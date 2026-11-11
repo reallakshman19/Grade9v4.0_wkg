@@ -50,7 +50,7 @@ def run(chromium: str | None = None) -> dict:
                     opts['executable_path'] = chromium
                 browser = p.chromium.launch(**opts)
                 try:
-                    for viewport in ({'width': 1440, 'height': 900}, {'width': 390, 'height': 844}):
+                    for viewport in ({'width': 1280, 'height': 800}, {'width': 1472, 'height': 920}, {'width': 800, 'height': 1280}):
                         context = browser.new_context(viewport=viewport)
                         try:
                             page = context.new_page()
@@ -63,6 +63,8 @@ def run(chromium: str | None = None) -> dict:
                                 assert response and response.status == 200, f'{path}: HTTP 200 missing'
                                 assert page.locator('#navlist .item').count() == expected, path
                                 assert 'source-unverified candidate reader' in page.locator('header h1').inner_text().lower()
+                                assert page.locator('style#g9-reader-12p7-layout').count() == 1
+                                assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth + 2'), 'Horizontal overflow on tablet/desktop'
                                 assert not errs, (path, errs)
                                 if 'alpha' in path or path.startswith('preview/'):
                                     assert page.locator('#question-root svg circle').count() == 1, 'Actual SVG lost in generated HTML'
