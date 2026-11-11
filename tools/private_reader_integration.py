@@ -111,6 +111,15 @@ def embed(template: str, data: dict) -> str:
     out, n = re.subn(r'(?s)<header\b[^>]*>.*?</header>', lambda _: safe_header, out, count=1)
     if n != 1:
         raise ValueError('HEADER_MISSING')
+    # Older candidate pages have a second, non-header original-exam claim.
+    # Replace only presentation copy; never alter the embedded question data.
+    out = re.sub(
+        r'(?is)<p\s+class=["\']subtitle["\'][^>]*>.*?</p>',
+        lambda _: '<p class="subtitle">Candidate records — original exam status unverified</p>',
+        out, count=1
+    )
+    if re.search(r'\b\d+\s+authentic\s+(?:items|questions)\b', out, re.I):
+        raise ValueError('UNVERIFIED_ORIGINAL_CLAIM_REMAINS')
     return out
 
 
