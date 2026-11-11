@@ -55,7 +55,34 @@
 
 ---
 
-## 4. Seven Anti-Patterns Quality Gate Compliance
+## 4. Physics Track Core 1A & Core 1B Review Packages
+
+### Primary Package: Authored Deliverables Only (Exclusively Core 1A & Core 1B)
+- **Archive Package:** [`workspace/output/G9V4_PHYSICS_CORE1A_CORE1B_ONLY_REVIEW.zip`](file:///D:/CodeD/grade9v4/workspace/output/G9V4_PHYSICS_CORE1A_CORE1B_ONLY_REVIEW.zip)
+- **Archive Size:** 116,187 bytes
+- **SHA-256 Digest:** `952f5a5e0178fe052d1d19293c94de3e3e021645297f3eefc8d3f96d4dd062fa`
+- **Archive Receipt:** [`workspace/output/G9V4_PHYSICS_CORE1A_CORE1B_ONLY_RECEIPT.json`](file:///D:/CodeD/grade9v4/workspace/output/G9V4_PHYSICS_CORE1A_CORE1B_ONLY_RECEIPT.json)
+- **CRC & Integrity:** Verified (`testzip()`: 0 bad members, 28 total members).
+- **Scope:** Exclusively the newly authored Core 1A & Core 1B files, witnesses, interactive learning journeys, and unit test suites:
+  - 5 Core 1A Teaching Constructions (`core1a_construction.json`)
+  - 5 Core 1B Phenomenological Reconstructions (`core1b_reconstruction.json`)
+  - 5 Bidirectional B1–B7 Cryptographic Witness Binders (`witness.json`)
+  - 5 Standalone Zero-Iframe Tablet Learning Journeys (`learning_journey.html`)
+  - 5 Core 1 Pytest Test Suites (`test_nsejs_*_core1.py`)
+  - `CORE1_TEST_REPORT.log` (verbatim 30 passed in 0.17s)
+  - `README_REVIEWER.md` & `MANIFEST.json`
+- **Disposition:** `HOLD:ACADEMIC_ADMISSION` (*Rule 13 in AGENTS.md*)
+
+### Full Track Package: Core 1A, Core 1B + Core 2 Baseline
+- **Archive Package:** [`workspace/output/G9V4_NSEJS_PHYSICS_CORE1_PRIVATE_REVIEW.zip`](file:///D:/CodeD/grade9v4/workspace/output/G9V4_NSEJS_PHYSICS_CORE1_PRIVATE_REVIEW.zip)
+- **Archive Size:** 310,196 bytes
+- **SHA-256 Digest:** `c6f9c89d1a8595d62607c2a1a6e0a8c75d1b2605087f5513ee0a0afec635608e`
+- **Archive Receipt:** [`workspace/output/G9V4_PHYSICS_CORE1_ARCHIVE_RECEIPT.json`](file:///D:/CodeD/grade9v4/workspace/output/G9V4_PHYSICS_CORE1_ARCHIVE_RECEIPT.json)
+- **Contents:** 78 ZIP members (Core 1 + Core 2 underlying modules, 50 questions, custody packets, and 106 tests).
+
+---
+
+## 5. Seven Anti-Patterns Quality Gate Compliance
 
 Strict compliance verified across all modules:
 - **Gate 1 (Zero Ghost Text):** 0 occurrences of `"2. Connection:"` or `"Connection:"`.
