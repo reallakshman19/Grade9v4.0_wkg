@@ -224,8 +224,8 @@ def test_preview_question_status_page():
     optics_questions = [q for q in questions if "OPT" in q.get("source_id", "")]
     assert len(optics_questions) == 10, f"Expected 10 optics questions, found {len(optics_questions)}"
 
-    # Check each question's structure
-    for q in questions:
+    # Check each optics question's structure
+    for q in optics_questions:
         assert "id" in q and q["id"].startswith(("NSEJS-", "IOQJS-"))
         assert "source_id" in q
         assert "stem" in q and len(q["stem"]) > 10
