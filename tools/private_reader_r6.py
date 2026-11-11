@@ -244,8 +244,28 @@ def upgrade_site(source:Path,output:Path):
     if receipt.get('release_authority')!='HOLD' or receipt.get('academic_approval')!='HOLD':
         raise ValueError('R6_RELEASE_AUTHORITY')
     files=receipt['output_files']
+    if not isinstance(files,dict) or not files or not all(isinstance(p,str) and p for p in files):
+        raise ValueError('R6_OUTPUT_FILE_LIST_INVALID')
+    # The generated review artifact must be a closed, file-pinned tree. Never
+    # follow symlinks, copy hidden unaccounted assets, or allow path traversal.
+    allowed=set(files)|{'PRIVATE_REVIEW_MANIFEST.json','.GRADE9_PRIVATE_REVIEW_ONLY'}
+    actual_files=set()
+    for item in source.rglob('*'):
+        if item.is_symlink():raise ValueError('R6_SYMLINK_REJECTED')
+        if item.is_file():actual_files.add(item.relative_to(source).as_posix())
+    if actual_files!=allowed:
+        raise ValueError('R6_UNACCOUNTED_OUTPUT_FILES')
+    for name in files:
+        path=Path(name)
+        if (path.is_absolute() or not name.endswith('.html') or
+            any(part in ('.','..','') for part in name.split('/')) or
+            '\\' in name or ':' in name or '\x00' in name):
+            raise ValueError('R6_UNSAFE_OUTPUT_REFERENCE')
     actual={p:sha((source/p).read_bytes()) for p in files}
     if actual!=files:raise ValueError('R6_INPUT_PIN_MISMATCH')
+    data=json.loads((source/'preview/question-status.html').read_text('utf-8').split(MARKER,1)[1].split(END,1)[0])
+    if sha(canonical(data['questions']).encode('utf-8'))!=receipt.get('source_question_digest'):
+        raise ValueError('R6_SOURCE_QUESTION_DIGEST_MISMATCH')
     orig_digest=receipt['source_question_digest']
     with tempfile.TemporaryDirectory(prefix='g9-r6-') as temp:
         stage=Path(temp)/'site'
