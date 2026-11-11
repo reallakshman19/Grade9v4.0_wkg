@@ -180,11 +180,14 @@ def patch_reader(js_html: str) -> str:
       putAttempt(q, cur);''')
     js_html=replace_once(js_html,'''      commitNote.textContent = 'Attempt committed. You may now reveal the worked solution.';''',
                               '''      commitNote.textContent = cur.storageStatus === 'SAVED_LOCAL' ?
-        'First attempt saved in this browser for this question revision (ungraded, not certified).' :
+        'First attempt saved in this browser for this question revision (ungraded, not certified).' +
+          (cur.firstAttempt.assisted ? ' ASSISTED: a hint was opened before commitment.' :
+            ' No hint opened before commitment (browser-local observation only).') :
         'Attempt committed on this page, but browser storage failed: NOT SAVED; reload loses progress.';''')
     js_html=replace_once(js_html,'''      '<span id="commit-note" class="live-note">' + (st.committed ? 'Attempt committed on this page only; reloading clears it.' : 'Select an option to enable commitment.') + '</span>' +''',
                               '''      '<span id="commit-note" class="live-note">' + (st.committed ?
-        (st.storageStatus === 'SAVED_LOCAL' ? 'First attempt restored from local browser storage (ungraded).' :
+        (st.storageStatus === 'SAVED_LOCAL' ? 'First attempt restored from local browser storage (ungraded).' +
+          (st.firstAttempt && st.firstAttempt.assisted ? ' ASSISTED by previously opened hint.' : '') :
           'First attempt exists on this page only; storage failed.') : 'Select an option to enable commitment.') + '</span>' +''')
     old='''      el.addEventListener('toggle', () => {
         if (el.open && idx > 0 && !hintEls[idx - 1].open) {
