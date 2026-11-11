@@ -5,6 +5,7 @@ on:
   pull_request:
     paths:
       - 'tools/private_reader_integration.py'
+      - 'tools/private_reader_12p7.css'
       - 'tools/check_private_reader_http.py'
       - 'tests/test_private_reader_integration.py'
       - 'docs/private-reader-integration.md'
@@ -28,5 +29,5 @@ jobs:
           python -m playwright install chromium
       - name: Python source-preservation and negative controls
         run: python -m pytest -q tests/test_private_reader_integration.py
-      - name: Chromium direct HTTP synthetic integration - no DOM fallback
+      - name: Chromium direct HTTP synthetic 12.7-inch tablet/desktop - no DOM fallback
         run: python tools/check_private_reader_http.py
