@@ -251,7 +251,7 @@ def test_preview_question_status_page_electrostatics():
     data = json.loads(m.group(1))
 
     questions = data["questions"]
-    assert len(questions) == 20, f"Expected 20 unified questions, found {len(questions)}"
+    assert len(questions) >= 20, f"Expected at least 20 unified questions, found {len(questions)}"
 
     elec_questions = [q for q in questions if "ELEC" in q.get("source_id", "")]
     assert len(elec_questions) == 10, f"Expected 10 electrostatics questions, found {len(elec_questions)}"

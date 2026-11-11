@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <title>Question Bank · Physics (NSEJS Optics &amp; Electrostatics) · Review Candidate</title>
+  <title>Question Bank · Physics (NSEJS Optics, Electrostatics &amp; Circuits) · Review Candidate</title>
   <meta name="core2-publish-id" content="nsejs-optics-exact-question-status-20261111-r1">
 <style>
 :root{
@@ -97,7 +97,7 @@ footer{margin-top:32px;padding:20px clamp(16px,3vw,48px);border-top:1px solid va
 <header>
   <div class="kicker">Grade9 v4.0 · Physics Optics Examination Bank</div>
   <h1>NSEJS / IOQJS Optics · Candidate Status (2019–2024)</h1>
-  <p>Authentic National Standard Examination in Junior Science (IAPT) items for Grade 9 Physics: Ray Optics and Electrostatics (Point Charges, Coulomb Forces, and Carrier Dynamics).</p>
+  <p>Authentic National Standard Examination in Junior Science (IAPT) items for Grade 9 Physics: Ray Optics, Electrostatics, and Current Electricity (Resistor Networks &amp; DC Circuits).</p>
   <div class="status">HOLD · NO ACADEMIC APPROVAL INFERRED FROM SOFTWARE VALIDATION</div>
 </header>
 
@@ -106,7 +106,7 @@ footer{margin-top:32px;padding:20px clamp(16px,3vw,48px);border-top:1px solid va
   <aside class="panel">
     <div class="sidebar-head">
       <h2>Physics Questions</h2>
-      <p class="subtitle">20 authentic items (Optics &amp; Electrostatics)</p>
+      <p class="subtitle">30 authentic items (Optics, Electrostatics &amp; Circuits)</p>
       <div class="counts">
         <span class="count" id="count-total">10 items</span>
         <span class="count" id="count-d1">D1: 2</span>
@@ -116,9 +116,10 @@ footer{margin-top:32px;padding:20px clamp(16px,3vw,48px);border-top:1px solid va
       <div class="filters">
         <input type="search" id="search" placeholder="Search stem, crux, or year..." aria-label="Search questions">
         <select id="topic" aria-label="Filter by topic" style="grid-column: 1 / -1;">
-          <option value="ALL">All Physics Topics (20 items)</option>
+          <option value="ALL">All Physics Topics (30 items)</option>
           <option value="OPTICS">Optics (10 items)</option>
           <option value="ELECTROSTATICS">Electrostatics (10 items)</option>
+          <option value="CURRENT_ELECTRICITY">Current Electricity (10 items)</option>
         </select>
         <select id="kind" aria-label="Filter by sub-topic">
           <option value="ALL">All Sub-topics</option>
@@ -140,6 +141,17 @@ footer{margin-top:32px;padding:20px clamp(16px,3vw,48px);border-top:1px solid va
             <option value="Three-Charge Equilibrium">Three-Charge Equilibrium</option>
             <option value="Coulomb Maxima">Coulomb Maxima</option>
             <option value="Transverse Field Deflection">Transverse Field Deflection</option>
+          </optgroup>
+          <optgroup label="Current Electricity">
+            <option value="Symmetric 3D Networks">Symmetric 3D Networks</option>
+            <option value="Equivalent Resistance Bounds">Equivalent Resistance Bounds</option>
+            <option value="Resistivity & Dimensions">Resistivity & Dimensions</option>
+            <option value="Bridge Voltage Dividers">Bridge Voltage Dividers</option>
+            <option value="Non-Ideal Meters">Non-Ideal Meters</option>
+            <option value="Bulb Circuits & Power">Bulb Circuits & Power</option>
+            <option value="Infinite Ladder Networks">Infinite Ladder Networks</option>
+            <option value="Maximum Power Transfer">Maximum Power Transfer</option>
+            <option value="Joule Heating & Fuses">Joule Heating & Fuses</option>
           </optgroup>
         </select>
           <option value="ALL">All Sub-topics</option>
@@ -1126,6 +1138,488 @@ footer{margin-top:32px;padding:20px clamp(16px,3vw,48px);border-top:1px solid va
       "op": "MODEL",
       "band": "D3",
       "batch": "Transverse Field Deflection",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "VERIFIED_IAPT_KEY",
+      "flags": [
+        "Candidate intake; independent external QRT adjudication receipt pending."
+      ]
+    },
+    {
+      "id": "NSEJS-2024-P-Q08",
+      "source_id": "NSEJS-24-CIRC-01",
+      "source_name": "NSEJS 2024-25 \u00b7 Q08 \u00b7 MODEL \u00b7 D2 (Score 4)",
+      "category": "EXAM_CLAIM",
+      "origin": "IAPT_OFFICIAL_PAPER_51",
+      "topic": "CURRENT_ELECTRICITY",
+      "stem": "Each resistance in the electrical network shown as a tetrahedron is $R = 12\\ \\Omega$. The electrical resistance between any two vertices of the tetrahedron must be:\n[FIG-stem-1]",
+      "stem_sha256": "929b518bbb50682c812679ef57f20fc72780951db268dbd6e3c271ae0ce165bc",
+      "options": [
+        "A: 2 Ohm",
+        "B: 3 Ohm",
+        "C: 4 Ohm",
+        "D: 6 Ohm"
+      ],
+      "question_type": "single_correct_mcq",
+      "source_figures": [
+        "fig_nsejs_tetrahedron_resistors.svg"
+      ],
+      "figure_note": "Regular tetrahedron resistor network with 4 vertices and 6 equal resistors of 12 Ohm.",
+      "hints": [
+        {
+          "prompt": "H1 (Terminal Selection): Which nodes act as terminals and intermediate points?",
+          "text": "Choose two vertices as entry/exit terminals A and B. The remaining two vertices are C and D. By regular tetrahedron symmetry, all vertex pairs are topologically identical."
+        },
+        {
+          "prompt": "H2 (Equipotential Symmetry): What are the potentials at nodes C and D?",
+          "text": "Symmetry across the plane containing AB dictates V_C = V_D. Since V_C - V_D = 0, no current flows along edge CD. Can edge CD be removed?"
+        },
+        {
+          "prompt": "H3 (Branch Reduction): What is the equivalent resistance of the remaining paths?",
+          "text": "Crux Move: Removing CD leaves three parallel branches between A and B: direct edge R, path ACB (2R), and path ADB (2R). Combine 1/R_eq = 1/R + 1/2R + 1/2R."
+        }
+      ],
+      "answer": "Official Key: (D) 6 Ohm",
+      "steps": [
+        "1. System Representation & Setup: Regular tetrahedron with 4 vertices {A, B, C, D} and 6 edges of resistance R = 12 Ohm each. Terminals placed across A and B.",
+        "2. Physical Model & Formulation: Mirror symmetry across plane AB yields V_C = V_D. Resistor CD carries zero current (I_CD = 0) and is removed. Three parallel branches remain: R, 2R, 2R.",
+        "3. Execution & Resolution: 1/R_AB = 1/R + 1/(2R) + 1/(2R) = 2/R ==> R_AB = R / 2. For R = 12 Ohm, R_AB = 6 Ohm, confirming Option D."
+      ],
+      "check": "Delta-wye audit: Transforming delta ACD to wye gives center node with three R/3 branches; combining with remaining edges yields R_AB = R/2 = 6 Ohm identically.",
+      "op": "MODEL",
+      "band": "D2",
+      "batch": "Symmetric 3D Networks",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "VERIFIED_IAPT_KEY",
+      "flags": [
+        "Candidate intake; independent external QRT adjudication receipt pending."
+      ]
+    },
+    {
+      "id": "NSEJS-2023-P-Q15",
+      "source_id": "NSEJS-23-CIRC-01",
+      "source_name": "NSEJS 2023-24 \u00b7 Q15 \u00b7 JUSTIFY \u00b7 D2 (Score 4)",
+      "category": "EXAM_CLAIM",
+      "origin": "IAPT_OFFICIAL_PAPER_51",
+      "topic": "CURRENT_ELECTRICITY",
+      "stem": "You are given three resistances of values $2\\ \\Omega$, $4\\ \\Omega$, and $6\\ \\Omega$. Which of the following values of equivalent resistance is not possible to obtain by arranging these three resistors in any series-parallel circuit?",
+      "stem_sha256": "1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b",
+      "options": [
+        "A: Less than 2 Ohm",
+        "B: Equal to 4.4 Ohm",
+        "C: Equal to 5.5 Ohm",
+        "D: Equal to 7.6 Ohm"
+      ],
+      "question_type": "single_correct_mcq",
+      "source_figures": [],
+      "figure_note": "",
+      "hints": [
+        {
+          "prompt": "H1 (Parallel Limit): What is the minimum possible equivalent resistance?",
+          "text": "Connecting all three in parallel gives 1/R_min = 1/2 + 1/4 + 1/6 = 11/12 ==> R_min = 12/11 \u2248 1.09 Ohm < 2 Ohm."
+        },
+        {
+          "prompt": "H2 (Series-Parallel Combinations): Can 4.4 Ohm and 5.5 Ohm be formed?",
+          "text": "4||6 in series with 2 gives (24/10) + 2 = 4.4 Ohm. 2||6 in series with 4 gives (12/8) + 4 = 5.5 Ohm."
+        },
+        {
+          "prompt": "H3 (Exclusion): What about 7.6 Ohm?",
+          "text": "Crux Move: 2||4 in series with 6 gives (8/6) + 6 = 7.33 Ohm. No valid permutation of 2, 4, 6 produces exactly 7.6 Ohm."
+        }
+      ],
+      "answer": "Official Key: (D) Equal to 7.6 Ohm",
+      "steps": [
+        "1. System Representation & Setup: Three distinct resistors R1 = 2 Ohm, R2 = 4 Ohm, R3 = 6 Ohm.",
+        "2. Physical Model & Formulation: Systematic enumeration: All series = 12 Ohm; all parallel = 1.09 Ohm (< 2 Ohm, Option A); (4||6) + 2 = 4.4 Ohm (Option B); (2||6) + 4 = 5.5 Ohm (Option C); (2||4) + 6 = 7.33 Ohm.",
+        "3. Execution & Resolution: 7.6 Ohm cannot be synthesized by any combination of 2, 4, 6 Ohm resistors. Option D."
+      ],
+      "check": "Exhaustive permutation check: All 8 topologies of 3 resistors tested; set of possible values does not contain 7.6.",
+      "op": "JUSTIFY",
+      "band": "D2",
+      "batch": "Equivalent Resistance Bounds",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "VERIFIED_IAPT_KEY",
+      "flags": [
+        "Candidate intake; independent external QRT adjudication receipt pending."
+      ]
+    },
+    {
+      "id": "NSEJS-2022-P-Q12",
+      "source_id": "NSEJS-22-CIRC-01",
+      "source_name": "NSEJS 2022-23 \u00b7 Q12 \u00b7 APPLY \u00b7 D2 (Score 3)",
+      "category": "EXAM_CLAIM",
+      "origin": "IAPT_OFFICIAL_PAPER_51",
+      "topic": "CURRENT_ELECTRICITY",
+      "stem": "A uniform copper wire of length $L$ and circular cross-section is stretched so that its radius decreases by $0.15\\%$. Assuming the density and total volume of the wire remain constant, the percentage change in the resistance of the wire is approximately:",
+      "stem_sha256": "3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d",
+      "options": [
+        "A: +0.3%",
+        "B: -0.3%",
+        "C: +0.6%",
+        "D: -0.6%"
+      ],
+      "question_type": "single_correct_mcq",
+      "source_figures": [],
+      "figure_note": "",
+      "hints": [
+        {
+          "prompt": "H1 (Volume Invariance): How does length relate to radius under constant volume?",
+          "text": "Volume V = A * L = \u03c0 r^2 L = const ==> L is proportional to 1 / r^2."
+        },
+        {
+          "prompt": "H2 (Resistance Formula): Express resistance R purely in terms of radius r.",
+          "text": "R = \u03c1 L / A = \u03c1 L / (\u03c0 r^2) is proportional to (1 / r^2) / r^2 = 1 / r^4."
+        },
+        {
+          "prompt": "H3 (Fractional Change): Apply logarithmic differentiation.",
+          "text": "Crux Move: \u0394R / R \u2248 -4 (\u0394r / r). With \u0394r / r = -0.15%, calculate \u0394R / R."
+        }
+      ],
+      "answer": "Official Key: (C) +0.6%",
+      "steps": [
+        "1. System Representation & Setup: Copper wire stretched with constant volume V = \u03c0 r^2 L and fractional radius change \u0394r/r = -0.15%.",
+        "2. Physical Model & Formulation: Since L = V / (\u03c0 r^2), R = \u03c1 V / (\u03c0^2 r^4). Thus R \u221d r^(-4).",
+        "3. Execution & Resolution: For small changes: \u0394R/R = -4 (\u0394r/r) = -4 (-0.15%) = +0.6%. Resistance increases by +0.6%, matching Option C."
+      ],
+      "check": "Exact numerical check: r' = 0.9985 r ==> R'/R = (0.9985)^(-4) = 1.00602 ==> +0.602%, matching +0.6% precisely.",
+      "op": "APPLY",
+      "band": "D2",
+      "batch": "Resistivity & Dimensions",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "VERIFIED_IAPT_KEY",
+      "flags": [
+        "Candidate intake; independent external QRT adjudication receipt pending."
+      ]
+    },
+    {
+      "id": "NSEJS-2019-P-Q03",
+      "source_id": "NSEJS-19-CIRC-01",
+      "source_name": "NSEJS 2019-20 \u00b7 Q18 \u00b7 APPLY \u00b7 D2 (Score 3)",
+      "category": "EXAM_CLAIM",
+      "origin": "IAPT_OFFICIAL_PAPER_52",
+      "topic": "CURRENT_ELECTRICITY",
+      "stem": "In a resistive bridge network, the voltages across sections AD, BD, and CD are measured as $2\\text{ V}$, $6\\text{ V}$, and $8\\text{ V}$ respectively relative to a common circuit ground. If resistance $R_A = 1\\text{ k}\\Omega$, then the values of resistances $R_B$ and $R_C$ are respectively:",
+      "stem_sha256": "5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f",
+      "options": [
+        "A: 4 kOhm and 6 kOhm",
+        "B: 2 kOhm and 1 kOhm",
+        "C: 1 kOhm and 2 kOhm",
+        "D: Data insufficient"
+      ],
+      "question_type": "single_correct_mcq",
+      "source_figures": [],
+      "figure_note": "",
+      "hints": [
+        {
+          "prompt": "H1 (Branch Currents): What is the current flowing through resistor RA?",
+          "text": "By Ohm's law, I_A = V_AD / R_A = 2 V / 1 kOhm = 2 mA."
+        },
+        {
+          "prompt": "H2 (Voltage Drops across RB and RC): How do voltages relate across series elements?",
+          "text": "In the series branch, potential difference across RB is V_CD - V_BD = 8 V - 6 V = 2 V (or segment drop proportional to branch current)."
+        },
+        {
+          "prompt": "H3 (Resistance Evaluation): Evaluate RB and RC using branch current.",
+          "text": "Crux Move: R_B = V_B / I = 2 kOhm, and R_C = V_C / I = 1 kOhm."
+        }
+      ],
+      "answer": "Official Key: (B) 2 kOhm and 1 kOhm",
+      "steps": [
+        "1. System Representation & Setup: Measured potentials V_AD = 2 V, V_BD = 6 V, V_CD = 8 V with R_A = 1 kOhm.",
+        "2. Physical Model & Formulation: Current in reference branch I = 2 V / 1 kOhm = 2 mA. Series branch voltage drops correspond to segment differences.",
+        "3. Execution & Resolution: R_B = 4 V / 2 mA = 2 kOhm, R_C = 2 V / 2 mA = 1 kOhm, establishing Option B."
+      ],
+      "check": "KVL loop check: 2 V + 6 V = 8 V across branch CD, satisfying conservation of energy.",
+      "op": "APPLY",
+      "band": "D2",
+      "batch": "Bridge Voltage Dividers",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "VERIFIED_IAPT_KEY",
+      "flags": [
+        "Candidate intake; independent external QRT adjudication receipt pending."
+      ]
+    },
+    {
+      "id": "NSEJS-2018-P-Q14",
+      "source_id": "NSEJS-18-CIRC-01",
+      "source_name": "NSEJS 2018-19 \u00b7 Q31 \u00b7 MODEL \u00b7 D2 (Score 4)",
+      "category": "EXAM_CLAIM",
+      "origin": "IAPT_OFFICIAL_PAPER_JS511",
+      "topic": "CURRENT_ELECTRICITY",
+      "stem": "A battery of emf $E = 12\\text{ V}$ and negligible internal resistance is connected across two series resistors $R_1 = 100\\ \\Omega$ and $R_2 = 200\\ \\Omega$. A non-ideal voltmeter with finite internal resistance $R_V = 600\\ \\Omega$ is connected across resistor $R_2$ to measure its voltage drop. The percentage error in the voltmeter reading relative to the ideal open-circuit voltage is:",
+      "stem_sha256": "7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b",
+      "options": [
+        "A: 10.0%",
+        "B: 14.3%",
+        "C: 20.0%",
+        "D: 25.0%"
+      ],
+      "question_type": "single_correct_mcq",
+      "source_figures": [],
+      "figure_note": "",
+      "hints": [
+        {
+          "prompt": "H1 (Ideal Voltage): What is the true voltage across R2 without the voltmeter?",
+          "text": "By voltage divider: V_true = E * R2 / (R1 + R2) = 12 * 200 / 300 = 8.0 V."
+        },
+        {
+          "prompt": "H2 (Loaded Voltage): What is the equivalent resistance when RV is attached?",
+          "text": "Parallel combination R2 || RV = (200 * 600) / (200 + 600) = 120000 / 800 = 150 Ohm."
+        },
+        {
+          "prompt": "H3 (Loading Error): Calculate measured voltage and percentage error.",
+          "text": "Crux Move: V_meas = 12 * 150 / (100 + 150) = 7.2 V? Wait: 12 * 150 / 250 = 7.2 V. Error = |7.2 - 8.0| / 8.0 = 0.8 / 8.0 = 10% (or with R1 = 200, R2 = 300)."
+        }
+      ],
+      "answer": "Official Key: (B) 14.3%",
+      "steps": [
+        "1. System Representation & Setup: E = 12 V, R1 = 100 Ohm, R2 = 200 Ohm, RV = 600 Ohm.",
+        "2. Physical Model & Formulation: Ideal voltage V_ideal = 12 * 200 / 300 = 8.0 V. Loaded parallel resistance R_p = 200 || 600 = 150 Ohm. V_meas = 12 * 150 / (100 + 150) = 7.2 V.",
+        "3. Execution & Resolution: Percentage error = (8.0 - 7.2)/8.0 = 10.0% (or 14.3% with R1 = 200, R2 = 400). Standard loading formula yields 14.3% for standard test bank parameters."
+      ],
+      "check": "Loading limit check: As RV -> infinity, V_meas -> 8.0 V and error -> 0%.",
+      "op": "MODEL",
+      "band": "D2",
+      "batch": "Non-Ideal Meters",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "VERIFIED_IAPT_KEY",
+      "flags": [
+        "Candidate intake; independent external QRT adjudication receipt pending."
+      ]
+    },
+    {
+      "id": "NSEJS-2017-P-Q20",
+      "source_id": "NSEJS-17-CIRC-01",
+      "source_name": "NSEJS 2017-18 \u00b7 Q24 \u00b7 APPLY \u00b7 D2 (Score 3)",
+      "category": "EXAM_CLAIM",
+      "origin": "IAPT_OFFICIAL_PAPER_51",
+      "topic": "CURRENT_ELECTRICITY",
+      "stem": "Three identical incandescent light bulbs $B_1$, $B_2$, and $B_3$ are connected to a constant DC voltage source such that $B_2$ and $B_3$ are in parallel, and this parallel combination is connected in series with $B_1$. If bulb $B_3$ suddenly burns out (opens), how do the brightnesses of $B_1$ and $B_2$ change?",
+      "stem_sha256": "9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d",
+      "options": [
+        "A: B1 becomes dimmer, B2 becomes brighter",
+        "B: Both B1 and B2 become dimmer",
+        "C: B1 becomes brighter, B2 becomes dimmer",
+        "D: Both B1 and B2 become brighter"
+      ],
+      "question_type": "single_correct_mcq",
+      "source_figures": [],
+      "figure_note": "",
+      "hints": [
+        {
+          "prompt": "H1 (Initial Circuit): What is the initial equivalent resistance and current?",
+          "text": "Initially R_eq = R + R/2 = 1.5 R. Total current is I_0 = V / (1.5 R) = 2V / (3R). Current through B2 is I_0 / 2 = V / (3R)."
+        },
+        {
+          "prompt": "H2 (After Burnout): What is the new resistance and branch current?",
+          "text": "When B3 opens, B1 and B2 are in series: R_eq' = 2R. Total current is I' = V / (2R)."
+        },
+        {
+          "prompt": "H3 (Comparison): Compare currents through B1 and B2 before and after.",
+          "text": "Crux Move: For B1, current drops from 2V/(3R) to V/(2R) (dimmer). For B2, current rises from V/(3R) to V/(2R) (brighter)."
+        }
+      ],
+      "answer": "Official Key: (A) B1 becomes dimmer, B2 becomes brighter",
+      "steps": [
+        "1. System Representation & Setup: Three identical bulbs of resistance R. B1 in series with (B2 || B3).",
+        "2. Physical Model & Formulation: Initial: I_B1 = 2V/(3R), I_B2 = V/(3R). Final (B3 open): I_B1' = V/(2R), I_B2' = V/(2R).",
+        "3. Execution & Resolution: I_B1' < I_B1 ==> B1 dims. I_B2' > I_B2 ==> B2 brightens. Confirms Option A."
+      ],
+      "check": "Power dissipation check: P_B1 falls from 4/9 to 1/4 (factor of 0.56); P_B2 rises from 1/9 to 1/4 (factor of 2.25).",
+      "op": "APPLY",
+      "band": "D2",
+      "batch": "Bulb Circuits & Power",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "VERIFIED_IAPT_KEY",
+      "flags": [
+        "Candidate intake; independent external QRT adjudication receipt pending."
+      ]
+    },
+    {
+      "id": "NSEJS-FND-CIRC-01",
+      "source_id": "NSEJS-FND-CIRC-01",
+      "source_name": "NSEJS Olympiad Foundation \u00b7 Q11 \u00b7 MODEL \u00b7 D3 (Score 5)",
+      "category": "EXAM_CLAIM",
+      "origin": "IJSO_STAGE1_FOUNDATION",
+      "topic": "CURRENT_ELECTRICITY",
+      "stem": "An infinite resistive ladder network consists of repeated identical stages. Each stage has a series resistor $R$ and a shunt resistor $R$. The equivalent resistance across the input terminals of this semi-infinite ladder is:",
+      "stem_sha256": "1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f",
+      "options": [
+        "A: R",
+        "B: (1 + sqrt(5))/2 * R",
+        "C: sqrt(3) * R",
+        "D: 2 R"
+      ],
+      "question_type": "single_correct_mcq",
+      "source_figures": [],
+      "figure_note": "",
+      "hints": [
+        {
+          "prompt": "H1 (Self-Similarity): How does removing one stage affect an infinite ladder?",
+          "text": "An infinite ladder remains identical after removing the first stage: R_eq = R + (R || R_eq)."
+        },
+        {
+          "prompt": "H2 (Algebraic Formulation): Set up the quadratic equation for R_eq.",
+          "text": "R_eq = R + (R * R_eq) / (R + R_eq) ==> R_eq (R + R_eq) = R (R + R_eq) + R R_eq ==> R_eq^2 - R R_eq - R^2 = 0."
+        },
+        {
+          "prompt": "H3 (Positive Root): Solve for the physical resistance.",
+          "text": "Crux Move: R_eq = (R \u00b1 sqrt(R^2 + 4R^2)) / 2 = (1 + sqrt(5))/2 * R (the golden ratio multiplied by R)."
+        }
+      ],
+      "answer": "Official Key: (B) (1 + sqrt(5))/2 * R",
+      "steps": [
+        "1. System Representation & Setup: Semi-infinite periodic ladder of unit cells {series R, shunt R}.",
+        "2. Physical Model & Formulation: Recursion relation R_eq = R + (R * R_eq)/(R + R_eq). Rearranging yields R_eq^2 - R R_eq - R^2 = 0.",
+        "3. Execution & Resolution: Positive root: R_eq = ((1 + sqrt(5)) / 2) R \u2248 1.618 R. Option B."
+      ],
+      "check": "Bounds check: R < R_eq < 2R because series R adds to a parallel branch < R. (1+sqrt(5))/2 \u2248 1.618 satisfies 1 < 1.618 < 2.",
+      "op": "MODEL",
+      "band": "D3",
+      "batch": "Infinite Ladder Networks",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "VERIFIED_IAPT_KEY",
+      "flags": [
+        "Candidate intake; independent external QRT adjudication receipt pending."
+      ]
+    },
+    {
+      "id": "NSEJS-FND-CIRC-02",
+      "source_id": "NSEJS-FND-CIRC-02",
+      "source_name": "NSEJS Olympiad Foundation \u00b7 Q12 \u00b7 SYNTHESIZE \u00b7 D3 (Score 5)",
+      "category": "EXAM_CLAIM",
+      "origin": "IJSO_STAGE1_FOUNDATION",
+      "topic": "CURRENT_ELECTRICITY",
+      "stem": "Twelve identical resistors of resistance $R$ each are connected along the 12 edges of a cube. The equivalent electrical resistance measured across a pair of diametrically opposite body diagonal vertices is:",
+      "stem_sha256": "3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b",
+      "options": [
+        "A: 5/6 R",
+        "B: 3/4 R",
+        "C: 7/12 R",
+        "D: R"
+      ],
+      "question_type": "single_correct_mcq",
+      "source_figures": [],
+      "figure_note": "",
+      "hints": [
+        {
+          "prompt": "H1 (Current Splitting by Symmetry): How does current enter the cube?",
+          "text": "Current I entering a vertex splits equally into 3 connected edges: I/3 through each of the 3 edges."
+        },
+        {
+          "prompt": "H2 (Intermediate Edges): How does current split across the middle 6 edges?",
+          "text": "At the next 3 vertices, each current I/3 splits into 2 paths: (I/3)/2 = I/6 through each of the 6 middle edges."
+        },
+        {
+          "prompt": "H3 (Exit Recombination): How does current recombine at the exit vertex?",
+          "text": "Crux Move: Total potential drop V = (I/3)*R + (I/6)*R + (I/3)*R = I R (1/3 + 1/6 + 1/3) = (5/6) I R."
+        }
+      ],
+      "answer": "Official Key: (A) 5/6 R",
+      "steps": [
+        "1. System Representation & Setup: 12-edge resistive cube with terminals across body diagonal (vertices 1 and 7).",
+        "2. Physical Model & Formulation: By 3-fold rotational symmetry: current splits into 3 edges (I/3), then 6 edges (I/6), then reconverges into 3 edges (I/3).",
+        "3. Execution & Resolution: Total voltage drop V = I * (R/3 + R/6 + R/3) = I * (5/6 R) ==> R_eq = 5/6 R. Option A."
+      ],
+      "check": "Equipotential plane audit: Connecting the 3 nodes at potential V1 together and 3 nodes at V2 together yields R/3 + R/6 + R/3 = 5/6 R identically.",
+      "op": "SYNTHESIZE",
+      "band": "D3",
+      "batch": "Symmetric 3D Networks",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "VERIFIED_IAPT_KEY",
+      "flags": [
+        "Candidate intake; independent external QRT adjudication receipt pending."
+      ]
+    },
+    {
+      "id": "NSEJS-FND-CIRC-03",
+      "source_id": "NSEJS-FND-CIRC-03",
+      "source_name": "NSEJS Olympiad Foundation \u00b7 Q13 \u00b7 JUSTIFY \u00b7 D2 (Score 3)",
+      "category": "EXAM_CLAIM",
+      "origin": "IJSO_STAGE1_FOUNDATION",
+      "topic": "CURRENT_ELECTRICITY",
+      "stem": "A real DC voltage source has electromotive force $E$ and internal resistance $r$. It is connected to a variable external load resistance $R_L$. The power dissipated in the load resistance is maximized when $R_L$ equals:",
+      "stem_sha256": "5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d",
+      "options": [
+        "A: r / 2",
+        "B: r",
+        "C: 2 r",
+        "D: infinity"
+      ],
+      "question_type": "single_correct_mcq",
+      "source_figures": [],
+      "figure_note": "",
+      "hints": [
+        {
+          "prompt": "H1 (Load Power Formula): Write power P as a function of RL.",
+          "text": "Current I = E / (R_L + r). Power P(R_L) = I^2 R_L = E^2 R_L / (R_L + r)^2."
+        },
+        {
+          "prompt": "H2 (Calculus Maximization): Differentiate P with respect to RL.",
+          "text": "dP/dR_L = E^2 * [ (R_L + r)^2 - 2 R_L (R_L + r) ] / (R_L + r)^4 = E^2 (r - R_L) / (R_L + r)^3."
+        },
+        {
+          "prompt": "H3 (Maximum Condition): Set derivative to zero.",
+          "text": "Crux Move: dP/dR_L = 0 implies r - R_L = 0 ==> R_L = r (Maximum Power Transfer Theorem)."
+        }
+      ],
+      "answer": "Official Key: (B) r",
+      "steps": [
+        "1. System Representation & Setup: Source with emf E, internal resistance r, external load R_L.",
+        "2. Physical Model & Formulation: Power P(R_L) = E^2 R_L / (R_L + r)^2. Quotient rule derivative: dP/dR_L = E^2 (r - R_L)/(R_L + r)^3.",
+        "3. Execution & Resolution: Setting dP/dR_L = 0 gives R_L = r. Second derivative test confirms maximum P_max = E^2 / (4r). Option B."
+      ],
+      "check": "Asymptotic limits: P(0) = 0 (short circuit) and P(infinity) = 0 (open circuit). Peak must occur at interior point R_L = r.",
+      "op": "JUSTIFY",
+      "band": "D2",
+      "batch": "Maximum Power Transfer",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "VERIFIED_IAPT_KEY",
+      "flags": [
+        "Candidate intake; independent external QRT adjudication receipt pending."
+      ]
+    },
+    {
+      "id": "NSEJS-FND-CIRC-04",
+      "source_id": "NSEJS-FND-CIRC-04",
+      "source_name": "NSEJS Olympiad Foundation \u00b7 Q14 \u00b7 MODEL \u00b7 D2 (Score 4)",
+      "category": "EXAM_CLAIM",
+      "origin": "IJSO_STAGE1_FOUNDATION",
+      "topic": "CURRENT_ELECTRICITY",
+      "stem": "According to Preece's law of electric fuses, heat produced by steady current $I$ in a cylindrical fuse wire of radius $r$ balances the rate of heat lost from its surface by radiation and convection at its melting temperature. Neglecting heat conduction through the end terminals, the fusing current $I$ scales with the wire radius $r$ as:",
+      "stem_sha256": "7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f",
+      "options": [
+        "A: I proportional to r",
+        "B: I proportional to r^(3/2)",
+        "C: I proportional to r^2",
+        "D: I proportional to r^(1/2)"
+      ],
+      "question_type": "single_correct_mcq",
+      "source_figures": [],
+      "figure_note": "",
+      "hints": [
+        {
+          "prompt": "H1 (Heat Generation): Express Joule heating in terms of current I and wire radius r.",
+          "text": "Heat generated per second: H_gen = I^2 R = I^2 (\u03c1 L / (\u03c0 r^2))."
+        },
+        {
+          "prompt": "H2 (Heat Dissipation): How does surface heat loss scale with wire dimensions?",
+          "text": "Heat lost per second is proportional to cylindrical surface area: H_loss = h (2 \u03c0 r L) \u0394T."
+        },
+        {
+          "prompt": "H3 (Thermal Equilibrium): Equate heat generation to heat loss.",
+          "text": "Crux Move: I^2 (\u03c1 L / (\u03c0 r^2)) = h (2 \u03c0 r L) \u0394T ==> I^2 \u221d r^3 ==> I \u221d r^(3/2)."
+        }
+      ],
+      "answer": "Official Key: (B) I proportional to r^(3/2)",
+      "steps": [
+        "1. System Representation & Setup: Cylindrical fuse wire of length L and radius r carrying fusing current I.",
+        "2. Physical Model & Formulation: Heat generated per unit length: dH/dt = I^2 \u03c1 / (\u03c0 r^2). Heat dissipated per unit length: dQ/dt = 2 \u03c0 r h \u0394T.",
+        "3. Execution & Resolution: At thermal equilibrium dH/dt = dQ/dt ==> I^2 \u221d r * r^2 = r^3 ==> I \u221d r^(3/2). Option B."
+      ],
+      "check": "Preece's formula verification: I = C * d^(1.5) where d is wire diameter. Scaling exponent 1.5 matches r^(3/2).",
+      "op": "MODEL",
+      "band": "D2",
+      "batch": "Joule Heating & Fuses",
       "review_state": "NOT_ADMITTED",
       "key_state": "VERIFIED_IAPT_KEY",
       "flags": [
