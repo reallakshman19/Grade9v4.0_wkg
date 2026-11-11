@@ -204,3 +204,42 @@ def test_governance_fail_closed_holding_status(bank, module_html):
     assert ext["academic_status"] == "UNREVIEWED"
     assert ext["official_exam_status"] == "PAPER_ON_FILE_NOT_ADMITTED"
     assert "No academic approval inferred from software validation." in module_html
+
+
+# ---------------------------------------------------------------------------
+# 6. Question Status Preview Page Validation
+# ---------------------------------------------------------------------------
+
+def test_preview_question_status_page():
+    path = REPO_ROOT / "preview/question-status.html"
+    assert path.exists(), "Missing preview/question-status.html"
+    html = path.read_text(encoding="utf-8")
+
+    # Match JSON script data
+    m = re.search(r'<script id="wpe-data" type="application/json">(.*?)</script>', html, re.DOTALL)
+    assert m, "Missing #wpe-data script tag in preview/question-status.html"
+    data = json.loads(m.group(1))
+
+    questions = data["questions"]
+    assert len(questions) == 10, f"Expected 10 optics questions, found {len(questions)}"
+
+    # Check each question's structure
+    for q in questions:
+        assert "id" in q and q["id"].startswith(("NSEJS-", "IOQJS-"))
+        assert "source_id" in q
+        assert "stem" in q and len(q["stem"]) > 10
+        assert "options" in q and len(q["options"]) == 4
+        assert "op" in q and q["op"] in CANONICAL_OPERATIONS
+        assert "band" in q and q["band"] in {"D1", "D2", "D3", "D4"}
+        assert q["review_state"] == "NOT_ADMITTED"
+        assert "hints" in q and len(q["hints"]) == 3
+        assert "steps" in q and len(q["steps"]) == 3
+        assert "check" in q and len(q["check"]) > 5
+
+    # Check UI & Governance elements
+    assert "HOLD · NO ACADEMIC APPROVAL INFERRED FROM SOFTWARE VALIDATION" in html
+    assert 'class="status"' in html
+    assert 'class="layout"' in html
+    assert 'class="filters"' in html
+    assert 'class="stage"' in html
+

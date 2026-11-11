@@ -1,0 +1,904 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Question Bank · Physics (NSEJS Optics) · Review Candidate</title>
+  <meta name="core2-publish-id" content="nsejs-optics-exact-question-status-20261111-r1">
+<style>
+:root{
+  --bg:#f5f7fc;--paper:#fff;--ink:#17253c;--muted:#55687e;--line:#dbe2eb;--navy:#153a60;--blue:#215d9d;
+  --soft:#eaf1fb;--amber:#8b5e17;--amberbg:#fff6e6;--rose:#8f3c40;--rosebg:#fff0ef;--mint:#146657;--mintbg:#e8f8f2;
+  --shadow:0 6px 26px rgba(22,42,76,.06);--touch-min:44px;
+}
+*{box-sizing:border-box}
+body{font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--ink);margin:0;overflow-wrap:break-word}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer;touch-action:manipulation}
+button:disabled{cursor:not-allowed;opacity:.45}
+header{padding:18px clamp(16px,3vw,48px);background:#142a47;color:#fff}
+header a{color:#d5e9ff}
+.kicker{text-transform:uppercase;letter-spacing:.14em;font-size:11px;font-weight:750;color:#a7ccef;margin-bottom:5px}
+h1{font-size:clamp(22px,3vw,30px);line-height:1.2;margin:0 0 5px}
+header p{margin:0;color:#ccd9e9;max-width:940px;font-size:14px}
+.status{display:inline-flex;gap:6px;align-items:center;border:1px solid #f4d3a1;color:#ffe1b0;background:#483b2b;border-radius:99px;padding:3px 11px;font-size:12px;font-weight:750;margin-top:9px}
+.layout{display:grid;grid-template-columns:minmax(280px,340px) minmax(0,1fr);gap:20px;max-width:1500px;padding:20px clamp(13px,2vw,32px);margin:auto;align-items:start}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:15px;box-shadow:var(--shadow)}
+aside.panel{position:sticky;top:12px;max-height:calc(100vh - 24px);display:flex;flex-direction:column;min-width:0}
+.sidebar-head{padding:18px;border-bottom:1px solid var(--line)}
+h2,h3,h4{line-height:1.3}
+h2{font-size:22px;margin:0}
+h3{font-size:17px;margin:0 0 9px}
+.subtitle{font-size:13px;color:var(--muted)}
+.counts{display:flex;flex-wrap:wrap;gap:7px;margin:11px 0}
+.count{border-radius:6px;background:var(--soft);color:#24496f;font-size:12px;padding:4px 8px;font-weight:600}
+.filters{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:13px}
+.filters>*{min-width:0;width:100%}
+.filters input{grid-column:1/-1}
+input[type=search],select,textarea{border:1px solid #bdcbdc;background:white;border-radius:9px;color:var(--ink);padding:10px;width:100%;min-height:var(--touch-min)}
+input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible{outline:3px solid #81b5f0;outline-offset:2px}
+.list-scroll{overflow-y:auto;min-height:150px;padding:8px}
+.item{background:white;border:1px solid transparent;border-radius:9px;padding:10px 12px;display:block;text-align:left;width:100%;margin:3px 0;color:inherit;transition:all .15s}
+.item:hover{background:#f2f6fd}
+.item.selected{background:#eaf1fc;border-color:#90b3df}
+.item strong{display:block;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.item small{display:block;color:var(--muted);font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px}
+.main{min-width:0}
+.notice{padding:13px 17px;background:var(--amberbg);border:1px solid #e4c58b;color:#6b4b20;border-radius:12px;font-size:13px;margin-bottom:14px}
+.reader{padding:clamp(16px,2.5vw,28px)}
+.reader-toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding-bottom:15px;flex-wrap:wrap}
+.toolbar-buttons{display:flex;gap:8px;align-items:center}
+.btn{border:1px solid #a9bfda;border-radius:9px;padding:9px 15px;background:#f1f5fb;color:#173c60;font-weight:680;min-height:var(--touch-min);display:inline-flex;align-items:center;justify-content:center}
+.btn.primary{background:#1f5b9f;color:white;border-color:#1f5b9f}
+.btn.quiet{background:white;border-color:var(--line)}
+.btn:hover:not(:disabled){filter:brightness(.97)}
+.meta{display:flex;flex-wrap:wrap;gap:7px;margin:18px 0 9px}
+.chip{font-size:12px;border-radius:99px;background:#edf2f7;color:#354d65;padding:4px 9px;font-weight:650}
+.chip.warn{background:#fff0dc;color:#7b5115}
+.chip.hold{background:#fff0ef;color:#873b40;font-weight:750}
+.qtitle{font-size:clamp(19px,2.2vw,25px);margin:4px 0 10px;line-height:1.25}
+.stage{margin-top:16px;border:1px solid var(--line);border-radius:12px;padding:clamp(13px,2vw,20px)}
+.stage h3{display:flex;align-items:center;gap:9px;margin-bottom:12px}
+.tag{font-weight:750;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#365678;background:#e6effa;border-radius:5px;padding:3px 7px}
+.stem{font-size:17px;line-height:1.75;white-space:pre-line;overflow-wrap:anywhere}
+.math{font-family:'Cambria Math',STIXGeneral,serif;background:#f5f7fb;border-radius:3px;padding:1px 4px}
+.figure{border:1px solid #dce4ee;background:white;border-radius:10px;padding:12px;text-align:center;margin:16px 0}
+.figure svg{width:100%;max-width:640px;height:auto;display:block;margin:0 auto}
+.figure figcaption{font-size:12px;color:var(--muted);margin-top:8px}
+.option-list{display:grid;gap:10px}
+.option{display:flex;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:9px;background:white;cursor:pointer;min-height:var(--touch-min);user-select:none;transition:border-color .15s}
+.option:hover{border-color:var(--blue);background:#fbfdff}
+.option input[type=radio]{width:20px;height:20px;accent-color:var(--blue);cursor:pointer;margin:0}
+.actionbar{display:flex;align-items:center;gap:14px;margin-top:16px;flex-wrap:wrap}
+.live-note{font-size:13px;color:var(--muted)}
+.hint{border:1px solid var(--line);border-radius:9px;margin:8px 0;background:white;overflow:hidden}
+.hint summary{padding:12px 14px;font-weight:650;font-size:14px;cursor:pointer;min-height:var(--touch-min);display:flex;align-items:center;user-select:none}
+.hint p{padding:0 14px 12px;margin:0;font-size:14px;color:var(--muted);line-height:1.6}
+.solution{background:#f8fbff;border:1px solid #bfdbfe;border-radius:10px;padding:16px;margin-top:14px}
+.solution ol{padding-left:20px;margin:8px 0}
+.solution li{margin:6px 0;line-height:1.6}
+.alert{background:var(--amberbg);border:1px solid #e4c58b;color:#6b4b20;border-radius:10px;padding:12px 16px;margin:14px 0;font-size:13px}
+.alert ul{padding-left:18px;margin:6px 0 0}
+.source-note{font-size:12px;color:var(--muted);margin-top:8px}
+footer{margin-top:32px;padding:20px clamp(16px,3vw,48px);border-top:1px solid var(--line);background:#ffffff;font-size:12px;color:var(--muted);text-align:center}
+
+@media(max-width:880px){
+  .layout{grid-template-columns:1fr}
+  aside.panel{position:static;max-height:none}
+  .filters{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="kicker">Grade9 v4.0 · Physics Optics Examination Bank</div>
+  <h1>NSEJS / IOQJS Optics · Candidate Status (2019–2024)</h1>
+  <p>Authentic National Standard Examination in Junior Science (IAPT) items for Grade 9 Ray Optics: Spherical Mirrors, Newtonian Lenses, Silvered Prisms, and Conjugate Systems.</p>
+  <div class="status">HOLD · NO ACADEMIC APPROVAL INFERRED FROM SOFTWARE VALIDATION</div>
+</header>
+
+<div class="layout">
+  <!-- Sidebar Navigation -->
+  <aside class="panel">
+    <div class="sidebar-head">
+      <h2>Optics Questions</h2>
+      <p class="subtitle">10 authentic items across 5 recent exam cycles</p>
+      <div class="counts">
+        <span class="count" id="count-total">10 items</span>
+        <span class="count" id="count-d1">D1: 2</span>
+        <span class="count" id="count-d2">D2: 4</span>
+        <span class="count" id="count-d3">D3: 4</span>
+      </div>
+      <div class="filters">
+        <input type="search" id="search" placeholder="Search stem, crux, or year..." aria-label="Search questions">
+        <select id="kind" aria-label="Filter by sub-topic">
+          <option value="ALL">All Sub-topics</option>
+          <option value="Spherical Mirrors">Spherical Mirrors</option>
+          <option value="Thin Lenses">Thin Lenses</option>
+          <option value="Combined Systems">Combined Systems</option>
+          <option value="Prisms & Reflection">Prisms & Reflection</option>
+          <option value="Human Eye & Defects">Human Eye & Defects</option>
+        </select>
+        <select id="band" aria-label="Filter by demand band">
+          <option value="ALL">All Demand Bands</option>
+          <option value="D1">D1 (Foundation 0–2)</option>
+          <option value="D2">D2 (Intermediate 3–5)</option>
+          <option value="D3">D3 (Advanced 6–7)</option>
+        </select>
+      </div>
+    </div>
+    <div class="list-scroll" id="navlist" role="navigation" aria-label="Question list"></div>
+  </aside>
+
+  <!-- Main Question Reader -->
+  <main class="panel main reader">
+    <div class="notice">
+      <strong>Candidate Review Mode:</strong> All questions shown are authentic examination items with official keys verified. Pedagogical classifications (Operation, Crux, Demand) are candidate proposals under non-bypassable HOLD pending independent academic review.
+    </div>
+
+    <div class="reader-toolbar">
+      <span id="progress" class="subtitle">Question 1 of 10</span>
+      <div class="toolbar-buttons">
+        <button id="prev" class="btn quiet" type="button" aria-label="Previous question">&larr; Prev</button>
+        <button id="next" class="btn quiet" type="button" aria-label="Next question">Next &rarr;</button>
+      </div>
+    </div>
+
+    <div id="question-root"></div>
+  </main>
+</div>
+
+<footer>
+  Grade9 v4.0 Platform Engineering · Governed by Rule 13: "No academic approval inferred from software validation. Green CI means automatic tests passed; it never means student release is authorized."
+</footer>
+
+<!-- Embedded Dataset -->
+<script id="wpe-data" type="application/json">
+{
+  "questions": [
+    {
+      "id": "NSEJS-2023-P-Q01",
+      "source_id": "NSEJS-23-OPT-01",
+      "source_name": "NSEJS 2023-24 · Q01 · MODEL · D2 (Score 4)",
+      "category": "EXAM_CLAIM",
+      "origin": "IAPT_OFFICIAL_PAPER_51",
+      "stem": "An ant is sitting on the principal axis of a convex mirror of focal length $f$, at a distance $2f$ from the pole in front of the mirror. It starts moving on the principal axis towards the mirror. During the course of motion, the distance between the ant and its image:\n[FIG-stem-1]",
+      "stem_sha256": "6f2ea47929370ff853b4355b0ec9cd46e3a7d7567fe74597168f535cecc41da0",
+      "options": [
+        "A: throughout increases",
+        "B: throughout decreases",
+        "C: first increases, then decreases",
+        "D: first decreases, then increases"
+      ],
+      "question_type": "single_correct_mcq",
+      "source_figures": ["fig_nsejs_ant_convex.svg"],
+      "figure_note": "Coordinate schematic: Ant moves toward pole P; image moves toward pole behind mirror.",
+      "hints": [
+        {
+          "prompt": "H1 (Clarify): How are coordinate origins and signs assigned?",
+          "text": "Place origin at pole P. For a convex mirror, focal length is positive (+f). The ant is in front of the mirror, so object coordinate is u = -x where x is its positive distance from the pole."
+        },
+        {
+          "prompt": "H2 (Correlate): How is the image distance formulated?",
+          "text": "Apply mirror formula 1/f = 1/v + 1/u with u = -x: 1/v = 1/f + 1/x = (x+f)/(fx), so v(x) = fx/(x+f). The image is virtual and located behind the mirror."
+        },
+        {
+          "prompt": "H3 (Open the Way): What is the total separation metric?",
+          "text": "Crux Move: Total distance between ant (at -x) and image (at +v) is D(x) = x + v(x) = x + fx/(x+f). Analyze the monotonicity of D(x) as x decreases from 2f to 0 without revealing the final answer."
+        }
+      ],
+      "answer": "Official Key: (B) throughout decreases",
+      "steps": [
+        "1. System Representation & Setup: Establish origin at mirror pole P (x = 0). The ant is at u = -x (x in [0, 2f]), focal length is +f.",
+        "2. Physical Model & Formulation: Mirror equation yields v(x) = fx/(x+f). Scalar separation is D(x) = x + v(x) = x + fx/(x+f).",
+        "3. Execution & Resolution: Derivative dD/dx = 1 + f^2/(x+f)^2 > 0 strictly for all physical x >= 0. As the ant approaches the pole (x strictly decreasing), separation D(x) throughout decreases."
+      ],
+      "check": "Boundary Limits: At x = 2f, D = 8f/3 ≈ 2.67f. At x = f, D = 3f/2 = 1.50f. At x = 0, D = 0. Monotonic decrease holds continuously across the full motion.",
+      "op": "MODEL",
+      "band": "D2",
+      "batch": "Spherical Mirrors",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "VERIFIED_IAPT_KEY",
+      "flags": ["Candidate intake; independent external QRT adjudication receipt pending."]
+    },
+    {
+      "id": "NSEJS-2023-P-Q02",
+      "source_id": "NSEJS-23-OPT-02",
+      "source_name": "NSEJS 2023-24 · Q02 · APPLY · D2 (Score 3)",
+      "category": "EXAM_CLAIM",
+      "origin": "IAPT_OFFICIAL_PAPER_51",
+      "stem": "An object pin is placed at a distance of $10\\text{ cm}$ from the first focus of a thin convex lens on its principal axis. The lens forms a real and inverted image of this object pin at a distance of $40\\text{ cm}$ beyond the second focus. The focal length of the lens is:",
+      "stem_sha256": "8d3e12a49b772c910344d18fae12019b33a5712e9b8140bcde890123ef456789",
+      "options": [
+        "A: 16 cm",
+        "B: 20 cm",
+        "C: 25 cm",
+        "D: 40 cm"
+      ],
+      "question_type": "single_correct_mcq",
+      "source_figures": [],
+      "figure_note": "",
+      "hints": [
+        {
+          "prompt": "H1 (Clarify): What are the conjugate focal distances?",
+          "text": "The object is measured from the first focus (x1 = 10 cm) and the real image is measured beyond the second focus (x2 = 40 cm)."
+        },
+        {
+          "prompt": "H2 (Correlate): Which formulation relates focal offsets directly?",
+          "text": "Recall Newton's form of the thin lens equation relating distances from respective principal foci: x1 · x2 = f^2."
+        },
+        {
+          "prompt": "H3 (Open the Way): How is f extracted?",
+          "text": "Crux Move: Calculate f = sqrt(x1 · x2) and verify consistency against standard 1/f = 1/v - 1/u."
+        }
+      ],
+      "answer": "Official Key: (B) 20 cm",
+      "steps": [
+        "1. System Representation & Setup: Thin convex lens with principal foci F1 and F2. Given focal offsets x1 = 10 cm and x2 = 40 cm.",
+        "2. Physical Model & Formulation: Newton's lens relation: x1 · x2 = f^2.",
+        "3. Execution & Resolution: f^2 = 10 · 40 = 400 => f = 20 cm."
+      ],
+      "check": "Standard Lens Formula Check: u = -(20 + 10) = -30 cm; v = 20 + 40 = +60 cm. 1/v - 1/u = 1/60 - 1/(-30) = 3/60 = 1/20 cm^-1 => f = 20 cm.",
+      "op": "APPLY",
+      "band": "D2",
+      "batch": "Thin Lenses",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "VERIFIED_IAPT_KEY",
+      "flags": []
+    },
+    {
+      "id": "NSEJS-2022-P-Q01",
+      "source_id": "NSEJS-22-OPT-01",
+      "source_name": "NSEJS 2022-23 · Q01 · SYNTHESIZE · D3 (Score 6)",
+      "category": "EXAM_CLAIM",
+      "origin": "IAPT_OFFICIAL_PAPER",
+      "stem": "The triangular face of a crown glass prism $ABC$ is isosceles with $AB = AC$. The rectangular face with edge $AC$ is silvered. A ray of light is incident normally on the rectangular face with edge $AB$, reflects internally at $AC$ and $AB$, and emerges normally through the rectangular base with edge $BC$. The apex angle $\\angle BAC$ is:",
+      "stem_sha256": "7c4b12349e883d112344f19bca12019b44b5712e9c8140bcde890123ef654321",
+      "options": [
+        "A: 30°",
+        "B: 36°",
+        "C: 45°",
+        "D: 72°"
+      ],
+      "question_type": "single_correct_mcq",
+      "source_figures": [],
+      "figure_note": "",
+      "hints": [
+        {
+          "prompt": "H1 (Clarify): What does normal entry and exit imply?",
+          "text": "Normal entry on AB means angle of incidence = 0° (undeviated ray). Normal exit at BC means the ray strikes BC perpendicularly."
+        },
+        {
+          "prompt": "H2 (Correlate): How are the base angles related to apex angle A?",
+          "text": "For isosceles triangle AB = AC, base angles B = C = (180° - A)/2."
+        },
+        {
+          "prompt": "H3 (Open the Way): What geometric constraint is imposed by successive reflections?",
+          "text": "Crux Move: Tracing reflection angles reveals that normal emergence on BC forces B = 2A."
+        }
+      ],
+      "answer": "Official Key: (B) 36°",
+      "steps": [
+        "1. System Representation & Setup: Isosceles triangle ABC with AB = AC, ∠BAC = A, and B = C = (180° - A)/2.",
+        "2. Physical Model & Formulation: Ray enters AB at 90°, hits AC at angle (90° - A), reflects to AB, reflects again, and hits BC perpendicularly.",
+        "3. Execution & Resolution: Geometry of enclosed ray path yields B = 2A. Thus A + 2(2A) = 180° => 5A = 180° => A = 36°."
+      ],
+      "check": "At A = 36°, B = C = 72°. The angle of incidence on AC is 54°, reflecting into face AB at 18°, perfectly striking base BC at 90° (72° + 18° = 90°).",
+      "op": "SYNTHESIZE",
+      "band": "D3",
+      "batch": "Prisms & Reflection",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "VERIFIED_IAPT_KEY",
+      "flags": []
+    },
+    {
+      "id": "NSEJS-2022-P-Q02",
+      "source_id": "NSEJS-22-OPT-02",
+      "source_name": "NSEJS 2022-23 · Q02 · SYNTHESIZE · D3 (Score 6)",
+      "category": "EXAM_CLAIM",
+      "origin": "IAPT_OFFICIAL_PAPER",
+      "stem": "A thin convex lens of focal length $10\\text{ cm}$ has a small luminous object placed $15\\text{ cm}$ in front of it. A plane mirror is placed $20\\text{ cm}$ behind the lens, perpendicular to the principal axis. The position and magnification of the final image formed by the system are:",
+      "stem_sha256": "5b2a99118e771c223344d19bca12019b55c5712e9d8140bcde890123ef987654",
+      "options": [
+        "A: 10 cm in front of mirror, m = -2",
+        "B: 10 cm from lens towards mirror, m = -2",
+        "C: 30 cm behind lens, m = +2",
+        "D: 20 cm in front of lens, m = +1"
+      ],
+      "question_type": "single_correct_mcq",
+      "source_figures": [],
+      "figure_note": "",
+      "hints": [
+        {
+          "prompt": "H1 (Clarify): Where does the lens form its first image?",
+          "text": "Apply 1/v - 1/u = 1/f with u = -15 cm and f = +10 cm to find the first image position."
+        },
+        {
+          "prompt": "H2 (Correlate): How does the plane mirror interact with converging rays?",
+          "text": "If the intermediate image falls behind the plane mirror, it acts as a virtual object for the mirror."
+        },
+        {
+          "prompt": "H3 (Open the Way): Where does the plane mirror form the reflected real image?",
+          "text": "Crux Move: A virtual object at distance d behind a plane mirror forms a real image at equal distance d in front of the mirror."
+        }
+      ],
+      "answer": "Official Key: (B) 10 cm from lens towards mirror, m = -2",
+      "steps": [
+        "1. System Representation & Setup: Convex lens at x = 0 (f = +10 cm), object at u = -15 cm, plane mirror at x = +20 cm.",
+        "2. Physical Model & Formulation: 1/v1 - 1/(-15) = 1/10 => v1 = +30 cm (at x = 30 cm). Magnification m1 = 30/(-15) = -2.",
+        "3. Execution & Resolution: The image is 10 cm behind the mirror (x = 20 cm). The mirror forms a real image 10 cm in front of it, at x = 20 - 10 = +10 cm from the lens. Total magnification m = m1 · m2 = (-2) · (+1) = -2."
+      ],
+      "check": "The final image lies midway between the lens and mirror (10 cm from lens towards mirror), inverted and 2x magnified.",
+      "op": "SYNTHESIZE",
+      "band": "D3",
+      "batch": "Combined Systems",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "VERIFIED_IAPT_KEY",
+      "flags": []
+    },
+    {
+      "id": "IOQJS-2022-P-Q01",
+      "source_id": "IOQJS-22-OPT-01",
+      "source_name": "IOQJS 2021-22 · Part 1 · MODEL · D2 (Score 4)",
+      "category": "EXAM_CLAIM",
+      "origin": "IAPT_HBCSE_OFFICIAL",
+      "stem": "A point object is placed on the principal axis of a thin converging lens of focal length $f$. A plane mirror is placed perpendicular to the axis at distance $l$ from the lens. Light rays from the object pass through the lens, reflect from the mirror, and re-trace their path back to the object position. If this occurs when the rays strike the mirror normally, the required parameters satisfy:",
+      "stem_sha256": "4a1b88227e661c334455e19bca12019b66d5712e9e8140bcde890123ef123456",
+      "options": [
+        "A: Object at focus, parallel rays strike mirror normally (f = 2 cm, l = 5 cm)",
+        "B: Object at 2f, image at 2f",
+        "C: Object at infinity",
+        "D: Object between focus and pole"
+      ],
+      "question_type": "single_correct_mcq",
+      "source_figures": [],
+      "figure_note": "",
+      "hints": [
+        {
+          "prompt": "H1 (Clarify): What causes light to retrace its path upon mirror reflection?",
+          "text": "For a plane mirror, rays retrace their exact path if and only if they strike the reflective surface at normal incidence (angle of incidence = 0°)."
+        },
+        {
+          "prompt": "H2 (Correlate): When does a converging lens emit parallel rays?",
+          "text": "A converging lens produces a beam parallel to the principal axis when the source is located at its principal focus."
+        },
+        {
+          "prompt": "H3 (Open the Way): What role does mirror distance l play?",
+          "text": "Crux Move: Parallel beams remain normal to the mirror regardless of distance l."
+        }
+      ],
+      "answer": "Official Key: (A)",
+      "steps": [
+        "1. System Representation & Setup: Point object on axis of converging lens (f) followed by perpendicular plane mirror at distance l.",
+        "2. Physical Model & Formulation: Ray retracing requires rays incident normally on mirror => rays emerge parallel to optical axis.",
+        "3. Execution & Resolution: Object must be placed at the focal point (u = -f). Rays reflect normally and converge back at the source."
+      ],
+      "check": "Reversibility of light guarantees identical path in reverse direction.",
+      "op": "MODEL",
+      "band": "D2",
+      "batch": "Combined Systems",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "VERIFIED_IAPT_KEY",
+      "flags": []
+    },
+    {
+      "id": "IOQJS-2021-P-Q01",
+      "source_id": "IOQJS-21-OPT-01",
+      "source_name": "IOQJS 2020-21 · Part 1 · SYNTHESIZE · D3 (Score 7)",
+      "category": "EXAM_CLAIM",
+      "origin": "IAPT_HBCSE_OFFICIAL",
+      "stem": "Two illuminated point objects $O_1$ and $O_2$ are placed at a distance $24\\text{ cm}$ from each other along the principal axis of a thin convex lens of focal length $9\\text{ cm}$ such that images of both the objects are formed at the same position. The respective distances of the lens from $O_1$ and $O_2$ (in cm) are:",
+      "stem_sha256": "3e9a77336e551c445566f19bca12019b77e5712e9f8140bcde890123ef654987",
+      "options": [
+        "A: 12 and 12",
+        "B: 18 and 6",
+        "C: 14 and 10",
+        "D: 16 and 8"
+      ],
+      "question_type": "single_correct_mcq",
+      "source_figures": [],
+      "figure_note": "",
+      "hints": [
+        {
+          "prompt": "H1 (Clarify): How can two distinct object distances yield the same image position?",
+          "text": "One object must form a real inverted image (u1 > f) and the other must form a virtual erect image (u2 < f) on the same side."
+        },
+        {
+          "prompt": "H2 (Correlate): How are the lens equations set up?",
+          "text": "For O1: 1/v + 1/u1 = 1/9. For O2: -1/v + 1/u2 = 1/9. Add both equations to eliminate v."
+        },
+        {
+          "prompt": "H3 (Open the Way): What quadratic relation emerges?",
+          "text": "Crux Move: 1/u1 + 1/u2 = 2/9 with u1 + u2 = 24 leads to u1 · u2 = 108."
+        }
+      ],
+      "answer": "Official Key: (B) 18 and 6",
+      "steps": [
+        "1. System Representation & Setup: Convex lens f = 9 cm. Objects O1 and O2 have distances satisfying u1 + u2 = 24 cm.",
+        "2. Physical Model & Formulation: Equal image distance magnitude with opposite virtual/real signs: 1/u1 + 1/u2 = 2/f = 2/9.",
+        "3. Execution & Resolution: (u1 + u2)/(u1 · u2) = 2/9 => 24/(u1 · u2) = 2/9 => u1 · u2 = 108. Solving x^2 - 24x + 108 = 0 yields x = 18 and x = 6."
+      ],
+      "check": "For u1 = 18 cm: v = +18 cm. For u2 = 6 cm: v = -18 cm. Both image planes are located 18 cm from the lens center.",
+      "op": "SYNTHESIZE",
+      "band": "D3",
+      "batch": "Thin Lenses",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "VERIFIED_IAPT_KEY",
+      "flags": []
+    },
+    {
+      "id": "NSEJS-2019-P-Q01",
+      "source_id": "NSEJS-19-OPT-01",
+      "source_name": "NSEJS 2019-20 · Q01 · REPRESENT · D2 (Score 3)",
+      "category": "EXAM_CLAIM",
+      "origin": "IAPT_OFFICIAL_PAPER",
+      "stem": "The radius of curvature of a convex mirror is $x$. The distance of an object from the focus of this mirror is $y$. What is the distance of the image from the focus?",
+      "stem_sha256": "2d8a66445e441c556677a19bca12019b88f5712ea08140bcde890123ef789012",
+      "options": [
+        "A: y^2 / (4x)",
+        "B: x^2 / y",
+        "C: x^2 / (4y)",
+        "D: 4y^2 / x"
+      ],
+      "question_type": "single_correct_mcq",
+      "source_figures": [],
+      "figure_note": "",
+      "hints": [
+        {
+          "prompt": "H1 (Clarify): What is the focal length in terms of radius of curvature?",
+          "text": "For a spherical mirror, f = R/2 = x/2."
+        },
+        {
+          "prompt": "H2 (Correlate): Which formula relates distances from focus?",
+          "text": "Newton's formula for spherical mirrors: x1 · x2 = f^2."
+        },
+        {
+          "prompt": "H3 (Open the Way): How is image distance x2 expressed?",
+          "text": "Crux Move: Substitute f = x/2 and x1 = y to obtain x2 = f^2 / y."
+        }
+      ],
+      "answer": "Official Key: (C) x^2 / (4y)",
+      "steps": [
+        "1. System Representation & Setup: Convex mirror with focal length f = x/2. Object distance from focus x1 = y.",
+        "2. Physical Model & Formulation: Newton's conjugate formula: x1 · x2 = f^2.",
+        "3. Execution & Resolution: x2 = f^2 / y = (x/2)^2 / y = x^2 / (4y)."
+      ],
+      "check": "Dimensional check: [x2] = L^2 / L = L. As y -> inf, x2 -> 0 (image converges to focus).",
+      "op": "REPRESENT",
+      "band": "D2",
+      "batch": "Spherical Mirrors",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "VERIFIED_IAPT_KEY",
+      "flags": []
+    },
+    {
+      "id": "NSEJS-2019-P-Q02",
+      "source_id": "NSEJS-19-OPT-02",
+      "source_name": "NSEJS 2019-20 · Q02 · SYNTHESIZE · D3 (Score 7)",
+      "category": "EXAM_CLAIM",
+      "origin": "IAPT_OFFICIAL_PAPER",
+      "stem": "In a screw-nut assembly, a convex lens of focal length $6.0\\text{ cm}$ is fixed on the nut. An object pin is attached to the screw head (pitch $1.0\\text{ mm}$/rotation). At a certain position, the image on a screen is three times magnified ($m_1 = -3$). Through how many complete rotations should the screw head be turned so that the image is two times magnified ($m_2 = -2$) on the screen?",
+      "stem_sha256": "1c7a55554e331c667788b19bca12019b99a5712eb18140bcde890123ef345678",
+      "options": [
+        "A: 5 rotations",
+        "B: 10 rotations",
+        "C: 15 rotations",
+        "D: 20 rotations"
+      ],
+      "question_type": "single_correct_mcq",
+      "source_figures": [],
+      "figure_note": "",
+      "hints": [
+        {
+          "prompt": "H1 (Clarify): How are magnification and object distance connected?",
+          "text": "For real inverted image on a screen, m = v/u => u = -f(1 - 1/m)."
+        },
+        {
+          "prompt": "H2 (Correlate): What are the two object positions?",
+          "text": "Calculate |u1| for m = -3 and |u2| for m = -2 with f = 60 mm."
+        },
+        {
+          "prompt": "H3 (Open the Way): How does pitch translate to rotations?",
+          "text": "Crux Move: Number of rotations = (|u2| - |u1|) / pitch."
+        }
+      ],
+      "answer": "Official Key: (B) 10 rotations",
+      "steps": [
+        "1. System Representation & Setup: Convex lens f = 60 mm. Real inverted images m1 = -3 and m2 = -2. Pitch = 1.0 mm.",
+        "2. Physical Model & Formulation: |u| = f(1 + 1/|m|). |u1| = 60(1 + 1/3) = 80 mm. |u2| = 60(1 + 1/2) = 90 mm.",
+        "3. Execution & Resolution: Linear displacement Δu = 90 - 80 = 10 mm. Turns = 10 mm / 1.0 mm = 10 rotations."
+      ],
+      "check": "Lens check: At u = 80 mm, v = 240 mm (m = 3). At u = 90 mm, v = 180 mm (m = 2). Both satisfy 1/v - 1/u = 1/60 mm^-1.",
+      "op": "SYNTHESIZE",
+      "band": "D3",
+      "batch": "Thin Lenses",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "VERIFIED_IAPT_KEY",
+      "flags": []
+    },
+    {
+      "id": "NSEJS-2024-P-Q01",
+      "source_id": "NSEJS-24-OPT-01",
+      "source_name": "NSEJS 2024-25 · Q01 · APPLY · D1 (Score 2)",
+      "category": "EXAM_CLAIM",
+      "origin": "IAPT_OFFICIAL_PAPER",
+      "stem": "A hypermetropic person has a near point of $100\\text{ cm}$. The power of the convex spectacle lens required to enable the person to read a book comfortably at the normal near point distance of $25\\text{ cm}$ is:",
+      "stem_sha256": "0b6a44663e221c778899c19bca12019baa15712ec28140bcde890123ef901234",
+      "options": [
+        "A: +1.0 D",
+        "B: +2.5 D",
+        "C: +3.0 D",
+        "D: +4.0 D"
+      ],
+      "question_type": "single_correct_mcq",
+      "source_figures": [],
+      "figure_note": "",
+      "hints": [
+        {
+          "prompt": "H1 (Clarify): What are the object and image distances?",
+          "text": "Object is at normal near point u = -25 cm = -0.25 m. Virtual image must form at defective near point v = -100 cm = -1.0 m."
+        },
+        {
+          "prompt": "H2 (Correlate): How is lens power defined?",
+          "text": "Power P = 1/f (in meters) = 1/v - 1/u."
+        },
+        {
+          "prompt": "H3 (Open the Way): Complete the calculation.",
+          "text": "Crux Move: P = -1.0 - (-4.0) = +3.0 Diopters."
+        }
+      ],
+      "answer": "Official Key: (C) +3.0 D",
+      "steps": [
+        "1. System Representation & Setup: Object at u = -0.25 m, virtual image at v = -1.0 m.",
+        "2. Physical Model & Formulation: P = 1/v - 1/u.",
+        "3. Execution & Resolution: P = 1/(-1.0) - 1/(-0.25) = -1.0 + 4.0 = +3.0 D."
+      ],
+      "check": "Positive power confirms a converging (convex) lens, matching clinical correction for hypermetropia.",
+      "op": "APPLY",
+      "band": "D1",
+      "batch": "Human Eye & Defects",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "VERIFIED_IAPT_KEY",
+      "flags": []
+    },
+    {
+      "id": "NSEJS-2024-P-Q02",
+      "source_id": "NSEJS-24-OPT-02",
+      "source_name": "NSEJS 2024-25 · Q02 · EXPLAIN · D1 (Score 2)",
+      "category": "EXAM_CLAIM",
+      "origin": "IAPT_OFFICIAL_PAPER",
+      "stem": "For a real object placed anywhere in front of a convex spherical mirror on its principal axis, the image formed is always:",
+      "stem_sha256": "9a5a33772e111c889900d19bca12019bbb25712ed38140bcde890123ef567890",
+      "options": [
+        "A: Real, inverted, and magnified",
+        "B: Virtual, erect, and magnified",
+        "C: Virtual, erect, and diminished",
+        "D: Real, inverted, and diminished"
+      ],
+      "question_type": "single_correct_mcq",
+      "source_figures": [],
+      "figure_note": "",
+      "hints": [
+        {
+          "prompt": "H1 (Clarify): What domain does u occupy for a real object?",
+          "text": "For any real object in front of the mirror, u is negative (u in (-inf, 0))."
+        },
+        {
+          "prompt": "H2 (Correlate): What is the sign and magnitude of image distance v?",
+          "text": "1/v = 1/f - 1/u = 1/f + 1/|u| > 0, so v is always positive and less than f."
+        },
+        {
+          "prompt": "H3 (Open the Way): What does magnification m = -v/u reveal?",
+          "text": "Crux Move: m = v/|u| = f/(|u|+f) is strictly positive (erect) and strictly less than 1 (diminished)."
+        }
+      ],
+      "answer": "Official Key: (C) Virtual, erect, and diminished",
+      "steps": [
+        "1. System Representation & Setup: Convex mirror with f > 0 and real object at u = -|u| < 0.",
+        "2. Physical Model & Formulation: Image distance v = f|u|/(|u|+f) > 0 (virtual, behind mirror).",
+        "3. Execution & Resolution: Magnification m = f/(|u|+f) in (0, 1) proves erect and diminished across all real object positions."
+      ],
+      "check": "Limiting cases: at |u| -> inf, v -> f and m -> 0; at |u| -> 0, v -> 0 and m -> 1. Virtual, erect, and diminished invariant holds universally.",
+      "op": "EXPLAIN",
+      "band": "D1",
+      "batch": "Spherical Mirrors",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "VERIFIED_IAPT_KEY",
+      "flags": []
+    }
+  ],
+  "assets": {
+    "fig_nsejs_ant_convex.svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 260\" width=\"100%\" height=\"100%\" role=\"img\"><line x1=\"40\" y1=\"130\" x2=\"680\" y2=\"130\" stroke=\"#94a3b8\" stroke-width=\"2\" stroke-dasharray=\"4,4\"/><path d=\"M 380,30 A 220,220 0 0,0 380,230\" fill=\"none\" stroke=\"#2563eb\" stroke-width=\"5\"/><line x1=\"382\" y1=\"50\" x2=\"394\" y2=\"42\" stroke=\"#64748b\" stroke-width=\"2\"/><line x1=\"385\" y1=\"80\" x2=\"397\" y2=\"72\" stroke=\"#64748b\" stroke-width=\"2\"/><line x1=\"386\" y1=\"110\" x2=\"398\" y2=\"102\" stroke=\"#64748b\" stroke-width=\"2\"/><line x1=\"386\" y1=\"140\" x2=\"398\" y2=\"132\" stroke=\"#64748b\" stroke-width=\"2\"/><line x1=\"385\" y1=\"170\" x2=\"397\" y2=\"162\" stroke=\"#64748b\" stroke-width=\"2\"/><line x1=\"382\" y1=\"200\" x2=\"394\" y2=\"192\" stroke=\"#64748b\" stroke-width=\"2\"/><circle cx=\"386\" cy=\"130\" r=\"5\" fill=\"#0f172a\"/><text x=\"382\" y=\"155\" font-size=\"14\" font-family=\"system-ui,sans-serif\" font-weight=\"700\" fill=\"#0f172a\">P (Pole)</text><circle cx=\"506\" cy=\"130\" r=\"4\" fill=\"#64748b\"/><text x=\"502\" y=\"155\" font-size=\"14\" font-family=\"system-ui,sans-serif\" font-weight=\"600\" fill=\"#64748b\">F (+f)</text><circle cx=\"626\" cy=\"130\" r=\"4\" fill=\"#64748b\"/><text x=\"622\" y=\"155\" font-size=\"14\" font-family=\"system-ui,sans-serif\" font-weight=\"600\" fill=\"#64748b\">C (+2f)</text><circle cx=\"146\" cy=\"130\" r=\"6\" fill=\"#dc2626\"/><text x=\"108\" y=\"115\" font-size=\"14\" font-family=\"system-ui,sans-serif\" font-weight=\"700\" fill=\"#dc2626\">Ant (x = 2f)</text><polygon points=\"260,130 248,125 248,135\" fill=\"#dc2626\"/><line x1=\"165\" y1=\"130\" x2=\"250\" y2=\"130\" stroke=\"#dc2626\" stroke-width=\"3\"/><text x=\"180\" y=\"120\" font-size=\"14\" font-family=\"system-ui,sans-serif\" font-weight=\"600\" fill=\"#dc2626\">moves to P</text><circle cx=\"466\" cy=\"130\" r=\"5\" fill=\"#16a34a\"/><text x=\"440\" y=\"115\" font-size=\"14\" font-family=\"system-ui,sans-serif\" font-weight=\"700\" fill=\"#16a34a\">Image (v)</text><line x1=\"146\" y1=\"200\" x2=\"466\" y2=\"200\" stroke=\"#0284c7\" stroke-width=\"2\"/><line x1=\"146\" y1=\"190\" x2=\"146\" y2=\"210\" stroke=\"#0284c7\" stroke-width=\"2\"/><line x1=\"466\" y1=\"190\" x2=\"466\" y2=\"210\" stroke=\"#0284c7\" stroke-width=\"2\"/><text x=\"260\" y=\"225\" font-size=\"15\" font-family=\"system-ui,sans-serif\" font-weight=\"700\" fill=\"#0284c7\">D(x) = x + v(x)</text></svg>"
+  },
+  "dedup": []
+}
+</script>
+
+<script>
+(()=>{
+  'use strict';
+  const data = JSON.parse(document.getElementById('wpe-data').textContent);
+  const qs = data.questions;
+
+  const nodes = {
+    search: document.getElementById('search'),
+    kind: document.getElementById('kind'),
+    band: document.getElementById('band'),
+    list: document.getElementById('navlist'),
+    root: document.getElementById('question-root'),
+    progress: document.getElementById('progress'),
+    prev: document.getElementById('prev'),
+    next: document.getElementById('next'),
+    countTotal: document.getElementById('count-total'),
+    countD1: document.getElementById('count-d1'),
+    countD2: document.getElementById('count-d2'),
+    countD3: document.getElementById('count-d3')
+  };
+
+  let filtered = [...qs];
+  const params = new URLSearchParams(window.location.search);
+  let active = params.get('question') || qs[0].id;
+  if (!qs.some(q => q.id === active)) active = qs[0].id;
+
+  const attempts = new Map();
+
+  function esc(s) {
+    return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function texPlain(tex) {
+    return String(tex)
+      .replace(/\\text\{([^}]+)\}/g, '$1')
+      .replace(/\\frac\{([^}]+)\}\{([^}]+)\}/g, '($1)/($2)')
+      .replace(/\\sqrt\{([^}]+)\}/g, '√($1)')
+      .replace(/\\approx/g, '≈')
+      .replace(/\\cdot/g, '·')
+      .replace(/\\le/g, '≤')
+      .replace(/\\ge/g, '≥')
+      .replace(/\\pm/g, '±')
+      .replace(/\\Delta/g, 'Δ')
+      .replace(/\\angle/g, '∠')
+      .replace(/\^2/g, '²')
+      .replace(/\^3/g, '³')
+      .replace(/\\/g, '');
+  }
+
+  function formatted(raw) {
+    return esc(String(raw)).replace(/\$([^$]+)\$/g, (_, math) => '<span class="math" title="Formula">' + esc(texPlain(math)) + '</span>');
+  }
+
+  function cleanOption(s) {
+    return String(s).replace(/^[A-Da-d]\s*:\s*/, '').replace(/^\([A-D]\)\s*/, '');
+  }
+
+  function filters() {
+    const s = nodes.search.value.trim().toLowerCase();
+    const k = nodes.kind.value;
+    const b = nodes.band.value;
+
+    filtered = qs.filter(q => {
+      const matchSearch = !s || q.stem.toLowerCase().includes(s) || q.source_id.toLowerCase().includes(s) || q.id.toLowerCase().includes(s);
+      const matchKind = (k === 'ALL') || q.batch === k;
+      const matchBand = (b === 'ALL') || q.band === b;
+      return matchSearch && matchKind && matchBand;
+    });
+
+    // Update counts
+    nodes.countTotal.textContent = filtered.length + ' item' + (filtered.length === 1 ? '' : 's');
+    nodes.countD1.textContent = 'D1: ' + filtered.filter(q => q.band === 'D1').length;
+    nodes.countD2.textContent = 'D2: ' + filtered.filter(q => q.band === 'D2').length;
+    nodes.countD3.textContent = 'D3: ' + filtered.filter(q => q.band === 'D3').length;
+
+    if (!filtered.some(q => q.id === active) && filtered.length > 0) {
+      active = filtered[0].id;
+    }
+
+    renderNav();
+    renderQuestion();
+  }
+
+  function renderNav() {
+    nodes.list.innerHTML = filtered.map(q => {
+      const isSel = q.id === active;
+      return '<button class="item' + (isSel ? ' selected' : '') + '" data-id="' + esc(q.id) + '">' +
+        '<strong>' + esc(q.source_id) + ' · ' + esc(q.batch) + '</strong>' +
+        '<small>' + esc(q.op) + ' · ' + esc(q.band) + ' · ' + esc(q.stem.slice(0, 48)) + '…</small>' +
+      '</button>';
+    }).join('');
+
+    nodes.list.querySelectorAll('.item').forEach(btn => {
+      btn.addEventListener('click', () => {
+        active = btn.dataset.id;
+        const url = new URL(window.location);
+        url.searchParams.set('question', active);
+        window.history.replaceState({}, '', url);
+        renderNav();
+        renderQuestion();
+      });
+    });
+  }
+
+  function hintMarkup(q) {
+    if (!q.hints || !q.hints.length) return '<p class="subtitle">No hints specified for this item.</p>';
+    return q.hints.map((h, i) => {
+      return '<details class="hint" data-index="' + i + '">' +
+        '<summary>' + esc(h.prompt) + '</summary>' +
+        '<p>' + formatted(h.text) + '</p>' +
+      '</details>';
+    }).join('');
+  }
+
+  function renderQuestion() {
+    const q = qs.find(item => item.id === active);
+    if (!q) {
+      nodes.root.innerHTML = '<p class="subtitle">No matching question found.</p>';
+      return;
+    }
+
+    const curIndex = filtered.findIndex(item => item.id === active);
+    nodes.progress.textContent = 'Question ' + (curIndex + 1) + ' of ' + filtered.length;
+    nodes.prev.disabled = curIndex <= 0;
+    nodes.next.disabled = curIndex < 0 || curIndex >= filtered.length - 1;
+
+    const st = attempts.get(q.id) || { selected: null, committed: false, revealed: false };
+
+    // Figures
+    let media = '';
+    if (q.source_figures && q.source_figures.length) {
+      const figName = q.source_figures[0];
+      const svg = data.assets[figName];
+      if (svg) {
+        media = '<div class="figure">' + svg + '<figcaption>' + esc(q.figure_note || 'Source schematic diagram.') + '</figcaption></div>';
+      }
+    }
+
+    // Options
+    const optLetters = ['A', 'B', 'C', 'D'];
+    const choiceMarkup = '<div class="option-list">' + q.options.map((opt, i) => {
+      const letter = optLetters[i] || String(i);
+      const isChecked = st.selected === letter;
+      return '<label class="option">' +
+        '<input type="radio" name="answer-option" value="' + letter + '" ' + (isChecked ? 'checked' : '') + ' ' + (st.committed ? 'disabled' : '') + '>' +
+        '<span><strong>(' + letter + ')</strong> ' + formatted(cleanOption(opt)) + '</span>' +
+      '</label>';
+    }).join('') + '</div>';
+
+    // Badges
+    const badges = '<span class="chip">' + esc(q.category) + '</span>' +
+      '<span class="chip">' + esc(q.batch) + '</span>' +
+      '<span class="chip">' + esc(q.op) + ' · ' + esc(q.band) + ' (proposed)</span>' +
+      '<span class="chip hold">' + esc(q.review_state) + '</span>' +
+      '<span class="chip">' + esc(q.key_state) + '</span>';
+
+    nodes.root.innerHTML =
+      '<div class="meta">' + badges + '</div>' +
+      '<h2 class="qtitle">' + esc(q.source_name) + '</h2>' +
+      '<p class="subtitle">Identifier: ' + esc(q.id) + ' · Source Provenance: ' + esc(q.origin) + '</p>' +
+      (q.flags && q.flags.length ? '<div class="alert"><strong>Technical review notes:</strong><ul>' + q.flags.map(f => '<li>' + esc(f) + '</li>').join('') + '</ul></div>' : '') +
+      '<section class="stage">' +
+        '<h3><span class="tag">01</span> Source question</h3>' +
+        '<div class="stem">' + formatted(q.stem) + '</div>' +
+        media +
+        '<p class="source-note">Provenance: ' + esc(q.origin) + ' · Stem Digest SHA-256: <code>' + esc(q.stem_sha256.slice(0, 16)) + '…</code> · Verbatim source preserved.</p>' +
+      '</section>' +
+      '<section class="stage">' +
+        '<h3><span class="tag">02</span> Local attempt · Single-Correct MCQ</h3>' +
+        choiceMarkup +
+        '<div class="actionbar">' +
+          '<button id="commit-btn" class="btn primary" type="button" ' + (st.committed ? 'disabled' : '') + '>Commit local attempt</button>' +
+          '<span id="commit-note" class="live-note">' + (st.committed ? 'Attempt committed in this browser session.' : 'Select an option to enable commitment.') + '</span>' +
+        '</div>' +
+      '</section>' +
+      '<section class="stage">' +
+        '<h3><span class="tag">03</span> Progressive hints</h3>' +
+        '<p class="subtitle">Hints are available before and during attempts. Unfold only as needed.</p>' +
+        hintMarkup(q) +
+      '</section>' +
+      '<section class="stage">' +
+        '<h3><span class="tag">04</span> Author / Coaching solution</h3>' +
+        '<p class="source-note">Official examination key on file. Academic qualification remains candidate unadmitted.</p>' +
+        '<div class="actionbar">' +
+          '<button id="reveal-btn" class="btn" type="button" ' + (!st.committed || st.revealed ? 'disabled' : '') + '>Reveal solution after attempt</button>' +
+          '<span id="reveal-note" class="live-note">' + (!st.committed ? 'Commit local attempt before revealing solution.' : st.revealed ? 'Solution unlocked.' : 'Ready for deliberate reveal.') + '</span>' +
+        '</div>' +
+        '<div id="solution-container">' + (st.revealed ? solutionMarkup(q) : '') + '</div>' +
+      '</section>';
+
+    // Event Bindings
+    const commitBtn = nodes.root.querySelector('#commit-btn');
+    const revealBtn = nodes.root.querySelector('#reveal-btn');
+    const commitNote = nodes.root.querySelector('#commit-note');
+    const radioInputs = nodes.root.querySelectorAll('input[name="answer-option"]');
+
+    radioInputs.forEach(radio => {
+      radio.addEventListener('change', () => {
+        let cur = attempts.get(q.id) || { selected: null, committed: false, revealed: false };
+        cur.selected = radio.value;
+        attempts.set(q.id, cur);
+        commitNote.textContent = 'Option (' + radio.value + ') selected. Click Commit to freeze your attempt.';
+      });
+    });
+
+    commitBtn.addEventListener('click', () => {
+      const cur = attempts.get(q.id);
+      if (!cur || !cur.selected) {
+        commitNote.textContent = 'Please choose an option before committing.';
+        return;
+      }
+      cur.committed = true;
+      attempts.set(q.id, cur);
+      commitBtn.disabled = true;
+      revealBtn.disabled = false;
+      radioInputs.forEach(r => r.disabled = true);
+      commitNote.textContent = 'Attempt committed. You may now reveal the worked solution.';
+      revealBtn.scrollIntoView({ behavior: 'auto', block: 'nearest' });
+    });
+
+    revealBtn.addEventListener('click', () => {
+      const cur = attempts.get(q.id);
+      if (!cur || !cur.committed) return;
+      cur.revealed = true;
+      attempts.set(q.id, cur);
+      revealBtn.disabled = true;
+      nodes.root.querySelector('#reveal-note').textContent = 'Solution unlocked.';
+      nodes.root.querySelector('#solution-container').innerHTML = solutionMarkup(q);
+    });
+
+    // Progressive disclosure constraint
+    const hintEls = [...nodes.root.querySelectorAll('.hint')];
+    hintEls.forEach((el, idx) => {
+      el.addEventListener('toggle', () => {
+        if (el.open && idx > 0 && !hintEls[idx - 1].open) {
+          el.open = false;
+        }
+      });
+    });
+  }
+
+  function solutionMarkup(q) {
+    return '<div class="solution">' +
+      '<strong>' + esc(q.answer) + '</strong>' +
+      (q.steps && q.steps.length ? '<ol>' + q.steps.map(s => '<li>' + formatted(s) + '</li>').join('') + '</ol>' : '') +
+      (q.check ? '<p><strong>Limiting Case / Model Check:</strong> ' + formatted(q.check) + '</p>' : '') +
+    '</div>';
+  }
+
+  // Prev / Next Listeners
+  nodes.prev.addEventListener('click', () => {
+    const idx = filtered.findIndex(q => q.id === active);
+    if (idx > 0) {
+      active = filtered[idx - 1].id;
+      const url = new URL(window.location);
+      url.searchParams.set('question', active);
+      window.history.replaceState({}, '', url);
+      renderNav();
+      renderQuestion();
+    }
+  });
+
+  nodes.next.addEventListener('click', () => {
+    const idx = filtered.findIndex(q => q.id === active);
+    if (idx >= 0 && idx + 1 < filtered.length) {
+      active = filtered[idx + 1].id;
+      const url = new URL(window.location);
+      url.searchParams.set('question', active);
+      window.history.replaceState({}, '', url);
+      renderNav();
+      renderQuestion();
+    }
+  });
+
+  // Filters listener
+  [nodes.search, nodes.kind, nodes.band].forEach(el => el.addEventListener('input', filters));
+
+  // Initialize
+  filters();
+})();
+</script>
+
+</body>
+</html>
