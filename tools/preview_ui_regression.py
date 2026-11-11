@@ -82,7 +82,7 @@ def tests(browser):
         device_scale_factor=1,
         color_scheme="dark"
     )
-    blocked_ctx.add_init_script("""() => {
+    blocked_ctx.add_init_script("""(() => {
       const originalSetItem = Storage.prototype.setItem;
       Storage.prototype.setItem = function(key, value) {
         if (key === 'grade9_alpha_progress') {
@@ -90,10 +90,18 @@ def tests(browser):
         }
         return originalSetItem.call(this, key, value);
       };
-    }""")
+    })()""")
     try:
         blocked_page = blocked_ctx.new_page()
         open_url(blocked_page, "preview/practice.html")
+        assert_that(blocked_page.evaluate("""() => {
+            try {
+                sessionStorage.setItem('grade9_alpha_progress', 'probe');
+                return false;
+            } catch (error) {
+                return error.name === 'QuotaExceededError';
+            }
+        }"""), "Storage-denial injection did not execute; abort negative control")
         blocked_page.locator('input[name="practice-answer"]').first.check()
         blocked_page.locator("#learner-reasoning").fill("I would use energy conservation.")
         blocked_page.locator("#btn-submit-answer").click()
