@@ -61,6 +61,10 @@ The test fixture generates *synthetic* questions, including reused historical di
 
 The browser test serves generated synthetic pages over real HTTP, requires browser page.goto to succeed at desktop/mobile sizes, checks figure/HOLD states, scoped attempt separation and the directory links. It deliberately has no DOM-only fallback. The workflow never packages private content.
 
+## 12.7-inch reader display target
+
+The presentation-only stylesheet `tools/private_reader_12p7.css` is included in every generated private review question page by the deterministic builder. Primary viewport contracts are 1280×800 and 1472×920 CSS pixels (landscape 16:10 scaling); 800×1280 tests full-size portrait tablet behavior. These are representative CSS viewports, not a claim about the exact device's native resolution. The portrait question picker is bounded and scrollable so the first question is visible without scrolling through all 50 navigation items. The original question/answer/figure payload is unchanged. Smartphone HTTP coverage is not required for this task, and its absence must not be described as a mobile PASS.
+
 **These synthetic CI tests do not qualify the private 50-record candidate's HTTP browser execution.** That still needs a separately authorized private runner, with a verified recipient source manifest, real Chromium over HTTP, original question-to-output reconciliation and observed saved-state/deep-link behavior.
 
 ## Approval boundaries
