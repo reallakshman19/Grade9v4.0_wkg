@@ -12,6 +12,7 @@ import json
 from pathlib import Path
 import tempfile
 import threading
+import sys
 from urllib.request import urlopen
 
 from playwright.sync_api import sync_playwright
@@ -20,6 +21,7 @@ from private_reader_integration import build
 
 
 def run(chromium: str | None = None) -> dict:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'tests'))
     from test_private_reader_integration import fixture
     with tempfile.TemporaryDirectory(prefix='grade9-synthetic-reader-') as temp:
         root, pins, out = fixture(Path(temp))
