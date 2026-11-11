@@ -75,6 +75,49 @@ def tests(browser):
             page.wait_for_function("""() => document.getElementById('status-wpe-practice')?.textContent?.toLowerCase().includes('not started') && sessionStorage.getItem('grade9_alpha_progress') === null""", timeout=8000)
         ctx.close()
 
+    # Negative control: reject an injected storage write failure without reporting
+    # the ungraded local attempt as a saved/recorded session attempt.
+    blocked_ctx = browser.new_context(
+        viewport={"width": 390, "height": 844},
+        device_scale_factor=1,
+        color_scheme="dark"
+    )
+    blocked_ctx.add_init_script("""() => {
+      const originalSetItem = Storage.prototype.setItem;
+      Storage.prototype.setItem = function(key, value) {
+        if (key === 'grade9_alpha_progress') {
+          throw new DOMException('Storage blocked for negative test', 'QuotaExceededError');
+        }
+        return originalSetItem.call(this, key, value);
+      };
+    }""")
+    try:
+        blocked_page = blocked_ctx.new_page()
+        open_url(blocked_page, "preview/practice.html")
+        blocked_page.locator('input[name="practice-answer"]').first.check()
+        blocked_page.locator("#learner-reasoning").fill("I would use energy conservation.")
+        blocked_page.locator("#btn-submit-answer").click()
+        feedback = blocked_page.locator("#validation-message").inner_text().casefold()
+        assert_that("not saved" in feedback and "no saved progress" in feedback,
+                    f"Storage denial falsely reported attempt persistence: {feedback!r}")
+        assert_that("attempt recorded (" not in feedback,
+                    f"Storage denial reported success: {feedback!r}")
+        assert_that(blocked_page.locator("#btn-reveal-solution").is_visible(),
+                    "Ungraded worked-solution reveal must remain available on current page")
+        assert_that(blocked_page.evaluate(
+            "() => sessionStorage.getItem('grade9_alpha_progress')"
+        ) is None, "A denied write must not create a session progress record")
+        blocked_page.locator("#btn-reveal-solution").click()
+        assert_that(blocked_page.locator("#panel-solution").is_visible(),
+                    "Worked solution should still be revealed locally")
+        open_url(blocked_page, "preview/progress.html")
+        assert_that("not started" in blocked_page.locator(
+            "#status-wpe-practice"
+        ).inner_text().casefold(),
+                    "Progress screen must not claim saved attempt after storage denial")
+    finally:
+        blocked_ctx.close()
+
 def main():
     server = subprocess.Popen([sys.executable,"-m","http.server",str(PORT),"--bind","127.0.0.1"],cwd=ROOT,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
     try:
@@ -88,7 +131,7 @@ def main():
             browser=p.chromium.launch(headless=True,args=["--no-sandbox","--disable-dev-shm-usage"])
             try: tests(browser)
             finally:browser.close()
-        print("PASS: 7 pages x 5 viewports, no duplicate site menus, no overflow, practice attempt/reveal/progress session; dark-preference regression.")
+        print("PASS: 7 pages x 5 viewports, practice and progress session, storage-denial negative control; dark-preference regression.")
     finally:server.terminate();server.wait(timeout=8)
 
 if __name__=="__main__":main()
