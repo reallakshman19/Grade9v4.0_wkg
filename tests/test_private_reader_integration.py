@@ -83,6 +83,23 @@ def test_non_destructive_deterministic_and_figure_recovery(tmp_path):
     assert before=={str(p.relative_to(root)):sha(p.read_bytes()) for p in root.rglob('*') if p.is_file()}
 
 
+
+def test_12p7_profile_applied_to_all_readers_without_changing_input(tmp_path):
+    root, mpath, out = fixture(tmp_path)
+    before = {str(p.relative_to(root)): sha(p.read_bytes()) for p in root.rglob('*') if p.is_file()}
+    receipt = build(root, out, mpath)
+    assert receipt['academic_approval'] == 'HOLD'
+    assert receipt['release_authority'] == 'HOLD'
+    for rel in ['preview/question-status.html', 'modules/alpha/question-status.html', 'modules/beta/question-status.html']:
+        html = (out / rel).read_text(encoding='utf-8')
+        assert html.count('<style id="g9-reader-12p7-layout">') == 1
+        assert 'max-height: 315px' in html
+        assert 'min-width: 960px' in html
+        assert 'min-width: 700px' in html
+    after = {str(p.relative_to(root)): sha(p.read_bytes()) for p in root.rglob('*') if p.is_file()}
+    assert before == after
+
+
 def test_pinned_input_mutation_fails_without_output(tmp_path):
     root,mpath,out=fixture(tmp_path)
     with (root/'preview/question-status.html').open('a') as f:f.write('CHANGED')
