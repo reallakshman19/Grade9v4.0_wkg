@@ -1,0 +1,29 @@
+name: R6 private reader runtime - synthetic 12.7 inch HTTP QA
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'tools/private_reader_r6.py'
+      - 'tools/check_private_reader_r6_http.py'
+      - 'tests/test_private_reader_r6.py'
+      - 'docs/private-reader-r6.md'
+      - '.github/workflows/private-reader-r6.yml'
+permissions:
+  contents: read
+jobs:
+  synthetic-reader-r6:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install synthetic QA and Chromium
+        run: |
+          python -m pip install 'pytest>=8,<10' 'playwright==1.55.0'
+          python -m playwright install chromium
+      - name: R6 source preservation and negative controls
+        run: python -m pytest -q tests/test_private_reader_r6.py
+      - name: R6 synthetic direct HTTP Chromium at 12.7 inch display sizes
+        run: python tools/check_private_reader_r6_http.py
