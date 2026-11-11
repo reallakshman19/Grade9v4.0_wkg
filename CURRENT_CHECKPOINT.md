@@ -1,85 +1,83 @@
 # Oracle Checkpoint — 11 November 2026
 
-**Timestamp:** 2026-11-11T10:10:00+04:00  
-**Operating Sequence:** **Physics $\to$ Mathematics $\to$ Chemistry $\to$ Biology**  
+**Timestamp:** 2026-11-11T12:05:00+04:00  
+**Operating Sequence:** **Physics (100% COMPLETE) $\to$ Mathematics (NEXT) $\to$ Chemistry $\to$ Biology**  
 **Audit Artifact:** [`C:\Users\reall\.gemini\antigravity\brain\953d0101-905a-4eb1-992c-ad727fbba29a\physics_syllabus_audit.md`](file:///C:/Users/reall/.gemini/antigravity/brain/953d0101-905a-4eb1-992c-ad727fbba29a/physics_syllabus_audit.md)  
-**Context State:** Ready for context compaction (`/compact`).
+**PR Discipline:** Draft feature branch `feat/nsejs-mechanics-intake-module-01` — **never merged into `main`**.
 
 ---
 
 ## 1. Identity & Authority Baseline
 
 - **Working Directory:** `D:\CodeD\grade9v4`
-- **Active Branch:** `feat/nsejs-magnetism-intake-module-01`
-- **Parent Branches:**
+- **Active Branch:** `feat/nsejs-mechanics-intake-module-01`
+- **Lineage Branches:**
+  - `feat/nsejs-magnetism-intake-module-01` (Commit: `c4003af`)
   - `feat/nsejs-circuits-intake-module-01` (Commit: `bb6c87e`)
   - `feat/nsejs-electrostatics-intake-module-01` (Commit: `bd26737`)
-  - `feat/nsejs-optics-intake-module-01`
-- **PR Status:** Local draft feature branches only — **never merged into `main`**.
+  - `feat/nsejs-optics-intake-module-01` (Commit: `d06f8a8`)
 - **Governance Invariant (Rule 13 in `AGENTS.md`):**
   > *“No academic approval inferred from software validation. Green CI means automatic tests passed; it never means student release is authorized.”*  
-  All candidate items default to `HOLD:ACADEMIC_ADMISSION` / `UNREVIEWED_NO_ADMISSION`.
+  All 50 candidate items default strictly to `HOLD:ACADEMIC_ADMISSION` / `UNREVIEWED_NO_ADMISSION`.
 
 ---
 
-## 2. Completed Physics Intake Slices (40 Verified Items)
+## 2. Completed Physics Intake Modules (50 Verified Items Across 5 Modules)
+
+The Physics Track of the Junior Science syllabus is now **100% complete**:
 
 1. **Section VII: Light (Ray Optics & Instruments):**
    - **Anchor Item:** `NSEJS-2023-P-Q01` (Ant convex mirror dynamics $\Delta x(t)$, Band D2 `MODEL`).
-   - **Bank & Contracts:** [`workspace/output/nsejs-optics-r1/`](file:///D:/CodeD/grade9v4/workspace/output/nsejs-optics-r1/) (10 authentic items).
+   - **Bank & Contracts:** [`workspace/output/nsejs-optics-r1/`](file:///D:/CodeD/grade9v4/workspace/output/nsejs-optics-r1/) (10 items).
    - **Interactive Module:** [`workspace/output/nsejs-optics-r1/core2_module.html`](file:///D:/CodeD/grade9v4/workspace/output/nsejs-optics-r1/core2_module.html).
    - **Test Suite:** [`tests/test_nsejs_optics.py`](file:///D:/CodeD/grade9v4/tests/test_nsejs_optics.py) — 13 passed.
 
 2. **Section VI (Part A): Electrostatics (Point Charges & Fields):**
    - **Anchor Item:** `NSEJS-2024-P-Q06` (Carbon spheres Coulomb force & carrier density $4.15 \times 10^{-14}$, Band D2 `SYNTHESIZE`).
-   - **Bank & Contracts:** [`workspace/output/nsejs-electrostatics-r1/`](file:///D:/CodeD/grade9v4/workspace/output/nsejs-electrostatics-r1/) (10 authentic items).
+   - **Bank & Contracts:** [`workspace/output/nsejs-electrostatics-r1/`](file:///D:/CodeD/grade9v4/workspace/output/nsejs-electrostatics-r1/) (10 items).
    - **Interactive Module:** [`workspace/output/nsejs-electrostatics-r1/core2_module.html`](file:///D:/CodeD/grade9v4/workspace/output/nsejs-electrostatics-r1/core2_module.html).
    - **Test Suite:** [`tests/test_nsejs_electrostatics.py`](file:///D:/CodeD/grade9v4/tests/test_nsejs_electrostatics.py) — 15 passed.
 
 3. **Section VI (Part B): Current Electricity & Resistor Networks:**
    - **Anchor Item:** `NSEJS-2024-P-Q08` (Regular tetrahedron resistor network $R = 12\ \Omega \implies R_{AB} = 6\ \Omega$, Band D2 `MODEL`).
-   - **Bank & Contracts:** [`workspace/output/nsejs-circuits-r1/`](file:///D:/CodeD/grade9v4/workspace/output/nsejs-circuits-r1/) (10 authentic items).
+   - **Bank & Contracts:** [`workspace/output/nsejs-circuits-r1/`](file:///D:/CodeD/grade9v4/workspace/output/nsejs-circuits-r1/) (10 items).
    - **Interactive Module:** [`workspace/output/nsejs-circuits-r1/core2_module.html`](file:///D:/CodeD/grade9v4/workspace/output/nsejs-circuits-r1/core2_module.html).
    - **Test Suite:** [`tests/test_nsejs_circuits.py`](file:///D:/CodeD/grade9v4/tests/test_nsejs_circuits.py) — 14 passed.
 
 4. **Section VI (Part C): Magnetism & Electromagnetic Induction (EMI):**
    - **Anchor Item:** `NSEJS-2024-P-Q28` (Conducting coils in Y-Z plane & moving bar magnet under Lenz's Law, Band D2 `MODEL`).
-   - **Bank & Contracts:** [`workspace/output/nsejs-magnetism-r1/`](file:///D:/CodeD/grade9v4/workspace/output/nsejs-magnetism-r1/) (10 authentic items).
+   - **Bank & Contracts:** [`workspace/output/nsejs-magnetism-r1/`](file:///D:/CodeD/grade9v4/workspace/output/nsejs-magnetism-r1/) (10 items).
    - **Interactive Module:** [`workspace/output/nsejs-magnetism-r1/core2_module.html`](file:///D:/CodeD/grade9v4/workspace/output/nsejs-magnetism-r1/core2_module.html).
    - **Test Suite:** [`tests/test_nsejs_magnetism.py`](file:///D:/CodeD/grade9v4/tests/test_nsejs_magnetism.py) — 15 passed.
 
-5. **Multi-Topic Status Explorer:**
-   - [`preview/question-status.html`](file:///D:/CodeD/grade9v4/preview/question-status.html) hosting all **40 authentic items** with active topic filtering across `Optics`, `Electrostatics`, `Current Electricity`, and `Magnetism & EMI`.
+5. **Section V: Motion, Force and Work (Mechanics & Dynamics):**
+   - **Anchor Item:** `NSEJS-2024-P-Q46` (Decoupled wagon $v\text{-}t$ integration & train ratio $d_1 / d_2 = 1/2$, Band D2 `MODEL`).
+   - **Bank & Contracts:** [`workspace/output/nsejs-mechanics-r1/`](file:///D:/CodeD/grade9v4/workspace/output/nsejs-mechanics-r1/) (10 items covering Kinematics, Newton's Laws, Gravitation, Work & Energy, Sound & Hearing).
+   - **Interactive Module:** [`workspace/output/nsejs-mechanics-r1/core2_module.html`](file:///D:/CodeD/grade9v4/workspace/output/nsejs-mechanics-r1/core2_module.html).
+   - **Test Suite:** [`tests/test_nsejs_mechanics.py`](file:///D:/CodeD/grade9v4/tests/test_nsejs_mechanics.py) — 19 passed.
 
-6. **Automated Verification:**
-   - Topic Suites: **57 passed in 0.33s**.
-   - Full Pytest: **342 passed, 2 pre-existing Windows OS symlink privilege errors** (documented in `Start_here.md`).
+6. **Unified Question Bank Status Explorer:**
+   - [`preview/question-status.html`](file:///D:/CodeD/grade9v4/preview/question-status.html) hosting all **50 authentic items** with active topic filtering across `Optics`, `Electrostatics`, `Current Electricity`, `Magnetism & EMI`, and `Mechanics`.
 
----
-
-## 3. Syllabus Audit Results & Next Step
-
-According to the official 10-section Junior Science curriculum:
-- **Section VII (Light):** 100% Complete.
-- **Section VI (Effects of Current):** 100% Complete across Electrostatics, Circuits, and Magnetism & EMI.
-- **Section V (Motion, Force and Work):** **Identified Gap / Next Immediate Task**.
-  - **Topics to Ingest:**
-    1. *Types of motion:* 1D kinematics, $v\text{-}t$ graphs, relative motion.
-    2. *Newton's laws:* Inertia, momentum conservation, impulse, connected bodies / Atwood machines, friction.
-    3. *Gravitation:* Universal law, $g$ variation with height/depth, Kepler's 3 laws, satellite motion.
-    4. *Work and energy:* Work-energy theorem, conservative forces, mechanical energy conservation, power.
-    5. *Sound and hearing:* Longitudinal waves, wave speed $v = f\lambda$, echo, ultrasound, frequency limits.
+7. **Automated Verification Results:**
+   - Topic Suites: **76 passed in 0.39s**.
+   - Full Pytest: **361 passed, 2 pre-existing Windows OS symlink privilege errors** (documented in `Start_here.md`).
 
 ---
 
-## 4. Post-Compaction Resumption Runbook
+## 3. The 7 Critical Anti-Patterns Audit Summary
 
-When resuming after `/compact`:
-1. **Branch checkout:** Confirm on `feat/nsejs-magnetism-intake-module-01` or create `feat/nsejs-mechanics-intake-module-01` branched from it.
-2. **Execute Section V Intake:**
-   - Identify anchor question from recent NSEJS papers (e.g. `NSEJS-2024-P-Q04` or `NSEJS-2024-P-Q14` on kinematics/dynamics).
-   - Generate custody, candidate bank, deterministic SL1/SL2 check reports, and interactive Core 2 module.
-   - Curate 10 authentic items across the 5 mechanics clusters (Kinematics, Newton's Laws, Gravitation, Work-Energy, Sound).
-   - Update [`preview/question-status.html`](file:///D:/CodeD/grade9v4/preview/question-status.html) to 50 items.
-   - Author [`tests/test_nsejs_mechanics.py`](file:///D:/CodeD/grade9v4/tests/test_nsejs_mechanics.py).
-3. **Transition to Mathematics:** Once Section V is verified, proceed to Track 2 (Mathematics).
+All 50 items and 5 interactive HTML modules adhere to the 7 quality gates with 0 violations:
+- **Gate 1 (Zero Ghost Text):** Strictly `1. System Representation & Setup:`, `2. Physical Model & Formulation:`, `3. Execution & Resolution:`. Zero occurrences of `"2. Connection:"` or `"Connection:"`.
+- **Gate 2 (Dynamic Crux Move):** Crux references bound to primary cognitive operation (`M2` for `MODEL` / `SYNTHESIZE`).
+- **Gate 3 (Rubric Sum Bounds):** $c_i \in \{0, 1, 2\}$ and $\sum c_i = \text{score}$ across all items.
+- **Gate 4 (Canonical Verbs Only):** Strictly 7 canonical verbs (`RETRIEVE`, `EXPLAIN`, `APPLY`, `MODEL`, `REPRESENT`, `SYNTHESIZE`, `JUSTIFY`).
+- **Gate 5 (W3C SVG Typography):** Responsive `viewBox >= 400x180` and `font-size >= 14px` across all SVG text elements.
+- **Gate 6 (Responsive Mobile Cascade):** `max-width 900px`, 0px horizontal viewport overflow.
+- **Gate 7 (Commitment-First Protected Derivations):** Derivations styled with `display: none;` until candidate answer is committed.
+
+---
+
+## 4. Handoff to Track 2: Mathematics
+
+With the Physics Track 100% complete across all three syllabus sections (Section V, Section VI, Section VII), the next phase commences on **Mathematics Track** (Number Theory, Algebra, Geometry, Combinatorics / Quantitative Reasoning).
