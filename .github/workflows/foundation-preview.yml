@@ -1,0 +1,30 @@
+name: Physics Foundation and NSEJS directory preview
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'physics/index.html'
+      - 'physics/foundation/**'
+      - 'exams/**'
+      - 'tests/test_foundation_routes.py'
+      - 'tools/check_foundation_routes_http.py'
+      - '.github/workflows/foundation-preview.yml'
+permissions:
+  contents: read
+jobs:
+  foundation-routes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install test dependencies
+        run: |
+          python -m pip install 'pytest>=8,<10' 'playwright==1.55.0'
+          python -m playwright install chromium
+      - name: Check subject scope and local links
+        run: python -m pytest -q tests/test_foundation_routes.py
+      - name: Real HTTP Chromium at 12.7-inch screen sizes
+        run: python tools/check_foundation_routes_http.py
