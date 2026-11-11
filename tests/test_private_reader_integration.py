@@ -149,3 +149,16 @@ def test_synthetic_data_is_not_official_or_academic_evidence(tmp_path):
     assert result['academic_approval']=='HOLD'
     assert result['source_authenticity']=='UNKNOWN_SOURCE'
     assert result['release_authority']=='HOLD'
+
+
+def test_stale_authenticity_subtitle_rewritten_without_data_mutation(tmp_path):
+    root,mpath,out=fixture(tmp_path)
+    src=root/'modules/alpha/question-status.html'
+    src.write_text(src.read_text().replace('</header>', '</header><p class="subtitle">2 authentic items</p>'))
+    update_manifest_for_file(root,mpath,'modules/alpha/question-status.html')
+    result=build(root,out,mpath)
+    actual=(out/'modules/alpha/question-status.html').read_text()
+    assert '2 authentic items' not in actual
+    assert 'Candidate records — original exam status unverified' in actual
+    assert result['record_count']==4
+    assert json.loads(actual.split('type="application/json">')[1].split('</script>')[0])['questions'][0]['stem']=='Synthetic alpha one'
