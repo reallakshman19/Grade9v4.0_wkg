@@ -221,7 +221,8 @@ def test_preview_question_status_page():
     data = json.loads(m.group(1))
 
     questions = data["questions"]
-    assert len(questions) == 10, f"Expected 10 optics questions, found {len(questions)}"
+    optics_questions = [q for q in questions if "OPT" in q.get("source_id", "")]
+    assert len(optics_questions) == 10, f"Expected 10 optics questions, found {len(optics_questions)}"
 
     # Check each question's structure
     for q in questions:

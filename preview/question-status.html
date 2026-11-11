@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <title>Question Bank · Physics (NSEJS Optics) · Review Candidate</title>
+  <title>Question Bank · Physics (NSEJS Optics &amp; Electrostatics) · Review Candidate</title>
   <meta name="core2-publish-id" content="nsejs-optics-exact-question-status-20261111-r1">
 <style>
 :root{
@@ -97,7 +97,7 @@ footer{margin-top:32px;padding:20px clamp(16px,3vw,48px);border-top:1px solid va
 <header>
   <div class="kicker">Grade9 v4.0 · Physics Optics Examination Bank</div>
   <h1>NSEJS / IOQJS Optics · Candidate Status (2019–2024)</h1>
-  <p>Authentic National Standard Examination in Junior Science (IAPT) items for Grade 9 Ray Optics: Spherical Mirrors, Newtonian Lenses, Silvered Prisms, and Conjugate Systems.</p>
+  <p>Authentic National Standard Examination in Junior Science (IAPT) items for Grade 9 Physics: Ray Optics and Electrostatics (Point Charges, Coulomb Forces, and Carrier Dynamics).</p>
   <div class="status">HOLD · NO ACADEMIC APPROVAL INFERRED FROM SOFTWARE VALIDATION</div>
 </header>
 
@@ -105,8 +105,8 @@ footer{margin-top:32px;padding:20px clamp(16px,3vw,48px);border-top:1px solid va
   <!-- Sidebar Navigation -->
   <aside class="panel">
     <div class="sidebar-head">
-      <h2>Optics Questions</h2>
-      <p class="subtitle">10 authentic items across 5 recent exam cycles</p>
+      <h2>Physics Questions</h2>
+      <p class="subtitle">20 authentic items (Optics &amp; Electrostatics)</p>
       <div class="counts">
         <span class="count" id="count-total">10 items</span>
         <span class="count" id="count-d1">D1: 2</span>
@@ -115,7 +115,33 @@ footer{margin-top:32px;padding:20px clamp(16px,3vw,48px);border-top:1px solid va
       </div>
       <div class="filters">
         <input type="search" id="search" placeholder="Search stem, crux, or year..." aria-label="Search questions">
+        <select id="topic" aria-label="Filter by topic" style="grid-column: 1 / -1;">
+          <option value="ALL">All Physics Topics (20 items)</option>
+          <option value="OPTICS">Optics (10 items)</option>
+          <option value="ELECTROSTATICS">Electrostatics (10 items)</option>
+        </select>
         <select id="kind" aria-label="Filter by sub-topic">
+          <option value="ALL">All Sub-topics</option>
+          <optgroup label="Optics">
+            <option value="Spherical Mirrors">Spherical Mirrors</option>
+            <option value="Thin Lenses">Thin Lenses</option>
+            <option value="Combined Systems">Combined Systems</option>
+            <option value="Prisms & Reflection">Prisms & Reflection</option>
+            <option value="Human Eye & Defects">Human Eye & Defects</option>
+          </optgroup>
+          <optgroup label="Electrostatics">
+            <option value="Coulomb & Quantization">Coulomb & Quantization</option>
+            <option value="Surface Charge Density">Surface Charge Density</option>
+            <option value="Electrostatic Shielding">Electrostatic Shielding</option>
+            <option value="Conductors & Field Lines">Conductors & Field Lines</option>
+            <option value="Potential Energy">Potential Energy</option>
+            <option value="Charge & Mass Transfer">Charge & Mass Transfer</option>
+            <option value="Charge Sharing & Contact">Charge Sharing & Contact</option>
+            <option value="Three-Charge Equilibrium">Three-Charge Equilibrium</option>
+            <option value="Coulomb Maxima">Coulomb Maxima</option>
+            <option value="Transverse Field Deflection">Transverse Field Deflection</option>
+          </optgroup>
+        </select>
           <option value="ALL">All Sub-topics</option>
           <option value="Spherical Mirrors">Spherical Mirrors</option>
           <option value="Thin Lenses">Thin Lenses</option>
@@ -163,7 +189,7 @@ footer{margin-top:32px;padding:20px clamp(16px,3vw,48px);border-top:1px solid va
     {
       "id": "NSEJS-2023-P-Q01",
       "source_id": "NSEJS-23-OPT-01",
-      "source_name": "NSEJS 2023-24 · Q01 · MODEL · D2 (Score 4)",
+      "source_name": "NSEJS 2023-24 \u00b7 Q01 \u00b7 MODEL \u00b7 D2 (Score 4)",
       "category": "EXAM_CLAIM",
       "origin": "IAPT_OFFICIAL_PAPER_51",
       "stem": "An ant is sitting on the principal axis of a convex mirror of focal length $f$, at a distance $2f$ from the pole in front of the mirror. It starts moving on the principal axis towards the mirror. During the course of motion, the distance between the ant and its image:\n[FIG-stem-1]",
@@ -175,7 +201,9 @@ footer{margin-top:32px;padding:20px clamp(16px,3vw,48px);border-top:1px solid va
         "D: first decreases, then increases"
       ],
       "question_type": "single_correct_mcq",
-      "source_figures": ["fig_nsejs_ant_convex.svg"],
+      "source_figures": [
+        "fig_nsejs_ant_convex.svg"
+      ],
       "figure_note": "Coordinate schematic: Ant moves toward pole P; image moves toward pole behind mirror.",
       "hints": [
         {
@@ -197,18 +225,21 @@ footer{margin-top:32px;padding:20px clamp(16px,3vw,48px);border-top:1px solid va
         "2. Physical Model & Formulation: Mirror equation yields v(x) = fx/(x+f). Scalar separation is D(x) = x + v(x) = x + fx/(x+f).",
         "3. Execution & Resolution: Derivative dD/dx = 1 + f^2/(x+f)^2 > 0 strictly for all physical x >= 0. As the ant approaches the pole (x strictly decreasing), separation D(x) throughout decreases."
       ],
-      "check": "Boundary Limits: At x = 2f, D = 8f/3 ≈ 2.67f. At x = f, D = 3f/2 = 1.50f. At x = 0, D = 0. Monotonic decrease holds continuously across the full motion.",
+      "check": "Boundary Limits: At x = 2f, D = 8f/3 \u2248 2.67f. At x = f, D = 3f/2 = 1.50f. At x = 0, D = 0. Monotonic decrease holds continuously across the full motion.",
       "op": "MODEL",
       "band": "D2",
       "batch": "Spherical Mirrors",
       "review_state": "NOT_ADMITTED",
       "key_state": "VERIFIED_IAPT_KEY",
-      "flags": ["Candidate intake; independent external QRT adjudication receipt pending."]
+      "flags": [
+        "Candidate intake; independent external QRT adjudication receipt pending."
+      ],
+      "topic": "OPTICS"
     },
     {
       "id": "NSEJS-2023-P-Q02",
       "source_id": "NSEJS-23-OPT-02",
-      "source_name": "NSEJS 2023-24 · Q02 · APPLY · D2 (Score 3)",
+      "source_name": "NSEJS 2023-24 \u00b7 Q02 \u00b7 APPLY \u00b7 D2 (Score 3)",
       "category": "EXAM_CLAIM",
       "origin": "IAPT_OFFICIAL_PAPER_51",
       "stem": "An object pin is placed at a distance of $10\\text{ cm}$ from the first focus of a thin convex lens on its principal axis. The lens forms a real and inverted image of this object pin at a distance of $40\\text{ cm}$ beyond the second focus. The focal length of the lens is:",
@@ -229,18 +260,18 @@ footer{margin-top:32px;padding:20px clamp(16px,3vw,48px);border-top:1px solid va
         },
         {
           "prompt": "H2 (Correlate): Which formulation relates focal offsets directly?",
-          "text": "Recall Newton's form of the thin lens equation relating distances from respective principal foci: x1 · x2 = f^2."
+          "text": "Recall Newton's form of the thin lens equation relating distances from respective principal foci: x1 \u00b7 x2 = f^2."
         },
         {
           "prompt": "H3 (Open the Way): How is f extracted?",
-          "text": "Crux Move: Calculate f = sqrt(x1 · x2) and verify consistency against standard 1/f = 1/v - 1/u."
+          "text": "Crux Move: Calculate f = sqrt(x1 \u00b7 x2) and verify consistency against standard 1/f = 1/v - 1/u."
         }
       ],
       "answer": "Official Key: (B) 20 cm",
       "steps": [
         "1. System Representation & Setup: Thin convex lens with principal foci F1 and F2. Given focal offsets x1 = 10 cm and x2 = 40 cm.",
-        "2. Physical Model & Formulation: Newton's lens relation: x1 · x2 = f^2.",
-        "3. Execution & Resolution: f^2 = 10 · 40 = 400 => f = 20 cm."
+        "2. Physical Model & Formulation: Newton's lens relation: x1 \u00b7 x2 = f^2.",
+        "3. Execution & Resolution: f^2 = 10 \u00b7 40 = 400 => f = 20 cm."
       ],
       "check": "Standard Lens Formula Check: u = -(20 + 10) = -30 cm; v = 20 + 40 = +60 cm. 1/v - 1/u = 1/60 - 1/(-30) = 3/60 = 1/20 cm^-1 => f = 20 cm.",
       "op": "APPLY",
@@ -248,21 +279,22 @@ footer{margin-top:32px;padding:20px clamp(16px,3vw,48px);border-top:1px solid va
       "batch": "Thin Lenses",
       "review_state": "NOT_ADMITTED",
       "key_state": "VERIFIED_IAPT_KEY",
-      "flags": []
+      "flags": [],
+      "topic": "OPTICS"
     },
     {
       "id": "NSEJS-2022-P-Q01",
       "source_id": "NSEJS-22-OPT-01",
-      "source_name": "NSEJS 2022-23 · Q01 · SYNTHESIZE · D3 (Score 6)",
+      "source_name": "NSEJS 2022-23 \u00b7 Q01 \u00b7 SYNTHESIZE \u00b7 D3 (Score 6)",
       "category": "EXAM_CLAIM",
       "origin": "IAPT_OFFICIAL_PAPER",
       "stem": "The triangular face of a crown glass prism $ABC$ is isosceles with $AB = AC$. The rectangular face with edge $AC$ is silvered. A ray of light is incident normally on the rectangular face with edge $AB$, reflects internally at $AC$ and $AB$, and emerges normally through the rectangular base with edge $BC$. The apex angle $\\angle BAC$ is:",
       "stem_sha256": "7c4b12349e883d112344f19bca12019b44b5712e9c8140bcde890123ef654321",
       "options": [
-        "A: 30°",
-        "B: 36°",
-        "C: 45°",
-        "D: 72°"
+        "A: 30\u00b0",
+        "B: 36\u00b0",
+        "C: 45\u00b0",
+        "D: 72\u00b0"
       ],
       "question_type": "single_correct_mcq",
       "source_figures": [],
@@ -270,35 +302,36 @@ footer{margin-top:32px;padding:20px clamp(16px,3vw,48px);border-top:1px solid va
       "hints": [
         {
           "prompt": "H1 (Clarify): What does normal entry and exit imply?",
-          "text": "Normal entry on AB means angle of incidence = 0° (undeviated ray). Normal exit at BC means the ray strikes BC perpendicularly."
+          "text": "Normal entry on AB means angle of incidence = 0\u00b0 (undeviated ray). Normal exit at BC means the ray strikes BC perpendicularly."
         },
         {
           "prompt": "H2 (Correlate): How are the base angles related to apex angle A?",
-          "text": "For isosceles triangle AB = AC, base angles B = C = (180° - A)/2."
+          "text": "For isosceles triangle AB = AC, base angles B = C = (180\u00b0 - A)/2."
         },
         {
           "prompt": "H3 (Open the Way): What geometric constraint is imposed by successive reflections?",
           "text": "Crux Move: Tracing reflection angles reveals that normal emergence on BC forces B = 2A."
         }
       ],
-      "answer": "Official Key: (B) 36°",
+      "answer": "Official Key: (B) 36\u00b0",
       "steps": [
-        "1. System Representation & Setup: Isosceles triangle ABC with AB = AC, ∠BAC = A, and B = C = (180° - A)/2.",
-        "2. Physical Model & Formulation: Ray enters AB at 90°, hits AC at angle (90° - A), reflects to AB, reflects again, and hits BC perpendicularly.",
-        "3. Execution & Resolution: Geometry of enclosed ray path yields B = 2A. Thus A + 2(2A) = 180° => 5A = 180° => A = 36°."
+        "1. System Representation & Setup: Isosceles triangle ABC with AB = AC, \u2220BAC = A, and B = C = (180\u00b0 - A)/2.",
+        "2. Physical Model & Formulation: Ray enters AB at 90\u00b0, hits AC at angle (90\u00b0 - A), reflects to AB, reflects again, and hits BC perpendicularly.",
+        "3. Execution & Resolution: Geometry of enclosed ray path yields B = 2A. Thus A + 2(2A) = 180\u00b0 => 5A = 180\u00b0 => A = 36\u00b0."
       ],
-      "check": "At A = 36°, B = C = 72°. The angle of incidence on AC is 54°, reflecting into face AB at 18°, perfectly striking base BC at 90° (72° + 18° = 90°).",
+      "check": "At A = 36\u00b0, B = C = 72\u00b0. The angle of incidence on AC is 54\u00b0, reflecting into face AB at 18\u00b0, perfectly striking base BC at 90\u00b0 (72\u00b0 + 18\u00b0 = 90\u00b0).",
       "op": "SYNTHESIZE",
       "band": "D3",
       "batch": "Prisms & Reflection",
       "review_state": "NOT_ADMITTED",
       "key_state": "VERIFIED_IAPT_KEY",
-      "flags": []
+      "flags": [],
+      "topic": "OPTICS"
     },
     {
       "id": "NSEJS-2022-P-Q02",
       "source_id": "NSEJS-22-OPT-02",
-      "source_name": "NSEJS 2022-23 · Q02 · SYNTHESIZE · D3 (Score 6)",
+      "source_name": "NSEJS 2022-23 \u00b7 Q02 \u00b7 SYNTHESIZE \u00b7 D3 (Score 6)",
       "category": "EXAM_CLAIM",
       "origin": "IAPT_OFFICIAL_PAPER",
       "stem": "A thin convex lens of focal length $10\\text{ cm}$ has a small luminous object placed $15\\text{ cm}$ in front of it. A plane mirror is placed $20\\text{ cm}$ behind the lens, perpendicular to the principal axis. The position and magnification of the final image formed by the system are:",
@@ -330,7 +363,7 @@ footer{margin-top:32px;padding:20px clamp(16px,3vw,48px);border-top:1px solid va
       "steps": [
         "1. System Representation & Setup: Convex lens at x = 0 (f = +10 cm), object at u = -15 cm, plane mirror at x = +20 cm.",
         "2. Physical Model & Formulation: 1/v1 - 1/(-15) = 1/10 => v1 = +30 cm (at x = 30 cm). Magnification m1 = 30/(-15) = -2.",
-        "3. Execution & Resolution: The image is 10 cm behind the mirror (x = 20 cm). The mirror forms a real image 10 cm in front of it, at x = 20 - 10 = +10 cm from the lens. Total magnification m = m1 · m2 = (-2) · (+1) = -2."
+        "3. Execution & Resolution: The image is 10 cm behind the mirror (x = 20 cm). The mirror forms a real image 10 cm in front of it, at x = 20 - 10 = +10 cm from the lens. Total magnification m = m1 \u00b7 m2 = (-2) \u00b7 (+1) = -2."
       ],
       "check": "The final image lies midway between the lens and mirror (10 cm from lens towards mirror), inverted and 2x magnified.",
       "op": "SYNTHESIZE",
@@ -338,12 +371,13 @@ footer{margin-top:32px;padding:20px clamp(16px,3vw,48px);border-top:1px solid va
       "batch": "Combined Systems",
       "review_state": "NOT_ADMITTED",
       "key_state": "VERIFIED_IAPT_KEY",
-      "flags": []
+      "flags": [],
+      "topic": "OPTICS"
     },
     {
       "id": "IOQJS-2022-P-Q01",
       "source_id": "IOQJS-22-OPT-01",
-      "source_name": "IOQJS 2021-22 · Part 1 · MODEL · D2 (Score 4)",
+      "source_name": "IOQJS 2021-22 \u00b7 Part 1 \u00b7 MODEL \u00b7 D2 (Score 4)",
       "category": "EXAM_CLAIM",
       "origin": "IAPT_HBCSE_OFFICIAL",
       "stem": "A point object is placed on the principal axis of a thin converging lens of focal length $f$. A plane mirror is placed perpendicular to the axis at distance $l$ from the lens. Light rays from the object pass through the lens, reflect from the mirror, and re-trace their path back to the object position. If this occurs when the rays strike the mirror normally, the required parameters satisfy:",
@@ -360,7 +394,7 @@ footer{margin-top:32px;padding:20px clamp(16px,3vw,48px);border-top:1px solid va
       "hints": [
         {
           "prompt": "H1 (Clarify): What causes light to retrace its path upon mirror reflection?",
-          "text": "For a plane mirror, rays retrace their exact path if and only if they strike the reflective surface at normal incidence (angle of incidence = 0°)."
+          "text": "For a plane mirror, rays retrace their exact path if and only if they strike the reflective surface at normal incidence (angle of incidence = 0\u00b0)."
         },
         {
           "prompt": "H2 (Correlate): When does a converging lens emit parallel rays?",
@@ -383,12 +417,13 @@ footer{margin-top:32px;padding:20px clamp(16px,3vw,48px);border-top:1px solid va
       "batch": "Combined Systems",
       "review_state": "NOT_ADMITTED",
       "key_state": "VERIFIED_IAPT_KEY",
-      "flags": []
+      "flags": [],
+      "topic": "OPTICS"
     },
     {
       "id": "IOQJS-2021-P-Q01",
       "source_id": "IOQJS-21-OPT-01",
-      "source_name": "IOQJS 2020-21 · Part 1 · SYNTHESIZE · D3 (Score 7)",
+      "source_name": "IOQJS 2020-21 \u00b7 Part 1 \u00b7 SYNTHESIZE \u00b7 D3 (Score 7)",
       "category": "EXAM_CLAIM",
       "origin": "IAPT_HBCSE_OFFICIAL",
       "stem": "Two illuminated point objects $O_1$ and $O_2$ are placed at a distance $24\\text{ cm}$ from each other along the principal axis of a thin convex lens of focal length $9\\text{ cm}$ such that images of both the objects are formed at the same position. The respective distances of the lens from $O_1$ and $O_2$ (in cm) are:",
@@ -413,14 +448,14 @@ footer{margin-top:32px;padding:20px clamp(16px,3vw,48px);border-top:1px solid va
         },
         {
           "prompt": "H3 (Open the Way): What quadratic relation emerges?",
-          "text": "Crux Move: 1/u1 + 1/u2 = 2/9 with u1 + u2 = 24 leads to u1 · u2 = 108."
+          "text": "Crux Move: 1/u1 + 1/u2 = 2/9 with u1 + u2 = 24 leads to u1 \u00b7 u2 = 108."
         }
       ],
       "answer": "Official Key: (B) 18 and 6",
       "steps": [
         "1. System Representation & Setup: Convex lens f = 9 cm. Objects O1 and O2 have distances satisfying u1 + u2 = 24 cm.",
         "2. Physical Model & Formulation: Equal image distance magnitude with opposite virtual/real signs: 1/u1 + 1/u2 = 2/f = 2/9.",
-        "3. Execution & Resolution: (u1 + u2)/(u1 · u2) = 2/9 => 24/(u1 · u2) = 2/9 => u1 · u2 = 108. Solving x^2 - 24x + 108 = 0 yields x = 18 and x = 6."
+        "3. Execution & Resolution: (u1 + u2)/(u1 \u00b7 u2) = 2/9 => 24/(u1 \u00b7 u2) = 2/9 => u1 \u00b7 u2 = 108. Solving x^2 - 24x + 108 = 0 yields x = 18 and x = 6."
       ],
       "check": "For u1 = 18 cm: v = +18 cm. For u2 = 6 cm: v = -18 cm. Both image planes are located 18 cm from the lens center.",
       "op": "SYNTHESIZE",
@@ -428,12 +463,13 @@ footer{margin-top:32px;padding:20px clamp(16px,3vw,48px);border-top:1px solid va
       "batch": "Thin Lenses",
       "review_state": "NOT_ADMITTED",
       "key_state": "VERIFIED_IAPT_KEY",
-      "flags": []
+      "flags": [],
+      "topic": "OPTICS"
     },
     {
       "id": "NSEJS-2019-P-Q01",
       "source_id": "NSEJS-19-OPT-01",
-      "source_name": "NSEJS 2019-20 · Q01 · REPRESENT · D2 (Score 3)",
+      "source_name": "NSEJS 2019-20 \u00b7 Q01 \u00b7 REPRESENT \u00b7 D2 (Score 3)",
       "category": "EXAM_CLAIM",
       "origin": "IAPT_OFFICIAL_PAPER",
       "stem": "The radius of curvature of a convex mirror is $x$. The distance of an object from the focus of this mirror is $y$. What is the distance of the image from the focus?",
@@ -454,7 +490,7 @@ footer{margin-top:32px;padding:20px clamp(16px,3vw,48px);border-top:1px solid va
         },
         {
           "prompt": "H2 (Correlate): Which formula relates distances from focus?",
-          "text": "Newton's formula for spherical mirrors: x1 · x2 = f^2."
+          "text": "Newton's formula for spherical mirrors: x1 \u00b7 x2 = f^2."
         },
         {
           "prompt": "H3 (Open the Way): How is image distance x2 expressed?",
@@ -464,7 +500,7 @@ footer{margin-top:32px;padding:20px clamp(16px,3vw,48px);border-top:1px solid va
       "answer": "Official Key: (C) x^2 / (4y)",
       "steps": [
         "1. System Representation & Setup: Convex mirror with focal length f = x/2. Object distance from focus x1 = y.",
-        "2. Physical Model & Formulation: Newton's conjugate formula: x1 · x2 = f^2.",
+        "2. Physical Model & Formulation: Newton's conjugate formula: x1 \u00b7 x2 = f^2.",
         "3. Execution & Resolution: x2 = f^2 / y = (x/2)^2 / y = x^2 / (4y)."
       ],
       "check": "Dimensional check: [x2] = L^2 / L = L. As y -> inf, x2 -> 0 (image converges to focus).",
@@ -473,12 +509,13 @@ footer{margin-top:32px;padding:20px clamp(16px,3vw,48px);border-top:1px solid va
       "batch": "Spherical Mirrors",
       "review_state": "NOT_ADMITTED",
       "key_state": "VERIFIED_IAPT_KEY",
-      "flags": []
+      "flags": [],
+      "topic": "OPTICS"
     },
     {
       "id": "NSEJS-2019-P-Q02",
       "source_id": "NSEJS-19-OPT-02",
-      "source_name": "NSEJS 2019-20 · Q02 · SYNTHESIZE · D3 (Score 7)",
+      "source_name": "NSEJS 2019-20 \u00b7 Q02 \u00b7 SYNTHESIZE \u00b7 D3 (Score 7)",
       "category": "EXAM_CLAIM",
       "origin": "IAPT_OFFICIAL_PAPER",
       "stem": "In a screw-nut assembly, a convex lens of focal length $6.0\\text{ cm}$ is fixed on the nut. An object pin is attached to the screw head (pitch $1.0\\text{ mm}$/rotation). At a certain position, the image on a screen is three times magnified ($m_1 = -3$). Through how many complete rotations should the screw head be turned so that the image is two times magnified ($m_2 = -2$) on the screen?",
@@ -510,7 +547,7 @@ footer{margin-top:32px;padding:20px clamp(16px,3vw,48px);border-top:1px solid va
       "steps": [
         "1. System Representation & Setup: Convex lens f = 60 mm. Real inverted images m1 = -3 and m2 = -2. Pitch = 1.0 mm.",
         "2. Physical Model & Formulation: |u| = f(1 + 1/|m|). |u1| = 60(1 + 1/3) = 80 mm. |u2| = 60(1 + 1/2) = 90 mm.",
-        "3. Execution & Resolution: Linear displacement Δu = 90 - 80 = 10 mm. Turns = 10 mm / 1.0 mm = 10 rotations."
+        "3. Execution & Resolution: Linear displacement \u0394u = 90 - 80 = 10 mm. Turns = 10 mm / 1.0 mm = 10 rotations."
       ],
       "check": "Lens check: At u = 80 mm, v = 240 mm (m = 3). At u = 90 mm, v = 180 mm (m = 2). Both satisfy 1/v - 1/u = 1/60 mm^-1.",
       "op": "SYNTHESIZE",
@@ -518,12 +555,13 @@ footer{margin-top:32px;padding:20px clamp(16px,3vw,48px);border-top:1px solid va
       "batch": "Thin Lenses",
       "review_state": "NOT_ADMITTED",
       "key_state": "VERIFIED_IAPT_KEY",
-      "flags": []
+      "flags": [],
+      "topic": "OPTICS"
     },
     {
       "id": "NSEJS-2024-P-Q01",
       "source_id": "NSEJS-24-OPT-01",
-      "source_name": "NSEJS 2024-25 · Q01 · APPLY · D1 (Score 2)",
+      "source_name": "NSEJS 2024-25 \u00b7 Q01 \u00b7 APPLY \u00b7 D1 (Score 2)",
       "category": "EXAM_CLAIM",
       "origin": "IAPT_OFFICIAL_PAPER",
       "stem": "A hypermetropic person has a near point of $100\\text{ cm}$. The power of the convex spectacle lens required to enable the person to read a book comfortably at the normal near point distance of $25\\text{ cm}$ is:",
@@ -563,12 +601,13 @@ footer{margin-top:32px;padding:20px clamp(16px,3vw,48px);border-top:1px solid va
       "batch": "Human Eye & Defects",
       "review_state": "NOT_ADMITTED",
       "key_state": "VERIFIED_IAPT_KEY",
-      "flags": []
+      "flags": [],
+      "topic": "OPTICS"
     },
     {
       "id": "NSEJS-2024-P-Q02",
       "source_id": "NSEJS-24-OPT-02",
-      "source_name": "NSEJS 2024-25 · Q02 · EXPLAIN · D1 (Score 2)",
+      "source_name": "NSEJS 2024-25 \u00b7 Q02 \u00b7 EXPLAIN \u00b7 D1 (Score 2)",
       "category": "EXAM_CLAIM",
       "origin": "IAPT_OFFICIAL_PAPER",
       "stem": "For a real object placed anywhere in front of a convex spherical mirror on its principal axis, the image formed is always:",
@@ -608,13 +647,492 @@ footer{margin-top:32px;padding:20px clamp(16px,3vw,48px);border-top:1px solid va
       "batch": "Spherical Mirrors",
       "review_state": "NOT_ADMITTED",
       "key_state": "VERIFIED_IAPT_KEY",
-      "flags": []
+      "flags": [],
+      "topic": "OPTICS"
+    },
+    {
+      "id": "NSEJS-2024-P-Q06",
+      "source_id": "NSEJS-24-ELEC-01",
+      "source_name": "NSEJS 2024-25 \u00b7 Q06 \u00b7 SYNTHESIZE \u00b7 D2 (Score 4)",
+      "category": "EXAM_CLAIM",
+      "origin": "IAPT_OFFICIAL_PAPER_51",
+      "topic": "ELECTROSTATICS",
+      "stem": "The magnitude of electrostatic force between two tiny spherical balls carrying charge $q_1$ and $q_2$ separated by a distance $r$ in free space is given by $F = K \\frac{q_1 q_2}{r^2}$, where the constant $K = 9 \\times 10^9$ in SI units. Two tiny spherical balls of carbon (${}^{12}_{\\ 6}\\text{C}$) weighing $1\\text{ g}$ each are kept $1\\text{ cm}$ apart in free space. The two spheres carry equal and opposite charges. The magnitude of electrostatic force of attraction between the two charged spheres is $F = 1.0 \\times 10^{-5}\\text{ N}$. The ratio of the number of excess electrons to total number of atoms in the negatively charged sphere is:\n[FIG-stem-1]",
+      "stem_sha256": "42d013631c31e2902b0f97be6d080a9d2462e7ff39da26852d9f69e0bebfd932",
+      "options": [
+        "A: 4.15 * 10^-14",
+        "B: 2.08 * 10^9",
+        "C: 5.02 * 10^-22",
+        "D: 6.02 * 10^-23"
+      ],
+      "question_type": "single_correct_mcq",
+      "source_figures": [
+        "fig_nsejs_carbon_balls.svg"
+      ],
+      "figure_note": "Equal and oppositely charged 1 g carbon spheres separated by 1 cm experiencing mutual Coulomb attraction.",
+      "hints": [
+        {
+          "prompt": "H1 (Coulomb Inversion): How is charge magnitude determined?",
+          "text": "Because spheres carry equal and opposite charges, |q1| = |q2| = q. Invert Coulomb's law: q = r * sqrt(F / K). With r = 0.01 m, F = 10^-5 N, K = 9*10^9, find q in Coulombs."
+        },
+        {
+          "prompt": "H2 (Quantization): How many excess electrons create this charge?",
+          "text": "Every electron carries elementary charge e = 1.6 * 10^-19 C. The excess electron population on the negative sphere is n_e = q / e."
+        },
+        {
+          "prompt": "H3 (Stoichiometric Ratio): How many carbon atoms are in 1 g?",
+          "text": "Crux Move: 1 g of Carbon-12 is (1/12) mol. Total atoms n_atoms = (1/12) * 6.022 * 10^23. Calculate the fractional ratio R = n_e / n_atoms without revealing the final option."
+        }
+      ],
+      "answer": "Official Key: (A) 4.15 * 10^-14",
+      "steps": [
+        "1. System Representation & Setup: Convert parameters to SI units: m = 10^-3 kg, r = 10^-2 m, F = 10^-5 N, K = 9*10^9 N m^2/C^2, e = 1.6*10^-19 C, M = 12 g/mol, N_A = 6.022*10^23 mol^-1.",
+        "2. Physical Model & Formulation: Invert Coulomb's law q = r sqrt(F/K) = (1/3)*10^-9 C. Compute excess electrons n_e = q/e = 2.0833*10^9. Calculate total atoms n_atoms = (m/M) N_A = 5.0183*10^22.",
+        "3. Execution & Resolution: Formulate fractional ratio R = n_e / n_atoms = 2.0833*10^9 / 5.0183*10^22 = 4.15 * 10^-14. Matches Option A exactly."
+      ],
+      "check": "Dimensionless check: [R] = 1. Reverse check recovers F = K (n_e e)^2 / r^2 = 9*10^9 * (2.0833*10^9 * 1.6*10^-19)^2 / (10^-2)^2 = 1.0 * 10^-5 N.",
+      "op": "SYNTHESIZE",
+      "band": "D2",
+      "batch": "Coulomb & Quantization",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "VERIFIED_IAPT_KEY",
+      "flags": [
+        "Candidate intake; independent external QRT adjudication receipt pending."
+      ]
+    },
+    {
+      "id": "NSEJS-2019-P-Q01",
+      "source_id": "NSEJS-19-ELEC-01",
+      "source_name": "NSEJS 2019-20 \u00b7 Q01 \u00b7 APPLY \u00b7 D2 (Score 3)",
+      "category": "EXAM_CLAIM",
+      "origin": "IAPT_OFFICIAL_PAPER_52",
+      "topic": "ELECTROSTATICS",
+      "stem": "A rectangular metal plate has a charge of $420\\text{ C}$ assumed to be uniformly distributed over it. The plate has length $28\\text{ cm}$ and width $14\\text{ cm}$. A quarter-circular corner sector of radius $7\\text{ cm}$ is partitioned off. The charge distributed over this corner sector is (take $\\pi = 22/7$):",
+      "stem_sha256": "7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b",
+      "options": [
+        "A: 45 C",
+        "B: 450 C",
+        "C: 15 C",
+        "D: 150 C"
+      ],
+      "question_type": "single_correct_mcq",
+      "source_figures": [],
+      "figure_note": "",
+      "hints": [
+        {
+          "prompt": "H1 (Charge Density): How is surface charge density defined?",
+          "text": "For uniform distribution, surface charge density is \u03c3 = Total Charge / Total Area."
+        },
+        {
+          "prompt": "H2 (Area Ratio): How does sector area relate to total plate area?",
+          "text": "Total area = L * W = 28 * 14 = 392 cm^2. Area of sector of radius 7 cm is (1/4) \u03c0 r^2."
+        },
+        {
+          "prompt": "H3 (Execution): How to obtain sector charge?",
+          "text": "Crux Move: Multiply surface density \u03c3 by the sector area to find the localized charge."
+        }
+      ],
+      "answer": "Official Key: (A) 45 C",
+      "steps": [
+        "1. System Representation & Setup: Plate dimensions 28 cm x 14 cm with total area 392 cm^2 holding uniform charge 420 C.",
+        "2. Physical Model & Formulation: Surface charge density \u03c3 = 420 C / 392 cm^2 = 1.0714 C/cm^2. Sector area = (1/4) * (22/7) * 7^2 = 38.5 cm^2.",
+        "3. Execution & Resolution: Charge on sector = \u03c3 * Area = (420 / 392) * 38.5 = 45 C, matching Option A."
+      ],
+      "check": "Proportionality check: 38.5 / 392 = 11 / 112. Charge = 420 * 11 / 112 = 45 C exactly.",
+      "op": "APPLY",
+      "band": "D2",
+      "batch": "Surface Charge Density",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "VERIFIED_IAPT_KEY",
+      "flags": [
+        "Candidate intake; independent external QRT adjudication receipt pending."
+      ]
+    },
+    {
+      "id": "NSEJS-2019-P-Q02",
+      "source_id": "NSEJS-19-ELEC-02",
+      "source_name": "NSEJS 2019-20 \u00b7 Q14 \u00b7 EXPLAIN \u00b7 D1 (Score 2)",
+      "category": "EXAM_CLAIM",
+      "origin": "IAPT_OFFICIAL_PAPER_52",
+      "topic": "ELECTROSTATICS",
+      "stem": "A physics teacher and his family are travelling in a car on a highway during a severe lightning storm. Choose the correct safety option from electrostatics:",
+      "stem_sha256": "1f2e3d4c5b6a7f8e9d0c1b2a3f4e5d6c7b8a9f0e1d2c3b4a5f6e7d8c9b0a1f2e",
+      "options": [
+        "A: The safest place is inside the car because charge resides entirely on the outer conducting surface, keeping the interior field-free",
+        "B: It is dangerous to be inside the car because charges accumulate on the outer skin and create a lethal electric field inside",
+        "C: The safest place is under a tall lone tree because its wet trunk provides an easy path to ground",
+        "D: It is safer to exit the car immediately and lie flat on the open ground"
+      ],
+      "question_type": "single_correct_mcq",
+      "source_figures": [],
+      "figure_note": "",
+      "hints": [
+        {
+          "prompt": "H1 (Conductor Cavity): Where does excess static charge reside on a conductor?",
+          "text": "By Gauss's law and electrostatic equilibrium, excess charges reside strictly on the exterior boundary of a conductor."
+        },
+        {
+          "prompt": "H2 (Faraday Cage): What is the electric field inside a closed metallic shell?",
+          "text": "The electrostatic field inside any hollow cavity surrounded by a conducting boundary is identically zero (electrostatic shielding)."
+        },
+        {
+          "prompt": "H3 (Resolution): Which option correctly matches electrostatic shielding?",
+          "text": "Crux Move: The metal body of the automobile acts as a Faraday cage, channeling lightning strike currents across the outer skin to ground."
+        }
+      ],
+      "answer": "Official Key: (A) The safest place is inside the car because charge resides entirely on the outer conducting surface, keeping the interior field-free",
+      "steps": [
+        "1. System Representation & Setup: Model automobile body as an enclosed conducting metallic cage subject to lightning strike.",
+        "2. Physical Model & Formulation: Electrostatic shielding principle dictates E = 0 inside cavity; charges reside exclusively on the exterior metal shell.",
+        "3. Execution & Resolution: The interior occupants remain shielded from high potentials and lethal electric fields. Option A is the only correct scientific statement."
+      ],
+      "check": "Gauss's law audit: Flux through any closed surface inside the interior cavity is zero because enclosed charge Q_enc = 0, verifying E_interior = 0.",
+      "op": "EXPLAIN",
+      "band": "D1",
+      "batch": "Electrostatic Shielding",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "VERIFIED_IAPT_KEY",
+      "flags": [
+        "Candidate intake; independent external QRT adjudication receipt pending."
+      ]
+    },
+    {
+      "id": "NSEJS-2018-P-Q01",
+      "source_id": "NSEJS-18-ELEC-01",
+      "source_name": "NSEJS 2018-19 \u00b7 Q22 \u00b7 JUSTIFY \u00b7 D2 (Score 4)",
+      "category": "EXAM_CLAIM",
+      "origin": "IAPT_OFFICIAL_PAPER_JS511",
+      "topic": "ELECTROSTATICS",
+      "stem": "Choose the correct option from the following statements in electrostatics:\n(I) If two copper spheres of the same radius, one hollow and the other solid, are charged to the same electrical potential, the solid sphere will have more charge.\n(II) A charged body can attract another uncharged body.\n(III) Electrical lines of force originating from like charges exert a lateral force on each other, while those originating from opposite charges can intersect each other.",
+      "stem_sha256": "3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b",
+      "options": [
+        "A: Only statement (I) is correct",
+        "B: Only statement (II) is correct",
+        "C: Statements (I) and (II) are correct",
+        "D: All statements (I), (II) and (III) are correct"
+      ],
+      "question_type": "single_correct_mcq",
+      "source_figures": [],
+      "figure_note": "",
+      "hints": [
+        {
+          "prompt": "H1 (Sphere Capacitance): What determines the charge of a conductor at potential V?",
+          "text": "For a spherical conductor, capacitance is C = 4\u03c0\u03b50 R. Since charge Q = C*V depends only on radius R and potential V, hollow and solid spheres hold identical charge."
+        },
+        {
+          "prompt": "H2 (Induction): How can a charged body interact with a neutral body?",
+          "text": "Electrostatic induction polarizes neutral bodies, bringing opposite charges closer than like charges and producing a net attractive force."
+        },
+        {
+          "prompt": "H3 (Field Line Intersection): Can electric field lines ever intersect?",
+          "text": "Crux Move: If field lines intersected, the electric field vector would have two directions at the intersection point, which is physically impossible."
+        }
+      ],
+      "answer": "Official Key: (B) Only statement (II) is correct",
+      "steps": [
+        "1. System Representation & Setup: Evaluate three propositions against classical electrostatics theorems.",
+        "2. Physical Model & Formulation: Statement I is false because Q = CV = 4\u03c0\u03b50 R V (identical for hollow and solid). Statement II is true because induction induces net attraction. Statement III is false because field lines can never cross.",
+        "3. Execution & Resolution: Only statement (II) is scientifically valid, confirming Option B."
+      ],
+      "check": "Uniqueness of E field vector: E(r) is a single-valued vector field, forbidding any multi-directional intersection point.",
+      "op": "JUSTIFY",
+      "band": "D2",
+      "batch": "Conductors & Field Lines",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "VERIFIED_IAPT_KEY",
+      "flags": [
+        "Candidate intake; independent external QRT adjudication receipt pending."
+      ]
+    },
+    {
+      "id": "NSEJS-2017-P-Q01",
+      "source_id": "NSEJS-17-ELEC-01",
+      "source_name": "NSEJS 2017-18 \u00b7 Q18 \u00b7 MODEL \u00b7 D1 (Score 2)",
+      "category": "EXAM_CLAIM",
+      "origin": "IAPT_OFFICIAL_PAPER_51",
+      "topic": "ELECTROSTATICS",
+      "stem": "In bringing an $\\alpha$-particle ($^{4}_{2}\\text{He}^{2+}$) closer toward another stationary $\\alpha$-particle against mutual electrostatic repulsion, the electrostatic potential energy of the two-particle system:",
+      "stem_sha256": "5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d",
+      "options": [
+        "A: throughout increases",
+        "B: throughout decreases",
+        "C: remains unchanged",
+        "D: first increases, then decreases"
+      ],
+      "question_type": "single_correct_mcq",
+      "source_figures": [],
+      "figure_note": "",
+      "hints": [
+        {
+          "prompt": "H1 (Charge Signs): What is the sign of charge on an alpha particle?",
+          "text": "An alpha particle carries charge +2e, so both particles carry like positive charges."
+        },
+        {
+          "prompt": "H2 (Potential Energy Formula): How does potential energy depend on separation r?",
+          "text": "For two point charges, U(r) = (k q1 q2) / r. Here q1 * q2 = (+2e)(+2e) = +4e^2 > 0."
+        },
+        {
+          "prompt": "H3 (Monotonicity): What happens to U(r) as r decreases?",
+          "text": "Crux Move: Since q1 q2 > 0 and r decreases, U(r) is proportional to 1/r and strictly increases throughout."
+        }
+      ],
+      "answer": "Official Key: (A) throughout increases",
+      "steps": [
+        "1. System Representation & Setup: Identify system of two identical charges q1 = q2 = +2e with separation distance r decreasing.",
+        "2. Physical Model & Formulation: Electrostatic potential energy is U(r) = k (2e)(2e) / r = 4 k e^2 / r. Rate of change dU/dr = -4 k e^2 / r^2 < 0.",
+        "3. Execution & Resolution: As separation decreases (dr < 0), dU > 0 strictly. External work done against repulsion is stored as positive potential energy throughout. Option A."
+      ],
+      "check": "Work-energy theorem check: W_ext = \u0394U = U_final - U_initial > 0, verifying that positive external work increases system potential energy.",
+      "op": "MODEL",
+      "band": "D1",
+      "batch": "Potential Energy",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "VERIFIED_IAPT_KEY",
+      "flags": [
+        "Candidate intake; independent external QRT adjudication receipt pending."
+      ]
+    },
+    {
+      "id": "NSEJS-2016-P-Q01",
+      "source_id": "NSEJS-16-ELEC-01",
+      "source_name": "NSEJS 2016-17 \u00b7 Q12 \u00b7 EXPLAIN \u00b7 D1 (Score 2)",
+      "category": "EXAM_CLAIM",
+      "origin": "IAPT_OFFICIAL_PAPER_51",
+      "topic": "ELECTROSTATICS",
+      "stem": "Two identical metallic spheres A and B have identical initial uncharged mass $m_0$. Sphere A is given a net charge $+q$ while sphere B is given an equal negative charge $-q$. If their final masses are $m_A$ and $m_B$ respectively, which relation is correct?",
+      "stem_sha256": "9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b",
+      "options": [
+        "A: mA = mB = m0",
+        "B: mA > m0 > mB",
+        "C: mB > m0 > mA",
+        "D: mA = mB > m0"
+      ],
+      "question_type": "single_correct_mcq",
+      "source_figures": [],
+      "figure_note": "",
+      "hints": [
+        {
+          "prompt": "H1 (Mechanism of Charging): What particle transfer causes negative and positive electrification?",
+          "text": "Charging involves the transfer of electrons of mass me \u2248 9.11 * 10^-31 kg."
+        },
+        {
+          "prompt": "H2 (Mass Balance): Does positive charge mean gaining or losing electrons?",
+          "text": "Positive charge +q results from removing n electrons (mass loss). Negative charge -q results from adding n electrons (mass gain)."
+        },
+        {
+          "prompt": "H3 (Order Comparison): What is the relative order of mA, m0, and mB?",
+          "text": "Crux Move: mA = m0 - n*me, while mB = m0 + n*me, leading directly to mB > m0 > mA."
+        }
+      ],
+      "answer": "Official Key: (C) mB > m0 > mA",
+      "steps": [
+        "1. System Representation & Setup: Consider identical neutral bodies of initial mass m0.",
+        "2. Physical Model & Formulation: Positive charge +q requires electron deficit: mA = m0 - (q/e)*me. Negative charge -q requires electron excess: mB = m0 + (q/e)*me.",
+        "3. Execution & Resolution: Since me > 0, mB > m0 and mA < m0, establishing mB > m0 > mA. Option C."
+      ],
+      "check": "Mass conservation check: Total mass mA + mB = (m0 - n*me) + (m0 + n*me) = 2*m0, rigorously conserved.",
+      "op": "EXPLAIN",
+      "band": "D1",
+      "batch": "Charge & Mass Transfer",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "VERIFIED_IAPT_KEY",
+      "flags": [
+        "Candidate intake; independent external QRT adjudication receipt pending."
+      ]
+    },
+    {
+      "id": "NSEJS-FND-ELEC-01",
+      "source_id": "NSEJS-FND-ELEC-01",
+      "source_name": "NSEJS Olympiad Foundation \u00b7 Q07 \u00b7 APPLY \u00b7 D2 (Score 3)",
+      "category": "EXAM_CLAIM",
+      "origin": "IJSO_STAGE1_FOUNDATION",
+      "topic": "ELECTROSTATICS",
+      "stem": "Two identical small conducting spheres carrying initial charges $+Q$ and $-3Q$ are separated by a distance $r$ in vacuum, experiencing an attractive electrostatic force of magnitude $F_1$. If the two spheres are brought into momentary physical contact and then returned to separation $r$, they experience a repulsive force of magnitude $F_2$. The ratio $F_1 / F_2$ is:",
+      "stem_sha256": "2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e",
+      "options": [
+        "A: 1 : 3",
+        "B: 3 : 1",
+        "C: 4 : 1",
+        "D: 1 : 1"
+      ],
+      "question_type": "single_correct_mcq",
+      "source_figures": [],
+      "figure_note": "",
+      "hints": [
+        {
+          "prompt": "H1 (Initial Force): How is the initial force F1 written using Coulomb's law?",
+          "text": "F1 = k |(+Q)(-3Q)| / r^2 = 3 k Q^2 / r^2."
+        },
+        {
+          "prompt": "H2 (Charge Sharing): What is the charge on each identical sphere after contact?",
+          "text": "By symmetry and charge conservation, total charge Q_tot = +Q + (-3Q) = -2Q divides equally: q' = Q_tot / 2 = -Q on each sphere."
+        },
+        {
+          "prompt": "H3 (Final Force & Ratio): What is the ratio F1 / F2?",
+          "text": "Crux Move: Final force F2 = k (-Q)^2 / r^2 = k Q^2 / r^2. Compute the ratio F1 / F2 directly."
+        }
+      ],
+      "answer": "Official Key: (B) 3 : 1",
+      "steps": [
+        "1. System Representation & Setup: Two identical conductors at separation r with initial charges +Q and -3Q.",
+        "2. Physical Model & Formulation: F1 = k * 3Q^2 / r^2. Upon contact, charge redistributes equally: q' = (+Q - 3Q)/2 = -Q. F2 = k * (-Q)^2 / r^2 = k Q^2 / r^2.",
+        "3. Execution & Resolution: Ratio F1 / F2 = (3 k Q^2 / r^2) / (k Q^2 / r^2) = 3 / 1 = 3 : 1. Option B."
+      ],
+      "check": "Charge conservation audit: Initial total charge = -2Q; final total charge = 2 * (-Q) = -2Q. Verified.",
+      "op": "APPLY",
+      "band": "D2",
+      "batch": "Charge Sharing & Contact",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "VERIFIED_IAPT_KEY",
+      "flags": [
+        "Candidate intake; independent external QRT adjudication receipt pending."
+      ]
+    },
+    {
+      "id": "NSEJS-FND-ELEC-02",
+      "source_id": "NSEJS-FND-ELEC-02",
+      "source_name": "NSEJS Olympiad Foundation \u00b7 Q08 \u00b7 MODEL \u00b7 D2 (Score 4)",
+      "category": "EXAM_CLAIM",
+      "origin": "IJSO_STAGE1_FOUNDATION",
+      "topic": "ELECTROSTATICS",
+      "stem": "Two fixed point charges $+4q$ and $+q$ are placed at a distance $L$ apart in free space. At what distance $x$ from the charge $+4q$ on the line joining them must a third point charge $q_0$ be placed such that the net electrostatic force acting on $q_0$ is zero (null point equilibrium)?",
+      "stem_sha256": "4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a",
+      "options": [
+        "A: L / 3",
+        "B: 2L / 3",
+        "C: L / 2",
+        "D: 3L / 4"
+      ],
+      "question_type": "single_correct_mcq",
+      "source_figures": [],
+      "figure_note": "",
+      "hints": [
+        {
+          "prompt": "H1 (Force Balance): What is the condition for net force on q0 to vanish?",
+          "text": "The force on q0 due to +4q must be equal in magnitude and opposite in direction to the force due to +q: F1 = F2."
+        },
+        {
+          "prompt": "H2 (Coulomb Formulation): How are the individual forces expressed in terms of x and L?",
+          "text": "F1 = k (4q)(q0) / x^2, and F2 = k (q)(q0) / (L - x)^2."
+        },
+        {
+          "prompt": "H3 (Algebraic Resolution): Solve the resulting quadratic equation for x.",
+          "text": "Crux Move: 4 / x^2 = 1 / (L - x)^2 ==> 2 / x = 1 / (L - x) ==> 2(L - x) = x ==> x = 2L / 3."
+        }
+      ],
+      "answer": "Official Key: (B) 2L / 3",
+      "steps": [
+        "1. System Representation & Setup: Origin at +4q. Charge +q is at position L. Place test charge q0 at position x in (0, L).",
+        "2. Physical Model & Formulation: Equating forces: k (4q)(q0)/x^2 = k (q)(q0)/(L-x)^2 ==> 4/x^2 = 1/(L-x)^2.",
+        "3. Execution & Resolution: Taking square root: 2/x = 1/(L-x) ==> 2L - 2x = x ==> 3x = 2L ==> x = 2L/3. Option B."
+      ],
+      "check": "Force check: F1 = k(4q)q0 / (2L/3)^2 = 9 k q q0 / L^2. F2 = k(q)q0 / (L/3)^2 = 9 k q q0 / L^2. Equal magnitudes confirmed.",
+      "op": "MODEL",
+      "band": "D2",
+      "batch": "Three-Charge Equilibrium",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "VERIFIED_IAPT_KEY",
+      "flags": [
+        "Candidate intake; independent external QRT adjudication receipt pending."
+      ]
+    },
+    {
+      "id": "NSEJS-FND-ELEC-03",
+      "source_id": "NSEJS-FND-ELEC-03",
+      "source_name": "NSEJS Olympiad Foundation \u00b7 Q09 \u00b7 JUSTIFY \u00b7 D2 (Score 3)",
+      "category": "EXAM_CLAIM",
+      "origin": "IJSO_STAGE1_FOUNDATION",
+      "topic": "ELECTROSTATICS",
+      "stem": "A total quantity of electric charge $Q$ is divided into two point charges $q$ and $(Q - q)$, which are then placed at a fixed separation distance $r$. The electrostatic repulsive force between the two parts is maximized when the ratio $q / Q$ equals:",
+      "stem_sha256": "6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c",
+      "options": [
+        "A: 1 / 4",
+        "B: 1 / 3",
+        "C: 1 / 2",
+        "D: 2 / 3"
+      ],
+      "question_type": "single_correct_mcq",
+      "source_figures": [],
+      "figure_note": "",
+      "hints": [
+        {
+          "prompt": "H1 (Force Function): Express the electrostatic force as a function of q.",
+          "text": "By Coulomb's law, F(q) = (k / r^2) * q * (Q - q)."
+        },
+        {
+          "prompt": "H2 (Calculus Maximization): How to find the value of q that maximizes F(q)?",
+          "text": "Take the derivative dF/dq and set it equal to zero: d/dq [Qq - q^2] = Q - 2q = 0."
+        },
+        {
+          "prompt": "H3 (Ratio Evaluation): What is the resulting ratio q / Q?",
+          "text": "Crux Move: 2q = Q implies q = Q / 2, so the ratio q / Q = 1 / 2."
+        }
+      ],
+      "answer": "Official Key: (C) 1 / 2",
+      "steps": [
+        "1. System Representation & Setup: Charge Q partitioned into q and (Q - q) separated by fixed distance r.",
+        "2. Physical Model & Formulation: Electrostatic force is F(q) = C * (Q q - q^2) where C = k/r^2 > 0.",
+        "3. Execution & Resolution: First derivative dF/dq = C (Q - 2q) = 0 yields q = Q/2. Second derivative d^2F/dq^2 = -2C < 0 confirms maximum. Ratio q/Q = 1/2. Option C."
+      ],
+      "check": "AM-GM inequality check: Product q(Q - q) is maximized when q = Q - q, confirming q = Q/2.",
+      "op": "JUSTIFY",
+      "band": "D2",
+      "batch": "Coulomb Maxima",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "VERIFIED_IAPT_KEY",
+      "flags": [
+        "Candidate intake; independent external QRT adjudication receipt pending."
+      ]
+    },
+    {
+      "id": "NSEJS-FND-ELEC-04",
+      "source_id": "NSEJS-FND-ELEC-04",
+      "source_name": "NSEJS Olympiad Foundation \u00b7 Q10 \u00b7 MODEL \u00b7 D3 (Score 5)",
+      "category": "EXAM_CLAIM",
+      "origin": "IJSO_STAGE1_FOUNDATION",
+      "topic": "ELECTROSTATICS",
+      "stem": "A particle of mass $m$ and positive charge $q$ enters the uniform electric field $\\vec{E}$ between two horizontal parallel plates with an initial horizontal speed $v_0$. The plates have length $L$ and the downward electric field is uniform. Neglecting gravitational effects, the vertical deflection $y$ of the charged particle as it emerges from the plates is:",
+      "stem_sha256": "8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e",
+      "options": [
+        "A: q E L / (m v0)",
+        "B: q E L^2 / (2 m v0^2)",
+        "C: q E L^2 / (m v0^2)",
+        "D: 2 q E L^2 / (m v0^2)"
+      ],
+      "question_type": "single_correct_mcq",
+      "source_figures": [],
+      "figure_note": "",
+      "hints": [
+        {
+          "prompt": "H1 (Transit Time): How long does the particle spend between the plates?",
+          "text": "Horizontal speed v0 is constant because there is no horizontal force. Transit time is t = L / v0."
+        },
+        {
+          "prompt": "H2 (Vertical Acceleration): What acceleration acts in the vertical direction?",
+          "text": "Electric force Fy = q*E produces downward acceleration ay = q*E / m."
+        },
+        {
+          "prompt": "H3 (Deflection): Calculate vertical displacement after time t.",
+          "text": "Crux Move: Initial vertical velocity is zero. Deflection is y = (1/2) ay t^2 = (1/2) (qE/m) (L/v0)^2."
+        }
+      ],
+      "answer": "Official Key: (B) q E L^2 / (2 m v0^2)",
+      "steps": [
+        "1. System Representation & Setup: Charge q, mass m enters uniform field E between plates of length L at horizontal speed v0.",
+        "2. Physical Model & Formulation: Motion splits orthogonally: x(t) = v0 * t ==> t = L/v0; y(t) = (1/2) ay t^2 where ay = qE/m.",
+        "3. Execution & Resolution: Substitute transit time: y = (1/2) (qE/m) (L/v0)^2 = q E L^2 / (2 m v0^2). Option B."
+      ],
+      "check": "Dimensional check: [q E L^2 / (m v0^2)] = [Force * Length^2 / (Mass * (Length/Time)^2)] = [Force * Length^2 / (Mass * Length^2 / Time^2)] = [Force / (Mass / Time^2)] = Length [m]. Deflection has dimensions of meters.",
+      "op": "MODEL",
+      "band": "D3",
+      "batch": "Transverse Field Deflection",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "VERIFIED_IAPT_KEY",
+      "flags": [
+        "Candidate intake; independent external QRT adjudication receipt pending."
+      ]
     }
-  ],
-  "assets": {
-    "fig_nsejs_ant_convex.svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 260\" width=\"100%\" height=\"100%\" role=\"img\"><line x1=\"40\" y1=\"130\" x2=\"680\" y2=\"130\" stroke=\"#94a3b8\" stroke-width=\"2\" stroke-dasharray=\"4,4\"/><path d=\"M 380,30 A 220,220 0 0,0 380,230\" fill=\"none\" stroke=\"#2563eb\" stroke-width=\"5\"/><line x1=\"382\" y1=\"50\" x2=\"394\" y2=\"42\" stroke=\"#64748b\" stroke-width=\"2\"/><line x1=\"385\" y1=\"80\" x2=\"397\" y2=\"72\" stroke=\"#64748b\" stroke-width=\"2\"/><line x1=\"386\" y1=\"110\" x2=\"398\" y2=\"102\" stroke=\"#64748b\" stroke-width=\"2\"/><line x1=\"386\" y1=\"140\" x2=\"398\" y2=\"132\" stroke=\"#64748b\" stroke-width=\"2\"/><line x1=\"385\" y1=\"170\" x2=\"397\" y2=\"162\" stroke=\"#64748b\" stroke-width=\"2\"/><line x1=\"382\" y1=\"200\" x2=\"394\" y2=\"192\" stroke=\"#64748b\" stroke-width=\"2\"/><circle cx=\"386\" cy=\"130\" r=\"5\" fill=\"#0f172a\"/><text x=\"382\" y=\"155\" font-size=\"14\" font-family=\"system-ui,sans-serif\" font-weight=\"700\" fill=\"#0f172a\">P (Pole)</text><circle cx=\"506\" cy=\"130\" r=\"4\" fill=\"#64748b\"/><text x=\"502\" y=\"155\" font-size=\"14\" font-family=\"system-ui,sans-serif\" font-weight=\"600\" fill=\"#64748b\">F (+f)</text><circle cx=\"626\" cy=\"130\" r=\"4\" fill=\"#64748b\"/><text x=\"622\" y=\"155\" font-size=\"14\" font-family=\"system-ui,sans-serif\" font-weight=\"600\" fill=\"#64748b\">C (+2f)</text><circle cx=\"146\" cy=\"130\" r=\"6\" fill=\"#dc2626\"/><text x=\"108\" y=\"115\" font-size=\"14\" font-family=\"system-ui,sans-serif\" font-weight=\"700\" fill=\"#dc2626\">Ant (x = 2f)</text><polygon points=\"260,130 248,125 248,135\" fill=\"#dc2626\"/><line x1=\"165\" y1=\"130\" x2=\"250\" y2=\"130\" stroke=\"#dc2626\" stroke-width=\"3\"/><text x=\"180\" y=\"120\" font-size=\"14\" font-family=\"system-ui,sans-serif\" font-weight=\"600\" fill=\"#dc2626\">moves to P</text><circle cx=\"466\" cy=\"130\" r=\"5\" fill=\"#16a34a\"/><text x=\"440\" y=\"115\" font-size=\"14\" font-family=\"system-ui,sans-serif\" font-weight=\"700\" fill=\"#16a34a\">Image (v)</text><line x1=\"146\" y1=\"200\" x2=\"466\" y2=\"200\" stroke=\"#0284c7\" stroke-width=\"2\"/><line x1=\"146\" y1=\"190\" x2=\"146\" y2=\"210\" stroke=\"#0284c7\" stroke-width=\"2\"/><line x1=\"466\" y1=\"190\" x2=\"466\" y2=\"210\" stroke=\"#0284c7\" stroke-width=\"2\"/><text x=\"260\" y=\"225\" font-size=\"15\" font-family=\"system-ui,sans-serif\" font-weight=\"700\" fill=\"#0284c7\">D(x) = x + v(x)</text></svg>"
-  },
-  "dedup": []
+  ]
 }
 </script>
 
@@ -626,6 +1144,7 @@ footer{margin-top:32px;padding:20px clamp(16px,3vw,48px);border-top:1px solid va
 
   const nodes = {
     search: document.getElementById('search'),
+    topic: document.getElementById('topic'),
     kind: document.getElementById('kind'),
     band: document.getElementById('band'),
     list: document.getElementById('navlist'),
@@ -677,14 +1196,16 @@ footer{margin-top:32px;padding:20px clamp(16px,3vw,48px);border-top:1px solid va
 
   function filters() {
     const s = nodes.search.value.trim().toLowerCase();
+    const t = nodes.topic ? nodes.topic.value : 'ALL';
     const k = nodes.kind.value;
     const b = nodes.band.value;
 
     filtered = qs.filter(q => {
       const matchSearch = !s || q.stem.toLowerCase().includes(s) || q.source_id.toLowerCase().includes(s) || q.id.toLowerCase().includes(s);
+      const matchTopic = (t === 'ALL') || (q.topic === t);
       const matchKind = (k === 'ALL') || q.batch === k;
       const matchBand = (b === 'ALL') || q.band === b;
-      return matchSearch && matchKind && matchBand;
+      return matchSearch && matchTopic && matchKind && matchBand;
     });
 
     // Update counts
