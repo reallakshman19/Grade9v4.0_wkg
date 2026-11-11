@@ -296,6 +296,48 @@ def test_governance_fail_closed_holding_status(bank, module_html):
     assert "No academic approval inferred from software validation." in module_html
 
 
+def test_math_algebra_qrt_labelling_integrity():
+    """Verify strict QRT cognitive demand rubric and labelling across all 10 algebra items."""
+    questions_file = MATH_DIR / "questions.json"
+    assert questions_file.exists()
+    questions = json.loads(questions_file.read_text(encoding="utf-8"))
+    assert len(questions) == 10
+
+    factors = (
+        "concept_model_selection",
+        "representation_translation",
+        "reasoning_chain_length",
+        "algebra_computational_load",
+        "trap_exception_sensitivity"
+    )
+
+    for q in questions:
+        assert "score" in q and isinstance(q["score"], int)
+        assert "components" in q and isinstance(q["components"], dict)
+        comps = q["components"]
+        for f in factors:
+            assert f in comps, f"Missing factor {f} in {q['id']}"
+            assert comps[f] in (0, 1, 2), f"Component {f} out of bounds in {q['id']}"
+        assert sum(comps.values()) == q["score"], f"Sum of components must equal score in {q['id']}"
+
+        # Band check
+        score = q["score"]
+        if score <= 2:
+            assert q["band"] == "D1"
+        elif score <= 5:
+            assert q["band"] == "D2"
+        elif score <= 7:
+            assert q["band"] == "D3"
+        else:
+            assert q["band"] == "D4"
+
+        # QRT refs
+        assert q.get("crux_move_ref", "").startswith("MATH-OLY-POLY-")
+        assert q.get("family_ref") == "MATH-ALGEBRA-POLYNOMIALS"
+        assert q.get("primary_capability_ref", "").startswith("MATH-ALG-")
+        assert q.get("op") in CANONICAL_OPERATIONS
+
+
 # ---------------------------------------------------------------------------
 # 6. Question Status Preview Page Validation
 # ---------------------------------------------------------------------------
@@ -313,11 +355,11 @@ def test_preview_question_status_page_mathematics():
     questions = data["questions"]
     assert len(questions) >= 60, f"Expected at least 60 unified questions, found {len(questions)}"
 
-    math_questions = [q for q in questions if "MATH" in q.get("source_id", "")]
-    assert len(math_questions) == 10, f"Expected 10 mathematics questions, found {len(math_questions)}"
+    poly_questions = [q for q in questions if "POLY" in q.get("source_id", "")]
+    assert len(poly_questions) == 10, f"Expected 10 algebra & polynomial questions, found {len(poly_questions)}"
 
     # Check each math question's structure
-    for q in math_questions:
+    for q in poly_questions:
         assert "id" in q and q["id"].startswith("MATH-")
         assert "source_id" in q
         assert "stem" in q and len(q["stem"]) > 10
