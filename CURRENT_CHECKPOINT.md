@@ -1,25 +1,45 @@
 # Oracle Checkpoint — 11 November 2026
 
-**Timestamp:** 2026-11-11T12:20:00+04:00  
-**Operating Sequence:** **Physics (100% COMPLETE) $\to$ Mathematics (Topic 1 COMPLETE) $\to$ Chemistry $\to$ Biology**  
-**Active Branch:** `feat/math-algebra-polynomials-intake-01` (branched from `feat/nsejs-mechanics-intake-module-01`)  
+**Timestamp:** 2026-11-11T15:38:00+04:00  
+**Operating Sequence:** **Physics (100% COMPLETE: Core 2 + Core 1A/1B) $\to$ Mathematics (Topic 1 COMPLETE) $\to$ Chemistry $\to$ Biology**  
+**Active Branch:** `feat/math-algebra-polynomials-intake-01`  
 **Authority Invariant:** Rule 13 in `AGENTS.md` (*No academic approval inferred from software validation. Green CI means automatic tests passed; it never means student release is authorized.*)
 
 ---
 
-## 1. Subject Track Progress Overview
+## 1. Subject Track & Curriculum Status Overview
 
 | Subject Track | Topics Ingested | Ingested Question Count | Test Suite Status | Track Status |
 | :--- | :--- | :---: | :---: | :---: |
-| **Track 1: Physics** | Ray Optics, Electrostatics, Circuits, Magnetism & EMI, Mechanics | **50 items** | 5 suites, 76 passed | **100% COMPLETE** |
+| **Track 1: Physics** | Ray Optics, Electrostatics, Circuits, Magnetism & EMI, Mechanics | **50 items** | 10 suites (Core 2 + Core 1), 106 passed | **100% COMPLETE (Full Loop)** |
 | **Track 2: Mathematics** | Topic 1: Algebra & Polynomials | **10 items** | 1 suite, 19 passed | **IN PROGRESS (Slice 1 Complete)** |
 | **Track 3: Chemistry** | Matter & Chemical Substances | 0 items | — | Scheduled after Mathematics |
 | **Track 4: Biology** | Living World, Life Processes, Environment, Resources, Food | 0 items | — | Final phase |
-| **Total Unified Bank** | **6 Distinct Subject/Topic Modules** | **60 items** | **6 suites, 95 passed** | **Active Pipeline** |
+| **Total Unified Bank** | **6 Distinct Subject/Topic Modules** | **60 items** | **11 suites, 125 passed** | **Active Pipeline** |
 
 ---
 
-## 2. Mathematics Track: Topic 1 (Algebra & Polynomials) Delivery
+## 2. Physics Track: Full Core 1A & Core 1B Implementation (All 5 Modules)
+
+Every Physics topic now possesses a complete, mechanically validated learning journey:
+- **Core 1A Teaching Construction (`core1a_construction.json`):** Declared conventions first, entry assumptions, inferential jump, canonical 4-step teaching path (`REPRESENT`, `MODEL`/`SYNTHESIZE`, `APPLY`, `JUSTIFY`), contrasting worked anchor, misconception diagnostic and repair, and independent exit check.
+- **Core 1B Phenomenological Reconstruction (`core1b_reconstruction.json`):** 6-stage cycle (Predict, Attempt, Reconstruct, Diagnose, Repair, Boundary test) with strict $(Y, Z, W)$ cognitive separation and 3 progressive hint tiers (H1–H3) protecting $W$.
+- **Bidirectional B1–B7 Witness Binder (`witness.json`):** Strict cryptographic SHA-256 hash binding of Core 1A and Core 1B artifacts. Verified fail-closed by `grade9qa.bridge_witness.inspect_witness` (all 7 gates report `HOLD`, 0 `FAIL`, 0 schema errors).
+- **Interactive Standalone Learning Journey (`learning_journey.html`):** Tablet-ready, zero-iframe gateway navigating the student loop: Core 2 (Original Challenge) $\leftrightarrow$ Core 1A (Conceptual Construction) $\leftrightarrow$ Core 1B (Fresh Reconstruction) with state preservation, responsive W3C SVGs (root `width="100%" height="100%"`, font-sizes $\ge 14\text{px}$), and commitment-first protected derivations.
+- **Dedicated Core 1 Test Suites (`tests/test_nsejs_*_core1.py`):** 6 comprehensive tests per module verifying schema, $(Y, Z, W)$ separation, B1–B7 witness, 7 Anti-Patterns, exact mathematical physics, and governance holding invariants.
+
+| Module | Anchor Item | Cognitive Demand & Crux | Core 1A Construction ID | Core 2 Tests | Core 1 Tests | Total Tests |
+| :--- | :--- | :---: | :--- | :---: | :---: | :---: |
+| **1. Ray Optics** | `NSEJS-2023-P-Q01` | `MODEL` (D2 · 4) · `M2` | `PHYS-OPT-C-CONVEX-DYNAMICS-01` | 13 passed | 6 passed | 19 passed |
+| **2. Electrostatics** | `NSEJS-2024-P-Q06` | `SYNTHESIZE` (D2 · 4) · `M2` | `PHYS-ELEC-C-COULOMB-QUANTIZATION-01` | 15 passed | 6 passed | 21 passed |
+| **3. Current Electricity** | `NSEJS-2024-P-Q08` | `MODEL` (D2 · 4) · `M2` | `PHYS-CIRC-C-TETRAHEDRON-SYMMETRY-01` | 14 passed | 6 passed | 20 passed |
+| **4. Magnetism & EMI** | `NSEJS-2024-P-Q28` | `MODEL` (D2 · 4) · `M2` | `PHYS-MAG-C-LENZ-LAW-INDUCED-CURRENT-01` | 15 passed | 6 passed | 21 passed |
+| **5. Mechanics & Dynamics** | `NSEJS-2024-P-Q46` | `MODEL` (D2 · 4) · `M2` | `PHYS-MECH-C-DECOUPLED-KINEMATICS-01` | 19 passed | 6 passed | 25 passed |
+| **Total Physics Track** | **5 Anchor Exemplars / 50 Authentic Items** | — | **5 Core 1A / 5 Core 1B Modules** | **76 passed** | **30 passed** | **106 passed in 0.29s** |
+
+---
+
+## 3. Mathematics Track: Topic 1 (Algebra & Polynomials)
 
 - **Anchor Item:** `MATH-OLY-POLY-01`  
   - **Stem:** Monic degree-4 polynomial $P(x)$ with $P(1) = 1, P(2) = 4, P(3) = 9$. Evaluates invariant sum $P(4) + P(0) = 40$.
@@ -41,43 +61,31 @@
 
 ---
 
-## 3. Seven Anti-Patterns Quality Gate Compliance
+## 4. Seven Anti-Patterns Quality Gate Compliance
 
-All 60 items across 6 topic modules strictly comply:
-- **Gate 1 (Zero Ghost Text):** 0 occurrences of `"2. Connection:"` or `"Connection:"`.
+Strict compliance verified across all modules and test harnesses:
+- **Gate 1 (Zero Ghost Text):** 0 occurrences of `"2. Connection:"` or `"Connection:"`. Section headers strictly adhere to `1. System Representation & Setup:`, `2. Physical Model & Formulation:`, `3. Execution & Resolution:`.
 - **Gate 2 (Dynamic Crux Move):** Crux references bound to primary cognitive operation.
 - **Gate 3 (Rubric Sum Bounds):** $c_i \in \{0, 1, 2\}$ with $\sum c_i = \text{score}$.
-- **Gate 4 (Canonical Verbs Only):** Only canonical 7 verbs used.
-- **Gate 5 (W3C SVG Typography):** `font-size >= 14px` on all text, responsive viewBox.
-- **Gate 6 (Responsive Mobile Cascade):** `max-width 900px`, 0px horizontal overflow.
+- **Gate 4 (Canonical Verbs Only):** Primary operations and teaching steps strictly use $\{ \text{RETRIEVE}, \text{EXPLAIN}, \text{APPLY}, \text{MODEL}, \text{REPRESENT}, \text{SYNTHESIZE}, \text{JUSTIFY} \}$.
+- **Gate 5 (W3C SVG Typography):** `font-size >= 14px` on all text, responsive viewBox, root `width="100%" height="100%"`.
+- **Gate 6 (Responsive Mobile Cascade):** `max-width 900px`, 0px horizontal scroll overflow on 375px viewport.
 - **Gate 7 (Commitment-First Protected Derivations):** `display: none;` until candidate answer is committed.
-
----
-
-## 4. Multi-Topic Explorer Integration
-
-[`preview/question-status.html`](file:///D:/CodeD/grade9v4/preview/question-status.html) now hosts **60 authentic items**:
-- All 50 Physics items (`Optics`, `Electrostatics`, `Current Electricity`, `Magnetism & EMI`, `Mechanics`)
-- 10 Mathematics items (`Algebra & Polynomials`)
-- Filterable by Topic and Subtopic, searchable by stem/crux.
 
 ---
 
 ## 5. Verification Results
 
 ```powershell
-$env:PYTHONPATH = "$PWD\src;$PWD\workspace\test-tools"
-python -m pytest -q -p no:cacheprovider tests/test_nsejs_optics.py tests/test_nsejs_electrostatics.py tests/test_nsejs_circuits.py tests/test_nsejs_magnetism.py tests/test_nsejs_mechanics.py tests/test_math_algebra.py
+python -c "import sys, pathlib; root = pathlib.Path('.'); sys.path.insert(0, str(root / 'workspace/test-tools')); sys.path.insert(0, str(root / 'src')); import pytest; sys.exit(pytest.main(['-q', '-p', 'no:cacheprovider'] + [str(f) for f in sorted(root.glob('tests/test_nsejs_*.py'))] + ['tests/test_math_algebra.py']))"
 ```
-**Result:** `95 passed in 0.46s`  
-Full pytest: `380 passed, 2 pre-existing Windows OS symlink privilege errors in 3.23s`
+**Topic Suites Result:** `125 passed in 0.32s` (106 Physics + 19 Mathematics)  
+**Full Repository Pytest:** `410 passed, 2 pre-existing Windows OS symlink privilege errors (WinError 1314) in 2.70s`
 
 ---
 
 ## 6. Next Steps for Mathematics Track
 
-Remaining Mathematics foundational topics to intake:
-1. **Topic 2: Number Theory & Divisibility** (Primes, GCD/LCM, modular congruence, Diophantine equations).
-2. **Topic 3: Geometry & Mensuration** (Circle theorems, cyclic quadrilaterals, triangle concurrency, area ratios).
-3. **Topic 4: Combinatorics & Counting** (Permutations/combinations, Pigeonhole Principle, double counting).
-4. **Transition to Chemistry Track** (Matter & Chemical Substances) upon Mathematics completion.
+1. **Mathematics Track Phase 2:** Intake Topic 2 (Number Theory & Divisibility) and Topic 3 (Geometry & Mensuration).
+2. **Core 1A / 1B for Mathematics Track:** Author corresponding learning journeys for Olympiad Mathematics algebra anchor `MATH-OLY-POLY-01`.
+3. **Transition to Chemistry Track:** (Matter, Chemical Reactions, Atomic Structure) following Mathematics completion.
