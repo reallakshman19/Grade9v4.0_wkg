@@ -120,6 +120,14 @@ def embed(template: str, data: dict) -> str:
     )
     if re.search(r'\b\d+\s+authentic\s+(?:items|questions)\b', out, re.I):
         raise ValueError('UNVERIFIED_ORIGINAL_CLAIM_REMAINS')
+    # Presentation-only: source data is unchanged and output remains private.
+    marker = '<style id="g9-reader-12p7-layout">'
+    if out.count('</head>') != 1 or marker in out:
+        raise ValueError('LAYOUT_HEAD_INVALID_OR_DUPLICATE')
+    css = Path(__file__).with_name('private_reader_12p7.css').read_text(encoding='utf-8')
+    if not css.strip() or '</style' in css.lower():
+        raise ValueError('LAYOUT_STYLESHEET_INVALID')
+    out = out.replace('</head>', marker + '\n' + css + '</style>\n</head>', 1)
     return out
 
 
