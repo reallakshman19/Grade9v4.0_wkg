@@ -68,7 +68,11 @@ def check_bank(root: Path) -> dict:
             if "75 cm" not in stem or "12 cm" not in stem:
                 findings.append("Q57_ORIGINAL_NUMERIC_ANCHORS_DIFFER")
             # Numeric anchors alone do not authenticate the original figure.
-            findings.append("Q57_ORIGINAL_FIGURE_AND_BYTE_DIGEST_NOT_VERIFIED")
+            # The official paper PDF was hashed in CI, but its optical
+            # diagram has not been reproduced as an authenticated source figure.
+            if not q.get("source_figures"):
+                findings.append("Q57_ORIGINAL_SOURCE_FIGURE_NOT_STAGED")
+            findings.append("Q57_CANDIDATE_FIGURE_FIDELITY_NOT_VERIFIED")
         else:
             findings.append("Q56_ORIGINAL_STEM_OPTIONS_NOT_FULLY_ATTESTED")
         if findings and any(x.startswith(("P0_", "OPTIONS_NOT_", "IAPT_", "Q57_ORIGINAL_NUMERIC"))
@@ -80,9 +84,21 @@ def check_bank(root: Path) -> dict:
                       "findings": sorted(set(findings)),
                       "key_letters_matched": submitted == expected,
                       "academic_admission": "HOLD"})
+    custody_manifest = ROOT / "docs/nsejs/official-2024-code51-raw-byte-custody-r1.json"
+    official_hash = None
+    if custody_manifest.is_file():
+        try:
+            meta = json.loads(custody_manifest.read_text(encoding="utf-8"))
+            paper = next(d for d in meta.get("documents", [])
+                         if d.get("id") == "IAPT_NSEJS_2024_PAPER_CODE51")
+            if paper.get("raw_byte_retrieval_status") == "VERIFIED_BY_EXACT_HEAD_CI":
+                official_hash = paper.get("sha256")
+        except (OSError, ValueError, StopIteration):
+            pass
     return {
         "schema": "grade9-nsejs-2024-code51-spotcheck/v1",
         "official_paper_code": 51,
+        "official_paper_raw_sha256_verified": official_hash,
         "evidence_note": "IAPT 2024 Code-51 paper & final key visually/textually inspected; raw PDF bytes not imported",
         "code51_q20": "DROP",
         "code51_a2_format": "MULTIPLE_CORRECT",
