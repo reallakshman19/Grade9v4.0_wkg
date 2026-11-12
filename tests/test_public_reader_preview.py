@@ -16,7 +16,7 @@ def test_preview_contains_only_public_allowlist(tmp_path):
     assert receipt["academic_approval"] == "HOLD"
     assert receipt["candidate_50_record_published"] is False
     actual = {p.relative_to(out).as_posix() for p in out.rglob("*") if p.is_file()}
-    assert actual == {".nojekyll", "index.html", "PUBLIC_PREVIEW_MANIFEST.json", *PAGES}
+    assert actual == {"index.html", "PUBLIC_PREVIEW_MANIFEST.json", *PAGES}
     home = (out / "index.html").read_text()
     assert "Not an exam or academic release" in home
     assert "Synthetic question reader" in home
