@@ -149,7 +149,8 @@ def test_bridge_owner_revision_and_task_gate(lesson):
     bridge = {"question_uid":lesson["source"]["question_uid"],
               "content_revision_sha256":lesson["source"]["content_revision_sha256"],
               "lesson_id":lesson["lesson"]["id"],
-              "source_return":{"content_revision_sha256":lesson["source"]["content_revision_sha256"]},
+              "source_return":{"question_uid":lesson["source"]["question_uid"],
+                               "content_revision_sha256":lesson["source"]["content_revision_sha256"]},
               "task_a_id":lesson["tasks"]["A"]["id"],
               "task_b_id":lesson["tasks"]["B"]["id"]}
     assert validate(lesson, bridge)["academic_admission"] == "HOLD"
@@ -163,3 +164,72 @@ def test_subject_neutral_shape(subject, lesson):
     lesson["source"]["question_uid"] = "g9:" + subject + ":G9-SYN-UNIT-001"
     lesson["source_return"]["question_uid"] = lesson["source"]["question_uid"]
     assert validate(lesson)["source_uid"].startswith("g9:" + subject + ":")
+
+
+def bridge_manifest(lesson):
+    """Versioned source-bridge shape used by Wave 1 Agent 4, NOT an exam admission."""
+    row = {
+        "question_uid": lesson["source"]["question_uid"],
+        "content_revision_sha256": lesson["source"]["content_revision_sha256"],
+        "lesson_id": lesson["lesson"]["id"],
+        "lesson_revision": lesson["lesson"]["revision"],
+        "lesson_status": "READY_FOR_TECHNICAL_PREVIEW",
+        "subject": lesson["subject"],
+        "topic": lesson["lesson"]["topic"],
+        "origin": lesson["source"]["origin"],
+        "task_a_id": lesson["tasks"]["A"]["id"],
+        "task_b_id": lesson["tasks"]["B"]["id"],
+        "transfer_id": lesson["lesson"]["id"] + "-BOUNDARY",
+        "source_return": {
+            "question_uid": lesson["source"]["question_uid"],
+            "content_revision_sha256": lesson["source"]["content_revision_sha256"],
+        },
+    }
+    return {"schema": "grade9-nsejs-source-learning-bridge/v1",
+            "academic_admission": "HOLD", "route_status": "TECHNICAL_PREVIEW",
+            "routes": [row]}
+
+
+def test_actual_agent_four_bridge_manifest_shape_is_supported(lesson):
+    bridge = bridge_manifest(lesson)
+    result = validate(lesson, bridge)
+    assert result["academic_admission"] == "HOLD"
+    assert result["storage_prefix"].startswith("g9:nsejs:wpe-parity:v1:")
+
+
+def test_unbuilt_agent_four_mapping_cannot_unlock_runtime(lesson):
+    bridge = bridge_manifest(lesson)
+    bridge["route_status"] = "UNBUILT_TECHNICAL_PILOT"
+    bridge["routes"][0]["lesson_status"] = "PENDING_WAVE2"
+    bridge["routes"][0]["lesson_revision"] = "UNBUILT"
+    fails(lesson, "SOURCE_BRIDGE_LESSON_NOT_READY", bridge)
+
+
+@pytest.mark.parametrize("field,value,error", [
+    ("lesson_id", "WRONG-LESSON", "SOURCE_BRIDGE_REVISION_OR_OWNER_MISMATCH"),
+    ("content_revision_sha256", "f"*64, "SOURCE_BRIDGE_REVISION_OR_OWNER_MISMATCH"),
+    ("subject", "CHEMISTRY", "SOURCE_BRIDGE_SUBJECT_TOPIC_OR_PROVENANCE_MISMATCH"),
+    ("topic", "OPTICS", "SOURCE_BRIDGE_SUBJECT_TOPIC_OR_PROVENANCE_MISMATCH"),
+    ("origin", "OFFICIAL_EXAM", "SOURCE_BRIDGE_SUBJECT_TOPIC_OR_PROVENANCE_MISMATCH"),
+    ("task_b_id", "WRONG-TASK", "BRIDGE_TASK_ID_MISMATCH"),
+    ("lesson_revision", "stale-r0", "SOURCE_BRIDGE_LESSON_NOT_READY"),
+])
+def test_manifest_owner_task_revision_and_provenance_isolation(lesson, field, value, error):
+    bridge = bridge_manifest(lesson)
+    bridge["routes"][0][field] = value
+    fails(lesson, error, bridge)
+
+
+def test_manifest_duplicate_or_missing_question_route_fails_closed(lesson):
+    bridge = bridge_manifest(lesson)
+    bridge["routes"].append(deepcopy(bridge["routes"][0]))
+    fails(lesson, "SOURCE_BRIDGE_ROUTE_MISSING_OR_DUPLICATED", bridge)
+    bridge = bridge_manifest(lesson)
+    bridge["routes"] = []
+    fails(lesson, "SOURCE_BRIDGE_ROUTE_MISSING_OR_DUPLICATED", bridge)
+
+
+def test_manifest_academic_self_promotion_fails_closed(lesson):
+    bridge = bridge_manifest(lesson)
+    bridge["academic_admission"] = "PASS"
+    fails(lesson, "SOURCE_BRIDGE_MANIFEST_UNTRUSTED", bridge)
