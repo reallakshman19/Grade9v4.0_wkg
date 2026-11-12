@@ -22,7 +22,7 @@ def generated(tmp_path_factory):
     work = tmp_path_factory.mktemp("agent_b_generated")
     env = dict(os.environ)
     env["PYTHONPATH"] = str(REPO) + os.pathsep + env.get("PYTHONPATH", "")
-    for filename in ("build_d3_batch2_modules.py", "build_d3_expansion_modules.py"):
+    for filename in ("build_d3_batch2_modules.py", "build_d3_expansion_modules.py", "build_physics_fluids_core1.py", "build_bio_genetics_core1.py"):
         target = work / filename
         shutil.copyfile(REPO / filename, target)
         p = subprocess.run([sys.executable, str(target)], cwd=work, env=env,
@@ -131,3 +131,70 @@ def test_generated_lens_learner_is_source_neutral_and_protected(generated):
     assert "localStorage.getItem(key)!==priorRaw" in html
     assert "Agent A" in html
     assert "<iframe" not in html.lower()
+
+
+def test_eight_reproducible_b1b7_candidates_have_generated_attempt_controls(generated):
+    slugs = [
+        "nsejs-optics-displacement-d3-r1",
+        "nsejs-fluids-surface-energy-d3-r1",
+        "chem-electronic-structure-d3-r1",
+        "bio-immunology-defense-d3-r1",
+        "chem-phosphorus-oxyacids-d3-r1",
+        "bio-viral-genetics-d3-r1",
+        "bio-genetics-coordination-r1",
+        "nsejs-fluids-sound-r1",
+    ]
+    for slug in slugs:
+        module = generated / slug
+        a = json.loads((module / "core1a_construction.json").read_text(encoding="utf-8"))
+        b = json.loads((module / "core1b_reconstruction.json").read_text(encoding="utf-8"))
+        w = json.loads((module / "witness.json").read_text(encoding="utf-8"))
+        page = (module / "learning_journey.html").read_text(encoding="utf-8")
+        assert a["construction_id"] == b["construction_id"] == w["construction"]["construction_id"], slug
+        assert a["target_question_id"] == b["target_question_id"], slug
+        assert a["academic_status"] == b["academic_status"] == "HOLD:ACADEMIC_ADMISSION", slug
+        assert w["status"] == "CANDIDATE", slug
+        assert not w["review_receipts"], slug
+        assert 'data-agent-b-core1b' in page, slug
+        assert 'data-role="model-host" hidden' in page, slug
+        assert 'data-role="save-firstAttempt"' in page, slug
+        assert 'data-role="save-transfer"' in page, slug
+        assert "<iframe" not in page.lower(), slug
+        raw = (module / "core1b_reconstruction.json").read_bytes()
+        assert w["core1b"]["task_sha256"] == "sha256:" + hashlib.sha256(raw).hexdigest(), slug
+
+
+def test_all_generated_core1b_hints_do_not_give_final_science_answer_before_attempt(generated):
+    genetics = _read(generated, "bio-genetics-coordination-r1", "core1b_reconstruction")
+    chem = _read(generated, "chem-phosphorus-oxyacids-d3-r1", "core1b_reconstruction")
+    viral = _read(generated, "bio-viral-genetics-d3-r1", "core1b_reconstruction")
+    assert "2000" not in genetics["progressive_hints"][-1]["text"]
+    assert "Option A" not in chem["progressive_hints"][-1]["text"]
+    assert "Statements C and D" not in viral["progressive_hints"][-1]["text"]
+    for slug in ("nsejs-fluids-sound-r1", "bio-genetics-coordination-r1",
+                 "chem-phosphorus-oxyacids-d3-r1", "bio-viral-genetics-d3-r1"):
+        w = _read(generated, slug, "witness")
+        assert w["core1b"]["attempt_events"] == [], slug
+        assert w["core1b"]["native_runtime_receipt_ref"] == "NOT_RECEIVED", slug
+
+
+def test_scandium_topup_is_new_ionization_inference_not_original_neutral_question(generated):
+    a = _read(generated, "chem-electronic-structure-d3-r1", "core1a_construction")
+    b = _read(generated, "chem-electronic-structure-d3-r1", "core1b_reconstruction")
+    assert "4s" in a["misconceptions"][-1]["repair"]
+    assert b["fresh_context_ref"].startswith("AB-PRACTICE")
+    assert "Sc2+" in b["stages"]["stage_2_attempt"]["prompt"]
+    assert "Sc3+" in b["stages"]["stage_2_attempt"]["prompt"]
+    assert len(b["stages"]["stage_2_attempt"]["rubric"]) == 3
+    assert len(b["stages"]["stage_3_reconstruct"]["route"]) == 4
+    assert "0 unpaired" not in b["progressive_hints"][-1]["text"]
+
+
+def test_immunity_topup_does_not_invent_original_source_or_universal_innate_loss(generated):
+    a = _read(generated, "bio-immunology-defense-d3-r1", "core1a_construction")
+    b = _read(generated, "bio-immunology-defense-d3-r1", "core1b_reconstruction")
+    assert "memory B cells" in a["misconceptions"][-1]["wrong_idea"]
+    assert b["fresh_context_ref"].startswith("AB-PRACTICE")
+    assert "intact neutrophils" in b["stages"]["stage_2_attempt"]["prompt"]
+    assert len(b["stages"]["stage_3_reconstruct"]["route"]) == 4
+    assert "neutrophils" in b["stages"]["stage_6_boundary_test"]["prompt"]
