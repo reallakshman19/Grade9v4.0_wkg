@@ -218,7 +218,7 @@ ENGINE_JS = r"""
     }
     function render() {
       by('prediction-input').value=state.prediction||by('prediction-input').value;
-      by('attempt-input').value=state.firstAttempt?.text||by('attempt-input').value;
+      by('firstAttempt-input').value=state.firstAttempt?.text||by('firstAttempt-input').value;
       by('diagnosis-input').value=state.diagnosis||by('diagnosis-input').value;
       by('repair-input').value=state.repair||by('repair-input').value;
       by('transfer-input').value=state.transfer||by('transfer-input').value;
