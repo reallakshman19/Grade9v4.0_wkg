@@ -50,5 +50,17 @@
     "The custody receipt proves byte identity for the downloaded files at that run, not authority to redistribute or a student's right to access a rewritten bank.",
     "Page visual spotchecks and key comparison do not constitute full item-by-item figure fidelity or academic source admission.",
     "No SHA256 custody of 2020–2023 exam sources has yet been established in this receipt."
-  ]
+  ],
+  "bounded_internal_page12_source_check": {
+    "evidence_run": "https://github.com/reallakshman19/Grade9v4.0/actions/runs/43231053282",
+    "extraction_method": "PyPDF source PDF page 12 text extraction; only boolean markers published",
+    "q52_igm_on_official_source_page": true,
+    "q52_igd_on_official_source_page": true,
+    "q52_eosinophil_on_official_source_page": true,
+    "q52_histamine_mentioned_on_same_page": false,
+    "q57_lens_75cm_and_12cm_on_official_source_page": true,
+    "original_q57_figure_to_generated_candidate": "NOT_INDEPENDENTLY_COMPARED",
+    "academic_admission": "HOLD",
+    "source_text_embedded": false
+  }
 }
