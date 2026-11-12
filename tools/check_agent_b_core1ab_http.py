@@ -62,7 +62,7 @@ def main():
                         _check("5.1124" not in page.locator(root_selector).inner_text(), "Work answer leaked before attempt")
 
                         page.locator('[data-hint="1"]').click()
-                        _check(page.locator('[data-hint-text="1"]').inner_text().strip() != "", "Hint did not reveal")
+                        _check(page.locator('[data-hint-text="1"]').inner_text().strip() != "", "Hint did not reveal; status=" + page.locator('[data-role="status"]').inner_text() + "; js=" + repr(js_errors))
                         page.locator('[data-role="prediction-input"]').fill("The large drop contributes eight small-drop volumes.")
                         page.locator('[data-role="save-prediction"]').click()
                         page.reload(wait_until="load")
