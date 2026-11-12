@@ -128,7 +128,13 @@ function initPracticeGate() {
             stored.timestamp = new Date().toISOString();
             delete stored.practiceCompleted;
             sessionStorage.setItem('grade9_alpha_progress', JSON.stringify(stored));
-        } catch (e) { /* session storage may be disabled */ }
+        } catch (e) {
+            // Valid local attempt, but it was NOT recorded for session progress.
+            // Keep the ungraded reveal available on this page; never claim a save.
+            if (revealBtn) revealBtn.hidden = false;
+            message('Attempt accepted on this page, but it was not saved to browser session storage. No saved progress was recorded; this attempt will be lost if you leave or reload. You can still reveal the worked solution.', true);
+            return;
+        }
         if (revealBtn) revealBtn.hidden = false;
         message('Attempt recorded (length requirement met). Your explanation has not been automatically graded. Select “Reveal Worked Solution” to compare your approach.', false);
     });
