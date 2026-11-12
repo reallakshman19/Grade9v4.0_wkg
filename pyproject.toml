@@ -11,7 +11,7 @@ requires-python = ">=3.11"
 dependencies = ["jsonschema>=4.21,<5"]
 
 [project.optional-dependencies]
-dev = ["pytest>=8,<10"]
+dev = ["pytest>=8,<10", "pypdf>=5,<7"]
 
 [project.scripts]
 grade9qa = "grade9qa.cli:main"
