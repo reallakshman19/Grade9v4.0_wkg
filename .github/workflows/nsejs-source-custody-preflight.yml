@@ -5,6 +5,7 @@ on:
       - 'tools/nsejs_source_custody_preflight.py'
       - 'tests/test_nsejs_source_custody_preflight.py'
       - 'docs/nsejs/subject-year-source-availability-r1.csv'
+      - 'docs/nsejs/official-iapt-source-locators-r1.json'
       - '.github/workflows/nsejs-source-custody-preflight.yml'
   push:
     branches: [main, 'feat/**']
@@ -12,6 +13,7 @@ on:
       - 'tools/nsejs_source_custody_preflight.py'
       - 'tests/test_nsejs_source_custody_preflight.py'
       - 'docs/nsejs/subject-year-source-availability-r1.csv'
+      - 'docs/nsejs/official-iapt-source-locators-r1.json'
       - '.github/workflows/nsejs-source-custody-preflight.yml'
 
 jobs:
