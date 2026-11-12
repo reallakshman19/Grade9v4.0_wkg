@@ -243,6 +243,11 @@ core1b = {
 c1a_path = MODULE_DIR / "core1a_construction.json"
 c1b_path = MODULE_DIR / "core1b_reconstruction.json"
 c1a_text = json.dumps(core1a, indent=2)
+# H3 must not disclose the completed counting operation before a frozen answer.
+core1b["progressive_hints"][2]["text"] = (
+    "For every viable seed, one pollen grain and one functional megaspore are required. "
+    "Compute the two minimum meiosis counts separately from their yields before summing."
+)
 c1b_text = json.dumps(core1b, indent=2)
 
 c1a_path.write_text(c1a_text, encoding="utf-8")
@@ -476,6 +481,10 @@ witness = {
 }
 
 witness_path = MODULE_DIR / "witness.json"
+# The builder cannot manufacture actual learner or reviewer observations.
+witness["core1b"]["attempt_events"] = []
+witness["core1b"]["native_runtime_receipt_ref"] = "NOT_RECEIVED"
+witness["core1b"]["freshness_review_ref"] = "PENDING-INDEPENDENT-REVIEW"
 witness_path.write_text(json.dumps(witness, indent=2), encoding="utf-8")
 
 # ---------------------------------------------------------------------------
@@ -823,6 +832,8 @@ html_content = """<!DOCTYPE html>
 """
 
 html_path = MODULE_DIR / "learning_journey.html"
+from tools.agent_b_core1ab_authoring import render_protected_core1b
+html_content = render_protected_core1b(html_content, core1b)
 html_path.write_text(html_content, encoding="utf-8")
 
 print(f"Generated Core 1A: {c1a_path} (SHA: {c1a_sha})")
