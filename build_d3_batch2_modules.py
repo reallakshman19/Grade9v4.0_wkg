@@ -739,9 +739,18 @@ mod3_bank = {
             "operation": "SYNTHESIZE",
             "band": "D3",
             "score": 6,
-            "crux_move": "M2"
+            "crux_move": "M2",
+            "source_claim_status": "KNOWN_NON_VERBATIM_AUTHORED_ADAPTATION",
+            "original_exam_question": False,
+            "exam_source_admission": "HOLD_P0_Q52_OPTIONS_SUBSTITUTED",
+            "academic_approval": "HOLD",
+            "review_issue": "https://github.com/reallakshman19/Grade9v4.0/issues/86"
         }
-    ]
+    ],
+    "source_claim_status": "KNOWN_NON_VERBATIM_AUTHORED_ADAPTATION",
+    "official_question_reproduction_allowed": False,
+    "academic_approval": "HOLD",
+    "release_status": "HOLD"
 }
 (mod3_dir / "bank.json").write_text(json.dumps(mod3_bank, indent=2), encoding="utf-8")
 
