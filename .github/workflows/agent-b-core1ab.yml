@@ -13,6 +13,9 @@ on:
       - 'build_d3_batch2_modules.py'
       - 'docs/agent-b-core1ab-candidate-topups.md'
       - 'docs/agent-b-core1ab-preflight.md'
+      - 'docs/agent-b-physics-uid-lookup-r1.json'
+      - 'tools/agent_b_core1ab_reconcile.py'
+      - 'tests/test_agent_b_core1ab_reconcile.py'
       - '.github/workflows/agent-b-core1ab.yml'
   workflow_dispatch:
 
@@ -30,7 +33,7 @@ jobs:
       - name: Install test runner
         run: python -m pip install 'pytest>=8,<10'
       - name: Run synthetic B4/B5 falsifiers
-        run: python -m pytest -q tests/test_agent_b_core1ab_audit.py tests/test_agent_b_science_topups.py tests/test_agent_b_authored_corrections.py
+        run: python -m pytest -q tests/test_agent_b_core1ab_audit.py tests/test_agent_b_science_topups.py tests/test_agent_b_authored_corrections.py tests/test_agent_b_core1ab_reconcile.py
 
 
   real-http-chromium:
@@ -47,3 +50,21 @@ jobs:
           python -m playwright install chromium
       - name: Run actual HTTP desktop/mobile Core1B protection
         run: python tools/check_agent_b_core1ab_http.py
+
+  candidate-census:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Reproduce public builder candidates and report identity/academic HOLDs
+        run: |
+          python tools/agent_b_core1ab_reconcile.py --generate --out agent-b-core1ab-census.json
+      - name: Upload source-neutral audit only
+        uses: actions/upload-artifact@v4
+        with:
+          name: agent-b-core1ab-census
+          path: agent-b-core1ab-census.json
+          if-no-files-found: error
