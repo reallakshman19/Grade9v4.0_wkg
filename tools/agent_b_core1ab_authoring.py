@@ -177,17 +177,17 @@ body button:focus-visible, body textarea:focus-visible, body input:focus-visible
 }
 body .tab-button { min-width: 168px; flex: 1 1 180px; }
 #content-core1b { max-width: 100%; }
-#content-core1b section { padding: clamp(18px, 2.2vw, 30px); margin-block: 16px; }
-#content-core1b label { display: block; margin-block: 10px 7px; font-weight: 650; }
-#content-core1b textarea {
+#content-core1b[data-agent-b-core1b] section { padding: clamp(18px, 2.2vw, 30px); margin-block: 16px; }
+#content-core1b[data-agent-b-core1b] label { display: block; margin-block: 10px 7px; font-weight: 650; }
+#content-core1b[data-agent-b-core1b] textarea {
   display: block; width: 100%; max-width: 100%; min-height: 176px;
   padding: 16px; border-radius: 9px; border: 2px solid #9faebf;
   font: inherit; font-size: 1rem; line-height: 1.5;
   resize: vertical; touch-action: pan-y;
 }
-#content-core1b button { min-width: 104px; min-height: 56px; margin: 8px 10px 8px 0; }
-#content-core1b [data-role="status"] { display: block; min-height: 32px; margin: 12px 0; line-height: 1.5; }
-#content-core1b [hidden] { display: none !important; }
+#content-core1b[data-agent-b-core1b] button { min-width: 104px; min-height: 56px; margin: 8px 10px 8px 0; }
+#content-core1b[data-agent-b-core1b] [data-role="status"] { display: block; min-height: 32px; margin: 12px 0; line-height: 1.5; }
+#content-core1b[data-agent-b-core1b] [hidden] { display: none !important; }
 @media (orientation: portrait) and (min-width: 800px) {
   main { max-width: 94vw; }
   body .tab-button { flex: 1 1 210px; }
