@@ -12,6 +12,7 @@ on:
       - 'build_d3_expansion_modules.py'
       - 'build_d3_batch2_modules.py'
       - 'docs/agent-b-core1ab-candidate-topups.md'
+      - 'docs/agent-b-core1ab-preflight.md'
       - '.github/workflows/agent-b-core1ab.yml'
   workflow_dispatch:
 
