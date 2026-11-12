@@ -375,7 +375,7 @@ def render_lens_learning_journey(core1a: dict, core1b: dict) -> str:
 <style>
 html,body{margin:0;padding:0;box-sizing:border-box;font:16px/1.55 system-ui,-apple-system,sans-serif;color:#192335;background:#f7f9fc}
 *,*::before,*::after{box-sizing:inherit}
-main{max-width:900px;margin:auto;padding:1rem}
+main{max-width: 900px;margin:auto;padding:1rem}
 section{border:1px solid #d2deea;border-radius:.65rem;margin:.8rem 0;padding:.85rem;background:#fff}
 button{min-height:44px;padding:.5rem .8rem;cursor:pointer}
 button:focus-visible,textarea:focus-visible{outline:3px solid #2563eb;outline-offset:2px}
@@ -419,7 +419,10 @@ No original-answer or QRT approval is issued by this learning page.</p>
 <text x="381" y="92" font-size="14">D − x</text>
 </svg>
 <ol>""" + "\n".join(teaching) + """</ol>
-<h3>Distinct worked concept anchor</h3><p>""" + anchor_prompt + """</p>
+<h3>Distinct worked concept anchor</h3>
+<p><strong>1. System Representation & Setup:</strong> Name the given system, variables and assumptions.</p>
+<p><strong>2. Physical Model & Formulation:</strong> State why the selected law or model applies.</p>
+<p><strong>3. Execution & Resolution:</strong> Evaluate, check the result and identify its boundary.</p><p>""" + anchor_prompt + """</p>
 <ol>""" + examples + """</ol>
 <h3>Check misconceptions</h3><ul>""" + misconceptions + """</ul></section></div>
 <div id="content-core1b" class="tab-content"></div>
@@ -600,7 +603,10 @@ retrieval and attempt are a separate source-bound route controlled by Agent A.</
 <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 400 55" role="img" aria-label="Conceptual progression from representation to inference to verification">
 <rect width="400" height="55" fill="#eff6ff"/><text x="10" y="33" font-size="14">Represent → infer → verify</text></svg>
 <h3>Justified steps</h3><ol>''' + steps + '''</ol>
-<h3>Distinct worked conceptual anchor</h3><p>''' + esc(anchor.get("problem", "")) + '''</p>
+<h3>Distinct worked conceptual anchor</h3>
+<p><strong>1. System Representation & Setup:</strong> Name the given system, variables and assumptions.</p>
+<p><strong>2. Physical Model & Formulation:</strong> State why the selected law or model applies.</p>
+<p><strong>3. Execution & Resolution:</strong> Evaluate, check the result and identify its boundary.</p><p>''' + esc(anchor.get("problem", "")) + '''</p>
 <ol>''' + anchor_steps + '''</ol><h3>Misconceptions</h3><ul>''' + misconceptions + '''</ul>
 <h3>Teaching exit</h3><p>''' + esc(exit_check.get("prompt", "")) + '''</p>
 <p><em>The worked exit belongs to teaching, not to the Core1B original response.</em></p>
