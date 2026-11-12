@@ -64,3 +64,33 @@ def test_required_figures_stay_not_received():
     a=[x for x in r if x["figure_refs"]]
     assert len(a)==5 and all(x["figure_custody"]=="NOT_RECEIVED" for x in a)
     assert all(x["source_authenticity"]=="UNKNOWN_SOURCE" for x in r)
+
+
+def test_nsejs_common_navigation_targets_exist():
+    pages = [
+        ROOT/"nsejs/index.html",ROOT/"nsejs/physics/index.html",
+        ROOT/"nsejs/chemistry/index.html",ROOT/"nsejs/biology/index.html"
+    ]
+    for page in pages:
+        html=page.read_text(encoding="utf-8")
+        nav=re.search(r'<nav class="tabs"[^>]*>([\s\S]*?)</nav>',html)
+        assert nav, page
+        for href in re.findall(r'href="([^"]+)"',nav.group(1)):
+            link=(page.parent/href).resolve()
+            assert link.is_file(), (page,href)
+        assert not re.search(r'href="#[^"]+-core1[ab]"',html),page
+
+
+def test_unavailable_chemistry_biology_banks_are_not_false_clickable():
+    for subject, count in (("chemistry",6),("biology",5)):
+        html=(ROOT/"nsejs"/subject/"index.html").read_text(encoding="utf-8")
+        assert html.count("Bank unavailable (source HOLD)") == count
+        assert html.count('disabled title="No verified public source-backed question bank available"') == count
+        assert "if (btn) btn.disabled = false;" not in html
+
+
+def test_physics_hub_sample_does_not_claim_saved_first_attempt():
+    html=(ROOT/"nsejs/physics/index.html").read_text(encoding="utf-8")
+    assert "Sample only" in html
+    assert "if (btn) btn.disabled = false;" not in html
+    assert 'window.location.href = "question-bank.html?topic="' in html

@@ -601,7 +601,7 @@
             <label class="q-opt-label"><input type="radio" name="q_opt_1" onchange="enableCommit('q1')"> <strong>(D)</strong> Continuously increases</label>
           </div>
           <div class="q-actions-bar">
-            <span style="font-size: 13px; color: #64748b;">Commit answer to unlock official derivation.</span>
+            <span style="font-size: 13px; color: #64748b;">Sample only — use the topic bank for a saved local first attempt.</span>
             <button class="q-commit-btn" id="commit-btn-q1" disabled onclick="revealDerivation('q1')">Commit Candidate Attempt</button>
           </div>
           <div class="q-derivation" id="deriv-q1">
@@ -632,7 +632,7 @@
             <label class="q-opt-label"><input type="checkbox" name="q_opt_2" onchange="enableCommit('q2')"> <strong>(D)</strong> Total internal reflection occurs at base</label>
           </div>
           <div class="q-actions-bar">
-            <span style="font-size: 13px; color: #64748b;">Commit answer to unlock official derivation.</span>
+            <span style="font-size: 13px; color: #64748b;">Sample only — use the topic bank for a saved local first attempt.</span>
             <button class="q-commit-btn" id="commit-btn-q2" disabled onclick="revealDerivation('q2')">Commit Candidate Attempt</button>
           </div>
           <div class="q-derivation" id="deriv-q2">
@@ -655,10 +655,7 @@
       window.location.href = "question-bank.html?topic=" + encodeURIComponent(topicKey);
     }
 
-    function enableCommit(qId) {
-      const btn = document.getElementById('commit-btn-' + qId);
-      if (btn) btn.disabled = false;
-    }
+    function enableCommit(qId) { /* Historical two-item sample: no first-attempt evidence in this page. */ }
 
     function revealDerivation(qId) {
       const deriv = document.getElementById('deriv-' + qId);
