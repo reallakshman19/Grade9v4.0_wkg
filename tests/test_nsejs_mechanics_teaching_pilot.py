@@ -124,7 +124,7 @@ def test_task_a_science_energy_and_units(data):
     assert (V, before, after, before-after, force, d) == pytest.approx((4, 36, 24, 12, 6, 4))
     assert expected(data["tasks"]["A"], "speed") == V
     assert expected(data["tasks"]["A"], "loss") == before - after
-    assert expected(data["tasks"]["A"], "distance") == d
+    assert expected(data["tasks"]["A"], "distance") == pytest.approx(d)
     assert "m/s" in next(x["label"] for x in data["tasks"]["A"]["fields"] if x["id"] == "speed")
     assert "(J)" in next(x["label"] for x in data["tasks"]["A"]["fields"] if x["id"] == "loss")
     assert "(m)" in next(x["label"] for x in data["tasks"]["A"]["fields"] if x["id"] == "distance")
@@ -141,8 +141,8 @@ def test_task_b_elastic_collision_is_not_original_sticking_model(data):
     inferred_mu = b*b/(2 * p["g_mps2"] * p["observed_stop_m"])
     assert inferred_mu == pytest.approx(0.2)
     assert expected(data["tasks"]["B"], "speed") == pytest.approx(b)
-    assert expected(data["tasks"]["B"], "mu") == pytest.approx(inferred_mu)
-    assert "dimensionless" in next(x["label"] for x in data["tasks"]["B"]["fields"] if x["id"] == "mu")
+    assert expected(data["tasks"]["B"], "coefficient") == pytest.approx(inferred_mu)
+    assert "dimensionless" in next(x["label"] for x in data["tasks"]["B"]["fields"] if x["id"] == "coefficient")
     wrong_sticking_mu = (p["u1_mps"] / 2)**2/(2*p["g_mps2"]*p["observed_stop_m"])
     assert wrong_sticking_mu == pytest.approx(0.05)
     assert wrong_sticking_mu != inferred_mu
@@ -158,7 +158,7 @@ def test_task_b_nonelastic_boundary_requires_restitution_model(data):
     assert mu == pytest.approx(0.1125)
     boundary = data["tasks"]["B"]["boundaryFields"]
     assert next(x["expected"] for x in boundary if x["id"] == "speed") == pytest.approx(b)
-    assert next(x["expected"] for x in boundary if x["id"] == "mu") == pytest.approx(mu)
+    assert next(x["expected"] for x in boundary if x["id"] == "coefficient") == pytest.approx(mu)
 
 
 def test_task_a_b_demand_is_different_and_feedback_is_answer_specific(data):
