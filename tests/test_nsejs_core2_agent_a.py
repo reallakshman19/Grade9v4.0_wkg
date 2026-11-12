@@ -143,7 +143,7 @@ def test_corpus_builder_is_reproducible_and_detects_source_mutations():
     import json
     import hashlib
     import importlib.util
-    source=(ROOT/"preview/question-status.html").read_bytes()
+    source=(ROOT/"nsejs/data/legacy-physics-candidate-source.html").read_bytes()
     corpus=json.loads((ROOT/"nsejs/data/physics-core2-candidates.v1.json").read_text(encoding="utf-8"))
     module_spec=importlib.util.spec_from_file_location("core2_candidate_builder",ROOT/"tools/build_nsejs_core2_corpus.py")
     builder=importlib.util.module_from_spec(module_spec)
