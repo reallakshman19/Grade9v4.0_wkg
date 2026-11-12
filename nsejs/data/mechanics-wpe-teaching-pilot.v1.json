@@ -258,7 +258,7 @@
             "I'm not sure yet"
           ],
           "expected": "Conserve momentum AND kinetic energy in elastic collision; then use B-only friction work",
-          "mistake": "Perfectly elastic equal-mass collisions exchange velocities in this one-dimensional setup. Only the struck B cart is subsequently braked.",
+          "mistake": "Perfectly elastic equal-mass collisions exchange velocities in this one-dimensional setup. Only the struck B cart is subsequently braked. Copying a sticking-collision shortcut is wrong for this explicitly elastic impact.",
           "errorKind": "MODEL_CHOICE"
         },
         {
@@ -286,7 +286,7 @@
           "errorKind": "CALCULATION_OR_UNITS"
         },
         {
-          "id": "mu",
+          "id": "coefficient",
           "label": "Inferred kinetic friction coefficient (dimensionless)",
           "type": "number",
           "expected": 0.2,
@@ -354,7 +354,7 @@
           "errorKind": "CALCULATION_OR_UNITS"
         },
         {
-          "id": "mu",
+          "id": "coefficient",
           "label": "New inferred μ for the 9 m lane",
           "type": "number",
           "expected": 0.1125,
