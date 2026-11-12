@@ -580,7 +580,7 @@ def render_generic_core1ab_lesson(core1a: dict, core1b: dict) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>''' + title + ''' — Core1A/B candidate</title><style>
 *{box-sizing:border-box}html,body{margin:0;font:16px/1.55 system-ui,sans-serif;color:#162536;background:#f7f9fc}
-main{max-width:900px;margin:auto;padding:1rem}section{padding:.9rem;margin:.8rem 0;border:1px solid #cbd5e1;border-radius:.5rem;background:white}
+main{max-width: 900px;margin:auto;padding:1rem}section{padding:.9rem;margin:.8rem 0;border:1px solid #cbd5e1;border-radius:.5rem;background:white}
 .tab-content{display:none}.tab-content.active{display:block}.tab-button.active{background:#184c75;color:white}
 nav{display:flex;flex-wrap:wrap;gap:.5rem}button{min-height:44px;padding:.6rem;cursor:pointer}
 button:focus-visible,textarea:focus-visible{outline:3px solid #146ca0;outline-offset:2px}
