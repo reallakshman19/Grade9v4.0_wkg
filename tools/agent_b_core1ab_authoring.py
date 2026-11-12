@@ -154,6 +154,47 @@ class _Core1BPanelFinder(HTMLParser):
             self.end = self._offset() + len("</div>")
 
 
+
+# The owner targets a 12.7-inch touch tablet; physical diagonal does not determine
+# CSS pixel density. Verify representative 16:10 landscape and portrait viewports
+# with real Chromium touch input instead of treating a 390px phone as the target.
+TABLET_TOUCH_CSS = """<style id="agent-b-127-tablet-touch">
+html { font-size: 18px; -webkit-text-size-adjust: 100%; }
+body { font-size: 1rem; line-height: 1.6; }
+main { width: min(100%, 1060px); max-width: 1060px; margin-inline: auto; padding: clamp(16px, 2.4vw, 36px); }
+main h1 { font-size: clamp(1.65rem, 2.4vw, 2.1rem); line-height: 1.23; }
+main h2 { font-size: 1.4rem; line-height: 1.3; }
+main h3 { font-size: 1.17rem; line-height: 1.4; }
+main p, main li { line-height: 1.62; overflow-wrap: anywhere; }
+main nav, main .tab-nav, main .tabs { display: flex; flex-wrap: wrap; align-items: stretch; gap: 12px; margin-block: 16px 22px; }
+body button, body .tab-button, body input[type="button"], body input[type="submit"] {
+  min-height: 56px; padding: 12px 18px; border-radius: 10px;
+  font: inherit; font-size: 1rem; line-height: 1.25;
+  touch-action: manipulation; -webkit-tap-highlight-color: transparent;
+}
+body button:focus-visible, body textarea:focus-visible, body input:focus-visible {
+  outline: 3px solid #1971c2; outline-offset: 3px;
+}
+body .tab-button { min-width: 168px; flex: 1 1 180px; }
+#content-core1b { max-width: 100%; }
+#content-core1b section { padding: clamp(18px, 2.2vw, 30px); margin-block: 16px; }
+#content-core1b label { display: block; margin-block: 10px 7px; font-weight: 650; }
+#content-core1b textarea {
+  display: block; width: 100%; max-width: 100%; min-height: 176px;
+  padding: 16px; border-radius: 9px; border: 2px solid #9faebf;
+  font: inherit; font-size: 1rem; line-height: 1.5;
+  resize: vertical; touch-action: pan-y;
+}
+#content-core1b button { min-width: 104px; min-height: 56px; margin: 8px 10px 8px 0; }
+#content-core1b [data-role="status"] { display: block; min-height: 32px; margin: 12px 0; line-height: 1.5; }
+#content-core1b [hidden] { display: none !important; }
+@media (orientation: portrait) and (min-width: 800px) {
+  main { max-width: 94vw; }
+  body .tab-button { flex: 1 1 210px; }
+  #content-core1b section { padding: 22px; }
+}
+</style>"""
+
 ENGINE_JS = r"""
 (function () {
   'use strict';
@@ -324,6 +365,9 @@ def render_protected_core1b(original_html: str, b: dict) -> str:
     script = '<script type="application/json" id="agent-b-core1b-data">'+raw+'</script>\n<script>'+ENGINE_JS.replace("</", "<\\/")+'</script>\n'
     if "</body>" not in output:
         raise ValueError("Cannot find end of generated learner page")
+    if "</head>" not in output:
+        raise ValueError("Generated learner page missing head for tablet touch design")
+    output = output.replace("</head>", TABLET_TOUCH_CSS + "\n</head>", 1)
     return output.replace("</body>", script+"</body>", 1)
 
 
