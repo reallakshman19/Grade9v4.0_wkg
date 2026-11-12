@@ -144,3 +144,30 @@ def test_committed_original_pdf_receipts_pin_real_ci_digests_without_claiming_ri
         else:
             assert item["source_byte_status"] == "RAW_SOURCE_NOT_RECEIVED"
             assert item["size_bytes"] is None
+
+
+
+def test_bounded_original_page_check_exports_flags_not_question_text(monkeypatch):
+    class Page:
+        def __init__(self, text):
+            self.text = text
+        def extract_text(self):
+            return self.text
+    class Reader:
+        def __init__(self, *args, **kwargs):
+            self.pages = [Page("irrelevant")] * 11 + [
+                Page("52: Eosinophils and surface IgM IgD. 57: lens 75 cm 12 cm.")
+            ]
+    import pypdf
+    monkeypatch.setattr(pypdf, "PdfReader", Reader)
+    evidence = custody.inspect_bounded_2024_pdf_evidence(b"%PDF-fake")
+    assert evidence["page12_available"] is True
+    assert evidence["source_q52_surface_igm_seen"] is True
+    assert evidence["source_q52_surface_igd_seen"] is True
+    assert evidence["source_q52_option_b_eosinophil_seen"] is True
+    assert evidence["source_q57_lens_75cm_seen"] is True
+    assert evidence["source_q57_focal_12cm_seen"] is True
+    assert evidence["q52_histamine_term_on_pdf_page12"] is False
+    assert evidence["original_q57_figure_comparison"] == "NOT_PERFORMED"
+    assert "Eosinophils" not in json.dumps(evidence)
+    assert evidence["academic_source_admission"] == "HOLD"
