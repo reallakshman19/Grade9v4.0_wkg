@@ -39,6 +39,8 @@ def check(site: Path) -> None:
                 ctx=browser.new_context(viewport={"width":width,"height":height},
                                         has_touch=True,is_mobile=True)
                 page=ctx.new_page()
+                page.route("https://cdn.jsdelivr.net/**",lambda route:
+                    route.fulfill(status=200,content_type="application/javascript",body=""))
                 errors=[]
                 page.on("pageerror",lambda e:errors.append(str(e)))
                 try:
@@ -88,6 +90,39 @@ def check(site: Path) -> None:
                         assert page.locator("#save-first-response").is_disabled()
                         assert "code/language" in page.locator("#attempt-status").inner_text().lower()
                         assert page.locator('#publisher-key-link').is_hidden()
+                        assert page.evaluate("document.documentElement.scrollWidth <= innerWidth + 4")
+                        # Distinct authored question bank must contain actual
+                        # fresh Core1B prompts, not an empty page or source copies.
+                        page.goto(base+f"/nsejs/{subject}/index.html",
+                                  wait_until="domcontentloaded",timeout=20000)
+                        authored_panel=page.locator("#authored-transfer-question-bank")
+                        assert authored_panel.count()==1 and "HOLD" in authored_panel.inner_text()
+                        authored_panel.get_by_role(
+                            "link",name="Open authored transfer practice questions").click()
+                        page.wait_for_url("**/nsejs/"+subject+"/authored-practice.html")
+                        cards=page.locator(".practice-card")
+                        cards.first.wait_for(timeout=15000)
+                        assert cards.count()==(2 if subject=="chemistry" else 3)
+                        assert page.locator("#authored-status").get_attribute(
+                            "data-status")=="AUTHORED_TECHNICAL_ONLY"
+                        first=cards.first
+                        assert len(first.locator(".practice-prompt").inner_text())>55
+                        assert first.locator(".author-worked li").count()==0
+                        assert first.get_by_role("button",name="Show author's unreviewed reconstruction").is_disabled()
+                        first.locator("textarea").fill(
+                            "I will choose an independent physical model, test its assumptions and check the boundary.")
+                        first.get_by_role("button",name="Save first independent response").click()
+                        assert first.get_by_role("button",name="Show author's unreviewed reconstruction").is_enabled()
+                        assert first.locator(".author-worked li").count()==0
+                        page.reload(wait_until="domcontentloaded")
+                        first=page.locator(".practice-card").first
+                        first.locator("textarea:disabled").wait_for(timeout=15000)
+                        assert first.locator(".author-worked li").count()==0
+                        first.get_by_role("button",name="Show author's unreviewed reconstruction").click()
+                        assert first.locator(".author-worked li").count()>=2
+                        assert first.locator(".author-worked").is_visible()
+                        assert "NOT academically reviewed" in first.locator(".author-worked").inner_text()
+                        assert page.locator("iframe").count()==0
                         assert page.evaluate("document.documentElement.scrollWidth <= innerWidth + 4")
                         checks+=1
                     # No separate student answer corpus or source PDF is staged.
