@@ -56,6 +56,10 @@ def check_bank(root: Path) -> dict:
         if submitted != expected:
             findings.append("IAPT_CODE_51_ANSWER_LETTERS_DIFFER")
         if question_id.endswith("B-Q52"):
+            if (q.get("original_exam_question") is not False or
+                q.get("source_claim_status") != "KNOWN_NON_VERBATIM_AUTHORED_ADAPTATION" or
+                q.get("exam_source_admission") != "HOLD_P0_Q52_OPTIONS_SUBSTITUTED"):
+                findings.append("P0_SOURCE_CONTRADICTION_NOT_QUARANTINED")
             original_d = opts.get("D", "").lower()
             original_b = opts.get("B", "").lower()
             if not ("igm" in original_d and "igd" in original_d
