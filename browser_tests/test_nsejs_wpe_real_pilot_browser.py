@@ -224,3 +224,90 @@ def test_full_lesson_text_change_isolates_attempt_history(server):
             assert page.evaluate("Object.keys(localStorage).length")>=1
         finally:
             ctx.close();browser.close()
+
+
+@pytest.mark.parametrize("phase", ["first_attempt", "boundary_attempt"])
+def test_quota_rejects_real_payload_before_any_solution_reveal(server, phase):
+    """A tiny storage probe can pass when real first/boundary record exceeds quota.
+
+    WPE itself renders stage transitions after persist() fails. The adapter must
+    precommit the full record, verify readback and stop the click on failure.
+    """
+    with sync_playwright() as pw:
+        browser = pw.chromium.launch(headless=True)
+        ctx = browser.new_context(viewport={"width":1000, "height":1600},
+                                  has_touch=True, is_mobile=True)
+        ctx.add_init_script("""() => {
+          window.__blockActualAttempt = false;
+          window.__blockActualBoundary = false;
+          const original = Storage.prototype.setItem;
+          Storage.prototype.setItem = function(key, value) {
+            const scoped = String(key).startsWith('g9:nsejs:wpe-parity:v1:');
+            const first = String(value).includes('"first":{');
+            const boundary = String(value).includes('"boundary":{');
+            if (scoped && ((window.__blockActualAttempt && first) ||
+                           (window.__blockActualBoundary && boundary))) {
+              throw new DOMException('Simulated attempt-key quota failure',
+                                     'QuotaExceededError');
+            }
+            return original.call(this, key, value);
+          };
+        }""")
+        page = ctx.new_page()
+        try:
+            page.goto(page_path(server), wait_until="domcontentloaded", timeout=30000)
+            begin(page)
+            if phase == "first_attempt":
+                page.locator('.stage-root [data-field="prediction"]').fill(
+                    "Separate collision momentum and later friction work.")
+                page.locator('.stage-root [data-action="prediction"]').click()
+                page.locator('.stage-root [data-action="attempt"]').wait_for()
+                page.locator('.stage-root [data-field="model"]').select_option(
+                    label=DATA["tasks"]["A"]["fields"][0]["expected"])
+                page.locator('.stage-root [data-field="reason"]').fill(
+                    "This is a meaningful attempted physical explanation.")
+                # The small probe will still work; only the actual record fails.
+                assert page.evaluate("""() => {
+                  localStorage.setItem('g9:nsejs:wpe-storage-probe','ok');
+                  return localStorage.getItem('g9:nsejs:wpe-storage-probe')==='ok';
+                }""")
+                page.evaluate("window.__blockActualAttempt = true")
+                page.locator('.stage-root [data-action="attempt"]').click()
+            else:
+                attempt(page, DATA["tasks"]["A"],
+                        "Before boundary, save the actual independent explanation.")
+                page.locator('.stage-root [data-action="reconstruct"]').click()
+                page.locator('.stage-root [data-diagnosis]').select_option("explanation")
+                page.locator('.stage-root [data-field="why"]').fill(
+                    "The first divergence was the conservation law.")
+                page.locator('.stage-root [data-action="diagnose"]').click()
+                page.locator('.stage-root [data-field="repair"]').fill(
+                    "Use momentum at impact, friction after the impact.")
+                page.locator('.stage-root [data-action="repair"]').click()
+                page.locator('.stage-root [data-action="boundary"]').wait_for()
+                for field in DATA["tasks"]["A"]["boundaryFields"]:
+                    target = page.locator('.stage-root [data-field="'+field["id"]+'"]')
+                    if field["type"] == "select":
+                        target.select_option(label=field["expected"])
+                    elif field["type"] == "number":
+                        target.fill(str(field["expected"]))
+                    else:
+                        target.fill("The limiting case changes stopping behavior.")
+                page.evaluate("window.__blockActualBoundary = true")
+                page.locator('.stage-root [data-action="boundary"]').click()
+            page.locator("#nsejs-parity-status[data-state='HOLD']").wait_for(timeout=10000)
+            assert "ACTUAL_ATTEMPT_NOT_DURABLY_SAVED" in page.locator(
+                "#nsejs-parity-status").inner_text()
+            assert page.locator('.stage-root .worked').count() == 0
+            assert page.locator("#nsejs-source-return").is_hidden()
+            record = committed_record(page)
+            assert record is not None
+            if phase == "first_attempt":
+                assert record["record"]["stage"] == 1
+                assert record["record"]["first"] is None
+            else:
+                assert record["record"]["stage"] == 5
+                assert record["record"]["boundary"] is None
+        finally:
+            ctx.close()
+            browser.close()
