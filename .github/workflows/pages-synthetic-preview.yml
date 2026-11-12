@@ -12,6 +12,8 @@ on:
       - 'tools/build_public_nsejs_preview.py'
       - 'tools/nsejs_core1ab_public_coverage.py'
       - 'tests/test_nsejs_public_coverage_r1.py'
+      - 'tests/test_nsejs_wave3_public_stage.py'
+      - 'tools/check_staged_nsejs_mechanics_http.py'
       - 'docs/nsejs/official-iapt-source-locators-r1.json'
       - 'tools/check_public_nsejs_http.py'
       - 'tools/check_live_nsejs_preview.py'
@@ -50,6 +52,8 @@ on:
       - 'tools/build_public_nsejs_preview.py'
       - 'tools/nsejs_core1ab_public_coverage.py'
       - 'tests/test_nsejs_public_coverage_r1.py'
+      - 'tests/test_nsejs_wave3_public_stage.py'
+      - 'tools/check_staged_nsejs_mechanics_http.py'
       - 'docs/nsejs/official-iapt-source-locators-r1.json'
       - 'tools/check_public_nsejs_http.py'
       - 'tools/check_live_nsejs_preview.py'
@@ -103,12 +107,16 @@ jobs:
         run: python tools/build_public_nsejs_preview.py --out public-safe-dist
       - name: Verify all 26 construction statuses, link-only sources and no fake lesson routes
         run: python -m pytest -q tests/test_nsejs_public_coverage_r1.py
+      - name: Verify source-first Mechanics technical-only publication and negative custody controls
+        run: python -m pytest -q tests/test_nsejs_wave3_public_stage.py
       - name: Check exact staged Pages payload and negative publication controls
         run: |
           python -m pytest -q tests/test_live_nsejs_preview_exact_bytes.py
           python tools/check_live_nsejs_preview.py --verify-local --manifest public-safe-dist/PUBLIC_PREVIEW_MANIFEST.json
       - name: Verify actual staged NSEJS routes with HTTP Chromium on 12.7-inch touch viewports
         run: python tools/check_public_nsejs_http.py --site public-safe-dist
+      - name: Check actual staged authored Mechanics six-stage learner via Physics hub
+        run: python tools/check_staged_nsejs_mechanics_http.py --site public-safe-dist
       - uses: actions/upload-artifact@v4
         with:
           name: grade9-public-safe-school-nsejs-hub
