@@ -31,12 +31,15 @@ The repaired private viewer passed bounded Chromium DOM tests for all six pages 
 
 ## This public-safe draft PR
 
-This PR adds a recipient-pinned private handoff audit tool and synthetic-only unit/negative tests, no actual original exam source. The tool:
-- Refuses a changed ZIP, unsafe path, duplicate member, symlink, or manifest hash mismatch.
-- Detects ambiguous bare IDs without pretending two different subject questions are the same.
-- Reports missing media, source packet coverage and unverified official-key claims without extracting originals into CI.
-- Checks five canonical QRT factors, leaves independent academic adjudication NOT_RUN, and never promotes any course or source to admitted.
-- Does not depend on or overwrite draft PR #75, and does not import the unreceived nine-topic R3 private candidate.
+The draft PR now contains the **same source-neutral private reader patcher used for the 50-candidate private ZIP** in tools/nsejs_core2_handoff_guard.py. No private input ZIP, original question, child response, private output HTML or exam figure is added to public Git.
+
+- tools/nsejs_core2_handoff_guard.py: verify the recipient-pinned ZIP and 103 inventory members; fail closed on unsafe names and altered members. Render six private review pages with fully qualified topic/source/question identities, explicit duplicate legacy-ID selection, guarded missing figures, revision-bound first-attempt persistence, help/reveal separation and storage failure/stale-tab refusals. Preserve all original embedded question datasets byte-for-byte; ship a private input/output SHA receipt. Do not publish the repaired ZIP.
+- tools/nsejs_core2_private_audit.py: inspect all 50 assembled candidates and independently surface duplicate bare IDs, custody/figure gaps, noncanonical five-factor QRT records and unverified official-key claims without including source text in the report.
+- tests/fixtures/nsejs_core2_legacy_synthetic.html: a source-independent synthetic browser template with two repeated bare IDs; no examination problem/answer.
+- Tests and CI: twelve new source-neutral Python tests and actual HTTP Chromium journeys at 1366×768 and 390×844 on synthetic data. These tests use the same production patcher, including negative cases for legacy ambiguity, storage denial, stale writes and missing media.
+- Adjacent draft PR #75 remains untouched. The absent nine-topic R3 correction ZIP has not been imported.
+
+This PR resolves the reproducible TECHNICAL reader defects but **does not** resolve the missing official source figures/keys, any original Physics errors, QRT/B1–B7 academic qualification or nine-topic Core1B R3 content.
 
 ## Remaining gates
 
@@ -44,7 +47,7 @@ This PR adds a recipient-pinned private handoff audit tool and synthetic-only un
 | --- | --- |
 | Private 103-file archive original hash and manifest | PASS |
 | Private source-neutral viewer six-page DOM tests | BOUNDED PASS; storage polyfill, not HTTP-origin |
-| Exact public-source PR CI on synthetic fixtures | Revalidate at exact head |
+| Exact-head public CI: synthetic custody/reader and real HTTP | PASSED at earlier head; reverify final doc-edit head |
 | Actual private HTTP Chromium desktop/mobile | NOT_RUN |
 | Authentic diagrams, official keys, figure rights, remaining source custody | HOLD |
 | Independent source-only five-factor QRT for every claimed exam item | NOT_RUN |
