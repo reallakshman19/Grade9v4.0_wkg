@@ -57,6 +57,51 @@ def json_object(path: Path) -> dict | None:
         return None
 
 
+def code51_grading_flags(question: dict) -> list[str]:
+    """Check only explicitly coded 2024 Code-51 answer mechanics.
+
+    The question's native source text and answer content are never exported.
+    If a bank has no reliable paper-code metadata, the caller must not use
+    these checks as proof of identity or academic admission.
+    """
+    qid = question.get("id") if isinstance(question, dict) else None
+    if not isinstance(qid, str) or not SAFE_ID.fullmatch(qid):
+        return ["CODE51_QUESTION_ID_INVALID"]
+    if not qid.startswith("NSEJS-2024-"):
+        return []
+    number = int(qid.rsplit("-Q", 1)[1])
+    flags = []
+    if number == 20:
+        status = str(next(
+            (question[k] for k in ("official_key_status", "grading_status", "key_status", "status")
+             if isinstance(question.get(k), str)), ""
+        )).upper()
+        if status not in {"DROP", "DROPPED", "NOT_GRADED", "EXCLUDED_FROM_GRADING"}:
+            flags.append("IAPT_CODE51_Q20_DROP_GRADING_NOT_CONFIRMED")
+        # A dropped item must never carry a normal answer for automatic grading.
+        answer = question.get("answer")
+        if isinstance(answer, dict) and any(
+            answer.get(k) not in (None, "", [], {}) for k in
+            ("correct_option", "correct_options", "correct_answer", "key")
+        ):
+            flags.append("IAPT_CODE51_Q20_HAS_GRADED_ANSWER")
+        if isinstance(question.get("correct_option"), str) and question["correct_option"].strip():
+            flags.append("IAPT_CODE51_Q20_HAS_GRADED_ANSWER")
+    if 49 <= number <= 60:
+        response = question.get("response")
+        response = response if isinstance(response, dict) else {}
+        mode = str(response.get("type", "")).lower()
+        mode_explicit = mode in {"multi_correct_mcq", "multiple_correct", "multiple_answer",
+                                 "multiple_select", "multi_select"}
+        mode_explicit |= response.get("allow_multiple") is True
+        mode_explicit |= response.get("multiple_selection") is True
+        mode_explicit |= isinstance(response.get("max_selections"), int) and response["max_selections"] > 1
+        mode_explicit |= str(response.get("selection_mode", "")).upper() in {"MULTIPLE", "MULTI_SELECT"}
+        if not mode_explicit:
+            flags.append("IAPT_CODE51_A2_MULTICORRECT_UI_NOT_CONFIRMED")
+    return flags
+
+
 def inspect_row(root: Path, row: dict) -> dict:
     """Only path/structural metadata, never original stems/answers/figures."""
     bank_path = Path(row["bank_expected_path"])
@@ -81,6 +126,8 @@ def inspect_row(root: Path, row: dict) -> dict:
             if qid[:10] != f"NSEJS-{row['year']}" or qid[11:12] != SUBJECT_CODES[row["subject"]]:
                 flags.append("BANK_YEAR_SUBJECT_MISMATCH")
             ids.append(qid)
+            if row["year"] == "2024":
+                flags.extend(code51_grading_flags(item))
         if len(ids) != len(set(ids)):
             flags.append("BANK_DUPLICATE_QUESTION_ID")
         if len(questions) != declared:
@@ -108,7 +155,10 @@ def inspect_row(root: Path, row: dict) -> dict:
         flags.append("SOURCE_ROOT_NOT_RECEIVED")
     blockers = {"BANK_JSON_INVALID", "BANK_QUESTIONS_NOT_LIST", "BANK_QUESTION_ID_INVALID",
                 "BANK_YEAR_SUBJECT_MISMATCH", "BANK_DUPLICATE_QUESTION_ID",
-                "BANK_COUNT_DISAGREES_WITH_AUTHOR_TEST", "CUSTODY_SOURCE_ID_CONFLICT"}
+                "BANK_COUNT_DISAGREES_WITH_AUTHOR_TEST", "CUSTODY_SOURCE_ID_CONFLICT",
+                "IAPT_CODE51_Q20_DROP_GRADING_NOT_CONFIRMED",
+                "IAPT_CODE51_Q20_HAS_GRADED_ANSWER",
+                "IAPT_CODE51_A2_MULTICORRECT_UI_NOT_CONFIRMED"}
     structurally_complete = (
         not missing_outputs and isinstance(questions, list) and len(questions) == declared
         and len(ids) == declared and not missing_sources and not invalid_sources
