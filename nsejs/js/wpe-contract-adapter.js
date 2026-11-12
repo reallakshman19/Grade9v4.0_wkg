@@ -79,6 +79,8 @@
       "SOURCE_UID_OR_REVISION_MISMATCH");
     requireThat(bridge?.schema === "grade9-nsejs-source-learning-bridge/v1"
       && bridge.academic_admission === "HOLD"
+      && bridge.route_status === "TECHNICAL_PREVIEW"
+      && bridge.preview_authority === "AUTHORED_TECHNICAL_ONLY_NOT_ACADEMIC_ADMISSION"
       && bridge.source_revision_algorithm === "core2-physics-reader-revisionPayload-sha256/v1"
       && Array.isArray(bridge.routes) && bridge.routes.length === 1,
       "UNTRUSTED_SOURCE_BRIDGE");
@@ -87,15 +89,17 @@
       route.content_revision_sha256 === source.content_revision_sha256 &&
       route.subject === "PHYSICS" && route.topic === "MECHANICS" &&
       route.origin === source.origin &&
-      route.lesson_id === lesson.id && route.lesson_revision === "UNBUILT" &&
-      route.lesson_status === "PENDING_WAVE2" &&
+      route.lesson_id === lesson.id && route.lesson_revision === lesson.revision &&
+      route.lesson_status === "READY_FOR_TECHNICAL_PREVIEW" &&
+      route.academic_admission === "HOLD" &&
+      route.original_source_status === source.origin &&
       route.task_a_id === contract.tasks.A.id &&
       route.task_b_id === contract.tasks.B.id &&
       route.source_collection === "nsejs/data/physics-authored-practice-r1.json",
       "SOURCE_LESSON_OWNER_OR_REVISION_MISMATCH");
     requireThat(contract.source_return?.question_uid === source.question_uid &&
       contract.source_return.content_revision_sha256 === source.content_revision_sha256 &&
-      contract.source_return.route_status === "UNBUILT" &&
+      contract.source_return.route_status === "TECHNICAL_PREVIEW" &&
       route.source_return?.question_uid === source.question_uid &&
       route.source_return.content_revision_sha256 === source.content_revision_sha256 &&
       route.source_return.page === "nsejs/physics/question-bank.html" &&
@@ -334,7 +338,7 @@
   window.NSEJSWPEAdapter = Object.freeze({mount, sourcePayload, validateContract, scenarioFor});
   if (document.body?.dataset?.nsejsMechanicsPilot === "true") {
     mount({contractUrl:"../data/mechanics-wpe-teaching-pilot.v1.json",
-      bridgeUrl:"../data/source-learning-bridge-pilot.v1.json",
+      bridgeUrl:"../data/source-learning-bridge-tech-preview.v1.json",
       sourceCollectionUrl:"../data/physics-authored-practice-r1.json"});
   }
 })();
