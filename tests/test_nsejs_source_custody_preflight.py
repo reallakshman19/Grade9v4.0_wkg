@@ -158,7 +158,7 @@ def test_untrusted_source_locator_metadata_fails_validation(tmp_path):
     broken["years"][0] = source["years"][0]
     broken["years"][4]["known_final_key_exception"] = {"question": 20, "paper_code": 51, "status": "A"}
     p.write_text(json.dumps(broken), encoding="utf-8")
-    with pytest.raises(ValueError, match="Code 51"):
+    with pytest.raises(ValueError, match="paper-code 51"):
         audit.load_official_locators(tmp_path)
 
 
