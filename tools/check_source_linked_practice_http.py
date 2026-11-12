@@ -86,7 +86,7 @@ def check(site: Path) -> None:
                         page.locator("#source-year").select_option("2023")
                         page.locator("#source-question-number").fill("21")
                         assert page.locator("#save-first-response").is_disabled()
-                        assert "scope" in page.locator("#attempt-status").inner_text().lower()
+                        assert "code/language" in page.locator("#attempt-status").inner_text().lower()
                         assert page.locator('#publisher-key-link').is_hidden()
                         assert page.evaluate("document.documentElement.scrollWidth <= innerWidth + 4")
                         checks+=1
