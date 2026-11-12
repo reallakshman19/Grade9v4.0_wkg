@@ -1,0 +1,392 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Synthetic private reader</title></head><body>
+<header><h1>Synthetic controls only</h1><p>No exam material</p></header>
+<div class="notice">All questions shown are authentic examination items with official keys verified.</div>
+<label>Search <input id="search" type="search" value=""></label>
+<label>Topic <select id="topic"><option value="ALL">All</option><option>ALPHA</option><option>BETA</option></select></label>
+<label>Kind <select id="kind"><option value="ALL">All</option><option>ALPHA</option><option>BETA</option></select></label>
+<label>Band <select id="band"><option value="ALL">All</option><option>D2</option></select></label>
+<nav id="navlist"></nav><main><p id="progress"></p><div id="question-root"></div>
+<button id="prev">Previous</button><button id="next">Next</button><span id="count-total"></span><span id="count-d1"></span><span id="count-d2"></span><span id="count-d3"></span></main>
+<script id="wpe-data" type="application/json">{
+  "generated_at": "SYNTHETIC_CONTROL",
+  "questions": [
+    {
+      "id": "SYN-DUP-ID",
+      "source_id": "SYN-A",
+      "source_name": "Synthetic ALPHA physics comparison",
+      "category": "SYNTHETIC_ONLY",
+      "origin": "ORIGINAL_AUTHOR_CONTROL",
+      "stem": "Synthetic cart in ALPHA: decide which symbolic model applies.",
+      "stem_sha256": "9fbe6f6793d08936225947840d65009ac5daa106c218bcb33dba94f26803a2c4",
+      "options": [
+        "Model alpha",
+        "Model beta",
+        "Not enough data",
+        "Choose a reference"
+      ],
+      "source_figures": [
+        "synthetic-required-diagram.svg"
+      ],
+      "figure_note": "Synthetic diagram unavailable",
+      "hints": [
+        {
+          "prompt": "Clarify axes",
+          "text": "Which quantity is on which axis?"
+        },
+        {
+          "prompt": "Connect law",
+          "text": "Name the governing relation."
+        },
+        {
+          "prompt": "Open model",
+          "text": "Check the assumptions."
+        }
+      ],
+      "answer": "Synthetic author-only training solution.",
+      "steps": [
+        "Synthetic governing relation."
+      ],
+      "check": "Check units.",
+      "op": "MODEL",
+      "band": "D2",
+      "batch": "ALPHA",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "UNVERIFIED_SYNTHETIC",
+      "flags": [
+        "Synthetic, no exam authority."
+      ],
+      "topic": "ALPHA"
+    },
+    {
+      "id": "SYN-DUP-ID",
+      "source_id": "SYN-B",
+      "source_name": "Synthetic BETA physics comparison",
+      "category": "SYNTHETIC_ONLY",
+      "origin": "ORIGINAL_AUTHOR_CONTROL",
+      "stem": "Synthetic cart in BETA: decide which symbolic model applies.",
+      "stem_sha256": "da6128d2d6b3e8902c71c993e095d80524316b9d10a45c842d25148ee773fe9e",
+      "options": [
+        "Model alpha",
+        "Model beta",
+        "Not enough data",
+        "Choose a reference"
+      ],
+      "source_figures": [
+        "synthetic-required-diagram.svg"
+      ],
+      "figure_note": "Synthetic diagram unavailable",
+      "hints": [
+        {
+          "prompt": "Clarify axes",
+          "text": "Which quantity is on which axis?"
+        },
+        {
+          "prompt": "Connect law",
+          "text": "Name the governing relation."
+        },
+        {
+          "prompt": "Open model",
+          "text": "Check the assumptions."
+        }
+      ],
+      "answer": "Synthetic author-only training solution.",
+      "steps": [
+        "Synthetic governing relation."
+      ],
+      "check": "Check units.",
+      "op": "MODEL",
+      "band": "D2",
+      "batch": "BETA",
+      "review_state": "NOT_ADMITTED",
+      "key_state": "UNVERIFIED_SYNTHETIC",
+      "flags": [
+        "Synthetic, no exam authority."
+      ],
+      "topic": "BETA"
+    }
+  ]
+}</script>
+<script>
+(()=>{
+  'use strict';
+  const data = JSON.parse(document.getElementById('wpe-data').textContent);
+  const qs = data.questions;
+
+  const nodes = {
+    search: document.getElementById('search'),
+    topic: document.getElementById('topic'),
+    kind: document.getElementById('kind'),
+    band: document.getElementById('band'),
+    list: document.getElementById('navlist'),
+    root: document.getElementById('question-root'),
+    progress: document.getElementById('progress'),
+    prev: document.getElementById('prev'),
+    next: document.getElementById('next'),
+    countTotal: document.getElementById('count-total'),
+    countD1: document.getElementById('count-d1'),
+    countD2: document.getElementById('count-d2'),
+    countD3: document.getElementById('count-d3')
+  };
+
+  let filtered = [...qs];
+  const params = new URLSearchParams(window.location.search);
+  let active = params.get('question') || qs[0].id;
+  if (!qs.some(q => q.id === active)) active = qs[0].id;
+
+  const attempts = new Map();
+
+  function esc(s) {
+    return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function texPlain(tex) {
+    return String(tex)
+      .replace(/\\text\{([^}]+)\}/g, '$1')
+      .replace(/\\frac\{([^}]+)\}\{([^}]+)\}/g, '($1)/($2)')
+      .replace(/\\sqrt\{([^}]+)\}/g, '√($1)')
+      .replace(/\\approx/g, '≈')
+      .replace(/\\cdot/g, '·')
+      .replace(/\\le/g, '≤')
+      .replace(/\\ge/g, '≥')
+      .replace(/\\pm/g, '±')
+      .replace(/\\Delta/g, 'Δ')
+      .replace(/\\angle/g, '∠')
+      .replace(/\^2/g, '²')
+      .replace(/\^3/g, '³')
+      .replace(/\\/g, '');
+  }
+
+  function formatted(raw) {
+    return esc(String(raw)).replace(/\$([^$]+)\$/g, (_, math) => '<span class="math" title="Formula">' + esc(texPlain(math)) + '</span>');
+  }
+
+  function cleanOption(s) {
+    return String(s).replace(/^[A-Da-d]\s*:\s*/, '').replace(/^\([A-D]\)\s*/, '');
+  }
+
+  function filters() {
+    const s = nodes.search.value.trim().toLowerCase();
+    const t = nodes.topic ? nodes.topic.value : 'ALL';
+    const k = nodes.kind.value;
+    const b = nodes.band.value;
+
+    filtered = qs.filter(q => {
+      const matchSearch = !s || q.stem.toLowerCase().includes(s) || q.source_id.toLowerCase().includes(s) || q.id.toLowerCase().includes(s);
+      const matchTopic = (t === 'ALL') || (q.topic === t);
+      const matchKind = (k === 'ALL') || q.batch === k;
+      const matchBand = (b === 'ALL') || q.band === b;
+      return matchSearch && matchTopic && matchKind && matchBand;
+    });
+
+    // Update counts
+    nodes.countTotal.textContent = filtered.length + ' item' + (filtered.length === 1 ? '' : 's');
+    nodes.countD1.textContent = 'D1: ' + filtered.filter(q => q.band === 'D1').length;
+    nodes.countD2.textContent = 'D2: ' + filtered.filter(q => q.band === 'D2').length;
+    nodes.countD3.textContent = 'D3: ' + filtered.filter(q => q.band === 'D3').length;
+
+    if (!filtered.some(q => q.id === active) && filtered.length > 0) {
+      active = filtered[0].id;
+    }
+
+    renderNav();
+    renderQuestion();
+  }
+
+  function renderNav() {
+    nodes.list.innerHTML = filtered.map(q => {
+      const isSel = q.id === active;
+      return '<button class="item' + (isSel ? ' selected' : '') + '" data-id="' + esc(q.id) + '">' +
+        '<strong>' + esc(q.source_id) + ' · ' + esc(q.batch) + '</strong>' +
+        '<small>' + esc(q.op) + ' · ' + esc(q.band) + ' · ' + esc(q.stem.slice(0, 48)) + '…</small>' +
+      '</button>';
+    }).join('');
+
+    nodes.list.querySelectorAll('.item').forEach(btn => {
+      btn.addEventListener('click', () => {
+        active = btn.dataset.id;
+        const url = new URL(window.location);
+        url.searchParams.set('question', active);
+        window.history.replaceState({}, '', url);
+        renderNav();
+        renderQuestion();
+      });
+    });
+  }
+
+  function hintMarkup(q) {
+    if (!q.hints || !q.hints.length) return '<p class="subtitle">No hints specified for this item.</p>';
+    return q.hints.map((h, i) => {
+      return '<details class="hint" data-index="' + i + '">' +
+        '<summary>' + esc(h.prompt) + '</summary>' +
+        '<p>' + formatted(h.text) + '</p>' +
+      '</details>';
+    }).join('');
+  }
+
+  function renderQuestion() {
+    const q = qs.find(item => item.id === active);
+    if (!q) {
+      nodes.root.innerHTML = '<p class="subtitle">No matching question found.</p>';
+      return;
+    }
+
+    const curIndex = filtered.findIndex(item => item.id === active);
+    nodes.progress.textContent = 'Question ' + (curIndex + 1) + ' of ' + filtered.length;
+    nodes.prev.disabled = curIndex <= 0;
+    nodes.next.disabled = curIndex < 0 || curIndex >= filtered.length - 1;
+
+    const st = attempts.get(q.id) || { selected: null, committed: false, revealed: false };
+
+    // Figures
+    let media = '';
+    if (q.source_figures && q.source_figures.length) {
+      const figName = q.source_figures[0];
+      const svg = data.assets[figName];
+      if (svg) {
+        media = '<div class="figure">' + svg + '<figcaption>' + esc(q.figure_note || 'Source schematic diagram.') + '</figcaption></div>';
+      }
+    }
+
+    // Options
+    const optLetters = ['A', 'B', 'C', 'D'];
+    const choiceMarkup = '<div class="option-list">' + q.options.map((opt, i) => {
+      const letter = optLetters[i] || String(i);
+      const isChecked = st.selected === letter;
+      return '<label class="option">' +
+        '<input type="radio" name="answer-option" value="' + letter + '" ' + (isChecked ? 'checked' : '') + ' ' + (st.committed ? 'disabled' : '') + '>' +
+        '<span><strong>(' + letter + ')</strong> ' + formatted(cleanOption(opt)) + '</span>' +
+      '</label>';
+    }).join('') + '</div>';
+
+    // Badges
+    const badges = '<span class="chip">' + esc(q.category) + '</span>' +
+      '<span class="chip">' + esc(q.batch) + '</span>' +
+      '<span class="chip">' + esc(q.op) + ' · ' + esc(q.band) + ' (proposed)</span>' +
+      '<span class="chip hold">' + esc(q.review_state) + '</span>' +
+      '<span class="chip">' + esc(q.key_state) + '</span>';
+
+    nodes.root.innerHTML =
+      '<div class="meta">' + badges + '</div>' +
+      '<h2 class="qtitle">' + esc(q.source_name) + '</h2>' +
+      '<p class="subtitle">Identifier: ' + esc(q.id) + ' · Source Provenance: ' + esc(q.origin) + '</p>' +
+      (q.flags && q.flags.length ? '<div class="alert"><strong>Technical review notes:</strong><ul>' + q.flags.map(f => '<li>' + esc(f) + '</li>').join('') + '</ul></div>' : '') +
+      '<section class="stage">' +
+        '<h3><span class="tag">01</span> Source question</h3>' +
+        '<div class="stem">' + formatted(q.stem) + '</div>' +
+        media +
+        '<p class="source-note">Provenance: ' + esc(q.origin) + ' · Stem Digest SHA-256: <code>' + esc(q.stem_sha256.slice(0, 16)) + '…</code> · Verbatim source preserved.</p>' +
+      '</section>' +
+      '<section class="stage">' +
+        '<h3><span class="tag">02</span> Local attempt · Single-Correct MCQ</h3>' +
+        choiceMarkup +
+        '<div class="actionbar">' +
+          '<button id="commit-btn" class="btn primary" type="button" ' + (st.committed ? 'disabled' : '') + '>Commit local attempt</button>' +
+          '<span id="commit-note" class="live-note">' + (st.committed ? 'Attempt committed in this browser session.' : 'Select an option to enable commitment.') + '</span>' +
+        '</div>' +
+      '</section>' +
+      '<section class="stage">' +
+        '<h3><span class="tag">03</span> Progressive hints</h3>' +
+        '<p class="subtitle">Hints are available before and during attempts. Unfold only as needed.</p>' +
+        hintMarkup(q) +
+      '</section>' +
+      '<section class="stage">' +
+        '<h3><span class="tag">04</span> Author / Coaching solution</h3>' +
+        '<p class="source-note">Official examination key on file. Academic qualification remains candidate unadmitted.</p>' +
+        '<div class="actionbar">' +
+          '<button id="reveal-btn" class="btn" type="button" ' + (!st.committed || st.revealed ? 'disabled' : '') + '>Reveal solution after attempt</button>' +
+          '<span id="reveal-note" class="live-note">' + (!st.committed ? 'Commit local attempt before revealing solution.' : st.revealed ? 'Solution unlocked.' : 'Ready for deliberate reveal.') + '</span>' +
+        '</div>' +
+        '<div id="solution-container">' + (st.revealed ? solutionMarkup(q) : '') + '</div>' +
+      '</section>';
+
+    // Event Bindings
+    const commitBtn = nodes.root.querySelector('#commit-btn');
+    const revealBtn = nodes.root.querySelector('#reveal-btn');
+    const commitNote = nodes.root.querySelector('#commit-note');
+    const radioInputs = nodes.root.querySelectorAll('input[name="answer-option"]');
+
+    radioInputs.forEach(radio => {
+      radio.addEventListener('change', () => {
+        let cur = attempts.get(q.id) || { selected: null, committed: false, revealed: false };
+        cur.selected = radio.value;
+        attempts.set(q.id, cur);
+        commitNote.textContent = 'Option (' + radio.value + ') selected. Click Commit to freeze your attempt.';
+      });
+    });
+
+    commitBtn.addEventListener('click', () => {
+      const cur = attempts.get(q.id);
+      if (!cur || !cur.selected) {
+        commitNote.textContent = 'Please choose an option before committing.';
+        return;
+      }
+      cur.committed = true;
+      attempts.set(q.id, cur);
+      commitBtn.disabled = true;
+      revealBtn.disabled = false;
+      radioInputs.forEach(r => r.disabled = true);
+      commitNote.textContent = 'Attempt committed. You may now reveal the worked solution.';
+      revealBtn.scrollIntoView({ behavior: 'auto', block: 'nearest' });
+    });
+
+    revealBtn.addEventListener('click', () => {
+      const cur = attempts.get(q.id);
+      if (!cur || !cur.committed) return;
+      cur.revealed = true;
+      attempts.set(q.id, cur);
+      revealBtn.disabled = true;
+      nodes.root.querySelector('#reveal-note').textContent = 'Solution unlocked.';
+      nodes.root.querySelector('#solution-container').innerHTML = solutionMarkup(q);
+    });
+
+    // Progressive disclosure constraint
+    const hintEls = [...nodes.root.querySelectorAll('.hint')];
+    hintEls.forEach((el, idx) => {
+      el.addEventListener('toggle', () => {
+        if (el.open && idx > 0 && !hintEls[idx - 1].open) {
+          el.open = false;
+        }
+      });
+    });
+  }
+
+  function solutionMarkup(q) {
+    return '<div class="solution">' +
+      '<strong>' + esc(q.answer) + '</strong>' +
+      (q.steps && q.steps.length ? '<ol>' + q.steps.map(s => '<li>' + formatted(s) + '</li>').join('') + '</ol>' : '') +
+      (q.check ? '<p><strong>Limiting Case / Model Check:</strong> ' + formatted(q.check) + '</p>' : '') +
+    '</div>';
+  }
+
+  // Prev / Next Listeners
+  nodes.prev.addEventListener('click', () => {
+    const idx = filtered.findIndex(q => q.id === active);
+    if (idx > 0) {
+      active = filtered[idx - 1].id;
+      const url = new URL(window.location);
+      url.searchParams.set('question', active);
+      window.history.replaceState({}, '', url);
+      renderNav();
+      renderQuestion();
+    }
+  });
+
+  nodes.next.addEventListener('click', () => {
+    const idx = filtered.findIndex(q => q.id === active);
+    if (idx >= 0 && idx + 1 < filtered.length) {
+      active = filtered[idx + 1].id;
+      const url = new URL(window.location);
+      url.searchParams.set('question', active);
+      window.history.replaceState({}, '', url);
+      renderNav();
+      renderQuestion();
+    }
+  });
+
+  // Filters listener
+  [nodes.search, nodes.kind, nodes.band].forEach(el => el.addEventListener('input', filters));
+
+  // Initialize
+  filters();
+})();
+</script></body></html>
