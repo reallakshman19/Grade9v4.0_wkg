@@ -832,6 +832,13 @@ mod3_c1a["misconceptions"].append({
     "diagnostic_prompt": "Which stipulated lineage makes antibodies, and which can still phagocytose?",
     "repair": "B-cell memory belongs to humoral adaptive immunity; neutrophils and physical barriers are separately maintained in the stated model."
 })
+# B3 scientific correction: eosinophils are granulocytes; whole helminths are
+# too large to be phagocytosed, with extracellular degranulation/ADCC important.
+mod3_c1a["misconceptions"].append({
+    "wrong_idea": "Eosinophils engulf intact helminth worms to clear infection.",
+    "diagnostic_prompt": "Can a whole multicellular parasite physically fit inside a phagocyte?",
+    "repair": "Large helminths cannot be ingested whole; eosinophils can participate in extracellular degranulation and antibody-dependent cellular cytotoxicity. This does not make them lymphocytes."
+})
 (mod3_dir / "core1a_construction.json").write_text(json.dumps(mod3_c1a, indent=2), encoding="utf-8")
 
 mod3_c1b = {
