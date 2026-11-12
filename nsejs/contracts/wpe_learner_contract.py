@@ -196,6 +196,8 @@ def validate(data: dict, bridge: dict | None = None) -> dict:
                   entry.get("lesson_status") == "READY_FOR_TECHNICAL_PREVIEW" and
                   entry.get("lesson_revision") == lesson["revision"],
                   "SOURCE_BRIDGE_LESSON_NOT_READY")
+            _need(route.get("route_status") == "TECHNICAL_PREVIEW",
+                  "SOURCE_RETURN_NOT_READY")
     return {"schema": data["schema"], "engine": data["engine"],
             "source_uid": uid, "source_revision": revision,
             "storage_prefix": namespace(data), "variants": ["T1", "T2"],
