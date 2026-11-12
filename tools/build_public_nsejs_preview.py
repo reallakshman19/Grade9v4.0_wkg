@@ -23,6 +23,7 @@ sys.path.insert(0, str(ROOT / "nsejs/contracts"))
 from build_public_reader_preview import build_preview
 from nsejs_core1ab_public_coverage import public_coverage, render_subject_index, render_official_sources
 from nsejs_source_practice_recovery import (build_source_link_index, recovery_receipt, render_core1_recovery, write_json)
+from nsejs_authored_transfer_index import derive_authored_transfer_index
 from source_learning_bridge import validate_bindings
 from wpe_learner_contract import validate as validate_wpe_contract
 
@@ -35,6 +36,9 @@ PUBLIC_NSEJS = (
     "nsejs/chemistry/question-bank.html",
     "nsejs/biology/question-bank.html",
     "nsejs/js/source-linked-exam-practice.js",
+    "nsejs/chemistry/authored-practice.html",
+    "nsejs/biology/authored-practice.html",
+    "nsejs/js/authored-transfer-practice.js",
     "nsejs/js/core2-physics-reader.js",
     "nsejs/js/core2-learning-route.js",
     "nsejs/data/physics-core2-candidates.v1.json",
@@ -121,6 +125,8 @@ def generated_lessons(stage: Path) -> dict:
             subprocess.run([sys.executable, builder], cwd=temp, env=env,
                            check=True, capture_output=True, text=True, timeout=100)
         coverage = public_coverage(LESSONS, ROOT, temp / "workspace" / "output")
+        authored = derive_authored_transfer_index(temp / "workspace" / "output", LESSONS)
+        put(stage, "nsejs/data/authored-core1b-transfers.v1.json", write_json(authored))
         put(stage, "nsejs/data/core1ab-coverage.v1.json",
             (json.dumps(coverage, indent=2, sort_keys=True) + "\n").encode("utf-8"))
         for subject, modules in LESSONS.items():
