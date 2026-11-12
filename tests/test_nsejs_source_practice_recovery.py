@@ -145,3 +145,46 @@ def test_exact_public_package_contains_working_notebook_and_recovery_not_officia
     for forbidden in ["workspace/sources","source-custody.json"]:
         assert not any(forbidden in name for name in manifest["files"])
     assert not list(dist.rglob("*.pdf"))
+
+
+def test_authored_core1b_transfer_bank_uses_only_five_fresh_builder_prompts(staged):
+    dist,manifest=staged
+    path=dist/"nsejs/data/authored-core1b-transfers.v1.json"
+    assert path.is_file()
+    bank=json.loads(path.read_text("utf-8"))
+    assert bank["schema"]=="grade9-nsejs-authored-core1b-practice/v1"
+    assert bank["source_origin"]=="GRADE9_ORIGINAL_CORE1B_TRANSFER_NOT_OFFICIAL_NSEJS"
+    assert bank["academic_admission"]=="HOLD"
+    assert bank["source_exam_authenticated"] is False
+    assert bank["official_exam_questions_published"]==0
+    assert bank["copy_of_original_exam_stem"] is False
+    assert bank["authored_transfer_count"]==5
+    assert len(bank["items"])==5
+    assert len({item["uid"] for item in bank["items"]})==5
+    for subject,expected in (("CHEMISTRY",2),("BIOLOGY",3)):
+        items=[x for x in bank["items"] if x["subject"]==subject]
+        assert len(items)==expected
+        reader=dist/f"nsejs/{subject.lower()}/authored-practice.html"
+        assert reader.is_file()
+        body=reader.read_text("utf-8")
+        assert "Authored Core1B transfer practice" in body
+        assert "NOT</strong> official NSEJS questions" in body
+        assert "<iframe" not in body.lower()
+        hub=(dist/f"nsejs/{subject.lower()}/index.html").read_text("utf-8")
+        assert hub.count('id="authored-transfer-question-bank"')==1
+        assert 'href="authored-practice.html"' in hub
+        for q in items:
+            assert q["academic_admission"]=="HOLD"
+            assert q["independent_science_review"]=="HOLD"
+            assert q["original_exam_question"] is False
+            assert q["source_origin"]==bank["source_origin"]
+            assert len(q["prompt"])>=55
+            assert len(q["reconstruction"])>=2
+            assert len(q["boundary_author_response"])>=25
+            assert "AUTHENTIC-EXAM" not in q["fresh_task_ref"].upper()
+            assert q["lesson_route"] in manifest["files"]
+            assert len(q["revision_sha256"])==64
+    assert "nsejs/js/authored-transfer-practice.js" in manifest["files"]
+    assert "nsejs/data/authored-core1b-transfers.v1.json" in manifest["files"]
+    assert manifest["core1ab_authored_lesson_pages"]==8
+    assert manifest["core1ab_unpublished_constructions"]==18
