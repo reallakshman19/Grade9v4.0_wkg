@@ -176,6 +176,7 @@ def test_task_a_b_demand_is_different_and_feedback_is_answer_specific(data):
 def test_revision_and_task_collision_negatives(data):
     bad = deepcopy(data)
     bad["source"]["content_revision_sha256"] = "0"*64
+    bad["source_return"]["content_revision_sha256"] = "0"*64
     with pytest.raises(ContractError, match="SOURCE_BRIDGE_REVISION_OR_OWNER_MISMATCH"):
         route = json.loads(BRIDGE.read_text("utf-8"))["routes"][0]
         validate(bad, route)
