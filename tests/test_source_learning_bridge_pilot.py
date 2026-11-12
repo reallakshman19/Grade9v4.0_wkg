@@ -86,7 +86,7 @@ def test_bad_route_fails_closed(evidence, field, value, error):
 
 
 def test_return_question_or_revision_substitution_rejected(evidence):
-    original = deepcopy(original)
+    original = deepcopy(evidence)
     mapping, source = deepcopy(original)
     mapping["routes"][0]["source_return"]["question_uid"] = "g9:PHYSICS:WRONG"
     held(mapping, source, "SOURCE_RETURN_REVISION_MISMATCH")
@@ -96,7 +96,7 @@ def test_return_question_or_revision_substitution_rejected(evidence):
 
 
 def test_academic_or_reader_contract_promotion_rejected(evidence):
-    original = deepcopy(original)
+    original = deepcopy(evidence)
     mapping, source = deepcopy(original)
     source["source_claim"] = "OFFICIAL_NSEJS_EXAM"
     held(mapping, source, "UNAUTHORIZED_SOURCE_ORIGIN")
@@ -109,7 +109,7 @@ def test_academic_or_reader_contract_promotion_rejected(evidence):
 
 
 def test_topic_change_or_lesson_attempt_alias_rejected(evidence):
-    original = deepcopy(original)
+    original = deepcopy(evidence)
     mapping, source = deepcopy(original)
     source["questions"][0]["topic"] = "OPTICS"
     held(mapping, source, "SOURCE_PROVENANCE_OR_TOPIC_INVALID")
