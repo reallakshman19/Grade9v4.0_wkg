@@ -34,12 +34,13 @@ def tests(browser):
               const main=document.querySelector('main');
               const allWidth=document.documentElement.scrollWidth;
               return {site:!!root, subjects:root?.querySelectorAll('nav.subjects a').length||0,
+                      hasNsejs:!![...root?.querySelectorAll('nav.subjects a')||[]].find(a=>a.textContent.includes('NSEJS')),
                       local:document.querySelectorAll('nav.top-nav').length,
                       bodyWidth:allWidth, viewport:innerWidth,
                       header:!!document.querySelector('header'), main:!!main,
                       cardTop:main?.querySelector('.card')?.getBoundingClientRect().top};
             }""")
-            assert_that(result["site"] and result["subjects"] == 4, f"{path} {width}: nav absent {result}")
+            assert_that(result["site"] and result["subjects"] == 5 and result["hasNsejs"], f"{path} {width}: nav absent {result}")
             assert_that(result["local"]==0, f"{path} {width}: duplicate menu {result}")
             assert_that(result["bodyWidth"]<=result["viewport"]+2, f"{path} {width}: horizontal overflow {result}")
             assert_that(not errors, f"{path} {width}: JS exception {errors}")
