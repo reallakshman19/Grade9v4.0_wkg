@@ -1,7 +1,7 @@
 # Oracle Checkpoint — 12 November 2026
 
-**Timestamp:** 2026-11-12T08:44:00+04:00  
-**Operating Sequence:** **NSEJS 5-Year Past-Paper Ingestion (2024, 2023 & 2022 COMPLETE across PCB: 180 authentic items) $\to$ 2021 $\to$ 2020**  
+**Timestamp:** 2026-11-12T08:57:00+04:00  
+**Operating Sequence:** **NSEJS 5-Year Past-Paper Ingestion (2024, 2023, 2022 & 2021 COMPLETE across PCB: 213 authentic items) $\to$ 2020**  
 **Active Branch:** `feat/multi-subject-core2-expansion-01`  
 **Authority Invariant:** Rule 13 in `AGENTS.md` (*No academic approval inferred from software validation. Green CI means automatic tests passed; it never means student release is authorized.*)
 
@@ -11,12 +11,12 @@
 
 | Subject Track | Topics / Papers Ingested | Ingested Question Count | Test Suite Status | Track Status |
 | :--- | :--- | :---: | :---: | :---: |
-| **Track 1: Physics** | Ray Optics, Electrostatics, Circuits, Magnetism & EMI, Mechanics, Fluid Mechanics & Sound, **NSEJS 2024, 2023 & 2022 Official Paper 51** | **120 items** | 23 suites (6 Core 2 topics + 8 D3 + 6 Core 1A/1B + **NSEJS 2024, 2023 & 2022 Papers**), **241 passed** | **100% COMPLETE (All Topics + 2024, 2023 & 2022 Official Papers Ingested)** |
+| **Track 1: Physics** | Ray Optics, Electrostatics, Circuits, Magnetism & EMI, Mechanics, Fluid Mechanics & Sound, **NSEJS 2024, 2023, 2022 & 2021 Official Paper 51** | **131 items** | 24 suites (6 Core 2 topics + 8 D3 + 6 Core 1A/1B + **NSEJS 2024, 2023, 2022 & 2021 Papers**), **256 passed** | **100% COMPLETE (All Topics + 2024, 2023, 2022 & 2021 Official Papers Ingested)** |
 | **Track 2: Mathematics** | Topic 1: Algebra & Polynomials<br>Topic 2: Number Theory & Divisibility | **20 items** | 2 suites, **43 passed** (Full QRT Labelling) | **COMPLETE (Topics 1 & 2 Ingested; paused per user)** |
-| **Track 3: Chemistry** | Topic 1: Matter & Mole Concept<br>Topic 2: Chemical Substances — Reactions<br>Topic 3: Atomic Structure & Bonding<br>D3 Modules (Eudiometry & Redox Titrations)<br>**NSEJS 2024, 2023 & 2022 Official Paper 51** | **92 items** | 12 suites (3 Core topics + 6 D3 + **NSEJS 2024, 2023 & 2022 Papers**), **122 passed** | **100% COMPLETE (All Topics + 2024, 2023 & 2022 Official Papers Ingested)** |
-| **Track 4: Biology** | **NSEJS 2024, 2023 & 2022 Official Paper 51** | **60 items** | 3 suites (**NSEJS 2024, 2023 & 2022 Papers**), **59 passed** | **100% COMPLETE (2024, 2023 & 2022 Official Papers Ingested)** |
+| **Track 3: Chemistry** | Topic 1: Matter & Mole Concept<br>Topic 2: Chemical Substances — Reactions<br>Topic 3: Atomic Structure & Bonding<br>D3 Modules (Eudiometry & Redox Titrations)<br>**NSEJS 2024, 2023, 2022 & 2021 Official Paper 51** | **103 items** | 13 suites (3 Core topics + 6 D3 + **NSEJS 2024, 2023, 2022 & 2021 Papers**), **135 passed** | **100% COMPLETE (All Topics + 2024, 2023, 2022 & 2021 Official Papers Ingested)** |
+| **Track 4: Biology** | **NSEJS 2024, 2023, 2022 & 2021 Official Paper 51** | **71 items** | 4 suites (**NSEJS 2024, 2023, 2022 & 2021 Papers**), **76 passed** | **100% COMPLETE (2024, 2023, 2022 & 2021 Official Papers Ingested)** |
 | **Cross-Subject Architecture** | Shared/QRT Schemas, Bounded Transfer Protocols, Gate Checkers, Audit Invariants | N/A | 10 cross-cutting contract suites, **461 passed** | **ACTIVE & ENFORCED** |
-| **TOTALS** | **28 Active Learning Modules** | **332 items** | **43 Pytest Suites, 890 Passed, 2 Skipped (Platform Symlinks), 0 Failed** | **100% GREEN CI** |
+| **TOTALS** | **31 Active Learning Modules** | **365 items** | **46 Pytest Suites, 935 Passed, 2 Skipped (Platform Symlinks), 0 Failed** | **100% GREEN CI** |
 
 ---
 
@@ -29,9 +29,9 @@ All 12 official question papers, detailed solution booklets, and chapter/concept
 | **NSEJS 2024** | **60** | 20 | 20 | 20 | 0 | **100% INGESTED (All 60 Items with Custody, Core 2 HTMLs & 54 Tests)** |
 | **NSEJS 2023** | **60** | 20 | 20 | 20 | 0 | **100% INGESTED (All 60 Items with Custody, Core 2 HTMLs & 53 Tests)** |
 | **NSEJS 2022** | **60** | 20 | 20 | 20 | 0 | **100% INGESTED (All 60 Items with Custody, Core 2 HTMLs & 54 Tests)** |
-| **IOQJS / NSEJS 2021** | **33** | 11 | 11 | 11 | 0 | Downloaded (`nsejs_2021_*.pdf`), ready for extraction |
+| **IOQJS / NSEJS 2021** | **33** | 11 | 11 | 11 | 0 | **100% INGESTED (All 33 Items with Custody, Core 2 HTMLs & 45 Tests)** |
 | **IOQJS 2020** | **24** | 8 | 8 | 8 | 0 (excl) | Downloaded (`nsejs_2020_*.pdf`), ready for extraction |
-| **Total Authentic PCB Corpus** | **237 items** | **79** | **79** | **79** | 0 | **180 items ingested (75.9% complete); 57 items staged** |
+| **Total Authentic PCB Corpus** | **237 items** | **79** | **79** | **79** | 0 | **213 items ingested (89.9% complete); 24 items remaining (2020)** |
 
 ---
 
@@ -117,9 +117,34 @@ All 12 official question papers, detailed solution booklets, and chapter/concept
 
 ---
 
-## 4. Quality Gate & Invariant Compliance
+## 4. NSEJS 2021 Complete Ingestion Modules (Paper Code 51)
 
-Strict compliance verified across all 332 items and 43 test suites:
+### Physics: `nsejs-2021-physics-r1` (11 items: `NSEJS-2021-P-Q17`..`Q24`, `Q31`..`Q33`)
+- **Format:** 8 Single Correct (3 marks, -1 negative: Q17–Q24) + 3 Multiple Correct (6 marks, no negative: Q31–Q33).
+- **Core Topics:** Kinematics relative velocity vector geometry, non-ohmic incandescent bulb circuit resistance, rotational and translational kinetic energy rolling balance, planar mirror refraction image position, parallel-plate capacitor charge distribution, ideal gas state equation work, and Archimedes buoyancy equilibrium.
+- **Official Keys:** Q17 (`B OR D`), Q18 (`DROP`), Q19 (`B`), Q20 (`B`), Q21 (`C`), Q22 (`A`), Q23 (`C`), Q24 (`B`), Q31 (`A, B, C`), Q32 (`B, C`), Q33 (`A, D`).
+- **Artifacts:** `intake.json`, `bank.json`, `questions.json`, `core2_module.html`, `question-status.html`, `sl1_check_report.json`, `sl2_check_report.json`, source custody in `workspace/sources/nsejs/`.
+- **Test Suite:** `tests/test_nsejs_2021_physics.py` (15 passed).
+
+### Chemistry: `nsejs-2021-chemistry-r1` (11 items: `NSEJS-2021-C-Q09`..`Q16`, `Q28`..`Q30`)
+- **Format:** 8 Single Correct (3 marks, -1 negative: Q09–Q16) + 3 Multiple Correct (6 marks, no negative: Q28–Q30).
+- **Core Topics:** Mole concept triatomic sulfur dioxide atom counting, stoichiometric antacid neutralisation of gastric HCl, thermal decomposition mass balance of calcium carbonate-oxide calcination, periodic electronegativity progression, Ostwald weak electrolyte ionisation conductance, qualitative analysis cationic hydrolysis of ammonium chloride, Avogadro molar mass equivalence of equal volume gases, and colligative van 't Hoff factor osmotic pressure hierarchy.
+- **Official Keys:** Q09 (`C`), Q10 (`A`), Q11 (`A`), Q12 (`C`), Q13 (`C`), Q14 (`B`), Q15 (`D`), Q16 (`B`), Q28 (`A, D`), Q29 (`B, D`), Q30 (`B`).
+- **Artifacts:** `intake.json`, `bank.json`, `questions.json`, `core2_module.html`, `question-status.html`, `sl1_check_report.json`, `sl2_check_report.json`, source custody in `workspace/sources/chem/`.
+- **Test Suite:** `tests/test_nsejs_2021_chemistry.py` (13 passed).
+
+### Biology: `nsejs-2021-biology-r1` (11 items: `NSEJS-2021-B-Q01`..`Q08`, `Q25`..`Q27`)
+- **Format:** 8 Single Correct (3 marks, -1 negative: Q01–Q08) + 3 Multiple Correct (6 marks, no negative: Q25–Q27).
+- **Core Topics:** Erythrocyte physiological functions vs B-cell immunoglobulin synthesis, limbless tetrapod evolution in Reptilia and Amphibia (Gymnophiona / caecilians), dipteran single wing pair and halteres in housefly, fruit fly, and mosquito, single-stranded RNA chemical diagnosis via lack of thymine and 2'-OH alkaline cleavage, hydrophytic aerenchyma buoyancy lacunae in water hyacinth petiole, bryophyte non-vascular organization and flagellated antherozoid water dependence, Crassulacean Acid Metabolism (CAM) nocturnal carbon fixation in desert succulents, and chiropterophily bat floral syndromes.
+- **Official Keys:** Q01 (`C`), Q02 (`C`), Q03 (`D`), Q04 (`C`), Q05 (`B`), Q06 (`D`), Q07 (`C`), Q08 (`B`), Q25 (`A, C, D`), Q26 (`A, B, C`), Q27 (`A, B`).
+- **Artifacts:** `intake.json`, `bank.json`, `questions.json`, `core2_module.html`, `question-status.html`, `sl1_check_report.json`, `sl2_check_report.json`, source custody in `workspace/sources/bio/`.
+- **Test Suite:** `tests/test_nsejs_2021_biology.py` (17 passed).
+
+---
+
+## 5. Quality Gate & Invariant Compliance
+
+Strict compliance verified across all 365 items and 46 test suites:
 - **Gate 1 (Zero Ghost Text):** 0 occurrences of `"2. Connection:"` across all modules.
 - **Gate 2 (Dynamic Crux Move):** Bound to `M2` or `M3` with strategy matching.
 - **Gate 3 (Rubric Bounds):** $c_i \in \{0, 1, 2\}$ with $\sum c_i = \text{score}$.
