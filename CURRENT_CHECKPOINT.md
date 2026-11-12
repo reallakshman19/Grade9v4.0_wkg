@@ -1,7 +1,7 @@
 # Oracle Checkpoint — 12 November 2026
 
-**Timestamp:** 2026-11-12T10:18:00+04:00  
-**Operating Sequence:** **12.7" Tablet Topic Hubs & Cores PR Draft Prepared (WPE Tile Removed; Core 2 Labeled {Unvalidated}; 1001 Pytest Passed, Tablet Playwright Passed)**  
+**Timestamp:** 2026-11-12T10:42:00+04:00  
+**Operating Sequence:** **Batch 2 Band D3 Core 1A/1B Authoring & Verification Complete (Optics Displacement, Scandium Electronic Structure, Immunology; 1019 Pytest Passed, 27/27 Playwright Passed)**  
 **Active Branch:** `feat/multi-subject-core2-expansion-01`  
 **Authority Invariant:** Rule 13 in `AGENTS.md` (*No academic approval inferred from software validation. Green CI means automatic tests passed; it never means student release is authorized.*)
 
@@ -11,12 +11,12 @@
 
 | Subject Track | Topics / Papers Ingested | Ingested Question Count | Test Suite Status | Track Status |
 | :--- | :--- | :---: | :---: | :---: |
-| **Track 1: Physics** | Ray Optics, Electrostatics, Circuits, Magnetism & EMI, Mechanics, Fluid Mechanics & Sound, **NSEJS 2024, 2023, 2022, 2021 & 2020 Official Paper 51** | **140 items** | 26 suites (6 Core 2 topics + 9 D3 + 6 Core 1A/1B + **NSEJS 2024, 2023, 2022, 2021 & 2020 Papers**), **276 passed** | **100% COMPLETE & DUAL-ENGINE AUDITED** |
+| **Track 1: Physics** | Ray Optics, Electrostatics, Circuits, Magnetism & EMI, Mechanics, Fluid Mechanics & Sound, **NSEJS 2024, 2023, 2022, 2021 & 2020 Official Paper 51** | **140 items** | 27 suites (6 Core 2 topics + 10 D3 + 6 Core 1A/1B + **NSEJS 2024, 2023, 2022, 2021 & 2020 Papers**), **282 passed** | **100% COMPLETE & DUAL-ENGINE AUDITED** |
 | **Track 2: Mathematics** | Topic 1: Algebra & Polynomials<br>Topic 2: Number Theory & Divisibility | **20 items** | 2 suites, **43 passed** (Full QRT Labelling) | **COMPLETE (Topics 1 & 2 Ingested; paused per user)** |
-| **Track 3: Chemistry** | Topic 1: Matter & Mole Concept<br>Topic 2: Chemical Substances — Reactions<br>Topic 3: Atomic Structure & Bonding<br>D3 Modules (Eudiometry & Redox Titrations)<br>**NSEJS 2024, 2023, 2022, 2021 & 2020 Official Paper 51** | **112 items** | 15 suites (3 Core topics + 7 D3 + **NSEJS 2024, 2023, 2022, 2021 & 2020 Papers**), **155 passed** | **100% COMPLETE & DUAL-ENGINE AUDITED** |
-| **Track 4: Biology** | **NSEJS 2024, 2023, 2022, 2021 & 2020 Official Paper 51** | **80 items** | 6 suites (**NSEJS 2024, 2023, 2022, 2021 & 2020 Papers** + D3 Viral Genetics), **96 passed** | **100% COMPLETE & DUAL-ENGINE AUDITED** |
-| **Cross-Subject Architecture** | Shared/QRT Schemas, Bounded Transfer Protocols, Gate Checkers, Audit Invariants | N/A | 10 cross-cutting contract suites, **468 passed** | **ACTIVE & ENFORCED** |
-| **TOTALS** | **37 Active Learning Modules** | **392 items** | **53 Pytest Suites, 1001 Passed, 2 Skipped (Platform Symlinks), 0 Failed** | **100% GREEN CI (Dual-Engine & Tablet Audited)** |
+| **Track 3: Chemistry** | Topic 1: Matter & Mole Concept<br>Topic 2: Chemical Substances — Reactions<br>Topic 3: Atomic Structure & Bonding<br>D3 Modules (Eudiometry, Redox Titrations & Transition Aufbau)<br>**NSEJS 2024, 2023, 2022, 2021 & 2020 Official Paper 51** | **112 items** | 16 suites (3 Core topics + 8 D3 + **NSEJS 2024, 2023, 2022, 2021 & 2020 Papers**), **161 passed** | **100% COMPLETE & DUAL-ENGINE AUDITED** |
+| **Track 4: Biology** | **NSEJS 2024, 2023, 2022, 2021 & 2020 Official Paper 51** | **80 items** | 7 suites (**NSEJS 2024, 2023, 2022, 2021 & 2020 Papers** + D3 Viral Genetics & Immunology), **102 passed** | **100% COMPLETE & DUAL-ENGINE AUDITED** |
+| **Cross-Subject Architecture** | Shared/QRT Schemas, Bounded Transfer Protocols, Gate Checkers, Audit Invariants | N/A | 10 cross-cutting contract suites, **474 passed** | **ACTIVE & ENFORCED** |
+| **TOTALS** | **40 Active Learning Modules** | **392 items** | **55 Pytest Suites, 1019 Passed, 2 Skipped (Platform Symlinks), 0 Failed** | **100% GREEN CI (Dual-Engine & Tablet Audited)** |
 
 ---
 
