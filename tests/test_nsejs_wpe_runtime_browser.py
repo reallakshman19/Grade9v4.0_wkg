@@ -66,19 +66,26 @@ def fixture_data():
     }
     c["tasks"]["A"]["id"] = route["task_a_id"]
     c["tasks"]["B"]["id"] = route["task_b_id"]
+    preview_bridge = deepcopy(bridge)
+    preview_bridge["route_status"] = "TECHNICAL_PREVIEW"
+    preview_bridge["preview_authority"] = "AUTHORED_TECHNICAL_ONLY_NOT_ACADEMIC_ADMISSION"
+    preview_bridge["routes"][0]["lesson_status"] = "READY_FOR_TECHNICAL_PREVIEW"
+    preview_bridge["routes"][0]["lesson_revision"] = c["lesson"]["revision"]
+    preview_bridge["routes"][0]["academic_admission"] = "HOLD"
+    preview_bridge["routes"][0]["original_source_status"] = "AUTHORED_PRACTICE_NOT_OFFICIAL_EXAM"
     c["source_return"] = {
         "page":route["source_return"]["page"],
         "topic":"mechanics",
         "question_uid":route["question_uid"],
         "content_revision_sha256":route["content_revision_sha256"],
-        "route_status":"UNBUILT",
+        "route_status":"TECHNICAL_PREVIEW",
     }
-    return c, src, route
+    return c, src, route, preview_bridge
 
 
 @pytest.fixture
 def open_page(server, fixture_data):
-    c, src, route = fixture_data
+    c, src, route, preview_bridge = fixture_data
     with sync_playwright() as pw:
         browser = pw.chromium.launch(headless=True)
         def open_one(*, width=1000, height=1600, changed_source=None,
@@ -96,6 +103,9 @@ def open_page(server, fixture_data):
                 lambda request: request.fulfill(
                     status=200, content_type="application/json",
                     body=json.dumps(c, separators=(",",":"))))
+            page.route("**/nsejs/data/source-learning-bridge-tech-preview.v1.json",
+                lambda request: request.fulfill(status=200, content_type="application/json",
+                    body=json.dumps(preview_bridge, separators=(",",":"))))
             page.route("**/nsejs/data/physics-authored-practice-r1.json",
                 lambda request: request.fulfill(
                     status=200, content_type="application/json",
@@ -153,7 +163,7 @@ def finish_boundary(page, task):
 def test_real_chromium_two_independent_six_stage_tasks_and_exact_return(
     open_page, fixture_data, width, height
 ):
-    contract, src, route = fixture_data
+    contract, src, route, preview_bridge = fixture_data
     context, page, errors = open_page(width=width, height=height)
     try:
         wait_ready(page)
