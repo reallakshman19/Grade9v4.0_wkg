@@ -52,7 +52,7 @@ jobs:
         run: |
           python -m pip install playwright==1.55.0
           python -m playwright install chromium
-      - name: Run actual HTTP desktop/mobile Core1B protection
+      - name: Run 12.7-inch touch tablet landscape/portrait Core1B journeys
         run: python tools/check_agent_b_core1ab_http.py
 
   candidate-census:
