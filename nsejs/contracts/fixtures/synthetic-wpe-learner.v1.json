@@ -1,0 +1,238 @@
+{
+  "schema": "grade9-nsejs-wpe-learner-contract/v1",
+  "engine": "window.WPEGapJourneys",
+  "stages": [
+    "Predict",
+    "Attempt",
+    "Reconstruct",
+    "Diagnose",
+    "Repair",
+    "Boundary test"
+  ],
+  "subject": "PHYSICS",
+  "academic_admission": "HOLD",
+  "source": {
+    "question_uid": "g9:PHYSICS:G9-SYN-UNIT-001",
+    "content_revision_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "origin": "AUTHORED_PRACTICE_NOT_OFFICIAL_EXAM",
+    "academic_admission": "HOLD"
+  },
+  "lesson": {
+    "id": "G9-SYN-UNIT-001-CORE1",
+    "revision": "synthetic-r1",
+    "topic": "MECHANICS",
+    "engine_adapter": "WPE_SCENARIO_DATA_ONLY",
+    "core1a": {
+      "prerequisites": "Kinetic energy is one half mass times speed squared; force times distance has units of joules.",
+      "core": "Separate the energy ledger from momentum conservation.",
+      "guide": "The teacher anchors the model using a simple 2 kg cart with adjustable surface resistance.",
+      "wrong": "Do not conserve momentum during external friction.",
+      "conditions": "Constant friction requires a controlled patch; measurements of only distance establish average work.",
+      "question": "How do speed and resistance change stopping distance?",
+      "guideSteps": [
+        [
+          "Choose the moving system",
+          "Define the cart and the braking surface."
+        ],
+        [
+          "Draw forces",
+          "Identify normal force, gravity and friction directions."
+        ],
+        [
+          "Calculate energy",
+          "Use one-half mass times speed squared."
+        ],
+        [
+          "Write the loss",
+          "Express friction work as force times displacement."
+        ],
+        [
+          "Check limits",
+          "Higher speed requires more work; zero resistance means no finite stopping distance."
+        ]
+      ],
+      "model": {
+        "kind": "SLIDER_MODEL",
+        "parameter": "friction_newtons",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "units": "N"
+      }
+    }
+  },
+  "tasks": {
+    "A": {
+      "id": "G9-SYN-UNIT-001-A",
+      "reasoning_demand": "Separate force balance from stopping work on one uniform surface",
+      "prediction": "If kinetic friction doubles at fixed entry speed, what happens to stopping distance?",
+      "challenge": "Synthetic: A 2 kg toy cart enters a horizontal rough patch at 4 m/s. The constant friction force is 4 N. Predict and calculate the stopping distance without treating friction as additional kinetic energy.",
+      "fields": [
+        {
+          "id": "model",
+          "label": "Choose the energy model",
+          "type": "select",
+          "choices": [
+            "Choose an idea",
+            "Initial kinetic energy is removed by friction work",
+            "Momentum is conserved as the cart stops",
+            "I'm not sure yet"
+          ],
+          "expected": "Initial kinetic energy is removed by friction work",
+          "mistake": "Friction is an external force that does negative work",
+          "errorKind": "MODEL_CHOICE"
+        },
+        {
+          "id": "distance",
+          "label": "Stopping distance (m)",
+          "type": "number",
+          "expected": 4,
+          "tol": 0.01,
+          "mistake": "Initial K = 16 J and friction is 4 N, so distance = 4 m",
+          "errorKind": "CALCULATION_OR_UNITS"
+        },
+        {
+          "id": "reason",
+          "label": "Explain the work–energy balance and units",
+          "type": "textarea"
+        }
+      ],
+      "hints": [
+        "Decide which force acts along the displacement and what sign its work has.",
+        "Set magnitude of friction work equal to the initial kinetic energy only after identifying the system."
+      ],
+      "worked": [
+        [
+          "Choose a system",
+          "The cart loses kinetic energy to the rough surface; momentum is not constant."
+        ],
+        [
+          "Calculate entry energy",
+          "K = 0.5 × 2 × 4² = 16 J."
+        ],
+        [
+          "Calculate friction work",
+          "The 4 N friction force removes 4 J per metre, so 4d = 16 J and d = 4 m."
+        ]
+      ],
+      "boundary": "Boundary test: the same cart enters the same patch at 8 m/s with the same constant friction force. Is the stopping distance still 4 m?",
+      "boundaryFields": [
+        {
+          "id": "model",
+          "label": "Choose the speed dependence",
+          "type": "select",
+          "choices": [
+            "Choose an idea",
+            "Stopping distance scales with the square of speed",
+            "Stopping distance stays the same",
+            "I'm not sure yet"
+          ],
+          "expected": "Stopping distance scales with the square of speed",
+          "mistake": "At fixed force, energy is proportional to speed squared",
+          "errorKind": "MODEL_CHOICE"
+        },
+        {
+          "id": "distance",
+          "label": "Changed distance (m)",
+          "type": "number",
+          "expected": 16,
+          "tol": 0.05,
+          "mistake": "Speed doubling multiplies kinetic energy by four",
+          "errorKind": "CALCULATION_OR_UNITS"
+        },
+        {
+          "id": "why",
+          "label": "Explain why speed doubling changes distance by this factor",
+          "type": "textarea"
+        }
+      ],
+      "boundaryCheck": "At 8 m/s the cart has 64 J. The same 4 N friction takes 16 m to stop.",
+      "first_attempt_policy": "SAVE_BEFORE_REVEAL",
+      "written_response_grading": "UNASSESSED"
+    },
+    "B": {
+      "id": "G9-SYN-UNIT-001-B",
+      "reasoning_demand": "Infer friction from measured stopping distance and test whether constant friction remains justified",
+      "prediction": "If a cart stops over 2 m from the same entry speed, what could that say about the average friction force?",
+      "challenge": "Synthetic unfamiliar setting: A rolling test cart of mass 2 kg enters an unknown coating at 4 m/s and stops over a measured 2 m. Assume other losses are negligible. Infer its average resistive force, then state what extra measurements you need before claiming friction is constant.",
+      "fields": [
+        {
+          "id": "model",
+          "label": "Choose the inference model",
+          "type": "select",
+          "choices": [
+            "Choose an idea",
+            "Infer average resistance from measured work",
+            "Conserve horizontal momentum throughout stopping",
+            "I'm not sure yet"
+          ],
+          "expected": "Infer average resistance from measured work",
+          "mistake": "Only net work and displacement determine an average force, not its time profile",
+          "errorKind": "MODEL_CHOICE"
+        },
+        {
+          "id": "resistance",
+          "label": "Inferred mean resistive force (N)",
+          "type": "number",
+          "expected": 8,
+          "tol": 0.05,
+          "mistake": "16 J dissipated over 2 m means mean force = 8 N",
+          "errorKind": "CALCULATION_OR_UNITS"
+        },
+        {
+          "id": "reason",
+          "label": "Explain what is and is not determined by stopping distance",
+          "type": "textarea"
+        }
+      ],
+      "hints": [
+        "First compute energy lost rather than assuming the friction value from Task A.",
+        "Only the integral of force over distance is fixed by a stopping measurement; an exact force-versus-position profile is not."
+      ],
+      "worked": [
+        [
+          "Measure lost kinetic energy",
+          "As before, K = 16 J at entry and zero at rest."
+        ],
+        [
+          "Infer mean force",
+          "Mean F along travel is 16 J / 2 m = 8 N opposing motion."
+        ],
+        [
+          "Check identifiability",
+          "This does not prove the force was constantly 8 N; different force–distance profiles could have the same work."
+        ]
+      ],
+      "boundary": "Boundary test: measured force becomes linearly larger with position across a 2 m patch but its average remains 8 N. Can the original stopping-distance measurement alone reconstruct that force profile?",
+      "boundaryFields": [
+        {
+          "id": "model",
+          "label": "Choose the data-identification claim",
+          "type": "select",
+          "choices": [
+            "Choose an idea",
+            "No, one work integral cannot determine a unique force profile",
+            "Yes, all forces must be constant at 8 N",
+            "I'm not sure yet"
+          ],
+          "expected": "No, one work integral cannot determine a unique force profile",
+          "mistake": "An integral of force does not identify its shape",
+          "errorKind": "MODEL_CHOICE"
+        },
+        {
+          "id": "why",
+          "label": "Explain the missing force-versus-distance information",
+          "type": "textarea"
+        }
+      ],
+      "boundaryCheck": "The same mean force gives the same total work over 2 m; time- or position-resolved measurements are needed to recover a unique profile.",
+      "first_attempt_policy": "SAVE_BEFORE_REVEAL",
+      "written_response_grading": "UNASSESSED"
+    }
+  },
+  "source_return": {
+    "question_uid": "g9:PHYSICS:G9-SYN-UNIT-001",
+    "content_revision_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "route_status": "UNBUILT"
+  }
+}
