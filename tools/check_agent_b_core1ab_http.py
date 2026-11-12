@@ -26,7 +26,7 @@ def main():
         root = Path(temp)
         env = dict(os.environ)
         env["PYTHONPATH"] = str(ROOT) + os.pathsep + env.get("PYTHONPATH", "")
-        for name in ("build_d3_expansion_modules.py", "build_d3_batch2_modules.py"):
+        for name in ("build_d3_expansion_modules.py", "build_d3_batch2_modules.py", "build_physics_fluids_core1.py", "build_bio_genetics_core1.py"):
             script = root / name
             shutil.copyfile(ROOT / name, script)
             r = subprocess.run([sys.executable, str(script)], cwd=root, env=env, capture_output=True,
@@ -162,6 +162,56 @@ def main():
                         _check(not js_errors, "Lens JS errors "+repr(js_errors))
                         cases += 1
                         ctx.close()
+
+                    # Six additional modules: true HTTP first-attempt and refresh smoke.
+                    # Their science and QRT qualification remains a distinct academic HOLD.
+                    more = (
+                        "chem-electronic-structure-d3-r1",
+                        "bio-immunology-defense-d3-r1",
+                        "chem-phosphorus-oxyacids-d3-r1",
+                        "bio-viral-genetics-d3-r1",
+                        "bio-genetics-coordination-r1",
+                        "nsejs-fluids-sound-r1",
+                    )
+                    for slug in more:
+                        path = "/workspace/output/"+slug+"/learning_journey.html"
+                        for size in ((1366, 768), (390, 844)):
+                            ctx = browser.new_context(viewport={"width": size[0], "height": size[1]})
+                            page = ctx.new_page()
+                            errors = []
+                            page.on("pageerror", lambda e: errors.append(str(e)))
+                            resp = page.goto(f"http://127.0.0.1:{port}"+path,
+                                             wait_until="load", timeout=15000)
+                            _check(resp is not None and resp.status == 200,
+                                   "Missing real HTTP learner route: "+slug)
+                            page.locator("#tab-core1b").click()
+                            _check(not page.locator('[data-role="model-host"]').is_visible(),
+                                   slug+" leaked model before first answer")
+                            _check(page.locator('[data-role="save-firstAttempt"]').is_enabled(),
+                                   slug+" cannot enter first answer")
+                            page.locator('[data-role="prediction-input"]').fill(
+                                "I predict the source assumptions will determine the governing operation.")
+                            page.locator('[data-role="save-prediction"]').click()
+                            page.locator('[data-role="firstAttempt-input"]').fill(
+                                "Original response: I will test the model assumptions and carry out the operation.")
+                            page.locator('[data-role="save-firstAttempt"]').click()
+                            _check(page.locator('[data-role="model-host"]').is_visible(),
+                                   slug+" did not unlock reconstruction after verified save")
+                            _check(page.locator('[data-role="save-firstAttempt"]').is_disabled(),
+                                   slug+" did not freeze original response")
+                            page.reload(wait_until="load")
+                            page.locator("#tab-core1b").click()
+                            _check(page.locator('[data-role="model-host"]').is_visible(),
+                                   slug+" lost persisted model/attempt on HTTP refresh")
+                            _check(page.locator('[data-role="save-firstAttempt"]').is_disabled(),
+                                   slug+" restored first attempt editable")
+                            _check(page.evaluate("document.documentElement.scrollWidth <= window.innerWidth + 1"),
+                                   slug+" horizontal viewport overflow")
+                            _check(page.locator("iframe").count() == 0,
+                                   slug+" uses unsupported iframe")
+                            _check(not errors, slug+" JavaScript errors "+repr(errors))
+                            cases += 1
+                            ctx.close()
 
                     denied = browser.new_context(viewport={"width": 390, "height": 844})
                     denied.add_init_script("""(() => {
