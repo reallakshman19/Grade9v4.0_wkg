@@ -11,6 +11,9 @@ on:
       - 'tools/check_agent_b_core1ab_http.py'
       - 'build_d3_expansion_modules.py'
       - 'build_d3_batch2_modules.py'
+      - 'build_bio_genetics_core1.py'
+      - 'build_physics_fluids_core1.py'
+      - 'docs/agent-b-core1ab-construction-handoff-r1.md'
       - 'docs/agent-b-core1ab-candidate-topups.md'
       - 'docs/agent-b-core1ab-preflight.md'
       - 'docs/agent-b-physics-uid-lookup-r1.json'
@@ -68,3 +71,23 @@ jobs:
           name: agent-b-core1ab-census
           path: agent-b-core1ab-census.json
           if-no-files-found: error
+
+  existing-core1-qualification-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install package and original dev test requirements
+        run: python -m pip install -e ".[dev]"
+      - name: Rebuild the eight public authored candidate modules in clean checkout
+        run: |
+          python build_d3_batch2_modules.py
+          python build_d3_expansion_modules.py
+          python build_physics_fluids_core1.py
+          python build_bio_genetics_core1.py
+      - name: Execute eight original Core1A/Core1B scientific and B1-B7 test modules
+        run: |
+          python -m pytest -q             tests/test_nsejs_optics_displacement_d3_core1.py             tests/test_nsejs_fluids_surface_energy_d3_core1.py             tests/test_chem_electronic_structure_d3_core1.py             tests/test_bio_immunology_defense_d3_core1.py             tests/test_chem_phosphorus_oxyacids_d3_core1.py             tests/test_bio_viral_genetics_d3_core1.py             tests/test_bio_genetics_coordination_core1.py             tests/test_nsejs_fluids_sound_core1.py
