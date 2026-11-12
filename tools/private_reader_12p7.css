@@ -1,0 +1,43 @@
+/* Grade9 private reader: 12.7-inch tablet/laptop profile.
+   CSS viewport targets represent scaled 16:10 landscape and tablet portrait;
+   physical diagonal alone does not imply a CSS pixel resolution. */
+@media (min-width: 960px) {
+  .layout {
+    max-width: 1540px;
+    grid-template-columns: minmax(246px, 284px) minmax(0, 1fr);
+    gap: 16px;
+    padding: 16px clamp(14px, 1.8vw, 26px);
+  }
+  aside.panel { top: 10px; max-height: calc(100vh - 20px); }
+  .sidebar-head { padding: 14px 15px; }
+  .list-scroll { flex: 1 1 auto; min-height: 0; overscroll-behavior: contain; }
+  .item { padding: 9px 10px; min-height: 44px; }
+  .reader { padding: 19px clamp(18px, 2vw, 29px); }
+  .stage { padding: 16px; }
+  .stem { font-size: 17px; line-height: 1.65; max-width: 85ch; }
+  .option { min-height: 44px; line-height: 1.45; }
+  .figure svg { max-width: 100%; max-height: 400px; }
+  .toolbar-buttons { flex-wrap: wrap; }
+}
+@media (min-width: 960px) and (max-height: 850px) {
+  header { padding-top: 12px; padding-bottom: 12px; }
+  .meta { margin-top: 12px; }
+  .reader-toolbar { padding-bottom: 10px; }
+  .stage { margin-top: 12px; }
+}
+/* Portrait mode on a full-size tablet: a bounded question picker prevents
+   a 50-item sidebar from pushing the first question thousands of pixels down. */
+@media (min-width: 700px) and (max-width: 959px) {
+  .layout { grid-template-columns: minmax(0, 1fr); gap: 14px; padding: 14px 18px; }
+  aside.panel { position: static; max-height: 315px; overflow: hidden; }
+  .sidebar-head { padding: 12px 14px 9px; }
+  .sidebar-head h2 { font-size: 19px; }
+  .counts { margin: 6px 0; }
+  .filters { grid-template-columns: 1fr 1fr; gap: 7px; margin-top: 7px; }
+  .list-scroll { min-height: 65px; max-height: 112px; overflow-y: auto; }
+  .reader { padding: 20px; }
+  .figure svg { max-width: 100%; max-height: 420px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .item, .option { transition: none; }
+}
