@@ -70,13 +70,23 @@ def test_visible_formula_delimiters_are_mathjax_compatible(subject,formula):
     assert "<script" in html and "MathJax" in html
 
 
-def test_no_unverified_chemistry_or_biology_core2_bank_created():
+def test_source_linked_notebooks_are_not_misrepresented_as_verified_core2_banks():
     for subject in EXPECTED:
-        assert not (ROOT/f"nsejs/{subject}/question-bank.html").exists()
-        html=(ROOT/f"nsejs/{subject}/index.html").read_text("utf-8")
-        assert "source verification pending" in html
-        assert "No reproducible public source-backed question bank" in html
-        assert not re.search(r'href="question-bank.html',html)
+        notebook=ROOT/f"nsejs/{subject}/question-bank.html"
+        assert notebook.is_file()
+        contents=notebook.read_text("utf-8")
+        assert "Source HOLD" in contents
+        assert "not a complete NSEJS" in contents
+        assert "The actual question text, diagrams" in contents
+        assert "No academic approval" in contents
+        assert 'src="../js/source-linked-exam-practice.js"' in contents
+        assert "<iframe" not in contents.lower()
+        hub=(ROOT/f"nsejs/{subject}/index.html").read_text("utf-8")
+        assert "source verification pending" in hub
+        assert "No reproducible public source-backed question bank" in hub
+        # The public staging builder, not static topic HTML, injects a
+        # source-only practice link after checking pinned IAPT URL custody.
+        assert not re.search(r'href="question-bank.html',hub)
 
 
 @pytest.fixture(scope="module")
