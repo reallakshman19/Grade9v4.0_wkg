@@ -35,12 +35,17 @@ jobs:
         run: python tools/build_nsejs_core2_corpus.py --check
       - name: Detect producer QRT band contradictions (expected HOLD, not CI acceptance)
         run: |
-          if python tools/nsejs_core2_audit.py --strict-qrt > out/qrt-contradiction-summary.json; then
-            echo "Expected QRT contradiction negative-control did not fail"
+          set +e
+          python tools/nsejs_core2_audit.py --strict-qrt > out/qrt-contradiction-summary.json
+          qrt_status=$?
+          python tools/nsejs_core2_audit.py --strict-digest > out/declared-stem-digest-summary.json
+          digest_status=$?
+          set -e
+          if [ "$qrt_status" -ne 4 ] || [ "$digest_status" -ne 3 ]; then
+            echo "Unexpected negative-control exit codes: QRT=$qrt_status DIGEST=$digest_status"
             exit 1
-          else
-            echo "QRT contradictions correctly held; not academically admitted"
           fi
+          echo "PASS: both QRT and digest contradictions rejected with exact failure codes; still on HOLD"
       - name: Isolated NSEJS negative and integrity tests
         run: python -m pytest tests/test_nsejs_core2_agent_a.py -q
       - name: Real HTTP Chromium Core2 journeys
