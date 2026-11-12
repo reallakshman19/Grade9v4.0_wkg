@@ -73,7 +73,7 @@ def check(browser,base,width,height):
         go("preview/physics-wpe.html","Learn Work, Power & Energy")
         ok(page.locator("nav.public-safe-nav a").filter(has_text="NSEJS").count()==1,
            "NSEJS global link absent on preview")
-        go("preview/practice.html","Practice")
+        go("preview/practice.html","Try a question")
         ok(page.locator("nav.public-safe-nav").count()==1,
            "Preview has duplicated navigations")
         go("preview/question-status.html","")  # synthetic JS reader
