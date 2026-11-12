@@ -124,8 +124,8 @@ def test_archive_years_are_source_named_and_preserve_2020_2021_ioqjs_identity(mo
 def test_committed_original_pdf_receipts_pin_real_ci_digests_without_claiming_rights():
     manifest = json.loads((ROOT / "docs/nsejs/official-2020-2024-raw-byte-custody-r1.json")
                           .read_text(encoding="utf-8"))
-    assert manifest["raw_official_pdf_documents_verified"] == 9
-    assert manifest["raw_official_pdf_documents_missing"] == 1
+    assert manifest["raw_official_pdf_documents_verified"] == 10
+    assert manifest["raw_official_pdf_documents_missing"] == 0
     assert len(manifest["items"]) == 10
     assert manifest["rights"] == "NOT_VERIFIED"
     assert manifest["academic_qualification"] == "HOLD"
@@ -133,6 +133,10 @@ def test_committed_original_pdf_receipts_pin_real_ci_digests_without_claiming_ri
     assert all(x["source_bytes_publicly_republished"] is False for x in manifest["items"])
     indexed = {x["id"]: x for x in manifest["items"]}
     paper = indexed["NSEJS_2024_CODE51_PAPER"]
+    archive2020 = indexed["IOQJS_2020_21_CODE51_PAPER"]
+    assert archive2020["sha256"] == "8b7f09e6bb42b6ca953155a3f1166dfecdea2c76372d65bcf4f5ff83d9d27471"
+    assert archive2020["pdf_pages"] == 36
+    assert archive2020["paper_code_scope"].endswith("NOT_FULLY_INDEPENDENTLY_REVIEWED")
     key = indexed["NSEJS_2024_FINAL_KEY"]
     assert paper["sha256"] == "b80e3bae4e64aaad11f43cc12f07ef17ae495b75e231122d440b0f81709379e8"
     assert key["sha256"] == "6d56f6f4e7f3c6b7a0b7b6146c0e7e9386c035fc5988c5523fe6551fc9374926"
