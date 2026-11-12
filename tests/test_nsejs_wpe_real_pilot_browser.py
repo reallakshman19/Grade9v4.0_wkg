@@ -151,8 +151,8 @@ def test_actual_authored_core1a_then_two_core1b_tasks_full_six_stages(
             assert record_b["record"]["first"]["hintsUsed"] == 1
             assert record_b["record"]["exposure"] == "HELPED_BEFORE_FIRST_ATTEMPT"
             assert committed_record(page)["record"]["first"] == record_a["record"]["first"]
-            assert "not automatically judged" in page.locator('.stage-root .assessment').inner_text().lower() or \
-                   "Your written explanation" in page.locator('.stage-root .snapshot').inner_text()
+            assert "do not grade explanations" in page.locator('.stage-root .assessment').inner_text().lower()
+            assert "Your original explanation" in page.locator('.stage-root .snapshot').inner_text()
             boundary(page, DATA["tasks"]["B"])
             page.locator("#nsejs-source-return:visible").wait_for(timeout=15000)
             href=page.locator("#nsejs-source-return").get_attribute("href")
