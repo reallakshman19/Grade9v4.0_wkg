@@ -56,10 +56,10 @@ def execute():
             assert restored.get_by_role("button",name="Show explanation").is_enabled()
             assert restored.locator(".answer").is_hidden()
             page.goto(base+BASE+"question-bank.html?topic=fluids",wait_until="domcontentloaded")
-            page.wait_for_function("'No source-backed' in document.querySelector('#questions').textContent")
+            page.wait_for_function("document.querySelector('#questions').textContent.includes('No source-backed')")
             assert page.locator(".card").count() == 0
             page.goto(base+BASE+"question-bank.html?topic=optics&uid=unknown",wait_until="domcontentloaded")
-            page.wait_for_function("'Requested question UID not found' in document.querySelector('#questions').textContent")
+            page.wait_for_function("document.querySelector('#questions').textContent.includes('Requested question UID not found')")
             page.goto(base+BASE+"index.html",wait_until="domcontentloaded")
             page.get_by_role("button",name="Open 10 candidate records").first.click()
             page.wait_for_url("**/question-bank.html?topic=optics")
