@@ -7,6 +7,8 @@ on:
       - 'docs/nsejs/subject-year-source-availability-r1.csv'
       - 'docs/nsejs/official-iapt-source-locators-r1.json'
       - 'tools/nsejs_2024_source_spotcheck.py'
+      - 'tools/nsejs_iapt_pdf_byte_custody.py'
+      - 'tests/test_nsejs_iapt_pdf_byte_custody.py'
       - 'tests/test_nsejs_2024_source_spotcheck.py'
       - 'build_d3_batch2_modules.py'
       - 'docs/nsejs/official-iapt-source-reconciliation-r1.md'
@@ -19,6 +21,8 @@ on:
       - 'docs/nsejs/subject-year-source-availability-r1.csv'
       - 'docs/nsejs/official-iapt-source-locators-r1.json'
       - 'tools/nsejs_2024_source_spotcheck.py'
+      - 'tools/nsejs_iapt_pdf_byte_custody.py'
+      - 'tests/test_nsejs_iapt_pdf_byte_custody.py'
       - 'tests/test_nsejs_2024_source_spotcheck.py'
       - 'build_d3_batch2_modules.py'
       - 'docs/nsejs/official-iapt-source-reconciliation-r1.md'
@@ -79,3 +83,45 @@ jobs:
           name: nsejs-custody-status-only
           path: source-custody-receipts/
           if-no-files-found: error
+
+
+  iapt-official-pdf-byte-custody:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install PDF parser and test runtime
+        run: python -m pip install "pypdf>=5,<7" "pytest>=8,<10"
+      - name: Check byte provenance, offline hashes, and host security controls
+        run: python -m pytest -q tests/test_nsejs_iapt_pdf_byte_custody.py
+      - name: Attempt TLS-verified official IAPT paper and final-key raw-byte retrieval
+        run: |
+          mkdir -p source-custody-receipts
+          python tools/nsejs_iapt_pdf_byte_custody.py \
+            --out source-custody-receipts/2024-code51-official-pdf-raw-sha256.json \
+            --timeout 18
+      - name: Upload digest-only custody report even on inaccessible source
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nsejs-iapt-official-pdf-hash-status-only
+          path: source-custody-receipts/2024-code51-official-pdf-raw-sha256.json
+          if-no-files-found: warn
+      - name: Enforce that both raw PDF documents were actually received
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("source-custody-receipts/2024-code51-official-pdf-raw-sha256.json")
+          report=json.loads(p.read_text())
+          n=report["raw_pdf_documents_received"]
+          if n != 2:
+              print("SOURCE_CUSTODY_NOT_RECEIVED: recovered",n,"of 2 PDFs; SHA256 claims remain absent where source was inaccessible")
+              raise SystemExit(7)
+          print("RAW_BYTES_SHA256_VERIFIED: 2/2 (source rights, figure fidelity, academic qualification still HOLD)")
+          PY
