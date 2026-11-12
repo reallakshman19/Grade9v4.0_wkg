@@ -23,6 +23,7 @@ SUBJECT_CODES = {"PHYSICS": "P", "CHEMISTRY": "C", "BIOLOGY": "B"}
 SAFE_ID = re.compile(r"^NSEJS-\d{4}-[PCB]-Q\d{2}$")
 REQUIRED_FIELDS = ("year", "subject", "author_test_declared_count",
                    "bank_expected_path", "source_root_expected")
+OFFICIAL_LOCATORS = Path("docs/nsejs/official-iapt-source-locators-r1.json")
 
 
 def load_manifest(root: Path = ROOT, manifest: Path = MANIFEST) -> list[dict]:
@@ -130,8 +131,69 @@ def inspect_row(root: Path, row: dict) -> dict:
     }
 
 
+def load_official_locators(root: Path = ROOT, path: Path = OFFICIAL_LOCATORS) -> dict:
+    """Read only publicly named IAPT PDF locators, never their source text.
+
+    A URL linked from an official archive is provenance, not a downloaded
+    source-custody artifact, licensed redistribution or QRT approval.
+    """
+    source = json_object(root / path)
+    if not source or source.get("schema") != "grade9-nsejs-official-source-locators/v1":
+        raise ValueError("Missing or malformed IAPT locator manifest")
+    years = source.get("years")
+    if not isinstance(years, list) or len(years) != 5:
+        raise ValueError("Exactly five historical exam-year locator rows required")
+    seen = set()
+    for item in years:
+        if not isinstance(item, dict) or not isinstance(item.get("year"), int):
+            raise ValueError("Invalid IAPT locator row")
+        year = item["year"]
+        if year in seen or year not in YEARS:
+            raise ValueError("Duplicate or unexpected IAPT year")
+        seen.add(year)
+        if item.get("source_bytes_imported") is not False or item.get("independently_authenticated") is not False:
+            raise ValueError("Cannot claim official source bytes or authentication in metadata-only intake")
+        for field in ("official_archive_url", "official_paper_url", "official_final_key_url"):
+            url = item.get(field)
+            if url is None and field == "official_paper_url" and year == 2020:
+                continue
+            if not isinstance(url, str) or not re.fullmatch(
+                r"https://(?:www\.)?iapt\.org\.in/[A-Za-z0-9_./%-]+", url
+            ):
+                raise ValueError("Non-IAPT source URL or missing locator: "+field)
+        if year in (2020, 2021) and not str(item.get("exam_series", "")).startswith("IOQJS_"):
+            raise ValueError("2020/21 and 2021/22 must retain IOQJS Part I source identity")
+    final = next(x for x in years if x["year"] == 2024)
+    if (final.get("paper_code") != 51 or final.get("part_A1_range") != [1, 48]
+            or final.get("part_A2_range") != [49, 60]
+            or final.get("part_A2_format") != "MULTIPLE_CORRECT"
+            or final.get("known_final_key_exception") != {
+                "question": 20, "paper_code": 51, "status": "DROP"
+            }):
+        raise ValueError("IAPT 2024 paper-code 51 answer-format/drop facts must be preserved")
+    return source
+
+
 def audit(root: Path = ROOT, manifest: Path = MANIFEST) -> dict:
+    official = load_official_locators(root)
+    official_by_year = {x["year"]: x for x in official["years"]}
     records = [inspect_row(root, row) for row in load_manifest(root, manifest)]
+    for row in records:
+        year = official_by_year[row["year"]]
+        row["official_exam_series"] = year["exam_series"]
+        row["official_archive_url"] = year["official_archive_url"]
+        row["official_paper_locator"] = year["official_paper_url"]
+        row["official_final_key_locator"] = year["official_final_key_url"]
+        row["official_locator_status"] = (
+            "PAPER_AND_KEY_URLS_LOCATED_NOT_IMPORTED" if year["official_paper_url"]
+            else "OFFICIAL_KEY_ONLY_PAPER_NOT_LOCATED"
+        )
+        if row["year"] in (2020, 2021):
+            row["flags"].append("IOQJS_PART_I_SOURCE_IDENTITY_REVIEW_REQUIRED")
+        if row["year"] == 2024:
+            row["flags"].append("IAPT_CODE_51_QUESTION_20_DROPPED")
+            row["flags"].append("IAPT_CODE_51_QUESTIONS_49_60_MULTI_CORRECT")
+        row["flags"] = sorted(set(row["flags"]))
     subjects = Counter(x["subject"] for x in records)
     if any(subjects.get(subject) != 5 for subject in SUBJECTS):
         raise ValueError("Expected five year rows per subject")
@@ -140,6 +202,11 @@ def audit(root: Path = ROOT, manifest: Path = MANIFEST) -> dict:
     return {
         "schema": "grade9-nsejs-source-custody-preflight/v1",
         "scope": "AUTHOR_TEST_EXPECTATIONS_NOT_OFFICIAL_EXAM_COVERAGE",
+        "official_archive_years_located": len(official_by_year),
+        "official_paper_url_years_located": sum(bool(x["official_paper_url"]) for x in official["years"]),
+        "official_final_key_url_years_located": sum(bool(x["official_final_key_url"]) for x in official["years"]),
+        "official_lc2024_key_exception": "NSEJS-2024 CODE 51 Q20 DROP",
+        "locators_are_source_custody": False,
         "subject_year_rows": len(records),
         "author_test_expected_by_subject": totals,
         "author_test_expected_total": sum(totals.values()),
@@ -157,6 +224,12 @@ def markdown(report: dict) -> str:
         "",
         "**Academic admission: HOLD.** The reported counts are author test expectations, not official exam totals.",
         "A self-declared ORIGINAL_EXACT field never proves independent source authentication.",
+        f"Official IAPT archive pages located for {report['official_archive_years_located']}/5 years; "
+        f"paper URLs located for {report['official_paper_url_years_located']}/5.",
+        "These are links, not recovered authorized source bytes or native source-custody records.",
+        "2020-21/2021-22 are IOQJS Part I source series; do not relabel them as conventional NSEJS.",
+        "Official 2024 Paper Code 51: Q20 is DROP; Q49-60 are multiple-correct.",
+
         "",
         f"Test-declared total: {report['author_test_expected_total']} across 15 subject-year groups.",
         f"Missing/incomplete groups: {report['missing_or_invalid_subject_year_bundles']}.",
