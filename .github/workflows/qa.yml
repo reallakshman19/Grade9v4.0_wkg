@@ -1,7 +1,7 @@
 name: Python QA
 on:
   push:
-    branches: ["main", "feat/**"]
+    branches: ["main", "feat/**", "integration/nsejs-wpe-parity-r1"]
   pull_request:
 jobs:
   test:
