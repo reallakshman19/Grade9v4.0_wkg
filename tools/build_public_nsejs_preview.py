@@ -280,7 +280,20 @@ def stage_external_paper_practice(stage: Path, coverage: dict) -> dict:
             'background:#145a75;color:white;font-weight:750;text-decoration:none">'
             'Open source-linked practice notebook</a></section>'
         )
-        page.write_text(s.replace("</body>",block+"\n</body>",1),encoding="utf-8")
+        authored_link=(
+            '<section id="authored-transfer-question-bank" class="tablet-container" '
+            'style="margin:24px auto;padding:20px;border:2px solid #80aebc;'
+            'border-radius:12px;background:#edf8fa;color:#1a3e52">'
+            '<h2>Authored Core1B independent transfer practice</h2>'
+            '<p>Technical-only authored Grade9 prompts, not official NSEJS questions. '
+            'Two Chemistry and three Biology practices were generated from checked-in '
+            'Core1B teaching builders; answers and academic admission remain HOLD.</p>'
+            '<a href="authored-practice.html" style="display:inline-flex;align-items:center;'
+            'min-height:56px;padding:12px 18px;color:#114d72">'
+            'Open authored transfer practice questions</a></section>'
+        )
+        page.write_text(s.replace("</body>",block+"\n"+authored_link+"\n</body>",1),
+                        encoding="utf-8")
     hub=stage/"nsejs/index.html"
     s=hub.read_text("utf-8")
     if "</body>" not in s or 'id="core1-recovery-ledger"' in s:
