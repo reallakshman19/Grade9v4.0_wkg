@@ -195,7 +195,7 @@ def tree_digest(root: Path) -> dict[str, str]:
             and '.pytest_cache' not in p.parts}
 
 
-def build(root: Path, out: Path, manifest_path: Path, publish: bool = False) -> dict:
+def build(root: Path, out: Path, manifest_path: Path, publish: bool = False, r6: bool = False) -> dict:
     if publish:
         raise ValueError('PUBLIC_RELEASE_FORBIDDEN')
     root, out = root.resolve(), out.absolute()
@@ -260,11 +260,20 @@ def build(root: Path, out: Path, manifest_path: Path, publish: bool = False) -> 
     if missing != pins['expected_missing_figures']:
         raise ValueError('FIGURE_INVENTORY_CHANGED')
     outputs['preview/question-status.html'] = embed(template, {**data, 'assets': assets}).encode('utf-8')
+    if r6:
+        # Optional, fail-closed R6 stage. Synthetic older-layout fixtures still
+        # exercise the base builder; actual private review readers must pass
+        # the exact runtime anchors required by transform().
+        from private_reader_r6 import transform
+        for name in sorted(outputs):
+            if name.endswith('/question-status.html'):
+                outputs[name] = transform(outputs[name].decode('utf-8')).encode('utf-8')
     outputs['index.html'] = hub(entries, missing).encode('utf-8')
     receipt = {
         'schema_version': 'private-review.v1', 'release_authority': 'HOLD',
         'purpose': 'REVIEW_ONLY_NOT_FOR_PUBLICATION',
         'source_authenticity': 'UNKNOWN_SOURCE',
+        'learner_runtime': 'R6_REVISION_SCOPED_LOCAL' if r6 else 'LEGACY_REVIEW_ONLY',
         'academic_approval': 'HOLD',
         'record_count': len(questions), 'module_count': len(modules),
         'figure_refs': len(figures), 'missing_figures': missing,
@@ -296,8 +305,9 @@ def main() -> None:
     parser.add_argument('--out', type=Path, required=True)
     parser.add_argument('--manifest', type=Path, required=True)
     parser.add_argument('--publish', action='store_true', help='always prohibited')
+    parser.add_argument('--r6', action='store_true', help='apply scoped R6 learner attempt runtime; fail closed on unsupported reader')
     a = parser.parse_args()
-    receipt = build(a.root, a.out, a.manifest, a.publish)
+    receipt = build(a.root, a.out, a.manifest, a.publish, r6=a.r6)
     print('PASS private review only records=%d figures missing=%d' %
           (receipt['record_count'], receipt['missing_figures']))
 
