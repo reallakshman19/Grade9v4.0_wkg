@@ -1,7 +1,7 @@
 # Oracle Checkpoint — 12 November 2026
 
-**Timestamp:** 2026-11-12T09:45:00+04:00  
-**Operating Sequence:** **Dual-Engine Core 2 Quality Audit across 5-Year NSEJS Corpus (237 items, 15 batches): 100% COMPLETE & VERIFIED**  
+**Timestamp:** 2026-11-12T10:15:00+04:00  
+**Operating Sequence:** **Dual-Engine Quality Audit & Remediation across all 24 Core 1A/1B Modules: 100% COMPLETE & VERIFIED**  
 **Active Branch:** `feat/multi-subject-core2-expansion-01`  
 **Authority Invariant:** Rule 13 in `AGENTS.md` (*No academic approval inferred from software validation. Green CI means automatic tests passed; it never means student release is authorized.*)
 
@@ -42,6 +42,19 @@ Auditing across all 15 authentic NSEJS examination batches (237 questions total)
 - **Console & Network Cleanliness:** 0 console errors, 0 unhandled exceptions, 0 HTTP 4xx/5xx errors.
 - **Engine B Verdict:** **`PLAYWRIGHT_VIEWPORT_AUDIT_PASS`**.
 - **Report Saved:** `workspace/output/5YEAR_NSEJS_PLAYWRIGHT_AUDIT_REPORT.json`.
+
+### C. Engine C: Core 1A & 1B Dual-Engine Audit & Standards Alignment (`comprehensive_core1_audit.py` & `audit_core1_playwright.js`)
+- **Modules Audited:** All 24 Core 1A/1B modules in `workspace/output/`.
+- **Initial Structural Deficiencies Identified:** 16 findings across 9 modules:
+  - 2 Chemistry D3 modules (`chem-eudiometry-d3-r1`, `chem-redox-titration-d3-r1`) had 5-step reconstruction routes exceeding canonical 4-slot ($X \to Y \to Z \to W$) structure.
+  - 7 Physics D3 modules (`ioqjs-optics-conjugate-d3-r1`, `nsejs-circuits-cube-d3-r1`, `nsejs-circuits-ladder-d3-r1`, `nsejs-electrostatics-deflection-d3-r1`, `nsejs-magnetism-terminal-d3-r1`, `nsejs-optics-lens-mirror-d3-r1`, `nsejs-optics-screw-lens-d3-r1`) lacked 3-part diagnostic rubrics in `stage_2_attempt` and had 3-step routes instead of the mandatory 4 cognitive slots.
+- **Surgical Remediation Executed (`scratch/fix_core1b_standards.py`):**
+  - Upgraded all 9 modules to have exact 3-criterion diagnostic rubrics in `stage_2_attempt` (`criterion` + `evidence_of`).
+  - Standardized all reconstruction trajectories to exactly 4 canonical cognitive steps ($X \to Y \to Z \to W$).
+  - Recomputed SHA-256 digests and synchronized `witness.json` (`core1b.task_sha256`) bit-for-bit across all 9 modules.
+- **Static Schema Re-Audit Verdict:** **`0 FINDINGS ACROSS ALL 24 MODULES`**.
+- **Playwright Headless Browser Audit:** **`24 / 24 MODULES PASSED`** with exact 0px horizontal scroll overflow (Mobile 375x812 and Desktop 1365x900), commitment-first hidden derivations, and 0 console errors.
+- **Reports Saved:** `workspace/output/CORE1_PLAYWRIGHT_AUDIT_REPORT.json` and `scratch/comprehensive_core1_audit.py`.
 
 ---
 
