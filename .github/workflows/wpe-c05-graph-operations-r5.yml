@@ -1,0 +1,37 @@
+name: WPE C05 Graph Operations R5 — Physics and Chromium
+on:
+  pull_request:
+    paths:
+      - "physics/wpe/c05-graph-constructions-r5.js"
+      - "physics/wpe/c05-graph-constructions-r5.html"
+      - "physics/wpe/c05-graph-constructions-r5.css"
+      - "physics/wpe/c05-source-r5.js"
+      - "physics/wpe/reviews/WPE_C05_GRAPH_OPERATIONS_R5_AUDIT.md"
+      - "tests/test_wpe_c05_graph_operations_r5.py"
+      - "tests/test_wpe_c05_r5_authored_oracle.py"
+      - "tools/wpe_c05_graph_operations_r5_ui.py"
+      - ".github/workflows/wpe-c05-graph-operations-r5.yml"
+  workflow_dispatch:
+jobs:
+  independent-physics-and-desktop-mobile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 29
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install existing project QA and actual Chromium browser
+        run: |
+          python -m pip install -e ".[dev]" playwright==1.55.0
+          python -m playwright install --with-deps chromium
+      - name: Check new source-scoped JavaScript syntax without changing shared engine
+        run: |
+          node --check physics/wpe/c05-graph-constructions-r5.js
+          node --check physics/wpe/c05-source-r5.js
+      - name: Independently verify graph models, signs, units, negative controls and 74-source custody
+        run: |
+          python -m pytest -q tests/test_wpe_c05_graph_operations_r5.py tests/test_wpe_c05_r5_authored_oracle.py
+          python -m pytest -q tests/test_wpe_c06_construction_r4.py tests/test_wpe_core1a_core1b_transfer_readiness_r3.py
+      - name: Fourteen independent A/B tasks — real six-stage Chromium desktop/mobile, source refusals
+        run: python tools/wpe_c05_graph_operations_r5_ui.py

@@ -1,0 +1,13 @@
+/* R5 source-specific graph lab only, no edits to C05 gateway or prior lessons. */
+.r5-source-index{background:#f5fafc;border:1px solid #b6d2dc;border-radius:12px;margin:20px 0;padding:16px 18px}
+.r5-source-index h2{font-size:1.15rem;margin:0 0 8px}
+.r5-source-family{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,235px),1fr));gap:8px;margin:12px 0}
+.r5-source-family a{padding:10px 12px;border-radius:9px;background:white;border:1px solid #b9d0d9;color:#145269;font-weight:680;text-decoration:none;line-height:1.4;display:block;overflow-wrap:anywhere}
+.r5-source-family a:hover,.r5-source-family a:focus-visible{text-decoration:underline;outline-offset:3px}
+.r5-source-route{border-left:4px solid #447f93;border-radius:7px;background:#fff;padding:11px 14px;margin:12px 0}
+.r5-source-route h3{margin:0;font-size:1rem}
+.r5-source-route p{margin:8px 0}
+.r5-source-route a{color:#12576e;font-weight:720}
+.guide svg{max-width:100%;height:auto}
+.academic-checkpoint,.lesson-title{overflow-wrap:anywhere}
+@media(max-width:520px){.r5-source-index{padding:12px}.r5-source-family{grid-template-columns:1fr}}
