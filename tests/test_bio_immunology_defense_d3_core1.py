@@ -136,8 +136,9 @@ def test_witness_schema_and_b1_to_b7_inspection(witness):
     # none is permitted to confer an academic PASS.
     assert all(gate_results[g] in ("HOLD", "FAIL") for g in
                ("B1", "B2", "B3", "B4", "B5", "B6"))
-    assert any(x["code"] == "KNOWN_PHYSICS_CONTRADICTION"
-               for x in next(g for g in result["gate_results"] if g["gate"] == "B7")["findings"])
+    assert "KNOWN_PHYSICS_CONTRADICTION" in next(
+        g for g in result["gate_results"] if g["gate"] == "B7"
+    )["diagnostic_codes"]
 
 
 def test_anti_patterns_on_learning_journey_html(journey_html):
