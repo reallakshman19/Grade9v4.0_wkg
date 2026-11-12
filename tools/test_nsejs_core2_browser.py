@@ -40,7 +40,7 @@ def execute():
             page.goto(base+BASE+"question-bank.html?topic=optics",wait_until="domcontentloaded")
             page.wait_for_function("document.querySelectorAll('.card').length === 10")
             figure_card = page.locator(".card").first
-            assert "source-fidelity HOLD" in figure_card.inner_text()
+            assert "Source-fidelity HOLD" in figure_card.inner_text()
             assert figure_card.get_by_role("button",name="Save first attempt").is_disabled()
             practice_card = page.locator(".card").nth(1)
             assert practice_card.locator(".answer").is_hidden()
@@ -76,6 +76,29 @@ def execute():
             assert "NOT SAVED" in denied_card.inner_text()
             assert "saved locally" not in denied_card.inner_text()
             denied.close()
+            # Original official Q34 is graph-dependent; the source candidate omitted its figure metadata.
+            page.goto(base+BASE+"question-bank.html?topic=mechanics",wait_until="domcontentloaded")
+            page.wait_for_function("document.querySelectorAll('.card').length === 11")
+            graph_card = page.locator(".card").nth(9)
+            assert "NSEJS-24-MECH-07" in graph_card.inner_text()
+            assert graph_card.get_by_role("button",name="Save first attempt").is_disabled()
+            assert "official examination figure/graph" in graph_card.inner_text()
+            # Expose inherited invalid 2024 source IDs instead of showing them as official.
+            page.goto(base+BASE+"question-bank.html?topic=optics",wait_until="domcontentloaded")
+            page.wait_for_function("document.querySelectorAll('.card').length === 10")
+            assert page.locator(".card").nth(8).inner_text().find("SOURCE CLAIM INVALID") >= 0
+            assert page.locator(".card").nth(9).inner_text().find("SOURCE CLAIM INVALID") >= 0
+            assert "QRT CONFLICT" in page.locator(".card").nth(7).inner_text()
+            # Tamper the canonical JSON but leave its ledger untouched; fail closed, no questions shown.
+            def mutate_corpus(route):
+                original = route.fetch()
+                tampered = original.text().replace("An ant is sitting on the principal axis","An ant is tumbling on the principal axis",1)
+                route.fulfill(status=200,content_type="application/json",body=tampered)
+            page.route("**/nsejs/data/physics-core2-candidates.v1.json", mutate_corpus)
+            page.goto(base+BASE+"question-bank.html?topic=optics",wait_until="domcontentloaded")
+            page.wait_for_function("document.querySelector('#status').textContent.includes('SOURCE_CONTENT_INTEGRITY_MISMATCH')")
+            assert page.locator(".card").count()==0
+            page.unroute("**/nsejs/data/physics-core2-candidates.v1.json")
             page.goto(base+BASE+"question-bank.html?topic=fluids",wait_until="domcontentloaded")
             page.wait_for_function("document.querySelector('#questions').textContent.includes('No source-backed')")
             assert page.locator(".card").count() == 0
