@@ -175,3 +175,19 @@ def test_bounded_original_page_check_exports_flags_not_question_text(monkeypatch
     assert evidence["original_q57_figure_comparison"] == "NOT_PERFORMED"
     assert "Eosinophils" not in json.dumps(evidence)
     assert evidence["academic_source_admission"] == "HOLD"
+
+
+
+def test_actual_2024_page_12_evidence_is_pinned_but_does_not_approve_figure():
+    source = json.loads(
+        (ROOT / "docs/nsejs/official-2024-code51-raw-byte-custody-r1.json")
+        .read_text(encoding="utf-8")
+    )
+    evidence = source["bounded_internal_page12_source_check"]
+    assert evidence["q52_igm_on_official_source_page"] is True
+    assert evidence["q52_igd_on_official_source_page"] is True
+    assert evidence["q52_histamine_mentioned_on_same_page"] is False
+    assert evidence["q57_lens_75cm_and_12cm_on_official_source_page"] is True
+    assert evidence["original_q57_figure_to_generated_candidate"] == "NOT_INDEPENDENTLY_COMPARED"
+    assert evidence["source_text_embedded"] is False
+    assert evidence["academic_admission"] == "HOLD"
