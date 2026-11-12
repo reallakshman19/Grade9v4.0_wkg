@@ -158,7 +158,7 @@ def load_official_locators(root: Path = ROOT, path: Path = OFFICIAL_LOCATORS) ->
             if url is None and field == "official_paper_url" and year == 2020:
                 continue
             if not isinstance(url, str) or not re.fullmatch(
-                r"https://(?:www\.)?iapt\.org\.in/[A-Za-z0-9_./%-]+", url
+                r"https://(?:www\.)?iapt\.org\.in/[A-Za-z0-9_./%\-]+", url
             ):
                 raise ValueError("Non-IAPT source URL or missing locator: "+field)
         if year in (2020, 2021) and not str(item.get("exam_series", "")).startswith("IOQJS_"):
