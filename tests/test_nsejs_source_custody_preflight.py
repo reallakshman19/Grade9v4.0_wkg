@@ -36,7 +36,7 @@ def build_synthetic(tmp_path, items):
         if not audit.SAFE_ID.fullmatch(qid):
             continue
         path = source_root / qid
-        path.mkdir()
+        path.mkdir(exist_ok=True)
         (path / "source_item.json").write_text(json.dumps({"source_item_locator": qid}), encoding="utf-8")
         (path / "source-custody.json").write_text(json.dumps({
             "source_item_locator": qid,
