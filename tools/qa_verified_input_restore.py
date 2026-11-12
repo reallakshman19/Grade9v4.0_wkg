@@ -93,9 +93,9 @@ def validate_bundle(bundle: Path, manifest: Path, bundle_sha256: str,
     try:
         with ZipFile(bundle) as zf:
             infos = [entry for entry in zf.infolist() if not entry.is_dir()]
-            if len(infos) != len(files) or len({x.filename for x in infos}) != len(infos):
-                raise PrivateInputError("PRIVATE_ARCHIVE_FILE_SET_OR_DUPLICATES_INVALID")
-            if {x.filename for x in infos} != set(files):
+            if len({x.filename for x in infos}) != len(infos):
+                raise PrivateInputError("PRIVATE_ARCHIVE_DUPLICATE_MEMBERS_INVALID")
+            if len(infos) != len(files) or {x.filename for x in infos} != set(files):
                 raise PrivateInputError("PRIVATE_ARCHIVE_CONTENTS_NOT_MANIFEST_PINNED")
             for entry in infos:
                 p = safe_path(entry.filename)
