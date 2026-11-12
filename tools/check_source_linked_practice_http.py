@@ -145,6 +145,33 @@ def check(site: Path) -> None:
             assert page.locator("#attempt-status").get_attribute("data-status")=="HOLD"
             assert page.locator("#publisher-key-link").is_hidden()
             assert "STORAGE" in page.locator("#attempt-status").inner_text()
+            # Denied storage must also stop authored Core1B reconstruction.
+            page.goto(base+"/nsejs/biology/authored-practice.html",wait_until="domcontentloaded")
+            card=page.locator(".practice-card").first
+            card.wait_for(timeout=15000)
+            card.locator("textarea").fill(
+                "I am separating the conceptual model from the boundary and independent verification.")
+            card.get_by_role("button",name="Save first independent response").click()
+            assert card.get_by_role("button",name="Show author's unreviewed reconstruction").is_disabled()
+            assert card.locator(".author-worked li").count()==0
+            assert "Storage denied" in card.inner_text()
+            ctx.close()
+            # A content-revision mismatch in the actual authored manifest
+            # must not render or reveal any exercises.
+            ctx=browser.new_context(viewport={"width":1000,"height":1600},
+                                   has_touch=True,is_mobile=True)
+            page=ctx.new_page()
+            def tamper_authored(route):
+                packet=json.loads((stage/"nsejs/data/authored-core1b-transfers.v1.json").read_text("utf-8"))
+                packet["items"][0]["prompt"]+=" TAMPER"
+                route.fulfill(status=200,content_type="application/json",body=json.dumps(packet))
+            page.route("**/nsejs/data/authored-core1b-transfers.v1.json",tamper_authored)
+            page.route("https://cdn.jsdelivr.net/**",lambda route:
+                route.fulfill(status=200,content_type="application/javascript",body=""))
+            page.goto(base+"/nsejs/chemistry/authored-practice.html",wait_until="domcontentloaded")
+            page.locator('#authored-status[data-status="HOLD"]').wait_for(timeout=15000)
+            assert "REAL_CONTENT_HASH_MISMATCH" in page.locator("#authored-status").inner_text()
+            assert page.locator(".practice-card").count()==0
             ctx.close()
             browser.close()
     finally:
