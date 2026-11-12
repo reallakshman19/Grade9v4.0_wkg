@@ -230,6 +230,8 @@ mod1_c1b = {
         }
     ]
 }
+from tools.agent_b_core1ab_authoring import inverse_lens_core1b
+mod1_c1b = inverse_lens_core1b(mod1_c1b)
 (mod1_dir / "core1b_reconstruction.json").write_text(json.dumps(mod1_c1b, indent=2), encoding="utf-8")
 
 # Witness 1
@@ -343,7 +345,22 @@ mod1_witness = {
     },
     "review_receipts": []
 }
+# Agent B corrects only the Core1B evidence bindings; original Core2 and QRT remain unchanged.
+mod1_witness["core1b"]["fresh_context_ref"] = mod1_c1b["fresh_context_ref"]
+mod1_witness["core1b"]["freshness_review_ref"] = "PENDING-INDEPENDENT-REVIEW"
+mod1_witness["core1b"]["assessed_roles"] = {
+    "ROLE_OPT_REPRESENT": {"attempt_field": "stage_2_attempt.rubric[0]", "observable": "Identify the measured sum and difference of conjugate lens positions."},
+    "ROLE_OPT_QUADRATIC": {"attempt_field": "stage_2_attempt.rubric[1]", "observable": "Derive focal length from the product of the measured roots."},
+    "ROLE_OPT_ROOTS": {"attempt_field": "stage_2_attempt.rubric[2]", "observable": "Recover both lens positions from D and measured separation."},
+    "ROLE_OPT_MAGNIFY": {"attempt_field": "stage_2_attempt.rubric[2]", "observable": "Evaluate reciprocal magnification magnitudes."}
+}
 (mod1_dir / "witness.json").write_text(json.dumps(mod1_witness, indent=2), encoding="utf-8")
+
+# Agent B: generate a source-neutral Core1A/B learner page; no original Core2 bank rewrite.
+from tools.agent_b_core1ab_authoring import render_lens_learning_journey
+(mod1_dir / "learning_journey.html").write_text(
+    render_lens_learning_journey(mod1_c1a, mod1_c1b), encoding="utf-8"
+)
 
 
 # ==============================================================================
@@ -457,6 +474,12 @@ mod2_c1a = {
         "answer": "Z = 21 (Scandium). The 3d subshell (n+l = 3+2 = 5) has higher energy than 4s (n+l = 4+0 = 4)."
     }
 }
+# Agent B Core1A top-up: neutral Aufbau order does not determine cation removal order.
+mod2_c1a["misconceptions"].append({
+    "wrong_idea": "Because the 3d electron filled after 4s, it must always leave before 4s in a transition-metal cation.",
+    "diagnostic_prompt": "Does filling order of neutral orbitals equal ionization order of a charged atom?",
+    "repair": "Sc first fills [Ar]3d1 4s2, but the 4s electrons are removed before 3d during common Sc cation formation; compare Sc2+ [Ar]3d1 with Sc3+ [Ar]."
+})
 (mod2_dir / "core1a_construction.json").write_text(json.dumps(mod2_c1a, indent=2), encoding="utf-8")
 
 mod2_c1b = {
@@ -562,6 +585,8 @@ mod2_c1b = {
         }
     ]
 }
+from tools.agent_b_core1ab_authoring import scandium_ionization_core1b, render_generic_core1ab_lesson
+mod2_c1b = scandium_ionization_core1b(mod2_c1b)
 (mod2_dir / "core1b_reconstruction.json").write_text(json.dumps(mod2_c1b, indent=2), encoding="utf-8")
 
 # Witness 2
@@ -675,7 +700,19 @@ mod2_witness = {
     },
     "review_receipts": []
 }
+# Evidence must describe the new ionic task, not neutral-shell answers from Core2.
+mod2_witness["core1b"]["fresh_context_ref"] = mod2_c1b["fresh_context_ref"]
+mod2_witness["core1b"]["freshness_review_ref"] = "PENDING-INDEPENDENT-REVIEW"
+mod2_witness["core1b"]["assessed_roles"] = {
+    "ROLE_CHEM_AUFBAU": {"attempt_field": "stage_2_attempt.rubric[0]", "observable": "Start from neutral [Ar]3d1 4s2."},
+    "ROLE_CHEM_SUBSHELL": {"attempt_field": "stage_2_attempt.rubric[1]", "observable": "Remove 4s before 3d in successive ionization."},
+    "ROLE_CHEM_SPIN": {"attempt_field": "stage_2_attempt.rubric[2]", "observable": "Count unpaired electrons in Sc, Sc2+, Sc3+."},
+    "ROLE_CHEM_BLOCK": {"attempt_field": "stage_2_attempt.rubric[1]", "observable": "Distinguish neutral atomic block from ionic state."}
+}
 (mod2_dir / "witness.json").write_text(json.dumps(mod2_witness, indent=2), encoding="utf-8")
+(mod2_dir / "learning_journey.html").write_text(
+    render_generic_core1ab_lesson(mod2_c1a, mod2_c1b), encoding="utf-8"
+)
 
 
 # ==============================================================================
@@ -789,6 +826,19 @@ mod3_c1a = {
         "answer": "An antibody is a soluble secreted glycoprotein with 2 heavy and 2 light chains; a lymphocyte receptor (TCR) is a membrane-bound heterodimer."
     }
 }
+# Agent B Core1A top-up: antibody recall deficit does not erase intact myeloid innate defenses.
+mod3_c1a["misconceptions"].append({
+    "wrong_idea": "Loss of memory B cells necessarily removes neutrophil phagocytosis and every innate barrier.",
+    "diagnostic_prompt": "Which stipulated lineage makes antibodies, and which can still phagocytose?",
+    "repair": "B-cell memory belongs to humoral adaptive immunity; neutrophils and physical barriers are separately maintained in the stated model."
+})
+# B3 scientific correction: eosinophils are granulocytes; whole helminths are
+# too large to be phagocytosed, with extracellular degranulation/ADCC important.
+mod3_c1a["misconceptions"].append({
+    "wrong_idea": "Eosinophils engulf intact helminth worms to clear infection.",
+    "diagnostic_prompt": "Can a whole multicellular parasite physically fit inside a phagocyte?",
+    "repair": "Large helminths cannot be ingested whole; eosinophils can participate in extracellular degranulation and antibody-dependent cellular cytotoxicity. This does not make them lymphocytes."
+})
 (mod3_dir / "core1a_construction.json").write_text(json.dumps(mod3_c1a, indent=2), encoding="utf-8")
 
 mod3_c1b = {
@@ -894,6 +944,8 @@ mod3_c1b = {
         }
     ]
 }
+from tools.agent_b_core1ab_authoring import immunity_bcell_core1b
+mod3_c1b = immunity_bcell_core1b(mod3_c1b)
 (mod3_dir / "core1b_reconstruction.json").write_text(json.dumps(mod3_c1b, indent=2), encoding="utf-8")
 
 # Witness 3
@@ -1007,6 +1059,18 @@ mod3_witness = {
     },
     "review_receipts": []
 }
+# Academic and QRT admission stay HOLD; this is only authored Core1B evidence.
+mod3_witness["core1b"]["fresh_context_ref"] = mod3_c1b["fresh_context_ref"]
+mod3_witness["core1b"]["freshness_review_ref"] = "PENDING-INDEPENDENT-REVIEW"
+mod3_witness["core1b"]["assessed_roles"] = {
+    "ROLE_BIO_ANTIBODY": {"attempt_field": "stage_2_attempt.rubric[0]", "observable": "Separate B-cell recall from innate response."},
+    "ROLE_BIO_LEUKOCYTE": {"attempt_field": "stage_2_attempt.rubric[1]", "observable": "Identify retained neutrophil/epithelial defense under assumptions."},
+    "ROLE_BIO_EPITHELIUM": {"attempt_field": "stage_2_attempt.rubric[1]", "observable": "State intact barrier function."},
+    "ROLE_BIO_HISTAMINE": {"attempt_field": "stage_2_attempt.rubric[2]", "observable": "Explain conditional limits; do not mislabel original histamine route as retested."}
+}
 (mod3_dir / "witness.json").write_text(json.dumps(mod3_witness, indent=2), encoding="utf-8")
+(mod3_dir / "learning_journey.html").write_text(
+    render_generic_core1ab_lesson(mod3_c1a, mod3_c1b), encoding="utf-8"
+)
 
 print("Rebuilt Batch 2 D3 modules with exact schema-compliant hashes.")

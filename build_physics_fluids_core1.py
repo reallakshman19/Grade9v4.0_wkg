@@ -475,6 +475,10 @@ witness = {
 }
 
 witness_path = MODULE_DIR / "witness.json"
+# No synthetic browser trace or review receipt is an observed learner session.
+witness["core1b"]["attempt_events"] = []
+witness["core1b"]["native_runtime_receipt_ref"] = "NOT_RECEIVED"
+witness["core1b"]["freshness_review_ref"] = "PENDING-INDEPENDENT-REVIEW"
 witness_path.write_text(json.dumps(witness, indent=2), encoding="utf-8")
 
 # ---------------------------------------------------------------------------
@@ -816,6 +820,8 @@ html_content = """<!DOCTYPE html>
 """
 
 html_path = MODULE_DIR / "learning_journey.html"
+from tools.agent_b_core1ab_authoring import render_protected_core1b
+html_content = render_protected_core1b(html_content, core1b)
 html_path.write_text(html_content, encoding="utf-8")
 
 print(f"Generated Core 1A: {c1a_path} (SHA: {c1a_sha})")

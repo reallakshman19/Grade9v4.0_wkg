@@ -1,0 +1,665 @@
+"""Agent B authoring corrections: synthetic practice only, never original Core2 edits.
+
+Existing builder scripts invoke these functions on their authored Core1B objects.
+Human Physics/QRT review remains mandatory even when checks pass.
+"""
+from __future__ import annotations
+
+import copy
+import hashlib
+import html
+from html.parser import HTMLParser
+import json
+from pathlib import Path
+
+
+def inverse_lens_core1b(original: dict) -> dict:
+    b = copy.deepcopy(original)
+    b["fresh_context_ref"] = "AB-PRACTICE-PHYS-OPT-INVERSE-DISPLACEMENT-R1"
+    b["protected_fresh_inference_W"] = (
+        "Infer focal length from independently observed conjugate-position separation "
+        "rather than compute the original exam's lens positions from given focal length."
+    )
+    b["taught_skill_Y"] = "Apply paraxial thin-lens geometry and real-image existence D >= 4f."
+    b["connecting_route_Z"] = "Treat measured position separation as the difference of quadratic roots."
+    b["stages"] = {
+        "stage_1_predict": {
+            "prompt": "Two sharp-image lens positions have been measured. Can their separation determine an unknown focal length? Explain before calculating.",
+            "defensible_prediction": "Yes, provided the screen separation and real-image thin-lens assumptions are known."
+        },
+        "stage_2_attempt": {
+            "prompt": "An object and screen are 96 cm apart. The two lens positions yielding a sharp image differ by 48 cm. Infer the convex lens focal length, both lens positions and their magnification magnitudes. Justify the physical assumptions.",
+            "produces": "f = 18 cm; x = 24 and 72 cm; |m| = 3 and 1/3.",
+            "closure": "RUBRIC",
+            "rubric": [
+                {"criterion": "Use sum of positive lens-position roots D=96 and separation d=48.", "evidence_of": "Distinguishes measured root separation from focal length."},
+                {"criterion": "Infer f=(D^2-d^2)/(4D), with D >= 4f.", "evidence_of": "Derives inverse relation rather than presuming source focal length."},
+                {"criterion": "Obtain x1=24 cm and x2=72 cm, then |m|=3 and 1/3.", "evidence_of": "Checks conjugacy and both physical magnification magnitudes."}
+            ],
+            "accepted": ["f = 18 cm with x1=24, x2=72 cm and magnification magnitudes 3 and 1/3"],
+            "rejected": ["f = 48 cm because displacement is focal length", "One position only", "Claim that image always forms for any D"]
+        },
+        "stage_3_reconstruct": {
+            "route": [
+                {"ask": "Which two measured quantities correspond to the sum and difference of the lens-position roots?", "why_this_ask": "The two roots sum to D; their positive separation is measured independently.", "step_answer": "x1+x2=96 cm, x2-x1=48 cm."},
+                {"ask": "How does their product determine the focal length?", "why_this_ask": "The thin-lens quadratic has product Df.", "step_answer": "x1*x2=(D^2-d^2)/4=Df, so f=(96^2-48^2)/(4*96)=18 cm."},
+                {"ask": "Where are the physical conjugate lens positions?", "why_this_ask": "Recover roots from measured sum and difference.", "step_answer": "x1=(96-48)/2=24 cm; x2=(96+48)/2=72 cm."},
+                {"ask": "What are the two magnification magnitudes?", "why_this_ask": "Use |m|=(D-x)/x with real images.", "step_answer": "At 24 cm, |m|=72/24=3. At 72 cm, |m|=24/72=1/3."}
+            ],
+            "differs_from_teaching_path": "Inverse measurement-to-focal-length reasoning; no original 75 cm / 12 cm values."
+        },
+        "stage_4_diagnose": {
+            "error_trap": "Confusing the measured difference of lens positions with focal length.",
+            "diagnostic_prompt": "If you used f=d, what measured constraint did your model neglect?",
+            "resolution": "The two positions are roots of x(D-x)=Df; their separation alone is not f."
+        },
+        "stage_5_repair": {"action": "Write both sum and difference constraints, infer product, then reconstruct f and both magnifications. Retain the original attempt separately."},
+        "stage_6_boundary_test": {
+            "prompt": "The screen distance becomes 70 cm with the same lens. Without trial positions, determine if any sharp real image can form.",
+            "answer": "No: 70 cm < 4f=72 cm, so the real-position quadratic has negative discriminant."
+        }
+    }
+    b["progressive_hints"] = [
+        {"hint_id": "H1", "tier": "CLARIFY", "text": "The measured separation is between two physically valid lens positions, not the focal length."},
+        {"hint_id": "H2", "tier": "CORRELATE", "text": "The sum and difference of the two position roots are known; use them to determine their product."},
+        {"hint_id": "H3", "tier": "OPEN_THE_WAY", "text": "The product of the lens-position roots is Df. Use the observed sum and difference without presuming a particular value of f."}
+    ]
+    return b
+
+
+def unequal_droplets_core1b(original: dict) -> dict:
+    b = copy.deepcopy(original)
+    b["fresh_context_ref"] = "AB-PRACTICE-PHYS-FLUID-UNEQUAL-DROPLETS-R1"
+    b["protected_fresh_inference_W"] = (
+        "Transfer equal-radius volume/area scaling to a mixed-radius collection, "
+        "summing cubes and squares separately before computing the free-energy contribution."
+    )
+    b["taught_skill_Y"] = "Incompressible liquid volume conservation and spherical interface area formulas."
+    b["connecting_route_Z"] = "For unequal drops use sum of cubic radii for final volume; separately sum squared radii for initial area."
+    b["stages"] = {
+        "stage_1_predict": {
+            "prompt": "Would nine unequal droplets produce the same final radius as nine identical small droplets? Explain.",
+            "defensible_answer": "No. Each droplet contributes a volume proportional to the cube of its individual radius."
+        },
+        "stage_2_attempt": {
+            "prompt": "Eight water drops of radius 1 mm and one water drop of radius 2 mm merge into one spherical drop at constant liquid volume. With surface tension 0.072 N/m, calculate the final radius, total eliminated surface area and released surface-energy contribution. State assumptions.",
+            "produces": "R=16^(1/3) mm; eliminated area approx 7.1005e-5 m^2; released surface-energy contribution approx 5.1124e-6 J.",
+            "closure": "RUBRIC",
+            "rubric": [
+                {"criterion": "Sum 8*r^3 + (2r)^3 = 16*r^3 for liquid volume.", "evidence_of": "Does not treat the nine unequal drops as nine identical drops."},
+                {"criterion": "Use initial area 4*pi*r^2*(8+4), final area 4*pi*r^2*16^(2/3).", "evidence_of": "Distinguishes cube scaling for volume from square scaling for area."},
+                {"criterion": "Multiply positive area reduction by 0.072 N/m with correct units.", "evidence_of": "Reports a conditional surface-energy contribution, not guaranteed total process energy."}
+            ],
+            "accepted": ["R=16^(1/3) mm, area loss approx 7.1005e-5 m^2, energy approx 5.1124e-6 J"],
+            "rejected": ["R=9^(1/3) mm", "Ignore the large drop's initial area", "Say energy release proves immediate merger under any conditions"]
+        },
+        "stage_3_reconstruct": {
+            "route": [
+                {"ask": "How is total liquid volume represented for unequal initial radii?", "why_this_ask": "Each spherical volume scales cubically.", "step_answer": "R^3=8*(1 mm)^3+(2 mm)^3=16 mm^3; R=16^(1/3) mm."},
+                {"ask": "What is the initial area of all nine surfaces?", "why_this_ask": "Sum individual areas before merger.", "step_answer": "A_initial=4*pi*(8*(1 mm)^2+(2 mm)^2)=4*pi*12 mm^2."},
+                {"ask": "What area remains afterward?", "why_this_ask": "The final sphere has the conserved volume.", "step_answer": "A_final=4*pi*16^(2/3) mm^2, so area reduction is about 7.1005e-5 m^2."},
+                {"ask": "What is the surface-energy contribution and its validity limit?", "why_this_ask": "Use gamma*delta_area for constant gamma, not an unconditional kinetic claim.", "step_answer": "0.072 N/m times area reduction = 5.1124e-6 J, assuming spherical interfaces, incompressible liquid and constant gamma."}
+            ],
+            "differs_from_teaching_path": "Mixed initial radii require an independent volume and area sum, not N identical droplets."
+        },
+        "stage_4_diagnose": {
+            "error_trap": "Treating the large drop as equal to the small drops or assuming release implies immediate merger.",
+            "diagnostic_prompt": "Why would R=9^(1/3) mm violate the original material quantity?",
+            "causal_explanation": "A 2-mm droplet contains eight times the 1-mm drop's volume; the total is 16, not 9, cubic-mm radius units."
+        },
+        "stage_5_repair": {"action": "Preserve your first response, write the nine individual volume and area contributions, then recompute."},
+        "stage_6_boundary_test": {
+            "prompt": "Replace the 2-mm drop with a third 1-mm drop, leaving ten identical 1-mm drops total. Which volume sum and area sum now apply?",
+            "answer": "For ten equal 1-mm drops, R^3=10 mm^3 and A_initial=4*pi*10 mm^2; compare to the unequal-radius case."
+        }
+    }
+    b["progressive_hints"] = [
+        {"tier": 1, "text": "For the starting drops, sum volumes using each radius cubed."},
+        {"tier": 2, "text": "Initial area is the sum of all nine spherical areas, not nine times the small-drop area."},
+        {"tier": 3, "text": "A 2-mm drop has a different contribution to volume and area. Keep the two sums separate before applying gamma."}
+    ]
+    return b
+
+
+class _Core1BPanelFinder(HTMLParser):
+    def __init__(self, source: str):
+        super().__init__(convert_charrefs=True)
+        self.source = source
+        self.lines = [0]
+        for i, char in enumerate(source):
+            if char == "\n":
+                self.lines.append(i + 1)
+        self.start = None
+        self.end = None
+        self.depth = 0
+
+    def _offset(self):
+        line, col = self.getpos()
+        return self.lines[line - 1] + col
+
+    def handle_starttag(self, tag, attrs):
+        if tag != "div" or self.end is not None:
+            return
+        if self.start is None and dict(attrs).get("id") == "content-core1b":
+            self.start = self._offset()
+            self.depth = 1
+        elif self.start is not None:
+            self.depth += 1
+
+    def handle_endtag(self, tag):
+        if tag != "div" or self.start is None or self.end is not None:
+            return
+        self.depth -= 1
+        if self.depth == 0:
+            self.end = self._offset() + len("</div>")
+
+
+
+# The owner targets a 12.7-inch touch tablet; physical diagonal does not determine
+# CSS pixel density. Verify representative 16:10 landscape and portrait viewports
+# with real Chromium touch input instead of treating a 390px phone as the target.
+TABLET_TOUCH_CSS = """<style id="agent-b-127-tablet-touch">
+html { font-size: 18px; -webkit-text-size-adjust: 100%; }
+body { font-size: 1rem; line-height: 1.6; }
+main { width: min(100%, 1060px); max-width: 1060px; margin-inline: auto; padding: clamp(16px, 2.4vw, 36px); }
+main h1 { font-size: clamp(1.65rem, 2.4vw, 2.1rem); line-height: 1.23; }
+main h2 { font-size: 1.4rem; line-height: 1.3; }
+main h3 { font-size: 1.17rem; line-height: 1.4; }
+main p, main li { line-height: 1.62; overflow-wrap: anywhere; }
+main nav, main .tab-nav, main .tabs { display: flex; flex-wrap: wrap; align-items: stretch; gap: 12px; margin-block: 16px 22px; }
+body button, body .tab-button, body input[type="button"], body input[type="submit"] {
+  min-height: 56px; padding: 12px 18px; border-radius: 10px;
+  font: inherit; font-size: 1rem; line-height: 1.25;
+  touch-action: manipulation; -webkit-tap-highlight-color: transparent;
+}
+body button:focus-visible, body textarea:focus-visible, body input:focus-visible {
+  outline: 3px solid #1971c2; outline-offset: 3px;
+}
+body .tab-button { min-width: 168px; flex: 1 1 180px; }
+#content-core1b { max-width: 100%; }
+#content-core1b[data-agent-b-core1b] section { padding: clamp(18px, 2.2vw, 30px); margin-block: 16px; }
+#content-core1b[data-agent-b-core1b] label { display: block; margin-block: 10px 7px; font-weight: 650; }
+#content-core1b[data-agent-b-core1b] textarea {
+  display: block; width: 100%; max-width: 100%; min-height: 176px;
+  padding: 16px; border-radius: 9px; border: 2px solid #9faebf;
+  font: inherit; font-size: 1rem; line-height: 1.5;
+  resize: vertical; touch-action: pan-y;
+}
+#content-core1b[data-agent-b-core1b] button { min-width: 104px; min-height: 56px; margin: 8px 10px 8px 0; }
+#content-core1b[data-agent-b-core1b] [data-role="status"] { display: block; min-height: 32px; margin: 12px 0; line-height: 1.5; }
+#content-core1b[data-agent-b-core1b] [hidden] { display: none !important; }
+@media (orientation: portrait) and (min-width: 800px) {
+  main { max-width: 94vw; }
+  body .tab-button { flex: 1 1 210px; }
+  #content-core1b section { padding: 22px; }
+}
+</style>"""
+
+ENGINE_JS = r"""
+(function () {
+  'use strict';
+  function boot() {
+    const root = document.querySelector('#content-core1b[data-agent-b-core1b]');
+    if (!root) return;
+    const data = JSON.parse(document.getElementById('agent-b-core1b-data').textContent);
+    const key = ['g9v4','agent-b','core1b',root.dataset.sourceId,root.dataset.practiceId,root.dataset.revision].join(':');
+    const by = role => root.querySelector('[data-role="' + role + '"]');
+    const notify = (message, danger=false) => {
+      by('status').textContent=message;
+      by('status').setAttribute('role', danger ? 'alert' : 'status');
+    };
+    const nonblank = x => typeof x === 'string' && !!x.trim();
+    const valid = x => !!x && x.schema==='agent-b-core1b-attempt/v1' &&
+      x.key===key && x.revision===root.dataset.revision &&
+      x.hints && typeof x.hints==='object' && !Array.isArray(x.hints) &&
+      (!x.prediction || nonblank(x.prediction)) &&
+      (!x.firstAttempt || (nonblank(x.firstAttempt.text) && nonblank(x.prediction))) &&
+      (!x.diagnosis || (nonblank(x.diagnosis) && x.firstAttempt)) &&
+      (!x.repair || (nonblank(x.repair) && x.diagnosis)) &&
+      (!x.transfer || (nonblank(x.transfer) && x.repair));
+    let priorRaw = null;
+    let state = {schema:'agent-b-core1b-attempt/v1', key, revision:root.dataset.revision,
+      prediction:null, firstAttempt:null, hints:{}, diagnosis:null, repair:null, transfer:null, events:[]};
+    function lock(message) {
+      root.querySelectorAll('textarea,button').forEach(e => e.disabled=true);
+      notify(message, true);
+    }
+    try {
+      const probe=key+':probe';
+      localStorage.setItem(probe,'ok');
+      if(localStorage.getItem(probe)!=='ok')throw Error('storage denied');
+      localStorage.removeItem(probe);
+      priorRaw=localStorage.getItem(key);
+      if(priorRaw!==null){
+        const restored=JSON.parse(priorRaw);
+        if(!valid(restored))throw Error('persisted evidence is invalid');
+        state=restored;
+      }
+    } catch (_) { lock('Attempt storage is unavailable or evidence is invalid. Nothing can be revealed or recorded.'); return; }
+    function put(next) {
+      try {
+        if(localStorage.getItem(key)!==priorRaw){lock('Another tab changed this attempt. Reload to see the original saved evidence.');return false;}
+        const raw=JSON.stringify(next);
+        localStorage.setItem(key,raw);
+        if(localStorage.getItem(key)!==raw)throw Error('readback mismatch');
+        priorRaw=raw;state=next;render();return true;
+      } catch (_) {lock('Attempt could not be saved and verified. Reconstruction remains protected.');return false;}
+    }
+    function commit(field, value) {
+      if(!nonblank(value)){notify('Write a nonblank response before continuing.',true);return;}
+      if(field==='firstAttempt' && !state.prediction){notify('Commit your prediction first.',true);return;}
+      if(field==='diagnosis' && !state.firstAttempt){notify('Commit an attempt first.',true);return;}
+      if(field==='repair' && !state.diagnosis){notify('Record your diagnosis first.',true);return;}
+      if(field==='transfer' && !state.repair){notify('Record your repair first.',true);return;}
+      if(state[field]){notify('This original response is already frozen.',true);return;}
+      const next=JSON.parse(JSON.stringify(state));
+      next[field]=field==='firstAttempt'?{text:value, helpBeforeAttempt:Object.keys(next.hints).sort()}:value;
+      next.events.push({type:'COMMIT_'+field.toUpperCase(),at:new Date().toISOString()});
+      put(next);
+    }
+    function render() {
+      by('prediction-input').value=state.prediction||by('prediction-input').value;
+      by('firstAttempt-input').value=state.firstAttempt?.text||by('firstAttempt-input').value;
+      by('diagnosis-input').value=state.diagnosis||by('diagnosis-input').value;
+      by('repair-input').value=state.repair||by('repair-input').value;
+      by('transfer-input').value=state.transfer||by('transfer-input').value;
+      for(const field of ['prediction','firstAttempt','diagnosis','repair','transfer']){
+        by('save-'+field).disabled=!!state[field];
+      }
+      const reveal=!!state.firstAttempt;
+      by('model-host').hidden=!reveal;
+      if(reveal && !by('model-host').dataset.rendered){
+        const list=document.createElement('ol');
+        for(const step of data.route){
+          const li=document.createElement('li');
+          li.textContent=step.ask+' — '+step.step_answer;
+          list.appendChild(li);
+        }
+        by('model-host').appendChild(list);
+        by('model-host').dataset.rendered='yes';
+      }
+      by('diagnosis-stage').hidden=!reveal;
+      by('repair-stage').hidden=!state.diagnosis;
+      by('transfer-stage').hidden=!state.repair;
+      by('boundary-answer').hidden=!state.transfer;
+      if(state.transfer) by('boundary-answer').textContent=data.boundaryAnswer;
+      root.querySelectorAll('[data-hint]').forEach(button => {
+        const tier=button.dataset.hint;
+        button.disabled=!!state.hints[tier];
+        if(state.hints[tier]){
+          const span=root.querySelector('[data-hint-text="'+tier+'"]');
+          span.textContent=data.hints[Number(tier)-1];
+        }
+      });
+      notify(reveal?'First answer saved and frozen. Reconstruction available.':'Prediction and original response are stored separately from hints and repairs.');
+    }
+    for(const field of ['prediction','firstAttempt','diagnosis','repair','transfer']){
+      by('save-'+field).addEventListener('click',()=>commit(field,by(field+'-input').value));
+    }
+    root.querySelectorAll('[data-hint]').forEach(btn=>btn.addEventListener('click',()=>{
+      const tier=btn.dataset.hint;
+      if(state.hints[tier])return;
+      const next=JSON.parse(JSON.stringify(state));
+      next.hints[tier]={at:new Date().toISOString(),beforeAttempt:!state.firstAttempt};
+      next.events.push({type:'HINT_EXPOSED',tier,at:next.hints[tier].at,beforeAttempt:!state.firstAttempt});
+      put(next);
+    }));
+    window.addEventListener('storage',event=>{
+      if(event.key===key && event.newValue!==priorRaw)lock('Another tab changed this evidence. Reload before continuing.');
+    });
+    render();
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);
+  else boot();
+})();
+"""
+
+
+def render_protected_core1b(original_html: str, b: dict) -> str:
+    """Replace only Core1B panel; leave Core2 answer, navigation and source intact."""
+    finder = _Core1BPanelFinder(original_html)
+    finder.feed(original_html)
+    if finder.start is None or finder.end is None:
+        raise ValueError("No parseable Core1B panel; refusing unsafe HTML rewrite")
+    stages = b["stages"]
+    prompt = stages["stage_2_attempt"]["prompt"]
+    prediction = stages["stage_1_predict"]["prompt"]
+    boundary = stages["stage_6_boundary_test"]["prompt"]
+    hints = [h["text"] for h in b["progressive_hints"]]
+    if len(hints) != 3:
+        raise ValueError("Three non-revealing hint tiers required")
+    revision = hashlib.sha256(json.dumps(b, sort_keys=True).encode()).hexdigest()
+    escape = lambda v: html.escape(str(v), quote=True)
+    keyattrs = (
+        f'data-source-id="{escape(b["target_question_id"])}" '
+        f'data-practice-id="{escape(b["fresh_context_ref"])}" '
+        f'data-revision="{revision}"'
+    )
+    inner = [
+        f'<div id="content-core1b" class="tab-content" data-agent-b-core1b {keyattrs}>',
+        '<style>#content-core1b [hidden]{display:none !important;} #content-core1b textarea{width:100%;min-height:5rem;} #content-core1b button{min-height:44px;margin:.35rem;}</style>',
+        '<h2>Core 1B — New reconstruction practice</h2>',
+        '<p>Source-distinct practice only. Your first response is not graded and remains unchanged after help.</p>',
+        f'<section><h3>Stage 1 — Predict</h3><p>{escape(prediction)}</p><label for="ab-pred">Your physical prediction</label><textarea id="ab-pred" data-role="prediction-input"></textarea><button type="button" data-role="save-prediction">Save prediction</button></section>',
+        f'<section><h3>Stage 2 — Independent attempt</h3><p>{escape(prompt)}</p><label for="ab-attempt">Your original calculation and model</label><textarea id="ab-attempt" data-role="firstAttempt-input"></textarea><button type="button" data-role="save-firstAttempt">Freeze original attempt</button></section>',
+        '<section><h3>Optional H1/H2/H3 help</h3>',
+    ]
+    for i in (1, 2, 3):
+        inner.append(f'<button type="button" data-hint="{i}">Reveal H{i} (record exposure)</button><p data-hint-text="{i}"></p>')
+    inner.extend([
+        '</section>',
+        '<section data-role="model-host" hidden><h3>Stage 3 — Reconstruct after first commitment</h3></section>',
+        '<section data-role="diagnosis-stage" hidden><h3>Stage 4 — Diagnose your first divergence</h3><textarea data-role="diagnosis-input" aria-label="Diagnose original model"></textarea><button type="button" data-role="save-diagnosis">Save diagnosis</button></section>',
+        '<section data-role="repair-stage" hidden><h3>Stage 5 — Repair separately</h3><textarea data-role="repair-input" aria-label="Repair original model"></textarea><button type="button" data-role="save-repair">Save repair</button></section>',
+        f'<section data-role="transfer-stage" hidden><h3>Stage 6 — Changed-condition transfer</h3><p>{escape(boundary)}</p><textarea data-role="transfer-input" aria-label="New changed-condition commitment"></textarea><button type="button" data-role="save-transfer">Save transfer response</button><p data-role="boundary-answer" hidden></p></section>',
+        '<p data-role="status" aria-live="polite"></p></div>',
+    ])
+    payload = {
+        "route": stages["stage_3_reconstruct"]["route"],
+        "hints": hints,
+        "boundaryAnswer": stages["stage_6_boundary_test"]["answer"],
+    }
+    raw = json.dumps(payload, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
+    replacement = "\n".join(inner)
+    output = original_html[:finder.start] + replacement + original_html[finder.end:]
+    script = '<script type="application/json" id="agent-b-core1b-data">'+raw+'</script>\n<script>'+ENGINE_JS.replace("</", "<\\/")+'</script>\n'
+    if "</body>" not in output:
+        raise ValueError("Cannot find end of generated learner page")
+    if "</head>" not in output:
+        raise ValueError("Generated learner page missing head for tablet touch design")
+    output = output.replace("</head>", TABLET_TOUCH_CSS + "\n</head>", 1)
+    return output.replace("</body>", script+"</body>", 1)
+
+
+
+def render_lens_learning_journey(core1a: dict, core1b: dict) -> str:
+    """Standalone source-neutral authored lesson; Agent A retains the Core2 reader.
+
+    This is intentionally a separate generated learner page, not a copy of the
+    candidate bank's original stem, figures, answer map or QRT authority.
+    """
+    if core1a.get("construction_id") != core1b.get("construction_id"):
+        raise ValueError("Core1A/Core1B construction identity mismatch")
+    if core1a.get("academic_status") != "HOLD:ACADEMIC_ADMISSION":
+        raise ValueError("Unexpected Core1A admission")
+    if core1b.get("academic_status") != "HOLD:ACADEMIC_ADMISSION":
+        raise ValueError("Unexpected Core1B admission")
+    if not core1b.get("fresh_context_ref", "").startswith("AB-PRACTICE-"):
+        raise ValueError("Practice candidate must not masquerade as an authentic exam source")
+    escaped_title = html.escape(str(core1a.get("title", "Lens displacement teaching")), quote=True)
+    path_steps = core1a.get("teaching_path", [])
+    anchor = core1a.get("worked_conceptual_anchor", {})
+    if not path_steps or not anchor:
+        raise ValueError("Core1A teaching spans or worked anchor missing")
+    teaching = []
+    for i, step in enumerate(path_steps, 1):
+        if not isinstance(step, dict):
+            raise ValueError("Invalid Core1A teaching step")
+        title = html.escape(str(step.get("role", "Inference")), quote=True)
+        action = html.escape(str(step.get("action", "")), quote=True)
+        justification = html.escape(str(step.get("why_valid", "")), quote=True)
+        teaching.append(f'<li><strong>{i}. {title}</strong>: {action} <span class="why">Why valid: {justification}</span></li>')
+    examples = "".join(
+        f"<li>{html.escape(str(step), quote=True)}</li>"
+        for step in anchor.get("solution_steps", [])
+    )
+    if not examples:
+        raise ValueError("No distinct worked Core1A solution anchor")
+    anchor_prompt = html.escape(str(anchor.get("problem", "")), quote=True)
+    entry = html.escape(str(core1a.get("inferential_jump", "")), quote=True)
+    misconceptions = "".join(
+        "<li>" + html.escape(str(m.get("wrong_idea", "")), quote=True) +
+        " — Repair: " + html.escape(str(m.get("repair", "")), quote=True) + "</li>"
+        for m in core1a.get("misconceptions", []) if isinstance(m, dict)
+    )
+    base = """<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>""" + escaped_title + """ — Core1A/B authored practice</title>
+<style>
+html,body{margin:0;padding:0;box-sizing:border-box;font:16px/1.55 system-ui,-apple-system,sans-serif;color:#192335;background:#f7f9fc}
+*,*::before,*::after{box-sizing:inherit}
+main{max-width: 900px;margin:auto;padding:1rem}
+section{border:1px solid #d2deea;border-radius:.65rem;margin:.8rem 0;padding:.85rem;background:#fff}
+button{min-height:44px;padding:.5rem .8rem;cursor:pointer}
+button:focus-visible,textarea:focus-visible{outline:3px solid #2563eb;outline-offset:2px}
+nav{display:flex;flex-wrap:wrap;gap:.5rem;padding:.4rem}
+.tab-content{display:none}.tab-content.active{display:block}
+.tab-button.active{background:#223f65;color:#fff}
+.why{display:block;font-style:italic;color:#3d5061}
+li{margin-bottom:.7rem;overflow-wrap:anywhere}
+svg{max-width:100%;max-height:130px}
+.derivation-section{display:none}
+footer{border-top:1px solid #d2deea;margin:2rem 0;padding-top:1rem;color:#435164}
+@media (max-width: 600px){main{padding:.5rem;}section{padding:.65rem;}button{width:100%;}}
+</style></head>
+<body><main>
+<header><h1>""" + escaped_title + """</h1>
+<p><strong>Authored practice · Academic admission HOLD.</strong> Not a verified original NSEJS question.
+Core2 source, original figure, official key and source/QRT approval belong to Agent A.</p></header>
+<nav aria-label="Core learning tabs">
+<button class="tab-button active" type="button" id="tab-core2" onclick="switchTab('core2')">Core 2 source status</button>
+<button class="tab-button" type="button" id="tab-core1a" onclick="switchTab('core1a')">Core 1A teaching</button>
+<button class="tab-button" type="button" id="tab-core1b" onclick="switchTab('core1b')">Core 1B new challenge</button></nav>
+<div id="content-core2" class="tab-content active">
+<section><h2>Original question — separate source authority</h2>
+<p>This standalone page does not reproduce the original examination question or authenticate its source.
+Use the Agent A source-preserving reader for the original question.
+No original-answer or QRT approval is issued by this learning page.</p>
+<button type="button" onclick="document.getElementById('derivation-section').style.display='block'">Show source authority note</button>
+<div id="derivation-section" class="derivation-section" style="display: none;">
+<p>Original question and derivation must remain under Agent A's separate source and attempt contract.</p></div></section></div>
+<div id="content-core1a" class="tab-content">
+<section><h2>Core1A physical construction</h2><p>""" + entry + """</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 600 100" role="img" aria-label="An object, thin lens and screen along a common optical axis; distances add to D.">
+<line x1="60" y1="58" x2="540" y2="58" stroke="#333" stroke-width="2"/>
+<line x1="95" y1="20" x2="95" y2="85" stroke="#244d8c" stroke-width="5"/>
+<line x1="275" y1="15" x2="275" y2="85" stroke="#107d75" stroke-width="5"/>
+<line x1="500" y1="20" x2="500" y2="85" stroke="#9a5427" stroke-width="5"/>
+<text x="60" y="14" font-size="14">Object</text>
+<text x="258" y="14" font-size="14">Lens</text>
+<text x="481" y="14" font-size="14">Screen</text>
+<text x="163" y="92" font-size="14">x</text>
+<text x="381" y="92" font-size="14">D − x</text>
+</svg>
+<ol>""" + "\n".join(teaching) + """</ol>
+<h3>Distinct worked concept anchor</h3>
+<p><strong>1. System Representation & Setup:</strong> Name the given system, variables and assumptions.</p>
+<p><strong>2. Physical Model & Formulation:</strong> State why the selected law or model applies.</p>
+<p><strong>3. Execution & Resolution:</strong> Evaluate, check the result and identify its boundary.</p><p>""" + anchor_prompt + """</p>
+<ol>""" + examples + """</ol>
+<h3>Check misconceptions</h3><ul>""" + misconceptions + """</ul></section></div>
+<div id="content-core1b" class="tab-content"></div>
+<footer>No academic approval inferred from software validation. Green CI means automatic tests passed; it never means student release is authorized.</footer>
+</main>
+<script>
+function switchTab(id){
+  for(const el of document.querySelectorAll('.tab-button'))el.classList.remove('active');
+  for(const el of document.querySelectorAll('.tab-content'))el.classList.remove('active');
+  document.getElementById('tab-'+id).classList.add('active');
+  document.getElementById('content-'+id).classList.add('active');
+}
+</script>
+</body></html>"""
+    return render_protected_core1b(base, core1b)
+
+
+
+def scandium_ionization_core1b(original: dict) -> dict:
+    """Authored transfer: remove electrons from ions; never present as an exam item."""
+    b = copy.deepcopy(original)
+    b["fresh_context_ref"] = "AB-PRACTICE-CHEM-SC-IONIZATION-R1"
+    b["taught_skill_Y"] = "Derive neutral atom electron configuration from shell and subshell occupancy."
+    b["connecting_route_Z"] = "Distinguish initial 4s filling from electron-removal ordering for free transition-metal ions."
+    b["protected_fresh_inference_W"] = (
+        "Predict how Sc, Sc2+ and Sc3+ ground-state unpaired-electron counts differ "
+        "by selecting the physically correct subshell to ionize."
+    )
+    b["stages"] = {
+        "stage_1_predict": {
+            "prompt": "The 4s subshell fills before 3d for neutral scandium. Must a 3d electron therefore always be lost before 4s during ionization? Justify.",
+            "defensible_prediction": "No; filling order and electron-removal order are different. The 4s electrons are removed first in common Sc cations."
+        },
+        "stage_2_attempt": {
+            "prompt": "For isolated neutral scandium, Sc2+ and Sc3+, write their ground-state subshell configurations and predict the number of unpaired electrons in each. Explain which subshell loses the first two electrons and which loses the third.",
+            "produces": "Sc [Ar]3d1 4s2 has one unpaired; Sc2+ [Ar]3d1 has one; Sc3+ [Ar] has none. Ionization removes 4s before 3d.",
+            "closure": "RUBRIC",
+            "rubric": [
+                {"criterion": "Start from neutral Sc [Ar]3d1 4s2.", "evidence_of": "Distinguishes neutral atom's electron filling from ionization."},
+                {"criterion": "Remove both 4s electrons before removing the remaining 3d electron.", "evidence_of": "Applies cation energetics instead of reversing Aufbau simplistically."},
+                {"criterion": "Determine Sc, Sc2+ and Sc3+ ground-state unpaired counts.", "evidence_of": "Checks Hund occupancy and an empty valence shell."}
+            ],
+            "accepted": ["Sc: 1; Sc2+: 1; Sc3+: 0 unpaired, removing 4s first"],
+            "rejected": ["Remove 3d before 4s simply because 3d filled last", "Sc3+ must remain paramagnetic"]
+        },
+        "stage_3_reconstruct": {
+            "route": [
+                {"ask": "What is the neutral ground-state Sc configuration?", "why_this_ask": "There are 21 electrons.", "step_answer": "Sc (Z=21) is [Ar]3d1 4s2."},
+                {"ask": "Which subshell loses electrons first when Sc is ionized?", "why_this_ask": "Ionization changes the energy ordering; 4s electrons are lost first.", "step_answer": "Sc2+ has [Ar]3d1 after loss of two 4s electrons."},
+                {"ask": "What happens to the final remaining valence electron for Sc3+?", "why_this_ask": "Removing the third electron produces the Ar core.", "step_answer": "Sc3+ is [Ar], with no 3d electron."},
+                {"ask": "What are the three unpaired-electron counts?", "why_this_ask": "Use subshell occupancy and pairing.", "step_answer": "Neutral Sc has 1; Sc2+ has 1; Sc3+ has 0 unpaired electrons."}
+            ],
+            "differs_from_teaching_path": "The original neutral shell-population classification is replaced by successive cation ionization and spin inference."
+        },
+        "stage_4_diagnose": {
+            "error_trap": "Confusing orbital filling sequence with cation ionization order.",
+            "diagnostic_prompt": "Did you remove a 3d electron from Sc before its 4s electrons? What assumption requires repair?",
+            "resolution": "Neutral Aufbau filling order does not fix removal order for a transition-metal ion."
+        },
+        "stage_5_repair": {"action": "Freeze the original answer and explicitly cross out the incorrect reverse-Aufbau assumption; redraw the neutral-to-2+-to-3+ sequence."},
+        "stage_6_boundary_test": {
+            "prompt": "Would a hypothetical Sc+ ion necessarily have zero unpaired electrons under the same isolated-ion model? Explain without using the original neutral-shell options.",
+            "answer": "No. Sc+ has [Ar]3d1 4s1 in its ground state, giving two unpaired electrons; the next electron removed for Sc2+ is 4s."
+        },
+    }
+    b["progressive_hints"] = [
+        {"hint_id": "H1", "tier": "CLARIFY", "text": "Use the neutral atom configuration as a starting point, then treat electron removal as a separate operation."},
+        {"hint_id": "H2", "tier": "CORRELATE", "text": "In transition-metal cations the 4s electrons are removed before the 3d electrons; do not simply reverse the Aufbau filling list."},
+        {"hint_id": "H3", "tier": "OPEN_THE_WAY", "text": "Write each ionic configuration before counting spins. Ask when the remaining 3d electron is removed."}
+    ]
+    return b
+
+
+def immunity_bcell_core1b(original: dict) -> dict:
+    """Authored explanatory transfer: antibody recall vs retained innate defense."""
+    b = copy.deepcopy(original)
+    b["fresh_context_ref"] = "AB-PRACTICE-BIO-INNATE-ADAPTIVE-R1"
+    b["taught_skill_Y"] = "Distinguish antibody-producing lymphocytes, phagocytes and nonspecific barriers."
+    b["connecting_route_Z"] = "Apply cell-lineage roles to a changed condition of absent B-cell antibody memory."
+    b["protected_fresh_inference_W"] = (
+        "Predict which recall and innate functions can remain in a model with B-cell deficiency "
+        "and intact neutrophils; avoid the overgeneralization that all immune defenses vanish."
+    )
+    b["stages"] = {
+        "stage_1_predict": {
+            "prompt": "If B-cell memory is lost, does every component of innate immunity necessarily disappear too? Explain which cell lineage matters.",
+            "defensible_prediction": "No: loss of B-cell antibody memory does not imply loss of functional neutrophils or intact physical barriers."
+        },
+        "stage_2_attempt": {
+            "prompt": "Compare two hypothetical learners exposed to an antigen previously encountered through vaccination. Learner A has functional B-cell memory; learner B lacks functional B cells but has intact neutrophils, skin and mucosal barriers. Predict (i) the difference in rapid antigen-specific antibody recall and (ii) one innate defense that can remain in learner B. Name an additional assumption necessary for this comparison.",
+            "produces": "Antigen-specific antibody recall is impaired without functional memory B cells, while neutrophil phagocytosis and physical barriers can remain. Other immune pathways depend on stated assumptions.",
+            "closure": "RUBRIC",
+            "rubric": [
+                {"criterion": "Separate memory-B-cell/plasma-cell antibody recall from innate defenses.", "evidence_of": "Avoids conflating humoral adaptive immunity with phagocyte function."},
+                {"criterion": "Identify an intact innate pathway under the stipulated condition.", "evidence_of": "Uses the changed B-cell-only deficit assumption."},
+                {"criterion": "State an additional condition/limitation, such as preserved T cells and neutrophil function.", "evidence_of": "Recognizes limits of a hypothetical cellular model."}
+            ],
+            "accepted": ["Antigen-specific antibody recall impaired; neutrophil phagocytosis/barriers can remain; assumptions stated"],
+            "rejected": ["All immunological functions necessarily disappear", "Neutrophils are memory B cells"]
+        },
+        "stage_3_reconstruct": {
+            "route": [
+                {"ask": "Which lineage produces a rapidly recalled antigen-specific antibody response?", "why_this_ask": "Memory B cells activate and differentiate into antibody-secreting plasma cells.", "step_answer": "Humoral adaptive recall requires competent antigen-specific B-cell memory and plasma-cell differentiation."},
+                {"ask": "Which hypothetical capacity is missing in learner B?", "why_this_ask": "The model stipulates absence of functional B cells.", "step_answer": "Rapid memory B-cell-mediated antibody response to the familiar antigen is deficient."},
+                {"ask": "What innate capacity need not vanish with this defect?", "why_this_ask": "Neutrophils arise from a different lineage and are retained by assumption.", "step_answer": "Neutrophil phagocytosis and intact physical barriers may remain effective."},
+                {"ask": "What makes this comparison conditional rather than universal?", "why_this_ask": "Clinical immunodeficiencies and infections can have additional mechanisms.", "step_answer": "It assumes preserved neutrophils, barriers and other relevant immune pathways; no disease prognosis follows."}
+            ],
+            "differs_from_teaching_path": "Predict selective loss and retained defense under changed-cell-lineage assumptions; not original statement selection."
+        },
+        "stage_4_diagnose": {
+            "error_trap": "Equating a humoral adaptive deficit with complete loss of innate response.",
+            "diagnostic_prompt": "Which other immune lineage did you inadvertently treat as a B cell?",
+            "resolution": "Neutrophils have separate myeloid lineage and can remain intact."
+        },
+        "stage_5_repair": {"action": "Keep the frozen first response; rewrite two columns for adaptive memory and innate phagocytic/barrier functions and state assumptions."},
+        "stage_6_boundary_test": {
+            "prompt": "If learner B also had severely impaired neutrophils, would the original retained-phagocytosis inference still follow? Explain.",
+            "answer": "No. The retained-phagocytosis conclusion depended on explicitly intact neutrophils and does not transfer when that condition changes."
+        },
+    }
+    b["progressive_hints"] = [
+        {"hint_id": "H1", "tier": "CLARIFY", "text": "B cells and neutrophils are different immune-cell types with distinct roles."},
+        {"hint_id": "H2", "tier": "CORRELATE", "text": "Separate antigen-specific recall from general phagocytosis and physical barriers."},
+        {"hint_id": "H3", "tier": "OPEN_THE_WAY", "text": "Read the stipulated functions carefully and distinguish which lineage was impaired from which was left intact."}
+    ]
+    return b
+
+
+def render_generic_core1ab_lesson(core1a: dict, core1b: dict) -> str:
+    """Standalone explanatory page with no original exam stem, options or key."""
+    if core1a.get("construction_id") != core1b.get("construction_id"):
+        raise ValueError("Core1A/Core1B IDs mismatch")
+    if core1a.get("academic_status") != "HOLD:ACADEMIC_ADMISSION":
+        raise ValueError("Core1A academic admission must be HOLD")
+    if core1b.get("academic_status") != "HOLD:ACADEMIC_ADMISSION":
+        raise ValueError("Core1B academic admission must be HOLD")
+    esc = lambda x: html.escape(str(x), quote=True)
+    title = esc(core1a.get("title", "Conceptual teaching"))
+    teaching = core1a.get("teaching_path", [])
+    anchor = core1a.get("worked_conceptual_anchor", {})
+    if not teaching or not anchor or not anchor.get("solution_steps"):
+        raise ValueError("Core1A missing conceptual teaching or worked anchor")
+    steps = "".join(
+        "<li><b>" + esc(x.get("role", "Inference")) + "</b> — " + esc(x.get("action", "")) +
+        ". Why valid: " + esc(x.get("why_valid", "")) + "</li>"
+        for x in teaching if isinstance(x, dict)
+    )
+    anchor_steps = "".join("<li>" + esc(x) + "</li>" for x in anchor.get("solution_steps", []))
+    misconceptions = "".join(
+        "<li>" + esc(x.get("wrong_idea", "")) + " — " + esc(x.get("repair", "")) + "</li>"
+        for x in core1a.get("misconceptions", []) if isinstance(x, dict)
+    )
+    exit_check = core1a.get("exit_task", {})
+    body = '''<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>''' + title + ''' — Core1A/B candidate</title><style>
+*{box-sizing:border-box}html,body{margin:0;font:16px/1.55 system-ui,sans-serif;color:#162536;background:#f7f9fc}
+main{max-width: 900px;margin:auto;padding:1rem}section{padding:.9rem;margin:.8rem 0;border:1px solid #cbd5e1;border-radius:.5rem;background:white}
+.tab-content{display:none}.tab-content.active{display:block}.tab-button.active{background:#184c75;color:white}
+nav{display:flex;flex-wrap:wrap;gap:.5rem}button{min-height:44px;padding:.6rem;cursor:pointer}
+button:focus-visible,textarea:focus-visible{outline:3px solid #146ca0;outline-offset:2px}
+li{padding:.25rem 0;overflow-wrap:anywhere}svg{max-width:100%}
+.derivation-section{display:none}footer{padding:1.2rem 0;border-top:1px solid #cbd5e1}
+@media (max-width: 600px){main{padding:.4rem}section{padding:.5rem}button{width:100%}}
+</style></head><body><main><h1>''' + title + '''</h1>
+<p><strong>Authored practice; science/QRT and source admission HOLD.</strong> Not an authenticated official exam item.</p>
+<nav><button type="button" id="tab-core2" class="tab-button active" onclick="switchTab('core2')">Core 2 status</button>
+<button type="button" id="tab-core1a" class="tab-button" onclick="switchTab('core1a')">Core 1A teaching</button>
+<button type="button" id="tab-core1b" class="tab-button" onclick="switchTab('core1b')">Core 1B new challenge</button></nav>
+<div id="content-core2" class="tab-content active"><section><h2>Original source authority</h2>
+<p>The original exam question and canonical UID, paper/key and QRT decisions remain with Agent A.
+This candidate does not reproduce them or infer source authenticity.</p>
+<button type="button" onclick="document.getElementById('derivation-section').style.display='block'">Show source custody notice</button>
+<div id="derivation-section" class="derivation-section" style="display: none;"><p>Original Core2
+retrieval and attempt are a separate source-bound route controlled by Agent A.</p></div></section></div>
+<div id="content-core1a" class="tab-content"><section><h2>Core1A — taught operation</h2>
+<p>''' + esc(core1a.get("inferential_jump", "")) + '''</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 400 55" role="img" aria-label="Conceptual progression from representation to inference to verification">
+<rect width="400" height="55" fill="#eff6ff"/><text x="10" y="33" font-size="14">Represent → infer → verify</text></svg>
+<h3>Justified steps</h3><ol>''' + steps + '''</ol>
+<h3>Distinct worked conceptual anchor</h3>
+<p><strong>1. System Representation & Setup:</strong> Name the given system, variables and assumptions.</p>
+<p><strong>2. Physical Model & Formulation:</strong> State why the selected law or model applies.</p>
+<p><strong>3. Execution & Resolution:</strong> Evaluate, check the result and identify its boundary.</p><p>''' + esc(anchor.get("problem", "")) + '''</p>
+<ol>''' + anchor_steps + '''</ol><h3>Misconceptions</h3><ul>''' + misconceptions + '''</ul>
+<h3>Teaching exit</h3><p>''' + esc(exit_check.get("prompt", "")) + '''</p>
+<p><em>The worked exit belongs to teaching, not to the Core1B original response.</em></p>
+</section></div><div id="content-core1b" class="tab-content"></div>
+<footer>No academic approval inferred from software validation.</footer></main>
+<script>function switchTab(tab){
+ document.querySelectorAll('.tab-button').forEach(x=>x.classList.remove('active'));
+ document.querySelectorAll('.tab-content').forEach(x=>x.classList.remove('active'));
+ document.getElementById('tab-'+tab).classList.add('active');
+ document.getElementById('content-'+tab).classList.add('active');
+}</script></body></html>'''
+    return render_protected_core1b(body, core1b)

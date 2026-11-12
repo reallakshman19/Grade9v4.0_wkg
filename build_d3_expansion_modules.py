@@ -285,6 +285,8 @@ c1b_1 = {
         }
     ]
 }
+from tools.agent_b_core1ab_authoring import unequal_droplets_core1b, render_protected_core1b
+c1b_1 = unequal_droplets_core1b(c1b_1)
 (mod1_dir / "core1b_reconstruction.json").write_text(json.dumps(c1b_1, indent=2), encoding="utf-8")
 
 c1a_bytes_1 = (mod1_dir / "core1a_construction.json").read_bytes()
@@ -452,6 +454,16 @@ witness1 = {
         ]
     },
     "review_receipts": []
+}
+# Preserve Agent A source/QRT. Do not claim fabricated learner events or an independent reviewer receipt.
+witness1["core1b"]["fresh_context_ref"] = c1b_1["fresh_context_ref"]
+witness1["core1b"]["freshness_review_ref"] = "PENDING-INDEPENDENT-REVIEW"
+witness1["core1b"]["attempt_events"] = []
+witness1["core1b"]["native_runtime_receipt_ref"] = "NOT_RECEIVED"
+witness1["core1b"]["assessed_roles"] = {
+    "VOLUME_CONSERVATION_POWER_SCALING": {"attempt_field": "stage_2_attempt.rubric[0]", "observable": "Sum eight small cubic radii and one doubled cubic radius."},
+    "SPHERICAL_SURFACE_AREA_CONTRACTION": {"attempt_field": "stage_2_attempt.rubric[1]", "observable": "Compare unequal-drop initial area with final sphere area."},
+    "SURFACE_ENERGY_THERMODYNAMICS": {"attempt_field": "stage_2_attempt.rubric[2]", "observable": "Calculate area-loss times constant surface tension with a conditional warrant."}
 }
 (mod1_dir / "witness.json").write_text(json.dumps(witness1, indent=2), encoding="utf-8")
 
@@ -664,6 +676,7 @@ html1 = """<!DOCTYPE html>
 </body>
 </html>
 """
+html1 = render_protected_core1b(html1, c1b_1)
 (mod1_dir / "learning_journey.html").write_text(html1, encoding="utf-8")
 print(f"Generated Physics D3 Module: {mod1_dir}")
 
@@ -942,6 +955,11 @@ c1b_2 = {
         }
     ]
 }
+# H3 must direct a learner to the discriminant rather than announce the original answer.
+c1b_2["progressive_hints"][2]["text"] = (
+    "Draw the P-H and P-OH bonds. Only hydrogens on oxygen can contribute to "
+    "ordinary acid-base neutralization; compare your formula with this rule."
+)
 (mod2_dir / "core1b_reconstruction.json").write_text(json.dumps(c1b_2, indent=2), encoding="utf-8")
 
 c1a_bytes_2 = (mod2_dir / "core1a_construction.json").read_bytes()
@@ -1109,6 +1127,9 @@ witness2 = {
     },
     "review_receipts": []
 }
+witness2["core1b"]["attempt_events"] = []
+witness2["core1b"]["native_runtime_receipt_ref"] = "NOT_RECEIVED"
+witness2["core1b"]["freshness_review_ref"] = "PENDING-INDEPENDENT-REVIEW"
 (mod2_dir / "witness.json").write_text(json.dumps(witness2, indent=2), encoding="utf-8")
 
 # HTML 2
@@ -1311,6 +1332,7 @@ html2 = """<!DOCTYPE html>
 </body>
 </html>
 """
+html2 = render_protected_core1b(html2, c1b_2)
 (mod2_dir / "learning_journey.html").write_text(html2, encoding="utf-8")
 print(f"Generated Chemistry D3 Module: {mod2_dir}")
 
@@ -1590,6 +1612,11 @@ c1b_3 = {
         }
     ]
 }
+# A hint cannot identify final incorrect options before the first saved attempt.
+c1b_3["progressive_hints"][2]["text"] = (
+    "Distinguish an envelope's lipid membrane from viral-encoded entry proteins "
+    "and remember that animal viruses have diverse genome types."
+)
 (mod3_dir / "core1b_reconstruction.json").write_text(json.dumps(c1b_3, indent=2), encoding="utf-8")
 
 c1a_bytes_3 = (mod3_dir / "core1a_construction.json").read_bytes()
@@ -1756,6 +1783,9 @@ witness3 = {
     },
     "review_receipts": []
 }
+witness3["core1b"]["attempt_events"] = []
+witness3["core1b"]["native_runtime_receipt_ref"] = "NOT_RECEIVED"
+witness3["core1b"]["freshness_review_ref"] = "PENDING-INDEPENDENT-REVIEW"
 (mod3_dir / "witness.json").write_text(json.dumps(witness3, indent=2), encoding="utf-8")
 
 # HTML 3
@@ -1962,6 +1992,7 @@ html3 = """<!DOCTYPE html>
 </body>
 </html>
 """
+html3 = render_protected_core1b(html3, c1b_3)
 (mod3_dir / "learning_journey.html").write_text(html3, encoding="utf-8")
 print(f"Generated Biology D3 Module: {mod3_dir}")
 
