@@ -93,9 +93,8 @@ def build_preview(out: Path) -> dict:
             dst.parent.mkdir(parents=True, exist_ok=True)
             dst.write_bytes(raw)
         (stage / "index.html").write_text(HUB, encoding="utf-8")
-        (stage / ".nojekyll").write_bytes(b"")
         files = sorted(p.relative_to(stage).as_posix() for p in stage.rglob("*") if p.is_file())
-        allowed = {".nojekyll", "index.html", *PAGES}
+        allowed = {"index.html", *PAGES}
         if set(files) != allowed:
             raise ValueError("PUBLIC_ALLOWLIST_MISMATCH")
         manifest = {"status":"SYNTHETIC_TECHNICAL_ONLY",
