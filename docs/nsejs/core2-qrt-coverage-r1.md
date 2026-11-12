@@ -12,6 +12,8 @@
 | MAGNETISM_AND_EMI | 10 | 3 | 6 | 1 | 0 | 0 |
 | MECHANICS | 10 | 2 | 8 | 0 | 0 | 0 |
 
+**Authored top-up (separate from the exam-source corpus):** G9-AUTH-MECH-001 is an authored collision-plus-friction Mechanics practice candidate, nominated SYNTHESIZE/D3 with QRT HOLD, science HOLD and NOT_ADMITTED. The site has 51 total Physics entries (50 source-claimed + 1 authored). It does not close a qualified D3/D4 coverage gap.
+
 **Current counts:** 50 distinct source_id; 48 distinct displayed original id; 50 internal scoped question_uid. Two displayed original IDs are repeated across topic-specific records. Original IDs are preserved; internal UID uses the source occurrence namespace.
 
 **Evidence classes:** D1/D2/D3/D4 are source-producer nominations, not QRT-admitted classifications. Source originals, official paper/key bytes, and figure binaries were not independently authenticated. Source authenticity remains UNKNOWN_SOURCE and academic release NOT_ADMITTED for every record.

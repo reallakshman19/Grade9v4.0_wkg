@@ -31,10 +31,11 @@ def execute():
             page_errors = []
             page.on("pageerror", lambda error: page_errors.append(str(error)))
             for topic in ("optics","electrostatics","circuits","magnetism","mechanics"):
+                expected = 11 if topic == "mechanics" else 10
                 page.goto(base+BASE+"question-bank.html?topic="+topic, wait_until="domcontentloaded")
-                page.wait_for_function("document.querySelectorAll('.card').length === 10")
-                assert page.locator(".card").count() == 10, topic
-                assert "10 candidate records" in page.locator("#status").inner_text(), topic
+                page.wait_for_function("(n) => document.querySelectorAll('.card').length === n", expected)
+                assert page.locator(".card").count() == expected, topic
+                assert str(expected)+" candidate records" in page.locator("#status").inner_text(), topic
                 assert page.locator("span.status").count() == 10, topic
             page.goto(base+BASE+"question-bank.html?topic=optics",wait_until="domcontentloaded")
             page.wait_for_function("document.querySelectorAll('.card').length === 10")
@@ -90,10 +91,11 @@ def execute():
                 status=200,content_type="application/javascript",body=""))
             mp = mobile.new_page()
             mp.goto(base+BASE+"question-bank.html?topic=mechanics",wait_until="domcontentloaded")
-            mp.wait_for_function("document.querySelectorAll('.card').length === 10")
-            assert mp.locator(".card").count()==10
+            mp.wait_for_function("document.querySelectorAll('.card').length === 11")
+            assert mp.locator(".card").count()==11
+            assert "Authored practice ID: G9-AUTH-MECH-001" in mp.locator(".card").last.inner_text()
             assert mp.evaluate("document.documentElement.scrollWidth <= window.innerWidth + 2")
-            print("PASS: 5 topic banks, 50 records, figure HOLD, commit/reveal/reload, deep link, storage denial, fluids HOLD, unknown UID, navigation, 390x844")
+            print("PASS: 5 topic banks, 50 source-claimed + 1 authored record, figure HOLD, commit/reveal/reload, deep link, storage denial, fluids HOLD, unknown UID, navigation, 390x844")
             mobile.close();context.close();browser.close()
     finally:
         server.shutdown()

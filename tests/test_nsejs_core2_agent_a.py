@@ -94,3 +94,25 @@ def test_physics_hub_sample_does_not_claim_saved_first_attempt():
     assert "Sample only" in html
     assert "if (btn) btn.disabled = false;" not in html
     assert 'window.location.href = "question-bank.html?topic="' in html
+
+
+def test_original_authored_mechanics_topup_keeps_provenance_and_physics_correct():
+    import json
+    source=ROOT/"nsejs/data/physics-authored-practice-r1.json"
+    manifest=json.loads(source.read_text(encoding="utf-8"))
+    assert manifest["academic_release"]=="HOLD"
+    assert manifest["source_claim"]=="AUTHORED_PRACTICE_NOT_OFFICIAL_EXAM"
+    assert len(manifest["questions"])==1
+    q=manifest["questions"][0]
+    assert q["id"]=="G9-AUTH-MECH-001"
+    assert q["category"]=="AUTHORED_PRACTICE"
+    assert q["review_state"]=="NOT_ADMITTED"
+    assert q["qrt_adjudication"]=="HOLD"
+    assert q["science_review"]=="HOLD"
+    assert q["score"]==sum(q["components"].values())==7
+    v=8.0;mu=0.25;g=10.0
+    post=v/2.0
+    stopping=post**2/(2*mu*g)
+    assert stopping==3.2
+    assert q["answer"]=="C: 3.2 m"
+    assert audit.uid(q) not in {audit.uid(x) for x in questions()}

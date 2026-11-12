@@ -11,3 +11,5 @@
 7. Recheck exact data revision before integration; no duplicate canonical source records or synthetic academic approvals. Source claims stay NOT_ADMITTED pending actual evidence.
 
 **Coverage input:** docs/nsejs/physics50-core2-index-r1.csv. No academic approval inferred from software validation.
+
+**Agent A authored top-up:** G9-AUTH-MECH-001 (collision then friction), explicitly authored; proposed D3/SYNTHESIZE, science HOLD/QRT HOLD. Not an authenticated NSEJS source. Agent B may identify teaching prerequisites but must not relabel its origin.
