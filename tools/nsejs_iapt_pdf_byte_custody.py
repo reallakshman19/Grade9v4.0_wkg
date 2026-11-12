@@ -157,8 +157,8 @@ def inspect_bounded_2024_pdf_evidence(data: bytes) -> dict:
         "source_q52_option_b_eosinophil_seen": "eosinophil" in text,
         "source_q57_lens_75cm_seen": "75 cm" in text and "lens" in text,
         "source_q57_focal_12cm_seen": "12 cm" in text and "lens" in text,
-        "candidate_q52_histamine_is_original": False,
-        "original_q57_figure_reproduced_in_candidate": False,
+        "q52_histamine_term_on_pdf_page12": "histamine" in text,
+        "original_q57_figure_comparison": "NOT_PERFORMED",
         "academic_source_admission": "HOLD",
         "status": "BOUNDED_PDF_TEXT_ANCHORS_ONLY_NO_FIGURE_AUTHENTICATION",
     }
