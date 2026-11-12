@@ -4,6 +4,8 @@ on:
     paths:
       - 'nsejs/js/wpe-contract-adapter.js'
       - 'nsejs/data/mechanics-wpe-teaching-pilot.v1.json'
+      - 'nsejs/data/source-learning-bridge-tech-preview.v1.json'
+      - 'tests/test_nsejs_wave2_promotion_gate.py'
       - 'nsejs/physics/learn-mechanics.html'
       - 'nsejs/css/wpe-touch-parity.css'
       - 'tests/test_nsejs_wpe_real_pilot_browser.py'
@@ -31,7 +33,7 @@ jobs:
           node --check nsejs/js/wpe-contract-adapter.js
       - name: Verify actual source, schema, physics and boundary arithmetic
         run: |
-          python -m pytest -q tests/test_source_learning_bridge_pilot.py tests/test_nsejs_wpe_learner_contract.py tests/test_nsejs_mechanics_teaching_pilot.py
+          python -m pytest -q tests/test_source_learning_bridge_pilot.py tests/test_nsejs_wpe_learner_contract.py tests/test_nsejs_wave1_combined_gate.py tests/test_nsejs_mechanics_teaching_pilot.py tests/test_nsejs_wave2_promotion_gate.py
       - name: Verify complete actual student path in 12.7-inch portrait/landscape Chromium
         run: |
           python -m pytest -v tests/test_nsejs_wpe_runtime_browser.py tests/test_nsejs_wpe_real_pilot_browser.py
