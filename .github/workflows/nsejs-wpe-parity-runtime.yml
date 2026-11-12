@@ -8,7 +8,7 @@ on:
       - 'nsejs/contracts/**'
       - 'nsejs/data/source-learning-bridge-pilot.v1.json'
       - 'nsejs/data/mechanics-wpe-teaching-pilot.v1.json'
-      - 'tests/test_nsejs_wpe_runtime_browser.py'
+      - 'browser_tests/test_nsejs_wpe_runtime_browser.py'
       - '.github/workflows/nsejs-wpe-parity-runtime.yml'
   workflow_dispatch:
 permissions:
@@ -31,4 +31,4 @@ jobs:
           node --check nsejs/js/wpe-contract-adapter.js
           node --check physics/wpe/gap-six-stage-engine.js
       - name: Run real HTTP Chromium independent Task A/B learner journeys
-        run: python -m pytest -v tests/test_nsejs_wpe_runtime_browser.py
+        run: python -m pytest -v browser_tests/test_nsejs_wpe_runtime_browser.py
