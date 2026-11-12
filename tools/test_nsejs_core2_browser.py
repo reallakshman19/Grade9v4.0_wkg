@@ -49,12 +49,32 @@ def execute():
             assert practice_card.locator(".answer").is_hidden()
             practice_card.get_by_role("button",name="Show explanation").click()
             assert practice_card.locator(".answer").is_visible()
+            assert "Producer-proposed answer (not independently verified):" in practice_card.locator(".answer").inner_text()
+            assert "Official Key:" not in practice_card.locator(".answer").inner_text()
             page.reload(wait_until="domcontentloaded")
             page.wait_for_function("document.querySelectorAll('.card').length === 10")
             restored = page.locator(".card").nth(1)
             assert restored.get_by_role("button",name="Save first attempt").is_disabled()
             assert restored.get_by_role("button",name="Show explanation").is_enabled()
             assert restored.locator(".answer").is_hidden()
+            # Distinct identity deep link, not the ambiguous historical displayed ID.
+            page.goto(base+BASE+"question-bank.html?topic=optics&uid=g9%3APHYSICS%3ANSEJS-23-OPT-02",wait_until="domcontentloaded")
+            page.wait_for_function("document.querySelectorAll('.card').length === 1")
+            assert "NSEJS-23-OPT-02" in page.locator(".card").inner_text()
+            # Failed storage must never be reported as successfully saved.
+            denied = browser.new_context(viewport={"width": 1280, "height": 800})
+            denied.route("https://cdn.jsdelivr.net/**",lambda route:route.fulfill(
+                status=200,content_type="application/javascript",body=""))
+            denied.add_init_script("Storage.prototype.setItem = function() { throw new Error('denied'); }")
+            denied_page = denied.new_page()
+            denied_page.goto(base+BASE+"question-bank.html?topic=optics",wait_until="domcontentloaded")
+            denied_page.wait_for_function("document.querySelectorAll('.card').length === 10")
+            denied_card = denied_page.locator(".card").nth(1)
+            denied_card.locator(".options input").first.check()
+            denied_card.get_by_role("button",name="Save first attempt").click()
+            assert "NOT SAVED" in denied_card.inner_text()
+            assert "saved locally" not in denied_card.inner_text()
+            denied.close()
             page.goto(base+BASE+"question-bank.html?topic=fluids",wait_until="domcontentloaded")
             page.wait_for_function("document.querySelector('#questions').textContent.includes('No source-backed')")
             assert page.locator(".card").count() == 0
@@ -73,7 +93,7 @@ def execute():
             mp.wait_for_function("document.querySelectorAll('.card').length === 10")
             assert mp.locator(".card").count()==10
             assert mp.evaluate("document.documentElement.scrollWidth <= window.innerWidth + 2")
-            print("PASS: 5 topic banks, 50 candidate records, figure HOLD, commit/reveal/reload, fluids HOLD, unknown UID, navigation, 390x844")
+            print("PASS: 5 topic banks, 50 records, figure HOLD, commit/reveal/reload, deep link, storage denial, fluids HOLD, unknown UID, navigation, 390x844")
             mobile.close();context.close();browser.close()
     finally:
         server.shutdown()
