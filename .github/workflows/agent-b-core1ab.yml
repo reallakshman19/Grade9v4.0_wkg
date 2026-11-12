@@ -14,6 +14,7 @@ on:
       - 'build_bio_genetics_core1.py'
       - 'build_physics_fluids_core1.py'
       - 'docs/agent-b-core1ab-construction-handoff-r1.md'
+      - 'docs/agent-b-core1ab-science-findings-r1.md'
       - 'docs/agent-b-core1ab-candidate-topups.md'
       - 'docs/agent-b-core1ab-preflight.md'
       - 'docs/agent-b-physics-uid-lookup-r1.json'
