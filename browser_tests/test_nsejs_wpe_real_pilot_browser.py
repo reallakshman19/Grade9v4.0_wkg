@@ -237,7 +237,7 @@ def test_quota_rejects_real_payload_before_any_solution_reveal(server, phase):
         browser = pw.chromium.launch(headless=True)
         ctx = browser.new_context(viewport={"width":1000, "height":1600},
                                   has_touch=True, is_mobile=True)
-        ctx.add_init_script("""() => {
+        ctx.add_init_script("""(() => {
           window.__blockActualAttempt = false;
           window.__blockActualBoundary = false;
           const original = Storage.prototype.setItem;
@@ -252,7 +252,7 @@ def test_quota_rejects_real_payload_before_any_solution_reveal(server, phase):
             }
             return original.call(this, key, value);
           };
-        }""")
+        })()""")
         page = ctx.new_page()
         try:
             page.goto(page_path(server), wait_until="domcontentloaded", timeout=30000)
