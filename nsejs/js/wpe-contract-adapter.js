@@ -237,6 +237,52 @@
     } catch (_) { return null; }
   }
 
+  function precommitRevealAttempt(root, prefix, lessonId, action) {
+    // WPE's existing engine renders its next stage even if persist() fails.
+    // For the only two solution-revealing actions, commit the actual full
+    // stage record to the *same* revision-scoped key before WPE handles click.
+    // A small independent storage probe does not protect against quota errors.
+    if (action !== "attempt" && action !== "boundary") return true;
+    try {
+      const selected = localStorage.getItem(prefix + "selected:" + lessonId) === "T2";
+      const taskKey = lessonId + (selected ? "-T2" : "");
+      const key = prefix + taskKey;
+      const record = JSON.parse(localStorage.getItem(key) || "null");
+      const stage = action === "attempt" ? 1 : 5;
+      if (!record || record.schema !== 1 || record.id !== taskKey ||
+          record.stage !== stage ||
+          (action === "attempt" ? record.first !== null : record.boundary !== null))
+        return true; // WPE's own validation handles invalid or stale clicks.
+      const host = root.querySelector(".stage-root");
+      if (!host) return false;
+      const fields = {};
+      host.querySelectorAll("[data-field]").forEach(node => { fields[node.dataset.field] = node.value; });
+      if (action === "attempt") {
+        if (!fields.reason?.trim() || !fields.model || fields.model === "Choose an idea")
+          return true; // WPE will display its normal incomplete-answer warning.
+        record.first = {
+          answers: {...fields},
+          hintsUsed: record.hints.length,
+          helpHistory: record.helpHistory.slice(),
+          capturedAt: new Date().toISOString()
+        };
+        record.draft = {};
+        record.stage = 2;
+      } else {
+        if (!fields.why?.trim() ||
+            (host.querySelector('[data-field="model"]') &&
+             (!fields.model || fields.model === "Choose an idea")))
+          return true;
+        record.boundary = {...fields, capturedAt: new Date().toISOString()};
+      }
+      const serialized = JSON.stringify(record);
+      localStorage.setItem(key, serialized);
+      return localStorage.getItem(key) === serialized;
+    } catch (_) {
+      return false;
+    }
+  }
+
   async function mount(config = {}) {
     try {
       requireThat(typeof window.WPEGapJourneys === "function", "WPE_ENGINE_MISSING");
@@ -290,12 +336,17 @@
       buttonRoot.addEventListener("click", event => {
         const clicked = event.target.closest("button[data-action]");
         if (!clicked) return;
-        /* Capture phase fires BEFORE the WPE engine's stage handlers. This
-         * prevents ordinary storage denial from moving into reconstruction.
+        /* Capture runs before the WPE stage transition. The probe is necessary
+         * but insufficient: quota may allow a tiny probe while refusing the
+         * real first-response or boundary payload.
          */
         if (!storageProbe()) {
           event.preventDefault(); event.stopImmediatePropagation();
           failClosed("STORAGE_DENIED_DURING_ATTEMPT"); return;
+        }
+        if (!precommitRevealAttempt(buttonRoot, prefix, lesson.id, clicked.dataset.action)) {
+          event.preventDefault(); event.stopImmediatePropagation();
+          failClosed("ACTUAL_ATTEMPT_NOT_DURABLY_SAVED"); return;
         }
       }, true);
       buttonRoot.addEventListener("click", event => {
