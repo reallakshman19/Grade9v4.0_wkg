@@ -6,7 +6,7 @@
 
 ## Evidence and scope
 
-The Owner's exact TASK_B_CORE1A_CORE1B_AGENT_PROMPT.md and Agent A ↔ B handoff manifest were not present in the conversation attachments, connected Drive searches, or PR #80 Git tree. Consequently, full 27-module source-to-Core2/QRT verification remains NOT_RECEIVED and the audit must remain HOLD. PR #80's generated workspace/output learning journeys are ignored by Git and are not verified GitHub tree artifacts. A Windows producer claim of 1019 passed / 27 pages rendered is REPORTED_ONLY until reproduced from pinned bytes at this head.
+The Owner confirmed that the in-chat **OWNER → CORE1A / CORE1B CODING AGENT** instruction is Agent B's governing Task B prompt; no duplicate standalone prompt is required. The separate Agent A ↔ B stable UID/cognitive-role/QRT handoff manifest was not located in the conversation attachments, connected Drive searches, or PR #80 Git tree. Consequently, full 27-module source-to-Core2/QRT verification remains NOT_RECEIVED and the audit must remain HOLD. PR #80's generated workspace/output learning journeys are ignored by Git and are not verified GitHub tree artifacts. A Windows producer claim of 1019 passed / 27 pages rendered is REPORTED_ONLY until reproduced from pinned bytes at this head.
 
 PR #80's build_d3_batch2_modules.py defines a lens Core1B with the original 75 cm / 12 cm lens problem, marks its fresh context as AUTHENTIC-EXAM, and gives both answer roots in H3. PR #80's build_d3_expansion_modules.py repeats the 1000-droplet original in Core1B, gives its result in H3, and renders Stage 3 as static Core1B tab content while its only commitment function protects the Core2 answer. These are observed B4/B5 defects; previous structural tests do not reject them.
 
@@ -21,6 +21,6 @@ Run after generating authorized candidate content privately:
 
 Exit code 2 = an observed FAIL; 3 = HOLD with no observed FAIL. No source content is copied into the JSON report. This is not browser verification or physical-science adjudication.
 
-**Next steps:** Provide the complete Task B and Agent A stable question-UID/cognitive-role/QRT manifest through the authorized handoff; regenerate exact candidate artifacts; inspect 27 Core1A/Core1B examples and all HTTP browser interactions; correct B3/B4/B6 cases in source-owned authored modules only; obtain separate independent academic requalification.
+**Next steps:** Use the Owner's in-chat Task B instruction; obtain Agent A's stable question-UID/cognitive-role/QRT manifest through the authorized handoff; regenerate exact candidate artifacts; inspect 27 Core1A/Core1B examples and all HTTP browser interactions; correct B3/B4/B6 cases in source-owned authored modules only; obtain separate independent academic requalification.
 
 No academic approval inferred from software validation.
