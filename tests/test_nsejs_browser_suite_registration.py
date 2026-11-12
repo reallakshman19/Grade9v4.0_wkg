@@ -29,7 +29,7 @@ def test_standard_qa_remains_unfiltered_and_chromium_is_separately_required():
     workflow = (ROOT / ".github/workflows/qa.yml").read_text("utf-8")
     assert "qa_reproducibility.py run" in workflow
     assert "pytest_args" not in workflow
-    assert "pytest -q tests" not in workflow
+    assert "run: python -m pytest -q\n" not in workflow
     for path in CASES:
         code = path.read_text("utf-8")
         assert "from playwright.sync_api import sync_playwright" in code
