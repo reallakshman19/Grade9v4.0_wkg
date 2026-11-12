@@ -16,10 +16,19 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - run: python -m pip install -e ".[dev]"
-      - name: Regenerate eight tracked authored Core1A/B candidates (never original exam fixtures)
+      - name: Verify reproducibility diagnostics and false-green controls
+        run: python -m pytest -q tests/test_qa_reproducibility.py
+      - name: Deterministically regenerate checked-in authored modules only
+        run: python tools/qa_reproducibility.py bootstrap
+      - name: Run full unfiltered Python QA and emit failure classification
         run: |
-          python build_d3_batch2_modules.py
-          python build_d3_expansion_modules.py
-          python build_physics_fluids_core1.py
-          python build_bio_genetics_core1.py
-      - run: python -m pytest -q
+          mkdir -p qa-artifacts
+          python tools/qa_reproducibility.py run --json-out qa-artifacts/failures.json --junit-out qa-artifacts/junit.xml
+      - name: Preserve exact-version classified QA receipt (not approval)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nsejs-py${{ matrix.python-version }}-full-qa-fail-closed
+          path: qa-artifacts/
+          if-no-files-found: warn
+
