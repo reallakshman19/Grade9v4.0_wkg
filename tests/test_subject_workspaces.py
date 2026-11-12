@@ -221,7 +221,10 @@ def test_symlink_escape_on_subject_contract_is_fail(tmp_path, manifest):
     outside.write_text(json.dumps(contract()))
     c=root/"Physics/adapter/CoreContracts.json"
     c.unlink()
-    c.symlink_to(outside)
+    try:
+        c.symlink_to(outside)
+    except OSError as e:
+        pytest.skip(f"Symlinks not supported or permitted on this host: {e}")
     assert "CONTRACT_PATH_ESCAPE" in codes(inspect(manifest,root))
 
 
