@@ -153,7 +153,7 @@ def build(out: Path) -> dict:
         "core1ab_authored_lesson_pages":8,
         "school_wpe_preserved":True,
         "existing_synthetic_reader_preserved":True,
-        "files":{name:sha((out/name).read_bytes()) for name in file_list if name!="PUBLIC_PREVIEW_MANIFEST.json"}
+        "files":{name:sha((out/name).read_bytes()) for name in file_list if name not in ("PUBLIC_PREVIEW_MANIFEST.json",".nojekyll")}
     }
     (out/"PUBLIC_PREVIEW_MANIFEST.json").write_text(
         json.dumps(manifest,indent=2,sort_keys=True)+"\n",encoding="utf-8")

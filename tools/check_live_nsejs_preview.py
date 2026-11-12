@@ -12,10 +12,13 @@ from urllib.request import Request, urlopen
 
 def download(url:str)->bytes:
     request=Request(url,headers={"User-Agent":"Grade9-NSEJS-Pages-exact-byte-check","Cache-Control":"no-cache"})
-    with urlopen(request,timeout=20) as r:
-        if r.status!=200:
-            raise ValueError("HTTP_STATUS_"+str(r.status)+":"+url)
-        return r.read()
+    try:
+        with urlopen(request,timeout=20) as r:
+            if r.status!=200:
+                raise ValueError("HTTP_STATUS_"+str(r.status)+":"+url)
+            return r.read()
+    except Exception as exc:
+        raise ValueError("PUBLIC_URL_FETCH_FAILED:"+url+": "+str(exc)) from exc
 
 def main()->int:
     ap=argparse.ArgumentParser()
