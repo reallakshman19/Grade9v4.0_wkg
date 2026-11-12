@@ -17,7 +17,7 @@ import ssl
 import time
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlparse
-from urllib.request import Request, urlopen
+from urllib.request import HTTPRedirectHandler, HTTPSHandler, Request, build_opener
 
 ALLOWED_HOSTS = frozenset(("iapt.org.in", "www.iapt.org.in", "mail.iapt.org.in"))
 URLS = {
@@ -54,6 +54,15 @@ def safe_http_error(exc: Exception) -> str:
     return type(exc).__name__.upper()[:50]
 
 
+class IAPTOnlyRedirect(HTTPRedirectHandler):
+    """Reject redirects before issuing a request outside the official domain."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        if not allowlisted_url(newurl):
+            raise ValueError("REDIRECT_LEFT_IAPT_ALLOWLIST")
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
 def read_official_bytes(url: str, timeout: int = 18) -> tuple[bytes, str]:
     if not allowlisted_url(url):
         raise ValueError("SOURCE_URL_NOT_IAPT_ALLOWLISTED")
@@ -62,7 +71,8 @@ def read_official_bytes(url: str, timeout: int = 18) -> tuple[bytes, str]:
         "Accept": "application/pdf",
         "Cache-Control": "no-cache",
     })
-    with urlopen(req, timeout=timeout, context=ssl.create_default_context()) as response:
+    opener = build_opener(IAPTOnlyRedirect(), HTTPSHandler(context=ssl.create_default_context()))
+    with opener.open(req, timeout=timeout) as response:
         actual = response.geturl()
         if not allowlisted_url(actual):
             raise ValueError("REDIRECT_LEFT_IAPT_ALLOWLIST")
