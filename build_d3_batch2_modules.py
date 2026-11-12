@@ -356,6 +356,12 @@ mod1_witness["core1b"]["assessed_roles"] = {
 }
 (mod1_dir / "witness.json").write_text(json.dumps(mod1_witness, indent=2), encoding="utf-8")
 
+# Agent B: generate a source-neutral Core1A/B learner page; no original Core2 bank rewrite.
+from tools.agent_b_core1ab_authoring import render_lens_learning_journey
+(mod1_dir / "learning_journey.html").write_text(
+    render_lens_learning_journey(mod1_c1a, mod1_c1b), encoding="utf-8"
+)
+
 
 # ==============================================================================
 # MODULE 2: CHEMISTRY — NSEJS-2024-C-Q56 (Electronic Structure & Transition Aufbau)
