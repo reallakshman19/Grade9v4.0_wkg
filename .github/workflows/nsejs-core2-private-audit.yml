@@ -1,0 +1,43 @@
+name: NSEJS Core2 Private Handoff Source-Neutral Audit
+
+on:
+  pull_request:
+    paths:
+      - 'tools/nsejs_core2_private_audit.py'
+      - 'tests/test_nsejs_core2_private_audit.py'
+      - 'docs/nsejs-core2-private-repair-r1.md'
+      - '.github/workflows/nsejs-core2-private-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  private-source-neutral-synthetic-gates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install synthetic test dependencies
+        run: python -m pip install 'pytest>=8,<10'
+      - name: Check source-neutral custody reader and adversarial synthetic fixtures
+        run: python -m pytest -q tests/test_nsejs_core2_private_audit.py
+      - name: Check no private question stem or figure is included in new code
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('tools/nsejs_core2_private_audit.py')
+          s=p.read_text()
+          assert 'NSEJS-2024-P-Q' not in s
+          assert 'G9V4_PHYSICS_COMPLETE_HANDOFF_20261111.zip' not in s
+          assert 'academic_admission' in s and 'NOT_RUN' in s
+          print('PASS source-neutral only; no private paper in public code')
+          PY
