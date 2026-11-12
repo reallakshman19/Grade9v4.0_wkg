@@ -101,3 +101,20 @@ def test_invalid_pdf_produces_no_fake_hash(monkeypatch):
     result = custody.build_receipt(timeout=1)
     assert result["raw_pdf_documents_received"] == 0
     assert all(x["sha256"] is None for x in result["documents"])
+
+
+
+def test_archive_years_are_source_named_and_preserve_2020_2021_ioqjs_identity(monkeypatch):
+    raw = fake_pdf()
+    monkeypatch.setattr(custody, "read_official_bytes",
+                        lambda url, timeout: (raw, url))
+    summary = custody.build_receipt(timeout=1, include_archives=True)
+    assert summary["expected_documents"] == 10
+    assert summary["raw_pdf_documents_received"] == 10
+    assert summary["archive_years_attempted"] is True
+    names = {d["document"] for d in summary["documents"]}
+    assert "IOQJS_2020_21_CODE51_PAPER" in names
+    assert "IOQJS_2021_22_FINAL_KEY" in names
+    assert "NSEJS_2023_24_KEY_AS_LINKED_BY_IAPT" in names
+    assert all(d["independent_academic_admission"] == "HOLD"
+               for d in summary["documents"])
