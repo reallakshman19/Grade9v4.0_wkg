@@ -1,0 +1,54 @@
+{
+  "schema": "grade9-nsejs-iapt-2024-code51-official-byte-custody/v1",
+  "checked_at_utc": "2026-11-12T13:30:28Z",
+  "github_actions_run": "https://github.com/reallakshman19/Grade9v4.0/actions/runs/43227895483",
+  "workflow_head": "37a64177305f956c43726bbe00de0b8e92666080",
+  "artifact_name": "nsejs-iapt-official-pdf-hash-status-only",
+  "retrieval": "IAPT HTTPS direct allowlisted host with TLS verification and cross-host redirect blocking",
+  "machine_check": "2/2 actual PDF bytes retrieved and SHA256 calculated",
+  "source_content_publication": "NO_ORIGINAL_BYTES_EXPORTED",
+  "rights_to_reproduce": "NOT_VERIFIED",
+  "figures_fidelity": "NOT_VERIFIED",
+  "academic_admission": "HOLD",
+  "documents": [
+    {
+      "id": "IAPT_NSEJS_2024_PAPER_CODE51",
+      "url": "https://iapt.org.in/wp-content/uploads/NSEJS-2024_Set_51.pdf",
+      "sha256": "b80e3bae4e64aaad11f43cc12f07ef17ae495b75e231122d440b0f81709379e8",
+      "size_bytes": 1189141,
+      "pdf_pages": 14,
+      "raw_byte_retrieval_status": "VERIFIED_BY_EXACT_HEAD_CI",
+      "pdf_encrypted": false
+    },
+    {
+      "id": "IAPT_NSEJS_2024_FINAL_KEY",
+      "url": "https://iapt.org.in/wp-content/uploads/NSEJS_-_2024_Final_Answer_Key.pdf",
+      "sha256": "6d56f6f4e7f3c6b7a0b7b6146c0e7e9386c035fc5988c5523fe6551fc9374926",
+      "size_bytes": 453386,
+      "pdf_pages": 1,
+      "raw_byte_retrieval_status": "VERIFIED_BY_EXACT_HEAD_CI",
+      "pdf_encrypted": false
+    }
+  ],
+  "source_observation": {
+    "paper_code": 51,
+    "original_q20_key": "DROP",
+    "a1": [
+      1,
+      48
+    ],
+    "a2": [
+      49,
+      60
+    ],
+    "a2_answer_mode": "MULTIPLE_CORRECT",
+    "q52_bank_source_conflict": "P0_REMAINS",
+    "q57_original_figure": "PRESENT_ON_PAPER_PAGE_12_BUT_NOT_REPRODUCED_AS_AUTHENTICATED_SOURCE_FIGURE"
+  },
+  "explicit_limitations": [
+    "Machine fetched bytes in ephemeral CI memory and discarded original PDFs after SHA and page-count verification.",
+    "The custody receipt proves byte identity for the downloaded files at that run, not authority to redistribute or a student's right to access a rewritten bank.",
+    "Page visual spotchecks and key comparison do not constitute full item-by-item figure fidelity or academic source admission.",
+    "No SHA256 custody of 2020–2023 exam sources has yet been established in this receipt."
+  ]
+}
