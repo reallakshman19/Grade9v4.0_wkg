@@ -9,6 +9,7 @@ on:
       - 'tools/private_reader_12p7.css'
       - 'tools/check_private_reader_http.py'
       - 'tools/build_public_reader_preview.py'
+      - 'tools/check_public_reader_deployment.py'
       - 'tests/test_private_reader_integration.py'
       - 'tests/test_private_reader_r6.py'
       - 'tests/test_public_reader_preview.py'
@@ -21,6 +22,7 @@ on:
       - 'tools/private_reader_12p7.css'
       - 'tools/check_private_reader_http.py'
       - 'tools/build_public_reader_preview.py'
+      - 'tools/check_public_reader_deployment.py'
       - 'tests/test_private_reader_integration.py'
       - 'tests/test_private_reader_r6.py'
       - 'tests/test_public_reader_preview.py'
@@ -69,6 +71,10 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
       - uses: actions/download-artifact@v4
         with:
           name: grade9-public-safe-synthetic-preview
@@ -83,3 +89,7 @@ jobs:
       - name: Publish synthetic technical preview only
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Verify live Pages synthetic manifest and file bytes
+        env:
+          PAGES_URL: ${{ steps.deployment.outputs.page_url }}
+        run: python tools/check_public_reader_deployment.py --url "$PAGES_URL" --manifest public-safe-dist/PUBLIC_PREVIEW_MANIFEST.json
