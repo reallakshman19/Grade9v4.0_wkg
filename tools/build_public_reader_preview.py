@@ -18,6 +18,7 @@ sys.path.insert(0, str(ROOT / "tools"))
 sys.path.insert(0, str(ROOT / "tests"))
 from private_reader_integration import build, ROOT_MARKER, END_MARKER
 from test_private_reader_integration import fixture
+from build_public_site_pages import PUBLIC_SHELL_FILES, write_shell
 
 PAGES = (
     "preview/question-status.html",
@@ -25,40 +26,8 @@ PAGES = (
     "modules/beta/question-status.html",
 )
 
-HUB = """<!doctype html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Grade9 | Synthetic reader technical preview</title>
-<style>
-:root{font-family:system-ui,sans-serif;color-scheme:light}
-body{margin:0;background:#f1f7fa;color:#143344}
-main{max-width:1000px;margin:0 auto;padding:clamp(22px,4vw,54px)}
-header{padding:22px 0;border-bottom:2px solid #bedce1}
-h1{line-height:1.15;font-size:clamp(30px,3.2vw,44px)}
-.alert{background:#fff7df;border:1px solid #edc773;border-radius:12px;padding:16px 18px}
-.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:15px;margin:24px 0}
-.links a{display:block;text-decoration:none;color:#113e50;background:#fff;padding:21px;
-border-radius:12px;border:1px solid #c4dce1;box-shadow:0 2px 8px #122c3b14}
-.links a:focus-visible{outline:3px solid #b35d00}
-small{color:#46606c;display:block;margin-top:7px}
-</style></head><body><main>
-<header><p>GRADE9 V4.0 · TECHNICAL PREVIEW</p>
-<h1>Synthetic question reader</h1>
-<p>Public-safe interaction test · Optimized for 12.7-inch screens</p></header>
-<p class="alert"><strong>Not an exam or academic release.</strong>
-All four questions are synthetic software fixtures, not original examination
-questions. One deliberately missing diagram is withheld. No Physics, QRT,
-or learner assessment approval is claimed.</p>
-<div class="links">
-<a href="preview/question-status.html"><strong>Combined synthetic reader</strong>
-<small>Four synthetic questions, two topics, duplicate legacy IDs</small></a>
-<a href="modules/alpha/question-status.html"><strong>Topic Alpha</strong>
-<small>Two synthetic questions, including one test SVG</small></a>
-<a href="modules/beta/question-status.html"><strong>Topic Beta</strong>
-<small>Two synthetic questions; missing-figure HOLD demonstration</small></a></div>
-<p>Technical source: <a href="https://github.com/reallakshman19/Grade9v4.0">
-Grade9 v4.0 on GitHub</a>.</p>
-</main></body></html>
-"""
+# The original four-question synthetic reader is retained under /preview;
+# the site root is now the explicitly allowlisted school/NSEJS learning hub.
 
 
 def digest(blob: bytes) -> str:
@@ -92,12 +61,14 @@ def build_preview(out: Path) -> dict:
             dst = stage / path
             dst.parent.mkdir(parents=True, exist_ok=True)
             dst.write_bytes(raw)
-        (stage / "index.html").write_text(HUB, encoding="utf-8")
+        write_shell(stage)
         files = sorted(p.relative_to(stage).as_posix() for p in stage.rglob("*") if p.is_file())
-        allowed = {"index.html", *PAGES}
+        allowed = {*PUBLIC_SHELL_FILES, *PAGES}
         if set(files) != allowed:
             raise ValueError("PUBLIC_ALLOWLIST_MISMATCH")
-        manifest = {"status":"SYNTHETIC_TECHNICAL_ONLY",
+        manifest = {"status":"PUBLIC_SAFE_SUBJECT_HUB_WITH_SYNTHETIC_READER",
+                    "source_question_published":False,
+                    "nsejs_academic_approval":"HOLD",
                     "academic_approval":"HOLD",
                     "candidate_50_record_published":False,
                     "files":{f:digest((stage / f).read_bytes()) for f in files}}
@@ -113,7 +84,7 @@ def main() -> None:
     ap.add_argument("--out", required=True, type=Path)
     args = ap.parse_args()
     result = build_preview(args.out)
-    print("PASS synthetic public preview: 4 questions, files=" + str(len(result["files"])))
+    print("PASS public subject home + NSEJS + four synthetic reader questions, files=" + str(len(result["files"])))
 
 
 if __name__ == "__main__":
