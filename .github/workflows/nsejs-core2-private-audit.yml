@@ -1,0 +1,66 @@
+name: NSEJS Core2 Private Handoff Source-Neutral QA
+
+on:
+  pull_request:
+    paths:
+      - 'tools/nsejs_core2_private_audit.py'
+      - 'tools/nsejs_core2_handoff_guard.py'
+      - 'tools/check_nsejs_core2_synthetic_http.py'
+      - 'tests/test_nsejs_core2_private_audit.py'
+      - 'tests/test_nsejs_core2_handoff_guard.py'
+      - 'tests/fixtures/nsejs_core2_legacy_synthetic.html'
+      - 'docs/nsejs-core2-private-repair-r1.md'
+      - '.github/workflows/nsejs-core2-private-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic-custody-and-physics-provenance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install source-neutral testing dependencies
+        run: python -m pip install 'pytest>=8,<10'
+      - name: Verify original handoff custody, scoped IDs, QRT and negative models
+        run: python -m pytest -q tests/test_nsejs_core2_private_audit.py tests/test_nsejs_core2_handoff_guard.py
+      - name: Verify no private exam input or authentic paper is included
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          paths=[
+            'tools/nsejs_core2_private_audit.py',
+            'tools/nsejs_core2_handoff_guard.py',
+            'tests/fixtures/nsejs_core2_legacy_synthetic.html'
+          ]
+          for p in paths:
+              s=Path(p).read_text(encoding='utf-8')
+              assert 'An ant is sitting on the principal axis' not in s
+              assert 'NSEJS-2024-P-Q06' not in s
+          print('PASS no authentic exam text introduced into source-neutral tools')
+          PY
+  desktop-mobile-real-http-synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install actual Chromium
+        run: |
+          python -m pip install 'pytest>=8,<10' 'playwright==1.55.0'
+          python -m playwright install --with-deps chromium
+      - name: Node syntax and real HTTP synthetic learner journeys
+        run: |
+          python -m pytest -q tests/test_nsejs_core2_handoff_guard.py
+          python tools/check_nsejs_core2_synthetic_http.py
