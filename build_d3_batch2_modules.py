@@ -230,6 +230,8 @@ mod1_c1b = {
         }
     ]
 }
+from tools.agent_b_core1ab_authoring import inverse_lens_core1b
+mod1_c1b = inverse_lens_core1b(mod1_c1b)
 (mod1_dir / "core1b_reconstruction.json").write_text(json.dumps(mod1_c1b, indent=2), encoding="utf-8")
 
 # Witness 1
@@ -342,6 +344,15 @@ mod1_witness = {
         ]
     },
     "review_receipts": []
+}
+# Agent B corrects only the Core1B evidence bindings; original Core2 and QRT remain unchanged.
+mod1_witness["core1b"]["fresh_context_ref"] = mod1_c1b["fresh_context_ref"]
+mod1_witness["core1b"]["freshness_review_ref"] = "PENDING-INDEPENDENT-REVIEW"
+mod1_witness["core1b"]["assessed_roles"] = {
+    "ROLE_OPT_REPRESENT": {"attempt_field": "stage_2_attempt.rubric[0]", "observable": "Identify the measured sum and difference of conjugate lens positions."},
+    "ROLE_OPT_QUADRATIC": {"attempt_field": "stage_2_attempt.rubric[1]", "observable": "Derive focal length from the product of the measured roots."},
+    "ROLE_OPT_ROOTS": {"attempt_field": "stage_2_attempt.rubric[2]", "observable": "Recover both lens positions from D and measured separation."},
+    "ROLE_OPT_MAGNIFY": {"attempt_field": "stage_2_attempt.rubric[2]", "observable": "Evaluate reciprocal magnification magnitudes."}
 }
 (mod1_dir / "witness.json").write_text(json.dumps(mod1_witness, indent=2), encoding="utf-8")
 
