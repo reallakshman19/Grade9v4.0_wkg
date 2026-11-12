@@ -1,0 +1,164 @@
+[
+  {
+    "original_path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\work_energy_power.md",
+    "candidate_path": "skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\sources\\book.md",
+    "bytes": 23474,
+    "sha256": "a33f19b308ea81c7eb527546e44b6bbd4b4adf26aed7116013ac01218cc1bbb8"
+  },
+  {
+    "original_path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\02_Syllabus_and_Book_Notes\\wpe-pilot\\syllabus\\WPE-SPINE.md",
+    "candidate_path": "skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\sources\\spine.md",
+    "bytes": 3620,
+    "sha256": "07338e242e363becf2e55a9637d29fd178e37236fd730e5aac0a1211f1d8ecf9"
+  },
+  {
+    "original_path": "C:\\CodeC\\Grade9v3.5\\Physics\\library\\phy-work-energy-power.v1.json",
+    "candidate_path": "skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\sources\\library.json",
+    "bytes": 119754,
+    "sha256": "84fe88387e33a03bf87bf1f537bae8c447f5b86f0d77a854c899ad70f12d8258"
+  },
+  {
+    "original_path": "C:\\CodeC\\Grade9v3.5\\Shared\\library\\package.schema.json",
+    "candidate_path": "skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\sources\\package.schema.json",
+    "bytes": 108010,
+    "sha256": "b645f4b5beb9132d6e38b628b1416846201d44dec16a5f04af9a252e9e891d93"
+  },
+  {
+    "original_path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\03_Reference_Ontology\\reference-wpe\\core1a_physics_wep_ontology.v1.json",
+    "candidate_path": "skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\sources\\reference-ontology.json",
+    "bytes": 25393,
+    "sha256": "0fb53c653d7cd5b5f6e94ba5ed096278aa42f5d1429eac24981ee8dffa168acf"
+  },
+  {
+    "original_path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\02_Syllabus_and_Book_Notes\\wpe-pilot\\qrt\\recall-topics-from-book.md",
+    "candidate_path": "skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\sources\\recall-notes.md",
+    "bytes": 3827,
+    "sha256": "5185ac2e9d28a1385ec7b4ea5b185717822e3063674e0e64a74673a0a11fb88e"
+  },
+  {
+    "original_path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\START_HERE.md",
+    "candidate_path": "skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\sources\\source-organizer.md",
+    "bytes": 1191,
+    "sha256": "e6c15f481bb67380b5e183a9e15f6b8eeb3467659de72fa3921e580fd2b45894"
+  },
+  {
+    "original_path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\generate_wpe_svgs.py",
+    "candidate_path": "skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\sources\\generate_wpe_svgs.py",
+    "bytes": 35681,
+    "sha256": "d59622c3df1e884602238e8e5f3548a521e5a73ebb6468d36ce14f101f2999da"
+  },
+  {
+    "original_path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_01.jpg",
+    "candidate_path": "skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\sources\\page_01.jpg",
+    "bytes": 872585,
+    "sha256": "577fa3448aeb2cb72387d827ab67d7ad2c47041fa8dba8473d74193455ceb55a"
+  },
+  {
+    "original_path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_02.jpg",
+    "candidate_path": "skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\sources\\page_02.jpg",
+    "bytes": 1074956,
+    "sha256": "49dfbcfdf5c17eddd3a88c5383ffb702d55150118bcb825d9b9257417e2214d0"
+  },
+  {
+    "original_path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_03.jpg",
+    "candidate_path": "skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\sources\\page_03.jpg",
+    "bytes": 1090384,
+    "sha256": "74af7bf6ef7a57d63259c68e871eaa6db14d4912153d253a545ab1f018c346b9"
+  },
+  {
+    "original_path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_04.jpg",
+    "candidate_path": "skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\sources\\page_04.jpg",
+    "bytes": 1487285,
+    "sha256": "6ca8b187415073f13a5c4638fc1dc42c4a09a7c682f663d58b384c089701257c"
+  },
+  {
+    "original_path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_05.jpg",
+    "candidate_path": "skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\sources\\page_05.jpg",
+    "bytes": 976805,
+    "sha256": "f399adb7fa0231871a2a4ec753cbcd0e81c27644daf5511286098c3292f26612"
+  },
+  {
+    "original_path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_06.jpg",
+    "candidate_path": "skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\sources\\page_06.jpg",
+    "bytes": 916968,
+    "sha256": "bef1126f750a833860588c49295fc50e28de5eb485b8acb5932e7a2388e5d500"
+  },
+  {
+    "original_path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_07.jpg",
+    "candidate_path": "skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\sources\\page_07.jpg",
+    "bytes": 503067,
+    "sha256": "e05651537a9b3ea961304ef281f30cc900b3e6331076346273bc82c57a2ed6b9"
+  },
+  {
+    "original_path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_08.jpg",
+    "candidate_path": "skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\sources\\page_08.jpg",
+    "bytes": 725098,
+    "sha256": "a4cdb3f5b960cf079bbf0627f461f4bff59bd1cb5880f8139609db3f10beafbd"
+  },
+  {
+    "original_path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_09.jpg",
+    "candidate_path": "skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\sources\\page_09.jpg",
+    "bytes": 830562,
+    "sha256": "4847ec6173954d7e50d89af62db0972db12a3cfde654666a4e9fd97ce734d646"
+  },
+  {
+    "original_path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\images\\fig_01_work_sign_positive.svg",
+    "candidate_path": "skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\sources\\images\\fig_01_work_sign_positive.svg",
+    "bytes": 2641,
+    "sha256": "912c3b84c157e78916584db95bd520c45ed31e76ad73c900175a1ea93ac1b804"
+  },
+  {
+    "original_path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\images\\fig_02_work_sign_negative.svg",
+    "candidate_path": "skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\sources\\images\\fig_02_work_sign_negative.svg",
+    "bytes": 2651,
+    "sha256": "a6ffa32dbc3e6918f06660f3f5b4b61f9ef965d9849c72663c88fb71ae9f16c9"
+  },
+  {
+    "original_path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\images\\fig_03_fbd_string_raising.svg",
+    "candidate_path": "skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\sources\\images\\fig_03_fbd_string_raising.svg",
+    "bytes": 2523,
+    "sha256": "9d408dcca1198fd6f5b08f63359c12007ae9428732be9d48dde32e8170e36df4"
+  },
+  {
+    "original_path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\images\\fig_04_variable_force_calculus.svg",
+    "candidate_path": "skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\sources\\images\\fig_04_variable_force_calculus.svg",
+    "bytes": 4749,
+    "sha256": "ff0b49e26c724f668f225930b0c928d52a7bffb4653d83c5189423580e4e8b74"
+  },
+  {
+    "original_path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\images\\fig_05_friction_direction.svg",
+    "candidate_path": "skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\sources\\images\\fig_05_friction_direction.svg",
+    "bytes": 4450,
+    "sha256": "a5db2db77e7149b546fe34e9a081a9863024b9bf774e57c02035d9867302e710"
+  },
+  {
+    "original_path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\images\\fig_06_incline_block.svg",
+    "candidate_path": "skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\sources\\images\\fig_06_incline_block.svg",
+    "bytes": 2404,
+    "sha256": "c5a896866e7fcca2b2dd82e8408394e655ab8b4ef8edda3a3eb6d80cbad6ccd5"
+  },
+  {
+    "original_path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\images\\fig_07_incline_fbd.svg",
+    "candidate_path": "skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\sources\\images\\fig_07_incline_fbd.svg",
+    "bytes": 3208,
+    "sha256": "98c664df1595322694f974c7fde38699fc337a6f7829786b00e0dd5fd133e6bd"
+  },
+  {
+    "original_path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\images\\fig_08_curved_path_work.svg",
+    "candidate_path": "skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\sources\\images\\fig_08_curved_path_work.svg",
+    "bytes": 2722,
+    "sha256": "d62c1f8955757c71486cce4f623a12042ea7da37043674a8dff4752c425c3ac6"
+  },
+  {
+    "original_path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\images\\fig_09_overhanging_chain.svg",
+    "candidate_path": "skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\sources\\images\\fig_09_overhanging_chain.svg",
+    "bytes": 3745,
+    "sha256": "40510540074ad29b0f7634e680f8235356f64dbe969eb28b164edb7e30a00aa0"
+  },
+  {
+    "original_path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\images\\fig_10_spring_block_wall.svg",
+    "candidate_path": "skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\sources\\images\\fig_10_spring_block_wall.svg",
+    "bytes": 3446,
+    "sha256": "c0a90c6fffcc88731316cb17fe34439e4bdccceda7a34d8deb585a2ba1d61bbc"
+  }
+]

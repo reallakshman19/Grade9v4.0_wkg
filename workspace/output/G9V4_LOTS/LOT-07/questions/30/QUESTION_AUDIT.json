@@ -1,0 +1,93 @@
+{
+  "sequence": 30,
+  "batch_sequence": 15,
+  "task_identity": "Q-ID-34",
+  "stable_id": "G9V4-PHYS-WPE-EX-M85",
+  "source_id": "EX-M85",
+  "lot": "LOT-07",
+  "batch": "BATCH-B",
+  "paper": "JEE Main 2016 (Online) 10th April Morning Slot",
+  "source_type": "JEE_MAIN_PAST_EXAM_QUESTION",
+  "source_custody": "PARTIAL (v-t graph unresolved)",
+  "stem_text": "Velocity-time graph for a body of mass 10 kg is shown in figure. Work-done on the body in first two seconds of the motion is : [FIG-stem-1]",
+  "stem_sha256": "f6d74f6517bbe210d4c24f23ae99bb632c436f2fb4c12a40b4fce0ced91bcfb8",
+  "source_hash": "f6d74f6517bbe210d4c24f23ae99bb632c436f2fb4c12a40b4fce0ced91bcfb8",
+  "source_record_digest": "f6d74f6517bbe210d4c24f23ae99bb632c436f2fb4c12a40b4fce0ced91bcfb8",
+  "duplicate_parent": null,
+  "scope": "IN_SCOPE_WPE_ONLY",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "HOLD:FIGURE_UNRESOLVED",
+  "figure_reference": "[FIG-stem-1] Velocity-time graph unverified against authentic master",
+  "options": [
+    "A: 12000 J",
+    "B: − 12000 J",
+    "C: − 4500 J",
+    "D: − 9300 J"
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "HOLD:FIGURE_UNRESOLVED",
+  "candidate_solve": {
+    "method": "WORK_ENERGY_THEOREM_VT_GRAPH",
+    "derivation": "Work done equals change in kinetic energy: W = Delta KE = 1/2 m (v_2^2 - v_0^2). Coaching solution reports v_0 = 50 m/s and v_2 = 40 m/s, yielding W = 1/2 * 10 * (40^2 - 50^2) = 5 * (1600 - 2500) = -4500 J (Option C). However, the initial velocity and acceleration slope cannot be independently verified without the authentic diagram asset.",
+    "predicted_option": "HOLD:FIGURE_UNRESOLVED",
+    "limiting_cases": "Cannot confirm slope or velocity values without original figure."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Work-energy theorem W = Delta KE from initial and final speeds on v-t graph"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Reading v_initial and v_final directly from v-t plot"
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Evaluate (1/2)m(v_f^2 - v_i^2)"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Simple difference of squares evaluation"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Avoiding trap of calculating area under v-t graph (which gives displacement, not work)"
+        }
+      },
+      "total": 5,
+      "band": "D2",
+      "prior_proposal": {
+        "source": "PRODUCER_HISTORICAL_ESTIMATE",
+        "scores": "1/1/1/1/1",
+        "total": 5
+      },
+      "differences": "Rescored to native five-factor rubric per B2 CP-4 review"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "REPRESENT"
+      ],
+      "rationale": "Applying work-energy theorem to speed values extracted from kinematics graph",
+      "candidate_cell": "QRT-APPLY-D2",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_CP4_GATE",
+  "b2_blind_status": "UNREVIEWED",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:FIGURE_UNRESOLVED (v-t graph unverified against authentic master)",
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)",
+    "HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)"
+  ],
+  "next_action": "Obtain authentic NTA question paper for 10-04-2016 Morning Slot to extract v-t diagram."
+}

@@ -1,0 +1,16 @@
+{
+  "underlying_calls_final_actual": 18,
+  "cap": 20,
+  "metric": "Underlying exec_command/view_image plus direct collaboration calls, including wait; orchestration wrappers excluded.",
+  "first_pass_sha256_verified": "99ac9b27be8fc9924b905449696fe693f2f369395b4227a615602d4d83b7a0e3",
+  "final_review_sha256_verified": "3b734b059920b6036b4b91d45b523adbe70e7a3d5c6b5481faed1ddf950d65c3",
+  "first_pass_intact": true,
+  "json_parsing_and_factor_totals": "PASS",
+  "phase2_complete": true,
+  "completed_verification_utc": "2026-10-31T10:35:24.046592+00:00",
+  "elapsed_since_supplied_routine_start_seconds": 648.046592,
+  "reviewer_activation_time": "Not instrumented; supplied overall-start interval reported instead.",
+  "token_telemetry": "UNKNOWN",
+  "calls_19_and_20": "UNUSED",
+  "last_call": "18 exec_command: reopen/verify reports, hashes and factor totals; write this resource receipt."
+}

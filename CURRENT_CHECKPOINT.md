@@ -1,218 +1,65 @@
-# Oracle Checkpoint — 12 November 2026
+# Oracle checkpoint — 1 November 2026
 
-**Timestamp:** 2026-11-12T10:42:00+04:00  
-**Operating Sequence:** **Batch 2 Band D3 Core 1A/1B Authoring & Verification Complete (Optics Displacement, Scandium Electronic Structure, Immunology; 1019 Pytest Passed, 27/27 Playwright Passed)**  
-**Active Branch:** `feat/multi-subject-core2-expansion-01`  
-**Authority Invariant:** Rule 13 in `AGENTS.md` (*No academic approval inferred from software validation. Green CI means automatic tests passed; it never means student release is authorized.*)
+Observed 2026-11-01T04:12:09.540887+04:00 (Asia/Dubai). Explicit Owner request: “create checkpoint and a handover note.” This continuity write creates no product execution, messaging, upload, reviewer or release grant. Detailed context: [handover note](ORACLE_HANDOVER_20261101.md).
 
----
+## Restore identity and authority
 
-## 1. Subject Track & Curriculum Status Overview
+- Working directory: `D:\CodeD\grade9v4`; set it explicitly for every command.
+- Existing Codex chat: `01a188e5-af7a-7881-b414-b465ca99680f`; role **Oracle (standalone)**. No repeated role selection. All scoped Coder assignments ended.
+- Local branch **feat/wep01-real-evidence-readback**, HEAD **38485dc8ef7f8af5d86031beab6ab565b2c61f25**, read back during this write. Changes remain local; no commit/push by this task. See saved Git status in `workspace/continuity/20261101/`.
+- All prior bounded working routines **CLOSED**. No unused capacity transfers. Token/context/account meters UNKNOWN. New substantive execution needs its actual Owner scope and fresh applicable resource bound.
+- Desktop write roots still point to the old workspace; V4 writes have used approved escalations. Open V4 as the project for a new agent; copying files never changed sandbox roots.
+- **D3.1 PAUSED.** Preserve Owner-scoped Core2 → Owner approval → Core1A → Owner approval → Core1B; this is not universal Shared academic order.
 
-| Subject Track | Topics / Papers Ingested | Ingested Question Count | Test Suite Status | Track Status |
-| :--- | :--- | :---: | :---: | :---: |
-| **Track 1: Physics** | Ray Optics, Electrostatics, Circuits, Magnetism & EMI, Mechanics, Fluid Mechanics & Sound, **NSEJS 2024, 2023, 2022, 2021 & 2020 Official Paper 51** | **140 items** | 27 suites (6 Core 2 topics + 10 D3 + 6 Core 1A/1B + **NSEJS 2024, 2023, 2022, 2021 & 2020 Papers**), **282 passed** | **100% COMPLETE & DUAL-ENGINE AUDITED** |
-| **Track 2: Mathematics** | Topic 1: Algebra & Polynomials<br>Topic 2: Number Theory & Divisibility | **20 items** | 2 suites, **43 passed** (Full QRT Labelling) | **COMPLETE (Topics 1 & 2 Ingested; paused per user)** |
-| **Track 3: Chemistry** | Topic 1: Matter & Mole Concept<br>Topic 2: Chemical Substances — Reactions<br>Topic 3: Atomic Structure & Bonding<br>D3 Modules (Eudiometry, Redox Titrations & Transition Aufbau)<br>**NSEJS 2024, 2023, 2022, 2021 & 2020 Official Paper 51** | **112 items** | 16 suites (3 Core topics + 8 D3 + **NSEJS 2024, 2023, 2022, 2021 & 2020 Papers**), **161 passed** | **100% COMPLETE & DUAL-ENGINE AUDITED** |
-| **Track 4: Biology** | **NSEJS 2024, 2023, 2022, 2021 & 2020 Official Paper 51** | **80 items** | 7 suites (**NSEJS 2024, 2023, 2022, 2021 & 2020 Papers** + D3 Viral Genetics & Immunology), **102 passed** | **100% COMPLETE & DUAL-ENGINE AUDITED** |
-| **Cross-Subject Architecture** | Shared/QRT Schemas, Bounded Transfer Protocols, Gate Checkers, Audit Invariants | N/A | 10 cross-cutting contract suites, **474 passed** | **ACTIVE & ENFORCED** |
-| **TOTALS** | **40 Active Learning Modules** | **392 items** | **55 Pytest Suites, 1019 Passed, 2 Skipped (Platform Symlinks), 0 Failed** | **100% GREEN CI (Dual-Engine & Tablet Audited)** |
+## Current frontier
 
----
+1. Grade9 v4 covers Physics/Mathematics/Chemistry; WPE is the Physics pilot. Do not reuse Physics warrants/Blueprint calibration for the other subjects.
+2. Examination target21:10 unreviewed nominations,4 independently reviewed APPLY/D2 supports,7 original vacancies,11 unsupported D3/D4 target slots,0 admissions. These are the last reconciled academic findings, not a new audit today.
+3. WEP07-03 source-conflict claim **WITHDRAWN**: source has x0²; official key agrees a,b,c,d. M101 is distinct from cut-spring MAIN. Preserve sealed review and later exposure.
+4. Current local Core2 reader:8 textbook questions +1 synthetic control, under `workspace/output/WPE_Core2_Reader_Fix_R1_20261031/rendered/core2.html`. Incline corrected;38 audit notes moved out of learner Conditions and retained for review;12 author browser checks passed. Draft findings17=9 inherited representation findings+8 intentional Conditions omissions. Independent QA remains open.
+5. Core1A:10 preparation dossiers, no newly qualified lessons. Two separate legacy WEP-01 authored pairs remain unselected. No new Core1B lesson built by this chat.
 
-## 2. Core 2 Dual-Engine Quality Audit Results (`ag-core2`)
+## Newest received local package
 
-Auditing across all 15 authentic NSEJS examination batches (237 questions total) was executed via the approved **`core2_quality_audit_plan.md`** under **Universal Rule 13**:
+[`WPE_CORE2_R17_THREE_BATCHES_PRIVATE_REVIEW_20261101.zip`](chatgpt/WPE_CORE2_R17_THREE_BATCHES_PRIVATE_REVIEW_20261101.zip) · 57,534 bytes ·19 ZIP members ·CRC PASS.
 
-### A. Engine A: Static Schema, Cognitive Demand & 7 Anti-Patterns (`audit_nsejs_corpus.py`)
-- **Batches Audited:** 15 batches (`nsejs-2024-*` through `nsejs-2020-*`).
-- **Total Questions Audited:** 237 authentic items (79 Physics, 79 Chemistry, 79 Biology).
-- **Gate 0 Custody:** 100% stem hash invariance, 0 duplicate IDs, explicit response types.
-- **Gate 1 Cognitive Demand:** 0 forbidden verbs (`CALCULATE`, `SOLVE`), 100% 7 canonical verbs membership, dynamic crux move distribution ($M1, M2, M3$), 0 rubric sum drift.
-- **7 Anti-Patterns:** 0 ghost text occurrences (`"2. Connection:"`), SVG root attributes width/height 100%, mobile cascade desktop-first.
-- **Engine A Verdict:** **`LOCAL_REVIEW_MECHANICAL_PASS`** (0 FAIL findings, 88 HOLD findings).
-- **Report Saved:** `workspace/output/5YEAR_NSEJS_CORPUS_AUDIT_REPORT.json`.
+SHA-256: `bad402a818fd178600500430b4d65453ca62eea1dc885d4b68d90ff09bc56abc`.
 
-### B. Engine B: Headless Playwright Viewport & Interaction (`verify_all_nsejs_playwright.js`)
-- **Batches Evaluated:** 15 / 15 (100% Pass rate).
-- **Mobile Viewport (375x812):** Exactly 0px horizontal scroll overflow (`scrollWidth <= 375px`).
-- **Desktop Viewport (1365x900):** Exactly 0px horizontal scroll overflow (`scrollWidth <= 1365px`).
-- **Commitment-First Contract:** Derivation initially `display: none;` $\to$ User selects option & commits $\to$ Derivation unlocks to `display: block;`.
-- **Touch Targets:** All interactive option labels and commit buttons meet WCAG 2.5.5 touch target height.
-- **Console & Network Cleanliness:** 0 console errors, 0 unhandled exceptions, 0 HTTP 4xx/5xx errors.
-- **Engine B Verdict:** **`PLAYWRIGHT_VIEWPORT_AUDIT_PASS`**.
-- **Report Saved:** `workspace/output/5YEAR_NSEJS_PLAYWRIGHT_AUDIT_REPORT.json`.
+- BATCH-01: ILL-01/02/06 question-specific representation-waiver **proposals**, not applied.
+- BATCH-02: ILL-03/11 editable neutral SVG **candidates**, not bound into native records.
+- BATCH-03: ILL-05 initial-speed source/Physics **HOLD**.
+- All six rows in its master gate are HOLD; native-applied NO; regenerated receipt NO; admissions0. Its START_HERE, gate, provenance and batch manifests were read; no archived code executed and no semantic/visual acceptance performed.
+- It references the historical nine-card/ten-gap baseline. Do not overwrite the corrected V4 reader or treat the producer's missing native inputs as absent from V4. This is a three-batch review packet, not verified lot acceptance or a complete handover.
 
-### C. Engine C: Core 1A & 1B Dual-Engine Audit & Standards Alignment (`comprehensive_core1_audit.py` & `audit_core1_playwright.js`)
-- **Modules Audited:** All 24 Core 1A/1B modules in `workspace/output/`.
-- **Initial Structural Deficiencies Identified:** 16 findings across 9 modules:
-  - 2 Chemistry D3 modules (`chem-eudiometry-d3-r1`, `chem-redox-titration-d3-r1`) had 5-step reconstruction routes exceeding canonical 4-slot ($X \to Y \to Z \to W$) structure.
-  - 7 Physics D3 modules (`ioqjs-optics-conjugate-d3-r1`, `nsejs-circuits-cube-d3-r1`, `nsejs-circuits-ladder-d3-r1`, `nsejs-electrostatics-deflection-d3-r1`, `nsejs-magnetism-terminal-d3-r1`, `nsejs-optics-lens-mirror-d3-r1`, `nsejs-optics-screw-lens-d3-r1`) lacked 3-part diagnostic rubrics in `stage_2_attempt` and had 3-step routes instead of the mandatory 4 cognitive slots.
-- **Surgical Remediation Executed (`scratch/fix_core1b_standards.py`):**
-  - Upgraded all 9 modules to have exact 3-criterion diagnostic rubrics in `stage_2_attempt` (`criterion` + `evidence_of`).
-  - Standardized all reconstruction trajectories to exactly 4 canonical cognitive steps ($X \to Y \to Z \to W$).
-  - Recomputed SHA-256 digests and synchronized `witness.json` (`core1b.task_sha256`) bit-for-bit across all 9 modules.
-- **Static Schema Re-Audit Verdict:** **`0 FINDINGS ACROSS ALL 24 MODULES`**.
-- **Playwright Headless Browser Audit:** **`24 / 24 MODULES PASSED`** with exact 0px horizontal scroll overflow (Mobile 375x812 and Desktop 1365x900), commitment-first hidden derivations, and 0 console errors.
-- **Reports Saved:** `workspace/output/CORE1_PLAYWRIGHT_AUDIT_REPORT.json` and `scratch/comprehensive_core1_audit.py`.
+## Communication and handoff route
 
----
+- Destination [A1-G9v4](https://chatgpt.com/c/6ae5c904-9d6c-83ed-b811-466ede6b0763); actual project role UNKNOWN.
+- Native tool accepted **one** request to stop after three assigned lots, avoid a fourth, and return a self-contained handover. Two bounded reads supplied older history/opaque content reference. ACK and actual three-lot completion remain UNVERIFIED. No resend; durable reservation retained.
+- [Drive Handoffs]((Drive link withheld from GitHub; Owner-local copy under workspace/continuity/20261101/pre-pr-unredacted/)) is the Owner-selected exchange. Folder metadata resolves; write capability/recipient retrieval not verified; no upload. Two connected accounts exist; no write account selected.
+- No replacement ChatGPT agent/chat created. Verify the actual handover and three-lot scope before switching.
+- Automation `chat-connectivity-30-minute-reminder` was intended once but fired repeatedly. It is now **PAUSED**, read back again. Its saved prompt is stale about approval; it does not describe the completed communication routine. Do not rearm or create another watcher.
 
-## 3. NSEJS 5-Year Authentic Corpus Inventory (`nsejs.com/previous-exam-papers`)
+## Required reading and next actor
 
-All 12 official question papers, detailed solution booklets, and chapter/concept analysis PDFs have been downloaded and cataloged in `scratch`:
+Read [agent onboarding](docs/agent-entry/index.html), [required reading](docs/agent-entry/00-required-reading.md), [current concept companion](docs/agent-entry/CURRENT_CONCEPT_COMPANION.md), the V4-linked original Source→Core1A report and revised methodology. Use `docs/agent-entry/CURRENT_PATHS.json`/`CURRENT_WORKFLOW.json`; migration maps remain frozen. Fresh blind reviewers use the source-only exception before prior exact-task conclusions.
 
-| Examination Year | Total Questions | Physics | Chemistry | Biology | Mathematics | Status in Workspace |
-| :--- | :---: | :---: | :---: | :---: | :---: | :--- |
-| **NSEJS 2024** | **60** | 20 | 20 | 20 | 0 | **100% INGESTED (All 60 Items with Custody, Core 2 HTMLs & 54 Tests)** |
-| **NSEJS 2023** | **60** | 20 | 20 | 20 | 0 | **100% INGESTED (All 60 Items with Custody, Core 2 HTMLs & 53 Tests)** |
-| **NSEJS 2022** | **60** | 20 | 20 | 20 | 0 | **100% INGESTED (All 60 Items with Custody, Core 2 HTMLs & 54 Tests)** |
-| **IOQJS / NSEJS 2021** | **33** | 11 | 11 | 11 | 0 | **100% INGESTED (All 33 Items with Custody, Core 2 HTMLs & 45 Tests)** |
-| **IOQJS 2020** | **24** | 8 | 8 | 8 | 0 (excl) | **100% INGESTED (All 24 Items with Custody, Core 2 HTMLs & 42 Tests)** |
-| **Total Authentic PCB Corpus** | **237 items** | **79** | **79** | **79** | 0 | **237 items ingested (100% COMPLETE)** |
+**Next actor: Owner / incoming Oracle.** Choose a fresh bounded read-only reconciliation of R17 plus prior R15/R16/runtime candidates against actual V4 sources. Then prepare an exact handover manifest for the selected private Drive route. No integration, academic acceptance, upload or new agent is authorized by this note.
 
----
+## Compact / restore syntax
 
-## 3. NSEJS 2022 Complete Ingestion Modules (Paper Code 51)
+```text
+Restore from:
+D:\CodeD\grade9v4\ORACLE_CHECKPOINT_20261101.md
+D:\CodeD\grade9v4\ORACLE_HANDOVER_20261101.md
+D:\CodeD\grade9v4\Start_here.md
 
-### Physics: `nsejs-2022-physics-r1` (20 items: `NSEJS-2022-P-Q33` to `Q48`, `Q57` to `Q60`)
-- **Single Correct (Q33–Q48):**
-  - `Q33`: Constant power kinetic energy integration ($t = K/P = 10\text{ s}$ [B]).
-  - `Q34`: Leaking trolley horizontal momentum invariance ($v = 10\text{ m/s}$ [C]).
-  - `Q35`: Piecewise $a-t$ kinematics ($s = 51\text{ m}, v = 6\text{ m/s}$ [A]).
-  - `Q36`: Binary star gravitational mutual attraction ($v = \sqrt{GM/d}$ [A]).
-  - `Q37`: Moving sound source echo timing ($350t = 1400 \implies t = 4.00\text{ s}$ [B]).
-  - `Q38`: Dual-fluid hydrostatic flotation density ($\rho_s = 7.2\text{ g/cm}^3$ [C]).
-  - `Q39`: Gravitational free fall and buoyant cycle duration ($T = 8\text{ s}$ [C]).
-  - `Q40`: Specular reflection angle between two mirrors ($\theta = 60^\circ$ [B]).
-  - `Q41`: Long solenoid magnetic field maximum at central point O ([C]).
-  - `Q42`: Partition door differential hydrostatic thrust ($F = 39.2\text{ N} \approx 39\text{ N}$ [C]).
-  - `Q43`: Negative charge Lorentz force vector direction (Upward [C]).
-  - `Q44`: Raman effect inelastic photon scattering ([D]).
-  - `Q45`: Uniform motion graphs (Official key DROP; retained for study [DROP]).
-  - `Q46`: Three 60W bulbs power dissipation (Official key DROP; retained for study [DROP]).
-  - `Q47`: Stretched wire resistance change (Official key DROP; retained for study [DROP]).
-  - `Q48`: Sound speed temperature scaling percentage error (Official key DROP; retained for study [DROP]).
-- **Multiple Correct (Q57–Q60):**
-  - `Q57`: Spring balance Atwood machine (Official key DROP; retained for study [DROP]).
-  - `Q58`: Lens-mirror optical combination image and magnification ([A, C]).
-  - `Q59`: Symmetric resistor network reduction ($I = 1.5\text{ A}, V_{AB} = 7.5\text{ V}, P_{R0} = 2.25\text{ W}$; [A, B, C]).
-  - `Q60`: One-dimensional elastic collision ($v_1 = 0, v_2 = +18\text{ m/s}$; [B, C]).
-- **Artifacts:** `intake.json`, `bank.json`, `questions.json`, `core2_module.html`, `question-status.html`, `sl1_check_report.json`, `sl2_check_report.json`, source custody in `workspace/sources/nsejs/`.
-- **Test Suite:** `tests/test_nsejs_2022_physics.py` (17 passed).
-
-### Chemistry: `nsejs-2022-chemistry-r1` (20 items: `NSEJS-2022-C-Q17` to `Q32`, `Q53` to `Q56`)
-- **Single Correct (Q17–Q32):**
-  - `Q17`: Heterolytic cleavage of hydroxyl O-H bond in methanoic acid ([D]).
-  - `Q18`: Chemical compound diversity ranking ($N_1 > N_2 > N_4 > N_3$ [B]).
-  - `Q19`: Heaviest non-radioactive stable nuclide (Lead-208 [B]).
-  - `Q20`: Mole fraction dilution calculation ($x_{\text{urea}} = 0.029$ [C]).
-  - `Q21`: Graham's effusion law stoichiometry for $\text{Ni(CO)}_x$ ($x = 3.9$ [A]).
-  - `Q22`: Dipole moment percent ionic character of $\text{LiH}$ ($76.8\%$ [C]).
-  - `Q23`: Carbonate mixture stoichiometric neutralisation ($11\% \text{ MgCO}_3$ [B]).
-  - `Q24`: Total carbon oxidation state sum in toluene ($-8$ [D]).
-  - `Q25`: Average oxidation state of oxygen in $[\text{O}_2]^+$ ($+1/2$ [C]).
-  - `Q26`: Tertiary allylic radical abstraction of $\text{H}_c$ ([C]).
-  - `Q27`: Degree of unsaturation impossible structure for $\text{C}_{10}\text{H}_{16}$ (Two triple bonds [A]).
-  - `Q28`: Interstitial hydrogen gas adsorption by Palladium ([C]).
-  - `Q29`: Paramagnetic $d^1$ vanadyl sulfate $\text{VOSO}_4$ ([C]).
-  - `Q30`: Dehydration gas analysis mole ratio ($4:1$ [B]).
-  - `Q31`: Hydrogenic degenerate energy levels ($3s = 3p = 3d > 2s$ [A]).
-  - `Q32`: Semipermeable membrane solute barrier (No brown colour on either side [D]).
-- **Multiple Correct (Q53–Q56):**
-  - `Q53`: Weak base strong acid salt hydrolysis for $0.01\text{ M NH}_4\text{Cl}$ ([B, C, D]).
-  - `Q54`: Metallurgy of aluminium amphoteric leaching (Official key DROP; retained for study [DROP]).
-  - `Q55`: Periodicity ionisation enthalpy anomalies (Official key DROP; retained for study [DROP]).
-  - `Q56`: Vapour pressure connected containers (Official key DROP; retained for study [DROP]).
-- **Artifacts:** `intake.json`, `bank.json`, `questions.json`, `core2_module.html`, `question-status.html`, `sl1_check_report.json`, `sl2_check_report.json`, source custody in `workspace/sources/chem/`.
-- **Test Suite:** `tests/test_nsejs_2022_chemistry.py` (14 passed).
-
-### Biology: `nsejs-2022-biology-r1` (20 items: `NSEJS-2022-B-Q01` to `Q16`, `Q49` to `Q52`)
-- **Single Correct (Q01–Q16):**
-  - `Q01`: Bakanae mad-seedling disease phytohormone discovery (Gibberellin [D]).
-  - `Q02`: Diagnostic pollen-tube ovular entry routes (A-Porogamy, B-Chalazogamy, C-Mesogamy [B]).
-  - `Q03`: Cucurbitaceae large fruits translocation (Bicollateral vascular bundles [C]).
-  - `Q04`: Incomplete dominance feather pigmentation ratio ($1\text{ black} : 1\text{ white} : 2\text{ blue}$ [A]).
-  - `Q05`: Spinach leaf photosynthetic pigment chromatographic sequence ([A]).
-  - `Q06`: Glyoxylate cycle microbodies in germinating oil seeds (Glyoxysomes [A]).
-  - `Q07`: Microbiological wastewater indicator of faecal pollution (Escherichia coli [B]).
-  - `Q08`: Optimal aquatic biota physiological pH window ($6.5\text{--}7.5$ [B]).
-  - `Q09`: Principal bioactive ovarian estrogen (17beta-estradiol [C]).
-  - `Q10`: Pelvic articulation of axial vertebral column (Sacral vertebrae [C]).
-  - `Q11`: Glycolytic substrate-level phosphorylation enzyme loci ($E_7\text{ and }E_{10}$ [C]).
-  - `Q12`: Telencephalic commissural white matter tract (Corpus callosum [D]).
-  - `Q13`: Bilaterally symmetrical diplomonad flagellate (Giardia [A]).
-  - `Q14`: Neuronal ribosomal protein-synthesizing Nissl bodies ([C]).
-  - `Q15`: Obligate intracellular viral replication requirement ([C]).
-  - `Q16`: Linnaean sexual classification system nature (Artificial system [A]).
-- **Multiple Correct (Q49–Q52):**
-  - `Q49`: Prehistoric human evolutionary lineages (Homo habilis and Homo heidelbergensis; [B, D]).
-  - `Q50`: B-complex vitamin deficiency disorders (Beri-beri & Pellagra, Dermatitis & Wernicke-Korsakoff, Cheilosis & Pernicious anaemia; [A, B, C]).
-  - `Q51`: Pond water aquatic flora assemblages (Groups A, B, and D; [A, B, D]).
-  - `Q52`: Nephron brush border and differential water permeability (PCT brush border 1 & segments 2, 3, 6; [B, D]).
-- **Artifacts:** `intake.json`, `bank.json`, `questions.json`, `core2_module.html`, `question-status.html`, `sl1_check_report.json`, `sl2_check_report.json`, source custody in `workspace/sources/bio/`.
-- **Test Suite:** `tests/test_nsejs_2022_biology.py` (23 passed).
-
----
-
-## 4. NSEJS 2021 Complete Ingestion Modules (Paper Code 51)
-
-### Physics: `nsejs-2021-physics-r1` (11 items: `NSEJS-2021-P-Q17`..`Q24`, `Q31`..`Q33`)
-- **Format:** 8 Single Correct (3 marks, -1 negative: Q17–Q24) + 3 Multiple Correct (6 marks, no negative: Q31–Q33).
-- **Core Topics:** Kinematics relative velocity vector geometry, non-ohmic incandescent bulb circuit resistance, rotational and translational kinetic energy rolling balance, planar mirror refraction image position, parallel-plate capacitor charge distribution, ideal gas state equation work, and Archimedes buoyancy equilibrium.
-- **Official Keys:** Q17 (`B OR D`), Q18 (`DROP`), Q19 (`B`), Q20 (`B`), Q21 (`C`), Q22 (`A`), Q23 (`C`), Q24 (`B`), Q31 (`A, B, C`), Q32 (`B, C`), Q33 (`A, D`).
-- **Artifacts:** `intake.json`, `bank.json`, `questions.json`, `core2_module.html`, `question-status.html`, `sl1_check_report.json`, `sl2_check_report.json`, source custody in `workspace/sources/nsejs/`.
-- **Test Suite:** `tests/test_nsejs_2021_physics.py` (15 passed).
-
-### Chemistry: `nsejs-2021-chemistry-r1` (11 items: `NSEJS-2021-C-Q09`..`Q16`, `Q28`..`Q30`)
-- **Format:** 8 Single Correct (3 marks, -1 negative: Q09–Q16) + 3 Multiple Correct (6 marks, no negative: Q28–Q30).
-- **Core Topics:** Mole concept triatomic sulfur dioxide atom counting, stoichiometric antacid neutralisation of gastric HCl, thermal decomposition mass balance of calcium carbonate-oxide calcination, periodic electronegativity progression, Ostwald weak electrolyte ionisation conductance, qualitative analysis cationic hydrolysis of ammonium chloride, Avogadro molar mass equivalence of equal volume gases, and colligative van 't Hoff factor osmotic pressure hierarchy.
-- **Official Keys:** Q09 (`C`), Q10 (`A`), Q11 (`A`), Q12 (`C`), Q13 (`C`), Q14 (`B`), Q15 (`D`), Q16 (`B`), Q28 (`A, D`), Q29 (`B, D`), Q30 (`B`).
-- **Artifacts:** `intake.json`, `bank.json`, `questions.json`, `core2_module.html`, `question-status.html`, `sl1_check_report.json`, `sl2_check_report.json`, source custody in `workspace/sources/chem/`.
-- **Test Suite:** `tests/test_nsejs_2021_chemistry.py` (13 passed).
-
-### Biology: `nsejs-2021-biology-r1` (11 items: `NSEJS-2021-B-Q01`..`Q08`, `Q25`..`Q27`)
-- **Format:** 8 Single Correct (3 marks, -1 negative: Q01–Q08) + 3 Multiple Correct (6 marks, no negative: Q25–Q27).
-- **Core Topics:** Erythrocyte physiological functions vs B-cell immunoglobulin synthesis, limbless tetrapod evolution in Reptilia and Amphibia (Gymnophiona / caecilians), dipteran single wing pair and halteres in housefly, fruit fly, and mosquito, single-stranded RNA chemical diagnosis via lack of thymine and 2'-OH alkaline cleavage, hydrophytic aerenchyma buoyancy lacunae in water hyacinth petiole, bryophyte non-vascular organization and flagellated antherozoid water dependence, Crassulacean Acid Metabolism (CAM) nocturnal carbon fixation in desert succulents, and chiropterophily bat floral syndromes.
-- **Official Keys:** Q01 (`C`), Q02 (`C`), Q03 (`D`), Q04 (`C`), Q05 (`B`), Q06 (`D`), Q07 (`C`), Q08 (`B`), Q25 (`A, C, D`), Q26 (`A, B, C`), Q27 (`A, B`).
-- **Artifacts:** `intake.json`, `bank.json`, `questions.json`, `core2_module.html`, `question-status.html`, `sl1_check_report.json`, `sl2_check_report.json`, source custody in `workspace/sources/bio/`.
-- **Test Suite:** `tests/test_nsejs_2021_biology.py` (17 passed).
-
----
-
-## 5. NSEJS 2020 Complete Ingestion Modules (Paper Code 51)
-
-### Physics: `nsejs-2020-physics-r1` (8 items: `NSEJS-2020-P-Q01`..`Q06`, `Q25`, `Q26`)
-- **Format:** 6 Single Correct (3 marks, -1 negative: Q01–Q06) + 2 Multiple Correct (6 marks, no negative: Q25, Q26).
-- **Core Topics:** Neutron star surface gravitational acceleration ($g = GM/R^2$), diver ear drum safe hydrostatic pressure depth, thin convex lens conjugate foci distance symmetry, nuclear reactor 1000 kW fission disintegration rate, Newton second law contact forces in coupled accelerating blocks, resistor lattice reduction and potential divider analysis, Biot-Savart law magnetic field and electron flow direction, and specific charge ($q/m$) SI units, tritium isotopic minimum, and electron/alpha particle comparisons.
-- **Official Keys:** Q01 (`B`), Q02 (`C`), Q03 (`B`), Q04 (`A`), Q05 (`B`), Q06 (`A`), Q25 (`A, B, C`), Q26 (`A, B, C OR A, B, D`).
-- **Artifacts:** `intake.json`, `bank.json`, `questions.json`, `core2_module.html`, `question-status.html`, `sl1_check_report.json`, `sl2_check_report.json`, source custody in `workspace/sources/nsejs/`.
-- **Test Suite:** `tests/test_nsejs_2020_physics.py` (14 passed).
-
-### Chemistry: `nsejs-2020-chemistry-r1` (8 items: `NSEJS-2020-C-Q07`..`Q12`, `Q27`, `Q28`)
-- **Format:** 6 Single Correct (3 marks, -1 negative: Q07–Q12) + 2 Multiple Correct (6 marks, no negative: Q27, Q28).
-- **Core Topics:** Silicone polymer waterproof film thickness and precursor mass balance, homogeneous gas-phase equilibrium constant calculation, alcohol dehydration and ozonolysis to acetaldehyde, single displacement redox decolourisation of $\text{CuCl}_2$ by calcium, triclosan percentage concentration calculation (officially dropped), simultaneous equations for binary compound atomic weights (officially dropped), didymium rare-earth glass absorbers (Nd and Pr), and magnesium reactivity and hydrogen evolution in strong mineral acids.
-- **Official Keys:** Q07 (`A`), Q08 (`B`), Q09 (`A OR B`), Q10 (`B`), Q11 (`DROP`), Q12 (`DROP`), Q27 (`A, B`), Q28 (`B, C`).
-- **Artifacts:** `intake.json`, `bank.json`, `questions.json`, `core2_module.html`, `question-status.html`, `sl1_check_report.json`, `sl2_check_report.json`, source custody in `workspace/sources/chem/`.
-- **Test Suite:** `tests/test_nsejs_2020_chemistry.py` (14 passed).
-
-### Biology: `nsejs-2020-biology-r1` (8 items: `NSEJS-2020-B-Q13`..`Q18`, `Q29`, `Q30`)
-- **Format:** 6 Single Correct (3 marks, -1 negative: Q13–Q18) + 2 Multiple Correct (6 marks, no negative: Q29, Q30).
-- **Core Topics:** B-DNA helical rise per base pair in chromosome mutant elongation, pedigree diagnostic criteria for sex-linked (X-linked) recessive inheritance, inverted pyramid of biomass in marine phytoplankton-dominated biomes, transpiration pull environmental optimization (open stomata, dry air, moist soil), traditional Indian bioresources and legal disputes over biopiracy, evolutionary criteria for living fossil categorization and phylogenetic stasis, immunological comparison of live attenuated vs inactivated vaccines, and endocrine and physiological factors regulating Basal Metabolic Rate (BMR).
-- **Official Keys:** Q13 (`A`), Q14 (`C`), Q15 (`D`), Q16 (`B`), Q17 (`C`), Q18 (`B`), Q29 (`A, B`), Q30 (`B, D`).
-- **Artifacts:** `intake.json`, `bank.json`, `questions.json`, `core2_module.html`, `question-status.html`, `sl1_check_report.json`, `sl2_check_report.json`, source custody in `workspace/sources/bio/`.
-- **Test Suite:** `tests/test_nsejs_2020_biology.py` (14 passed).
-
----
-
-## 6. Quality Gate & Invariant Compliance
-
-Strict compliance verified across all 389 items and 49 test suites:
-- **Gate 1 (Zero Ghost Text):** 0 occurrences of `"2. Connection:"` across all modules.
-- **Gate 2 (Dynamic Crux Move):** Bound to `M2` or `M3` with strategy matching.
-- **Gate 3 (Rubric Bounds):** $c_i \in \{0, 1, 2\}$ with $\sum c_i = \text{score}$.
-- **Gate 4 (Canonical Verbs):** Strictly within $\{ \text{RETRIEVE}, \text{EXPLAIN}, \text{APPLY}, \text{MODEL}, \text{REPRESENT}, \text{SYNTHESIZE}, \text{JUSTIFY} \}$.
-- **Gate 5 (Commitment-First Derivations):** `style="display: none;"` until user commits answer.
-- **Gate 6 (Mobile Cascade):** Base container styles precede `@media (max-width: 600px)` in CSS.
-- **Gate 7 (W3C Typography):** $\ge 14\text{px}$ text on responsive SVG views.
-- **Rule 13 Invariant (`AGENTS.md`):** *"No academic approval inferred from software validation. Green CI means automatic tests passed; it never means student release is authorized."*
+Working directory: D:\CodeD\grade9v4.
+Role: Oracle (standalone); do not repeat role selection in this existing chat.
+All earlier work routines CLOSED; no capacity transfers or new implementation grant.
+Latest local candidate: R17 three-batch ZIP, all three review batches HOLD;
+not merged, not academically admitted, not a verified complete agent handover.
+A1-G9v4 request submitted once; acknowledgement remains unverified; do not resend.
+Drive Handoffs folder selected; no upload or replacement chat yet.
+30-minute reminder PAUSED after repeated firing; do not rearm.
+D3.1 remains PAUSED. Preserve actual Owner authoring gates and private custody.
+```

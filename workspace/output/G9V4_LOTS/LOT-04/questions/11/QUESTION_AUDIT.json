@@ -1,0 +1,105 @@
+{
+  "sequence": 11,
+  "task_identity": "Q-ID-11",
+  "stable_id": "Q-PHY-WPE-JEEM-2024-04-05-S2-11",
+  "source_id": "EX-M29",
+  "lot": "LOT-04",
+  "paper": "JEE Main 2024 (Online) 5th April Evening Shift",
+  "source_type": "SCRAPED_EXTRACT_EXAMGOAL",
+  "source_custody": "VERIFIED_TEXT_ONLY",
+  "stem_text": "A body is moving unidirectionally under the influence of a constant power source. Its displacement in time t is proportional to :",
+  "stem_sha256": "80c4f7f49db75f9ae66f54d1ed7808074d33abbaa7a744a4c0e3adf1622e1501",
+  "source_hash": "80c4f7f49db75f9ae66f54d1ed7808074d33abbaa7a744a4c0e3adf1622e1501",
+  "source_record_digest": "80c4f7f49db75f9ae66f54d1ed7808074d33abbaa7a744a4c0e3adf1622e1501",
+  "duplicate_parent": null,
+  "scope": "IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "VERIFIED_NONE_REQUIRED",
+  "options": [
+    "A: t2/3",
+    "B: t3/2",
+    "C: t",
+    "D: t2"
+  ],
+  "unbound_remote_figures": [],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "CONSTANT_POWER_DISPLACEMENT_INTEGRAL",
+    "initial_condition_status": "PHYSICAL_CONDITION_TO_VERIFY (Initial rest v(0)=0 assumed for integration; not explicitly stated in stem).",
+    "assumed_parameters_from_coaching_figure": "None required (pure text). Body assumed to start from rest at t=0.",
+    "derivation": "Constant power P = F * v = m * v * (dv/dt) = constant. Separating variables: v dv = (P/m) dt. Integrating both sides: 1/2 v^2 = (P/m) t => v = sqrt(2P/m) * t^(1/2). Since v = ds/dt: ds = sqrt(2P/m) * t^(1/2) dt. Integrating from rest: s = sqrt(2P/m) * (2/3 t^(3/2)) => s proportional to t^(3/2).",
+    "predicted_option": "B: t3/2",
+    "limiting_cases": "If acceleration were constant (constant force), P = F*a*t proportional to t, and s proportional to t^2. Under constant power, acceleration decreases as v increases, yielding s proportional to t^(3/2), which is intermediate between t and t^2."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "status": "UNREVIEWED",
+    "decisive_operation": "APPLY",
+    "crux": "Setting up the differential relation for constant power P = m v (dv/dt) and integrating twice to find displacement time scaling s proportional to t^(3/2).",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Constant mechanical power model P = F v."
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Converting rate of work statement into differential equation."
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Two-stage integration: v(t) -> s(t)."
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Power rule integration: int t^(1/2) dt = 2/3 t^(3/2)."
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Trap of confusing velocity scaling t^(1/2) with displacement, or assuming constant acceleration t^2."
+        }
+      },
+      "total": 5,
+      "band": "D2"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "MODEL"
+      ],
+      "candidate_cell": "QRT-APPLY-D2",
+      "status": "PROPOSED"
+    },
+    "representation_requirements": [
+      "EQUATION"
+    ],
+    "independent_checks": [
+      "UNITS",
+      "LIMITING_CASE"
+    ],
+    "wrong_route_hypotheses": [
+      {
+        "route": "Assuming constant acceleration s proportional to t^2 (Option D)",
+        "status": "HYPOTHESIS"
+      },
+      {
+        "route": "Taking velocity relation v proportional to t^(1/2) and inverting to t^(2/3) (Option A)",
+        "status": "HYPOTHESIS"
+      }
+    ]
+  },
+  "qrt": "UNREVIEWED",
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_REVIEW",
+  "b2_blind_status": "NOT_RUN",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)",
+    "HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)"
+  ],
+  "next_action": "Verify official NTA answer key for 2024-04-05 S2."
+}

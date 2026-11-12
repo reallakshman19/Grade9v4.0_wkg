@@ -1,0 +1,100 @@
+{
+  "batch_id": "BATCH-01",
+  "title": "Grade9 v4.0 — Work, Power & Energy Core 2 Review Package (Batch 1: Q01-Q15)",
+  "timestamp_utc": "2026-11-02T10:08:49.347316+00:00",
+  "scope": "PHYSICS_WPE_PILOT",
+  "total_questions": 15,
+  "included_lots": [
+    "LOT-02",
+    "LOT-03",
+    "LOT-04"
+  ],
+  "academic_admission": "NOT_ADMITTED",
+  "disposition": "HOLD:ACADEMIC_ADMISSION",
+  "governance_notice": "No academic approval inferred from software validation. Green CI means automatic tests passed; it never means student release is authorized.",
+  "total_manifested_files": 15,
+  "runtime_dependencies": {
+    "python": ">=3.11 (tested on Python 3.14.0)",
+    "node": ">=v18 (tested on Node v22.23.2)",
+    "playwright": "playwright-core with chromium",
+    "os": "Windows 11 (build 26100)",
+    "shell": "PowerShell 5.1 / 7"
+  },
+  "files": [
+    {
+      "path": "bank/core2_batch01_bank.json",
+      "bytes": 119487,
+      "sha256": "970936a7d2a8e9a7b96c7dbe1f4026f8245a92f1c834b925c602d350a0cf1151"
+    },
+    {
+      "path": "rendered/core2_batch01.html",
+      "bytes": 112708,
+      "sha256": "442153d2b128a11c2bd9c419c03b2def2506f0953aa1f4e73206b63f561cad2f"
+    },
+    {
+      "path": "assets/fig_q01_atwood.svg",
+      "bytes": 1958,
+      "sha256": "f972868ff3ec91f5dfec3f1cc3c5f777210524043f575426f1774cb2f57f7632"
+    },
+    {
+      "path": "assets/fig_q03_bead_semicircle.svg",
+      "bytes": 1396,
+      "sha256": "d9ea78d599d0c9c8a01b742662a3d808bcf8465f8dcfcd4372718f7dad8d7293"
+    },
+    {
+      "path": "assets/fig_q04_projectile_energy.svg",
+      "bytes": 1447,
+      "sha256": "fdee2cbc0414b7da28e990f76edfbf103ed0eea3c463924b22aff62eff8a894c"
+    },
+    {
+      "path": "assets/fig_q05_atwood_work.svg",
+      "bytes": 1467,
+      "sha256": "c91d1890d3dfbfb2fec6abe404a8befc024d6644ac68de93f47b95eea8fe85fe"
+    },
+    {
+      "path": "assets/fig_q06_potential_curve.svg",
+      "bytes": 1121,
+      "sha256": "03fcc62c6ace0b5214fdeff94fc5c859a830c7a59edd04c27f245f9c9f930733"
+    },
+    {
+      "path": "assets/fig_q09_bead_wire_spring.svg",
+      "bytes": 962,
+      "sha256": "5d31170280038776530f1adaa466d7fd4e6f346f1ac62ad741e46ac579cd3ced"
+    },
+    {
+      "path": "assets/fig_q10_incline_block.svg",
+      "bytes": 1194,
+      "sha256": "1a54ea24c5bd09b283298737312beb3307fbe38b4042924363a1f25bf72ef0ac"
+    },
+    {
+      "path": "assets/fig_q12_vertical_circle.svg",
+      "bytes": 1153,
+      "sha256": "aa04bf178857bf504d5c8b2a64ef40997ec0011354c2181728f5bf982394157e"
+    },
+    {
+      "path": "assets/fig_q15_spring_two_blocks.svg",
+      "bytes": 1646,
+      "sha256": "c90c318518f9b9e4411f830c06b66669fe67eb15ac9e740817e03ced01805b24"
+    },
+    {
+      "path": "test_batch01.py",
+      "bytes": 8570,
+      "sha256": "f2da2073ecb7dd05d262a05eeef6480cc862cc66f408920b8e317a487f086b05"
+    },
+    {
+      "path": "verify_batch01_playwright.js",
+      "bytes": 6090,
+      "sha256": "a40119035c17b292cb67df632712825d6d0c32bc8db4f6e562506c90b1960531"
+    },
+    {
+      "path": "BATCH01_TEST.log",
+      "bytes": 1487,
+      "sha256": "0bd8c3e584253d759c922a40bfa9339cab533634aedace7cebcdc75997fc5d78"
+    },
+    {
+      "path": "BATCH01_PLAYWRIGHT_TEST.log",
+      "bytes": 1022,
+      "sha256": "46d1b2e89b5fc59c84afc16dd7883a1481c57e6fe13c1abf73f7aa022ccc772a"
+    }
+  ]
+}

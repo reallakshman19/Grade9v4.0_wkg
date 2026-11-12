@@ -1,0 +1,75 @@
+{
+  "schema": "source-pin-set/v1",
+  "sources": [
+    {
+      "id": "REFERENCE",
+      "path": "sources/reference-ontology.json",
+      "sha256": "0fb53c653d7cd5b5f6e94ba5ed096278aa42f5d1429eac24981ee8dffa168acf",
+      "role": "REFERENCE_SOURCE",
+      "authority": "CANDIDATE_REFERENCE"
+    },
+    {
+      "id": "BOOK",
+      "path": "sources/book.md",
+      "sha256": "a33f19b308ea81c7eb527546e44b6bbd4b4adf26aed7116013ac01218cc1bbb8",
+      "role": "BOOK_TEXT",
+      "authority": "OWNER_LOCAL_UNAUTHENTICATED"
+    },
+    {
+      "id": "SPINE",
+      "path": "sources/spine.md",
+      "sha256": "07338e242e363becf2e55a9637d29fd178e37236fd730e5aac0a1211f1d8ecf9",
+      "role": "SYLLABUS",
+      "authority": "OWNER_LOCAL_UNAUTHENTICATED"
+    },
+    {
+      "id": "LIBRARY",
+      "path": "sources/library.json",
+      "sha256": "84fe88387e33a03bf87bf1f537bae8c447f5b86f0d77a854c899ad70f12d8258",
+      "role": "CANONICAL_CANDIDATE",
+      "authority": "CANDIDATE_REFERENCE"
+    },
+    {
+      "id": "PKG_SCHEMA",
+      "path": "sources/package.schema.json",
+      "sha256": "b645f4b5beb9132d6e38b628b1416846201d44dec16a5f04af9a252e9e891d93",
+      "role": "NATIVE_CONTRACT",
+      "authority": "LOCAL_CONTRACT"
+    },
+    {
+      "id": "SCAN-4",
+      "path": "sources/page_04.jpg",
+      "sha256": "6ca8b187415073f13a5c4638fc1dc42c4a09a7c682f663d58b384c089701257c",
+      "role": "SOURCE_SCAN",
+      "authority": "OWNER_LOCAL_UNAUTHENTICATED"
+    },
+    {
+      "id": "SCAN-5",
+      "path": "sources/page_05.jpg",
+      "sha256": "f399adb7fa0231871a2a4ec753cbcd0e81c27644daf5511286098c3292f26612",
+      "role": "SOURCE_SCAN",
+      "authority": "OWNER_LOCAL_UNAUTHENTICATED"
+    },
+    {
+      "id": "FIG-5",
+      "path": "sources/images/fig_05_friction_direction.svg",
+      "sha256": "a5db2db77e7149b546fe34e9a081a9863024b9bf774e57c02035d9867302e710",
+      "role": "DERIVED_FIGURE",
+      "authority": "OWNER_LOCAL_UNAUTHENTICATED"
+    },
+    {
+      "id": "FIG-6",
+      "path": "sources/images/fig_06_incline_block.svg",
+      "sha256": "c5a896866e7fcca2b2dd82e8408394e655ab8b4ef8edda3a3eb6d80cbad6ccd5",
+      "role": "DERIVED_FIGURE",
+      "authority": "OWNER_LOCAL_UNAUTHENTICATED"
+    },
+    {
+      "id": "FIG-7",
+      "path": "sources/images/fig_07_incline_fbd.svg",
+      "sha256": "98c664df1595322694f974c7fde38699fc337a6f7829786b00e0dd5fd133e6bd",
+      "role": "DERIVED_FIGURE",
+      "authority": "OWNER_LOCAL_UNAUTHENTICATED"
+    }
+  ]
+}

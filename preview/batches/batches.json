@@ -1,0 +1,343 @@
+{
+  "schema": "g9v4-wpe-batch-index/v1",
+  "updated": "2026-11-02",
+  "project": "Grade9 v4.0 — Physics Work, Power & Energy",
+  "context": "Public technical review of newly authored synthetic demonstrations, not a learner/content release.",
+  "academicAdmissions": 0,
+  "gates": {
+    "sourceRights": "NOT_ASSERTED_FOR_EXTERNAL_MATERIAL",
+    "scientificReview": "PENDING",
+    "core2NativeIntegration": "NOT_RUN",
+    "ownerAcademicAcceptance": "NOT_RECEIVED"
+  },
+  "batches": [
+    {
+      "id": "B02",
+      "order": 2,
+      "date": "2026-11-02",
+      "title": "Five Core2 representation subtopics",
+      "status": "SYNTHETIC_REVIEW",
+      "href": "b02-five-subtopics.html",
+      "count": 5,
+      "topics": [
+        {
+          "label": "Vector displacement and signed work",
+          "record": "TB-WPE-ILL-01",
+          "anchor": "ill01"
+        },
+        {
+          "label": "Tension, weight and net work",
+          "record": "TB-WPE-ILL-02",
+          "anchor": "ill02"
+        },
+        {
+          "label": "Work by a variable force",
+          "record": "TB-WPE-ILL-03",
+          "anchor": "ill03"
+        },
+        {
+          "label": "Instantaneous gravitational power on an incline",
+          "record": "TB-WPE-ILL-05",
+          "anchor": "ill05"
+        },
+        {
+          "label": "Radial and tangential contributions to power",
+          "record": "TB-WPE-ILL-06",
+          "anchor": "ill06"
+        }
+      ],
+      "nativeIntegration": "NOT_RUN",
+      "scienceReview": "PENDING"
+    },
+    {
+      "id": "B03",
+      "order": 3,
+      "date": "2026-11-02",
+      "title": "Five Core2 representation and Conditions subtopics",
+      "status": "SYNTHETIC_REVIEW",
+      "href": "b03-five-subtopics.html",
+      "count": 5,
+      "topics": [
+        {
+          "label": "Distributed mass and energy accounting",
+          "record": "TB-WPE-ILL-11",
+          "anchor": "ill11"
+        },
+        {
+          "label": "Potential energy landscape and turning points",
+          "record": "WEP07-03",
+          "anchor": "wep07"
+        },
+        {
+          "label": "Constant-force formula applicability",
+          "record": "TB-WPE-ILL-01",
+          "anchor": "cond01"
+        },
+        {
+          "label": "Tension model and complete force account",
+          "record": "TB-WPE-ILL-02",
+          "anchor": "cond02"
+        },
+        {
+          "label": "Signed integration bounds for variable force",
+          "record": "TB-WPE-ILL-03",
+          "anchor": "cond03"
+        }
+      ],
+      "nativeIntegration": "NOT_RUN",
+      "scienceReview": "PENDING"
+    },
+    {
+      "id": "B04",
+      "order": 4,
+      "date": "2026-11-02",
+      "title": "Five Core2 Conditions subtopics",
+      "status": "SYNTHETIC_REVIEW",
+      "href": "b04-five-subtopics.html",
+      "count": 5,
+      "topics": [
+        {
+          "label": "Fixed incline: work of gravity, friction and normal",
+          "record": "TB-WPE-ILL-04",
+          "anchor": "cond04"
+        },
+        {
+          "label": "Power with specified initial speed",
+          "record": "TB-WPE-ILL-05",
+          "anchor": "cond05"
+        },
+        {
+          "label": "Radial and tangential power",
+          "record": "TB-WPE-ILL-06",
+          "anchor": "cond06"
+        },
+        {
+          "label": "Chain energy and initial kinetic energy",
+          "record": "TB-WPE-ILL-11",
+          "anchor": "cond11"
+        },
+        {
+          "label": "Spring contact and detachment",
+          "record": "TB-WPE-ILL-12",
+          "anchor": "cond12"
+        }
+      ],
+      "nativeIntegration": "NOT_RUN",
+      "scienceReview": "PENDING"
+    },
+    {
+      "id": "B05",
+      "order": 5,
+      "date": "2026-11-02",
+      "title": "WPE Conditions closure candidate and four Core1A construction bridges",
+      "status": "SYNTHETIC_REVIEW",
+      "href": "b05-five-subtopics.html",
+      "count": 5,
+      "topics": [
+        {
+          "label": "Potential-energy curve and allowed motion",
+          "record": "WEP07-03",
+          "anchor": "cond07"
+        },
+        {
+          "label": "Conservative work and path independence",
+          "record": "WPE-N05",
+          "anchor": "n05"
+        },
+        {
+          "label": "Gravitational potential zero and ΔU",
+          "record": "WPE-N06",
+          "anchor": "n06"
+        },
+        {
+          "label": "Force–potential gradient: missing warrant",
+          "record": "WPE-N07",
+          "anchor": "n07"
+        },
+        {
+          "label": "Complete mechanical-energy transfer ledger",
+          "record": "WPE-N08",
+          "anchor": "n08"
+        }
+      ],
+      "nativeIntegration": "NOT_RUN",
+      "scienceReview": "PENDING",
+      "notes": "Contains exactly one R3 Conditions finding candidate; N05–N08 are unqualified source-to-Core1A construction examples."
+    },
+    {
+      "id": "B06",
+      "order": 6,
+      "date": "2026-11-02",
+      "title": "Five source-to-Core1A construction candidates (N01–N04, N09)",
+      "status": "SYNTHETIC_REVIEW",
+      "href": "b06-five-subtopics.html",
+      "count": 5,
+      "topics": [
+        {
+          "label": "Signed work as force projection",
+          "record": "WPE-N01",
+          "anchor": "n01"
+        },
+        {
+          "label": "Variable force, signed areas and work",
+          "record": "WPE-N02",
+          "anchor": "n02"
+        },
+        {
+          "label": "Net work and kinetic-energy change",
+          "record": "WPE-N03",
+          "anchor": "n03"
+        },
+        {
+          "label": "Momentum, kinetic energy and inertial frames",
+          "record": "WPE-N04",
+          "anchor": "n04"
+        },
+        {
+          "label": "Friction, selected body and contact",
+          "record": "WPE-N09",
+          "anchor": "n09"
+        }
+      ],
+      "nativeIntegration": "NOT_RUN",
+      "scienceReview": "PENDING",
+      "qrtJoin": "NONE",
+      "physicsBlueprint": "PHYS-QRT-BLUEPRINT 0.2.0 DRAFT_OWNER_REVIEW",
+      "topicAdapter": "NO_APPROVED_SELECTED_ADAPTER",
+      "evidence_map": "b06-evidence-map.json",
+      "notes": "All five are authored synthetic construction candidates. No exact reviewed SL2/QRT question join, no selected WPE adapter, and no B1–B7 qualification."
+    },
+    {
+      "id": "B07",
+      "order": 7,
+      "date": "2026-11-02",
+      "title": "Five exact-task QRT/Blueprint/adapter disposition reviews",
+      "status": "EVIDENCE_RECONCILIATION_HOLD",
+      "href": "b07-five-subtopics.html",
+      "count": 5,
+      "topics": [
+        {
+          "label": "M62 — reviewed D2 net power, no hard-cell promotion",
+          "record": "EX-M62",
+          "anchor": "m62"
+        },
+        {
+          "label": "M73 — reviewed D2 lifting-work conditions",
+          "record": "EX-M73",
+          "anchor": "m73"
+        },
+        {
+          "label": "M101 — reviewed D2 spring-controlled variables",
+          "record": "EX-M101",
+          "anchor": "m101"
+        },
+        {
+          "label": "WEP07-03 — reviewed D2 NSEP multiple-correct",
+          "record": "WEP07-03",
+          "anchor": "wep07"
+        },
+        {
+          "label": "M79 — APPLY versus SYNTHESIZE unreviewed",
+          "record": "EX-M79",
+          "anchor": "m79"
+        }
+      ],
+      "nativeIntegration": "NOT_RUN",
+      "scienceReview": "PENDING_ADMISSION_REVIEW",
+      "qrtStatus": "FOUR_INDEPENDENT_D2_FIRST_PASS_ONE_CONTESTED",
+      "physicsBlueprint": "PHYS-QRT-BLUEPRINT 0.2.0 DRAFT_OWNER_REVIEW",
+      "topicAdapter": "NO_APPROVED_SELECTED_ADAPTER",
+      "evidence_map": "b07-qrt-evidence.json",
+      "notes": "Five existing exact-task evidence cases, not five academically new lessons. Four independent APPLY/D2 demand records; one author-exposed operation dispute. All 0 admissions."
+    },
+    {
+      "id": "B08",
+      "order": 8,
+      "date": "2026-11-02",
+      "title": "Five WPE examination source and QRT evidence blockers",
+      "status": "SOURCE_REVIEW_HOLD",
+      "href": "b08-five-subtopics.html",
+      "count": 5,
+      "topics": [
+        {
+          "label": "M56 — four missing force–displacement graphs",
+          "record": "EX-M56",
+          "anchor": "exm56"
+        },
+        {
+          "label": "M61 — missing potential-energy curve",
+          "record": "EX-M61",
+          "anchor": "exm61"
+        },
+        {
+          "label": "M69 — original option graphs and mismatched SL2 rubric",
+          "record": "EX-M69",
+          "anchor": "exm69"
+        },
+        {
+          "label": "M105 — spring–friction question, pending key and QRT review",
+          "record": "EX-M105",
+          "anchor": "exm105"
+        },
+        {
+          "label": "M106 — pendulum model dispute and D3.4 WPE adapter gap",
+          "record": "EX-M106",
+          "anchor": "exm106"
+        }
+      ],
+      "nativeIntegration": "NOT_RUN",
+      "scienceReview": "PENDING",
+      "qrtStatus": "PROPOSALS_NOT_INDEPENDENTLY_REVIEWED",
+      "physicsBlueprint": "PHYS-QRT-BLUEPRINT 0.2.0 DRAFT_OWNER_REVIEW",
+      "topicAdapter": "NO_APPROVED_SELECTED_ADAPTER",
+      "evidence_map": "b08-source-gates.json",
+      "notes": "Five in-scope tasks with source-gate dispositions; M69 factor evidence is mismatched to task. Scores are exposed proposals, not accepted classifications."
+    },
+    {
+      "id": "B09",
+      "order": 9,
+      "date": "2026-11-02",
+      "title": "Five physics reconstructions and source-gate repair candidates",
+      "status": "SYNTHETIC_REVIEW_WITH_SOURCE_LEADS",
+      "href": "b09-five-subtopics.html",
+      "count": 5,
+      "topics": [
+        {
+          "label": "Signed force–position area; four-graph source lead",
+          "record": "EX-M56",
+          "anchor": "m56"
+        },
+        {
+          "label": "Potential energy, turning points; missing curve lead",
+          "record": "EX-M61",
+          "anchor": "m61"
+        },
+        {
+          "label": "Constant-power kinematics; unscored SL2 mismatch repair",
+          "record": "EX-M69",
+          "anchor": "m69"
+        },
+        {
+          "label": "Spring compression with kinetic friction",
+          "record": "EX-M105",
+          "anchor": "m105"
+        },
+        {
+          "label": "Constant-force turning versus static equilibrium",
+          "record": "EX-M106",
+          "anchor": "m106"
+        }
+      ],
+      "nativeIntegration": "NOT_RUN",
+      "scienceReview": "PENDING",
+      "qrtStatus": "NO_NEW_INDEPENDENT_QRT_REVIEW",
+      "physicsBlueprint": "PHYS-QRT-BLUEPRINT 0.2.0 DRAFT_OWNER_REVIEW",
+      "topicAdapter": "NO_APPROVED_SELECTED_ADAPTER",
+      "evidence_map": "b09-corrective-evidence.json",
+      "notes": "Five distinct new synthetic physics examples; three third-party public figure-recovery links are unverified, M69 task-specific rubric explanations supplied only as unscored candidate; no native SL2 edits."
+    }
+  ],
+  "archiveNote": "B01 figure-label repair is a private patch/test handoff, not a completed five-subtopic HTML batch and is not published here.",
+  "appendInstructions": "Append exactly five bounded subtopics, qualified source leads, independent-reviewed pins if available, technical evidence and unqualified holds; the cumulative reader uses the manifest. Do not advertise candidate fixes as official exam custody.",
+  "reader_href": "reader.html"
+}

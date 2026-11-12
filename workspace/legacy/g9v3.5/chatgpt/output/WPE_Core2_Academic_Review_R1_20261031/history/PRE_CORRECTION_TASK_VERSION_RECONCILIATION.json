@@ -1,0 +1,73 @@
+{
+  "id": "WEP07-03",
+  "record_kind": "ORACLE_SOURCE_VERSION_RECONCILIATION_NOT_NATIVE_RECORD",
+  "as_of_utc": "2026-10-31T10:30:58.920926+00:00",
+  "paper": {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Core2_Evidence_Audit_R1_20261030\\sources\\NSEP_2025_official.pdf",
+    "sha256": "c3e5770f56d60d4245ad5c707b53bbbee35745b643b063de11f51287261e5973",
+    "printed_page": 15,
+    "question": 57,
+    "code": 61,
+    "option_c_denominator": "2*m*x0"
+  },
+  "saved_crop": {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Core2_Academic_Review_R1_20261031\\blind-input\\original-saved-crop.png",
+    "sha256": "ae826bc82e01199473958c6c622c94851ef60fd54792d0e3b1f4ffd5442e13e7",
+    "matches_printed_denominator": true
+  },
+  "official_worked_solution": {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Core2_Academic_Review_R1_20261031\\comparison\\official-worked-solution.pdf",
+    "printed_page": 20,
+    "option_c_denominator": "2*m*x0^2",
+    "published_answer": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ]
+  },
+  "official_final_key": {
+    "url": "https://iapt.org.in/wp-content/uploads/images/NSEP_-_2025_Final_Answer_Key.pdf",
+    "final_url": "https://iapt.org.in/wp-content/uploads/images/NSEP_-_2025_Final_Answer_Key.pdf",
+    "bytes": 452627,
+    "sha256": "b640115a6d05c5bb3bc86440070832f8a9501bf94740a942f696f6ce24d01859",
+    "pages": 1,
+    "source_anchor_text": "NSEJS (mislabeled on linked resource page)",
+    "actual_document_identity": "INDIAN ASSOCIATION OF PHYSICS TEACHERS / FINAL ANSWER KEY NSEP - 2025",
+    "visually_checked_row": {
+      "question": 57,
+      "paper_code": 61,
+      "answer": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "page": 1
+    },
+    "paper_key_discrepancy_resolved": false
+  },
+  "navigation_caveat": "On the official2025-26resource page,NSEJSanchor points to NSEPkey; internal PDF identity and actual code61/Q57table independently inspected.",
+  "resolved": [
+    "Official final rather than tentative key located",
+    "Exact code61/Q57final scoring answer read as a,b,c,d"
+  ],
+  "unresolved": [
+    "Printed option(c) versus mathematically derived corrected expression",
+    "A corrective official erratum or replacement paper has not been found within checked routes",
+    "Independent academic/demand reconciliation still pending"
+  ],
+  "do_not_infer": [
+    "Final marking authority does not make the printed formula mathematically correct",
+    "Verified key artifact is not an admission",
+    "A corrected adaptation is not the unchanged original"
+  ],
+  "disposition": "HOLD_EXACT_TASK_VERSION; preserve raw original and correction separately; no product mutation or admission",
+  "routes_checked": [
+    "https://iapt.org.in/",
+    "https://iapt.org.in/nse-2025-26",
+    "https://iapt.org.in/papers-solution/",
+    "bounded IAPT-domain final-key/correction/errata searches"
+  ],
+  "negative_search_limit": "No notice located on those inspected routes; no exhaustive proof of absence and no contact with the publisher undertaken."
+}

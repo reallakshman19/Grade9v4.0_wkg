@@ -1,0 +1,104 @@
+{
+  "sequence": 28,
+  "batch_sequence": 13,
+  "task_identity": "Q-ID-32",
+  "stable_id": "G9V4-PHYS-WPE-EX-M82",
+  "source_id": "EX-M82",
+  "lot": "LOT-07",
+  "batch": "BATCH-B",
+  "paper": "JEE Main 2017 (Online) 8th April Morning Slot",
+  "source_type": "JEE_MAIN_PAST_EXAM_QUESTION",
+  "source_custody": "VERIFIED_TEXT_ONLY (Self-contained mathematical question)",
+  "stem_text": "An object is dropped from a height h from the ground. Every time it hits the ground it loses 50% of its kinetic energy. The total distance covered as t → ∞ is :",
+  "stem_sha256": "e2cf28b63bd8edb9397430f80be3d78edc1c803b75f9ff6eda23bbba3b78a649",
+  "source_hash": "e2cf28b63bd8edb9397430f80be3d78edc1c803b75f9ff6eda23bbba3b78a649",
+  "source_record_digest": "e2cf28b63bd8edb9397430f80be3d78edc1c803b75f9ff6eda23bbba3b78a649",
+  "duplicate_parent": null,
+  "scope": "IN_SCOPE_WPE_ONLY",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "NOT_REQUIRED",
+  "figure_reference": "NONE (pure text question)",
+  "options": [
+    "A: 3h",
+    "B: ∞",
+    "C: (5)/(3) h",
+    "D: (8)/(3) h"
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "INELASTIC_BOUNCE_INFINITE_SERIES",
+    "derivation": "Initial drop from height h: distance d0 = h, kinetic energy before 1st impact KE0 = mgh. At 1st bounce, it loses 50% KE, retaining KE1 = 0.5 mgh. Rebound height h1 = KE1 / (mg) = h/2. Up-and-down distance for 1st bounce is 2*h1 = 2*(h/2) = h. At 2nd bounce, retains KE2 = 0.5 KE1 = 0.25 mgh, rebound height h2 = h/4, contributing 2*h2 = h/2. For each subsequent bounce k >= 1, rebound height is h_k = h / 2^k, contributing distance 2*h_k = 2h / 2^k = h / 2^(k-1). Total distance covered: D = d0 + sum_{k=1}^infinity 2*h_k = h + [ h + h/2 + h/4 + ... ] = h + h / (1 - 1/2) = h + 2h = 3h. Matches Option A.",
+    "predicted_option": "A: 3h",
+    "limiting_cases": "If 0% KE lost (elastic bounce), D = infinity (Option B). If 100% lost (inelastic stick), D = h. With restitution coefficient e where e^2 = 0.5: D = h * (1 + e^2) / (1 - e^2) = h * (1 + 0.5) / (1 - 0.5) = h * 1.5 / 0.5 = 3h."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 2,
+          "evidence": "Recognizing repeated fractional energy loss as infinite geometric series"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Formulating total distance as h + 2h_1 + 2h_2 + ..."
+        },
+        "reasoning_chain_length": {
+          "score": 2,
+          "evidence": "Relating 50% loss per impact to height ratio r = 1/2, then summing series"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Sum of infinite geometric series S = a/(1 - r)"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Initial drop is traversed once; rebounds are traversed twice (h vs 2h)"
+        }
+      },
+      "total": 7,
+      "band": "D3",
+      "prior_proposal": {
+        "source": "PRODUCER_HISTORICAL_ESTIMATE",
+        "scores": "1/1/1/1/1",
+        "total": 5
+      },
+      "differences": "Rescored to native five-factor rubric per B2 CP-4 review"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "SYNTHESIZE"
+      ],
+      "rationale": "Synthesis of energy restitution with geometric series summation for cumulative distance",
+      "candidate_cell": "QRT-APPLY-D3",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": {
+    "blueprint_id": "PHYS-QRT-BLUEPRINT",
+    "version": "0.2.0",
+    "sha256": "ac32dc937403cac33c76343f2e7e0dabd7c2c4a3188cb3b453ddf2576578ddf9",
+    "blueprint_cell_ref": "D3.3",
+    "topic_tag": "WPE-02-POTENTIAL",
+    "status": "PINNED_CELL_UNQUALIFIED"
+  },
+  "adapter_fit": {
+    "adapter_id": "PHYS-TOPIC-WPE",
+    "sha256": "899e61e59370a3fc5d6f73b7d8cbb65165d0782c9fba20acd83439ae441e6a9b",
+    "status": "CELL_UNQUALIFIED_ADAPTER_GAP",
+    "note": "WPE adapter currently defines cell D3.1 only. Target cell requires adapter cell expansion; flagged as SPEC_GAP."
+  },
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_CP4_GATE",
+  "b2_blind_status": "UNREVIEWED",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)",
+    "HOLD:INDEPENDENT_REVIEW_PENDING (requires unexposed blind physics review before admission)"
+  ],
+  "next_action": "Verify official NTA key and submit for independent blind review."
+}

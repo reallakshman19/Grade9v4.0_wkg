@@ -1,0 +1,17 @@
+{
+  "source_id": "AN-3",
+  "task_identity": "Q-ID-65",
+  "sequence": 56,
+  "batch_sequence": 11,
+  "paper": "JEE Main 2025 (Online), 28 January, Morning Shift",
+  "stem_text": "Assertion A: In a central force field, the work done is independent of the path chosen.\nReason R: Every force encountered in mechanics does not have an associated potential energy.",
+  "stem_sha256": "7e4f3c7265264c89a289192bedc6248bc10a35301854870e87f749b83a006339",
+  "options": [
+    "A: A is false but R is true",
+    "B: Both A and R are true but R is NOT the correct explanation of A",
+    "C: A is true but R is false",
+    "D: Both A and R are true and R is the correct explanation of A"
+  ],
+  "figure_reference": null,
+  "confidentiality_notice": "Source custody blind packet. Academic solve, answer key, and scoring omitted. Private review only."
+}

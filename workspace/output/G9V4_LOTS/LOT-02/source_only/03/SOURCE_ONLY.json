@@ -1,0 +1,16 @@
+{
+  "source_id": "EX-M6",
+  "task_identity": "Q-ID-03",
+  "sequence": 3,
+  "paper": "JEE Main 2026 (Online) 23rd January Evening Shift",
+  "stem_text": "A bead \ud835\udc43 sliding on a frictionless semi-circular string (\ud835\udc34\ud835\udc36\ud835\udc35) and it is at point \ud835\udc46 at \ud835\udc61=0 and at this instant the horizontal component of its velocity is \ud835\udc63 . Another bead \ud835\udc44 of the same mass as \ud835\udc43 is ejected from point \ud835\udc34 at \ud835\udc61=0 along the horizontal string \ud835\udc34\ud835\udc35 , with the speed \ud835\udc63 , friction between the beads and the respective strings may be neglected in both cases. Let \ud835\udc61_\ud835\udc43 and \ud835\udc61_\ud835\udc44 be the respective times taken by beads \ud835\udc43 and \ud835\udc44 to reach the point \ud835\udc35 , then the relation between \ud835\udc61_\ud835\udc43 and \ud835\udc61_\ud835\udc44 is [FIG-stem-1]",
+  "stem_sha256": "7d9e6e00a473b5219d71fa3889281e129945bb5c19d9f53407d7ca7fe570e1b6",
+  "options": [
+    "A: \ud835\udc61_\ud835\udc43<\ud835\udc61_\ud835\udc44",
+    "B: \ud835\udc61_\ud835\udc43=\ud835\udc61_\ud835\udc44",
+    "C: \ud835\udc61_\ud835\udc43>1.25\ud835\udc61_\ud835\udc44",
+    "D: \ud835\udc61_\ud835\udc43>\ud835\udc61_\ud835\udc44"
+  ],
+  "figure_reference": "https://app-content.cdn.examgoal.net/fly/1000/image/6y3zli1ml8w2ix5/e5f6479c-ae49-4514-841d-fa273d0828c4/a21e2390-0241-11f1-88dd-c7214e4b90e3/file-6y3zli1ml8w2ix6.png?format=png",
+  "confidentiality_notice": "SEALED SOURCE-ONLY PACKET FOR BLIND INDEPENDENT REVIEW. Contains NO answers, keys, explanations, candidate solutions, SL2 factor scores, or prior review commentary."
+}

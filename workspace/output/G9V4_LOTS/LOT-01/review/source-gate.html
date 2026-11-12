@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grade9 v4.0 — Lot 01 Source & Qualification Gate: EX-M39</title>
+<style>
+  :root {
+    --bg: #0f172a; --panel: #1e293b; --border: #334155; --text: #f8fafc;
+    --muted: #94a3b8; --accent: #38bdf8; --success: #22c55e; --warning: #f59e0b;
+    --danger: #ef4444; --chip-bg: #334155;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  html, body { width: 100%; overflow-x: hidden; background: var(--bg); color: var(--text); }
+  body { padding: 16px; line-height: 1.5; font-size: 13px; }
+  a { word-break: break-all; overflow-wrap: anywhere; }
+  code { word-break: break-all; overflow-wrap: anywhere; background: rgba(0,0,0,0.3); padding: 1px 4px; border-radius: 3px; font-family: monospace; font-size: 11px; }
+  .container { width: 100%; max-width: 1200px; margin: 0 auto; box-sizing: border-box; }
+  header { margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 14px; }
+  h1 { font-size: 20px; color: var(--accent); margin-bottom: 4px; }
+  .subtitle { font-size: 13px; color: var(--warning); margin-bottom: 8px; font-weight: 600; }
+  .meta-bar { color: var(--muted); font-size: 12px; display: flex; gap: 14px; flex-wrap: wrap; }
+  .notice { background: rgba(245, 158, 11, 0.15); border-left: 4px solid var(--warning); padding: 12px 14px; margin: 14px 0; border-radius: 4px; font-size: 12px; }
+  .stop-box { background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.35); border-left: 5px solid var(--warning); border-radius: 6px; padding: 14px 16px; margin: 16px 0; font-size: 13px; }
+  .stop-box strong { color: #fde68a; font-size: 14px; }
+  .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 20px; }
+  .card { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 14px; }
+  .card .num { font-size: 20px; font-weight: 700; color: var(--accent); }
+  .card .sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .card .label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
+  .card.success .num { color: var(--success); }
+  .card.warning .num { color: var(--warning); }
+  .card.danger .num { color: var(--danger); }
+  
+  .section-card { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+  .section-card h2 { font-size: 15px; color: var(--accent); margin-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 6px; }
+  
+  .chain-step { display: flex; gap: 14px; margin-bottom: 12px; padding: 12px; background: rgba(0,0,0,0.2); border-radius: 6px; border: 1px solid var(--border); }
+  .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--border); color: var(--text); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12px; flex-shrink: 0; }
+  .step-num.ok { background: var(--success); color: #000; }
+  .step-num.warn { background: var(--warning); color: #000; }
+  .step-num.fail { background: var(--danger); color: #fff; }
+  .step-content { flex: 1; min-width: 0; }
+  .step-title { font-weight: 600; font-size: 13px; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; }
+  .step-detail { color: var(--muted); font-size: 12px; line-height: 1.6; word-break: break-word; overflow-wrap: anywhere; }
+  
+  .pill { display: inline-block; padding: 2px 7px; border-radius: 12px; font-size: 10px; font-weight: 600; }
+  .pill-scope { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+  .pill-partial { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+  .pill-fail { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
+  .pill-pass { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
+  .pill-lead { background: rgba(168, 85, 247, 0.15); color: #c084fc; }
+  
+  .table-container { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--border); border-radius: 6px; background: #0f172a; margin-top: 10px; }
+  table { width: 100%; min-width: 650px; border-collapse: collapse; font-size: 12px; }
+  th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { background: #162032; color: var(--muted); font-weight: 600; font-size: 11px; text-transform: uppercase; }
+  
+  ul.check-list { list-style: none; padding-left: 0; }
+  ul.check-list li { margin-bottom: 6px; font-size: 12px; color: var(--text); }
+  ul.check-list li strong { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Grade9 v4.0 — Lot 01 Source & Qualification Gate: EX-M39</h1>
+    <div class="subtitle">JEE Main 2024 (27 Jan Shift 2) — Vertical Swing Acceleration Dynamics</div>
+    <div class="meta-bar">
+      <span><strong>Lot:</strong> LOT-01 (Single-Question Gated Qualification Pass)</span>
+      <span><strong>Source ID:</strong> EX-M39 (Task Identity: Q-ID-12)</span>
+      <span><strong>Exam Sitting:</strong> 2024-01-27 Shift 2 (Evening)</span>
+      <span><strong>Updated:</strong> 2026-11-01 (B2 Repair Edition)</span>
+      <span><strong>Custody:</strong> Owner-Local Private Gate Record</span>
+    </div>
+  </header>
+
+  <div class="stop-box">
+    <strong>STOP GATE ACTIVE: SOURCE CHAIN PARTIAL &rarr; LEARNER CARD BLOCKED</strong><br>
+    B2 review refined the source-to-ID chain: Matrix Academy associates this stem with <strong>NTA Question ID 533543498</strong>, and NTA Final Key maps <code>533543498 &rarr; 5335431726</code>. Furthermore, dropped ID <code>533543501</code> is associated with the separate bullet question in Matrix (counterevidence resolves dropped-item ambiguity). However, because <strong>authentic option-ID-to-text binding</strong> is not verified from an original NTA candidate response sheet (positions differ across papers: Matrix Choice 1 vs Extract Choice B), the chain status remains <strong>PARTIAL: NTA_OPTION_TEXT_BINDING_NOT_VERIFIED</strong>. Execution halts before learner card construction.
+  </div>
+
+  <div class="notice">
+    <strong>CONFIDENTIAL OWNER-LOCAL RECORD.</strong> Verbatim exam stems, options, and solution text are strictly excluded from public Git repositories. No academic approval is inferred from mechanical qualification.
+  </div>
+
+  <div class="metrics">
+    <div class="card warning">
+      <div class="num">PARTIAL</div>
+      <div class="sub">Option-text binding pending</div>
+      <div class="label">Official Key Chain</div>
+    </div>
+    <div class="card warning">
+      <div class="num">PREREQ</div>
+      <div class="sub">Circular dynamics bridge</div>
+      <div class="label">Active Scope Role</div>
+    </div>
+    <div class="card">
+      <div class="num">D3 (7/10)</div>
+      <div class="sub">Proposed SYNTHESIZE</div>
+      <div class="label">QRT Classification</div>
+    </div>
+    <div class="card danger">
+      <div class="num">NOT ADMITTED</div>
+      <div class="sub">Zero admissions gate</div>
+      <div class="label">Academic Admission</div>
+    </div>
+  </div>
+
+  <!-- SECTION A: QUESTION IDENTIFICATION -->
+  <div class="section-card">
+    <h2>1. Question Identification & Provenance Fingerprint</h2>
+    <ul class="check-list">
+      <li><strong>Local Source ID:</strong> <code>EX-M39</code> (Registry Record #12 / Task Identity: <code>Q-ID-12</code>)</li>
+      <li><strong>Primary Extract Source:</strong> <code>workspace/legacy/g9v3.5/qrt/sources/examside-wpe-extract.json</code> (item index <code>/items/12</code>, source id <code>M39</code>)</li>
+      <li><strong>Exam Sitting:</strong> JEE Main 2024 (Online) 27th January, Evening Shift (Shift 2)</li>
+      <li><strong>Question Type:</strong> Single-Correct Multiple Choice Question (MCQ)</li>
+      <li><strong>Stem Digest:</strong> SHA-256 <code>cfa7368ff62d1c68f2fe15fa57659bb29d2110c950c45da62fcb5e7d598b5071</code> (Length: 228 characters)</li>
+      <li><strong>Figures:</strong> None in stem or options. (One third-party explanation image URL noted, unverified).</li>
+      <li><strong>Stored Key Status:</strong> <code>PARTIAL (NTA_OPTION_TEXT_BINDING_NOT_VERIFIED)</code>.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION B: UPDATED FOUR-LINK SOURCE CHAIN -->
+  <div class="section-card">
+    <h2>2. Updated Four-Link Source-to-Official-ID Chain Audit</h2>
+    <p style="color:var(--muted); margin-bottom: 14px;">Incorporate secondary provenance from Matrix Academy and primary key status from NTA Final Key Notice.</p>
+
+    <div class="chain-step">
+      <div class="step-num ok">&#10003;</div>
+      <div class="step-content">
+        <div class="step-title">
+          <span>Link 1: Exam Sitting & Candidate Stem</span>
+          <span class="pill pill-pass">SUPPORTED</span>
+        </div>
+        <div class="step-detail">
+          Stem wording matched across registry, ExamSIDE extract (<code>items/12</code>), and multiple secondary coaching papers: ALLEN (Q38), Cracku (Q4), Collegedunia (Q38), and Matrix Academy (Q8). Original NTA master-paper custody remains pending.
+        </div>
+      </div>
+    </div>
+
+    <div class="chain-step">
+      <div class="step-num ok">&#10003;</div>
+      <div class="step-content">
+        <div class="step-title">
+          <span>Link 2: Stem &rarr; NTA Question ID</span>
+          <span class="pill pill-pass">THIRD_PARTY_ID_MAPPING_FOUND</span>
+        </div>
+        <div class="step-detail">
+          <strong>Locator:</strong> Matrix Academy, <em>JEE Main 27 January 2024 Shift 2 Physics</em>, page 4 (viewer page 3):<br>
+          <a href="https://www.matrixedu.in/assets/default/physics/27_jan_shift2_2024.pdf" target="_blank" style="color:var(--accent);">https://www.matrixedu.in/assets/default/physics/27_jan_shift2_2024.pdf</a><br>
+          Matrix Question 8 displays the exact swing stem and explicitly labels it with <strong>NTA Question ID 533543498</strong>.<br>
+          <em>Caveat:</em> Original NTA master paper / candidate response sheet custody not checked.
+        </div>
+      </div>
+    </div>
+
+    <div class="chain-step">
+      <div class="step-num ok">&#10003;</div>
+      <div class="step-content">
+        <div class="step-title">
+          <span>Dropped Question Ruling: Question ID 533543501</span>
+          <span class="pill pill-pass">STRONG COUNTEREVIDENCE</span>
+        </div>
+        <div class="step-detail">
+          In Matrix Academy's paper, <strong>Question 6</strong> displays the separate <strong>bullet-penetration into block question</strong> and labels it with <strong>NTA Question ID 533543501</strong> (marked bonus). In the NTA Final Key Notice, ID <code>533543501</code> is marked "Drop". Matrix independently associates the dropped ID with the bullet problem, providing strong counterevidence that the swing problem is NOT the dropped question.
+        </div>
+      </div>
+    </div>
+
+    <div class="chain-step">
+      <div class="step-num ok">&#10003;</div>
+      <div class="step-content">
+        <div class="step-title">
+          <span>Link 3: NTA Question ID &rarr; Official Option ID</span>
+          <span class="pill pill-pass">VERIFIED FOR GIVEN ID</span>
+        </div>
+        <div class="step-detail">
+          <strong>Locator:</strong> NTA, <em>JEE (Main) 2024 Session 1 Final Answer Key as on 12 February 2024</em>, 27 Jan Shift Second, Physics column, page 2:<br>
+          <a href="https://jeemain.nta.ac.in/images/Final_Answer_Key_P1_12022024.pdf" target="_blank" style="color:var(--accent);">https://jeemain.nta.ac.in/images/Final_Answer_Key_P1_12022024.pdf</a><br>
+          For Question ID <strong>533543498</strong>, the official key specifies correct Option ID: <strong>5335431726</strong>.
+        </div>
+      </div>
+    </div>
+
+    <div class="chain-step">
+      <div class="step-num warn">!</div>
+      <div class="step-content">
+        <div class="step-title">
+          <span>Link 4: Official Option ID &rarr; Mathematical Expression</span>
+          <span class="pill pill-partial">PARTIAL (NTA_OPTION_TEXT_BINDING_NOT_VERIFIED)</span>
+        </div>
+        <div class="step-detail">
+          Matrix Academy places the mathematically derived answer &theta; = 2 tan<sup>&minus;1</sup>(1/2) as Choice (1). The Owner-supplied extract places it as Choice (B). Numeric positions and letters are not portable across test forms.<br>
+          <strong>Missing Link:</strong> Matrix does not print the specific NTA Option IDs (e.g. 5335431725..5335431728) assigned to each mathematical expression. Option ID <code>5335431726</code> cannot be proven to bind to <code>2 tan⁻¹(1/2)</code> without an authentic NTA response sheet or master question paper.
+        </div>
+      </div>
+    </div>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Chain Segment</th>
+            <th>Evidence Document / Locator</th>
+            <th>Finding</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Stem &rarr; Sitting</td>
+            <td>ExamSIDE `/items/12`; ALLEN Q38; Cracku Q4; Matrix Q8</td>
+            <td>Consistent across multiple independent sources</td>
+            <td><span class="pill pill-pass">SUPPORTED</span></td>
+          </tr>
+          <tr>
+            <td>Stem &rarr; NTA Question ID</td>
+            <td>Matrix Academy 27 Jan S2 Physics, p. 4, Q8</td>
+            <td>Labels stem with NTA Question ID 533543498</td>
+            <td><span class="pill pill-pass">THIRD_PARTY_ID_FOUND</span></td>
+          </tr>
+          <tr>
+            <td>Dropped Question 533543501</td>
+            <td>Matrix Academy Q6 (bullet problem = 533543501 Drop)</td>
+            <td>Dropped ID associated with bullet, not swing</td>
+            <td><span class="pill pill-pass">COUNTEREVIDENCED</span></td>
+          </tr>
+          <tr>
+            <td>NTA Question ID &rarr; Option ID</td>
+            <td>NTA Final Key Notice 12-02-2024, p. 2</td>
+            <td>533543498 &rarr; 5335431726</td>
+            <td><span class="pill pill-pass">VERIFIED_FOR_ID</span></td>
+          </tr>
+          <tr>
+            <td>Option ID &rarr; Math Expression</td>
+            <td>NTA candidate response sheet / master option IDs</td>
+            <td>Matrix Choice (1) vs Extract Choice (B); option IDs unprinted</td>
+            <td><span class="pill pill-partial">PARTIAL_BINDING</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SECTION C: ACADEMIC & SCOPE GATES -->
+  <div class="section-card">
+    <h2>3. Academic, Cognitive (QRT), and Blueprint Status</h2>
+    <ul class="check-list">
+      <li><strong>Scope Classification:</strong> <span class="pill pill-scope">PREREQUISITE_BRIDGE</span>. Circular dynamics / vertical swing acceleration is a prerequisite bridge concept. It is <em>not</em> direct Work, Power and Energy examination coverage. <strong>Requires Owner reclassification authorization before any WPE adapter entry.</strong></li>
+      <li><strong>Cognitive Operation (QRT):</strong> Proposed <code>SYNTHESIZE &middot; D3</code> (Score: 7/10 per B2 review: Concept 2, Representation 1, Chain 2, Algebra 1, Trap 1). Decisive reasoning move: equating extreme-point tangential acceleration (g sin &theta;) with bottom-point centripetal acceleration (2g(1 &minus; cos &theta;)) through conservation of mechanical energy.</li>
+      <li><strong>Physics Blueprint Reference:</strong> <code>workspace/subjects/physics/blueprints/physics-blueprint.D3-D4.resolved.v0.2.0.json</code> (SHA-256 <code>AC32DC93...</code>), Cell <code>D3.6</code> (<code>QRT-SYNTHESIZE-D3</code>).</li>
+      <li><strong>Topic Adapter Fit:</strong> <span class="pill pill-fail">HOLD:ADAPTER_PIN</span>. The active draft WPE adapter does not currently qualify vertical circular dynamics as a native core operation.</li>
+      <li><strong>Independent Physics Solve:</strong> Prior dated B2 independent solve preserved (&theta; = 2 tan<sup>&minus;1</sup>(1/2)). Physics check is consistent; not a substitute for option-ID custody.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION D: OUTSTANDING OWNER DECISIONS -->
+  <div class="section-card">
+    <h2>4. Outstanding Owner Decisions & Next Actions</h2>
+    <ol style="padding-left: 20px; line-height: 1.8;">
+      <li><strong>Source-Chain Acceptance Threshold:</strong> Decide whether the third-party Matrix ID mapping (Question ID <code>533543498</code> &rarr; Option ID <code>5335431726</code>) plus B2 independent physics derivation is acceptable, or if authentic NTA candidate response-sheet custody is required to certify Option ID text binding.</li>
+      <li><strong>Scope Determination:</strong> Explicitly authorize whether <code>EX-M39</code> remains <code>PREREQUISITE_BRIDGE</code> or enters an expanded circular dynamics adapter.</li>
+      <li><strong>Adapter Pin:</strong> Approve / pin topic adapter accommodating multi-step circular dynamics.</li>
+      <li><strong>PR Base Selection:</strong> Authorize a stable base branch before opening a new public draft PR (PR #22 remains draft).</li>
+      <li><strong>Authoring Authorization:</strong> Grant explicit authoring go-ahead before any student learner card is built.</li>
+    </ol>
+  </div>
+
+  <!-- SECTION E: GATE DISPOSITION -->
+  <div class="section-card" style="border-color: rgba(245, 158, 11, 0.4);">
+    <h2>5. Official Gate Disposition</h2>
+    <p><strong>Academic Admission Status:</strong> <span class="pill pill-fail" style="font-size: 12px; padding: 4px 10px;">NOT_ADMITTED</span></p>
+    <p style="margin-top: 8px;"><strong>Active Governance Holds:</strong></p>
+    <ul style="padding-left: 20px; margin-top: 6px; color: #fde68a;">
+      <li><code>HOLD:NTA_OPTION_TEXT_BINDING_NOT_VERIFIED</code> &mdash; NTA Option ID 5335431726 unmapped to exact mathematical expression from authentic response sheet.</li>
+      <li><code>HOLD:SCOPE_AUTHORIZATION</code> &mdash; Prerequisite bridge status requires Owner reclassification.</li>
+      <li><code>HOLD:ADAPTER_PIN</code> &mdash; Circular dynamics not pinned in root WPE adapter.</li>
+      <li><code>HOLD:BASE_NOT_READY</code> &mdash; Stable PR base branch unselected by Owner.</li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

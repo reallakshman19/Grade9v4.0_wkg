@@ -1,0 +1,42 @@
+name: WPE Core1A Core1B Transfer Readiness R3 — Physics and Browser
+on:
+  pull_request:
+    paths:
+      - "physics/wpe/gap-journeys.js"
+      - "physics/wpe/gap-transfer-r3.js"
+      - "physics/wpe/gap-transfer-r3.css"
+      - "physics/wpe/gap-six-stage-engine.js"
+      - "physics/wpe/gap-journeys.html"
+      - "physics/wpe/reviews/WPE_CORE1A_CORE1B_TRANSFER_R3_AUDIT.md"
+      - "docs/wpe-r3-real-learner-observation-protocol.md"
+      - "tests/test_wpe_core1a_core1b_transfer_readiness_r3.py"
+      - "tools/wpe_core1a_core1b_transfer_readiness_r3_ui.py"
+      - ".github/workflows/wpe-core1a-core1b-transfer-readiness-r3.yml"
+  workflow_dispatch:
+jobs:
+  physics-transfer-and-chromium:
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install project tests and real Chromium
+        run: |
+          python -m pip install -e ".[dev]" playwright==1.55.0
+          python -m playwright install --with-deps chromium
+      - name: Check syntax of only the scoped F04–F08 scripts
+        run: |
+          node --check physics/wpe/gap-transfer-r3.js
+          node --check physics/wpe/gap-journeys.js
+          node --check physics/wpe/gap-six-stage-engine.js
+      - name: Independent equations, limiting cases, source custody, five construction rubrics
+        run: python -m pytest -q tests/test_wpe_core1a_core1b_transfer_readiness_r3.py
+      - name: Ten complete A/B six-stage journeys per screen, both source-validated desktop and mobile
+        run: python tools/wpe_core1a_core1b_transfer_readiness_r3_ui.py
+      # Historical R2 gateway-click test uses an obsolete #interactive-lesson-links
+      # selector removed by merged #62; its shared-route repair is PR #61-owned.
+      # The R3-local browser test runs both full six-stage Task A and Task B
+      # per construction, checks source identity and returns, without rewriting
+      # the Question Bank or pretending that gateway migration is complete.

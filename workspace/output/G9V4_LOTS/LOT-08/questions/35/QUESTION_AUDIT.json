@@ -1,0 +1,105 @@
+{
+  "sequence": 35,
+  "batch_sequence": 5,
+  "task_identity": "Q-ID-40",
+  "stable_id": "PHYS-WPE-LOT08-Q35",
+  "source_id": "EX-M97",
+  "lot": "LOT-08",
+  "batch": "BATCH-C",
+  "paper": "JEE Main 2013 (Online) 23th April Morning Slot",
+  "source_type": "EXAM_PAPER_TRANSCRIBED",
+  "source_custody": "VERIFIED_TEXT",
+  "stem_text": "A 70 kg man leaps vertically into the air from a crouching position. To take the leap the man pushes the ground with a constant force F to raise himself. The center of gravity rises by 0.5 m before he leaps. After the leap the c.g. rises by another 1 m. The maximum power delivered by the muscles is : (Take g = 10 ms ^(−2) )",
+  "stem_sha256": "cbb41b03fc485b69ca2d6ca28cbb08a484d1a36fb7b3ba766c455607508ac8c8",
+  "source_hash": "cbb41b03fc485b69ca2d6ca28cbb08a484d1a36fb7b3ba766c455607508ac8c8",
+  "source_record_digest": "sha256:cbb41b03fc485b69ca2d6ca28cbb08a484d1a36fb7b3ba766c455607508ac8c8",
+  "duplicate_parent": null,
+  "scope": "PRIMARY_IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "NOT_REQUIRED",
+  "figure_reference": null,
+  "options": [
+    "A: 6.26×10^(3) Watts at the start",
+    "B: 6.26×10^(3) Watts at take off",
+    "C: 6.26×10^(4) Watts at the start",
+    "D: 6.26×10^(4) Watts at take off"
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "VERTICAL_LEAP_DYNAMICS_AND_POWER",
+    "predicted_option": "B: 6.26×10^(3) Watts at take off",
+    "derivation": "Free flight rise h = 1.0 m => v_takeoff = sqrt(2*g*h) = sqrt(2 * 10 * 1) = sqrt(20) = 4.472 m/s. During crouching push s = 0.5 m from rest: v^2 = 2*a*s => 20 = 2*a*0.5 => a = 20 m/s^2. Net accelerating force F_net = m*a = 70 * 20 = 1400 N. Instantaneous power delivered to acceleration at takeoff: P = F_net * v_takeoff = 1400 * 4.472 = 6261 W = 6.26 * 10^3 W at takeoff."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 2,
+          "evidence": "Connecting crouching vertical acceleration phase to ballistic free flight rise and power definition"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Separating crouching push phase (0.5 m) from airborne rise (1.0 m)"
+        },
+        "reasoning_chain_length": {
+          "score": 2,
+          "evidence": "Find takeoff velocity from ballistic rise, compute accelerating force during push, evaluate P = F*v at takeoff"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Square root and multiplication: 1400 * sqrt(20) = 6261 W"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Noting coaching key dispute between net accelerating force F_net = 1400 N vs ground normal force N = 2100 N"
+        }
+      },
+      "total": 7,
+      "band": "D3",
+      "prior_proposal": {
+        "source": "INITIAL_CALIBRATION",
+        "scores": "2/1/2/1/1",
+        "total": 7
+      },
+      "differences": "Initial native factor audit"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "MODEL"
+      ],
+      "rationale": "Application of kinematics and instantaneous mechanical power to vertical biomechanical jump",
+      "candidate_cell": "QRT-APPLY-D3",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": {
+    "blueprint_id": "PHYS-QRT-BLUEPRINT",
+    "version": "0.2.0",
+    "sha256": "ac32dc937403cac33c76343f2e7e0dabd7c2c4a3188cb3b453ddf2576578ddf9",
+    "blueprint_cell_ref": "D3.3",
+    "topic_tag": "WPE-03-POWER",
+    "status": "PINNED_CELL_UNQUALIFIED"
+  },
+  "adapter_fit": {
+    "adapter_id": "PHYS-TOPIC-WPE",
+    "sha256": "899e61e59370a3fc5d6f73b7d8cbb65165d0782c9fba20acd83439ae441e6a9b",
+    "status": "CELL_UNQUALIFIED_ADAPTER_GAP",
+    "note": "WPE adapter defines cell D3.1 only. Target cell D3.3 requires adapter cell expansion; flagged as SPEC_GAP."
+  },
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_INDEPENDENT_REVIEW",
+  "b2_blind_status": "PENDING_BLIND_SOLVE",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (Coaching key unverified against official NTA master)",
+    "HOLD:KEY_DISPUTE (Coaching key evaluates net accelerating force F_net=1400N rather than ground contact force F_ground=2100N)",
+    "HOLD:ADAPTER_CELL_GAP (WPE adapter lacks D3.3 cell authority)",
+    "HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)"
+  ],
+  "next_action": "B2 independent source-only solve + official NTA master key reconciliation"
+}

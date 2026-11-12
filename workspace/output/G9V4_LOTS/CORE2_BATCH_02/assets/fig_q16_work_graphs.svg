@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 220" width="100%" height="100%">
+  <defs>
+    <style>
+      .label { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 600; fill: #1e293b; }
+      .sublabel { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; fill: #475569; }
+      .axis { stroke: #64748b; stroke-width: 1.5; }
+      .curve { stroke: #2563eb; stroke-width: 2.5; fill: none; }
+      .area-pos { fill: rgba(37, 99, 235, 0.2); }
+      .area-neg { fill: rgba(225, 29, 72, 0.2); }
+    </style>
+  </defs>
+  <!-- Graph (a) W1: Zero Net Work -->
+  <g transform="translate(20, 20)">
+    <line x1="10" y1="70" x2="100" y2="70" class="axis"/>
+    <line x1="10" y1="10" x2="10" y2="130" class="axis"/>
+    <polygon points="10,70 30,30 50,70 70,110 90,70" class="area-pos"/>
+    <path d="M 10 70 L 30 30 L 50 70 L 70 110 L 90 70" class="curve"/>
+    <text x="50" y="150" class="label" text-anchor="middle">(a) W1 ≈ 0</text>
+  </g>
+  <!-- Graph (b) W2: Moderate Work -->
+  <g transform="translate(145, 20)">
+    <line x1="10" y1="70" x2="100" y2="70" class="axis"/>
+    <line x1="10" y1="10" x2="10" y2="130" class="axis"/>
+    <polygon points="10,70 50,30 90,70" class="area-pos"/>
+    <path d="M 10 70 L 50 30 L 90 70" class="curve"/>
+    <text x="50" y="150" class="label" text-anchor="middle">(b) W2 &gt; 0</text>
+  </g>
+  <!-- Graph (c) W3: Largest Work -->
+  <g transform="translate(270, 20)">
+    <line x1="10" y1="70" x2="100" y2="70" class="axis"/>
+    <line x1="10" y1="10" x2="10" y2="130" class="axis"/>
+    <polygon points="10,70 10,25 90,25 90,70" class="area-pos"/>
+    <path d="M 10 25 L 90 25" class="curve"/>
+    <text x="50" y="150" class="label" text-anchor="middle">(c) W3 (Max)</text>
+  </g>
+  <!-- Graph (d) W4: Negative Work -->
+  <g transform="translate(395, 20)">
+    <line x1="10" y1="70" x2="100" y2="70" class="axis"/>
+    <line x1="10" y1="10" x2="10" y2="130" class="axis"/>
+    <polygon points="10,70 50,115 90,70" class="area-neg"/>
+    <path d="M 10 70 L 50 115 L 90 70" stroke="#e11d48" stroke-width="2.5" fill="none"/>
+    <text x="50" y="150" class="label" text-anchor="middle">(d) W4 &lt; 0</text>
+  </g>
+</svg>

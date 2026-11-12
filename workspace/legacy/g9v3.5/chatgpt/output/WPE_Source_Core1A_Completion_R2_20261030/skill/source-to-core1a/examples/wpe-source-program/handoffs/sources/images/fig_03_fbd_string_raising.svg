@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 380" width="100%" height="100%" role="img" aria-label="Free Body Diagram: Block raised by string tension with upward acceleration">
+  <title>Free Body Diagram of Upward Accelerating Block</title>
+  <desc>A mass m experiencing upward string tension T and downward gravitational force mg, accelerating upward with acceleration a.</desc>
+  <defs>
+    <marker id="arr-dark-03" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1e293b"/>
+    </marker>
+    <marker id="arr-blue-03" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arr-red-03" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arr-green-03" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#16a34a"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: system-ui, -apple-system, sans-serif; fill: #1e293b; }
+    .bold { font-weight: bold; }
+    .math { font-style: italic; font-family: 'Times New Roman', serif; }
+  </style>
+
+  <!-- Block of mass m -->
+  <rect x="150" y="140" width="100" height="90" fill="#f8fafc" stroke="#1e293b" stroke-width="2.5" rx="3" />
+  <text x="200" y="192" font-size="20px" text-anchor="middle" font-weight="bold">m</text>
+
+  <!-- Tension vector T (upwards) -->
+  <line x1="200" y1="140" x2="200" y2="40" stroke="#2563eb" stroke-width="3" marker-end="url(#arr-blue-03)" />
+  <text x="215" y="55" font-size="18px" class="bold" fill="#2563eb">T</text>
+
+  <!-- Gravity vector mg (downwards) -->
+  <line x1="200" y1="230" x2="200" y2="330" stroke="#dc2626" stroke-width="3" marker-end="url(#arr-red-03)" />
+  <text x="215" y="325" font-size="18px" class="bold" fill="#dc2626">mg</text>
+
+  <!-- Acceleration vector a (upwards alongside) -->
+  <line x1="280" y1="210" x2="280" y2="120" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arr-green-03)" />
+  <text x="295" y="165" font-size="18px" class="bold" fill="#16a34a">a</text>
+
+  <!-- Caption -->
+  <text x="210" y="365" font-size="15px" text-anchor="middle" font-weight="600">Free Body Diagram: T - mg = ma</text>
+</svg>

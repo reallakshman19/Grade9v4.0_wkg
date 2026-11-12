@@ -1,0 +1,112 @@
+{
+  "sequence": 6,
+  "task_identity": "Q-ID-06",
+  "stable_id": "Q-PHY-WPE-JEEM-2026-01-21-S1-06",
+  "source_id": "EX-M11",
+  "lot": "LOT-03",
+  "paper": "JEE Main 2026 (Online) 21st January Morning Shift",
+  "source_type": "SCRAPED_EXTRACT_EXAMGOAL",
+  "source_custody": "PARTIAL",
+  "stem_text": "Potential energy ( \ud835\udc49 ) versus distance ( \ud835\udc65 ) is given by the graph. Rank various regions as per the magnitudes of the force ( \ud835\udc39 ) acting on a particle from high to low. [FIG-stem-1]",
+  "stem_sha256": "dc5006b422da3095c1eb3f9d14810987971898073fa6e37fcfd7af34a35fd90f",
+  "source_hash": "dc5006b422da3095c1eb3f9d14810987971898073fa6e37fcfd7af34a35fd90f",
+  "source_record_digest": "dc5006b422da3095c1eb3f9d14810987971898073fa6e37fcfd7af34a35fd90f",
+  "interpretation": "Rank force magnitudes |F| = |-dV/dx| from highest to lowest across regions AB, BC, CD, DE based on graph slopes.",
+  "duplicate_parent": null,
+  "scope": "IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "HOLD:FIGURE_UNRESOLVED",
+  "options": [
+    "A: \ud835\udc39_\ud835\udc35\ud835\udc36>\ud835\udc39_\ud835\udc34\ud835\udc35>\ud835\udc39_\ud835\udc37\ud835\udc38>\ud835\udc39_\ud835\udc36\ud835\udc37",
+    "B: \ud835\udc39_\ud835\udc35\ud835\udc36>\ud835\udc39_\ud835\udc36\ud835\udc37>\ud835\udc39_\ud835\udc37\ud835\udc38>\ud835\udc39_\ud835\udc34\ud835\udc35",
+    "C: \ud835\udc39_\ud835\udc36\ud835\udc37>\ud835\udc39_\ud835\udc34\ud835\udc35>\ud835\udc39_\ud835\udc35\ud835\udc36>\ud835\udc39_\ud835\udc37\ud835\udc38",
+    "D: \ud835\udc39_\ud835\udc36\ud835\udc37>\ud835\udc39_\ud835\udc37\ud835\udc38>\ud835\udc39_\ud835\udc34\ud835\udc35>\ud835\udc39_\ud835\udc35\ud835\udc36"
+  ],
+  "unbound_remote_figures": [
+    {
+      "role": "stem",
+      "url": "https://app-content.cdn.examgoal.net/fly/1000/image/6y3zli1ml8b57ie/549f4be0-42f3-4404-b29b-42ccf8e0d8a7/cd04ee60-01ef-11f1-bb8c-db351d97a854/file-6y3zli1ml8b57if.png?format=png"
+    }
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "HOLD:FIGURE_UNRESOLVED",
+  "candidate_solve": {
+    "method": "POTENTIAL_GRADIENT_SLOPE_RANKING",
+    "assumed_parameters_from_coaching_figure": "V(x) piece-wise linear segments: AB from (0,0) to (1,1); BC from (1,1) to (2,4); CD from (2,4) to (4,4); DE from (4,4) to (6,3).",
+    "derivation": "Conservative force magnitude is given by |F| = |-dV/dx| = |slope|. Slope_AB = (1-0)/(1-0) = 1 => |F_AB| = 1. Slope_BC = (4-1)/(2-1) = 3 => |F_BC| = 3. Slope_CD = (4-4)/(4-2) = 0 => |F_CD| = 0. Slope_DE = (3-4)/(6-4) = -0.5 => |F_DE| = 0.5. Descending rank: |F_BC| (3) > |F_AB| (1) > |F_DE| (0.5) > |F_CD| (0).",
+    "predicted_option": "A: \ud835\udc39_\ud835\udc35\ud835\udc36>\ud835\udc39_\ud835\udc34\ud835\udc35>\ud835\udc39_\ud835\udc37\ud835\udc38>\ud835\udc39_\ud835\udc36\ud835\udc37",
+    "limiting_cases": "Flat region CD has zero slope, hence minimum force (0). Steeper segment BC has maximum slope (3). Rank order is strictly determined by geometric steepness."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "status": "UNREVIEWED",
+    "decisive_operation": "REPRESENT",
+    "crux": "Translating graph slopes of potential energy V(x) to conservative force magnitudes |F| = |dV/dx| and ordering piecewise segments.",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Connection between conservative force and potential gradient."
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Extracting coordinates and calculating slopes from piecewise graph."
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Calculate four segment slopes and order descendingly."
+        },
+        "algebra_computational_load": {
+          "score": 0,
+          "evidence": "Elementary slope ratios: 3, 1, 0.5, 0."
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Magnitude requested, so negative slope in DE becomes positive 0.5, exceeding flat CD."
+        }
+      },
+      "total": 4,
+      "band": "D2"
+    },
+    "demand_proposal": {
+      "primary": "REPRESENT",
+      "secondary": [
+        "APPLY"
+      ],
+      "candidate_cell": "QRT-REPRESENT-D2",
+      "status": "PROPOSED"
+    },
+    "representation_requirements": [
+      "GRAPH",
+      "EQUATION"
+    ],
+    "independent_checks": [
+      "SIGN",
+      "ROUND_TRIP"
+    ],
+    "wrong_route_hypotheses": [
+      {
+        "route": "Confusing force magnitude with potential energy value (ranking by V instead of slope)",
+        "status": "HYPOTHESIS"
+      },
+      {
+        "route": "Retaining negative sign for DE slope (-0.5 < 0) placing DE below CD",
+        "status": "HYPOTHESIS"
+      }
+    ]
+  },
+  "qrt": "UNREVIEWED",
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_REVIEW",
+  "b2_blind_status": "NOT_RUN",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:FIGURE_UNRESOLVED (graph coordinates and segment labels require local verified asset)",
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)",
+    "HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)"
+  ],
+  "next_action": "Secure official NTA exam graph asset and verify master answer key."
+}

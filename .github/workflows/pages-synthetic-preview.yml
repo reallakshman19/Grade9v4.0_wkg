@@ -1,0 +1,132 @@
+name: Grade9 public-safe school + NSEJS hub and isolated synthetic reader
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'tools/private_reader_integration.py'
+      - 'tools/private_reader_r6.py'
+      - 'tools/private_reader_12p7.css'
+      - 'tools/check_private_reader_http.py'
+      - 'tools/build_public_reader_preview.py'
+      - 'tools/build_public_site_pages.py'
+      - 'tools/check_public_home_navigation.py'
+      - 'index.html'
+      - 'site.css'
+      - 'site-nav.js'
+      - 'physics/index.html'
+      - 'physics/wpe/index.html'
+      - 'mathematics/index.html'
+      - 'chemistry/index.html'
+      - 'architecture/index.html'
+      - 'nsejs/**'
+      - 'preview/index.html'
+      - 'preview/physics-wpe.html'
+      - 'preview/practice.html'
+      - 'preview/progress.html'
+      - 'preview/alpha-board.html'
+      - 'preview/assets/app.css'
+      - 'preview/assets/app.js'
+      - 'tools/check_public_reader_deployment.py'
+      - 'tests/test_public_reader_preview.py'
+      - 'tests/test_private_reader_integration.py'
+      - 'tests/test_private_reader_r6.py'
+      - '.github/workflows/pages-synthetic-preview.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'tools/private_reader_integration.py'
+      - 'tools/private_reader_r6.py'
+      - 'tools/private_reader_12p7.css'
+      - 'tools/check_private_reader_http.py'
+      - 'tools/build_public_reader_preview.py'
+      - 'tools/build_public_site_pages.py'
+      - 'tools/check_public_home_navigation.py'
+      - 'index.html'
+      - 'site.css'
+      - 'site-nav.js'
+      - 'physics/index.html'
+      - 'physics/wpe/index.html'
+      - 'mathematics/index.html'
+      - 'chemistry/index.html'
+      - 'architecture/index.html'
+      - 'nsejs/**'
+      - 'preview/index.html'
+      - 'preview/physics-wpe.html'
+      - 'preview/practice.html'
+      - 'preview/progress.html'
+      - 'preview/alpha-board.html'
+      - 'preview/assets/app.css'
+      - 'preview/assets/app.js'
+      - 'tools/check_public_reader_deployment.py'
+      - 'tests/test_public_reader_preview.py'
+      - 'tests/test_private_reader_integration.py'
+      - 'tests/test_private_reader_r6.py'
+      - '.github/workflows/pages-synthetic-preview.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  build-public-safe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install synthetic QA and Chromium
+        run: |
+          python -m pip install 'pytest>=8,<10' 'playwright==1.55.0'
+          python -m playwright install chromium
+      - name: Exact-head source custody, homepage and NSEJS safety checks
+        run: |
+          python -m pytest -q tests/test_private_reader_integration.py tests/test_private_reader_r6.py tests/test_public_reader_preview.py
+          python tools/check_private_reader_http.py
+          python tools/check_public_home_navigation.py
+      - name: Build strictly allowlisted school/NSEJS site with synthetic reader
+        run: python tools/build_public_reader_preview.py --out public-safe-dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: grade9-public-safe-school-nsejs-hub
+          path: public-safe-dist/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 7
+
+  deploy-public-safe:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build-public-safe
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@v4
+        with:
+          name: grade9-public-safe-synthetic-preview
+          path: public-safe-dist
+      - name: Configure GitHub Pages for Actions
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: public-safe-dist
+      - name: Publish school/NSEJS hub with isolated synthetic reader
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Verify live school/NSEJS navigation manifest and exact Pages bytes
+        env:
+          PAGES_URL: ${{ steps.deployment.outputs.page_url }}
+        run: python tools/check_public_reader_deployment.py --url "$PAGES_URL" --manifest public-safe-dist/PUBLIC_PREVIEW_MANIFEST.json

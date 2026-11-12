@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10384d">
+<meta name="description" content="Source-bound, unapproved WPE reasoning topic routes. No original question or author-only solution is published here.">
+<title>Reasoning routes · WPE review preview | Grade9 v4.0</title>
+<link rel="stylesheet" href="../../site.css">
+<style>
+body{background:#f4f8fa;color:#1c3646}
+.route-shell{max-width:1090px;margin:22px auto 60px;padding:0 18px}
+.route-panel,.route-card{background:#fff;border:1px solid #d4e1e9;border-radius:13px;padding:18px;margin:14px 0}
+.route-panel h1{font-size:clamp(1.65rem,3.3vw,2.3rem);line-height:1.17}
+.route-panel h2{font-size:1.2rem}
+.route-panel p,.route-card p{line-height:1.6}
+.route-alert{background:#fff5e6;border-left:5px solid #b88a3a}
+.route-alert strong{color:#7c5519}
+.route-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.route-card{margin:0;min-width:0}
+.route-card h3{font-size:1.06rem;line-height:1.35;margin:8px 0}
+.route-card[data-match="yes"]{border:3px solid #2d8076}
+.route-tag{font-size:.75rem;color:#365b6b;font-weight:800}
+.route-links{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.route-links a{display:inline-flex;align-items:center;min-height:40px;border:1px solid #bad0dd;border-radius:8px;padding:8px 10px;text-decoration:none;background:#f3f9fb;color:#195d75;font-size:.88rem;font-weight:750}
+.route-links a:focus-visible{outline:3px solid #ba8732;outline-offset:2px}
+.route-muted{color:#526d7a;font-size:.88rem}
+@media(max-width:690px){.route-grid{grid-template-columns:1fr}.route-links{flex-direction:column}.route-links a{width:100%}}
+</style>
+</head><body>
+<main class="route-shell">
+<section class="route-panel">
+<p class="route-tag">PHYSICS / WORK, POWER &amp; ENERGY / REVIEW ONLY</p>
+<h1>Reasoning routes for difficult WPE questions</h1>
+<p>The repository contains author-created teaching and independent-task drafts. Here you can inspect their proposed topic links, revisit existing foundation demonstrations, and return to the exact Question Bank entry. The authored packs themselves are <strong>not learner-approved lessons</strong> and their worked references are not exposed through this route.</p>
+<nav aria-label="WPE destinations" class="route-links"><a href="index.html">Chapter home</a><a href="learn-challenge.html">Five existing foundation demonstrations</a><a href="question-bank.html">Question Bank</a><a href="question-coverage.html">All 74 questions · lesson gaps</a></nav>
+</section>
+<section class="route-panel route-alert" aria-label="Academic review gate">
+<strong>0 academically admitted · Core1A/Core1B NOT_ACCEPTED · QRT NOT_RUN</strong>
+<p>Theme associations are author proposals, not canonical prerequisites or qualified D3/D4 classifications. This is a navigation preview. Selecting a topic is not evidence of mastery, and no independent challenge answer is provided here.</p>
+</section>
+<section class="route-panel" aria-live="polite"><h2>Return to your question</h2><p id="route-status">Checking source/route identity…</p><nav id="return-links" class="route-links" aria-label="Return to question"></nav></section>
+<section aria-label="Author-proposed construction and extension index">
+<h2>Proposed reasoning constructions and targeted extensions</h2>
+<p class="route-muted">All C01–C08 and E01–E05 have separate six-stage interactive student practice lessons. Each teaches an authored model and a different challenge before the exact-question return. These are suggested study routes, not verified prerequisites.</p>
+<div class="route-grid" id="route-cards"><p>Reading review-only route inventory…</p></div>
+</section>
+</main>
+<script>
+(async()=>{
+'use strict';
+const status=document.getElementById('route-status'),returns=document.getElementById('return-links'),cards=document.getElementById('route-cards');
+const id=new URLSearchParams(location.search).get('question');
+const valid=x=>typeof x==='string'&&/^[A-Za-z0-9-]{2,64}$/.test(x);
+const txt=(parent,label,cls)=>{const p=document.createElement('p');if(cls)p.className=cls;p.textContent=label;parent.append(p);};
+const addLink=(parent,href,label)=>{const a=document.createElement('a');a.href=href;a.textContent=label;parent.append(a);};
+let d;
+try{
+ const response=await fetch('reasoning-paths.review.json',{cache:'no-store'});
+ if(!response.ok)throw new Error('Missing source-bound route evidence');
+ d=await response.json();
+ if(d.schema!=='wpe-reasoning-route-preview/v1'||d.policy!=='REVIEW_NAVIGATION_ONLY__NOT_CANONICAL_PREREQUISITE'||
+    d.academic?.admitted!==0||d.academic?.native_core1a!=='NOT_ACCEPTED'||d.academic?.native_core1b!=='NOT_ACCEPTED'||
+    d.academic?.qrt!=='NOT_RUN'||d.academic?.owner!=='PENDING'||d.counts?.qualified_learner_routes!==0||
+    !Array.isArray(d.constructions)||d.constructions.length!==13||d.constructions.some(x=>x.approved_core1a_url!==null||x.approved_core1b_url!==null)){
+  throw new Error('Changed academic authority: refuse inferred routes');
+ }
+}catch(error){status.textContent='HOLD: the reviewed route evidence is missing or authority changed. Return to Chapter home.';cards.textContent='No route inferred.';return;}
+const matches=d.constructions.filter(c=>c.proposed_source_ids.some(s=>s.id===id));
+const pilot=d.pilot.find(p=>p.id===id);
+const present=d.constructions.some(c=>c.proposed_source_ids.some(s=>s.id===id&&s.reader_present))||!!pilot?.reader_present;
+if(!id){status.textContent='No specific question selected. Browse review-only topic groups below.';}
+else if(!valid(id)){status.textContent='Invalid question identifier. No route selected.';}
+else if(present){
+ status.textContent=id+' · review-only question · '+(matches.length?matches.map(c=>c.id).join(', ')+' are proposed themes.':'no proposed construction mapped.');
+ addLink(returns,'../../preview/question-status.html?question='+encodeURIComponent(id),'Return to '+id+' (review candidate)');
+}else if(pilot&&!pilot.reader_present){status.textContent=id+' is absent from the 74-entry Question Bank. No reader link is supplied.';}
+else{status.textContent='No source-bound route exists for '+id+'. No academic mapping is inferred.';}
+// Add the new evidence-based 74-question practice overlay without changing
+// the pre-existing thirteen author-proposed QRT/Blueprint associations.
+try{
+ const r=await fetch('learning-coverage-r1.json',{cache:'no-store'});
+ if(r.ok){
+  const coverage=await r.json();
+  if(coverage.schema==='wpe-learner-coverage-r1/v1'&&coverage.questions?.length===74&&id&&valid(id)){
+   const plan=coverage.questions.find(q=>q.source_id===id);
+   if(plan){
+    // Preserve the existing review-index contract for questions without
+    // a proposed source-to-construction association. The separate Learn
+    // Challenge tile handles related-only practice and missing gaps.
+    if(present||plan.fit==='FOCUSED_NEW'){
+      addLink(returns,'learn-challenge.html?question='+encodeURIComponent(id)+'#question-routes','Pick a source-specific learning route · '+id);
+    }
+    if(plan.fit==='FOCUSED_NEW'&&/^F0[1-8]$/.test(plan.primary_lesson)){
+      status.textContent=id+' · new focused interactive study route '+plan.primary_lesson+'. This is practice, not an admitted examination classification.';
+      addLink(returns,plan.lesson_href,'New focused challenge · '+plan.primary_lesson);
+    }
+   }
+  }
+ }
+}catch(_){/* Existing thirteen author-bound review routes remain usable. */}
+cards.replaceChildren();
+for(const route of d.constructions){
+ const card=document.createElement('article');card.className='route-card';card.id=route.id||'wpe-extension-pending';const match=matches.some(c=>c.id===route.id);card.dataset.match=match?'yes':'no';
+ const h=document.createElement('h3');h.textContent=(route.id||'Extension pending')+' · '+route.title;card.append(h);
+ txt(card,route.authored_pack_present?'Author-created guided/fresh draft exists · NOT ACCEPTED':'Author construction not yet drafted · HOLD','route-tag');
+ txt(card,'Proposed source themes (not verified prerequisites):','route-muted');
+ const links=document.createElement('div');links.className='route-links';
+ for(const s of route.proposed_source_ids){
+  if(s.reader_present){addLink(links,'../../preview/question-status.html?question='+encodeURIComponent(s.id),s.id+' · View question');}
+  else txt(links,s.id+' · absent from reader','route-muted');
+ }
+ card.append(links);
+ const found=document.createElement('div');found.className='route-links';
+ if(['WPE-C01','WPE-C02','WPE-C03','WPE-C04','WPE-C05','WPE-C06','WPE-C07','WPE-C08'].includes(route.id)){
+   const code=route.id.slice(-3);
+   const sourceMatch=valid(id)&&route.proposed_source_ids.some(s=>s.id===id&&s.reader_present);
+   const params=sourceMatch?'?question='+encodeURIComponent(id):'';
+   addLink(found,'d3d4-self-tutor.html'+params+'#'+code,'Learn → Try a different challenge · '+code);
+   if(id==='EX-M79'&&code==='C03'&&sourceMatch)txt(card,'Model comparison: the original question gives a velocity–distance law; do not assume it describes constant power.','route-muted');
+ }
+ for(const anchor of route.foundation_anchors){
+  if(!d.foundations.includes(anchor))continue;
+  const params=id&&valid(id)&&match?'?question='+encodeURIComponent(id):'';
+  addLink(found,'learn-challenge.html'+params+'#'+encodeURIComponent(anchor),'Foundation: '+anchor.replace(/-/g,' '));
+ }
+ if(/^WPE-E0[1-5]$/.test(route.id)){
+   const code=route.id.slice(-3);
+   const sourceMatch=valid(id)&&route.proposed_source_ids.some(s=>s.id===id&&s.reader_present);
+   const params=sourceMatch?'?question='+encodeURIComponent(id):'';
+   addLink(found,'extension-learning.html'+params+'#'+code,'Learn → Fresh six-stage challenge · '+code);
+ }
+ card.append(found);cards.append(card);
+}
+})();
+</script>
+</body></html>

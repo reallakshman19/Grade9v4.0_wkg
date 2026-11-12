@@ -1,0 +1,25 @@
+{
+  "schema": "product-manifest/v1",
+  "product_id": "WPE-SYNTHETIC-NATIVE-CONTROL-R1",
+  "subject": "Physics",
+  "title": "WPE · private native integration draft",
+  "home_href": "../index.html",
+  "question_bank_href": "../review.html",
+  "package_refs": [
+    "D:/CodeD/g9v3.5/chatgpt/output/WPE_Core2_Native_Integration_R1_20261030/native/records.json"
+  ],
+  "bank_refs": [
+    "D:/CodeD/g9v3.5/chatgpt/output/WPE_Core2_Native_Integration_R1_20261030/native/synthetic-bank.json"
+  ],
+  "output_roles": [
+    "CORE2"
+  ],
+  "selection": {
+    "microtopics": [],
+    "core2": [
+      "SYN-WPE-DIRECTION-CONTROL-01"
+    ],
+    "core2a": [],
+    "core2b": []
+  }
+}

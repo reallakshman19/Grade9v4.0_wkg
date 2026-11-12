@@ -1,0 +1,432 @@
+[
+  {
+    "original": "C:\\Users\\reall\\Downloads\\WPE_CORE2_R2_ENGINEERING_HANDOFF_PUBLIC_SAFE_20261030.zip",
+    "retained": "originals\\WPE_CORE2_R2_ENGINEERING_HANDOFF_PUBLIC_SAFE_20261030.zip",
+    "sha256": "d2a24619b1def84bcc538615f6032a94f4161a5697067f60984280f1186a40e2"
+  },
+  {
+    "original": "C:\\Users\\reall\\Downloads\\WPE_CORE2_R2_OWNER_FULL_HANDOFF_20261030.zip",
+    "retained": "originals\\WPE_CORE2_R2_OWNER_FULL_HANDOFF_20261030.zip",
+    "sha256": "8609bcbdcb224abc37f7b72c50a15ecfb6abcacfbac5b585a40f164f900a6b1e"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\AUTHORITY.json",
+    "retained": "textbook-baseline\\AUTHORITY.json",
+    "sha256": "5d3763e0607ca372f2b602002c13aa769ac16fca474189a7d379fb60a342bddf"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\build_candidate.py",
+    "retained": "textbook-baseline\\build_candidate.py",
+    "sha256": "8eb6dc3da1e3b16a9849a11e1461f023b8c0491c9b4c424fb68ff099af4bcbea"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\concept.html",
+    "retained": "textbook-baseline\\concept.html",
+    "sha256": "a04044d22651487428fb7c9b8bcf0724d0c5b01185e6ce18591d6989b80414a3"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\CONCEPT_NOTE.md",
+    "retained": "textbook-baseline\\CONCEPT_NOTE.md",
+    "sha256": "e60eb53a49d71ae9ba930881c9aa422f4c42b99074d15a37acf82218e28ffd93"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\CONTINUITY.md",
+    "retained": "textbook-baseline\\CONTINUITY.md",
+    "sha256": "8104dd4db45f7a4d4bb3036dd61aca155f2e7407ee46507a1bbd52217744e4f3"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\DELIVERY_MANIFEST.json",
+    "retained": "textbook-baseline\\DELIVERY_MANIFEST.json",
+    "sha256": "2070f820ba827a8dbaf83128759751081ac42ce5ea0e8afba6f8829a2daeca16"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\DELIVERY_REPORT.md",
+    "retained": "textbook-baseline\\DELIVERY_REPORT.md",
+    "sha256": "3c958ff00226b9558c4f1b44a5645c5e808d0ad7cfdeca457804ea2896abc9f1"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\finish_candidate.py",
+    "retained": "textbook-baseline\\finish_candidate.py",
+    "sha256": "c9e2c08f5d6c9e77e41c271fff4d18f925ee606b2ae7a988b31ec65e9510ef3b"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\index.html",
+    "retained": "textbook-baseline\\index.html",
+    "sha256": "b14eae66d21eaecbe2e894aa613d91061acb6901ce35af9379b003cf1615a3a1"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\package_candidate.py",
+    "retained": "textbook-baseline\\package_candidate.py",
+    "sha256": "a31f13dd9f7a6d23b287d78e471cec56b37ba7e5afa00a883e28588d39161822"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\review.html",
+    "retained": "textbook-baseline\\review.html",
+    "sha256": "9e00f8bf4c624cf31f000a33b2b00cbc25ac3ea85fa714a4860776e9caced446"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\css\\modern-learner.css",
+    "retained": "textbook-baseline\\css\\modern-learner.css",
+    "sha256": "1534437082327a575623b4044949de0bee500dfa095cad2f0236f846b5fd73c6"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\css\\tablet-12-7.css",
+    "retained": "textbook-baseline\\css\\tablet-12-7.css",
+    "sha256": "a8d2f54184818bf4fa3f5acdb61e6efc2c8103e475b0bb4a4c0747d8898455ab"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\js\\display-controls.js",
+    "retained": "textbook-baseline\\js\\display-controls.js",
+    "sha256": "2121a1e242220e38cb93dc6e900ee0d0c223b1eab4d32a07398fd632a7d3de1e"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\js\\site-header.js",
+    "retained": "textbook-baseline\\js\\site-header.js",
+    "sha256": "770e990d173e66ba0cbbc04d2eded76f66f998c044ee6917ac507f60e2177604"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\native\\bank.json",
+    "retained": "textbook-baseline\\native\\bank.json",
+    "sha256": "5fc11d368f8264494b86364ab06c6bf454525cb511d0cee3c17df7aa4eaadcd8"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\native\\intake.json",
+    "retained": "textbook-baseline\\native\\intake.json",
+    "sha256": "8dfc0ad204179f4c9954e4d4fb78b022bb3e7913a9c02daa13fae84539fca181"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\native\\manifest.json",
+    "retained": "textbook-baseline\\native\\manifest.json",
+    "sha256": "dc97d33a35a7cb7bb9b209156905033b16278b4596a1523989ba0ab231d63a75"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\native\\records.json",
+    "retained": "textbook-baseline\\native\\records.json",
+    "sha256": "14e07f1c459b43d5f73ef355558637b9ee776121de24b1b4482ea654e8c49bee"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\rendered\\core2.html",
+    "retained": "textbook-baseline\\rendered\\core2.html",
+    "sha256": "fc17badf85ff872e1e7c0fefae848229093fb50962d3dcc835c31ed11540d8ab"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\rendered\\index.html",
+    "retained": "textbook-baseline\\rendered\\index.html",
+    "sha256": "0fa1f9f58a75b762f32710e936b40840b88ac3055752da350990c7ea39d00eb8"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\rendered\\render-receipt.json",
+    "retained": "textbook-baseline\\rendered\\render-receipt.json",
+    "sha256": "5b3228565b6f6723ab37b0b130655e5e4c526af6b13895b8784c6aa2b20709ab"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\review\\BROWSER_CHECK.json",
+    "retained": "textbook-baseline\\review\\BROWSER_CHECK.json",
+    "sha256": "81519a8df5ca8a0645055a59288dd70e906c502431414311026eead5eb943a07"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\review\\canonical-original.json",
+    "retained": "textbook-baseline\\review\\canonical-original.json",
+    "sha256": "84fe88387e33a03bf87bf1f537bae8c447f5b86f0d77a854c899ad70f12d8258"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\review\\CLEANUP.json",
+    "retained": "textbook-baseline\\review\\CLEANUP.json",
+    "sha256": "16dc37b6ad58d7a8ffdedee702077f57f8f799e8891f5dadb2b82f511761e729"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\review\\core2-template.zip",
+    "retained": "textbook-baseline\\review\\core2-template.zip",
+    "sha256": "433b356a26ebfdbfa922cbaa7401e7c224f5c095f4bae8f951b4e97154937d74"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\review\\core2_v2.py",
+    "retained": "textbook-baseline\\review\\core2_v2.py",
+    "sha256": "2ce88d609785c8f82be2c5ef2d2455d43593cddc1d8e1bcc410f55d174d2c1ae"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\review\\DEPENDENCY_SEAL.json",
+    "retained": "textbook-baseline\\review\\DEPENDENCY_SEAL.json",
+    "sha256": "fbc34a8bfb29b6e785d7e7d8e5533a551367f791b5c552fe089af7cd9444afa7"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\review\\EXTRACT_HASH_READBACK.json",
+    "retained": "textbook-baseline\\review\\EXTRACT_HASH_READBACK.json",
+    "sha256": "fe09c673aa73894f022342db447622b991ff95067667968e013832e9594e1cd6"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\review\\interactive-page-blueprints.v1.json",
+    "retained": "textbook-baseline\\review\\interactive-page-blueprints.v1.json",
+    "sha256": "75f6bd43b31dfdf555fb26e8b36417e9c830a563898264dbe917d4254828653e"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\review\\learner-question-metadata.v1.json",
+    "retained": "textbook-baseline\\review\\learner-question-metadata.v1.json",
+    "sha256": "6e6f28bef1182222babf79508288c599585f5f55245abcb934892a1e2b65cfdf"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\review\\learner_metadata.py",
+    "retained": "textbook-baseline\\review\\learner_metadata.py",
+    "sha256": "11eb200959d2b009f3902eca9df5aba3f8963c0830c7c7c1f33f6036f9ac830c"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\review\\NATIVE_INPUT_CHECK.json",
+    "retained": "textbook-baseline\\review\\NATIVE_INPUT_CHECK.json",
+    "sha256": "ee16f8f45de09c8fc5824185cd1d87bc48842be53350974cf48b8a38c7d5027e"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\review\\owner_bank.py",
+    "retained": "textbook-baseline\\review\\owner_bank.py",
+    "sha256": "5f662c331d50d9976dbb43a17fff1725d93bbf6715120c1e6b29d2953e6a0648"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\review\\package.schema.json",
+    "retained": "textbook-baseline\\review\\package.schema.json",
+    "sha256": "b645f4b5beb9132d6e38b628b1416846201d44dec16a5f04af9a252e9e891d93"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\review\\product_coverage.py",
+    "retained": "textbook-baseline\\review\\product_coverage.py",
+    "sha256": "417aa2c3f087d62e645d02129144cc9110f145be19566cf5b001e4ff7ac8c310"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\review\\product_manifest.py",
+    "retained": "textbook-baseline\\review\\product_manifest.py",
+    "sha256": "a0c72f33a65ac77cfa3deee7c3b048c9f6b3f23c7be976bbc37f97b5d256ade2"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\review\\questions.json",
+    "retained": "textbook-baseline\\review\\questions.json",
+    "sha256": "072bb3d8e3b9a17ca029f5178082f62ec9dde53159e7bc1495cd7dfb873ec000"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\review\\REGRESSION_RESULTS.json",
+    "retained": "textbook-baseline\\review\\REGRESSION_RESULTS.json",
+    "sha256": "63cc7d86201908399c1d72ee8528571680a55acd1228c7bdf49144f88e6bdb7a"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\review\\render_core.py",
+    "retained": "textbook-baseline\\review\\render_core.py",
+    "sha256": "0ec1acc79750f24af2000adeb2549068414032ddcc72347b4bae97551fcceb06"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\review\\SOURCE_PINS.json",
+    "retained": "textbook-baseline\\review\\SOURCE_PINS.json",
+    "sha256": "5f84a0b7fe7e7c063475a999bbf9b2036a12d46cc9eb50b6f6ca8d54d103a09c"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\review\\STATIC_LINKS.json",
+    "retained": "textbook-baseline\\review\\STATIC_LINKS.json",
+    "sha256": "77fd89e14988f2029aeb80e4235cd749c000173cb83ae9af81419bddc6a9ebaf"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\review\\web_blueprint_contract.py",
+    "retained": "textbook-baseline\\review\\web_blueprint_contract.py",
+    "sha256": "cf07293da6d01214a19a76637f432a5e1bd47796101cce07dad76a62b1d922b3"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\sources\\page_01.jpg",
+    "retained": "textbook-baseline\\sources\\page_01.jpg",
+    "sha256": "577fa3448aeb2cb72387d827ab67d7ad2c47041fa8dba8473d74193455ceb55a"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\sources\\page_02.jpg",
+    "retained": "textbook-baseline\\sources\\page_02.jpg",
+    "sha256": "49dfbcfdf5c17eddd3a88c5383ffb702d55150118bcb825d9b9257417e2214d0"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\sources\\page_03.jpg",
+    "retained": "textbook-baseline\\sources\\page_03.jpg",
+    "sha256": "74af7bf6ef7a57d63259c68e871eaa6db14d4912153d253a545ab1f018c346b9"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\sources\\page_04.jpg",
+    "retained": "textbook-baseline\\sources\\page_04.jpg",
+    "sha256": "6ca8b187415073f13a5c4638fc1dc42c4a09a7c682f663d58b384c089701257c"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\sources\\page_05.jpg",
+    "retained": "textbook-baseline\\sources\\page_05.jpg",
+    "sha256": "f399adb7fa0231871a2a4ec753cbcd0e81c27644daf5511286098c3292f26612"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\sources\\page_06.jpg",
+    "retained": "textbook-baseline\\sources\\page_06.jpg",
+    "sha256": "bef1126f750a833860588c49295fc50e28de5eb485b8acb5932e7a2388e5d500"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\sources\\page_07.jpg",
+    "retained": "textbook-baseline\\sources\\page_07.jpg",
+    "sha256": "e05651537a9b3ea961304ef281f30cc900b3e6331076346273bc82c57a2ed6b9"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\sources\\page_08.jpg",
+    "retained": "textbook-baseline\\sources\\page_08.jpg",
+    "sha256": "a4cdb3f5b960cf079bbf0627f461f4bff59bd1cb5880f8139609db3f10beafbd"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\sources\\page_09.jpg",
+    "retained": "textbook-baseline\\sources\\page_09.jpg",
+    "sha256": "4847ec6173954d7e50d89af62db0972db12a3cfde654666a4e9fd97ce734d646"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\sources\\work_energy_power.md",
+    "retained": "textbook-baseline\\sources\\work_energy_power.md",
+    "sha256": "a33f19b308ea81c7eb527546e44b6bbd4b4adf26aed7116013ac01218cc1bbb8"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\output\\playwright\\final-reader.png",
+    "retained": "textbook-baseline\\output\\playwright\\final-reader.png",
+    "sha256": "20ff29921530b957b0e0b6a87b9058a8782fd75e4d6dbb538f77de64cfd9a17b"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\output\\playwright\\mobile-question12.png",
+    "retained": "textbook-baseline\\output\\playwright\\mobile-question12.png",
+    "sha256": "56b8cfb822645acd216a625ba6971b0e1066a13a6cdab3ca2af9d858dfac8bbd"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\output\\playwright\\question1-solution.png",
+    "retained": "textbook-baseline\\output\\playwright\\question1-solution.png",
+    "sha256": "12dcc728658c04f7b0755c6856bc93ca7b293fbe6e2e5db33da335bc5101a9a1"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\output\\playwright\\server.json",
+    "retained": "textbook-baseline\\output\\playwright\\server.json",
+    "sha256": "a642301db87a606342009f5bb6999a5e51b61e0650d3d45b5956378e29b33c7b"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\output\\playwright\\server.stderr.log",
+    "retained": "textbook-baseline\\output\\playwright\\server.stderr.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\output\\playwright\\server.stdout.log",
+    "retained": "textbook-baseline\\output\\playwright\\server.stdout.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\output\\playwright\\server2.json",
+    "retained": "textbook-baseline\\output\\playwright\\server2.json",
+    "sha256": "5e35e38bcfd88075ef748d8ddd9538c60e2c28da0eb8c6f5a9e35bf05c3bfd4c"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\output\\playwright\\server2.stderr.log",
+    "retained": "textbook-baseline\\output\\playwright\\server2.stderr.log",
+    "sha256": "3a3b3bc633c48e86ad658c3a60fcbe2d046954d09c45213d4a7091b04166f5c0"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\output\\playwright\\server2.stdout.log",
+    "retained": "textbook-baseline\\output\\playwright\\server2.stdout.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\output\\playwright\\solution-open.png",
+    "retained": "textbook-baseline\\output\\playwright\\solution-open.png",
+    "sha256": "218f45c6f026a0b84f7ccdf1aff1908df502aae4568d19083238abd6a13ab54a"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\sources\\images\\fig_01_work_sign_positive.svg",
+    "retained": "textbook-baseline\\sources\\images\\fig_01_work_sign_positive.svg",
+    "sha256": "912c3b84c157e78916584db95bd520c45ed31e76ad73c900175a1ea93ac1b804"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\sources\\images\\fig_02_work_sign_negative.svg",
+    "retained": "textbook-baseline\\sources\\images\\fig_02_work_sign_negative.svg",
+    "sha256": "a6ffa32dbc3e6918f06660f3f5b4b61f9ef965d9849c72663c88fb71ae9f16c9"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\sources\\images\\fig_03_fbd_string_raising.svg",
+    "retained": "textbook-baseline\\sources\\images\\fig_03_fbd_string_raising.svg",
+    "sha256": "9d408dcca1198fd6f5b08f63359c12007ae9428732be9d48dde32e8170e36df4"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\sources\\images\\fig_04_variable_force_calculus.svg",
+    "retained": "textbook-baseline\\sources\\images\\fig_04_variable_force_calculus.svg",
+    "sha256": "ff0b49e26c724f668f225930b0c928d52a7bffb4653d83c5189423580e4e8b74"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\sources\\images\\fig_05_friction_direction.svg",
+    "retained": "textbook-baseline\\sources\\images\\fig_05_friction_direction.svg",
+    "sha256": "a5db2db77e7149b546fe34e9a081a9863024b9bf774e57c02035d9867302e710"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\sources\\images\\fig_06_incline_block.svg",
+    "retained": "textbook-baseline\\sources\\images\\fig_06_incline_block.svg",
+    "sha256": "c5a896866e7fcca2b2dd82e8408394e655ab8b4ef8edda3a3eb6d80cbad6ccd5"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\sources\\images\\fig_07_incline_fbd.svg",
+    "retained": "textbook-baseline\\sources\\images\\fig_07_incline_fbd.svg",
+    "sha256": "98c664df1595322694f974c7fde38699fc337a6f7829786b00e0dd5fd133e6bd"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\sources\\images\\fig_08_curved_path_work.svg",
+    "retained": "textbook-baseline\\sources\\images\\fig_08_curved_path_work.svg",
+    "sha256": "d62c1f8955757c71486cce4f623a12042ea7da37043674a8dff4752c425c3ac6"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\sources\\images\\fig_09_overhanging_chain.svg",
+    "retained": "textbook-baseline\\sources\\images\\fig_09_overhanging_chain.svg",
+    "sha256": "40510540074ad29b0f7634e680f8235356f64dbe969eb28b164edb7e30a00aa0"
+  },
+  {
+    "original": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\sources\\images\\fig_10_spring_block_wall.svg",
+    "retained": "textbook-baseline\\sources\\images\\fig_10_spring_block_wall.svg",
+    "sha256": "c0a90c6fffcc88731316cb17fe34439e4bdccceda7a34d8deb585a2ba1d61bbc"
+  },
+  {
+    "original": "C:\\CodeC\\Grade9v3.5\\Shared\\tools\\render_core.py",
+    "retained": "dependencies\\Shared\\tools\\render_core.py",
+    "sha256": "0ec1acc79750f24af2000adeb2549068414032ddcc72347b4bae97551fcceb06"
+  },
+  {
+    "original": "C:\\CodeC\\Grade9v3.5\\Shared\\tools\\core2_v2.py",
+    "retained": "dependencies\\Shared\\tools\\core2_v2.py",
+    "sha256": "2ce88d609785c8f82be2c5ef2d2455d43593cddc1d8e1bcc410f55d174d2c1ae"
+  },
+  {
+    "original": "C:\\CodeC\\Grade9v3.5\\Shared\\tools\\owner_bank.py",
+    "retained": "dependencies\\Shared\\tools\\owner_bank.py",
+    "sha256": "5f662c331d50d9976dbb43a17fff1725d93bbf6715120c1e6b29d2953e6a0648"
+  },
+  {
+    "original": "C:\\CodeC\\Grade9v3.5\\Shared\\tools\\product_manifest.py",
+    "retained": "dependencies\\Shared\\tools\\product_manifest.py",
+    "sha256": "a0c72f33a65ac77cfa3deee7c3b048c9f6b3f23c7be976bbc37f97b5d256ade2"
+  },
+  {
+    "original": "C:\\CodeC\\Grade9v3.5\\Shared\\tools\\learner_metadata.py",
+    "retained": "dependencies\\Shared\\tools\\learner_metadata.py",
+    "sha256": "11eb200959d2b009f3902eca9df5aba3f8963c0830c7c7c1f33f6036f9ac830c"
+  },
+  {
+    "original": "C:\\CodeC\\Grade9v3.5\\Shared\\tools\\product_coverage.py",
+    "retained": "dependencies\\Shared\\tools\\product_coverage.py",
+    "sha256": "417aa2c3f087d62e645d02129144cc9110f145be19566cf5b001e4ff7ac8c310"
+  },
+  {
+    "original": "C:\\CodeC\\Grade9v3.5\\Shared\\tools\\web_blueprint_contract.py",
+    "retained": "dependencies\\Shared\\tools\\web_blueprint_contract.py",
+    "sha256": "cf07293da6d01214a19a76637f432a5e1bd47796101cce07dad76a62b1d922b3"
+  },
+  {
+    "original": "C:\\CodeC\\Grade9v3.5\\Shared\\library\\package.schema.json",
+    "retained": "dependencies\\Shared\\library\\package.schema.json",
+    "sha256": "b645f4b5beb9132d6e38b628b1416846201d44dec16a5f04af9a252e9e891d93"
+  },
+  {
+    "original": "C:\\CodeC\\Grade9v3.5\\Shared\\library\\competitive-exam-bank.schema.json",
+    "retained": "dependencies\\Shared\\library\\competitive-exam-bank.schema.json",
+    "sha256": "1447c7219a94bf1480878c79943d95478d82360a37ea8817c69fa1aac6660918"
+  },
+  {
+    "original": "C:\\CodeC\\Grade9v3.5\\Shared\\web\\interactive-page-blueprints.v1.json",
+    "retained": "dependencies\\Shared\\web\\interactive-page-blueprints.v1.json",
+    "sha256": "75f6bd43b31dfdf555fb26e8b36417e9c830a563898264dbe917d4254828653e"
+  },
+  {
+    "original": "C:\\CodeC\\Grade9v3.5\\Physics\\library\\phy-work-energy-power.v1.json",
+    "retained": "dependencies\\Physics\\library\\phy-work-energy-power.v1.json",
+    "sha256": "84fe88387e33a03bf87bf1f537bae8c447f5b86f0d77a854c899ad70f12d8258"
+  }
+]

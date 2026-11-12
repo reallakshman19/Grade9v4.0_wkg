@@ -1,0 +1,103 @@
+{
+  "sequence": 13,
+  "task_identity": "Q-ID-13",
+  "stable_id": "Q-PHY-WPE-JEEM-2022-07-29-S1-13",
+  "source_id": "EX-M47",
+  "lot": "LOT-04",
+  "paper": "JEE Main 2022 (Online) 29th July Morning Shift",
+  "source_type": "SCRAPED_EXTRACT_EXAMGOAL",
+  "source_custody": "VERIFIED_TEXT_ONLY",
+  "stem_text": "A ball is projected with kinetic energy E, at an angle of 60^(\u2218) to the horizontal. The kinetic energy of this ball at the highest point of its flight will become :",
+  "stem_sha256": "99520cf83728c938297ec6a067aa32f4635bf8a7f2bd20d581941f0d6b41753d",
+  "source_hash": "99520cf83728c938297ec6a067aa32f4635bf8a7f2bd20d581941f0d6b41753d",
+  "source_record_digest": "99520cf83728c938297ec6a067aa32f4635bf8a7f2bd20d581941f0d6b41753d",
+  "duplicate_parent": null,
+  "scope": "IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "VERIFIED_NONE_REQUIRED",
+  "options": [
+    "A: Zero",
+    "B: (\ud835\udc38)/(2)",
+    "C: (\ud835\udc38)/(4)",
+    "D: E"
+  ],
+  "unbound_remote_figures": [],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "PROJECTILE_PEAK_KINETIC_ENERGY",
+    "assumed_parameters_from_coaching_figure": "None required (pure text). Zero air resistance.",
+    "derivation": "Initial launch kinetic energy: E = 1/2 m v^2. At the highest point of projectile flight, the vertical velocity component is zero (v_y = 0), while horizontal velocity remains constant: v_x = v * cos(60 deg) = v * (1/2) = v/2. Kinetic energy at peak: E' = 1/2 m (v_x)^2 = 1/2 m (v/2)^2 = 1/4 (1/2 m v^2) = E/4.",
+    "predicted_option": "C: (\ud835\udc38)/(4)",
+    "limiting_cases": "If projected vertically (90 deg), KE at peak is zero (Option A). If projected horizontally (0 deg), KE at peak is E (Option D). For 60 deg, KE is E * cos^2(60 deg) = E/4."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "status": "UNREVIEWED",
+    "decisive_operation": "RETRIEVE",
+    "crux": "Retrieving the constancy of horizontal velocity in 2D projectile motion and squaring the cosine factor: E_peak = E cos^2(60 deg) = E/4.",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 0,
+          "evidence": "Standard parabolic trajectory velocity resolution."
+        },
+        "representation_translation": {
+          "score": 0,
+          "evidence": "Direct symbolic manipulation."
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Identify horizontal speed -> compute kinetic energy."
+        },
+        "algebra_computational_load": {
+          "score": 0,
+          "evidence": "Cos(60 deg) = 1/2, (1/2)^2 = 1/4."
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Prevalent beginner misconception that speed or kinetic energy is zero at highest point."
+        }
+      },
+      "total": 2,
+      "band": "D1"
+    },
+    "demand_proposal": {
+      "primary": "RETRIEVE",
+      "secondary": [
+        "APPLY"
+      ],
+      "candidate_cell": "QRT-RETRIEVE-D1",
+      "status": "PROPOSED"
+    },
+    "representation_requirements": [
+      "EQUATION"
+    ],
+    "independent_checks": [
+      "LIMITING_CASE"
+    ],
+    "wrong_route_hypotheses": [
+      {
+        "route": "Selecting Zero (Option A) due to conflating peak vertical velocity with total velocity",
+        "status": "HYPOTHESIS"
+      },
+      {
+        "route": "Omitting the square: E * cos(60 deg) = E/2 (Option B)",
+        "status": "HYPOTHESIS"
+      }
+    ]
+  },
+  "qrt": "UNREVIEWED",
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_REVIEW",
+  "b2_blind_status": "NOT_RUN",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)",
+    "HOLD:SPEC_PENDING_D1 (no common D1/D2 teaching blueprint qualified)"
+  ],
+  "next_action": "Verify NTA master answer key for 2022-07-29 S1."
+}

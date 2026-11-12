@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<meta name="description" content="Grade9 v4.0 WPE eight review batches (B02–B09): synthetic teaching demonstrations and source-bound QRT evidence cases. No academic approvals. Not academically admitted.">
+<title>WPE Batch Library · Grade9 v4.0</title>
+<style>
+:root {
+  color-scheme: light;
+  --navy: #14344e;
+  --navy-dark: #0d2335;
+  --fg: #193047;
+  --muted: #536b7b;
+  --blue: #12609a;
+  --blue-hover: #0f4d7e;
+  --bg: #f2f6f9;
+  --card: #ffffff;
+  --line: #d5e1eb;
+  --warn: #fff6e8;
+  --warn-border: #b88425;
+  --focus-ring: rgba(18, 96, 154, 0.35);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { color: #165b95; }
+a:focus-visible, button:focus-visible {
+  outline: 3px solid #c38b24;
+  outline-offset: 3px;
+}
+header {
+  background: var(--navy);
+  color: #fff;
+  padding: 24px max(18px, calc((100vw - 1110px)/2)) 38px;
+}
+header a { color: #e4f3ff; }
+header nav {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 0.88rem;
+}
+h1 {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  letter-spacing: -0.035em;
+  line-height: 1.13;
+  margin: 26px 0 12px;
+}
+header p {
+  max-width: 760px;
+  color: #d9e8f3;
+  margin: 0;
+}
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #93c5fd;
+}
+main {
+  max-width: 1140px;
+  margin: auto;
+  padding: 22px 20px 44px;
+}
+.notice {
+  padding: 18px 20px;
+  border: 1px solid #eccd92;
+  border-left: 5px solid var(--warn-border);
+  background: var(--warn);
+  border-radius: 13px;
+  margin: 0 0 24px;
+}
+.notice strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #78350f;
+}
+.notice p {
+  margin: 0;
+  color: #5e4a29;
+  font-size: 0.95rem;
+}
+.steward {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px;
+  margin: 0 0 24px;
+}
+.steward h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  color: var(--navy);
+}
+.steward p {
+  margin: 8px 0;
+  color: var(--fg);
+}
+.steward ol {
+  padding-left: 22px;
+}
+.steward li {
+  margin-bottom: 7px;
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0 0 28px;
+}
+.stat {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 18px 20px;
+  border-radius: 12px;
+}
+.stat strong {
+  font-size: 2rem;
+  display: block;
+  line-height: 1.2;
+  color: var(--navy);
+}
+.stat span {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 0 0 16px;
+}
+h2 {
+  font-size: 1.4rem;
+  margin: 0;
+  color: var(--navy);
+}
+.subtle {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr));
+  gap: 20px;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(18, 52, 76, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+.card .meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 12px;
+}
+.pill {
+  background: #eef5fc;
+  color: #23577a;
+  border: 1px solid #cfe0ee;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 4px 10px;
+}
+.pill.id-pill {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+}
+.pill.hold {
+  background: #fff1dc;
+  color: #7d5317;
+  border-color: #ecd1a6;
+}
+.pill.qrt {
+  background: #f1f5f9;
+  color: #475569;
+  border-color: #cbd5e1;
+  font-size: 0.7rem;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.card h3 {
+  font-size: 1.25rem;
+  margin: 0 0 8px;
+  line-height: 1.3;
+  color: var(--navy);
+}
+.card .card-meta {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+.card ul {
+  padding-left: 20px;
+  margin: 0 0 20px;
+  font-size: 0.92rem;
+  flex-grow: 1;
+}
+.card li {
+  margin: 6px 0;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: auto;
+}
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  min-height: 44px;
+  border-radius: 9px;
+  background: var(--blue);
+  color: #ffffff !important;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  touch-action: manipulation;
+  transition: background 0.15s ease;
+}
+.cta:hover {
+  background: var(--blue-hover);
+}
+.cta.secondary {
+  border: 1px solid var(--line);
+  background: #ffffff;
+  color: #145586 !important;
+}
+.cta.secondary:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+footer {
+  margin-top: 36px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+@media (max-width: 680px) {
+  .stats { grid-template-columns: 1fr 1fr; }
+  .stat:last-child { grid-column: span 2; }
+  main { padding: 16px; }
+  .card, .steward { padding: 18px; }
+  header { padding: 22px 18px 30px; }
+  .actions { flex-direction: column; }
+  .cta { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+</style>
+<script data-grade9-nav defer src="../../site-nav.js"></script>
+</head>
+<body>
+
+<header>
+  <nav aria-label="Site navigation">
+    <a href="../index.html">Grade9 alpha home</a>
+    <a href="reader.html">Cumulative WPE Reader</a>
+    <a href="https://reallakshman19.github.io/Grade9v4.0/docs/agent-entry/index.html">Architecture and onboarding</a>
+  </nav>
+  <div class="eyebrow" style="margin-top: 25px">Grade9 v4.0 / Physics / Work–Power–Energy</div>
+  <h1>WPE batch library</h1>
+  <p>One stable entry point for successive sets of five review items: synthetic teaching subtopics and source-bound QRT evidence cases. Each completed batch has its own permanent HTML page; older batches remain accessible when new ones are added.</p>
+</header>
+
+<main>
+  <!-- Notice -->
+  <section class="notice" role="note" aria-label="Academic and rights boundary">
+    <strong>SYNTHETIC TECHNICAL PREVIEW · ZERO ACADEMIC ADMISSIONS · NOT A STUDENT RELEASE</strong>
+    <p>These are example diagrams and practice tasks for evaluating an authoring approach. They are not approved source illustrations, a replacement native Core2 reader, or an academic decision. The linked reader remains a draft. Do not reuse the public demonstration as a source of official answers or as independent qualification evidence.</p>
+  </section>
+
+  <!-- Cumulative Reader Hero -->
+  <section class="steward" aria-label="Cumulative WPE reader">
+    <h2>One merged technical reader — eight hosted batches</h2>
+    <p>Browse 40 review entries from B02–B09: 30 synthetic teaching demonstrations plus ten source/QRT evidence cases. The reader combines published presentation pages; it does <strong>not</strong> merge or approve academic/native question records.</p>
+    <p style="margin-top: 14px;">
+      <a class="cta" href="reader.html" style="color:white !important;">Open cumulative WPE reader</a> &nbsp;
+      <a href="b09-corrective-evidence.json" style="font-weight: 600; text-decoration: underline; margin-left: 8px;">See B09 corrective evidence map</a>
+    </p>
+  </section>
+
+  <!-- Metrics Row (Statically Pre-Rendered) -->
+  <div class="stats" aria-label="Review metrics">
+    <div class="stat"><strong id="batch-count">8</strong><span>Completed HTML batches</span></div>
+    <div class="stat"><strong id="topic-count">40</strong><span>Demonstrations and review cases</span></div>
+    <div class="stat"><strong>0</strong><span>Academically admitted items</span></div>
+  </div>
+
+  <!-- Published Batches (Statically Pre-Rendered in DOM) -->
+  <section aria-label="Published technical review batches">
+    <div class="section-heading">
+      <h2>Available batch pages</h2>
+      <span class="subtle" id="as-of">Catalogue as of 2026-11-02</span>
+    </div>
+
+    <div class="cards" id="batch-list">
+<article class="card" id="card-b09">
+  <div class="meta">
+    <span class="pill id-pill">B09</span>
+    <span class="pill hold">Review only</span>
+    <span class="pill qrt">NO_NEW_INDEPENDENT_QRT_REVIEW</span>
+  </div>
+  <h3>Five physics reconstructions and source-gate repair candidates</h3>
+  <p class="card-meta">2026-11-02 · 5 subtopics · Native integration NOT_RUN</p>
+  <ul>
+<li>Signed force–position area; four-graph source lead [EX-M56]</li>
+<li>Potential energy, turning points; missing curve lead [EX-M61]</li>
+<li>Constant-power kinematics; unscored SL2 mismatch repair [EX-M69]</li>
+<li>Spring compression with kinetic friction [EX-M105]</li>
+<li>Constant-force turning versus static equilibrium [EX-M106]</li>
+  </ul>
+  <div class="actions">
+    <a class="cta" href="b09-five-subtopics.html">Open B09 HTML</a>
+    <a class="cta secondary" href="b09-five-subtopics.html#handoff">View review handoff</a>
+  </div>
+</article>
+<article class="card" id="card-b08">
+  <div class="meta">
+    <span class="pill id-pill">B08</span>
+    <span class="pill hold">Review only</span>
+    <span class="pill qrt">PROPOSALS_NOT_INDEPENDENTLY_REVIEWED</span>
+  </div>
+  <h3>Five WPE examination source and QRT evidence blockers</h3>
+  <p class="card-meta">2026-11-02 · 5 subtopics · Native integration NOT_RUN</p>
+  <ul>
+<li>M56 — four missing force–displacement graphs [EX-M56]</li>
+<li>M61 — missing potential-energy curve [EX-M61]</li>
+<li>M69 — original option graphs and mismatched SL2 rubric [EX-M69]</li>
+<li>M105 — spring–friction question, pending key and QRT review [EX-M105]</li>
+<li>M106 — pendulum model dispute and D3.4 WPE adapter gap [EX-M106]</li>
+  </ul>
+  <div class="actions">
+    <a class="cta" href="b08-five-subtopics.html">Open B08 HTML</a>
+    <a class="cta secondary" href="b08-five-subtopics.html#handoff">View review handoff</a>
+  </div>
+</article>
+<article class="card" id="card-b07">
+  <div class="meta">
+    <span class="pill id-pill">B07</span>
+    <span class="pill hold">Review only</span>
+    <span class="pill qrt">FOUR_INDEPENDENT_D2_FIRST_PASS_ONE_CONTESTED</span>
+  </div>
+  <h3>Five exact-task QRT/Blueprint/adapter disposition reviews</h3>
+  <p class="card-meta">2026-11-02 · 5 subtopics · Native integration NOT_RUN</p>
+  <ul>
+<li>M62 — reviewed D2 net power, no hard-cell promotion [EX-M62]</li>
+<li>M73 — reviewed D2 lifting-work conditions [EX-M73]</li>
+<li>M101 — reviewed D2 spring-controlled variables [EX-M101]</li>
+<li>WEP07-03 — reviewed D2 NSEP multiple-correct [WEP07-03]</li>
+<li>M79 — APPLY versus SYNTHESIZE unreviewed [EX-M79]</li>
+  </ul>
+  <div class="actions">
+    <a class="cta" href="b07-five-subtopics.html">Open B07 HTML</a>
+    <a class="cta secondary" href="b07-five-subtopics.html#handoff">View review handoff</a>
+  </div>
+</article>
+<article class="card" id="card-b06">
+  <div class="meta">
+    <span class="pill id-pill">B06</span>
+    <span class="pill hold">Review only</span>
+    
+  </div>
+  <h3>Five source-to-Core1A construction candidates (N01–N04, N09)</h3>
+  <p class="card-meta">2026-11-02 · 5 subtopics · Native integration NOT_RUN</p>
+  <ul>
+<li>Signed work as force projection [WPE-N01]</li>
+<li>Variable force, signed areas and work [WPE-N02]</li>
+<li>Net work and kinetic-energy change [WPE-N03]</li>
+<li>Momentum, kinetic energy and inertial frames [WPE-N04]</li>
+<li>Friction, selected body and contact [WPE-N09]</li>
+  </ul>
+  <div class="actions">
+    <a class="cta" href="b06-five-subtopics.html">Open B06 HTML</a>
+    <a class="cta secondary" href="b06-five-subtopics.html#handoff">View review handoff</a>
+  </div>
+</article>
+<article class="card" id="card-b05">
+  <div class="meta">
+    <span class="pill id-pill">B05</span>
+    <span class="pill hold">Review only</span>
+    
+  </div>
+  <h3>WPE Conditions closure candidate and four Core1A construction bridges</h3>
+  <p class="card-meta">2026-11-02 · 5 subtopics · Native integration NOT_RUN</p>
+  <ul>
+<li>Potential-energy curve and allowed motion [WEP07-03]</li>
+<li>Conservative work and path independence [WPE-N05]</li>
+<li>Gravitational potential zero and ΔU [WPE-N06]</li>
+<li>Force–potential gradient: missing warrant [WPE-N07]</li>
+<li>Complete mechanical-energy transfer ledger [WPE-N08]</li>
+  </ul>
+  <div class="actions">
+    <a class="cta" href="b05-five-subtopics.html">Open B05 HTML</a>
+    <a class="cta secondary" href="b05-five-subtopics.html#handoff">View review handoff</a>
+  </div>
+</article>
+<article class="card" id="card-b04">
+  <div class="meta">
+    <span class="pill id-pill">B04</span>
+    <span class="pill hold">Review only</span>
+    
+  </div>
+  <h3>Five Core2 Conditions subtopics</h3>
+  <p class="card-meta">2026-11-02 · 5 subtopics · Native integration NOT_RUN</p>
+  <ul>
+<li>Fixed incline: work of gravity, friction and normal [TB-WPE-ILL-04]</li>
+<li>Power with specified initial speed [TB-WPE-ILL-05]</li>
+<li>Radial and tangential power [TB-WPE-ILL-06]</li>
+<li>Chain energy and initial kinetic energy [TB-WPE-ILL-11]</li>
+<li>Spring contact and detachment [TB-WPE-ILL-12]</li>
+  </ul>
+  <div class="actions">
+    <a class="cta" href="b04-five-subtopics.html">Open B04 HTML</a>
+    <a class="cta secondary" href="b04-five-subtopics.html#handoff">View review handoff</a>
+  </div>
+</article>
+<article class="card" id="card-b03">
+  <div class="meta">
+    <span class="pill id-pill">B03</span>
+    <span class="pill hold">Review only</span>
+    
+  </div>
+  <h3>Five Core2 representation and Conditions subtopics</h3>
+  <p class="card-meta">2026-11-02 · 5 subtopics · Native integration NOT_RUN</p>
+  <ul>
+<li>Distributed mass and energy accounting [TB-WPE-ILL-11]</li>
+<li>Potential energy landscape and turning points [WEP07-03]</li>
+<li>Constant-force formula applicability [TB-WPE-ILL-01]</li>
+<li>Tension model and complete force account [TB-WPE-ILL-02]</li>
+<li>Signed integration bounds for variable force [TB-WPE-ILL-03]</li>
+  </ul>
+  <div class="actions">
+    <a class="cta" href="b03-five-subtopics.html">Open B03 HTML</a>
+    <a class="cta secondary" href="b03-five-subtopics.html#handoff">View review handoff</a>
+  </div>
+</article>
+<article class="card" id="card-b02">
+  <div class="meta">
+    <span class="pill id-pill">B02</span>
+    <span class="pill hold">Review only</span>
+    
+  </div>
+  <h3>Five Core2 representation subtopics</h3>
+  <p class="card-meta">2026-11-02 · 5 subtopics · Native integration NOT_RUN</p>
+  <ul>
+<li>Vector displacement and signed work [TB-WPE-ILL-01]</li>
+<li>Tension, weight and net work [TB-WPE-ILL-02]</li>
+<li>Work by a variable force [TB-WPE-ILL-03]</li>
+<li>Instantaneous gravitational power on an incline [TB-WPE-ILL-05]</li>
+<li>Radial and tangential contributions to power [TB-WPE-ILL-06]</li>
+  </ul>
+  <div class="actions">
+    <a class="cta" href="b02-five-subtopics.html">Open B02 HTML</a>
+    <a class="cta secondary" href="b02-five-subtopics.html#handoff">View review handoff</a>
+  </div>
+</article>
+    </div>
+  </section>
+
+  <!-- Governance & Growth Method -->
+  <section class="steward" aria-label="Batch governance and update method" style="margin-top: 28px;">
+    <h2>How this library grows</h2>
+    <p>Each batch is a bounded five-subtopic deliverable with a distinct page, source mapping, test evidence and unresolved-review notes. New pages append to this index without replacing existing batch HTML.</p>
+    <ol>
+      <li>Prepare exactly five new synthetic examples and keep them isolated from protected exam stems and figures.</li>
+      <li>Verify the output and identify academic versus technical gates separately.</li>
+      <li>Publish the new page at a permanent URL under this directory, then add its entry to <a href="batches.json">the batch manifest</a>.</li>
+      <li>Confirm that the site serves the new page and preserves the older links.</li>
+    </ol>
+    <p><strong>Existing private-only evidence:</strong> B01 is a three-figure patch proposal rather than a completed five-subtopic HTML lesson batch; it is deliberately not uploaded here. Publishing this page does not resume D3.1 or grant native Core2/Core1A approval.</p>
+  </section>
+
+  <footer>
+    <p>Grade9 v4.0 · Static HTML, no CDN or analytics code. The hosting provider may retain request logs. Academic admission remains 0. <span id="footer-date">Catalogue updated 2026-11-02.</span></p>
+    <p style="margin-top: 6px; font-size: 0.8rem; color: #94a3b8;">No academic approval inferred from software validation. Green CI means automatic tests passed; it never means student release is authorized.</p>
+  </footer>
+</main>
+
+<script>
+// Progressive enhancement: re-render dynamically only if served via HTTP and batches.json contains updates
+(function () {
+  "use strict";
+  if (!window.location.protocol.startsWith("http")) return;
+  fetch("./batches.json", { cache: "no-store" })
+    .then(r => r.ok ? r.json() : null)
+    .then(data => {
+      if (!data || data.schema !== "g9v4-wpe-batch-index/v1" || !Array.isArray(data.batches)) return;
+      const bCount = document.getElementById("batch-count");
+      const tCount = document.getElementById("topic-count");
+      const asOf = document.getElementById("as-of");
+      if (bCount && data.batches.length) bCount.textContent = String(data.batches.length);
+      if (tCount) {
+        const total = data.batches.reduce((sum, b) => sum + (Number(b.count) || 0), 0);
+        tCount.textContent = String(total);
+      }
+      if (asOf && data.updated) asOf.textContent = "Catalogue as of " + data.updated;
+    })
+    .catch(() => { /* Static DOM remains completely visible without JS */ });
+})();
+</script>
+</body>
+</html>

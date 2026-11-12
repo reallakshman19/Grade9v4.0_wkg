@@ -1,0 +1,771 @@
+{
+  "topic": "Work-Energy-Power",
+  "spine_reference": "D:\\CodeD\\g9v3.5\\wpe-pilot\\syllabus\\WPE-SPINE.md",
+  "sources": [
+    {
+      "filename": "JEE_Main_2026_04_02_Shift_1_Question_Paper.pdf",
+      "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf",
+      "status": "DOWNLOADED_VERIFIED",
+      "session": "JEE Main 2026 Session 2",
+      "date": "2026-04-02",
+      "shift": "Shift 1 (Morning)",
+      "subject": "Physics"
+    },
+    {
+      "filename": "JEE_Main_2026_04_02_Shift_2_Question_Paper.pdf",
+      "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260409481957146.pdf",
+      "status": "DOWNLOADED_VERIFIED",
+      "session": "JEE Main 2026 Session 2",
+      "date": "2026-04-02",
+      "shift": "Shift 2 (Evening)",
+      "subject": "Physics"
+    },
+    {
+      "filename": "JEE_Main_2026_04_04_Shift_1_Question_Paper.pdf",
+      "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604091916616339.pdf",
+      "status": "DOWNLOADED_VERIFIED",
+      "session": "JEE Main 2026 Session 2",
+      "date": "2026-04-04",
+      "shift": "Shift 1 (Morning)",
+      "subject": "Physics"
+    },
+    {
+      "filename": "JEE_Main_2026_04_04_Shift_2_Question_Paper.pdf",
+      "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260409432593766.pdf",
+      "status": "DOWNLOADED_VERIFIED",
+      "session": "JEE Main 2026 Session 2",
+      "date": "2026-04-04",
+      "shift": "Shift 2 (Evening)",
+      "subject": "Physics"
+    },
+    {
+      "filename": "JEE_Main_2026_04_05_Shift_1_Question_Paper.pdf",
+      "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260409828731207.pdf",
+      "status": "DOWNLOADED_VERIFIED",
+      "session": "JEE Main 2026 Session 2",
+      "date": "2026-04-05",
+      "shift": "Shift 1 (Morning)",
+      "subject": "Physics"
+    },
+    {
+      "filename": "JEE_Main_2026_04_05_Shift_2_Question_Paper.pdf",
+      "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260409829414602.pdf",
+      "status": "DOWNLOADED_VERIFIED",
+      "session": "JEE Main 2026 Session 2",
+      "date": "2026-04-05",
+      "shift": "Shift 2 (Evening)",
+      "subject": "Physics"
+    },
+    {
+      "filename": "JEE_Main_2026_04_06_Shift_1_Question_Paper.pdf",
+      "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092007095665.pdf",
+      "status": "DOWNLOADED_VERIFIED",
+      "session": "JEE Main 2026 Session 2",
+      "date": "2026-04-06",
+      "shift": "Shift 1 (Morning)",
+      "subject": "Physics"
+    },
+    {
+      "filename": "JEE_Main_2026_04_06_Shift_2_Question_Paper.pdf",
+      "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260409725707538.pdf",
+      "status": "DOWNLOADED_VERIFIED",
+      "session": "JEE Main 2026 Session 2",
+      "date": "2026-04-06",
+      "shift": "Shift 2 (Evening)",
+      "subject": "Physics"
+    },
+    {
+      "filename": "JEE_Main_2026_04_08_Shift_2_Question_Paper.pdf",
+      "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260409932754345.pdf",
+      "status": "DOWNLOADED_VERIFIED",
+      "session": "JEE Main 2026 Session 2",
+      "date": "2026-04-08",
+      "shift": "Shift 2 (Evening)",
+      "subject": "Physics"
+    },
+    {
+      "filename": "JEE_Main_2026_Session_2_Final_Answer_Key.pdf",
+      "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf",
+      "status": "DOWNLOADED_VERIFIED",
+      "session": "JEE Main 2026 Session 2",
+      "date": "2026-04-20",
+      "shift": "All Shifts",
+      "subject": "Mathematics, Physics, Chemistry"
+    },
+    {
+      "filename": "JEE_Main_2026_Session_1_Final_Answer_Key.pdf",
+      "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf",
+      "status": "DOWNLOADED_VERIFIED",
+      "session": "JEE Main 2026 Session 1",
+      "date": "2026-02-16",
+      "shift": "All Shifts",
+      "subject": "Mathematics, Physics, Chemistry"
+    },
+    {
+      "filename": "JEE_Main_2025_Session_2_Final_Answer_Key.pdf",
+      "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2025/04/2025041892.pdf",
+      "status": "DOWNLOADED_VERIFIED",
+      "session": "JEE Main 2025 Session 2",
+      "date": "2025-04-18",
+      "shift": "All Shifts",
+      "subject": "Mathematics, Physics, Chemistry"
+    },
+    {
+      "filename": "JEE_Main_2025_Session_1_Final_Answer_Key.pdf",
+      "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2025/02/2025021039.pdf",
+      "status": "DOWNLOADED_VERIFIED",
+      "session": "JEE Main 2025 Session 1",
+      "date": "2025-02-10",
+      "shift": "All Shifts",
+      "subject": "Mathematics, Physics, Chemistry"
+    },
+    {
+      "filename": "JEE_Main_2025_Session_1_Question_Papers.pdf",
+      "url": "https://examinationservices.nic.in/resultservices/JEEMAIN2025S1P1/Login",
+      "status": "BLOCKED",
+      "error": "Authentication required: NTA Question Papers and recorded response sheets for 2025 Session 1 were released exclusively via candidate login requiring Application Number and Password/DOB during the challenge window. No open public PDF download exists on jeemain.nta.nic.in.",
+      "session": "JEE Main 2025 Session 1"
+    },
+    {
+      "filename": "JEE_Main_2025_Session_2_Question_Papers.pdf",
+      "url": "https://examinationservices.nic.in/resultservices/JEEMAIN2025S2P1/Login",
+      "status": "BLOCKED",
+      "error": "Authentication required: NTA Question Papers and recorded response sheets for 2025 Session 2 were released exclusively via candidate login requiring Application Number and Password/DOB during the challenge window. No open public PDF download exists on jeemain.nta.nic.in.",
+      "session": "JEE Main 2025 Session 2"
+    },
+    {
+      "filename": "JEE_Main_2024_Session_1_Question_Papers.pdf",
+      "url": "https://jeemain.nta.ac.in/",
+      "status": "BLOCKED",
+      "error": "HTTP 502 Bad Gateway / Expired SSL Certificate: The archive portal jeemain.nta.ac.in is unreachable, and individual shift question papers were accessible only through candidate login during the active challenge window.",
+      "session": "JEE Main 2024 Session 1"
+    },
+    {
+      "filename": "JEE_Main_2024_Session_2_Question_Papers.pdf",
+      "url": "https://jeemain.nta.ac.in/",
+      "status": "BLOCKED",
+      "error": "HTTP 502 Bad Gateway / Expired SSL Certificate: The archive portal jeemain.nta.ac.in is unreachable, and individual shift question papers were accessible only through candidate login during the active challenge window.",
+      "session": "JEE Main 2024 Session 2"
+    },
+    {
+      "filename": "JEE_Main_2023_Question_Papers_All_Shifts.pdf",
+      "url": "https://nta.ac.in/Downloads",
+      "status": "BLOCKED",
+      "error": "Not hosted on official domain: Examination papers for 2023 are archived and not provided as standalone open-access question papers on nta.ac.in.",
+      "session": "JEE Main 2023 (Session 1 & 2)"
+    }
+  ],
+  "questions": [
+    {
+      "id": "JEE-2026-04-04-S1-Q46",
+      "nta_question_id": "695278271",
+      "session": "JEE Main 2026 Session 2",
+      "exam_date": "2026-04-04",
+      "shift": "Shift 1 (Morning)",
+      "source_file": "JEE_Main_2026_04_04_Shift_1_Question_Paper.pdf",
+      "page": 17,
+      "question_number": 46,
+      "question_type": "numerical_value",
+      "raw_stem": "A 1 kg block subjected to two simultaneous forces (2i^ + 3j^ + 4k^) N and (3i^ - j^ - 2k^) N is moved a distance of 25 m along (3i^ - 4j^) direction. The work done in this process is _____ J.",
+      "options": null,
+      "figure_locator": "Page 17, Item 46, Section B (No external diagram; in-line vector formulas)",
+      "nta_final_key": "35",
+      "solver_solution": "1. Resultant force: F_net = F_1 + F_2 = (2 + 3)i^ + (3 - 1)j^ + (4 - 2)k^ = (5i^ + 2j^ + 2k^) N.\n2. Unit displacement vector along direction (3i^ - 4j^): u^ = (3i^ - 4j^) / sqrt(3^2 + (-4)^2) = (3i^ - 4j^) / 5.\n3. Total displacement vector: s = 25 * u^ = 25 * (3i^ - 4j^) / 5 = (15i^ - 20j^) m.\n4. Work done by net force: W = F_net . s = (5)(15) + (2)(-20) + (2)(0) = 75 - 40 = 35 J.",
+      "agrees": "yes",
+      "status": "VERBATIM_CONFIRMED",
+      "binding": {
+        "primary_key_idea": "WEP-01",
+        "secondary_key_ideas": [],
+        "cognitive_demand": "QUANTITATIVE_APPLICATION",
+        "difficulty_band": "D2",
+        "band_reason": "Direct vector addition of simultaneous constant forces combined with direction-vector normalization to construct displacement vector before scalar dot product evaluation.",
+        "crux_step": "Construct unit displacement vector from specified direction vector and compute scalar work as F_net . s = (5)(15) + (2)(-20) = 35 J.",
+        "grade9_flag": "G9_SOLVABLE"
+      },
+      "tile_test": {
+        "tile_file": "wep01-core1ab-9e95dde5.json",
+        "verdict": "COVERED",
+        "reason": "The tile's shared inferential jump explicitly instructs resolving constant forces along displacement, adding signed contributions from all forces, which directly generates the crux calculation."
+      }
+    },
+    {
+      "id": "JEE-2026-04-06-S2-Q29",
+      "nta_question_id": "6911211229",
+      "session": "JEE Main 2026 Session 2",
+      "exam_date": "2026-04-06",
+      "shift": "Shift 2 (Evening)",
+      "source_file": "JEE_Main_2026_04_06_Shift_2_Question_Paper.pdf",
+      "page": 12,
+      "question_number": 29,
+      "question_type": "single_correct_mcq",
+      "raw_stem": "A body of mass 1 kg moves along a straight line with a velocity v = 2x^2. The work done by the body during displacement from x = 0 to 5 m is _____ J.",
+      "options": {
+        "6911214178": "0",
+        "6911214179": "250",
+        "6911214180": "1250",
+        "6911214181": "1000"
+      },
+      "figure_locator": "Page 12, Item 29, Section A (No external diagram; in-line formula v = 2x^2)",
+      "nta_final_key": "6911214180",
+      "solver_solution": "1. At initial position x_i = 0 m: v_i = 2(0)^2 = 0 m/s, so initial kinetic energy K_i = 0 J.\n2. At final position x_f = 5 m: v_f = 2(5)^2 = 50 m/s.\n3. By Work-Energy Theorem: W_net = Delta K = 1/2 m (v_f^2 - v_i^2) = 1/2 (1 kg) (50^2 - 0) = 1250 J.\n(Alternative calculus route: F = m v dv/dx = 1 * (2x^2) * (4x) = 8x^3 N. W = int_0^5 8x^3 dx = [2x^4]_0^5 = 2(625) = 1250 J.)",
+      "agrees": "yes",
+      "status": "VERBATIM_CONFIRMED",
+      "binding": {
+        "primary_key_idea": "WEP-02",
+        "secondary_key_ideas": [
+          "WEP-03"
+        ],
+        "cognitive_demand": "QUANTITATIVE_APPLICATION",
+        "difficulty_band": "D2",
+        "band_reason": "Evaluates work done on a particle whose velocity is parameterized by position, requiring either application of the Work-Energy Theorem at position boundaries or integration of position-dependent force F(x).",
+        "crux_step": "Evaluate kinetic energy at the boundary positions x=0 and x=5 m to find W = Delta K = 1/2 m (50^2 - 0) = 1250 J.",
+        "grade9_flag": "G9_SOLVABLE"
+      },
+      "tile_test": {
+        "tile_file": "wep02-core1ab-a74b883f.json",
+        "verdict": "PARTIAL",
+        "reason": "Tile WEP-02 focuses strictly on geometric areas under F-x graphs and linear spring force triangles. It needs widening to cross-reference the Work-Energy Theorem (WEP-03) so students recognize that work by position-dependent forces can be obtained directly from endpoint kinetic energies without graphical quadrature."
+      }
+    },
+    {
+      "id": "JEE-2026-04-06-S1-Q28",
+      "nta_question_id": "6952782163",
+      "session": "JEE Main 2026 Session 2",
+      "exam_date": "2026-04-06",
+      "shift": "Shift 1 (Morning)",
+      "source_file": "JEE_Main_2026_04_06_Shift_1_Question_Paper.pdf",
+      "page": 10,
+      "question_number": 28,
+      "question_type": "single_correct_mcq",
+      "raw_stem": "The rain drop of mass 1 g, starts with zero velocity from a height of 1 km. It hits the ground with a speed of 5 m/s. The work done by the unknown resistive force is _____ J. (take g = 10 m/s^2)",
+      "options": {
+        "6952787589": "- 8.75",
+        "6952787590": "- 8.35",
+        "6952787591": "- 9.55",
+        "6952787592": "- 9.98"
+      },
+      "figure_locator": "Page 10, Item 28, Section A (Textual stem only)",
+      "nta_final_key": "6952787592",
+      "solver_solution": "1. Mass of raindrop: m = 1 g = 10^-3 kg. Fall distance: h = 1 km = 1000 m.\n2. Work done by gravity: W_g = m g h = (10^-3 kg)(10 m/s^2)(1000 m) = +10.0 J.\n3. Change in kinetic energy: Delta K = 1/2 m v^2 - 0 = 1/2 (10^-3 kg)(5 m/s)^2 = 0.0125 J.\n4. Work-Energy Theorem: W_g + W_res = Delta K ==> W_res = Delta K - W_g = 0.0125 J - 10.0 J = -9.9875 J ~= -9.98 J.",
+      "agrees": "yes",
+      "status": "VERBATIM_CONFIRMED",
+      "binding": {
+        "primary_key_idea": "WEP-03",
+        "secondary_key_ideas": [],
+        "cognitive_demand": "MULTISTEP_REASONING",
+        "difficulty_band": "D2",
+        "band_reason": "Partitions total work into conservative gravity and non-conservative air resistance, using kinetic energy difference to isolate the unknown dissipative work.",
+        "crux_step": "Apply Work-Energy Theorem W_g + W_res = Delta K and compute W_res = 0.0125 - 10 = -9.98 J.",
+        "grade9_flag": "G9_SOLVABLE"
+      },
+      "tile_test": {
+        "tile_file": "TILE_PENDING",
+        "verdict": "TILE_PENDING",
+        "reason": "WEP-03 tile not yet authored; harvesting establishes benchmark requirement for partitioning conservative and resistive work components."
+      }
+    },
+    {
+      "id": "JEE-2026-04-02-S2-Q31",
+      "nta_question_id": "691121181",
+      "session": "JEE Main 2026 Session 2",
+      "exam_date": "2026-04-02",
+      "shift": "Shift 2 (Evening)",
+      "source_file": "JEE_Main_2026_04_02_Shift_2_Question_Paper.pdf",
+      "page": 12,
+      "question_number": 31,
+      "question_type": "single_correct_mcq",
+      "raw_stem": "If a body of mass 1 kg falls on the earth from infinity, it attains velocity (v) and kinetic energy (k) on reaching the surface of earth. The values of v and k respectively are _____ . (Take radius of earth to be 6400 km and g = 9.8 m/s^2)",
+      "options": {
+        "691121616": "11.2 km/s; 6.27 x 10^7 J",
+        "691121617": "11.2 km/s; 12.54 x 10^7 J",
+        "691121618": "8.8 km/s; 6.27 x 10^7 J",
+        "691121619": "8.8 km/s; 12.54 x 10^7 J"
+      },
+      "figure_locator": "Page 12, Item 31, Section A (Textual stem only)",
+      "nta_final_key": "691121616",
+      "solver_solution": "1. Conservation of mechanical energy between infinity (r = infty) and Earth surface (r = R):\n   E_i = K_i + U_i = 0 + 0 = 0 J.\n   E_f = K_f + U_f = K_f - G M m / R = 0 ==> K_f = G M m / R.\n2. Express in terms of surface gravity g = G M / R^2 ==> G M / R = g R:\n   k = K_f = m g R = (1 kg)(9.8 m/s^2)(6.4 x 10^6 m) = 6.272 x 10^7 J ~= 6.27 x 10^7 J.\n3. Velocity attained: 1/2 m v^2 = k ==> v = sqrt(2 g R) = sqrt(2 * 9.8 * 6.4 x 10^6) = sqrt(1.2544 x 10^8) = 11.2 x 10^3 m/s = 11.2 km/s.\n4. Matching pair: 11.2 km/s; 6.27 x 10^7 J corresponds to option 691121616.",
+      "agrees": "yes",
+      "status": "VERBATIM_CONFIRMED",
+      "binding": {
+        "primary_key_idea": "WEP-07",
+        "secondary_key_ideas": [
+          "WEP-05"
+        ],
+        "cognitive_demand": "MULTISTEP_REASONING",
+        "difficulty_band": "D3",
+        "band_reason": "Combines non-uniform gravitational potential energy with mechanical energy conservation from an asymptotic boundary state to find speed and kinetic energy.",
+        "crux_step": "Set total mechanical energy E = 0 from the reference state at infinity and equate surface kinetic energy to potential energy depth K = mgR.",
+        "grade9_flag": "G9_WITH_GIVEN"
+      },
+      "tile_test": {
+        "tile_file": "wep07-core1ab-d04e98dc.json",
+        "verdict": "COVERED",
+        "reason": "The tile's shared jump explicitly covers selecting the appropriate potential, fixing total energy E = K + U from a reference state, and determining maximum kinetic energy at the point of minimum accessible potential."
+      }
+    },
+    {
+      "id": "JEE-2026-04-05-S2-Q28",
+      "nta_question_id": "691121478",
+      "session": "JEE Main 2026 Session 2",
+      "exam_date": "2026-04-05",
+      "shift": "Shift 2 (Evening)",
+      "source_file": "JEE_Main_2026_04_05_Shift_2_Question_Paper.pdf",
+      "page": 11,
+      "question_number": 28,
+      "question_type": "single_correct_mcq",
+      "raw_stem": "A mass of 1 kg is kept on a inclined plane with 30\u00b0 inclination with respect to horizontal plane and it is at rest initially. Then the whole assembly is moved up with constant velocity of 4 m/s. The work done by the frictional force in time 2 s is _____ J. (Take g = 10 m/s^2)",
+      "options": {
+        "6911211624": "20",
+        "6911211625": "25",
+        "6911211626": "30",
+        "6911211627": "10"
+      },
+      "figure_locator": "Page 11, Item 28, Section A (Textual stem only)",
+      "nta_final_key": "6911211624",
+      "solver_solution": "1. Incline angle theta = 30\u00b0 to horizontal. Since block remains at rest relative to the incline moving at constant velocity, net acceleration is zero.\n2. Force balance along the incline: static friction f_s balances the component of gravity down the incline:\n   f_s = m g sin(30\u00b0) = (1 kg)(10 m/s^2)(0.5) = 5 N directed upward along the incline (at 30\u00b0 to horizontal).\n3. Displacement of the assembly: moves vertically upward with speed v = 4 m/s for time t = 2 s:\n   s = v * t = 4 * 2 = 8 m vertically upward.\n4. Angle phi between friction force vector f_s and vertical displacement vector s: phi = 90\u00b0 - 30\u00b0 = 60\u00b0.\n5. Work done by static friction in the ground frame: W_f = f_s * s * cos(60\u00b0) = 5 N * 8 m * 0.5 = 20 J.",
+      "agrees": "yes",
+      "status": "VERBATIM_CONFIRMED",
+      "binding": {
+        "primary_key_idea": "WEP-09",
+        "secondary_key_ideas": [
+          "WEP-01"
+        ],
+        "cognitive_demand": "MULTISTEP_REASONING",
+        "difficulty_band": "D3",
+        "band_reason": "High-transfer conceptual test proving static friction can perform positive mechanical work in an inertial frame when the supporting contact surface undergoes displacement.",
+        "crux_step": "Determine static friction direction and magnitude f_s = mg sin(30\u00b0) = 5 N along incline, find angle with vertical displacement phi = 60\u00b0, and evaluate W = (5)(8)cos(60\u00b0) = 20 J.",
+        "grade9_flag": "G9_SOLVABLE"
+      },
+      "tile_test": {
+        "tile_file": "TILE_PENDING",
+        "verdict": "TILE_PENDING",
+        "reason": "WEP-09 tile not yet authored; confirms crucial requirement that friction tile must explicitly include static friction doing non-zero work in frames where contact surfaces move."
+      }
+    },
+    {
+      "id": "JEE-2026-04-04-S1-Q49",
+      "nta_question_id": "695278274",
+      "session": "JEE Main 2026 Session 2",
+      "exam_date": "2026-04-04",
+      "shift": "Shift 1 (Morning)",
+      "source_file": "JEE_Main_2026_04_04_Shift_1_Question_Paper.pdf",
+      "page": 17,
+      "question_number": 49,
+      "question_type": "numerical_value",
+      "raw_stem": "A body of mass 2 kg begins to move under the influence of time dependent force F^ = (2t i^ + 6t^2 j^) N, where i^ and j^ are unit vectors along x and y-axis respectively. The power produced by the force at t = 2 s is _____ W.",
+      "options": null,
+      "figure_locator": "Page 17, Item 49, Section B (In-line force formula)",
+      "nta_final_key": "200",
+      "solver_solution": "1. Acceleration: a(t) = F(t) / m = (2t i^ + 6t^2 j^) / 2 = t i^ + 3t^2 j^ m/s^2.\n2. Initial condition 'begins to move' implies v(0) = 0.\n3. Velocity at time t: v(t) = int_0^t a(t') dt' = (t^2 / 2) i^ + t^3 j^ m/s.\n4. At t = 2 s:\n   F(2) = 2(2) i^ + 6(2^2) j^ = 4 i^ + 24 j^ N.\n   v(2) = (2^2 / 2) i^ + (2^3) j^ = 2 i^ + 8 j^ m/s.\n5. Instantaneous power: P = F . v = (4)(2) + (24)(8) = 8 + 192 = 200 W.",
+      "agrees": "yes",
+      "status": "VERBATIM_CONFIRMED",
+      "binding": {
+        "primary_key_idea": "WEP-08",
+        "secondary_key_ideas": [],
+        "cognitive_demand": "QUANTITATIVE_APPLICATION",
+        "difficulty_band": "D2",
+        "band_reason": "Applies definition of instantaneous power P = F . v, requiring integration of time-varying vector acceleration to determine instantaneous velocity.",
+        "crux_step": "Integrate a(t) to get v(t) = (t^2/2)i^ + t^3 j^, evaluate F(2) and v(2), then compute scalar product P = (4)(2) + (24)(8) = 200 W.",
+        "grade9_flag": "G9_WITH_GIVEN"
+      },
+      "tile_test": {
+        "tile_file": "TILE_PENDING",
+        "verdict": "TILE_PENDING",
+        "reason": "WEP-08 tile not yet authored; establishes requirement for instantaneous power P = F . v with time-dependent vector forces."
+      }
+    }
+  ],
+  "rejected_near_misses": [
+    {
+      "id": "JEE-2026-04-02-S1-Q38",
+      "nta_question_id": "69112138",
+      "reason": "Electromagnetic induction: power dissipation in a coil rotating in time-dependent magnetic field (P = e^2 / R)."
+    },
+    {
+      "id": "JEE-2026-04-02-S1-Q47",
+      "nta_question_id": "69112147",
+      "reason": "Thermodynamics: work done during adiabatic gas expansion (W = (P1 V1 - P2 V2) / (gamma - 1))."
+    },
+    {
+      "id": "JEE-2026-04-02-S2-Q27",
+      "nta_question_id": "691121177",
+      "reason": "Rotational circular dynamics: static friction balancing gravity in a rotating cylindrical rotor (f_s = mg, N = m omega^2 R)."
+    },
+    {
+      "id": "JEE-2026-04-02-S2-Q33",
+      "nta_question_id": "691121183",
+      "reason": "Fluid mechanics: surface tension work done expanding a soap bubble (W = 2 T Delta A)."
+    },
+    {
+      "id": "JEE-2026-04-04-S1-Q28",
+      "nta_question_id": "695278253",
+      "reason": "Newton's laws of motion: kinematic sliding time on rough vs smooth incline (a = g(sin theta - mu cos theta))."
+    },
+    {
+      "id": "JEE-2026-04-04-S1-Q32",
+      "nta_question_id": "695278257",
+      "reason": "Modern physics: photoelectric effect stopping potential graph comparison for different metals."
+    },
+    {
+      "id": "JEE-2026-04-04-S1-Q47",
+      "nta_question_id": "695278272",
+      "reason": "Fluid mechanics: surface tension work required to expand soap bubble radius."
+    },
+    {
+      "id": "JEE-2026-04-04-S2-Q26",
+      "nta_question_id": "695278401",
+      "reason": "Units and dimensions: dimensional formula matching for work function, Planck's constant, and stopping potential."
+    },
+    {
+      "id": "JEE-2026-04-04-S2-Q33",
+      "nta_question_id": "695278408",
+      "reason": "Kinetic theory of gases: thermal kinetic energy of gas molecules as function of temperature."
+    },
+    {
+      "id": "JEE-2026-04-05-S1-Q41",
+      "nta_question_id": "695278341",
+      "reason": "Thermodynamics: net work done in a cyclic indicator diagram."
+    },
+    {
+      "id": "JEE-2026-04-05-S2-Q32",
+      "nta_question_id": "691121482",
+      "reason": "Electrostatics: potential energy of an electric dipole in external electric field (U = -p . E)."
+    },
+    {
+      "id": "JEE-2026-04-05-S2-Q46",
+      "nta_question_id": "691121496",
+      "reason": "Elasticity of solids: strain energy stored in stretched copper wire (U = 1/2 Y (Delta L / L)^2 * Volume)."
+    },
+    {
+      "id": "JEE-2026-04-06-S1-Q27",
+      "nta_question_id": "6952782162",
+      "reason": "Units and dimensions: dimensional analysis of constants A and B in an algebraic potential expression."
+    },
+    {
+      "id": "JEE-2026-04-06-S1-Q49",
+      "nta_question_id": "6952782184",
+      "reason": "Electrostatics: line integral work done moving a point charge in non-uniform electric field (W = q int E . dr)."
+    },
+    {
+      "id": "JEE-2026-04-06-S1-Q50",
+      "nta_question_id": "6952782185",
+      "reason": "Thermodynamics: isothermal compression work on a gas."
+    },
+    {
+      "id": "JEE-2026-04-06-S2-Q40",
+      "nta_question_id": "6911211240",
+      "reason": "Electrostatics: electrostatic energy loss when connecting charged spherical capacitors."
+    },
+    {
+      "id": "JEE-2026-04-06-S2-Q46",
+      "nta_question_id": "6911211246",
+      "reason": "Newton's laws of motion: coefficient of friction derived from sliding time on smooth vs rough incline."
+    },
+    {
+      "id": "JEE-2026-04-08-S2-Q32",
+      "nta_question_id": "691121557",
+      "reason": "Rotational dynamics: slipping-to-rolling transition time for cylinder on rough plane."
+    },
+    {
+      "id": "JEE-2026-04-08-S2-Q37",
+      "nta_question_id": "691121562",
+      "reason": "Simple harmonic motion: spring-mass oscillation frequency scaling when spring is cut."
+    },
+    {
+      "id": "JEE-2026-04-08-S2-Q43",
+      "nta_question_id": "691121568",
+      "reason": "Modern physics: Einstein's photoelectric equation relating maximum KE and work function."
+    }
+  ],
+  "coverage_matrix": {
+    "WEP-01": {
+      "node": "WPE-N01",
+      "title": "Work & dot product",
+      "total_q": 1,
+      "d_bands": {
+        "D1": 0,
+        "D2": 1,
+        "D3": 0,
+        "D4": 0
+      },
+      "g9_flags": {
+        "G9_SOLVABLE": 1,
+        "G9_WITH_GIVEN": 0,
+        "BEYOND_G9": 0
+      },
+      "tile_test": {
+        "COVERED": 1,
+        "PARTIAL": 0,
+        "NOT_COVERED": 0,
+        "TILE_PENDING": 0
+      },
+      "gap": false,
+      "questions": [
+        "JEE-2026-04-04-S1-Q46"
+      ]
+    },
+    "WEP-02": {
+      "node": "WPE-N02",
+      "title": "Variable-force work, spring",
+      "total_q": 1,
+      "d_bands": {
+        "D1": 0,
+        "D2": 1,
+        "D3": 0,
+        "D4": 0
+      },
+      "g9_flags": {
+        "G9_SOLVABLE": 1,
+        "G9_WITH_GIVEN": 0,
+        "BEYOND_G9": 0
+      },
+      "tile_test": {
+        "COVERED": 0,
+        "PARTIAL": 1,
+        "NOT_COVERED": 0,
+        "TILE_PENDING": 0
+      },
+      "gap": false,
+      "questions": [
+        "JEE-2026-04-06-S2-Q29"
+      ]
+    },
+    "WEP-03": {
+      "node": "WPE-N03",
+      "title": "Work-energy theorem",
+      "total_q": 1,
+      "d_bands": {
+        "D1": 0,
+        "D2": 1,
+        "D3": 0,
+        "D4": 0
+      },
+      "g9_flags": {
+        "G9_SOLVABLE": 1,
+        "G9_WITH_GIVEN": 0,
+        "BEYOND_G9": 0
+      },
+      "tile_test": {
+        "COVERED": 0,
+        "PARTIAL": 0,
+        "NOT_COVERED": 0,
+        "TILE_PENDING": 1
+      },
+      "gap": false,
+      "questions": [
+        "JEE-2026-04-06-S1-Q28"
+      ]
+    },
+    "WEP-04": {
+      "node": "WPE-N05",
+      "title": "Path independence",
+      "total_q": 0,
+      "d_bands": {
+        "D1": 0,
+        "D2": 0,
+        "D3": 0,
+        "D4": 0
+      },
+      "g9_flags": {
+        "G9_SOLVABLE": 0,
+        "G9_WITH_GIVEN": 0,
+        "BEYOND_G9": 0
+      },
+      "tile_test": {
+        "COVERED": 0,
+        "PARTIAL": 0,
+        "NOT_COVERED": 0,
+        "TILE_PENDING": 0
+      },
+      "gap": true,
+      "questions": []
+    },
+    "WEP-05": {
+      "node": "WPE-N06",
+      "title": "Gravitational and elastic PE",
+      "total_q": 1,
+      "d_bands": {
+        "D1": 0,
+        "D2": 0,
+        "D3": 1,
+        "D4": 0
+      },
+      "g9_flags": {
+        "G9_SOLVABLE": 0,
+        "G9_WITH_GIVEN": 1,
+        "BEYOND_G9": 0
+      },
+      "tile_test": {
+        "COVERED": 0,
+        "PARTIAL": 0,
+        "NOT_COVERED": 0,
+        "TILE_PENDING": 1
+      },
+      "gap": false,
+      "questions": [
+        "JEE-2026-04-02-S2-Q31"
+      ]
+    },
+    "WEP-06": {
+      "node": "WPE-N07",
+      "title": "F = -dU/dx",
+      "total_q": 0,
+      "d_bands": {
+        "D1": 0,
+        "D2": 0,
+        "D3": 0,
+        "D4": 0
+      },
+      "g9_flags": {
+        "G9_SOLVABLE": 0,
+        "G9_WITH_GIVEN": 0,
+        "BEYOND_G9": 0
+      },
+      "tile_test": {
+        "COVERED": 0,
+        "PARTIAL": 0,
+        "NOT_COVERED": 0,
+        "TILE_PENDING": 0
+      },
+      "gap": true,
+      "questions": []
+    },
+    "WEP-07": {
+      "node": "WPE-N08",
+      "title": "Conservation and turning points",
+      "total_q": 1,
+      "d_bands": {
+        "D1": 0,
+        "D2": 0,
+        "D3": 1,
+        "D4": 0
+      },
+      "g9_flags": {
+        "G9_SOLVABLE": 0,
+        "G9_WITH_GIVEN": 1,
+        "BEYOND_G9": 0
+      },
+      "tile_test": {
+        "COVERED": 1,
+        "PARTIAL": 0,
+        "NOT_COVERED": 0,
+        "TILE_PENDING": 0
+      },
+      "gap": false,
+      "questions": [
+        "JEE-2026-04-02-S2-Q31"
+      ]
+    },
+    "WEP-08": {
+      "node": "WPE-N10",
+      "title": "Power",
+      "total_q": 1,
+      "d_bands": {
+        "D1": 0,
+        "D2": 1,
+        "D3": 0,
+        "D4": 0
+      },
+      "g9_flags": {
+        "G9_SOLVABLE": 0,
+        "G9_WITH_GIVEN": 1,
+        "BEYOND_G9": 0
+      },
+      "tile_test": {
+        "COVERED": 0,
+        "PARTIAL": 0,
+        "NOT_COVERED": 0,
+        "TILE_PENDING": 1
+      },
+      "gap": false,
+      "questions": [
+        "JEE-2026-04-04-S1-Q49"
+      ]
+    },
+    "WEP-09": {
+      "node": "WPE-N09",
+      "title": "Friction work",
+      "total_q": 1,
+      "d_bands": {
+        "D1": 0,
+        "D2": 0,
+        "D3": 1,
+        "D4": 0
+      },
+      "g9_flags": {
+        "G9_SOLVABLE": 1,
+        "G9_WITH_GIVEN": 0,
+        "BEYOND_G9": 0
+      },
+      "tile_test": {
+        "COVERED": 0,
+        "PARTIAL": 0,
+        "NOT_COVERED": 0,
+        "TILE_PENDING": 1
+      },
+      "gap": false,
+      "questions": [
+        "JEE-2026-04-05-S2-Q28"
+      ]
+    },
+    "WEP-10": {
+      "node": "WPE-N04",
+      "title": "Momentum vs KE relation",
+      "total_q": 0,
+      "d_bands": {
+        "D1": 0,
+        "D2": 0,
+        "D3": 0,
+        "D4": 0
+      },
+      "g9_flags": {
+        "G9_SOLVABLE": 0,
+        "G9_WITH_GIVEN": 0,
+        "BEYOND_G9": 0
+      },
+      "tile_test": {
+        "COVERED": 0,
+        "PARTIAL": 0,
+        "NOT_COVERED": 0,
+        "TILE_PENDING": 0
+      },
+      "gap": true,
+      "questions": []
+    }
+  },
+  "revisit_list": [
+    {
+      "tile": "WEP-02",
+      "current_file": "wep02-core1ab-a74b883f.json",
+      "affected_questions": [
+        "JEE-2026-04-06-S2-Q29"
+      ],
+      "status": "PARTIAL",
+      "proposed_change": "Widen jump or add cross-reference note to show that work by position-dependent force/velocity v(x) can be solved via Work-Energy Theorem W = Delta K at boundary coordinates without explicit force integration."
+    }
+  ],
+  "core2_candidates": [
+    {
+      "question_id": "JEE-2026-04-02-S2-Q31",
+      "key_idea": "WEP-07",
+      "demand": "MULTISTEP_REASONING",
+      "band": "D3",
+      "grade9_flag": "G9_WITH_GIVEN",
+      "official_paper_shift": "JEE Main 2026 Session 2, 2026-04-02 Shift 2 (Evening)",
+      "source_pdf": "JEE_Main_2026_04_02_Shift_2_Question_Paper.pdf",
+      "locator": "Page 12, Item 31, Section A",
+      "crop_path": "scratch/all_question_crops/2026_04_02_S2/Q31_691121181.png"
+    },
+    {
+      "question_id": "JEE-2026-04-05-S2-Q28",
+      "key_idea": "WEP-09",
+      "demand": "MULTISTEP_REASONING",
+      "band": "D3",
+      "grade9_flag": "G9_SOLVABLE",
+      "official_paper_shift": "JEE Main 2026 Session 2, 2026-04-05 Shift 2 (Evening)",
+      "source_pdf": "JEE_Main_2026_04_05_Shift_2_Question_Paper.pdf",
+      "locator": "Page 11, Item 28, Section A",
+      "crop_path": "scratch/all_question_crops/2026_04_05_S2/Q28_691121478.png"
+    }
+  ]
+}

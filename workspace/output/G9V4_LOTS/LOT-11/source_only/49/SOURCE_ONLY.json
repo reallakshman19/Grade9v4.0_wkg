@@ -1,0 +1,12 @@
+{
+  "source_id": "EX-N31",
+  "task_identity": "Q-ID-57",
+  "sequence": 49,
+  "batch_sequence": 4,
+  "paper": "JEE Main 2021 (Online) 27th July Evening Shift",
+  "stem_text": "A small block slides down from the top of hemisphere of radius R = 3 m as shown in the figure. The height 'h' at which the block will lose contact with the surface of the sphere is __________ m.(Assume there is no friction between the block and the hemisphere) [FIG-stem-1]",
+  "stem_sha256": "4d65ea5eb7ee18377b5d2d9ca3264a4ebf6460d792aab960aa5119166b2e4431",
+  "options": [],
+  "figure_reference": "FIG-stem-1",
+  "confidentiality_notice": "Source custody blind packet. Academic solve, answer key, and scoring omitted. Private review only."
+}

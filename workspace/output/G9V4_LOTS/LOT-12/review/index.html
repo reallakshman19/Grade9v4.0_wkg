@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade9 v4.0 — Lot 12 Private Review Dashboard (Questions 51–55)</title>
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --border: #e2e8f0;
+            --text: #0f172a;
+            --text-muted: #64748b;
+            --primary: #2563eb;
+            --warning: #d97706;
+            --warning-bg: #fffbeb;
+            --danger: #b91c1c;
+            --danger-bg: #fef2f2;
+            --info: #0891b2;
+            --info-bg: #ecfeff;
+            --badge-bg: #f1f5f9;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            padding: 16px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        h1 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+        .header-meta { font-size: 13px; color: var(--text-muted); }
+
+        .table-wrap {
+            overflow-x: auto;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            text-align: left;
+        }
+
+        th {
+            background: #f1f5f9;
+            padding: 10px 12px;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border);
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        .col-seq { width: 100px; }
+        .col-source { width: 180px; }
+        .col-stem { width: 340px; }
+        .col-cog { width: 130px; }
+        .col-bp { width: 170px; }
+        .col-gates { width: 260px; }
+
+        .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+        .text-muted { color: var(--text-muted); }
+
+        .badge {
+            display: inline-block;
+            font-size: 11px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+            margin-top: 4px;
+        }
+
+        .badge-lot { background: #ede9fe; color: #6d28d9; }
+        .badge-source { background: #e0f2fe; color: #0369a1; }
+        .badge-fig { background: #fef3c7; color: #92400e; }
+        .badge-prop { background: #dcfce7; color: #15803d; }
+        .badge-hold { background: #fef2f2; color: #b91c1c; font-family: monospace; }
+        .badge-admission { background: #fef2f2; color: #991b1b; font-weight: 700; border: 1px solid #f87171; }
+
+        .stem-preview {
+            font-size: 12px;
+            color: var(--text);
+            margin-bottom: 8px;
+            max-height: 60px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .solve-summary {
+            font-size: 12px;
+            background: #f8fafc;
+            padding: 6px 8px;
+            border-radius: 4px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .blocker-list {
+            list-style: none;
+            margin-top: 6px;
+        }
+
+        .blocker-list li {
+            font-size: 11px;
+            color: var(--danger);
+            margin-bottom: 2px;
+            padding-left: 12px;
+            position: relative;
+        }
+
+        .blocker-list li::before {
+            content: "•";
+            position: absolute;
+            left: 2px;
+            color: var(--danger);
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .pr-banner {
+            margin-top: 15px;
+            padding: 10px 14px;
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            border-radius: 6px;
+            font-size: 12px;
+            color: #92400e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Grade9 v4.0 — Lot 12 Private Review Dashboard</h1>
+            <div class="header-meta">
+                Batch D (CP-2) | Candidates Q51–Q55 | Generated: 2026-11-01 12:36:44 UTC<br>
+                <strong>Academic Notice:</strong> No academic approval inferred from software validation.
+            </div>
+            <div class="pr-banner">
+                <strong>PR Gate Status:</strong> <code>PR: HOLD_BASE_NOT_READY</code> — Retained in local private storage until stable base designated by owner.
+            </div>
+        </header>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sequence</th>
+                        <th>Source Custody</th>
+                        <th>Stem & Candidate Solve</th>
+                        <th>Cognitive Demand</th>
+                        <th>Blueprint Fit</th>
+                        <th>Gates & Blockers</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+    <tr>
+        <td class="col-seq">
+            <strong>#51</strong><br>
+            <span class="badge badge-lot">LOT-12</span><br>
+            <small class="mono">Q-ID-59</small><br>
+            <small>Batch #6</small>
+        </td>
+        <td class="col-source">
+            <strong>EX-N38</strong><br>
+            <small class="text-muted">JEE Main 2020 (Online) 5th September Evening Slot</small><br>
+            <span class="badge badge-source">VERIFIED_TEXT</span>
+            <span class="badge badge-fig">NOT_REQUIRED</span><br>
+            <small>Auth: <strong>NTA</strong></small>
+        </td>
+        <td class="col-stem">
+            <div class="stem-preview">A body of mass 2 kg is driven by an engine delivering a constant power of 1 J/s. The body starts from rest and moves in a straight line. Aft...</div>
+            <div class="solve-summary">
+                <strong>Method:</strong> <code>CONSTANT_POWER_DISPLACEMENT_INTEGRATION</code><br>
+                <strong>Predicted Option:</strong> 18
+            </div>
+        </td>
+        <td class="col-cog">
+            <strong>APPLY</strong> (D3)<br>
+            <small>Score: 7/10</small><br>
+            <span class="badge badge-prop">PROPOSED</span>
+        </td>
+        <td class="col-bp"><strong>PHYS-QRT-BLUEPRINT</strong><br><small>D3.3 (WPE-03-POWER)</small></td>
+        <td class="col-gates">
+            <span class="badge badge-admission">NOT_ADMITTED</span>
+            <ul class="blocker-list">
+                <li>HOLD:OFFICIAL_KEY_UNRESOLVED (Numerical answer 18 unverified against official NTA master)</li><li>HOLD:ADAPTER_CELL_GAP (WPE adapter lacks D3.3 cell authority)</li><li>HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)</li>
+            </ul>
+        </td>
+    </tr>
+    
+    <tr>
+        <td class="col-seq">
+            <strong>#52</strong><br>
+            <span class="badge badge-lot">LOT-12</span><br>
+            <small class="mono">Q-ID-60</small><br>
+            <small>Batch #7</small>
+        </td>
+        <td class="col-source">
+            <strong>EX-N39</strong><br>
+            <small class="text-muted">JEE Main 2020 (Online) 3rd September Evening Slot</small><br>
+            <span class="badge badge-source">VERIFIED_TEXT</span>
+            <span class="badge badge-fig">NOT_REQUIRED</span><br>
+            <small>Auth: <strong>NTA</strong></small>
+        </td>
+        <td class="col-stem">
+            <div class="stem-preview">A block starts moving up an inclined plane of inclination 30o with an initial velocity of v0 . It comes back to its initial position with ve...</div>
+            <div class="solve-summary">
+                <strong>Method:</strong> <code>INCLINE_ROUND_TRIP_WORK_ENERGY_FRICTION_DISSIPATION</code><br>
+                <strong>Predicted Option:</strong> 346
+            </div>
+        </td>
+        <td class="col-cog">
+            <strong>MODEL</strong> (D3)<br>
+            <small>Score: 8/10</small><br>
+            <span class="badge badge-prop">PROPOSED</span>
+        </td>
+        <td class="col-bp"><strong>PHYS-QRT-BLUEPRINT</strong><br><small>D3.3 (WPE-01-WORK)</small></td>
+        <td class="col-gates">
+            <span class="badge badge-admission">NOT_ADMITTED</span>
+            <ul class="blocker-list">
+                <li>HOLD:OFFICIAL_KEY_UNRESOLVED (Numerical answer 346 unverified against official NTA master)</li><li>HOLD:ADAPTER_CELL_GAP (WPE adapter lacks D3.3 cell authority)</li><li>HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)</li>
+            </ul>
+        </td>
+    </tr>
+    
+    <tr>
+        <td class="col-seq">
+            <strong>#53</strong><br>
+            <span class="badge badge-lot">LOT-12</span><br>
+            <small class="mono">Q-ID-62</small><br>
+            <small>Batch #8</small>
+        </td>
+        <td class="col-source">
+            <strong>EX-N42</strong><br>
+            <small class="text-muted">JEE Main 2020 (Online) 7th January Morning Slot</small><br>
+            <span class="badge badge-source">VERIFIED_TEXT_FIGURE_PENDING</span>
+            <span class="badge badge-fig">REQUIRED_UNRESOLVED</span><br>
+            <small>Auth: <strong>NTA</strong></small>
+        </td>
+        <td class="col-stem">
+            <div class="stem-preview">A particle (m = 1 kg) slides down a frictionless track (AOC) starting from rest at a point A (height 2 m). After reaching C, the particle co...</div>
+            <div class="solve-summary">
+                <strong>Method:</strong> <code>MECHANICAL_ENERGY_CONSERVATION_TRAJECTORY_EXTREMA</code><br>
+                <strong>Predicted Option:</strong> 10
+            </div>
+        </td>
+        <td class="col-cog">
+            <strong>APPLY</strong> (D2)<br>
+            <small>Score: 5/10</small><br>
+            <span class="badge badge-prop">PROPOSED</span>
+        </td>
+        <td class="col-bp"><span class='badge badge-hold'>BLUEPRINT=SPEC_PENDING</span></td>
+        <td class="col-gates">
+            <span class="badge badge-admission">NOT_ADMITTED</span>
+            <ul class="blocker-list">
+                <li>HOLD:OFFICIAL_KEY_UNRESOLVED (Numerical answer 10 unverified against official NTA master)</li><li>HOLD:FIGURE_CUSTODY_UNRESOLVED (Question figure [FIG-stem-1] custody unverified)</li><li>HOLD:SPEC_PENDING (No qualified D1/D2 common blueprint or topic adapter)</li><li>HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)</li>
+            </ul>
+        </td>
+    </tr>
+    
+    <tr>
+        <td class="col-seq">
+            <strong>#54</strong><br>
+            <span class="badge badge-lot">LOT-12</span><br>
+            <small class="mono">Q-ID-63</small><br>
+            <small>Batch #9</small>
+        </td>
+        <td class="col-source">
+            <strong>AN-1</strong><br>
+            <small class="text-muted">JEE Main 2023 (Online), 29 January, Evening Shift</small><br>
+            <span class="badge badge-source">VERIFIED_TEXT</span>
+            <span class="badge badge-fig">NOT_REQUIRED</span><br>
+            <small>Auth: <strong>NTA</strong></small>
+        </td>
+        <td class="col-stem">
+            <div class="stem-preview">Identify the correct statements from the following:
+A. Work done by a man in lifting a bucket out of a well by means of a rope tied to the b...</div>
+            <div class="solve-summary">
+                <strong>Method:</strong> <code>WORK_SIGN_CONVENTIONS_FORCE_DISPLACEMENT_EVALUATION</code><br>
+                <strong>Predicted Option:</strong> D: B and E only
+            </div>
+        </td>
+        <td class="col-cog">
+            <strong>JUSTIFY</strong> (D3)<br>
+            <small>Score: 8/10</small><br>
+            <span class="badge badge-prop">PROPOSED</span>
+        </td>
+        <td class="col-bp"><strong>PHYS-QRT-BLUEPRINT</strong><br><small>D3.3 (WPE-01-WORK)</small></td>
+        <td class="col-gates">
+            <span class="badge badge-admission">NOT_ADMITTED</span>
+            <ul class="blocker-list">
+                <li>HOLD:OFFICIAL_KEY_UNRESOLVED (Option D unverified against official NTA master)</li><li>HOLD:FORCE_FRAME_CONTACT_QUALIFICATIONS (Force frame contact qualifications require review)</li><li>HOLD:ADAPTER_CELL_GAP (WPE adapter lacks D3.3 cell authority)</li><li>HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)</li>
+            </ul>
+        </td>
+    </tr>
+    
+    <tr>
+        <td class="col-seq">
+            <strong>#55</strong><br>
+            <span class="badge badge-lot">LOT-12</span><br>
+            <small class="mono">Q-ID-64</small><br>
+            <small>Batch #10</small>
+        </td>
+        <td class="col-source">
+            <strong>AN-2</strong><br>
+            <small class="text-muted">JEE Main 2026 (Online), 22 January, Evening Shift</small><br>
+            <span class="badge badge-source">VERIFIED_TEXT</span>
+            <span class="badge badge-fig">NOT_REQUIRED</span><br>
+            <small>Auth: <strong>NTA</strong></small>
+        </td>
+        <td class="col-stem">
+            <div class="stem-preview">Given below are two statements:
+Statement I: An object moves from position r₁ to position r₂ under a conservative force field F⃗. The work d...</div>
+            <div class="solve-summary">
+                <strong>Method:</strong> <code>CONSERVATIVE_FORCE_LINE_INTEGRAL_AND_PATH_INDEPENDENCE_EVALUATION</code><br>
+                <strong>Predicted Option:</strong> C: Both Statement I and Statement II are false
+            </div>
+        </td>
+        <td class="col-cog">
+            <strong>JUSTIFY</strong> (D3)<br>
+            <small>Score: 7/10</small><br>
+            <span class="badge badge-prop">PROPOSED</span>
+        </td>
+        <td class="col-bp"><strong>PHYS-QRT-BLUEPRINT</strong><br><small>D3.4 (WPE-02-POTENTIAL)</small></td>
+        <td class="col-gates">
+            <span class="badge badge-admission">NOT_ADMITTED</span>
+            <ul class="blocker-list">
+                <li>HOLD:OFFICIAL_KEY_UNRESOLVED (Option C unverified against official NTA master)</li><li>HOLD:ADAPTER_CELL_GAP (WPE adapter lacks D3.4 cell authority)</li><li>HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)</li>
+            </ul>
+        </td>
+    </tr>
+    
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            Grade9 v4.0 Academic Platform &bull; Private Review Artifact &bull; Confidential
+        </footer>
+    </div>
+</body>
+</html>

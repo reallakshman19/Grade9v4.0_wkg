@@ -1,0 +1,17 @@
+{
+  "source_id": "AN-5",
+  "task_identity": "Q-ID-67",
+  "sequence": 57,
+  "batch_sequence": 12,
+  "paper": "AIEEE 2004",
+  "stem_text": "A particle is acted upon by a force of constant magnitude which is always perpendicular to the velocity of the particle, the motion of the particles takes place in a plane. It follows that",
+  "stem_sha256": "418e81b2f767cac56cbc06edf988ea400744d74b0990258dc5c881508c5a55b1",
+  "options": [
+    "A: its kinetic energy is constant",
+    "B: its acceleration is constant",
+    "C: its velocity is constant",
+    "D: it moves in a straight line"
+  ],
+  "figure_reference": null,
+  "confidentiality_notice": "Source custody blind packet. Academic solve, answer key, and scoring omitted. Private review only."
+}

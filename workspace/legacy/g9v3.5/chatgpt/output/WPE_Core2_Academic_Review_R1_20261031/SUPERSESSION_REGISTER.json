@@ -1,0 +1,58 @@
+{
+  "as_of_utc": "2026-10-31T10:38:57.885040+00:00",
+  "correction": "CORRECTION_NOTICE.md",
+  "scope": "Affected WEP07-03 source-conflict and final-key claims only; other findings retain their evidence qualifications",
+  "affected_records": [
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Core2_Evidence_Audit_R1_20261030\\AUDIT_REPORT.md",
+      "exists": true,
+      "sha256": "57402d398f3e54f7092c98e77f671e14912ec1fcbd7eb168c3f34a442a807ef1"
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Core2_Evidence_Audit_R1_20261030\\index.html",
+      "exists": true,
+      "sha256": "92fed6287812397fc68fb821486bcf704d2bdce6234165a0a998902fe50268c6"
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Core2_Evidence_Audit_R1_20261030\\review\\QUESTION_DISPOSITIONS.json",
+      "exists": true,
+      "sha256": "69e2e484471dbd243d21a2971bbabbc7e4d83e74458eb4bf574fa21d44c424aa"
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Core2_Evidence_Audit_R1_20261030\\review\\WEP07_03_TASK_VERSION_CONFLICT.json",
+      "exists": true,
+      "sha256": "0483a7d4ab2f2ddf2376b46126bc562a1d0e3920fa8bbe356c3680ab19ce1398"
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Core2_Evidence_Audit_R1_20261030\\review\\WORK_QUEUE.json",
+      "exists": true,
+      "sha256": "c9baa5966ccb16677ed4289fd4a9afa1da4a3b920bf78b432ff0bff3748ba7d3"
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Core2_Evidence_Audit_R1_20261030\\CONTINUITY.md",
+      "exists": true,
+      "sha256": "dd1ab93afa070e4f11526b4f059d73a9c9b995e8e9c912d9e7216faab58747e2"
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_ORACLE_EVIDENCE_AUDIT_CHECKPOINT_20261031.md",
+      "exists": true,
+      "sha256": "06f58d9d841a0e52e1c33f8213e5bfb32a0791e4060aea1e69316dac33cfd409"
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Core2_Academic_Review_R1_20261031\\comparison\\AUTHOR_COMPARISON.json",
+      "exists": true,
+      "sha256": "96292ebb638b8b24ce401a7c8cff072c4d57727730f09f9b4fcdf768e8e4a6eb"
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Core2_Academic_Review_R1_20261031\\oracle-research\\FINAL_KEY_RECEIPT.json",
+      "exists": true,
+      "sha256": "2fbb4f7b5cd2f365496fcd8acaa74b6de1f77961db07aca4418fa6a29068a8b8"
+    }
+  ],
+  "immutable_archive": {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_CORE2_EVIDENCE_AUDIT_R1_PRIVATE_20261030.zip",
+    "sha256": "c710f8aa94e90117288ec903852991bfcf9c5b17240c21d49a5662c36e23924d",
+    "unchanged": true
+  },
+  "old_artifacts_current": false
+}

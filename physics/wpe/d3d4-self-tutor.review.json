@@ -1,0 +1,235 @@
+{
+  "schema": "wpe-c01-c08-six-stage-self-tutor/v4",
+  "date": "2026-11-03",
+  "publication_role": "STUDENT_PRACTICE_PREVIEW_ONLY",
+  "route": "physics/wpe/d3d4-self-tutor.html",
+  "scope": "Eight original guided Core1A and distinct independent Core1B interactive six-stage practice journeys; no native academic admission or reprinting exam tasks",
+  "lessons": [
+    {
+      "id": "C01",
+      "concept": "Multi-force work–energy ledger",
+      "author_pack": "WPE_Source_to_Core1A_Concept/learning-bridge/MULTIFORCE_LEDGER_LEARNING_PACK.md",
+      "author_pack_blob_sha": "ee4fb95f4528e8fc2bd2c43719406f414f315be2",
+      "guided": "2 kg horizontal box, +30 J pull, −12 J friction, 18 J net",
+      "fresh": "3 kg motorized scooter, 2 m uphill, 0.5 m rise, four force ledger",
+      "proposed_source_themes": [
+        "EX-M105",
+        "EX-M24",
+        "TB-WPE-ILL-02"
+      ],
+      "source_join_status": "PROPOSED_UNQUALIFIED",
+      "revision": 1
+    },
+    {
+      "id": "C02",
+      "concept": "Spring contact and rough-ground phase split",
+      "author_pack": "WPE_Source_to_Core1A_Concept/learning-bridge/SPRING_CONTACT_LEARNING_PACK.md",
+      "author_pack_blob_sha": "56ac029f37bc805acbdc296b2f3d55ebdc53b0ca",
+      "guided": "1 kg smooth spring-cart release k=100 N/m x=0.20 m",
+      "fresh": "2 kg spring cart k=200 N/m x=0.10 m then 0.50 m rough strip, 1 N friction",
+      "proposed_source_themes": [
+        "EX-M24",
+        "TB-WPE-ILL-12",
+        "EX-M18"
+      ],
+      "source_join_status": "PROPOSED_UNQUALIFIED",
+      "revision": 1
+    },
+    {
+      "id": "C03",
+      "concept": "Constant mechanical power, energy versus speed and graph shapes",
+      "author_pack": "WPE_Source_to_Core1A_Concept/learning-bridge/CONSTANT_POWER_LEARNING_PACK.md",
+      "author_pack_blob_sha": "46794134580e69654318325b9e8247cb1fc24d18",
+      "guided": "2 kg sled with initial 2 m/s and 12 W for 1 s and 4 s, energy table and graphs",
+      "fresh": "3 kg trolley with initial 2 m/s and 18 W for 2 s and 6 s, three graph choices and 9 W boundary",
+      "proposed_source_themes": [
+        "EX-M62",
+        "EX-M79",
+        "EX-M69"
+      ],
+      "source_join_status": "PROPOSED_UNQUALIFIED",
+      "revision": 1
+    },
+    {
+      "id": "C04",
+      "concept": "Distributed chain mass and changing hanging centre of mass",
+      "author_pack": "WPE_Source_to_Core1A_Concept/learning-bridge/DISTRIBUTED_MASS_LEARNING_PACK.md",
+      "author_pack_blob_sha": "78097c0c64319a0dcc949da445fb67e6add1afcc",
+      "guided": "4 m, 2 kg uniform chain, 2 m hanging, lifted completely onto tabletop",
+      "fresh": "8 m, 4 kg rope, hanging length changes from 4 m to 2 m, full-lift boundary",
+      "proposed_source_themes": [
+        "EX-M73",
+        "WEP07-02",
+        "TB-WPE-ILL-11"
+      ],
+      "source_join_status": "PROPOSED_UNQUALIFIED",
+      "revision": 1
+    },
+    {
+      "id": "C05",
+      "concept": "Choose the correct operation for force–position, potential–position and displacement–time graphs",
+      "author_pack": "WPE_Source_to_Core1A_Concept/learning-bridge/GRAPH_OPERATION_LEARNING_PACK.md",
+      "author_pack_blob_sha": "0649efda3c2cef0c77b258d8a8ac15421cdfb7ed",
+      "guided": "Three simple axis-labeled graphs: F–x rectangle work, U–x negative-slope force, s–t slope velocity",
+      "fresh": "R triangular F–x work, S rising U–x negative force, T piecewise s–t interval velocity, F–t impulse boundary",
+      "proposed_source_themes": [
+        "EX-M56",
+        "EX-M61",
+        "EX-M69"
+      ],
+      "source_join_status": "PROPOSED_UNQUALIFIED",
+      "original_source_graphs_verified": false,
+      "revision": 1
+    },
+    {
+      "id": "C06",
+      "concept": "Vertical circular motion requires both energy feasibility and nonnegative taut-string tension",
+      "author_pack": "WPE_Source_to_Core1A_Concept/learning-bridge/VERTICAL_CIRCLE_LEARNING_PACK.md",
+      "author_pack_blob_sha": "33e5bd5a7111c95e01c33dc38eee930e9739a3e2",
+      "guided": "0.5 kg ball on 2 m string, top speed 6 m/s, top tension +4 N, bottom speed sqrt116 m/s",
+      "fresh": "1 kg ball on 1 m string initially 7 m/s at bottom, hypothetical top v²=9, tension −1 N impossible, 8 m/s boundary yields +14 N",
+      "proposed_source_themes": [
+        "EX-M39",
+        "EX-N31",
+        "EX-M18",
+        "EX-M6"
+      ],
+      "source_join_status": "PROPOSED_UNQUALIFIED",
+      "required_prerequisites": [
+        "conservation of mechanical energy",
+        "inward acceleration v²/r",
+        "direction of tension and gravity",
+        "taut string cannot push"
+      ],
+      "revision": 1
+    },
+    {
+      "id": "C07",
+      "concept": "Conveyor momentum-flow modelling and separate motor power, kinetic-energy gain and frictional heat rates",
+      "author_pack": "WPE_Source_to_Core1A_Concept/learning-bridge/CONVEYOR_MOMENTUM_POWER_LEARNING_PACK.md",
+      "author_pack_blob_sha": "5e967434d72f3222efe9ba2675980720f94eff1d",
+      "guided": "1 kg/s stationary horizontal sand arriving on 2 m/s belt gives 2 N pickup force, 4 W motor power, 2 W kinetic gain, 2 W heat",
+      "fresh": "Wood chips already enter at 1 m/s and leave at 4 m/s, feed rate v/2 kg/s; force 6 N, power 24 W, kinetic gain 15 W, heat 9 W; changed 2 m/s belt boundary",
+      "proposed_source_themes": [
+        "EX-M16"
+      ],
+      "source_join_status": "PROPOSED_UNQUALIFIED",
+      "required_prerequisites": [
+        "horizontal momentum change",
+        "rate in kilograms per second",
+        "mechanical power Fv",
+        "frictional dissipation during speed matching"
+      ],
+      "revision": 1
+    },
+    {
+      "id": "C08",
+      "concept": "Elastic spring energy comparison changes when fixed extension becomes fixed final applied force",
+      "author_pack": "WPE_Source_to_Core1A_Concept/learning-bridge/SPRING_CONTROLLED_VARIABLE_LEARNING_PACK.md",
+      "author_pack_blob_sha": "d90dda5d33fe90f09d1b567f4ae605546d882d0b",
+      "guided": "Ideal spring stiffnesses 100 N/m and 200 N/m at equal 0.10 m extension versus same final 10 N force",
+      "fresh": "Infer Blue and Gold stiffnesses 200/400 N/m from force at 4 cm; compare energy at 5 cm and final 12 N; double final force boundary",
+      "proposed_source_themes": [
+        "EX-M101"
+      ],
+      "source_join_status": "PROPOSED_UNQUALIFIED",
+      "source_selection_reader_conflict_unresolved": true,
+      "required_prerequisites": [
+        "Hooke law F=kx",
+        "elastic energy as triangle under force-extension graph",
+        "final equilibrium force distinct from constant force applied throughout loading"
+      ],
+      "revision": 1
+    }
+  ],
+  "six_stage_contract": [
+    "PREDICT",
+    "ATTEMPT",
+    "RECONSTRUCT",
+    "DIAGNOSE",
+    "REPAIR",
+    "BOUNDARY_TEST"
+  ],
+  "first_attempt_policy": {
+    "recorded_first_model": "browser_local_storage",
+    "immutable_after_commit_until_explicit_reset": true,
+    "separate_repair_record": true,
+    "answer_revealed_in_dom_only_after_first_attempt": true,
+    "secure_answer_secrecy": false,
+    "graded_reasoning": false,
+    "external_evidence": false,
+    "independent_student_observation": false
+  },
+  "academic": {
+    "native_core1a": "NOT_ACCEPTED",
+    "native_core1b": "NOT_ACCEPTED",
+    "qrt": "NOT_RUN",
+    "owner": "PENDING",
+    "qualified_learner_routes": 0
+  },
+  "review_notes": [
+    "PR #40 source-question return route remains DRAFT and was inspected but not merged or treated as academic prerequisite authority.",
+    "Two concepts are connected to difficult-question source IDs only as unverified proposed themes, not proven prerequisites.",
+    "Existing five-topic practice and main academic reader remain unchanged apart from small WPE chapter entry-point link.",
+    "Original exam stems, keys, source figures and native academic statuses were not copied or modified.",
+    "Static browser code can be inspected; a UI lock is not secure answer custody or independent evidence of a child's ability.",
+    "C03 guided and fresh problems follow existing constant-power authored pack; finite initial speed avoids the idealized zero-speed constant-power singularity and no s∝t^(3/2) derivation is required.",
+    "C04 guided and fresh problems follow existing chain pack; both hanging mass and centre height change, and a child may explain their diagram using text instead of drawing.",
+    "C01/C02 browser localStorage v1 keys retained so saved prior attempts continue after expansion to four topics.",
+    "No real-child observation performed; layout and state testing are automated simulations only.",
+    "C05 is an independently authored graph choice sequence; the original graphs for source themes EX-M56/61/69 have not been independently verified.",
+    "C06 is a scaffolded advanced circular-motion practice, requiring v²/r, gravity and a string-only nonnegative tension condition before the learner can independently reconstruct it.",
+    "Existing C01–C04 browser localStorage v1 keys remain unchanged after C05/C06 addition; no reset of old learners' attempts.",
+    "Only software browser simulations, not real child observations, measure layout and state transitions in this batch.",
+    "C07 steady pickup addresses only horizontal flows and incremental motor power; electric/bearing/vertical loads excluded. A source reference EX-M16 does not establish an accepted original-source join.",
+    "C08 has an unresolved selected-pilot versus consolidated-reader classification discrepancy for EX-M101; no source or demand band change made.",
+    "Existing C01–C06 browser localStorage v1 keys, initial responses, repaired text and progress state are unchanged after the C07/C08 addition.",
+    "New C07/C08 reasoning tests are automated simulations; no real child's understanding or admission inferred.",
+    "Learner-readiness software audit found missing C05–C08 attempt hints and repair cues, no reviewable worked steps at diagnosis/repair, and lost in-progress draft text across reload. These are code-inspection findings, not observed child behavior.",
+    "A supervised, anonymized learner observation protocol is now prepared. No learner session was run or inferred from the simulated browser journeys."
+  ],
+  "implementation_batch": {
+    "id": "C07_C08_INTERACTIVE_TRANSFER",
+    "date": "2026-11-03",
+    "new_topics": [
+      "C07",
+      "C08"
+    ],
+    "retained_topics": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06"
+    ],
+    "existing_storage_keys_preserved": true,
+    "new_qualified_routes": 0,
+    "academic_admissions_changed": false,
+    "real_student_usability_observed": false,
+    "software_browser_simulations_only": true,
+    "author_pack_contract": "Each fresh challenge requires an independent flow/control variable decision, locked first model, reconstruction, self-diagnosis, repair and changed-condition boundary test",
+    "learner_accessibility": "Flow-rate arrows, separate motor/kinetic/heat ledger, and explicit Hooke-law measurements plus worked equal-force versus equal-extension comparisons; advanced examples remain optional."
+  },
+  "learner_readiness_batch": {
+    "id": "EIGHT_LESSON_LEARNER_READINESS_REVIEW_20261103",
+    "date": "2026-11-03",
+    "scope": "Existing C01-C08 six-stage practice only; no academic admission or new source-theme join",
+    "fixes": [
+      "Save incomplete prediction and attempt drafts locally, without overwriting the locked first model",
+      "Keep the worked Core1B reasoning accessible in a collapsed control during diagnosis, repair and pre-boundary reflection",
+      "Give optional non-answer hints and misconception-tailored repair prompts in C05-C08, matching C01-C04 support",
+      "Provide an anonymized supervised observation protocol before claiming actual student usability evidence"
+    ],
+    "observational_protocol": "WPE_Source_to_Core1A_Concept/learning-bridge/LEARNER_OBSERVATION_PROTOCOL.md",
+    "protocol_created": true,
+    "real_student_sessions_conducted": 0,
+    "actual_child_observations": false,
+    "automated_browser_regression_only": true,
+    "first_attempt_key_changed": false,
+    "first_attempt_unlock_changed": false,
+    "original_source_stems_changed": false,
+    "academic_admissions_changed": false,
+    "scope_status": "PREPARATION_AND_SOFTWARE_FIXES_ONLY__NO_REAL_LEARNER_DATA"
+  }
+}

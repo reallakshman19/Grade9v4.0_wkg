@@ -1,0 +1,93 @@
+{
+  "sequence": 25,
+  "batch_sequence": 10,
+  "task_identity": "Q-ID-28",
+  "stable_id": "G9V4-PHYS-WPE-EX-M76",
+  "source_id": "EX-M76",
+  "lot": "LOT-06",
+  "batch": "BATCH-B",
+  "paper": "JEE Main 2019 (Online) 10th January Morning Slot",
+  "source_type": "JEE_MAIN_PAST_EXAM_QUESTION",
+  "source_custody": "PARTIAL (remote setup diagram unresolved)",
+  "stem_text": "A block of mass m is kept on a platform which starts from rest with constant acceleration g/2 upward, as shown in figure. Work done by normal reaction on block in time t is - [FIG-stem-1]",
+  "stem_sha256": "b7e30117787ec4c78919caf7f08c4fbe70299cf0c656fb9164c20f5816f4bc91",
+  "source_hash": "b7e30117787ec4c78919caf7f08c4fbe70299cf0c656fb9164c20f5816f4bc91",
+  "source_record_digest": "b7e30117787ec4c78919caf7f08c4fbe70299cf0c656fb9164c20f5816f4bc91",
+  "duplicate_parent": null,
+  "scope": "IN_SCOPE_WPE_ONLY",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "HOLD:FIGURE_UNRESOLVED",
+  "figure_reference": "[FIG-stem-1] Platform and block setup unverified against authentic master",
+  "options": [
+    "A: (𝑚𝑔^(2)𝑡^(2))/(8)",
+    "B: (3𝑚𝑔^(2)𝑡^(2))/(8)",
+    "C: − (𝑚𝑔^(2)𝑡^(2))/(8)",
+    "D: 0"
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "ACCELERATED_FRAME_NORMAL_FORCE_WORK",
+    "derivation": "Equation of motion for block in vertical direction: N - mg = m a = m (g/2) => N = mg + mg/2 = (3/2) mg. Upward displacement of platform in time t starting from rest: s = 1/2 a t^2 = 1/2 (g/2) t^2 = (1/4) g t^2. Work done by normal reaction force: W = N * s = ((3/2) mg) * ((1/4) g t^2) = (3 m g^2 t^2) / 8. Matches Option B.",
+    "predicted_option": "B: (3𝑚𝑔^(2)𝑡^(2))/(8)",
+    "limiting_cases": "If platform had zero acceleration, N = mg and s = 0 (from rest), W = 0. If platform accelerated in free fall (a = -g), N = 0, W = 0. With upward acceleration g/2, N > mg and W > 0."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 2,
+          "evidence": "Conservation of energy including gravitational potential and spring elastic potential"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Setting reference datum for gravitational fall (h + x)"
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Energy balance: mg(h + x) = (1/2)kx^2"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Solving quadratic equation in compression x"
+        },
+        "trap_exception_sensitivity": {
+          "score": 0,
+          "evidence": "Standard energy conservation setup"
+        }
+      },
+      "total": 5,
+      "band": "D2",
+      "prior_proposal": {
+        "source": "PRODUCER_HISTORICAL_ESTIMATE",
+        "scores": "1/1/1/1/1",
+        "total": 5
+      },
+      "differences": "Rescored to native five-factor rubric per B2 CP-4 review"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "MODEL"
+      ],
+      "rationale": "Application of mechanical energy conservation to coupled gravity-spring interaction",
+      "candidate_cell": "QRT-APPLY-D2",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_CP4_GATE",
+  "b2_blind_status": "UNREVIEWED",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:FIGURE_UNRESOLVED (diagram needed to verify orientation and contact plane)",
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)",
+    "HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)"
+  ],
+  "next_action": "Verify official NTA diagram and key for 10-01-2019 Morning Slot."
+}

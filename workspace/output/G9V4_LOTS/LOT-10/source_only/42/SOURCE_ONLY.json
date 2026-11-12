@@ -1,0 +1,17 @@
+{
+  "source_id": "EX-M120",
+  "task_identity": "Q-ID-49",
+  "sequence": 42,
+  "batch_sequence": 12,
+  "paper": "AIEEE 2003",
+  "stem_text": "A body is moved along a straight line by a machine delivering a constant power. The distance moved by the body in time ^(′)𝑡^(′) is proportional to",
+  "stem_sha256": "ba2a01004368fd62fdd85b1dedd32e3171cdeda5b1e08edd87b4da2db74d7f66",
+  "options": [
+    "A: 𝑡^(3/4)",
+    "B: 𝑡^(3/2)",
+    "C: 𝑡^(1/4)",
+    "D: 𝑡^(1/2)"
+  ],
+  "figure_reference": null,
+  "confidentiality_notice": "Source custody blind packet. Academic solve, answer key, and scoring omitted. Private review only."
+}

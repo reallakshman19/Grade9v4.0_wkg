@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <style>
+      .label { font-family: system-ui, -apple-system, sans-serif; font-size: 15px; font-weight: 600; fill: #1e293b; }
+      .dim { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; fill: #475569; }
+      .thick { stroke: #0f172a; stroke-width: 2.5; fill: none; }
+      .rope { stroke: #334155; stroke-width: 2; fill: none; stroke-dasharray: none; }
+      .pulley { fill: #94a3b8; stroke: #0f172a; stroke-width: 2; }
+      .block { fill: #e2e8f0; stroke: #1e293b; stroke-width: 2; rx: 4; }
+      .ground { stroke: #64748b; stroke-width: 3; }
+    </style>
+  </defs>
+  <!-- Ceiling -->
+  <line x1="140" y1="30" x2="260" y2="30" stroke="#475569" stroke-width="4"/>
+  <line x1="200" y1="30" x2="200" y2="60" stroke="#475569" stroke-width="3"/>
+  
+  <!-- Pulley -->
+  <circle cx="200" cy="75" r="25" class="pulley"/>
+  <circle cx="200" cy="75" r="4" fill="#0f172a"/>
+  
+  <!-- Ropes -->
+  <line x1="175" y1="75" x2="175" y2="150" class="rope"/>
+  <line x1="225" y1="75" x2="225" y2="210" class="rope"/>
+  
+  <!-- Mass m = 2 kg -->
+  <rect x="155" y="150" width="40" height="35" class="block"/>
+  <text x="175" y="172" class="label" text-anchor="middle">2 kg</text>
+  
+  <!-- Mass M = 6 kg -->
+  <rect x="202" y="210" width="46" height="42" class="block" style="fill:#cbd5e1;"/>
+  <text x="225" y="236" class="label" text-anchor="middle">6 kg</text>
+  
+  <!-- Ground Line -->
+  <line x1="80" y1="280" x2="320" y2="280" class="ground"/>
+  <text x="325" y="285" class="dim">Ground</text>
+  
+  <!-- Height Dimension -->
+  <line x1="260" y1="252" x2="260" y2="280" stroke="#0284c7" stroke-width="1.5"/>
+  <path d="M257 256 L260 252 L263 256 M257 276 L260 280 L263 276" stroke="#0284c7" stroke-width="1.5" fill="none"/>
+  <text x="270" y="270" class="label" style="fill:#0284c7;">h = 6 m</text>
+</svg>

@@ -1,0 +1,2241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grade9 v4.0 · Physics WPE · Core 2 Source Questions (Batch 1)</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --muted: #64748b;
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --success: #16a34a;
+      --warning: #d97706;
+      --danger: #dc2626;
+      --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding-bottom: 60px;
+      overflow-x: hidden;
+      width: 100%;
+    }
+    math, .math-tex {
+      font-family: "Cambria Math", "STIX Two Math", "Noto Sans Math", "Latin Modern Math", serif;
+      font-size: 1.05em;
+    }
+    .header {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 16px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .header-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .title-group h1 { font-size: 1.25rem; font-weight: 700; }
+    .title-group p { font-size: 0.85rem; color: #94a3b8; }
+    .badge-hold {
+      background: #991b1b;
+      color: #fef2f2;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      border: 1px solid #ef4444;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 16px;
+    }
+    /* Drawer Navigation */
+    .drawer-nav {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 24px;
+      box-shadow: var(--card-shadow);
+    }
+    .drawer-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .pill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+      gap: 8px;
+    }
+    .nav-pill {
+      background: #f1f5f9;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 4px;
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      min-height: 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      touch-action: manipulation;
+    }
+    .nav-pill:hover { background: #e2e8f0; }
+    .nav-pill.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+    .nav-pill .sub { font-size: 0.65rem; font-weight: normal; opacity: 0.85; }
+    .nav-pill.band-D1 { border-left: 3px solid #16a34a; }
+    .nav-pill.band-D2 { border-left: 3px solid #2563eb; }
+    .nav-pill.band-D3 { border-left: 3px solid #d97706; }
+    .nav-pill.band-D4 { border-left: 3px solid #dc2626; }
+    
+    /* Question Card */
+    .q-card {
+      display: none;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 24px;
+    }
+    .q-card.active { display: block; }
+    
+    .q-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+      align-items: center;
+    }
+    .meta-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: #f1f5f9;
+      color: #334155;
+    }
+    .tag-band { background: #dbeafe; color: #1e40af; font-weight: 700; }
+    .tag-op { background: #fef3c7; color: #92400e; font-weight: 700; }
+    
+    .q-stem {
+      font-size: 1.1rem;
+      font-weight: 500;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: #1e293b;
+    }
+    
+    .q-fig-box {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      margin: 16px 0 24px 0;
+      text-align: center;
+      max-width: 480px;
+    }
+    .q-fig-box img, .q-fig-box svg {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    
+    /* Options & Commitment */
+    .commit-section {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+    .commit-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #334155;
+    }
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .opt-btn {
+      background: var(--surface);
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 0.95rem;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 48px;
+      touch-action: manipulation;
+      transition: all 0.15s ease;
+    }
+    .opt-btn:hover { border-color: var(--primary); background: #f0f7ff; }
+    .opt-btn.selected {
+      border-color: var(--primary);
+      background: #eff6ff;
+      font-weight: 600;
+    }
+    .opt-radio {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid #94a3b8;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    .opt-btn.selected .opt-radio {
+      border-color: var(--primary);
+      background: var(--primary);
+      box-shadow: inset 0 0 0 3px #ffffff;
+    }
+    .commit-btn {
+      background: var(--primary);
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 24px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      min-height: 48px;
+      touch-action: manipulation;
+      transition: background 0.15s;
+    }
+    .commit-btn:hover { background: var(--primary-hover); }
+    .commit-btn:disabled {
+      background: #94a3b8;
+      cursor: not-allowed;
+    }
+    
+    /* Scaffolds / Hint Ladder */
+    .hints-section {
+      margin-bottom: 24px;
+    }
+    .hints-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .hint-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      background: var(--surface);
+    }
+    .hint-header {
+      background: #f8fafc;
+      padding: 12px 16px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 48px;
+      touch-action: manipulation;
+    }
+    .hint-body {
+      display: none;
+      padding: 14px 16px;
+      font-size: 0.9rem;
+      color: #334155;
+      border-top: 1px solid var(--border);
+      background: #ffffff;
+    }
+    .hint-card.open .hint-body { display: block; }
+    .hint-card.open .hint-header { background: #f1f5f9; }
+    
+    /* Derivation Stages (Hidden Until Commitment) */
+    .derivation-section {
+      display: none;
+      background: #f8fafc;
+      border: 2px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 24px;
+    }
+    .derivation-section.revealed { display: block; animation: fadeIn 0.3s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    
+    .deriv-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .move-step {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+    .move-kind {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: #e2e8f0;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+    .move-action { font-weight: 600; margin-bottom: 4px; }
+    .move-why { font-size: 0.85rem; color: #475569; margin-bottom: 4px; }
+    .move-output { font-family: monospace; font-size: 0.85rem; background: #f1f5f9; padding: 4px 8px; border-radius: 4px; }
+    
+    .author-check {
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 0.85rem;
+      color: #065f46;
+      margin-top: 14px;
+    }
+    
+    /* Footer Governance Banner */
+    .gov-footer {
+      background: #f1f5f9;
+      border-top: 1px solid #e2e8f0;
+      padding: 16px;
+      font-size: 0.8rem;
+      color: #64748b;
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-top">
+      <div class="title-group">
+        <h1>Grade9 v4.0 · Physics (Work, Power & Energy)</h1>
+        <p>Core 2 Source Question Reader · Batch 1 (Questions 01–15)</p>
+      </div>
+      <div>
+        <span class="badge-hold">HOLD:ACADEMIC_ADMISSION</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    
+    <!-- Drawer Navigation -->
+    <nav class="drawer-nav" aria-label="Question selector">
+      <div class="drawer-title">
+        <span>Select Candidate Question (15 Total)</span>
+        <span>Batch 1: Lots 02–04</span>
+      </div>
+      <div class="pill-grid">
+        <button class="nav-pill band-D2 active" data-q="q01" onclick="switchQuestion(1)">
+          <span>Q01</span>
+          <span class="sub">D2</span>
+        </button>        <button class="nav-pill band-D2" data-q="q02" onclick="switchQuestion(2)">
+          <span>Q02</span>
+          <span class="sub">D2</span>
+        </button>        <button class="nav-pill band-D4" data-q="q03" onclick="switchQuestion(3)">
+          <span>Q03</span>
+          <span class="sub">D4</span>
+        </button>        <button class="nav-pill band-D2" data-q="q04" onclick="switchQuestion(4)">
+          <span>Q04</span>
+          <span class="sub">D2</span>
+        </button>        <button class="nav-pill band-D2" data-q="q05" onclick="switchQuestion(5)">
+          <span>Q05</span>
+          <span class="sub">D2</span>
+        </button>        <button class="nav-pill band-D2" data-q="q06" onclick="switchQuestion(6)">
+          <span>Q06</span>
+          <span class="sub">D2</span>
+        </button>        <button class="nav-pill band-D2" data-q="q07" onclick="switchQuestion(7)">
+          <span>Q07</span>
+          <span class="sub">D2</span>
+        </button>        <button class="nav-pill band-D3" data-q="q08" onclick="switchQuestion(8)">
+          <span>Q08</span>
+          <span class="sub">D3</span>
+        </button>        <button class="nav-pill band-D4" data-q="q09" onclick="switchQuestion(9)">
+          <span>Q09</span>
+          <span class="sub">D4</span>
+        </button>        <button class="nav-pill band-D4" data-q="q10" onclick="switchQuestion(10)">
+          <span>Q10</span>
+          <span class="sub">D4</span>
+        </button>        <button class="nav-pill band-D2" data-q="q11" onclick="switchQuestion(11)">
+          <span>Q11</span>
+          <span class="sub">D2</span>
+        </button>        <button class="nav-pill band-D2" data-q="q12" onclick="switchQuestion(12)">
+          <span>Q12</span>
+          <span class="sub">D2</span>
+        </button>        <button class="nav-pill band-D1" data-q="q13" onclick="switchQuestion(13)">
+          <span>Q13</span>
+          <span class="sub">D1</span>
+        </button>        <button class="nav-pill band-D2" data-q="q14" onclick="switchQuestion(14)">
+          <span>Q14</span>
+          <span class="sub">D2</span>
+        </button>        <button class="nav-pill band-D2" data-q="q15" onclick="switchQuestion(15)">
+          <span>Q15</span>
+          <span class="sub">D2</span>
+        </button>      </div>
+    </nav>
+
+    <!-- Question Cards Container -->
+    <div id="questions-container">
+
+      <article class="q-card active" id="card-q01" data-seq="1">
+        
+        <!-- Metadata Tags -->
+        <div class="q-meta">
+          <span class="meta-tag tag-band">Band: D2 (5/10)</span>
+          <span class="meta-tag tag-op">Operation: APPLY</span>
+          <span class="meta-tag">JEE Main 2026 (Online) 6th April Evening Shift</span>
+          <span class="meta-tag">ID: EX-M2</span>
+        </div>
+
+        <!-- Problem Stem -->
+        <div class="q-stem">
+          <strong>Question 01:</strong> The velocity at which 6 kg mass (shown in figure) strikes the ground when it is released from a height of 6 m above the ground is ____ m/s . Assume pulley is massless and string is light and inextensible. (Take g=10<math class="math-tex" display="inline"><mrow><mi>m</mi><mo>/</mo><msup><mi>s</mi><mn>2</mn></msup></mrow></math> ) [FIG-stem-1]
+        </div>
+
+        <div class="q-fig-box">
+          <img src="../assets/fig_q01_atwood.svg" alt="Diagram for Question 01" loading="lazy">
+        </div>
+
+        <section class="hints-section" aria-label="Progressive Hints">
+          <div class="hints-title">Progressive Scaffold Ladder (Pre-Attempt Safe)</div>
+
+          <div class="hint-card" id="hint-q01-1">
+            <div class="hint-header" onclick="toggleHint('hint-q01-1')">
+              <span>Tier 1 (REPRESENTATION): How should the physical system be isolated?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Identify which bodies form the interacting system and establish coordinate directions.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q01-2">
+            <div class="hint-header" onclick="toggleHint('hint-q01-2')">
+              <span>Tier 2 (FORMULATION): Which physical conservation law or work-energy theorem applies?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Consider Work Energy Two Body Pulley relating initial and final mechanical states.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q01-3">
+            <div class="hint-header" onclick="toggleHint('hint-q01-3')">
+              <span>Tier 3 (RESOLUTION): What is the crucial relationship connecting the variables?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Crux Move: Setting up the coupled two-body kinetic energy ledger where both bodies move at identical instantaneous speed v while one descends and the other ascends.</p>
+            </div>
+          </div>
+        </section>
+        <!-- Commitment Section -->
+        <section class="commit-section" aria-label="Attempt Commitment">
+          <div class="commit-title">Commit Your Answer to Unlock Worked Derivation:</div>
+          <div class="options-grid">
+
+            <button class="opt-btn" onclick="selectOption(1, 0)" id="opt-btn-q01-0">
+              <span class="opt-radio"></span>
+              <span>A: 7.74</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(1, 1)" id="opt-btn-q01-1">
+              <span class="opt-radio"></span>
+              <span>B: 7.20</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(1, 2)" id="opt-btn-q01-2">
+              <span class="opt-radio"></span>
+              <span>C: 6.55</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(1, 3)" id="opt-btn-q01-3">
+              <span class="opt-radio"></span>
+              <span>D: 4.50</span>
+            </button>
+
+          </div>
+          <button class="commit-btn" id="commit-btn-q01" onclick="commitAnswer(1)" disabled>
+            Commit Answer
+          </button>
+        </section>
+
+        <!-- Derivation Section (Inert Until Commitment) -->
+        <section class="derivation-section" id="derivation-q01" aria-label="Worked Derivation">
+          <div class="deriv-title">
+            <span>✓ Solution & Cognitive Route</span>
+            <span style="font-size:0.85rem; font-weight:normal; color:#15803d;">(Coaching predicted option: A: 7.74)</span>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">REPRESENT</span>
+            <div class="move-action">Establish coordinate system, free-body system boundary, and identify initial states for EX-M2.</div>
+            <div class="move-why"><em>Physical Warrant:</em> System boundary isolation determines internal vs external forces.</div>
+            <div class="move-output">Output: Isolated system free-body model and state coordinates</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">CONNECT</span>
+            <div class="move-action">Formulate the governing work-energy relation: WORK_ENERGY_TWO_BODY_PULLEY.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Work-Energy Theorem and conservation of mechanical energy hold in inertial laboratory frames.</div>
+            <div class="move-output">Output: Governing equation: Conservation of mechanical energy for connected two-body system: Delta K = W_net...</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">TRANSFORM</span>
+            <div class="move-action">Solve for the required target quantity and select matching option A:.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Algebraic manipulation and root extraction preserve equality on real physical domains.</div>
+            <div class="move-output">Output: Exact target result agreeing with A: 7.74</div>
+          </div>
+
+          <div class="author-check">
+            <strong>Limiting Case & Dimensional Sanity Check:</strong><br>
+            Author Limiting Case Verification: If m = M, v = 0 (equilibrium). If m = 0, v = sqrt(2gh) = sqrt(120) approx 10.95 m/s. Bound: 0 < 7.746 < 10.95 m/s.
+          </div>
+        </section>
+      </article>
+
+      <article class="q-card" id="card-q02" data-seq="2">
+        
+        <!-- Metadata Tags -->
+        <div class="q-meta">
+          <span class="meta-tag tag-band">Band: D2 (4/10)</span>
+          <span class="meta-tag tag-op">Operation: APPLY</span>
+          <span class="meta-tag">JEE Main 2026 (Online) 5th April Evening Shift</span>
+          <span class="meta-tag">ID: EX-M4</span>
+        </div>
+
+        <!-- Problem Stem -->
+        <div class="q-stem">
+          <strong>Question 02:</strong> A mass of 1 kg is kept on an inclined plane with <math class="math-tex" display="inline"><msup><mn>30</mn><mo>∘</mo></msup></math> inclination with respect to horizontal plane and it is at rest initially. Then the whole assembly is moved up with constant velocity of 4m/s . The work done by the frictional force in time 2 s is ____ J. (Take 𝑔=10<math class="math-tex" display="inline"><mrow><mi>m</mi><mo>/</mo><msup><mi>s</mi><mn>2</mn></msup></mrow></math> )
+        </div>
+
+        <section class="hints-section" aria-label="Progressive Hints">
+          <div class="hints-title">Progressive Scaffold Ladder (Pre-Attempt Safe)</div>
+
+          <div class="hint-card" id="hint-q02-1">
+            <div class="hint-header" onclick="toggleHint('hint-q02-1')">
+              <span>Tier 1 (REPRESENTATION): How should the physical system be isolated?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Identify which bodies form the interacting system and establish coordinate directions.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q02-2">
+            <div class="hint-header" onclick="toggleHint('hint-q02-2')">
+              <span>Tier 2 (FORMULATION): Which physical conservation law or work-energy theorem applies?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Consider Static Friction Frame Translation relating initial and final mechanical states.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q02-3">
+            <div class="hint-header" onclick="toggleHint('hint-q02-3')">
+              <span>Tier 3 (RESOLUTION): What is the crucial relationship connecting the variables?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Crux Move: Recognizing that static friction can perform non-zero work in an inertial frame when the contact boundary translates, and projecting friction onto the displacement vector.</p>
+            </div>
+          </div>
+        </section>
+        <!-- Commitment Section -->
+        <section class="commit-section" aria-label="Attempt Commitment">
+          <div class="commit-title">Commit Your Answer to Unlock Worked Derivation:</div>
+          <div class="options-grid">
+
+            <button class="opt-btn" onclick="selectOption(2, 0)" id="opt-btn-q02-0">
+              <span class="opt-radio"></span>
+              <span>A: 20</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(2, 1)" id="opt-btn-q02-1">
+              <span class="opt-radio"></span>
+              <span>B: 25</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(2, 2)" id="opt-btn-q02-2">
+              <span class="opt-radio"></span>
+              <span>C: 30</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(2, 3)" id="opt-btn-q02-3">
+              <span class="opt-radio"></span>
+              <span>D: 10</span>
+            </button>
+
+          </div>
+          <button class="commit-btn" id="commit-btn-q02" onclick="commitAnswer(2)" disabled>
+            Commit Answer
+          </button>
+        </section>
+
+        <!-- Derivation Section (Inert Until Commitment) -->
+        <section class="derivation-section" id="derivation-q02" aria-label="Worked Derivation">
+          <div class="deriv-title">
+            <span>✓ Solution & Cognitive Route</span>
+            <span style="font-size:0.85rem; font-weight:normal; color:#15803d;">(Coaching predicted option: A: 20)</span>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">REPRESENT</span>
+            <div class="move-action">Establish coordinate system, free-body system boundary, and identify initial states for EX-M4.</div>
+            <div class="move-why"><em>Physical Warrant:</em> System boundary isolation determines internal vs external forces.</div>
+            <div class="move-output">Output: Isolated system free-body model and state coordinates</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">CONNECT</span>
+            <div class="move-action">Formulate the governing work-energy relation: STATIC_FRICTION_FRAME_TRANSLATION.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Work-Energy Theorem and conservation of mechanical energy hold in inertial laboratory frames.</div>
+            <div class="move-output">Output: Governing equation: Block rests on incline at theta = 30 deg. Tangential gravity balance gives stati...</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">TRANSFORM</span>
+            <div class="move-action">Solve for the required target quantity and select matching option A:.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Algebraic manipulation and root extraction preserve equality on real physical domains.</div>
+            <div class="move-output">Output: Exact target result agreeing with A: 20</div>
+          </div>
+
+          <div class="author-check">
+            <strong>Limiting Case & Dimensional Sanity Check:</strong><br>
+            Author Limiting Case Verification: If theta = 0 deg, f_s = 0 => W = 0 J. If theta -> 90 deg, normal force -> 0 (block falls). For theta = 30 deg, W = 20 J.
+          </div>
+        </section>
+      </article>
+
+      <article class="q-card" id="card-q03" data-seq="3">
+        
+        <!-- Metadata Tags -->
+        <div class="q-meta">
+          <span class="meta-tag tag-band">Band: D4 (8/10)</span>
+          <span class="meta-tag tag-op">Operation: JUSTIFY</span>
+          <span class="meta-tag">JEE Main 2026 (Online) 23rd January Evening Shift</span>
+          <span class="meta-tag">ID: EX-M6</span>
+        </div>
+
+        <!-- Problem Stem -->
+        <div class="q-stem">
+          <strong>Question 03:</strong> A bead <math class="math-tex" display="inline"><mi>𝑃</mi></math> sliding on a frictionless semi-circular string (<math class="math-tex" display="inline"><mi>𝐴𝐶𝐵</mi></math>) and it is at point <math class="math-tex" display="inline"><mi>𝑆</mi></math> at 𝑡=0 and at this instant the horizontal component of its velocity is <math class="math-tex" display="inline"><mi>𝑣</mi></math> . Another bead <math class="math-tex" display="inline"><mi>𝑄</mi></math> of the same mass as <math class="math-tex" display="inline"><mi>𝑃</mi></math> is ejected from point <math class="math-tex" display="inline"><mi>𝐴</mi></math> at 𝑡=0 along the horizontal string <math class="math-tex" display="inline"><mi>𝐴𝐵</mi></math> , with the speed <math class="math-tex" display="inline"><mi>𝑣</mi></math> , friction between the beads and the respective strings may be neglected in both cases. Let 𝑡_𝑃 and 𝑡_𝑄 be the respective times taken by beads <math class="math-tex" display="inline"><mi>𝑃</mi></math> and <math class="math-tex" display="inline"><mi>𝑄</mi></math> to reach the point <math class="math-tex" display="inline"><mi>𝐵</mi></math> , then the relation between 𝑡_𝑃 and 𝑡_𝑄 is [FIG-stem-1]
+        </div>
+
+        <div class="q-fig-box">
+          <img src="../assets/fig_q03_bead_semicircle.svg" alt="Diagram for Question 03" loading="lazy">
+        </div>
+
+        <section class="hints-section" aria-label="Progressive Hints">
+          <div class="hints-title">Progressive Scaffold Ladder (Pre-Attempt Safe)</div>
+
+          <div class="hint-card" id="hint-q03-1">
+            <div class="hint-header" onclick="toggleHint('hint-q03-1')">
+              <span>Tier 1 (REPRESENTATION): How should the physical system be isolated?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Identify which bodies form the interacting system and establish coordinate directions.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q03-2">
+            <div class="hint-header" onclick="toggleHint('hint-q03-2')">
+              <span>Tier 2 (FORMULATION): Which physical conservation law or work-energy theorem applies?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Consider Comparative Trajectory Time Integral relating initial and final mechanical states.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q03-3">
+            <div class="hint-header" onclick="toggleHint('hint-q03-3')">
+              <span>Tier 3 (RESOLUTION): What is the crucial relationship connecting the variables?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Crux Move: Analyzing the trade-off between increased path length along a circular arc versus increased speed from gravitational potential energy conversion.</p>
+            </div>
+          </div>
+        </section>
+        <!-- Commitment Section -->
+        <section class="commit-section" aria-label="Attempt Commitment">
+          <div class="commit-title">Commit Your Answer to Unlock Worked Derivation:</div>
+          <div class="options-grid">
+
+            <button class="opt-btn" onclick="selectOption(3, 0)" id="opt-btn-q03-0">
+              <span class="opt-radio"></span>
+              <span>A: 𝑡_𝑃<𝑡_𝑄</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(3, 1)" id="opt-btn-q03-1">
+              <span class="opt-radio"></span>
+              <span>B: 𝑡_𝑃=𝑡_𝑄</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(3, 2)" id="opt-btn-q03-2">
+              <span class="opt-radio"></span>
+              <span>C: 𝑡_𝑃>1.25𝑡_𝑄</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(3, 3)" id="opt-btn-q03-3">
+              <span class="opt-radio"></span>
+              <span>D: 𝑡_𝑃>𝑡_𝑄</span>
+            </button>
+
+          </div>
+          <button class="commit-btn" id="commit-btn-q03" onclick="commitAnswer(3)" disabled>
+            Commit Answer
+          </button>
+        </section>
+
+        <!-- Derivation Section (Inert Until Commitment) -->
+        <section class="derivation-section" id="derivation-q03" aria-label="Worked Derivation">
+          <div class="deriv-title">
+            <span>✓ Solution & Cognitive Route</span>
+            <span style="font-size:0.85rem; font-weight:normal; color:#15803d;">(Coaching predicted option: A: 𝑡_𝑃<𝑡_𝑄 (coaching proposal))</span>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">REPRESENT</span>
+            <div class="move-action">Establish coordinate system, free-body system boundary, and identify initial states for EX-M6.</div>
+            <div class="move-why"><em>Physical Warrant:</em> System boundary isolation determines internal vs external forces.</div>
+            <div class="move-output">Output: Isolated system free-body model and state coordinates</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">CONNECT</span>
+            <div class="move-action">Formulate the governing work-energy relation: COMPARATIVE_TRAJECTORY_TIME_INTEGRAL.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Work-Energy Theorem and conservation of mechanical energy hold in inertial laboratory frames.</div>
+            <div class="move-output">Output: Governing equation: Bead Q traverses straight chord AB of length 2R with uniform horizontal velocity...</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">TRANSFORM</span>
+            <div class="move-action">Solve for the required target quantity and select matching option A:.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Algebraic manipulation and root extraction preserve equality on real physical domains.</div>
+            <div class="move-output">Output: Exact target result agreeing with A: 𝑡_𝑃<𝑡_𝑄 (coaching proposal)</div>
+          </div>
+
+          <div class="author-check">
+            <strong>Limiting Case & Dimensional Sanity Check:</strong><br>
+            Author Limiting Case Verification: If g -> 0, path ACB is longer (pi*R > 2R) with constant speed v, so t_P = pi*R/v > 2R/v = t_Q. If g is very large, descent velocity becomes extremely high, driving t_P -> 0, so t_P < t_Q. Crossover depends sensitively on v^2/(gR).
+          </div>
+        </section>
+      </article>
+
+      <article class="q-card" id="card-q04" data-seq="4">
+        
+        <!-- Metadata Tags -->
+        <div class="q-meta">
+          <span class="meta-tag tag-band">Band: D2 (3/10)</span>
+          <span class="meta-tag tag-op">Operation: APPLY</span>
+          <span class="meta-tag">JEE Main 2026 (Online) 23rd January Morning Shift</span>
+          <span class="meta-tag">ID: EX-M7</span>
+        </div>
+
+        <!-- Problem Stem -->
+        <div class="q-stem">
+          <strong>Question 04:</strong> An object is projected with kinetic energy <math class="math-tex" display="inline"><mi>𝐾</mi></math> from a point <math class="math-tex" display="inline"><mi>𝐴</mi></math> at an angle <math class="math-tex" display="inline"><msup><mn>60</mn><mo>∘</mo></msup></math> with the horizontal. The ratio of the difference in kinetic energies at points <math class="math-tex" display="inline"><mi>𝐵</mi></math> and <math class="math-tex" display="inline"><mi>𝐶</mi></math> to that at point <math class="math-tex" display="inline"><mi>𝐴</mi></math> (see figure), in the absence of air friction is : [FIG-stem-1]
+        </div>
+
+        <div class="q-fig-box">
+          <img src="../assets/fig_q04_projectile_energy.svg" alt="Diagram for Question 04" loading="lazy">
+        </div>
+
+        <section class="hints-section" aria-label="Progressive Hints">
+          <div class="hints-title">Progressive Scaffold Ladder (Pre-Attempt Safe)</div>
+
+          <div class="hint-card" id="hint-q04-1">
+            <div class="hint-header" onclick="toggleHint('hint-q04-1')">
+              <span>Tier 1 (REPRESENTATION): How should the physical system be isolated?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Identify which bodies form the interacting system and establish coordinate directions.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q04-2">
+            <div class="hint-header" onclick="toggleHint('hint-q04-2')">
+              <span>Tier 2 (FORMULATION): Which physical conservation law or work-energy theorem applies?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Consider Projectile Energy Decomposition relating initial and final mechanical states.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q04-3">
+            <div class="hint-header" onclick="toggleHint('hint-q04-3')">
+              <span>Tier 3 (RESOLUTION): What is the crucial relationship connecting the variables?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Crux Move: Decomposing projectile kinetic energy into horizontal and vertical components to find apex energy retention K_B = K cos^2(theta).</p>
+            </div>
+          </div>
+        </section>
+        <!-- Commitment Section -->
+        <section class="commit-section" aria-label="Attempt Commitment">
+          <div class="commit-title">Commit Your Answer to Unlock Worked Derivation:</div>
+          <div class="options-grid">
+
+            <button class="opt-btn" onclick="selectOption(4, 0)" id="opt-btn-q04-0">
+              <span class="opt-radio"></span>
+              <span>A: 3:4</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(4, 1)" id="opt-btn-q04-1">
+              <span class="opt-radio"></span>
+              <span>B: 1:4</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(4, 2)" id="opt-btn-q04-2">
+              <span class="opt-radio"></span>
+              <span>C: 2:3</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(4, 3)" id="opt-btn-q04-3">
+              <span class="opt-radio"></span>
+              <span>D: 1:2</span>
+            </button>
+
+          </div>
+          <button class="commit-btn" id="commit-btn-q04" onclick="commitAnswer(4)" disabled>
+            Commit Answer
+          </button>
+        </section>
+
+        <!-- Derivation Section (Inert Until Commitment) -->
+        <section class="derivation-section" id="derivation-q04" aria-label="Worked Derivation">
+          <div class="deriv-title">
+            <span>✓ Solution & Cognitive Route</span>
+            <span style="font-size:0.85rem; font-weight:normal; color:#15803d;">(Coaching predicted option: A: 3:4)</span>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">REPRESENT</span>
+            <div class="move-action">Establish coordinate system, free-body system boundary, and identify initial states for EX-M7.</div>
+            <div class="move-why"><em>Physical Warrant:</em> System boundary isolation determines internal vs external forces.</div>
+            <div class="move-output">Output: Isolated system free-body model and state coordinates</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">CONNECT</span>
+            <div class="move-action">Formulate the governing work-energy relation: PROJECTILE_ENERGY_DECOMPOSITION.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Work-Energy Theorem and conservation of mechanical energy hold in inertial laboratory frames.</div>
+            <div class="move-output">Output: Governing equation: Initial launch KE at A: K_A = K = 1/2 m u^2. At apex B, vertical velocity is zer...</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">TRANSFORM</span>
+            <div class="move-action">Solve for the required target quantity and select matching option A:.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Algebraic manipulation and root extraction preserve equality on real physical domains.</div>
+            <div class="move-output">Output: Exact target result agreeing with A: 3:4</div>
+          </div>
+
+          <div class="author-check">
+            <strong>Limiting Case & Dimensional Sanity Check:</strong><br>
+            Author Limiting Case Verification: If launch angle theta = 0 deg, v_B = u => Delta K = 0. If theta = 90 deg, v_B = 0 => Delta K = K => ratio 1:1. For 60 deg, ratio is sin^2(60 deg) = 3/4.
+          </div>
+        </section>
+      </article>
+
+      <article class="q-card" id="card-q05" data-seq="5">
+        
+        <!-- Metadata Tags -->
+        <div class="q-meta">
+          <span class="meta-tag tag-band">Band: D2 (4/10)</span>
+          <span class="meta-tag tag-op">Operation: APPLY</span>
+          <span class="meta-tag">JEE Main 2026 (Online) 23rd January Morning Shift</span>
+          <span class="meta-tag">ID: EX-M8</span>
+        </div>
+
+        <!-- Problem Stem -->
+        <div class="q-stem">
+          <strong>Question 05:</strong> Two blocks with masses 100 g and 200 g are attached to the ends of springs <math class="math-tex" display="inline"><mi>𝐴</mi></math> and <math class="math-tex" display="inline"><mi>𝐵</mi></math> as shown in figure. The energy stored in <math class="math-tex" display="inline"><mi>𝐴</mi></math> is <math class="math-tex" display="inline"><mi>𝐸</mi></math> . The energy stored in <math class="math-tex" display="inline"><mi>𝐵</mi></math> , when spring constants 𝑘_𝐴,𝑘_𝐵 of <math class="math-tex" display="inline"><mi>𝐴</mi></math> and <math class="math-tex" display="inline"><mi>𝐵</mi></math> , respectively satisfy the relation 4𝑘_𝐴=3𝑘_𝐵 , is : [FIG-stem-1]
+        </div>
+
+        <div class="q-fig-box">
+          <img src="../assets/fig_q05_atwood_work.svg" alt="Diagram for Question 05" loading="lazy">
+        </div>
+
+        <section class="hints-section" aria-label="Progressive Hints">
+          <div class="hints-title">Progressive Scaffold Ladder (Pre-Attempt Safe)</div>
+
+          <div class="hint-card" id="hint-q05-1">
+            <div class="hint-header" onclick="toggleHint('hint-q05-1')">
+              <span>Tier 1 (REPRESENTATION): How should the physical system be isolated?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Identify which bodies form the interacting system and establish coordinate directions.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q05-2">
+            <div class="hint-header" onclick="toggleHint('hint-q05-2')">
+              <span>Tier 2 (FORMULATION): Which physical conservation law or work-energy theorem applies?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Consider Spring Static Equilibrium Energy relating initial and final mechanical states.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q05-3">
+            <div class="hint-header" onclick="toggleHint('hint-q05-3')">
+              <span>Tier 3 (RESOLUTION): What is the crucial relationship connecting the variables?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Crux Move: Expressing elastic potential energy in terms of static gravitational force U = F^2 / (2k) to exploit scaling with mass squared and inverse spring constant.</p>
+            </div>
+          </div>
+        </section>
+        <!-- Commitment Section -->
+        <section class="commit-section" aria-label="Attempt Commitment">
+          <div class="commit-title">Commit Your Answer to Unlock Worked Derivation:</div>
+          <div class="options-grid">
+
+            <button class="opt-btn" onclick="selectOption(5, 0)" id="opt-btn-q05-0">
+              <span class="opt-radio"></span>
+              <span>A: 4𝐸</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(5, 1)" id="opt-btn-q05-1">
+              <span class="opt-radio"></span>
+              <span>B: 2𝐸</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(5, 2)" id="opt-btn-q05-2">
+              <span class="opt-radio"></span>
+              <span>C: <math class="math-tex" display="inline"><mfrac><mrow><mi>4</mi></mrow><mrow><mi>3</mi></mrow></mfrac></math>𝐸</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(5, 3)" id="opt-btn-q05-3">
+              <span class="opt-radio"></span>
+              <span>D: 3𝐸</span>
+            </button>
+
+          </div>
+          <button class="commit-btn" id="commit-btn-q05" onclick="commitAnswer(5)" disabled>
+            Commit Answer
+          </button>
+        </section>
+
+        <!-- Derivation Section (Inert Until Commitment) -->
+        <section class="derivation-section" id="derivation-q05" aria-label="Worked Derivation">
+          <div class="deriv-title">
+            <span>✓ Solution & Cognitive Route</span>
+            <span style="font-size:0.85rem; font-weight:normal; color:#15803d;">(Coaching predicted option: D: 3𝐸)</span>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">REPRESENT</span>
+            <div class="move-action">Establish coordinate system, free-body system boundary, and identify initial states for EX-M8.</div>
+            <div class="move-why"><em>Physical Warrant:</em> System boundary isolation determines internal vs external forces.</div>
+            <div class="move-output">Output: Isolated system free-body model and state coordinates</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">CONNECT</span>
+            <div class="move-action">Formulate the governing work-energy relation: SPRING_STATIC_EQUILIBRIUM_ENERGY.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Work-Energy Theorem and conservation of mechanical energy hold in inertial laboratory frames.</div>
+            <div class="move-output">Output: Governing equation: In vertical static equilibrium, spring tension equals suspended weight: k x = mg...</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">TRANSFORM</span>
+            <div class="move-action">Solve for the required target quantity and select matching option D:.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Algebraic manipulation and root extraction preserve equality on real physical domains.</div>
+            <div class="move-output">Output: Exact target result agreeing with D: 3𝐸</div>
+          </div>
+
+          <div class="author-check">
+            <strong>Limiting Case & Dimensional Sanity Check:</strong><br>
+            Author Limiting Case Verification: If m_B = m_A and k_B = k_A, E_B = E. If k_B -> infinity, E_B -> 0. With m ratio 2 and k ratio 4/3, factor is 2^2 / (4/3) = 3.
+          </div>
+        </section>
+      </article>
+
+      <article class="q-card" id="card-q06" data-seq="6">
+        
+        <!-- Metadata Tags -->
+        <div class="q-meta">
+          <span class="meta-tag tag-band">Band: D2 (4/10)</span>
+          <span class="meta-tag tag-op">Operation: REPRESENT</span>
+          <span class="meta-tag">JEE Main 2026 (Online) 21st January Morning Shift</span>
+          <span class="meta-tag">ID: EX-M11</span>
+        </div>
+
+        <!-- Problem Stem -->
+        <div class="q-stem">
+          <strong>Question 06:</strong> Potential energy ( <math class="math-tex" display="inline"><mi>𝑉</mi></math> ) versus distance ( <math class="math-tex" display="inline"><mi>𝑥</mi></math> ) is given by the graph. Rank various regions as per the magnitudes of the force ( 𝐹 ) acting on a particle from high to low. [FIG-stem-1]
+        </div>
+
+        <div class="q-fig-box">
+          <img src="../assets/fig_q06_potential_curve.svg" alt="Diagram for Question 06" loading="lazy">
+        </div>
+
+        <section class="hints-section" aria-label="Progressive Hints">
+          <div class="hints-title">Progressive Scaffold Ladder (Pre-Attempt Safe)</div>
+
+          <div class="hint-card" id="hint-q06-1">
+            <div class="hint-header" onclick="toggleHint('hint-q06-1')">
+              <span>Tier 1 (REPRESENTATION): How should the physical system be isolated?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Identify which bodies form the interacting system and establish coordinate directions.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q06-2">
+            <div class="hint-header" onclick="toggleHint('hint-q06-2')">
+              <span>Tier 2 (FORMULATION): Which physical conservation law or work-energy theorem applies?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Consider Potential Gradient Slope Ranking relating initial and final mechanical states.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q06-3">
+            <div class="hint-header" onclick="toggleHint('hint-q06-3')">
+              <span>Tier 3 (RESOLUTION): What is the crucial relationship connecting the variables?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Crux Move: Translating graph slopes of potential energy V(x) to conservative force magnitudes |F| = |dV/dx| and ordering piecewise segments.</p>
+            </div>
+          </div>
+        </section>
+        <!-- Commitment Section -->
+        <section class="commit-section" aria-label="Attempt Commitment">
+          <div class="commit-title">Commit Your Answer to Unlock Worked Derivation:</div>
+          <div class="options-grid">
+
+            <button class="opt-btn" onclick="selectOption(6, 0)" id="opt-btn-q06-0">
+              <span class="opt-radio"></span>
+              <span>A: 𝐹_𝐵𝐶>𝐹_𝐴𝐵>𝐹_𝐷𝐸>𝐹_𝐶𝐷</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(6, 1)" id="opt-btn-q06-1">
+              <span class="opt-radio"></span>
+              <span>B: 𝐹_𝐵𝐶>𝐹_𝐶𝐷>𝐹_𝐷𝐸>𝐹_𝐴𝐵</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(6, 2)" id="opt-btn-q06-2">
+              <span class="opt-radio"></span>
+              <span>C: 𝐹_𝐶𝐷>𝐹_𝐴𝐵>𝐹_𝐵𝐶>𝐹_𝐷𝐸</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(6, 3)" id="opt-btn-q06-3">
+              <span class="opt-radio"></span>
+              <span>D: 𝐹_𝐶𝐷>𝐹_𝐷𝐸>𝐹_𝐴𝐵>𝐹_𝐵𝐶</span>
+            </button>
+
+          </div>
+          <button class="commit-btn" id="commit-btn-q06" onclick="commitAnswer(6)" disabled>
+            Commit Answer
+          </button>
+        </section>
+
+        <!-- Derivation Section (Inert Until Commitment) -->
+        <section class="derivation-section" id="derivation-q06" aria-label="Worked Derivation">
+          <div class="deriv-title">
+            <span>✓ Solution & Cognitive Route</span>
+            <span style="font-size:0.85rem; font-weight:normal; color:#15803d;">(Coaching predicted option: A: 𝐹_𝐵𝐶>𝐹_𝐴𝐵>𝐹_𝐷𝐸>𝐹_𝐶𝐷)</span>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">REPRESENT</span>
+            <div class="move-action">Establish coordinate system, free-body system boundary, and identify initial states for EX-M11.</div>
+            <div class="move-why"><em>Physical Warrant:</em> System boundary isolation determines internal vs external forces.</div>
+            <div class="move-output">Output: Isolated system free-body model and state coordinates</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">CONNECT</span>
+            <div class="move-action">Formulate the governing work-energy relation: POTENTIAL_GRADIENT_SLOPE_RANKING.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Work-Energy Theorem and conservation of mechanical energy hold in inertial laboratory frames.</div>
+            <div class="move-output">Output: Governing equation: Conservative force magnitude is given by |F| = |-dV/dx| = |slope|. Slope_AB = (1...</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">TRANSFORM</span>
+            <div class="move-action">Solve for the required target quantity and select matching option A:.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Algebraic manipulation and root extraction preserve equality on real physical domains.</div>
+            <div class="move-output">Output: Exact target result agreeing with A: 𝐹_𝐵𝐶>𝐹_𝐴𝐵>𝐹_𝐷𝐸>𝐹_𝐶𝐷</div>
+          </div>
+
+          <div class="author-check">
+            <strong>Limiting Case & Dimensional Sanity Check:</strong><br>
+            Author Limiting Case Verification: Flat region CD has zero slope, hence minimum force (0). Steeper segment BC has maximum slope (3). Rank order is strictly determined by geometric steepness.
+          </div>
+        </section>
+      </article>
+
+      <article class="q-card" id="card-q07" data-seq="7">
+        
+        <!-- Metadata Tags -->
+        <div class="q-meta">
+          <span class="meta-tag tag-band">Band: D2 (5/10)</span>
+          <span class="meta-tag tag-op">Operation: APPLY</span>
+          <span class="meta-tag">JEE Main 2025 (Online) 4th April Evening Shift</span>
+          <span class="meta-tag">ID: EX-M14</span>
+        </div>
+
+        <!-- Problem Stem -->
+        <div class="q-stem">
+          <strong>Question 07:</strong> A block of mass 25 kg is pulled along a horizontal surface by a force at an angle 45^(∘) with the horizontal. The friction coefficient between the block and the surface is 0.25 . The block travels at a uniform velocity. The work done by the applied force during a displacement of 5 m of the block is :
+        </div>
+
+        <section class="hints-section" aria-label="Progressive Hints">
+          <div class="hints-title">Progressive Scaffold Ladder (Pre-Attempt Safe)</div>
+
+          <div class="hint-card" id="hint-q07-1">
+            <div class="hint-header" onclick="toggleHint('hint-q07-1')">
+              <span>Tier 1 (REPRESENTATION): How should the physical system be isolated?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Identify which bodies form the interacting system and establish coordinate directions.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q07-2">
+            <div class="hint-header" onclick="toggleHint('hint-q07-2')">
+              <span>Tier 2 (FORMULATION): Which physical conservation law or work-energy theorem applies?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Consider Work Ext Dynamic Equilibrium relating initial and final mechanical states.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q07-3">
+            <div class="hint-header" onclick="toggleHint('hint-q07-3')">
+              <span>Tier 3 (RESOLUTION): What is the crucial relationship connecting the variables?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Crux Move: Incorporating the vertical component of the pulling force into the normal reaction reduction and calculating work done at uniform velocity.</p>
+            </div>
+          </div>
+        </section>
+        <!-- Commitment Section -->
+        <section class="commit-section" aria-label="Attempt Commitment">
+          <div class="commit-title">Commit Your Answer to Unlock Worked Derivation:</div>
+          <div class="options-grid">
+
+            <button class="opt-btn" onclick="selectOption(7, 0)" id="opt-btn-q07-0">
+              <span class="opt-radio"></span>
+              <span>A: 490 J</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(7, 1)" id="opt-btn-q07-1">
+              <span class="opt-radio"></span>
+              <span>B: 970 J</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(7, 2)" id="opt-btn-q07-2">
+              <span class="opt-radio"></span>
+              <span>C: 735 J</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(7, 3)" id="opt-btn-q07-3">
+              <span class="opt-radio"></span>
+              <span>D: 245 J</span>
+            </button>
+
+          </div>
+          <button class="commit-btn" id="commit-btn-q07" onclick="commitAnswer(7)" disabled>
+            Commit Answer
+          </button>
+        </section>
+
+        <!-- Derivation Section (Inert Until Commitment) -->
+        <section class="derivation-section" id="derivation-q07" aria-label="Worked Derivation">
+          <div class="deriv-title">
+            <span>✓ Solution & Cognitive Route</span>
+            <span style="font-size:0.85rem; font-weight:normal; color:#15803d;">(Coaching predicted option: D: 245 J)</span>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">REPRESENT</span>
+            <div class="move-action">Establish coordinate system, free-body system boundary, and identify initial states for EX-M14.</div>
+            <div class="move-why"><em>Physical Warrant:</em> System boundary isolation determines internal vs external forces.</div>
+            <div class="move-output">Output: Isolated system free-body model and state coordinates</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">CONNECT</span>
+            <div class="move-action">Formulate the governing work-energy relation: WORK_EXT_DYNAMIC_EQUILIBRIUM.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Work-Energy Theorem and conservation of mechanical energy hold in inertial laboratory frames.</div>
+            <div class="move-output">Output: Governing equation: Let pulling force be F at 45 deg above horizontal. Vertical equilibrium: N + F s...</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">TRANSFORM</span>
+            <div class="move-action">Solve for the required target quantity and select matching option D:.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Algebraic manipulation and root extraction preserve equality on real physical domains.</div>
+            <div class="move-output">Output: Exact target result agreeing with D: 245 J</div>
+          </div>
+
+          <div class="author-check">
+            <strong>Limiting Case & Dimensional Sanity Check:</strong><br>
+            Author Limiting Case Verification: If mu = 0, F = 0 => W = 0 J. If s = 0, W = 0 J. Direct energy balance: work by applied force equals thermal dissipation by kinetic friction over 5 m: W = f_k * s = 49 * 5 = 245 J.
+          </div>
+        </section>
+      </article>
+
+      <article class="q-card" id="card-q08" data-seq="8">
+        
+        <!-- Metadata Tags -->
+        <div class="q-meta">
+          <span class="meta-tag tag-band">Band: D3 (7/10)</span>
+          <span class="meta-tag tag-op">Operation: MODEL</span>
+          <span class="meta-tag">JEE Main 2025 (Online) 29th January Evening Shift</span>
+          <span class="meta-tag">ID: EX-M16</span>
+        </div>
+
+        <!-- Problem Stem -->
+        <div class="q-stem">
+          <strong>Question 08:</strong> A sand dropper drops sand of mass m(t) on a conveyer belt at a rate proportional to the square root of speed (v) of the belt, i.e., <math class="math-tex" display="inline"><mfrac><mrow><mi>𝑑𝑚</mi></mrow><mrow><mi>𝑑𝑡</mi></mrow></mfrac></math>∝√(<math class="math-tex" display="inline"><mi>𝑣</mi></math>) . If P is the power delivered to run the belt at constant speed then which of the following relationship is true?
+        </div>
+
+        <section class="hints-section" aria-label="Progressive Hints">
+          <div class="hints-title">Progressive Scaffold Ladder (Pre-Attempt Safe)</div>
+
+          <div class="hint-card" id="hint-q08-1">
+            <div class="hint-header" onclick="toggleHint('hint-q08-1')">
+              <span>Tier 1 (REPRESENTATION): How should the physical system be isolated?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Identify which bodies form the interacting system and establish coordinate directions.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q08-2">
+            <div class="hint-header" onclick="toggleHint('hint-q08-2')">
+              <span>Tier 2 (FORMULATION): Which physical conservation law or work-energy theorem applies?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Consider Variable Mass Belt Power Proportionality relating initial and final mechanical states.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q08-3">
+            <div class="hint-header" onclick="toggleHint('hint-q08-3')">
+              <span>Tier 3 (RESOLUTION): What is the crucial relationship connecting the variables?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Crux Move: Modeling variable-mass thrust F = v(dm/dt) and input power P = F*v = v^2(dm/dt) under velocity-dependent mass flux dm/dt proportional to v^(1/2).</p>
+            </div>
+          </div>
+        </section>
+        <!-- Commitment Section -->
+        <section class="commit-section" aria-label="Attempt Commitment">
+          <div class="commit-title">Commit Your Answer to Unlock Worked Derivation:</div>
+          <div class="options-grid">
+
+            <button class="opt-btn" onclick="selectOption(8, 0)" id="opt-btn-q08-0">
+              <span class="opt-radio"></span>
+              <span>A: P ∝√(<math class="math-tex" display="inline"><mi>𝑣</mi></math>)</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(8, 1)" id="opt-btn-q08-1">
+              <span class="opt-radio"></span>
+              <span>B: P ∝𝑣</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(8, 2)" id="opt-btn-q08-2">
+              <span class="opt-radio"></span>
+              <span>C: 𝑃^(2)∝𝑣^(3)</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(8, 3)" id="opt-btn-q08-3">
+              <span class="opt-radio"></span>
+              <span>D: 𝑃^(2)∝𝑣^(5)</span>
+            </button>
+
+          </div>
+          <button class="commit-btn" id="commit-btn-q08" onclick="commitAnswer(8)" disabled>
+            Commit Answer
+          </button>
+        </section>
+
+        <!-- Derivation Section (Inert Until Commitment) -->
+        <section class="derivation-section" id="derivation-q08" aria-label="Worked Derivation">
+          <div class="deriv-title">
+            <span>✓ Solution & Cognitive Route</span>
+            <span style="font-size:0.85rem; font-weight:normal; color:#15803d;">(Coaching predicted option: D: 𝑃^(2)∝𝑣^(5))</span>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">REPRESENT</span>
+            <div class="move-action">Establish coordinate system, free-body system boundary, and identify initial states for EX-M16.</div>
+            <div class="move-why"><em>Physical Warrant:</em> System boundary isolation determines internal vs external forces.</div>
+            <div class="move-output">Output: Isolated system free-body model and state coordinates</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">CONNECT</span>
+            <div class="move-action">Formulate the governing work-energy relation: VARIABLE_MASS_BELT_POWER_PROPORTIONALITY.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Work-Energy Theorem and conservation of mechanical energy hold in inertial laboratory frames.</div>
+            <div class="move-output">Output: Governing equation: Rate of mass addition: dm/dt = k * v^(1/2). To maintain constant speed v, the fo...</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">TRANSFORM</span>
+            <div class="move-action">Solve for the required target quantity and select matching option D:.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Algebraic manipulation and root extraction preserve equality on real physical domains.</div>
+            <div class="move-output">Output: Exact target result agreeing with D: 𝑃^(2)∝𝑣^(5)</div>
+          </div>
+
+          <div class="author-check">
+            <strong>Limiting Case & Dimensional Sanity Check:</strong><br>
+            Author Limiting Case Verification: If dm/dt were constant (independent of v), P = v^2 (dm/dt) => P proportional to v^2 => P^2 proportional to v^4. With dm/dt proportional to v^(1/2), P proportional to v^(5/2) => P^2 proportional to v^5.
+          </div>
+        </section>
+      </article>
+
+      <article class="q-card" id="card-q09" data-seq="9">
+        
+        <!-- Metadata Tags -->
+        <div class="q-meta">
+          <span class="meta-tag tag-band">Band: D4 (8/10)</span>
+          <span class="meta-tag tag-op">Operation: MODEL</span>
+          <span class="meta-tag">JEE Main 2025 (Online) 28th January Morning Shift</span>
+          <span class="meta-tag">ID: EX-M18</span>
+        </div>
+
+        <!-- Problem Stem -->
+        <div class="q-stem">
+          <strong>Question 09:</strong> A bead of mass ' <math class="math-tex" display="inline"><mi>𝑚</mi></math> ' slides without friction on the wall of a vertical circular hoop of radius ' 𝑅 ' as shown in figure. The bead moves under the combined action of gravity and a massless spring (k) attached to the bottom of the hoop. The equilibrium length of the spring is ' 𝑅 '. If the bead is released from top of the hoop with (negligible) zero initial speed, velocity of bead, when the length of spring becomes ' 𝑅 ', would be (spring constant is ' 𝑘 ', 𝑔 is acceleration due to gravity) [FIG-stem-1]
+        </div>
+
+        <div class="q-fig-box">
+          <img src="../assets/fig_q09_bead_wire_spring.svg" alt="Diagram for Question 09" loading="lazy">
+        </div>
+
+        <section class="hints-section" aria-label="Progressive Hints">
+          <div class="hints-title">Progressive Scaffold Ladder (Pre-Attempt Safe)</div>
+
+          <div class="hint-card" id="hint-q09-1">
+            <div class="hint-header" onclick="toggleHint('hint-q09-1')">
+              <span>Tier 1 (REPRESENTATION): How should the physical system be isolated?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Identify which bodies form the interacting system and establish coordinate directions.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q09-2">
+            <div class="hint-header" onclick="toggleHint('hint-q09-2')">
+              <span>Tier 2 (FORMULATION): Which physical conservation law or work-energy theorem applies?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Consider Circular Hoop Bottom Spring Gravity Energy relating initial and final mechanical states.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q09-3">
+            <div class="hint-header" onclick="toggleHint('hint-q09-3')">
+              <span>Tier 3 (RESOLUTION): What is the crucial relationship connecting the variables?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Crux Move: Modeling the simultaneous relaxation of an extended bottom-anchored spring and gravitational descent on a circular constraint using equilateral triangle geometry.</p>
+            </div>
+          </div>
+        </section>
+        <!-- Commitment Section -->
+        <section class="commit-section" aria-label="Attempt Commitment">
+          <div class="commit-title">Commit Your Answer to Unlock Worked Derivation:</div>
+          <div class="options-grid">
+
+            <button class="opt-btn" onclick="selectOption(9, 0)" id="opt-btn-q09-0">
+              <span class="opt-radio"></span>
+              <span>A: √<math class="math-tex" display="inline"><mfrac><mrow><mi>2𝑅𝑔+(kR2</mi></mrow><mrow><mi>m</mi></mrow></mfrac></math>)</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(9, 1)" id="opt-btn-q09-1">
+              <span class="opt-radio"></span>
+              <span>B: √<math class="math-tex" display="inline"><mfrac><mrow><mi>3Rg+(kR2</mi></mrow><mrow><mi>m</mi></mrow></mfrac></math>)</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(9, 2)" id="opt-btn-q09-2">
+              <span class="opt-radio"></span>
+              <span>C: √(2Rg+(4kR^(2))/(m))</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(9, 3)" id="opt-btn-q09-3">
+              <span class="opt-radio"></span>
+              <span>D: 2√<math class="math-tex" display="inline"><mfrac><mrow><mi>gR+(kR2</mi></mrow><mrow><mi>m</mi></mrow></mfrac></math>)</span>
+            </button>
+
+          </div>
+          <button class="commit-btn" id="commit-btn-q09" onclick="commitAnswer(9)" disabled>
+            Commit Answer
+          </button>
+        </section>
+
+        <!-- Derivation Section (Inert Until Commitment) -->
+        <section class="derivation-section" id="derivation-q09" aria-label="Worked Derivation">
+          <div class="deriv-title">
+            <span>✓ Solution & Cognitive Route</span>
+            <span style="font-size:0.85rem; font-weight:normal; color:#15803d;">(Coaching predicted option: B: √(3Rg+(kR2)/(m)))</span>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">REPRESENT</span>
+            <div class="move-action">Establish coordinate system, free-body system boundary, and identify initial states for EX-M18.</div>
+            <div class="move-why"><em>Physical Warrant:</em> System boundary isolation determines internal vs external forces.</div>
+            <div class="move-output">Output: Isolated system free-body model and state coordinates</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">CONNECT</span>
+            <div class="move-action">Formulate the governing work-energy relation: CIRCULAR_HOOP_BOTTOM_SPRING_GRAVITY_ENERGY.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Work-Energy Theorem and conservation of mechanical energy hold in inertial laboratory frames.</div>
+            <div class="move-output">Output: Governing equation: Initial state (top of hoop): y1 = 2R, spring length = 2R, extension x1 = 2R - R ...</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">TRANSFORM</span>
+            <div class="move-action">Solve for the required target quantity and select matching option B:.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Algebraic manipulation and root extraction preserve equality on real physical domains.</div>
+            <div class="move-output">Output: Exact target result agreeing with B: √(3Rg+(kR2)/(m))</div>
+          </div>
+
+          <div class="author-check">
+            <strong>Limiting Case & Dimensional Sanity Check:</strong><br>
+            Author Limiting Case Verification: If k = 0 (pure gravity), v = sqrt(2 g Delta h) = sqrt(2 g * 3R/2) = sqrt(3gR). If g = 0 (pure spring), v = sqrt(k R^2 / m). Both conservative forces lose potential energy simultaneously, yielding Option B.
+          </div>
+        </section>
+      </article>
+
+      <article class="q-card" id="card-q10" data-seq="10">
+        
+        <!-- Metadata Tags -->
+        <div class="q-meta">
+          <span class="meta-tag tag-band">Band: D4 (8/10)</span>
+          <span class="meta-tag tag-op">Operation: APPLY</span>
+          <span class="meta-tag">JEE Main 2024 (Online) 8th April Evening Shift</span>
+          <span class="meta-tag">ID: EX-M24</span>
+        </div>
+
+        <!-- Problem Stem -->
+        <div class="q-stem">
+          <strong>Question 10:</strong> [FIG-stem-1] A block is simply released from the top of an inclined plane as shown in the figure above. The maximum compression in the spring when the block hits the spring is :
+        </div>
+
+        <div class="q-fig-box">
+          <img src="../assets/fig_q10_incline_block.svg" alt="Diagram for Question 10" loading="lazy">
+        </div>
+
+        <section class="hints-section" aria-label="Progressive Hints">
+          <div class="hints-title">Progressive Scaffold Ladder (Pre-Attempt Safe)</div>
+
+          <div class="hint-card" id="hint-q10-1">
+            <div class="hint-header" onclick="toggleHint('hint-q10-1')">
+              <span>Tier 1 (REPRESENTATION): How should the physical system be isolated?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Identify which bodies form the interacting system and establish coordinate directions.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q10-2">
+            <div class="hint-header" onclick="toggleHint('hint-q10-2')">
+              <span>Tier 2 (FORMULATION): Which physical conservation law or work-energy theorem applies?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Consider Work Energy Theorem Incline Spring Friction relating initial and final mechanical states.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q10-3">
+            <div class="hint-header" onclick="toggleHint('hint-q10-3')">
+              <span>Tier 3 (RESOLUTION): What is the crucial relationship connecting the variables?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Crux Move: Formulating the complete work-energy equation incorporating gravitational potential loss, non-conservative frictional dissipation, and spring potential gain to solve a quadratic in spring compression x.</p>
+            </div>
+          </div>
+        </section>
+        <!-- Commitment Section -->
+        <section class="commit-section" aria-label="Attempt Commitment">
+          <div class="commit-title">Commit Your Answer to Unlock Worked Derivation:</div>
+          <div class="options-grid">
+
+            <button class="opt-btn" onclick="selectOption(10, 0)" id="opt-btn-q10-0">
+              <span class="opt-radio"></span>
+              <span>A: √(6)m</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(10, 1)" id="opt-btn-q10-1">
+              <span class="opt-radio"></span>
+              <span>B: √(5)m</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(10, 2)" id="opt-btn-q10-2">
+              <span class="opt-radio"></span>
+              <span>C: 1m</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(10, 3)" id="opt-btn-q10-3">
+              <span class="opt-radio"></span>
+              <span>D: 2m</span>
+            </button>
+
+          </div>
+          <button class="commit-btn" id="commit-btn-q10" onclick="commitAnswer(10)" disabled>
+            Commit Answer
+          </button>
+        </section>
+
+        <!-- Derivation Section (Inert Until Commitment) -->
+        <section class="derivation-section" id="derivation-q10" aria-label="Worked Derivation">
+          <div class="deriv-title">
+            <span>✓ Solution & Cognitive Route</span>
+            <span style="font-size:0.85rem; font-weight:normal; color:#15803d;">(Coaching predicted option: D: 2m)</span>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">REPRESENT</span>
+            <div class="move-action">Establish coordinate system, free-body system boundary, and identify initial states for EX-M24.</div>
+            <div class="move-why"><em>Physical Warrant:</em> System boundary isolation determines internal vs external forces.</div>
+            <div class="move-output">Output: Isolated system free-body model and state coordinates</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">CONNECT</span>
+            <div class="move-action">Formulate the governing work-energy relation: WORK_ENERGY_THEOREM_INCLINE_SPRING_FRICTION.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Work-Energy Theorem and conservation of mechanical energy hold in inertial laboratory frames.</div>
+            <div class="move-output">Output: Governing equation: Work-energy theorem between release point and maximum compression x: W_grav + W_...</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">TRANSFORM</span>
+            <div class="move-action">Solve for the required target quantity and select matching option D:.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Algebraic manipulation and root extraction preserve equality on real physical domains.</div>
+            <div class="move-output">Output: Exact target result agreeing with D: 2m</div>
+          </div>
+
+          <div class="author-check">
+            <strong>Limiting Case & Dimensional Sanity Check:</strong><br>
+            Author Limiting Case Verification: If mu = 0, 50x^2 = 250 => x^2 = 5 => x = sqrt(5) m (Option B). With friction present, energy is dissipated, leading to quadratic equation root x = 2 m.
+          </div>
+        </section>
+      </article>
+
+      <article class="q-card" id="card-q11" data-seq="11">
+        
+        <!-- Metadata Tags -->
+        <div class="q-meta">
+          <span class="meta-tag tag-band">Band: D2 (5/10)</span>
+          <span class="meta-tag tag-op">Operation: APPLY</span>
+          <span class="meta-tag">JEE Main 2024 (Online) 5th April Evening Shift</span>
+          <span class="meta-tag">ID: EX-M29</span>
+        </div>
+
+        <!-- Problem Stem -->
+        <div class="q-stem">
+          <strong>Question 11:</strong> A body is moving unidirectionally under the influence of a constant power source. Its displacement in time t is proportional to :
+        </div>
+
+        <section class="hints-section" aria-label="Progressive Hints">
+          <div class="hints-title">Progressive Scaffold Ladder (Pre-Attempt Safe)</div>
+
+          <div class="hint-card" id="hint-q11-1">
+            <div class="hint-header" onclick="toggleHint('hint-q11-1')">
+              <span>Tier 1 (REPRESENTATION): How should the physical system be isolated?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Identify which bodies form the interacting system and establish coordinate directions.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q11-2">
+            <div class="hint-header" onclick="toggleHint('hint-q11-2')">
+              <span>Tier 2 (FORMULATION): Which physical conservation law or work-energy theorem applies?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Consider Constant Power Displacement Integral relating initial and final mechanical states.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q11-3">
+            <div class="hint-header" onclick="toggleHint('hint-q11-3')">
+              <span>Tier 3 (RESOLUTION): What is the crucial relationship connecting the variables?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Crux Move: Setting up the differential relation for constant power P = m v (dv/dt) and integrating twice to find displacement time scaling s proportional to t^(3/2).</p>
+            </div>
+          </div>
+        </section>
+        <!-- Commitment Section -->
+        <section class="commit-section" aria-label="Attempt Commitment">
+          <div class="commit-title">Commit Your Answer to Unlock Worked Derivation:</div>
+          <div class="options-grid">
+
+            <button class="opt-btn" onclick="selectOption(11, 0)" id="opt-btn-q11-0">
+              <span class="opt-radio"></span>
+              <span>A: t2/3</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(11, 1)" id="opt-btn-q11-1">
+              <span class="opt-radio"></span>
+              <span>B: t3/2</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(11, 2)" id="opt-btn-q11-2">
+              <span class="opt-radio"></span>
+              <span>C: t</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(11, 3)" id="opt-btn-q11-3">
+              <span class="opt-radio"></span>
+              <span>D: t2</span>
+            </button>
+
+          </div>
+          <button class="commit-btn" id="commit-btn-q11" onclick="commitAnswer(11)" disabled>
+            Commit Answer
+          </button>
+        </section>
+
+        <!-- Derivation Section (Inert Until Commitment) -->
+        <section class="derivation-section" id="derivation-q11" aria-label="Worked Derivation">
+          <div class="deriv-title">
+            <span>✓ Solution & Cognitive Route</span>
+            <span style="font-size:0.85rem; font-weight:normal; color:#15803d;">(Coaching predicted option: B: t3/2)</span>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">REPRESENT</span>
+            <div class="move-action">Establish coordinate system, free-body system boundary, and identify initial states for EX-M29.</div>
+            <div class="move-why"><em>Physical Warrant:</em> System boundary isolation determines internal vs external forces.</div>
+            <div class="move-output">Output: Isolated system free-body model and state coordinates</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">CONNECT</span>
+            <div class="move-action">Formulate the governing work-energy relation: CONSTANT_POWER_DISPLACEMENT_INTEGRAL.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Work-Energy Theorem and conservation of mechanical energy hold in inertial laboratory frames.</div>
+            <div class="move-output">Output: Governing equation: Constant power P = F * v = m * v * (dv/dt) = constant. Separating variables: v d...</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">TRANSFORM</span>
+            <div class="move-action">Solve for the required target quantity and select matching option B:.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Algebraic manipulation and root extraction preserve equality on real physical domains.</div>
+            <div class="move-output">Output: Exact target result agreeing with B: t3/2</div>
+          </div>
+
+          <div class="author-check">
+            <strong>Limiting Case & Dimensional Sanity Check:</strong><br>
+            Author Limiting Case Verification: If acceleration were constant (constant force), P = F*a*t proportional to t, and s proportional to t^2. Under constant power, acceleration decreases as v increases, yielding s proportional to t^(3/2), which is intermediate between t and t^2.
+          </div>
+        </section>
+      </article>
+
+      <article class="q-card" id="card-q12" data-seq="12">
+        
+        <!-- Metadata Tags -->
+        <div class="q-meta">
+          <span class="meta-tag tag-band">Band: D2 (4/10)</span>
+          <span class="meta-tag tag-op">Operation: APPLY</span>
+          <span class="meta-tag">JEE Main 2024 (Online) 29th January Evening Shift</span>
+          <span class="meta-tag">ID: EX-M36</span>
+        </div>
+
+        <!-- Problem Stem -->
+        <div class="q-stem">
+          <strong>Question 12:</strong> A bob of mass ' <math class="math-tex" display="inline"><mi>𝑚</mi></math> ' is suspended by a light string of length ' 𝐿 '. It is imparted a minimum horizontal velocity at the lowest point <math class="math-tex" display="inline"><mi>𝐴</mi></math> such that it just completes half circle reaching the top most position B. The ratio of kinetic energies ((<math class="math-tex" display="inline"><mi>𝐾</mi></math>.𝐸)_𝐴)/((<math class="math-tex" display="inline"><mi>𝐾</mi></math>.𝐸)_𝐵) is : [FIG-stem-1]
+        </div>
+
+        <div class="q-fig-box">
+          <img src="../assets/fig_q12_vertical_circle.svg" alt="Diagram for Question 12" loading="lazy">
+        </div>
+
+        <section class="hints-section" aria-label="Progressive Hints">
+          <div class="hints-title">Progressive Scaffold Ladder (Pre-Attempt Safe)</div>
+
+          <div class="hint-card" id="hint-q12-1">
+            <div class="hint-header" onclick="toggleHint('hint-q12-1')">
+              <span>Tier 1 (REPRESENTATION): How should the physical system be isolated?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Identify which bodies form the interacting system and establish coordinate directions.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q12-2">
+            <div class="hint-header" onclick="toggleHint('hint-q12-2')">
+              <span>Tier 2 (FORMULATION): Which physical conservation law or work-energy theorem applies?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Consider Vertical Circle Critical Speed Energy Ratio relating initial and final mechanical states.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q12-3">
+            <div class="hint-header" onclick="toggleHint('hint-q12-3')">
+              <span>Tier 3 (RESOLUTION): What is the crucial relationship connecting the variables?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Crux Move: Applying the vertical circular motion boundary condition T_B >= 0 to determine apex kinetic energy and using energy conservation over height 2L.</p>
+            </div>
+          </div>
+        </section>
+        <!-- Commitment Section -->
+        <section class="commit-section" aria-label="Attempt Commitment">
+          <div class="commit-title">Commit Your Answer to Unlock Worked Derivation:</div>
+          <div class="options-grid">
+
+            <button class="opt-btn" onclick="selectOption(12, 0)" id="opt-btn-q12-0">
+              <span class="opt-radio"></span>
+              <span>A: 5 : 1</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(12, 1)" id="opt-btn-q12-1">
+              <span class="opt-radio"></span>
+              <span>B: 3 : 2</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(12, 2)" id="opt-btn-q12-2">
+              <span class="opt-radio"></span>
+              <span>C: 1 : 5</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(12, 3)" id="opt-btn-q12-3">
+              <span class="opt-radio"></span>
+              <span>D: 2 : 5</span>
+            </button>
+
+          </div>
+          <button class="commit-btn" id="commit-btn-q12" onclick="commitAnswer(12)" disabled>
+            Commit Answer
+          </button>
+        </section>
+
+        <!-- Derivation Section (Inert Until Commitment) -->
+        <section class="derivation-section" id="derivation-q12" aria-label="Worked Derivation">
+          <div class="deriv-title">
+            <span>✓ Solution & Cognitive Route</span>
+            <span style="font-size:0.85rem; font-weight:normal; color:#15803d;">(Coaching predicted option: A: 5 : 1)</span>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">REPRESENT</span>
+            <div class="move-action">Establish coordinate system, free-body system boundary, and identify initial states for EX-M36.</div>
+            <div class="move-why"><em>Physical Warrant:</em> System boundary isolation determines internal vs external forces.</div>
+            <div class="move-output">Output: Isolated system free-body model and state coordinates</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">CONNECT</span>
+            <div class="move-action">Formulate the governing work-energy relation: VERTICAL_CIRCLE_CRITICAL_SPEED_ENERGY_RATIO.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Work-Energy Theorem and conservation of mechanical energy hold in inertial laboratory frames.</div>
+            <div class="move-output">Output: Governing equation: Condition to just complete vertical circle: string tension at apex B must satisf...</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">TRANSFORM</span>
+            <div class="move-action">Solve for the required target quantity and select matching option A:.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Algebraic manipulation and root extraction preserve equality on real physical domains.</div>
+            <div class="move-output">Output: Exact target result agreeing with A: 5 : 1</div>
+          </div>
+
+          <div class="author-check">
+            <strong>Limiting Case & Dimensional Sanity Check:</strong><br>
+            Author Limiting Case Verification: If B were at height L (reaching horizontal), v_A^2 = v_B^2 + 2gL => ratio depends on apex speed. For complete circle apex B, critical ratio is exactly 5 : 1.
+          </div>
+        </section>
+      </article>
+
+      <article class="q-card" id="card-q13" data-seq="13">
+        
+        <!-- Metadata Tags -->
+        <div class="q-meta">
+          <span class="meta-tag tag-band">Band: D1 (2/10)</span>
+          <span class="meta-tag tag-op">Operation: RETRIEVE</span>
+          <span class="meta-tag">JEE Main 2022 (Online) 29th July Morning Shift</span>
+          <span class="meta-tag">ID: EX-M47</span>
+        </div>
+
+        <!-- Problem Stem -->
+        <div class="q-stem">
+          <strong>Question 13:</strong> A ball is projected with kinetic energy E, at an angle of <math class="math-tex" display="inline"><msup><mn>60</mn><mo>∘</mo></msup></math> to the horizontal. The kinetic energy of this ball at the highest point of its flight will become :
+        </div>
+
+        <section class="hints-section" aria-label="Progressive Hints">
+          <div class="hints-title">Progressive Scaffold Ladder (Pre-Attempt Safe)</div>
+
+          <div class="hint-card" id="hint-q13-1">
+            <div class="hint-header" onclick="toggleHint('hint-q13-1')">
+              <span>Tier 1 (REPRESENTATION): How should the physical system be isolated?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Identify which bodies form the interacting system and establish coordinate directions.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q13-2">
+            <div class="hint-header" onclick="toggleHint('hint-q13-2')">
+              <span>Tier 2 (FORMULATION): Which physical conservation law or work-energy theorem applies?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Consider Projectile Peak Kinetic Energy relating initial and final mechanical states.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q13-3">
+            <div class="hint-header" onclick="toggleHint('hint-q13-3')">
+              <span>Tier 3 (RESOLUTION): What is the crucial relationship connecting the variables?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Crux Move: Retrieving the constancy of horizontal velocity in 2D projectile motion and squaring the cosine factor: E_peak = E cos^2(60 deg) = E/4.</p>
+            </div>
+          </div>
+        </section>
+        <!-- Commitment Section -->
+        <section class="commit-section" aria-label="Attempt Commitment">
+          <div class="commit-title">Commit Your Answer to Unlock Worked Derivation:</div>
+          <div class="options-grid">
+
+            <button class="opt-btn" onclick="selectOption(13, 0)" id="opt-btn-q13-0">
+              <span class="opt-radio"></span>
+              <span>A: Zero</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(13, 1)" id="opt-btn-q13-1">
+              <span class="opt-radio"></span>
+              <span>B: <math class="math-tex" display="inline"><mfrac><mrow><mi>𝐸</mi></mrow><mrow><mi>2</mi></mrow></mfrac></math></span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(13, 2)" id="opt-btn-q13-2">
+              <span class="opt-radio"></span>
+              <span>C: <math class="math-tex" display="inline"><mfrac><mrow><mi>𝐸</mi></mrow><mrow><mi>4</mi></mrow></mfrac></math></span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(13, 3)" id="opt-btn-q13-3">
+              <span class="opt-radio"></span>
+              <span>D: E</span>
+            </button>
+
+          </div>
+          <button class="commit-btn" id="commit-btn-q13" onclick="commitAnswer(13)" disabled>
+            Commit Answer
+          </button>
+        </section>
+
+        <!-- Derivation Section (Inert Until Commitment) -->
+        <section class="derivation-section" id="derivation-q13" aria-label="Worked Derivation">
+          <div class="deriv-title">
+            <span>✓ Solution & Cognitive Route</span>
+            <span style="font-size:0.85rem; font-weight:normal; color:#15803d;">(Coaching predicted option: C: (𝐸)/(4))</span>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">REPRESENT</span>
+            <div class="move-action">Establish coordinate system, free-body system boundary, and identify initial states for EX-M47.</div>
+            <div class="move-why"><em>Physical Warrant:</em> System boundary isolation determines internal vs external forces.</div>
+            <div class="move-output">Output: Isolated system free-body model and state coordinates</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">CONNECT</span>
+            <div class="move-action">Formulate the governing work-energy relation: PROJECTILE_PEAK_KINETIC_ENERGY.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Work-Energy Theorem and conservation of mechanical energy hold in inertial laboratory frames.</div>
+            <div class="move-output">Output: Governing equation: Initial launch kinetic energy: E = 1/2 m v^2. At the highest point of projectile...</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">TRANSFORM</span>
+            <div class="move-action">Solve for the required target quantity and select matching option C:.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Algebraic manipulation and root extraction preserve equality on real physical domains.</div>
+            <div class="move-output">Output: Exact target result agreeing with C: (𝐸)/(4)</div>
+          </div>
+
+          <div class="author-check">
+            <strong>Limiting Case & Dimensional Sanity Check:</strong><br>
+            Author Limiting Case Verification: If projected vertically (90 deg), KE at peak is zero (Option A). If projected horizontally (0 deg), KE at peak is E (Option D). For 60 deg, KE is E * cos^2(60 deg) = E/4.
+          </div>
+        </section>
+      </article>
+
+      <article class="q-card" id="card-q14" data-seq="14">
+        
+        <!-- Metadata Tags -->
+        <div class="q-meta">
+          <span class="meta-tag tag-band">Band: D2 (4/10)</span>
+          <span class="meta-tag tag-op">Operation: APPLY</span>
+          <span class="meta-tag">JEE Main 2022 (Online) 27th July Morning Shift</span>
+          <span class="meta-tag">ID: EX-M49</span>
+        </div>
+
+        <!-- Problem Stem -->
+        <div class="q-stem">
+          <strong>Question 14:</strong> Sand is being dropped from a stationary dropper at a rate of 0.5kg<math class="math-tex" display="inline"><mrow><msup><mi>s</mi><mn>-1</mn></msup></mrow></math> on a conveyor belt moving with a velocity of 5m<math class="math-tex" display="inline"><mrow><msup><mi>s</mi><mn>-1</mn></msup></mrow></math> . The power needed to keep the belt moving with the same velocity will be :
+        </div>
+
+        <section class="hints-section" aria-label="Progressive Hints">
+          <div class="hints-title">Progressive Scaffold Ladder (Pre-Attempt Safe)</div>
+
+          <div class="hint-card" id="hint-q14-1">
+            <div class="hint-header" onclick="toggleHint('hint-q14-1')">
+              <span>Tier 1 (REPRESENTATION): How should the physical system be isolated?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Identify which bodies form the interacting system and establish coordinate directions.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q14-2">
+            <div class="hint-header" onclick="toggleHint('hint-q14-2')">
+              <span>Tier 2 (FORMULATION): Which physical conservation law or work-energy theorem applies?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Consider Variable Mass Belt Power Numerical relating initial and final mechanical states.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q14-3">
+            <div class="hint-header" onclick="toggleHint('hint-q14-3')">
+              <span>Tier 3 (RESOLUTION): What is the crucial relationship connecting the variables?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Crux Move: Applying variable-mass force relation F = v(dm/dt) to calculate required external motor power P = F*v = v^2(dm/dt), recognizing that mechanical power is twice the rate of kinetic energy increase.</p>
+            </div>
+          </div>
+        </section>
+        <!-- Commitment Section -->
+        <section class="commit-section" aria-label="Attempt Commitment">
+          <div class="commit-title">Commit Your Answer to Unlock Worked Derivation:</div>
+          <div class="options-grid">
+
+            <button class="opt-btn" onclick="selectOption(14, 0)" id="opt-btn-q14-0">
+              <span class="opt-radio"></span>
+              <span>A: 1.25 W</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(14, 1)" id="opt-btn-q14-1">
+              <span class="opt-radio"></span>
+              <span>B: 2.5 W</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(14, 2)" id="opt-btn-q14-2">
+              <span class="opt-radio"></span>
+              <span>C: 6.25 W</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(14, 3)" id="opt-btn-q14-3">
+              <span class="opt-radio"></span>
+              <span>D: 12.5 W</span>
+            </button>
+
+          </div>
+          <button class="commit-btn" id="commit-btn-q14" onclick="commitAnswer(14)" disabled>
+            Commit Answer
+          </button>
+        </section>
+
+        <!-- Derivation Section (Inert Until Commitment) -->
+        <section class="derivation-section" id="derivation-q14" aria-label="Worked Derivation">
+          <div class="deriv-title">
+            <span>✓ Solution & Cognitive Route</span>
+            <span style="font-size:0.85rem; font-weight:normal; color:#15803d;">(Coaching predicted option: D: 12.5 W)</span>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">REPRESENT</span>
+            <div class="move-action">Establish coordinate system, free-body system boundary, and identify initial states for EX-M49.</div>
+            <div class="move-why"><em>Physical Warrant:</em> System boundary isolation determines internal vs external forces.</div>
+            <div class="move-output">Output: Isolated system free-body model and state coordinates</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">CONNECT</span>
+            <div class="move-action">Formulate the governing work-energy relation: VARIABLE_MASS_BELT_POWER_NUMERICAL.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Work-Energy Theorem and conservation of mechanical energy hold in inertial laboratory frames.</div>
+            <div class="move-output">Output: Governing equation: Mass rate dm/dt = 0.5 kg/s, belt velocity v = 5 m/s. The horizontal force requir...</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">TRANSFORM</span>
+            <div class="move-action">Solve for the required target quantity and select matching option D:.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Algebraic manipulation and root extraction preserve equality on real physical domains.</div>
+            <div class="move-output">Output: Exact target result agreeing with D: 12.5 W</div>
+          </div>
+
+          <div class="author-check">
+            <strong>Limiting Case & Dimensional Sanity Check:</strong><br>
+            Author Limiting Case Verification: Rate of gain of kinetic energy of sand is d(KE)/dt = 1/2 (dm/dt) v^2 = 1/2 (0.5)(25) = 6.25 W. An equal amount of power (6.25 W) is dissipated as heat in friction as the sand slips on the belt. Total power input by the motor must be 6.25 + 6.25 = 12.5 W.
+          </div>
+        </section>
+      </article>
+
+      <article class="q-card" id="card-q15" data-seq="15">
+        
+        <!-- Metadata Tags -->
+        <div class="q-meta">
+          <span class="meta-tag tag-band">Band: D2 (4/10)</span>
+          <span class="meta-tag tag-op">Operation: APPLY</span>
+          <span class="meta-tag">JEE Main 2022 (Online) 26th July Morning Shift</span>
+          <span class="meta-tag">ID: EX-M50</span>
+        </div>
+
+        <!-- Problem Stem -->
+        <div class="q-stem">
+          <strong>Question 15:</strong> As per the given figure, two blocks each of mass 250g are connected to a spring of spring constant 2Nm^(−1) . If both are given velocity <math class="math-tex" display="inline"><mi>𝑣</mi></math> in opposite directions, then maximum elongation of the spring is : [FIG-stem-1]
+        </div>
+
+        <div class="q-fig-box">
+          <img src="../assets/fig_q15_spring_two_blocks.svg" alt="Diagram for Question 15" loading="lazy">
+        </div>
+
+        <section class="hints-section" aria-label="Progressive Hints">
+          <div class="hints-title">Progressive Scaffold Ladder (Pre-Attempt Safe)</div>
+
+          <div class="hint-card" id="hint-q15-1">
+            <div class="hint-header" onclick="toggleHint('hint-q15-1')">
+              <span>Tier 1 (REPRESENTATION): How should the physical system be isolated?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Identify which bodies form the interacting system and establish coordinate directions.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q15-2">
+            <div class="hint-header" onclick="toggleHint('hint-q15-2')">
+              <span>Tier 2 (FORMULATION): Which physical conservation law or work-energy theorem applies?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Consider Two Body Spring Center Of Mass Energy relating initial and final mechanical states.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q15-3">
+            <div class="hint-header" onclick="toggleHint('hint-q15-3')">
+              <span>Tier 3 (RESOLUTION): What is the crucial relationship connecting the variables?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Crux Move: Setting up the coupled two-block spring energy ledger in the zero-momentum center of mass frame where total kinetic energy m*v^2 fully transfers into spring potential 1/2 k x_m^2.</p>
+            </div>
+          </div>
+        </section>
+        <!-- Commitment Section -->
+        <section class="commit-section" aria-label="Attempt Commitment">
+          <div class="commit-title">Commit Your Answer to Unlock Worked Derivation:</div>
+          <div class="options-grid">
+
+            <button class="opt-btn" onclick="selectOption(15, 0)" id="opt-btn-q15-0">
+              <span class="opt-radio"></span>
+              <span>A: <math class="math-tex" display="inline"><mfrac><mrow><mi>𝑣</mi></mrow><mrow><mi>2√(2</mi></mrow></mfrac></math>)</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(15, 1)" id="opt-btn-q15-1">
+              <span class="opt-radio"></span>
+              <span>B: <math class="math-tex" display="inline"><mfrac><mrow><mi>𝑣</mi></mrow><mrow><mi>2</mi></mrow></mfrac></math></span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(15, 2)" id="opt-btn-q15-2">
+              <span class="opt-radio"></span>
+              <span>C: <math class="math-tex" display="inline"><mfrac><mrow><mi>𝑣</mi></mrow><mrow><mi>4</mi></mrow></mfrac></math></span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(15, 3)" id="opt-btn-q15-3">
+              <span class="opt-radio"></span>
+              <span>D: <math class="math-tex" display="inline"><mfrac><mrow><mi>𝑣</mi></mrow><mrow><mi>√2</mi></mrow></mfrac></math></span>
+            </button>
+
+          </div>
+          <button class="commit-btn" id="commit-btn-q15" onclick="commitAnswer(15)" disabled>
+            Commit Answer
+          </button>
+        </section>
+
+        <!-- Derivation Section (Inert Until Commitment) -->
+        <section class="derivation-section" id="derivation-q15" aria-label="Worked Derivation">
+          <div class="deriv-title">
+            <span>✓ Solution & Cognitive Route</span>
+            <span style="font-size:0.85rem; font-weight:normal; color:#15803d;">(Coaching predicted option: B: (𝑣)/(2))</span>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">REPRESENT</span>
+            <div class="move-action">Establish coordinate system, free-body system boundary, and identify initial states for EX-M50.</div>
+            <div class="move-why"><em>Physical Warrant:</em> System boundary isolation determines internal vs external forces.</div>
+            <div class="move-output">Output: Isolated system free-body model and state coordinates</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">CONNECT</span>
+            <div class="move-action">Formulate the governing work-energy relation: TWO_BODY_SPRING_CENTER_OF_MASS_ENERGY.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Work-Energy Theorem and conservation of mechanical energy hold in inertial laboratory frames.</div>
+            <div class="move-output">Output: Governing equation: Initial total momentum: P = m(-v) + m(+v) = 0. The center of mass is stationary....</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">TRANSFORM</span>
+            <div class="move-action">Solve for the required target quantity and select matching option B:.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Algebraic manipulation and root extraction preserve equality on real physical domains.</div>
+            <div class="move-output">Output: Exact target result agreeing with B: (𝑣)/(2)</div>
+          </div>
+
+          <div class="author-check">
+            <strong>Limiting Case & Dimensional Sanity Check:</strong><br>
+            Author Limiting Case Verification: If k -> infinity (rigid rod), x_m -> 0. If only one block were given velocity v (total momentum mv), V_cm = v/2, and internal KE = 1/2 mu v^2 = 1/4 m v^2, yielding x_m = v/(2*sqrt(2)) (Option A). With equal and opposite velocities, all initial KE is converted into spring PE, yielding x_m = v/2.
+          </div>
+        </section>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="gov-footer">
+    <p><strong>Grade9 v4.0 Physics Work, Power & Energy (Pilot)</strong></p>
+    <p>No academic approval inferred from software validation. Green CI means automatic tests passed; it never means student release is authorized.</p>
+    <p>Academic Admission: <strong>0 / 15 (100% HOLD:ACADEMIC_ADMISSION)</strong> · Fail-Closed Architecture</p>
+  </footer>
+
+  <script>
+    const userSelections = {};
+    const committedStates = {};
+
+    function switchQuestion(seq) {
+      document.querySelectorAll('.nav-pill').forEach(pill => pill.classList.remove('active'));
+      document.querySelectorAll('.q-card').forEach(card => card.classList.remove('active'));
+      
+      const targetPill = document.querySelector(`.nav-pill[data-q="q${String(seq).padStart(2, '0')}"]`);
+      const targetCard = document.getElementById(`card-q${String(seq).padStart(2, '0')}`);
+      
+      if (targetPill) targetPill.classList.add('active');
+      if (targetCard) targetCard.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleHint(hintId) {
+      const card = document.getElementById(hintId);
+      if (card) {
+        card.classList.toggle('open');
+        const icon = card.querySelector('.hint-toggle-icon');
+        if (icon) {
+          icon.textContent = card.classList.contains('open') ? '▲' : '▼';
+        }
+      }
+    }
+
+    function selectOption(seq, optIdx) {
+      if (committedStates[seq]) return; // locked once committed
+      userSelections[seq] = optIdx;
+      
+      const card = document.getElementById(`card-q${String(seq).padStart(2, '0')}`);
+      card.querySelectorAll('.opt-btn').forEach((btn, idx) => {
+        btn.classList.toggle('selected', idx === optIdx);
+      });
+      
+      const commitBtn = document.getElementById(`commit-btn-q${String(seq).padStart(2, '0')}`);
+      if (commitBtn) commitBtn.disabled = false;
+    }
+
+    function commitAnswer(seq) {
+      if (userSelections[seq] === undefined) return;
+      committedStates[seq] = true;
+      
+      const commitBtn = document.getElementById(`commit-btn-q${String(seq).padStart(2, '0')}`);
+      commitBtn.disabled = true;
+      commitBtn.textContent = 'Answer Committed ✓';
+      commitBtn.style.background = '#15803d';
+      
+      const derivSection = document.getElementById(`derivation-q${String(seq).padStart(2, '0')}`);
+      if (derivSection) {
+        derivSection.classList.add('revealed');
+        derivSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+{
+  "sequence": 10,
+  "task_identity": "Q-ID-10",
+  "stable_id": "Q-PHY-WPE-JEEM-2024-04-08-S2-10",
+  "source_id": "EX-M24",
+  "lot": "LOT-03",
+  "paper": "JEE Main 2024 (Online) 8th April Evening Shift",
+  "source_type": "SCRAPED_EXTRACT_EXAMGOAL",
+  "source_custody": "PARTIAL",
+  "stem_text": "[FIG-stem-1] A block is simply released from the top of an inclined plane as shown in the figure above. The maximum compression in the spring when the block hits the spring is :",
+  "stem_sha256": "9d2c7cb9df50430ea2cb67603844ba5309901489311286518341a967bdd80dab",
+  "source_hash": "9d2c7cb9df50430ea2cb67603844ba5309901489311286518341a967bdd80dab",
+  "source_record_digest": "9d2c7cb9df50430ea2cb67603844ba5309901489311286518341a967bdd80dab",
+  "duplicate_parent": null,
+  "scope": "IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "HOLD:FIGURE_UNRESOLVED",
+  "options": [
+    "A: \u221a(6)m",
+    "B: \u221a(5)m",
+    "C: 1m",
+    "D: 2m"
+  ],
+  "unbound_remote_figures": [
+    {
+      "role": "stem",
+      "url": "https://app-content.cdn.examgoal.net/fly/1000/image/1lv3g4i1f/1efcf294-a9a1-4376-836b-324bcbe1c57f/bbe3ea30-fc85-11ee-97a5-e951feb71c60/file-1lv3g4i1g.png?format=png"
+    }
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "HOLD:FIGURE_UNRESOLVED",
+  "candidate_solve": {
+    "method": "WORK_ENERGY_THEOREM_INCLINE_SPRING_FRICTION",
+    "assumed_parameters_from_coaching_figure": "All parameters (m=5 kg, h=5 m, mu=0.5, k=100 N/m or equivalent) are embedded inside figure, completely absent from text stem.",
+    "derivation": "Work-energy theorem between release point and maximum compression x: W_grav + W_fric + W_spring = Delta K = 0. From coaching extract calculation: W_grav = 5 * 10 * 5 = 250 J; W_fric = -0.5 * 5 * 10 * x = -25x; W_spring = -1/2 * k * x^2 = -50 x^2 (assuming k=100 N/m). Equation: 250 - 25x - 50x^2 = 0 => 50x^2 + 25x - 250 = 0 => 2x^2 + x - 10 = 0 => (2x + 5)(x - 2) = 0 => x = 2 m.",
+    "predicted_option": "D: 2m",
+    "limiting_cases": "If mu = 0, 50x^2 = 250 => x^2 = 5 => x = sqrt(5) m (Option B). With friction present, energy is dissipated, leading to quadratic equation root x = 2 m."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "status": "UNREVIEWED",
+    "decisive_operation": "APPLY",
+    "crux": "Formulating the complete work-energy equation incorporating gravitational potential loss, non-conservative frictional dissipation, and spring potential gain to solve a quadratic in spring compression x.",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 2,
+          "evidence": "Work-energy theorem combining conservative and dissipative mechanisms on an incline."
+        },
+        "representation_translation": {
+          "score": 2,
+          "evidence": "Crucial requirement: entire problem parameter set resides in the diagram."
+        },
+        "reasoning_chain_length": {
+          "score": 2,
+          "evidence": "Identify forces -> integrate over path (d + x) -> formulate quadratic -> physical root."
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Factoring quadratic: 2x^2 + x - 10 = 0 => x = 2."
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Frictional dissipation occurs along entire sliding distance including spring compression x."
+        }
+      },
+      "total": 8,
+      "band": "D4"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "MODEL"
+      ],
+      "candidate_cell": "QRT-APPLY-D4",
+      "status": "PROPOSED"
+    },
+    "representation_requirements": [
+      "DIAGRAM",
+      "FREE_BODY_DIAGRAM",
+      "EQUATION"
+    ],
+    "independent_checks": [
+      "UNITS",
+      "LIMITING_CASE"
+    ],
+    "wrong_route_hypotheses": [
+      {
+        "route": "Ignoring friction dissipation entirely: 1/2 k x^2 = mgh => x = sqrt(5) m (Option B)",
+        "status": "HYPOTHESIS"
+      },
+      {
+        "route": "Ignoring spring compression in friction path: W_fric = mu mg cos(theta) * d",
+        "status": "HYPOTHESIS"
+      }
+    ]
+  },
+  "qrt": "UNREVIEWED",
+  "blueprint_fit": {
+    "blueprint_id": "PHYS-QRT-BLUEPRINT",
+    "version": "0.2.0",
+    "sha256": "ac32dc937403cac33c76343f2e7e0dabd7c2c4a3188cb3b453ddf2576578ddf9",
+    "cell": "QRT-APPLY-D4"
+  },
+  "adapter_fit": {
+    "adapter_id": "PHYS-TOPIC-WPE",
+    "version": "0.1.0",
+    "sha256": "899e61e59370a3fc5d6f73b7d8cbb65165d0782c9fba20acd83439ae441e6a9b",
+    "topic": "WPE"
+  },
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_REVIEW",
+  "b2_blind_status": "NOT_RUN",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:FIGURE_UNRESOLVED (stem is entirely incomplete without diagram containing all numerical parameters)",
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)",
+    "HOLD:B2_INDEPENDENT_PENDING (requires verified diagram before candidate solve can be qualified)"
+  ],
+  "next_action": "Source official NTA original diagram asset for JEE Main 2024-04-08 S2."
+}

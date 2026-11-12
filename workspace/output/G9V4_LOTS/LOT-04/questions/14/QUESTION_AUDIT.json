@@ -1,0 +1,104 @@
+{
+  "sequence": 14,
+  "task_identity": "Q-ID-14",
+  "stable_id": "Q-PHY-WPE-JEEM-2022-07-27-S1-14",
+  "source_id": "EX-M49",
+  "lot": "LOT-04",
+  "paper": "JEE Main 2022 (Online) 27th July Morning Shift",
+  "source_type": "SCRAPED_EXTRACT_EXAMGOAL",
+  "source_custody": "VERIFIED_TEXT_ONLY",
+  "stem_text": "Sand is being dropped from a stationary dropper at a rate of 0.5kgs^(\u22121) on a conveyor belt moving with a velocity of 5ms^(\u22121) . The power needed to keep the belt moving with the same velocity will be :",
+  "stem_sha256": "0e1ddae0acecd3dd63d5006fdce6616051e886fba96b35f836c70330d1b7f0de",
+  "source_hash": "0e1ddae0acecd3dd63d5006fdce6616051e886fba96b35f836c70330d1b7f0de",
+  "source_record_digest": "0e1ddae0acecd3dd63d5006fdce6616051e886fba96b35f836c70330d1b7f0de",
+  "duplicate_parent": null,
+  "scope": "IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "VERIFIED_NONE_REQUIRED",
+  "options": [
+    "A: 1.25 W",
+    "B: 2.5 W",
+    "C: 6.25 W",
+    "D: 12.5 W"
+  ],
+  "unbound_remote_figures": [],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "VARIABLE_MASS_BELT_POWER_NUMERICAL",
+    "assumed_parameters_from_coaching_figure": "None required (pure text). Sand dropped from rest vertically.",
+    "derivation": "Mass rate dm/dt = 0.5 kg/s, belt velocity v = 5 m/s. The horizontal force required to accelerate newly dropped sand to belt speed is F = v * (dm/dt) = 5 m/s * 0.5 kg/s = 2.5 N. The power supplied by the motor to maintain constant velocity is P = F * v = 2.5 N * 5 m/s = 12.5 W.",
+    "predicted_option": "D: 12.5 W",
+    "limiting_cases": "Rate of gain of kinetic energy of sand is d(KE)/dt = 1/2 (dm/dt) v^2 = 1/2 (0.5)(25) = 6.25 W. An equal amount of power (6.25 W) is dissipated as heat in friction as the sand slips on the belt. Total power input by the motor must be 6.25 + 6.25 = 12.5 W."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "status": "UNREVIEWED",
+    "decisive_operation": "APPLY",
+    "crux": "Applying variable-mass force relation F = v(dm/dt) to calculate required external motor power P = F*v = v^2(dm/dt), recognizing that mechanical power is twice the rate of kinetic energy increase.",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Variable-mass mechanics applied to steady conveyor belt."
+        },
+        "representation_translation": {
+          "score": 0,
+          "evidence": "Direct text numerical translation."
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Force from mass flow -> power from F*v."
+        },
+        "algebra_computational_load": {
+          "score": 0,
+          "evidence": "Direct arithmetic: 5 * 0.5 * 5 = 12.5 W."
+        },
+        "trap_exception_sensitivity": {
+          "score": 2,
+          "evidence": "Severe attractor trap: computing d(1/2 m v^2)/dt = 6.25 W (Option C) by ignoring frictional heat dissipation."
+        }
+      },
+      "total": 4,
+      "band": "D2"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "MODEL"
+      ],
+      "candidate_cell": "QRT-APPLY-D2",
+      "status": "PROPOSED"
+    },
+    "representation_requirements": [
+      "EQUATION"
+    ],
+    "independent_checks": [
+      "UNITS",
+      "ENERGY_LEDGER"
+    ],
+    "wrong_route_hypotheses": [
+      {
+        "route": "Calculating pure rate of KE gain d(KE)/dt = 1/2 v^2 dm/dt = 6.25 W (Option C)",
+        "status": "HYPOTHESIS"
+      },
+      {
+        "route": "Dividing force by velocity instead of multiplying: 2.5 / 5 = 0.5 W",
+        "status": "HYPOTHESIS"
+      }
+    ]
+  },
+  "qrt": "UNREVIEWED",
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_REVIEW",
+  "b2_blind_status": "NOT_RUN",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)",
+    "HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)"
+  ],
+  "next_action": "Verify NTA master answer key for 2022-07-27 S1."
+}

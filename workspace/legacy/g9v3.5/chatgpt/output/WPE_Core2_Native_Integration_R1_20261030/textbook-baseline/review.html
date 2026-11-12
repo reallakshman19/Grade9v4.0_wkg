@@ -1,0 +1,641 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Textbook source and labelling review</title><style>body{font:17px/1.55 system-ui;color:#182a36;background:#f5f7fa;margin:0}main{max-width:1100px;margin:auto;padding:24px}a{color:#075cad}section,.card{background:white;border:1px solid #ccd7df;border-radius:10px;padding:20px;margin:20px 0}.hold{background:#fff3d9;padding:16px;border-left:5px solid #b87400}table{border-collapse:collapse;width:100%}td,th{text-align:left;vertical-align:top;border-bottom:1px solid #ddd;padding:10px}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f4f6f8;padding:15px}summary{cursor:pointer;font-weight:650}svg,img{max-width:100%;height:auto}nav a{display:inline-block;padding:8px}code{overflow-wrap:anywhere}@media(max-width:600px){main{padding:12px}table{font-size:14px}td,th{padding:6px}}</style><main><nav><a href="index.html">Overview</a><a href="rendered/core2.html">Core2 reader</a><a href="review.html">Source and label review</a><a href="concept.html">Revised concept</a></nav><h1>Textbook source and labelling review</h1><p>These are supplementary review sidecars, not independently reviewed native SL1/SL2 admissions. Source answers are deliberately confined to this author view and protected learner solutions.</p><section id="TB-WPE-ILL-01"><h2>Illustration 1 — Constant-force work in three dimensions</h2><p><a href="rendered/core2.html#TB-WPE-ILL-01">Try in native reader</a> · <a href="sources/page_02.jpg">Scan 2</a></p><p class="hold">AUTHOR EVIDENCE VIEW: contains source answers. Printed exam labels are unverified. Extract-to-print equivalence remains pending; source wording and working below are exact saved extraction.</p><ul><li>Printed and extracted wording are not verbatim identical; this reader preserves the supplied extraction.</li></ul><details><summary>Exact extracted question</summary><pre>Assume that a body is displaced from $\vec{r}_A = (2\text{m}, 4\text{m}, -6\text{m})$ to $\vec{r}_B = (6\hat{i} - 4\hat{j} + 2\hat{k})\text{ m}$ under a constant force $\vec{F} = (2\hat{i} + 3\hat{j} - \hat{k})\text{ N}$. Calculate the total work done.</pre></details><details><summary>Exact extracted source working — contains answer</summary><pre>**Solution**:  
+The work done by the constant force $\vec{F}$ during displacement $\vec{s}$ of a particle is the scalar product of force and displacement:
+
+$$W = \vec{F} \cdot \vec{s}$$
+
+The position vectors are:
+$$\vec{r}_A = 2\hat{i} + 4\hat{j} - 6\hat{k}\text{ m}$$
+$$\vec{r}_B = 6\hat{i} - 4\hat{j} + 2\hat{k}\text{ m}$$
+
+The displacement vector $\vec{s}$ is:
+$$\vec{s} = \vec{r}_B - \vec{r}_A = (6\hat{i} - 4\hat{j} + 2\hat{k}) - (2\hat{i} + 4\hat{j} - 6\hat{k}) = 4\hat{i} - 8\hat{j} + 8\hat{k}\text{ m}$$
+
+Taking the scalar product:
+$$W = \vec{F} \cdot \vec{s} = (2\hat{i} + 3\hat{j} - \hat{k}) \cdot (4\hat{i} - 8\hat{j} + 8\hat{k})$$
+$$W = (2)(4) + (3)(-8) + (-1)(8) = 8 - 24 - 8 = -24\text{ J}$$
+
+$$\mathbf{W = -24\text{ J}}$$</pre></details><h3>SL1-style custody</h3><pre>{
+  &quot;question_role&quot;: &quot;OWNER_SUPPLIED_TEXTBOOK_EXTRACT&quot;,
+  &quot;source_document_identity&quot;: &quot;EXACT_SAVED_EXTRACT&quot;,
+  &quot;printed_equivalence&quot;: &quot;PENDING&quot;,
+  &quot;exam_identity&quot;: &quot;UNVERIFIED&quot;,
+  &quot;official_key&quot;: &quot;NOT_ESTABLISHED&quot;,
+  &quot;question_payload_sha256&quot;: &quot;31c27b8fc61913bf5a7d2e95ae8c88cd3a625584b14400f4297e4a6e529c5cfc&quot;,
+  &quot;source_answer_sha256&quot;: &quot;3de4ce1f8296150991ba5a41e61af1b9d13ffd942c55d4a58ad1bb1ab1e85f55&quot;,
+  &quot;assets&quot;: [],
+  &quot;first_try&quot;: &quot;CANDIDATE_WITH_SOURCE_WARNINGS&quot;
+}</pre><h3>SL2 proposal and QRT join</h3><pre>{
+  &quot;SL2&quot;: {
+    &quot;mode&quot;: &quot;QUESTION&quot;,
+    &quot;operation_proposal&quot;: &quot;APPLY&quot;,
+    &quot;difficulty_proposal&quot;: {
+      &quot;band&quot;: &quot;D2&quot;,
+      &quot;score&quot;: 5,
+      &quot;components&quot;: {
+        &quot;concept_model_selection&quot;: 1,
+        &quot;representation_translation&quot;: 1,
+        &quot;reasoning_chain_length&quot;: 1,
+        &quot;algebra_computational_load&quot;: 1,
+        &quot;trap_exception_sensitivity&quot;: 1
+      },
+      &quot;basis&quot;: &quot;Author proposal for the exact supplied extract before support; independent adjudication pending. Constant-force work in three dimensions&quot;,
+      &quot;component_evidence&quot;: {
+        &quot;concept_model_selection&quot;: &quot;Choose constant-force dot product from the stated force and two positions.&quot;,
+        &quot;representation_translation&quot;: &quot;Translate endpoint positions into displacement.&quot;,
+        &quot;reasoning_chain_length&quot;: &quot;Use displacement before evaluating work.&quot;,
+        &quot;algebra_computational_load&quot;: &quot;Evaluate three signed products and their sum.&quot;,
+        &quot;trap_exception_sensitivity&quot;: &quot;Reversing displacement reverses the work sign.&quot;
+      }
+    },
+    &quot;decisive_move&quot;: &quot;Subtract initial position from final position.&quot;,
+    &quot;input_roles&quot;: [
+      [
+        &quot;The two supplied position vectors&quot;
+      ],
+      [
+        &quot;F = (2, 3, -1) N and s&quot;
+      ],
+      [
+        &quot;The three signed products&quot;
+      ]
+    ],
+    &quot;output_role&quot;: &quot;W = -24 J.&quot;,
+    &quot;competing_operation&quot;: &quot;MODEL&quot;,
+    &quot;competition_reason&quot;: &quot;The governing model is familiar and its execution is the principal demand.&quot;,
+    &quot;review&quot;: &quot;AUTHOR_PROPOSED_NOT_INDEPENDENT&quot;,
+    &quot;learner_observation&quot;: null
+  },
+  &quot;QRT&quot;: {
+    &quot;placement&quot;: &quot;PROVISIONAL&quot;,
+    &quot;source_role&quot;: &quot;TEXTBOOK_QUESTION&quot;,
+    &quot;exam_21_admission&quot;: false,
+    &quot;reviewed_construction_join&quot;: &quot;PENDING&quot;,
+    &quot;syllabus_nodes&quot;: [
+      &quot;WPE-N01&quot;
+    ]
+  }
+}</pre></section><section id="TB-WPE-ILL-02"><h2>Illustration 2 — Tension, gravity and net work</h2><p><a href="rendered/core2.html#TB-WPE-ILL-02">Try in native reader</a> · <a href="sources/page_02.jpg">Scan 2</a> <a href="sources/page_03.jpg">Scan 3</a></p><p class="hold">AUTHOR EVIDENCE VIEW: contains source answers. Printed exam labels are unverified. Extract-to-print equivalence remains pending; source wording and working below are exact saved extraction.</p><ul><li>The scan puts g = 9.8 in the solution rather than the printed stem; the extraction includes it as a given.</li><li>Derived FBD includes T - mg = ma, so it is solution-only.</li></ul><details><summary>Exact extracted question</summary><pre>A block of total mass $5\text{ kg}$ is being raised vertically upwards with the help of a string attached to it and it rises with an acceleration of $2\text{ m/s}^2$. Find the work done due to the tension in the string if the block rises by $2.5\text{ m}$. Also, calculate the work done due to gravity and the net work done. ($g = 9.8\text{ m/s}^2$).
+
+![Free Body Diagram: String Raising](images/fig_03_fbd_string_raising.svg)</pre></details><details><summary>Exact extracted source working — contains answer</summary><pre>**Solution**:  
+The tension in the string acts vertically upwards and the block is also moving vertically upwards, so the work done by the tension will be positive. The force of gravity acts vertically downwards, so the work done by gravity will be negative.
+
+1. **Calculate the Tension $T$**:  
+   From the free-body diagram:
+   $$T - mg = ma \implies T = m(g + a)$$
+   $$T = 5(9.8 + 2) = 5(11.8) = 59\text{ N}$$
+
+2. **Work Done by Tension $W_T$**:  
+   Since tension $\vec{T}$ and displacement $\vec{s}$ are both directed upwards ($\theta = 0^\circ$):
+   $$W_T = T s = 59 \times 2.5 = 147.5\text{ J}$$
+
+3. **Work Done by Gravity $W_g$**:  
+   Since gravity acts downwards while displacement is upwards ($\theta = 180^\circ$):
+   $$W_g = -m g s = -5 \times 9.8 \times 2.5 = -122.5\text{ J}$$
+
+4. **Net Work Done $W_{\text{net}}$**:  
+   $$W_{\text{net}} = W_T + W_g = 147.5 + (-122.5) = 25\text{ J}$$</pre></details><h3>SL1-style custody</h3><pre>{
+  &quot;question_role&quot;: &quot;OWNER_SUPPLIED_TEXTBOOK_EXTRACT&quot;,
+  &quot;source_document_identity&quot;: &quot;EXACT_SAVED_EXTRACT&quot;,
+  &quot;printed_equivalence&quot;: &quot;PENDING&quot;,
+  &quot;exam_identity&quot;: &quot;UNVERIFIED&quot;,
+  &quot;official_key&quot;: &quot;NOT_ESTABLISHED&quot;,
+  &quot;question_payload_sha256&quot;: &quot;e47edf5c255cb95a0e189b6cfbca0b253253c93924cc459bf0abe0e8334be4c1&quot;,
+  &quot;source_answer_sha256&quot;: &quot;3709905bc360077168735502e8ec15429f46ce848563d2f9376d0a442e138bfe&quot;,
+  &quot;assets&quot;: [
+    &quot;fig_03_fbd_string_raising.svg&quot;
+  ],
+  &quot;first_try&quot;: &quot;CANDIDATE_WITH_SOURCE_WARNINGS&quot;
+}</pre><h3>SL2 proposal and QRT join</h3><pre>{
+  &quot;SL2&quot;: {
+    &quot;mode&quot;: &quot;QUESTION&quot;,
+    &quot;operation_proposal&quot;: &quot;APPLY&quot;,
+    &quot;difficulty_proposal&quot;: {
+      &quot;band&quot;: &quot;D3&quot;,
+      &quot;score&quot;: 6,
+      &quot;components&quot;: {
+        &quot;concept_model_selection&quot;: 1,
+        &quot;representation_translation&quot;: 1,
+        &quot;reasoning_chain_length&quot;: 2,
+        &quot;algebra_computational_load&quot;: 1,
+        &quot;trap_exception_sensitivity&quot;: 1
+      },
+      &quot;basis&quot;: &quot;Author proposal for the exact supplied extract before support; independent adjudication pending. Tension, gravity and net work&quot;,
+      &quot;component_evidence&quot;: {
+        &quot;concept_model_selection&quot;: &quot;Find tension from the upward acceleration before calculating its work.&quot;,
+        &quot;representation_translation&quot;: &quot;Translate upward and downward forces into signed work.&quot;,
+        &quot;reasoning_chain_length&quot;: &quot;Coordinate force balance, two individual works and their net.&quot;,
+        &quot;algebra_computational_load&quot;: &quot;Routine multiplication and signed addition.&quot;,
+        &quot;trap_exception_sensitivity&quot;: &quot;Confusing individual work with net work changes the result.&quot;
+      }
+    },
+    &quot;decisive_move&quot;: &quot;Use T - mg = ma to determine tension.&quot;,
+    &quot;input_roles&quot;: [
+      [
+        &quot;m = 5 kg, g = 9.8 m/s², a = 2 m/s²&quot;
+      ],
+      [
+        &quot;s = 2.5 m&quot;
+      ],
+      [
+        &quot;W_T and W_g&quot;
+      ]
+    ],
+    &quot;output_role&quot;: &quot;T = 59 N; tension work = 147.5 J; gravity work = -122.5 J; net work = 25 J.&quot;,
+    &quot;competing_operation&quot;: &quot;MODEL&quot;,
+    &quot;competition_reason&quot;: &quot;The governing model is familiar and its execution is the principal demand.&quot;,
+    &quot;review&quot;: &quot;AUTHOR_PROPOSED_NOT_INDEPENDENT&quot;,
+    &quot;learner_observation&quot;: null
+  },
+  &quot;QRT&quot;: {
+    &quot;placement&quot;: &quot;PROVISIONAL&quot;,
+    &quot;source_role&quot;: &quot;TEXTBOOK_QUESTION&quot;,
+    &quot;exam_21_admission&quot;: false,
+    &quot;reviewed_construction_join&quot;: &quot;PENDING&quot;,
+    &quot;syllabus_nodes&quot;: [
+      &quot;WPE-N01&quot;,
+      &quot;WPE-N03&quot;
+    ]
+  }
+}</pre></section><section id="TB-WPE-ILL-03"><h2>Illustration 3 — Position-dependent force</h2><p><a href="rendered/core2.html#TB-WPE-ILL-03">Try in native reader</a> · <a href="sources/page_03.jpg">Scan 3</a> <a href="sources/page_04.jpg">Scan 4</a></p><p class="hold">AUTHOR EVIDENCE VIEW: contains source answers. Printed exam labels are unverified. Extract-to-print equivalence remains pending; source wording and working below are exact saved extraction.</p><ul><li>The canonical work-direction capability is a prerequisite bridge, not a qualified variable-force warrant.</li></ul><details><summary>Exact extracted question</summary><pre>A force $F = (10 + 0.50x)\text{ N}$ is observed to act on a particle in the $x$ direction, where $x$ is in meters. Find the actual work done by this force during a displacement from $x = 0$ to $x = 2.0\text{ m}$.</pre></details><details><summary>Exact extracted source working — contains answer</summary><pre>**Solution**:  
+For an infinitesimal displacement $dx$:
+$$dW = F dx = (10 + 0.50x) dx$$
+
+Integrating over the displacement bounds from $x = 0$ to $x = 2.0\text{ m}$:
+$$W = \int_{0}^{2.0} (10 + 0.50x) dx = \left[ 10x + 0.50 \frac{x^2}{2} \right]_{0}^{2.0}$$
+$$W = \left[ 10(2.0) + 0.25(2.0)^2 \right] - [0] = 20 + 1.0 = 21\text{ J}$$
+
+$$\mathbf{W = 21\text{ J}}$$</pre></details><h3>SL1-style custody</h3><pre>{
+  &quot;question_role&quot;: &quot;OWNER_SUPPLIED_TEXTBOOK_EXTRACT&quot;,
+  &quot;source_document_identity&quot;: &quot;EXACT_SAVED_EXTRACT&quot;,
+  &quot;printed_equivalence&quot;: &quot;PENDING&quot;,
+  &quot;exam_identity&quot;: &quot;UNVERIFIED&quot;,
+  &quot;official_key&quot;: &quot;NOT_ESTABLISHED&quot;,
+  &quot;question_payload_sha256&quot;: &quot;22ccc19a720846446f725e730acf34609cf2f6f22327f4759db84d35eafe2107&quot;,
+  &quot;source_answer_sha256&quot;: &quot;bfddaccf804f337f1144113d097c5b0e75b1cf5174c2cc036d75278ca05453be&quot;,
+  &quot;assets&quot;: [],
+  &quot;first_try&quot;: &quot;CANDIDATE_WITH_SOURCE_WARNINGS&quot;
+}</pre><h3>SL2 proposal and QRT join</h3><pre>{
+  &quot;SL2&quot;: {
+    &quot;mode&quot;: &quot;QUESTION&quot;,
+    &quot;operation_proposal&quot;: &quot;APPLY&quot;,
+    &quot;difficulty_proposal&quot;: {
+      &quot;band&quot;: &quot;D2&quot;,
+      &quot;score&quot;: 4,
+      &quot;components&quot;: {
+        &quot;concept_model_selection&quot;: 1,
+        &quot;representation_translation&quot;: 1,
+        &quot;reasoning_chain_length&quot;: 1,
+        &quot;algebra_computational_load&quot;: 1,
+        &quot;trap_exception_sensitivity&quot;: 0
+      },
+      &quot;basis&quot;: &quot;Author proposal for the exact supplied extract before support; independent adjudication pending. Position-dependent force&quot;,
+      &quot;component_evidence&quot;: {
+        &quot;concept_model_selection&quot;: &quot;Identify variable-force work rather than one constant-force substitution.&quot;,
+        &quot;representation_translation&quot;: &quot;Translate F(x) into a bounded work integral or equivalent area.&quot;,
+        &quot;reasoning_chain_length&quot;: &quot;Integrate before substituting the bounds.&quot;,
+        &quot;algebra_computational_load&quot;: &quot;Routine linear-polynomial integration and evaluation.&quot;,
+        &quot;trap_exception_sensitivity&quot;: &quot;No extra hidden domain exception is required.&quot;
+      }
+    },
+    &quot;decisive_move&quot;: &quot;Write work as the integral of the stated force over x.&quot;,
+    &quot;input_roles&quot;: [
+      [
+        &quot;F(x) = 10 + 0.50x N, x from 0 to 2 m&quot;
+      ],
+      [
+        &quot;The stated bounds&quot;
+      ]
+    ],
+    &quot;output_role&quot;: &quot;W = 21 J.&quot;,
+    &quot;competing_operation&quot;: &quot;MODEL&quot;,
+    &quot;competition_reason&quot;: &quot;The governing model is familiar and its execution is the principal demand.&quot;,
+    &quot;review&quot;: &quot;AUTHOR_PROPOSED_NOT_INDEPENDENT&quot;,
+    &quot;learner_observation&quot;: null
+  },
+  &quot;QRT&quot;: {
+    &quot;placement&quot;: &quot;PROVISIONAL&quot;,
+    &quot;source_role&quot;: &quot;TEXTBOOK_QUESTION&quot;,
+    &quot;exam_21_admission&quot;: false,
+    &quot;reviewed_construction_join&quot;: &quot;PENDING&quot;,
+    &quot;syllabus_nodes&quot;: [
+      &quot;WPE-N02&quot;
+    ]
+  }
+}</pre></section><section id="TB-WPE-ILL-04"><h2>Illustration 4 — Work on a rough incline</h2><p><a href="rendered/core2.html#TB-WPE-ILL-04">Try in native reader</a> · <a href="sources/page_04.jpg">Scan 4</a> <a href="sources/page_05.jpg">Scan 5</a></p><p class="hold">AUTHOR EVIDENCE VIEW: contains source answers. Printed exam labels are unverified. Extract-to-print equivalence remains pending; source wording and working below are exact saved extraction.</p><ul><li>Stationary-plane kinetic-friction model only; no universal claim that friction work is always negative.</li><li>The extraction supplies trigonometric approximations from the printed working.</li><li>Derived FBD includes final work relations and is solution-only.</li></ul><details><summary>Exact extracted question</summary><pre>A block of mass $4\text{ kg}$ slides down a plane inclined at $37^\circ$ with the horizontal. The length of the plane is $3\text{ m}$. The coefficient of sliding friction between the block and the plane is $\mu = 0.2$. Find:
+1. The work done due to gravity,
+2. The work done by the frictional force,
+3. The work done by the normal reaction between the block and the plane.  
+($g = 9.8\text{ m/s}^2, \sin 37^\circ = 0.6, \cos 37^\circ = 0.8$).
+
+&lt;div align=&quot;center&quot;&gt;
+  &lt;img src=&quot;images/fig_06_incline_block.svg&quot; width=&quot;45%&quot; alt=&quot;Block on Incline&quot; /&gt;
+  &lt;img src=&quot;images/fig_07_incline_fbd.svg&quot; width=&quot;45%&quot; alt=&quot;FBD on Incline&quot; /&gt;
+&lt;/div&gt;</pre></details><details><summary>Exact extracted source working — contains answer</summary><pre>**Solution**:  
+1. **Work Done by Normal Reaction ($W_N$)**:  
+   The normal reaction $\vec{R}$ is perpendicular to the inclined plane ($\theta = 90^\circ$ relative to displacement $\vec{s}$):
+   $$W_N = R s \cos 90^\circ = 0$$
+
+2. **Work Done by Gravity ($W_g$)**:  
+   The angle between the downward vertical gravity force ($mg$) and the displacement vector along the incline is $(90^\circ - 37^\circ)$:
+   $$W_g = mg s \cos(90^\circ - 37^\circ) = mg s \sin 37^\circ$$
+   $$W_g = 4 \times 9.8 \times 3 \times \frac{3}{5} = 70.56\text{ J}$$
+
+3. **Work Done by Friction ($W_f$)**:  
+   The normal reaction is $R = mg \cos 37^\circ$. The kinetic friction is $f_k = \mu R = \mu mg \cos 37^\circ$, acting opposite to displacement ($\theta = 180^\circ$):
+   $$W_f = -(\mu R) s = -(\mu mg \cos 37^\circ) s$$
+   $$W_f = -(0.2) \times (4 \times 9.8 \times 0.8) \times 3 = -18.816\text{ J}$$
+
+$$\mathbf{W_N = 0\text{ J}, \quad W_g = 70.56\text{ J}, \quad W_f = -18.816\text{ J}}$$</pre></details><h3>SL1-style custody</h3><pre>{
+  &quot;question_role&quot;: &quot;OWNER_SUPPLIED_TEXTBOOK_EXTRACT&quot;,
+  &quot;source_document_identity&quot;: &quot;EXACT_SAVED_EXTRACT&quot;,
+  &quot;printed_equivalence&quot;: &quot;PENDING&quot;,
+  &quot;exam_identity&quot;: &quot;UNVERIFIED&quot;,
+  &quot;official_key&quot;: &quot;NOT_ESTABLISHED&quot;,
+  &quot;question_payload_sha256&quot;: &quot;cd156005e36b175cf660c4beef98a0f08824c395d444be084028ad0c4e3d36c0&quot;,
+  &quot;source_answer_sha256&quot;: &quot;c53be5b93cd055d8ec419571879829deb72d07e4dd51f8d5b3814f20e414fb1f&quot;,
+  &quot;assets&quot;: [
+    &quot;fig_06_incline_block.svg&quot;,
+    &quot;fig_07_incline_fbd.svg&quot;
+  ],
+  &quot;first_try&quot;: &quot;CANDIDATE_WITH_SOURCE_WARNINGS&quot;
+}</pre><h3>SL2 proposal and QRT join</h3><pre>{
+  &quot;SL2&quot;: {
+    &quot;mode&quot;: &quot;QUESTION&quot;,
+    &quot;operation_proposal&quot;: &quot;APPLY&quot;,
+    &quot;difficulty_proposal&quot;: {
+      &quot;band&quot;: &quot;D2&quot;,
+      &quot;score&quot;: 5,
+      &quot;components&quot;: {
+        &quot;concept_model_selection&quot;: 1,
+        &quot;representation_translation&quot;: 1,
+        &quot;reasoning_chain_length&quot;: 1,
+        &quot;algebra_computational_load&quot;: 1,
+        &quot;trap_exception_sensitivity&quot;: 1
+      },
+      &quot;basis&quot;: &quot;Author proposal for the exact supplied extract before support; independent adjudication pending. Work on a rough incline&quot;,
+      &quot;component_evidence&quot;: {
+        &quot;concept_model_selection&quot;: &quot;Apply work separately to gravity, friction and the normal.&quot;,
+        &quot;representation_translation&quot;: &quot;Resolve the vertical force relative to motion down the incline.&quot;,
+        &quot;reasoning_chain_length&quot;: &quot;Obtain the normal before kinetic friction and its work.&quot;,
+        &quot;algebra_computational_load&quot;: &quot;Routine multi-operation numerical evaluation.&quot;,
+        &quot;trap_exception_sensitivity&quot;: &quot;Signs and the normal being perpendicular matter.&quot;
+      }
+    },
+    &quot;decisive_move&quot;: &quot;Identify the angle each force makes with the displacement.&quot;,
+    &quot;input_roles&quot;: [
+      [
+        &quot;Inclination 37° and sliding direction&quot;
+      ],
+      [
+        &quot;m = 4 kg, μ = 0.2, cos(37°) = 0.8&quot;
+      ],
+      [
+        &quot;sin(37°) = 0.6 and s = 3 m&quot;
+      ]
+    ],
+    &quot;output_role&quot;: &quot;Gravity work = 70.56 J; friction work = -18.816 J; normal work = 0 J.&quot;,
+    &quot;competing_operation&quot;: &quot;MODEL&quot;,
+    &quot;competition_reason&quot;: &quot;The governing model is familiar and its execution is the principal demand.&quot;,
+    &quot;review&quot;: &quot;AUTHOR_PROPOSED_NOT_INDEPENDENT&quot;,
+    &quot;learner_observation&quot;: null
+  },
+  &quot;QRT&quot;: {
+    &quot;placement&quot;: &quot;PROVISIONAL&quot;,
+    &quot;source_role&quot;: &quot;TEXTBOOK_QUESTION&quot;,
+    &quot;exam_21_admission&quot;: false,
+    &quot;reviewed_construction_join&quot;: &quot;PENDING&quot;,
+    &quot;syllabus_nodes&quot;: [
+      &quot;WPE-N01&quot;,
+      &quot;WPE-N09&quot;
+    ]
+  }
+}</pre></section><section id="TB-WPE-ILL-05"><h2>Illustration 5 — Gravitational power at the bottom of an incline</h2><p><a href="rendered/core2.html#TB-WPE-ILL-05">Try in native reader</a> · <a href="sources/page_05.jpg">Scan 5</a></p><p class="hold">AUTHOR EVIDENCE VIEW: contains source answers. Printed exam labels are unverified. Extract-to-print equivalence remains pending; source wording and working below are exact saved extraction.</p><ul><li>UNDERDETERMINED_STEM: initial speed is absent; displayed source answer assumes release from rest.</li></ul><details><summary>Exact extracted question</summary><pre>A block of mass $m$ slides down a fixed smooth inclined plane of inclination angle $\theta$ and length $l$. Calculate the magnitude of instantaneous power developed by the gravitational force when the block reaches the bottom.</pre></details><details><summary>Exact extracted source working — contains answer</summary><pre>**Solution**:  
+The power delivered by gravity is $P = \vec{F}_g \cdot \vec{v}$.
+
+When the block reaches the bottom, its speed is given by Torricelli&#x27;s theorem:
+$$v = \sqrt{2gh} = \sqrt{2gl\sin\theta}$$
+
+The velocity vector $\vec{v}$ is directed along the incline, which makes an angle of $(90^\circ - \theta)$ with the downward vertical gravity force $m\vec{g}$.
+$$P = mg v \cos(90^\circ - \theta) = mg v \sin\theta$$
+$$P = mg \sin\theta \sqrt{2gl\sin\theta} = \sqrt{2m^2 g^3 l \sin^3\theta}$$
+
+$$\mathbf{P = \sqrt{2m^2 g^3 l \sin^3\theta}}$$</pre></details><h3>SL1-style custody</h3><pre>{
+  &quot;question_role&quot;: &quot;OWNER_SUPPLIED_TEXTBOOK_EXTRACT&quot;,
+  &quot;source_document_identity&quot;: &quot;EXACT_SAVED_EXTRACT&quot;,
+  &quot;printed_equivalence&quot;: &quot;PENDING&quot;,
+  &quot;exam_identity&quot;: &quot;UNVERIFIED&quot;,
+  &quot;official_key&quot;: &quot;NOT_ESTABLISHED&quot;,
+  &quot;question_payload_sha256&quot;: &quot;ce4e11826ca40c76caff757ed10ee993fd9d533e23cc43f327c9333d878f2dcb&quot;,
+  &quot;source_answer_sha256&quot;: &quot;c7759cc115f8f42c334852b298766cb3d9c4e56776e6ab8662df4ffef6148b9e&quot;,
+  &quot;assets&quot;: [],
+  &quot;first_try&quot;: &quot;CONDITIONAL_SOURCE_DEFECT&quot;
+}</pre><h3>SL2 proposal and QRT join</h3><pre>{
+  &quot;SL2&quot;: {
+    &quot;mode&quot;: &quot;QUESTION&quot;,
+    &quot;operation_proposal&quot;: &quot;APPLY&quot;,
+    &quot;difficulty_proposal&quot;: {
+      &quot;band&quot;: &quot;D3&quot;,
+      &quot;score&quot;: 6,
+      &quot;components&quot;: {
+        &quot;concept_model_selection&quot;: 1,
+        &quot;representation_translation&quot;: 1,
+        &quot;reasoning_chain_length&quot;: 2,
+        &quot;algebra_computational_load&quot;: 1,
+        &quot;trap_exception_sensitivity&quot;: 1
+      },
+      &quot;basis&quot;: &quot;Author proposal for the exact supplied extract before support; independent adjudication pending. Gravitational power at the bottom of an incline&quot;,
+      &quot;component_evidence&quot;: {
+        &quot;concept_model_selection&quot;: &quot;Combine bottom speed with power of the named gravitational force.&quot;,
+        &quot;representation_translation&quot;: &quot;Translate the incline geometry into h = l sin(θ).&quot;,
+        &quot;reasoning_chain_length&quot;: &quot;Coordinate energy or kinematics with a force-velocity projection.&quot;,
+        &quot;algebra_computational_load&quot;: &quot;Routine symbolic substitution and simplification.&quot;,
+        &quot;trap_exception_sensitivity&quot;: &quot;Force attribution matters; the missing initial speed is a source defect, not a demand bonus.&quot;
+      }
+    },
+    &quot;decisive_move&quot;: &quot;State that the source solution assumes release from rest.&quot;,
+    &quot;input_roles&quot;: [
+      [
+        &quot;Fixed smooth incline and source working&quot;
+      ],
+      [
+        &quot;v_bottom along the incline&quot;
+      ],
+      [
+        &quot;The preceding two relations&quot;
+      ]
+    ],
+    &quot;output_role&quot;: &quot;Source result, conditional on release from rest: P = mg sin(θ) sqrt(2gl sin(θ)).&quot;,
+    &quot;competing_operation&quot;: &quot;MODEL&quot;,
+    &quot;competition_reason&quot;: &quot;The governing model is familiar and its execution is the principal demand.&quot;,
+    &quot;review&quot;: &quot;AUTHOR_PROPOSED_NOT_INDEPENDENT&quot;,
+    &quot;learner_observation&quot;: null
+  },
+  &quot;QRT&quot;: {
+    &quot;placement&quot;: &quot;PROVISIONAL&quot;,
+    &quot;source_role&quot;: &quot;TEXTBOOK_QUESTION&quot;,
+    &quot;exam_21_admission&quot;: false,
+    &quot;reviewed_construction_join&quot;: &quot;PENDING&quot;,
+    &quot;syllabus_nodes&quot;: [
+      &quot;WPE-N10&quot;,
+      &quot;WPE-N08&quot;
+    ]
+  }
+}</pre></section><section id="TB-WPE-ILL-06"><h2>Illustration 6 — Net power during nonuniform circular motion</h2><p><a href="rendered/core2.html#TB-WPE-ILL-06">Try in native reader</a> · <a href="sources/page_05.jpg">Scan 5</a></p><p class="hold">AUTHOR EVIDENCE VIEW: contains source answers. Printed exam labels are unverified. Extract-to-print equivalence remains pending; source wording and working below are exact saved extraction.</p><ul><li>The source convention uses nonnegative elapsed time; speed is a magnitude.</li></ul><details><summary>Exact extracted question</summary><pre>A particle of mass $m$ is moving in a circular path of constant radius $r$ such that its centripetal acceleration $a_c$ varies with time $t$ as $a_c = k^2 r t^2$, where $k$ is a constant. The power delivered to the particle by the net force acting on it is:  
+(A) $2\pi m k^2 r^2$  
+(B) $m k^2 r^2 t$  
+(C) $\frac{m k^4 r^2 t^5}{3}$  
+(D) Zero</pre></details><details><summary>Exact extracted source working — contains answer</summary><pre>**Solution: (B)**  
+The net force acting on the particle can be decomposed into centripetal and tangential components:
+$$\vec{F} = \vec{F}_c + \vec{F}_t$$
+
+1. Since centripetal force is perpendicular to velocity ($\vec{F}_c \perp \vec{v}$), the power delivered by the centripetal force is zero:
+   $$P_c = \vec{F}_c \cdot \vec{v} = 0$$
+
+2. Tangential force is collinear with velocity, so:
+   $$P = P_t = F_t v$$
+
+From the given centripetal acceleration:
+$$a_c = \frac{v^2}{r} = k^2 r t^2 \implies v = krt$$
+
+Differentiating with respect to time to find tangential acceleration:
+$$a_t = \frac{dv}{dt} = kr$$
+
+The tangential force is:
+$$F_t = m a_t = mkr$$
+
+Therefore, the instantaneous power delivered is:
+$$P = F_t v = (mkr)(krt) = m k^2 r^2 t$$
+
+$$\mathbf{\text{Correct Option: (B) } m k^2 r^2 t}$$</pre></details><h3>SL1-style custody</h3><pre>{
+  &quot;question_role&quot;: &quot;OWNER_SUPPLIED_TEXTBOOK_EXTRACT&quot;,
+  &quot;source_document_identity&quot;: &quot;EXACT_SAVED_EXTRACT&quot;,
+  &quot;printed_equivalence&quot;: &quot;PENDING&quot;,
+  &quot;exam_identity&quot;: &quot;UNVERIFIED&quot;,
+  &quot;official_key&quot;: &quot;NOT_ESTABLISHED&quot;,
+  &quot;question_payload_sha256&quot;: &quot;6d074f7d1adb0560c453b8f75b3758cf4e162626d0532795c086ca0b314f773b&quot;,
+  &quot;source_answer_sha256&quot;: &quot;5f99b7c5ce616a9a2f2a4cf41b61380abd7c1a43ddfec4f78bdc4ba930e65dba&quot;,
+  &quot;assets&quot;: [],
+  &quot;first_try&quot;: &quot;CANDIDATE_WITH_SOURCE_WARNINGS&quot;
+}</pre><h3>SL2 proposal and QRT join</h3><pre>{
+  &quot;SL2&quot;: {
+    &quot;mode&quot;: &quot;QUESTION&quot;,
+    &quot;operation_proposal&quot;: &quot;APPLY&quot;,
+    &quot;difficulty_proposal&quot;: {
+      &quot;band&quot;: &quot;D3&quot;,
+      &quot;score&quot;: 6,
+      &quot;components&quot;: {
+        &quot;concept_model_selection&quot;: 1,
+        &quot;representation_translation&quot;: 1,
+        &quot;reasoning_chain_length&quot;: 2,
+        &quot;algebra_computational_load&quot;: 1,
+        &quot;trap_exception_sensitivity&quot;: 1
+      },
+      &quot;basis&quot;: &quot;Author proposal for the exact supplied extract before support; independent adjudication pending. Net power during nonuniform circular motion&quot;,
+      &quot;component_evidence&quot;: {
+        &quot;concept_model_selection&quot;: &quot;Net power must include the speed-changing force, not only the radial component.&quot;,
+        &quot;representation_translation&quot;: &quot;Convert centripetal acceleration into speed using a_c = v²/r.&quot;,
+        &quot;reasoning_chain_length&quot;: &quot;Find speed, differentiate it, and combine tangential force with velocity.&quot;,
+        &quot;algebra_computational_load&quot;: &quot;Routine time differentiation and product.&quot;,
+        &quot;trap_exception_sensitivity&quot;: &quot;Zero radial power does not mean zero net power.&quot;
+      }
+    },
+    &quot;decisive_move&quot;: &quot;Use a_c = v²/r to infer the speed law.&quot;,
+    &quot;input_roles&quot;: [
+      [
+        &quot;a_c = k²rt²&quot;
+      ],
+      [
+        &quot;v = krt for the source convention&quot;
+      ],
+      [
+        &quot;F_t = mkr and v = krt&quot;
+      ]
+    ],
+    &quot;output_role&quot;: &quot;Source choice (B): P = m k² r² t.&quot;,
+    &quot;competing_operation&quot;: &quot;MODEL&quot;,
+    &quot;competition_reason&quot;: &quot;The governing model is familiar and its execution is the principal demand.&quot;,
+    &quot;review&quot;: &quot;AUTHOR_PROPOSED_NOT_INDEPENDENT&quot;,
+    &quot;learner_observation&quot;: null
+  },
+  &quot;QRT&quot;: {
+    &quot;placement&quot;: &quot;PROVISIONAL&quot;,
+    &quot;source_role&quot;: &quot;TEXTBOOK_QUESTION&quot;,
+    &quot;exam_21_admission&quot;: false,
+    &quot;reviewed_construction_join&quot;: &quot;PENDING&quot;,
+    &quot;syllabus_nodes&quot;: [
+      &quot;WPE-N10&quot;,
+      &quot;WPE-N04&quot;
+    ]
+  }
+}</pre></section><section id="TB-WPE-ILL-11"><h2>Illustration 11 — A uniform chain slipping off a table</h2><p><a href="rendered/core2.html#TB-WPE-ILL-11">Try in native reader</a> · <a href="sources/page_09.jpg">Scan 9</a></p><p class="hold">AUTHOR EVIDENCE VIEW: contains source answers. Printed exam labels are unverified. Extract-to-print equivalence remains pending; source wording and working below are exact saved extraction.</p><ul><li>Initial rest appears in the printed solution, not in the supplied extracted stem.</li><li>Flexible-chain contact/edge idealization and lossless energy transfer require distinct review.</li><li>The derived SVG prints the final answer and is solution-only; a safe original-figure projection is pending.</li></ul><details><summary>Exact extracted question</summary><pre>A uniform flexible chain of length $l$ and mass $m$ overhangs a smooth horizontal table with two-thirds ($2l/3$) of its length lying on the table. Find the kinetic energy of the chain as it completely slips off the table.
+
+![Uniform Overhanging Chain Slipping Off Table](images/fig_09_overhanging_chain.svg)</pre></details><details><summary>Exact extracted source working — contains answer</summary><pre>**Solution**:  
+Choose the table surface as the gravitational potential energy reference plane ($U_{\text{table}} = 0$).
+
+1. **Initial Potential Energy ($U_1$)**:  
+   The portion on the table ($2l/3$) has $U = 0$.  
+   The hanging portion has length $l/3$. Consider an infinitesimal element of length $dx$ at depth $x$ below the table edge ($0 \le x \le l/3$):
+   $$dm = \frac{m}{l}dx$$
+   $$dU = - (dm) g x = -\frac{m}{l}g x dx$$
+   $$U_1 = \int_{0}^{l/3} -\frac{m}{l}g x dx = -\frac{m g}{l} \left[ \frac{x^2}{2} \right]_{0}^{l/3} = -\frac{mg}{l}\left( \frac{l^2}{18} \right) = -\frac{1}{18}mgl$$
+
+2. **Final Potential Energy ($U_2$)**:  
+   When the entire chain has just slipped off the table, the chain hangs vertically between $x = 0$ and $x = l$:
+   $$U_2 = \int_{0}^{l} -\frac{m}{l}g x dx = -\frac{mg}{l} \left[ \frac{l^2}{2} \right] = -\frac{1}{2}mgl$$
+
+3. **Loss in Potential Energy = Gain in Kinetic Energy**:  
+   Since the table is frictionless and no non-conservative forces act:
+   $$\Delta K = -\Delta U = U_1 - U_2$$
+   $$K_{\text{final}} - 0 = \left( -\frac{1}{18}mgl \right) - \left( -\frac{1}{2}mgl \right) = \left( \frac{1}{2} - \frac{1}{18} \right)mgl = \frac{8}{18}mgl = \frac{4}{9}mgl$$
+
+$$\mathbf{K = \frac{4}{9}mgl}$$</pre></details><h3>SL1-style custody</h3><pre>{
+  &quot;question_role&quot;: &quot;OWNER_SUPPLIED_TEXTBOOK_EXTRACT&quot;,
+  &quot;source_document_identity&quot;: &quot;EXACT_SAVED_EXTRACT&quot;,
+  &quot;printed_equivalence&quot;: &quot;PENDING&quot;,
+  &quot;exam_identity&quot;: &quot;UNVERIFIED&quot;,
+  &quot;official_key&quot;: &quot;NOT_ESTABLISHED&quot;,
+  &quot;question_payload_sha256&quot;: &quot;cf7d349a007e2d875309bd1e97677b7152de2ae563aae225a870e5b5371ae918&quot;,
+  &quot;source_answer_sha256&quot;: &quot;96bb1913e318a1dd1464a04e79aa6e810bb3b35a08362d7b2eb257de9477ab67&quot;,
+  &quot;assets&quot;: [
+    &quot;fig_09_overhanging_chain.svg&quot;
+  ],
+  &quot;first_try&quot;: &quot;CONDITIONAL_SOURCE_DEFECT&quot;
+}</pre><h3>SL2 proposal and QRT join</h3><pre>{
+  &quot;SL2&quot;: {
+    &quot;mode&quot;: &quot;QUESTION&quot;,
+    &quot;operation_proposal&quot;: &quot;MODEL&quot;,
+    &quot;difficulty_proposal&quot;: {
+      &quot;band&quot;: &quot;D4&quot;,
+      &quot;score&quot;: 8,
+      &quot;components&quot;: {
+        &quot;concept_model_selection&quot;: 2,
+        &quot;representation_translation&quot;: 2,
+        &quot;reasoning_chain_length&quot;: 2,
+        &quot;algebra_computational_load&quot;: 1,
+        &quot;trap_exception_sensitivity&quot;: 1
+      },
+      &quot;basis&quot;: &quot;Author proposal for the exact supplied extract before support; independent adjudication pending. A uniform chain slipping off a table&quot;,
+      &quot;component_evidence&quot;: {
+        &quot;concept_model_selection&quot;: &quot;Choose a distributed-energy model rather than placing the whole mass at one arbitrary height.&quot;,
+        &quot;representation_translation&quot;: &quot;Construct initial and final mass-height distributions with a consistent zero.&quot;,
+        &quot;reasoning_chain_length&quot;: &quot;Coordinate density, two potential-energy integrals and energy balance.&quot;,
+        &quot;algebra_computational_load&quot;: &quot;Routine quadratic integration; not scored high merely for calculus.&quot;,
+        &quot;trap_exception_sensitivity&quot;: &quot;Initial kinetic energy and ideal contact assumptions affect the final result.&quot;
+      }
+    },
+    &quot;decisive_move&quot;: &quot;Set table height as zero and use uniform linear mass density m/l.&quot;,
+    &quot;input_roles&quot;: [
+      [
+        &quot;Initial hanging length l/3 and full length l&quot;
+      ],
+      [
+        &quot;The uniform-density model&quot;
+      ],
+      [
+        &quot;The two potential energies and K_initial = 0&quot;
+      ]
+    ],
+    &quot;output_role&quot;: &quot;Source result, conditional on zero initial kinetic energy and its ideal chain model: K_final = (4/9)mgl.&quot;,
+    &quot;competing_operation&quot;: &quot;APPLY&quot;,
+    &quot;competition_reason&quot;: &quot;An explicit distributed/contact representation is decisive.&quot;,
+    &quot;review&quot;: &quot;AUTHOR_PROPOSED_NOT_INDEPENDENT&quot;,
+    &quot;learner_observation&quot;: null
+  },
+  &quot;QRT&quot;: {
+    &quot;placement&quot;: &quot;PROVISIONAL&quot;,
+    &quot;source_role&quot;: &quot;TEXTBOOK_QUESTION&quot;,
+    &quot;exam_21_admission&quot;: false,
+    &quot;reviewed_construction_join&quot;: &quot;PENDING&quot;,
+    &quot;syllabus_nodes&quot;: [
+      &quot;WPE-N06&quot;,
+      &quot;WPE-N08&quot;
+    ]
+  }
+}</pre></section><section id="TB-WPE-ILL-12"><h2>Illustration 12 — A block pushed by a compressed spring</h2><p><a href="rendered/core2.html#TB-WPE-ILL-12">Try in native reader</a> · <a href="sources/page_09.jpg">Scan 9</a></p><p class="hold">AUTHOR EVIDENCE VIEW: contains source answers. Printed exam labels are unverified. Extract-to-print equivalence remains pending; source wording and working below are exact saved extraction.</p><ul><li>The printed solution is qualitative; the extraction adds the piecewise algebra and explicit initial-rest wording.</li><li>The printed assertion of no external forces must be read as no external energy transfer in this ideal model; gravity and table normal exist.</li></ul><details><summary>Exact extracted question</summary><pre>A block of mass $m$ is pushed against a light spring of spring constant $k$ fixed at one end to a rigid vertical wall. The block slides on a frictionless horizontal table. The natural length of the spring is $L_0$. The spring is compressed to half its natural length ($x_{\text{init}} = L_0/2$) and the block is released from rest. Find the velocity of the block as a function of its distance $x$ from the wall.
+
+![Block Released from Compressed Spring](images/fig_10_spring_block_wall.svg)</pre></details><details><summary>Exact extracted source working — contains answer</summary><pre>**Solution**:  
+The system consists of the block and the spring. The surface is frictionless, so mechanical energy is conserved throughout the motion.
+
+1. **Initial State ($x = L_0/2$)**:  
+   The block is released from rest ($v = 0 \implies K = 0$).  
+   The compression of the spring is:
+   $$\Delta x_{\text{init}} = L_0 - \frac{L_0}{2} = \frac{L_0}{2}$$
+   Total initial mechanical energy:
+   $$E = \frac{1}{2}k (\Delta x_{\text{init}})^2 = \frac{1}{2}k \left(\frac{L_0}{2}\right)^2 = \frac{1}{8}k L_0^2$$
+
+2. **Motion while in Contact with Spring ($\frac{L_0}{2} \le x \le L_0$)**:  
+   At any position $x$, the compression of the spring is $(L_0 - x)$.  
+   By conservation of mechanical energy:
+   $$\frac{1}{2}mv^2 + \frac{1}{2}k(L_0 - x)^2 = \frac{1}{8}k L_0^2$$
+   $$\frac{1}{2}mv^2 = \frac{1}{2}k \left[ \frac{L_0^2}{4} - (L_0 - x)^2 \right]$$
+   $$v(x) = \sqrt{\frac{k}{m} \left[ \frac{L_0^2}{4} - (L_0 - x)^2 \right]}$$
+
+3. **Motion after Losing Contact ($x &gt; L_0$)**:  
+   At $x = L_0$, the spring reaches its natural length and cannot pull on the detached block. The block loses contact with the spring and travels with constant maximum velocity:
+   $$v_{\max} = \sqrt{\frac{k}{m}} \left(\frac{L_0}{2}\right)$$
+
+$$\mathbf{v(x) = \begin{cases} \sqrt{\frac{k}{m}\left[\frac{L_0^2}{4} - (L_0 - x)^2\right]}, &amp; \frac{L_0}{2} \le x \le L_0 \\[8pt] \frac{L_0}{2}\sqrt{\frac{k}{m}}, &amp; x &gt; L_0 \end{cases}}$$</pre></details><h3>SL1-style custody</h3><pre>{
+  &quot;question_role&quot;: &quot;OWNER_SUPPLIED_TEXTBOOK_EXTRACT&quot;,
+  &quot;source_document_identity&quot;: &quot;EXACT_SAVED_EXTRACT&quot;,
+  &quot;printed_equivalence&quot;: &quot;PENDING&quot;,
+  &quot;exam_identity&quot;: &quot;UNVERIFIED&quot;,
+  &quot;official_key&quot;: &quot;NOT_ESTABLISHED&quot;,
+  &quot;question_payload_sha256&quot;: &quot;e94e81cc0f5319fe702f30436ae3ce8b0ca4950d68c3b911b48a56446ce6d5cc&quot;,
+  &quot;source_answer_sha256&quot;: &quot;2691ac6b62f9f328f18922b95d897ce24bd6c954d4a71a144a2af008b910735f&quot;,
+  &quot;assets&quot;: [
+    &quot;fig_10_spring_block_wall.svg&quot;
+  ],
+  &quot;first_try&quot;: &quot;CONDITIONAL_SOURCE_DEFECT&quot;
+}</pre><h3>SL2 proposal and QRT join</h3><pre>{
+  &quot;SL2&quot;: {
+    &quot;mode&quot;: &quot;QUESTION&quot;,
+    &quot;operation_proposal&quot;: &quot;MODEL&quot;,
+    &quot;difficulty_proposal&quot;: {
+      &quot;band&quot;: &quot;D4&quot;,
+      &quot;score&quot;: 9,
+      &quot;components&quot;: {
+        &quot;concept_model_selection&quot;: 2,
+        &quot;representation_translation&quot;: 1,
+        &quot;reasoning_chain_length&quot;: 2,
+        &quot;algebra_computational_load&quot;: 2,
+        &quot;trap_exception_sensitivity&quot;: 2
+      },
+      &quot;basis&quot;: &quot;Author proposal for the exact supplied extract before support; independent adjudication pending. A block pushed by a compressed spring&quot;,
+      &quot;component_evidence&quot;: {
+        &quot;concept_model_selection&quot;: &quot;Select a unilateral contact model: pushed against the spring does not mean permanently attached.&quot;,
+        &quot;representation_translation&quot;: &quot;Translate wall distance into spring compression while contact lasts.&quot;,
+        &quot;reasoning_chain_length&quot;: &quot;Coordinate initial energy, contact phase and subsequent free motion.&quot;,
+        &quot;algebra_computational_load&quot;: &quot;Construct and bound a piecewise symbolic expression.&quot;,
+        &quot;trap_exception_sensitivity&quot;: &quot;Detachment at natural length changes the governing expression.&quot;
+      }
+    },
+    &quot;decisive_move&quot;: &quot;Separate contact motion from motion after loss of contact.&quot;,
+    &quot;input_roles&quot;: [
+      [
+        &quot;Initial compression L₀/2&quot;
+      ],
+      [
+        &quot;Wall distance x and natural length L₀&quot;
+      ],
+      [
+        &quot;(1/2)mv² + (1/2)k(L₀-x)² = kL₀²/8&quot;
+      ]
+    ],
+    &quot;output_role&quot;: &quot;Extracted conditional model: v(x) = sqrt((k/m)[L₀²/4 - (L₀-x)²]) for L₀/2 ≤ x ≤ L₀; v(x) = (L₀/2)sqrt(k/m) after detachment.&quot;,
+    &quot;competing_operation&quot;: &quot;APPLY&quot;,
+    &quot;competition_reason&quot;: &quot;An explicit distributed/contact representation is decisive.&quot;,
+    &quot;review&quot;: &quot;AUTHOR_PROPOSED_NOT_INDEPENDENT&quot;,
+    &quot;learner_observation&quot;: null
+  },
+  &quot;QRT&quot;: {
+    &quot;placement&quot;: &quot;PROVISIONAL&quot;,
+    &quot;source_role&quot;: &quot;TEXTBOOK_QUESTION&quot;,
+    &quot;exam_21_admission&quot;: false,
+    &quot;reviewed_construction_join&quot;: &quot;PENDING&quot;,
+    &quot;syllabus_nodes&quot;: [
+      &quot;WPE-N02&quot;,
+      &quot;WPE-N06&quot;,
+      &quot;WPE-N08&quot;
+    ]
+  }
+}</pre></section></main></html>

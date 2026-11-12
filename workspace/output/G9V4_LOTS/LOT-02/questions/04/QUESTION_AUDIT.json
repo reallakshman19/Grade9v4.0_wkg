@@ -1,0 +1,111 @@
+{
+  "sequence": 4,
+  "task_identity": "Q-ID-04",
+  "stable_id": "Q-PHY-WPE-JEEM-2026-01-23-S1-04",
+  "source_id": "EX-M7",
+  "lot": "LOT-02",
+  "paper": "JEE Main 2026 (Online) 23rd January Morning Shift",
+  "source_type": "SCRAPED_EXTRACT_EXAMGOAL",
+  "source_custody": "PARTIAL",
+  "stem_text": "An object is projected with kinetic energy \ud835\udc3e from a point \ud835\udc34 at an angle 60^(\u2218) with the horizontal. The ratio of the difference in kinetic energies at points \ud835\udc35 and \ud835\udc36 to that at point \ud835\udc34 (see figure), in the absence of air friction is : [FIG-stem-1]",
+  "stem_sha256": "0a7d0a44e9eeb70842e0730dd0f34bbaacf362ddd7f7951b81e47eb3883e5489",
+  "source_hash": "0a7d0a44e9eeb70842e0730dd0f34bbaacf362ddd7f7951b81e47eb3883e5489",
+  "source_record_digest": "0a7d0a44e9eeb70842e0730dd0f34bbaacf362ddd7f7951b81e47eb3883e5489",
+  "duplicate_parent": null,
+  "scope": "IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "HOLD:FIGURE_UNRESOLVED",
+  "options": [
+    "A: 3:4",
+    "B: 1:4",
+    "C: 2:3",
+    "D: 1:2"
+  ],
+  "unbound_remote_figures": [
+    {
+      "role": "stem",
+      "url": "https://app-content.cdn.examgoal.net/fly/1000/image/6y3zli1mlutkti1/ec272730-93fd-443e-becd-35ed913d1e41/21c14490-0e51-11f1-97f7-91791681dff2/file-6y3zli1mlutkti2.png?format=png"
+    }
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "HOLD:FIGURE_UNRESOLVED",
+  "candidate_solve": {
+    "method": "PROJECTILE_ENERGY_DECOMPOSITION",
+    "assumed_parameters_from_coaching_figure": "Figure identifies B as apex (maximum height) and C as impact ground point on launch level.",
+    "derivation": "Initial launch KE at A: K_A = K = 1/2 m u^2. At apex B, vertical velocity is zero; speed is horizontal component v_B = u cos(60 deg) = u/2. Kinetic energy at B: K_B = 1/2 m (u/2)^2 = K/4. At ground impact C, speed is restored to u: K_C = K. Difference in KE between B and C: Delta K_BC = K_C - K_B = K - K/4 = 3/4 K. Ratio to KE at A: Delta K_BC / K_A = (3/4 K) / K = 3/4 = 3:4.",
+    "predicted_option": "A: 3:4",
+    "limiting_cases": "If launch angle theta = 0 deg, v_B = u => Delta K = 0. If theta = 90 deg, v_B = 0 => Delta K = K => ratio 1:1. For 60 deg, ratio is sin^2(60 deg) = 3/4."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "status": "UNREVIEWED",
+    "decisive_operation": "APPLY",
+    "crux": "Decomposing projectile kinetic energy into horizontal and vertical components to find apex energy retention K_B = K cos^2(theta).",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Standard 2D projectile kinetic energy model."
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Reading labeled trajectory points A, B, C from schematic."
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Determine K_B, K_C, calculate difference, form ratio."
+        },
+        "algebra_computational_load": {
+          "score": 0,
+          "evidence": "Elementary ratio: 1 - 1/4 = 3/4."
+        },
+        "trap_exception_sensitivity": {
+          "score": 0,
+          "evidence": "Direct application without subtle boundary traps."
+        }
+      },
+      "total": 3,
+      "band": "D2"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "REPRESENT"
+      ],
+      "candidate_cell": "QRT-APPLY-D2",
+      "status": "PROPOSED"
+    },
+    "representation_requirements": [
+      "DIAGRAM",
+      "EQUATION"
+    ],
+    "independent_checks": [
+      "UNITS",
+      "LIMITING_CASE"
+    ],
+    "wrong_route_hypotheses": [
+      {
+        "route": "Using vertical velocity component directly as ratio K_B/K_A = 1/4 (selecting B: 1:4)",
+        "status": "HYPOTHESIS"
+      },
+      {
+        "route": "Confusing cos(60) with sin(60) leading to ratio 1/4 or 1/2",
+        "status": "HYPOTHESIS"
+      }
+    ]
+  },
+  "qrt": "UNREVIEWED",
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_REVIEW",
+  "b2_blind_status": "NOT_RUN",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:FIGURE_UNRESOLVED (points B and C defined on diagram, unbound remote URL)",
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)",
+    "HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)"
+  ],
+  "next_action": "Source official NTA figure to verify labels of B and C."
+}

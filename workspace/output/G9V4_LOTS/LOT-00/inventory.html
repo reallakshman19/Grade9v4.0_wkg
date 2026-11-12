@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grade9 v4.0 — WPE 79-Record Source Inventory & Reconciliation Dashboard</title>
+<style>
+  :root {
+    --bg: #0f172a; --panel: #1e293b; --border: #334155; --text: #f8fafc;
+    --muted: #94a3b8; --accent: #38bdf8; --success: #22c55e; --warning: #f59e0b;
+    --danger: #ef4444; --chip-bg: #334155;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  html, body { width: 100%; overflow-x: hidden; background: var(--bg); color: var(--text); }
+  body { padding: 16px; line-height: 1.5; }
+  .container { width: 100%; max-width: 1400px; margin: 0 auto; box-sizing: border-box; }
+  header { margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 14px; }
+  h1 { font-size: 22px; color: var(--accent); margin-bottom: 4px; }
+  .subtitle { font-size: 13px; color: var(--warning); margin-bottom: 8px; font-weight: 600; }
+  .meta-bar { color: var(--muted); font-size: 13px; display: flex; gap: 14px; flex-wrap: wrap; }
+  .notice { background: rgba(245, 158, 11, 0.15); border-left: 4px solid var(--warning); padding: 12px 14px; margin: 14px 0; border-radius: 4px; font-size: 12px; }
+  .arithmetic-box { background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 8px; padding: 12px 16px; margin-bottom: 18px; font-size: 12px; }
+  .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin-bottom: 20px; }
+  .card { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 14px; }
+  .card .num { font-size: 26px; font-weight: 700; color: var(--accent); }
+  .card .sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .card .label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
+  .card.success .num { color: var(--success); }
+  .card.warning .num { color: var(--warning); }
+  .card.danger .num { color: var(--danger); }
+  .filter-bar { background: var(--panel); border: 1px solid var(--border); padding: 12px 14px; border-radius: 8px; margin-bottom: 14px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .filter-bar select, .filter-bar input { background: #0f172a; border: 1px solid var(--border); color: var(--text); padding: 6px 10px; border-radius: 4px; font-size: 12px; }
+  .filter-bar input { min-width: 200px; flex: 1; }
+  .table-container { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--border); border-radius: 8px; background: var(--panel); margin-top: 14px; }
+  table { width: 100%; min-width: 1000px; border-collapse: collapse; font-size: 12px; }
+  th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { background: #162032; color: var(--muted); font-weight: 600; text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px; position: sticky; top: 0; }
+  tr:hover { background: rgba(255, 255, 255, 0.02); }
+  .pill { display: inline-block; padding: 2px 7px; border-radius: 12px; font-size: 10px; font-weight: 600; }
+  .pill-scope { background: rgba(56, 189, 248, 0.15); color: #38bdf8; }
+  .pill-bridge { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+  .pill-out { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
+  .pill-verified { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
+  .pill-partial { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+  .pill-unresolved { background: rgba(148, 163, 184, 0.15); color: #94a3b8; }
+  .pill-lead { background: rgba(168, 85, 247, 0.15); color: #c084fc; font-weight: 700; }
+  .pill-dup { background: rgba(239, 68, 68, 0.2); color: #fca5a5; }
+  .pill-unbound { background: rgba(245, 158, 11, 0.2); color: #fbbf24; font-size: 10px; }
+  .holds-list { font-size: 10px; color: #fca5a5; list-style: none; margin-top: 3px; }
+  .holds-list li::before { content: "• "; color: var(--danger); }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Grade9 v4.0 — WPE 79-Record Source Inventory & Reconciliation Dashboard</h1>
+    <div class="subtitle">78 Provisional Distinct Identities (Candidate Deduplication Pending Independent Cross-Source Authentication)</div>
+    <div class="meta-bar">
+      <span><strong>Lot:</strong> LOT-00 (Process & Inventory Readiness)</span>
+      <span><strong>Subject:</strong> Physics (Work, Power and Energy Pilot)</span>
+      <span><strong>Generated:</strong> 2026-11-01T06:59:34Z</span>
+      <span><strong>Storage:</strong> workspace/output/G9V4_LOTS/LOT-00/</span>
+    </div>
+  </header>
+
+  <div class="notice">
+    <strong>CONFIDENTIAL OWNER-LOCAL RECORD.</strong> Verbatim exam stems, options, and solution text are strictly excluded from this dashboard. No academic approval is inferred from mechanical inventory reconciliation. Key statuses are inherited legacy review claims and remain on HOLD.
+  </div>
+
+  <div class="arithmetic-box">
+    <strong>Reconciliation Arithmetic:</strong> 79 raw records &minus; 1 candidate alias pair (<code>EX-M4</code> &harr; <code>JEE-2026-04-05-S2-Q28</code>, both in-scope WPE) = <strong>78 provisional distinct identities</strong>.<br>
+    <strong>Raw Scope (79):</strong> 66 In-Scope + 8 Prerequisite Bridge + 5 Out-of-Scope = 79.<br>
+    <strong>Provisional Unique Scope (78):</strong> 65 In-Scope + 8 Prerequisite Bridge + 5 Out-of-Scope = 78.<br>
+    <strong>Registry Binding:</strong> 74 stems bound in registry; 5 NSEP-extension records marked <code>TEXT_NOT_BOUND_IN_REGISTRY</code>.
+  </div>
+
+  <div class="metrics">
+    <div class="card">
+      <div class="num">79</div>
+      <div class="sub">Raw candidates</div>
+      <div class="label">Total Raw Records</div>
+    </div>
+    <div class="card success">
+      <div class="num">78</div>
+      <div class="sub">65 core + 8 bridge + 5 out</div>
+      <div class="label">Provisional Distinct Identities</div>
+    </div>
+    <div class="card warning">
+      <div class="num">1</div>
+      <div class="sub">EX-M4 &harr; JEE-S2-Q28</div>
+      <div class="label">Candidate Alias Pair</div>
+    </div>
+    <div class="card">
+      <div class="num">14</div>
+      <div class="sub">13 JEE + 1 NSEP</div>
+      <div class="label">Conditional Selected Leads</div>
+    </div>
+    <div class="card warning">
+      <div class="num">1</div>
+      <div class="sub">WEP07-03 verified; M39 partial</div>
+      <div class="label">Verified Inherited Claims</div>
+    </div>
+    <div class="card danger">
+      <div class="num">0</div>
+      <div class="sub">Gate preserved fail-closed</div>
+      <div class="label">Admitted Questions</div>
+    </div>
+  </div>
+
+  <div class="filter-bar">
+    <label><strong>Filter:</strong></label>
+    <select id="scopeFilter">
+      <option value="ALL">All Scopes</option>
+      <option value="IN_SCOPE">In Scope (66 raw / 65 unique)</option>
+      <option value="PREREQUISITE_BRIDGE">Prerequisite Bridge (8)</option>
+      <option value="OUT_OF_SCOPE">Out of Scope Collision (5)</option>
+    </select>
+    <select id="keyFilter">
+      <option value="ALL">All Key Statuses</option>
+      <option value="VERIFIED">Verified Inherited (1)</option>
+      <option value="PARTIAL">Partial Inherited (1)</option>
+      <option value="UNRESOLVED">Unresolved Coaching (77 raw / 76 unique)</option>
+    </select>
+    <select id="leadFilter">
+      <option value="ALL">All Selection Statuses</option>
+      <option value="CONDITIONAL_LEAD">Conditional Leads (14)</option>
+      <option value="UNSELECTED_CANDIDATE">Unselected Candidates</option>
+    </select>
+    <select id="dupFilter">
+      <option value="ALL">All Records (79)</option>
+      <option value="PRIMARY_ONLY">Deduplicated (78 Provisional Distinct)</option>
+      <option value="DUPLICATES_ONLY">Aliases Only (1)</option>
+    </select>
+    <input type="text" id="searchInput" placeholder="Search ID, Task, or Paper (updates on input)...">
+  </div>
+
+  <div class="table-container">
+    <table id="inventoryTable">
+      <thead>
+        <tr>
+          <th>Ref</th>
+          <th>Record ID</th>
+          <th>Task Identity</th>
+          <th>Paper / Session</th>
+          <th>Origin</th>
+          <th>Scope</th>
+          <th>Key Status</th>
+          <th>Figures</th>
+          <th>Lead Status</th>
+          <th>Stem Binding</th>
+          <th>Active Holds</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q01</strong></td>
+          <td><code>EX-M2</code> </td>
+          <td><code>Q-ID-01</code></td>
+          <td>JEE Main 2026 (Online) 6th April Evening Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_UNRESOLVED</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+3 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q02</strong></td>
+          <td><code>EX-M4</code> </td>
+          <td><code>Q-ID-02</code></td>
+          <td>JEE Main 2026 (Online) 5th April Evening Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q03</strong></td>
+          <td><code>EX-M6</code> </td>
+          <td><code>Q-ID-03</code></td>
+          <td>JEE Main 2026 (Online) 23rd January Evening Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_UNRESOLVED</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+4 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q04</strong></td>
+          <td><code>EX-M7</code> </td>
+          <td><code>Q-ID-04</code></td>
+          <td>JEE Main 2026 (Online) 23rd January Morning Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_UNRESOLVED</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+3 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q05</strong></td>
+          <td><code>EX-M8</code> </td>
+          <td><code>Q-ID-05</code></td>
+          <td>JEE Main 2026 (Online) 23rd January Morning Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_UNRESOLVED</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+3 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q06</strong></td>
+          <td><code>EX-M11</code> </td>
+          <td><code>Q-ID-06</code></td>
+          <td>JEE Main 2026 (Online) 21st January Morning Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_UNRESOLVED</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+3 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="CONDITIONAL_LEAD" data-primary="1">
+          <td><strong>Q07</strong></td>
+          <td><code>EX-M14</code> </td>
+          <td><code>Q-ID-07</code></td>
+          <td>JEE Main 2025 (Online) 4th April Evening Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span class='pill pill-lead'>LEAD</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>G_VALUE_AND_PULL_ORIENTATION_REQUIRE_ORIGINAL_CHECK</li><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>+3 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="CONDITIONAL_LEAD" data-primary="1">
+          <td><strong>Q08</strong></td>
+          <td><code>EX-M16</code> </td>
+          <td><code>Q-ID-08</code></td>
+          <td>JEE Main 2025 (Online) 29th January Evening Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span class='pill pill-lead'>LEAD</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+3 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="CONDITIONAL_LEAD" data-primary="1">
+          <td><strong>Q09</strong></td>
+          <td><code>EX-M18</code> </td>
+          <td><code>Q-ID-09</code></td>
+          <td>JEE Main 2025 (Online) 28th January Morning Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_UNRESOLVED</small></td>
+          <td><span class='pill pill-lead'>LEAD</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+3 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q10</strong></td>
+          <td><code>EX-M24</code> </td>
+          <td><code>Q-ID-10</code></td>
+          <td>JEE Main 2024 (Online) 8th April Evening Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_UNRESOLVED</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+3 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q11</strong></td>
+          <td><code>EX-M29</code> </td>
+          <td><code>Q-ID-11</code></td>
+          <td>JEE Main 2024 (Online) 5th April Evening Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q12</strong></td>
+          <td><code>EX-M36</code> </td>
+          <td><code>Q-ID-12</code></td>
+          <td>JEE Main 2024 (Online) 29th January Evening Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_UNRESOLVED</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+3 more</li></ul></td>
+        </tr>
+        <tr data-scope="PREREQUISITE_BRIDGE" data-key="PARTIAL" data-lead="CONDITIONAL_LEAD" data-primary="1">
+          <td><strong>Q13</strong></td>
+          <td><code>EX-M39</code> </td>
+          <td><code>Q-ID-13</code></td>
+          <td>JEE Main 2024 (Online) 27th January Evening Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-bridge'>BRIDGE</span><br><small style="color:var(--muted)">Vertical circular motion / swing acceleration (circular dynamics bridge)</small></td>
+          <td><span class='pill pill-partial'>PARTIAL</span></td>
+          <td><small>NONE</small></td>
+          <td><span class='pill pill-lead'>LEAD</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="OUT_OF_SCOPE" data-key="UNRESOLVED" data-lead="CONDITIONAL_LEAD" data-primary="1">
+          <td><strong>Q14</strong></td>
+          <td><code>EX-M44</code> </td>
+          <td><code>Q-ID-14</code></td>
+          <td>JEE Main 2023 (Online) 8th April Evening Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-out'>OUT_OF_SCOPE</span><br><small style="color:var(--muted)">Collision on horizontal plane (collisions out of WPE adapter scope)</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span class='pill pill-lead'>LEAD</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q15</strong></td>
+          <td><code>EX-M47</code> </td>
+          <td><code>Q-ID-15</code></td>
+          <td>JEE Main 2022 (Online) 29th July Morning Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q16</strong></td>
+          <td><code>EX-M49</code> </td>
+          <td><code>Q-ID-16</code></td>
+          <td>JEE Main 2022 (Online) 27th July Morning Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q17</strong></td>
+          <td><code>EX-M50</code> </td>
+          <td><code>Q-ID-17</code></td>
+          <td>JEE Main 2022 (Online) 26th July Morning Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_UNRESOLVED</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+3 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="CONDITIONAL_LEAD" data-primary="1">
+          <td><strong>Q18</strong></td>
+          <td><code>EX-M56</code> </td>
+          <td><code>Q-ID-18</code></td>
+          <td>JEE Main 2022 (Online) 26th June Evening Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_UNRESOLVED</small></td>
+          <td><span class='pill pill-lead'>LEAD</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>BAND_AND_OPERATION_CONDITIONAL_ON_MISSING_GRAPHS</li><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>+4 more</li></ul></td>
+        </tr>
+        <tr data-scope="OUT_OF_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q19</strong></td>
+          <td><code>EX-M60</code> </td>
+          <td><code>Q-ID-19</code></td>
+          <td>JEE Main 2021 (Online) 31st August Evening Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-out'>OUT_OF_SCOPE</span><br><small style="color:var(--muted)">Elastic collision between two spheres (collision dynamics out of scope)</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="CONDITIONAL_LEAD" data-primary="1">
+          <td><strong>Q20</strong></td>
+          <td><code>EX-M61</code> </td>
+          <td><code>Q-ID-20</code></td>
+          <td>JEE Main 2021 (Online) 27th July Evening Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_UNRESOLVED</small></td>
+          <td><span class='pill pill-lead'>LEAD</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>BAND_AND_OPERATION_CONDITIONAL_ON_MISSING_GRAPH</li><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>+4 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q21</strong></td>
+          <td><code>EX-M62</code> </td>
+          <td><code>Q-ID-21</code></td>
+          <td>JEE Main 2021 (Online) 27th July Evening Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q22</strong></td>
+          <td><code>EX-M64</code> </td>
+          <td><code>Q-ID-22</code></td>
+          <td>JEE Main 2021 (Online) 20th July Evening Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q23</strong></td>
+          <td><code>EX-M65</code> </td>
+          <td><code>Q-ID-23</code></td>
+          <td>JEE Main 2021 (Online) 18th March Morning Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q24</strong></td>
+          <td><code>EX-M68</code> </td>
+          <td><code>Q-ID-24</code></td>
+          <td>JEE Main 2020 (Online) 4th September Evening Slot</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="CONDITIONAL_LEAD" data-primary="1">
+          <td><strong>Q25</strong></td>
+          <td><code>EX-M69</code> </td>
+          <td><code>Q-ID-25</code></td>
+          <td>JEE Main 2020 (Online) 3rd September Evening Slot</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_UNRESOLVED</small></td>
+          <td><span class='pill pill-lead'>LEAD</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+5 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q26</strong></td>
+          <td><code>EX-M73</code> </td>
+          <td><code>Q-ID-26</code></td>
+          <td>JEE Main 2019 (Online) 9th April Morning Slot</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q27</strong></td>
+          <td><code>EX-M74</code> </td>
+          <td><code>Q-ID-27</code></td>
+          <td>JEE Main 2019 (Online) 8th April Morning Slot</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_UNRESOLVED</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+3 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q28</strong></td>
+          <td><code>EX-M76</code> </td>
+          <td><code>Q-ID-28</code></td>
+          <td>JEE Main 2019 (Online) 10th January Morning Slot</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_UNRESOLVED</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+3 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q29</strong></td>
+          <td><code>EX-M78</code> </td>
+          <td><code>Q-ID-29</code></td>
+          <td>JEE Main 2019 (Online) 9th January Morning Slot</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_UNRESOLVED</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+3 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q30</strong></td>
+          <td><code>EX-M79</code> </td>
+          <td><code>Q-ID-30</code></td>
+          <td>JEE Main 2018 (Online) 16th April Morning Slot</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="OUT_OF_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q31</strong></td>
+          <td><code>EX-M81</code> </td>
+          <td><code>Q-ID-31</code></td>
+          <td>JEE Main 2018 (Offline)</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-out'>OUT_OF_SCOPE</span><br><small style="color:var(--muted)">Collision of body with target</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q32</strong></td>
+          <td><code>EX-M82</code> </td>
+          <td><code>Q-ID-32</code></td>
+          <td>JEE Main 2017 (Online) 8th April Morning Slot</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q33</strong></td>
+          <td><code>EX-M84</code> </td>
+          <td><code>Q-ID-33</code></td>
+          <td>JEE Main 2016 (Online) 10th April Morning Slot</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q34</strong></td>
+          <td><code>EX-M85</code> </td>
+          <td><code>Q-ID-34</code></td>
+          <td>JEE Main 2016 (Online) 10th April Morning Slot</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_UNRESOLVED</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+3 more</li></ul></td>
+        </tr>
+        <tr data-scope="OUT_OF_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q35</strong></td>
+          <td><code>EX-M88</code> </td>
+          <td><code>Q-ID-35</code></td>
+          <td>JEE Main 2016 (Offline)</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-out'>OUT_OF_SCOPE</span><br><small style="color:var(--muted)">Ball collision and rebound from surface</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_UNRESOLVED</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+3 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q36</strong></td>
+          <td><code>EX-M89</code> </td>
+          <td><code>Q-ID-36</code></td>
+          <td>JEE Main 2015 (Online) 11th April Morning Slot</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q37</strong></td>
+          <td><code>EX-M90</code> </td>
+          <td><code>Q-ID-37</code></td>
+          <td>JEE Main 2015 (Online) 10th April Morning Slot</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="CONDITIONAL_LEAD" data-primary="1">
+          <td><strong>Q38</strong></td>
+          <td><code>EX-M92</code> </td>
+          <td><code>Q-ID-38</code></td>
+          <td>JEE Main 2014 (Online) 12th April Morning Slot</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span class='pill pill-lead'>LEAD</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>AFFINE_VELOCITY_PROFILE_NOT_EXPLICIT_IN_STEM</li><li>CALCULUS_CONTINUUM_PREREQUISITES_UNQUALIFIED</li><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>+4 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q39</strong></td>
+          <td><code>EX-M96</code> </td>
+          <td><code>Q-ID-39</code></td>
+          <td>JEE Main 2013 (Online) 25th April Morning Slot</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q40</strong></td>
+          <td><code>EX-M97</code> </td>
+          <td><code>Q-ID-40</code></td>
+          <td>JEE Main 2013 (Online) 23th April Morning Slot</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>EXCLUDED_FROM_SELECTION</li><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>+5 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q41</strong></td>
+          <td><code>EX-M98</code> </td>
+          <td><code>Q-ID-41</code></td>
+          <td>JEE Main 2013 (Online) 9th April Morning Slot</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="OUT_OF_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q42</strong></td>
+          <td><code>EX-M99</code> </td>
+          <td><code>Q-ID-42</code></td>
+          <td>AIEEE 2012 (Online) 26th May</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-out'>OUT_OF_SCOPE</span><br><small style="color:var(--muted)">Inelastic collision and energy loss</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_UNRESOLVED</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+3 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="CONDITIONAL_LEAD" data-primary="1">
+          <td><strong>Q43</strong></td>
+          <td><code>EX-M101</code> </td>
+          <td><code>Q-ID-43</code></td>
+          <td>AIEEE 2012</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span class='pill pill-lead'>LEAD</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+3 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="CONDITIONAL_LEAD" data-primary="1">
+          <td><strong>Q44</strong></td>
+          <td><code>EX-M105</code> </td>
+          <td><code>Q-ID-44</code></td>
+          <td>AIEEE 2007</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span class='pill pill-lead'>LEAD</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="CONDITIONAL_LEAD" data-primary="1">
+          <td><strong>Q45</strong></td>
+          <td><code>EX-M106</code> </td>
+          <td><code>Q-ID-45</code></td>
+          <td>AIEEE 2006</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span class='pill pill-lead'>LEAD</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>D4_CONDITIONAL_NOT_ESTABLISHED</li><li>ESSENTIAL_MODEL_AMBIGUITY</li><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>+4 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q46</strong></td>
+          <td><code>EX-M109</code> </td>
+          <td><code>Q-ID-46</code></td>
+          <td>AIEEE 2006</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q47</strong></td>
+          <td><code>EX-M111</code> </td>
+          <td><code>Q-ID-47</code></td>
+          <td>AIEEE 2005</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="PREREQUISITE_BRIDGE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q48</strong></td>
+          <td><code>EX-M114</code> </td>
+          <td><code>Q-ID-48</code></td>
+          <td>AIEEE 2004</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-bridge'>BRIDGE</span><br><small style="color:var(--muted)">Linear retardation proportional to displacement (calculus / variable force bridge)</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q49</strong></td>
+          <td><code>EX-M120</code> </td>
+          <td><code>Q-ID-49</code></td>
+          <td>AIEEE 2003</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q50</strong></td>
+          <td><code>EX-N8</code> </td>
+          <td><code>Q-ID-50</code></td>
+          <td>JEE Main 2023 (Online) 11th April Evening Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q51</strong></td>
+          <td><code>EX-N11</code> </td>
+          <td><code>Q-ID-51</code></td>
+          <td>JEE Main 2023 (Online) 10th April Morning Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_UNRESOLVED</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>EXCLUDED_FROM_SELECTION</li><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>+5 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q52</strong></td>
+          <td><code>EX-N19</code> </td>
+          <td><code>Q-ID-52</code></td>
+          <td>JEE Main 2023 (Online) 30th January Evening Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q53</strong></td>
+          <td><code>EX-N21</code> </td>
+          <td><code>Q-ID-53</code></td>
+          <td>JEE Main 2023 (Online) 25th January Morning Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_UNRESOLVED</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+3 more</li></ul></td>
+        </tr>
+        <tr data-scope="PREREQUISITE_BRIDGE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q54</strong></td>
+          <td><code>EX-N26</code> </td>
+          <td><code>Q-ID-54</code></td>
+          <td>JEE Main 2022 (Online) 24th June Morning Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-bridge'>BRIDGE</span><br><small style="color:var(--muted)">Momentum flux / continuous water jet force (fluid momentum bridge)</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_UNRESOLVED</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+3 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q55</strong></td>
+          <td><code>EX-N27</code> </td>
+          <td><code>Q-ID-55</code></td>
+          <td>JEE Main 2021 (Online) 1st September Evening Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q56</strong></td>
+          <td><code>EX-N30</code> </td>
+          <td><code>Q-ID-56</code></td>
+          <td>JEE Main 2021 (Online) 26th August Morning Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q57</strong></td>
+          <td><code>EX-N31</code> </td>
+          <td><code>Q-ID-57</code></td>
+          <td>JEE Main 2021 (Online) 27th July Evening Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_UNRESOLVED</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+3 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q58</strong></td>
+          <td><code>EX-N34</code> </td>
+          <td><code>Q-ID-58</code></td>
+          <td>JEE Main 2021 (Online) 20th July Morning Shift</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_UNRESOLVED</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+3 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q59</strong></td>
+          <td><code>EX-N38</code> </td>
+          <td><code>Q-ID-59</code></td>
+          <td>JEE Main 2020 (Online) 5th September Evening Slot</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q60</strong></td>
+          <td><code>EX-N39</code> </td>
+          <td><code>Q-ID-60</code></td>
+          <td>JEE Main 2020 (Online) 3rd September Evening Slot</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="PREREQUISITE_BRIDGE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q61</strong></td>
+          <td><code>EX-N41</code> </td>
+          <td><code>Q-ID-61</code></td>
+          <td>JEE Main 2020 (Online) 2nd September Morning Slot</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-bridge'>BRIDGE</span><br><small style="color:var(--muted)">Overhanging chain released from table (variable mass / calculus continuum bridge)</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_UNRESOLVED</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+3 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q62</strong></td>
+          <td><code>EX-N42</code> </td>
+          <td><code>Q-ID-62</code></td>
+          <td>JEE Main 2020 (Online) 7th January Morning Slot</td>
+          <td>ExamSIDE_Extract</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_UNRESOLVED</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+3 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="CONDITIONAL_LEAD" data-primary="1">
+          <td><strong>Q63</strong></td>
+          <td><code>AN-1</code> </td>
+          <td><code>Q-ID-63</code></td>
+          <td>JEE Main 2023 (Online), 29 January, Evening Shift</td>
+          <td>Anchor_Historical</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span class='pill pill-lead'>LEAD</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>FORCE_FRAME_CONTACT_QUALIFICATIONS_REQUIRE_REVIEW</li><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>+3 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q64</strong></td>
+          <td><code>AN-2</code> </td>
+          <td><code>Q-ID-64</code></td>
+          <td>JEE Main 2026 (Online), 22 January, Evening Shift</td>
+          <td>Anchor_Historical</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q65</strong></td>
+          <td><code>AN-3</code> </td>
+          <td><code>Q-ID-65</code></td>
+          <td>JEE Main 2025 (Online), 28 January, Morning Shift</td>
+          <td>Anchor_Historical</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>CENTRAL_FORCE_QUALIFICATION</li><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>+3 more</li></ul></td>
+        </tr>
+        <tr data-scope="PREREQUISITE_BRIDGE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q66</strong></td>
+          <td><code>AN-4</code> </td>
+          <td><code>Q-ID-66</code></td>
+          <td>JEE Main 2023 (Online), 12 April, Morning Shift</td>
+          <td>Anchor_Historical</td>
+          <td><span class='pill pill-bridge'>BRIDGE</span><br><small style="color:var(--muted)">Vertical loop circular trajectory</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q67</strong></td>
+          <td><code>AN-5</code> </td>
+          <td><code>Q-ID-67</code></td>
+          <td>AIEEE 2004</td>
+          <td>Anchor_Historical</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q68</strong></td>
+          <td><code>AN-6</code> </td>
+          <td><code>Q-ID-68</code></td>
+          <td>JEE Main 2025 (Online), 7 April, Evening Shift</td>
+          <td>Anchor_Historical</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+2 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q69</strong></td>
+          <td><code>JEE-2026-04-04-S1-Q46</code> </td>
+          <td><code>Q-ID-69</code></td>
+          <td>JEE Main 2026 Session 2 / 2026-04-04 / Shift 1 (Morning)</td>
+          <td>NTA_Pass2_Raw</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_RETAINED</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q70</strong></td>
+          <td><code>JEE-2026-04-06-S2-Q29</code> </td>
+          <td><code>Q-ID-70</code></td>
+          <td>JEE Main 2026 Session 2 / 2026-04-06 / Shift 2 (Evening)</td>
+          <td>NTA_Pass2_Raw</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_RETAINED</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+1 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q71</strong></td>
+          <td><code>JEE-2026-04-06-S1-Q28</code> </td>
+          <td><code>Q-ID-71</code></td>
+          <td>JEE Main 2026 Session 2 / 2026-04-06 / Shift 1 (Morning)</td>
+          <td>NTA_Pass2_Raw</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_RETAINED</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+1 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q72</strong></td>
+          <td><code>JEE-2026-04-02-S2-Q31</code> </td>
+          <td><code>Q-ID-72</code></td>
+          <td>JEE Main 2026 Session 2 / 2026-04-02 / Shift 2 (Evening)</td>
+          <td>NTA_Pass2_Raw</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_RETAINED</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+1 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="0">
+          <td><strong>Q73</strong></td>
+          <td><code>JEE-2026-04-05-S2-Q28</code> <span class='pill pill-dup'>ALIAS of EX-M4</span></td>
+          <td><code>Q-ID-02</code></td>
+          <td>JEE Main 2026 Session 2 / 2026-04-05 / Shift 2 (Evening)</td>
+          <td>NTA_Pass2_Raw</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_RETAINED</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>INDEPENDENT_SOURCE_REVIEW_MISSING</li><li>+1 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q74</strong></td>
+          <td><code>JEE-2026-04-04-S1-Q49</code> </td>
+          <td><code>Q-ID-73</code></td>
+          <td>JEE Main 2026 Session 2 / 2026-04-04 / Shift 1 (Morning)</td>
+          <td>NTA_Pass2_Raw</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_RETAINED</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-verified'>BOUND</span></td>
+          <td><ul class='holds-list'><li>CALCULUS_PREREQUISITE_UNQUALIFIED</li><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>+1 more</li></ul></td>
+        </tr>
+        <tr data-scope="PREREQUISITE_BRIDGE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q75</strong></td>
+          <td><code>WEP07-01</code> </td>
+          <td><code>Q-ID-74</code></td>
+          <td>NSEP 2024 code 61 Q4</td>
+          <td>NSEP_Extension</td>
+          <td><span class='pill pill-bridge'>BRIDGE</span><br><small style="color:var(--muted)">Rolling on incline / moment of inertia (rotational bridge)</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_RETAINED</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-unbound'>UNBOUND</span></td>
+          <td><ul class='holds-list'><li>EXACT_TEXT_EXTRACTION_NOT_COMPLETED</li><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>+3 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q76</strong></td>
+          <td><code>WEP07-02</code> </td>
+          <td><code>Q-ID-75</code></td>
+          <td>NSEP 2024 code 61 Q32</td>
+          <td>NSEP_Extension</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_RETAINED</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-unbound'>UNBOUND</span></td>
+          <td><ul class='holds-list'><li>EXACT_TEXT_EXTRACTION_NOT_COMPLETED</li><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>+3 more</li></ul></td>
+        </tr>
+        <tr data-scope="IN_SCOPE" data-key="VERIFIED" data-lead="CONDITIONAL_LEAD" data-primary="1">
+          <td><strong>Q77</strong></td>
+          <td><code>WEP07-03</code> </td>
+          <td><code>Q-ID-76</code></td>
+          <td>NSEP 2025 code 61 Q57</td>
+          <td>NSEP_Extension</td>
+          <td><span class='pill pill-scope'>IN_SCOPE</span><br><small style="color:var(--muted)">Core Work, Power and Energy physics</small></td>
+          <td><span class='pill pill-verified'>VERIFIED</span></td>
+          <td><small>REQUIRED_RETAINED</small></td>
+          <td><span class='pill pill-lead'>LEAD</span></td>
+          <td><span class='pill pill-unbound'>UNBOUND</span></td>
+          <td><ul class='holds-list'><li>EXACT_TEXT_EXTRACTION_NOT_COMPLETED</li><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>+4 more</li></ul></td>
+        </tr>
+        <tr data-scope="PREREQUISITE_BRIDGE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q78</strong></td>
+          <td><code>WEP07-04</code> </td>
+          <td><code>Q-ID-77</code></td>
+          <td>NSEP 2024 code 61 Q59</td>
+          <td>NSEP_Extension</td>
+          <td><span class='pill pill-bridge'>BRIDGE</span><br><small style="color:var(--muted)">Potential energy of coupled oscillator / SHM</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>REQUIRED_RETAINED</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-unbound'>UNBOUND</span></td>
+          <td><ul class='holds-list'><li>EXACT_TEXT_EXTRACTION_NOT_COMPLETED</li><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>+3 more</li></ul></td>
+        </tr>
+        <tr data-scope="PREREQUISITE_BRIDGE" data-key="UNRESOLVED" data-lead="UNSELECTED_CANDIDATE" data-primary="1">
+          <td><strong>Q79</strong></td>
+          <td><code>WEP07-05</code> </td>
+          <td><code>Q-ID-78</code></td>
+          <td>NSEP 2019 code 61 Q19</td>
+          <td>NSEP_Extension</td>
+          <td><span class='pill pill-bridge'>BRIDGE</span><br><small style="color:var(--muted)">Planetary / inverse square non-uniform gravity</small></td>
+          <td><span class='pill pill-unresolved'>UNRESOLVED</span></td>
+          <td><small>NONE</small></td>
+          <td><span style='color:var(--muted); font-size:11px;'>Candidate</span></td>
+          <td><span class='pill pill-unbound'>UNBOUND</span></td>
+          <td><ul class='holds-list'><li>EXACT_TEXT_EXTRACTION_NOT_COMPLETED</li><li>INDEPENDENT_KEY_REVIEW_MISSING</li><li>INDEPENDENT_QRT_REVIEW_MISSING</li><li>+5 more</li></ul></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<script>
+function applyFilters() {
+  const scope = document.getElementById('scopeFilter').value;
+  const key = document.getElementById('keyFilter').value;
+  const lead = document.getElementById('leadFilter').value;
+  const dup = document.getElementById('dupFilter').value;
+  const search = document.getElementById('searchInput').value.toLowerCase().trim();
+  
+  const rows = document.querySelectorAll('#inventoryTable tbody tr');
+  rows.forEach(row => {
+    const rScope = row.getAttribute('data-scope');
+    const rKey = row.getAttribute('data-key');
+    const rLead = row.getAttribute('data-lead');
+    const rPrim = row.getAttribute('data-primary');
+    const text = row.innerText.toLowerCase();
+    
+    const matchScope = (scope === 'ALL' || rScope === scope);
+    const matchKey = (key === 'ALL' || rKey === key);
+    const matchLead = (lead === 'ALL' || rLead === lead);
+    const matchDup = (dup === 'ALL' || (dup === 'PRIMARY_ONLY' && rPrim === '1') || (dup === 'DUPLICATES_ONLY' && rPrim === '0'));
+    const matchSearch = (search === '' || text.includes(search));
+    
+    if (matchScope && matchKey && matchLead && matchDup && matchSearch) {
+      row.style.display = '';
+    } else {
+      row.style.display = 'none';
+    }
+  });
+}
+
+// Bind input event for immediate updates on typing and pasting
+document.getElementById('searchInput').addEventListener('input', applyFilters);
+document.getElementById('scopeFilter').addEventListener('change', applyFilters);
+document.getElementById('keyFilter').addEventListener('change', applyFilters);
+document.getElementById('leadFilter').addEventListener('change', applyFilters);
+document.getElementById('dupFilter').addEventListener('change', applyFilters);
+</script>
+</body>
+</html>

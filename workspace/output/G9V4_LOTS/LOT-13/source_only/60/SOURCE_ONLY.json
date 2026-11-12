@@ -1,0 +1,17 @@
+{
+  "source_id": "JEE-2026-04-06-S2-Q29",
+  "task_identity": "Q-ID-70",
+  "sequence": 60,
+  "batch_sequence": 15,
+  "paper": "JEE Main 2026 Session 2 / 2026-04-06 / Shift 2 (Evening)",
+  "stem_text": "A body of mass 1 kg moves along a straight line with a velocity v = 2x^2. The work done by the body during displacement from x = 0 to 5 m is _____ J.",
+  "stem_sha256": "4ee2f5ef155a22e2906cb7dd9fcfb0e6e4409a2e21fb691fbce58dacfec00ed3",
+  "options": [
+    "6911214178: 0",
+    "6911214179: 250",
+    "6911214180: 1250",
+    "6911214181: 1000"
+  ],
+  "figure_reference": null,
+  "confidentiality_notice": "Source custody blind packet. Academic solve, answer key, and scoring omitted. Private review only."
+}

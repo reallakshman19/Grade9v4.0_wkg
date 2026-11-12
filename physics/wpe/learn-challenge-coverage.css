@@ -1,0 +1,24 @@
+/* Bounded expansion of the EXISTING Learn → Challenge tile. */
+.question-routes{max-width:1110px;margin:20px auto 28px;padding:20px 24px;border:1px solid #c9dfe6;border-radius:17px;background:#fff;scroll-margin-top:20px;box-shadow:0 6px 20px #294a5509}
+.question-routes h2{font-size:clamp(1.35rem,2.7vw,1.85rem);line-height:1.25;margin:5px 0 12px}
+.question-routes .mini{color:#317470;font-size:.75rem;letter-spacing:.06em;font-weight:850}
+.question-routes p{max-width:100%;font-size:.92rem}
+.question-route-pick{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:13px;align-items:end;margin:18px 0}
+.question-route-pick label{display:grid;gap:7px;font-size:.86rem;font-weight:800}
+.question-route-pick select,.question-route-pick input{width:100%;min-width:0;padding:10px 12px;border:1px solid #a8c4cf;border-radius:9px;min-height:44px;font:inherit;color:#1b495a;background:white}
+#question-route-status{font-size:.82rem;color:#456878}
+#question-plan{padding:17px 19px;background:#f5fafb;border:1px solid #d5e6ea;border-radius:13px}
+#question-plan h3{font-size:1.2rem;line-height:1.3;margin:3px 0 8px}
+#question-plan .student-goal{font-weight:760;color:#1c5164}
+#question-plan .fit-explanation{border-left:4px solid #368a80;padding:10px 12px;background:#ebf6f2}
+#question-plan .teaching-limit{font-size:.87rem;color:#435f71}
+#question-plan .source-caution{border-left:4px solid #b57637;background:#fff5ea;padding:10px 12px;font-size:.85rem}
+.question-actions{display:flex;gap:9px;flex-wrap:wrap;margin:15px 0}
+.question-actions a{display:inline-flex;min-height:44px;align-items:center;padding:10px 13px;border:1px solid #9ebfc9;border-radius:9px;text-decoration:none;font-weight:800;font-size:.89rem}
+.question-actions .primary-link{background:#177c70;color:white;border-color:#0c7066}
+.question-actions .source-link{background:#fff;color:#1e6276}
+.no-lesson{color:#895b36;font-weight:750;font-size:.9rem}
+.related-support{font-size:.85rem}
+.related-support summary{cursor:pointer;font-weight:800}
+.related-support a{display:inline-flex;margin:6px 10px 6px 0;min-height:38px;align-items:center}
+@media(max-width:760px){.question-routes{margin-inline:12px;padding:15px}.question-route-pick{grid-template-columns:1fr}#question-plan{padding:13px}.question-actions a{width:100%}}

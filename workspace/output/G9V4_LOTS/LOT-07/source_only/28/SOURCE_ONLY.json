@@ -1,0 +1,17 @@
+{
+  "source_id": "EX-M82",
+  "task_identity": "Q-ID-32",
+  "sequence": 28,
+  "batch_sequence": 13,
+  "paper": "JEE Main 2017 (Online) 8th April Morning Slot",
+  "stem_text": "An object is dropped from a height h from the ground. Every time it hits the ground it loses 50% of its kinetic energy. The total distance covered as t \u2192 \u221e is :",
+  "stem_sha256": "e2cf28b63bd8edb9397430f80be3d78edc1c803b75f9ff6eda23bbba3b78a649",
+  "options": [
+    "A: 3h",
+    "B: \u221e",
+    "C: (5)/(3) h",
+    "D: (8)/(3) h"
+  ],
+  "figure_reference": "NONE (pure text question)",
+  "confidentiality_notice": "SEALED SOURCE-ONLY PACKET FOR BLIND INDEPENDENT REVIEW. Contains NO answers, keys, explanations, candidate solutions, SL2 factor scores, or prior review commentary."
+}

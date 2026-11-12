@@ -1,0 +1,100 @@
+{
+  "sequence": 47,
+  "batch_sequence": 2,
+  "task_identity": "Q-ID-55",
+  "stable_id": "PHYS-WPE-LOT11-Q47",
+  "source_id": "EX-N27",
+  "lot": "LOT-11",
+  "batch": "BATCH-D",
+  "paper": "JEE Main 2021 (Online) 1st September Evening Shift",
+  "source_type": "EXAM_PAPER_TRANSCRIBED",
+  "source_custody": "VERIFIED_TEXT",
+  "stem_text": "An engine is attached to a wagon through a shock absorber of length 1.5 m. The system with a total mass of 40,000 kg is moving with a speed of 72 kmh − 1 when the brakes are applied to bring it to rest. In the process of the system being brought to rest, the spring of the shock absorber gets compressed by 1.0 m. If 90% of energy of the wagon is lost due to friction, the spring constant is ____________ × 105 N/m.",
+  "stem_sha256": "a6819daad7442b9720739551885301d5aa100cae1563cc8e3fe64518a08fae3d",
+  "source_hash": "a6819daad7442b9720739551885301d5aa100cae1563cc8e3fe64518a08fae3d",
+  "source_record_digest": "sha256:a6819daad7442b9720739551885301d5aa100cae1563cc8e3fe64518a08fae3d",
+  "duplicate_parent": null,
+  "scope": "PRIMARY_IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "key_issuing_authority": "NTA",
+  "figure_status": "NOT_REQUIRED",
+  "figure_reference": null,
+  "options": [],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "WORK_ENERGY_DISSIPATIVE_SPRING_BALANCE",
+    "predicted_option": "16",
+    "derivation": "Speed v = 72 km/h = 20 m/s. Initial KE = 0.5 * 40,000 * 20^2 = 8,000,000 J. Friction loss = 90% * 8,000,000 = 7,200,000 J. Remaining energy absorbed by spring: U_spring = 800,000 J. 0.5 * k * x^2 = 800,000 J with x = 1.0 m => k = 1,600,000 N/m = 16 * 10^5 N/m. Spring constant prefactor is 16."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 2,
+          "evidence": "Energy conservation balancing dissipative fractional friction loss (90%) and spring elastic potential (10%)"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Converting velocity 72 km/h -> 20 m/s and relating wagon kinetic energy to shock absorber compression"
+        },
+        "reasoning_chain_length": {
+          "score": 2,
+          "evidence": "Compute initial KE (8 MJ), determine stored spring energy (800 kJ), solve for spring constant k"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Arithmetic division: (800000 * 2) / 1.0^2 = 1.6 * 10^6 N/m = 16 * 10^5 N/m"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Initial length of shock absorber 1.5 m is an extraneous distractor; only compression 1.0 m enters energy"
+        }
+      },
+      "total": 7,
+      "band": "D3",
+      "prior_proposal": {
+        "source": "INITIAL_CALIBRATION",
+        "scores": "2/1/2/1/1",
+        "total": 7
+      },
+      "differences": "Initial native factor audit"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "MODEL"
+      ],
+      "rationale": "Applying work-energy partition theorem with fractional dissipative losses to spring deceleration",
+      "candidate_cell": "QRT-APPLY-D3",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": {
+    "blueprint_id": "PHYS-QRT-BLUEPRINT",
+    "version": "0.2.0",
+    "sha256": "ac32dc937403cac33c76343f2e7e0dabd7c2c4a3188cb3b453ddf2576578ddf9",
+    "blueprint_cell_ref": "D3.4",
+    "topic_tag": "WPE-02-POTENTIAL",
+    "status": "PINNED_CELL_UNQUALIFIED"
+  },
+  "adapter_fit": {
+    "adapter_id": "PHYS-TOPIC-WPE",
+    "sha256": "899e61e59370a3fc5d6f73b7d8cbb65165d0782c9fba20acd83439ae441e6a9b",
+    "status": "CELL_UNQUALIFIED_ADAPTER_GAP",
+    "note": "WPE adapter defines cell D3.1 only. Target cell D3.4 requires adapter cell expansion; flagged as SPEC_GAP."
+  },
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_INDEPENDENT_REVIEW",
+  "b2_blind_status": "PENDING_BLIND_SOLVE",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (Numerical answer 16 unverified against official NTA master)",
+    "HOLD:ADAPTER_CELL_GAP (WPE adapter lacks D3.4 cell authority)",
+    "HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)"
+  ],
+  "next_action": "B2 independent source-only solve + official NTA master key reconciliation"
+}

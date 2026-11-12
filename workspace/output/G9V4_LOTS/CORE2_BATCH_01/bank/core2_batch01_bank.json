@@ -1,0 +1,2281 @@
+{
+  "schema_version": "grade9v3-owner-supplied-bank-v1",
+  "bank_id": "wpe-core2-batch01",
+  "title": "Grade9 v4.0 — Work, Power & Energy Core 2 Bank (Batch 1: Candidates 01-15)",
+  "batch_id": "BATCH-01",
+  "timestamp_utc": "2026-11-02T10:02:58.212737+00:00",
+  "governance_notice": "No academic approval inferred from software validation. Green CI means automatic tests passed; it never means student release is authorized.",
+  "academic_admission_status": "NOT_ADMITTED",
+  "disposition": "HOLD:ACADEMIC_ADMISSION",
+  "total_questions": 15,
+  "questions": [
+    {
+      "id": "Q-PHY-WPE-B1-01",
+      "sequence": 1,
+      "source_id": "EX-M2",
+      "original_identifier": "JEE Main 2026 (Online) 6th April Evening Shift · EX-M2 · APPLY · D2",
+      "stem": "The velocity at which 6 kg mass (shown in figure) strikes the ground when it is released from a height of 6 m above the ground is ____ m/s . Assume pulley is massless and string is light and inextensible. (Take g=10m/s^(2) ) [FIG-stem-1]",
+      "options": [
+        "A: 7.74",
+        "B: 7.20",
+        "C: 6.55",
+        "D: 4.50"
+      ],
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Coaching predicted option: A: 7.74",
+        "reasoning": [
+          "1. Representation: Establish coordinate system, free-body system boundary, and identify initial states for EX-M2.",
+          "2. Connection: Conservation of mechanical energy for connected two-body system: Delta K = W_net => 1/2(M+m)v^2 = (M-m)gh => v = sqrt(2(M-m)gh / (M+m)) = sqrt(2(6-2)(10)(6)/(6+2)) = sqrt(480/8) = sqrt(60) approx 7.74596 m/s.",
+          "3. Resolution: Solve for the required target quantity and select matching option A:."
+        ],
+        "reasoning_route": [
+          {
+            "id": "WPE-B1-Q01-M1",
+            "kind": "REPRESENT",
+            "action": "Establish coordinate system, free-body system boundary, and identify initial states for EX-M2.",
+            "why_valid": "System boundary isolation determines internal vs external forces.",
+            "inputs": [
+              "Problem parameters and given initial conditions"
+            ],
+            "output": "Isolated system free-body model and state coordinates",
+            "source_ref": "JEE Main 2026 (Online) 6th April Evening Shift#EX-M2"
+          },
+          {
+            "id": "WPE-B1-Q01-M2",
+            "kind": "CONNECT",
+            "action": "Formulate the governing work-energy relation: WORK_ENERGY_TWO_BODY_PULLEY.",
+            "why_valid": "Work-Energy Theorem and conservation of mechanical energy hold in inertial laboratory frames.",
+            "inputs": [
+              "Initial state mechanical energy and applied external/conservative forces"
+            ],
+            "output": "Governing equation: Conservation of mechanical energy for connected two-body system: Delta K = W_net...",
+            "source_ref": "JEE Main 2026 (Online) 6th April Evening Shift#EX-M2"
+          },
+          {
+            "id": "WPE-B1-Q01-M3",
+            "kind": "TRANSFORM",
+            "action": "Solve for the required target quantity and select matching option A:.",
+            "why_valid": "Algebraic manipulation and root extraction preserve equality on real physical domains.",
+            "inputs": [
+              "Governing work-energy equation"
+            ],
+            "output": "Exact target result agreeing with A: 7.74",
+            "source_ref": "JEE Main 2026 (Online) 6th April Evening Shift#EX-M2"
+          }
+        ],
+        "crux_move_ref": "WPE-B1-Q01-M2",
+        "check": "Author Limiting Case Verification: If m = M, v = 0 (equilibrium). If m = 0, v = sqrt(2gh) = sqrt(120) approx 10.95 m/s. Bound: 0 < 7.746 < 10.95 m/s.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-PHYS-WPE-CONSERVATION",
+      "family_ref": "FAM-PHYS-WPE-CORE2-BATCH01",
+      "figure_refs": [
+        "fig_q01_atwood.svg"
+      ],
+      "scaffolds": [
+        {
+          "prompt": "How should the physical system be isolated?",
+          "text": "Identify which bodies form the interacting system and establish coordinate directions.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT"
+        },
+        {
+          "prompt": "Which physical conservation law or work-energy theorem applies?",
+          "text": "Consider Work Energy Two Body Pulley relating initial and final mechanical states.",
+          "learner_stage": "FORMULATION",
+          "support_kind": "CONNECT"
+        },
+        {
+          "prompt": "What is the crucial relationship connecting the variables?",
+          "text": "Crux Move: Setting up the coupled two-body kinetic energy ledger where both bodies move at identical instantaneous speed v while one descends and the other ascends.",
+          "learner_stage": "RESOLUTION",
+          "support_kind": "TRANSFORM"
+        }
+      ],
+      "conditions": [],
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "EX-M2",
+          "wording_custody": "VERBATIM",
+          "stem_sha256": "a5c763f95741876d7e1c31a53aa6049a439d0aa91b0b28512c9aece32b8bb52d",
+          "lot": "LOT-02"
+        },
+        "grade9v3:attempt_labels": {
+          "question_ref": "Q-PHY-WPE-B1-01",
+          "concept": "Work, Power and Energy Invariants",
+          "family": "Work-Energy Theorem and Mechanical Energy Conservation"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D2",
+            "score": 5,
+            "components": {
+              "concept_model_selection": 1,
+              "representation_translation": 1,
+              "reasoning_chain_length": 1,
+              "algebra_computational_load": 1,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Difficulty: APPLY D2 (5/10) evaluated across 5 QRT dimensions.",
+            "component_evidence": {
+              "concept_model_selection": "Standard coupled Atwood work-energy model.",
+              "representation_translation": "Interpreting pulley system schematic to assign mass parameters.",
+              "reasoning_chain_length": "Combined kinetic energy and potential energy ledger to speed.",
+              "algebra_computational_load": "Square root approximation: sqrt(60) approx 7.74.",
+              "trap_exception_sensitivity": "Must avoid treating 6 kg mass as unconstrained free fall."
+            }
+          },
+          "common_wrong_route": "Common trap: misinterpreting system constraint or neglecting friction/energy dissipation, leading to distractor options.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "JEE Main 2026 (Online) 6th April Evening Shift",
+          "stable_crux_move": "Setting up the coupled two-body kinetic energy ledger where both bodies move at identical instantaneous speed v while one descends and the other ascends."
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "WPE-B1-Q01-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[2]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "grade9v3:governance": {
+          "academic_admission": "NOT_ADMITTED",
+          "disposition": "HOLD:ACADEMIC_ADMISSION",
+          "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED"
+        }
+      }
+    },
+    {
+      "id": "Q-PHY-WPE-B1-02",
+      "sequence": 2,
+      "source_id": "EX-M4",
+      "original_identifier": "JEE Main 2026 (Online) 5th April Evening Shift · EX-M4 · APPLY · D2",
+      "stem": "A mass of 1 kg is kept on an inclined plane with 30^(∘) inclination with respect to horizontal plane and it is at rest initially. Then the whole assembly is moved up with constant velocity of 4m/s . The work done by the frictional force in time 2 s is ____ J. (Take 𝑔=10m/s^(2) )",
+      "options": [
+        "A: 20",
+        "B: 25",
+        "C: 30",
+        "D: 10"
+      ],
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Coaching predicted option: A: 20",
+        "reasoning": [
+          "1. Representation: Establish coordinate system, free-body system boundary, and identify initial states for EX-M4.",
+          "2. Connection: Block rests on incline at theta = 30 deg. Tangential gravity balance gives static friction f_s = mg sin(30 deg) = 1 * 10 * 0.5 = 5 N directed up the incline. The incline assembly translates vertically upward at constant v = 4 m/s for t = 2 s, so vertical displacement s_y = 4 * 2 = 8 m. Since acceleration a = 0, dynamic equilibrium holds and f_s remains 5 N up the incline. Incline angle is 30 deg to horizontal, so friction vector angle to vertical is 60 deg (or angle to horizontal is 30 deg). Vertical component of static friction f_s,y = f_s * sin(30 deg) = 5 * 0.5 = 2.5 N. Work done by friction W = f_s,y * s_y = 2.5 N * 8 m = 20 J.",
+          "3. Resolution: Solve for the required target quantity and select matching option A:."
+        ],
+        "reasoning_route": [
+          {
+            "id": "WPE-B1-Q02-M1",
+            "kind": "REPRESENT",
+            "action": "Establish coordinate system, free-body system boundary, and identify initial states for EX-M4.",
+            "why_valid": "System boundary isolation determines internal vs external forces.",
+            "inputs": [
+              "Problem parameters and given initial conditions"
+            ],
+            "output": "Isolated system free-body model and state coordinates",
+            "source_ref": "JEE Main 2026 (Online) 5th April Evening Shift#EX-M4"
+          },
+          {
+            "id": "WPE-B1-Q02-M2",
+            "kind": "CONNECT",
+            "action": "Formulate the governing work-energy relation: STATIC_FRICTION_FRAME_TRANSLATION.",
+            "why_valid": "Work-Energy Theorem and conservation of mechanical energy hold in inertial laboratory frames.",
+            "inputs": [
+              "Initial state mechanical energy and applied external/conservative forces"
+            ],
+            "output": "Governing equation: Block rests on incline at theta = 30 deg. Tangential gravity balance gives stati...",
+            "source_ref": "JEE Main 2026 (Online) 5th April Evening Shift#EX-M4"
+          },
+          {
+            "id": "WPE-B1-Q02-M3",
+            "kind": "TRANSFORM",
+            "action": "Solve for the required target quantity and select matching option A:.",
+            "why_valid": "Algebraic manipulation and root extraction preserve equality on real physical domains.",
+            "inputs": [
+              "Governing work-energy equation"
+            ],
+            "output": "Exact target result agreeing with A: 20",
+            "source_ref": "JEE Main 2026 (Online) 5th April Evening Shift#EX-M4"
+          }
+        ],
+        "crux_move_ref": "WPE-B1-Q02-M2",
+        "check": "Author Limiting Case Verification: If theta = 0 deg, f_s = 0 => W = 0 J. If theta -> 90 deg, normal force -> 0 (block falls). For theta = 30 deg, W = 20 J.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-PHYS-WPE-CONSERVATION",
+      "family_ref": "FAM-PHYS-WPE-CORE2-BATCH01",
+      "figure_refs": [],
+      "scaffolds": [
+        {
+          "prompt": "How should the physical system be isolated?",
+          "text": "Identify which bodies form the interacting system and establish coordinate directions.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT"
+        },
+        {
+          "prompt": "Which physical conservation law or work-energy theorem applies?",
+          "text": "Consider Static Friction Frame Translation relating initial and final mechanical states.",
+          "learner_stage": "FORMULATION",
+          "support_kind": "CONNECT"
+        },
+        {
+          "prompt": "What is the crucial relationship connecting the variables?",
+          "text": "Crux Move: Recognizing that static friction can perform non-zero work in an inertial frame when the contact boundary translates, and projecting friction onto the displacement vector.",
+          "learner_stage": "RESOLUTION",
+          "support_kind": "TRANSFORM"
+        }
+      ],
+      "conditions": [],
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "EX-M4",
+          "wording_custody": "VERBATIM",
+          "stem_sha256": "1c74525b1b16d7448675a4f5fdb9586a47da156a0650291c7fdb9d5c577c89e1",
+          "lot": "LOT-02"
+        },
+        "grade9v3:attempt_labels": {
+          "question_ref": "Q-PHY-WPE-B1-02",
+          "concept": "Work, Power and Energy Invariants",
+          "family": "Work-Energy Theorem and Mechanical Energy Conservation"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D2",
+            "score": 4,
+            "components": {
+              "concept_model_selection": 1,
+              "representation_translation": 1,
+              "reasoning_chain_length": 1,
+              "algebra_computational_load": 0,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Difficulty: APPLY D2 (4/10) evaluated across 5 QRT dimensions.",
+            "component_evidence": {
+              "concept_model_selection": "Equilibrium static friction and definition of work W = F . s.",
+              "representation_translation": "Resolving inclined vector into vertical motion coordinate.",
+              "reasoning_chain_length": "Equilibrium force -> vertical component -> displacement dot product.",
+              "algebra_computational_load": "Direct arithmetic: 5 * 0.5 * 8 = 20 J.",
+              "trap_exception_sensitivity": "Overcoming the pervasive misconception that static friction never does work."
+            }
+          },
+          "common_wrong_route": "Common trap: misinterpreting system constraint or neglecting friction/energy dissipation, leading to distractor options.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "JEE Main 2026 (Online) 5th April Evening Shift",
+          "stable_crux_move": "Recognizing that static friction can perform non-zero work in an inertial frame when the contact boundary translates, and projecting friction onto the displacement vector."
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "WPE-B1-Q02-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[2]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "grade9v3:governance": {
+          "academic_admission": "NOT_ADMITTED",
+          "disposition": "HOLD:ACADEMIC_ADMISSION",
+          "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED"
+        }
+      }
+    },
+    {
+      "id": "Q-PHY-WPE-B1-03",
+      "sequence": 3,
+      "source_id": "EX-M6",
+      "original_identifier": "JEE Main 2026 (Online) 23rd January Evening Shift · EX-M6 · JUSTIFY · D4",
+      "stem": "A bead 𝑃 sliding on a frictionless semi-circular string (𝐴𝐶𝐵) and it is at point 𝑆 at 𝑡=0 and at this instant the horizontal component of its velocity is 𝑣 . Another bead 𝑄 of the same mass as 𝑃 is ejected from point 𝐴 at 𝑡=0 along the horizontal string 𝐴𝐵 , with the speed 𝑣 , friction between the beads and the respective strings may be neglected in both cases. Let 𝑡_𝑃 and 𝑡_𝑄 be the respective times taken by beads 𝑃 and 𝑄 to reach the point 𝐵 , then the relation between 𝑡_𝑃 and 𝑡_𝑄 is [FIG-stem-1]",
+      "options": [
+        "A: 𝑡_𝑃<𝑡_𝑄",
+        "B: 𝑡_𝑃=𝑡_𝑄",
+        "C: 𝑡_𝑃>1.25𝑡_𝑄",
+        "D: 𝑡_𝑃>𝑡_𝑄"
+      ],
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Coaching predicted option: A: 𝑡_𝑃<𝑡_𝑄 (coaching proposal)",
+        "reasoning": [
+          "1. Representation: Establish coordinate system, free-body system boundary, and identify initial states for EX-M6.",
+          "2. Connection: Bead Q traverses straight chord AB of length 2R with uniform horizontal velocity v: t_Q = 2R/v. Bead P traverses curved semi-circular wire ACB. Under gravity, as P descends below AB, mechanical energy conservation gives v_P(theta) = sqrt(v_0^2 + 2gy) > v. However, the path length is pi*R approx 3.14 R, whereas AB is 2R. Whether t_P < t_Q depends on the exact initial point S, the ratio v^2/(gR), and whether the horizontal velocity component remains greater than v throughout. In the coaching solution, t_P < t_Q (Option A) is asserted based on average horizontal speed enhancement, but without the exact figure and rigorous bound, the result cannot be conclusively certified.",
+          "3. Resolution: Solve for the required target quantity and select matching option A:."
+        ],
+        "reasoning_route": [
+          {
+            "id": "WPE-B1-Q03-M1",
+            "kind": "REPRESENT",
+            "action": "Establish coordinate system, free-body system boundary, and identify initial states for EX-M6.",
+            "why_valid": "System boundary isolation determines internal vs external forces.",
+            "inputs": [
+              "Problem parameters and given initial conditions"
+            ],
+            "output": "Isolated system free-body model and state coordinates",
+            "source_ref": "JEE Main 2026 (Online) 23rd January Evening Shift#EX-M6"
+          },
+          {
+            "id": "WPE-B1-Q03-M2",
+            "kind": "CONNECT",
+            "action": "Formulate the governing work-energy relation: COMPARATIVE_TRAJECTORY_TIME_INTEGRAL.",
+            "why_valid": "Work-Energy Theorem and conservation of mechanical energy hold in inertial laboratory frames.",
+            "inputs": [
+              "Initial state mechanical energy and applied external/conservative forces"
+            ],
+            "output": "Governing equation: Bead Q traverses straight chord AB of length 2R with uniform horizontal velocity...",
+            "source_ref": "JEE Main 2026 (Online) 23rd January Evening Shift#EX-M6"
+          },
+          {
+            "id": "WPE-B1-Q03-M3",
+            "kind": "TRANSFORM",
+            "action": "Solve for the required target quantity and select matching option A:.",
+            "why_valid": "Algebraic manipulation and root extraction preserve equality on real physical domains.",
+            "inputs": [
+              "Governing work-energy equation"
+            ],
+            "output": "Exact target result agreeing with A: 𝑡_𝑃<𝑡_𝑄 (coaching proposal)",
+            "source_ref": "JEE Main 2026 (Online) 23rd January Evening Shift#EX-M6"
+          }
+        ],
+        "crux_move_ref": "WPE-B1-Q03-M2",
+        "check": "Author Limiting Case Verification: If g -> 0, path ACB is longer (pi*R > 2R) with constant speed v, so t_P = pi*R/v > 2R/v = t_Q. If g is very large, descent velocity becomes extremely high, driving t_P -> 0, so t_P < t_Q. Crossover depends sensitively on v^2/(gR).",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-PHYS-WPE-CONSERVATION",
+      "family_ref": "FAM-PHYS-WPE-CORE2-BATCH01",
+      "figure_refs": [
+        "fig_q03_bead_semicircle.svg"
+      ],
+      "scaffolds": [
+        {
+          "prompt": "How should the physical system be isolated?",
+          "text": "Identify which bodies form the interacting system and establish coordinate directions.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT"
+        },
+        {
+          "prompt": "Which physical conservation law or work-energy theorem applies?",
+          "text": "Consider Comparative Trajectory Time Integral relating initial and final mechanical states.",
+          "learner_stage": "FORMULATION",
+          "support_kind": "CONNECT"
+        },
+        {
+          "prompt": "What is the crucial relationship connecting the variables?",
+          "text": "Crux Move: Analyzing the trade-off between increased path length along a circular arc versus increased speed from gravitational potential energy conversion.",
+          "learner_stage": "RESOLUTION",
+          "support_kind": "TRANSFORM"
+        }
+      ],
+      "conditions": [],
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "EX-M6",
+          "wording_custody": "VERBATIM",
+          "stem_sha256": "7d9e6e00a473b5219d71fa3889281e129945bb5c19d9f53407d7ca7fe570e1b6",
+          "lot": "LOT-02"
+        },
+        "grade9v3:attempt_labels": {
+          "question_ref": "Q-PHY-WPE-B1-03",
+          "concept": "Work, Power and Energy Invariants",
+          "family": "Work-Energy Theorem and Mechanical Energy Conservation"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D4",
+            "score": 8,
+            "components": {
+              "concept_model_selection": 2,
+              "representation_translation": 2,
+              "reasoning_chain_length": 2,
+              "algebra_computational_load": 1,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Difficulty: JUSTIFY D4 (8/10) evaluated across 5 QRT dimensions.",
+            "component_evidence": {
+              "concept_model_selection": "Non-uniform circular dynamics under gravity vs uniform rectilinear kinematics.",
+              "representation_translation": "Spatial trajectory mapping, speed profile comparison, and integral time evaluation.",
+              "reasoning_chain_length": "Multi-step qualitative and quantitative trajectory integration analysis.",
+              "algebra_computational_load": "Inequality comparison of path integrals vs uniform velocity.",
+              "trap_exception_sensitivity": "Common misconception that straight line always minimizes travel time (tautochrone/brachistochrone contrast)."
+            }
+          },
+          "common_wrong_route": "Common trap: misinterpreting system constraint or neglecting friction/energy dissipation, leading to distractor options.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "JEE Main 2026 (Online) 23rd January Evening Shift",
+          "stable_crux_move": "Analyzing the trade-off between increased path length along a circular arc versus increased speed from gravitational potential energy conversion."
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "WPE-B1-Q03-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[2]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "grade9v3:governance": {
+          "academic_admission": "NOT_ADMITTED",
+          "disposition": "HOLD:ACADEMIC_ADMISSION",
+          "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED"
+        }
+      }
+    },
+    {
+      "id": "Q-PHY-WPE-B1-04",
+      "sequence": 4,
+      "source_id": "EX-M7",
+      "original_identifier": "JEE Main 2026 (Online) 23rd January Morning Shift · EX-M7 · APPLY · D2",
+      "stem": "An object is projected with kinetic energy 𝐾 from a point 𝐴 at an angle 60^(∘) with the horizontal. The ratio of the difference in kinetic energies at points 𝐵 and 𝐶 to that at point 𝐴 (see figure), in the absence of air friction is : [FIG-stem-1]",
+      "options": [
+        "A: 3:4",
+        "B: 1:4",
+        "C: 2:3",
+        "D: 1:2"
+      ],
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Coaching predicted option: A: 3:4",
+        "reasoning": [
+          "1. Representation: Establish coordinate system, free-body system boundary, and identify initial states for EX-M7.",
+          "2. Connection: Initial launch KE at A: K_A = K = 1/2 m u^2. At apex B, vertical velocity is zero; speed is horizontal component v_B = u cos(60 deg) = u/2. Kinetic energy at B: K_B = 1/2 m (u/2)^2 = K/4. At ground impact C, speed is restored to u: K_C = K. Difference in KE between B and C: Delta K_BC = K_C - K_B = K - K/4 = 3/4 K. Ratio to KE at A: Delta K_BC / K_A = (3/4 K) / K = 3/4 = 3:4.",
+          "3. Resolution: Solve for the required target quantity and select matching option A:."
+        ],
+        "reasoning_route": [
+          {
+            "id": "WPE-B1-Q04-M1",
+            "kind": "REPRESENT",
+            "action": "Establish coordinate system, free-body system boundary, and identify initial states for EX-M7.",
+            "why_valid": "System boundary isolation determines internal vs external forces.",
+            "inputs": [
+              "Problem parameters and given initial conditions"
+            ],
+            "output": "Isolated system free-body model and state coordinates",
+            "source_ref": "JEE Main 2026 (Online) 23rd January Morning Shift#EX-M7"
+          },
+          {
+            "id": "WPE-B1-Q04-M2",
+            "kind": "CONNECT",
+            "action": "Formulate the governing work-energy relation: PROJECTILE_ENERGY_DECOMPOSITION.",
+            "why_valid": "Work-Energy Theorem and conservation of mechanical energy hold in inertial laboratory frames.",
+            "inputs": [
+              "Initial state mechanical energy and applied external/conservative forces"
+            ],
+            "output": "Governing equation: Initial launch KE at A: K_A = K = 1/2 m u^2. At apex B, vertical velocity is zer...",
+            "source_ref": "JEE Main 2026 (Online) 23rd January Morning Shift#EX-M7"
+          },
+          {
+            "id": "WPE-B1-Q04-M3",
+            "kind": "TRANSFORM",
+            "action": "Solve for the required target quantity and select matching option A:.",
+            "why_valid": "Algebraic manipulation and root extraction preserve equality on real physical domains.",
+            "inputs": [
+              "Governing work-energy equation"
+            ],
+            "output": "Exact target result agreeing with A: 3:4",
+            "source_ref": "JEE Main 2026 (Online) 23rd January Morning Shift#EX-M7"
+          }
+        ],
+        "crux_move_ref": "WPE-B1-Q04-M2",
+        "check": "Author Limiting Case Verification: If launch angle theta = 0 deg, v_B = u => Delta K = 0. If theta = 90 deg, v_B = 0 => Delta K = K => ratio 1:1. For 60 deg, ratio is sin^2(60 deg) = 3/4.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-PHYS-WPE-CONSERVATION",
+      "family_ref": "FAM-PHYS-WPE-CORE2-BATCH01",
+      "figure_refs": [
+        "fig_q04_projectile_energy.svg"
+      ],
+      "scaffolds": [
+        {
+          "prompt": "How should the physical system be isolated?",
+          "text": "Identify which bodies form the interacting system and establish coordinate directions.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT"
+        },
+        {
+          "prompt": "Which physical conservation law or work-energy theorem applies?",
+          "text": "Consider Projectile Energy Decomposition relating initial and final mechanical states.",
+          "learner_stage": "FORMULATION",
+          "support_kind": "CONNECT"
+        },
+        {
+          "prompt": "What is the crucial relationship connecting the variables?",
+          "text": "Crux Move: Decomposing projectile kinetic energy into horizontal and vertical components to find apex energy retention K_B = K cos^2(theta).",
+          "learner_stage": "RESOLUTION",
+          "support_kind": "TRANSFORM"
+        }
+      ],
+      "conditions": [],
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "EX-M7",
+          "wording_custody": "VERBATIM",
+          "stem_sha256": "0a7d0a44e9eeb70842e0730dd0f34bbaacf362ddd7f7951b81e47eb3883e5489",
+          "lot": "LOT-02"
+        },
+        "grade9v3:attempt_labels": {
+          "question_ref": "Q-PHY-WPE-B1-04",
+          "concept": "Work, Power and Energy Invariants",
+          "family": "Work-Energy Theorem and Mechanical Energy Conservation"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D2",
+            "score": 3,
+            "components": {
+              "concept_model_selection": 1,
+              "representation_translation": 1,
+              "reasoning_chain_length": 1,
+              "algebra_computational_load": 0,
+              "trap_exception_sensitivity": 0
+            },
+            "basis": "Difficulty: APPLY D2 (3/10) evaluated across 5 QRT dimensions.",
+            "component_evidence": {
+              "concept_model_selection": "Standard 2D projectile kinetic energy model.",
+              "representation_translation": "Reading labeled trajectory points A, B, C from schematic.",
+              "reasoning_chain_length": "Determine K_B, K_C, calculate difference, form ratio.",
+              "algebra_computational_load": "Elementary ratio: 1 - 1/4 = 3/4.",
+              "trap_exception_sensitivity": "Direct application without subtle boundary traps."
+            }
+          },
+          "common_wrong_route": "Common trap: misinterpreting system constraint or neglecting friction/energy dissipation, leading to distractor options.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "JEE Main 2026 (Online) 23rd January Morning Shift",
+          "stable_crux_move": "Decomposing projectile kinetic energy into horizontal and vertical components to find apex energy retention K_B = K cos^2(theta)."
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "WPE-B1-Q04-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[2]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "grade9v3:governance": {
+          "academic_admission": "NOT_ADMITTED",
+          "disposition": "HOLD:ACADEMIC_ADMISSION",
+          "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED"
+        }
+      }
+    },
+    {
+      "id": "Q-PHY-WPE-B1-05",
+      "sequence": 5,
+      "source_id": "EX-M8",
+      "original_identifier": "JEE Main 2026 (Online) 23rd January Morning Shift · EX-M8 · APPLY · D2",
+      "stem": "Two blocks with masses 100 g and 200 g are attached to the ends of springs 𝐴 and 𝐵 as shown in figure. The energy stored in 𝐴 is 𝐸 . The energy stored in 𝐵 , when spring constants 𝑘_𝐴,𝑘_𝐵 of 𝐴 and 𝐵 , respectively satisfy the relation 4𝑘_𝐴=3𝑘_𝐵 , is : [FIG-stem-1]",
+      "options": [
+        "A: 4𝐸",
+        "B: 2𝐸",
+        "C: (4)/(3)𝐸",
+        "D: 3𝐸"
+      ],
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Coaching predicted option: D: 3𝐸",
+        "reasoning": [
+          "1. Representation: Establish coordinate system, free-body system boundary, and identify initial states for EX-M8.",
+          "2. Connection: In vertical static equilibrium, spring tension equals suspended weight: k x = mg => x = mg / k. Elastic potential energy stored: U = 1/2 k x^2 = (mg)^2 / (2k). For spring A: m_A = 100 g, stiffness k_A => E_A = E = (m_A g)^2 / (2 k_A). For spring B: m_B = 200 g = 2 m_A, stiffness k_B = 4/3 k_A. Energy stored in B: E_B = (m_B g)^2 / (2 k_B) = (2 m_A g)^2 / (2 * (4/3) k_A) = (4 / (4/3)) * [ (m_A g)^2 / (2 k_A) ] = 3 E_A = 3E.",
+          "3. Resolution: Solve for the required target quantity and select matching option D:."
+        ],
+        "reasoning_route": [
+          {
+            "id": "WPE-B1-Q05-M1",
+            "kind": "REPRESENT",
+            "action": "Establish coordinate system, free-body system boundary, and identify initial states for EX-M8.",
+            "why_valid": "System boundary isolation determines internal vs external forces.",
+            "inputs": [
+              "Problem parameters and given initial conditions"
+            ],
+            "output": "Isolated system free-body model and state coordinates",
+            "source_ref": "JEE Main 2026 (Online) 23rd January Morning Shift#EX-M8"
+          },
+          {
+            "id": "WPE-B1-Q05-M2",
+            "kind": "CONNECT",
+            "action": "Formulate the governing work-energy relation: SPRING_STATIC_EQUILIBRIUM_ENERGY.",
+            "why_valid": "Work-Energy Theorem and conservation of mechanical energy hold in inertial laboratory frames.",
+            "inputs": [
+              "Initial state mechanical energy and applied external/conservative forces"
+            ],
+            "output": "Governing equation: In vertical static equilibrium, spring tension equals suspended weight: k x = mg...",
+            "source_ref": "JEE Main 2026 (Online) 23rd January Morning Shift#EX-M8"
+          },
+          {
+            "id": "WPE-B1-Q05-M3",
+            "kind": "TRANSFORM",
+            "action": "Solve for the required target quantity and select matching option D:.",
+            "why_valid": "Algebraic manipulation and root extraction preserve equality on real physical domains.",
+            "inputs": [
+              "Governing work-energy equation"
+            ],
+            "output": "Exact target result agreeing with D: 3𝐸",
+            "source_ref": "JEE Main 2026 (Online) 23rd January Morning Shift#EX-M8"
+          }
+        ],
+        "crux_move_ref": "WPE-B1-Q05-M2",
+        "check": "Author Limiting Case Verification: If m_B = m_A and k_B = k_A, E_B = E. If k_B -> infinity, E_B -> 0. With m ratio 2 and k ratio 4/3, factor is 2^2 / (4/3) = 3.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-PHYS-WPE-CONSERVATION",
+      "family_ref": "FAM-PHYS-WPE-CORE2-BATCH01",
+      "figure_refs": [
+        "fig_q05_atwood_work.svg"
+      ],
+      "scaffolds": [
+        {
+          "prompt": "How should the physical system be isolated?",
+          "text": "Identify which bodies form the interacting system and establish coordinate directions.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT"
+        },
+        {
+          "prompt": "Which physical conservation law or work-energy theorem applies?",
+          "text": "Consider Spring Static Equilibrium Energy relating initial and final mechanical states.",
+          "learner_stage": "FORMULATION",
+          "support_kind": "CONNECT"
+        },
+        {
+          "prompt": "What is the crucial relationship connecting the variables?",
+          "text": "Crux Move: Expressing elastic potential energy in terms of static gravitational force U = F^2 / (2k) to exploit scaling with mass squared and inverse spring constant.",
+          "learner_stage": "RESOLUTION",
+          "support_kind": "TRANSFORM"
+        }
+      ],
+      "conditions": [],
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "EX-M8",
+          "wording_custody": "VERBATIM",
+          "stem_sha256": "f154bd2c140fee999c231282c39119e1efee629fa820c8edcbb97fb9c2bf5245",
+          "lot": "LOT-02"
+        },
+        "grade9v3:attempt_labels": {
+          "question_ref": "Q-PHY-WPE-B1-05",
+          "concept": "Work, Power and Energy Invariants",
+          "family": "Work-Energy Theorem and Mechanical Energy Conservation"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D2",
+            "score": 4,
+            "components": {
+              "concept_model_selection": 1,
+              "representation_translation": 1,
+              "reasoning_chain_length": 1,
+              "algebra_computational_load": 0,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Difficulty: APPLY D2 (4/10) evaluated across 5 QRT dimensions.",
+            "component_evidence": {
+              "concept_model_selection": "Hooke's law static equilibrium and elastic potential energy formula.",
+              "representation_translation": "Interpreting two separate vertical spring-mass assemblies.",
+              "reasoning_chain_length": "Equilibrium condition -> energy equation -> algebraic scaling ratio.",
+              "algebra_computational_load": "Simple fraction arithmetic: 4 / (4/3) = 3.",
+              "trap_exception_sensitivity": "Must avoid assuming identical extensions x or direct proportionality U proportional to k."
+            }
+          },
+          "common_wrong_route": "Common trap: misinterpreting system constraint or neglecting friction/energy dissipation, leading to distractor options.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "JEE Main 2026 (Online) 23rd January Morning Shift",
+          "stable_crux_move": "Expressing elastic potential energy in terms of static gravitational force U = F^2 / (2k) to exploit scaling with mass squared and inverse spring constant."
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "WPE-B1-Q05-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[2]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "grade9v3:governance": {
+          "academic_admission": "NOT_ADMITTED",
+          "disposition": "HOLD:ACADEMIC_ADMISSION",
+          "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED"
+        }
+      }
+    },
+    {
+      "id": "Q-PHY-WPE-B1-06",
+      "sequence": 6,
+      "source_id": "EX-M11",
+      "original_identifier": "JEE Main 2026 (Online) 21st January Morning Shift · EX-M11 · REPRESENT · D2",
+      "stem": "Potential energy ( 𝑉 ) versus distance ( 𝑥 ) is given by the graph. Rank various regions as per the magnitudes of the force ( 𝐹 ) acting on a particle from high to low. [FIG-stem-1]",
+      "options": [
+        "A: 𝐹_𝐵𝐶>𝐹_𝐴𝐵>𝐹_𝐷𝐸>𝐹_𝐶𝐷",
+        "B: 𝐹_𝐵𝐶>𝐹_𝐶𝐷>𝐹_𝐷𝐸>𝐹_𝐴𝐵",
+        "C: 𝐹_𝐶𝐷>𝐹_𝐴𝐵>𝐹_𝐵𝐶>𝐹_𝐷𝐸",
+        "D: 𝐹_𝐶𝐷>𝐹_𝐷𝐸>𝐹_𝐴𝐵>𝐹_𝐵𝐶"
+      ],
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Coaching predicted option: A: 𝐹_𝐵𝐶>𝐹_𝐴𝐵>𝐹_𝐷𝐸>𝐹_𝐶𝐷",
+        "reasoning": [
+          "1. Representation: Establish coordinate system, free-body system boundary, and identify initial states for EX-M11.",
+          "2. Connection: Conservative force magnitude is given by |F| = |-dV/dx| = |slope|. Slope_AB = (1-0)/(1-0) = 1 => |F_AB| = 1. Slope_BC = (4-1)/(2-1) = 3 => |F_BC| = 3. Slope_CD = (4-4)/(4-2) = 0 => |F_CD| = 0. Slope_DE = (3-4)/(6-4) = -0.5 => |F_DE| = 0.5. Descending rank: |F_BC| (3) > |F_AB| (1) > |F_DE| (0.5) > |F_CD| (0).",
+          "3. Resolution: Solve for the required target quantity and select matching option A:."
+        ],
+        "reasoning_route": [
+          {
+            "id": "WPE-B1-Q06-M1",
+            "kind": "REPRESENT",
+            "action": "Establish coordinate system, free-body system boundary, and identify initial states for EX-M11.",
+            "why_valid": "System boundary isolation determines internal vs external forces.",
+            "inputs": [
+              "Problem parameters and given initial conditions"
+            ],
+            "output": "Isolated system free-body model and state coordinates",
+            "source_ref": "JEE Main 2026 (Online) 21st January Morning Shift#EX-M11"
+          },
+          {
+            "id": "WPE-B1-Q06-M2",
+            "kind": "CONNECT",
+            "action": "Formulate the governing work-energy relation: POTENTIAL_GRADIENT_SLOPE_RANKING.",
+            "why_valid": "Work-Energy Theorem and conservation of mechanical energy hold in inertial laboratory frames.",
+            "inputs": [
+              "Initial state mechanical energy and applied external/conservative forces"
+            ],
+            "output": "Governing equation: Conservative force magnitude is given by |F| = |-dV/dx| = |slope|. Slope_AB = (1...",
+            "source_ref": "JEE Main 2026 (Online) 21st January Morning Shift#EX-M11"
+          },
+          {
+            "id": "WPE-B1-Q06-M3",
+            "kind": "TRANSFORM",
+            "action": "Solve for the required target quantity and select matching option A:.",
+            "why_valid": "Algebraic manipulation and root extraction preserve equality on real physical domains.",
+            "inputs": [
+              "Governing work-energy equation"
+            ],
+            "output": "Exact target result agreeing with A: 𝐹_𝐵𝐶>𝐹_𝐴𝐵>𝐹_𝐷𝐸>𝐹_𝐶𝐷",
+            "source_ref": "JEE Main 2026 (Online) 21st January Morning Shift#EX-M11"
+          }
+        ],
+        "crux_move_ref": "WPE-B1-Q06-M2",
+        "check": "Author Limiting Case Verification: Flat region CD has zero slope, hence minimum force (0). Steeper segment BC has maximum slope (3). Rank order is strictly determined by geometric steepness.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-PHYS-WPE-CONSERVATION",
+      "family_ref": "FAM-PHYS-WPE-CORE2-BATCH01",
+      "figure_refs": [
+        "fig_q06_potential_curve.svg"
+      ],
+      "scaffolds": [
+        {
+          "prompt": "How should the physical system be isolated?",
+          "text": "Identify which bodies form the interacting system and establish coordinate directions.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT"
+        },
+        {
+          "prompt": "Which physical conservation law or work-energy theorem applies?",
+          "text": "Consider Potential Gradient Slope Ranking relating initial and final mechanical states.",
+          "learner_stage": "FORMULATION",
+          "support_kind": "CONNECT"
+        },
+        {
+          "prompt": "What is the crucial relationship connecting the variables?",
+          "text": "Crux Move: Translating graph slopes of potential energy V(x) to conservative force magnitudes |F| = |dV/dx| and ordering piecewise segments.",
+          "learner_stage": "RESOLUTION",
+          "support_kind": "TRANSFORM"
+        }
+      ],
+      "conditions": [],
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "EX-M11",
+          "wording_custody": "VERBATIM",
+          "stem_sha256": "dc5006b422da3095c1eb3f9d14810987971898073fa6e37fcfd7af34a35fd90f",
+          "lot": "LOT-03"
+        },
+        "grade9v3:attempt_labels": {
+          "question_ref": "Q-PHY-WPE-B1-06",
+          "concept": "Work, Power and Energy Invariants",
+          "family": "Work-Energy Theorem and Mechanical Energy Conservation"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D2",
+            "score": 4,
+            "components": {
+              "concept_model_selection": 1,
+              "representation_translation": 1,
+              "reasoning_chain_length": 1,
+              "algebra_computational_load": 0,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Difficulty: REPRESENT D2 (4/10) evaluated across 5 QRT dimensions.",
+            "component_evidence": {
+              "concept_model_selection": "Connection between conservative force and potential gradient.",
+              "representation_translation": "Extracting coordinates and calculating slopes from piecewise graph.",
+              "reasoning_chain_length": "Calculate four segment slopes and order descendingly.",
+              "algebra_computational_load": "Elementary slope ratios: 3, 1, 0.5, 0.",
+              "trap_exception_sensitivity": "Magnitude requested, so negative slope in DE becomes positive 0.5, exceeding flat CD."
+            }
+          },
+          "common_wrong_route": "Common trap: misinterpreting system constraint or neglecting friction/energy dissipation, leading to distractor options.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "JEE Main 2026 (Online) 21st January Morning Shift",
+          "stable_crux_move": "Translating graph slopes of potential energy V(x) to conservative force magnitudes |F| = |dV/dx| and ordering piecewise segments."
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "WPE-B1-Q06-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[2]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "grade9v3:governance": {
+          "academic_admission": "NOT_ADMITTED",
+          "disposition": "HOLD:ACADEMIC_ADMISSION",
+          "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED"
+        }
+      }
+    },
+    {
+      "id": "Q-PHY-WPE-B1-07",
+      "sequence": 7,
+      "source_id": "EX-M14",
+      "original_identifier": "JEE Main 2025 (Online) 4th April Evening Shift · EX-M14 · APPLY · D2",
+      "stem": "A block of mass 25 kg is pulled along a horizontal surface by a force at an angle 45^(∘) with the horizontal. The friction coefficient between the block and the surface is 0.25 . The block travels at a uniform velocity. The work done by the applied force during a displacement of 5 m of the block is :",
+      "options": [
+        "A: 490 J",
+        "B: 970 J",
+        "C: 735 J",
+        "D: 245 J"
+      ],
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Coaching predicted option: D: 245 J",
+        "reasoning": [
+          "1. Representation: Establish coordinate system, free-body system boundary, and identify initial states for EX-M14.",
+          "2. Connection: Let pulling force be F at 45 deg above horizontal. Vertical equilibrium: N + F sin(45 deg) = mg => N = mg - F/sqrt(2). Friction force f_k = mu * N = mu * (mg - F/sqrt(2)). Uniform velocity implies zero acceleration: F cos(45 deg) = f_k => F/sqrt(2) = mu * [mg - F/sqrt(2)] => F/sqrt(2) * (1 + mu) = mu * mg. With m = 25 kg, g = 9.8 m/s^2, mu = 0.25: F/sqrt(2) * (1.25) = 0.25 * (25 * 9.8) = 61.25 => F/sqrt(2) = 61.25 / 1.25 = 49 N. Work done by applied force over displacement s = 5 m: W = F * s * cos(45 deg) = (F/sqrt(2)) * s = 49 N * 5 m = 245 J.",
+          "3. Resolution: Solve for the required target quantity and select matching option D:."
+        ],
+        "reasoning_route": [
+          {
+            "id": "WPE-B1-Q07-M1",
+            "kind": "REPRESENT",
+            "action": "Establish coordinate system, free-body system boundary, and identify initial states for EX-M14.",
+            "why_valid": "System boundary isolation determines internal vs external forces.",
+            "inputs": [
+              "Problem parameters and given initial conditions"
+            ],
+            "output": "Isolated system free-body model and state coordinates",
+            "source_ref": "JEE Main 2025 (Online) 4th April Evening Shift#EX-M14"
+          },
+          {
+            "id": "WPE-B1-Q07-M2",
+            "kind": "CONNECT",
+            "action": "Formulate the governing work-energy relation: WORK_EXT_DYNAMIC_EQUILIBRIUM.",
+            "why_valid": "Work-Energy Theorem and conservation of mechanical energy hold in inertial laboratory frames.",
+            "inputs": [
+              "Initial state mechanical energy and applied external/conservative forces"
+            ],
+            "output": "Governing equation: Let pulling force be F at 45 deg above horizontal. Vertical equilibrium: N + F s...",
+            "source_ref": "JEE Main 2025 (Online) 4th April Evening Shift#EX-M14"
+          },
+          {
+            "id": "WPE-B1-Q07-M3",
+            "kind": "TRANSFORM",
+            "action": "Solve for the required target quantity and select matching option D:.",
+            "why_valid": "Algebraic manipulation and root extraction preserve equality on real physical domains.",
+            "inputs": [
+              "Governing work-energy equation"
+            ],
+            "output": "Exact target result agreeing with D: 245 J",
+            "source_ref": "JEE Main 2025 (Online) 4th April Evening Shift#EX-M14"
+          }
+        ],
+        "crux_move_ref": "WPE-B1-Q07-M2",
+        "check": "Author Limiting Case Verification: If mu = 0, F = 0 => W = 0 J. If s = 0, W = 0 J. Direct energy balance: work by applied force equals thermal dissipation by kinetic friction over 5 m: W = f_k * s = 49 * 5 = 245 J.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-PHYS-WPE-CONSERVATION",
+      "family_ref": "FAM-PHYS-WPE-CORE2-BATCH01",
+      "figure_refs": [],
+      "scaffolds": [
+        {
+          "prompt": "How should the physical system be isolated?",
+          "text": "Identify which bodies form the interacting system and establish coordinate directions.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT"
+        },
+        {
+          "prompt": "Which physical conservation law or work-energy theorem applies?",
+          "text": "Consider Work Ext Dynamic Equilibrium relating initial and final mechanical states.",
+          "learner_stage": "FORMULATION",
+          "support_kind": "CONNECT"
+        },
+        {
+          "prompt": "What is the crucial relationship connecting the variables?",
+          "text": "Crux Move: Incorporating the vertical component of the pulling force into the normal reaction reduction and calculating work done at uniform velocity.",
+          "learner_stage": "RESOLUTION",
+          "support_kind": "TRANSFORM"
+        }
+      ],
+      "conditions": [],
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "EX-M14",
+          "wording_custody": "VERBATIM",
+          "stem_sha256": "d42c49f2f74aee3cc526fca32bc34cbea5f9adc8817c591513fb91702feeca3d",
+          "lot": "LOT-03"
+        },
+        "grade9v3:attempt_labels": {
+          "question_ref": "Q-PHY-WPE-B1-07",
+          "concept": "Work, Power and Energy Invariants",
+          "family": "Work-Energy Theorem and Mechanical Energy Conservation"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D2",
+            "score": 5,
+            "components": {
+              "concept_model_selection": 1,
+              "representation_translation": 1,
+              "reasoning_chain_length": 1,
+              "algebra_computational_load": 1,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Difficulty: APPLY D2 (5/10) evaluated across 5 QRT dimensions.",
+            "component_evidence": {
+              "concept_model_selection": "Dynamic equilibrium with inclined pulling force and friction.",
+              "representation_translation": "Translating force balance along two orthogonal axes.",
+              "reasoning_chain_length": "Normal force -> friction -> pulling force -> work calculation.",
+              "algebra_computational_load": "Linear equation with decimals: 61.25 / 1.25 = 49, 49 * 5 = 245.",
+              "trap_exception_sensitivity": "Trap of setting N = mg without subtracting vertical component of pull."
+            }
+          },
+          "common_wrong_route": "Common trap: misinterpreting system constraint or neglecting friction/energy dissipation, leading to distractor options.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "JEE Main 2025 (Online) 4th April Evening Shift",
+          "stable_crux_move": "Incorporating the vertical component of the pulling force into the normal reaction reduction and calculating work done at uniform velocity."
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "WPE-B1-Q07-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[2]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "grade9v3:governance": {
+          "academic_admission": "NOT_ADMITTED",
+          "disposition": "HOLD:ACADEMIC_ADMISSION",
+          "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED"
+        }
+      }
+    },
+    {
+      "id": "Q-PHY-WPE-B1-08",
+      "sequence": 8,
+      "source_id": "EX-M16",
+      "original_identifier": "JEE Main 2025 (Online) 29th January Evening Shift · EX-M16 · MODEL · D3",
+      "stem": "A sand dropper drops sand of mass m(t) on a conveyer belt at a rate proportional to the square root of speed (v) of the belt, i.e., (𝑑𝑚)/(𝑑𝑡)∝√(𝑣) . If P is the power delivered to run the belt at constant speed then which of the following relationship is true?",
+      "options": [
+        "A: P ∝√(𝑣)",
+        "B: P ∝𝑣",
+        "C: 𝑃^(2)∝𝑣^(3)",
+        "D: 𝑃^(2)∝𝑣^(5)"
+      ],
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Coaching predicted option: D: 𝑃^(2)∝𝑣^(5)",
+        "reasoning": [
+          "1. Representation: Establish coordinate system, free-body system boundary, and identify initial states for EX-M16.",
+          "2. Connection: Rate of mass addition: dm/dt = k * v^(1/2). To maintain constant speed v, the force required to accelerate newly dropped sand from rest to speed v is F = v * (dm/dt) = v * (k * v^(1/2)) = k * v^(3/2). Total power delivered to the belt: P = F * v = (k * v^(3/2)) * v = k * v^(5/2). Squaring both sides to eliminate fractional powers: P^2 = k^2 * v^5, which implies P^2 proportional to v^5.",
+          "3. Resolution: Solve for the required target quantity and select matching option D:."
+        ],
+        "reasoning_route": [
+          {
+            "id": "WPE-B1-Q08-M1",
+            "kind": "REPRESENT",
+            "action": "Establish coordinate system, free-body system boundary, and identify initial states for EX-M16.",
+            "why_valid": "System boundary isolation determines internal vs external forces.",
+            "inputs": [
+              "Problem parameters and given initial conditions"
+            ],
+            "output": "Isolated system free-body model and state coordinates",
+            "source_ref": "JEE Main 2025 (Online) 29th January Evening Shift#EX-M16"
+          },
+          {
+            "id": "WPE-B1-Q08-M2",
+            "kind": "CONNECT",
+            "action": "Formulate the governing work-energy relation: VARIABLE_MASS_BELT_POWER_PROPORTIONALITY.",
+            "why_valid": "Work-Energy Theorem and conservation of mechanical energy hold in inertial laboratory frames.",
+            "inputs": [
+              "Initial state mechanical energy and applied external/conservative forces"
+            ],
+            "output": "Governing equation: Rate of mass addition: dm/dt = k * v^(1/2). To maintain constant speed v, the fo...",
+            "source_ref": "JEE Main 2025 (Online) 29th January Evening Shift#EX-M16"
+          },
+          {
+            "id": "WPE-B1-Q08-M3",
+            "kind": "TRANSFORM",
+            "action": "Solve for the required target quantity and select matching option D:.",
+            "why_valid": "Algebraic manipulation and root extraction preserve equality on real physical domains.",
+            "inputs": [
+              "Governing work-energy equation"
+            ],
+            "output": "Exact target result agreeing with D: 𝑃^(2)∝𝑣^(5)",
+            "source_ref": "JEE Main 2025 (Online) 29th January Evening Shift#EX-M16"
+          }
+        ],
+        "crux_move_ref": "WPE-B1-Q08-M2",
+        "check": "Author Limiting Case Verification: If dm/dt were constant (independent of v), P = v^2 (dm/dt) => P proportional to v^2 => P^2 proportional to v^4. With dm/dt proportional to v^(1/2), P proportional to v^(5/2) => P^2 proportional to v^5.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-PHYS-WPE-CONSERVATION",
+      "family_ref": "FAM-PHYS-WPE-CORE2-BATCH01",
+      "figure_refs": [],
+      "scaffolds": [
+        {
+          "prompt": "How should the physical system be isolated?",
+          "text": "Identify which bodies form the interacting system and establish coordinate directions.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT"
+        },
+        {
+          "prompt": "Which physical conservation law or work-energy theorem applies?",
+          "text": "Consider Variable Mass Belt Power Proportionality relating initial and final mechanical states.",
+          "learner_stage": "FORMULATION",
+          "support_kind": "CONNECT"
+        },
+        {
+          "prompt": "What is the crucial relationship connecting the variables?",
+          "text": "Crux Move: Modeling variable-mass thrust F = v(dm/dt) and input power P = F*v = v^2(dm/dt) under velocity-dependent mass flux dm/dt proportional to v^(1/2).",
+          "learner_stage": "RESOLUTION",
+          "support_kind": "TRANSFORM"
+        }
+      ],
+      "conditions": [],
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "EX-M16",
+          "wording_custody": "VERBATIM",
+          "stem_sha256": "d2abc9e9b5d095977abadd84bae36f1a5f40a58e4341dd4e8593efa216f7c0a2",
+          "lot": "LOT-03"
+        },
+        "grade9v3:attempt_labels": {
+          "question_ref": "Q-PHY-WPE-B1-08",
+          "concept": "Work, Power and Energy Invariants",
+          "family": "Work-Energy Theorem and Mechanical Energy Conservation"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D3",
+            "score": 7,
+            "components": {
+              "concept_model_selection": 2,
+              "representation_translation": 1,
+              "reasoning_chain_length": 1,
+              "algebra_computational_load": 1,
+              "trap_exception_sensitivity": 2
+            },
+            "basis": "Difficulty: MODEL D3 (7/10) evaluated across 5 QRT dimensions.",
+            "component_evidence": {
+              "concept_model_selection": "Variable-mass dynamics and continuous conveyor belt mechanical power.",
+              "representation_translation": "Converting proportionality statement to power scaling law.",
+              "reasoning_chain_length": "Force formulation -> power multiplication -> squaring operation.",
+              "algebra_computational_load": "Index laws: v * v^(1/2) * v = v^(5/2), (v^(5/2))^2 = v^5.",
+              "trap_exception_sensitivity": "Critical trap: confusing rate of KE increase (1/2 v^2 dm/dt) with motor power input (v^2 dm/dt)."
+            }
+          },
+          "common_wrong_route": "Common trap: misinterpreting system constraint or neglecting friction/energy dissipation, leading to distractor options.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "JEE Main 2025 (Online) 29th January Evening Shift",
+          "stable_crux_move": "Modeling variable-mass thrust F = v(dm/dt) and input power P = F*v = v^2(dm/dt) under velocity-dependent mass flux dm/dt proportional to v^(1/2)."
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "WPE-B1-Q08-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[2]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "grade9v3:governance": {
+          "academic_admission": "NOT_ADMITTED",
+          "disposition": "HOLD:ACADEMIC_ADMISSION",
+          "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED"
+        }
+      }
+    },
+    {
+      "id": "Q-PHY-WPE-B1-09",
+      "sequence": 9,
+      "source_id": "EX-M18",
+      "original_identifier": "JEE Main 2025 (Online) 28th January Morning Shift · EX-M18 · MODEL · D4",
+      "stem": "A bead of mass ' 𝑚 ' slides without friction on the wall of a vertical circular hoop of radius ' 𝑅 ' as shown in figure. The bead moves under the combined action of gravity and a massless spring (k) attached to the bottom of the hoop. The equilibrium length of the spring is ' 𝑅 '. If the bead is released from top of the hoop with (negligible) zero initial speed, velocity of bead, when the length of spring becomes ' 𝑅 ', would be (spring constant is ' 𝑘 ', 𝑔 is acceleration due to gravity) [FIG-stem-1]",
+      "options": [
+        "A: √(2𝑅𝑔+(kR2)/(m))",
+        "B: √(3Rg+(kR2)/(m))",
+        "C: √(2Rg+(4kR^(2))/(m))",
+        "D: 2√(gR+(kR2)/(m))"
+      ],
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Coaching predicted option: B: √(3Rg+(kR2)/(m))",
+        "reasoning": [
+          "1. Representation: Establish coordinate system, free-body system boundary, and identify initial states for EX-M18.",
+          "2. Connection: Initial state (top of hoop): y1 = 2R, spring length = 2R, extension x1 = 2R - R = R, v1 = 0. Final state (length of spring becomes R): spring anchor at bottom (0,0), hoop center at (0,R), bead at P on circle. Since distance from bottom to P is R, and from center to P is R, triangle formed by bottom anchor, center, and P is equilateral with side R. The angle at center from downward vertical is 60 deg. Height of P: y2 = R - R cos(60 deg) = R - R/2 = R/2. Height drop: Delta h = y1 - y2 = 2R - R/2 = 3R/2. Final spring extension x2 = R - R = 0 (spring is unstretched). Energy conservation: 1/2 m v^2 = mg(Delta h) + 1/2 k x1^2 - 1/2 k x2^2 = mg(3R/2) + 1/2 k R^2 - 0 = 3/2 mgR + 1/2 k R^2. Multiplying by 2/m: v^2 = 3gR + (k R^2 / m) => v = sqrt(3gR + (k R^2 / m)).",
+          "3. Resolution: Solve for the required target quantity and select matching option B:."
+        ],
+        "reasoning_route": [
+          {
+            "id": "WPE-B1-Q09-M1",
+            "kind": "REPRESENT",
+            "action": "Establish coordinate system, free-body system boundary, and identify initial states for EX-M18.",
+            "why_valid": "System boundary isolation determines internal vs external forces.",
+            "inputs": [
+              "Problem parameters and given initial conditions"
+            ],
+            "output": "Isolated system free-body model and state coordinates",
+            "source_ref": "JEE Main 2025 (Online) 28th January Morning Shift#EX-M18"
+          },
+          {
+            "id": "WPE-B1-Q09-M2",
+            "kind": "CONNECT",
+            "action": "Formulate the governing work-energy relation: CIRCULAR_HOOP_BOTTOM_SPRING_GRAVITY_ENERGY.",
+            "why_valid": "Work-Energy Theorem and conservation of mechanical energy hold in inertial laboratory frames.",
+            "inputs": [
+              "Initial state mechanical energy and applied external/conservative forces"
+            ],
+            "output": "Governing equation: Initial state (top of hoop): y1 = 2R, spring length = 2R, extension x1 = 2R - R ...",
+            "source_ref": "JEE Main 2025 (Online) 28th January Morning Shift#EX-M18"
+          },
+          {
+            "id": "WPE-B1-Q09-M3",
+            "kind": "TRANSFORM",
+            "action": "Solve for the required target quantity and select matching option B:.",
+            "why_valid": "Algebraic manipulation and root extraction preserve equality on real physical domains.",
+            "inputs": [
+              "Governing work-energy equation"
+            ],
+            "output": "Exact target result agreeing with B: √(3Rg+(kR2)/(m))",
+            "source_ref": "JEE Main 2025 (Online) 28th January Morning Shift#EX-M18"
+          }
+        ],
+        "crux_move_ref": "WPE-B1-Q09-M2",
+        "check": "Author Limiting Case Verification: If k = 0 (pure gravity), v = sqrt(2 g Delta h) = sqrt(2 g * 3R/2) = sqrt(3gR). If g = 0 (pure spring), v = sqrt(k R^2 / m). Both conservative forces lose potential energy simultaneously, yielding Option B.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-PHYS-WPE-CONSERVATION",
+      "family_ref": "FAM-PHYS-WPE-CORE2-BATCH01",
+      "figure_refs": [
+        "fig_q09_bead_wire_spring.svg"
+      ],
+      "scaffolds": [
+        {
+          "prompt": "How should the physical system be isolated?",
+          "text": "Identify which bodies form the interacting system and establish coordinate directions.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT"
+        },
+        {
+          "prompt": "Which physical conservation law or work-energy theorem applies?",
+          "text": "Consider Circular Hoop Bottom Spring Gravity Energy relating initial and final mechanical states.",
+          "learner_stage": "FORMULATION",
+          "support_kind": "CONNECT"
+        },
+        {
+          "prompt": "What is the crucial relationship connecting the variables?",
+          "text": "Crux Move: Modeling the simultaneous relaxation of an extended bottom-anchored spring and gravitational descent on a circular constraint using equilateral triangle geometry.",
+          "learner_stage": "RESOLUTION",
+          "support_kind": "TRANSFORM"
+        }
+      ],
+      "conditions": [],
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "EX-M18",
+          "wording_custody": "VERBATIM",
+          "stem_sha256": "42336fcec4a83179e7f595fe5bdc33dddc30953940189b66288cb39696ceaad8",
+          "lot": "LOT-03"
+        },
+        "grade9v3:attempt_labels": {
+          "question_ref": "Q-PHY-WPE-B1-09",
+          "concept": "Work, Power and Energy Invariants",
+          "family": "Work-Energy Theorem and Mechanical Energy Conservation"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D4",
+            "score": 8,
+            "components": {
+              "concept_model_selection": 2,
+              "representation_translation": 2,
+              "reasoning_chain_length": 2,
+              "algebra_computational_load": 1,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Difficulty: MODEL D4 (8/10) evaluated across 5 QRT dimensions.",
+            "component_evidence": {
+              "concept_model_selection": "Simultaneous conservative potential energies (gravity + bottom Hookean spring) on circular constraint.",
+              "representation_translation": "Geometric resolution of equilateral triangle to find angle (60 deg) and height drop (3R/2).",
+              "reasoning_chain_length": "Initial geometry -> final geometry -> energy conservation -> velocity solution.",
+              "algebra_computational_load": "Quadratic expression and square root formatting.",
+              "trap_exception_sensitivity": "Equilibrium length is R, so elongation at top is 2R - R = R, not 2R; spring relaxes to zero elongation."
+            }
+          },
+          "common_wrong_route": "Common trap: misinterpreting system constraint or neglecting friction/energy dissipation, leading to distractor options.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "JEE Main 2025 (Online) 28th January Morning Shift",
+          "stable_crux_move": "Modeling the simultaneous relaxation of an extended bottom-anchored spring and gravitational descent on a circular constraint using equilateral triangle geometry."
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "WPE-B1-Q09-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[2]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "grade9v3:governance": {
+          "academic_admission": "NOT_ADMITTED",
+          "disposition": "HOLD:ACADEMIC_ADMISSION",
+          "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED"
+        }
+      }
+    },
+    {
+      "id": "Q-PHY-WPE-B1-10",
+      "sequence": 10,
+      "source_id": "EX-M24",
+      "original_identifier": "JEE Main 2024 (Online) 8th April Evening Shift · EX-M24 · APPLY · D4",
+      "stem": "[FIG-stem-1] A block is simply released from the top of an inclined plane as shown in the figure above. The maximum compression in the spring when the block hits the spring is :",
+      "options": [
+        "A: √(6)m",
+        "B: √(5)m",
+        "C: 1m",
+        "D: 2m"
+      ],
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Coaching predicted option: D: 2m",
+        "reasoning": [
+          "1. Representation: Establish coordinate system, free-body system boundary, and identify initial states for EX-M24.",
+          "2. Connection: Work-energy theorem between release point and maximum compression x: W_grav + W_fric + W_spring = Delta K = 0. From coaching extract calculation: W_grav = 5 * 10 * 5 = 250 J; W_fric = -0.5 * 5 * 10 * x = -25x; W_spring = -1/2 * k * x^2 = -50 x^2 (assuming k=100 N/m). Equation: 250 - 25x - 50x^2 = 0 => 50x^2 + 25x - 250 = 0 => 2x^2 + x - 10 = 0 => (2x + 5)(x - 2) = 0 => x = 2 m.",
+          "3. Resolution: Solve for the required target quantity and select matching option D:."
+        ],
+        "reasoning_route": [
+          {
+            "id": "WPE-B1-Q10-M1",
+            "kind": "REPRESENT",
+            "action": "Establish coordinate system, free-body system boundary, and identify initial states for EX-M24.",
+            "why_valid": "System boundary isolation determines internal vs external forces.",
+            "inputs": [
+              "Problem parameters and given initial conditions"
+            ],
+            "output": "Isolated system free-body model and state coordinates",
+            "source_ref": "JEE Main 2024 (Online) 8th April Evening Shift#EX-M24"
+          },
+          {
+            "id": "WPE-B1-Q10-M2",
+            "kind": "CONNECT",
+            "action": "Formulate the governing work-energy relation: WORK_ENERGY_THEOREM_INCLINE_SPRING_FRICTION.",
+            "why_valid": "Work-Energy Theorem and conservation of mechanical energy hold in inertial laboratory frames.",
+            "inputs": [
+              "Initial state mechanical energy and applied external/conservative forces"
+            ],
+            "output": "Governing equation: Work-energy theorem between release point and maximum compression x: W_grav + W_...",
+            "source_ref": "JEE Main 2024 (Online) 8th April Evening Shift#EX-M24"
+          },
+          {
+            "id": "WPE-B1-Q10-M3",
+            "kind": "TRANSFORM",
+            "action": "Solve for the required target quantity and select matching option D:.",
+            "why_valid": "Algebraic manipulation and root extraction preserve equality on real physical domains.",
+            "inputs": [
+              "Governing work-energy equation"
+            ],
+            "output": "Exact target result agreeing with D: 2m",
+            "source_ref": "JEE Main 2024 (Online) 8th April Evening Shift#EX-M24"
+          }
+        ],
+        "crux_move_ref": "WPE-B1-Q10-M2",
+        "check": "Author Limiting Case Verification: If mu = 0, 50x^2 = 250 => x^2 = 5 => x = sqrt(5) m (Option B). With friction present, energy is dissipated, leading to quadratic equation root x = 2 m.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-PHYS-WPE-CONSERVATION",
+      "family_ref": "FAM-PHYS-WPE-CORE2-BATCH01",
+      "figure_refs": [
+        "fig_q10_incline_block.svg"
+      ],
+      "scaffolds": [
+        {
+          "prompt": "How should the physical system be isolated?",
+          "text": "Identify which bodies form the interacting system and establish coordinate directions.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT"
+        },
+        {
+          "prompt": "Which physical conservation law or work-energy theorem applies?",
+          "text": "Consider Work Energy Theorem Incline Spring Friction relating initial and final mechanical states.",
+          "learner_stage": "FORMULATION",
+          "support_kind": "CONNECT"
+        },
+        {
+          "prompt": "What is the crucial relationship connecting the variables?",
+          "text": "Crux Move: Formulating the complete work-energy equation incorporating gravitational potential loss, non-conservative frictional dissipation, and spring potential gain to solve a quadratic in spring compression x.",
+          "learner_stage": "RESOLUTION",
+          "support_kind": "TRANSFORM"
+        }
+      ],
+      "conditions": [],
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "EX-M24",
+          "wording_custody": "VERBATIM",
+          "stem_sha256": "9d2c7cb9df50430ea2cb67603844ba5309901489311286518341a967bdd80dab",
+          "lot": "LOT-03"
+        },
+        "grade9v3:attempt_labels": {
+          "question_ref": "Q-PHY-WPE-B1-10",
+          "concept": "Work, Power and Energy Invariants",
+          "family": "Work-Energy Theorem and Mechanical Energy Conservation"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D4",
+            "score": 8,
+            "components": {
+              "concept_model_selection": 2,
+              "representation_translation": 2,
+              "reasoning_chain_length": 2,
+              "algebra_computational_load": 1,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Difficulty: APPLY D4 (8/10) evaluated across 5 QRT dimensions.",
+            "component_evidence": {
+              "concept_model_selection": "Work-energy theorem combining conservative and dissipative mechanisms on an incline.",
+              "representation_translation": "Crucial requirement: entire problem parameter set resides in the diagram.",
+              "reasoning_chain_length": "Identify forces -> integrate over path (d + x) -> formulate quadratic -> physical root.",
+              "algebra_computational_load": "Factoring quadratic: 2x^2 + x - 10 = 0 => x = 2.",
+              "trap_exception_sensitivity": "Frictional dissipation occurs along entire sliding distance including spring compression x."
+            }
+          },
+          "common_wrong_route": "Common trap: misinterpreting system constraint or neglecting friction/energy dissipation, leading to distractor options.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "JEE Main 2024 (Online) 8th April Evening Shift",
+          "stable_crux_move": "Formulating the complete work-energy equation incorporating gravitational potential loss, non-conservative frictional dissipation, and spring potential gain to solve a quadratic in spring compression x."
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "WPE-B1-Q10-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[2]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "grade9v3:governance": {
+          "academic_admission": "NOT_ADMITTED",
+          "disposition": "HOLD:ACADEMIC_ADMISSION",
+          "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED"
+        }
+      }
+    },
+    {
+      "id": "Q-PHY-WPE-B1-11",
+      "sequence": 11,
+      "source_id": "EX-M29",
+      "original_identifier": "JEE Main 2024 (Online) 5th April Evening Shift · EX-M29 · APPLY · D2",
+      "stem": "A body is moving unidirectionally under the influence of a constant power source. Its displacement in time t is proportional to :",
+      "options": [
+        "A: t2/3",
+        "B: t3/2",
+        "C: t",
+        "D: t2"
+      ],
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Coaching predicted option: B: t3/2",
+        "reasoning": [
+          "1. Representation: Establish coordinate system, free-body system boundary, and identify initial states for EX-M29.",
+          "2. Connection: Constant power P = F * v = m * v * (dv/dt) = constant. Separating variables: v dv = (P/m) dt. Integrating both sides: 1/2 v^2 = (P/m) t => v = sqrt(2P/m) * t^(1/2). Since v = ds/dt: ds = sqrt(2P/m) * t^(1/2) dt. Integrating from rest: s = sqrt(2P/m) * (2/3 t^(3/2)) => s proportional to t^(3/2).",
+          "3. Resolution: Solve for the required target quantity and select matching option B:."
+        ],
+        "reasoning_route": [
+          {
+            "id": "WPE-B1-Q11-M1",
+            "kind": "REPRESENT",
+            "action": "Establish coordinate system, free-body system boundary, and identify initial states for EX-M29.",
+            "why_valid": "System boundary isolation determines internal vs external forces.",
+            "inputs": [
+              "Problem parameters and given initial conditions"
+            ],
+            "output": "Isolated system free-body model and state coordinates",
+            "source_ref": "JEE Main 2024 (Online) 5th April Evening Shift#EX-M29"
+          },
+          {
+            "id": "WPE-B1-Q11-M2",
+            "kind": "CONNECT",
+            "action": "Formulate the governing work-energy relation: CONSTANT_POWER_DISPLACEMENT_INTEGRAL.",
+            "why_valid": "Work-Energy Theorem and conservation of mechanical energy hold in inertial laboratory frames.",
+            "inputs": [
+              "Initial state mechanical energy and applied external/conservative forces"
+            ],
+            "output": "Governing equation: Constant power P = F * v = m * v * (dv/dt) = constant. Separating variables: v d...",
+            "source_ref": "JEE Main 2024 (Online) 5th April Evening Shift#EX-M29"
+          },
+          {
+            "id": "WPE-B1-Q11-M3",
+            "kind": "TRANSFORM",
+            "action": "Solve for the required target quantity and select matching option B:.",
+            "why_valid": "Algebraic manipulation and root extraction preserve equality on real physical domains.",
+            "inputs": [
+              "Governing work-energy equation"
+            ],
+            "output": "Exact target result agreeing with B: t3/2",
+            "source_ref": "JEE Main 2024 (Online) 5th April Evening Shift#EX-M29"
+          }
+        ],
+        "crux_move_ref": "WPE-B1-Q11-M2",
+        "check": "Author Limiting Case Verification: If acceleration were constant (constant force), P = F*a*t proportional to t, and s proportional to t^2. Under constant power, acceleration decreases as v increases, yielding s proportional to t^(3/2), which is intermediate between t and t^2.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-PHYS-WPE-CONSERVATION",
+      "family_ref": "FAM-PHYS-WPE-CORE2-BATCH01",
+      "figure_refs": [],
+      "scaffolds": [
+        {
+          "prompt": "How should the physical system be isolated?",
+          "text": "Identify which bodies form the interacting system and establish coordinate directions.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT"
+        },
+        {
+          "prompt": "Which physical conservation law or work-energy theorem applies?",
+          "text": "Consider Constant Power Displacement Integral relating initial and final mechanical states.",
+          "learner_stage": "FORMULATION",
+          "support_kind": "CONNECT"
+        },
+        {
+          "prompt": "What is the crucial relationship connecting the variables?",
+          "text": "Crux Move: Setting up the differential relation for constant power P = m v (dv/dt) and integrating twice to find displacement time scaling s proportional to t^(3/2).",
+          "learner_stage": "RESOLUTION",
+          "support_kind": "TRANSFORM"
+        }
+      ],
+      "conditions": [],
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "EX-M29",
+          "wording_custody": "VERBATIM",
+          "stem_sha256": "80c4f7f49db75f9ae66f54d1ed7808074d33abbaa7a744a4c0e3adf1622e1501",
+          "lot": "LOT-04"
+        },
+        "grade9v3:attempt_labels": {
+          "question_ref": "Q-PHY-WPE-B1-11",
+          "concept": "Work, Power and Energy Invariants",
+          "family": "Work-Energy Theorem and Mechanical Energy Conservation"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D2",
+            "score": 5,
+            "components": {
+              "concept_model_selection": 1,
+              "representation_translation": 1,
+              "reasoning_chain_length": 1,
+              "algebra_computational_load": 1,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Difficulty: APPLY D2 (5/10) evaluated across 5 QRT dimensions.",
+            "component_evidence": {
+              "concept_model_selection": "Constant mechanical power model P = F v.",
+              "representation_translation": "Converting rate of work statement into differential equation.",
+              "reasoning_chain_length": "Two-stage integration: v(t) -> s(t).",
+              "algebra_computational_load": "Power rule integration: int t^(1/2) dt = 2/3 t^(3/2).",
+              "trap_exception_sensitivity": "Trap of confusing velocity scaling t^(1/2) with displacement, or assuming constant acceleration t^2."
+            }
+          },
+          "common_wrong_route": "Common trap: misinterpreting system constraint or neglecting friction/energy dissipation, leading to distractor options.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "JEE Main 2024 (Online) 5th April Evening Shift",
+          "stable_crux_move": "Setting up the differential relation for constant power P = m v (dv/dt) and integrating twice to find displacement time scaling s proportional to t^(3/2)."
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "WPE-B1-Q11-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[2]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "grade9v3:governance": {
+          "academic_admission": "NOT_ADMITTED",
+          "disposition": "HOLD:ACADEMIC_ADMISSION",
+          "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED"
+        }
+      }
+    },
+    {
+      "id": "Q-PHY-WPE-B1-12",
+      "sequence": 12,
+      "source_id": "EX-M36",
+      "original_identifier": "JEE Main 2024 (Online) 29th January Evening Shift · EX-M36 · APPLY · D2",
+      "stem": "A bob of mass ' 𝑚 ' is suspended by a light string of length ' 𝐿 '. It is imparted a minimum horizontal velocity at the lowest point 𝐴 such that it just completes half circle reaching the top most position B. The ratio of kinetic energies ((𝐾.𝐸)_𝐴)/((𝐾.𝐸)_𝐵) is : [FIG-stem-1]",
+      "options": [
+        "A: 5 : 1",
+        "B: 3 : 2",
+        "C: 1 : 5",
+        "D: 2 : 5"
+      ],
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Coaching predicted option: A: 5 : 1",
+        "reasoning": [
+          "1. Representation: Establish coordinate system, free-body system boundary, and identify initial states for EX-M36.",
+          "2. Connection: Condition to just complete vertical circle: string tension at apex B must satisfy T_B >= 0 => m v_B^2 / L = mg => v_B = sqrt(gL). By conservation of mechanical energy between bottom A and top B: 1/2 m v_A^2 = 1/2 m v_B^2 + mg(2L) = 1/2 m (gL) + 2mgL = 5/2 mgL => v_A = sqrt(5gL). Ratio of kinetic energies: (K.E)_A / (K.E)_B = (1/2 m v_A^2) / (1/2 m v_B^2) = (5/2 mgL) / (1/2 mgL) = 5 / 1 = 5 : 1.",
+          "3. Resolution: Solve for the required target quantity and select matching option A:."
+        ],
+        "reasoning_route": [
+          {
+            "id": "WPE-B1-Q12-M1",
+            "kind": "REPRESENT",
+            "action": "Establish coordinate system, free-body system boundary, and identify initial states for EX-M36.",
+            "why_valid": "System boundary isolation determines internal vs external forces.",
+            "inputs": [
+              "Problem parameters and given initial conditions"
+            ],
+            "output": "Isolated system free-body model and state coordinates",
+            "source_ref": "JEE Main 2024 (Online) 29th January Evening Shift#EX-M36"
+          },
+          {
+            "id": "WPE-B1-Q12-M2",
+            "kind": "CONNECT",
+            "action": "Formulate the governing work-energy relation: VERTICAL_CIRCLE_CRITICAL_SPEED_ENERGY_RATIO.",
+            "why_valid": "Work-Energy Theorem and conservation of mechanical energy hold in inertial laboratory frames.",
+            "inputs": [
+              "Initial state mechanical energy and applied external/conservative forces"
+            ],
+            "output": "Governing equation: Condition to just complete vertical circle: string tension at apex B must satisf...",
+            "source_ref": "JEE Main 2024 (Online) 29th January Evening Shift#EX-M36"
+          },
+          {
+            "id": "WPE-B1-Q12-M3",
+            "kind": "TRANSFORM",
+            "action": "Solve for the required target quantity and select matching option A:.",
+            "why_valid": "Algebraic manipulation and root extraction preserve equality on real physical domains.",
+            "inputs": [
+              "Governing work-energy equation"
+            ],
+            "output": "Exact target result agreeing with A: 5 : 1",
+            "source_ref": "JEE Main 2024 (Online) 29th January Evening Shift#EX-M36"
+          }
+        ],
+        "crux_move_ref": "WPE-B1-Q12-M2",
+        "check": "Author Limiting Case Verification: If B were at height L (reaching horizontal), v_A^2 = v_B^2 + 2gL => ratio depends on apex speed. For complete circle apex B, critical ratio is exactly 5 : 1.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-PHYS-WPE-CONSERVATION",
+      "family_ref": "FAM-PHYS-WPE-CORE2-BATCH01",
+      "figure_refs": [
+        "fig_q12_vertical_circle.svg"
+      ],
+      "scaffolds": [
+        {
+          "prompt": "How should the physical system be isolated?",
+          "text": "Identify which bodies form the interacting system and establish coordinate directions.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT"
+        },
+        {
+          "prompt": "Which physical conservation law or work-energy theorem applies?",
+          "text": "Consider Vertical Circle Critical Speed Energy Ratio relating initial and final mechanical states.",
+          "learner_stage": "FORMULATION",
+          "support_kind": "CONNECT"
+        },
+        {
+          "prompt": "What is the crucial relationship connecting the variables?",
+          "text": "Crux Move: Applying the vertical circular motion boundary condition T_B >= 0 to determine apex kinetic energy and using energy conservation over height 2L.",
+          "learner_stage": "RESOLUTION",
+          "support_kind": "TRANSFORM"
+        }
+      ],
+      "conditions": [],
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "EX-M36",
+          "wording_custody": "VERBATIM",
+          "stem_sha256": "5cd94ff098ab3cb5375207898d793623c5465f00ad2c4990a19f7ebaabc8fb1d",
+          "lot": "LOT-04"
+        },
+        "grade9v3:attempt_labels": {
+          "question_ref": "Q-PHY-WPE-B1-12",
+          "concept": "Work, Power and Energy Invariants",
+          "family": "Work-Energy Theorem and Mechanical Energy Conservation"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D2",
+            "score": 4,
+            "components": {
+              "concept_model_selection": 1,
+              "representation_translation": 1,
+              "reasoning_chain_length": 1,
+              "algebra_computational_load": 0,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Difficulty: APPLY D2 (4/10) evaluated across 5 QRT dimensions.",
+            "component_evidence": {
+              "concept_model_selection": "Vertical circular motion threshold dynamics and energy conservation.",
+              "representation_translation": "Interpreting vertical circle diagram geometry.",
+              "reasoning_chain_length": "Threshold condition -> energy conservation -> kinetic energy ratio.",
+              "algebra_computational_load": "Elementary integer ratio: 5 / 1.",
+              "trap_exception_sensitivity": "Must avoid assuming v_B = 0 at the top (which would cause string slackening)."
+            }
+          },
+          "common_wrong_route": "Common trap: misinterpreting system constraint or neglecting friction/energy dissipation, leading to distractor options.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "JEE Main 2024 (Online) 29th January Evening Shift",
+          "stable_crux_move": "Applying the vertical circular motion boundary condition T_B >= 0 to determine apex kinetic energy and using energy conservation over height 2L."
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "WPE-B1-Q12-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[2]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "grade9v3:governance": {
+          "academic_admission": "NOT_ADMITTED",
+          "disposition": "HOLD:ACADEMIC_ADMISSION",
+          "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED"
+        }
+      }
+    },
+    {
+      "id": "Q-PHY-WPE-B1-13",
+      "sequence": 13,
+      "source_id": "EX-M47",
+      "original_identifier": "JEE Main 2022 (Online) 29th July Morning Shift · EX-M47 · RETRIEVE · D1",
+      "stem": "A ball is projected with kinetic energy E, at an angle of 60^(∘) to the horizontal. The kinetic energy of this ball at the highest point of its flight will become :",
+      "options": [
+        "A: Zero",
+        "B: (𝐸)/(2)",
+        "C: (𝐸)/(4)",
+        "D: E"
+      ],
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Coaching predicted option: C: (𝐸)/(4)",
+        "reasoning": [
+          "1. Representation: Establish coordinate system, free-body system boundary, and identify initial states for EX-M47.",
+          "2. Connection: Initial launch kinetic energy: E = 1/2 m v^2. At the highest point of projectile flight, the vertical velocity component is zero (v_y = 0), while horizontal velocity remains constant: v_x = v * cos(60 deg) = v * (1/2) = v/2. Kinetic energy at peak: E' = 1/2 m (v_x)^2 = 1/2 m (v/2)^2 = 1/4 (1/2 m v^2) = E/4.",
+          "3. Resolution: Solve for the required target quantity and select matching option C:."
+        ],
+        "reasoning_route": [
+          {
+            "id": "WPE-B1-Q13-M1",
+            "kind": "REPRESENT",
+            "action": "Establish coordinate system, free-body system boundary, and identify initial states for EX-M47.",
+            "why_valid": "System boundary isolation determines internal vs external forces.",
+            "inputs": [
+              "Problem parameters and given initial conditions"
+            ],
+            "output": "Isolated system free-body model and state coordinates",
+            "source_ref": "JEE Main 2022 (Online) 29th July Morning Shift#EX-M47"
+          },
+          {
+            "id": "WPE-B1-Q13-M2",
+            "kind": "CONNECT",
+            "action": "Formulate the governing work-energy relation: PROJECTILE_PEAK_KINETIC_ENERGY.",
+            "why_valid": "Work-Energy Theorem and conservation of mechanical energy hold in inertial laboratory frames.",
+            "inputs": [
+              "Initial state mechanical energy and applied external/conservative forces"
+            ],
+            "output": "Governing equation: Initial launch kinetic energy: E = 1/2 m v^2. At the highest point of projectile...",
+            "source_ref": "JEE Main 2022 (Online) 29th July Morning Shift#EX-M47"
+          },
+          {
+            "id": "WPE-B1-Q13-M3",
+            "kind": "TRANSFORM",
+            "action": "Solve for the required target quantity and select matching option C:.",
+            "why_valid": "Algebraic manipulation and root extraction preserve equality on real physical domains.",
+            "inputs": [
+              "Governing work-energy equation"
+            ],
+            "output": "Exact target result agreeing with C: (𝐸)/(4)",
+            "source_ref": "JEE Main 2022 (Online) 29th July Morning Shift#EX-M47"
+          }
+        ],
+        "crux_move_ref": "WPE-B1-Q13-M2",
+        "check": "Author Limiting Case Verification: If projected vertically (90 deg), KE at peak is zero (Option A). If projected horizontally (0 deg), KE at peak is E (Option D). For 60 deg, KE is E * cos^2(60 deg) = E/4.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-PHYS-WPE-CONSERVATION",
+      "family_ref": "FAM-PHYS-WPE-CORE2-BATCH01",
+      "figure_refs": [],
+      "scaffolds": [
+        {
+          "prompt": "How should the physical system be isolated?",
+          "text": "Identify which bodies form the interacting system and establish coordinate directions.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT"
+        },
+        {
+          "prompt": "Which physical conservation law or work-energy theorem applies?",
+          "text": "Consider Projectile Peak Kinetic Energy relating initial and final mechanical states.",
+          "learner_stage": "FORMULATION",
+          "support_kind": "CONNECT"
+        },
+        {
+          "prompt": "What is the crucial relationship connecting the variables?",
+          "text": "Crux Move: Retrieving the constancy of horizontal velocity in 2D projectile motion and squaring the cosine factor: E_peak = E cos^2(60 deg) = E/4.",
+          "learner_stage": "RESOLUTION",
+          "support_kind": "TRANSFORM"
+        }
+      ],
+      "conditions": [],
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "EX-M47",
+          "wording_custody": "VERBATIM",
+          "stem_sha256": "99520cf83728c938297ec6a067aa32f4635bf8a7f2bd20d581941f0d6b41753d",
+          "lot": "LOT-04"
+        },
+        "grade9v3:attempt_labels": {
+          "question_ref": "Q-PHY-WPE-B1-13",
+          "concept": "Work, Power and Energy Invariants",
+          "family": "Work-Energy Theorem and Mechanical Energy Conservation"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D1",
+            "score": 2,
+            "components": {
+              "concept_model_selection": 0,
+              "representation_translation": 0,
+              "reasoning_chain_length": 1,
+              "algebra_computational_load": 0,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Difficulty: RETRIEVE D1 (2/10) evaluated across 5 QRT dimensions.",
+            "component_evidence": {
+              "concept_model_selection": "Standard parabolic trajectory velocity resolution.",
+              "representation_translation": "Direct symbolic manipulation.",
+              "reasoning_chain_length": "Identify horizontal speed -> compute kinetic energy.",
+              "algebra_computational_load": "Cos(60 deg) = 1/2, (1/2)^2 = 1/4.",
+              "trap_exception_sensitivity": "Prevalent beginner misconception that speed or kinetic energy is zero at highest point."
+            }
+          },
+          "common_wrong_route": "Common trap: misinterpreting system constraint or neglecting friction/energy dissipation, leading to distractor options.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "JEE Main 2022 (Online) 29th July Morning Shift",
+          "stable_crux_move": "Retrieving the constancy of horizontal velocity in 2D projectile motion and squaring the cosine factor: E_peak = E cos^2(60 deg) = E/4."
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "WPE-B1-Q13-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[2]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "grade9v3:governance": {
+          "academic_admission": "NOT_ADMITTED",
+          "disposition": "HOLD:ACADEMIC_ADMISSION",
+          "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED"
+        }
+      }
+    },
+    {
+      "id": "Q-PHY-WPE-B1-14",
+      "sequence": 14,
+      "source_id": "EX-M49",
+      "original_identifier": "JEE Main 2022 (Online) 27th July Morning Shift · EX-M49 · APPLY · D2",
+      "stem": "Sand is being dropped from a stationary dropper at a rate of 0.5kgs^(−1) on a conveyor belt moving with a velocity of 5ms^(−1) . The power needed to keep the belt moving with the same velocity will be :",
+      "options": [
+        "A: 1.25 W",
+        "B: 2.5 W",
+        "C: 6.25 W",
+        "D: 12.5 W"
+      ],
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Coaching predicted option: D: 12.5 W",
+        "reasoning": [
+          "1. Representation: Establish coordinate system, free-body system boundary, and identify initial states for EX-M49.",
+          "2. Connection: Mass rate dm/dt = 0.5 kg/s, belt velocity v = 5 m/s. The horizontal force required to accelerate newly dropped sand to belt speed is F = v * (dm/dt) = 5 m/s * 0.5 kg/s = 2.5 N. The power supplied by the motor to maintain constant velocity is P = F * v = 2.5 N * 5 m/s = 12.5 W.",
+          "3. Resolution: Solve for the required target quantity and select matching option D:."
+        ],
+        "reasoning_route": [
+          {
+            "id": "WPE-B1-Q14-M1",
+            "kind": "REPRESENT",
+            "action": "Establish coordinate system, free-body system boundary, and identify initial states for EX-M49.",
+            "why_valid": "System boundary isolation determines internal vs external forces.",
+            "inputs": [
+              "Problem parameters and given initial conditions"
+            ],
+            "output": "Isolated system free-body model and state coordinates",
+            "source_ref": "JEE Main 2022 (Online) 27th July Morning Shift#EX-M49"
+          },
+          {
+            "id": "WPE-B1-Q14-M2",
+            "kind": "CONNECT",
+            "action": "Formulate the governing work-energy relation: VARIABLE_MASS_BELT_POWER_NUMERICAL.",
+            "why_valid": "Work-Energy Theorem and conservation of mechanical energy hold in inertial laboratory frames.",
+            "inputs": [
+              "Initial state mechanical energy and applied external/conservative forces"
+            ],
+            "output": "Governing equation: Mass rate dm/dt = 0.5 kg/s, belt velocity v = 5 m/s. The horizontal force requir...",
+            "source_ref": "JEE Main 2022 (Online) 27th July Morning Shift#EX-M49"
+          },
+          {
+            "id": "WPE-B1-Q14-M3",
+            "kind": "TRANSFORM",
+            "action": "Solve for the required target quantity and select matching option D:.",
+            "why_valid": "Algebraic manipulation and root extraction preserve equality on real physical domains.",
+            "inputs": [
+              "Governing work-energy equation"
+            ],
+            "output": "Exact target result agreeing with D: 12.5 W",
+            "source_ref": "JEE Main 2022 (Online) 27th July Morning Shift#EX-M49"
+          }
+        ],
+        "crux_move_ref": "WPE-B1-Q14-M2",
+        "check": "Author Limiting Case Verification: Rate of gain of kinetic energy of sand is d(KE)/dt = 1/2 (dm/dt) v^2 = 1/2 (0.5)(25) = 6.25 W. An equal amount of power (6.25 W) is dissipated as heat in friction as the sand slips on the belt. Total power input by the motor must be 6.25 + 6.25 = 12.5 W.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-PHYS-WPE-CONSERVATION",
+      "family_ref": "FAM-PHYS-WPE-CORE2-BATCH01",
+      "figure_refs": [],
+      "scaffolds": [
+        {
+          "prompt": "How should the physical system be isolated?",
+          "text": "Identify which bodies form the interacting system and establish coordinate directions.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT"
+        },
+        {
+          "prompt": "Which physical conservation law or work-energy theorem applies?",
+          "text": "Consider Variable Mass Belt Power Numerical relating initial and final mechanical states.",
+          "learner_stage": "FORMULATION",
+          "support_kind": "CONNECT"
+        },
+        {
+          "prompt": "What is the crucial relationship connecting the variables?",
+          "text": "Crux Move: Applying variable-mass force relation F = v(dm/dt) to calculate required external motor power P = F*v = v^2(dm/dt), recognizing that mechanical power is twice the rate of kinetic energy increase.",
+          "learner_stage": "RESOLUTION",
+          "support_kind": "TRANSFORM"
+        }
+      ],
+      "conditions": [],
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "EX-M49",
+          "wording_custody": "VERBATIM",
+          "stem_sha256": "0e1ddae0acecd3dd63d5006fdce6616051e886fba96b35f836c70330d1b7f0de",
+          "lot": "LOT-04"
+        },
+        "grade9v3:attempt_labels": {
+          "question_ref": "Q-PHY-WPE-B1-14",
+          "concept": "Work, Power and Energy Invariants",
+          "family": "Work-Energy Theorem and Mechanical Energy Conservation"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D2",
+            "score": 4,
+            "components": {
+              "concept_model_selection": 1,
+              "representation_translation": 0,
+              "reasoning_chain_length": 1,
+              "algebra_computational_load": 0,
+              "trap_exception_sensitivity": 2
+            },
+            "basis": "Difficulty: APPLY D2 (4/10) evaluated across 5 QRT dimensions.",
+            "component_evidence": {
+              "concept_model_selection": "Variable-mass mechanics applied to steady conveyor belt.",
+              "representation_translation": "Direct text numerical translation.",
+              "reasoning_chain_length": "Force from mass flow -> power from F*v.",
+              "algebra_computational_load": "Direct arithmetic: 5 * 0.5 * 5 = 12.5 W.",
+              "trap_exception_sensitivity": "Severe attractor trap: computing d(1/2 m v^2)/dt = 6.25 W (Option C) by ignoring frictional heat dissipation."
+            }
+          },
+          "common_wrong_route": "Common trap: misinterpreting system constraint or neglecting friction/energy dissipation, leading to distractor options.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "JEE Main 2022 (Online) 27th July Morning Shift",
+          "stable_crux_move": "Applying variable-mass force relation F = v(dm/dt) to calculate required external motor power P = F*v = v^2(dm/dt), recognizing that mechanical power is twice the rate of kinetic energy increase."
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "WPE-B1-Q14-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[2]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "grade9v3:governance": {
+          "academic_admission": "NOT_ADMITTED",
+          "disposition": "HOLD:ACADEMIC_ADMISSION",
+          "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED"
+        }
+      }
+    },
+    {
+      "id": "Q-PHY-WPE-B1-15",
+      "sequence": 15,
+      "source_id": "EX-M50",
+      "original_identifier": "JEE Main 2022 (Online) 26th July Morning Shift · EX-M50 · APPLY · D2",
+      "stem": "As per the given figure, two blocks each of mass 250g are connected to a spring of spring constant 2Nm^(−1) . If both are given velocity 𝑣 in opposite directions, then maximum elongation of the spring is : [FIG-stem-1]",
+      "options": [
+        "A: (𝑣)/(2√(2))",
+        "B: (𝑣)/(2)",
+        "C: (𝑣)/(4)",
+        "D: (𝑣)/(√2)"
+      ],
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Coaching predicted option: B: (𝑣)/(2)",
+        "reasoning": [
+          "1. Representation: Establish coordinate system, free-body system boundary, and identify initial states for EX-M50.",
+          "2. Connection: Initial total momentum: P = m(-v) + m(+v) = 0. The center of mass is stationary. At maximum spring elongation x_m, relative speed between the two blocks is zero, so both blocks are instantaneously at rest relative to the center of mass (v_1 = v_2 = 0). By conservation of mechanical energy: Total Initial KE = Maximum Spring Elastic PE => 1/2 m v^2 + 1/2 m v^2 = 1/2 k x_m^2 => m v^2 = 1/2 k x_m^2 => x_m = sqrt(2 m v^2 / k) = v * sqrt(2m / k). Substituting m = 0.25 kg and k = 2 N/m: x_m = v * sqrt(2 * 0.25 / 2) = v * sqrt(0.25) = v * 0.5 = v / 2.",
+          "3. Resolution: Solve for the required target quantity and select matching option B:."
+        ],
+        "reasoning_route": [
+          {
+            "id": "WPE-B1-Q15-M1",
+            "kind": "REPRESENT",
+            "action": "Establish coordinate system, free-body system boundary, and identify initial states for EX-M50.",
+            "why_valid": "System boundary isolation determines internal vs external forces.",
+            "inputs": [
+              "Problem parameters and given initial conditions"
+            ],
+            "output": "Isolated system free-body model and state coordinates",
+            "source_ref": "JEE Main 2022 (Online) 26th July Morning Shift#EX-M50"
+          },
+          {
+            "id": "WPE-B1-Q15-M2",
+            "kind": "CONNECT",
+            "action": "Formulate the governing work-energy relation: TWO_BODY_SPRING_CENTER_OF_MASS_ENERGY.",
+            "why_valid": "Work-Energy Theorem and conservation of mechanical energy hold in inertial laboratory frames.",
+            "inputs": [
+              "Initial state mechanical energy and applied external/conservative forces"
+            ],
+            "output": "Governing equation: Initial total momentum: P = m(-v) + m(+v) = 0. The center of mass is stationary....",
+            "source_ref": "JEE Main 2022 (Online) 26th July Morning Shift#EX-M50"
+          },
+          {
+            "id": "WPE-B1-Q15-M3",
+            "kind": "TRANSFORM",
+            "action": "Solve for the required target quantity and select matching option B:.",
+            "why_valid": "Algebraic manipulation and root extraction preserve equality on real physical domains.",
+            "inputs": [
+              "Governing work-energy equation"
+            ],
+            "output": "Exact target result agreeing with B: (𝑣)/(2)",
+            "source_ref": "JEE Main 2022 (Online) 26th July Morning Shift#EX-M50"
+          }
+        ],
+        "crux_move_ref": "WPE-B1-Q15-M2",
+        "check": "Author Limiting Case Verification: If k -> infinity (rigid rod), x_m -> 0. If only one block were given velocity v (total momentum mv), V_cm = v/2, and internal KE = 1/2 mu v^2 = 1/4 m v^2, yielding x_m = v/(2*sqrt(2)) (Option A). With equal and opposite velocities, all initial KE is converted into spring PE, yielding x_m = v/2.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-PHYS-WPE-CONSERVATION",
+      "family_ref": "FAM-PHYS-WPE-CORE2-BATCH01",
+      "figure_refs": [
+        "fig_q15_spring_two_blocks.svg"
+      ],
+      "scaffolds": [
+        {
+          "prompt": "How should the physical system be isolated?",
+          "text": "Identify which bodies form the interacting system and establish coordinate directions.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT"
+        },
+        {
+          "prompt": "Which physical conservation law or work-energy theorem applies?",
+          "text": "Consider Two Body Spring Center Of Mass Energy relating initial and final mechanical states.",
+          "learner_stage": "FORMULATION",
+          "support_kind": "CONNECT"
+        },
+        {
+          "prompt": "What is the crucial relationship connecting the variables?",
+          "text": "Crux Move: Setting up the coupled two-block spring energy ledger in the zero-momentum center of mass frame where total kinetic energy m*v^2 fully transfers into spring potential 1/2 k x_m^2.",
+          "learner_stage": "RESOLUTION",
+          "support_kind": "TRANSFORM"
+        }
+      ],
+      "conditions": [],
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "EX-M50",
+          "wording_custody": "VERBATIM",
+          "stem_sha256": "eb9b4c3b60984e3eba754ab63859475dfa45b5cc75f7824e40dd3a845bd04501",
+          "lot": "LOT-04"
+        },
+        "grade9v3:attempt_labels": {
+          "question_ref": "Q-PHY-WPE-B1-15",
+          "concept": "Work, Power and Energy Invariants",
+          "family": "Work-Energy Theorem and Mechanical Energy Conservation"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D2",
+            "score": 4,
+            "components": {
+              "concept_model_selection": 1,
+              "representation_translation": 1,
+              "reasoning_chain_length": 1,
+              "algebra_computational_load": 0,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Difficulty: APPLY D2 (4/10) evaluated across 5 QRT dimensions.",
+            "component_evidence": {
+              "concept_model_selection": "Two-body symmetric oscillator energy conservation.",
+              "representation_translation": "Interpreting spring-mass schematic and opposite velocity arrows.",
+              "reasoning_chain_length": "Center of mass rest condition -> full KE to PE transfer -> solve x_m.",
+              "algebra_computational_load": "Elementary square root: sqrt(0.25) = 0.5.",
+              "trap_exception_sensitivity": "Must avoid accounting for only one block's kinetic energy (which gives Option D: v/sqrt(2))."
+            }
+          },
+          "common_wrong_route": "Common trap: misinterpreting system constraint or neglecting friction/energy dissipation, leading to distractor options.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "JEE Main 2022 (Online) 26th July Morning Shift",
+          "stable_crux_move": "Setting up the coupled two-block spring energy ledger in the zero-momentum center of mass frame where total kinetic energy m*v^2 fully transfers into spring potential 1/2 k x_m^2."
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "WPE-B1-Q15-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[2]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "grade9v3:governance": {
+          "academic_admission": "NOT_ADMITTED",
+          "disposition": "HOLD:ACADEMIC_ADMISSION",
+          "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED"
+        }
+      }
+    }
+  ]
+}

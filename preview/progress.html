@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Progress — Grade9 v4.0 Alpha Preview</title>
+    <link rel="stylesheet" href="assets/app.css">
+<script data-grade9-nav defer src="../site-nav.js"></script></head>
+<body>
+    <header class="preview-page-header">
+        <div class="header-container">
+            <div><span class="brand-tag">PHYSICS / WORK, POWER &amp; ENERGY</span><h1 class="brand-title">My progress</h1><p class="page-subtitle">See what you explored in this browser session. You can reset this local progress any time.</p></div>
+        </div>
+    </header>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a><span aria-hidden="true">›</span>
+        <a href="../physics/index.html">Physics</a><span aria-hidden="true">›</span>
+        <a href="../physics/wpe/index.html">WPE</a><span aria-hidden="true">›</span>
+        <span aria-current="page">My progress</span>
+    </nav>
+
+    <main>
+                <aside class="banner-disclosure" role="note" aria-label="Learning preview status">
+            <div class="preview-note-line"><span class="preview-pill">Preview</span> <strong>Progress is a local preview indicator, not a graded test or certified learning record.</strong></div>
+            <details><summary>Why is this marked as a preview?</summary><p>Academic admissions: <strong>0</strong>. Original exam keys, figure rights, scientific review, topic-adapter qualification and learner-release approval remain pending where applicable. Successful website tests do not provide academic approval.</p></details>
+        </aside>
+
+        <section class="card" id="progress-status-display">
+            <h2>Your activity in this session</h2>
+            <p id="progress-summary-text" style="font-weight: 500; color: var(--accent);">
+                Loading local session status...
+            </p>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Activity</th>
+                            <th>Subject</th>
+                            <th>Topic</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Work-Energy Lesson</strong></td>
+                            <td>Physics (Pilot)</td>
+                            <td>Conservative Fields &amp; Wells</td>
+                            <td><span id="status-wpe-lesson" class="badge badge-hold">Not Started</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Energy Practice Trial</strong></td>
+                            <td>Physics (Pilot)</td>
+                            <td>Ungraded Attempt &amp; Quadratic Derivation</td>
+                            <td><span id="status-wpe-practice" class="badge badge-hold">Not Started</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Algebraic Invariants</strong></td>
+                            <td>Mathematics</td>
+                            <td>Symmetric Polynomials &amp; Roots</td>
+                            <td><span class="badge badge-hold">Draft / Hold</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Chemical Equilibrium</strong></td>
+                            <td>Chemistry</td>
+                            <td>Dynamic Law of Mass Action</td>
+                            <td><span class="badge badge-hold">Draft / Hold</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-top: 24px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
+                <button type="button" id="btn-reset-progress" class="btn btn-secondary">
+                    Reset my progress
+                </button>
+                <span id="reset-feedback" style="display: none; font-size: 13px; color: #16a34a; font-weight: 600;"></span>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>How this progress is saved</h2>
+            <p>
+                In alignment with Grade9 v4.0 architecture, this public Alpha preview adheres to the following client-side data boundaries:
+            </p>
+            <ul style="margin-left: 20px; margin-bottom: 16px; font-size: 14px; line-height: 1.8;">
+                <li><strong>No User Identification:</strong> The app JavaScript requests no learner identity or credentials and does not transmit the learner explanation. Hosting providers can still process server access logs and IP addresses.</li>
+                <li><strong>Ephemeral Session Memory:</strong> Progress flags, selected answer, and timestamp are stored in <code>sessionStorage</code> where supported; no explanation text is saved. Reset clears this app state. Browser session lifetime depends on browser behavior.</li>
+                <li><strong>Local Calculations:</strong> The slider and attempt-length check run locally. The explanation is not automatically judged for physics correctness. Static resource requests may reach the host when viewed over HTTP.</li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="practice.html" class="btn btn-secondary">&larr; Back to Practice</a>
+                <a href="alpha-board.html" class="btn btn-primary">Inspect Alpha Roadmap &rarr;</a>
+            </div>
+        </section>
+
+        <footer>
+            Grade9 v4.0 · Original learning preview · Not an approved examination release
+        </footer>
+    </main>
+
+    <script src="assets/app.js"></script>
+</body>
+</html>

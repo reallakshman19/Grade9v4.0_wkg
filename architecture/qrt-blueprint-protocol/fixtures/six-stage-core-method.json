@@ -1,0 +1,144 @@
+{
+  "schema": "g9v4-core1b-six-stage-method-fixture/v1",
+  "status": "AUTHOR_EXPOSED_TRAINING_NOT_QRT_NOT_LEARNER_EVIDENCE",
+  "scope": "Six-phase Core1B method for MAIN and each instance; distinct Core1A completed teaching",
+  "blueprint": {
+    "path": "templates/physics-blueprint/physics-blueprint.D3-D4.json",
+    "version": "0.2.0",
+    "status": "DRAFT_OWNER_REVIEW",
+    "stage_source": "common.page_anatomy.core1b.sections"
+  },
+  "method": {
+    "known_skill": "Y: already taught law and prerequisite",
+    "route": "Z: permissible cue connecting Y to fresh problem",
+    "protected_step": "W: learner-owned decisive inference",
+    "hint_order": [
+      "H1 CLARIFY",
+      "H2 CORRELATE",
+      "H3 OPEN_THE_WAY"
+    ],
+    "evidence_states": [
+      "DEMONSTRATED",
+      "UNCERTAIN",
+      "MISSING",
+      "UNKNOWN"
+    ],
+    "no_claims": [
+      "No real learner was observed",
+      "No independent QRT was performed",
+      "No approved Blueprint or adapter was selected"
+    ]
+  },
+  "stages": [
+    {
+      "key": "predict",
+      "title": "Predict",
+      "principle": "Commit to a justified physical choice before solution reveal",
+      "learner_action": "State the initial model and why it might work",
+      "expected_evidence": "Recorded pre-reveal prediction and exposure status",
+      "failure": "Only a guess or answer already revealed",
+      "witness": [
+        "B1",
+        "B4",
+        "B5"
+      ]
+    },
+    {
+      "key": "attempt",
+      "title": "Attempt",
+      "principle": "Elicit fresh learner-owned inference W with protected first response",
+      "learner_action": "Choose a one-second flow model and build independent force and power rates",
+      "expected_evidence": "Immutable first model, saved time, ordered hint and reveal exposure",
+      "failure": "Copied Core1A or hinted W reported as unassisted",
+      "witness": [
+        "B2",
+        "B4",
+        "B5"
+      ]
+    },
+    {
+      "key": "reconstruct",
+      "title": "Reconstruct",
+      "principle": "Explain why each model step and physical condition is valid",
+      "learner_action": "Find the first difference between their model and the full warranted ledger",
+      "expected_evidence": "Model comparison, accepted and rejected reasoning, independent check",
+      "failure": "Only final numeric answer or formula",
+      "witness": [
+        "B3",
+        "B6",
+        "B7"
+      ]
+    },
+    {
+      "key": "diagnose",
+      "title": "Diagnose",
+      "principle": "Locate misconception from actual answer evidence rather than guess",
+      "learner_action": "Identify first wrong inference and what condition it violates",
+      "expected_evidence": "Diagnostic claim supported by saved first response, otherwise UNCERTAIN",
+      "failure": "A clicked misconception label treated as proven",
+      "witness": [
+        "B5",
+        "B6"
+      ]
+    },
+    {
+      "key": "repair",
+      "title": "Repair",
+      "principle": "Rebuild the causal model, not merely the final number",
+      "learner_action": "Rewrite first wrong physical step and explain replacement with Core1A reason",
+      "expected_evidence": "Separate repaired inference and physical check",
+      "failure": "Overwrite original or change answer without reason",
+      "witness": [
+        "B3",
+        "B5",
+        "B6"
+      ]
+    },
+    {
+      "key": "boundary_test",
+      "title": "Boundary test / Edge case",
+      "principle": "Verify transfer after changing a governing condition",
+      "learner_action": "Recalculate with a slower belt, changed flow rate and incoming speed kept fixed",
+      "expected_evidence": "Protected new model, check, and identified changed condition",
+      "failure": "Only cosmetic number change or solution shown in advance",
+      "witness": [
+        "B4",
+        "B5",
+        "B6",
+        "B7"
+      ]
+    }
+  ],
+  "examples": {
+    "conveyor": {
+      "topic": "C07",
+      "core1a": {
+        "force_N": 2,
+        "motor_W": 4,
+        "kinetic_W": 2,
+        "heat_W": 2
+      },
+      "fresh": {
+        "flow_kg_s": 2,
+        "force_N": 6,
+        "motor_W": 24,
+        "kinetic_W": 15,
+        "heat_W": 9
+      },
+      "boundary": {
+        "flow_kg_s": 1,
+        "force_N": 1,
+        "motor_W": 2,
+        "kinetic_W": 1.5,
+        "heat_W": 0.5
+      }
+    },
+    "vertical_circle": {
+      "topic": "C06",
+      "candidate_top_speed_squared_m2_s2": 9,
+      "top_tension_N": -1,
+      "boundary_top_speed_squared_m2_s2": 24,
+      "boundary_top_tension_N": 14
+    }
+  }
+}

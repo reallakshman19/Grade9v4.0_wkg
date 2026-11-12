@@ -1,0 +1,17 @@
+{
+  "source_id": "AN-2",
+  "task_identity": "Q-ID-64",
+  "sequence": 55,
+  "batch_sequence": 10,
+  "paper": "JEE Main 2026 (Online), 22 January, Evening Shift",
+  "stem_text": "Given below are two statements:\nStatement I: An object moves from position r₁ to position r₂ under a conservative force field F⃗. The work done by the force is W = −∫(r₁→r₂) F⃗·dr⃗.\nStatement II: Any object moving from one location to another location can follow infinite number of paths. Therefore, the amount of work done by the object changes with the path it follows for a conservative force.",
+  "stem_sha256": "f55524808b7e173fa787c96f13a1df0ea75a0a2147a7fe60576d7af1c4697ced",
+  "options": [
+    "A: Statement I is true but Statement II is false",
+    "B: Statement I is false but Statement II is true",
+    "C: Both Statement I and Statement II are false",
+    "D: Both Statement I and Statement II are true"
+  ],
+  "figure_reference": null,
+  "confidentiality_notice": "Source custody blind packet. Academic solve, answer key, and scoring omitted. Private review only."
+}

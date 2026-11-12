@@ -1,0 +1,105 @@
+{
+  "sequence": 39,
+  "batch_sequence": 9,
+  "task_identity": "Q-ID-45",
+  "stable_id": "PHYS-WPE-LOT09-Q39",
+  "source_id": "EX-M106",
+  "lot": "LOT-09",
+  "batch": "BATCH-C",
+  "paper": "AIEEE 2006",
+  "source_type": "EXAM_PAPER_TRANSCRIBED",
+  "source_custody": "VERIFIED_TEXT",
+  "stem_text": "A mass of 𝑀 𝑘𝑔 is suspended by a weightless string. The horizontal force that is required to displace it until the string makes an angle of 45^(∘) with the initial vertical direction is",
+  "stem_sha256": "89395cca6f98acf3a6845a526fe23d22fd1ab044eb29fd937ac5a5ca6a97d824",
+  "source_hash": "89395cca6f98acf3a6845a526fe23d22fd1ab044eb29fd937ac5a5ca6a97d824",
+  "source_record_digest": "sha256:89395cca6f98acf3a6845a526fe23d22fd1ab044eb29fd937ac5a5ca6a97d824",
+  "duplicate_parent": null,
+  "scope": "PRIMARY_IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "NOT_REQUIRED",
+  "figure_reference": null,
+  "options": [
+    "A: 𝑀𝑔(√(2)+1)",
+    "B: 𝑀𝑔√(2)",
+    "C: (𝑀𝑔)/(√(2))",
+    "D: 𝑀𝑔(√(2)−1)"
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "CONSTANT_HORIZONTAL_FORCE_PENDULUM",
+    "predicted_option": "D: 𝑀𝑔(√(2)−1)",
+    "derivation": "Horizontal displacement of mass: delta_x = L*sin(45) = L/sqrt(2). Vertical rise: delta_y = L*(1 - cos(45)) = L*(1 - 1/sqrt(2)). By work-energy theorem, W_net = W_F - Delta U = 0 (comes to rest at 45 deg) => F * (L/sqrt(2)) = M*g*L*(1 - 1/sqrt(2)) = M*g*L*((sqrt(2)-1)/sqrt(2)). Multiplying by sqrt(2)/L: F = M*g*(sqrt(2) - 1)."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 2,
+          "evidence": "Work-energy theorem for constant force displacement vs quasi-static equilibrium"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Geometry of pendulum displacement: horizontal = L*sin(45), vertical = L*(1-cos(45))"
+        },
+        "reasoning_chain_length": {
+          "score": 2,
+          "evidence": "Equating work done by constant horizontal force to gravitational potential gain at momentary rest"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Radical factoring: (sqrt(2)-1)/sqrt(2) * sqrt(2) = sqrt(2)-1"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Recognizing essential model ambiguity between constant force vs quasi-static force"
+        }
+      },
+      "total": 7,
+      "band": "D3",
+      "prior_proposal": {
+        "source": "INITIAL_CALIBRATION",
+        "scores": "2/1/2/1/1",
+        "total": 7
+      },
+      "differences": "Initial native factor audit"
+    },
+    "demand_proposal": {
+      "primary": "MODEL",
+      "secondary": [
+        "APPLY"
+      ],
+      "rationale": "Formulating work-energy model for constant horizontal force pulling pendulum to momentary rest",
+      "candidate_cell": "QRT-MODEL-D3",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": {
+    "blueprint_id": "PHYS-QRT-BLUEPRINT",
+    "version": "0.2.0",
+    "sha256": "ac32dc937403cac33c76343f2e7e0dabd7c2c4a3188cb3b453ddf2576578ddf9",
+    "blueprint_cell_ref": "D3.4",
+    "topic_tag": "WPE-02-POTENTIAL",
+    "status": "PINNED_CELL_UNQUALIFIED"
+  },
+  "adapter_fit": {
+    "adapter_id": "PHYS-TOPIC-WPE",
+    "sha256": "899e61e59370a3fc5d6f73b7d8cbb65165d0782c9fba20acd83439ae441e6a9b",
+    "status": "CELL_UNQUALIFIED_ADAPTER_GAP",
+    "note": "WPE adapter defines cell D3.1 only. Target cell D3.4 requires adapter cell expansion; flagged as SPEC_GAP."
+  },
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_INDEPENDENT_REVIEW",
+  "b2_blind_status": "PENDING_BLIND_SOLVE",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (Coaching key unverified against official NTA master)",
+    "HOLD:MODEL_AMBIGUITY (Constant force work-energy gives Mg(sqrt(2)-1) whereas quasi-static equilibrium gives Mg)",
+    "HOLD:ADAPTER_CELL_GAP (WPE adapter lacks D3.4 cell authority)",
+    "HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)"
+  ],
+  "next_action": "B2 independent source-only solve + official NTA master key reconciliation"
+}

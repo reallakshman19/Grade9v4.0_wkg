@@ -1,0 +1,32 @@
+{
+  "task": "WPE-CORE2-NATIVE-INTEGRATION-R1",
+  "scope": "Separate private candidate only",
+  "changes": [
+    "Explicit source-bound synthetic native adapter and authored bindings",
+    "Native manifest selects 8 preserved textbook questions plus 1 synthetic control",
+    "Native package changes only title and existing asset paths, with 1 appended synthetic representation",
+    "New strict synthetic-only native manifest",
+    "14 received examination records retained and held; regenerated metadata/native readiness reports",
+    "Private entry/matrix/filter catalogue, mapping, controls and continuity"
+  ],
+  "unchanged": [
+    "Original textbook bank/intake and complete retained baseline",
+    "Both original handoff archives",
+    "Canonical library and native schema/renderer/tool files",
+    "Original skill files and Physics blueprints/adapters"
+  ],
+  "test_counts": {
+    "upstream_unit_rerun": 33,
+    "current_author_integration": 26,
+    "browser_assertions": 60,
+    "actual_build_controls": 3
+  },
+  "acceptance": {
+    "academic": "NOT_RUN",
+    "distinct_technical_qa": "NOT_RUN",
+    "owner_product": "NOT_REQUESTED_BY_THIS_RECEIPT",
+    "real_exam_admissions": 0
+  },
+  "open_reference_gaps": 10,
+  "link_findings_file": "LOCAL_LINKS.json"
+}

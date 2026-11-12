@@ -1,0 +1,17 @@
+{
+  "source_id": "EX-M106",
+  "task_identity": "Q-ID-45",
+  "sequence": 39,
+  "batch_sequence": 9,
+  "paper": "AIEEE 2006",
+  "stem_text": "A mass of 𝑀 𝑘𝑔 is suspended by a weightless string. The horizontal force that is required to displace it until the string makes an angle of 45^(∘) with the initial vertical direction is",
+  "stem_sha256": "89395cca6f98acf3a6845a526fe23d22fd1ab044eb29fd937ac5a5ca6a97d824",
+  "options": [
+    "A: 𝑀𝑔(√(2)+1)",
+    "B: 𝑀𝑔√(2)",
+    "C: (𝑀𝑔)/(√(2))",
+    "D: 𝑀𝑔(√(2)−1)"
+  ],
+  "figure_reference": null,
+  "confidentiality_notice": "Source custody blind packet. Academic solve, answer key, and scoring omitted. Private review only."
+}

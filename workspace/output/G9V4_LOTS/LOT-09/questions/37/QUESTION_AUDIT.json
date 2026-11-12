@@ -1,0 +1,93 @@
+{
+  "sequence": 37,
+  "batch_sequence": 7,
+  "task_identity": "Q-ID-43",
+  "stable_id": "PHYS-WPE-LOT09-Q37",
+  "source_id": "EX-M101",
+  "lot": "LOT-09",
+  "batch": "BATCH-C",
+  "paper": "AIEEE 2012",
+  "source_type": "EXAM_PAPER_TRANSCRIBED",
+  "source_custody": "VERIFIED_TEXT",
+  "stem_text": "This question has Statement 1 and Statement 2. Of the four choices given after the Statements, choose the one that best describes the two Statements. If two springs 𝑆_1 and 𝑆_2 of force constants 𝑘_1 and 𝑘_2 , respectively, are stretched by the same force, it is found that more work is done on spring 𝑆_1 than on spring 𝑆_2 . STATEMENT 1: If stretched by the same amount, work done on 𝑆_1 is more than that on 𝑆_2 STATEMENT 2: 𝑘_1<𝑘_2",
+  "stem_sha256": "c6caf00ac4069a7c971ef146bba439ffb17602663de90cb408c805f887fc639c",
+  "source_hash": "c6caf00ac4069a7c971ef146bba439ffb17602663de90cb408c805f887fc639c",
+  "source_record_digest": "sha256:c6caf00ac4069a7c971ef146bba439ffb17602663de90cb408c805f887fc639c",
+  "duplicate_parent": null,
+  "scope": "PRIMARY_IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "NOT_REQUIRED",
+  "figure_reference": null,
+  "options": [
+    "A: Statement 1 is false, Statement 2 is true",
+    "B: Statement 1 is true, Statement 2 is false",
+    "C: Statement 1 is true, Statement 2 is true, Statement 2 is the correct explanation for Statement 1",
+    "D: Statement 1 is true, Statement 2 is true, Statement 2 is not the correct explanation for Statement 1"
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "WORK_INEQUALITY_COMPARISON",
+    "predicted_option": "A: Statement 1 is false, Statement 2 is true",
+    "derivation": "Same force F: W = F^2/(2k). W1 > W2 => F^2/(2k1) > F^2/(2k2) => k1 < k2. Statement 2 is TRUE. Same extension x: W = (1/2)kx^2. Since k1 < k2, W1 < W2. Statement 1 claims W1 > W2, which is FALSE. Therefore Statement 1 is false, Statement 2 is true."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Contrasting constant-force vs constant-displacement spring energy regimes"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Translating verbal statements into mathematical inequalities"
+        },
+        "reasoning_chain_length": {
+          "score": 2,
+          "evidence": "Deduce k1 < k2 from constant force condition, then evaluate constant displacement condition"
+        },
+        "algebra_computational_load": {
+          "score": 0,
+          "evidence": "Qualitative inequality comparison"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Inversion of inequality when moving from F^2/(2k) to (1/2)kx^2"
+        }
+      },
+      "total": 5,
+      "band": "D2",
+      "prior_proposal": {
+        "source": "INITIAL_CALIBRATION",
+        "scores": "1/1/2/0/1",
+        "total": 5
+      },
+      "differences": "Initial native factor audit"
+    },
+    "demand_proposal": {
+      "primary": "JUSTIFY",
+      "secondary": [
+        "APPLY"
+      ],
+      "rationale": "Evaluating logical validity and explanation relationship of dual physics statements",
+      "candidate_cell": "QRT-JUSTIFY-D2",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_INDEPENDENT_REVIEW",
+  "b2_blind_status": "PENDING_BLIND_SOLVE",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (Coaching key unverified against official NTA master)",
+    "HOLD:JUSTIFY_REQUIRES_ADJUDICATION (QRT review required for Statement 1/2 justification rubric)",
+    "HOLD:SPEC_PENDING (No qualified D1/D2 common blueprint or topic adapter)",
+    "HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)"
+  ],
+  "next_action": "B2 independent source-only solve + official NTA master key reconciliation"
+}

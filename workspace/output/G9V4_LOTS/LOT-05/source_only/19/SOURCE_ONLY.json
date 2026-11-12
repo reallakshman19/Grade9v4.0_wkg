@@ -1,0 +1,17 @@
+{
+  "source_id": "EX-M64",
+  "task_identity": "Q-ID-22",
+  "sequence": 19,
+  "batch_sequence": 4,
+  "paper": "JEE Main 2021 (Online) 20th July Evening Shift",
+  "stem_text": "A body at rest is moved along a horizontal straight line by a machine delivering a constant power. The distance moved by the body in time 't' is proportional to :",
+  "stem_sha256": "780d5949eaaafe9e699eff01f856c9fd7e5aaf2eb1589fbf4ce4713220907e1c",
+  "options": [
+    "A: \ud835\udc61^((3)/(2))",
+    "B: \ud835\udc61^((1)/(2))",
+    "C: \ud835\udc61^((1)/(4))",
+    "D: \ud835\udc61^((3)/(4))"
+  ],
+  "figure_reference": "NONE (pure text question)",
+  "confidentiality_notice": "SEALED SOURCE-ONLY PACKET FOR BLIND INDEPENDENT REVIEW. Contains NO answers, keys, explanations, candidate solutions, SL2 factor scores, or prior review commentary."
+}

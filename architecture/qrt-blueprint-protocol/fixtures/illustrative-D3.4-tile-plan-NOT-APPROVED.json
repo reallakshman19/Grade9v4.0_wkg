@@ -1,0 +1,245 @@
+{
+  "schema": "g9v4-qrt-blueprint-tile-build-plan/v1",
+  "tile_id": "PHY-WPE-D3.4",
+  "band": "D3",
+  "primary_operation": "MODEL",
+  "blueprint": {
+    "id": "PHYS-QRT-BLUEPRINT",
+    "version": "0.2.0",
+    "status": "DRAFT_OWNER_REVIEW",
+    "selected_cell": "D3.4"
+  },
+  "adapter": {
+    "id": "PHYS-TOPIC-WPE",
+    "version": null,
+    "status": "UNSELECTED",
+    "exact_path": null,
+    "git_blob_sha": null
+  },
+  "sources": [
+    {
+      "question_id": "EX-M16",
+      "role": "BRIDGE",
+      "source_gate": "HOLD"
+    }
+  ],
+  "instances": [
+    {
+      "id": "CONVEYOR-MOMENTUM",
+      "subtopic_ref": "WPE-C07",
+      "inferential_jump": "Use mass per second entering the belt rather than already accumulated material.",
+      "core1a_steps": [
+        {
+          "action": "Draw a horizontal incoming/outgoing speed arrow for a one-second batch.",
+          "why_valid": "Momentum change applies to the stream crossing the chosen system boundary.",
+          "source_ref": "WPE-C07"
+        },
+        {
+          "action": "Calculate horizontal force from the incoming-to-outgoing momentum rate.",
+          "why_valid": "Rate of momentum change equals force under the stated steady-flow idealization.",
+          "source_ref": "WPE-C07"
+        }
+      ],
+      "wrong_path": "Multiply total collected mass by speed rather than mass flow rate.",
+      "exit_check": "Check kg/s multiplied by m/s gives newtons."
+    },
+    {
+      "id": "CONVEYOR-ENERGY",
+      "subtopic_ref": "WPE-C07",
+      "inferential_jump": "Distinguish pickup motor power from acquired kinetic energy and heat.",
+      "core1a_steps": [
+        {
+          "action": "Multiply pickup force by belt speed.",
+          "why_valid": "Motor contact at steady belt speed transfers mechanical energy at F·v.",
+          "source_ref": "WPE-C07"
+        },
+        {
+          "action": "Compare with change of material kinetic energy per second.",
+          "why_valid": "Slipping dissipates the difference as heat in the stated idealization.",
+          "source_ref": "WPE-C07"
+        }
+      ],
+      "wrong_path": "Set motor power equal to chip kinetic energy rate without accounting for slip.",
+      "exit_check": "Check power in watts and total energy-rate balance."
+    }
+  ],
+  "main_cycle": {
+    "kind": "MAIN",
+    "instance_refs": [
+      "CONVEYOR-MOMENTUM",
+      "CONVEYOR-ENERGY"
+    ],
+    "predict": "Predict which physical rate matters most before any calculation.",
+    "attempt": {
+      "prompt": "Newly authored practice: select the moving material stream, trace incoming/outgoing horizontal speed and decide which work/power rule applies. Give a model and check; this is not an exam original.",
+      "protected_decision": "Choose the correct flow system and distinguish force × belt speed from chips' kinetic-energy rate.",
+      "h1": "Identify what arrives during one second.",
+      "h2": "Mark incoming versus outgoing horizontal momentum.",
+      "h3": "Connect the rate of momentum change to force, but choose the energy split yourself.",
+      "first_answer_saved_before_reveal": true
+    },
+    "reconstruct": "Reveal the complete force, mechanical-power and heat-energy ledger only after the first response.",
+    "diagnose": "Ask whether the learner used total accumulated material instead of a mass flow rate; verify from saved answer rather than guessing.",
+    "repair": "Recompute the one-second rate after correcting the model; preserve original and corrected responses separately.",
+    "boundary_test": "Change the incoming horizontal speed and predict the effect on force and heat with the same belt speed.",
+    "band_check": {
+      "status": "PROPOSED",
+      "claimed_band": "D3",
+      "factors": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "AUTHOR TRAINING RATING ONLY: select a physical system before calculating"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "AUTHOR TRAINING RATING ONLY: translate a verbal flow into horizontal arrows and quantities"
+        },
+        "reasoning_chain_length": {
+          "score": 2,
+          "evidence": "AUTHOR TRAINING RATING ONLY: connect flow momentum, force and motor power"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "AUTHOR TRAINING RATING ONLY: multiply and subtract with appropriate units"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "AUTHOR TRAINING RATING ONLY: guard against treating all motor power as acquired kinetic energy"
+        }
+      },
+      "total": 6,
+      "independent_receipt": null
+    }
+  },
+  "instance_cycles": [
+    {
+      "kind": "INSTANCE",
+      "instance_refs": [
+        "CONVEYOR-MOMENTUM"
+      ],
+      "predict": "Predict which physical rate matters most before any calculation.",
+      "attempt": {
+        "prompt": "Newly authored practice: select the moving material stream, trace incoming/outgoing horizontal speed and decide which work/power rule applies. Give a model and check; this is not an exam original.",
+        "protected_decision": "Choose the correct flow system and distinguish force × belt speed from chips' kinetic-energy rate.",
+        "h1": "Identify what arrives during one second.",
+        "h2": "Mark incoming versus outgoing horizontal momentum.",
+        "h3": "Connect the rate of momentum change to force, but choose the energy split yourself.",
+        "first_answer_saved_before_reveal": true
+      },
+      "reconstruct": "Reveal the complete force, mechanical-power and heat-energy ledger only after the first response.",
+      "diagnose": "Ask whether the learner used total accumulated material instead of a mass flow rate; verify from saved answer rather than guessing.",
+      "repair": "Recompute the one-second rate after correcting the model; preserve original and corrected responses separately.",
+      "boundary_test": "Change the incoming horizontal speed and predict the effect on force and heat with the same belt speed.",
+      "band_check": {
+        "status": "PROPOSED",
+        "claimed_band": "D2",
+        "factors": {
+          "concept_model_selection": {
+            "score": 1,
+            "evidence": "AUTHOR TRAINING RATING ONLY: select a physical system before calculating"
+          },
+          "representation_translation": {
+            "score": 1,
+            "evidence": "AUTHOR TRAINING RATING ONLY: translate a verbal flow into horizontal arrows and quantities"
+          },
+          "reasoning_chain_length": {
+            "score": 1,
+            "evidence": "AUTHOR TRAINING RATING ONLY: connect flow momentum, force and motor power"
+          },
+          "algebra_computational_load": {
+            "score": 1,
+            "evidence": "AUTHOR TRAINING RATING ONLY: multiply and subtract with appropriate units"
+          },
+          "trap_exception_sensitivity": {
+            "score": 0,
+            "evidence": "AUTHOR TRAINING RATING ONLY: guard against treating all motor power as acquired kinetic energy"
+          }
+        },
+        "total": 4,
+        "independent_receipt": null
+      }
+    },
+    {
+      "kind": "INSTANCE",
+      "instance_refs": [
+        "CONVEYOR-ENERGY"
+      ],
+      "predict": "Predict which physical rate matters most before any calculation.",
+      "attempt": {
+        "prompt": "Newly authored practice: select the moving material stream, trace incoming/outgoing horizontal speed and decide which work/power rule applies. Give a model and check; this is not an exam original.",
+        "protected_decision": "Choose the correct flow system and distinguish force × belt speed from chips' kinetic-energy rate.",
+        "h1": "Identify what arrives during one second.",
+        "h2": "Mark incoming versus outgoing horizontal momentum.",
+        "h3": "Connect the rate of momentum change to force, but choose the energy split yourself.",
+        "first_answer_saved_before_reveal": true
+      },
+      "reconstruct": "Reveal the complete force, mechanical-power and heat-energy ledger only after the first response.",
+      "diagnose": "Ask whether the learner used total accumulated material instead of a mass flow rate; verify from saved answer rather than guessing.",
+      "repair": "Recompute the one-second rate after correcting the model; preserve original and corrected responses separately.",
+      "boundary_test": "Change the incoming horizontal speed and predict the effect on force and heat with the same belt speed.",
+      "band_check": {
+        "status": "PROPOSED",
+        "claimed_band": "D2",
+        "factors": {
+          "concept_model_selection": {
+            "score": 1,
+            "evidence": "AUTHOR TRAINING RATING ONLY: select a physical system before calculating"
+          },
+          "representation_translation": {
+            "score": 1,
+            "evidence": "AUTHOR TRAINING RATING ONLY: translate a verbal flow into horizontal arrows and quantities"
+          },
+          "reasoning_chain_length": {
+            "score": 1,
+            "evidence": "AUTHOR TRAINING RATING ONLY: connect flow momentum, force and motor power"
+          },
+          "algebra_computational_load": {
+            "score": 1,
+            "evidence": "AUTHOR TRAINING RATING ONLY: multiply and subtract with appropriate units"
+          },
+          "trap_exception_sensitivity": {
+            "score": 0,
+            "evidence": "AUTHOR TRAINING RATING ONLY: guard against treating all motor power as acquired kinetic energy"
+          }
+        },
+        "total": 4,
+        "independent_receipt": null
+      }
+    }
+  ],
+  "b1_b7": {
+    "B1": {
+      "status": "NOT_RUN",
+      "evidence": "EXAMPLE_NOT_A_REVIEW__NO_NATIVE_WITNESS"
+    },
+    "B2": {
+      "status": "NOT_RUN",
+      "evidence": "EXAMPLE_NOT_A_REVIEW__NO_NATIVE_WITNESS"
+    },
+    "B3": {
+      "status": "NOT_RUN",
+      "evidence": "EXAMPLE_NOT_A_REVIEW__NO_NATIVE_WITNESS"
+    },
+    "B4": {
+      "status": "NOT_RUN",
+      "evidence": "EXAMPLE_NOT_A_REVIEW__NO_NATIVE_WITNESS"
+    },
+    "B5": {
+      "status": "NOT_RUN",
+      "evidence": "EXAMPLE_NOT_A_REVIEW__NO_NATIVE_WITNESS"
+    },
+    "B6": {
+      "status": "NOT_RUN",
+      "evidence": "EXAMPLE_NOT_A_REVIEW__NO_NATIVE_WITNESS"
+    },
+    "B7": {
+      "status": "NOT_RUN",
+      "evidence": "EXAMPLE_NOT_A_REVIEW__NO_NATIVE_WITNESS"
+    }
+  },
+  "release": {
+    "status": "AUTHOR_DRAFT_ONLY",
+    "owner_receipt": null,
+    "qualified_tile_receipt": null
+  }
+}

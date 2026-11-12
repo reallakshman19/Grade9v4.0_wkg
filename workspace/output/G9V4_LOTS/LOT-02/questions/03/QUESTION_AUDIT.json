@@ -1,0 +1,122 @@
+{
+  "sequence": 3,
+  "task_identity": "Q-ID-03",
+  "stable_id": "Q-PHY-WPE-JEEM-2026-01-23-S2-03",
+  "source_id": "EX-M6",
+  "lot": "LOT-02",
+  "paper": "JEE Main 2026 (Online) 23rd January Evening Shift",
+  "source_type": "SCRAPED_EXTRACT_EXAMGOAL",
+  "source_custody": "PARTIAL",
+  "stem_text": "A bead \ud835\udc43 sliding on a frictionless semi-circular string (\ud835\udc34\ud835\udc36\ud835\udc35) and it is at point \ud835\udc46 at \ud835\udc61=0 and at this instant the horizontal component of its velocity is \ud835\udc63 . Another bead \ud835\udc44 of the same mass as \ud835\udc43 is ejected from point \ud835\udc34 at \ud835\udc61=0 along the horizontal string \ud835\udc34\ud835\udc35 , with the speed \ud835\udc63 , friction between the beads and the respective strings may be neglected in both cases. Let \ud835\udc61_\ud835\udc43 and \ud835\udc61_\ud835\udc44 be the respective times taken by beads \ud835\udc43 and \ud835\udc44 to reach the point \ud835\udc35 , then the relation between \ud835\udc61_\ud835\udc43 and \ud835\udc61_\ud835\udc44 is [FIG-stem-1]",
+  "stem_sha256": "7d9e6e00a473b5219d71fa3889281e129945bb5c19d9f53407d7ca7fe570e1b6",
+  "source_hash": "7d9e6e00a473b5219d71fa3889281e129945bb5c19d9f53407d7ca7fe570e1b6",
+  "source_record_digest": "7d9e6e00a473b5219d71fa3889281e129945bb5c19d9f53407d7ca7fe570e1b6",
+  "duplicate_parent": null,
+  "scope": "IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "HOLD:FIGURE_UNRESOLVED",
+  "options": [
+    "A: \ud835\udc61_\ud835\udc43<\ud835\udc61_\ud835\udc44",
+    "B: \ud835\udc61_\ud835\udc43=\ud835\udc61_\ud835\udc44",
+    "C: \ud835\udc61_\ud835\udc43>1.25\ud835\udc61_\ud835\udc44",
+    "D: \ud835\udc61_\ud835\udc43>\ud835\udc61_\ud835\udc44"
+  ],
+  "unbound_remote_figures": [
+    {
+      "role": "stem",
+      "url": "https://app-content.cdn.examgoal.net/fly/1000/image/6y3zli1ml8w2ix5/e5f6479c-ae49-4514-841d-fa273d0828c4/a21e2390-0241-11f1-88dd-c7214e4b90e3/file-6y3zli1ml8w2ix6.png?format=png"
+    }
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "HOLD:FIGURE_UNRESOLVED",
+  "candidate_solve": {
+    "method": "COMPARATIVE_TRAJECTORY_TIME_INTEGRAL",
+    "assumed_parameters_from_coaching_figure": "Geometric configuration of S, C, ACB in vertical plane with downward gravity.",
+    "derivation": "Bead Q traverses straight chord AB of length 2R with uniform horizontal velocity v: t_Q = 2R/v. Bead P traverses curved semi-circular wire ACB. Under gravity, as P descends below AB, mechanical energy conservation gives v_P(theta) = sqrt(v_0^2 + 2gy) > v. However, the path length is pi*R approx 3.14 R, whereas AB is 2R. Whether t_P < t_Q depends on the exact initial point S, the ratio v^2/(gR), and whether the horizontal velocity component remains greater than v throughout. In the coaching solution, t_P < t_Q (Option A) is asserted based on average horizontal speed enhancement, but without the exact figure and rigorous bound, the result cannot be conclusively certified.",
+    "predicted_option": "A: \ud835\udc61_\ud835\udc43<\ud835\udc61_\ud835\udc44 (coaching proposal)",
+    "limiting_cases": "If g -> 0, path ACB is longer (pi*R > 2R) with constant speed v, so t_P = pi*R/v > 2R/v = t_Q. If g is very large, descent velocity becomes extremely high, driving t_P -> 0, so t_P < t_Q. Crossover depends sensitively on v^2/(gR)."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "status": "UNREVIEWED",
+    "decisive_operation": "JUSTIFY",
+    "crux": "Analyzing the trade-off between increased path length along a circular arc versus increased speed from gravitational potential energy conversion.",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 2,
+          "evidence": "Non-uniform circular dynamics under gravity vs uniform rectilinear kinematics."
+        },
+        "representation_translation": {
+          "score": 2,
+          "evidence": "Spatial trajectory mapping, speed profile comparison, and integral time evaluation."
+        },
+        "reasoning_chain_length": {
+          "score": 2,
+          "evidence": "Multi-step qualitative and quantitative trajectory integration analysis."
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Inequality comparison of path integrals vs uniform velocity."
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Common misconception that straight line always minimizes travel time (tautochrone/brachistochrone contrast)."
+        }
+      },
+      "total": 8,
+      "band": "D4"
+    },
+    "demand_proposal": {
+      "primary": "JUSTIFY",
+      "secondary": [
+        "MODEL"
+      ],
+      "candidate_cell": "QRT-JUSTIFY-D4",
+      "status": "PROPOSED"
+    },
+    "representation_requirements": [
+      "DIAGRAM",
+      "GRAPH",
+      "EQUATION"
+    ],
+    "independent_checks": [
+      "LIMITING_CASE",
+      "COUNTEREXAMPLE"
+    ],
+    "wrong_route_hypotheses": [
+      {
+        "route": "Naive geometric path length comparison pi*R > 2R leading to t_P > t_Q",
+        "status": "HYPOTHESIS"
+      },
+      {
+        "route": "Assuming horizontal velocity component remains strictly v throughout circular motion",
+        "status": "HYPOTHESIS"
+      }
+    ]
+  },
+  "qrt": "UNREVIEWED",
+  "blueprint_fit": {
+    "blueprint_id": "PHYS-QRT-BLUEPRINT",
+    "version": "0.2.0",
+    "sha256": "ac32dc937403cac33c76343f2e7e0dabd7c2c4a3188cb3b453ddf2576578ddf9",
+    "cell": "QRT-JUSTIFY-D4"
+  },
+  "adapter_fit": {
+    "adapter_id": "PHYS-TOPIC-WPE",
+    "version": "0.1.0",
+    "sha256": "899e61e59370a3fc5d6f73b7d8cbb65165d0782c9fba20acd83439ae441e6a9b",
+    "topic": "WPE"
+  },
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_REVIEW",
+  "b2_blind_status": "NOT_RUN",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:FIGURE_UNRESOLVED (diagram needed to verify location of S, C, orientation of track)",
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)",
+    "HOLD:B2_INDEPENDENT_PENDING (requires blind expert derivation of integral bound)"
+  ],
+  "next_action": "Source official NTA figure and assign blind B2 solve for limiting case verification."
+}

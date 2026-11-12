@@ -1,0 +1,335 @@
+{
+  "schema": "core1a-source-program/v1",
+  "id": "WPE-SOURCE-PREPARATION-R2",
+  "status": "CANDIDATE",
+  "scope": {
+    "spine_path": "handoffs/sources/spine.md",
+    "spine_sha256": "07338e242e363becf2e55a9637d29fd178e37236fd730e5aac0a1211f1d8ecf9",
+    "book_path": "handoffs/sources/book.md",
+    "book_sha256": "a33f19b308ea81c7eb527546e44b6bbd4b4adf26aed7116013ac01218cc1bbb8"
+  },
+  "records": [
+    {
+      "id": "WPE-N01",
+      "path": "handoffs/WPE-N01.json",
+      "sha256": "649f4797b0a442d65c9c765ee339636c0ea09b7b4349e42e346e5fd15e49a89d",
+      "pins_path": "handoffs/WPE-N01.pins.json",
+      "pins_sha256": "bdd0a4716feb4370c014991dfc26e82ae740667b0b1257e0f1d3e53119e7648b",
+      "prerequisites": []
+    },
+    {
+      "id": "WPE-N02",
+      "path": "handoffs/WPE-N02.json",
+      "sha256": "74ba4f955ab52460341353bafdd8ede68c4d75445ead5b45d1dca94df1d3801c",
+      "pins_path": "handoffs/WPE-N02.pins.json",
+      "pins_sha256": "cc3c4d7d1764d312bfab4852d3e796580b6baf0c18db9d468281364d4f025698",
+      "prerequisites": [
+        "WPE-N01"
+      ]
+    },
+    {
+      "id": "WPE-N03",
+      "path": "handoffs/WPE-N03.json",
+      "sha256": "4cef03d4fc5d991e1427f167ef9d7f0a1721cd5693eaea8570290ea60f1938cb",
+      "pins_path": "handoffs/WPE-N03.pins.json",
+      "pins_sha256": "86997070771789fb74d09525c01fb9ae723de5d9bba90b1e455934a034f12b36",
+      "prerequisites": [
+        "WPE-N01",
+        "WPE-N02"
+      ]
+    },
+    {
+      "id": "WPE-N04",
+      "path": "handoffs/WPE-N04.json",
+      "sha256": "8497b39d71379990873ff0155ef2b10a43f3ce72e0b86b8103eb573075b3368a",
+      "pins_path": "handoffs/WPE-N04.pins.json",
+      "pins_sha256": "2db898e538d88ad5ab60a7521c045bc2ef5a1899760c1eccc283611566a9e045",
+      "prerequisites": [
+        "WPE-N03"
+      ]
+    },
+    {
+      "id": "WPE-N05",
+      "path": "handoffs/WPE-N05.json",
+      "sha256": "cb14f78f570a3b21a5673de79c45eed58be3efddbb05bab2ef70351e861def09",
+      "pins_path": "handoffs/WPE-N05.pins.json",
+      "pins_sha256": "970ba845e3f450436bcd882ffacdfcfa7b592ede42da681e63d45d674168c588",
+      "prerequisites": [
+        "WPE-N01",
+        "WPE-N02"
+      ]
+    },
+    {
+      "id": "WPE-N06",
+      "path": "handoffs/WPE-N06.json",
+      "sha256": "a943abead4b68788fce979956140b5687fafa5c2fb19b7e12ad4be3e4d441623",
+      "pins_path": "handoffs/WPE-N06.pins.json",
+      "pins_sha256": "fd9ec5465c60e80c3bd0d3be36665fc01f541bd7e65333bc4e6470ad782c24a3",
+      "prerequisites": [
+        "WPE-N05"
+      ]
+    },
+    {
+      "id": "WPE-N07",
+      "path": "handoffs/WPE-N07.json",
+      "sha256": "ed90830e804ee42858331b76fe174073fbfd919b198ae9b58592c247429df818",
+      "pins_path": "handoffs/WPE-N07.pins.json",
+      "pins_sha256": "fd9ec5465c60e80c3bd0d3be36665fc01f541bd7e65333bc4e6470ad782c24a3",
+      "prerequisites": [
+        "WPE-N02",
+        "WPE-N05",
+        "WPE-N06"
+      ]
+    },
+    {
+      "id": "WPE-N08",
+      "path": "handoffs/WPE-N08.json",
+      "sha256": "6fcfc850650624c1485a25a4e1dec115461f51566d04e7f5ed0d0221cdd7ab6c",
+      "pins_path": "handoffs/WPE-N08.pins.json",
+      "pins_sha256": "8ab41062ca609e71fcdde7507d288e688bd7977726dcbab9d3854d93f62a2cf3",
+      "prerequisites": [
+        "WPE-N03",
+        "WPE-N06",
+        "WPE-N07",
+        "WPE-N09"
+      ]
+    },
+    {
+      "id": "WPE-N09",
+      "path": "handoffs/WPE-N09.json",
+      "sha256": "91bdec64f9fe7fa7f04f33d77f439fc0f44eafa1637ddc8ca0afdb9e3568527c",
+      "pins_path": "handoffs/WPE-N09.pins.json",
+      "pins_sha256": "9e19203b51984186c20f01a0e942114d07129c1a1ccebc354c2ed8d72078b466",
+      "prerequisites": [
+        "WPE-N01",
+        "WPE-N03"
+      ]
+    },
+    {
+      "id": "WPE-N10",
+      "path": "handoffs/WPE-N10.json",
+      "sha256": "34a00fb300e55bc2056df4febe68324ca6be255765bc71b8e73577918c3dd711",
+      "pins_path": "handoffs/WPE-N10.pins.json",
+      "pins_sha256": "acfd814e7670b713131430f11bb0b469738ea362e41b832c737b5558caaf6eb7",
+      "prerequisites": [
+        "WPE-N01",
+        "WPE-N03"
+      ]
+    }
+  ],
+  "line_dispositions": [
+    {
+      "start": 1,
+      "end": 10,
+      "disposition": "EXTRACTION_METADATA",
+      "node_refs": [],
+      "reason": "Harvester metadata and derived authenticity claims; not adopted as verification."
+    },
+    {
+      "start": 11,
+      "end": 18,
+      "disposition": "SHARED_CONTEXT",
+      "node_refs": [
+        "WPE-N01",
+        "WPE-N02",
+        "WPE-N03",
+        "WPE-N04",
+        "WPE-N05",
+        "WPE-N06",
+        "WPE-N07",
+        "WPE-N08",
+        "WPE-N09",
+        "WPE-N10"
+      ],
+      "reason": "Chapter introduction, not a separate lesson."
+    },
+    {
+      "start": 19,
+      "end": 133,
+      "disposition": "SOURCE_SECTION",
+      "node_refs": [
+        "WPE-N01"
+      ],
+      "reason": "Work/sign and existing source illustrations."
+    },
+    {
+      "start": 134,
+      "end": 169,
+      "disposition": "SOURCE_SECTION",
+      "node_refs": [
+        "WPE-N02"
+      ],
+      "reason": "Variable-force area and source illustration."
+    },
+    {
+      "start": 170,
+      "end": 188,
+      "disposition": "SOURCE_SECTION",
+      "node_refs": [
+        "WPE-N05"
+      ],
+      "reason": "Conservative/non-conservative source claims."
+    },
+    {
+      "start": 189,
+      "end": 238,
+      "disposition": "SOURCE_SECTION",
+      "node_refs": [
+        "WPE-N09"
+      ],
+      "reason": "Restricted friction examples and disputed generalizations."
+    },
+    {
+      "start": 239,
+      "end": 310,
+      "disposition": "SOURCE_SECTION",
+      "node_refs": [
+        "WPE-N10"
+      ],
+      "reason": "Power and source illustrations."
+    },
+    {
+      "start": 311,
+      "end": 348,
+      "disposition": "SOURCE_SECTION",
+      "node_refs": [
+        "WPE-N06",
+        "WPE-N07"
+      ],
+      "reason": "Potential and spring passage; general slope bridge missing."
+    },
+    {
+      "start": 349,
+      "end": 375,
+      "disposition": "SOURCE_SECTION",
+      "node_refs": [
+        "WPE-N03",
+        "WPE-N08"
+      ],
+      "reason": "Work–energy and conditional conservation."
+    },
+    {
+      "start": 376,
+      "end": 409,
+      "disposition": "SOURCE_SECTION",
+      "node_refs": [
+        "WPE-N04"
+      ],
+      "reason": "Kinetic-energy derivation and thin momentum property."
+    },
+    {
+      "start": 410,
+      "end": 473,
+      "disposition": "SOURCE_SECTION",
+      "node_refs": [
+        "WPE-N08"
+      ],
+      "reason": "Advanced source illustrations; extraction expansion recorded."
+    },
+    {
+      "start": 474,
+      "end": 486,
+      "disposition": "DERIVED_SUMMARY",
+      "node_refs": [
+        "WPE-N01",
+        "WPE-N02",
+        "WPE-N03",
+        "WPE-N04",
+        "WPE-N05",
+        "WPE-N06",
+        "WPE-N07",
+        "WPE-N08",
+        "WPE-N09",
+        "WPE-N10"
+      ],
+      "reason": "Extractor summary is not a separately verified printed section."
+    }
+  ],
+  "scan_observations": [
+    {
+      "source_path": "handoffs/sources/page_01.jpg",
+      "sha256": "577fa3448aeb2cb72387d827ab67d7ad2c47041fa8dba8473d74193455ceb55a",
+      "region": "Introduction and work definition/sign diagram",
+      "observation": "Opening constant-force equation and positive-work picture are visible.",
+      "limits": "Author visual comparison only; no independent transcription or official-source authentication.",
+      "status": "AUTHOR_VIEWED_NOT_INDEPENDENT"
+    },
+    {
+      "source_path": "handoffs/sources/page_02.jpg",
+      "sha256": "49dfbcfdf5c17eddd3a88c5383ffb702d55150118bcb825d9b9257417e2214d0",
+      "region": "Negative-work diagram, nature of work and Illustrations1/2",
+      "observation": "Illustration1 vector calculation is visible; Illustration2 problem starts at page bottom.",
+      "limits": "No official paper/key provenance follows from the printed coaching badges.",
+      "status": "AUTHOR_VIEWED_NOT_INDEPENDENT"
+    },
+    {
+      "source_path": "handoffs/sources/page_03.jpg",
+      "sha256": "74af7bf6ef7a57d63259c68e871eaa6db14d4912153d253a545ab1f018c346b9",
+      "region": "Illustration2 solution, point-of-application insight, variable-force figure and Illustration3 start",
+      "observation": "Retained insight has the disputed second zero-work case; variable-force text/diagram are visible.",
+      "limits": "A finger occludes a right-side region; no pixel-exact OCR/correspondence validation.",
+      "status": "AUTHOR_VIEWED_NOT_INDEPENDENT"
+    },
+    {
+      "source_path": "handoffs/sources/page_04.jpg",
+      "sha256": "6ca8b187415073f13a5c4638fc1dc42c4a09a7c682f663d58b384c089701257c",
+      "region": "Illustration3 continuation; conservative and friction sections; Illustration4 stem",
+      "observation": "Blanket central-force and non-positive-friction statements are printed; these need scoped qualification.",
+      "limits": "The extract expands/rephrases the printed prose; visual inspection is author-side evidence.",
+      "status": "AUTHOR_VIEWED_NOT_INDEPENDENT"
+    },
+    {
+      "source_path": "handoffs/sources/page_05.jpg",
+      "sha256": "f399adb7fa0231871a2a4ec753cbcd0e81c27644daf5511286098c3292f26612",
+      "region": "Incline solution, power and Illustrations5/6",
+      "observation": "Power definitions and circular-motion reasoning visible; incline speed expression uses a rest-type initial-state assumption.",
+      "limits": "Finger occludes some text; selected derived algebra was not printed as a full teaching construction.",
+      "status": "AUTHOR_VIEWED_NOT_INDEPENDENT"
+    },
+    {
+      "source_path": "handoffs/sources/page_06.jpg",
+      "sha256": "bef1126f750a833860588c49295fc50e28de5eb485b8acb5932e7a2388e5d500",
+      "region": "Potential-energy definitions, gravity and elastic heading",
+      "observation": "Potential/zero/gravity discussion and beginning restoring-force paragraph visible.",
+      "limits": "Image cuts off at a bottom concepts heading; no visible general force–potential slope derivation.",
+      "status": "AUTHOR_VIEWED_NOT_INDEPENDENT"
+    },
+    {
+      "source_path": "handoffs/sources/page_07.jpg",
+      "sha256": "e05651537a9b3ea961304ef281f30cc900b3e6331076346273bc82c57a2ed6b9",
+      "region": "Work–energy theorem and force partition",
+      "observation": "Printed substitution line reads W_c=Delta U, whereas the retained extraction uses a minus sign.",
+      "limits": "Record discrepancy; no independent scientific adjudication performed here.",
+      "status": "AUTHOR_VIEWED_NOT_INDEPENDENT"
+    },
+    {
+      "source_path": "handoffs/sources/page_08.jpg",
+      "sha256": "a4cdb3f5b960cf079bbf0627f461f4bff59bd1cb5880f8139609db3f10beafbd",
+      "region": "Kinetic-energy component derivation and properties",
+      "observation": "Momentum relation and frame discussion visible. Printed curved-path paragraph makes an overbroad claim omitted from the extraction.",
+      "limits": "Bottom cut-off and finger region; source includes reasoning requiring correction/qualification.",
+      "status": "AUTHOR_VIEWED_NOT_INDEPENDENT"
+    },
+    {
+      "source_path": "handoffs/sources/page_09.jpg",
+      "sha256": "4847ec6173954d7e50d89af62db0972db12a3cfde654666a4e9fd97ce734d646",
+      "region": "Chain and spring-block illustrations",
+      "observation": "Printed chain solution states initial kinetic energy zero. Spring solution is primarily qualitative, unlike the expanded extraction.",
+      "limits": "No collisions section supplied; supporting diagrams are printed but generated SVG correspondence is not pixel-verified.",
+      "status": "AUTHOR_VIEWED_NOT_INDEPENDENT"
+    }
+  ],
+  "exclusions": [
+    "Collisions: title only, no supplied source section; excluded from frozen spine.",
+    "Missing section8 and illustration numbers7–10 cannot be reconstructed as source facts.",
+    "The supplied reference ontology is retained as proposed review material, not approved canonical science. Its force-gradient material does not repair the absent chapter derivation or establish a qualified warrant.",
+    "Recall-topic notes contain inherited examination/demand proposals, not adjudicated SL2 requirements. The original SVG-generation script is preserved, NOT_EXECUTED.",
+    "No official examination authentication, reviewed SL2/QRT join, native learner lesson or Owner approval is produced."
+  ],
+  "gates": {
+    "semantic": "NOT_RUN",
+    "core2_owner_approval": "PENDING",
+    "core1a_authoring": "NOT_STARTED",
+    "core1b_correspondence": "NOT_RUN"
+  }
+}

@@ -1,0 +1,693 @@
+[
+  {
+    "profile": "wpe-textbook-core2-review/v1",
+    "id": "TB-WPE-ILL-01",
+    "illustration": 1,
+    "title": "Constant-force work in three dimensions",
+    "source": {
+      "raw": "### Illustration 1 (JEE Main)\n\n**Problem**:  \nAssume that a body is displaced from $\\vec{r}_A = (2\\text{m}, 4\\text{m}, -6\\text{m})$ to $\\vec{r}_B = (6\\hat{i} - 4\\hat{j} + 2\\hat{k})\\text{ m}$ under a constant force $\\vec{F} = (2\\hat{i} + 3\\hat{j} - \\hat{k})\\text{ N}$. Calculate the total work done.\n\n**Solution**:  \nThe work done by the constant force $\\vec{F}$ during displacement $\\vec{s}$ of a particle is the scalar product of force and displacement:\n\n$$W = \\vec{F} \\cdot \\vec{s}$$\n\nThe position vectors are:\n$$\\vec{r}_A = 2\\hat{i} + 4\\hat{j} - 6\\hat{k}\\text{ m}$$\n$$\\vec{r}_B = 6\\hat{i} - 4\\hat{j} + 2\\hat{k}\\text{ m}$$\n\nThe displacement vector $\\vec{s}$ is:\n$$\\vec{s} = \\vec{r}_B - \\vec{r}_A = (6\\hat{i} - 4\\hat{j} + 2\\hat{k}) - (2\\hat{i} + 4\\hat{j} - 6\\hat{k}) = 4\\hat{i} - 8\\hat{j} + 8\\hat{k}\\text{ m}$$\n\nTaking the scalar product:\n$$W = \\vec{F} \\cdot \\vec{s} = (2\\hat{i} + 3\\hat{j} - \\hat{k}) \\cdot (4\\hat{i} - 8\\hat{j} + 8\\hat{k})$$\n$$W = (2)(4) + (3)(-8) + (-1)(8) = 8 - 24 - 8 = -24\\text{ J}$$\n\n$$\\mathbf{W = -24\\text{ J}}$$",
+      "question": "Assume that a body is displaced from $\\vec{r}_A = (2\\text{m}, 4\\text{m}, -6\\text{m})$ to $\\vec{r}_B = (6\\hat{i} - 4\\hat{j} + 2\\hat{k})\\text{ m}$ under a constant force $\\vec{F} = (2\\hat{i} + 3\\hat{j} - \\hat{k})\\text{ N}$. Calculate the total work done.",
+      "source_answer": "**Solution**:  \nThe work done by the constant force $\\vec{F}$ during displacement $\\vec{s}$ of a particle is the scalar product of force and displacement:\n\n$$W = \\vec{F} \\cdot \\vec{s}$$\n\nThe position vectors are:\n$$\\vec{r}_A = 2\\hat{i} + 4\\hat{j} - 6\\hat{k}\\text{ m}$$\n$$\\vec{r}_B = 6\\hat{i} - 4\\hat{j} + 2\\hat{k}\\text{ m}$$\n\nThe displacement vector $\\vec{s}$ is:\n$$\\vec{s} = \\vec{r}_B - \\vec{r}_A = (6\\hat{i} - 4\\hat{j} + 2\\hat{k}) - (2\\hat{i} + 4\\hat{j} - 6\\hat{k}) = 4\\hat{i} - 8\\hat{j} + 8\\hat{k}\\text{ m}$$\n\nTaking the scalar product:\n$$W = \\vec{F} \\cdot \\vec{s} = (2\\hat{i} + 3\\hat{j} - \\hat{k}) \\cdot (4\\hat{i} - 8\\hat{j} + 8\\hat{k})$$\n$$W = (2)(4) + (3)(-8) + (-1)(8) = 8 - 24 - 8 = -24\\text{ J}$$\n\n$$\\mathbf{W = -24\\text{ J}}$$",
+      "line_start": 74,
+      "line_end": 95,
+      "native_stem": "Assume that a body is displaced from $\\vec{r}_A = (2\\text{m}, 4\\text{m}, -6\\text{m})$ to $\\vec{r}_B = (6\\hat{i} - 4\\hat{j} + 2\\hat{k})\\text{ m}$ under a constant force $\\vec{F} = (2\\hat{i} + 3\\hat{j} - \\hat{k})\\text{ N}$. Calculate the total work done.",
+      "options": []
+    },
+    "scan_pages": [
+      2
+    ],
+    "sl1": {
+      "question_role": "OWNER_SUPPLIED_TEXTBOOK_EXTRACT",
+      "source_document_identity": "EXACT_SAVED_EXTRACT",
+      "printed_equivalence": "PENDING",
+      "exam_identity": "UNVERIFIED",
+      "official_key": "NOT_ESTABLISHED",
+      "question_payload_sha256": "31c27b8fc61913bf5a7d2e95ae8c88cd3a625584b14400f4297e4a6e529c5cfc",
+      "source_answer_sha256": "3de4ce1f8296150991ba5a41e61af1b9d13ffd942c55d4a58ad1bb1ab1e85f55",
+      "assets": [],
+      "first_try": "CANDIDATE_WITH_SOURCE_WARNINGS"
+    },
+    "sl2": {
+      "mode": "QUESTION",
+      "operation_proposal": "APPLY",
+      "difficulty_proposal": {
+        "band": "D2",
+        "score": 5,
+        "components": {
+          "concept_model_selection": 1,
+          "representation_translation": 1,
+          "reasoning_chain_length": 1,
+          "algebra_computational_load": 1,
+          "trap_exception_sensitivity": 1
+        },
+        "basis": "Author proposal for the exact supplied extract before support; independent adjudication pending. Constant-force work in three dimensions",
+        "component_evidence": {
+          "concept_model_selection": "Choose constant-force dot product from the stated force and two positions.",
+          "representation_translation": "Translate endpoint positions into displacement.",
+          "reasoning_chain_length": "Use displacement before evaluating work.",
+          "algebra_computational_load": "Evaluate three signed products and their sum.",
+          "trap_exception_sensitivity": "Reversing displacement reverses the work sign."
+        }
+      },
+      "decisive_move": "Subtract initial position from final position.",
+      "input_roles": [
+        [
+          "The two supplied position vectors"
+        ],
+        [
+          "F = (2, 3, -1) N and s"
+        ],
+        [
+          "The three signed products"
+        ]
+      ],
+      "output_role": "W = -24 J.",
+      "competing_operation": "MODEL",
+      "competition_reason": "The governing model is familiar and its execution is the principal demand.",
+      "review": "AUTHOR_PROPOSED_NOT_INDEPENDENT",
+      "learner_observation": null
+    },
+    "qrt": {
+      "placement": "PROVISIONAL",
+      "source_role": "TEXTBOOK_QUESTION",
+      "exam_21_admission": false,
+      "reviewed_construction_join": "PENDING",
+      "syllabus_nodes": [
+        "WPE-N01"
+      ]
+    },
+    "issues": [
+      "Printed and extracted wording are not verbatim identical; this reader preserves the supplied extraction."
+    ],
+    "admission": "NONE",
+    "native_question_sha256": "6b9e233f49063e9f1dea13eaa45444c31f82316305b3bb02bb763165bad1ad16"
+  },
+  {
+    "profile": "wpe-textbook-core2-review/v1",
+    "id": "TB-WPE-ILL-02",
+    "illustration": 2,
+    "title": "Tension, gravity and net work",
+    "source": {
+      "raw": "### Illustration 2 (JEE Advanced)\n\n**Problem**:  \nA block of total mass $5\\text{ kg}$ is being raised vertically upwards with the help of a string attached to it and it rises with an acceleration of $2\\text{ m/s}^2$. Find the work done due to the tension in the string if the block rises by $2.5\\text{ m}$. Also, calculate the work done due to gravity and the net work done. ($g = 9.8\\text{ m/s}^2$).\n\n![Free Body Diagram: String Raising](images/fig_03_fbd_string_raising.svg)\n\n**Solution**:  \nThe tension in the string acts vertically upwards and the block is also moving vertically upwards, so the work done by the tension will be positive. The force of gravity acts vertically downwards, so the work done by gravity will be negative.\n\n1. **Calculate the Tension $T$**:  \n   From the free-body diagram:\n   $$T - mg = ma \\implies T = m(g + a)$$\n   $$T = 5(9.8 + 2) = 5(11.8) = 59\\text{ N}$$\n\n2. **Work Done by Tension $W_T$**:  \n   Since tension $\\vec{T}$ and displacement $\\vec{s}$ are both directed upwards ($\\theta = 0^\\circ$):\n   $$W_T = T s = 59 \\times 2.5 = 147.5\\text{ J}$$\n\n3. **Work Done by Gravity $W_g$**:  \n   Since gravity acts downwards while displacement is upwards ($\\theta = 180^\\circ$):\n   $$W_g = -m g s = -5 \\times 9.8 \\times 2.5 = -122.5\\text{ J}$$\n\n4. **Net Work Done $W_{\\text{net}}$**:  \n   $$W_{\\text{net}} = W_T + W_g = 147.5 + (-122.5) = 25\\text{ J}$$\n\n> [!TIP]\n> **Concepts Insight — Nivvedan (JEE 2009, AIR 113)**  \n> Point of application of force also plays a major role.  \n> Zero work is done by a force in the following cases:\n> - If the point of application of force is not changed in space even though the body moves (e.g. static friction in rolling without slipping).\n> - If the body doesn't move but the point of application of force moves.",
+      "question": "A block of total mass $5\\text{ kg}$ is being raised vertically upwards with the help of a string attached to it and it rises with an acceleration of $2\\text{ m/s}^2$. Find the work done due to the tension in the string if the block rises by $2.5\\text{ m}$. Also, calculate the work done due to gravity and the net work done. ($g = 9.8\\text{ m/s}^2$).\n\n![Free Body Diagram: String Raising](images/fig_03_fbd_string_raising.svg)",
+      "source_answer": "**Solution**:  \nThe tension in the string acts vertically upwards and the block is also moving vertically upwards, so the work done by the tension will be positive. The force of gravity acts vertically downwards, so the work done by gravity will be negative.\n\n1. **Calculate the Tension $T$**:  \n   From the free-body diagram:\n   $$T - mg = ma \\implies T = m(g + a)$$\n   $$T = 5(9.8 + 2) = 5(11.8) = 59\\text{ N}$$\n\n2. **Work Done by Tension $W_T$**:  \n   Since tension $\\vec{T}$ and displacement $\\vec{s}$ are both directed upwards ($\\theta = 0^\\circ$):\n   $$W_T = T s = 59 \\times 2.5 = 147.5\\text{ J}$$\n\n3. **Work Done by Gravity $W_g$**:  \n   Since gravity acts downwards while displacement is upwards ($\\theta = 180^\\circ$):\n   $$W_g = -m g s = -5 \\times 9.8 \\times 2.5 = -122.5\\text{ J}$$\n\n4. **Net Work Done $W_{\\text{net}}$**:  \n   $$W_{\\text{net}} = W_T + W_g = 147.5 + (-122.5) = 25\\text{ J}$$",
+      "line_start": 99,
+      "line_end": 130,
+      "native_stem": "A block of total mass $5\\text{ kg}$ is being raised vertically upwards with the help of a string attached to it and it rises with an acceleration of $2\\text{ m/s}^2$. Find the work done due to the tension in the string if the block rises by $2.5\\text{ m}$. Also, calculate the work done due to gravity and the net work done. ($g = 9.8\\text{ m/s}^2$).",
+      "options": []
+    },
+    "scan_pages": [
+      2,
+      3
+    ],
+    "sl1": {
+      "question_role": "OWNER_SUPPLIED_TEXTBOOK_EXTRACT",
+      "source_document_identity": "EXACT_SAVED_EXTRACT",
+      "printed_equivalence": "PENDING",
+      "exam_identity": "UNVERIFIED",
+      "official_key": "NOT_ESTABLISHED",
+      "question_payload_sha256": "e47edf5c255cb95a0e189b6cfbca0b253253c93924cc459bf0abe0e8334be4c1",
+      "source_answer_sha256": "3709905bc360077168735502e8ec15429f46ce848563d2f9376d0a442e138bfe",
+      "assets": [
+        "fig_03_fbd_string_raising.svg"
+      ],
+      "first_try": "CANDIDATE_WITH_SOURCE_WARNINGS"
+    },
+    "sl2": {
+      "mode": "QUESTION",
+      "operation_proposal": "APPLY",
+      "difficulty_proposal": {
+        "band": "D3",
+        "score": 6,
+        "components": {
+          "concept_model_selection": 1,
+          "representation_translation": 1,
+          "reasoning_chain_length": 2,
+          "algebra_computational_load": 1,
+          "trap_exception_sensitivity": 1
+        },
+        "basis": "Author proposal for the exact supplied extract before support; independent adjudication pending. Tension, gravity and net work",
+        "component_evidence": {
+          "concept_model_selection": "Find tension from the upward acceleration before calculating its work.",
+          "representation_translation": "Translate upward and downward forces into signed work.",
+          "reasoning_chain_length": "Coordinate force balance, two individual works and their net.",
+          "algebra_computational_load": "Routine multiplication and signed addition.",
+          "trap_exception_sensitivity": "Confusing individual work with net work changes the result."
+        }
+      },
+      "decisive_move": "Use T - mg = ma to determine tension.",
+      "input_roles": [
+        [
+          "m = 5 kg, g = 9.8 m/s², a = 2 m/s²"
+        ],
+        [
+          "s = 2.5 m"
+        ],
+        [
+          "W_T and W_g"
+        ]
+      ],
+      "output_role": "T = 59 N; tension work = 147.5 J; gravity work = -122.5 J; net work = 25 J.",
+      "competing_operation": "MODEL",
+      "competition_reason": "The governing model is familiar and its execution is the principal demand.",
+      "review": "AUTHOR_PROPOSED_NOT_INDEPENDENT",
+      "learner_observation": null
+    },
+    "qrt": {
+      "placement": "PROVISIONAL",
+      "source_role": "TEXTBOOK_QUESTION",
+      "exam_21_admission": false,
+      "reviewed_construction_join": "PENDING",
+      "syllabus_nodes": [
+        "WPE-N01",
+        "WPE-N03"
+      ]
+    },
+    "issues": [
+      "The scan puts g = 9.8 in the solution rather than the printed stem; the extraction includes it as a given.",
+      "Derived FBD includes T - mg = ma, so it is solution-only."
+    ],
+    "admission": "NONE",
+    "native_question_sha256": "64753fa924dfea0c4b7e5b6a958438979c92569882d491e0c1b74e583ec40beb"
+  },
+  {
+    "profile": "wpe-textbook-core2-review/v1",
+    "id": "TB-WPE-ILL-03",
+    "illustration": 3,
+    "title": "Position-dependent force",
+    "source": {
+      "raw": "### Illustration 3 (JEE Main)\n\n**Problem**:  \nA force $F = (10 + 0.50x)\\text{ N}$ is observed to act on a particle in the $x$ direction, where $x$ is in meters. Find the actual work done by this force during a displacement from $x = 0$ to $x = 2.0\\text{ m}$.\n\n**Solution**:  \nFor an infinitesimal displacement $dx$:\n$$dW = F dx = (10 + 0.50x) dx$$\n\nIntegrating over the displacement bounds from $x = 0$ to $x = 2.0\\text{ m}$:\n$$W = \\int_{0}^{2.0} (10 + 0.50x) dx = \\left[ 10x + 0.50 \\frac{x^2}{2} \\right]_{0}^{2.0}$$\n$$W = \\left[ 10(2.0) + 0.25(2.0)^2 \\right] - [0] = 20 + 1.0 = 21\\text{ J}$$\n\n$$\\mathbf{W = 21\\text{ J}}$$",
+      "question": "A force $F = (10 + 0.50x)\\text{ N}$ is observed to act on a particle in the $x$ direction, where $x$ is in meters. Find the actual work done by this force during a displacement from $x = 0$ to $x = 2.0\\text{ m}$.",
+      "source_answer": "**Solution**:  \nFor an infinitesimal displacement $dx$:\n$$dW = F dx = (10 + 0.50x) dx$$\n\nIntegrating over the displacement bounds from $x = 0$ to $x = 2.0\\text{ m}$:\n$$W = \\int_{0}^{2.0} (10 + 0.50x) dx = \\left[ 10x + 0.50 \\frac{x^2}{2} \\right]_{0}^{2.0}$$\n$$W = \\left[ 10(2.0) + 0.25(2.0)^2 \\right] - [0] = 20 + 1.0 = 21\\text{ J}$$\n\n$$\\mathbf{W = 21\\text{ J}}$$",
+      "line_start": 153,
+      "line_end": 166,
+      "native_stem": "A force $F = (10 + 0.50x)\\text{ N}$ is observed to act on a particle in the $x$ direction, where $x$ is in meters. Find the actual work done by this force during a displacement from $x = 0$ to $x = 2.0\\text{ m}$.",
+      "options": []
+    },
+    "scan_pages": [
+      3,
+      4
+    ],
+    "sl1": {
+      "question_role": "OWNER_SUPPLIED_TEXTBOOK_EXTRACT",
+      "source_document_identity": "EXACT_SAVED_EXTRACT",
+      "printed_equivalence": "PENDING",
+      "exam_identity": "UNVERIFIED",
+      "official_key": "NOT_ESTABLISHED",
+      "question_payload_sha256": "22ccc19a720846446f725e730acf34609cf2f6f22327f4759db84d35eafe2107",
+      "source_answer_sha256": "bfddaccf804f337f1144113d097c5b0e75b1cf5174c2cc036d75278ca05453be",
+      "assets": [],
+      "first_try": "CANDIDATE_WITH_SOURCE_WARNINGS"
+    },
+    "sl2": {
+      "mode": "QUESTION",
+      "operation_proposal": "APPLY",
+      "difficulty_proposal": {
+        "band": "D2",
+        "score": 4,
+        "components": {
+          "concept_model_selection": 1,
+          "representation_translation": 1,
+          "reasoning_chain_length": 1,
+          "algebra_computational_load": 1,
+          "trap_exception_sensitivity": 0
+        },
+        "basis": "Author proposal for the exact supplied extract before support; independent adjudication pending. Position-dependent force",
+        "component_evidence": {
+          "concept_model_selection": "Identify variable-force work rather than one constant-force substitution.",
+          "representation_translation": "Translate F(x) into a bounded work integral or equivalent area.",
+          "reasoning_chain_length": "Integrate before substituting the bounds.",
+          "algebra_computational_load": "Routine linear-polynomial integration and evaluation.",
+          "trap_exception_sensitivity": "No extra hidden domain exception is required."
+        }
+      },
+      "decisive_move": "Write work as the integral of the stated force over x.",
+      "input_roles": [
+        [
+          "F(x) = 10 + 0.50x N, x from 0 to 2 m"
+        ],
+        [
+          "The stated bounds"
+        ]
+      ],
+      "output_role": "W = 21 J.",
+      "competing_operation": "MODEL",
+      "competition_reason": "The governing model is familiar and its execution is the principal demand.",
+      "review": "AUTHOR_PROPOSED_NOT_INDEPENDENT",
+      "learner_observation": null
+    },
+    "qrt": {
+      "placement": "PROVISIONAL",
+      "source_role": "TEXTBOOK_QUESTION",
+      "exam_21_admission": false,
+      "reviewed_construction_join": "PENDING",
+      "syllabus_nodes": [
+        "WPE-N02"
+      ]
+    },
+    "issues": [
+      "The canonical work-direction capability is a prerequisite bridge, not a qualified variable-force warrant."
+    ],
+    "admission": "NONE",
+    "native_question_sha256": "20c24b8b2b6f29056f9d92099f42451eb508ec7d3acf2939477691723b73b1b8"
+  },
+  {
+    "profile": "wpe-textbook-core2-review/v1",
+    "id": "TB-WPE-ILL-04",
+    "illustration": 4,
+    "title": "Work on a rough incline",
+    "source": {
+      "raw": "### Illustration 4 (JEE Main)\n\n**Problem**:  \nA block of mass $4\\text{ kg}$ slides down a plane inclined at $37^\\circ$ with the horizontal. The length of the plane is $3\\text{ m}$. The coefficient of sliding friction between the block and the plane is $\\mu = 0.2$. Find:\n1. The work done due to gravity,\n2. The work done by the frictional force,\n3. The work done by the normal reaction between the block and the plane.  \n($g = 9.8\\text{ m/s}^2, \\sin 37^\\circ = 0.6, \\cos 37^\\circ = 0.8$).\n\n<div align=\"center\">\n  <img src=\"images/fig_06_incline_block.svg\" width=\"45%\" alt=\"Block on Incline\" />\n  <img src=\"images/fig_07_incline_fbd.svg\" width=\"45%\" alt=\"FBD on Incline\" />\n</div>\n\n**Solution**:  \n1. **Work Done by Normal Reaction ($W_N$)**:  \n   The normal reaction $\\vec{R}$ is perpendicular to the inclined plane ($\\theta = 90^\\circ$ relative to displacement $\\vec{s}$):\n   $$W_N = R s \\cos 90^\\circ = 0$$\n\n2. **Work Done by Gravity ($W_g$)**:  \n   The angle between the downward vertical gravity force ($mg$) and the displacement vector along the incline is $(90^\\circ - 37^\\circ)$:\n   $$W_g = mg s \\cos(90^\\circ - 37^\\circ) = mg s \\sin 37^\\circ$$\n   $$W_g = 4 \\times 9.8 \\times 3 \\times \\frac{3}{5} = 70.56\\text{ J}$$\n\n3. **Work Done by Friction ($W_f$)**:  \n   The normal reaction is $R = mg \\cos 37^\\circ$. The kinetic friction is $f_k = \\mu R = \\mu mg \\cos 37^\\circ$, acting opposite to displacement ($\\theta = 180^\\circ$):\n   $$W_f = -(\\mu R) s = -(\\mu mg \\cos 37^\\circ) s$$\n   $$W_f = -(0.2) \\times (4 \\times 9.8 \\times 0.8) \\times 3 = -18.816\\text{ J}$$\n\n$$\\mathbf{W_N = 0\\text{ J}, \\quad W_g = 70.56\\text{ J}, \\quad W_f = -18.816\\text{ J}}$$",
+      "question": "A block of mass $4\\text{ kg}$ slides down a plane inclined at $37^\\circ$ with the horizontal. The length of the plane is $3\\text{ m}$. The coefficient of sliding friction between the block and the plane is $\\mu = 0.2$. Find:\n1. The work done due to gravity,\n2. The work done by the frictional force,\n3. The work done by the normal reaction between the block and the plane.  \n($g = 9.8\\text{ m/s}^2, \\sin 37^\\circ = 0.6, \\cos 37^\\circ = 0.8$).\n\n<div align=\"center\">\n  <img src=\"images/fig_06_incline_block.svg\" width=\"45%\" alt=\"Block on Incline\" />\n  <img src=\"images/fig_07_incline_fbd.svg\" width=\"45%\" alt=\"FBD on Incline\" />\n</div>",
+      "source_answer": "**Solution**:  \n1. **Work Done by Normal Reaction ($W_N$)**:  \n   The normal reaction $\\vec{R}$ is perpendicular to the inclined plane ($\\theta = 90^\\circ$ relative to displacement $\\vec{s}$):\n   $$W_N = R s \\cos 90^\\circ = 0$$\n\n2. **Work Done by Gravity ($W_g$)**:  \n   The angle between the downward vertical gravity force ($mg$) and the displacement vector along the incline is $(90^\\circ - 37^\\circ)$:\n   $$W_g = mg s \\cos(90^\\circ - 37^\\circ) = mg s \\sin 37^\\circ$$\n   $$W_g = 4 \\times 9.8 \\times 3 \\times \\frac{3}{5} = 70.56\\text{ J}$$\n\n3. **Work Done by Friction ($W_f$)**:  \n   The normal reaction is $R = mg \\cos 37^\\circ$. The kinetic friction is $f_k = \\mu R = \\mu mg \\cos 37^\\circ$, acting opposite to displacement ($\\theta = 180^\\circ$):\n   $$W_f = -(\\mu R) s = -(\\mu mg \\cos 37^\\circ) s$$\n   $$W_f = -(0.2) \\times (4 \\times 9.8 \\times 0.8) \\times 3 = -18.816\\text{ J}$$\n\n$$\\mathbf{W_N = 0\\text{ J}, \\quad W_g = 70.56\\text{ J}, \\quad W_f = -18.816\\text{ J}}$$",
+      "line_start": 206,
+      "line_end": 235,
+      "native_stem": "A block of mass $4\\text{ kg}$ slides down a plane inclined at $37^\\circ$ with the horizontal. The length of the plane is $3\\text{ m}$. The coefficient of sliding friction between the block and the plane is $\\mu = 0.2$. Find:\n1. The work done due to gravity,\n2. The work done by the frictional force,\n3. The work done by the normal reaction between the block and the plane.  \n($g = 9.8\\text{ m/s}^2, \\sin 37^\\circ = 0.6, \\cos 37^\\circ = 0.8$).",
+      "options": []
+    },
+    "scan_pages": [
+      4,
+      5
+    ],
+    "sl1": {
+      "question_role": "OWNER_SUPPLIED_TEXTBOOK_EXTRACT",
+      "source_document_identity": "EXACT_SAVED_EXTRACT",
+      "printed_equivalence": "PENDING",
+      "exam_identity": "UNVERIFIED",
+      "official_key": "NOT_ESTABLISHED",
+      "question_payload_sha256": "cd156005e36b175cf660c4beef98a0f08824c395d444be084028ad0c4e3d36c0",
+      "source_answer_sha256": "c53be5b93cd055d8ec419571879829deb72d07e4dd51f8d5b3814f20e414fb1f",
+      "assets": [
+        "fig_06_incline_block.svg",
+        "fig_07_incline_fbd.svg"
+      ],
+      "first_try": "CANDIDATE_WITH_SOURCE_WARNINGS"
+    },
+    "sl2": {
+      "mode": "QUESTION",
+      "operation_proposal": "APPLY",
+      "difficulty_proposal": {
+        "band": "D2",
+        "score": 5,
+        "components": {
+          "concept_model_selection": 1,
+          "representation_translation": 1,
+          "reasoning_chain_length": 1,
+          "algebra_computational_load": 1,
+          "trap_exception_sensitivity": 1
+        },
+        "basis": "Author proposal for the exact supplied extract before support; independent adjudication pending. Work on a rough incline",
+        "component_evidence": {
+          "concept_model_selection": "Apply work separately to gravity, friction and the normal.",
+          "representation_translation": "Resolve the vertical force relative to motion down the incline.",
+          "reasoning_chain_length": "Obtain the normal before kinetic friction and its work.",
+          "algebra_computational_load": "Routine multi-operation numerical evaluation.",
+          "trap_exception_sensitivity": "Signs and the normal being perpendicular matter."
+        }
+      },
+      "decisive_move": "Identify the angle each force makes with the displacement.",
+      "input_roles": [
+        [
+          "Inclination 37° and sliding direction"
+        ],
+        [
+          "m = 4 kg, μ = 0.2, cos(37°) = 0.8"
+        ],
+        [
+          "sin(37°) = 0.6 and s = 3 m"
+        ]
+      ],
+      "output_role": "Gravity work = 70.56 J; friction work = -18.816 J; normal work = 0 J.",
+      "competing_operation": "MODEL",
+      "competition_reason": "The governing model is familiar and its execution is the principal demand.",
+      "review": "AUTHOR_PROPOSED_NOT_INDEPENDENT",
+      "learner_observation": null
+    },
+    "qrt": {
+      "placement": "PROVISIONAL",
+      "source_role": "TEXTBOOK_QUESTION",
+      "exam_21_admission": false,
+      "reviewed_construction_join": "PENDING",
+      "syllabus_nodes": [
+        "WPE-N01",
+        "WPE-N09"
+      ]
+    },
+    "issues": [
+      "Stationary-plane kinetic-friction model only; no universal claim that friction work is always negative.",
+      "The extraction supplies trigonometric approximations from the printed working.",
+      "Derived FBD includes final work relations and is solution-only."
+    ],
+    "admission": "NONE",
+    "native_question_sha256": "1789f4a3eacb460e9d7c73d1d2c28467fc55fdaae4ba0f46ba07372dd566e433"
+  },
+  {
+    "profile": "wpe-textbook-core2-review/v1",
+    "id": "TB-WPE-ILL-05",
+    "illustration": 5,
+    "title": "Gravitational power at the bottom of an incline",
+    "source": {
+      "raw": "### Illustration 5 (JEE Advanced)\n\n**Problem**:  \nA block of mass $m$ slides down a fixed smooth inclined plane of inclination angle $\\theta$ and length $l$. Calculate the magnitude of instantaneous power developed by the gravitational force when the block reaches the bottom.\n\n**Solution**:  \nThe power delivered by gravity is $P = \\vec{F}_g \\cdot \\vec{v}$.\n\nWhen the block reaches the bottom, its speed is given by Torricelli's theorem:\n$$v = \\sqrt{2gh} = \\sqrt{2gl\\sin\\theta}$$\n\nThe velocity vector $\\vec{v}$ is directed along the incline, which makes an angle of $(90^\\circ - \\theta)$ with the downward vertical gravity force $m\\vec{g}$.\n$$P = mg v \\cos(90^\\circ - \\theta) = mg v \\sin\\theta$$\n$$P = mg \\sin\\theta \\sqrt{2gl\\sin\\theta} = \\sqrt{2m^2 g^3 l \\sin^3\\theta}$$\n\n$$\\mathbf{P = \\sqrt{2m^2 g^3 l \\sin^3\\theta}}$$",
+      "question": "A block of mass $m$ slides down a fixed smooth inclined plane of inclination angle $\\theta$ and length $l$. Calculate the magnitude of instantaneous power developed by the gravitational force when the block reaches the bottom.",
+      "source_answer": "**Solution**:  \nThe power delivered by gravity is $P = \\vec{F}_g \\cdot \\vec{v}$.\n\nWhen the block reaches the bottom, its speed is given by Torricelli's theorem:\n$$v = \\sqrt{2gh} = \\sqrt{2gl\\sin\\theta}$$\n\nThe velocity vector $\\vec{v}$ is directed along the incline, which makes an angle of $(90^\\circ - \\theta)$ with the downward vertical gravity force $m\\vec{g}$.\n$$P = mg v \\cos(90^\\circ - \\theta) = mg v \\sin\\theta$$\n$$P = mg \\sin\\theta \\sqrt{2gl\\sin\\theta} = \\sqrt{2m^2 g^3 l \\sin^3\\theta}$$\n\n$$\\mathbf{P = \\sqrt{2m^2 g^3 l \\sin^3\\theta}}$$",
+      "line_start": 257,
+      "line_end": 272,
+      "native_stem": "A block of mass $m$ slides down a fixed smooth inclined plane of inclination angle $\\theta$ and length $l$. Calculate the magnitude of instantaneous power developed by the gravitational force when the block reaches the bottom.",
+      "options": []
+    },
+    "scan_pages": [
+      5
+    ],
+    "sl1": {
+      "question_role": "OWNER_SUPPLIED_TEXTBOOK_EXTRACT",
+      "source_document_identity": "EXACT_SAVED_EXTRACT",
+      "printed_equivalence": "PENDING",
+      "exam_identity": "UNVERIFIED",
+      "official_key": "NOT_ESTABLISHED",
+      "question_payload_sha256": "ce4e11826ca40c76caff757ed10ee993fd9d533e23cc43f327c9333d878f2dcb",
+      "source_answer_sha256": "c7759cc115f8f42c334852b298766cb3d9c4e56776e6ab8662df4ffef6148b9e",
+      "assets": [],
+      "first_try": "CONDITIONAL_SOURCE_DEFECT"
+    },
+    "sl2": {
+      "mode": "QUESTION",
+      "operation_proposal": "APPLY",
+      "difficulty_proposal": {
+        "band": "D3",
+        "score": 6,
+        "components": {
+          "concept_model_selection": 1,
+          "representation_translation": 1,
+          "reasoning_chain_length": 2,
+          "algebra_computational_load": 1,
+          "trap_exception_sensitivity": 1
+        },
+        "basis": "Author proposal for the exact supplied extract before support; independent adjudication pending. Gravitational power at the bottom of an incline",
+        "component_evidence": {
+          "concept_model_selection": "Combine bottom speed with power of the named gravitational force.",
+          "representation_translation": "Translate the incline geometry into h = l sin(θ).",
+          "reasoning_chain_length": "Coordinate energy or kinematics with a force-velocity projection.",
+          "algebra_computational_load": "Routine symbolic substitution and simplification.",
+          "trap_exception_sensitivity": "Force attribution matters; the missing initial speed is a source defect, not a demand bonus."
+        }
+      },
+      "decisive_move": "State that the source solution assumes release from rest.",
+      "input_roles": [
+        [
+          "Fixed smooth incline and source working"
+        ],
+        [
+          "v_bottom along the incline"
+        ],
+        [
+          "The preceding two relations"
+        ]
+      ],
+      "output_role": "Source result, conditional on release from rest: P = mg sin(θ) sqrt(2gl sin(θ)).",
+      "competing_operation": "MODEL",
+      "competition_reason": "The governing model is familiar and its execution is the principal demand.",
+      "review": "AUTHOR_PROPOSED_NOT_INDEPENDENT",
+      "learner_observation": null
+    },
+    "qrt": {
+      "placement": "PROVISIONAL",
+      "source_role": "TEXTBOOK_QUESTION",
+      "exam_21_admission": false,
+      "reviewed_construction_join": "PENDING",
+      "syllabus_nodes": [
+        "WPE-N10",
+        "WPE-N08"
+      ]
+    },
+    "issues": [
+      "UNDERDETERMINED_STEM: initial speed is absent; displayed source answer assumes release from rest."
+    ],
+    "admission": "NONE",
+    "native_question_sha256": "618cc5014e169811254f999293aef1f941474735da87cdb7f4b5411e306995ea"
+  },
+  {
+    "profile": "wpe-textbook-core2-review/v1",
+    "id": "TB-WPE-ILL-06",
+    "illustration": 6,
+    "title": "Net power during nonuniform circular motion",
+    "source": {
+      "raw": "### Illustration 6 (JEE Main)\n\n**Problem**:  \nA particle of mass $m$ is moving in a circular path of constant radius $r$ such that its centripetal acceleration $a_c$ varies with time $t$ as $a_c = k^2 r t^2$, where $k$ is a constant. The power delivered to the particle by the net force acting on it is:  \n(A) $2\\pi m k^2 r^2$  \n(B) $m k^2 r^2 t$  \n(C) $\\frac{m k^4 r^2 t^5}{3}$  \n(D) Zero  \n\n**Solution: (B)**  \nThe net force acting on the particle can be decomposed into centripetal and tangential components:\n$$\\vec{F} = \\vec{F}_c + \\vec{F}_t$$\n\n1. Since centripetal force is perpendicular to velocity ($\\vec{F}_c \\perp \\vec{v}$), the power delivered by the centripetal force is zero:\n   $$P_c = \\vec{F}_c \\cdot \\vec{v} = 0$$\n\n2. Tangential force is collinear with velocity, so:\n   $$P = P_t = F_t v$$\n\nFrom the given centripetal acceleration:\n$$a_c = \\frac{v^2}{r} = k^2 r t^2 \\implies v = krt$$\n\nDifferentiating with respect to time to find tangential acceleration:\n$$a_t = \\frac{dv}{dt} = kr$$\n\nThe tangential force is:\n$$F_t = m a_t = mkr$$\n\nTherefore, the instantaneous power delivered is:\n$$P = F_t v = (mkr)(krt) = m k^2 r^2 t$$\n\n$$\\mathbf{\\text{Correct Option: (B) } m k^2 r^2 t}$$",
+      "question": "A particle of mass $m$ is moving in a circular path of constant radius $r$ such that its centripetal acceleration $a_c$ varies with time $t$ as $a_c = k^2 r t^2$, where $k$ is a constant. The power delivered to the particle by the net force acting on it is:  \n(A) $2\\pi m k^2 r^2$  \n(B) $m k^2 r^2 t$  \n(C) $\\frac{m k^4 r^2 t^5}{3}$  \n(D) Zero",
+      "source_answer": "**Solution: (B)**  \nThe net force acting on the particle can be decomposed into centripetal and tangential components:\n$$\\vec{F} = \\vec{F}_c + \\vec{F}_t$$\n\n1. Since centripetal force is perpendicular to velocity ($\\vec{F}_c \\perp \\vec{v}$), the power delivered by the centripetal force is zero:\n   $$P_c = \\vec{F}_c \\cdot \\vec{v} = 0$$\n\n2. Tangential force is collinear with velocity, so:\n   $$P = P_t = F_t v$$\n\nFrom the given centripetal acceleration:\n$$a_c = \\frac{v^2}{r} = k^2 r t^2 \\implies v = krt$$\n\nDifferentiating with respect to time to find tangential acceleration:\n$$a_t = \\frac{dv}{dt} = kr$$\n\nThe tangential force is:\n$$F_t = m a_t = mkr$$\n\nTherefore, the instantaneous power delivered is:\n$$P = F_t v = (mkr)(krt) = m k^2 r^2 t$$\n\n$$\\mathbf{\\text{Correct Option: (B) } m k^2 r^2 t}$$",
+      "line_start": 276,
+      "line_end": 307,
+      "native_stem": "A particle of mass $m$ is moving in a circular path of constant radius $r$ such that its centripetal acceleration $a_c$ varies with time $t$ as $a_c = k^2 r t^2$, where $k$ is a constant. The power delivered to the particle by the net force acting on it is:",
+      "options": [
+        "(A) $2\\pi m k^2 r^2$",
+        "(B) $m k^2 r^2 t$",
+        "(C) $\\frac{m k^4 r^2 t^5}{3}$",
+        "(D) Zero"
+      ]
+    },
+    "scan_pages": [
+      5
+    ],
+    "sl1": {
+      "question_role": "OWNER_SUPPLIED_TEXTBOOK_EXTRACT",
+      "source_document_identity": "EXACT_SAVED_EXTRACT",
+      "printed_equivalence": "PENDING",
+      "exam_identity": "UNVERIFIED",
+      "official_key": "NOT_ESTABLISHED",
+      "question_payload_sha256": "6d074f7d1adb0560c453b8f75b3758cf4e162626d0532795c086ca0b314f773b",
+      "source_answer_sha256": "5f99b7c5ce616a9a2f2a4cf41b61380abd7c1a43ddfec4f78bdc4ba930e65dba",
+      "assets": [],
+      "first_try": "CANDIDATE_WITH_SOURCE_WARNINGS"
+    },
+    "sl2": {
+      "mode": "QUESTION",
+      "operation_proposal": "APPLY",
+      "difficulty_proposal": {
+        "band": "D3",
+        "score": 6,
+        "components": {
+          "concept_model_selection": 1,
+          "representation_translation": 1,
+          "reasoning_chain_length": 2,
+          "algebra_computational_load": 1,
+          "trap_exception_sensitivity": 1
+        },
+        "basis": "Author proposal for the exact supplied extract before support; independent adjudication pending. Net power during nonuniform circular motion",
+        "component_evidence": {
+          "concept_model_selection": "Net power must include the speed-changing force, not only the radial component.",
+          "representation_translation": "Convert centripetal acceleration into speed using a_c = v²/r.",
+          "reasoning_chain_length": "Find speed, differentiate it, and combine tangential force with velocity.",
+          "algebra_computational_load": "Routine time differentiation and product.",
+          "trap_exception_sensitivity": "Zero radial power does not mean zero net power."
+        }
+      },
+      "decisive_move": "Use a_c = v²/r to infer the speed law.",
+      "input_roles": [
+        [
+          "a_c = k²rt²"
+        ],
+        [
+          "v = krt for the source convention"
+        ],
+        [
+          "F_t = mkr and v = krt"
+        ]
+      ],
+      "output_role": "Source choice (B): P = m k² r² t.",
+      "competing_operation": "MODEL",
+      "competition_reason": "The governing model is familiar and its execution is the principal demand.",
+      "review": "AUTHOR_PROPOSED_NOT_INDEPENDENT",
+      "learner_observation": null
+    },
+    "qrt": {
+      "placement": "PROVISIONAL",
+      "source_role": "TEXTBOOK_QUESTION",
+      "exam_21_admission": false,
+      "reviewed_construction_join": "PENDING",
+      "syllabus_nodes": [
+        "WPE-N10",
+        "WPE-N04"
+      ]
+    },
+    "issues": [
+      "The source convention uses nonnegative elapsed time; speed is a magnitude."
+    ],
+    "admission": "NONE",
+    "native_question_sha256": "3b3fae451223b913e8efd24b686d97c5022d985068bf895904f9cdb4ef7bf74c"
+  },
+  {
+    "profile": "wpe-textbook-core2-review/v1",
+    "id": "TB-WPE-ILL-11",
+    "illustration": 11,
+    "title": "A uniform chain slipping off a table",
+    "source": {
+      "raw": "### Illustration 11 (JEE Main): Overhanging Slipping Chain\n\n**Problem**:  \nA uniform flexible chain of length $l$ and mass $m$ overhangs a smooth horizontal table with two-thirds ($2l/3$) of its length lying on the table. Find the kinetic energy of the chain as it completely slips off the table.\n\n![Uniform Overhanging Chain Slipping Off Table](images/fig_09_overhanging_chain.svg)\n\n**Solution**:  \nChoose the table surface as the gravitational potential energy reference plane ($U_{\\text{table}} = 0$).\n\n1. **Initial Potential Energy ($U_1$)**:  \n   The portion on the table ($2l/3$) has $U = 0$.  \n   The hanging portion has length $l/3$. Consider an infinitesimal element of length $dx$ at depth $x$ below the table edge ($0 \\le x \\le l/3$):\n   $$dm = \\frac{m}{l}dx$$\n   $$dU = - (dm) g x = -\\frac{m}{l}g x dx$$\n   $$U_1 = \\int_{0}^{l/3} -\\frac{m}{l}g x dx = -\\frac{m g}{l} \\left[ \\frac{x^2}{2} \\right]_{0}^{l/3} = -\\frac{mg}{l}\\left( \\frac{l^2}{18} \\right) = -\\frac{1}{18}mgl$$\n\n2. **Final Potential Energy ($U_2$)**:  \n   When the entire chain has just slipped off the table, the chain hangs vertically between $x = 0$ and $x = l$:\n   $$U_2 = \\int_{0}^{l} -\\frac{m}{l}g x dx = -\\frac{mg}{l} \\left[ \\frac{l^2}{2} \\right] = -\\frac{1}{2}mgl$$\n\n3. **Loss in Potential Energy = Gain in Kinetic Energy**:  \n   Since the table is frictionless and no non-conservative forces act:\n   $$\\Delta K = -\\Delta U = U_1 - U_2$$\n   $$K_{\\text{final}} - 0 = \\left( -\\frac{1}{18}mgl \\right) - \\left( -\\frac{1}{2}mgl \\right) = \\left( \\frac{1}{2} - \\frac{1}{18} \\right)mgl = \\frac{8}{18}mgl = \\frac{4}{9}mgl$$\n\n$$\\mathbf{K = \\frac{4}{9}mgl}$$",
+      "question": "A uniform flexible chain of length $l$ and mass $m$ overhangs a smooth horizontal table with two-thirds ($2l/3$) of its length lying on the table. Find the kinetic energy of the chain as it completely slips off the table.\n\n![Uniform Overhanging Chain Slipping Off Table](images/fig_09_overhanging_chain.svg)",
+      "source_answer": "**Solution**:  \nChoose the table surface as the gravitational potential energy reference plane ($U_{\\text{table}} = 0$).\n\n1. **Initial Potential Energy ($U_1$)**:  \n   The portion on the table ($2l/3$) has $U = 0$.  \n   The hanging portion has length $l/3$. Consider an infinitesimal element of length $dx$ at depth $x$ below the table edge ($0 \\le x \\le l/3$):\n   $$dm = \\frac{m}{l}dx$$\n   $$dU = - (dm) g x = -\\frac{m}{l}g x dx$$\n   $$U_1 = \\int_{0}^{l/3} -\\frac{m}{l}g x dx = -\\frac{m g}{l} \\left[ \\frac{x^2}{2} \\right]_{0}^{l/3} = -\\frac{mg}{l}\\left( \\frac{l^2}{18} \\right) = -\\frac{1}{18}mgl$$\n\n2. **Final Potential Energy ($U_2$)**:  \n   When the entire chain has just slipped off the table, the chain hangs vertically between $x = 0$ and $x = l$:\n   $$U_2 = \\int_{0}^{l} -\\frac{m}{l}g x dx = -\\frac{mg}{l} \\left[ \\frac{l^2}{2} \\right] = -\\frac{1}{2}mgl$$\n\n3. **Loss in Potential Energy = Gain in Kinetic Energy**:  \n   Since the table is frictionless and no non-conservative forces act:\n   $$\\Delta K = -\\Delta U = U_1 - U_2$$\n   $$K_{\\text{final}} - 0 = \\left( -\\frac{1}{18}mgl \\right) - \\left( -\\frac{1}{2}mgl \\right) = \\left( \\frac{1}{2} - \\frac{1}{18} \\right)mgl = \\frac{8}{18}mgl = \\frac{4}{9}mgl$$\n\n$$\\mathbf{K = \\frac{4}{9}mgl}$$",
+      "line_start": 412,
+      "line_end": 438,
+      "native_stem": "A uniform flexible chain of length $l$ and mass $m$ overhangs a smooth horizontal table with two-thirds ($2l/3$) of its length lying on the table. Find the kinetic energy of the chain as it completely slips off the table.",
+      "options": []
+    },
+    "scan_pages": [
+      9
+    ],
+    "sl1": {
+      "question_role": "OWNER_SUPPLIED_TEXTBOOK_EXTRACT",
+      "source_document_identity": "EXACT_SAVED_EXTRACT",
+      "printed_equivalence": "PENDING",
+      "exam_identity": "UNVERIFIED",
+      "official_key": "NOT_ESTABLISHED",
+      "question_payload_sha256": "cf7d349a007e2d875309bd1e97677b7152de2ae563aae225a870e5b5371ae918",
+      "source_answer_sha256": "96bb1913e318a1dd1464a04e79aa6e810bb3b35a08362d7b2eb257de9477ab67",
+      "assets": [
+        "fig_09_overhanging_chain.svg"
+      ],
+      "first_try": "CONDITIONAL_SOURCE_DEFECT"
+    },
+    "sl2": {
+      "mode": "QUESTION",
+      "operation_proposal": "MODEL",
+      "difficulty_proposal": {
+        "band": "D4",
+        "score": 8,
+        "components": {
+          "concept_model_selection": 2,
+          "representation_translation": 2,
+          "reasoning_chain_length": 2,
+          "algebra_computational_load": 1,
+          "trap_exception_sensitivity": 1
+        },
+        "basis": "Author proposal for the exact supplied extract before support; independent adjudication pending. A uniform chain slipping off a table",
+        "component_evidence": {
+          "concept_model_selection": "Choose a distributed-energy model rather than placing the whole mass at one arbitrary height.",
+          "representation_translation": "Construct initial and final mass-height distributions with a consistent zero.",
+          "reasoning_chain_length": "Coordinate density, two potential-energy integrals and energy balance.",
+          "algebra_computational_load": "Routine quadratic integration; not scored high merely for calculus.",
+          "trap_exception_sensitivity": "Initial kinetic energy and ideal contact assumptions affect the final result."
+        }
+      },
+      "decisive_move": "Set table height as zero and use uniform linear mass density m/l.",
+      "input_roles": [
+        [
+          "Initial hanging length l/3 and full length l"
+        ],
+        [
+          "The uniform-density model"
+        ],
+        [
+          "The two potential energies and K_initial = 0"
+        ]
+      ],
+      "output_role": "Source result, conditional on zero initial kinetic energy and its ideal chain model: K_final = (4/9)mgl.",
+      "competing_operation": "APPLY",
+      "competition_reason": "An explicit distributed/contact representation is decisive.",
+      "review": "AUTHOR_PROPOSED_NOT_INDEPENDENT",
+      "learner_observation": null
+    },
+    "qrt": {
+      "placement": "PROVISIONAL",
+      "source_role": "TEXTBOOK_QUESTION",
+      "exam_21_admission": false,
+      "reviewed_construction_join": "PENDING",
+      "syllabus_nodes": [
+        "WPE-N06",
+        "WPE-N08"
+      ]
+    },
+    "issues": [
+      "Initial rest appears in the printed solution, not in the supplied extracted stem.",
+      "Flexible-chain contact/edge idealization and lossless energy transfer require distinct review.",
+      "The derived SVG prints the final answer and is solution-only; a safe original-figure projection is pending."
+    ],
+    "admission": "NONE",
+    "native_question_sha256": "3732f04ab358d3098c7041b771f220c0aafb77ea601a722b71e103c4ca49f6ad"
+  },
+  {
+    "profile": "wpe-textbook-core2-review/v1",
+    "id": "TB-WPE-ILL-12",
+    "illustration": 12,
+    "title": "A block pushed by a compressed spring",
+    "source": {
+      "raw": "### Illustration 12 (JEE Advanced): Spring-Block System Release\n\n**Problem**:  \nA block of mass $m$ is pushed against a light spring of spring constant $k$ fixed at one end to a rigid vertical wall. The block slides on a frictionless horizontal table. The natural length of the spring is $L_0$. The spring is compressed to half its natural length ($x_{\\text{init}} = L_0/2$) and the block is released from rest. Find the velocity of the block as a function of its distance $x$ from the wall.\n\n![Block Released from Compressed Spring](images/fig_10_spring_block_wall.svg)\n\n**Solution**:  \nThe system consists of the block and the spring. The surface is frictionless, so mechanical energy is conserved throughout the motion.\n\n1. **Initial State ($x = L_0/2$)**:  \n   The block is released from rest ($v = 0 \\implies K = 0$).  \n   The compression of the spring is:\n   $$\\Delta x_{\\text{init}} = L_0 - \\frac{L_0}{2} = \\frac{L_0}{2}$$\n   Total initial mechanical energy:\n   $$E = \\frac{1}{2}k (\\Delta x_{\\text{init}})^2 = \\frac{1}{2}k \\left(\\frac{L_0}{2}\\right)^2 = \\frac{1}{8}k L_0^2$$\n\n2. **Motion while in Contact with Spring ($\\frac{L_0}{2} \\le x \\le L_0$)**:  \n   At any position $x$, the compression of the spring is $(L_0 - x)$.  \n   By conservation of mechanical energy:\n   $$\\frac{1}{2}mv^2 + \\frac{1}{2}k(L_0 - x)^2 = \\frac{1}{8}k L_0^2$$\n   $$\\frac{1}{2}mv^2 = \\frac{1}{2}k \\left[ \\frac{L_0^2}{4} - (L_0 - x)^2 \\right]$$\n   $$v(x) = \\sqrt{\\frac{k}{m} \\left[ \\frac{L_0^2}{4} - (L_0 - x)^2 \\right]}$$\n\n3. **Motion after Losing Contact ($x > L_0$)**:  \n   At $x = L_0$, the spring reaches its natural length and cannot pull on the detached block. The block loses contact with the spring and travels with constant maximum velocity:\n   $$v_{\\max} = \\sqrt{\\frac{k}{m}} \\left(\\frac{L_0}{2}\\right)$$\n\n$$\\mathbf{v(x) = \\begin{cases} \\sqrt{\\frac{k}{m}\\left[\\frac{L_0^2}{4} - (L_0 - x)^2\\right]}, & \\frac{L_0}{2} \\le x \\le L_0 \\\\[8pt] \\frac{L_0}{2}\\sqrt{\\frac{k}{m}}, & x > L_0 \\end{cases}}$$",
+      "question": "A block of mass $m$ is pushed against a light spring of spring constant $k$ fixed at one end to a rigid vertical wall. The block slides on a frictionless horizontal table. The natural length of the spring is $L_0$. The spring is compressed to half its natural length ($x_{\\text{init}} = L_0/2$) and the block is released from rest. Find the velocity of the block as a function of its distance $x$ from the wall.\n\n![Block Released from Compressed Spring](images/fig_10_spring_block_wall.svg)",
+      "source_answer": "**Solution**:  \nThe system consists of the block and the spring. The surface is frictionless, so mechanical energy is conserved throughout the motion.\n\n1. **Initial State ($x = L_0/2$)**:  \n   The block is released from rest ($v = 0 \\implies K = 0$).  \n   The compression of the spring is:\n   $$\\Delta x_{\\text{init}} = L_0 - \\frac{L_0}{2} = \\frac{L_0}{2}$$\n   Total initial mechanical energy:\n   $$E = \\frac{1}{2}k (\\Delta x_{\\text{init}})^2 = \\frac{1}{2}k \\left(\\frac{L_0}{2}\\right)^2 = \\frac{1}{8}k L_0^2$$\n\n2. **Motion while in Contact with Spring ($\\frac{L_0}{2} \\le x \\le L_0$)**:  \n   At any position $x$, the compression of the spring is $(L_0 - x)$.  \n   By conservation of mechanical energy:\n   $$\\frac{1}{2}mv^2 + \\frac{1}{2}k(L_0 - x)^2 = \\frac{1}{8}k L_0^2$$\n   $$\\frac{1}{2}mv^2 = \\frac{1}{2}k \\left[ \\frac{L_0^2}{4} - (L_0 - x)^2 \\right]$$\n   $$v(x) = \\sqrt{\\frac{k}{m} \\left[ \\frac{L_0^2}{4} - (L_0 - x)^2 \\right]}$$\n\n3. **Motion after Losing Contact ($x > L_0$)**:  \n   At $x = L_0$, the spring reaches its natural length and cannot pull on the detached block. The block loses contact with the spring and travels with constant maximum velocity:\n   $$v_{\\max} = \\sqrt{\\frac{k}{m}} \\left(\\frac{L_0}{2}\\right)$$\n\n$$\\mathbf{v(x) = \\begin{cases} \\sqrt{\\frac{k}{m}\\left[\\frac{L_0^2}{4} - (L_0 - x)^2\\right]}, & \\frac{L_0}{2} \\le x \\le L_0 \\\\[8pt] \\frac{L_0}{2}\\sqrt{\\frac{k}{m}}, & x > L_0 \\end{cases}}$$",
+      "line_start": 442,
+      "line_end": 470,
+      "native_stem": "A block of mass $m$ is pushed against a light spring of spring constant $k$ fixed at one end to a rigid vertical wall. The block slides on a frictionless horizontal table. The natural length of the spring is $L_0$. The spring is compressed to half its natural length ($x_{\\text{init}} = L_0/2$) and the block is released from rest. Find the velocity of the block as a function of its distance $x$ from the wall.",
+      "options": []
+    },
+    "scan_pages": [
+      9
+    ],
+    "sl1": {
+      "question_role": "OWNER_SUPPLIED_TEXTBOOK_EXTRACT",
+      "source_document_identity": "EXACT_SAVED_EXTRACT",
+      "printed_equivalence": "PENDING",
+      "exam_identity": "UNVERIFIED",
+      "official_key": "NOT_ESTABLISHED",
+      "question_payload_sha256": "e94e81cc0f5319fe702f30436ae3ce8b0ca4950d68c3b911b48a56446ce6d5cc",
+      "source_answer_sha256": "2691ac6b62f9f328f18922b95d897ce24bd6c954d4a71a144a2af008b910735f",
+      "assets": [
+        "fig_10_spring_block_wall.svg"
+      ],
+      "first_try": "CONDITIONAL_SOURCE_DEFECT"
+    },
+    "sl2": {
+      "mode": "QUESTION",
+      "operation_proposal": "MODEL",
+      "difficulty_proposal": {
+        "band": "D4",
+        "score": 9,
+        "components": {
+          "concept_model_selection": 2,
+          "representation_translation": 1,
+          "reasoning_chain_length": 2,
+          "algebra_computational_load": 2,
+          "trap_exception_sensitivity": 2
+        },
+        "basis": "Author proposal for the exact supplied extract before support; independent adjudication pending. A block pushed by a compressed spring",
+        "component_evidence": {
+          "concept_model_selection": "Select a unilateral contact model: pushed against the spring does not mean permanently attached.",
+          "representation_translation": "Translate wall distance into spring compression while contact lasts.",
+          "reasoning_chain_length": "Coordinate initial energy, contact phase and subsequent free motion.",
+          "algebra_computational_load": "Construct and bound a piecewise symbolic expression.",
+          "trap_exception_sensitivity": "Detachment at natural length changes the governing expression."
+        }
+      },
+      "decisive_move": "Separate contact motion from motion after loss of contact.",
+      "input_roles": [
+        [
+          "Initial compression L₀/2"
+        ],
+        [
+          "Wall distance x and natural length L₀"
+        ],
+        [
+          "(1/2)mv² + (1/2)k(L₀-x)² = kL₀²/8"
+        ]
+      ],
+      "output_role": "Extracted conditional model: v(x) = sqrt((k/m)[L₀²/4 - (L₀-x)²]) for L₀/2 ≤ x ≤ L₀; v(x) = (L₀/2)sqrt(k/m) after detachment.",
+      "competing_operation": "APPLY",
+      "competition_reason": "An explicit distributed/contact representation is decisive.",
+      "review": "AUTHOR_PROPOSED_NOT_INDEPENDENT",
+      "learner_observation": null
+    },
+    "qrt": {
+      "placement": "PROVISIONAL",
+      "source_role": "TEXTBOOK_QUESTION",
+      "exam_21_admission": false,
+      "reviewed_construction_join": "PENDING",
+      "syllabus_nodes": [
+        "WPE-N02",
+        "WPE-N06",
+        "WPE-N08"
+      ]
+    },
+    "issues": [
+      "The printed solution is qualitative; the extraction adds the piecewise algebra and explicit initial-rest wording.",
+      "The printed assertion of no external forces must be read as no external energy transfer in this ideal model; gravity and table normal exist."
+    ],
+    "admission": "NONE",
+    "native_question_sha256": "497dafe01330c94675c8f775d4a5cb9a8ff500ba9b5954b8bc41e963d7143baf"
+  }
+]

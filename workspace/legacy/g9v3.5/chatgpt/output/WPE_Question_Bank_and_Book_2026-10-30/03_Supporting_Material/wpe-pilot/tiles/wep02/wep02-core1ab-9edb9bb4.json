@@ -1,0 +1,1420 @@
+{
+  "task": "P1-WPE-G9v35",
+  "card": "S6",
+  "move": "M8",
+  "as_of": "2026-10-28",
+  "deliverable": "ONE_PAIRED_CORE1A_CORE1B_JSON_PASS1_SYLLABUS_TILE_WEP02",
+  "writer_status": "S6_AUTHOR_DRAFT_UNCHECKED",
+  "writer_does_not_approve": true,
+  "scope": {
+    "key_idea": "WEP-02",
+    "title": "Work done by a variable force; signed F–x area and ideal spring work",
+    "included_core": [
+      "Force varies with position along one straight axis",
+      "Signed area under F_parallel–x: rectangles, triangles, trapezia",
+      "Correct sign when force changes sign",
+      "Why endpoint force times distance is generally wrong",
+      "Hooke force on body F_spring=−kx",
+      "Work by and against ideal spring between two nonzero extensions",
+      "Crossing natural length x=0 and reverse-direction checks"
+    ],
+    "excluded": [
+      "Definite integrals or differentiation",
+      "General curved-path work",
+      "General nonlinear force curves with exact non-elementary areas",
+      "Rotational/elastic-plastic/hysteresis spring models",
+      "Claims that all forces besides spring vanish without declared assumption"
+    ],
+    "not_core2": true,
+    "no_exam_questions_required_pass_1": true,
+    "original_anchors_only": true,
+    "beyond_grade9": {
+      "notation": "∫F dx — beyond Grade 9, given; never required, used, or tested",
+      "other": "No advanced mathematics or vectors beyond signed components and cosθ used."
+    },
+    "link_to_prior_tile": "WEP-01 provides force/body/frame, sign of constant-force work and signed summation."
+  },
+  "shared_inferential_jump": "The signed area under the force–position graph generalises F × s; the ideal spring is the straight-line case.",
+  "authority": {
+    "academic_truth_from": {
+      "canonical_library_url": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Physics/library/phy-work-energy-power.v1.json",
+      "canonical_existing_refs": [
+        "MIC-PHY-WEP-WORK-DIRECTION",
+        "REL-WORK-CONSTANT-FORCE",
+        "CONV-WEP-SYSTEM-FIRST",
+        "CONV-WEP-PATH-FIRST"
+      ],
+      "status": "The repository physics package is CANDIDATE and excludes spring/variable-force work from its current scope; the added syllabus node is an explicit CANDIDATE for library admission, not a silent canonical rewrite."
+    },
+    "role_rules": {
+      "core1a": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Shared/roles/CORE1A.md",
+      "core1b": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Shared/roles/CORE1B.md",
+      "authority": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Shared/roles/CORE-AUTHORITY-CONTRACT.md",
+      "invariants": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Shared/roles/README.md",
+      "templates": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Shared/roles/LEARNER-PRODUCT-TEMPLATES.md"
+    },
+    "truth_sources": [
+      {
+        "id": "CAN-WEP-WORK",
+        "url": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Physics/library/phy-work-energy-power.v1.json",
+        "kind": "CANDIDATE_LIBRARY_SUBJECT_RECORD",
+        "use": "Work on chosen body and sign of constant-force component; WEP-01 prerequisite"
+      },
+      {
+        "id": "REF-OPENSTAX-GRAPH",
+        "url": "https://openstax.org/books/college-physics/pages/7-2-kinetic-energy-and-the-work-energy-theorem",
+        "kind": "REFERENCE_ENRICHMENT",
+        "use": "Force-displacement graph signed area and segment accumulation"
+      },
+      {
+        "id": "REF-OPENSTAX-SPRING",
+        "url": "https://openstax.org/books/university-physics-volume-1/pages/7-1-work",
+        "kind": "REFERENCE_ENRICHMENT",
+        "use": "Spring force F=−kx and work between arbitrary endpoint deformations"
+      },
+      {
+        "id": "REF-OPENSTAX-U",
+        "url": "https://openstax.org/books/college-physics-2e/pages/7-4-conservative-forces-and-potential-energy",
+        "kind": "REFERENCE_ENRICHMENT",
+        "use": "Triangular area and ideal spring potential energy"
+      },
+      {
+        "id": "SRC-WEP02-AUTHOR-CONSTRUCTION",
+        "url": null,
+        "kind": "AUTHORED_PEDAGOGICAL",
+        "use": "Original conceptual construction, examples, diagrams and elicitation; not attributed to a source verbatim"
+      }
+    ],
+    "exam_custody_used": false,
+    "learner_estimate_used": false,
+    "origin": "AUTHORED_PEDAGOGICAL_GROUNDED_IN_CANONICAL_SUBJECT_INPUT_AND_CITED_REFERENCES",
+    "frozen_question_primary_capability_modified": false,
+    "extension_admission": "RESEARCH_AND_AUTHOR_CANDIDATE_NOT_COMMITTED"
+  },
+  "bucket": {
+    "id": "BUCKET-PHY-WORK-ENERGY-POWER",
+    "status": "CANDIDATE_EXISTING_LIBRARY_PLUS_EXPLICIT_EXTENSION_CANDIDATE",
+    "subject": "Physics",
+    "stage": "PASS1_SYLLABUS_FIRST",
+    "conventions": [
+      {
+        "id": "WEP02-C1",
+        "statement": "Specify the physical target body, force agent, one-dimensional ground (inertial) frame, observation interval and force component along a fixed +x axis.",
+        "learner_visibility": "PRE_ATTEMPT_SAFE"
+      },
+      {
+        "id": "WEP02-C2",
+        "statement": "Use x in metres as signed spring-end or body position; for springs x=0 is the natural length, x>0 is extension and x<0 is compression; k>0 has units N/m.",
+        "learner_visibility": "PRE_ATTEMPT_SAFE"
+      },
+      {
+        "id": "WEP02-C3",
+        "statement": "The plotted F_x(x) must be the force component ON the target body along the chosen x direction. Motion between supplied endpoints follows the stated direction. No unlisted force is presumed absent.",
+        "learner_visibility": "PRE_ATTEMPT_SAFE"
+      },
+      {
+        "id": "WEP02-C4",
+        "statement": "For a graph composed of horizontal and straight sloping pieces, compute work by adding the signed rectangle/triangle/trapezium areas between initial and final x. Horizontal-axis crossings split the pieces.",
+        "learner_visibility": "AFTER_ATTEMPT_ONLY"
+      },
+      {
+        "id": "WEP02-C5",
+        "statement": "For motion toward increasing x, graph area above the x-axis is positive, below negative; for traversal from x2 back to x1 with the same F(x), every segment sign reverses. Force-area units N·m=J.",
+        "learner_visibility": "AFTER_ATTEMPT_ONLY"
+      },
+      {
+        "id": "WEP02-C6",
+        "statement": "A varying force does not generally do W=F(x1)(x2−x1) or W=F(x2)(x2−x1); these use one height for the whole graph. F_average Δx is exact for a linear graph with F_average=(F1+F2)/2.",
+        "learner_visibility": "AFTER_ATTEMPT_ONLY"
+      },
+      {
+        "id": "WEP02-C7",
+        "statement": "Ideal spring is massless for work-account purposes, obeys F_spring on attached body=−kx throughout the stated range, and is anchored at one end; its graph is a straight line through the origin with negative slope.",
+        "learner_visibility": "AFTER_ATTEMPT_ONLY"
+      },
+      {
+        "id": "WEP02-C8",
+        "statement": "Spring work between x1 and x2 equals W_spring=½k(x1²−x2²); ideal elastic-energy change ΔU_s=½k(x2²−x1²) with U_s(0)=0. Work by the spring is −ΔU_s.",
+        "learner_visibility": "AFTER_ATTEMPT_ONLY"
+      },
+      {
+        "id": "WEP02-C9",
+        "statement": "Work BY the spring means work of F_spring=−kx on its attached body; work AGAINST the spring means work of an external applied pull on that body. They are equal in magnitude and opposite in sign only if the movement is slow/quasistatic with negligible friction, no additional along-axis work and no appreciable change in kinetic energy. State these conditions before equating them.",
+        "learner_visibility": "AFTER_ATTEMPT_ONLY"
+      },
+      {
+        "id": "WEP02-C10",
+        "statement": "The force graph may be used to compute the work by one named force even if friction or other forces are present. To infer overall energy/kinetic change one must account for work by every acting force.",
+        "learner_visibility": "AFTER_ATTEMPT_ONLY"
+      },
+      {
+        "id": "WEP02-C11",
+        "statement": "Elementary signed areas are exact for explicitly horizontal or linear straight-line graph portions. General curved graphs need additional approximations or higher-level methods, not required here.",
+        "learner_visibility": "AFTER_ATTEMPT_ONLY"
+      }
+    ]
+  },
+  "microtopic": {
+    "id": "MIC-PHY-WEP-VARIABLE-FORCE-AREA-CANDIDATE",
+    "version": "0.1.0",
+    "status": "CANDIDATE_PROPOSED_SYLLABUS_TILE_NOT_COMMITTED",
+    "origin": "AUTHORED_PEDAGOGICAL_EXTENSION_OF_EXISTING_WORK_DIRECTION",
+    "source_refs": [
+      "CAN-WEP-WORK",
+      "REF-OPENSTAX-GRAPH",
+      "REF-OPENSTAX-SPRING",
+      "REF-OPENSTAX-U",
+      "SRC-WEP02-AUTHOR-CONSTRUCTION"
+    ],
+    "evidence_refs": [],
+    "extensions": {
+      "syllabus_spine": "WEP-02",
+      "admission": "CANDIDATE_ONLY"
+    },
+    "title": "From changing force to signed work: geometric F–x area and ideal spring",
+    "bucket_id": "BUCKET-PHY-WORK-ENERGY-POWER",
+    "primary_capability_ref": "CAP-WEP-WORK-DIRECTION",
+    "new_candidate_capability_ref": "CAP-WEP-VARIABLE-FORCE-AREA-SPRING",
+    "intrinsic_badge": "MEDIUM",
+    "badge_reason": "Learners must translate a changing force graph to a signed area, break a zero crossing into distinct regions, and separate spring work from external work; these transitions are easy to misread as force-times-distance.",
+    "entry_assumptions": [
+      "Can name the force agent and target body and distinguish displacement from distance (WEP-01).",
+      "Can choose a right-positive 1D axis and identify initial/final coordinates in a fixed ground inertial frame.",
+      "Can use W=F_parallel s=Fs cosθ for a constant force and identify positive/negative work (WEP-01).",
+      "Can add signed numbers and use metre, newton and joule units.",
+      "Can calculate rectangle, triangle, and trapezium areas and interpret slope of a straight line without calculus.",
+      "Can solve simple one-step algebra, square a decimal and convert cm to m.",
+      "Knows Newton’s laws enough to distinguish force agents and that balanced forces can allow slow nearly constant-speed motion.",
+      "No prior spring-energy formula assumed; the ideal spring force law is introduced and then constructed geometrically."
+    ],
+    "inferential_jump": "The signed area under the force–position graph generalises F × s; the ideal spring is the straight-line case.",
+    "teaching_path": [
+      {
+        "id": "S01",
+        "role": "DECLARE",
+        "action": "Choose the force acting on the target body, inertial frame, signed position x, and the ordered endpoints; label F_x rather than an unsigned force magnitude.",
+        "why_valid": "Work is about a named agent/body and displacement in a declared frame; F_x sign must match this axis.",
+        "source_ref": "CAN-WEP-WORK"
+      },
+      {
+        "id": "S02",
+        "role": "CONSTRUCT",
+        "action": "Connect the WEP-01 constant-force case to a flat F_x–x graph: its rectangular area has magnitude |F_x|·|Δx| with sign from force and traversal.",
+        "why_valid": "A constant force has the same height at every position; a rectangle encodes the earlier relation.",
+        "source_ref": "REF-OPENSTAX-GRAPH"
+      },
+      {
+        "id": "S03",
+        "role": "TRANSFORM",
+        "action": "For a linearly varying force segment, use trapezium area width × mean of endpoint signed heights; alternatively split into rectangle and triangle.",
+        "why_valid": "Straight-line height changes uniformly: the rectangle-plus-triangle formula equals the average-height trapezium.",
+        "source_ref": "REF-OPENSTAX-GRAPH"
+      },
+      {
+        "id": "S04",
+        "role": "CONSTRUCT",
+        "action": "Split a graph at a crossing of F_x=0; treat above-axis and below-axis regions separately and add their signed areas.",
+        "why_valid": "The direction of force relative to displacement changes at an axis crossing, so geometric magnitudes cannot all be added positively.",
+        "source_ref": "REF-OPENSTAX-GRAPH"
+      },
+      {
+        "id": "S05",
+        "role": "COMPARE",
+        "action": "Contrast endpoint F×distance with the actual trapezium for a sloped segment. Endpoint multiplication gives the wrong area unless the force is constant or a special coincidence occurs.",
+        "why_valid": "One endpoint height cannot represent changing force over the interval; the graph contains the missing change.",
+        "source_ref": "CAN-WEP-WORK"
+      },
+      {
+        "id": "S06",
+        "role": "DECLARE",
+        "action": "Specify an ideal Hooke spring, the undeformed reference x=0, and an attached body; distinguish restoring spring force −kx from the balancing applied force +kx.",
+        "why_valid": "A stretched spring pulls back, a compressed spring pushes out; the two named agents have opposite forces.",
+        "source_ref": "REF-OPENSTAX-SPRING"
+      },
+      {
+        "id": "S07",
+        "role": "CONSTRUCT",
+        "action": "For F_spring=−kx, construct the zero-to-|x| force–position triangle: its base is |x| metres, its height is |F|=k|x| newtons, so its geometric area is ½·|x|·k|x|=½kx². Give the spring work its directed sign; compare the two signed endpoint triangles to obtain W_spring(x1→x2)=½k(x1²−x2²).",
+        "why_valid": "Each endpoint triangle magnitude is ½·|x|·k|x|=½kx²; directed signed subtraction handles both stretching and compression.",
+        "source_ref": "REF-OPENSTAX-SPRING"
+      },
+      {
+        "id": "S08",
+        "role": "COMPARE",
+        "action": "During slow ideal stretching, work by the balancing agent is the opposite of spring work and equals the increase of U_s=½kx². State the no-friction and no-net-change-in-K conditions.",
+        "why_valid": "With no kinetic change or additional along-axis transfer, the applied and spring works cancel; potential rises on stretching from equilibrium.",
+        "source_ref": "REF-OPENSTAX-U"
+      },
+      {
+        "id": "S09",
+        "role": "VERIFY",
+        "action": "Reverse an interval in an unchanged F_x(x) field; the signed work changes sign. Check a zero-net-work case with nonzero force on different portions and no invented total-force assumptions.",
+        "why_valid": "Reversing the direction swaps sign of each directed area. Positive and negative pieces can cancel without making force or motion zero.",
+        "source_ref": "REF-OPENSTAX-GRAPH"
+      },
+      {
+        "id": "S10",
+        "role": "VERIFY",
+        "action": "Check units and scope: newtons times metres produce joules; compare individual-force work and net work; curved graphs are not exactly one elementary trapezium.",
+        "why_valid": "Dimensional and domain tests catch wrong heights, wrong body, sign and invalid approximation.",
+        "source_ref": "CAN-WEP-WORK"
+      }
+    ],
+    "relation_refs": [
+      "REL-WEP02-SIGNED-AREA-CANDIDATE",
+      "REL-WEP02-IDEAL-SPRING-CANDIDATE"
+    ],
+    "representation_refs": [
+      "SCN02-RECT",
+      "SCN02-LINE",
+      "SCN02-CROSS",
+      "SCN02-SPRING",
+      "SCN02-EXT",
+      "SCN02-REVERSE"
+    ],
+    "question_family_refs": [],
+    "misconceptions": [
+      {
+        "id": "MIS01",
+        "wrong_idea": "For varying force, multiply the force at the start by the whole distance.",
+        "diagnostic_prompt": "A graph rises from 2 N to 8 N over 3 m. Would using 2×3 reproduce the geometric trapezium?",
+        "repair": "Compare the single rectangle to the trapezium; draw the extra triangular part rather than reusing one endpoint height."
+      },
+      {
+        "id": "MIS02",
+        "wrong_idea": "Every geometric area is positive, so positive and negative force regions add as positive magnitudes.",
+        "diagnostic_prompt": "A graph spends equal signed triangular areas above and below the axis. What is the signed total work?",
+        "repair": "Write one signed row per interval, then add algebraically; area below the axis contributes negative work in a rightward traversal."
+      },
+      {
+        "id": "MIS03",
+        "wrong_idea": "The spring always does negative work, even while returning toward the natural length.",
+        "diagnostic_prompt": "An initially extended spring pulls the body left while the body moves left. What is the spring-work sign?",
+        "repair": "Identify the actual direction of motion relative to restoring force; verify with W_spring=½k(x1²−x2²)."
+      },
+      {
+        "id": "MIS04",
+        "wrong_idea": "Work done against the spring is the same signed work as work done by the spring.",
+        "diagnostic_prompt": "In a quasistatic stretch from 0.05 m to 0.15 m, do the spring force and applied pulling force have the same direction?",
+        "repair": "Name the agent for each force. Under explicitly frictionless, quasistatic conditions, external balancing force is opposite the spring force."
+      },
+      {
+        "id": "MIS05",
+        "wrong_idea": "For a spring extended from x1 to x2, work only depends on x2, as though the stretch always starts at zero.",
+        "diagnostic_prompt": "If a spring already starts extended, can a new stretch cost the entire zero-to-final stored energy again?",
+        "repair": "Subtract the initial triangle from the final triangle, or compute the signed trapezium between x1 and x2."
+      },
+      {
+        "id": "MIS06",
+        "wrong_idea": "At a force-axis crossing, motion must stop or total work must be zero.",
+        "diagnostic_prompt": "If F_x passes through 0 at one position while the body continues, must the total area on both sides cancel?",
+        "repair": "Distinguish the instantaneous force value from the area accumulated over the full displacement; compare actual signed regions."
+      },
+      {
+        "id": "MIS07",
+        "wrong_idea": "Reversing motion leaves work by a given position-dependent force unchanged because the graph is unchanged.",
+        "diagnostic_prompt": "A body moves from x=1 to 3 and then back from 3 to 1 with the same F(x); are the two works equal in sign?",
+        "repair": "Reverse the directed interval, not the graph; every signed contribution changes sign."
+      }
+    ],
+    "research_contribution": "Enrichment from OpenStax work–position and ideal spring references; original no-calculus rectangle/triangle/trapezium constructions, sign-changing counterexample and explicit external-work conditions.",
+    "prerequisite_refs": [
+      "CAP-WEP-WORK-DIRECTION"
+    ],
+    "candidate_admission_needed": true,
+    "library_commit_performed": false,
+    "elicitation": {
+      "predict": {
+        "prompt": "A puck moves in the ground frame from x=1 to x=7 m while a named force changes with position. What quantity should a force–position graph let you find for that interval?",
+        "defensible_answer": "The signed work of that named force over the directed interval, in joules."
+      },
+      "attempt": {
+        "produces": "For the puck moving right from x=1 to 7 m, one named force is +6 N from x=1 to 3 m and then decreases linearly from +6 N at x=3 to −2 N at x=7. Give the work of this force in joules, with the sign, name the force/body/frame, and justify your calculation from the stated graph.",
+        "closure": "RUBRIC",
+        "model_response": "A specified force acts on the puck in a fixed right-positive ground frame x=1→7 m. The constant-height part contributes +6 N ×2 m=+12 J. The sloping part contributes signed trapezium [(+6−2)/2] N ×4 m=+8 J (equivalently +9 J above axis on x=3→6 and −1 J below axis x=6→7). Total signed work of this force is +20 J. The force alone is being accounted for; no final-speed claim follows.",
+        "rubric": [
+          {
+            "criterion": "Names target, the graphed force, fixed ground frame and directed positions as requested.",
+            "evidence_of": "Puck, specified force on it, ground +x right, interval x=1→7 m."
+          },
+          {
+            "criterion": "Calculates signed work for the supplied varying force, including the sign change.",
+            "evidence_of": "Constant region +12 J, sloping region +8 J, signed total +20 J."
+          },
+          {
+            "criterion": "Justifies the numerical result from elementary graph areas and supplies units.",
+            "evidence_of": "A rectangle plus signed trapezium (or triangles split at x=6) with N·m=J."
+          }
+        ],
+        "accepted": [
+          "For the named force on the puck, W=+20 J using the +12 J rectangle and +8 J net area of the later trapezium."
+        ],
+        "rejected": [
+          "The work must be +36 J because the force begins at +6 N over 6 m. Incorrect: the second segment changes height and becomes negative before the end."
+        ]
+      },
+      "reconstruct": {
+        "route": [
+          {
+            "ask": "Whose displacement and which one force is being accounted for?",
+            "why_this_ask": "Fixes owner and frame before solving geometry."
+          },
+          {
+            "ask": "Which graph regions have different heights or lie on different sides of zero force?",
+            "why_this_ask": "Elicits representation choice instead of giving a sign rule first."
+          },
+          {
+            "ask": "Can each region be drawn as a rectangle, triangle or trapezium?",
+            "why_this_ask": "Prompts no-calculus work construction."
+          },
+          {
+            "ask": "What changes when the ideal spring begins already stretched?",
+            "why_this_ask": "Makes initial stored deformation relevant before calculating a difference."
+          },
+          {
+            "ask": "What condition is required for external work against a spring to be the exact opposite of spring work?",
+            "why_this_ask": "Learner checks assumptions rather than silently borrowing a conservation result."
+          },
+          {
+            "ask": "What independent reversal or units test catches a sign error?",
+            "why_this_ask": "Requires a self-check on the learner-owned result."
+          }
+        ],
+        "differs_from_teaching_path": "A explains geometric accumulation and spring endpoints directly; B begins with choosing body/graph partitions, asks learner to construct the sign and conditional work comparison, then reveals closure."
+      },
+      "boundary_test": {
+        "prompt": "A body moves right through an interval in which an acting force is positive on one portion and equally negative in signed-area magnitude on another. Could this force do zero net work even while it acts and the body moves? Explain the status of motion.",
+        "answer": "Yes. The signed positive and negative work contributions cancel to zero. Motion and nonzero force occur on the portions; zero net work by this force does not require speed to vanish or imply that total work of all forces is zero.",
+        "confirms": "Distinguishes signed work of a named force from force presence, displacement and the net work of all forces."
+      }
+    },
+    "exit_task": {
+      "prompt": "An ideal anchored spring of k=60 N/m, negligible mass, operates on a horizontal frictionless track. Its attached block moves from x=+0.30 m to x=+0.40 m at nearly constant low speed under a balancing pull in the stationary ground frame (no other along-track forces). Compute the work by the spring and by the pull with a signed trapezium or endpoint triangles, show the spring energy increase, check signs and units. Then state whether an additional separate varying force would require its own graph-area calculation.",
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "The spring does −2.1 J; slow balancing pull does +2.1 J; ΔU_s=+2.1 J; any separate force must be accounted for separately.",
+        "reasoning": [
+          "Spring force on block is −kx; at .30 m it is −18 N and at .40 m −24 N; Δx=+.10 m.",
+          "Trapezium area [(−18−24)/2]×(.10)=−2.1 J is work by the spring.",
+          "By endpoint triangles: U_i=½(60)(.30²)=2.7 J; U_f=½(60)(.40²)=4.8 J; ΔU=+2.1 J and W_spring=−2.1 J.",
+          "The slow balancing pull, with negligible friction, no other along-track force and no appreciable ΔK, does +2.1 J.",
+          "The spring and separate varying force each need their own signed work account; units are newtons times metres = joules."
+        ],
+        "check": "For further stretching the restoring force opposes the positive displacement; spring work is negative and pull positive. N·m=J; the endpoint difference (4.8−2.7)=2.1 J matches the trapezium.",
+        "acceptable_alternatives": [
+          "Rectangle-plus-triangle yielding −2.1 J for spring and +2.1 J for the slowly balancing pull."
+        ],
+        "verification_status": "AUTHOR_CALCULATED_NOT_INDEPENDENTLY_APPROVED"
+      }
+    }
+  },
+  "relation": {
+    "id": "REL-WEP02-SIGNED-AREA-CANDIDATE",
+    "version": "0.1.0",
+    "status": "CANDIDATE_AUTHOR_CONSTRUCTION",
+    "origin": "AUTHORED_PEDAGOGICAL_WITH_REFERENCES",
+    "equation": "For increasing x, W_force = sum of signed geometric areas of elementary graph pieces: rectangle FΔx; straight-line trapezium [(F_start+F_end)/2]Δx. For decreasing x reverse the sign. Ideal spring F_spring=−kx; W_spring(x1→x2)=½k(x1²−x2²); work against spring = −W_spring only under stated balancing conditions.",
+    "model_assumptions": [
+      "Named force on named target body, with one consistent inertial ground frame and one signed x-axis.",
+      "Graph vertical ordinate is signed component F_x(x) in newtons, horizontal is x in metres.",
+      "For exact geometry each segment is constant or linear; if curve nonlinear, these shapes are approximations only.",
+      "Work as signed area taken over directed interval; sign reversal for motion to decreasing x.",
+      "Ideal linear Hooke spring with positive k and equilibrium x=0 within elastic range; no hysteresis/plasticity.",
+      "For external-work-as-negative-spring-work, slow quasi-static movement, negligible friction and other along-x forces, no change in kinetic energy.",
+      "Computation is work of an individual force; frictionlessness is NOT needed for that individual-force area-based work; net work requires inclusion of other forces."
+    ],
+    "axis_and_sign": "Rightward positive. When x increases, region above F_x=0 counts positive, region below negative. When x decreases, reverse each sign. For spring x>0 stretch, x<0 compression, F_spring=−kx.",
+    "dimensions": "[F]=N, [x]=m, [k]=N/m, [W]=N·m=J; kx² has N·m=J.",
+    "physical_interpretation": "Changing forces do different amounts of work over different locations. Net work of one named force is not determined by one endpoint force. A linear spring stores ½kx² of elastic energy relative to its natural length; the spring-force work is minus the change of that stored energy.",
+    "checks": [
+      "Constant F graph reduces to one rectangle, matching WEP-01.",
+      "Equal positive and negative signed areas cancel even though force and motion exist.",
+      "Reversing the interval with the same F_x(x) reverses the work sign.",
+      "For a spring x1=x2, work is zero for an immediate unchanged endpoint (the same endpoints also give zero net spring work for a reversible out-and-back excursion).",
+      "For spring stretch x2>x1≥0, W_spring<0; for release toward 0, W_spring>0.",
+      "k>0 and all endpoint positions use metres; two spring energy terms are subtracted for x1≠0.",
+      "External work against a spring is not automatically minus spring work with friction, acceleration or extra along-axis forces."
+    ],
+    "source_ref": "REF-OPENSTAX-SPRING"
+  },
+  "representation": {
+    "scene_instances": [
+      {
+        "id": "SCN02-RECT",
+        "microtopic_ref": "MIC-PHY-WEP-VARIABLE-FORCE-AREA-CANDIDATE",
+        "kind": "rectangular_graph",
+        "origin": "AUTHORED_DIAGRAM_SPEC_NOT_EXTERNAL_FIGURE",
+        "caption": "Force component constant for one horizontal displacement",
+        "elements": [
+          "Plot x (m) horizontally and F_x (N) vertically with x=0..3 m and F_x=+2 N horizontal line",
+          "Shade rectangle of width 3 m and height 2 N; sign/area label in Core1A only"
+        ],
+        "physics_binding": "A flat signed force graph represents constant-force work.",
+        "visibility": "CORE1A_OR_CORE1B_AFTER_ATTEMPT"
+      },
+      {
+        "id": "SCN02-LINE",
+        "microtopic_ref": "MIC-PHY-WEP-VARIABLE-FORCE-AREA-CANDIDATE",
+        "kind": "piecewise_linear_graph",
+        "origin": "AUTHORED_DIAGRAM_SPEC_NOT_EXTERNAL_FIGURE",
+        "caption": "Straight-line varying force and trapezium",
+        "elements": [
+          "x runs from 3 m to 5 m, F_x increases from +2 N to +6 N",
+          "Shade trapezium as rectangle at 2 N plus triangle of extra 4 N",
+          "Label each geometrical region and force values, not unexplained total work"
+        ],
+        "physics_binding": "A linearly changing height is captured by a mean-force trapezium.",
+        "visibility": "CORE1A_OR_CORE1B_AFTER_ATTEMPT"
+      },
+      {
+        "id": "SCN02-CROSS",
+        "microtopic_ref": "MIC-PHY-WEP-VARIABLE-FORCE-AREA-CANDIDATE",
+        "kind": "axis_crossing_graph",
+        "origin": "AUTHORED_DIAGRAM_SPEC_NOT_EXTERNAL_FIGURE",
+        "caption": "A piecewise-straight force graph crossing the zero-force axis while a body moves",
+        "elements": [
+          "F_x line from +6 N at x=0 to zero at x=2 m and −4 N at x=4 m",
+          "Shade positive triangle from 0 to 2 and negative triangle from 2 to 4 in contrasting fills",
+          "Show rightward motion arrow x=0→4 and F_x=0 marked at x=2"
+        ],
+        "physics_binding": "Motion can continue while force passes through zero and partial work signs differ.",
+        "visibility": "CORE1A_OR_CORE1B_AFTER_ATTEMPT"
+      },
+      {
+        "id": "SCN02-SPRING",
+        "microtopic_ref": "MIC-PHY-WEP-VARIABLE-FORCE-AREA-CANDIDATE",
+        "kind": "spring_force_graph",
+        "origin": "AUTHORED_DIAGRAM_SPEC_NOT_EXTERNAL_FIGURE",
+        "caption": "Hooke restoring force from compression through natural length to stretch",
+        "elements": [
+          "Horizontal x (m) axis showing x<0 compression, x=0 natural, x>0 stretch",
+          "F_spring=−kx line descending through origin",
+          "Attach simple labelled spring-end images compressed, relaxed, stretched; show restoring arrows +x at negative extension and −x at positive extension"
+        ],
+        "physics_binding": "Sign of F_spring reflects restoration rather than direction of the body’s actual motion.",
+        "visibility": "CORE1A_OR_CORE1B_AFTER_ATTEMPT"
+      },
+      {
+        "id": "SCN02-EXT",
+        "microtopic_ref": "MIC-PHY-WEP-VARIABLE-FORCE-AREA-CANDIDATE",
+        "kind": "nonzero_endpoint_area",
+        "origin": "AUTHORED_DIAGRAM_SPEC_NOT_EXTERNAL_FIGURE",
+        "caption": "Spring starting and finishing at nonzero extensions",
+        "elements": [
+          "Spring graph x=0.10 to x=0.30 m at k=200 N/m with F_spring from −20 to −60 N",
+          "Shade below-axis trapezium between x1 and x2 and show two endpoint triangles from x=0",
+          "Mark independent force agents: spring on body versus slowly applied balancing pull"
+        ],
+        "physics_binding": "Incremental spring work uses difference of endpoint triangles, not a zero-to-final triangle.",
+        "visibility": "CORE1A_OR_CORE1B_AFTER_ATTEMPT"
+      },
+      {
+        "id": "SCN02-REVERSE",
+        "microtopic_ref": "MIC-PHY-WEP-VARIABLE-FORCE-AREA-CANDIDATE",
+        "kind": "directed_work_reversal",
+        "origin": "AUTHORED_DIAGRAM_SPEC_NOT_EXTERNAL_FIGURE",
+        "caption": "Same force graph traversed forward and backward",
+        "elements": [
+          "One linearly positive F_x graph from x=1 to 4; x axis kept fixed",
+          "Arrow x=1→4 on top copy, arrow x=4→1 on bottom copy",
+          "Same shaded geometric region but opposite work sign because displacement direction reverses"
+        ],
+        "physics_binding": "The same field/force law is not the same directed work when endpoints reverse.",
+        "visibility": "CORE1A_OR_CORE1B_AFTER_ATTEMPT"
+      }
+    ],
+    "correspondence": [
+      {
+        "symbol": "x (m)",
+        "element": "horizontal coordinate of SCN02-CROSS",
+        "in_words": "position of chosen target body in the ground frame; intervals have a travel direction"
+      },
+      {
+        "symbol": "F_x(x) (N)",
+        "element": "vertical signed height of graph in SCN02-LINE",
+        "in_words": "component of one named force acting on the body, not necessarily the net force"
+      },
+      {
+        "symbol": "W (J)",
+        "element": "shaded signed areas above/below baseline in SCN02-CROSS",
+        "in_words": "work by the named force over a stated directed displacement"
+      },
+      {
+        "symbol": "½(base)(height)",
+        "element": "triangle in SCN02-EXT",
+        "in_words": "magnitude of work from a straight-line force change starting at zero height"
+      },
+      {
+        "symbol": "[(F1+F2)/2]Δx",
+        "element": "trapezium in SCN02-LINE",
+        "in_words": "signed mean-force area for a linear segment traversed toward increasing x"
+      },
+      {
+        "symbol": "F_spring=−kx",
+        "element": "negative-slope line and restoring arrows of SCN02-SPRING",
+        "in_words": "force by an ideal spring on the attached body points toward natural length"
+      },
+      {
+        "symbol": "W_spring=½k(x1²−x2²)",
+        "element": "difference of two endpoint triangles of SCN02-EXT",
+        "in_words": "work by the spring when deformation changes from x1 to x2"
+      },
+      {
+        "symbol": "W_against=−W_spring",
+        "element": "two opposite force arrows on the body in SCN02-EXT",
+        "in_words": "only for a slow balancing pull with no other along-axis work and negligible kinetic-energy change"
+      }
+    ]
+  },
+  "proposed_extension_candidate": {
+    "id": "MIC-PHY-WEP-VARIABLE-FORCE-AREA-CANDIDATE",
+    "status": "CANDIDATE",
+    "admission": "RESEARCH_AND_AUTHOR",
+    "canon_library_excluded": "Current repository WEP bucket excluded elastic spring and variable-force work, although the Owner’s frozen syllabus now requires WEP-02.",
+    "requires_librarian_admission": true,
+    "subject_library_mutated": false,
+    "teaching_provided": "This draft Core1A/Core1B pair, marked candidate, with no-calculus graph-area construction and Hooke-law spring."
+  },
+  "core1a": {
+    "id": "CORE1A-WEP02",
+    "role": "CORE1A",
+    "title": "WEP-02 — Why changing force means signed graph area",
+    "microtopic_ref": "MIC-PHY-WEP-VARIABLE-FORCE-AREA-CANDIDATE",
+    "inferential_jump_ref": "microtopic.inferential_jump",
+    "visibility_policy": "FULL_CONSTRUCTION_VISIBLE_IN_CORE1A",
+    "ordered_blocks": [
+      {
+        "id": "identity_scope",
+        "show": "Grade 9: one named varying force on a body in one ground frame, signed graph areas and ideal spring between arbitrary endpoints."
+      },
+      {
+        "id": "conventions",
+        "ref": "bucket.conventions",
+        "show": "All before any worked calculations."
+      },
+      {
+        "id": "entry_assumptions",
+        "ref": "microtopic.entry_assumptions"
+      },
+      {
+        "id": "inferential_jump",
+        "ref": "microtopic.inferential_jump"
+      },
+      {
+        "id": "constructed_teaching",
+        "ref": "microtopic.teaching_path"
+      },
+      {
+        "id": "representation_bridges",
+        "ref": "representation"
+      },
+      {
+        "id": "completed_examples",
+        "ref": "core1a.questions"
+      },
+      {
+        "id": "diagnostic_repairs",
+        "ref": "microtopic.misconceptions"
+      },
+      {
+        "id": "independent_checks",
+        "ref": "relation.checks"
+      },
+      {
+        "id": "exit_with_full_closure",
+        "ref": "microtopic.exit_task"
+      },
+      {
+        "id": "provenance",
+        "ref": "authority"
+      }
+    ],
+    "questions": [
+      {
+        "id": "W02-A1",
+        "title": "Rectangle plus triangle on a rising force graph",
+        "provenance": "AUTHORED_PEDAGOGICAL_CONCEPT_ANCHOR_NOT_EXAM_QUESTION",
+        "exposure": [
+          {
+            "core": "CORE1A",
+            "type": "COMPLETED_WORKED_EXAMPLE"
+          }
+        ],
+        "model_level": "GRADE9_CORE",
+        "setup": "Ground-frame block moves right from x=0 to 5 m; the named horizontal force ON it is +2 N for 0≤x≤3 m, then rises linearly from +2 to +6 N between x=3 and 5 m. The graph is exact and other forces are irrelevant to this one-force work calculation.",
+        "answer": {
+          "reasoning": [
+            "Choose block as target, right-positive ground frame, and directed travel x=0→5 m. The plotted F_x is this named force on the block.",
+            "On 0→3 m the height is 2 N, so rectangular work = 3 m × 2 N = +6 J.",
+            "On 3→5 m make a rectangle at 2 N with work +4 J and a triangle of width 2 m and extra height 4 N with work +4 J.",
+            "Their sum is +6+4+4 = +14 J; equivalently the latter trapezium is [(2+6)/2]×2=+8 J.",
+            "Using the starting force 2 N over the entire 5 m would give 10 J, which omits the growing-force region."
+          ],
+          "summary": "Work of the specified varying force is +14 J.",
+          "rubric": [],
+          "check": "F_x remains positive; the answer must be positive and has N·m=J units."
+        },
+        "coverage_keys": [
+          "force_body_frame",
+          "constant_vs_variable",
+          "graph_rectangles_triangles_trapezia",
+          "units_and_reverse_check"
+        ]
+      },
+      {
+        "id": "W02-A2",
+        "title": "A changing-sign force during one motion",
+        "provenance": "AUTHORED_PEDAGOGICAL_CONCEPT_ANCHOR_NOT_EXAM_QUESTION",
+        "exposure": [
+          {
+            "core": "CORE1A",
+            "type": "COMPLETED_WORKED_EXAMPLE"
+          }
+        ],
+        "model_level": "GRADE9_CORE",
+        "setup": "A puck moves right on a track from x=0 to x=4 m. A named horizontal force on the puck decreases linearly from +6 N at x=0 to 0 at x=2 m, then to −4 N at x=4 m. The puck’s continued rightward motion is stipulated; no claim about net force is made.",
+        "answer": {
+          "reasoning": [
+            "The target is the puck; ground frame +x right, motion x=0→4. The graph crosses F_x=0 at x=2.",
+            "First triangle lies above the axis: +½(2 m)(6 N)=+6 J.",
+            "Second triangle lies below the axis: −½(2 m)(4 N)=−4 J.",
+            "Add signed areas: W_this_force = +6−4 = +2 J. At x=2 the instantaneous force component is 0, not the accumulated work.",
+            "The work of all forces or final speed cannot be inferred without knowing other forces and initial speed."
+          ],
+          "summary": "One specified force does +2 J even though its sign changes during the motion.",
+          "rubric": [],
+          "check": "The positive region is larger than the negative by 2 J; both force and motion may exist when F_x crosses zero."
+        },
+        "coverage_keys": [
+          "force_body_frame",
+          "signed_area_and_crossing",
+          "units_and_reverse_check"
+        ]
+      },
+      {
+        "id": "W02-A3",
+        "title": "Below-axis trapezium",
+        "provenance": "AUTHORED_PEDAGOGICAL_CONCEPT_ANCHOR_NOT_EXAM_QUESTION",
+        "exposure": [
+          {
+            "core": "CORE1A",
+            "type": "COMPLETED_WORKED_EXAMPLE"
+          }
+        ],
+        "model_level": "GRADE9_CORE",
+        "setup": "A body travels to the right from x=1 to x=4 m. One named horizontal force on the body varies linearly from −2 N to −6 N. Use a fixed ground frame.",
+        "answer": {
+          "reasoning": [
+            "Fix target body and +x right. The displacement is 3 m right.",
+            "Since both force-component heights are negative, the trapezium is below the axis.",
+            "Magnitude of area = [(2+6)/2] N × 3 m = 12 J.",
+            "Attach negative sign for force opposite increasing-x displacement: W=−12 J.",
+            "If the body retraced 4→1 m through the unchanged field, work of the same force would be +12 J."
+          ],
+          "summary": "The named force does −12 J for the rightward interval.",
+          "rubric": [],
+          "check": "Dimensions N·m=J; reverse traversal gives +12 J."
+        },
+        "coverage_keys": [
+          "graph_rectangles_triangles_trapezia",
+          "signed_area_and_crossing",
+          "units_and_reverse_check"
+        ]
+      },
+      {
+        "id": "W02-A4",
+        "title": "Stretch an ideal spring between two nonzero extensions",
+        "provenance": "AUTHORED_PEDAGOGICAL_CONCEPT_ANCHOR_NOT_EXAM_QUESTION",
+        "exposure": [
+          {
+            "core": "CORE1A",
+            "type": "COMPLETED_WORKED_EXAMPLE"
+          }
+        ],
+        "model_level": "GRADE9_CORE",
+        "setup": "Ideal anchored spring with k=200 N/m is attached to a sliding block. In the stationary ground frame the end is slowly stretched from x1=+0.10 m to x2=+0.30 m, where x is signed deformation from natural length. Assume negligible friction, no other along-axis force and negligible change in kinetic energy.",
+        "answer": {
+          "reasoning": [
+            "For x>0 the restoring force of the spring on the block is F_spring=−kx, from −20 N to −60 N over Δx=+0.20 m.",
+            "The force–position trapezium is entirely below the axis. W_spring = [(−20−60)/2]×0.20=−8 J.",
+            "Equivalently the full 0→0.30 m triangle is ½(200)(0.30²)=9 J, and the prior 0→0.10 m triangle is 1 J: spring work for the additional stretch is −(9−1)=−8 J.",
+            "To maintain slow equilibrium, an external pull is +kx at every point. Its work is +8 J, the opposite of spring work in this specified model.",
+            "The increase in stored spring potential energy ΔU_s = ½k(x2²−x1²)=+8 J, with U_s(0)=0."
+          ],
+          "summary": "Spring does −8 J; slow ideal external agent does +8 J; stored spring energy increases by +8 J.",
+          "rubric": [],
+          "check": "The final deformation is larger, so the spring’s restoring work during further stretching is negative; the zero-to-final answer 9 J is not the interval answer."
+        },
+        "coverage_keys": [
+          "spring_force_orientation",
+          "spring_between_two_extensions",
+          "units_and_reverse_check"
+        ]
+      },
+      {
+        "id": "W02-A5",
+        "title": "Compress-to-stretch traversal crosses natural length",
+        "provenance": "AUTHORED_PEDAGOGICAL_CONCEPT_ANCHOR_NOT_EXAM_QUESTION",
+        "exposure": [
+          {
+            "core": "CORE1A",
+            "type": "COMPLETED_WORKED_EXAMPLE"
+          }
+        ],
+        "model_level": "GRADE9_CORE",
+        "setup": "An ideal spring k=100 N/m is attached to a mass guided without friction in the ground frame. Its signed deformation changes from x1=−0.20 m (compression) to x2=+0.10 m (stretch), while the mass follows this directed motion. Calculate work done by spring only; no assumption of slow balanced external motion is made.",
+        "answer": {
+          "reasoning": [
+            "For x=−0.20, F_spring=+20 N; at x=0 force is 0; at x=+0.10, F_spring=−10 N.",
+            "From −0.20 to 0, force and rightward displacement align: positive triangle area ½(0.20)(20)=+2 J.",
+            "From 0 to +0.10, restoring force opposes rightward motion: negative triangle area −½(0.10)(10)=−0.5 J.",
+            "Signed spring-work total is +2−0.5=+1.5 J.",
+            "Cross-check W_spring=½(100)[(−0.20)²−(+0.10)²]=50(0.04−0.01)=+1.5 J. Other-force work is not claimed."
+          ],
+          "summary": "Spring does +1.5 J across compression-to-stretch motion.",
+          "rubric": [],
+          "check": "Initial spring stored energy is 2 J; final is 0.5 J, so spring work is +1.5 J."
+        },
+        "coverage_keys": [
+          "spring_force_orientation",
+          "spring_crosses_natural_length",
+          "signed_area_and_crossing"
+        ]
+      },
+      {
+        "id": "W02-A6",
+        "title": "Endpoint-force multiplication fails when slope is nonzero",
+        "provenance": "AUTHORED_PEDAGOGICAL_CONCEPT_ANCHOR_NOT_EXAM_QUESTION",
+        "exposure": [
+          {
+            "core": "CORE1A",
+            "type": "COMPLETED_WORKED_EXAMPLE"
+          }
+        ],
+        "model_level": "GRADE9_CORE",
+        "setup": "On a rightward displacement x=0→4 m, a specified force on a body rises in a straight line from +1 N to +5 N; no other force is being calculated.",
+        "answer": {
+          "reasoning": [
+            "The fixed +x ground frame gives Δx=4 m and both signed heights positive.",
+            "A force that changes with position does not keep either endpoint height over the whole interval.",
+            "The exact signed trapezium is (1+5)/2×4=+12 J.",
+            "Initial-height rectangle gives 1×4=4 J; final-height rectangle gives 5×4=20 J; neither is the graph’s area.",
+            "Here only, the mean of the endpoint forces is exactly the mean force because F(x) is a straight line; +3 N×4 m=+12 J."
+          ],
+          "summary": "Actual work +12 J; initial- or final-force times displacement generally fails.",
+          "rubric": [],
+          "check": "The trapezium lies between its 4-J and 20-J endpoint rectangles, giving a plausibility check."
+        },
+        "coverage_keys": [
+          "constant_vs_variable",
+          "graph_rectangles_triangles_trapezia",
+          "units_and_reverse_check"
+        ]
+      }
+    ],
+    "coverage_keys": [
+      "force_body_frame",
+      "constant_vs_variable",
+      "graph_rectangles_triangles_trapezia",
+      "signed_area_and_crossing",
+      "spring_force_orientation",
+      "spring_between_two_extensions",
+      "spring_crosses_natural_length",
+      "units_and_reverse_check"
+    ],
+    "coverage_evidence": {
+      "force_body_frame": "microtopic.teaching_path, core1a.questions and representation scenes",
+      "constant_vs_variable": "microtopic.teaching_path, core1a.questions and representation scenes",
+      "graph_rectangles_triangles_trapezia": "microtopic.teaching_path, core1a.questions and representation scenes",
+      "signed_area_and_crossing": "microtopic.teaching_path, core1a.questions and representation scenes",
+      "spring_force_orientation": "microtopic.teaching_path, core1a.questions and representation scenes",
+      "spring_between_two_extensions": "microtopic.teaching_path, core1a.questions and representation scenes",
+      "spring_crosses_natural_length": "microtopic.teaching_path, core1a.questions and representation scenes",
+      "units_and_reverse_check": "microtopic.teaching_path, core1a.questions and representation scenes"
+    },
+    "scope_guards": [
+      "No calculus anywhere in learner task or worked route; only exact rectangular, triangular and trapezial graph pieces.",
+      "Spring forces and work are assigned to agents correctly. Quasistatic external-agent work requires explicit conditions.",
+      "Figures are described as authored specs and never claimed to be actual exam graphics."
+    ],
+    "exit_ref": "microtopic.exit_task"
+  },
+  "core1b": {
+    "id": "CORE1B-WEP02",
+    "role": "CORE1B",
+    "title": "WEP-02 — Decide graph areas before revealing the construction",
+    "microtopic_ref": "MIC-PHY-WEP-VARIABLE-FORCE-AREA-CANDIDATE",
+    "inferential_jump_ref": "microtopic.inferential_jump",
+    "visibility_policy": "PREDICT_AND_ATTEMPT_BEFORE_ANY_ANSWER_BEARING_CONTENT",
+    "visible_convention_refs": [
+      "WEP02-C1",
+      "WEP02-C2",
+      "WEP02-C3"
+    ],
+    "deferred_convention_refs": [
+      "WEP02-C4",
+      "WEP02-C5",
+      "WEP02-C6",
+      "WEP02-C7",
+      "WEP02-C8",
+      "WEP02-C9",
+      "WEP02-C10",
+      "WEP02-C11"
+    ],
+    "pre_attempt_visible": [
+      "scope_without_answer",
+      "core1b.visible_convention_refs",
+      "microtopic.elicitation.predict.prompt",
+      "microtopic.elicitation.attempt.produces",
+      "core1b.concept_cycles[].predict.prompt",
+      "core1b.concept_cycles[].attempt.produces"
+    ],
+    "pre_attempt_hidden": [
+      "microtopic.inferential_jump",
+      "bucket.conventions[WEP02-C4..C11]",
+      "microtopic.teaching_path",
+      "relation.equation",
+      "relation.checks",
+      "representation.scene_instances[*].physics_binding",
+      "core1a.questions",
+      "microtopic.misconceptions",
+      "microtopic.elicitation.predict.defensible_answer",
+      "microtopic.elicitation.attempt.model_response",
+      "microtopic.elicitation.attempt.rubric",
+      "microtopic.elicitation.attempt.accepted",
+      "microtopic.elicitation.attempt.rejected",
+      "microtopic.elicitation.reconstruct",
+      "microtopic.elicitation.boundary_test.answer",
+      "core1b.concept_cycles[].predict.defensible_answer",
+      "core1b.concept_cycles[].attempt.model_response",
+      "core1b.concept_cycles[].attempt.rubric",
+      "core1b.concept_cycles[].attempt.accepted",
+      "core1b.concept_cycles[].attempt.rejected",
+      "core1b.concept_cycles[].reconstruct",
+      "core1b.concept_cycles[].boundary_test.answer",
+      "microtopic.exit_task.answer"
+    ],
+    "ordered_blocks": [
+      {
+        "id": "identity_scope",
+        "visibility": "IMMEDIATE",
+        "text": "WEP-02: changing force graphs and ideal spring contexts; commit to each analysis before revealing calculations."
+      },
+      {
+        "id": "safe_conventions",
+        "visibility": "IMMEDIATE",
+        "ref": "core1b.visible_convention_refs",
+        "resolution": "Allowlist only; do not project the entire bucket.conventions."
+      },
+      {
+        "id": "predict",
+        "visibility": "PRE_ATTEMPT",
+        "ref": "microtopic.elicitation.predict.prompt"
+      },
+      {
+        "id": "attempt",
+        "visibility": "PRE_ATTEMPT",
+        "ref": "microtopic.elicitation.attempt.produces"
+      },
+      {
+        "id": "cycle_predict_attempt",
+        "visibility": "PRE_ATTEMPT",
+        "ref": "core1b.concept_cycles[].predict.prompt, .attempt.produces ONLY",
+        "answer_access": "AFTER_EACH_INDEPENDENT_ATTEMPT"
+      },
+      {
+        "id": "cycle_closure",
+        "visibility": "AFTER_ATTEMPT",
+        "ref": "core1b.concept_cycles[].predict.defensible_answer, .attempt.rubric, .attempt.model_response, .attempt.accepted, .attempt.rejected"
+      },
+      {
+        "id": "reconstruct",
+        "visibility": "AFTER_ATTEMPT",
+        "ref": "microtopic.elicitation.reconstruct and core1b.concept_cycles[].reconstruct"
+      },
+      {
+        "id": "misconceptions_and_repairs",
+        "visibility": "AFTER_ATTEMPT",
+        "ref": "microtopic.misconceptions"
+      },
+      {
+        "id": "post_attempt_conventions",
+        "visibility": "AFTER_ATTEMPT",
+        "ref": "core1b.deferred_convention_refs"
+      },
+      {
+        "id": "boundary_prompt",
+        "visibility": "BEFORE_BOUNDARY_REVEAL",
+        "ref": "core1b.concept_cycles[].boundary_test.prompt and microtopic.elicitation.boundary_test.prompt"
+      },
+      {
+        "id": "boundary_closure",
+        "visibility": "AFTER_BOUNDARY_ATTEMPT",
+        "ref": "core1b.concept_cycles[].boundary_test.answer and microtopic.elicitation.boundary_test.answer"
+      },
+      {
+        "id": "shared_jump_reveal",
+        "visibility": "AFTER_ATTEMPT",
+        "ref": "microtopic.inferential_jump"
+      }
+    ],
+    "elicitation_ref": "microtopic.elicitation",
+    "diagnostic_and_repair_ref": "microtopic.misconceptions",
+    "coverage_keys": [
+      "force_body_frame",
+      "constant_vs_variable",
+      "graph_rectangles_triangles_trapezia",
+      "signed_area_and_crossing",
+      "spring_force_orientation",
+      "spring_between_two_extensions",
+      "spring_crosses_natural_length",
+      "units_and_reverse_check"
+    ],
+    "concept_cycles": [
+      {
+        "id": "CYCLE-GRAPH",
+        "coverage_keys": [
+          "force_body_frame",
+          "constant_vs_variable",
+          "graph_rectangles_triangles_trapezia",
+          "units_and_reverse_check"
+        ],
+        "scope": "GRADE9_CORE",
+        "visibility": "PREDICT_ATTEMPT_THEN_REVEAL",
+        "predict": {
+          "prompt": "A body moves to the right along a straight track while a named force on it changes with position. A graph shows the force component as a horizontal line followed by a rising straight line. What calculation should represent that force’s work over the journey?",
+          "defensible_answer": "Add the separately signed areas of the flat and rising graph regions; one constant-force product cannot represent the entire varying segment."
+        },
+        "attempt": {
+          "produces": "A body moves right in the ground frame from x=2 to 7 m. One named horizontal force on it is +4 N from x=2 to 4 m, then rises linearly from +4 to +10 N over x=4 to 7 m. Report the work of that force in joules and justify the result using the supplied graph.",
+          "closure": "RUBRIC",
+          "model_response": "The named force acts on the target body travelling right in the ground frame x=2→7 m. The first graph region is a +4 N rectangle across 2 m, giving +8 J. The next is a trapezium with heights +4 N and +10 N over 3 m, giving [(4+10)/2]×3=+21 J. Total work is +29 J. Using only the beginning +4 N across 5 m would give +20 J, omitting the rising portion. N·m=J.",
+          "rubric": [
+            {
+              "criterion": "Identifies the given force acting on the moving body and uses the given ground-frame interval.",
+              "evidence_of": "Specified force on body; +x right and x=2→7 m."
+            },
+            {
+              "criterion": "Computes the correct work and justifies it from the force–position graph.",
+              "evidence_of": "+8 J rectangle plus +21 J sloping trapezium yields +29 J."
+            },
+            {
+              "criterion": "Gives the correct sign and units for the reported work.",
+              "evidence_of": "Work of the named force is positive +29 J and has units N·m=J."
+            }
+          ],
+          "accepted": [
+            "The force does +29 J over the interval, justified by the rectangle and sloping trapezium."
+          ],
+          "rejected": [
+            "Using just the starting +4 N over all 5 m gives the exact work +20 J. Incorrect: the force increases during the latter part, adding a positive triangular portion."
+          ]
+        },
+        "reconstruct": {
+          "route": [
+            {
+              "ask": "What is the target body and which force component is plotted?",
+              "why_this_ask": "Prevents combining an unspecified different force."
+            },
+            {
+              "ask": "What shapes are present across the two position intervals?",
+              "why_this_ask": "Makes the learner choose the representation before obtaining a result."
+            },
+            {
+              "ask": "Which signed contributions does each shape represent?",
+              "why_this_ask": "Builds a checkable total."
+            },
+            {
+              "ask": "How can the one-height shortcut be independently tested?",
+              "why_this_ask": "Tests the failure of endpoint force multiplication."
+            }
+          ],
+          "differs_from_teaching_path": "Learner identifies and constructs pieces before seeing the area decomposition; Core1A displayed its decomposition."
+        },
+        "boundary_test": {
+          "prompt": "Suppose the second section also remained exactly +4 N throughout x=4→7 m; what would the total work from x=2→7 m become?",
+          "answer": "+20 J: a +4 N constant force across 5 m gives one rectangle, restoring the WEP-01 limit.",
+          "confirms": "Restores WEP-01 as a limiting case."
+        }
+      },
+      {
+        "id": "CYCLE-CROSS",
+        "coverage_keys": [
+          "force_body_frame",
+          "signed_area_and_crossing",
+          "graph_rectangles_triangles_trapezia",
+          "units_and_reverse_check"
+        ],
+        "scope": "GRADE9_CORE",
+        "visibility": "PREDICT_ATTEMPT_THEN_REVEAL",
+        "predict": {
+          "prompt": "A puck moves right while a named force on it varies linearly from +9 N at x=1 m through 0 at x=3 m to −5 N at x=5 m. Predict whether the work done by this force during the full movement is positive, negative or zero.",
+          "defensible_answer": "Positive: the signed work is +4 J for the stated motion."
+        },
+        "attempt": {
+          "produces": "For the puck moving right from x=1 m to x=5 m, find the total work of the named force with sign, units and justification; also state what the zero force at x=3 m tells you about the puck’s motion.",
+          "closure": "RUBRIC",
+          "model_response": "The named force acts on the puck; the ground-frame displacement is 1→5 m toward +x. The above-axis 1→3 triangle does +½(2)(9)=+9 J. The below-axis 3→5 triangle does −½(2)(5)=−5 J. Net work by that named force is +4 J. Zero force of this agent at one point does not mean zero speed there; no other forces or speed are specified.",
+          "rubric": [
+            {
+              "criterion": "Uses the named force on the moving puck and the supplied directed interval.",
+              "evidence_of": "Puck moves right in ground frame from x=1 to 5 m."
+            },
+            {
+              "criterion": "Calculates the total signed work and supplies a valid force–position justification.",
+              "evidence_of": "+9 J and −5 J contributions yield +4 J with unit J; equivalent justified area method accepted."
+            },
+            {
+              "criterion": "Explains what the zero force at the crossing can and cannot establish.",
+              "evidence_of": "F_x=0 at x=3 m for this agent only; it does not imply the puck stops."
+            }
+          ],
+          "accepted": [
+            "Signed work of the named force is +4 J; the instantaneous zero of that force says nothing definitive about speed."
+          ],
+          "rejected": [
+            "Both geometric triangles must be positive, so work is +14 J. Incorrect: the region below the force axis contributes −5 J in rightward travel."
+          ]
+        },
+        "reconstruct": {
+          "route": [
+            {
+              "ask": "Which way does the body travel?",
+              "why_this_ask": "Sets orientation of each work sign."
+            },
+            {
+              "ask": "Where does the given graph cross its zero-height line?",
+              "why_this_ask": "Identifies independent regions before arithmetic."
+            },
+            {
+              "ask": "How do you record each region before addition?",
+              "why_this_ask": "Elicits signed rather than unsigned accumulation."
+            },
+            {
+              "ask": "What does one instantaneous force value establish about speed?",
+              "why_this_ask": "Separates force value from motion state."
+            }
+          ],
+          "differs_from_teaching_path": "Learner must discriminate cancellation and motion first; Core1A made the sign-region solution visible."
+        },
+        "boundary_test": {
+          "prompt": "If equal-magnitude triangles of opposite sign occur while the puck still moves right, what is the work of this named force?",
+          "answer": "Zero signed total even though the force is nonzero over most of the motion and the puck moves.",
+          "confirms": "Cancellation does not require no force or no motion."
+        }
+      },
+      {
+        "id": "CYCLE-NEGATIVE",
+        "coverage_keys": [
+          "graph_rectangles_triangles_trapezia",
+          "signed_area_and_crossing",
+          "units_and_reverse_check"
+        ],
+        "scope": "GRADE9_CORE",
+        "visibility": "PREDICT_ATTEMPT_THEN_REVEAL",
+        "predict": {
+          "prompt": "A named force changes along a body’s rightward motion and the body later retraces the same interval. How could you decide the work by that force on each leg?",
+          "defensible_answer": "Use signed work over each directed interval; for the given negative-force profile, forward work is negative and return work has the opposite sign."
+        },
+        "attempt": {
+          "produces": "For a body moving right from x=0→2 m, the named force changes linearly from F_x=−3 N to −7 N in a ground frame. Report its signed work in joules. Then report the work of the unchanged force if the body returns x=2→0 m, with reasoning and units.",
+          "closure": "RUBRIC",
+          "model_response": "From x=0→2 m the signed trapezium is [(−3−7)/2]×2=−10 J. On the reverse 2→0 traversal of the same force field, work is +10 J. This is work of the named force only; N·m=J.",
+          "rubric": [
+            {
+              "criterion": "Identifies directed displacement and relevant graph shape.",
+              "evidence_of": "Rightward 0→2 m, negative-height trapezium."
+            },
+            {
+              "criterion": "Computes correctly signed work in joules.",
+              "evidence_of": "−10 J on forward journey."
+            },
+            {
+              "criterion": "Calculates reversed-interval work under unchanged force field.",
+              "evidence_of": "+10 J on backward journey."
+            }
+          ],
+          "accepted": [
+            "Forward work −10 J; reverse work +10 J."
+          ],
+          "rejected": [
+            "Returning through the same negative graph also produces −10 J. Incorrect: reversed displacement changes the sign of each work contribution."
+          ]
+        },
+        "reconstruct": {
+          "route": [
+            {
+              "ask": "What is the direction of each traversal?",
+              "why_this_ask": "Secures the sign before numerical area."
+            },
+            {
+              "ask": "What geometric region is bounded by the two signed endpoint heights?",
+              "why_this_ask": "Prompts model choice."
+            },
+            {
+              "ask": "What stays the same and what reverses on the return?",
+              "why_this_ask": "Prevents treating the path as undirected."
+            }
+          ],
+          "differs_from_teaching_path": "Core1B asks learner to compare directed travel against a fixed field rather than copying Core1A’s negative trapezium numbers."
+        },
+        "boundary_test": {
+          "prompt": "If the force instead becomes the constant value F_x=−5 N across x=0→2 m, what are the work values on the rightward and leftward legs?",
+          "answer": "Rightward: (−5 N)(+2 m)=−10 J; leftward: (−5 N)(−2 m)=+10 J. The constant-force rectangle is the limiting case of the signed area rule.",
+          "confirms": "Tests the constant-force limit with nonzero force, nonzero displacement, and sign reversal."
+        }
+      },
+      {
+        "id": "CYCLE-SPRING-ENDPOINTS",
+        "coverage_keys": [
+          "spring_force_orientation",
+          "spring_between_two_extensions",
+          "units_and_reverse_check"
+        ],
+        "scope": "GRADE9_CORE",
+        "visibility": "PREDICT_ATTEMPT_THEN_REVEAL",
+        "predict": {
+          "prompt": "An ideal anchored spring is stretched slowly on a frictionless horizontal track by a balancing pull, with no other along-track forces and negligible change in kinetic energy. How should the work for the stretch from x1 to x2 be found?",
+          "defensible_answer": "Find the work over the interval between x1 and x2. For the stated model, work by the spring is negative and the slowly balancing pull does equal positive work."
+        },
+        "attempt": {
+          "produces": "For an ideal anchored spring with k=150 N/m and its attached body, report the signed work done by the spring and by the applied pull for the stretch from x1=+0.20 m to x2=+0.40 m, with units and justification under the stated model.",
+          "closure": "RUBRIC",
+          "model_response": "Spring force on attached body F_s=−kx: F_s(.20)=−30 N and F_s(.40)=−60 N. Rightward stretch Δx=.20 m means W_spring=[(−30−60)/2](.20)=−9 J. With slow frictionless balance, applied agent does +9 J. U_initial=½(150)(.20²)=3 J; U_final=½(150)(.40²)=12 J; increase +9 J, not all 12 J. Units N·m=J.",
+          "rubric": [
+            {
+              "criterion": "Identifies the target body, spring and applied force agents and stated slow frictionless balance.",
+              "evidence_of": "Work concerns the spring and balancing pull ON the attached body over x=.20→.40 m in the ground frame."
+            },
+            {
+              "criterion": "Gives correctly signed spring work in joules, justified over the specified nonzero-to-nonzero interval.",
+              "evidence_of": "W_spring=−9 J; a graph-area or endpoint-energy-difference derivation is accepted."
+            },
+            {
+              "criterion": "Gives applied work in joules with its stated physical condition.",
+              "evidence_of": "W_pull=+9 J because motion is slowly balanced, friction negligible, no other along-track work, and ΔK≈0."
+            }
+          ],
+          "accepted": [
+            "The extra stretch requires +9 J of applied work and produces −9 J of spring work."
+          ],
+          "rejected": [
+            "Since final spring energy is 12 J, the extra pull from .20 to .40 m must do +12 J. Incorrect: 3 J was already stored initially, so added work is +9 J."
+          ]
+        },
+        "reconstruct": {
+          "route": [
+            {
+              "ask": "Which body moves and which agents exert opposing forces?",
+              "why_this_ask": "Clarifies spring versus applied work."
+            },
+            {
+              "ask": "Which two heights on the spring-force graph bound this motion?",
+              "why_this_ask": "Constructs the area interval."
+            },
+            {
+              "ask": "What should be compared at the two endpoint deformations?",
+              "why_this_ask": "Elicits the nonzero-initial reference."
+            },
+            {
+              "ask": "Which assumptions let the external work be opposite spring work?",
+              "why_this_ask": "Requires conditions instead of automatic sign transfer."
+            }
+          ],
+          "differs_from_teaching_path": "Core1B requires the learner to construct agents, conditions and endpoint difference; Core1A showed an entirely different nonzero stretch."
+        },
+        "boundary_test": {
+          "prompt": "If the spring in this model instead begins at its natural length x1=0 and is stretched slowly to x2=+0.40 m, what work do the spring and balancing pull do?",
+          "answer": "U_initial=0, U_final=½(150)(.40²)=12 J. Spring work is −12 J, and under the given slow frictionless balance the pull does +12 J.",
+          "confirms": "Tests the x1→0 limit explicitly and recovers the familiar one-triangle expression without confusing it with the original nonzero-to-nonzero interval."
+        }
+      },
+      {
+        "id": "CYCLE-COMPRESS-THROUGH-ZERO",
+        "coverage_keys": [
+          "spring_force_orientation",
+          "spring_crosses_natural_length",
+          "signed_area_and_crossing"
+        ],
+        "scope": "GRADE9_CORE",
+        "visibility": "PREDICT_ATTEMPT_THEN_REVEAL",
+        "predict": {
+          "prompt": "An ideal spring end moves from compression to extension across its undeformed position. What can determine the spring’s work during the stated motion?",
+          "defensible_answer": "Work is determined by the force–position relationship over the specified directed motion; the total spring work for the supplied values is +3.2 J, and external work needs additional information."
+        },
+        "attempt": {
+          "produces": "For an ideal spring k=80 N/m acting on its attached body moving right in the ground frame from x1=−0.30 m to x2=+0.10 m, report the total work done by the spring in joules with justification, and explain what can be concluded about the work of any external agent from the information given.",
+          "closure": "RUBRIC",
+          "model_response": "For spring ON body F_s=−80x. At x=−0.30, +24 N; at 0, 0 N; at +0.10, −8 N. Rightward motion from −.30→0 gives +½(.30)(24)=+3.6 J, from 0→+.10 gives −½(.10)(8)=−0.4 J, sum W_s=+3.2 J. Neither slow motion nor negligible extra along-axis forces was stipulated; external work is undetermined from these data alone.",
+          "rubric": [
+            {
+              "criterion": "Uses the correct target, spring-on-body force, coordinate and directed endpoints.",
+              "evidence_of": "Attached body; ideal spring with signed F_s=−80x N, ground frame, −0.30→+0.10 m."
+            },
+            {
+              "criterion": "Produces correct signed total work with units and a valid explanation.",
+              "evidence_of": "+3.2 J; acceptable justification includes signed graph regions or difference in endpoint triangle energies."
+            },
+            {
+              "criterion": "States the limit on any conclusion about an external force’s work.",
+              "evidence_of": "Cannot infer external work without movement/balance and other-force conditions."
+            }
+          ],
+          "accepted": [
+            "Spring does +3.2 J over the traverse; external work unspecified."
+          ],
+          "rejected": [
+            "The spring always opposes motion so both triangles are negative and total is −4.0 J. Incorrect: when compressed at negative x, restoring force points right with the rightward motion."
+          ]
+        },
+        "reconstruct": {
+          "route": [
+            {
+              "ask": "Where is the spring’s undeformed reference?",
+              "why_this_ask": "Draws the domain crossing."
+            },
+            {
+              "ask": "Which direction does the spring push at compressed versus stretched positions?",
+              "why_this_ask": "Reconstructs the force law physically."
+            },
+            {
+              "ask": "What areas lie on each side of the zero-force crossing?",
+              "why_this_ask": "Forces signed area selection."
+            },
+            {
+              "ask": "What additional conditions would be needed to assign a balancing external agent’s work?",
+              "why_this_ask": "Distinguishes a force ledger from a motion-state assumption."
+            }
+          ],
+          "differs_from_teaching_path": "Learner reconstructs the spring sign across zero and asks about unspecified external work; Core1A showed a separate spring with different deformations."
+        },
+        "boundary_test": {
+          "prompt": "If the body returns from +0.10 m to −0.30 m through the same ideal spring law, what is its spring work?",
+          "answer": "−3.2 J, the negative of the forward work; the closed out-and-back spring work is zero.",
+          "confirms": "Reversibility and sign under reversed traversal."
+        }
+      },
+      {
+        "id": "CYCLE-REVERSE",
+        "coverage_keys": [
+          "force_body_frame",
+          "graph_rectangles_triangles_trapezia",
+          "units_and_reverse_check"
+        ],
+        "scope": "GRADE9_CORE",
+        "visibility": "PREDICT_ATTEMPT_THEN_REVEAL",
+        "predict": {
+          "prompt": "A body travels from x=2 m to x=6 m and then returns along the same path while the named force law remains unchanged. What do you predict about the work done by that force on each leg?",
+          "defensible_answer": "The two works have equal magnitudes and opposite signs under the unchanged position-dependent force law."
+        },
+        "attempt": {
+          "produces": "A body moves first x=2→6 m, then x=6→2 m along a fixed ground-frame axis. A named force on it has F_x(x)=(1 N/m)x+1 N throughout both legs, where x is measured in metres. Give the signed work by the force in joules for each leg, with a geometric explanation.",
+          "closure": "RUBRIC",
+          "model_response": "The force is F_x(2)=+3 N and F_x(6)=+7 N. Work x=2→6 m is [(3+7)/2]×4=+20 J. Return work x=6→2 m is −20 J because the identical force graph is traversed in the opposite displacement direction. The sum over these two legs is 0 J, with no claim about other forces.",
+          "rubric": [
+            {
+              "criterion": "Identifies named force, body, fixed frame and two directed intervals.",
+              "evidence_of": "Ground-frame +x, x=2→6 then 6→2 m."
+            },
+            {
+              "criterion": "Calculates signed work of the named force with the correct force values.",
+              "evidence_of": "F(2)=+3 N, F(6)=+7 N, outward +20 J via trapezium."
+            },
+            {
+              "criterion": "Reports correctly signed return work with units and explains the reversal.",
+              "evidence_of": "Return −20 J; the directed interval is reversed though the force field is unchanged."
+            }
+          ],
+          "accepted": [
+            "Work of the given force is +20 J out and −20 J back."
+          ],
+          "rejected": [
+            "The unchanged field makes the return work +20 J, giving +40 J across both legs. Incorrect: the directed displacement reverses and changes the signed work."
+          ]
+        },
+        "reconstruct": {
+          "route": [
+            {
+              "ask": "What stays fixed on both legs?",
+              "why_this_ask": "Identifies force law and reference axis."
+            },
+            {
+              "ask": "How is the same graph region traversed each time?",
+              "why_this_ask": "Makes path orientation explicit."
+            },
+            {
+              "ask": "What relation should hold between work totals for a fixed field on reversed traversals?",
+              "why_this_ask": "Boundary confirmation of signed area."
+            }
+          ],
+          "differs_from_teaching_path": "Learner reasons about a reversed directed interval and returns, a task not used as a solved standalone A anchor."
+        },
+        "boundary_test": {
+          "prompt": "If outward and return legs have different forces because an external controller changes the force law during the turn, does cancellation necessarily hold?",
+          "answer": "No. The same-field assumption is essential; different force laws need separate work calculations.",
+          "confirms": "Restricts the reversal check to an unchanged force law."
+        }
+      }
+    ],
+    "coverage_evidence": {
+      "force_body_frame": "microtopic.elicitation.attempt.produces + CYCLE-GRAPH.attempt.produces, CYCLE-CROSS.attempt.produces, CYCLE-REVERSE.attempt.produces",
+      "constant_vs_variable": "microtopic.elicitation.attempt.produces + CYCLE-GRAPH.attempt.produces",
+      "graph_rectangles_triangles_trapezia": "microtopic.elicitation.attempt.produces + CYCLE-GRAPH.attempt.produces, CYCLE-CROSS.attempt.produces, CYCLE-NEGATIVE.attempt.produces, CYCLE-REVERSE.attempt.produces",
+      "signed_area_and_crossing": "microtopic.elicitation.attempt.produces + CYCLE-CROSS.attempt.produces, CYCLE-NEGATIVE.attempt.produces, CYCLE-COMPRESS-THROUGH-ZERO.attempt.produces",
+      "spring_force_orientation": "microtopic.elicitation.attempt.produces + CYCLE-SPRING-ENDPOINTS.attempt.produces, CYCLE-COMPRESS-THROUGH-ZERO.attempt.produces",
+      "spring_between_two_extensions": "microtopic.elicitation.attempt.produces + CYCLE-SPRING-ENDPOINTS.attempt.produces",
+      "spring_crosses_natural_length": "microtopic.elicitation.attempt.produces + CYCLE-COMPRESS-THROUGH-ZERO.attempt.produces",
+      "units_and_reverse_check": "microtopic.elicitation.attempt.produces + CYCLE-GRAPH.attempt.produces, CYCLE-CROSS.attempt.produces, CYCLE-NEGATIVE.attempt.produces, CYCLE-SPRING-ENDPOINTS.attempt.produces, CYCLE-REVERSE.attempt.produces"
+    },
+    "test_of_ab_distinction": "Core1A displays six fully calculated, independent graph and spring anchors. Core1B instead requires graph decomposition, sign assignment, force/agent naming, modelling assumptions and reasoned self-checks before its own different-numbered numerical answers appear. No original exam question used.",
+    "extension_marker": "CANDIDATE_EXTENSION: MIC-PHY-WEP-VARIABLE-FORCE-AREA-CANDIDATE is not yet admitted to canonical subject library. Calculus notation ∫F dx is beyond Grade 9, given and not required.",
+    "visible_scene_refs": [],
+    "deferred_scene_refs": [
+      "SCN02-RECT",
+      "SCN02-LINE",
+      "SCN02-CROSS",
+      "SCN02-SPRING",
+      "SCN02-EXT",
+      "SCN02-REVERSE"
+    ]
+  },
+  "question_bank_use": {
+    "pass_1_original_exam_questions": 0,
+    "pass_2_jee_main_validation": "SEPARATE_LATER_JOB",
+    "authored_concept_examples_only": true
+  },
+  "answer_visibility_contract": {
+    "core1b_pre_attempt_allowlist": [
+      "core1b.visible_convention_refs",
+      "microtopic.elicitation.predict.prompt",
+      "microtopic.elicitation.attempt.produces",
+      "core1b.concept_cycles[].predict.prompt",
+      "core1b.concept_cycles[].attempt.produces"
+    ],
+    "default_for_unlisted_answer_bearing_fields": "HIDDEN_UNTIL_RELEVANT_ATTEMPT",
+    "core1b_predict_answers": "AFTER_ATTEMPT_ONLY",
+    "core1b_rubrics_model_answers": "AFTER_ATTEMPT_ONLY",
+    "core1a_completed_examples": "CORE1A_ONLY_NOT_IMPORTED_INTO_CORE1B_PRE_ATTEMPT",
+    "microtopic.exit_task.answer": "AFTER_EXIT_ATTEMPT_ONLY_IN_CORE1B",
+    "exam_key_letters_and_option_formulas": "ABSENT_NOT_REQUIRED_PASS1",
+    "rendering_must_enforce": "NOT_TESTED"
+  },
+  "not_done_or_unsure": [
+    "Independent S6 review and academic approval outstanding.",
+    "No canonical-library commit or extension admission performed (repo existing bucket excludes variable-force/spring work).",
+    "No Pass 2 NTA JEE Main question/key validation in Pass 1.",
+    "Learner renderer visibility enforcement not tested.",
+    "Production package-schema compiler was not run; writer JSON follows the checked pair layout, not asserted production-canonical.",
+    "Upload to Drive attempted separately; verify saved file ID and remote metadata before claiming success."
+  ],
+  "self_check_what_could_be_wrong": [
+    "The learner might not distinguish signed oriented work from unsigned geometric area when traversing toward decreasing x.",
+    "A renderer could expose deferred equations/model answers before a genuine attempt.",
+    "External balancing-force work is not necessarily −spring work if movement is not quasi-static or extra dissipative work exists.",
+    "A diagram may be rendered with force agent/direction mislabelled even if its text description is correct.",
+    "The spring graph assumes a linear elastic range and ignores hysteresis, which may not hold for real springs.",
+    "Several similar triangular-area constructions could reduce diversity of pedagogical transfer.",
+    "Validation cannot substitute for independent physics or Grade 9 pedagogy review."
+  ],
+  "source_custody_visibility": "NO_EXAM_CONTENT_USED; ORIGINAL_AUTHORED_ANCHORS; CORE1A_VISIBLE_AND_CORE1B_ANSWERS_AFTER_ATTEMPT_ONLY"
+}

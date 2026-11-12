@@ -1,0 +1,17 @@
+{
+  "source_id": "EX-M65",
+  "task_identity": "Q-ID-23",
+  "sequence": 20,
+  "batch_sequence": 5,
+  "paper": "JEE Main 2021 (Online) 18th March Morning Shift",
+  "stem_text": "A constant power delivering machine has towed a box, which was initially at rest, along a horizontal straight line. The distance moved by the box in time 't' is proportional to :-",
+  "stem_sha256": "7b6b64cb8888f1591598b0ba9bbb9fc432e4fe2071040755328667c3437330a8",
+  "options": [
+    "A: t2/3",
+    "B: t3/2",
+    "C: t",
+    "D: t1/2"
+  ],
+  "figure_reference": "NONE (pure text question)",
+  "confidentiality_notice": "SEALED SOURCE-ONLY PACKET FOR BLIND INDEPENDENT REVIEW. Contains NO answers, keys, explanations, candidate solutions, SL2 factor scores, or prior review commentary."
+}

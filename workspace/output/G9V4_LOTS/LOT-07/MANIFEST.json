@@ -1,0 +1,97 @@
+{
+  "batch_id": "BATCH-B",
+  "lot_id": "LOT-07",
+  "title": "Grade9 v4.0 \u2014 Lot 07 Self-Contained Review Package (Candidates 26-30)",
+  "timestamp_utc": "2026-11-01T11:20:28.094006+00:00",
+  "roster_sha256": "df05237bc3a7e8a0df0a0e395f6d2e85ad0750eaba4cf110d26e52b59162a3c6",
+  "total_archive_members": 16,
+  "manifested_sibling_files_count": 15,
+  "runtime_dependencies": {
+    "python": ">=3.11 (tested on Python 3.14.0)",
+    "python_packages": [
+      "pytest",
+      "jsonschema"
+    ],
+    "node": ">=v18 (tested on Node v22.23.2)",
+    "playwright": "playwright-core with chromium (local or C:/Users/reall/AppData/Local/Temp/pw-1.52.0/node_modules/playwright-core)",
+    "os": "Windows 11 (build 26100)",
+    "shell": "PowerShell 5.1 / 7"
+  },
+  "files": [
+    {
+      "path": "ROSTER_PRIVATE.json",
+      "bytes": 10386,
+      "sha256": "7ebf57a3f6d3a3f651328b6e35ea89eb7f13257836da3c2ed6c82ac8c2aac27c"
+    },
+    {
+      "path": "LOT07_TEST.log",
+      "bytes": 897,
+      "sha256": "12b1be51011756e758e8daf35e7fe90b4f171f96e8ff8c51a4477e0eeb469b3e"
+    },
+    {
+      "path": "review/index.html",
+      "bytes": 20194,
+      "sha256": "eb4a67b53a059f281e908cf1f6d5674e00df3415aa95d173bd6a092d372375fb"
+    },
+    {
+      "path": "questions/26/QUESTION_AUDIT.json",
+      "bytes": 4439,
+      "sha256": "a071b98d0b7b893cdfe05ecfb0639d356092c66759d2aca0a15d806e852a999d"
+    },
+    {
+      "path": "questions/27/QUESTION_AUDIT.json",
+      "bytes": 4724,
+      "sha256": "401de4f5a1824c596476053040c117c263f17a89513912078b2bf0f945313c67"
+    },
+    {
+      "path": "questions/28/QUESTION_AUDIT.json",
+      "bytes": 4804,
+      "sha256": "f0e14133af38e25689004598cd4cd433f6dc81ab03ccc7ba3467bbb8f21abab8"
+    },
+    {
+      "path": "questions/29/QUESTION_AUDIT.json",
+      "bytes": 4044,
+      "sha256": "e63334f41c02696466f248da39e2e9039324e65eac2ca92851acdcdac8782fc0"
+    },
+    {
+      "path": "questions/30/QUESTION_AUDIT.json",
+      "bytes": 3928,
+      "sha256": "f44d6e7a783a133109a37ad0b4183193d457a0967281917a4c6225554ac93c93"
+    },
+    {
+      "path": "source_only/26/SOURCE_ONLY.json",
+      "bytes": 1201,
+      "sha256": "cbad269fbe9f84abfac1299cd7726840c5b78ef7b05666a59f867ec18527d6d2"
+    },
+    {
+      "path": "source_only/27/SOURCE_ONLY.json",
+      "bytes": 948,
+      "sha256": "c3480c9823186edb0640e0f9e3262e7298399fafee47563ee3342aea756706e1"
+    },
+    {
+      "path": "source_only/28/SOURCE_ONLY.json",
+      "bytes": 785,
+      "sha256": "89936b0bf1147dbac2a9dafefc3440ec166d4e83f8554edcafe0f17ff4981127"
+    },
+    {
+      "path": "source_only/29/SOURCE_ONLY.json",
+      "bytes": 863,
+      "sha256": "c630eecf55ae2ac4cf457c9dde0b1b152e2f51afe2c7c829bde294a9b3cdf825"
+    },
+    {
+      "path": "source_only/30/SOURCE_ONLY.json",
+      "bytes": 819,
+      "sha256": "6a3aea7fbf3fa163be702dde962f86349f3739c4ed953d8835aa9396c21102c5"
+    },
+    {
+      "path": "test_lot07.py",
+      "bytes": 10053,
+      "sha256": "36719eaef7736ef3f5035bb360dc8148f29fd8483aec017e67b0f0d5f09387e5"
+    },
+    {
+      "path": "verify_lot07_viewport.js",
+      "bytes": 2793,
+      "sha256": "014ffd2ef69905f7f99cfbc80313e2ce667bfc7a09aa0477cf71aecc429900b5"
+    }
+  ]
+}

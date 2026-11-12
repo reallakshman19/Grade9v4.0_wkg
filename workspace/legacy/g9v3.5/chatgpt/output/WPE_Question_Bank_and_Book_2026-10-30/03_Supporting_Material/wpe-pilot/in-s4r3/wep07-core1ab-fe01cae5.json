@@ -1,0 +1,2073 @@
+{
+  "task": "P1-WPE-G9v35",
+  "card": "S4R2",
+  "move": "M4",
+  "as_of": "2026-10-28",
+  "deliverable": "ONE_PAIRED_CORE1A_CORE1B_JSON_S4R2_REVISION",
+  "writer_status": "S4R2_REVISED_FOR_INDEPENDENT_CHECK_NOT_APPROVED",
+  "writer_does_not_approve": true,
+  "scope": {
+    "key_idea": "WEP-07",
+    "included_core": [
+      "WEP07-01",
+      "WEP07-02",
+      "WEP07-03"
+    ],
+    "included_extension": [
+      "WEP07-04"
+    ],
+    "extension_allowed_parts": [
+      "b",
+      "c"
+    ],
+    "excluded": [
+      "WEP07-05"
+    ],
+    "not_core2": true,
+    "no_original_exam_stems_reproduced": true,
+    "question_source_custody_owner": "OWNER_LOCAL_IAPT_PAGE_CROPS"
+  },
+  "shared_inferential_jump": "For each conservative-motion interval, select the actual system and build its appropriate potential from the forces and mass distribution, then fix E=K+U from a real state and use K=E−U≥0 to compare states or limit motion, with E=U marking zero-kinetic-energy candidates (actual turns require reversal) and the smallest accessible U marking greatest K (and greatest speed when mass or inertia is fixed).",
+  "question_to_jump_mapping": [
+    {
+      "id": "WEP07-01",
+      "use": "Restart the conservative-energy account after a sudden change of the applied force and compare two zero-speed points using the new effective potential.",
+      "scope": "CORE"
+    },
+    {
+      "id": "WEP07-02",
+      "use": "Represent a changing height distribution by its centre-of-mass gravitational U and equate initial E to whole-chain final K+U.",
+      "scope": "CORE"
+    },
+    {
+      "id": "WEP07-03",
+      "use": "Evaluate total E from rest, restrict the allowed x-domain, and find maximum K from minimum U by completing the square.",
+      "scope": "CORE"
+    },
+    {
+      "id": "WEP07-04",
+      "use": "EXTENSION — BEYOND GRADE 9, GIVEN, parts (b),(c) only: horizontal release of intact rod reaches vertical, where it fractures without impulse; reselect the attached piece and apply its separately conserved rotational-and-gravitational ledger.",
+      "scope": "EXTENSION"
+    }
+  ],
+  "authority": {
+    "academic_truth_from": {
+      "canonical_library_url": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Physics/library/phy-work-energy-power.v1.json",
+      "canonical_existing_refs": [
+        "MIC-PHY-WEP-MECH-ENERGY-CONDITION",
+        "MIC-PHY-WEP-POTENTIAL-ELIGIBILITY",
+        "MIC-PHY-WEP-GRADE9-QUANT"
+      ],
+      "status": "Existing subject library is CANDIDATE; WEP07 turning-point and rotation microtopics are proposed CANDIDATE additions not yet admitted."
+    },
+    "role_rules": {
+      "canon": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Physics/library/phy-work-energy-power.v1.json",
+      "core1a": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Shared/roles/CORE1A.md",
+      "core1b": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Shared/roles/CORE1B.md",
+      "authority": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Shared/roles/CORE-AUTHORITY-CONTRACT.md",
+      "invariants": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Shared/roles/README.md",
+      "templates": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Shared/roles/LEARNER-PRODUCT-TEMPLATES.md",
+      "adapter": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Physics/adapter/CoreContracts.json",
+      "energy": "https://openstax.org/books/university-physics-volume-1/pages/8-3-conservation-of-energy",
+      "turn": "https://openstax.org/books/university-physics-volume-1/pages/8-4-potential-energy-diagrams-and-stability",
+      "rotation": "https://openstax.org/books/university-physics-volume-1/pages/10-4-moment-of-inertia-and-rotational-kinetic-energy",
+      "springs": "https://openstax.org/books/college-physics-2e/pages/7-4-conservative-forces-and-potential-energy"
+    },
+    "truth_sources": [
+      "https://openstax.org/books/university-physics-volume-1/pages/8-3-conservation-of-energy",
+      "https://openstax.org/books/university-physics-volume-1/pages/8-4-potential-energy-diagrams-and-stability",
+      "https://openstax.org/books/college-physics-2e/pages/7-4-conservative-forces-and-potential-energy",
+      "https://openstax.org/books/university-physics-volume-1/pages/10-4-moment-of-inertia-and-rotational-kinetic-energy"
+    ],
+    "question_custody_not_authority": "NSEP documents and S3 verdict identify demand/selection; they do not define the physics concept.",
+    "learner_support_input_used": false,
+    "mastery_estimate_used": false,
+    "primary_question_capability_remap_performed": false,
+    "extension_admission": "Proposed record in this artifact ONLY; not admitted to canonical package. All extension content labelled BEYOND GRADE 9, GIVEN.",
+    "origin": "AUTHORED_PEDAGOGICAL_WITH_CANONICAL_BASIS_AND_RESEARCH_ENRICHMENT",
+    "additional_research_references": [
+      "https://openstax.org/books/university-physics-volume-1/pages/9-6-center-of-mass",
+      "https://openstax.org/books/intermediate-algebra-2e/pages/9-2-solve-quadratic-equations-by-completing-the-square"
+    ]
+  },
+  "bucket": {
+    "id": "BUCKET-PHY-WORK-ENERGY-POWER",
+    "status": "CANDIDATE_EXISTING_LIBRARY",
+    "conventions": [
+      {
+        "id": "WEP07-C1",
+        "statement": "State the physical system, the time interval, every included energy store, and the forces/transfers before equating K + U.",
+        "example": "For a frictionless cart and conservative interaction, specify the system and the interval being examined before recording its energy stores."
+      },
+      {
+        "id": "WEP07-C2",
+        "statement": "Choose a coordinate and signs: x to the right positive; vertical height h upward positive; angles measured from the vertically downward rest direction in the rotational extension.",
+        "example": "A compressed spring is x < 0 and an extension is x > 0."
+      },
+      {
+        "id": "WEP07-C3",
+        "statement": "Fix the same zero reference for gravitational/spring/effective potential at every compared position within an interval; adding the same constant to E and U changes no predictions.",
+        "example": "For heights, U_g = mgh with zero at h=0; negative U is permitted."
+      },
+      {
+        "id": "WEP07-C4",
+        "statement": "Restrict position to its physical domain, such as x>0 for a reciprocal potential, and to the interval actually connected to the initial position. Reject places where E < U.",
+        "example": "A mathematical root on a disconnected island is not automatically reachable from the start."
+      },
+      {
+        "id": "WEP07-C5",
+        "statement": "In the core, motion is along one coordinate with K=(1/2)mv², m>0; friction, impacts and unmodelled work are absent within each conserved interval.",
+        "example": "Do not use K+U constant across a dissipative collision."
+      },
+      {
+        "id": "WEP07-C6",
+        "statement": "At E=U, K=0; call a position a turning point only when the actual motion reaches it and reverses direction, not merely because a rest/equilibrium state satisfies the equality.",
+        "example": "A bead released at rest at the bottom of a smooth bowl remains there in the ideal model and never reverses."
+      },
+      {
+        "id": "WEP07-C7",
+        "statement": "For the rotation extension only: rotational kinetic energy K_rot=(1/2)Iω² and the appropriate moment of inertia are BEYOND GRADE 9, GIVEN, not derived here.",
+        "example": "After a rod breaks at the vertical following release from horizontal, use the attached piece and its supplied I."
+      },
+      {
+        "id": "WEP07-C8",
+        "statement": "WEP07-01 only: pre-reversal configuration is static spring equilibrium; after an instantaneous force reversal and doubling, assume an ideal Hooke spring, no damping or impulse, and a constant applied force on the new interval. Both U_s=kx²/2 and U_F=−Fx are SUPPLIED STRETCHES beyond baseline Grade 9.",
+        "example": "An external field switch changes the interval energy model, not the instantaneous spring displacement."
+      },
+      {
+        "id": "WEP07-C9",
+        "statement": "EXTENSION — BEYOND GRADE 9, GIVEN for WEP07-04(c): the rod starts from horizontal at rest and fractures without impulse exactly when passing vertical; evaluate the attached upper piece after that event.",
+        "example": "The extension angle is conditional on that initial state and break geometry."
+      }
+    ],
+    "subject": "Physics",
+    "stage": "Grade 9 with explicitly marked rotational extension"
+  },
+  "microtopic": {
+    "id": "MIC-PHY-WEP-TURNING-POINT-BOUNDARY",
+    "version": "0.1.0",
+    "status": "CANDIDATE",
+    "origin": "AUTHORED_PEDAGOGICAL_PROPOSAL_NOT_ADMITTED_IN_CANONICAL_LIBRARY",
+    "source_refs": [
+      "SRC-AUTHOR-WEP07-S4",
+      "SRC-CANON-WEP-MECH-COND",
+      "SRC-OPENSTAX-TURN"
+    ],
+    "evidence_refs": [],
+    "extensions": {},
+    "title": "Use a conserved total to bound motion and locate genuine turning points",
+    "bucket_id": "BUCKET-PHY-WORK-ENERGY-POWER",
+    "primary_capability_ref": "CAP-WEP-MECH-ENERGY-CONDITION",
+    "new_candidate_capability_ref": "CAP-WEP-TURNING-POINTS-CANDIDATE",
+    "intrinsic_badge": "HARD",
+    "badge_reason": "Must build a closed energy account, translate nonnegative kinetic energy into spatial limits, distinguish zero speed from actual reversal, and handle model changes.",
+    "entry_assumptions": [
+      "Can calculate translational kinetic energy (1/2)mv² and gravitational changes mgΔh.",
+      "Can identify conservative versus dissipative/external transfer before treating K+U as constant.",
+      "Can solve a simple quadratic inequality and complete a square without calculus.",
+      "Can choose a fixed energy reference and interpret a signed x coordinate.",
+      "Can distinguish an isolated stable-equilibrium rest state from a reached reversal by looking at motion before and after the instant.",
+      "Can compute the weighted mean height of two point masses; continuously distributed mass uses the same centre-of-mass idea as a stated bridge.",
+      "Can distinguish a force/field switching event from an impulse; in a no-impulse change the instantaneous speed remains continuous.",
+      "STRETCH beyond baseline Grade 9: accept U_s=kx²/2 and uniform-force U_F=−Fx as supplied conservative potentials, not newly derived Grade 9 laws.",
+      "ALGEBRA STRETCH: complete the square and, if WEP07-03 is attempted, treat z=x₀/x as a supplied optional substitution on x>0.",
+      "EXTENSION — BEYOND GRADE 9, GIVEN: rotational K=Iω²/2, moment of inertia, fixed-pivot model and impulse-free separation."
+    ],
+    "inferential_jump": "For each conservative-motion interval, select the actual system and build its appropriate potential from the forces and mass distribution, then fix E=K+U from a real state and use K=E−U≥0 to compare states or limit motion, with E=U marking zero-kinetic-energy candidates (actual turns require reversal) and the smallest accessible U marking greatest K (and greatest speed when mass or inertia is fixed).",
+    "teaching_path": [
+      {
+        "id": "S01",
+        "role": "DECLARE",
+        "action": "Name the system and mark the particular interval whose energy is being compared.",
+        "why_valid": "Otherwise an external force, fracture, or friction term may be omitted or double counted.",
+        "source_ref": "https://openstax.org/books/university-physics-volume-1/pages/8-3-conservation-of-energy",
+        "origin": "AUTHORED_PEDAGOGICAL_CONSTRUCTION_GROUNDED_IN_REFERENCED_TRUTH",
+        "source_ref_binding": {
+          "exact_concept": "OpenStax 8.3 problem-solving strategy step 1: choose bodies/system and forces; canonical MIC-PHY-WEP-MECH-ENERGY-CONDITION.teaching_path WEP4-0",
+          "canonical_ref": "MIC-PHY-WEP-MECH-ENERGY-CONDITION",
+          "authority": "CANONICAL_ACADEMIC_TRUTH_PLUS_REFERENCE"
+        }
+      },
+      {
+        "id": "S02",
+        "role": "DECLARE",
+        "action": "Choose an x-axis, potential-energy reference and physical domain before evaluating U(x).",
+        "why_valid": "A potential value depends on the zero convention, while accessibility depends on consistent differences and a valid domain.",
+        "source_ref": "https://openstax.org/books/university-physics-volume-1/pages/8-3-conservation-of-energy",
+        "origin": "AUTHORED_PEDAGOGICAL_CONSTRUCTION_GROUNDED_IN_REFERENCED_TRUTH",
+        "source_ref_binding": {
+          "exact_concept": "OpenStax 8.3 strategy step 4: select a potential reference for each conservative force; canonical MIC-PHY-WEP-GRADE9-QUANT.teaching_path WEP6-1",
+          "canonical_ref": "MIC-PHY-WEP-GRADE9-QUANT",
+          "authority": "CANONICAL_ACADEMIC_TRUTH_PLUS_REFERENCE"
+        }
+      },
+      {
+        "id": "S03",
+        "role": "MODEL",
+        "action": "Test whether the chosen mechanical account is closed: only conservative interactions may exchange K and U, with no unaccounted work or dissipative transfer.",
+        "why_valid": "The general energy law does not automatically imply K+U constant; this is exactly the canonical conservative-only condition.",
+        "source_ref": "https://openstax.org/books/university-physics-volume-1/pages/8-3-conservation-of-energy",
+        "origin": "AUTHORED_PEDAGOGICAL_CONSTRUCTION_GROUNDED_IN_REFERENCED_TRUTH"
+      },
+      {
+        "id": "S04",
+        "role": "CONSTRUCT",
+        "action": "Read initial speed and position; determine E = (1/2)mv_i² + U(x_i), or the matching total K plus U for the declared system.",
+        "why_valid": "A fixed total must come from one genuine physical state, not an arbitrary guessed constant.",
+        "source_ref": "https://openstax.org/books/university-physics-volume-1/pages/8-3-conservation-of-energy",
+        "origin": "AUTHORED_PEDAGOGICAL_CONSTRUCTION_GROUNDED_IN_REFERENCED_TRUTH"
+      },
+      {
+        "id": "S05",
+        "role": "INFER",
+        "action": "At any later accessible x, subtract: K(x)=E−U(x).",
+        "why_valid": "Rearranging the conserved total E=K+U isolates the energy available for motion.",
+        "source_ref": "https://openstax.org/books/university-physics-volume-1/pages/8-4-potential-energy-diagrams-and-stability",
+        "origin": "AUTHORED_PEDAGOGICAL_CONSTRUCTION_GROUNDED_IN_REFERENCED_TRUTH"
+      },
+      {
+        "id": "S06",
+        "role": "BOUND",
+        "action": "Reject any x with U(x)>E and retain connected allowed positions with U(x)≤E.",
+        "why_valid": "Ordinary kinetic energy (1/2)mv² cannot be negative; non-negative algebra alone does not prove access across a forbidden gap.",
+        "source_ref": "https://openstax.org/books/university-physics-volume-1/pages/8-4-potential-energy-diagrams-and-stability",
+        "origin": "AUTHORED_PEDAGOGICAL_CONSTRUCTION_GROUNDED_IN_REFERENCED_TRUTH"
+      },
+      {
+        "id": "S07",
+        "role": "BOUND",
+        "action": "At a reachable E=U point, K=0, but test actual motion before calling it a turn. GRADE 9 TEST: Bead A climbs a smooth uphill track, slows to zero, and rolls back downhill; bead B is placed exactly at rest at the bottom of a smooth bowl and remains there. Both have zero speed at the stated instant. Which one actually turns, and why?",
+        "why_valid": "Bead A reverses direction at its reached end of permitted upward motion: a genuine turning instant. Bead B remains motionless at stable equilibrium: zero speed or E=U by itself does not imply reversal. The comparison requires an incoming trajectory and outgoing change of direction, not a calculus test.",
+        "source_ref": "https://openstax.org/books/university-physics-volume-1/pages/8-4-potential-energy-diagrams-and-stability",
+        "origin": "AUTHORED_PEDAGOGICAL_CONSTRUCTION_GROUNDED_IN_REFERENCED_TRUTH",
+        "grade9_test": {
+          "prompt": "Bead A moves uphill on a smooth track, reaches zero speed, then moves downhill. Bead B is placed at rest at the bottom of a smooth bowl and stays there. Which has a turning instant? Both can have K=0.",
+          "model_answer": "A has a genuine turning instant because its direction reverses. B is at rest in stable equilibrium, not turning: it has no before-and-after motion.",
+          "check": "Classify each using motion before and after the zero-speed instant; do not decide from K=0 alone.",
+          "assumptions": [
+            "Ideal smooth tracks, no extra energy transfers.",
+            "B starts exactly at the stable bowl minimum with zero velocity; no perturbation."
+          ],
+          "grade_level": "GRADE_9_NO_CALCULUS",
+          "visibility": "CORE1A_COMPLETED_CONSTRUCTION; CORE1B_AFTER_ATTEMPT_ONLY"
+        }
+      },
+      {
+        "id": "S08",
+        "role": "COMPARE",
+        "action": "For a fixed positive mass, maximum speed is where K=E−U is greatest; equivalently where U is least among the reachable positions.",
+        "why_valid": "The constant E does not depend on x; v²=2K/m grows with K.",
+        "source_ref": "https://openstax.org/books/university-physics-volume-1/pages/8-4-potential-energy-diagrams-and-stability",
+        "origin": "AUTHORED_PEDAGOGICAL_CONSTRUCTION_GROUNDED_IN_REFERENCED_TRUTH"
+      },
+      {
+        "id": "S09A",
+        "role": "REWRITE",
+        "action": "Complete a quadratic square algebraically (do not differentiate) to locate the accessible potential minimum.",
+        "why_valid": "A square is never negative, so the vertex form makes the least potential explicit.",
+        "source_ref": "https://openstax.org/books/intermediate-algebra-2e/pages/9-2-solve-quadratic-equations-by-completing-the-square",
+        "origin": "AUTHORED_PEDAGOGICAL_CONSTRUCTION_GROUNDED_IN_REFERENCED_TRUTH",
+        "source_ref_binding": {
+          "exact_concept": "Completing the square to rewrite a quadratic as squared binomial plus constant; the physics K_max inference is separately S08",
+          "authority": "AUTHOR_CONSTRUCTION_WITH_MATH_REFERENCE"
+        },
+        "prerequisite_flag": "ALGEBRA_STRETCH"
+      },
+      {
+        "id": "S09B",
+        "role": "REPRESENT",
+        "action": "For a collection of masses, sum each mgh or use total mass times centre-of-mass height; use a weighted position for unequal masses.",
+        "why_valid": "Summing m_i g h_i equals (sum m_i)g h_cm under uniform g; this is the mass-weighted centre definition.",
+        "source_ref": "https://openstax.org/books/university-physics-volume-1/pages/9-6-center-of-mass",
+        "origin": "AUTHORED_PEDAGOGICAL_CONSTRUCTION_GROUNDED_IN_REFERENCED_TRUTH",
+        "source_ref_binding": {
+          "exact_concept": "9.6 centre-of-mass weighted-position definition; combined with canonical near-Earth gravitational mgh relation",
+          "canonical_ref": "REL-GRAVITATIONAL-POTENTIAL-NEAR-EARTH",
+          "authority": "CANONICAL_ACADEMIC_TRUTH_WITH_COM_EXTENSION"
+        }
+      },
+      {
+        "id": "S10A",
+        "role": "RESET",
+        "action": "When an externally controlled conservative field changes without impulse, carry physical x,v through the instant and compute a new U and E for the subsequent fixed-field interval.",
+        "why_valid": "One time-independent potential and total apply only within the interval under the stated unchanged forces; the switching event may exchange energy externally.",
+        "source_ref": "https://openstax.org/books/university-physics-volume-1/pages/8-3-conservation-of-energy",
+        "origin": "AUTHORED_PEDAGOGICAL_CONSTRUCTION_GROUNDED_IN_REFERENCED_TRUTH",
+        "source_ref_binding": {
+          "exact_concept": "OpenStax 8.3 conservative-only interval condition; event matching of x,v is an explicitly assumed no-impulse model, not claimed verbatim from the source",
+          "authority": "AUTHOR_CONSTRUCTION_WITH_CONSERVATION_REFERENCE"
+        }
+      },
+      {
+        "id": "S10B",
+        "role": "RESET_EXTENSION",
+        "action": "EXTENSION — BEYOND GRADE 9, GIVEN: if a rotating rod fractures at the vertical after horizontal release and without impulse, reselect the attached fragment and its inertia for the post-fracture energy ledger.",
+        "why_valid": "The attached piece has a different mass distribution and rotational inertia; do not apply the intact-rod total to the selected fragment.",
+        "source_ref": "https://openstax.org/books/university-physics-volume-1/pages/10-4-moment-of-inertia-and-rotational-kinetic-energy",
+        "origin": "AUTHORED_PEDAGOGICAL_CONSTRUCTION_GROUNDED_IN_REFERENCED_TRUTH",
+        "scope": "EXTENSION — BEYOND GRADE 9, GIVEN",
+        "source_ref_binding": {
+          "exact_concept": "Rotational K and moment of inertia relation; breakup at vertical/no impulse is a problem-specific supplied assumption, not a published general OpenStax result",
+          "authority": "AUTHOR_EXTENSION_WITH_ROTATIONAL_REFERENCE"
+        }
+      },
+      {
+        "id": "S11",
+        "role": "EXTEND",
+        "action": "For rotational motion only, insert the GIVEN beyond-Grade-9 relation K_rot=(1/2)Iω², then use E=K_rot+U and K_rot=0 at an angular turning point.",
+        "why_valid": "Changing K from translation to rotation does not change the allowed-energy inference; the rotational relation is an advanced prerequisite.",
+        "source_ref": "https://openstax.org/books/university-physics-volume-1/pages/10-4-moment-of-inertia-and-rotational-kinetic-energy",
+        "origin": "AUTHORED_PEDAGOGICAL_CONSTRUCTION_GROUNDED_IN_REFERENCED_TRUTH",
+        "scope": "EXTENSION — BEYOND GRADE 9, GIVEN"
+      },
+      {
+        "id": "S12",
+        "role": "VERIFY",
+        "action": "Check units, limits, sign of K, reference-offset invariance, and whether alleged turning positions can actually be reached from the stated start.",
+        "why_valid": "An algebraically consistent root can still violate physical domain, state continuity or the conditions of conservation.",
+        "source_ref": "https://openstax.org/books/university-physics-volume-1/pages/8-4-potential-energy-diagrams-and-stability",
+        "origin": "AUTHORED_PEDAGOGICAL_CONSTRUCTION_GROUNDED_IN_REFERENCED_TRUTH"
+      }
+    ],
+    "relation_refs": [
+      "REL-MECHANICAL-ENERGY-CONSERVATION",
+      "REL-KINETIC-ENERGY",
+      "REL-GRAVITATIONAL-POTENTIAL-NEAR-EARTH",
+      "REL-WEP07-ACCESSIBLE-SET-CANDIDATE"
+    ],
+    "representation_refs": [
+      "SCN01",
+      "SCN02",
+      "SCN03",
+      "SCN04",
+      "SCN05"
+    ],
+    "question_family_refs": [],
+    "misconceptions": [
+      {
+        "id": "MIS01",
+        "wrong_idea": "Energy is always conserved, therefore K + U is always unchanged.",
+        "diagnostic_prompt": "A puck slides across a rough patch and warms it; can its translational K plus gravitational U remain constant without a friction-transfer term?",
+        "diagnostic_answer": "No; energy transfers to internal/thermal stores.",
+        "repair": "Write a system/store/transfer ledger first; use unchanged K+U only after a zero-extra-transfer check."
+      },
+      {
+        "id": "MIS02",
+        "wrong_idea": "If U is negative, total energy or K must also be negative.",
+        "diagnostic_prompt": "If E=0 and U=−3 J at one permitted position, what is K?",
+        "diagnostic_answer": "K=3 J; negative potential relative to a chosen reference is allowed.",
+        "repair": "Use K=E−U and test K≥0, not the sign of U alone."
+      },
+      {
+        "id": "MIS03",
+        "wrong_idea": "Every solution of E=U is a reached turning point, and E=U always implies reversal.",
+        "diagnostic_prompt": "An object sits at rest in a stable equilibrium and remains there. Is it reversing direction every instant?",
+        "diagnostic_answer": "No; E=U but there is no incoming/outgoing motion to reverse.",
+        "repair": "Examine the physical domain, connection to the initial state and accessible sides near the zero-speed position."
+      },
+      {
+        "id": "MIS04",
+        "wrong_idea": "Maximum speed occurs where potential U is maximum.",
+        "diagnostic_prompt": "At E=10 J, compare the speeds where U=2 J and U=8 J for the same moving mass.",
+        "diagnostic_answer": "Faster at U=2 J, where K=8 J instead of 2 J.",
+        "repair": "Calculate K=E−U before comparing speed, then compare smallest accessible U."
+      },
+      {
+        "id": "MIS05",
+        "wrong_idea": "After a controlled force switch, the old energy model stays valid; EXTENSION — BEYOND GRADE 9, GIVEN: after a rod fracture the intact body and its inertia still apply.",
+        "diagnostic_prompt": "GRADE 9: when a uniform conservative field is switched off without impulse, should its previous U still be used? EXTENSION — BEYOND GRADE 9, GIVEN: after a rod fractures at vertical, can the intact I be used for the attached fragment?",
+        "diagnostic_answer": "No to both; reconstruct the active interval model; EXTENSION — BEYOND GRADE 9, GIVEN: reconstruct the post-fracture subsystem and I.",
+        "repair": "Separate the intervals by a force-switch marker; EXTENSION — BEYOND GRADE 9, GIVEN: for fracture, additionally specify the attached rotating fragment and supplied inertia."
+      },
+      {
+        "id": "MIS06",
+        "wrong_idea": "All of a chain has the same gravitational potential per unit length as the hanging tip.",
+        "diagnostic_prompt": "A vertical uniform length y has midpoint at depth y/2; should its total gravitational U be based on tip depth y or centre depth y/2?",
+        "diagnostic_answer": "Use centre depth y/2 and the mass of the hanging portion.",
+        "repair": "Write mass λy, then centre height −y/2, then multiply before mixing in whole-chain K."
+      }
+    ],
+    "exit_task": {
+      "prompt": "With U(x)=(x−1)² J and E=4 J on a frictionless 1D track (x in metres), give the allowed interval, the potential minimum and speed-maximum position, and which E=U points represent turns for a moving cart.",
+      "answer": {
+        "summary": "Allowed −1≤x≤3 m; U_min=0 J at x=1 m, where speed is greatest; the boundaries x=−1 m and x=3 m are turns if the moving cart reaches and reverses at them.",
+        "reasoning": [
+          "K=4−(x−1)²≥0 gives |x−1|≤2.",
+          "K is largest when the square is smallest: x=1.",
+          "At each end K=0; the motion/reversal check distinguishes a turn from a static rest."
+        ],
+        "check": "Try x=4: U=9 J>4 J, so K would be −5 J and it is forbidden. Try x=1: K=4 J≥0."
+      }
+    },
+    "research_contribution": "Adapted the already-canonical conditional-mechanical-energy ledger to an explicitly proposed turning-point construction; enrichment verified against OpenStax University Physics 8.3 and 8.4. No calculus, and the original exam corpus is not used as conceptual authority.",
+    "prerequisite_refs": [
+      "MIC-PHY-WEP-MECH-ENERGY-CONDITION",
+      "MIC-PHY-WEP-POTENTIAL-ELIGIBILITY",
+      "MIC-PHY-WEP-GRADE9-QUANT"
+    ],
+    "elicitation": {
+      "predict": {
+        "prompt": "A frictionless cart has E=4 J and a position-dependent potential U(x)=(x−1)² J, with x in metres. Before calculating a trajectory, can it ever occupy x=4 m? Where should it move fastest?",
+        "defensible_answer": "No: U(4)=9 J exceeds E=4 J. Speed is largest at x=1 m, where U is smallest."
+      },
+      "attempt": {
+        "produces": "Before seeing any model response, declare the cart-plus-conservative-interaction system, the fixed-potential interval, which energy stores are included, the positive x direction, the physically valid domain of the long 1D track, and why no dissipative/external work changes K+U on that interval. Then draw an x-axis and energy-line sketch; construct K(x), determine the allowed interval and test x=4 m, mark zero-speed boundary candidates, and locate the greatest-speed position.",
+        "closure": "RUBRIC",
+        "model_response": "For the stated E=4 J moving cart, K(x)=4−(x−1)² J and K≥0 gives −1≤x≤3 m. x=−1 and x=3 are zero-speed boundary candidates; a cart moving inside the connected interval can reach and reverse at them. The minimum U is 0 J at x=1 m, so K_max=4 J there. CONTRAST WITH A DIFFERENT INITIAL STATE: if a cart is placed at rest at the stable equilibrium x=1 m, then U(1)=0 and K=0 so its total is E=0 J, NOT 4 J. That cart remains at equilibrium in the ideal model and never reverses; it is not the moving E=4 J cart.",
+        "rubric": [
+          {
+            "criterion": "Declare system, coordinate, physical domain and zero-extra-transfer assumption.",
+            "evidence_of": "A statement tying conservation to a frictionless, unchanged model."
+          },
+          {
+            "criterion": "Obtain K(x)=4−(x−1)² and non-negativity inequality.",
+            "evidence_of": "Subtract U from E before solving."
+          },
+          {
+            "criterion": "Derive −1≤x≤3 and mark x=4 forbidden.",
+            "evidence_of": "Both square-root inequality boundaries and exclusion."
+          },
+          {
+            "criterion": "Separate candidate equality points from actual reversals.",
+            "evidence_of": "Motion and connectivity qualifications."
+          },
+          {
+            "criterion": "Place K maximum where U minimum: x=1.",
+            "evidence_of": "E fixed and square ≥0."
+          }
+        ],
+        "accepted": [
+          "For a moving cart within −1 to 3 m, it turns at the two ends and moves fastest at 1 m.",
+          "A DIFFERENT cart placed at rest at x=1 has E=U(1)=0 J and stays there; E=U need not mean a reversal."
+        ],
+        "rejected": [
+          "x=4 is allowed because potential can be greater than total energy.",
+          "Speed is greatest at either turning boundary.",
+          "Any rest position automatically means an actual reversal."
+        ]
+      },
+      "reconstruct": {
+        "route": [
+          {
+            "ask": "What physically defined system and interval make E constant here?",
+            "why_this_ask": "Conservation is earned by verifying its condition, not assumed merely from the presence of U.",
+            "model_answer": "Frictionless cart plus conservative interaction during one fixed-potential interval."
+          },
+          {
+            "ask": "What must be nonnegative at every real position?",
+            "why_this_ask": "This selects the constraint that distinguishes a physical path from an algebraically imaginable coordinate.",
+            "model_answer": "K=(1/2)mv²=E−U≥0."
+          },
+          {
+            "ask": "How do you turn the constraint into a marked segment on an x-axis?",
+            "why_this_ask": "Translates energy arithmetic into spatial accessibility.",
+            "model_answer": "4−(x−1)²≥0 gives |x−1|≤2, so −1≤x≤3."
+          },
+          {
+            "ask": "If the kinetic bar vanishes at one end, what extra observation makes it a turning point?",
+            "why_this_ask": "Distinguishes equality from actual reversal or equilibrium.",
+            "model_answer": "A moving trajectory reaches the boundary and changes direction, rather than remaining motionless."
+          },
+          {
+            "ask": "Where is E−U largest on that segment?",
+            "why_this_ask": "Extracts maximum speed by minimising U, not by confusing it with maximum potential.",
+            "model_answer": "At x=1, where U=(x−1)² is zero."
+          },
+          {
+            "ask": "GRADE 9 reset: If an external conservative field is switched off without impulse, which measured state quantities persist, and which interval energy ledger must you construct anew?",
+            "why_this_ask": "Rebuilds the event-reset condition rather than blindly reusing the earlier total.",
+            "model_answer": "Position and velocity carry through a no-impulse force switch; rebuild U and E for the post-switch interval. EXTENSION — BEYOND GRADE 9: if a rod fractures, also reselect the physical subsystem and the supplied inertia."
+          },
+          {
+            "ask": "A chain segment hangs y below the edge. Which height represents the whole hanging segment?",
+            "why_this_ask": "Makes the learner construct the distributed gravitational ledger before applying energy conservation.",
+            "model_answer": "Its centre-of-mass height −y/2; the segment has mass λy."
+          },
+          {
+            "ask": "On −4≤q≤0, U(q)=q²+4q+9 J and E=9 J: which constant completes the square, and where is K largest?",
+            "why_this_ask": "Requires constructing the algebraic vertex in the original coordinate rather than repeating the reciprocal-potential substitution of WEP07-03.",
+            "model_answer": "U=(q+2)²+5, so K=4−(q+2)² reaches 4 J at q=−2, without calculus.",
+            "scope": "GRADE9_ALGEBRA_STRETCH"
+          },
+          {
+            "ask": "EXTENSION — BEYOND GRADE 9, GIVEN: after a flywheel’s attached bead detaches, which inertia and subsystem belong to the next interval?",
+            "why_this_ask": "Keeps the extension at the same core inference while marking advanced mechanics as supplied.",
+            "model_answer": "Use the flywheel-only system with its supplied inertia, not the combined pre-detachment inertia."
+          }
+        ],
+        "differs_from_teaching_path": "CORE1A directly builds from system declarations to the energy inequality and then applies cases. CORE1B opens with an unfamiliar shifted potential and a commitment about a forbidden point, makes the learner produce a diagram/domain before any reveal, then reconstructs from the physical impossibility of negative kinetic energy and only later tests model resets, distributed mass, algebra and given rotation."
+      },
+      "boundary_test": {
+        "prompt": "Two frictionless beads have zero speed at the same instant. Bead A reaches the rim of a smooth bowl while moving outward, then travels back inward; bead B is released exactly at rest at the bowl bottom and stays there. In which case is that instant a turning point? If a zero-speed bead is at the end of a downhill ramp with unlimited length ahead, must there be a second turn? Justify using motion on either side of the instant, not only an energy equality.",
+        "answer": "Bead A reverses at its reached rim and has a genuine turning instant. Bead B is in stable equilibrium without incoming/outgoing motion and has no turn. On an indefinitely descending frictionless ramp an initially stationary bead can accelerate downhill continually and have no second turning point; a zero-speed event alone does not imply a later reversal.",
+        "confirms": "Tests the missing assumptions: actual incoming/reversing motion, equilibrium rest, connected domain and lack of an enclosing second boundary."
+      }
+    },
+    "candidate_admission_needed": true
+  },
+  "relation": {
+    "id": "REL-WEP07-ACCESSIBLE-SET-CANDIDATE",
+    "version": "0.1.0",
+    "status": "CANDIDATE",
+    "origin": "AUTHORED_DERIVATION_FROM_CANONICAL_CONSERVATION",
+    "equation": "E=K+U(x); K=E−U(x)≥0; E=U(x) at a zero-speed candidate boundary",
+    "model_assumptions": [
+      "one-coordinate motion and positive mass",
+      "chosen consistent physical system and energy reference",
+      "only conservative transfers within fixed interval",
+      "physical domain and trajectory connectivity accounted for"
+    ],
+    "axis_and_sign": "Declared in bucket.conventions",
+    "dimensions": "K, E, U in joules; x in metres; (1/2)mv² in joules",
+    "physical_interpretation": "Potential higher than E is inaccessible; reached equality may identify a turning position if reversal is present.",
+    "checks": [
+      {
+        "id": "CHECK01",
+        "action": "At any permitted x, recompute K+U and verify it equals the E from the same interval.",
+        "expected": "No drift of E within a conserved interval."
+      },
+      {
+        "id": "CHECK02",
+        "action": "Test the edges E=U and one point beyond with U>E.",
+        "expected": "K=0 at the edge, negative K and hence forbidden just beyond."
+      },
+      {
+        "id": "CHECK03",
+        "action": "Add a constant C to all U values and to E; re-evaluate E−U.",
+        "expected": "The allowed set and speeds do not change."
+      },
+      {
+        "id": "CHECK04",
+        "action": "In a potential with a genuine minimum, compare speeds at the minimum and at a turning boundary.",
+        "expected": "Speed maximal at U minimum and zero at a reached turning boundary."
+      },
+      {
+        "id": "CHECK05",
+        "action": "For a hanging chain, let initial hanging length approach the full chain length.",
+        "expected": "If the chain starts already fully hanging and at rest, its final speed from the same-state comparison tends to zero."
+      },
+      {
+        "id": "CHECK06",
+        "action": "At the fracture/force-change event, write left and right energy ledgers separately.",
+        "expected": "They share the actual instantaneous state; they need not share the same U model or the same system energy total."
+      },
+      {
+        "id": "CHECK07",
+        "action": "Compare an actual moving bead that reverses at a bowl rim with one that is initially at rest in stable equilibrium at the bottom.",
+        "expected": "Both can have E=U instantaneously, but only the moving bead reverses."
+      },
+      {
+        "id": "CHECK08",
+        "action": "For a uniform downhill conservative force along an ideal infinite ramp, test whether K returns to zero for any s>0 when released at rest at s=0.",
+        "expected": "No. K increases as s grows, so no second finite turn is forced."
+      }
+    ]
+  },
+  "representation": {
+    "scene_instances": [
+      {
+        "id": "SCN01",
+        "microtopic_ref": "MIC-PHY-WEP-TURNING-POINT-BOUNDARY",
+        "kind": "graph",
+        "origin": "AUTHORED_CONCEPTUAL_DIAGRAM_SPEC_NOT_OFFICIAL_EXAM_FIGURE",
+        "caption": "Potential-energy curve U(x)=x² J for x in metres (coefficient 1 J/m²), with horizontal total-energy line E=9 J.",
+        "axes": {
+          "horizontal": "x (m), increasing right, marked −4, −3, 0, 3, 4",
+          "vertical": "energy (J), increasing up, marked 0 and 9"
+        },
+        "elements": [
+          "Upward parabola with vertex (0,0)",
+          "Horizontal line E=9 J",
+          "Line/curve intersections (−3,9) and (3,9), labelled candidate turning boundaries",
+          "Shaded accessible interval −3≤x≤3; x=±4 marked forbidden because U=16 J>9 J"
+        ]
+      },
+      {
+        "id": "SCN02",
+        "microtopic_ref": "MIC-PHY-WEP-TURNING-POINT-BOUNDARY",
+        "kind": "energy_bar_chart_spec",
+        "origin": "AUTHORED_CONCEPTUAL_DIAGRAM_SPEC",
+        "caption": "The same graph in energy-bar form; each row totals 9 J.",
+        "rows": [
+          {
+            "x_m": -3,
+            "U_J": 9,
+            "K_J": 0,
+            "E_J": 9
+          },
+          {
+            "x_m": 0,
+            "U_J": 0,
+            "K_J": 9,
+            "E_J": 9
+          },
+          {
+            "x_m": 3,
+            "U_J": 9,
+            "K_J": 0,
+            "E_J": 9
+          }
+        ]
+      },
+      {
+        "id": "SCN03",
+        "microtopic_ref": "MIC-PHY-WEP-TURNING-POINT-BOUNDARY",
+        "kind": "state_sequence",
+        "origin": "AUTHORED_CONCEPTUAL_DIAGRAM_SPEC",
+        "caption": "Force-field switch at one instant; EXTENSION — BEYOND GRADE 9, GIVEN: any rod fracture belongs to a separately labelled advanced panel, not the Grade 9 force-switch diagram.",
+        "elements": [
+          "before interval: uniform conservative field on; U_A(x)=−(2 J/m)x",
+          "vertical switch marker at x=2 m, v=3 m/s with no impulse",
+          "after interval: field off, U_B(x)=0",
+          "kinetic energy K=9 J unchanged at the instant; distinct interval totals E_A=5 J, E_B=9 J",
+          "EXTENSION — BEYOND GRADE 9, GIVEN: rod fracture is different from this field switch and requires a new subsystem and rotational I"
+        ],
+        "scope": "GRADE9_FORCE_SWITCH_ONLY; FRACTURE_EXTENSION_NOT_DEPICTED"
+      },
+      {
+        "id": "SCN04",
+        "microtopic_ref": "MIC-PHY-WEP-TURNING-POINT-BOUNDARY",
+        "kind": "weighted_mass_heights",
+        "origin": "AUTHORED_CONCEPTUAL_DIAGRAM_SPEC",
+        "caption": "Two unlike point masses on a light rigid carrier: m1=1 kg at h1=1 m, m2=3 kg at h2=3 m, with mass-weighted centre at h_cm=2.5 m; after moving together down 0.5 m, the centre is at 2.0 m.",
+        "elements": [
+          "height axis h↑ with zero at the floor",
+          "1 kg point at h1=1 m, 3 kg point at h2=3 m",
+          "filled COM dot at h=2.5 m computed as weighted mean",
+          "second position: both points shifted down 0.5 m and COM dot at h=2 m",
+          "ΔU=(m1+m2)gΔh_cm; total moving mass appears in K"
+        ]
+      },
+      {
+        "id": "SCN05",
+        "microtopic_ref": "MIC-PHY-WEP-TURNING-POINT-BOUNDARY",
+        "kind": "rotational_extension",
+        "origin": "AUTHORED_CONCEPTUAL_DIAGRAM_SPEC",
+        "caption": "EXTENSION — BEYOND GRADE 9, GIVEN: a rotating rigid fragment, its own I and ω and centre-of-mass height; breakup/fracture and post-fracture system selection are outside Grade 9.",
+        "elements": [
+          "EXTENSION — BEYOND GRADE 9: fixed upper hinge and attached piece selected AFTER fracture",
+          "GIVEN rotational K_rot=I_piece ω²/2 with piece-specific inertia",
+          "lowest location of attached piece with COM h=0 and ω≠0",
+          "raised genuine angular turning configuration with COM h=Δh and ω=0",
+          "WEP07-04(c): fracture exactly at vertical after release from horizontal and no impulse is an essential conditional assumption"
+        ],
+        "scope": "EXTENSION_BEYOND_GRADE9_GIVEN"
+      },
+      {
+        "id": "SCN06",
+        "microtopic_ref": "MIC-PHY-WEP-TURNING-POINT-BOUNDARY",
+        "kind": "monotone_unbounded_potential_graph",
+        "origin": "AUTHORED_CONCEPTUAL_DIAGRAM_SPEC",
+        "caption": "Non-quadratic U(s)=−(2 J/m)s on s≥0 and E=0; line and potential touch only at start, then separate without a second turn.",
+        "axes": {
+          "horizontal": "downhill s (m), beginning at 0 and extending right indefinitely",
+          "vertical": "U and E in joules, horizontal E=0 line, downward sloping U"
+        },
+        "elements": [
+          "descending straight U line through (0,0), (1,−2), (2,−4)",
+          "horizontal E=0 J line",
+          "gap K=E−U positive and increasing for all s>0",
+          "starting rest s=0 is not a reversal; no second intersection",
+          "arrow extends indefinitely to right: no finite second turn"
+        ]
+      },
+      {
+        "id": "SCN07",
+        "microtopic_ref": "MIC-PHY-WEP-TURNING-POINT-BOUNDARY",
+        "kind": "two_interval_energy_ledger",
+        "origin": "AUTHORED_CONCEPTUAL_DIAGRAM_SPEC",
+        "caption": "A field shuts off without impulse while a cart moves; before/after potentials differ but instantaneous K is the same.",
+        "elements": [
+          "left: x=2 m, v=3 m/s, K=9 J, U_A=−4 J, E_A=5 J",
+          "switch marker: no impulse, same x and v",
+          "right: same x,v,K; U_B=0, E_B=9 J",
+          "rightward coasting arrow for all later times and no second turn"
+        ]
+      },
+      {
+        "id": "SCN08",
+        "microtopic_ref": "MIC-PHY-WEP-TURNING-POINT-BOUNDARY",
+        "kind": "stable_equilibrium_vs_reversal_sequence",
+        "origin": "AUTHORED_CONCEPTUAL_DIAGRAM_SPEC",
+        "caption": "Two beads each momentarily have K=0, but only the bead with incoming and outgoing opposite motion actually turns.",
+        "elements": [
+          "left: bead approaching bowl rim, stationary for an instant, then moving inward",
+          "right: bead initially at bowl bottom with zero speed and remaining there",
+          "both satisfy E=U at the pictured instant, but only left is a reversal",
+          "label: actual path history is required to assert a turn"
+        ]
+      }
+    ],
+    "correspondence": [
+      {
+        "symbol": "E",
+        "element": "horizontal line E=9 J in SCN01 / total height of each bar row SCN02",
+        "in_words": "One fixed total chosen from the initial state.",
+        "forward": "The horizontal line represents the same energy at every position.",
+        "reverse": "An unchanged total bar height means the same E line throughout."
+      },
+      {
+        "symbol": "U(x)",
+        "element": "parabola height in SCN01 / potential part of bars in SCN02",
+        "in_words": "Position-dependent energy stored in the conservative interaction.",
+        "forward": "Read a curve height at x as U.",
+        "reverse": "A potential bar value locates the height on the U curve."
+      },
+      {
+        "symbol": "K(x)=E−U(x)",
+        "element": "vertical separation between line and curve / kinetic part of bar",
+        "in_words": "Energy left for movement after potential is accounted for.",
+        "forward": "Positive line-above-curve gap is kinetic energy.",
+        "reverse": "Bar kinetic height gives the graph’s line-to-curve gap."
+      },
+      {
+        "symbol": "E=U(x)",
+        "element": "line/curve contact or intersection in SCN01 / K=0 bar in SCN02",
+        "in_words": "Zero-speed candidate boundary that requires a reachability and reversal test.",
+        "forward": "Intersection makes the kinetic bar vanish.",
+        "reverse": "Zero kinetic bar corresponds to an equality point, not automatically a reversal."
+      },
+      {
+        "symbol": "U(x)>E",
+        "element": "curve above E line / no physical K bar",
+        "in_words": "Forbidden position for the chosen fixed energy.",
+        "forward": "Above-line positions demand negative kinetic energy.",
+        "reverse": "An impossible negative bar shows the point must be excluded."
+      },
+      {
+        "symbol": "U_g=Σm_i g h_i=M g h_cm",
+        "element": "two differently weighted points and COM dot in SCN04",
+        "in_words": "For several bodies, total gravitational potential uses each mass’s height or their mass-weighted mean height.",
+        "forward": "Weight heights by their masses before constructing total U.",
+        "reverse": "The COM dot at 2.5 m encodes the weighted total of unequal masses."
+      },
+      {
+        "symbol": "K_rot=(1/2)Iω²",
+        "element": "rotating piece speed marker in SCN05",
+        "in_words": "Given beyond-Grade-9 rotational kinetic energy replaces translational K.",
+        "forward": "At ω=0, K_rot=0 and energy is potential.",
+        "reverse": "The rotating speed marker is not a linear v and needs the given I formula."
+      },
+      {
+        "symbol": "K(s)=E−U(s)=2s J (s in m)",
+        "element": "gap between E=0 line and declining U in SCN06",
+        "in_words": "Moving downhill can keep gaining kinetic energy without another zero-speed position.",
+        "forward": "The gap increases forever in the ideal domain.",
+        "reverse": "No second intersection means no second finite turn is forced by energy."
+      },
+      {
+        "symbol": "E_A=K+U_A, E_B=K+U_B",
+        "element": "two side-by-side energy ledgers in SCN07",
+        "in_words": "The same instantaneous speed can lead to different interval energy numbers after a controlled force change.",
+        "forward": "Compute each E using the potential active on its side.",
+        "reverse": "Different ledger totals do not mean the cart speed jumped."
+      },
+      {
+        "symbol": "K=0 at an instant",
+        "element": "two temporal motion strips in SCN08",
+        "in_words": "An actual direction reversal requires incoming and outgoing motion; rest equilibrium does not turn.",
+        "forward": "Inspect events before and after zero speed.",
+        "reverse": "A static bead cannot be called an oscillation turning point."
+      }
+    ]
+  },
+  "proposed_extension_candidate": {
+    "id": "MIC-PHY-WEP-ROTATIONAL-TURNING-EXTENSION",
+    "version": "0.1.0",
+    "status": "CANDIDATE",
+    "origin": "AUTHORED_EXTENSION_CANDIDATE_NOT_COMMITTED_TO_SUBJECT_LIBRARY",
+    "bucket_id": "BUCKET-PHY-WORK-ENERGY-POWER",
+    "title": "EXTENSION: carry the turning-point ledger to a rotating post-break subsystem",
+    "extension_label": "EXTENSION — BEYOND GRADE 9, GIVEN",
+    "shared_inferential_jump_ref": "MIC-PHY-WEP-TURNING-POINT-BOUNDARY.inferential_jump",
+    "entry_assumptions": [
+      "Own WEP07 turning-point energy ledger.",
+      "GIVEN beyond Grade 9: K_rot=(1/2)Iω²; value of I about the fixed hinge; piece masses and centre-of-mass heights.",
+      "Assume break is impulse-free and separately confirm no later energy leakage.",
+      "WEP07-04(c): rod released from horizontal at rest and fractures at the vertical without impulse before attached-piece swing."
+    ],
+    "bridge": "EXTENSION — BEYOND GRADE 9, GIVEN: use rotational K for each specified body. For WEP07-04(c), the intact rod has fallen from horizontal to vertical before an impulse-free break there; reselect the attached piece, compute its own post-fracture energy and find a genuine angular turn.",
+    "specific_question_ref": "WEP07-04",
+    "allowed_parts": [
+      "b",
+      "c"
+    ],
+    "unresolved": "Canonical extension microtopic/capability admission through package schema and human subject authority remains pending; contained here as a proposed record only.",
+    "teaching_path": [
+      {
+        "id": "EX1",
+        "action": "BEYOND GRADE 9, GIVEN: K_rot=Iω²/2 and required hinge inertia.",
+        "why_valid": "This is the provided advanced relation; learner does not derive rotational dynamics.",
+        "source_ref": "https://openstax.org/books/university-physics-volume-1/pages/10-4-moment-of-inertia-and-rotational-kinetic-energy"
+      },
+      {
+        "id": "EX2",
+        "action": "Use initial or bottom K_rot+U to fix the total for the currently selected rigid body.",
+        "why_valid": "Kinetic-to-gravitational conversion is the same conservative-energy account.",
+        "source_ref": "https://openstax.org/books/university-physics-volume-1/pages/8-3-conservation-of-energy"
+      },
+      {
+        "id": "EX3",
+        "action": "After any non-impulsive fracture reselect the attached piece, its inertia and its gravitational centre-of-mass potential.",
+        "why_valid": "A post-break subsystem differs from the original intact body.",
+        "source_ref": "https://openstax.org/books/university-physics-volume-1/pages/10-4-moment-of-inertia-and-rotational-kinetic-energy"
+      },
+      {
+        "id": "EX4",
+        "action": "At the actual angular turning position set ω=0, K_rot=0 and solve U(θ)=E after verifying angular reachability.",
+        "why_valid": "The nonnegative-kinetic-energy boundary is the same crux in a new kinetic model.",
+        "source_ref": "https://openstax.org/books/university-physics-volume-1/pages/8-4-potential-energy-diagrams-and-stability"
+      }
+    ],
+    "elicitation_bridge": {
+      "predict": "Does the total energy of the full rod remain the relevant energy expression after selecting only the attached top piece?",
+      "answer": "No; construct a fresh energy ledger for the selected attached piece, with its own I and centre of mass.",
+      "attempt": "State what is supplied beyond Grade 9 and how E=U identifies a reached angular turn.",
+      "rubric": [
+        "Names the new attached subsystem and correct centre of mass.",
+        "Treats rotational relation as GIVEN beyond Grade 9.",
+        "Uses ω=0 and E=U only in the post-break conservative interval."
+      ]
+    }
+  },
+  "core1a": {
+    "id": "CORE1A-WEP07-S4",
+    "role": "CORE1A",
+    "title": "Why energy determines where motion can occur",
+    "microtopic_ref": "MIC-PHY-WEP-TURNING-POINT-BOUNDARY",
+    "inferential_jump_ref": "MIC-PHY-WEP-TURNING-POINT-BOUNDARY.inferential_jump",
+    "visibility_policy": "SHOW_COMPLETED_INFERENCE; show teacher-style path, worked examples, misconceptions, then independent exit and check",
+    "ordered_blocks": [
+      {
+        "id": "identity_scope",
+        "show": "Grade 9 core: system/energy closure, allowed places, candidate turns, speed maxima; rotation optional extension."
+      },
+      {
+        "id": "conventions",
+        "ref": "bucket.conventions"
+      },
+      {
+        "id": "entry_assumptions",
+        "ref": "microtopic.entry_assumptions"
+      },
+      {
+        "id": "inferential_jump",
+        "ref": "microtopic.inferential_jump"
+      },
+      {
+        "id": "representation_bridges",
+        "ref": "representation"
+      },
+      {
+        "id": "teaching_path",
+        "ref": "microtopic.teaching_path"
+      },
+      {
+        "id": "completed_worked_examples",
+        "ref": "core1a.questions"
+      },
+      {
+        "id": "plausible_wrong_paths",
+        "ref": "microtopic.misconceptions"
+      },
+      {
+        "id": "independent_checks",
+        "ref": "relation.checks"
+      },
+      {
+        "id": "exit_and_model_answer",
+        "ref": "microtopic.exit_task"
+      },
+      {
+        "id": "labelled_extension",
+        "ref": "proposed_extension_candidate"
+      },
+      {
+        "id": "provenance_and_status",
+        "ref": "authority"
+      }
+    ],
+    "questions": [
+      {
+        "id": "W-A1",
+        "title": "Read a U(x) picture as a motion boundary",
+        "provenance": "AUTHORED_PEDAGOGICAL_CONCEPT_ANCHOR_NOT_EXAM_QUESTION",
+        "exposure": [
+          {
+            "core": "CORE1A",
+            "type": "COMPLETED_WORKED_EXAMPLE"
+          }
+        ],
+        "model_level": "GRADE9_CORE",
+        "setup": "A frictionless 1D cart of positive mass has U(x)=x² J for x in metres, with coefficient 1 J/m². From its known initial state E=9 J. Identify physically allowed x, reached turn boundaries for a cart moving between them, and x of maximum speed.",
+        "answer": {
+          "reasoning": [
+            "The system is the cart and conservative interaction; friction is absent. The potential reference and x coordinate are fixed.",
+            "Conservation gives K(x)=9−x² J. K cannot be negative.",
+            "The allowed inequality 9−x²≥0 implies −3≤x≤3 metres.",
+            "At x=−3 and +3, K=0. For a cart travelling within the interval and reversing at each boundary, these are the turning positions.",
+            "The smallest U in the allowed interval is 0 J at x=0, so K is maximal there at 9 J. No mass value is required to locate where speed is maximal."
+          ],
+          "summary": "Allowed interval −3≤x≤3 m; turning boundaries −3 m and +3 m for the moving cart; maximum speed at x=0.",
+          "rubric": [],
+          "check": "K(−3)=K(3)=0; K(0)=9 J; K(4)=−7 J is inadmissible."
+        }
+      },
+      {
+        "id": "W-A2",
+        "title": "A moving cart crosses a field switch without an impulse",
+        "provenance": "AUTHORED_PEDAGOGICAL_CONCEPT_ANCHOR_NOT_EXAM_QUESTION",
+        "exposure": [
+          {
+            "core": "CORE1A",
+            "type": "COMPLETED_WORKED_EXAMPLE"
+          }
+        ],
+        "model_level": "GRADE9_CORE_WITH_SUPPLIED_CONSTANT_FORCE_POTENTIAL",
+        "setup": "A 2 kg cart is travelling at 3 m/s when a uniform conservative driving field is switched OFF at x=2 m on an infinite horizontal frictionless track. Before switching, the field potential is U_A(x)=−(2 J/m)x; after switching U_B=0. Compare the energy ledger immediately on either side of the event and the subsequent motion.",
+        "answer": {
+          "reasoning": [
+            "Use the same actual event state x=2 m and v=3 m/s immediately before/after because switching is assumed impulse-free.",
+            "K=mv²/2=(1/2)(2)(3²)=9 J at the event.",
+            "Before the switch U_A(2)=−4 J, giving old interval total E_A=9−4=5 J.",
+            "After the switch there is no field, U_B=0, and the post-switch interval E_B=9+0=9 J. The two totals need not have the same numerical value because the model changed at the controlled switching event.",
+            "In the new force-free interval K remains 9 J and motion continues with constant speed; there is no finite second turning point."
+          ],
+          "summary": "No impulse gives unchanged speed; the post-switch mechanical ledger has E_B=9 J and no finite turning point.",
+          "rubric": [],
+          "check": "K=9 J on both event sides; old E_A=5 J, new E_B=9 J. No discontinuous change of the measured speed is asserted."
+        }
+      },
+      {
+        "id": "W-A3",
+        "title": "Mass-weighted height for two connected unequal masses",
+        "provenance": "AUTHORED_PEDAGOGICAL_CONCEPT_ANCHOR_NOT_EXAM_QUESTION",
+        "exposure": [
+          {
+            "core": "CORE1A",
+            "type": "COMPLETED_WORKED_EXAMPLE"
+          }
+        ],
+        "model_level": "GRADE9_CORE_WITH_EXPLICIT_COM_BRIDGE",
+        "setup": "A rigid light carrier keeps two small masses vertically aligned: 1 kg at height 1 m and 3 kg at height 3 m; both descend together by 0.5 m from rest on frictionless guides (g=10 m/s²). Calculate their combined initial centre-of-mass height, their gravitational energy change and their total kinetic energy gain.",
+        "answer": {
+          "reasoning": [
+            "Choose both masses and Earth, with h upward and zero at h=0; the light carrier’s kinetic energy is neglected.",
+            "The initial mass-weighted centre height is (1 kg×1 m+3 kg×3 m)/(4 kg)=2.5 m, not the unweighted midpoint 2 m.",
+            "Both masses descend 0.5 m, so the final heights are 0.5 and 2.5 m and their centre height becomes 2.0 m.",
+            "The gravitational potential change is M g Δh_cm=4×10×(−0.5)=−20 J; summing separate mgh changes gives the same −20 J.",
+            "In the absence of extra work, K_total rises by 20 J; because they share one speed, K_total=(1/2)(4 kg)v²."
+          ],
+          "summary": "Initial centre height 2.5 m; ΔU=−20 J; K gain 20 J for the two-mass system.",
+          "rubric": [],
+          "check": "Individual changes −5 J and −15 J sum to −20 J. COM weighting, not simple midpoint, is decisive."
+        }
+      },
+      {
+        "id": "W-A4",
+        "title": "Minimum potential by completing the square",
+        "provenance": "AUTHORED_PEDAGOGICAL_CONCEPT_ANCHOR_NOT_EXAM_QUESTION",
+        "exposure": [
+          {
+            "core": "CORE1A",
+            "type": "COMPLETED_WORKED_EXAMPLE"
+          }
+        ],
+        "model_level": "GRADE9_CORE",
+        "setup": "For an abstract position coordinate z restricted to 0≤z≤4, U(z)=2(z−2)²−8 J and E=0. Find the allowed range and the maximum kinetic energy, using algebra only.",
+        "answer": {
+          "reasoning": [
+            "Conservation gives K=E−U=8−2(z−2)² J.",
+            "K≥0 requires (z−2)²≤4, which agrees with 0≤z≤4.",
+            "The square (z−2)² is never negative, and is least (zero) at z=2.",
+            "Thus U is least at z=2, where U=−8 J, and K is greatest at 8 J.",
+            "At the boundaries z=0 and z=4, U=0=E and K=0. Negative U is not a problem because kinetic energy stays nonnegative."
+          ],
+          "summary": "Maximum K=8 J at z=2, with zero-speed boundaries z=0 and z=4.",
+          "rubric": [],
+          "check": "K(0)=0, K(2)=8 J and K(4)=0; at z=5, K=−10 J so that location would be forbidden if included in the domain."
+        }
+      },
+      {
+        "id": "W-A5",
+        "title": "EXTENSION: a rotating system obeys the same zero-speed energy test",
+        "provenance": "AUTHORED_PEDAGOGICAL_CONCEPT_ANCHOR_NOT_EXAM_QUESTION",
+        "exposure": [
+          {
+            "core": "CORE1A",
+            "type": "COMPLETED_WORKED_EXAMPLE"
+          }
+        ],
+        "model_level": "EXTENSION",
+        "setup": "BEYOND GRADE 9, GIVEN: a rigid piece rotates around a fixed hinge with moment of inertia I=2 kg·m². At its lowest configuration it has angular speed ω=3 rad/s and mass m=1 kg; take g=10 m/s². Assuming no loss or external work afterwards, find the centre-of-mass rise achievable by using up its rotational kinetic energy.",
+        "answer": {
+          "reasoning": [
+            "The rotating piece and Earth are the declared system after the event; no friction or drive acts.",
+            "Use the GIVEN beyond-Grade-9 formula K_rot=(1/2)Iω², so the initial K_rot=0.5×2×3²=9 J.",
+            "At an angular turning position ω=0 and rotational K is zero.",
+            "The centre of mass must gain gravitational U=m g Δh=9 J, so Δh=9/(1×10)=0.9 m.",
+            "This energy comparison predicts a maximum rise only if the geometry of the actual hinged piece permits that height; otherwise its allowed geometry is the restricting condition."
+          ],
+          "summary": "Conditional energy-based centre-of-mass rise Δh=0.9 m; geometric reachability must still be checked.",
+          "rubric": [],
+          "check": "Iω² has joule units and mgΔh=9 J. The formula for I and K_rot is supplied, not derived."
+        }
+      },
+      {
+        "id": "W-A6",
+        "title": "An indefinitely descending path has no second turning point",
+        "provenance": "AUTHORED_PEDAGOGICAL_CONCEPT_ANCHOR_NOT_EXAM_QUESTION",
+        "exposure": [
+          {
+            "core": "CORE1A",
+            "type": "COMPLETED_WORKED_EXAMPLE"
+          }
+        ],
+        "model_level": "GRADE9_CORE",
+        "setup": "An ideal frictionless bead starts from rest at position s=0 on an indefinitely long descending straight ramp. Take the downhill position s≥0, and suppose U(s)=−(2 J/m)s. Describe the allowed positions, kinetic energy and whether a second finite turning point exists.",
+        "answer": {
+          "reasoning": [
+            "Declare bead-plus-Earth and a fixed downhill coordinate s≥0; uniform gravity along the ramp is conservative and no friction acts.",
+            "At s=0 the bead rests and U(0)=0, so E=0.",
+            "At any s≥0, K(s)=E−U(s)=(2 J/m)s, which is nonnegative and grows without bound in the ideal infinite-ramp model.",
+            "The starting point s=0 is a zero-speed boundary, but a release from rest followed by motion downhill is not a reversal there.",
+            "There is no further finite root K=0 for s>0, so there is no second turning point and no finite maximum speed in this unbounded idealisation."
+          ],
+          "summary": "Allowed domain s≥0, K=2s J for s in metres, no second finite turning point.",
+          "rubric": [],
+          "check": "At s=1 m, K=2 J; at s=10 m, K=20 J; K does not return to zero for s>0."
+        }
+      }
+    ],
+    "coverage_keys": [
+      "system_account",
+      "reference_and_sign",
+      "initial_energy",
+      "E_minus_U_nonnegative",
+      "connected_allowed_domain",
+      "turning_vs_equilibrium",
+      "speed_max_at_U_min",
+      "event_reset",
+      "distributed_mass_com",
+      "complete_square_no_calculus",
+      "rotational_given_extension",
+      "unbounded_no_second_turn"
+    ],
+    "scope_guards": [
+      "All examples are authored conceptual anchors, not altered NSEP originals.",
+      "All prompt-bearing worked anchors include complete reasoning and a check.",
+      "Do not use calculus.",
+      "In rotation, beyond Grade 9 relations are GIVEN."
+    ],
+    "exit_ref": "microtopic.exit_task",
+    "coverage_evidence": {
+      "system_account": "microtopic.teaching_path + core1a.questions",
+      "reference_and_sign": "microtopic.teaching_path + core1a.questions",
+      "initial_energy": "microtopic.teaching_path + core1a.questions",
+      "E_minus_U_nonnegative": "microtopic.teaching_path + core1a.questions",
+      "connected_allowed_domain": "microtopic.teaching_path + core1a.questions",
+      "turning_vs_equilibrium": "microtopic.teaching_path + core1a.questions",
+      "speed_max_at_U_min": "microtopic.teaching_path + core1a.questions",
+      "event_reset": "microtopic.teaching_path + core1a.questions",
+      "distributed_mass_com": "microtopic.teaching_path + core1a.questions",
+      "complete_square_no_calculus": "microtopic.teaching_path + core1a.questions",
+      "rotational_given_extension": "microtopic.teaching_path + core1a.questions",
+      "unbounded_no_second_turn": "core1a.questions[W-A6]"
+    }
+  },
+  "core1b": {
+    "id": "CORE1B-WEP07-S4",
+    "role": "CORE1B",
+    "title": "Can you reconstruct the permitted motion before seeing it?",
+    "microtopic_ref": "MIC-PHY-WEP-TURNING-POINT-BOUNDARY",
+    "inferential_jump_ref": "MIC-PHY-WEP-TURNING-POINT-BOUNDARY.inferential_jump",
+    "visibility_policy": "PREDICT_AND_ATTEMPT_BEFORE_SHOWING_INFERENTIAL_JUMP_OR_MODEL_ANSWERS; accessible after commitment, no locked teacher dependency",
+    "pre_attempt_visible": [
+      "scope_without_conclusion",
+      "core1b.visible_convention_refs -> bucket.conventions entries C1,C2,C3,C5 only",
+      "microtopic.elicitation.predict.prompt",
+      "microtopic.elicitation.attempt.produces",
+      "core1b.concept_cycles[].predict.prompt",
+      "core1b.concept_cycles[].attempt.produces"
+    ],
+    "pre_attempt_hidden": [
+      "bucket.conventions entries WEP07-C4, WEP07-C6, WEP07-C7, WEP07-C8, WEP07-C9",
+      "microtopic.inferential_jump",
+      "microtopic.elicitation.predict.defensible_answer",
+      "microtopic.elicitation.attempt.model_response",
+      "microtopic.elicitation.attempt.rubric",
+      "microtopic.elicitation.reconstruct",
+      "microtopic.misconceptions",
+      "microtopic.elicitation.boundary_test.answer",
+      "core1b.concept_cycles[].predict.defensible_answer",
+      "core1b.concept_cycles[].attempt.model_response",
+      "core1b.concept_cycles[].attempt.rubric",
+      "core1b.concept_cycles[].boundary_test.answer",
+      "s2_question_support_retained_with_s3_revisions[*].official_answer_key_letters",
+      "s2_question_support_retained_with_s3_revisions[*].answer",
+      "core1a.questions[*].answer"
+    ],
+    "ordered_blocks": [
+      {
+        "id": "identity_scope",
+        "visibility": "IMMEDIATE",
+        "text": "Rebuild the same energy decision; complete the attempt before revealing construction."
+      },
+      {
+        "id": "conventions",
+        "visibility": "IMMEDIATE",
+        "ref": "core1b.visible_convention_refs",
+        "resolution": "Only explicitly listed IDs are projected before attempt; never resolve bucket.conventions as a whole."
+      },
+      {
+        "id": "predict",
+        "visibility": "PRE_ATTEMPT",
+        "ref": "microtopic.elicitation.predict.prompt"
+      },
+      {
+        "id": "attempt",
+        "visibility": "PRE_ATTEMPT",
+        "ref": "microtopic.elicitation.attempt.produces"
+      },
+      {
+        "id": "four_context_predict_attempts",
+        "visibility": "PRE_ATTEMPT",
+        "ref": "core1b.concept_cycles[].predict.prompt and .attempt.produces only",
+        "answer_access": "AFTER_EACH_INDEPENDENT_ATTEMPT"
+      },
+      {
+        "id": "attempt_closure",
+        "visibility": "AFTER_ATTEMPT",
+        "refs": [
+          "microtopic.elicitation.predict.defensible_answer",
+          "microtopic.elicitation.attempt.model_response",
+          "microtopic.elicitation.attempt.rubric",
+          "microtopic.elicitation.attempt.accepted",
+          "microtopic.elicitation.attempt.rejected"
+        ]
+      },
+      {
+        "id": "four_context_reconstruction_and_rubrics",
+        "visibility": "AFTER_ATTEMPT",
+        "ref": "core1b.concept_cycles[].predict.defensible_answer, .attempt.model_response, .attempt.rubric, .reconstruct, .boundary_test"
+      },
+      {
+        "id": "reconstruct",
+        "visibility": "AFTER_ATTEMPT",
+        "ref": "microtopic.elicitation.reconstruct"
+      },
+      {
+        "id": "deferred_conventions",
+        "visibility": "AFTER_ATTEMPT",
+        "ref": "core1b.deferred_convention_refs"
+      },
+      {
+        "id": "representation_check",
+        "visibility": "AFTER_ATTEMPT",
+        "ref": "representation"
+      },
+      {
+        "id": "diagnose",
+        "visibility": "AFTER_ATTEMPT",
+        "ref": "microtopic.misconceptions"
+      },
+      {
+        "id": "repair",
+        "visibility": "AFTER_ATTEMPT",
+        "ref": "microtopic.misconceptions"
+      },
+      {
+        "id": "extension_predict_reconstruct",
+        "visibility": "AFTER_ATTEMPT",
+        "ref": "proposed_extension_candidate.elicitation_bridge"
+      },
+      {
+        "id": "boundary_test",
+        "visibility": "BEFORE_BOUNDARY_REVEAL",
+        "ref": "microtopic.elicitation.boundary_test.prompt"
+      },
+      {
+        "id": "boundary_closure",
+        "visibility": "AFTER_BOUNDARY_ATTEMPT",
+        "refs": [
+          "microtopic.elicitation.boundary_test.answer",
+          "microtopic.elicitation.boundary_test.confirms"
+        ]
+      },
+      {
+        "id": "canonical_crux_summary",
+        "visibility": "AFTER_ATTEMPT",
+        "ref": "microtopic.inferential_jump"
+      },
+      {
+        "id": "provenance_and_status",
+        "visibility": "AFTER_ATTEMPT",
+        "ref": "authority"
+      }
+    ],
+    "elicitation_ref": "microtopic.elicitation",
+    "diagnostic_and_repair_ref": "microtopic.misconceptions",
+    "coverage_keys": [
+      "system_account",
+      "reference_and_sign",
+      "initial_energy",
+      "E_minus_U_nonnegative",
+      "connected_allowed_domain",
+      "turning_vs_equilibrium",
+      "speed_max_at_U_min",
+      "event_reset",
+      "distributed_mass_com",
+      "complete_square_no_calculus",
+      "rotational_given_extension",
+      "unbounded_no_second_turn"
+    ],
+    "extension_marker": "BEYOND GRADE 9, GIVEN",
+    "test_of_ab_distinction": "Core1A reveals completed physical ledgers and non-isomorphic multi-mass and force-switch examples. Core1B requires a distinct independent commitment and rubric for each of event reset, two-mass centre of mass, expanded-quadratic completing-square and supplied rotation, plus a before/after reversal boundary test; no answer-bearing field is projected before attempts.",
+    "visible_convention_refs": [
+      "WEP07-C1",
+      "WEP07-C2",
+      "WEP07-C3",
+      "WEP07-C5"
+    ],
+    "deferred_convention_refs": [
+      "WEP07-C4",
+      "WEP07-C6",
+      "WEP07-C7",
+      "WEP07-C8",
+      "WEP07-C9"
+    ],
+    "concept_cycles": [
+      {
+        "id": "CYCLE-RESET",
+        "coverage_keys": [
+          "event_reset"
+        ],
+        "scope": "GRADE9_CORE",
+        "visibility": "PREDICT_ATTEMPT_THEN_REVEAL",
+        "predict": {
+          "prompt": "A 4 kg cart passes x=3 m at 2 m/s on a level frictionless track when a uniform conservative driving field is switched OFF without an impulse. Before switching, U_A(x)=−(1 J/m)x. May the old field potential still be used after switch-off?",
+          "defensible_answer": "No. The event leaves x=3 m and v=2 m/s continuous, but U_B(x)=0 belongs to the force-free subsequent interval. Re-evaluate its total from the actual event state."
+        },
+        "attempt": {
+          "produces": "Draw two columns for the instant before and after switch-off. State the cart position and speed on both sides, compute K, U and E for each interval, and describe its subsequent motion.",
+          "closure": "RUBRIC",
+          "model_response": "At the impulse-free switch x=3 m and v=2 m/s on either side, so K=0.5(4)(2²)=8 J. Before, U_A(3)=−3 J and E_A=8−3=5 J. After, U_B=0 and E_B=8 J. The cart coasts at 2 m/s on the infinite level track; no second zero-speed boundary appears. Switching the conservative field is an external change of the potential model, not a violation of conservation within either fixed-field interval.",
+          "rubric": [
+            {
+              "criterion": "States impulse-free continuity of event position and velocity.",
+              "evidence_of": "x=3 m and v=2 m/s immediately before and after."
+            },
+            {
+              "criterion": "Computes the correct two fixed-field interval ledgers.",
+              "evidence_of": "K=8 J; U_A=−3 J; E_A=5 J; U_B=0 and E_B=8 J."
+            },
+            {
+              "criterion": "Explains the post-event motion under the new field without assuming a second turn.",
+              "evidence_of": "Constant 2 m/s on the unbounded force-free track; conserves E_B only in the new interval."
+            }
+          ],
+          "accepted": [
+            "At x=3 m and 2 m/s, K=8 J; new field-free total is E_B=8 J and the cart coasts."
+          ],
+          "rejected": [
+            "The earlier −(1 J/m)x potential still governs after the force has been removed."
+          ]
+        },
+        "reconstruct": {
+          "route": [
+            {
+              "ask": "Does a force-switch without impulse instantly change v?",
+              "why_this_ask": "Keeps actual state separate from the model.",
+              "model_answer": "No."
+            },
+            {
+              "ask": "Which of the two potential formulas belongs to each interval?",
+              "why_this_ask": "Rebuilds the conservation condition.",
+              "model_answer": "U_A(x)=−(1 J/m)x before; U_B(x)=0 after."
+            },
+            {
+              "ask": "Why may two interval totals differ as numbers?",
+              "why_this_ask": "Avoids using one changed potential reference as if unchanged.",
+              "model_answer": "The externally switched field changes the energy account across that event; each fixed-field interval has its own correct ledger."
+            }
+          ],
+          "differs_from_teaching_path": "Learner must first reject persistence of a switched-off field with new cart values, then build two ledgers from the continuous event state rather than recall the Core1A worked numbers."
+        },
+        "boundary_test": {
+          "prompt": "If the field is switched off when v=0 instead, does turning follow solely from K=0?",
+          "answer": "No; the force-free cart can remain at rest, with no reversal.",
+          "confirms": "Zero speed does not itself imply a turn."
+        }
+      },
+      {
+        "id": "CYCLE-COM",
+        "coverage_keys": [
+          "distributed_mass_com"
+        ],
+        "scope": "GRADE9_CORE_WITH_COM_BRIDGE",
+        "visibility": "PREDICT_ATTEMPT_THEN_REVEAL",
+        "predict": {
+          "prompt": "A light rigid carrier holds 2 kg at height 2 m and 5 kg at height 6 m. Take U=0 at h=0 and g=10 m/s². Is the initial centre-of-mass height the simple midpoint 4 m, and would that midpoint give the correct INITIAL gravitational potential energy? Decide before calculating.",
+          "defensible_answer": "No. The 5 kg mass weighs more in the average: h_cm=(2×2+5×6)/7=34/7 m, and U_initial=7×10×(34/7)=340 J; using 4 m incorrectly gives 280 J. For a common rigid displacement, however, the change in U depends only on total mass and displacement, so a midpoint error might cancel in ΔU."
+        },
+        "attempt": {
+          "produces": "For the 2 kg and 5 kg masses, calculate the initial centre-of-mass height and gravitational potential energy. Evaluate the validity of a second method of estimating the initial potential energy. If both masses later descend together by 1 m with no friction, compute the final centre height, final U, ΔU and kinetic energy gained from rest.",
+          "closure": "RUBRIC",
+          "model_response": "h_cm,i=(2×2+5×6)/(2+5)=34/7 m≈4.857 m; U_i=2×10×2+5×10×6=340 J. The naive midpoint 4 m would give 7×10×4=280 J, incorrectly. After a rigid 1 m descent, heights are 1 m and 5 m; h_cm,f=(2×1+5×5)/7=27/7 m≈3.857 m; U_f=2×10×1+5×10×5=270 J. Thus ΔU=270−340=−70 J and the ideal combined kinetic energy gain is 70 J. Because the whole centre descends by 1 m, ΔU=−(7 kg)(10 m/s²)(1 m) regardless of its initial absolute height: the midpoint is wrong for initial U but could accidentally predict this same rigid-shift ΔU.",
+          "rubric": [
+            {
+              "criterion": "Rejects the simple midpoint for the initial height and calculates the mass-weighted centre.",
+              "evidence_of": "h_cm,i=34/7 m, not 4 m."
+            },
+            {
+              "criterion": "Computes initial potential correctly and shows why midpoint fails for this absolute U.",
+              "evidence_of": "U_i=340 J versus incorrect midpoint estimate 280 J, both with U=0 at h=0."
+            },
+            {
+              "criterion": "Computes the final centre, U, and ΔU using a consistent reference.",
+              "evidence_of": "h_cm,f=27/7 m; U_f=270 J; ΔU=−70 J."
+            },
+            {
+              "criterion": "Includes both moving masses in the kinetic-energy gain and recognises rigid-shift cancellation.",
+              "evidence_of": "K_gain=70 J; 0.5(7 kg)v²=70 J; ΔU depends on common 1 m descent even if initial centre misidentified."
+            }
+          ],
+          "accepted": [
+            "The initial centre is 34/7 m and U_i=340 J; with a 1 m common descent, ΔU=−70 J and the gain in total K is 70 J.",
+            "Summing both mgh terms works: U_i=40+300=340 J; U_f=20+250=270 J."
+          ],
+          "rejected": [
+            "The unweighted midpoint is 4 m, so initial U is 280 J.",
+            "The midpoint gives the correct ΔU=−70 J for the common rigid 1 m descent, but it does not give the correct absolute initial U: it predicts 280 J instead of 340 J. A correct ΔU here does not validate the midpoint as the centre of mass."
+          ]
+        },
+        "reconstruct": {
+          "route": [
+            {
+              "ask": "Which height matters more to the centre: that of 2 kg or 5 kg, and why?",
+              "why_this_ask": "It forces proportional-mass reasoning before computing initial U.",
+              "model_answer": "The 5 kg height contributes more because the centre is a mass-weighted mean."
+            },
+            {
+              "ask": "What is the true initial centre height, and what initial U would a midpoint incorrectly predict?",
+              "why_this_ask": "Exposes the actual error caused by the unweighted midpoint.",
+              "model_answer": "h_cm=34/7 m; U_i=340 J while the midpoint gives 280 J."
+            },
+            {
+              "ask": "How do the centre height and gravitational U change when BOTH masses descend by 1 m?",
+              "why_this_ask": "Distinguishes absolute potential from the rigid-shift difference.",
+              "model_answer": "Centre drops 1 m; ΔU=−70 J regardless of the initial centre height."
+            },
+            {
+              "ask": "Which moving masses contribute to the kinetic energy gained?",
+              "why_this_ask": "Prevents assigning the energy gain to only the heavier mass.",
+              "model_answer": "Both, for total moving mass 7 kg; K_gain=70 J."
+            }
+          ],
+          "differs_from_teaching_path": "Builds energy for two unequal point masses, not a continuously distributed chain."
+        },
+        "boundary_test": {
+          "prompt": "Keep the heights 2 m and 6 m but increase the upper mass from 5 kg to 10 kg; then lower both by 1 m. What happens to the initial centre height, initial U, and ΔU?",
+          "answer": "Total mass becomes 12 kg; initial h_cm=(2×2+10×6)/12=16/3 m; U_i=640 J; final U=520 J; ΔU=−120 J. The centre height changes with the heavier mass, while the rigid displacement still changes U by −Mg×1 m.",
+          "confirms": "Absolute centre height uses mass weighting, but the common-shift energy change follows the total mass and common displacement."
+        }
+      },
+      {
+        "id": "CYCLE-SQUARE",
+        "coverage_keys": [
+          "complete_square_no_calculus",
+          "speed_max_at_U_min"
+        ],
+        "scope": "GRADE9_CORE_ALGEBRA_STRETCH",
+        "visibility": "PREDICT_ATTEMPT_THEN_REVEAL",
+        "predict": {
+          "prompt": "For a positive-mass frictionless particle on −4≤q≤0, let U(q)=q²+4q+9 J and E=9 J. Must the greatest speed occur at q=0, or could it occur inside the interval?",
+          "defensible_answer": "It occurs inside: rewriting U=(q+2)²+5 makes its minimum at q=−2, hence K maximum there."
+        },
+        "attempt": {
+          "produces": "Complete the square by adding and subtracting a constant, identify the accessible domain and find the position and value of K_max without differentiation.",
+          "closure": "RUBRIC",
+          "model_response": "q²+4q+9=(q+2)²+5 J; K=9−U=4−(q+2)² J. K≥0 implies −4≤q≤0, matching the stated interval. At q=−2, K_max=4 J; at both endpoints K=0.",
+          "rubric": [
+            {
+              "criterion": "Constructs the completed square correctly.",
+              "evidence_of": "U=(q+2)²+5 J."
+            },
+            {
+              "criterion": "Applies the nonnegative K domain.",
+              "evidence_of": "−4≤q≤0."
+            },
+            {
+              "criterion": "Identifies minimum U and maximum K using square≥0.",
+              "evidence_of": "q=−2, K_max=4 J with no calculus."
+            }
+          ],
+          "accepted": [
+            "K(q)=4−(q+2)²; greatest at q=−2."
+          ],
+          "rejected": [
+            "Greatest speed is at the highest U or the right endpoint."
+          ]
+        },
+        "reconstruct": {
+          "route": [
+            {
+              "ask": "Which constant completes q²+4q into a square?",
+              "why_this_ask": "Needs algebraic choice rather than supplied pattern.",
+              "model_answer": "4."
+            },
+            {
+              "ask": "What does the completed square tell you about minimum U?",
+              "why_this_ask": "Builds the minimum without calculus.",
+              "model_answer": "It is 5 J at q=−2."
+            },
+            {
+              "ask": "How do you get maximum K for fixed E?",
+              "why_this_ask": "Links algebra to physics.",
+              "model_answer": "Subtract the smallest U from 9 J."
+            }
+          ],
+          "differs_from_teaching_path": "Learner chooses a square-completion constant for an expanded quadratic with a negative-coordinate domain, not the reciprocal substitution from the exam."
+        },
+        "boundary_test": {
+          "prompt": "If E is lowered to 4 J with this U, can the particle occupy any point?",
+          "answer": "No: U≥5 J everywhere, so K=E−U<0 throughout.",
+          "confirms": "An algebraic energy value must permit some nonnegative K before motion exists."
+        }
+      },
+      {
+        "id": "CYCLE-ROTATION",
+        "coverage_keys": [
+          "rotational_given_extension"
+        ],
+        "scope": "EXTENSION_BEYOND_GRADE9_GIVEN",
+        "visibility": "PREDICT_ATTEMPT_THEN_REVEAL",
+        "predict": {
+          "prompt": "EXTENSION — BEYOND GRADE 9, GIVEN: a flywheel and bead initially rotate together; the bead detaches without impulse. To decide whether the remaining flywheel later turns against a GIVEN conservative torsional potential U(θ), may we keep the old combined inertia?",
+          "defensible_answer": "No. Select the flywheel-only system with its own GIVEN inertia and K_rot; compare that energy with the supplied post-event U(θ)."
+        },
+        "attempt": {
+          "produces": "Mark before/after subsystem boundaries. GIVEN beyond Grade 9: the post-detachment flywheel has I=1 kg·m² and angular speed ω=+2 rad/s at θ=0; no external work/dissipation acts afterwards, and its conservative potential is U(θ)=(0.5 J/rad²)θ². State the applicable moment of inertia and compute the immediate rotational kinetic energy and total E; then determine whether θ=2 rad is an accessible zero-angular-speed turning point.",
+          "closure": "RUBRIC",
+          "model_response": "EXTENSION — BEYOND GRADE 9, GIVEN: use the post-detachment flywheel alone. At θ=0, U=0 J and K_rot=0.5Iω²=0.5(1 kg·m²)(2 rad/s)²=2 J, so E=2 J. At θ=2 rad, U=(0.5 J/rad²)(2 rad)²=2 J, leaving K_rot=0. With positive initial angular motion from θ=0 toward the increasing potential, θ=2 rad is a reachable angular turn in the stated ideal conservative torsional model. The old combined inertia belongs to a different system and cannot replace I=1 here.",
+          "rubric": [
+            {
+              "criterion": "Explicitly selects the flywheel-only post-detachment system.",
+              "evidence_of": "Rejects the old combined inertia."
+            },
+            {
+              "criterion": "Uses GIVEN beyond-Grade-9 rotational relation and inertia without derivation.",
+              "evidence_of": "K_rot=(1/2)Iω² with flywheel I=1 kg·m²."
+            },
+            {
+              "criterion": "Computes post-detachment kinetic energy and total energy at θ=0.",
+              "evidence_of": "K_rot=2 J, U(0)=0, E=2 J."
+            },
+            {
+              "criterion": "Checks accessible turning position using supplied U(θ), E=U, and motion direction.",
+              "evidence_of": "At θ=2 rad, U=2 J and K_rot=0; positive initial ω and rising U imply a turn."
+            }
+          ],
+          "accepted": [
+            "The selected flywheel has E=2 J at θ=0; it can reach θ=2 rad with K_rot=0 and turn under the GIVEN conservative torsion potential."
+          ],
+          "rejected": [
+            "Reuse the original flywheel-plus-bead inertia for the separated flywheel.",
+            "The angle θ=2 rad cannot be reached because U=2 J (it is exactly the available total E)."
+          ]
+        },
+        "reconstruct": {
+          "route": [
+            {
+              "ask": "What changed at the detachment?",
+              "why_this_ask": "Forces explicit subsystem selection.",
+              "model_answer": "The original combined body split; only the flywheel remains."
+            },
+            {
+              "ask": "Which inertia belongs to the flywheel-only interval?",
+              "why_this_ask": "Stops accidental reuse of whole-system inertia.",
+              "model_answer": "The GIVEN flywheel I=1 kg·m²."
+            },
+            {
+              "ask": "What can energy conservation then say in a later loss-free interval?",
+              "why_this_ask": "Transfers the same invariant to the new system.",
+              "model_answer": "Flywheel K_rot+its U remains constant for that interval if no transfer."
+            },
+            {
+              "ask": "Under the GIVEN conservative U(θ)=(0.5 J/rad²)θ² and E=2 J, what happens at θ=2 rad?",
+              "why_this_ask": "Applies the shared energy-boundary inference to a genuine rotational turn while retaining explicit extension status.",
+              "model_answer": "U=E=2 J and K_rot=0. Positive initial angular motion toward the rising potential reverses there in the ideal model."
+            }
+          ],
+          "differs_from_teaching_path": "An object-detachment comparison replaces the original hinged-rod turning-angle route."
+        },
+        "boundary_test": {
+          "prompt": "EXTENSION — BEYOND GRADE 9, GIVEN: if the post-event total were only E=1 J under U(θ)=(0.5 J/rad²)θ², could the flywheel reach θ=2 rad? Would adding a dissipative brake preserve the E=2 J turn claim?",
+          "answer": "No: U(2)=2 J exceeds E=1 J, so θ=2 rad is forbidden in the lower-energy ideal case. A brake removes mechanical energy, so the original unbraked turning-angle calculation no longer follows.",
+          "confirms": "An angular turn must satisfy both E≥U accessibility and the unchanged-energy assumptions for the selected rotating subsystem."
+        }
+      }
+    ],
+    "coverage_evidence": {
+      "system_account": "microtopic.elicitation.attempt.produces + CYCLE-RESET.attempt.produces",
+      "reference_and_sign": "microtopic.elicitation.attempt.produces + CYCLE-RESET.attempt.produces",
+      "initial_energy": "microtopic.elicitation.attempt.produces + CYCLE-RESET.attempt.produces",
+      "E_minus_U_nonnegative": "microtopic.elicitation.attempt.produces + CYCLE-SQUARE.attempt.produces",
+      "connected_allowed_domain": "microtopic.elicitation.attempt.produces + CYCLE-SQUARE.attempt.produces",
+      "turning_vs_equilibrium": "microtopic.elicitation.attempt.produces + microtopic.elicitation.boundary_test.prompt",
+      "speed_max_at_U_min": "microtopic.elicitation.attempt.produces + CYCLE-SQUARE.attempt.produces",
+      "event_reset": "CYCLE-RESET.predict.prompt + CYCLE-RESET.attempt.produces",
+      "distributed_mass_com": "CYCLE-COM.predict.prompt + CYCLE-COM.attempt.produces",
+      "complete_square_no_calculus": "CYCLE-SQUARE.predict.prompt + CYCLE-SQUARE.attempt.produces",
+      "rotational_given_extension": "CYCLE-ROTATION.predict.prompt + CYCLE-ROTATION.attempt.produces",
+      "unbounded_no_second_turn": "microtopic.elicitation.boundary_test.prompt + CYCLE-RESET.attempt.produces"
+    }
+  },
+  "s2_question_support_retained_with_s3_revisions": [
+    {
+      "id": "WEP07-01",
+      "exam": "NSEP",
+      "year": 2024,
+      "paper_code": "61",
+      "original_question_number": 4,
+      "paper_url": "https://iapt.org.in/wp-content/uploads/NSEP_-_2024_Set_61.pdf",
+      "paper_pdf_page_index_zero_based": 2,
+      "official_key_source_url": "https://iapt.org.in/wp-content/uploads/NSEP_-_2024_Final_Answer_key.pdf",
+      "official_key_source_kind": "IAPT final answer key",
+      "official_key_source_verification": "IAPT_FINAL_KEY",
+      "official_answer_key_letters": [
+        "d"
+      ],
+      "official_key_agrees_with_writer": true,
+      "scope": "CORE",
+      "allowed_option_analysis": null,
+      "uses_jump": "Restart the conservative-energy account after a sudden change of the applied force and compare two zero-speed points using the new effective potential.",
+      "demand": "MODEL",
+      "difficulty_band": "D3",
+      "difficulty_total": 7,
+      "difficulty_factors": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Select a post-reversal effective potential for spring plus applied constant force, rather than spring potential alone."
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Convert compression and extension into signed positions x = −ξ and x > 0."
+        },
+        "reasoning_chain_length": {
+          "score": 2,
+          "evidence": "First infer kξ=F, then set the post-switch conserved energy, then locate the other rest position."
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Expand and factor a quadratic in x/ξ."
+        },
+        "trap_exception_sensitivity": {
+          "score": 2,
+          "evidence": "A changed applied force invalidates conservation of spring energy alone; the −2Fx contribution is decisive."
+        }
+      },
+      "canonical_primary_capability_ref_status": "UNVERIFIED_FOR_EXAM_ITEMS; S2 locally labelled demand is not a canonical question.primary_capability_ref",
+      "s2_hint_ladder_origin": "AUTHORED_PEDAGOGICAL_NOT_IAPT_SOURCE_HINTS",
+      "hint_ladder_authored_not_source": [
+        "Decide what happens to the conserved energy expression immediately after the force changes.",
+        "Measure x from natural length; compression and extension have opposite signs.",
+        "At the extreme extension, speed is again zero; compare the total potential at the two rest points."
+      ],
+      "s2_reasoning_route_origin": "AUTHORED_PEDAGOGICAL_NOT_IAPT_SOURCE_SOLUTION",
+      "answer": {
+        "crux_move_ref": "WEP07-01-s2",
+        "reasoning_route": [
+          {
+            "step_ref": "WEP07-01-s1",
+            "description": "At the initial equilibrium the original force gives F=kξ."
+          },
+          {
+            "step_ref": "WEP07-01-s2",
+            "description": "Choose x positive along the new applied force, so the initial coordinate is −ξ; after switching, U_eff(x)=kx²/2−2Fx."
+          },
+          {
+            "step_ref": "WEP07-01-s3",
+            "description": "Immediately after switching the spring is still at −ξ with zero speed: E= kξ²/2+2Fξ=5kξ²/2."
+          },
+          {
+            "step_ref": "WEP07-01-s4",
+            "description": "At an extreme extension K=0, hence kx²/2−2kξx=5kξ²/2."
+          },
+          {
+            "step_ref": "WEP07-01-s5",
+            "description": "Thus x²−4ξx−5ξ²=(x−5ξ)(x+ξ)=0; exclude the already-known initial root x=−ξ."
+          },
+          {
+            "step_ref": "WEP07-01-s6",
+            "description": "The other turning point is x=5ξ, choice d."
+          }
+        ],
+        "calculated_answer": [
+          "d"
+        ]
+      },
+      "changes_from_s2": [
+        "Explicit static equilibrium, ideal spring, constant post-switch force and given-potential stretch assumptions; original S2 hint ladder and reasoning route unchanged."
+      ],
+      "visibility": {
+        "pre_attempt": "HIDDEN_FROM_LEARNER",
+        "official_answer_key_letters": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT",
+        "calculated_answer": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT",
+        "answer_reasoning_route": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT",
+        "hint_ladder": "SCAFFOLD_REVEAL_SEPARATE_FROM_SOURCE_HINTS",
+        "allowed_option_analysis": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT",
+        "answer.calculated_answer": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT",
+        "answer.reasoning_route": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT"
+      },
+      "original_exam_stem_options_included": false,
+      "model_assumptions": [
+        "Initial spring compression is a static equilibrium under the original applied force: F=kξ.",
+        "The applied force reverses direction and doubles instantaneously; no impulsive jump in speed/displacement.",
+        "Ideal Hooke spring, no damping/friction; the NEW applied force is constant after switching.",
+        "SUPPLIED STRETCH: U_s=kx²/2 and uniform-force potential −Fx (rather than a baseline Grade 9 derivation)."
+      ]
+    },
+    {
+      "id": "WEP07-02",
+      "exam": "NSEP",
+      "year": 2024,
+      "paper_code": "61",
+      "original_question_number": 32,
+      "paper_url": "https://iapt.org.in/wp-content/uploads/NSEP_-_2024_Set_61.pdf",
+      "paper_pdf_page_index_zero_based": 7,
+      "official_key_source_url": "https://iapt.org.in/wp-content/uploads/NSEP_-_2024_Final_Answer_key.pdf",
+      "official_key_source_kind": "IAPT final answer key",
+      "official_key_source_verification": "IAPT_FINAL_KEY",
+      "official_answer_key_letters": [
+        "a"
+      ],
+      "official_key_agrees_with_writer": true,
+      "scope": "CORE",
+      "allowed_option_analysis": null,
+      "uses_jump": "Represent a changing height distribution by its centre-of-mass gravitational U and equate initial E to whole-chain final K+U.",
+      "demand": "SYNTHESIZE",
+      "difficulty_band": "D3",
+      "difficulty_total": 7,
+      "difficulty_factors": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Recognise a constant-mass chain as one energy-conserving system despite changing hanging mass."
+        },
+        "representation_translation": {
+          "score": 2,
+          "evidence": "Translate changing dangling length into gravitational energy of a uniform segment at centre-of-mass depth y/2."
+        },
+        "reasoning_chain_length": {
+          "score": 2,
+          "evidence": "Form U_initial and U_final, calculate their difference, and equate to whole-chain kinetic energy."
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Simplify λg(L²−y₀²)/2 against the kinetic energy λLv²/2."
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "The hanging segment alone does not supply the complete kinetic mass; all of λL moves."
+        }
+      },
+      "canonical_primary_capability_ref_status": "UNVERIFIED_FOR_EXAM_ITEMS; S2 locally labelled demand is not a canonical question.primary_capability_ref",
+      "s2_hint_ladder_origin": "AUTHORED_PEDAGOGICAL_NOT_IAPT_SOURCE_HINTS",
+      "hint_ladder_authored_not_source": [
+        "Use the tabletop edge as zero gravitational height.",
+        "At a hanging length y, determine the hanging mass and its centre-of-mass depth.",
+        "For kinetic energy, remember the entire chain is moving when it leaves the table."
+      ],
+      "s2_reasoning_route_origin": "AUTHORED_PEDAGOGICAL_NOT_IAPT_SOURCE_SOLUTION",
+      "answer": {
+        "crux_move_ref": "WEP07-02-s1",
+        "reasoning_route": [
+          {
+            "step_ref": "WEP07-02-s1",
+            "description": "When length y hangs, that portion has mass λy and mean gravitational height −y/2; therefore U(y)=−λgy²/2."
+          },
+          {
+            "step_ref": "WEP07-02-s2",
+            "description": "The initial energy is E_i=−λgy₀²/2 because the chain is released from rest."
+          },
+          {
+            "step_ref": "WEP07-02-s3",
+            "description": "Just before leaving the edge, U_f=−λgL²/2 and K_f=(λL)v²/2."
+          },
+          {
+            "step_ref": "WEP07-02-s4",
+            "description": "Set E_i=U_f+K_f and cancel λ/2."
+          },
+          {
+            "step_ref": "WEP07-02-s5",
+            "description": "Obtain Lv²=g(L²−y₀²), hence v=√[g(L−y₀²/L)], choice a."
+          }
+        ],
+        "calculated_answer": [
+          "a"
+        ]
+      },
+      "changes_from_s2": [],
+      "visibility": {
+        "pre_attempt": "HIDDEN_FROM_LEARNER",
+        "official_answer_key_letters": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT",
+        "calculated_answer": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT",
+        "answer_reasoning_route": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT",
+        "hint_ladder": "SCAFFOLD_REVEAL_SEPARATE_FROM_SOURCE_HINTS",
+        "allowed_option_analysis": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT",
+        "answer.calculated_answer": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT",
+        "answer.reasoning_route": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT"
+      },
+      "original_exam_stem_options_included": false
+    },
+    {
+      "id": "WEP07-03",
+      "exam": "NSEP",
+      "year": 2025,
+      "paper_code": "61",
+      "original_question_number": 57,
+      "paper_url": "https://iapt.org.in/wp-content/uploads/images/NSEP_-_2025_Set_611.pdf",
+      "paper_pdf_page_index_zero_based": 14,
+      "official_key_source_url": "https://iapt.org.in/wp-content/uploads/images/NSEP_-_2025_Solution_1_compressed.pdf",
+      "official_key_source_kind": "IAPT official published worked solution with explicit Ans field",
+      "official_key_source_verification": "IAPT_PUBLISHED_SOLUTION_ONLY_NO_SEPARATE_FINAL_KEY_VERIFIED",
+      "official_answer_key_letters": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "official_key_agrees_with_writer": true,
+      "scope": "CORE",
+      "allowed_option_analysis": null,
+      "uses_jump": "Evaluate total E from rest, restrict the allowed x-domain, and find maximum K from minimum U by completing the square.",
+      "demand": "SYNTHESIZE",
+      "difficulty_band": "D4",
+      "difficulty_total": 8,
+      "difficulty_factors": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Apply a single conserved energy to all four statements, identifying E=U(x₀)=0."
+        },
+        "representation_translation": {
+          "score": 2,
+          "evidence": "Introduce dimensionless z=x₀/x and preserve the admissible interval 0≤z≤1 implied by E≥U."
+        },
+        "reasoning_chain_length": {
+          "score": 2,
+          "evidence": "Coordinate potential rescaling, energy conservation, velocity expression, domain and maximum-speed evaluation."
+        },
+        "algebra_computational_load": {
+          "score": 2,
+          "evidence": "Symbolically substitute β=α/x₀, solve for square-root velocity and complete a square to maximise z−z²."
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "A positive kinetic energy coexists with E=0 because U can be negative; the x-domain cannot be ignored."
+        }
+      },
+      "canonical_primary_capability_ref_status": "UNVERIFIED_FOR_EXAM_ITEMS; S2 locally labelled demand is not a canonical question.primary_capability_ref",
+      "s2_hint_ladder_origin": "AUTHORED_PEDAGOGICAL_NOT_IAPT_SOURCE_HINTS",
+      "hint_ladder_authored_not_source": [
+        "Find the starting value of potential energy before writing the speed formula.",
+        "Express U in terms of the dimensionless ratio x₀/x.",
+        "A quadratic of the form z−z² has a maximum that can be found by completing the square."
+      ],
+      "s2_reasoning_route_origin": "AUTHORED_PEDAGOGICAL_NOT_IAPT_SOURCE_SOLUTION",
+      "answer": {
+        "crux_move_ref": "WEP07-03-s2",
+        "reasoning_route": [
+          {
+            "step_ref": "WEP07-03-s1",
+            "description": "Since x₀=α/β, write β=α/x₀ and U(x)=α/x₀²[(x₀/x)²−x₀/x]."
+          },
+          {
+            "step_ref": "WEP07-03-s2",
+            "description": "At the release point x=x₀, U(x₀)=0 and K=0; thus the conserved total energy E=0."
+          },
+          {
+            "step_ref": "WEP07-03-s3",
+            "description": "Hence K(x)=−U(x)=α/x₀²[z−z²] where z=x₀/x, and v(x)=√{2α/[mx₀²]·[z−z²]}."
+          },
+          {
+            "step_ref": "WEP07-03-s4",
+            "description": "The accessible outward branch has x≥x₀ and thus 0<z≤1; x₀ is its finite turning point and no smaller positive x is accessible."
+          },
+          {
+            "step_ref": "WEP07-03-s5",
+            "description": "Complete the square z−z²=1/4−(z−1/2)²; its maximum 1/4 occurs at z=1/2 or x=2x₀."
+          },
+          {
+            "step_ref": "WEP07-03-s6",
+            "description": "Then v_max²=α/(2mx₀²). Claims a, b, c and d all hold."
+          }
+        ],
+        "calculated_answer": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ]
+      },
+      "changes_from_s2": [
+        "Updated key-source status: solution PDF only; no separate final-key PDF established."
+      ],
+      "visibility": {
+        "pre_attempt": "HIDDEN_FROM_LEARNER",
+        "official_answer_key_letters": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT",
+        "calculated_answer": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT",
+        "answer_reasoning_route": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT",
+        "hint_ladder": "SCAFFOLD_REVEAL_SEPARATE_FROM_SOURCE_HINTS",
+        "allowed_option_analysis": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT",
+        "answer.calculated_answer": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT",
+        "answer.reasoning_route": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT"
+      },
+      "original_exam_stem_options_included": false,
+      "prerequisite_stretch": "STRETCH: dimensionless z=x₀/x (x>0) is provided/bridged algebraically; minimum U identified by completing the square without calculus."
+    },
+    {
+      "id": "WEP07-04",
+      "exam": "NSEP",
+      "year": 2024,
+      "paper_code": "61",
+      "original_question_number": 59,
+      "paper_url": "https://iapt.org.in/wp-content/uploads/NSEP_-_2024_Set_61.pdf",
+      "paper_pdf_page_index_zero_based": 12,
+      "official_key_source_url": "https://iapt.org.in/wp-content/uploads/NSEP_-_2024_Final_Answer_key.pdf",
+      "official_key_source_kind": "IAPT final answer key",
+      "official_key_source_verification": "IAPT_FINAL_KEY",
+      "official_answer_key_letters": [
+        "b",
+        "c"
+      ],
+      "official_key_agrees_with_writer": true,
+      "scope": "EXTENSION_PARTS_B_C_ONLY",
+      "allowed_option_analysis": [
+        "b",
+        "c"
+      ],
+      "uses_jump": "Extension parts (b), (c) only: with rotational K and I GIVEN, fix energy for the intact rod and then reselect the attached piece for an angular turning condition.",
+      "demand": "SYNTHESIZE",
+      "difficulty_band": "D4",
+      "difficulty_total": 8,
+      "difficulty_factors": {
+        "concept_model_selection": {
+          "score": 2,
+          "evidence": "Choose rotational kinetic-energy model for the intact rod and separately model the upper-half pendulum after break."
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Convert uniform rod geometry to gravitational centre-of-mass height changes and pivot inertias."
+        },
+        "reasoning_chain_length": {
+          "score": 2,
+          "evidence": "Obtain intact angular speed, partition instantaneous kinetic energy, then solve the subsequent upper-half turning angle."
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Several short inertia and energy substitutions with consistent lengths and masses."
+        },
+        "trap_exception_sensitivity": {
+          "score": 2,
+          "evidence": "The break changes the correct body and its moment of inertia; reusing intact-rod K after switching to the attached piece gives a plausible but materially wrong turning angle."
+        }
+      },
+      "canonical_primary_capability_ref_status": "UNVERIFIED_FOR_EXAM_ITEMS; S2 locally labelled demand is not a canonical question.primary_capability_ref",
+      "s2_hint_ladder_origin": "AUTHORED_PEDAGOGICAL_NOT_IAPT_SOURCE_HINTS",
+      "hint_ladder_authored_not_source": [
+        "For the intact rod, determine the height through which its centre of mass descends.",
+        "At the instant of a fracture without impulse, each piece keeps the instantaneous velocities it had just before breaking.",
+        "For the upper half, compare its rotational kinetic energy at the bottom with the gain in its centre-of-mass height at its furthest position."
+      ],
+      "s2_reasoning_route_origin": "AUTHORED_PEDAGOGICAL_NOT_IAPT_SOURCE_SOLUTION",
+      "answer": {
+        "crux_move_ref": "WEP07-04-s5",
+        "reasoning_route": [
+          {
+            "step_ref": "WEP07-04-s1",
+            "description": "Let total rod mass be M. From horizontal rest, its COM descends L/2; equate MgL/2=(1/2)(ML²/3)ω²."
+          },
+          {
+            "step_ref": "WEP07-04-s2",
+            "description": "This gives ω²=3g/L, confirming statement b."
+          },
+          {
+            "step_ref": "WEP07-04-s3",
+            "description": "Immediately after impulse-free fracture, the upper half has mass M/2, length L/2 and inertia about O: I_top=ML²/24."
+          },
+          {
+            "step_ref": "WEP07-04-s4",
+            "description": "At the break its kinetic energy about O is (1/2)I_topω²=MgL/16."
+          },
+          {
+            "step_ref": "WEP07-04-s5",
+            "description": "When the upper piece reaches a turning angle θ, K=0 and its COM rises by (L/4)(1−cosθ). Set MgL/16=(MgL/8)(1−cosθ), obtaining θ=60°; this confirms c under the horizontal-release state."
+          }
+        ],
+        "calculated_answer": [
+          "b",
+          "c"
+        ]
+      },
+      "changes_from_s2": [
+        "Scope limited to b and c; S2 step s6 on a/d excluded from slice route.",
+        "Trap-factor evidence refocused from d to the b/c subsystem-break boundary, score remains 2; D4 remains.",
+        "Rotational relation and inertia BEYOND GRADE 9, GIVEN.",
+        "Explicit Q59(c) vertical-fracture-after-horizontal-release assumption; rotational extension retained with b/c only; S2 hints/route retained."
+      ],
+      "visibility": {
+        "pre_attempt": "HIDDEN_FROM_LEARNER",
+        "official_answer_key_letters": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT",
+        "calculated_answer": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT",
+        "answer_reasoning_route": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT",
+        "hint_ladder": "SCAFFOLD_REVEAL_SEPARATE_FROM_SOURCE_HINTS",
+        "allowed_option_analysis": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT",
+        "answer.calculated_answer": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT",
+        "answer.reasoning_route": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT"
+      },
+      "original_exam_stem_options_included": false,
+      "model_assumptions": [
+        "EXTENSION — BEYOND GRADE 9, GIVEN: rotational K=Iω²/2, hinge moments of inertia and attached-piece COM geometry.",
+        "For part (b), the intact rod is released horizontally from rest and passes vertical.",
+        "For part (c), fracture occurs exactly at vertical after that horizontal release, without impulse.",
+        "After fracture, conserve mechanical energy for attached upper fragment only, assuming loss-free subsequent rotation.",
+        "Only parts (b), (c) are selected; (a),(d) are excluded from learner scope."
+      ]
+    }
+  ],
+  "rejected_for_this_slice": [
+    {
+      "id": "WEP07-05",
+      "reason": "Excluded by Oracle following S3: needs SHM relation and is a weak WEP-07 fit."
+    }
+  ],
+  "changes_to_s2_labels": [
+    "WEP07-03: key status clarified as IAPT published solution PDF only; no separate final key established.",
+    "WEP07-04: teaching and reasoning scope restricted to (b) and (c), while keeping official full-item key (b,c).",
+    "WEP07-04: trap-factor evidence updated to the b/c new-subsystem condition instead of a/d; total 8 and D4 unchanged.",
+    "WEP07-04: rotation marked BEYOND GRADE 9, GIVEN.",
+    "WEP07-05 removed from the selected slice."
+  ],
+  "not_done_or_unsure": [
+    "Proposed WEP07 and rotational extension CANDIDATE microtopics have not been committed to or admitted into canonical subject library; no canonical ID authority is claimed.",
+    "Original IAPT pages/crops are owner-local Core2 work, not produced here.",
+    "2025 Q57 answer verified by IAPT worked-solution PDF only; separate final-key PDF not checked.",
+    "Q59(c) relies on the horizontal release described with (b); independent checker should reconfirm the implied initial-state bridge.",
+    "Neither independent academic check nor publication/approval performed.",
+    "S2 hint ladders are writer-authored pedagogical support, not official source hints; Q59 out-of-scope S2 step six omitted from active route.",
+    "S4R2 revised writer draft; needs independent re-check and canonical candidate extension admission.",
+    "Source and exam answers are retained for checker custody but must be gated by actual learner renderer; JSON flags alone do not enforce client access."
+  ],
+  "self_check_what_could_be_wrong": [
+    "An underlying candidate canonical record may be revised before promotion.",
+    "The same intrinsic coverage in A and B may still have an uneven learner cognitive load.",
+    "Q59 parts (b)/(c) assumption linkage and momentum/impulse interpretation may need scrutiny.",
+    "An edge case of E=U with no reversal could be misunderstood if taught as universal turning equality.",
+    "The extended elastic or rotational potential model may exceed an individual Grade 9 learner’s algebra prerequisites despite no calculus.",
+    "The source/citation descriptions are not proof of rights or that the user’s final web renderer will honour hidden/reveal ordering.",
+    "A renderer could ignore the explicit pre-attempt allowlist and expose answer-bearing fields.",
+    "The field-switch and detachment anchors, while non-isomorphic to NSEP originals, need independent judgment for pedagogical distance.",
+    "Candidate teaching_path.source_ref_binding identifies academic reference scope but is not an approval by subject authority.",
+    "The revised rigid-carrier COM test distinguishes initial potential correctly but assumes a light rigid carrier and loss-free common translation."
+  ],
+  "prerequisite_stretch_flags": [
+    {
+      "concept": "elastic spring potential U_s=kx²/2",
+      "status": "STRETCH_BEYOND_BASELINE_GRADE9_SUPPLIED",
+      "question": "WEP07-01"
+    },
+    {
+      "concept": "uniform conservative force effective potential U_F=−Fx",
+      "status": "STRETCH_BEYOND_BASELINE_GRADE9_SUPPLIED",
+      "question": "WEP07-01"
+    },
+    {
+      "concept": "dimensionless substitution z=x₀/x with x>0",
+      "status": "ALGEBRA_STRETCH_OPTIONAL_SUPPLIED_NOT_CALCULUS",
+      "question": "WEP07-03"
+    },
+    {
+      "concept": "uniform body centre-of-mass gravitational potential",
+      "status": "GRADE9_BRIDGE_SUPPLIED_OR_EXPLICITLY_TAUGHT",
+      "question": "WEP07-02"
+    },
+    {
+      "concept": "rotational kinetic energy, hinge inertia and fracture at vertical after horizontal release",
+      "status": "EXTENSION_BEYOND_GRADE9_GIVEN",
+      "question": "WEP07-04"
+    }
+  ],
+  "answer_visibility_contract": {
+    "source_exam_option_formulas": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT",
+    "source_exam_official_key_letters": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT",
+    "s2_writer_calculated_letters": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT",
+    "s2_reasoning_route": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT",
+    "core1a_completed_working": "CORE1A_VISIBLE_AS_TEACHING_ONLY",
+    "core1b_attempt_rubrics_model_answers": "AFTER_ATTEMPT_ONLY",
+    "core1b_predict_answer": "AFTER_ATTEMPT_ONLY",
+    "pre_attempt_projection_allowlist": [
+      "core1b.visible_convention_refs",
+      "microtopic.elicitation.predict.prompt",
+      "microtopic.elicitation.attempt.produces",
+      "core1b.concept_cycles[].predict.prompt",
+      "core1b.concept_cycles[].attempt.produces"
+    ],
+    "scope.extension_allowed_parts": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT",
+    "proposed_extension_candidate.allowed_parts": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT",
+    "s2_question_support_retained_with_s3_revisions[*].allowed_option_analysis": "HIDDEN_FROM_LEARNER_UNTIL_POST_ATTEMPT",
+    "question_to_jump_mapping": "AUTHOR_METADATA_NOT_PROJECTED_IN_CORE1B_PRE_ATTEMPT"
+  },
+  "repair_log": {
+    "1": "DONE: C4/C6 removed from Core1B pre-attempt projection; explicit safe-ID allowlist and answer-denylist.",
+    "2": "DONE: four independent predict/attempt/rubric/reconstruct/boundary cycles; evidence map aligns all coverage keys.",
+    "3": "DONE: one widened shared jump includes selection of system, constructed effective/distributed potential, state comparisons and optional turns.",
+    "4": "DONE: removed rubric criterion 6; strengthened motion-history and unbounded boundary tests.",
+    "5": "DONE: grade9 rest-versus-turn test, Q1 static/ideal/constant force, Q4 exact vertical fracture and horizontal release assumptions.",
+    "6": "DONE: W-A2 force-off moving cart, W-A3 unequal point masses, non-mirror B algebra route; W-A6 unbounded downhill example.",
+    "7": "DONE: S01/S02 targeted binding; S09 split algebra/COM; S10 split switch/rotation; added scenes, prerequisites and conspicuous extension/stretch markers; key and formulas gated."
+  },
+  "source_custody_visibility": "EXAM_STEMS_OPTIONS_NOT_EMBEDDED; SOURCE_KEY_LETTERS_AND_WRITER_SOLUTION_POST_ATTEMPT_ONLY",
+  "s4r2_repair_log": {
+    "a": {
+      "status": "DONE",
+      "paths": [
+        "microtopic.teaching_path[id=S07].action",
+        "microtopic.teaching_path[id=S07].grade9_test"
+      ],
+      "detail": "Explicit Grade-9 turning-vs-equilibrium test with independent answer and no calculus."
+    },
+    "b": {
+      "status": "DONE",
+      "paths": [
+        "core1b.concept_cycles[id=CYCLE-COM].predict",
+        "core1b.concept_cycles[id=CYCLE-COM].attempt"
+      ],
+      "detail": "Predicted initial centre height/U, not rigid-shift ΔU; made potential reference and cancellation explicit."
+    },
+    "c": {
+      "status": "DONE",
+      "paths": [
+        "core1b.concept_cycles[id=CYCLE-RESET]",
+        "core1b.concept_cycles[id=CYCLE-COM]"
+      ],
+      "detail": "Reset and COM use numbers unlike Core1A W-A2/W-A3."
+    },
+    "d": {
+      "status": "DONE",
+      "paths": [
+        "microtopic.elicitation.attempt.produces",
+        "core1b.concept_cycles[id=CYCLE-RESET].attempt.produces",
+        "bucket.conventions[id=WEP07-C1].example"
+      ],
+      "detail": "Attempt now asks for rubric 0; three pre-attempt hints removed."
+    },
+    "e": {
+      "status": "DONE",
+      "paths": [
+        "microtopic.elicitation.attempt.model_response",
+        "core1b.concept_cycles[id=CYCLE-ROTATION]"
+      ],
+      "detail": "Separate E=0 rest equilibrium from E=4 moving cart; explicit rotation U/turn with supplied formula."
+    }
+  }
+}

@@ -1,0 +1,1749 @@
+{
+  "schema_version": "grade9v3-owner-supplied-bank-v1",
+  "bank_id": "wpe-textbook-r1",
+  "intake_digest": "sha256:774be29fa55b17683d90911d490772805d7054147595261a21f9662d34a883c2",
+  "questions": [
+    {
+      "id": "TB-WPE-ILL-01",
+      "original_identifier": "Textbook extract · Illustration 1 · candidate, independently unreviewed",
+      "stem": "Assume that a body is displaced from $\\vec{r}_A = (2\\text{m}, 4\\text{m}, -6\\text{m})$ to $\\vec{r}_B = (6\\hat{i} - 4\\hat{j} + 2\\hat{k})\\text{ m}$ under a constant force $\\vec{F} = (2\\hat{i} + 3\\hat{j} - \\hat{k})\\text{ N}$. Calculate the total work done.",
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "W = -24 J.",
+        "reasoning": [
+          "Subtract initial position from final position. s = (4, -8, 8) m.",
+          "Take the dot product of force and displacement. W = 2(4) + 3(-8) - 1(8).",
+          "Evaluate the signed sum. W = -24 J."
+        ],
+        "reasoning_route": [
+          {
+            "id": "TB-WPE-ILL-01-M1",
+            "kind": "REPRESENT",
+            "action": "Subtract initial position from final position.",
+            "why_valid": "Displacement is the change of position, not the final position itself.",
+            "inputs": [
+              "The two supplied position vectors"
+            ],
+            "output": "s = (4, -8, 8) m.",
+            "source_ref": "TB-WPE-EXTRACT#illustration-1"
+          },
+          {
+            "id": "TB-WPE-ILL-01-M2",
+            "kind": "CONNECT",
+            "action": "Take the dot product of force and displacement.",
+            "why_valid": "The force is constant and the question asks its work.",
+            "inputs": [
+              "F = (2, 3, -1) N and s"
+            ],
+            "output": "W = 2(4) + 3(-8) - 1(8).",
+            "source_ref": "TB-WPE-EXTRACT#illustration-1"
+          },
+          {
+            "id": "TB-WPE-ILL-01-M3",
+            "kind": "TRANSFORM",
+            "action": "Evaluate the signed sum.",
+            "why_valid": "Each Cartesian term is a force component times the matching displacement component.",
+            "inputs": [
+              "The three signed products"
+            ],
+            "output": "W = -24 J.",
+            "source_ref": "TB-WPE-EXTRACT#illustration-1"
+          }
+        ],
+        "crux_move_ref": "TB-WPE-ILL-01-M1",
+        "check": "Author check: reversing the path gives +24 J for the same constant force; the unit is N m = J.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-WEP-WORK-DIRECTION",
+      "family_ref": "FAM-PHY-WEP-PRACTICE",
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "TB-WPE-ILL-01",
+          "wording_custody": "VERBATIM",
+          "text_sha256": "sha256:a7931196db6f00febc5dde1796c7c8409c0b98108f3c912022266e14bc18fc90"
+        },
+        "grade9v3:math_spans": [
+          {
+            "target": "stem",
+            "literal": "$\\vec{r}_A = (2\\text{m}, 4\\text{m}, -6\\text{m})$",
+            "tex": "\\vec{r}_A = (2\\text{m}, 4\\text{m}, -6\\text{m})",
+            "display": false
+          },
+          {
+            "target": "stem",
+            "literal": "$\\vec{r}_B = (6\\hat{i} - 4\\hat{j} + 2\\hat{k})\\text{ m}$",
+            "tex": "\\vec{r}_B = (6\\hat{i} - 4\\hat{j} + 2\\hat{k})\\text{ m}",
+            "display": false
+          },
+          {
+            "target": "stem",
+            "literal": "$\\vec{F} = (2\\hat{i} + 3\\hat{j} - \\hat{k})\\text{ N}$",
+            "tex": "\\vec{F} = (2\\hat{i} + 3\\hat{j} - \\hat{k})\\text{ N}",
+            "display": false
+          }
+        ],
+        "grade9v3:analysis": {
+          "learner_question_type": "constructed_response",
+          "difficulty": {
+            "band": "D2",
+            "score": 5,
+            "components": {
+              "concept_model_selection": 1,
+              "representation_translation": 1,
+              "reasoning_chain_length": 1,
+              "algebra_computational_load": 1,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Author proposal for the exact supplied extract before support; independent adjudication pending. Constant-force work in three dimensions",
+            "component_evidence": {
+              "concept_model_selection": "Choose constant-force dot product from the stated force and two positions.",
+              "representation_translation": "Translate endpoint positions into displacement.",
+              "reasoning_chain_length": "Use displacement before evaluating work.",
+              "algebra_computational_load": "Evaluate three signed products and their sum.",
+              "trap_exception_sensitivity": "Reversing displacement reverses the work sign."
+            }
+          },
+          "expected_time_seconds": 0,
+          "common_wrong_route": "Using the final position instead of the displacement.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "Supplied textbook extract · Illustration 1",
+          "stable_crux_move": "Subtract initial position from final position."
+        },
+        "wpe:textbook_source": {
+          "role": "OWNER_SUPPLIED_TEXTBOOK_EXTRACT",
+          "printed_exam_label": "JEE Main",
+          "exam_identity": "UNAUTHENTICATED_SOURCE_LABEL",
+          "extract_sha256": "a33f19b308ea81c7eb527546e44b6bbd4b4adf26aed7116013ac01218cc1bbb8",
+          "line_start": 74,
+          "line_end": 95,
+          "scan_pages": [
+            2
+          ],
+          "printed_wording_equivalence": "UNREVIEWED",
+          "source_answer_sha256": "3de4ce1f8296150991ba5a41e61af1b9d13ffd942c55d4a58ad1bb1ab1e85f55",
+          "source_question_sha256": "a7931196db6f00febc5dde1796c7c8409c0b98108f3c912022266e14bc18fc90",
+          "support_provenance": "AUTHOR_SOURCE_DERIVED",
+          "solution_provenance": "AUTHOR_STRUCTURED_FROM_EXTRACT_NOT_VERBATIM_PRINT"
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "TB-WPE-ILL-01-M1"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "completed_move_refs": [],
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "completed_move_refs": [],
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        }
+      },
+      "conditions": [
+        "Private textbook candidate. Source wording is the supplied extraction; equivalence to the printed page is not certified.",
+        "JEE labels printed in the book have not been authenticated against an examination paper.",
+        "Classification and source-derived working are author proposals; no independent admission or grading is claimed.",
+        "Source review: Printed and extracted wording are not verbatim identical; this reader preserves the supplied extraction."
+      ],
+      "figure_refs": [],
+      "scaffolds": [
+        {
+          "prompt": "Which two positions define the displacement?",
+          "text": "Use the final and initial positions in their stated order.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT",
+          "reveals": "METHOD",
+          "supports_move_ref": "TB-WPE-ILL-01-M1"
+        },
+        {
+          "prompt": "Which components need to be paired?",
+          "text": "Keep Cartesian component pairs and their signs together.",
+          "learner_stage": "FIRST_MOVE",
+          "support_kind": "CONNECT",
+          "reveals": "METHOD",
+          "supports_move_ref": "TB-WPE-ILL-01-M2"
+        }
+      ],
+      "version": "0.1.0",
+      "status": "CANDIDATE",
+      "source_refs": [
+        "TB-WPE-EXTRACT"
+      ],
+      "evidence_refs": [],
+      "origin": "ORIGINAL",
+      "origin_ref": "TB-WPE-EXTRACT",
+      "subparts": [],
+      "options": [],
+      "secondary_capability_refs": [],
+      "adaptation": null,
+      "exposure": [],
+      "hints": [],
+      "response": {
+        "type": "free_response"
+      },
+      "learner_question_type": "constructed_response",
+      "difficulty": {
+        "band": "D2",
+        "score": 5,
+        "components": {
+          "concept_model_selection": 1,
+          "representation_translation": 1,
+          "reasoning_chain_length": 1,
+          "algebra_computational_load": 1,
+          "trap_exception_sensitivity": 1
+        },
+        "basis": "Author proposal for the exact supplied extract before support; independent adjudication pending. Constant-force work in three dimensions",
+        "component_evidence": {
+          "concept_model_selection": "Choose constant-force dot product from the stated force and two positions.",
+          "representation_translation": "Translate endpoint positions into displacement.",
+          "reasoning_chain_length": "Use displacement before evaluating work.",
+          "algebra_computational_load": "Evaluate three signed products and their sum.",
+          "trap_exception_sensitivity": "Reversing displacement reverses the work sign."
+        }
+      }
+    },
+    {
+      "id": "TB-WPE-ILL-02",
+      "original_identifier": "Textbook extract · Illustration 2 · candidate, independently unreviewed",
+      "stem": "A block of total mass $5\\text{ kg}$ is being raised vertically upwards with the help of a string attached to it and it rises with an acceleration of $2\\text{ m/s}^2$. Find the work done due to the tension in the string if the block rises by $2.5\\text{ m}$. Also, calculate the work done due to gravity and the net work done. ($g = 9.8\\text{ m/s}^2$).",
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "T = 59 N; tension work = 147.5 J; gravity work = -122.5 J; net work = 25 J.",
+        "reasoning": [
+          "Use T - mg = ma to determine tension. T = 5(9.8 + 2) = 59 N.",
+          "Calculate work separately for tension and gravity. W_T = 147.5 J and W_g = -122.5 J.",
+          "Add the individual works and compare with net-force work. W_net = 25 J = ma s."
+        ],
+        "reasoning_route": [
+          {
+            "id": "TB-WPE-ILL-02-M1",
+            "kind": "CONNECT",
+            "action": "Use T - mg = ma to determine tension.",
+            "why_valid": "The block accelerates upward under tension and gravity.",
+            "inputs": [
+              "m = 5 kg, g = 9.8 m/s², a = 2 m/s²"
+            ],
+            "output": "T = 5(9.8 + 2) = 59 N.",
+            "source_ref": "TB-WPE-EXTRACT#illustration-2"
+          },
+          {
+            "id": "TB-WPE-ILL-02-M2",
+            "kind": "TRANSFORM",
+            "action": "Calculate work separately for tension and gravity.",
+            "why_valid": "Their forces have opposite directions relative to upward displacement.",
+            "inputs": [
+              "s = 2.5 m"
+            ],
+            "output": "W_T = 147.5 J and W_g = -122.5 J.",
+            "source_ref": "TB-WPE-EXTRACT#illustration-2"
+          },
+          {
+            "id": "TB-WPE-ILL-02-M3",
+            "kind": "VERIFY",
+            "action": "Add the individual works and compare with net-force work.",
+            "why_valid": "Work is additive for the forces acting on this particle model.",
+            "inputs": [
+              "W_T and W_g"
+            ],
+            "output": "W_net = 25 J = ma s.",
+            "source_ref": "TB-WPE-EXTRACT#illustration-2"
+          }
+        ],
+        "crux_move_ref": "TB-WPE-ILL-02-M1",
+        "check": "Author check: ma s = 5 × 2 × 2.5 = 25 J, agreeing with the signed work sum.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-WEP-NET-WORK-SIGN",
+      "family_ref": "FAM-PHY-WEP-PRACTICE",
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "TB-WPE-ILL-02",
+          "wording_custody": "VERBATIM",
+          "text_sha256": "sha256:7b4ba0ec3e17047dbdb2b44cb010576a5e3d2adba5024276e5076a90d128ad8a"
+        },
+        "grade9v3:math_spans": [
+          {
+            "target": "stem",
+            "literal": "$5\\text{ kg}$",
+            "tex": "5\\text{ kg}",
+            "display": false
+          },
+          {
+            "target": "stem",
+            "literal": "$2\\text{ m/s}^2$",
+            "tex": "2\\text{ m/s}^2",
+            "display": false
+          },
+          {
+            "target": "stem",
+            "literal": "$2.5\\text{ m}$",
+            "tex": "2.5\\text{ m}",
+            "display": false
+          },
+          {
+            "target": "stem",
+            "literal": "$g = 9.8\\text{ m/s}^2$",
+            "tex": "g = 9.8\\text{ m/s}^2",
+            "display": false
+          }
+        ],
+        "grade9v3:analysis": {
+          "learner_question_type": "constructed_response",
+          "difficulty": {
+            "band": "D3",
+            "score": 6,
+            "components": {
+              "concept_model_selection": 1,
+              "representation_translation": 1,
+              "reasoning_chain_length": 2,
+              "algebra_computational_load": 1,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Author proposal for the exact supplied extract before support; independent adjudication pending. Tension, gravity and net work",
+            "component_evidence": {
+              "concept_model_selection": "Find tension from the upward acceleration before calculating its work.",
+              "representation_translation": "Translate upward and downward forces into signed work.",
+              "reasoning_chain_length": "Coordinate force balance, two individual works and their net.",
+              "algebra_computational_load": "Routine multiplication and signed addition.",
+              "trap_exception_sensitivity": "Confusing individual work with net work changes the result."
+            }
+          },
+          "expected_time_seconds": 0,
+          "common_wrong_route": "Taking tension equal to weight despite the stated acceleration.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "Supplied textbook extract · Illustration 2",
+          "stable_crux_move": "Use T - mg = ma to determine tension."
+        },
+        "wpe:textbook_source": {
+          "role": "OWNER_SUPPLIED_TEXTBOOK_EXTRACT",
+          "printed_exam_label": "JEE Advanced",
+          "exam_identity": "UNAUTHENTICATED_SOURCE_LABEL",
+          "extract_sha256": "a33f19b308ea81c7eb527546e44b6bbd4b4adf26aed7116013ac01218cc1bbb8",
+          "line_start": 99,
+          "line_end": 130,
+          "scan_pages": [
+            2,
+            3
+          ],
+          "printed_wording_equivalence": "UNREVIEWED",
+          "source_answer_sha256": "3709905bc360077168735502e8ec15429f46ce848563d2f9376d0a442e138bfe",
+          "source_question_sha256": "ffdf29f3a33e21698fbb2db6a217366fc4722eb01fc5ab8e2287e2163267fb5f",
+          "support_provenance": "AUTHOR_SOURCE_DERIVED",
+          "solution_provenance": "AUTHOR_STRUCTURED_FROM_EXTRACT_NOT_VERBATIM_PRINT"
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "TB-WPE-ILL-02-M1"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "completed_move_refs": [],
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "completed_move_refs": [],
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        }
+      },
+      "conditions": [
+        "Private textbook candidate. Source wording is the supplied extraction; equivalence to the printed page is not certified.",
+        "JEE labels printed in the book have not been authenticated against an examination paper.",
+        "Classification and source-derived working are author proposals; no independent admission or grading is claimed.",
+        "Source review: The scan puts g = 9.8 in the solution rather than the printed stem; the extraction includes it as a given.",
+        "Source review: Derived FBD includes T - mg = ma, so it is solution-only."
+      ],
+      "figure_refs": [],
+      "scaffolds": [
+        {
+          "prompt": "Which force does the first part ask about?",
+          "text": "Distinguish tension from the net force before calculating work.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT",
+          "reveals": "METHOD",
+          "supports_move_ref": "TB-WPE-ILL-02-M1"
+        },
+        {
+          "prompt": "How do the two force directions compare with the motion?",
+          "text": "Track each force separately relative to the same upward displacement.",
+          "learner_stage": "FIRST_MOVE",
+          "support_kind": "CONNECT",
+          "reveals": "METHOD",
+          "supports_move_ref": "TB-WPE-ILL-02-M2"
+        }
+      ],
+      "version": "0.1.0",
+      "status": "CANDIDATE",
+      "source_refs": [
+        "TB-WPE-EXTRACT"
+      ],
+      "evidence_refs": [],
+      "origin": "ORIGINAL",
+      "origin_ref": "TB-WPE-EXTRACT",
+      "subparts": [],
+      "options": [],
+      "secondary_capability_refs": [],
+      "adaptation": null,
+      "exposure": [],
+      "hints": [],
+      "response": {
+        "type": "free_response"
+      },
+      "learner_question_type": "constructed_response",
+      "difficulty": {
+        "band": "D3",
+        "score": 6,
+        "components": {
+          "concept_model_selection": 1,
+          "representation_translation": 1,
+          "reasoning_chain_length": 2,
+          "algebra_computational_load": 1,
+          "trap_exception_sensitivity": 1
+        },
+        "basis": "Author proposal for the exact supplied extract before support; independent adjudication pending. Tension, gravity and net work",
+        "component_evidence": {
+          "concept_model_selection": "Find tension from the upward acceleration before calculating its work.",
+          "representation_translation": "Translate upward and downward forces into signed work.",
+          "reasoning_chain_length": "Coordinate force balance, two individual works and their net.",
+          "algebra_computational_load": "Routine multiplication and signed addition.",
+          "trap_exception_sensitivity": "Confusing individual work with net work changes the result."
+        }
+      },
+      "representation_roles": {
+        "bound_ref": "REP-TB-FIG-03-FBD-STRING-RAISING"
+      }
+    },
+    {
+      "id": "TB-WPE-ILL-03",
+      "original_identifier": "Textbook extract · Illustration 3 · candidate, independently unreviewed",
+      "stem": "A force $F = (10 + 0.50x)\\text{ N}$ is observed to act on a particle in the $x$ direction, where $x$ is in meters. Find the actual work done by this force during a displacement from $x = 0$ to $x = 2.0\\text{ m}$.",
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "W = 21 J.",
+        "reasoning": [
+          "Write work as the integral of the stated force over x. W = integral from 0 to 2 of (10 + 0.50x) dx.",
+          "Evaluate the definite integral. W = 20 + 1 = 21 J."
+        ],
+        "reasoning_route": [
+          {
+            "id": "TB-WPE-ILL-03-M1",
+            "kind": "CONNECT",
+            "action": "Write work as the integral of the stated force over x.",
+            "why_valid": "The force and displacement are along the x direction and force varies with x.",
+            "inputs": [
+              "F(x) = 10 + 0.50x N, x from 0 to 2 m"
+            ],
+            "output": "W = integral from 0 to 2 of (10 + 0.50x) dx.",
+            "source_ref": "TB-WPE-EXTRACT#illustration-3"
+          },
+          {
+            "id": "TB-WPE-ILL-03-M2",
+            "kind": "TRANSFORM",
+            "action": "Evaluate the definite integral.",
+            "why_valid": "An antiderivative is 10x + 0.25x².",
+            "inputs": [
+              "The stated bounds"
+            ],
+            "output": "W = 20 + 1 = 21 J.",
+            "source_ref": "TB-WPE-EXTRACT#illustration-3"
+          }
+        ],
+        "crux_move_ref": "TB-WPE-ILL-03-M1",
+        "check": "Author check: the linear force rises from 10 N to 11 N; trapezoid area is 10.5 N × 2 m = 21 J.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-WEP-WORK-DIRECTION",
+      "family_ref": "FAM-PHY-WEP-PRACTICE",
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "TB-WPE-ILL-03",
+          "wording_custody": "VERBATIM",
+          "text_sha256": "sha256:c6b63342e273b053d8a2f80a1358b62c0e32522e9533c1b5694aefa248515974"
+        },
+        "grade9v3:math_spans": [
+          {
+            "target": "stem",
+            "literal": "$F = (10 + 0.50x)\\text{ N}$",
+            "tex": "F = (10 + 0.50x)\\text{ N}",
+            "display": false
+          },
+          {
+            "target": "stem",
+            "literal": "$x$",
+            "tex": "x",
+            "display": false
+          },
+          {
+            "target": "stem",
+            "literal": "$x = 0$",
+            "tex": "x = 0",
+            "display": false
+          },
+          {
+            "target": "stem",
+            "literal": "$x = 2.0\\text{ m}$",
+            "tex": "x = 2.0\\text{ m}",
+            "display": false
+          }
+        ],
+        "grade9v3:analysis": {
+          "learner_question_type": "constructed_response",
+          "difficulty": {
+            "band": "D2",
+            "score": 4,
+            "components": {
+              "concept_model_selection": 1,
+              "representation_translation": 1,
+              "reasoning_chain_length": 1,
+              "algebra_computational_load": 1,
+              "trap_exception_sensitivity": 0
+            },
+            "basis": "Author proposal for the exact supplied extract before support; independent adjudication pending. Position-dependent force",
+            "component_evidence": {
+              "concept_model_selection": "Identify variable-force work rather than one constant-force substitution.",
+              "representation_translation": "Translate F(x) into a bounded work integral or equivalent area.",
+              "reasoning_chain_length": "Integrate before substituting the bounds.",
+              "algebra_computational_load": "Routine linear-polynomial integration and evaluation.",
+              "trap_exception_sensitivity": "No extra hidden domain exception is required."
+            }
+          },
+          "expected_time_seconds": 0,
+          "common_wrong_route": "Multiplying only the final force by the whole displacement.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "Supplied textbook extract · Illustration 3",
+          "stable_crux_move": "Write work as the integral of the stated force over x."
+        },
+        "wpe:textbook_source": {
+          "role": "OWNER_SUPPLIED_TEXTBOOK_EXTRACT",
+          "printed_exam_label": "JEE Main",
+          "exam_identity": "UNAUTHENTICATED_SOURCE_LABEL",
+          "extract_sha256": "a33f19b308ea81c7eb527546e44b6bbd4b4adf26aed7116013ac01218cc1bbb8",
+          "line_start": 153,
+          "line_end": 166,
+          "scan_pages": [
+            3,
+            4
+          ],
+          "printed_wording_equivalence": "UNREVIEWED",
+          "source_answer_sha256": "bfddaccf804f337f1144113d097c5b0e75b1cf5174c2cc036d75278ca05453be",
+          "source_question_sha256": "c6b63342e273b053d8a2f80a1358b62c0e32522e9533c1b5694aefa248515974",
+          "support_provenance": "AUTHOR_SOURCE_DERIVED",
+          "solution_provenance": "AUTHOR_STRUCTURED_FROM_EXTRACT_NOT_VERBATIM_PRINT"
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "TB-WPE-ILL-03-M1"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "completed_move_refs": [],
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "completed_move_refs": [],
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        }
+      },
+      "conditions": [
+        "Private textbook candidate. Source wording is the supplied extraction; equivalence to the printed page is not certified.",
+        "JEE labels printed in the book have not been authenticated against an examination paper.",
+        "Classification and source-derived working are author proposals; no independent admission or grading is claimed.",
+        "Source review: The canonical work-direction capability is a prerequisite bridge, not a qualified variable-force warrant."
+      ],
+      "figure_refs": [],
+      "scaffolds": [
+        {
+          "prompt": "Does the force stay constant?",
+          "text": "Compare its expression at the beginning and end of the interval.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT",
+          "reveals": "METHOD",
+          "supports_move_ref": "TB-WPE-ILL-03-M1"
+        },
+        {
+          "prompt": "What does work accumulate over the stated displacement?",
+          "text": "Use the whole interval rather than only an endpoint force.",
+          "learner_stage": "FIRST_MOVE",
+          "support_kind": "CONNECT",
+          "reveals": "METHOD",
+          "supports_move_ref": "TB-WPE-ILL-03-M2"
+        }
+      ],
+      "version": "0.1.0",
+      "status": "CANDIDATE",
+      "source_refs": [
+        "TB-WPE-EXTRACT"
+      ],
+      "evidence_refs": [],
+      "origin": "ORIGINAL",
+      "origin_ref": "TB-WPE-EXTRACT",
+      "subparts": [],
+      "options": [],
+      "secondary_capability_refs": [],
+      "adaptation": null,
+      "exposure": [],
+      "hints": [],
+      "response": {
+        "type": "free_response"
+      },
+      "learner_question_type": "constructed_response",
+      "difficulty": {
+        "band": "D2",
+        "score": 4,
+        "components": {
+          "concept_model_selection": 1,
+          "representation_translation": 1,
+          "reasoning_chain_length": 1,
+          "algebra_computational_load": 1,
+          "trap_exception_sensitivity": 0
+        },
+        "basis": "Author proposal for the exact supplied extract before support; independent adjudication pending. Position-dependent force",
+        "component_evidence": {
+          "concept_model_selection": "Identify variable-force work rather than one constant-force substitution.",
+          "representation_translation": "Translate F(x) into a bounded work integral or equivalent area.",
+          "reasoning_chain_length": "Integrate before substituting the bounds.",
+          "algebra_computational_load": "Routine linear-polynomial integration and evaluation.",
+          "trap_exception_sensitivity": "No extra hidden domain exception is required."
+        }
+      }
+    },
+    {
+      "id": "TB-WPE-ILL-04",
+      "original_identifier": "Textbook extract · Illustration 4 · candidate, independently unreviewed",
+      "stem": "A block of mass $4\\text{ kg}$ slides down a plane inclined at $37^\\circ$ with the horizontal. The length of the plane is $3\\text{ m}$. The coefficient of sliding friction between the block and the plane is $\\mu = 0.2$. Find:\n1. The work done due to gravity,\n2. The work done by the frictional force,\n3. The work done by the normal reaction between the block and the plane.  \n($g = 9.8\\text{ m/s}^2, \\sin 37^\\circ = 0.6, \\cos 37^\\circ = 0.8$).",
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Gravity work = 70.56 J; friction work = -18.816 J; normal work = 0 J.",
+        "reasoning": [
+          "Identify the angle each force makes with the displacement. Gravity has a downhill component; friction is uphill; normal is perpendicular.",
+          "Use R = mg cos(37°) and f = μR. R = 31.36 N and f = 6.272 N.",
+          "Compute the three signed works. W_g = 70.56 J; W_f = -18.816 J; W_N = 0 J."
+        ],
+        "reasoning_route": [
+          {
+            "id": "TB-WPE-ILL-04-M1",
+            "kind": "REPRESENT",
+            "action": "Identify the angle each force makes with the displacement.",
+            "why_valid": "The plane is fixed and the block moves down it.",
+            "inputs": [
+              "Inclination 37° and sliding direction"
+            ],
+            "output": "Gravity has a downhill component; friction is uphill; normal is perpendicular.",
+            "source_ref": "TB-WPE-EXTRACT#illustration-4"
+          },
+          {
+            "id": "TB-WPE-ILL-04-M2",
+            "kind": "CONNECT",
+            "action": "Use R = mg cos(37°) and f = μR.",
+            "why_valid": "There is no acceleration perpendicular to the fixed straight plane in this model.",
+            "inputs": [
+              "m = 4 kg, μ = 0.2, cos(37°) = 0.8"
+            ],
+            "output": "R = 31.36 N and f = 6.272 N.",
+            "source_ref": "TB-WPE-EXTRACT#illustration-4"
+          },
+          {
+            "id": "TB-WPE-ILL-04-M3",
+            "kind": "TRANSFORM",
+            "action": "Compute the three signed works.",
+            "why_valid": "Use the same 3 m displacement for all forces and their respective directions.",
+            "inputs": [
+              "sin(37°) = 0.6 and s = 3 m"
+            ],
+            "output": "W_g = 70.56 J; W_f = -18.816 J; W_N = 0 J.",
+            "source_ref": "TB-WPE-EXTRACT#illustration-4"
+          }
+        ],
+        "crux_move_ref": "TB-WPE-ILL-04-M1",
+        "check": "Author check: net work is 51.744 J; normal work vanishes by perpendicularity, not because normal force is zero.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-WEP-WORK-DIRECTION",
+      "family_ref": "FAM-PHY-WEP-PRACTICE",
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "TB-WPE-ILL-04",
+          "wording_custody": "VERBATIM",
+          "text_sha256": "sha256:698135d72d5291a075df45b0a83178a5e918d1169ecd20a9d2f97202c10706ec"
+        },
+        "grade9v3:math_spans": [
+          {
+            "target": "stem",
+            "literal": "$4\\text{ kg}$",
+            "tex": "4\\text{ kg}",
+            "display": false
+          },
+          {
+            "target": "stem",
+            "literal": "$37^\\circ$",
+            "tex": "37^\\circ",
+            "display": false
+          },
+          {
+            "target": "stem",
+            "literal": "$3\\text{ m}$",
+            "tex": "3\\text{ m}",
+            "display": false
+          },
+          {
+            "target": "stem",
+            "literal": "$\\mu = 0.2$",
+            "tex": "\\mu = 0.2",
+            "display": false
+          },
+          {
+            "target": "stem",
+            "literal": "$g = 9.8\\text{ m/s}^2, \\sin 37^\\circ = 0.6, \\cos 37^\\circ = 0.8$",
+            "tex": "g = 9.8\\text{ m/s}^2, \\sin 37^\\circ = 0.6, \\cos 37^\\circ = 0.8",
+            "display": false
+          }
+        ],
+        "grade9v3:analysis": {
+          "learner_question_type": "constructed_response",
+          "difficulty": {
+            "band": "D2",
+            "score": 5,
+            "components": {
+              "concept_model_selection": 1,
+              "representation_translation": 1,
+              "reasoning_chain_length": 1,
+              "algebra_computational_load": 1,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Author proposal for the exact supplied extract before support; independent adjudication pending. Work on a rough incline",
+            "component_evidence": {
+              "concept_model_selection": "Apply work separately to gravity, friction and the normal.",
+              "representation_translation": "Resolve the vertical force relative to motion down the incline.",
+              "reasoning_chain_length": "Obtain the normal before kinetic friction and its work.",
+              "algebra_computational_load": "Routine multi-operation numerical evaluation.",
+              "trap_exception_sensitivity": "Signs and the normal being perpendicular matter."
+            }
+          },
+          "expected_time_seconds": 0,
+          "common_wrong_route": "Using the full weight as the friction-determining normal force.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "Supplied textbook extract · Illustration 4",
+          "stable_crux_move": "Identify the angle each force makes with the displacement."
+        },
+        "wpe:textbook_source": {
+          "role": "OWNER_SUPPLIED_TEXTBOOK_EXTRACT",
+          "printed_exam_label": "JEE Main",
+          "exam_identity": "UNAUTHENTICATED_SOURCE_LABEL",
+          "extract_sha256": "a33f19b308ea81c7eb527546e44b6bbd4b4adf26aed7116013ac01218cc1bbb8",
+          "line_start": 206,
+          "line_end": 235,
+          "scan_pages": [
+            4,
+            5
+          ],
+          "printed_wording_equivalence": "UNREVIEWED",
+          "source_answer_sha256": "c53be5b93cd055d8ec419571879829deb72d07e4dd51f8d5b3814f20e414fb1f",
+          "source_question_sha256": "f9965cf92cb3d3c8a3aa751077b2f5b75c7066c84e233f5189d6f400783ebbdc",
+          "support_provenance": "AUTHOR_SOURCE_DERIVED",
+          "solution_provenance": "AUTHOR_STRUCTURED_FROM_EXTRACT_NOT_VERBATIM_PRINT"
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "TB-WPE-ILL-04-M1"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "completed_move_refs": [],
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "completed_move_refs": [],
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        }
+      },
+      "conditions": [
+        "Private textbook candidate. Source wording is the supplied extraction; equivalence to the printed page is not certified.",
+        "JEE labels printed in the book have not been authenticated against an examination paper.",
+        "Classification and source-derived working are author proposals; no independent admission or grading is claimed.",
+        "Source review: Stationary-plane kinetic-friction model only; no universal claim that friction work is always negative.",
+        "Source review: The extraction supplies trigonometric approximations from the printed working.",
+        "Source review: Derived FBD includes final work relations and is solution-only."
+      ],
+      "figure_refs": [
+        "REP-TB-FIG-06-INCLINE-BLOCK"
+      ],
+      "scaffolds": [
+        {
+          "prompt": "Which force directions are fixed by the incline?",
+          "text": "Distinguish normal and tangential directions.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT",
+          "reveals": "METHOD",
+          "supports_move_ref": "TB-WPE-ILL-04-M1"
+        },
+        {
+          "prompt": "Which force determines the sliding-friction magnitude?",
+          "text": "Use the contact normal, with the stated coefficient.",
+          "learner_stage": "FIRST_MOVE",
+          "support_kind": "CONNECT",
+          "reveals": "METHOD",
+          "supports_move_ref": "TB-WPE-ILL-04-M2"
+        }
+      ],
+      "version": "0.1.0",
+      "status": "CANDIDATE",
+      "source_refs": [
+        "TB-WPE-EXTRACT"
+      ],
+      "evidence_refs": [],
+      "origin": "ORIGINAL",
+      "origin_ref": "TB-WPE-EXTRACT",
+      "subparts": [],
+      "options": [],
+      "secondary_capability_refs": [],
+      "adaptation": null,
+      "exposure": [],
+      "hints": [],
+      "response": {
+        "type": "free_response"
+      },
+      "learner_question_type": "constructed_response",
+      "difficulty": {
+        "band": "D2",
+        "score": 5,
+        "components": {
+          "concept_model_selection": 1,
+          "representation_translation": 1,
+          "reasoning_chain_length": 1,
+          "algebra_computational_load": 1,
+          "trap_exception_sensitivity": 1
+        },
+        "basis": "Author proposal for the exact supplied extract before support; independent adjudication pending. Work on a rough incline",
+        "component_evidence": {
+          "concept_model_selection": "Apply work separately to gravity, friction and the normal.",
+          "representation_translation": "Resolve the vertical force relative to motion down the incline.",
+          "reasoning_chain_length": "Obtain the normal before kinetic friction and its work.",
+          "algebra_computational_load": "Routine multi-operation numerical evaluation.",
+          "trap_exception_sensitivity": "Signs and the normal being perpendicular matter."
+        }
+      },
+      "representation_roles": {
+        "bound_ref": "REP-TB-FIG-07-INCLINE-FBD"
+      }
+    },
+    {
+      "id": "TB-WPE-ILL-05",
+      "original_identifier": "Textbook extract · Illustration 5 · candidate, independently unreviewed",
+      "stem": "A block of mass $m$ slides down a fixed smooth inclined plane of inclination angle $\\theta$ and length $l$. Calculate the magnitude of instantaneous power developed by the gravitational force when the block reaches the bottom.",
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Source result, conditional on release from rest: P = mg sin(θ) sqrt(2gl sin(θ)).",
+        "reasoning": [
+          "State that the source solution assumes release from rest. Under that additional assumption, v_bottom = sqrt(2gl sin(θ)).",
+          "Project gravity onto velocity along the incline. P = mg v_bottom sin(θ).",
+          "Insert the conditional bottom speed. P = mg sin(θ) sqrt(2gl sin(θ))."
+        ],
+        "reasoning_route": [
+          {
+            "id": "TB-WPE-ILL-05-M1",
+            "kind": "DECIDE",
+            "action": "State that the source solution assumes release from rest.",
+            "why_valid": "The supplied stem does not specify initial speed, so its displayed result is conditional.",
+            "inputs": [
+              "Fixed smooth incline and source working"
+            ],
+            "output": "Under that additional assumption, v_bottom = sqrt(2gl sin(θ)).",
+            "source_ref": "TB-WPE-EXTRACT#illustration-5"
+          },
+          {
+            "id": "TB-WPE-ILL-05-M2",
+            "kind": "CONNECT",
+            "action": "Project gravity onto velocity along the incline.",
+            "why_valid": "Power of gravity is F_g dot v, not weight magnitude times speed without a projection.",
+            "inputs": [
+              "v_bottom along the incline"
+            ],
+            "output": "P = mg v_bottom sin(θ).",
+            "source_ref": "TB-WPE-EXTRACT#illustration-5"
+          },
+          {
+            "id": "TB-WPE-ILL-05-M3",
+            "kind": "TRANSFORM",
+            "action": "Insert the conditional bottom speed.",
+            "why_valid": "This follows only under the initial-rest interpretation used by the source.",
+            "inputs": [
+              "The preceding two relations"
+            ],
+            "output": "P = mg sin(θ) sqrt(2gl sin(θ)).",
+            "source_ref": "TB-WPE-EXTRACT#illustration-5"
+          }
+        ],
+        "crux_move_ref": "TB-WPE-ILL-05-M1",
+        "check": "Author check: for nonzero initial speed u, the same smooth-plane model instead uses v_bottom² = u² + 2gl sin(θ); the printed result is the u = 0 case.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "DISPUTED"
+      },
+      "primary_capability_ref": "CAP-WEP-POWER-RATES",
+      "family_ref": "FAM-PHY-WEP-PRACTICE",
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "TB-WPE-ILL-05",
+          "wording_custody": "VERBATIM",
+          "text_sha256": "sha256:826dfe7a0d485ccb73b58e73d3a8f88c535e84961ac9c281e8ff0971658e51fd"
+        },
+        "grade9v3:math_spans": [
+          {
+            "target": "stem",
+            "literal": "$m$",
+            "tex": "m",
+            "display": false
+          },
+          {
+            "target": "stem",
+            "literal": "$\\theta$",
+            "tex": "\\theta",
+            "display": false
+          },
+          {
+            "target": "stem",
+            "literal": "$l$",
+            "tex": "l",
+            "display": false
+          }
+        ],
+        "grade9v3:analysis": {
+          "learner_question_type": "constructed_response",
+          "difficulty": {
+            "band": "D3",
+            "score": 6,
+            "components": {
+              "concept_model_selection": 1,
+              "representation_translation": 1,
+              "reasoning_chain_length": 2,
+              "algebra_computational_load": 1,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Author proposal for the exact supplied extract before support; independent adjudication pending. Gravitational power at the bottom of an incline",
+            "component_evidence": {
+              "concept_model_selection": "Combine bottom speed with power of the named gravitational force.",
+              "representation_translation": "Translate the incline geometry into h = l sin(θ).",
+              "reasoning_chain_length": "Coordinate energy or kinematics with a force-velocity projection.",
+              "algebra_computational_load": "Routine symbolic substitution and simplification.",
+              "trap_exception_sensitivity": "Force attribution matters; the missing initial speed is a source defect, not a demand bonus."
+            }
+          },
+          "expected_time_seconds": 0,
+          "common_wrong_route": "Treating the conditional zero-initial-speed answer as uniquely determined by the original stem.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "Supplied textbook extract · Illustration 5",
+          "stable_crux_move": "State that the source solution assumes release from rest."
+        },
+        "wpe:textbook_source": {
+          "role": "OWNER_SUPPLIED_TEXTBOOK_EXTRACT",
+          "printed_exam_label": "JEE Advanced",
+          "exam_identity": "UNAUTHENTICATED_SOURCE_LABEL",
+          "extract_sha256": "a33f19b308ea81c7eb527546e44b6bbd4b4adf26aed7116013ac01218cc1bbb8",
+          "line_start": 257,
+          "line_end": 272,
+          "scan_pages": [
+            5
+          ],
+          "printed_wording_equivalence": "UNREVIEWED",
+          "source_answer_sha256": "c7759cc115f8f42c334852b298766cb3d9c4e56776e6ab8662df4ffef6148b9e",
+          "source_question_sha256": "826dfe7a0d485ccb73b58e73d3a8f88c535e84961ac9c281e8ff0971658e51fd",
+          "support_provenance": "AUTHOR_SOURCE_DERIVED",
+          "solution_provenance": "AUTHOR_STRUCTURED_FROM_EXTRACT_NOT_VERBATIM_PRINT"
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "TB-WPE-ILL-05-M1"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "completed_move_refs": [],
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "completed_move_refs": [],
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        }
+      },
+      "conditions": [
+        "Private textbook candidate. Source wording is the supplied extraction; equivalence to the printed page is not certified.",
+        "JEE labels printed in the book have not been authenticated against an examination paper.",
+        "Classification and source-derived working are author proposals; no independent admission or grading is claimed.",
+        "Source review: UNDERDETERMINED_STEM: initial speed is absent; displayed source answer assumes release from rest."
+      ],
+      "figure_refs": [],
+      "scaffolds": [
+        {
+          "prompt": "What information about the motion is explicitly supplied?",
+          "text": "Check whether the initial state is determined before using the source result.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT",
+          "reveals": "METHOD",
+          "supports_move_ref": "TB-WPE-ILL-05-M1"
+        },
+        {
+          "prompt": "Whose power is requested?",
+          "text": "Keep gravitational power distinct from an unnamed applied force.",
+          "learner_stage": "FIRST_MOVE",
+          "support_kind": "CONNECT",
+          "reveals": "METHOD",
+          "supports_move_ref": "TB-WPE-ILL-05-M2"
+        }
+      ],
+      "version": "0.1.0",
+      "status": "CANDIDATE",
+      "source_refs": [
+        "TB-WPE-EXTRACT"
+      ],
+      "evidence_refs": [],
+      "origin": "ORIGINAL",
+      "origin_ref": "TB-WPE-EXTRACT",
+      "subparts": [],
+      "options": [],
+      "secondary_capability_refs": [],
+      "adaptation": null,
+      "exposure": [],
+      "hints": [],
+      "response": {
+        "type": "free_response"
+      },
+      "learner_question_type": "constructed_response",
+      "difficulty": {
+        "band": "D3",
+        "score": 6,
+        "components": {
+          "concept_model_selection": 1,
+          "representation_translation": 1,
+          "reasoning_chain_length": 2,
+          "algebra_computational_load": 1,
+          "trap_exception_sensitivity": 1
+        },
+        "basis": "Author proposal for the exact supplied extract before support; independent adjudication pending. Gravitational power at the bottom of an incline",
+        "component_evidence": {
+          "concept_model_selection": "Combine bottom speed with power of the named gravitational force.",
+          "representation_translation": "Translate the incline geometry into h = l sin(θ).",
+          "reasoning_chain_length": "Coordinate energy or kinematics with a force-velocity projection.",
+          "algebra_computational_load": "Routine symbolic substitution and simplification.",
+          "trap_exception_sensitivity": "Force attribution matters; the missing initial speed is a source defect, not a demand bonus."
+        }
+      }
+    },
+    {
+      "id": "TB-WPE-ILL-06",
+      "original_identifier": "Textbook extract · Illustration 6 · candidate, independently unreviewed",
+      "stem": "A particle of mass $m$ is moving in a circular path of constant radius $r$ such that its centripetal acceleration $a_c$ varies with time $t$ as $a_c = k^2 r t^2$, where $k$ is a constant. The power delivered to the particle by the net force acting on it is:",
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Source choice (B): P = m k² r² t.",
+        "reasoning": [
+          "Use a_c = v²/r to infer the speed law. v² = k²r²t².",
+          "Separate radial and tangential contributions to power. a_t = kr and P = F_t v.",
+          "Evaluate tangential power. P = m k² r² t, option (B)."
+        ],
+        "reasoning_route": [
+          {
+            "id": "TB-WPE-ILL-06-M1",
+            "kind": "REPRESENT",
+            "action": "Use a_c = v²/r to infer the speed law.",
+            "why_valid": "The radius is constant. For the source convention k ≥ 0 and t ≥ 0, speed is krt.",
+            "inputs": [
+              "a_c = k²rt²"
+            ],
+            "output": "v² = k²r²t².",
+            "source_ref": "TB-WPE-EXTRACT#illustration-6"
+          },
+          {
+            "id": "TB-WPE-ILL-06-M2",
+            "kind": "CONNECT",
+            "action": "Separate radial and tangential contributions to power.",
+            "why_valid": "The radial contribution is perpendicular to velocity; changing speed still has a tangential contribution.",
+            "inputs": [
+              "v = krt for the source convention"
+            ],
+            "output": "a_t = kr and P = F_t v.",
+            "source_ref": "TB-WPE-EXTRACT#illustration-6"
+          },
+          {
+            "id": "TB-WPE-ILL-06-M3",
+            "kind": "TRANSFORM",
+            "action": "Evaluate tangential power.",
+            "why_valid": "F_t = ma_t in the particle model.",
+            "inputs": [
+              "F_t = mkr and v = krt"
+            ],
+            "output": "P = m k² r² t, option (B).",
+            "source_ref": "TB-WPE-EXTRACT#illustration-6"
+          }
+        ],
+        "crux_move_ref": "TB-WPE-ILL-06-M1",
+        "check": "Author check: K = (1/2)m k²r²t²; dK/dt = m k²r²t, agreeing with the source choice.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-WEP-POWER-RATES",
+      "family_ref": "FAM-PHY-WEP-PRACTICE",
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "TB-WPE-ILL-06",
+          "wording_custody": "VERBATIM",
+          "text_sha256": "sha256:8d826df876ac32d2f27054911fb97799a81124b5f23533198cb1949dd7fb881d"
+        },
+        "grade9v3:math_spans": [
+          {
+            "target": "stem",
+            "literal": "$m$",
+            "tex": "m",
+            "display": false
+          },
+          {
+            "target": "stem",
+            "literal": "$r$",
+            "tex": "r",
+            "display": false
+          },
+          {
+            "target": "stem",
+            "literal": "$a_c$",
+            "tex": "a_c",
+            "display": false
+          },
+          {
+            "target": "stem",
+            "literal": "$t$",
+            "tex": "t",
+            "display": false
+          },
+          {
+            "target": "stem",
+            "literal": "$a_c = k^2 r t^2$",
+            "tex": "a_c = k^2 r t^2",
+            "display": false
+          },
+          {
+            "target": "stem",
+            "literal": "$k$",
+            "tex": "k",
+            "display": false
+          },
+          {
+            "target": "option:0",
+            "literal": "$2\\pi m k^2 r^2$",
+            "tex": "2\\pi m k^2 r^2",
+            "display": false
+          },
+          {
+            "target": "option:1",
+            "literal": "$m k^2 r^2 t$",
+            "tex": "m k^2 r^2 t",
+            "display": false
+          },
+          {
+            "target": "option:2",
+            "literal": "$\\frac{m k^4 r^2 t^5}{3}$",
+            "tex": "\\frac{m k^4 r^2 t^5}{3}",
+            "display": false
+          }
+        ],
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D3",
+            "score": 6,
+            "components": {
+              "concept_model_selection": 1,
+              "representation_translation": 1,
+              "reasoning_chain_length": 2,
+              "algebra_computational_load": 1,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Author proposal for the exact supplied extract before support; independent adjudication pending. Net power during nonuniform circular motion",
+            "component_evidence": {
+              "concept_model_selection": "Net power must include the speed-changing force, not only the radial component.",
+              "representation_translation": "Convert centripetal acceleration into speed using a_c = v²/r.",
+              "reasoning_chain_length": "Find speed, differentiate it, and combine tangential force with velocity.",
+              "algebra_computational_load": "Routine time differentiation and product.",
+              "trap_exception_sensitivity": "Zero radial power does not mean zero net power."
+            }
+          },
+          "expected_time_seconds": 0,
+          "common_wrong_route": "Selecting zero because the centripetal contribution alone has zero power.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "Supplied textbook extract · Illustration 6",
+          "stable_crux_move": "Use a_c = v²/r to infer the speed law."
+        },
+        "wpe:textbook_source": {
+          "role": "OWNER_SUPPLIED_TEXTBOOK_EXTRACT",
+          "printed_exam_label": "JEE Main",
+          "exam_identity": "UNAUTHENTICATED_SOURCE_LABEL",
+          "extract_sha256": "a33f19b308ea81c7eb527546e44b6bbd4b4adf26aed7116013ac01218cc1bbb8",
+          "line_start": 276,
+          "line_end": 307,
+          "scan_pages": [
+            5
+          ],
+          "printed_wording_equivalence": "UNREVIEWED",
+          "source_answer_sha256": "5f99b7c5ce616a9a2f2a4cf41b61380abd7c1a43ddfec4f78bdc4ba930e65dba",
+          "source_question_sha256": "527ef7d5d88902103bf468a1b16729809bdf743466007a022eb23bbc1416124d",
+          "support_provenance": "AUTHOR_SOURCE_DERIVED",
+          "solution_provenance": "AUTHOR_STRUCTURED_FROM_EXTRACT_NOT_VERBATIM_PRINT"
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "TB-WPE-ILL-06-M1"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "completed_move_refs": [],
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "completed_move_refs": [],
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        }
+      },
+      "conditions": [
+        "Private textbook candidate. Source wording is the supplied extraction; equivalence to the printed page is not certified.",
+        "JEE labels printed in the book have not been authenticated against an examination paper.",
+        "Classification and source-derived working are author proposals; no independent admission or grading is claimed.",
+        "Source review: The source convention uses nonnegative elapsed time; speed is a magnitude."
+      ],
+      "figure_refs": [],
+      "scaffolds": [
+        {
+          "prompt": "Does centripetal acceleration describe all of the acceleration?",
+          "text": "Consider whether the speed changes as time changes.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT",
+          "reveals": "METHOD",
+          "supports_move_ref": "TB-WPE-ILL-06-M1"
+        },
+        {
+          "prompt": "Which force component is perpendicular to velocity?",
+          "text": "Distinguish that component from the one changing the speed.",
+          "learner_stage": "FIRST_MOVE",
+          "support_kind": "CONNECT",
+          "reveals": "METHOD",
+          "supports_move_ref": "TB-WPE-ILL-06-M2"
+        }
+      ],
+      "version": "0.1.0",
+      "status": "CANDIDATE",
+      "source_refs": [
+        "TB-WPE-EXTRACT"
+      ],
+      "evidence_refs": [],
+      "origin": "ORIGINAL",
+      "origin_ref": "TB-WPE-EXTRACT",
+      "subparts": [],
+      "options": [
+        "(A) $2\\pi m k^2 r^2$",
+        "(B) $m k^2 r^2 t$",
+        "(C) $\\frac{m k^4 r^2 t^5}{3}$",
+        "(D) Zero"
+      ],
+      "secondary_capability_refs": [],
+      "adaptation": null,
+      "exposure": [],
+      "hints": [],
+      "response": {
+        "type": "single_choice"
+      },
+      "learner_question_type": "single_correct_mcq",
+      "difficulty": {
+        "band": "D3",
+        "score": 6,
+        "components": {
+          "concept_model_selection": 1,
+          "representation_translation": 1,
+          "reasoning_chain_length": 2,
+          "algebra_computational_load": 1,
+          "trap_exception_sensitivity": 1
+        },
+        "basis": "Author proposal for the exact supplied extract before support; independent adjudication pending. Net power during nonuniform circular motion",
+        "component_evidence": {
+          "concept_model_selection": "Net power must include the speed-changing force, not only the radial component.",
+          "representation_translation": "Convert centripetal acceleration into speed using a_c = v²/r.",
+          "reasoning_chain_length": "Find speed, differentiate it, and combine tangential force with velocity.",
+          "algebra_computational_load": "Routine time differentiation and product.",
+          "trap_exception_sensitivity": "Zero radial power does not mean zero net power."
+        }
+      }
+    },
+    {
+      "id": "TB-WPE-ILL-11",
+      "original_identifier": "Textbook extract · Illustration 11 · candidate, independently unreviewed",
+      "stem": "A uniform flexible chain of length $l$ and mass $m$ overhangs a smooth horizontal table with two-thirds ($2l/3$) of its length lying on the table. Find the kinetic energy of the chain as it completely slips off the table.",
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Source result, conditional on zero initial kinetic energy and its ideal chain model: K_final = (4/9)mgl.",
+        "reasoning": [
+          "Set table height as zero and use uniform linear mass density m/l. dm = (m/l) dx and dU = -(m/l)g x dx.",
+          "Evaluate the initial and final potential energies. U_initial = -mgl/18; U_final = -mgl/2.",
+          "Apply the energy balance with the source initial-rest assumption. K_final = U_initial - U_final = (4/9)mgl."
+        ],
+        "reasoning_route": [
+          {
+            "id": "TB-WPE-ILL-11-M1",
+            "kind": "REPRESENT",
+            "action": "Set table height as zero and use uniform linear mass density m/l.",
+            "why_valid": "Different parts of the chain have different heights.",
+            "inputs": [
+              "Initial hanging length l/3 and full length l"
+            ],
+            "output": "dm = (m/l) dx and dU = -(m/l)g x dx.",
+            "source_ref": "TB-WPE-EXTRACT#illustration-11"
+          },
+          {
+            "id": "TB-WPE-ILL-11-M2",
+            "kind": "TRANSFORM",
+            "action": "Evaluate the initial and final potential energies.",
+            "why_valid": "Use hanging-depth bounds 0 to l/3 initially and 0 to l finally.",
+            "inputs": [
+              "The uniform-density model"
+            ],
+            "output": "U_initial = -mgl/18; U_final = -mgl/2.",
+            "source_ref": "TB-WPE-EXTRACT#illustration-11"
+          },
+          {
+            "id": "TB-WPE-ILL-11-M3",
+            "kind": "CONNECT",
+            "action": "Apply the energy balance with the source initial-rest assumption.",
+            "why_valid": "The printed solution explicitly takes initial kinetic energy as zero; the ideal contact model admits no dissipative work.",
+            "inputs": [
+              "The two potential energies and K_initial = 0"
+            ],
+            "output": "K_final = U_initial - U_final = (4/9)mgl.",
+            "source_ref": "TB-WPE-EXTRACT#illustration-11"
+          }
+        ],
+        "crux_move_ref": "TB-WPE-ILL-11-M1",
+        "check": "Author check: using the hanging segment centre of mass gives U_initial = -(m/3)g(l/6), and U_final = -mg(l/2), the same change.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "DISPUTED"
+      },
+      "primary_capability_ref": "CAP-WEP-MECH-ENERGY-CONDITION",
+      "family_ref": "FAM-PHY-WEP-PRACTICE",
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "TB-WPE-ILL-11",
+          "wording_custody": "VERBATIM",
+          "text_sha256": "sha256:731e89619ab1f36cfdcbbbe0977bffe79ddc9da79d83e39a4fb1075c4b4e6038"
+        },
+        "grade9v3:math_spans": [
+          {
+            "target": "stem",
+            "literal": "$l$",
+            "tex": "l",
+            "display": false
+          },
+          {
+            "target": "stem",
+            "literal": "$m$",
+            "tex": "m",
+            "display": false
+          },
+          {
+            "target": "stem",
+            "literal": "$2l/3$",
+            "tex": "2l/3",
+            "display": false
+          }
+        ],
+        "grade9v3:analysis": {
+          "learner_question_type": "constructed_response",
+          "difficulty": {
+            "band": "D4",
+            "score": 8,
+            "components": {
+              "concept_model_selection": 2,
+              "representation_translation": 2,
+              "reasoning_chain_length": 2,
+              "algebra_computational_load": 1,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Author proposal for the exact supplied extract before support; independent adjudication pending. A uniform chain slipping off a table",
+            "component_evidence": {
+              "concept_model_selection": "Choose a distributed-energy model rather than placing the whole mass at one arbitrary height.",
+              "representation_translation": "Construct initial and final mass-height distributions with a consistent zero.",
+              "reasoning_chain_length": "Coordinate density, two potential-energy integrals and energy balance.",
+              "algebra_computational_load": "Routine quadratic integration; not scored high merely for calculus.",
+              "trap_exception_sensitivity": "Initial kinetic energy and ideal contact assumptions affect the final result."
+            }
+          },
+          "expected_time_seconds": 0,
+          "common_wrong_route": "Putting all initial mass at the centre of the hanging part.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "Supplied textbook extract · Illustration 11",
+          "stable_crux_move": "Set table height as zero and use uniform linear mass density m/l."
+        },
+        "wpe:textbook_source": {
+          "role": "OWNER_SUPPLIED_TEXTBOOK_EXTRACT",
+          "printed_exam_label": "JEE Main",
+          "exam_identity": "UNAUTHENTICATED_SOURCE_LABEL",
+          "extract_sha256": "a33f19b308ea81c7eb527546e44b6bbd4b4adf26aed7116013ac01218cc1bbb8",
+          "line_start": 412,
+          "line_end": 438,
+          "scan_pages": [
+            9
+          ],
+          "printed_wording_equivalence": "UNREVIEWED",
+          "source_answer_sha256": "96bb1913e318a1dd1464a04e79aa6e810bb3b35a08362d7b2eb257de9477ab67",
+          "source_question_sha256": "714bcec43f4ee10d55263f95d8295dd21bb7ac5227c010cbfdb59965cefd8763",
+          "support_provenance": "AUTHOR_SOURCE_DERIVED",
+          "solution_provenance": "AUTHOR_STRUCTURED_FROM_EXTRACT_NOT_VERBATIM_PRINT"
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "TB-WPE-ILL-11-M1"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "completed_move_refs": [],
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "completed_move_refs": [],
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        }
+      },
+      "conditions": [
+        "Private textbook candidate. Source wording is the supplied extraction; equivalence to the printed page is not certified.",
+        "JEE labels printed in the book have not been authenticated against an examination paper.",
+        "Classification and source-derived working are author proposals; no independent admission or grading is claimed.",
+        "Source review: Initial rest appears in the printed solution, not in the supplied extracted stem.",
+        "Source review: Flexible-chain contact/edge idealization and lossless energy transfer require distinct review.",
+        "Source review: The derived SVG prints the final answer and is solution-only; a safe original-figure projection is pending."
+      ],
+      "figure_refs": [],
+      "scaffolds": [
+        {
+          "prompt": "Is the whole chain at one height?",
+          "text": "Track the distribution of mass above and below the chosen reference level.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT",
+          "reveals": "METHOD",
+          "supports_move_ref": "TB-WPE-ILL-11-M1"
+        },
+        {
+          "prompt": "What initial kinetic energy is actually specified?",
+          "text": "Compare the problem statement with the assumption used in the supplied working.",
+          "learner_stage": "FIRST_MOVE",
+          "support_kind": "CONNECT",
+          "reveals": "METHOD",
+          "supports_move_ref": "TB-WPE-ILL-11-M2"
+        }
+      ],
+      "version": "0.1.0",
+      "status": "CANDIDATE",
+      "source_refs": [
+        "TB-WPE-EXTRACT"
+      ],
+      "evidence_refs": [],
+      "origin": "ORIGINAL",
+      "origin_ref": "TB-WPE-EXTRACT",
+      "subparts": [],
+      "options": [],
+      "secondary_capability_refs": [],
+      "adaptation": null,
+      "exposure": [],
+      "hints": [],
+      "response": {
+        "type": "free_response"
+      },
+      "learner_question_type": "constructed_response",
+      "difficulty": {
+        "band": "D4",
+        "score": 8,
+        "components": {
+          "concept_model_selection": 2,
+          "representation_translation": 2,
+          "reasoning_chain_length": 2,
+          "algebra_computational_load": 1,
+          "trap_exception_sensitivity": 1
+        },
+        "basis": "Author proposal for the exact supplied extract before support; independent adjudication pending. A uniform chain slipping off a table",
+        "component_evidence": {
+          "concept_model_selection": "Choose a distributed-energy model rather than placing the whole mass at one arbitrary height.",
+          "representation_translation": "Construct initial and final mass-height distributions with a consistent zero.",
+          "reasoning_chain_length": "Coordinate density, two potential-energy integrals and energy balance.",
+          "algebra_computational_load": "Routine quadratic integration; not scored high merely for calculus.",
+          "trap_exception_sensitivity": "Initial kinetic energy and ideal contact assumptions affect the final result."
+        }
+      },
+      "representation_roles": {
+        "bound_ref": "REP-TB-FIG-09-OVERHANGING-CHAIN"
+      }
+    },
+    {
+      "id": "TB-WPE-ILL-12",
+      "original_identifier": "Textbook extract · Illustration 12 · candidate, independently unreviewed",
+      "stem": "A block of mass $m$ is pushed against a light spring of spring constant $k$ fixed at one end to a rigid vertical wall. The block slides on a frictionless horizontal table. The natural length of the spring is $L_0$. The spring is compressed to half its natural length ($x_{\\text{init}} = L_0/2$) and the block is released from rest. Find the velocity of the block as a function of its distance $x$ from the wall.",
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Extracted conditional model: v(x) = sqrt((k/m)[L₀²/4 - (L₀-x)²]) for L₀/2 ≤ x ≤ L₀; v(x) = (L₀/2)sqrt(k/m) after detachment.",
+        "reasoning": [
+          "Determine initial elastic energy from compression L₀/2. E_initial = kL₀²/8.",
+          "Separate contact motion from motion after loss of contact. Contact range L₀/2 ≤ x ≤ L₀; thereafter no spring force on the detached block.",
+          "Solve the energy relation during contact and preserve speed after detachment. The piecewise velocity expression in the extracted answer."
+        ],
+        "reasoning_route": [
+          {
+            "id": "TB-WPE-ILL-12-M1",
+            "kind": "CONNECT",
+            "action": "Determine initial elastic energy from compression L₀/2.",
+            "why_valid": "The extraction specifies release from rest and a light spring in the ideal frictionless model.",
+            "inputs": [
+              "Initial compression L₀/2"
+            ],
+            "output": "E_initial = kL₀²/8.",
+            "source_ref": "TB-WPE-EXTRACT#illustration-12"
+          },
+          {
+            "id": "TB-WPE-ILL-12-M2",
+            "kind": "DECIDE",
+            "action": "Separate contact motion from motion after loss of contact.",
+            "why_valid": "A block merely pushed against the spring is not pulled back once it separates.",
+            "inputs": [
+              "Wall distance x and natural length L₀"
+            ],
+            "output": "Contact range L₀/2 ≤ x ≤ L₀; thereafter no spring force on the detached block.",
+            "source_ref": "TB-WPE-EXTRACT#illustration-12"
+          },
+          {
+            "id": "TB-WPE-ILL-12-M3",
+            "kind": "TRANSFORM",
+            "action": "Solve the energy relation during contact and preserve speed after detachment.",
+            "why_valid": "While contact lasts, compression is L₀-x; afterward the horizontal net force vanishes in this model.",
+            "inputs": [
+              "(1/2)mv² + (1/2)k(L₀-x)² = kL₀²/8"
+            ],
+            "output": "The piecewise velocity expression in the extracted answer.",
+            "source_ref": "TB-WPE-EXTRACT#illustration-12"
+          }
+        ],
+        "crux_move_ref": "TB-WPE-ILL-12-M2",
+        "check": "Author check: the expression gives v = 0 at x = L₀/2 and joins continuously to (L₀/2)sqrt(k/m) at x = L₀. The formula is not extended into x < L₀/2.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "DISPUTED"
+      },
+      "primary_capability_ref": "CAP-WEP-MECH-ENERGY-CONDITION",
+      "family_ref": "FAM-PHY-WEP-PRACTICE",
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "TB-WPE-ILL-12",
+          "wording_custody": "VERBATIM",
+          "text_sha256": "sha256:47bf0b96009161ccb17706ff4eb16e9caf93b07b681a912978f05a73859a7faf"
+        },
+        "grade9v3:math_spans": [
+          {
+            "target": "stem",
+            "literal": "$m$",
+            "tex": "m",
+            "display": false
+          },
+          {
+            "target": "stem",
+            "literal": "$k$",
+            "tex": "k",
+            "display": false
+          },
+          {
+            "target": "stem",
+            "literal": "$L_0$",
+            "tex": "L_0",
+            "display": false
+          },
+          {
+            "target": "stem",
+            "literal": "$x_{\\text{init}} = L_0/2$",
+            "tex": "x_{\\text{init}} = L_0/2",
+            "display": false
+          },
+          {
+            "target": "stem",
+            "literal": "$x$",
+            "tex": "x",
+            "display": false
+          }
+        ],
+        "grade9v3:analysis": {
+          "learner_question_type": "constructed_response",
+          "difficulty": {
+            "band": "D4",
+            "score": 9,
+            "components": {
+              "concept_model_selection": 2,
+              "representation_translation": 1,
+              "reasoning_chain_length": 2,
+              "algebra_computational_load": 2,
+              "trap_exception_sensitivity": 2
+            },
+            "basis": "Author proposal for the exact supplied extract before support; independent adjudication pending. A block pushed by a compressed spring",
+            "component_evidence": {
+              "concept_model_selection": "Select a unilateral contact model: pushed against the spring does not mean permanently attached.",
+              "representation_translation": "Translate wall distance into spring compression while contact lasts.",
+              "reasoning_chain_length": "Coordinate initial energy, contact phase and subsequent free motion.",
+              "algebra_computational_load": "Construct and bound a piecewise symbolic expression.",
+              "trap_exception_sensitivity": "Detachment at natural length changes the governing expression."
+            }
+          },
+          "expected_time_seconds": 0,
+          "common_wrong_route": "Continuing a restoring spring force after the unconnected block has detached.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "Supplied textbook extract · Illustration 12",
+          "stable_crux_move": "Separate contact motion from motion after loss of contact."
+        },
+        "wpe:textbook_source": {
+          "role": "OWNER_SUPPLIED_TEXTBOOK_EXTRACT",
+          "printed_exam_label": "JEE Advanced",
+          "exam_identity": "UNAUTHENTICATED_SOURCE_LABEL",
+          "extract_sha256": "a33f19b308ea81c7eb527546e44b6bbd4b4adf26aed7116013ac01218cc1bbb8",
+          "line_start": 442,
+          "line_end": 470,
+          "scan_pages": [
+            9
+          ],
+          "printed_wording_equivalence": "UNREVIEWED",
+          "source_answer_sha256": "2691ac6b62f9f328f18922b95d897ce24bd6c954d4a71a144a2af008b910735f",
+          "source_question_sha256": "2a00238666dae00db016619cd68fb54edcfc80a9c75139e1f79c710b9e0919d7",
+          "support_provenance": "AUTHOR_SOURCE_DERIVED",
+          "solution_provenance": "AUTHOR_STRUCTURED_FROM_EXTRACT_NOT_VERBATIM_PRINT"
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "TB-WPE-ILL-12-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "completed_move_refs": [],
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "completed_move_refs": [],
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        }
+      },
+      "conditions": [
+        "Private textbook candidate. Source wording is the supplied extraction; equivalence to the printed page is not certified.",
+        "JEE labels printed in the book have not been authenticated against an examination paper.",
+        "Classification and source-derived working are author proposals; no independent admission or grading is claimed.",
+        "Source review: The printed solution is qualitative; the extraction adds the piecewise algebra and explicit initial-rest wording.",
+        "Source review: The printed assertion of no external forces must be read as no external energy transfer in this ideal model; gravity and table normal exist."
+      ],
+      "figure_refs": [
+        "REP-TB-FIG-10-SPRING-BLOCK-WALL"
+      ],
+      "scaffolds": [
+        {
+          "prompt": "What does the text say about how block and spring are connected?",
+          "text": "Distinguish being pushed against a spring from being permanently attached.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT",
+          "reveals": "METHOD",
+          "supports_move_ref": "TB-WPE-ILL-12-M1"
+        },
+        {
+          "prompt": "Does one interaction law apply over the whole trajectory?",
+          "text": "Locate the point where contact can end without changing the original givens.",
+          "learner_stage": "FIRST_MOVE",
+          "support_kind": "CONNECT",
+          "reveals": "METHOD",
+          "supports_move_ref": "TB-WPE-ILL-12-M2"
+        }
+      ],
+      "version": "0.1.0",
+      "status": "CANDIDATE",
+      "source_refs": [
+        "TB-WPE-EXTRACT"
+      ],
+      "evidence_refs": [],
+      "origin": "ORIGINAL",
+      "origin_ref": "TB-WPE-EXTRACT",
+      "subparts": [],
+      "options": [],
+      "secondary_capability_refs": [],
+      "adaptation": null,
+      "exposure": [],
+      "hints": [],
+      "response": {
+        "type": "free_response"
+      },
+      "learner_question_type": "constructed_response",
+      "difficulty": {
+        "band": "D4",
+        "score": 9,
+        "components": {
+          "concept_model_selection": 2,
+          "representation_translation": 1,
+          "reasoning_chain_length": 2,
+          "algebra_computational_load": 2,
+          "trap_exception_sensitivity": 2
+        },
+        "basis": "Author proposal for the exact supplied extract before support; independent adjudication pending. A block pushed by a compressed spring",
+        "component_evidence": {
+          "concept_model_selection": "Select a unilateral contact model: pushed against the spring does not mean permanently attached.",
+          "representation_translation": "Translate wall distance into spring compression while contact lasts.",
+          "reasoning_chain_length": "Coordinate initial energy, contact phase and subsequent free motion.",
+          "algebra_computational_load": "Construct and bound a piecewise symbolic expression.",
+          "trap_exception_sensitivity": "Detachment at natural length changes the governing expression."
+        }
+      }
+    }
+  ],
+  "title": "WPE textbook illustrations — private Core2 review candidate",
+  "extensions": {
+    "source_role": "OWNER_SUPPLIED_TEXTBOOK_EXTRACT",
+    "academic_status": "UNREVIEWED",
+    "classification_status": "AUTHOR_PROPOSED",
+    "official_exam_status": "UNVERIFIED"
+  }
+}

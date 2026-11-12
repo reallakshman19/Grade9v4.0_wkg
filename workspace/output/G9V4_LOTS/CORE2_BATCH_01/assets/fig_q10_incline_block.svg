@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" width="100%" height="100%">
+  <defs>
+    <style>
+      .label { font-family: system-ui, -apple-system, sans-serif; font-size: 15px; font-weight: 600; fill: #1e293b; }
+      .dim { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; fill: #475569; }
+      .incline { fill: #f1f5f9; stroke: #334155; stroke-width: 2.5; }
+      .block { fill: #cbd5e1; stroke: #0f172a; stroke-width: 2; rx: 3; }
+    </style>
+  </defs>
+  <!-- Incline Triangle -->
+  <polygon points="60,220 360,220 360,60" class="incline"/>
+  
+  <!-- Angle theta -->
+  <path d="M 120 220 A 60 60 0 0 0 113 194" stroke="#e11d48" stroke-width="2" fill="none"/>
+  <text x="135" y="212" class="label" style="fill:#e11d48;">θ</text>
+  
+  <!-- Height h -->
+  <line x1="375" y1="60" x2="375" y2="220" stroke="#0284c7" stroke-width="1.5"/>
+  <text x="385" y="145" class="label" style="fill:#0284c7;">h</text>
+  
+  <!-- Block on Incline -->
+  <g transform="translate(240, 140) rotate(-28)">
+    <rect x="-25" y="-30" width="50" height="30" class="block"/>
+    <text x="0" y="-10" class="label" text-anchor="middle">m</text>
+  </g>
+</svg>

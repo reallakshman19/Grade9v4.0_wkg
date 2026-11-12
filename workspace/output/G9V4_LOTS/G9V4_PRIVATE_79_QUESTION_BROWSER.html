@@ -1,0 +1,3576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade9 v4.0 — Private 79-Question Inventory & Candidate Audit Browser</title>
+<style>
+:root {
+    --bg: #0b1320;
+    --surface: #152238;
+    --surface-hover: #1c2d4a;
+    --border: #283a58;
+    --border-subtle: #1e2e48;
+    --text: #f1f5f9;
+    --text-muted: #94a3b8;
+    --accent: #38bdf8;
+    --accent-hover: #0284c7;
+    --warn-bg: #291e0a;
+    --warn-border: #855307;
+    --warn-text: #fde047;
+    --danger-bg: #301014;
+    --danger-border: #7f1d1d;
+    --danger-text: #fca5a5;
+    --success-bg: #0b2e1e;
+    --success-border: #166534;
+    --success-text: #86efac;
+    --tag-bg: #1e293b;
+    --tag-text: #cbd5e1;
+    --font-math: "Cambria Math", "STIX Two Math", "Noto Sans Math", "Latin Modern Math", serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    padding-bottom: 60px;
+}
+
+header {
+    background: #080d15;
+    border-bottom: 2px solid var(--accent);
+    padding: 24px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1380px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.title-group h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.badge-private {
+    background: #991b1b;
+    color: #fee2e2;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.title-group p {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+/* Disclosure Banner */
+.disclaimer-banner {
+    max-width: 1380px;
+    margin: 20px auto;
+    padding: 14px 18px;
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    border-left: 6px solid var(--warn-text);
+    border-radius: 8px;
+    color: var(--warn-text);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* KPI Metric Cards */
+.kpi-grid {
+    max-width: 1380px;
+    margin: 0 auto 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 14px;
+}
+
+.kpi-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.kpi-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 6px;
+}
+
+.kpi-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.kpi-subtext {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+/* Filter Bar */
+.filter-bar {
+    max-width: 1380px;
+    margin: 0 auto 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+
+.search-input {
+    flex: 1 1 280px;
+    min-height: 40px;
+    background: #080d15;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 14px;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.search-input:focus {
+    outline: 2px solid var(--accent);
+    border-color: var(--accent);
+}
+
+select.filter-select {
+    min-height: 40px;
+    background: #080d15;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 12px;
+    color: #ffffff;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.view-toggle {
+    display: flex;
+    gap: 4px;
+    background: #080d15;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 3px;
+}
+
+.view-btn {
+    padding: 6px 12px;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.view-btn.active {
+    background: var(--accent);
+    color: #080d15;
+}
+
+.results-count {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-left: auto;
+    font-weight: 500;
+}
+
+/* Cards Container */
+.cards-container {
+    max-width: 1380px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.question-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    transition: border-color 0.15s ease;
+}
+
+.question-card:hover {
+    border-color: var(--accent);
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.card-identifiers {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.ref-pill {
+    background: #1e3a8a;
+    color: #93c5fd;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.id-badge {
+    background: #1e293b;
+    border: 1px solid var(--border);
+    color: #ffffff;
+    font-family: ui-monospace, Menlo, Consolas, monospace;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.task-id {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.card-badges {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.pill {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 999px;
+    text-transform: uppercase;
+}
+
+.pill-lot { background: #0c4a6e; color: #7dd3fc; border: 1px solid #0284c7; }
+.pill-in-scope { background: var(--success-bg); color: var(--success-text); border: 1px solid var(--success-border); }
+.pill-prereq { background: #312e81; color: #c7d2fe; border: 1px solid #4f46e5; }
+.pill-collision { background: #3b0764; color: #f0abfc; border: 1px solid #9333ea; }
+.pill-hold { background: var(--danger-bg); color: var(--danger-text); border: 1px solid var(--danger-border); }
+.pill-figure { background: #291e0a; color: #fde047; border: 1px solid #78350f; }
+.pill-textonly { background: #1e293b; color: #94a3b8; border: 1px solid #334155; }
+
+.card-paper {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.card-stem {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #f8fafc;
+    margin-bottom: 14px;
+    background: #0c1422;
+    padding: 14px 16px;
+    border-radius: 6px;
+    border-left: 3px solid var(--accent);
+    font-family: inherit;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.option-box {
+    background: #0f1828;
+    border: 1px solid var(--border-subtle);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.card-accordion {
+    margin-top: 10px;
+    border-top: 1px solid var(--border-subtle);
+    padding-top: 10px;
+}
+
+.accordion-toggle {
+    background: transparent;
+    border: none;
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.accordion-toggle:hover {
+    color: #ffffff;
+}
+
+.accordion-body {
+    display: none;
+    margin-top: 10px;
+    padding: 12px;
+    background: #080d15;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.accordion-body.open {
+    display: block;
+}
+
+.hold-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.hold-tag {
+    font-family: ui-monospace, Menlo, Consolas, monospace;
+    font-size: 10px;
+    background: #3b1116;
+    border: 1px solid #7f1d1d;
+    color: #fca5a5;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Table View */
+.table-container {
+    max-width: 1380px;
+    margin: 0 auto;
+    overflow-x: auto;
+    display: none;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    text-align: left;
+}
+
+th, td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+th {
+    background: #080d15;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    position: sticky;
+    top: 80px;
+}
+
+tr:hover {
+    background: var(--surface-hover);
+}
+
+footer {
+    max-width: 1380px;
+    margin: 40px auto 0;
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-subtle);
+    padding-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="title-group">
+            <h1>Grade9 v4.0 — WPE 79-Question Inventory Browser <span class="badge-private">Private Workspace</span></h1>
+            <p>Custody: D:\CodeD\grade9v4\workspace\output\G9V4_LOTS\ · Authenticated Local Repository Archive</p>
+        </div>
+        <div style="font-size: 12px; color: var(--text-muted); text-align: right;">
+            Academic Admission: <strong style="color: #fca5a5;">0 / 3 (100% HOLD)</strong><br>
+            Student Release: <strong style="color: #fca5a5;">NOT AUTHORIZED</strong>
+        </div>
+    </div>
+</header>
+
+<main style="padding: 0 16px;">
+    <div class="disclaimer-banner" role="region" aria-label="Governance Disclaimer">
+        <strong>PRIVATE AUDIT INTERFACE · NOT AN APPROVED QUESTION BANK · 0 ADMITTED FOR RELEASE</strong><br>
+        This internal dashboard browses all 79 raw question records collected for the Work, Power &amp; Energy (WPE) pilot curriculum.
+        All authentic stems, option lists, and figure descriptions are held under strict local source custody. Source rights, official answers, diagram redrafts, and independent academic QRT reviews remain in active HOLD status.
+    </div>
+
+    <!-- Core 2 Batches Interactive Readers Quick Launch -->
+    <div style="max-width: 1380px; margin: 0 auto 20px; padding: 14px 18px; background: #0c4a6e; border: 1px solid #0284c7; border-radius: 8px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px;" role="region" aria-label="Core 2 Module Access">
+        <div>
+            <strong style="color: #38bdf8; font-size: 14px;">🎯 Core 2 Interactive Source Questions: Batches 1 &amp; 2 Active (30 Questions Operational)</strong>
+            <p style="color: #bae6fd; font-size: 12px; margin-top: 2px;">Tablet-ready interactive readers with commitment-first attempt control, 3-tier progressive hint scaffolds, worked derivations, and neutral SVG vector diagrams.</p>
+        </div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <a href="CORE2_BATCH_01/rendered/core2_batch01.html" style="display: inline-block; background: #38bdf8; color: #082f49; font-weight: 700; padding: 8px 14px; border-radius: 6px; text-decoration: none; font-size: 13px;">Batch 1 (Q01–Q15) ↗</a>
+            <a href="CORE2_BATCH_02/rendered/core2_batch02.html" style="display: inline-block; background: #0284c7; color: #ffffff; font-weight: 700; padding: 8px 14px; border-radius: 6px; text-decoration: none; font-size: 13px; border: 1px solid #38bdf8;">Batch 2 (Q16–Q30) ↗</a>
+        </div>
+    </div>
+
+
+    <section class="kpi-grid" aria-label="Inventory Metrics">
+        <div class="kpi-card">
+            <span class="kpi-label">Raw Records Collected</span>
+            <div class="kpi-value">79</div>
+            <div class="kpi-subtext">All candidate entries in registry.json</div>
+        </div>
+        <div class="kpi-card">
+            <span class="kpi-label">Provisional Distinct</span>
+            <div class="kpi-value">78</div>
+            <div class="kpi-subtext">1 candidate alias pair identified</div>
+        </div>
+        <div class="kpi-card">
+            <span class="kpi-label">In-Scope WPE Questions</span>
+            <div class="kpi-value">65</div>
+            <div class="kpi-subtext">Core mechanical work &amp; energy physics</div>
+        </div>
+        <div class="kpi-card">
+            <span class="kpi-label">Processed in Lots 02–13</span>
+            <div class="kpi-value">60</div>
+            <div class="kpi-subtext">Batches A, B, C, D (12 lots &times; 5)</div>
+        </div>
+        <div class="kpi-card">
+            <span class="kpi-label">Pending Lot 14 Candidates</span>
+            <div class="kpi-value">5</div>
+            <div class="kpi-subtext">Remaining in-scope candidates to process</div>
+        </div>
+        <div class="kpi-card" style="border-left: 4px solid var(--danger-border);">
+            <span class="kpi-label">Admitted for Student Release</span>
+            <div class="kpi-value" style="color: #fca5a5;">0</div>
+            <div class="kpi-subtext">100% HOLD:ACADEMIC_ADMISSION</div>
+        </div>
+    </section>
+
+    <section class="filter-bar" aria-label="Controls and Filters">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search by ID (e.g. EX-M2, Q01), sitting, stem keywords, or hold code...">
+        
+        <select id="scopeFilter" class="filter-select" aria-label="Filter by Scope">
+            <option value="ALL">All Scopes (79)</option>
+            <option value="IN_SCOPE">In-Scope WPE (65)</option>
+            <option value="PREREQUISITE_BRIDGE">Prerequisite Bridges (8)</option>
+            <option value="COLLISION_OUT_OF_SCOPE">Collisions / Out-of-Scope (5)</option>
+        </select>
+
+        <select id="lotFilter" class="filter-select" aria-label="Filter by Lot">
+            <option value="ALL">All Lots</option>
+            <option value="LOT-02">Lot 02 (Batch A)</option>
+            <option value="LOT-03">Lot 03 (Batch A)</option>
+            <option value="LOT-04">Lot 04 (Batch A)</option>
+            <option value="LOT-05">Lot 05 (Batch B)</option>
+            <option value="LOT-06">Lot 06 (Batch B)</option>
+            <option value="LOT-07">Lot 07 (Batch B)</option>
+            <option value="LOT-08">Lot 08 (Batch C)</option>
+            <option value="LOT-09">Lot 09 (Batch C)</option>
+            <option value="LOT-10">Lot 10 (Batch C)</option>
+            <option value="LOT-11">Lot 11 (Batch D)</option>
+            <option value="LOT-12">Lot 12 (Batch D)</option>
+            <option value="LOT-13">Lot 13 (Batch D)</option>
+            <option value="LOT-14">Lot 14 (Pending)</option>
+            <option value="UNASSIGNED">Unassigned (Prereq/Collision)</option>
+        </select>
+
+        <select id="figureFilter" class="filter-select" aria-label="Filter by Figure Status">
+            <option value="ALL">All Figures (79)</option>
+            <option value="TEXT_ONLY_NO_FIGURE">Text-Only (43)</option>
+            <option value="REQUIRED">Requires Figure Diagram (36)</option>
+        </select>
+
+        <div class="view-toggle" role="group" aria-label="View toggle">
+            <button type="button" id="btnCardView" class="view-btn active">Cards</button>
+            <button type="button" id="btnTableView" class="view-btn">Table</button>
+        </div>
+
+        <span id="resultsCount" class="results-count">Showing 79 of 79 records</span>
+    </section>
+
+    <!-- Cards View -->
+    <div id="cardsView" class="cards-container"></div>
+
+    <!-- Table View -->
+    <div id="tableView" class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Ref</th>
+                    <th>ID / Task</th>
+                    <th>Lot</th>
+                    <th>Scope</th>
+                    <th>Paper / Sitting</th>
+                    <th>Figure</th>
+                    <th>Key Status</th>
+                    <th>Stem Preview</th>
+                    <th>Active Holds</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+    </div>
+
+    <footer>
+        Grade9 v4.0 · Private Source Custody Browser · Strictly Internal Research &amp; Reconciliation · No Academic Approval Inferred
+    </footer>
+</main>
+
+<script id="recordsData" type="application/json">
+[
+  {
+    "index": 1,
+    "ref": "Q01",
+    "id": "EX-M2",
+    "task_id": "Q-ID-01",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2026 (Online) 6th April Evening Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-02",
+    "stem": "The velocity at which 6 kg mass (shown in figure) strikes the ground when it is released from a height of 6 m above the ground is ____ m/s . Assume pulley is massless and string is light and inextensible. (Take g=10m/s^(2) ) [FIG-stem-1]",
+    "options": [
+      "A: 7.74",
+      "B: 7.20",
+      "C: 6.55",
+      "D: 4.50"
+    ],
+    "figure_status": "REQUIRED_UNRESOLVED",
+    "figure_note": "Fixed pulley at the ceiling. Left: 6 kg block 6 m above the ground. Right: 2 kg block resting on the ground. Light string over the pulley.",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "For the 6 kg mass (M) moving down and the 2 kg mass (m) moving up, let the acceleration of system is a and tension in the string is T . [FIG-explanation-1] Using Newton's second law ( F=ma ) of motion for M Mg\u2212T=Ma\u2026(\ud835\udc56) For m , T\u2212mg=ma\u2026(\ud835\udc56\ud835\udc56) Adding the two equations : (\ud835\udc40\u2212\ud835\udc5a)\ud835\udc54=(\ud835\udc40+\ud835\udc5a)\ud835\udc4e \u21d2 \ud835\udc4e=((\ud835\udc40\u2212\ud835\udc5a))/(\ud835\udc40+\ud835\udc5a)\ud835\udc54 Substituting M=6,m=2 , and g=10 : a=(6\u22122)/(6+2)\u00d710=(4)/(8)\u00d710=5m/s^(2) Using the kinematic equation for constant acceleration, starting from rest ( \ud835\udc62=0 ) : v^(2)=u^(2)+2as \u21d2 v=\u221a(2as) Where s is the height h=6m . \ud835\udc63=\u221a(2\u00d75\u00d76) \u21d2 v=\u221a(60)\u22487.745m/s Therefore, the velocity is approximately 7.74m/s . The correct option is (A).",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+      "QUESTION_FIGURE_CUSTODY_UNRESOLVED"
+    ],
+    "stem_sha256": "a5c763f95741876d7e1c31a53aa6049a439d0aa91b0b28512c9aece32b8bb52d"
+  },
+  {
+    "index": 2,
+    "ref": "Q02",
+    "id": "EX-M4",
+    "task_id": "Q-ID-02",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2026 (Online) 5th April Evening Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-02",
+    "stem": "A mass of 1 kg is kept on an inclined plane with 30^(\u2218) inclination with respect to horizontal plane and it is at rest initially. Then the whole assembly is moved up with constant velocity of 4m/s . The work done by the frictional force in time 2 s is ____ J. (Take \ud835\udc54=10m/s^(2) )",
+    "options": [
+      "A: 20",
+      "B: 25",
+      "C: 30",
+      "D: 10"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "When the block is at rest on the incline, the forces acting on it are : [FIG-explanation-1] F_g=mg is weight acting vertically downward. N= Normal force acting perpendicular to the incline. f_s= Static friction acting up the incline, preventing the block from sliding down. Since the block is at rest relative to the incline, the frictional force must balance the component of gravity acting down the slope : f_s=mgsin\u2061\ud835\udf03 The mass of block is m=1kg , acceleration due to gravity is g=10m/s^(2) and \ud835\udf03=30^(\u2218) So, value of static friction is f_s=1\u00d710\u00d7sin\u206130^(\u2218)=10\u00d70.5=5N The friction force is 5 N directed up along the incline. As the entire assembly moves vertically upward with a constant velocity v",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "1c74525b1b16d7448675a4f5fdb9586a47da156a0650291c7fdb9d5c577c89e1"
+  },
+  {
+    "index": 3,
+    "ref": "Q03",
+    "id": "EX-M6",
+    "task_id": "Q-ID-03",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2026 (Online) 23rd January Evening Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-02",
+    "stem": "A bead \ud835\udc43 sliding on a frictionless semi-circular string (\ud835\udc34\ud835\udc36\ud835\udc35) and it is at point \ud835\udc46 at \ud835\udc61=0 and at this instant the horizontal component of its velocity is \ud835\udc63 . Another bead \ud835\udc44 of the same mass as \ud835\udc43 is ejected from point \ud835\udc34 at \ud835\udc61=0 along the horizontal string \ud835\udc34\ud835\udc35 , with the speed \ud835\udc63 , friction between the beads and the respective strings may be neglected in both cases. Let \ud835\udc61_\ud835\udc43 and \ud835\udc61_\ud835\udc44 be the respective times taken by beads \ud835\udc43 and \ud835\udc44 to reach the point \ud835\udc35 , then the relation between \ud835\udc61_\ud835\udc43 and \ud835\udc61_\ud835\udc44 is [FIG-stem-1]",
+    "options": [
+      "A: \ud835\udc61_\ud835\udc43<\ud835\udc61_\ud835\udc44",
+      "B: \ud835\udc61_\ud835\udc43=\ud835\udc61_\ud835\udc44",
+      "C: \ud835\udc61_\ud835\udc43>1.25\ud835\udc61_\ud835\udc44",
+      "D: \ud835\udc61_\ud835\udc43>\ud835\udc61_\ud835\udc44"
+    ],
+    "figure_status": "REQUIRED_UNRESOLVED",
+    "figure_note": "Semicircle ACB hangs below the horizontal string AB (A left, B right, C bottom, centre on AB). Q starts at A moving right along AB. P starts at S on the lower-left arc where the radius makes 45\u00b0 with AB, moving towards C.",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "For bead Q Bead \ud835\udc44 moves along the horizontal straight string \ud835\udc34\ud835\udc35 . The length \ud835\udc34\ud835\udc35 is 2\ud835\udc45 where \ud835\udc45 is the radius of semicircular path. Since the string is frictionless and horizontal, there is no component of gravity acting along the direction of motion. Bead Q maintains a constant horizontal velocity v throughout the motion. \ud835\udc61_\ud835\udc44=(\ud835\udc34\ud835\udc35)/(\ud835\udc63)=2[(\ud835\udc45)/(\ud835\udc63)] For bead P Bead P moves along the semi-circular path ACB under the influence of gravity. And along horizontal the net force is zero, i.e., the acceleration along vertical will be non-zero and the acceleration along horizontal will be zero. At point S , the horizontal component of its velocity is given as v . As bead P moves from S toward",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "INHERITED_SOURCE_WARNING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+      "QUESTION_FIGURE_CUSTODY_UNRESOLVED"
+    ],
+    "stem_sha256": "7d9e6e00a473b5219d71fa3889281e129945bb5c19d9f53407d7ca7fe570e1b6"
+  },
+  {
+    "index": 4,
+    "ref": "Q04",
+    "id": "EX-M7",
+    "task_id": "Q-ID-04",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2026 (Online) 23rd January Morning Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-02",
+    "stem": "An object is projected with kinetic energy \ud835\udc3e from a point \ud835\udc34 at an angle 60^(\u2218) with the horizontal. The ratio of the difference in kinetic energies at points \ud835\udc35 and \ud835\udc36 to that at point \ud835\udc34 (see figure), in the absence of air friction is : [FIG-stem-1]",
+    "options": [
+      "A: 3:4",
+      "B: 1:4",
+      "C: 2:3",
+      "D: 1:2"
+    ],
+    "figure_status": "REQUIRED_UNRESOLVED",
+    "figure_note": "Figure referenced: 1 asset(s) unverified",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "Let the mass of the object be m and the initial speed be u . The angle of projection is \ud835\udf03=60^(\u2218) . At point A The kinetic energy at point \ud835\udc34 is given as \ud835\udc3e . K_A=(1)/(2)mu^(2)=K At Point B (Maximum Height) At the highest point of a projectile's path, the vertical component of velocity becomes zero (\ud835\udc63_\ud835\udc66=0) . The object only possesses the horizontal component of velocity ( v_x ). The horizontal velocity remains constant throughout the motion (assuming no air resistance): v_B=u_x=ucos\u2061\ud835\udf03 \u21d2 v_B=ucos\u206160^(\u2218)=u((1)/(2))=(u)/(2) So, the kinetic energy at B is, K_B=(1)/(2)m(v_B)^(2) \u21d2 K_B=(1)/(2)m((u)/(2))^(2) \u21d2 K_B=(1)/(2)m((u2)/(4)) \u21d2 K_B=(1)/(4)((1)/(2)mu^(2))=(1)/(4)K_A=(K)/(4) \u21d2K_B=(K)/(4) At",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+      "QUESTION_FIGURE_CUSTODY_UNRESOLVED"
+    ],
+    "stem_sha256": "0a7d0a44e9eeb70842e0730dd0f34bbaacf362ddd7f7951b81e47eb3883e5489"
+  },
+  {
+    "index": 5,
+    "ref": "Q05",
+    "id": "EX-M8",
+    "task_id": "Q-ID-05",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2026 (Online) 23rd January Morning Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-02",
+    "stem": "Two blocks with masses 100 g and 200 g are attached to the ends of springs \ud835\udc34 and \ud835\udc35 as shown in figure. The energy stored in \ud835\udc34 is \ud835\udc38 . The energy stored in \ud835\udc35 , when spring constants \ud835\udc58_\ud835\udc34,\ud835\udc58_\ud835\udc35 of \ud835\udc34 and \ud835\udc35 , respectively satisfy the relation 4\ud835\udc58_\ud835\udc34=3\ud835\udc58_\ud835\udc35 , is : [FIG-stem-1]",
+    "options": [
+      "A: 4\ud835\udc38",
+      "B: 2\ud835\udc38",
+      "C: (4)/(3)\ud835\udc38",
+      "D: 3\ud835\udc38"
+    ],
+    "figure_status": "REQUIRED_UNRESOLVED",
+    "figure_note": "Two separate springs hang from the ceiling side by side: spring A holds a 100 g block, spring B holds a 200 g block. Both at rest.",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "When a mass \ud835\udc5a is suspended from a spring of constant \ud835\udc58 , the spring stretches. If the stretch in spring is x,kx=mg\u21d2x=(mg)/(k) The potential energy ( \ud835\udc48 ) stored in the spring is given by : U=(1)/(2)kx^(2) Substituting x=(mg)/(k) : U=(1)/(2)k((mg)/(k))^(2)=((mg)^(2))/(2k) Mass of block A is m_A=100g . The spring constant is k_A . So, the stored energy in spring A is E_A=E . Using the formula : \ud835\udc38=((\ud835\udc5a_\ud835\udc34\ud835\udc54)2)/(2\ud835\udc58_\ud835\udc34) Mass of block B is m_B=200g=2\u00d7100g=2m_A The spring constant of spring B is k_B . It is given that 4k_A=3k_B\u21d2k_B=(4)/(3)k_A . So, the stored energy in spring B is E_B=((m_Bg)2)/(2k_B) Substituting m_B=2m_A and k_B=(4)/(3)k_A : \ud835\udc38_\ud835\udc35=((2\ud835\udc5a_\ud835\udc34\ud835\udc54)2)/(2((4)/(3)\ud835\udc58_\ud835\udc34)) \u21d2E_B=(4\u00d7(3)/(",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+      "QUESTION_FIGURE_CUSTODY_UNRESOLVED"
+    ],
+    "stem_sha256": "f154bd2c140fee999c231282c39119e1efee629fa820c8edcbb97fb9c2bf5245"
+  },
+  {
+    "index": 6,
+    "ref": "Q06",
+    "id": "EX-M11",
+    "task_id": "Q-ID-06",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2026 (Online) 21st January Morning Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-03",
+    "stem": "Potential energy ( \ud835\udc49 ) versus distance ( \ud835\udc65 ) is given by the graph. Rank various regions as per the magnitudes of the force ( \ud835\udc39 ) acting on a particle from high to low. [FIG-stem-1]",
+    "options": [
+      "A: \ud835\udc39_\ud835\udc35\ud835\udc36>\ud835\udc39_\ud835\udc34\ud835\udc35>\ud835\udc39_\ud835\udc37\ud835\udc38>\ud835\udc39_\ud835\udc36\ud835\udc37",
+      "B: \ud835\udc39_\ud835\udc35\ud835\udc36>\ud835\udc39_\ud835\udc36\ud835\udc37>\ud835\udc39_\ud835\udc37\ud835\udc38>\ud835\udc39_\ud835\udc34\ud835\udc35",
+      "C: \ud835\udc39_\ud835\udc36\ud835\udc37>\ud835\udc39_\ud835\udc34\ud835\udc35>\ud835\udc39_\ud835\udc35\ud835\udc36>\ud835\udc39_\ud835\udc37\ud835\udc38",
+      "D: \ud835\udc39_\ud835\udc36\ud835\udc37>\ud835\udc39_\ud835\udc37\ud835\udc38>\ud835\udc39_\ud835\udc34\ud835\udc35>\ud835\udc39_\ud835\udc35\ud835\udc36"
+    ],
+    "figure_status": "REQUIRED_UNRESOLVED",
+    "figure_note": "V-x graph through points A(0,0), B(1,1), C(1.5,4), D(4,4), E(about 5.5, about 3.3); straight segments: AB slope 1, BC slope about 6, CD flat, DE slope about -0.5.",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "The force (F) acting on a particle is defined as the negative gradient of its potential energy (V) with respect to position (x) : F=\u2212(dV)/(dx) Here, (\ud835\udc51\ud835\udc49)/(\ud835\udc51\ud835\udc65) is the slope of the \ud835\udc49 versus \ud835\udc65 graph. So, the magnitude of the force (|\ud835\udc39|) is the absolute value of the slope in each region : |F|=\u2223V\u2212x\u2223 Using the formula of slope =\ud835\udc5a=(\ud835\udc49_2\u2212\ud835\udc49_1)/(\ud835\udc65_2\u2212\ud835\udc65_1) For region AB (from x=0 to x=1 ) : Points are ( 0,0 ) and ( 1,1 ) |F_AB|=\u2223(1\u22120)/(1\u22120)\u2223=1 For region BC (from x=1 to x=2 ) : Points are (1,1) and (2,4) |F_BC|=\u2223(4\u22121)/(2\u22121)\u2223=3 For region CD (from x=2 to x=4 ) : Points are (2,4) and (4,4) |F_CD|=\u2223(4\u22124)/(4\u22122)\u2223=0 For region DE (from x=4 to x=6 ): Points are (4,4) and (6,3) |F_DE|=\u2223(3\u22124)/(6\u22124)\u2223=0",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+      "QUESTION_FIGURE_CUSTODY_UNRESOLVED"
+    ],
+    "stem_sha256": "dc5006b422da3095c1eb3f9d14810987971898073fa6e37fcfd7af34a35fd90f"
+  },
+  {
+    "index": 7,
+    "ref": "Q07",
+    "id": "EX-M14",
+    "task_id": "Q-ID-07",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2025 (Online) 4th April Evening Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-03",
+    "stem": "A block of mass 25 kg is pulled along a horizontal surface by a force at an angle 45^(\u2218) with the horizontal. The friction coefficient between the block and the surface is 0.25 . The block travels at a uniform velocity. The work done by the applied force during a displacement of 5 m of the block is :",
+    "options": [
+      "A: 490 J",
+      "B: 970 J",
+      "C: 735 J",
+      "D: 245 J"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "[FIG-explanation-1] Block travels with uniform velocity So a=0\u21d2Fcos\u206145^(\u2218)= friction (F)/(\u221a2)=\ud835\udf07[mg\u2212(F)/(\u221a2)](F)/(\u221a2)=0.25[25\u00d79.8\u2212(F)/(\u221a2)]\u21d21.25(F)/(\u221a2)=61.25F=(61.25\u00d7\u221a(2))/(1.25)=49\u221a(2)W_ext=FScos\u206145^(\u2218)=49\u221a(2)\u00d75\u00d7(1)/(\u221a2)=245J",
+    "holds": [
+      "G_VALUE_AND_PULL_ORIENTATION_REQUIRE_ORIGINAL_CHECK",
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "d42c49f2f74aee3cc526fca32bc34cbea5f9adc8817c591513fb91702feeca3d"
+  },
+  {
+    "index": 8,
+    "ref": "Q08",
+    "id": "EX-M16",
+    "task_id": "Q-ID-08",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2025 (Online) 29th January Evening Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-03",
+    "stem": "A sand dropper drops sand of mass m(t) on a conveyer belt at a rate proportional to the square root of speed (v) of the belt, i.e., (\ud835\udc51\ud835\udc5a)/(\ud835\udc51\ud835\udc61)\u221d\u221a(\ud835\udc63) . If P is the power delivered to run the belt at constant speed then which of the following relationship is true?",
+    "options": [
+      "A: P \u221d\u221a(\ud835\udc63)",
+      "B: P \u221d\ud835\udc63",
+      "C: \ud835\udc43^(2)\u221d\ud835\udc63^(3)",
+      "D: \ud835\udc43^(2)\u221d\ud835\udc63^(5)"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "Given, (\ud835\udc51\ud835\udc5a)/(\ud835\udc51\ud835\udc61)\u221d\u221a(\ud835\udc63) So, (\ud835\udc51\ud835\udc5a)/(\ud835\udc51\ud835\udc61)=\ud835\udc58\u221a(\ud835\udc63) .... (i) where, k = constant We know, Power = \ud835\udc43=\ud835\udc39\ud835\udc49 \u21d2\ud835\udc43=(\ud835\udc51\ud835\udc5d)/(\ud835\udc51\ud835\udc61)\ud835\udc63 (As \ud835\udc39=(\ud835\udc51\ud835\udc5d)/(\ud835\udc51\ud835\udc61) where, p = linear momentum) \u21d2\ud835\udc43=(\ud835\udc51)/(\ud835\udc51\ud835\udc61)(\ud835\udc5a\ud835\udc63)\ud835\udc63 \u21d2\ud835\udc43=\ud835\udc63(\ud835\udc51\ud835\udc5a)/(\ud835\udc51\ud835\udc61).\ud835\udc63 (As speed is constant i.e. v = constant) \u21d2\ud835\udc43=\ud835\udc63^(2)(\ud835\udc58\u221a(\ud835\udc63)) [From (i)] \u21d2\ud835\udc43=\ud835\udc58\ud835\udc63^(5/2) by squaring both sides, \u21d2\ud835\udc43^(2)=\ud835\udc58^(2)\ud835\udc63^(5) \u21d2\ud835\udc43^(2)\u221d\ud835\udc63^(5) (As k^(2) = constant) Hence, option 4 is correct.",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "MOMENTUM_FLUX_PREREQUISITE_UNQUALIFIED",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "d2abc9e9b5d095977abadd84bae36f1a5f40a58e4341dd4e8593efa216f7c0a2"
+  },
+  {
+    "index": 9,
+    "ref": "Q09",
+    "id": "EX-M18",
+    "task_id": "Q-ID-09",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2025 (Online) 28th January Morning Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-03",
+    "stem": "A bead of mass ' \ud835\udc5a ' slides without friction on the wall of a vertical circular hoop of radius ' \ud835\udc45 ' as shown in figure. The bead moves under the combined action of gravity and a massless spring (k) attached to the bottom of the hoop. The equilibrium length of the spring is ' \ud835\udc45 '. If the bead is released from top of the hoop with (negligible) zero initial speed, velocity of bead, when the length of spring becomes ' \ud835\udc45 ', would be (spring constant is ' \ud835\udc58 ', \ud835\udc54 is acceleration due to gravity) [FIG-stem-1]",
+    "options": [
+      "A: \u221a(2\ud835\udc45\ud835\udc54+(kR2)/(m))",
+      "B: \u221a(3Rg+(kR2)/(m))",
+      "C: \u221a(2Rg+(4kR^(2))/(m))",
+      "D: 2\u221a(gR+(kR2)/(m))"
+    ],
+    "figure_status": "REQUIRED_UNRESOLVED",
+    "figure_note": "Vertical hoop, radius R, standing on the ground. Spring attached to the lowest point of the hoop; its other end holds the bead. Bead released at the top, so the spring there has length 2R (natural length R).",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "[FIG-explanation-1] When mass is at position A, Elongation of spring, \ud835\udc65_1=2\ud835\udc45\u2212\ud835\udc45=\ud835\udc45 (As equilibrium length of spring is R) \u210e_1=2\ud835\udc45 \ud835\udc63_1=0 (As the bead is released from zero initial speed) When mass is at position B, \ud835\udc65_2=\ud835\udc45\u2212\ud835\udc45=0 \u210e_2=\ud835\udc45/2,\ud835\udc63_2=\ud835\udc63 So using energy conservation, \ud835\udc38_\ud835\udc56=\ud835\udc38_\ud835\udc53 \u21d2(1)/(2)\ud835\udc58\ud835\udc65[2\u21921]+(1)/(2)\ud835\udc5a\ud835\udc63[2\u21921]+\ud835\udc5a\ud835\udc54\u210e_1=(1)/(2)\ud835\udc58\ud835\udc65[2\u21922]+(1)/(2)\ud835\udc5a\ud835\udc63[2\u21922]+\ud835\udc5a\ud835\udc54\u210e_2 \u21d2(1)/(2)\ud835\udc58\ud835\udc45^(2)+\ud835\udc5a\ud835\udc54(2\ud835\udc45)=(1)/(2)\ud835\udc58(\ud835\udc5c)+(1)/(2)\ud835\udc5a\ud835\udc63^(2)+\ud835\udc5a\ud835\udc54(\ud835\udc45)/(2) \u21d2(1)/(2)\ud835\udc58\ud835\udc45^(2)+2\ud835\udc5a\ud835\udc54\ud835\udc45\u2212(\ud835\udc5a\ud835\udc54\ud835\udc45)/(2)=(1)/(2)\ud835\udc5a\ud835\udc63^(2) \u21d2(1)/(2)\ud835\udc5a\ud835\udc63^(2)=(1)/(2)\ud835\udc58\ud835\udc45^(2)+(3\ud835\udc5a\ud835\udc54\ud835\udc45)/(2) \u21d2\ud835\udc63^(2)=(\ud835\udc58\ud835\udc45^(2))/(\ud835\udc5a)+3\ud835\udc54\ud835\udc45 \u21d2\ud835\udc63=\u221a((\ud835\udc58\ud835\udc45^(2))/(\ud835\udc5a)+3\ud835\udc54\ud835\udc45)",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+      "QUESTION_FIGURE_CUSTODY_UNRESOLVED"
+    ],
+    "stem_sha256": "42336fcec4a83179e7f595fe5bdc33dddc30953940189b66288cb39696ceaad8"
+  },
+  {
+    "index": 10,
+    "ref": "Q10",
+    "id": "EX-M24",
+    "task_id": "Q-ID-10",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2024 (Online) 8th April Evening Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-03",
+    "stem": "[FIG-stem-1] A block is simply released from the top of an inclined plane as shown in the figure above. The maximum compression in the spring when the block hits the spring is :",
+    "options": [
+      "A: \u221a(6)m",
+      "B: \u221a(5)m",
+      "C: 1m",
+      "D: 2m"
+    ],
+    "figure_status": "REQUIRED_UNRESOLVED",
+    "figure_note": "Smooth incline (mu = 0), 30 degrees, 10 m long; 5 kg block released at the top. Then a 2 m horizontal stretch; a spring k = 100 N/m against a wall; mu = 0.5 marked under the spring region. The publisher's working applies friction only while the spring is compressed.",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "W_g+W_Fr+W_s=\u0394KE5\u00d710\u00d75\u22120.5\u00d75\u00d710\u00d7x\u2212(1)/(2)Kx^(2)=0\u22120250=25x+50x^(2)2x^(2)+x\u221210=0x=2",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+      "QUESTION_FIGURE_CUSTODY_UNRESOLVED"
+    ],
+    "stem_sha256": "9d2c7cb9df50430ea2cb67603844ba5309901489311286518341a967bdd80dab"
+  },
+  {
+    "index": 11,
+    "ref": "Q11",
+    "id": "EX-M29",
+    "task_id": "Q-ID-11",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2024 (Online) 5th April Evening Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-04",
+    "stem": "A body is moving unidirectionally under the influence of a constant power source. Its displacement in time t is proportional to :",
+    "options": [
+      "A: t2/3",
+      "B: t3/2",
+      "C: t",
+      "D: t2"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "When a body moves under the influence of a constant power, the relationship between displacement and time can be established through the concept of power. Power (P) is defined as the rate at which work is done, and it can also be expressed in terms of force (F) and velocity (v) as \ud835\udc43=\ud835\udc39\u22c5\ud835\udc63 . For a constant power P and assuming the force acts in the direction of the velocity, we can analyze how displacement (s) changes with time (t). Since force can also be written as \ud835\udc39=(\ud835\udc51(\ud835\udc5a\ud835\udc63))/(\ud835\udc51\ud835\udc61) for a constant mass m, this simplifies to \ud835\udc39=\ud835\udc5a(\ud835\udc51\ud835\udc63)/(\ud835\udc51\ud835\udc61) , because mass doesn't change with time for most cases. Integrating force over a distance gives work (W), and power is the rate of doing work, thu",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "80c4f7f49db75f9ae66f54d1ed7808074d33abbaa7a744a4c0e3adf1622e1501"
+  },
+  {
+    "index": 12,
+    "ref": "Q12",
+    "id": "EX-M36",
+    "task_id": "Q-ID-12",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2024 (Online) 29th January Evening Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-04",
+    "stem": "A bob of mass ' \ud835\udc5a ' is suspended by a light string of length ' \ud835\udc3f '. It is imparted a minimum horizontal velocity at the lowest point \ud835\udc34 such that it just completes half circle reaching the top most position B. The ratio of kinetic energies ((\ud835\udc3e.\ud835\udc38)_\ud835\udc34)/((\ud835\udc3e.\ud835\udc38)_\ud835\udc35) is : [FIG-stem-1]",
+    "options": [
+      "A: 5 : 1",
+      "B: 3 : 2",
+      "C: 1 : 5",
+      "D: 2 : 5"
+    ],
+    "figure_status": "REQUIRED_UNRESOLVED",
+    "figure_note": "Vertical circle of radius L, A at the bottom (speed V_L horizontal), B at the top (speed V_H), C at the side; tension and mg marked at A and B.",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "Apply energy conservation between A & B (1)/(2)mV[2\u2192L]=(1)/(2)mV[2\u2192H]+mg(2L)\u2235V_L=\u221a(5gL) So, V_H=\u221a(gL) ((K.E)_A)/((K.E)_B)=((1)/(2)m(\u221a(5gL))^(2))/((1)/(2)m(\u221a(gL))^(2))=(5)/(1)",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+      "QUESTION_FIGURE_CUSTODY_UNRESOLVED"
+    ],
+    "stem_sha256": "5cd94ff098ab3cb5375207898d793623c5465f00ad2c4990a19f7ebaabc8fb1d"
+  },
+  {
+    "index": 13,
+    "ref": "Q13",
+    "id": "EX-M39",
+    "task_id": "Q-ID-13",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2024 (Online) 27th January Evening Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "PREREQUISITE_BRIDGE",
+    "scope_note": "Vertical circular motion / swing acceleration (circular dynamics bridge)",
+    "lot": "UNASSIGNED",
+    "stem": "A ball suspended by a thread swings in a vertical plane so that its magnitude of acceleration in the extreme position and lowest position are equal. The angle (\ud835\udf03) of thread deflection in the extreme position will be :",
+    "options": [
+      "A: tan^(\u22121)\u2061((1)/(2))",
+      "B: 2tan^(\u22121)\u2061((1)/(2))",
+      "C: 2tan^(\u22121)\u2061((1)/(\u221a5))",
+      "D: tan^(\u22121)\u2061(\u221a(2))"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "PARTIAL",
+    "key_note": "Inherited legacy claim (3 blind solves + coaching agree option B); NTA Session 1 official key mapping unverified; legacy dropped-question 533543501 risk noted as unconfirmed preliminary claim pending fresh primary-source investigation. Remains on HOLD.",
+    "solution": "[FIG-explanation-1] Loss in kinetic energy = Gain in potential energy \u21d2(1)/(2)mv^(2)=mg\u2113(1\u2212cos\u2061\ud835\udf03)\u21d2(v2)/(\u2113)=2g(1\u2212cos\u2061\ud835\udf03) Acceleration at lowest point =(v2)/(\u2113) Acceleration at extreme point =\ud835\udc54sin\u2061\ud835\udf03 (v2)/(\u2113)=gsin\u2061\ud835\udf03\u2234sin\u2061\ud835\udf03=2(1\u2212cos\u2061\ud835\udf03)\u21d2tan\u2061(\ud835\udf03)/(2)=(1)/(2)\u21d2\ud835\udf03=2tan^(\u22121)\u2061((1)/(2))",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "faa127230eb7c0770a59cbf0772d47143c04bc52f517f8211a6d774f14a74e49"
+  },
+  {
+    "index": 14,
+    "ref": "Q14",
+    "id": "EX-M44",
+    "task_id": "Q-ID-14",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2023 (Online) 8th April Evening Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "OUT_OF_SCOPE",
+    "scope_note": "Collision on horizontal plane (collisions out of WPE adapter scope)",
+    "lot": "UNASSIGNED",
+    "stem": "A bullet of mass 0.1kg moving horizontally with speed 400ms^(\u22121) hits a wooden block of mass 3.9kg kept on a horizontal rough surface. The bullet gets embedded into the block and moves 20m before coming to rest. The coefficient of friction between the block and the surface is __________. (Given \ud835\udc54=10m/s^(2) )",
+    "options": [
+      "A: 0.65",
+      "B: 0.25",
+      "C: 0.50",
+      "D: 0.90"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "First, we will use conservation of momentum to find the velocity of the bullet-block system just after the bullet gets embedded into the block. The initial momentum of the system is given by the momentum of the bullet (as the block is initially at rest), and the final momentum of the system is the combined momentum of the bullet and the block. Setting initial momentum equal to final momentum: \ud835\udc5a_\u22c5\ud835\udc63_=(\ud835\udc5a_+\ud835\udc5a_)\u22c5\ud835\udc63_ Solving for ( \ud835\udc63_ ): \ud835\udc63_=(\ud835\udc5a_\u22c5\ud835\udc63_)/(\ud835\udc5a_+\ud835\udc5a_) Substituting the given values: \ud835\udc63_=(0.1\u22c5400)/(0.1+3.9)=10 Next, we know the block comes to rest after moving 20 m due to friction. The work done by the friction force is equal to the initial kinetic energy of the block (since it comes to",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "f250fca9992d3a2291cce92d1e0c75d12f934946f95d3946b1b180198ad8186c"
+  },
+  {
+    "index": 15,
+    "ref": "Q15",
+    "id": "EX-M47",
+    "task_id": "Q-ID-15",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2022 (Online) 29th July Morning Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-04",
+    "stem": "A ball is projected with kinetic energy E, at an angle of 60^(\u2218) to the horizontal. The kinetic energy of this ball at the highest point of its flight will become :",
+    "options": [
+      "A: Zero",
+      "B: (\ud835\udc38)/(2)",
+      "C: (\ud835\udc38)/(4)",
+      "D: E"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "\ud835\udc3e.\ud835\udc38.=\ud835\udc38=(1)/(2)\ud835\udc5a\ud835\udc63^(2) at highest point \ud835\udc3e.\ud835\udc38^(\u2032)=(1)/(2)\ud835\udc5a\ud835\udc63^(2)cos^(2)\ud835\udf03 =(1)/(2)\ud835\udc5a\ud835\udc63^(2)((1)/(4)) =(\ud835\udc38)/(4)",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "99520cf83728c938297ec6a067aa32f4635bf8a7f2bd20d581941f0d6b41753d"
+  },
+  {
+    "index": 16,
+    "ref": "Q16",
+    "id": "EX-M49",
+    "task_id": "Q-ID-16",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2022 (Online) 27th July Morning Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-04",
+    "stem": "Sand is being dropped from a stationary dropper at a rate of 0.5kgs^(\u22121) on a conveyor belt moving with a velocity of 5ms^(\u22121) . The power needed to keep the belt moving with the same velocity will be :",
+    "options": [
+      "A: 1.25 W",
+      "B: 2.5 W",
+      "C: 6.25 W",
+      "D: 12.5 W"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "(\ud835\udc51\ud835\udc5a)/(\ud835\udc51\ud835\udc61)=0.5 kg/s \ud835\udc63=5 m/s \ud835\udc39=(\ud835\udc63\ud835\udc51\ud835\udc5a)/(\ud835\udc51\ud835\udc61)=2.5 kg m/s2 \ud835\udc43=\ud835\udc39\u2013.\ud835\udc63\u2013=(2.5)(5) W =12.5 W",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "0e1ddae0acecd3dd63d5006fdce6616051e886fba96b35f836c70330d1b7f0de"
+  },
+  {
+    "index": 17,
+    "ref": "Q17",
+    "id": "EX-M50",
+    "task_id": "Q-ID-17",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2022 (Online) 26th July Morning Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-04",
+    "stem": "As per the given figure, two blocks each of mass 250g are connected to a spring of spring constant 2Nm^(\u22121) . If both are given velocity \ud835\udc63 in opposite directions, then maximum elongation of the spring is : [FIG-stem-1]",
+    "options": [
+      "A: (\ud835\udc63)/(2\u221a(2))",
+      "B: (\ud835\udc63)/(2)",
+      "C: (\ud835\udc63)/(4)",
+      "D: (\ud835\udc63)/(\u221a2)"
+    ],
+    "figure_status": "REQUIRED_UNRESOLVED",
+    "figure_note": "Two 250 g blocks joined by a horizontal spring; both given speed v in opposite directions (away from each other).",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "\u2235 Loss in KE = Gain in spring energy \u21d2(1)/(2)\ud835\udc5a\ud835\udc63^(2)\u00d72=(1)/(2)\ud835\udc58\ud835\udc65[2\u2192\ud835\udc5a] \u21d22\u00d7(1)/(4)\u00d7\ud835\udc63^(2)=2\u00d7\ud835\udc65[2\u2192\ud835\udc5a] \u21d2\ud835\udc65_\ud835\udc5a=\u221a((\ud835\udc63^(2))/(4))=(\ud835\udc63)/(2)",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+      "QUESTION_FIGURE_CUSTODY_UNRESOLVED"
+    ],
+    "stem_sha256": "eb9b4c3b60984e3eba754ab63859475dfa45b5cc75f7824e40dd3a845bd04501"
+  },
+  {
+    "index": 18,
+    "ref": "Q18",
+    "id": "EX-M56",
+    "task_id": "Q-ID-18",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2022 (Online) 26th June Evening Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-05",
+    "stem": "Arrange the four graphs in descending order of total work done; where W1, W2, W3 and W4 are the work done corresponding to figure a, b, c and d respectively. [FIG-stem-1] [FIG-stem-2] [FIG-stem-3] [FIG-stem-4]",
+    "options": [
+      "A: W3 > W2 > W1 > W4",
+      "B: W3 > W2 > W4 > W1",
+      "C: W2 > W3 > W4 > W1",
+      "D: W2 > W3 > W1 > W4"
+    ],
+    "figure_status": "REQUIRED_UNRESOLVED",
+    "figure_note": "Four F-x graphs. (a) straight line from -F at x=0 to +F at x1, crossing zero at x0. (b) same rise to +F at x1, then flat at +F to x2. (c) same as (b) with extra positive area beyond x2. (d) negative net area. Publisher: Wa = 0, Wb > 0, Wc > Wb, Wd < 0.",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "Wa = 0, Wb = +ve, Wc = +ve > Wb, Wd = \u2212 ve \u21d2 Wc > Wb > Wa > Wd \u21d2 W3 > W2 > W1 > W4",
+    "holds": [
+      "BAND_AND_OPERATION_CONDITIONAL_ON_MISSING_GRAPHS",
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+      "QUESTION_FIGURE_CUSTODY_UNRESOLVED"
+    ],
+    "stem_sha256": "57330c99d1445aaf20f549a6e6eeec59f9c0e8d7a3bca2ae24ae5a686275fe17"
+  },
+  {
+    "index": 19,
+    "ref": "Q19",
+    "id": "EX-M60",
+    "task_id": "Q-ID-19",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2021 (Online) 31st August Evening Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "OUT_OF_SCOPE",
+    "scope_note": "Elastic collision between two spheres (collision dynamics out of scope)",
+    "lot": "UNASSIGNED",
+    "stem": "A block moving horizontally on a smooth surface with a speed of 40 m/s splits into two parts with masses in the ratio of 1 : 2. If the smaller part moves at 60 m/s in the same direction, then the fractional change in kinetic energy is :-",
+    "options": [
+      "A: (1)/(3)",
+      "B: (2)/(3)",
+      "C: (1)/(8)",
+      "D: (1)/(4)"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "[FIG-explanation-1] 3MV0 = 2MV2 + MV13V0 = 2V2 + V1120 = 2V2 + 60 \u21d2 V2 = 30 m/s (\u0394\ud835\udc3e.\ud835\udc38.)/(\ud835\udc3e.\ud835\udc38.)=((1)/(2)\ud835\udc40\ud835\udc49[2\u21921]+(1)/(2)2\ud835\udc40\ud835\udc49[2\u21922]\u2212(1)/(2)3\ud835\udc40\ud835\udc49[2\u21920])/((1)/(2)3\ud835\udc40\ud835\udc49[2\u21920]) =(\ud835\udc49[2\u21921]+2\ud835\udc49[2\u21922]\u22123\ud835\udc49[2\u21920])/(3\ud835\udc49[2\u21920]) =(3600+1800\u22124800)/(4800)=(1)/(8)",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "d87626d9d3575e2d30a8d54b0e57149cb56dae9b556b9ad4f9cb0753ca8df68c"
+  },
+  {
+    "index": 20,
+    "ref": "Q20",
+    "id": "EX-M61",
+    "task_id": "Q-ID-20",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2021 (Online) 27th July Evening Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-05",
+    "stem": "Given below is the plot of a potential energy function U(x) for a system, in which a particle is in one dimensional motion, while a conservative force F(x) acts on it. Suppose that Emech = 8 J, the incorrect statement for this system is : [FIG-stem-1] [ where K.E. = kinetic energy ]",
+    "options": [
+      "A: at x > x4 K.E. is constant throughout the region.",
+      "B: at x < x1, K.E. is smallest and the particle is moving at the slowest speed.",
+      "C: at x = x2, K.E. is greatest and the particle is moving at the fastest speed.",
+      "D: at x = x3, K.E. = 4 J."
+    ],
+    "figure_status": "REQUIRED_UNRESOLVED",
+    "figure_note": "U(x) graph: U = 8 J for x < x1; falls to 0 at x2; rises to 4 J at x3; dips to about 2 J; rises to 6 J at x4 and stays 6 J beyond. Dashed line E_mech = 8 J.",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "Emech. = 8J(A) at x > x4U = constant = 6JK = Emech. \u2212 U = 2J = constant(B) at x < x1U = constant = 8JK = Emech \u2212 U = 8 \u2212 8 = 0 JParticle is at rest.(C) At x = x2,U = 0 \u21d2 Emech. = K = 8 JKE is greatest, and particle is moving at fastest speed.(D) At x = x3U = 4JU + K = 8JK = 4J",
+    "holds": [
+      "BAND_AND_OPERATION_CONDITIONAL_ON_MISSING_GRAPH",
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+      "QUESTION_FIGURE_CUSTODY_UNRESOLVED"
+    ],
+    "stem_sha256": "bf7a3008c27d92309c6bd2e2e6c5881bd66ad6cef10030dd1177d2b7322e098a"
+  },
+  {
+    "index": 21,
+    "ref": "Q21",
+    "id": "EX-M62",
+    "task_id": "Q-ID-21",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2021 (Online) 27th July Evening Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-05",
+    "stem": "An automobile of mass 'm' accelerates starting from origin and initially at rest, while the engine supplies constant power P. The position is given as a function of time by :",
+    "options": [
+      "A: ((9\ud835\udc43)/(8\ud835\udc5a))^((1)/(2))\ud835\udc61^((3)/(2))",
+      "B: ((8\ud835\udc43)/(9\ud835\udc5a))^((1)/(2))\ud835\udc61^((2)/(3))",
+      "C: ((9\ud835\udc5a)/(8\ud835\udc43))^((1)/(2))\ud835\udc61^((3)/(2))",
+      "D: ((8\ud835\udc43)/(9\ud835\udc5a))^((1)/(2))\ud835\udc61^((3)/(2))"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "P = const. \ud835\udc43=\ud835\udc39\ud835\udc63=(\ud835\udc5a\ud835\udc63^(2)\ud835\udc51\ud835\udc63)/(\ud835\udc51\ud835\udc65) \u222b[0\u2192\ud835\udc65](\ud835\udc43)/(\ud835\udc5a)\ud835\udc51\ud835\udc65=\u222b[0\u2192\ud835\udc63]\ud835\udc63^(2)\ud835\udc51\ud835\udc63 (\ud835\udc43\ud835\udc65)/(\ud835\udc5a)=(\ud835\udc63^(3))/(3) ((3\ud835\udc43\ud835\udc65)/(\ud835\udc5a))^(1/3)=\ud835\udc63=(\ud835\udc51\ud835\udc65)/(\ud835\udc51\ud835\udc61) ((3\ud835\udc43)/(\ud835\udc5a))^(1/3)\u222b[0\u2192\ud835\udc61]\ud835\udc51\ud835\udc61=\u222b[0\u2192\ud835\udc65]\ud835\udc65^(\u22121/3)\ud835\udc51\ud835\udc65 \u21d2\ud835\udc65=((8\ud835\udc43)/(9\ud835\udc5a))^(1/2)\ud835\udc61^(3/2)",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "5786412e1a4c846fe36db232cd19d5c0d5007a5ad2d5a3fe72350fb01704706a"
+  },
+  {
+    "index": 22,
+    "ref": "Q22",
+    "id": "EX-M64",
+    "task_id": "Q-ID-22",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2021 (Online) 20th July Evening Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-05",
+    "stem": "A body at rest is moved along a horizontal straight line by a machine delivering a constant power. The distance moved by the body in time 't' is proportional to :",
+    "options": [
+      "A: \ud835\udc61^((3)/(2))",
+      "B: \ud835\udc61^((1)/(2))",
+      "C: \ud835\udc61^((1)/(4))",
+      "D: \ud835\udc61^((3)/(4))"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "P = constant (1)/(2) mv2 = Pt \u21d2 v \u221d \u221a(\ud835\udc61) (\ud835\udc51\ud835\udc65)/(\ud835\udc51\ud835\udc61)=\ud835\udc36\u221a(\ud835\udc61) [C = constant]by integration. \ud835\udc65=\ud835\udc36(\ud835\udc61^((1)/(2)+1))/((1)/(2)+1) \ud835\udc65\u221d\ud835\udc61^(3/2)",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "780d5949eaaafe9e699eff01f856c9fd7e5aaf2eb1589fbf4ce4713220907e1c"
+  },
+  {
+    "index": 23,
+    "ref": "Q23",
+    "id": "EX-M65",
+    "task_id": "Q-ID-23",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2021 (Online) 18th March Morning Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-05",
+    "stem": "A constant power delivering machine has towed a box, which was initially at rest, along a horizontal straight line. The distance moved by the box in time 't' is proportional to :-",
+    "options": [
+      "A: t2/3",
+      "B: t3/2",
+      "C: t",
+      "D: t1/2"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "\ud835\udc43=\ud835\udc39.\ud835\udc63=\ud835\udc5a\ud835\udc4e\ud835\udc63 \ud835\udc43=(\ud835\udc5a\ud835\udc63\ud835\udc51\ud835\udc63)/(\ud835\udc51\ud835\udc61) \u222b[0\u2192\ud835\udc61]\ud835\udc43\ud835\udc51\ud835\udc61=\ud835\udc5a\u222b[0\u2192\ud835\udc63]\ud835\udc63\ud835\udc51\ud835\udc63 \ud835\udc43\ud835\udc61=(\ud835\udc5a\ud835\udc63^(2))/(2) \ud835\udc63=\u221a((2\ud835\udc43\ud835\udc61)/(\ud835\udc5a)) (\ud835\udc51\ud835\udc65)/(\ud835\udc51\ud835\udc61)=\u221a((2\ud835\udc43\ud835\udc61)/(\ud835\udc5a)) \u222b\ud835\udc51\ud835\udc65=\u222b\u221a((2\ud835\udc43\ud835\udc61)/(\ud835\udc5a))\ud835\udc51\ud835\udc61 \ud835\udc65\u221d\ud835\udc61^(3/2)",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "7b6b64cb8888f1591598b0ba9bbb9fc432e4fe2071040755328667c3437330a8"
+  },
+  {
+    "index": 24,
+    "ref": "Q24",
+    "id": "EX-M68",
+    "task_id": "Q-ID-24",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2020 (Online) 4th September Evening Slot",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-06",
+    "stem": "A person pushes a box on a rough horizontal platform surface. He applies a force of 200 N over a distance of 15 m. Thereafter, he gets progressively tired and his applied force reduces linearly with distance to 100 N. The total distance through which the box has been moved is 30 m. What is the work done by the person during the total movement of the box?",
+    "options": [
+      "A: 5690 J",
+      "B: 5250 J",
+      "C: 2780 J",
+      "D: 3280 J"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "[FIG-explanation-1] Work done = area of ABCEO = area of trapezium ABCD + area of rectangle ODCE = (1)/(2) \u00d7 45 \u00d7 100 + 100 \u00d7 30 = 5250J",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "4dcf7e7341d2ffd1554a7b9ca5a03d26271172b9ea4c8c0ab2b3efc57c1b96da"
+  },
+  {
+    "index": 25,
+    "ref": "Q25",
+    "id": "EX-M69",
+    "task_id": "Q-ID-25",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2020 (Online) 3rd September Evening Slot",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-06",
+    "stem": "A particle is moving unidirectionally on a horizontal plane under the action of a constant power supplying energy source. The displacement (s) - time (t) graph that describes the motion of the particle is (graphs are drawn schematically and are not to scale) :",
+    "options": [
+      "A: [FIG-options-1]",
+      "B: [FIG-options-2]",
+      "C: [FIG-options-3]",
+      "D: [FIG-options-4]"
+    ],
+    "figure_status": "REQUIRED_UNRESOLVED",
+    "figure_note": "Options are four s-t sketches: (A) horizontal line; (B) curve from the origin bending upwards (concave up); (C) curve from the origin flattening (concave down); (D) straight line from the origin.",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "\ud835\udc43=\ud835\udc39\ud835\udc63 \ud835\udc43=\ud835\udc5a(\ud835\udc51\ud835\udc63)/(\ud835\udc51\ud835\udc61)\ud835\udc63 \u21d2 \ud835\udc63\ud835\udc51\ud835\udc63=(\ud835\udc43)/(\ud835\udc5a)\ud835\udc51\ud835\udc61 Integrating both sides, we get \ud835\udc49^(2)=\ud835\udc58^(\u2032)\ud835\udc61 \u21d2 V = k\" \u221a(\ud835\udc61) \u21d2 (\ud835\udc51\ud835\udc60)/(\ud835\udc51\ud835\udc61) = k\" \u221a(\ud835\udc61) \u21d2 \u222b\ud835\udc51\ud835\udc60=\u222b\ud835\udc58^(\u2032\u2032)\u221a(\ud835\udc61)\ud835\udc51\ud835\udc61 \u21d2 s \u221d t3/2",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "INITIAL_CONDITION_REQUIRES_REVIEW",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+      "OPTION_IMAGES_NOT_BOUND",
+      "QUESTION_FIGURE_CUSTODY_UNRESOLVED"
+    ],
+    "stem_sha256": "9761db6873712de6b069cc95d817491c45f5018250ef8deac3885ab0c7525add"
+  },
+  {
+    "index": 26,
+    "ref": "Q26",
+    "id": "EX-M73",
+    "task_id": "Q-ID-26",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2019 (Online) 9th April Morning Slot",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-06",
+    "stem": "A uniform cable of mass 'M' and length 'L' is placed on a horizontal surface such that its (1/n)th part is hanging below the edge of the surface. To lift the hanging part of the cable upto the surface, the work done should be :",
+    "options": [
+      "A: (2\ud835\udc40\ud835\udc54\ud835\udc3f)/(\ud835\udc5b^(2))",
+      "B: nMgL",
+      "C: (\ud835\udc40\ud835\udc54\ud835\udc3f)/(2\ud835\udc5b^(2))",
+      "D: (\ud835\udc40\ud835\udc54\ud835\udc3f)/(\ud835\udc5b^(2))"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "To solve this problem, we need to determine the work done to lift the hanging part of the cable up to the surface. The work done lifting a small element of the cable will be the weight of the element times the distance it has to be lifted. Let's take a small section of the cable at a depth \ud835\udc65 below the surface. This section has a length of \ud835\udc51\ud835\udc65 , so its mass is (\ud835\udc40/\ud835\udc3f)\ud835\udc51\ud835\udc65 where (\ud835\udc40/\ud835\udc3f) is the linear mass density of the cable. The work \ud835\udc51\ud835\udc4a done to lift this small section up to the surface is the weight of the section times the distance it has to be lifted : \ud835\udc51\ud835\udc4a=(\ud835\udc40/\ud835\udc3f)\ud835\udc54\ud835\udc51\ud835\udc65\u00d7\ud835\udc65 . Integrating this expression from 0 to L/n (the length of the hanging part of the cable) gives the total work do",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "f2bd1e9620ea2ee16dea9acb4f06f5f5098f93a46960dfdda5a8a62f670a88bf"
+  },
+  {
+    "index": 27,
+    "ref": "Q27",
+    "id": "EX-M74",
+    "task_id": "Q-ID-27",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2019 (Online) 8th April Morning Slot",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-06",
+    "stem": "A particle moves in one dimension from rest under the influence of a force that varies with the distance travelled by the particle as shown in the figure. The kinetic energy of the particle after it has travelled 3m is : [FIG-stem-1]",
+    "options": [
+      "A: 6.5 J",
+      "B: 2.5 J",
+      "C: 5 J",
+      "D: 4 J"
+    ],
+    "figure_status": "REQUIRED_UNRESOLVED",
+    "figure_note": "Figure referenced: 1 asset(s) unverified",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "According to work energy theorem. Work done by force on the particle = Change in KE Work done = Area under F-x graph = \u222b\ud835\udc39.\ud835\udc51\ud835\udc65 = 2\u00d72+((2+3)\u00d71)/(2) W = KEfinal \u2013 KEinitial = 6.5 KEinitial = 0 KEfinal = 6.5 J",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+      "QUESTION_FIGURE_CUSTODY_UNRESOLVED"
+    ],
+    "stem_sha256": "e3b751177c3295210a19fa1d3b4f8cfb5091ac8475e868095191cefde40ef5e8"
+  },
+  {
+    "index": 28,
+    "ref": "Q28",
+    "id": "EX-M76",
+    "task_id": "Q-ID-28",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2019 (Online) 10th January Morning Slot",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-06",
+    "stem": "A block of mass m is kept on a platform which starts from rest with constant acceleration g/2 upward, as shown in figure. Work done by normal reaction on block in time t is - [FIG-stem-1]",
+    "options": [
+      "A: (\ud835\udc5a\ud835\udc54^(2)\ud835\udc61^(2))/(8)",
+      "B: (3\ud835\udc5a\ud835\udc54^(2)\ud835\udc61^(2))/(8)",
+      "C: \u2212 (\ud835\udc5a\ud835\udc54^(2)\ud835\udc61^(2))/(8)",
+      "D: 0"
+    ],
+    "figure_status": "REQUIRED_UNRESOLVED",
+    "figure_note": "Block of mass m resting on a horizontal platform; the platform accelerates upward at g/2 from rest.",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "N \u2212 mg = (\ud835\udc5a\ud835\udc54)/(2) \u21d2 N = (3\ud835\udc5a\ud835\udc54)/(2) The distance travelled by the system in time t is S = ut + (1)/(2)\ud835\udc4e\ud835\udc61^(2)=0+(1)/(2)((\ud835\udc54)/(2))\ud835\udc61^(2)=(1)/(2)(\ud835\udc54)/(2)\ud835\udc61^(2) Now, work done W = N.S = ((3)/(2)\ud835\udc5a\ud835\udc54)((1)/(2)(\ud835\udc54)/(2)\ud835\udc61^(2)) \u21d2 W = (3\ud835\udc5a\ud835\udc54^(2)\ud835\udc61^(2))/(8)",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+      "QUESTION_FIGURE_CUSTODY_UNRESOLVED"
+    ],
+    "stem_sha256": "b7e30117787ec4c78919caf7f08c4fbe70299cf0c656fb9164c20f5816f4bc91"
+  },
+  {
+    "index": 29,
+    "ref": "Q29",
+    "id": "EX-M78",
+    "task_id": "Q-ID-29",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2019 (Online) 9th January Morning Slot",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-07",
+    "stem": "A block of mass m, lying on a smooth horizontal surface, is attached to a spring (of negligible mass) of spring constant k. The other end of the spring is fixed, as shown in the figure. The block is initially at rest in its equilibrium position. If now the block is pulled with a constant force F, the maximum speed of the block is : [FIG-stem-1]",
+    "options": [
+      "A: (2\ud835\udc39)/(\u221a(\ud835\udc5a\ud835\udc58))",
+      "B: (\ud835\udc39)/(\ud835\udf0b\u221a(\ud835\udc5a\ud835\udc58))",
+      "C: (\ud835\udf0b\ud835\udc39)/(\u221a(\ud835\udc5a\ud835\udc58))",
+      "D: (\ud835\udc39)/(\u221a(\ud835\udc5a\ud835\udc58))"
+    ],
+    "figure_status": "REQUIRED_UNRESOLVED",
+    "figure_note": "Spring fixed to a wall on the left, block m on a smooth horizontal floor on its right, constant force F pulling the block to the right.",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "[FIG-explanation-1] When block is pulled x distance with F force, then it is at maximum speed position \u2234 F = Kx \u21d2 x = (\ud835\udc39)/(\ud835\udc3e) Applying work energy theorem, work done by all the forces = change in Kinetic energy. \u21d2 WForce + WSpring = (1)/(2)\ud835\udc5a\ud835\udc63^(2)\u22120 \u21d2 Fx \u2212 (1)/(2) Kx2 = (1)/(2)\ud835\udc5a\ud835\udc63^(2) \u21d2 \ud835\udc39 ((\ud835\udc39)/(\ud835\udc3e))\u2212(1)/(2)\ud835\udc3e((\ud835\udc39)/(\ud835\udc3e))^(2) = (1)/(2)\ud835\udc5a\ud835\udc63^(2) \u21d2 (\ud835\udc39^(2))/(\ud835\udc3e)\u2212(\ud835\udc39^(2))/(2\ud835\udc3e) = (1)/(2)\ud835\udc5a\ud835\udc63^(2) \u21d2 (\ud835\udc39^(2))/(2\ud835\udc3e) = (1)/(2)\ud835\udc5a\ud835\udc63^(2) \u21d2 \ud835\udc63 = (\ud835\udc39)/(\u221a(\ud835\udc5a\ud835\udc3e))",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+      "QUESTION_FIGURE_CUSTODY_UNRESOLVED"
+    ],
+    "stem_sha256": "4f16a1508ca866152bc5523d0bc6719aede0028234b3b8ea49571c2e9c4d260f"
+  },
+  {
+    "index": 30,
+    "ref": "Q30",
+    "id": "EX-M79",
+    "task_id": "Q-ID-30",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2018 (Online) 16th April Morning Slot",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-07",
+    "stem": "A body of mass m starts moving from rest along x-axis so that its velocity varies as \ud835\udf10=\ud835\udc4e\u221a(\ud835\udc60) where a is a constant and s is the distance covered by the body. The total work done by all the forces acting on the body in the first t seconds after the start of the motion is :",
+    "options": [
+      "A: (1)/(8) m a4 t2",
+      "B: 8 m a4 t2",
+      "C: 4 m a4 t2",
+      "D: (1)/(4) m a4 t2"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "Given, \ud835\udf10 = a \u221a(\ud835\udc60) \u21d2 (\ud835\udc51\ud835\udc60)/(\ud835\udc51\ud835\udc61)=\ud835\udc4e\u221a(\ud835\udc60) \u21d2 \u222b[0\u2192\ud835\udc60](\ud835\udc51\ud835\udc60)/(\u221a(\ud835\udc60))=\u222b[0\u2192\ud835\udc61]\ud835\udc4e\ud835\udc51\ud835\udc61 \u21d2 2 \u221a(\ud835\udc60) = at \u21d2 s = (\ud835\udc4e^(2)\ud835\udc61^(2))/(4) = (1)/(2).(\ud835\udc4e^(2))/(2).\ud835\udc61^(2) \u2234 acceleration = (\ud835\udc4e^(2))/(2) \u2234 Force (F) = m \u00d7 (\ud835\udc4e^(2))/(2) \u2234 Work done = F. S = (\ud835\udc5a\ud835\udc4e^(2))/(2)\u00d7(\ud835\udc4e^(2)\ud835\udc61^(2))/(4) = (\ud835\udc5a\ud835\udc4e^(4)\ud835\udc61^(2))/(8)",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "6050eaed83530c31e53b0b03afcae65b9a6011f89d27085e95a50f1da7c2c51a"
+  },
+  {
+    "index": 31,
+    "ref": "Q31",
+    "id": "EX-M81",
+    "task_id": "Q-ID-31",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2018 (Offline)",
+    "origin": "ExamSIDE_Extract",
+    "scope": "OUT_OF_SCOPE",
+    "scope_note": "Collision of body with target",
+    "lot": "UNASSIGNED",
+    "stem": "A particle is moving in a circular path of radius \ud835\udc4e under the action of an attractive potential \ud835\udc48=\u2212(\ud835\udc58)/(2\ud835\udc5f^(2)) . Its total energy is:",
+    "options": [
+      "A: \u2212(3)/(2)(\ud835\udc58)/(\ud835\udc4e^(2))",
+      "B: Zero",
+      "C: \u2212(\ud835\udc58)/(4\ud835\udc4e^(2))",
+      "D: (\ud835\udc58)/(2\ud835\udc4e^(2))"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "We know, Total energy = Kinetic energy + Potential energy Potential energy given as \ud835\udc48=\u2212(\ud835\udc58)/(2\ud835\udc5f^(2)) We need to find Kinetic Energy. As Force acting on the particle (F) = \u2212(\ud835\udc51\ud835\udc48)/(\ud835\udc51\ud835\udc5f) \u21d2\ud835\udc39=\u2212(\ud835\udc51)/(\ud835\udc51\ud835\udc5f)((\u2212\ud835\udc58)/(2\ud835\udc5f^(2))) =(\ud835\udc58)/(2)\u00d7(\u22122)\u00d7\ud835\udc5f^(\u22123) =\u2212(\ud835\udc58)/(\ud835\udc5f^(3)) Because of this force particle is having circular motion so it will provide possible centripetal force. |\ud835\udc39|=(\ud835\udc5a\ud835\udc63^(2))/(\ud835\udc5f) \u21d2(\ud835\udc5a\ud835\udc63^(2))/(\ud835\udc5f)=(\ud835\udc58)/(\ud835\udc5f^(3)) \u21d2 \ud835\udc5a\ud835\udc63^(2)=(\ud835\udc58)/(\ud835\udc5f^(2)) We know kinetic energy of particle, K = (1)/(2)\ud835\udc5a\ud835\udc63^(2) = (\ud835\udc58)/(2\ud835\udc5f^(2)) As Total energy = Kinetic energy + Potential energy So Total energy = (\ud835\udc58)/(2\ud835\udc5f^(2)) \u2212(\ud835\udc58)/(2\ud835\udc5f^(2)) = 0",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "10072f22280dbeb19a39db3ca814336f8d5e9d19df393c90ac62560044866e1c"
+  },
+  {
+    "index": 32,
+    "ref": "Q32",
+    "id": "EX-M82",
+    "task_id": "Q-ID-32",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2017 (Online) 8th April Morning Slot",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-07",
+    "stem": "An object is dropped from a height h from the ground. Every time it hits the ground it loses 50% of its kinetic energy. The total distance covered as t \u2192 \u221e is :",
+    "options": [
+      "A: 3h",
+      "B: \u221e",
+      "C: (5)/(3) h",
+      "D: (8)/(3) h"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "Let, Kinetic energy (k) = (1)/(2) m \ud835\udf10 2 before it hit the ground. After hitting the ground kinetic energy (k') = (1)/(2) m \ud835\udf10 [2\u21921] \u2234 According to the question, (1)/(2) m \ud835\udf10 [2\u21921] = (1)/(2) \u00d7 (1)/(2) m \ud835\udf10 2 \u21d2 \ud835\udf10 1 = (\ud835\udc63)/(\u221a(2)) After hitting the ground the object will bounce h' = (\ud835\udc63[2\u21921])/(2\ud835\udc54) = (\ud835\udc63^(2))/(4\ud835\udc54) = (\u210e)/(2) [ as h = (\ud835\udc63^(2))/(2\ud835\udc54) ] Total distance travelled from the time it first hits the ground to the next time it hits the ground is = (\u210e)/(2) + (\u210e)/(2) = h So, this will create an infinite geometric progression with the common ratio (1)/(2) . \u2234 Total distance covered = h (distance travelled by the object when first dropped, before it hits the ground) + (h + (\u210e)/(2) + (\u210e)/(4) ",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "e2cf28b63bd8edb9397430f80be3d78edc1c803b75f9ff6eda23bbba3b78a649"
+  },
+  {
+    "index": 33,
+    "ref": "Q33",
+    "id": "EX-M84",
+    "task_id": "Q-ID-33",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2016 (Online) 10th April Morning Slot",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-07",
+    "stem": "A particle of mass M is moving in a circle of fixed radius R in such a way that its centripetal acceleration at time t is given by n2 R t2 where n is a constant. The power delivered to the particle by the force acting on it, is :",
+    "options": [
+      "A: M n2 R2 t",
+      "B: M n R2 t",
+      "C: M n R2 t2",
+      "D: (1)/(2) M n2 R2 t2"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "We know, centripetal acceleration = (\ud835\udc49^(2))/(\ud835\udc45) \u2234 According to question, (\ud835\udc49^(2))/(\ud835\udc45) = \ud835\udc5b^(2)\ud835\udc45\ud835\udc61^(2) \u21d2 V2 = n2 R2 t2 \u21d2 V = nRt \u21d2 (\ud835\udc51\ud835\udc49)/(\ud835\udc51\ud835\udc61) = nR Power (P) = Force (F) \u00d7 Velocity (V) = M (\ud835\udc51\ud835\udc49)/(\ud835\udc51\ud835\udc61) (V) = M (nR) (nRt) = Mn2R2t",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "352d2efd930e969bf02e088778a6079f020e71e0cd3a4265a468d3df90ef34c2"
+  },
+  {
+    "index": 34,
+    "ref": "Q34",
+    "id": "EX-M85",
+    "task_id": "Q-ID-34",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2016 (Online) 10th April Morning Slot",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-07",
+    "stem": "Velocity-time graph for a body of mass 10 kg is shown in figure. Work-done on the body in first two seconds of the motion is : [FIG-stem-1]",
+    "options": [
+      "A: 12000 J",
+      "B: \u2212 12000 J",
+      "C: \u2212 4500 J",
+      "D: \u2212 9300 J"
+    ],
+    "figure_status": "REQUIRED_UNRESOLVED",
+    "figure_note": "Figure referenced: 1 asset(s) unverified",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "[FIG-explanation-1] Here u = 50 m/s , when t = 0 \ud835\udefc = (\u0394\ud835\udc63)/(\u0394\ud835\udc61) = (50\u22120)/(0\u221210) = \u2212 5 m/s2 Speed of the body at t = 2 s v = u + at = 50 + ( \u2212 5) \u00d7 2 = 40 m/s From work energy theorem, \u0394 w = (1)/(2)\ud835\udc5a\ud835\udc63^(2)\u2212(1)/(2)\ud835\udc5a\ud835\udc62^(2) = (1)/(2) m(v2 \u2212 u2) = (1)/(2) \u00d7 10 \u00d7 (402 \u2212 502) = 5 \u00d7 ( \u2212 10)(90) = \u2212 4500 J",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+      "QUESTION_FIGURE_CUSTODY_UNRESOLVED"
+    ],
+    "stem_sha256": "f6d74f6517bbe210d4c24f23ae99bb632c436f2fb4c12a40b4fce0ced91bcfb8"
+  },
+  {
+    "index": 35,
+    "ref": "Q35",
+    "id": "EX-M88",
+    "task_id": "Q-ID-35",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2016 (Offline)",
+    "origin": "ExamSIDE_Extract",
+    "scope": "OUT_OF_SCOPE",
+    "scope_note": "Ball collision and rebound from surface",
+    "lot": "UNASSIGNED",
+    "stem": "A point particle of mass \ud835\udc5a, moves along the uniformly rough track \ud835\udc43\ud835\udc44\ud835\udc45 as shown in the figure. The coefficient of friction, between the particle and the rough track equals \ud835\udf07. The particle is released, from rest from the point \ud835\udc43 and it comes to rest at point \ud835\udc45. The energies, lost by the ball, over the parts, \ud835\udc43\ud835\udc44 and \ud835\udc44\ud835\udc45 , of the track, are equal to each other , and no energy is lost when particle changes direction from \ud835\udc43\ud835\udc44 to \ud835\udc44\ud835\udc45 . The value of the coefficient of friction \ud835\udf07 and the distance \ud835\udc65 (=\ud835\udc44\ud835\udc45), are, respectively close to: [FIG-stem-1]",
+    "options": [
+      "A: 0.29 and 3.5 \ud835\udc5a",
+      "B: 0.29 and 6.5 \ud835\udc5a",
+      "C: 0.2 and 6.5 \ud835\udc5a",
+      "D: 0.2 and 3.5 \ud835\udc5a"
+    ],
+    "figure_status": "REQUIRED_UNRESOLVED",
+    "figure_note": "P at height h = 2 m; straight incline PQ at 30 degrees to the horizontal down to Q; then horizontal surface QR. Whole track equally rough (mu).",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "Using work energy theorem for the motion of the particle, Loss in \ud835\udc43.\ud835\udc38.= Work done against friction from \ud835\udc43\u2192\ud835\udc44 + work done against friction from \ud835\udc44\u2192\ud835\udc45 \ud835\udc5a\ud835\udc54\u210e=\ud835\udf07(\ud835\udc5a\ud835\udc54cos\u2061\ud835\udf03)\ud835\udc43\ud835\udc44+\ud835\udf07\ud835\udc5a\ud835\udc54(\ud835\udc44\ud835\udc45) \u210e=\ud835\udf07cos\ud835\udf03\u00d7\ud835\udc43\ud835\udc44+\ud835\udf07(\ud835\udc44\ud835\udc45) 2=\ud835\udf07\u00d7(\u221a(3))/(2)\u00d7(2)/(sin30^(\u2218))+\ud835\udf07\ud835\udc65 2=2\u221a(3)\ud835\udf07+\ud835\udf07\ud835\udc65 ....(\ud835\udc56) [ sin30^(\u2218)=(2)/(\ud835\udc43\ud835\udc44) ] According to the question, work done \ud835\udc43\u2192\ud835\udc44= work done \ud835\udc44\u2192\ud835\udc45 \u21d2 \ud835\udf07(\ud835\udc5a\ud835\udc54cos\u2061\ud835\udf03)\ud835\udc43\ud835\udc44=\ud835\udf07\ud835\udc5a\ud835\udc54(\ud835\udc44\ud835\udc45) \u2234 2\u221a(3)\ud835\udf07=\ud835\udf07\ud835\udc65 \u2234 \ud835\udc65\u22483.5\ud835\udc5a From (\ud835\udc56) 2=2\u221a(3)\ud835\udf07+2\u221a(3)\ud835\udf07=4\u221a(3)\ud835\udf07 \u2234 \ud835\udf07=(2)/(4\u221a(3))=(1)/(2\u00d71.732)=0.29",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+      "QUESTION_FIGURE_CUSTODY_UNRESOLVED"
+    ],
+    "stem_sha256": "8f15b28b399e637d8c5a0a20a00e10d5a146be81ca201f551512350eae3d14b5"
+  },
+  {
+    "index": 36,
+    "ref": "Q36",
+    "id": "EX-M89",
+    "task_id": "Q-ID-36",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2015 (Online) 11th April Morning Slot",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-08",
+    "stem": "A particle is moving in a circle of radius r under the action of a force F = \ud835\udefc r2 which is directed towards center of the circle. Total mechanical energy (kinetic energy + potential energy) of the particle is (take potential energy = 0 for r = 0) :",
+    "options": [
+      "A: \ud835\udefc r3",
+      "B: (1)/(2) \ud835\udefc r3",
+      "C: (4)/(3) \ud835\udefc r3",
+      "D: (5)/(6) \ud835\udefc r3"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "With \ud835\udc48(0)=0 : \ud835\udc48=\u222b[\ud835\udc5f\u21920]\ud835\udefc\ud835\udc65^(2)\ud835\udc51\ud835\udc65=(\ud835\udefc\ud835\udc5f^(3))/(3) (the force is attractive, so \ud835\udc48 increases with \ud835\udc5f ). For circular motion, (\ud835\udc5a\ud835\udc63^(2))/(\ud835\udc5f)=\ud835\udefc\ud835\udc5f^(2)\u21d2\ud835\udc5a\ud835\udc63^(2)=\ud835\udefc\ud835\udc5f^(3) . So \ud835\udc3e=(1)/(2)\ud835\udc5a\ud835\udc63^(2)=(\ud835\udefc\ud835\udc5f^(3))/(2) . Total energy \ud835\udc38=\ud835\udc3e+\ud835\udc48=(\ud835\udefc\ud835\udc5f^(3))/(2)+(\ud835\udefc\ud835\udc5f^(3))/(3)=(5)/(6)\ud835\udefc\ud835\udc5f^(3) . So the total mechanical energy is (5)/(6)\ud835\udefc\ud835\udc5f^(3) .",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "794f05ed6f9302a63fe556ff98ee3644e5b0a419983ea559f9a9c517d3221379"
+  },
+  {
+    "index": 37,
+    "ref": "Q37",
+    "id": "EX-M90",
+    "task_id": "Q-ID-37",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2015 (Online) 10th April Morning Slot",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-08",
+    "stem": "A block of mass m = 0.1 kg is connected to a spring of unknown spring constant k. It is compressed to a distance x from its equilibrium position and released from rest. After approaching half the distance ((\ud835\udc65)/(2)) from equilibrium position, it hits another block and comes to rest momentarily, while the other block moves with a velocity 3 ms \u2212 1 . The total initial energy of the spring is :",
+    "options": [
+      "A: 1.5 J",
+      "B: 0.6 J",
+      "C: 0.3 J",
+      "D: 0.8 J"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "Treating the collision as elastic between identical blocks, the velocities are exchanged, so the block's speed at (\ud835\udc65)/(2) was \ud835\udc62=3ms^(\u22121) . Its kinetic energy there: (1)/(2)\ud835\udc5a\ud835\udc62^(2)=(1)/(2)\u00d70.1\u00d79=0.45J . Energy conservation from \ud835\udc65 to (\ud835\udc65)/(2) : (1)/(2)\ud835\udc58\ud835\udc65^(2)=(1)/(2)\ud835\udc58((\ud835\udc65)/(2))^(2)+0.45 . So (3)/(4)((1)/(2)\ud835\udc58\ud835\udc65^(2))=0.45\u21d2(1)/(2)\ud835\udc58\ud835\udc65^(2)=0.6J . So the total initial energy of the spring is 0.6J .",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "f4543c5bbc08148d92aa40d74960d1496ef409acf45665a5e41bc2e08024348e"
+  },
+  {
+    "index": 38,
+    "ref": "Q38",
+    "id": "EX-M92",
+    "task_id": "Q-ID-38",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2014 (Online) 12th April Morning Slot",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-08",
+    "stem": "A spring of unstretched length \ud835\udc59 has a mass m with one end fixed to a rigid support. Assuming spring to be made of a uniform wire, the kinetic energy possessed by it if its free end is pulled with uniform velocity \ud835\udc63 is :",
+    "options": [
+      "A: (1)/(2) m \ud835\udc63 2",
+      "B: m \ud835\udc63 2",
+      "C: (1)/(3) m \ud835\udc63 2",
+      "D: (1)/(6) m \ud835\udc63 2"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "The fixed end is at rest and the free end moves with \ud835\udc63 , so an element at distance \ud835\udc65 from the fixed end moves with speed (\ud835\udc63\ud835\udc65)/(\ud835\udc59) . Mass of an element of length \ud835\udc51\ud835\udc65 : \ud835\udc51\ud835\udc5a=(\ud835\udc5a)/(\ud835\udc59)\ud835\udc51\ud835\udc65 . \ud835\udc3e=\u222b[\ud835\udc59\u21920](1)/(2)(\ud835\udc5a)/(\ud835\udc59)((\ud835\udc63\ud835\udc65)/(\ud835\udc59))^(2)\ud835\udc51\ud835\udc65=(\ud835\udc5a\ud835\udc63^(2))/(2\ud835\udc59^(3))\u22c5(\ud835\udc593)/(3)=(1)/(6)\ud835\udc5a\ud835\udc63^(2) . So the kinetic energy of the spring is (1)/(6)\ud835\udc5a\ud835\udc63^(2) .",
+    "holds": [
+      "AFFINE_VELOCITY_PROFILE_NOT_EXPLICIT_IN_STEM",
+      "CALCULUS_CONTINUUM_PREREQUISITES_UNQUALIFIED",
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "24ef3006cdb28b6eea3dc564f08194f099c08e3c1de42bed2d6dcf7eec6babf4"
+  },
+  {
+    "index": 39,
+    "ref": "Q39",
+    "id": "EX-M96",
+    "task_id": "Q-ID-39",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2013 (Online) 25th April Morning Slot",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-08",
+    "stem": "A wind-powered generator converts wind energy into electrical energy. Assume that the generator converts a fixed fraction of the wind energy intercepted by its blades into electrical energy. For wind speed \ud835\udc63 , the electrical power output will be most likely proportional to",
+    "options": [
+      "A: \ud835\udc63^(4)",
+      "B: \ud835\udc63^(2)",
+      "C: \ud835\udc63",
+      "D: \ud835\udc63^(3)"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "Mass of air reaching the blades per second =\ud835\udf0c\ud835\udc34\ud835\udc63 . Kinetic energy brought per second =(1)/(2)(\ud835\udf0c\ud835\udc34\ud835\udc63)\ud835\udc63^(2)=(1)/(2)\ud835\udf0c\ud835\udc34\ud835\udc63^(3) . A fixed fraction of this becomes electrical power, so \ud835\udc43\u221d\ud835\udc63^(3) .",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "833b0038bb505b5298837eda5fceb2bfa58f0149c3dbf52a2168b78b42cd29cc"
+  },
+  {
+    "index": 40,
+    "ref": "Q40",
+    "id": "EX-M97",
+    "task_id": "Q-ID-40",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2013 (Online) 23th April Morning Slot",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-08",
+    "stem": "A 70 kg man leaps vertically into the air from a crouching position. To take the leap the man pushes the ground with a constant force F to raise himself. The center of gravity rises by 0.5 m before he leaps. After the leap the c.g. rises by another 1 m. The maximum power delivered by the muscles is : (Take g = 10 ms ^(\u22122) )",
+    "options": [
+      "A: 6.26\u00d710^(3) Watts at the start",
+      "B: 6.26\u00d710^(3) Watts at take off",
+      "C: 6.26\u00d710^(4) Watts at the start",
+      "D: 6.26\u00d710^(4) Watts at take off"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "After leaving the ground the c.g. rises 1m , so take-off speed \ud835\udc63=\u221a(2\ud835\udc54\u210e)=\u221a(20)\u22484.47ms^(\u22121) . During the 0.5m push, the net force supplies this kinetic energy: (\ud835\udc39\u2212\ud835\udc5a\ud835\udc54)(0.5)=(1)/(2)\ud835\udc5a\ud835\udc63^(2)=700J . So the constant net upward force is \ud835\udc39\u2212\ud835\udc5a\ud835\udc54=1400N . With a constant force, power = force \u00d7 speed is largest when the speed is largest, i.e. at take-off. \ud835\udc43_\ud835\udc5a\ud835\udc4e\ud835\udc65=(\ud835\udc39\u2212\ud835\udc5a\ud835\udc54)\ud835\udc63=1400\u00d74.47\u22486.26\u00d710^(3)W . Maximum power is 6.26\u00d710^(3)W , at take-off.",
+    "holds": [
+      "EXCLUDED_FROM_SELECTION",
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "INHERITED_SOURCE_WARNING",
+      "KEY_DISPUTE",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "cbb41b03fc485b69ca2d6ca28cbb08a484d1a36fb7b3ba766c455607508ac8c8"
+  },
+  {
+    "index": 41,
+    "ref": "Q41",
+    "id": "EX-M98",
+    "task_id": "Q-ID-41",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2013 (Online) 9th April Morning Slot",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-09",
+    "stem": "Two springs of force constants 300 N/m (Spring A) and 400 N/m (Spring B) are joined together in series. The combination is compressed by 8.75 cm. The ratio of energy stored in A and B is (\ud835\udc38\ud835\udc34)/(\ud835\udc38\ud835\udc35) . Then (\ud835\udc38\ud835\udc34)/(\ud835\udc38\ud835\udc35) is equal to:",
+    "options": [
+      "A: (4)/(3)",
+      "B: (16)/(9)",
+      "C: (3)/(4)",
+      "D: (9)/(16)"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "In series both springs carry the same force \ud835\udc39 . Energy stored \ud835\udc38=(\ud835\udc392)/(2\ud835\udc58) , so \ud835\udc38\u221d(1)/(\ud835\udc58) . (\ud835\udc38\ud835\udc34)/(\ud835\udc38\ud835\udc35)=(\ud835\udc58\ud835\udc35)/(\ud835\udc58\ud835\udc34)=(400)/(300)=(4)/(3) Answer: (4)/(3)",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "275a2a58ac5f752c0584a60cc804d0a71ea2dfdc266fa0c9f46b7e0ad5c63a3d"
+  },
+  {
+    "index": 42,
+    "ref": "Q42",
+    "id": "EX-M99",
+    "task_id": "Q-ID-42",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "AIEEE 2012 (Online) 26th May",
+    "origin": "ExamSIDE_Extract",
+    "scope": "OUT_OF_SCOPE",
+    "scope_note": "Inelastic collision and energy loss",
+    "lot": "UNASSIGNED",
+    "stem": "The force \ud835\udc39\u20d7=\ud835\udc39\ud835\udc56\u02c6 on a particle of mass 2kg , moving along the \ud835\udc65 -axis is given in the figure as a function of its position \ud835\udc65 . The particle is moving with a velocity of 5m/s along the \ud835\udc65 -axis at \ud835\udc65=0 . What is the kinetic energy of the particle at \ud835\udc65=8m ? [FIG-stem-1]",
+    "options": [
+      "A: 34J",
+      "B: 34.5J",
+      "C: 4.5J",
+      "D: 29.4J"
+    ],
+    "figure_status": "REQUIRED_UNRESOLVED",
+    "figure_note": "Figure referenced: 1 asset(s) unverified",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "Work done by the force = area under the \ud835\udc39 - \ud835\udc65 graph from \ud835\udc65=0 to \ud835\udc65=8m . From 0 to 2m : (1)/(2)(2)(2)=2J ; from 2 to 5m (below the axis): \u2212((1)/(2)(1)(1)+(1)(1)+(1)/(2)(1)(1))=\u22122J . From 5 to 8m : (1)/(2)(3)(3)=4.5J , so the net work is \ud835\udc4a=2\u22122+4.5=4.5J . Initial kinetic energy \ud835\udc3e_\ud835\udc56=(1)/(2)(2)(5)^(2)=25J . Work-energy theorem: \ud835\udc3e_\ud835\udc53=\ud835\udc3e_\ud835\udc56+\ud835\udc4a=25+4.5=29.5J . So the kinetic energy at \ud835\udc65=8m is about 29.5J , the listed 29.4J .",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+      "QUESTION_FIGURE_CUSTODY_UNRESOLVED"
+    ],
+    "stem_sha256": "d21e4aeb84b737307c712a2ff3971d72f0a1e9da2228a6ad640fcede96c2a4c0"
+  },
+  {
+    "index": 43,
+    "ref": "Q43",
+    "id": "EX-M101",
+    "task_id": "Q-ID-43",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "AIEEE 2012",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-09",
+    "stem": "This question has Statement 1 and Statement 2. Of the four choices given after the Statements, choose the one that best describes the two Statements. If two springs \ud835\udc46_1 and \ud835\udc46_2 of force constants \ud835\udc58_1 and \ud835\udc58_2 , respectively, are stretched by the same force, it is found that more work is done on spring \ud835\udc46_1 than on spring \ud835\udc46_2 . STATEMENT 1: If stretched by the same amount, work done on \ud835\udc46_1 is more than that on \ud835\udc46_2 STATEMENT 2: \ud835\udc58_1<\ud835\udc58_2",
+    "options": [
+      "A: Statement 1 is false, Statement 2 is true",
+      "B: Statement 1 is true, Statement 2 is false",
+      "C: Statement 1 is true, Statement 2 is true, Statement 2 is the correct explanation for Statement 1",
+      "D: Statement 1 is true, Statement 2 is true, Statement 2 is not the correct explanation for Statement 1"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "We know force (F) = kx \ud835\udc4a=(1)/(2)\ud835\udc58\ud835\udc65^(2) \ud835\udc4a= ((\ud835\udc58\ud835\udc65)^(2))/(2\ud835\udc58) \u2234 \ud835\udc4a=(\ud835\udc39^(2))/(2\ud835\udc58) [ as \ud835\udc39=\ud835\udc58\ud835\udc65 ] When force is same then, \ud835\udc4a\u221d(1)/(\ud835\udc58) Given that, \ud835\udc4a_1>\ud835\udc4a_2 \u2234 \ud835\udc58_1<\ud835\udc58_2 Statement-2 is true. For the same extension, x1 = x2 = x Work done on spring S1 is W1 = (1)/(2)\ud835\udc58_1\ud835\udc65[2\u21921]=(1)/(2)\ud835\udc58_1\ud835\udc65^(2) Work done on spring S2 is W2 = (1)/(2)\ud835\udc58_2\ud835\udc65[2\u21922]=(1)/(2)\ud835\udc58_2\ud835\udc65^(2) \u2234 (\ud835\udc4a_1)/(\ud835\udc4a_2)=(\ud835\udc58_1)/(\ud835\udc58_2) As \ud835\udc58_1<\ud835\udc58_2 then \ud835\udc4a_1<\ud835\udc4a_2 So, Statement-1 is false.",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "JUSTIFY_VS_APPLY_REQUIRES_INDEPENDENT_ADJUDICATION",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "c6caf00ac4069a7c971ef146bba439ffb17602663de90cb408c805f887fc639c"
+  },
+  {
+    "index": 44,
+    "ref": "Q44",
+    "id": "EX-M105",
+    "task_id": "Q-ID-44",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "AIEEE 2007",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-09",
+    "stem": "A 2 \ud835\udc58\ud835\udc54 block slides on a horizontal floor with a speed of 4\ud835\udc5a/\ud835\udc60. It strikes an uncompressed spring and compresses it till the block is motionless. The kinetic friction force is 15\ud835\udc41 and spring constant is 10,000 \ud835\udc41/\ud835\udc5a. The spring compresses by",
+    "options": [
+      "A: 8.5\ud835\udc50\ud835\udc5a",
+      "B: 5.5\ud835\udc50\ud835\udc5a",
+      "C: 2.5\ud835\udc50\ud835\udc5a",
+      "D: 11.0\ud835\udc50\ud835\udc5a"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "Let the block compress the spring by \ud835\udc65 before coming to rest. Initial kinetic energy of the block = (potential energy of compressed spring) + work done due to friction. (1)/(2)\u00d72\u00d7(4)^(2)=(1)/(2)\u00d710000\u00d7\ud835\udc65^(2)+15\u00d7\ud835\udc65 10,000\ud835\udc65^(2)+30\ud835\udc65\u221232=0 \u21d25000\ud835\udc65^(2)+15\ud835\udc65\u221216=0 \u2234 \ud835\udc65=(\u221215\u00b1\u221a((15)^(2)\u22124\u00d7(5000)(\u221216)))/(2\u00d75000) =0.055\ud835\udc5a=5.5\ud835\udc50\ud835\udc5a.",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "7f1f8bdb0ec27dc0c8dafc016414d1dd70d15932139624a0a03f7f629b437ed4"
+  },
+  {
+    "index": 45,
+    "ref": "Q45",
+    "id": "EX-M106",
+    "task_id": "Q-ID-45",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "AIEEE 2006",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-09",
+    "stem": "A mass of \ud835\udc40 \ud835\udc58\ud835\udc54 is suspended by a weightless string. The horizontal force that is required to displace it until the string makes an angle of 45^(\u2218) with the initial vertical direction is",
+    "options": [
+      "A: \ud835\udc40\ud835\udc54(\u221a(2)+1)",
+      "B: \ud835\udc40\ud835\udc54\u221a(2)",
+      "C: (\ud835\udc40\ud835\udc54)/(\u221a(2))",
+      "D: \ud835\udc40\ud835\udc54(\u221a(2)\u22121)"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "[FIG-explanation-1] From work energy theorem we can say, Work done by tension + work done by force (applied) + Work done by gravitational force = change in kinetic energy Here Work done by tension is zero \u21d20+\ud835\udc39\u00d7\ud835\udc34\ud835\udc35\u2212\ud835\udc40\ud835\udc54\u00d7\ud835\udc34\ud835\udc36=0 \u21d2\ud835\udc39=\ud835\udc40\ud835\udc54((\ud835\udc34\ud835\udc36)/(\ud835\udc34\ud835\udc35))=\ud835\udc40\ud835\udc54[(1\u2212(1)/(\u221a(2)))/((1)/(\u221a(2)))] [ as \ud835\udc34\ud835\udc35=\u2113sin\u206145^(\u2218)=(\u2113)/(\u221a(2)) and \ud835\udc34\ud835\udc36=\ud835\udc42\ud835\udc36\u2212\ud835\udc42\ud835\udc34=\u2113\u2212\u2113cos45^(\u2218)=\u2113(1\u2212(1)/(\u221a(2))) where \u2113= length of the string. ] \u21d2\ud835\udc39=\ud835\udc40\ud835\udc54(\u221a(2)\u22121)",
+    "holds": [
+      "D4_CONDITIONAL_NOT_ESTABLISHED",
+      "ESSENTIAL_MODEL_AMBIGUITY",
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "89395cca6f98acf3a6845a526fe23d22fd1ab044eb29fd937ac5a5ca6a97d824"
+  },
+  {
+    "index": 46,
+    "ref": "Q46",
+    "id": "EX-M109",
+    "task_id": "Q-ID-46",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "AIEEE 2006",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-09",
+    "stem": "The potential energy of a 1 \ud835\udc58\ud835\udc54 particle free to move along the \ud835\udc65 -axis is given by \ud835\udc49(\ud835\udc65)=((\ud835\udc65^(4))/(4)\u2212(\ud835\udc65^(2))/(2))\ud835\udc3d . The total mechanical energy of the particle is 2\ud835\udc3d. Then, the maximum speed (in \ud835\udc5a/\ud835\udc60 ) is",
+    "options": [
+      "A: (3)/(\u221a(2))",
+      "B: \u221a(2)",
+      "C: (1)/(\u221a(2))",
+      "D: 2"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "Velocity is maximum when kinetic energy is maximum and when kinetic energy is maximum then potential energy should be minimum For minimum potential energy, (\ud835\udc51\ud835\udc49)/(\ud835\udc51\ud835\udc65)=0 \u21d2\ud835\udc65^(3)\u2212\ud835\udc65=0 \u21d2\ud835\udc65=\u00b11 \u21d2 Min. Potential energy (P.E.) = (1)/(4)\u2212(1)/(2)=\u2212(1)/(4)\ud835\udc3d \ud835\udc3e.\ud835\udc38._(max.)+\ud835\udc43.\ud835\udc38._(min.)=2 (Given) \u2234 \ud835\udc3e.\ud835\udc38._(max.)=2+(1)/(4)=(9)/(4) \u2234 (1)/(2)\ud835\udc5a\ud835\udc63[2\u2192max] = (9)/(4) \u21d2(1)/(2)\u00d71\u00d7\ud835\udc63^(2)_max.=(9)/(4) \u21d2\ud835\udc63_max=(3)/(\u221a(2)) m/s",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "33513889a1163bb0ae5baeb9251958e4131319985cfb8fd452a700f855d66b07"
+  },
+  {
+    "index": 47,
+    "ref": "Q47",
+    "id": "EX-M111",
+    "task_id": "Q-ID-47",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "AIEEE 2005",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-10",
+    "stem": "The upper half of an inclined plane with inclination \ud835\udf19 is perfectly smooth while the lower half is rough. A body starting from rest at the top will again come to rest at the bottom if the coefficient of friction for the lower half is given by",
+    "options": [
+      "A: 2cos\ud835\udf19",
+      "B: 2\ud835\udc60\ud835\udc56\ud835\udc5b\ud835\udf19",
+      "C: tan\ud835\udf19",
+      "D: 2tan\ud835\udf19"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "Let the length of the inclined plane be \ud835\udc59 . So only (\ud835\udc59)/(2) part will have friction. According to work-energy theorem, \ud835\udc4a=\u0394\ud835\udc58=0 (Since initial and final speeds are zero) \u2234 Work done by friction + Work done by gravity =0 i.e., \u2212(\ud835\udf07\ud835\udc5a\ud835\udc54cos\ud835\udf19)(\u2113)/(2)+\ud835\udc5a\ud835\udc54\u2113sin\ud835\udf19=0 or (\ud835\udf07)/(2)cos\ud835\udf19=sin\u2061\ud835\udf19 or \ud835\udf07=2tan\ud835\udf19",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "1897b95b307743efe3c36a1e9b49cb6fb7c2957e7391efa13b84bbecb71f10fc"
+  },
+  {
+    "index": 48,
+    "ref": "Q48",
+    "id": "EX-M114",
+    "task_id": "Q-ID-48",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "AIEEE 2004",
+    "origin": "ExamSIDE_Extract",
+    "scope": "PREREQUISITE_BRIDGE",
+    "scope_note": "Linear retardation proportional to displacement (calculus / variable force bridge)",
+    "lot": "UNASSIGNED",
+    "stem": "A particle moves in a straight line with retardation proportional to its displacement. Its loss of kinetic energy for any displacement \ud835\udc65 is proportional to",
+    "options": [
+      "A: \ud835\udc65",
+      "B: \ud835\udc52^(\ud835\udc65)",
+      "C: \ud835\udc65^(2)",
+      "D: log_\ud835\udc52\ud835\udc65"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "Given that, retardation \u221d displacement \u21d2 \ud835\udc4e=\u2212\ud835\udc58\ud835\udc65 But we know \ud835\udc4e=\ud835\udc63(\ud835\udc51\ud835\udc63)/(\ud835\udc51\ud835\udc65) \u2234 (\ud835\udc63\ud835\udc51\ud835\udc63)/(\ud835\udc51\ud835\udc65)=\u2212\ud835\udc58\ud835\udc65 \u21d2\u222b[\ud835\udc63_1\u2192\ud835\udc63_2]\ud835\udc63\ud835\udc51\ud835\udc63=\u2212\ud835\udc58\u222b[0\u2192\ud835\udc65]\ud835\udc65\ud835\udc51\ud835\udc65 (\ud835\udc63[2\u21922]\u2212\ud835\udc63[2\u21921])=\u2212\ud835\udc58(\ud835\udc65^(2))/(2) \u21d2(1)/(2)\ud835\udc5a(\ud835\udc63[2\u21922]\u2212\ud835\udc63[2\u21921])=(1)/(2)\ud835\udc5a\ud835\udc58((\u2212\ud835\udc65^(2))/(2)) \u2234 Loss in kinetic energy is proportional to \ud835\udc65^(2) . \u2234 \u0394\ud835\udc3e\u221d\ud835\udc65^(2)",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "836855ee5acda54fdd24f70861170717182a36be4c8dd9924c13d4cd97bfc95f"
+  },
+  {
+    "index": 49,
+    "ref": "Q49",
+    "id": "EX-M120",
+    "task_id": "Q-ID-49",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "AIEEE 2003",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-10",
+    "stem": "A body is moved along a straight line by a machine delivering a constant power. The distance moved by the body in time ^(\u2032)\ud835\udc61^(\u2032) is proportional to",
+    "options": [
+      "A: \ud835\udc61^(3/4)",
+      "B: \ud835\udc61^(3/2)",
+      "C: \ud835\udc61^(1/4)",
+      "D: \ud835\udc61^(1/2)"
+    ],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "We know that \ud835\udc39\u00d7\ud835\udc63= Power According to the question, power is constant. \u2234 \ud835\udc39\u00d7\ud835\udc63=\ud835\udc50 where \ud835\udc50= constant \u2234 \ud835\udc5a(\ud835\udc51\ud835\udc63)/(\ud835\udc51\ud835\udc61)\u00d7\ud835\udc63=\ud835\udc50 ( \u2234 \ud835\udc39=\ud835\udc5a\ud835\udc4e=(\ud835\udc5a\ud835\udc51\ud835\udc63)/(\ud835\udc51\ud835\udc61)) \u2234 \ud835\udc5a\u222b[0\u2192\ud835\udc63]\ud835\udc63\ud835\udc51\ud835\udc63=\ud835\udc50\u222b[0\u2192\ud835\udc61]\ud835\udc51\ud835\udc61 \u2234 (1)/(2)\ud835\udc5a\ud835\udc63^(2)=\ud835\udc50\ud835\udc61 \u2234 \ud835\udc63=\u221a((2\ud835\udc50)/(\ud835\udc5a))\u00d7\ud835\udc61^(1/2) (\ud835\udc51\ud835\udc65)/(\ud835\udc51\ud835\udc61)=\u221a((2\ud835\udc50)/(\ud835\udc5a))\u00d7\ud835\udc61^(1/2) where \ud835\udc63=(\ud835\udc51\ud835\udc65)/(\ud835\udc51\ud835\udc61) \u2234 \u222b[0\u2192\ud835\udc65]\ud835\udc51\ud835\udc65=\u221a((2\ud835\udc50)/(\ud835\udc5a))\u00d7\u222b[0\u2192\ud835\udc61]\ud835\udc61^(1/2)\ud835\udc51\ud835\udc61 \ud835\udc65=\u221a((2\ud835\udc50)/(\ud835\udc5a))\u00d7(2\ud835\udc61^(3/2))/(3)\u21d2\ud835\udc65\u221d\ud835\udc61^(3/2)",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "ba2a01004368fd62fdd85b1dedd32e3171cdeda5b1e08edd87b4da2db74d7f66"
+  },
+  {
+    "index": 50,
+    "ref": "Q50",
+    "id": "EX-N8",
+    "task_id": "Q-ID-50",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2023 (Online) 11th April Evening Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-10",
+    "stem": "A block of mass 5kg starting from rest is pulled up on a smooth inclined plane making an angle of 30^(\u2218) with horizontal with an effective acceleration of 1ms^(\u22122) . The power delivered by the pulling force at \ud835\udc61=10s from the start is ___________ W. [use g=10ms^(\u22122) ] (calculate the nearest integer value)",
+    "options": [],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "To find the power delivered by the pulling force at t = 10 s, we first need to find the work done by the force. The work done is given by the product of force and displacement, and the power is the rate of work done. Calculate the velocity (v) at t = 10 s: Since the block starts from rest and is pulled up with an effective acceleration of 1 m/s\u00b2, we can use the equation of motion to find the velocity (v) at t = 10 s: \ud835\udc63=\ud835\udc62+\ud835\udc4e\ud835\udc61 Here, u = 0 (initial velocity) and a = 1 m/s\u00b2 (acceleration). Plugging in the values: \ud835\udc63_10=0+1(10)=10m/s Calculate the net force acting on the block ( \ud835\udc39_\ud835\udc5b\ud835\udc52\ud835\udc61 ): The net force acting on the block along the incline plane is the difference between the pulling force (",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "d19ba8fc4762a1acb93b9059c01f13e25bdb4874bcd50ef8dcd71375500d4fef"
+  },
+  {
+    "index": 51,
+    "ref": "Q51",
+    "id": "EX-N11",
+    "task_id": "Q-ID-51",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2023 (Online) 10th April Morning Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-10",
+    "stem": "A closed circular tube of average radius 15 cm, whose inner walls are rough, is kept in vertical plane. A block of mass 1 kg just fits inside the tube. The speed of block is 22 m/s, when it is introduced at the top of tube. After completing five oscillations, the block stops at the bottom region of tube. The work done by the tube on the block is __________ J. (Given g = 10 m/s ^(2) ). [FIG-stem-1]",
+    "options": [],
+    "figure_status": "REQUIRED_UNRESOLVED",
+    "figure_note": "Closed circular tube in a vertical plane, 30 cm across (radius 15 cm), block inside at the top.",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "From work energy theorem \ud835\udc4a_+\ud835\udc4a_=\u0394(\ud835\udc3e\ud835\udc38)=\ud835\udc3e\ud835\udc38_\ud835\udc53\u2212\ud835\udc3e\ud835\udc38_\ud835\udc56\ud835\udc4a_=\ud835\udc5a\ud835\udc54\u210e=1\u00d710\u00d70.3=3J\ud835\udc4a_=0\u2212(1)/(2)\u00d7(22)^(2)\u22123=\u2212(242+3)=\u2212245J The negative sign indicates that the work done by frictional force (the tube) is in the direction opposite to the displacement of the block. In conclusion, the work done by the tube on the block is 245 J.",
+    "holds": [
+      "EXCLUDED_FROM_SELECTION",
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+      "QUESTION_FIGURE_CUSTODY_UNRESOLVED",
+      "SIGNED_WORK_VS_KEY_DISPUTE"
+    ],
+    "stem_sha256": "12a8f2425259c6c9b25eaba9f7aed7b20549c74d6ab635daee4efb8c4bd43de7"
+  },
+  {
+    "index": 52,
+    "ref": "Q52",
+    "id": "EX-N19",
+    "task_id": "Q-ID-52",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2023 (Online) 30th January Evening Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-10",
+    "stem": "A body of mass 2kg is initially at rest. It starts moving unidirectionally under the influence of a source of constant power P. Its displacement in 4s is (1)/(3)\ud835\udefc^(2)\u221a(\ud835\udc43)m . The value of \ud835\udefc will be ______.",
+    "options": [],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "\ud835\udc43=\ud835\udc39\ud835\udc63 \ud835\udc5a(\ud835\udc63\ud835\udc51\ud835\udc63)/(\ud835\udc51\ud835\udc61)=\ud835\udc43 \ud835\udc5a\u222b[\ud835\udc63\u21920]\ud835\udc63\ud835\udc51\ud835\udc63=\u222b[\ud835\udc61\u21920]\ud835\udc43\ud835\udc51\ud835\udc61 (\ud835\udc5a\ud835\udc63^(2))/(2)=\ud835\udc43\ud835\udc61 \ud835\udc63=\u221a((2\ud835\udc43)/(\ud835\udc5a))\ud835\udc61^(1/2) \u222b[\ud835\udc60\u21920]\ud835\udc51\ud835\udc65=\u221a((2\ud835\udc43)/(\ud835\udc5a))\u222b[\ud835\udc61\u21920]\ud835\udc61^(1/2)\ud835\udc51\ud835\udc61 \ud835\udc60=(2)/(3)\u221a((2\ud835\udc43)/(\ud835\udc5a))\ud835\udc61^(3/2) or \ud835\udc60=(2)/(3)\u221a((2\ud835\udc43)/(2))\u00d74^(3/2) =(16)/(3)\u221a(\ud835\udc43)\ud835\udc5a So, \ud835\udefc=4",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "9739b34ab0a515db095df3f20655720d10bf0a5f3d057f175610930caf9d38ca"
+  },
+  {
+    "index": 53,
+    "ref": "Q53",
+    "id": "EX-N21",
+    "task_id": "Q-ID-53",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2023 (Online) 25th January Morning Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-11",
+    "stem": "An object of mass 'm' initially at rest on a smooth horizontal plane starts moving under the action of force F = 2N. In the process of its linear motion, the angle \ud835\udf03 (as shown in figure) between the direction of force and horizontal varies as \ud835\udf03=k\ud835\udc65 , where k is a constant and \ud835\udc65 is the distance covered by the object from its initial position. The expression of kinetic energy of the object will be \ud835\udc38=(\ud835\udc5b)/(\ud835\udc58)sin\u2061\ud835\udf03 . The value of n is ___________. [FIG-stem-1]",
+    "options": [],
+    "figure_status": "REQUIRED_UNRESOLVED",
+    "figure_note": "Figure referenced: 1 asset(s) unverified",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "[FIG-explanation-1] =\u0394K.E \u2234\u222b\ud835\udc39\u22c5\ud835\udc51\ud835\udc65=(1)/(2)\ud835\udc5a\ud835\udc63^(2)=\ud835\udc38\u2234\ud835\udc38=\u222b[\ud835\udc65\u21920]2cos\u2061(\ud835\udc58\ud835\udc65)\ud835\udc51\ud835\udc65\ud835\udc38=(2)/(\ud835\udc58)[sin\u2061\ud835\udc58\ud835\udc65][\ud835\udc65\u21920]=(2)/(\ud835\udc58)sin\u2061\ud835\udc58\ud835\udc65=(2sin\u2061\ud835\udf03)/(\ud835\udc58)",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+      "QUESTION_FIGURE_CUSTODY_UNRESOLVED"
+    ],
+    "stem_sha256": "9138f7c80c15935a01e5518199ae4da9a95c8e3c4945c05da65f61ee14a11375"
+  },
+  {
+    "index": 54,
+    "ref": "Q54",
+    "id": "EX-N26",
+    "task_id": "Q-ID-54",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2022 (Online) 24th June Morning Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "PREREQUISITE_BRIDGE",
+    "scope_note": "Momentum flux / continuous water jet force (fluid momentum bridge)",
+    "lot": "UNASSIGNED",
+    "stem": "A ball of mass 100 g is dropped from a height h = 10 cm on a platform fixed at the top of a vertical spring (as shown in figure). The ball stays on the platform and the platform is depressed by a distance (\u210e)/(2) . The spring constant is _____________ Nm \u2212 1. (Use g = 10 ms \u2212 2) [FIG-stem-1]",
+    "options": [],
+    "figure_status": "REQUIRED_UNRESOLVED",
+    "figure_note": "Ball at height h above a platform fixed on top of a vertical spring.",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "\ud835\udc5a\ud835\udc54(\u210e+(\u210e)/(2))=(1)/(2)\ud835\udc58((\u210e)/(2))^(2) \u21d20.1\u00d710\u00d7(0.15)=(1)/(2)\ud835\udc58(0.05)^(2) \u21d2\ud835\udc58=120 N/m",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+      "QUESTION_FIGURE_CUSTODY_UNRESOLVED"
+    ],
+    "stem_sha256": "b3cf431c5d8a0164540c32fbd0c39797a63078d7275f6d6db7507e9b1fca51ea"
+  },
+  {
+    "index": 55,
+    "ref": "Q55",
+    "id": "EX-N27",
+    "task_id": "Q-ID-55",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2021 (Online) 1st September Evening Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-11",
+    "stem": "An engine is attached to a wagon through a shock absorber of length 1.5 m. The system with a total mass of 40,000 kg is moving with a speed of 72 kmh \u2212 1 when the brakes are applied to bring it to rest. In the process of the system being brought to rest, the spring of the shock absorber gets compressed by 1.0 m. If 90% of energy of the wagon is lost due to friction, the spring constant is ____________ \u00d7 105 N/m.",
+    "options": [],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "Given, the length of the shock absorber, l = 1.5 mThe total mass of the system, M = 40000 kgThe speed of the wagon, v = 72 km/hWhen brakes are applied, the final velocity, vf = 0The compressed spring of the shock absorber, x = 1 mApplying the work-energy theorem,Work done by the system = Change in kinetic energy \ud835\udc4a=\u0394\ud835\udc3e\ud835\udc38 \ud835\udc4a_\ud835\udc53\ud835\udc5f\ud835\udc56\ud835\udc50\ud835\udc61\ud835\udc56\ud835\udc5c\ud835\udc5b+\ud835\udc4a_\ud835\udc60\ud835\udc5d\ud835\udc5f\ud835\udc56\ud835\udc5b\ud835\udc54=(1)/(2)\ud835\udc5a\ud835\udc63[2\u2192\ud835\udc53]\u2212(1)/(2)\ud835\udc5a\ud835\udc63[2\u2192\ud835\udc56] \u2212(90)/(100)((1)/(2)\ud835\udc5a\ud835\udc63^(2))+\ud835\udc4a_\ud835\udc60\ud835\udc5d\ud835\udc5f\ud835\udc56\ud835\udc5b\ud835\udc54=0\u2212(1)/(2)\ud835\udc5a\ud835\udc63[2\u2192\ud835\udc56] ( \u2235 90% energy lost due to friction) \ud835\udc4a_\ud835\udc60\ud835\udc5d\ud835\udc5f\ud835\udc56\ud835\udc5b\ud835\udc54=\u2212(10)/(100)\u00d7(1)/(2)\ud835\udc5a\ud835\udc63^(2) \u2212(1)/(2)\ud835\udc58\ud835\udc65^(2)=\u2212(1)/(20)\ud835\udc5a\ud835\udc63^(2) \ud835\udc58=(\ud835\udc5a\ud835\udc63^(2))/(10\u00d7\ud835\udc65^(2)) Substituting the values in the above equation, we get \ud835\udc58=(40000\u00d7(72\u00d7(5)/(18))^(2))/(10(1)^(2)) = 1",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "a6819daad7442b9720739551885301d5aa100cae1563cc8e3fe64518a08fae3d"
+  },
+  {
+    "index": 56,
+    "ref": "Q56",
+    "id": "EX-N30",
+    "task_id": "Q-ID-56",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2021 (Online) 26th August Morning Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-11",
+    "stem": "A uniform chain of length 3 meter and mass 3 kg overhangs a smooth table with 2 meter lying on the table. If k is the kinetic energy of the chain in joule as it completely slips off the table, then the value of k is ................. . (Take g = 10 m/s2)",
+    "options": [],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "[FIG-explanation-1] From energy conservationKi + Ui = kf + Uf 0+(\u22121\u00d710\u00d7(1)/(2))=\ud835\udc58_\ud835\udc53+(\u22123\u00d710\u00d7(3)/(2)) \u2212 5 = kf \u2212 45kf = 40 J",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "7c21556444e97731374f766f14f37a90cfb488abd5f66e30d1777cc4811cbd73"
+  },
+  {
+    "index": 57,
+    "ref": "Q57",
+    "id": "EX-N31",
+    "task_id": "Q-ID-57",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2021 (Online) 27th July Evening Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-11",
+    "stem": "A small block slides down from the top of hemisphere of radius R = 3 m as shown in the figure. The height 'h' at which the block will lose contact with the surface of the sphere is __________ m.(Assume there is no friction between the block and the hemisphere) [FIG-stem-1]",
+    "options": [],
+    "figure_status": "REQUIRED_UNRESOLVED",
+    "figure_note": "Small block at the top of a fixed hemisphere of radius R; the height drop to the point of leaving is marked (R - h).",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "[FIG-explanation-1] \ud835\udc5a\ud835\udc54cos\u2061\ud835\udf03=(\ud835\udc5a\ud835\udc63^(2))/(\ud835\udc45) .... (1) cos\u2061\ud835\udf03=(\u210e)/(\ud835\udc45) Energy conservation \ud835\udc5a\ud835\udc54{\ud835\udc45\u2212\u210e}=(1)/(2)\ud835\udc5a\ud835\udc63^(2) ..... (2)from (1) & (2) \u21d2 \ud835\udc5a\ud835\udc54{(\u210e)/(\ud835\udc45)}=(2\ud835\udc5a\ud835\udc54{\ud835\udc45\u2212\u210e})/(\ud835\udc45) \u210e=(2\ud835\udc45)/(3) = 2m",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+      "QUESTION_FIGURE_CUSTODY_UNRESOLVED"
+    ],
+    "stem_sha256": "4d65ea5eb7ee18377b5d2d9ca3264a4ebf6460d792aab960aa5119166b2e4431"
+  },
+  {
+    "index": 58,
+    "ref": "Q58",
+    "id": "EX-N34",
+    "task_id": "Q-ID-58",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2021 (Online) 20th July Morning Shift",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-11",
+    "stem": "In a spring gun having spring constant 100 N/m a small ball 'B' of mass 100 g is put in its barrel (as shown in figure) by compressing the spring through 0.05 m. There should be a box placed at a distance 'd' on the ground so that the ball falls in it. If the ball leaves the gun horizontally at a height of 2 m above the ground. The value of d is _________ m. (g = 10 m/s2). [FIG-stem-1]",
+    "options": [],
+    "figure_status": "REQUIRED_UNRESOLVED",
+    "figure_note": "Figure referenced: 1 asset(s) unverified",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "Given, k = 100 N/mm = 100 g = 0.1 kgx = 0.05 m and H = 2 mBy energy conservation, (1)/(2)\ud835\udc58\ud835\udc65^(2)=(1)/(2)\ud835\udc5a\ud835\udc63^(2)\u21d2\ud835\udc63=\ud835\udc65\u221a((\ud835\udc58)/(\ud835\udc5a)) =0.05\u00d7\u221a((100)/(0.1))=0.5\u221a(10) ms \u2212 1 .... (i)Time of flight of ball, \ud835\udc61=\u221a((2\ud835\udc3b)/(\ud835\udc54)) \u21d2\ud835\udc61=\u221a((2\u00d72)/(10))=(2)/(\u221a(10)) s .... (ii) \u2234 Range of ball, d = vt =0.5\u221a(10)\u00d7((2)/(\u221a(10))) [From Eqs. (i) and (ii)] =0.5\u00d72=1\ud835\udc5a",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+      "QUESTION_FIGURE_CUSTODY_UNRESOLVED"
+    ],
+    "stem_sha256": "48b31fcbba7f05e5a8d22084185d0d7dee11347424a767f88564a85916624285"
+  },
+  {
+    "index": 59,
+    "ref": "Q59",
+    "id": "EX-N38",
+    "task_id": "Q-ID-59",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2020 (Online) 5th September Evening Slot",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-12",
+    "stem": "A body of mass 2 kg is driven by an engine delivering a constant power of 1 J/s. The body starts from rest and moves in a straight line. After 9 seconds, the body has moved a distance (in m) _______.",
+    "options": [],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "Let s be the required distance. [FIG-explanation-1] From Work - Energy theorem, Work = Change in kinetic energy \u21d2 Power \u00d7 Time = \u0394 K i.e., Pt = \u0394 K \u21d2 Pt = (1)/(2) mv2 ..... (i) Given, P = 1 Js \u2212 1, t = 9 s, m = 2 kg Substituting all the given values in eq. (i), we get 1 \u00d7 9 = (1)/(2) (2) v2 v2 = 9 \u21d2 v = 3 m/s (at t = 9 s) As, Fv = P \u21d2 (ma)v = P [ \u2235 F = ma] \u21d2\ud835\udc5a[(\ud835\udc51\ud835\udc63)/(\ud835\udc51\ud835\udc61)]\ud835\udc63=\ud835\udc43\u21d2\ud835\udc5a[(\ud835\udc51\ud835\udc60)/(\ud835\udc51\ud835\udc61)(\ud835\udc51\ud835\udc63)/(\ud835\udc51\ud835\udc60)]\ud835\udc63=\ud835\udc43 \u21d2\ud835\udc5a[\ud835\udc63(\ud835\udc51\ud835\udc63)/(\ud835\udc51\ud835\udc60)]\ud835\udc63=\ud835\udc43 \u21d22\ud835\udc63^(2)\ud835\udc51\ud835\udc63=\ud835\udc51\ud835\udc60 { \u2235 P = 1 J/s and m = 2 kg} Integrating both sides, \u222b[0\u21923]2\ud835\udc63^(2)\ud835\udc51\ud835\udc63=\u222b[0\u2192\ud835\udc60]\ud835\udc51\ud835\udc60\u21d2(2)/(3)[\ud835\udc63^(3)][3\u21920]=\ud835\udc60 (2)/(3)[27\u22120]=\ud835\udc60\u21d2\ud835\udc60=18 m Hence, after 9 s, the body has moved a distance of 18 m.",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "a1ae424276a151020133e8093c67432b4d5ed499ede455da4039ce5cc513c2a4"
+  },
+  {
+    "index": 60,
+    "ref": "Q60",
+    "id": "EX-N39",
+    "task_id": "Q-ID-60",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2020 (Online) 3rd September Evening Slot",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-12",
+    "stem": "A block starts moving up an inclined plane of inclination 30o with an initial velocity of v0 . It comes back to its initial position with velocity (\ud835\udc63_0)/(2) . The value of the coefficient of kinetic friction between the block and the inclined plane is close to (\ud835\udc3c)/(1000) . The nearest integer to I is____.",
+    "options": [],
+    "figure_status": "NONE",
+    "figure_note": null,
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "[FIG-explanation-1] a = g sin 30 + \ud835\udf07 g cos 30 We know, v2 = u2 + 2as \u21d2 0 = \ud835\udc63[2\u21920] - 2ad \u21d2 \ud835\udc63[2\u21920]=2\ud835\udc4e\ud835\udc51 \ud835\udc51=(\ud835\udc63[2\u21920])/(2\ud835\udc4e) Total work done, \ud835\udc4a_\ud835\udc53=\ud835\udc58_\ud835\udc53\u2212\ud835\udc58_\ud835\udc56 \u21d2 \u22122\ud835\udf07\ud835\udc5a\ud835\udc54cos\u206130(\ud835\udc63[2\u21920])/(2\ud835\udc4e)=(1)/(2)\ud835\udc5a(\ud835\udc63[2\u21920])/(4)\u2212(1)/(2)\ud835\udc5a\ud835\udc63[2\u21920] \u21d2 (+\ud835\udf07\ud835\udc54cos\u206130)/(\ud835\udc4e)= (3)/(8) \u21d2 8\ud835\udf07\ud835\udc54cos\u206130=3\ud835\udc54sin\u206130+3\ud835\udf07cos\u206130 \u21d2 5\ud835\udf07\ud835\udc54cos\u206130=3\ud835\udc54sin\u206130 \u21d2 \ud835\udf07=(3tan\u206130)/(5)=(\u221a(3))/(5) \u21d2 (\u221a(3))/(5)=(\ud835\udc3c)/(1000) \u21d2 \ud835\udc3c=346",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "cd38aa00009c960631e41be9ab231e928c80b805c64c8780f54c2953967869cd"
+  },
+  {
+    "index": 61,
+    "ref": "Q61",
+    "id": "EX-N41",
+    "task_id": "Q-ID-61",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2020 (Online) 2nd September Morning Slot",
+    "origin": "ExamSIDE_Extract",
+    "scope": "PREREQUISITE_BRIDGE",
+    "scope_note": "Overhanging chain released from table (variable mass / calculus continuum bridge)",
+    "lot": "UNASSIGNED",
+    "stem": "[FIG-stem-1] A small block starts slipping down from a point B on an inclined plane AB, which is making an angle \ud835\udf03 with the horizontal section BC is smooth and the remaining section CA is rough with a coefficient of friction \ud835\udf07 . It is found that the block comes to rest as it reaches the bottom (point A) of the inclined plane. If BC = 2AC, the coefficient of friction is given by \ud835\udf07 = ktan \ud835\udf03 . The value of k is _________.",
+    "options": [],
+    "figure_status": "REQUIRED_UNRESOLVED",
+    "figure_note": "Figure referenced: 1 asset(s) unverified",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "[FIG-explanation-1] Apply work energy theorem Wg + Wf = \u0394 kE mgsin \ud835\udf03 (AC + 2AC) \u2013 \ud835\udf07 mg cos \ud835\udf03 \u00d7 AC = 0 - 0 \u21d2 \ud835\udf07 = 3tan \ud835\udf03",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+      "QUESTION_FIGURE_CUSTODY_UNRESOLVED"
+    ],
+    "stem_sha256": "bb905cd47f1ac4cb40fe72966111505497d225355ec3dde22f9520ae414a4576"
+  },
+  {
+    "index": 62,
+    "ref": "Q62",
+    "id": "EX-N42",
+    "task_id": "Q-ID-62",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2020 (Online) 7th January Morning Slot",
+    "origin": "ExamSIDE_Extract",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-12",
+    "stem": "A particle (m = 1 kg) slides down a frictionless track (AOC) starting from rest at a point A (height 2 m). After reaching C, the particle continues to move freely in air as a projectile. When it reaches its highest point P (height 1 m), the kinetic energy of the particle (in J) is : (Figure drawn is schematic and not to scale; take g = 10 ms-2) [FIG-stem-1]",
+    "options": [],
+    "figure_status": "REQUIRED_UNRESOLVED",
+    "figure_note": "Figure referenced: 1 asset(s) unverified",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "KE = PE1 \u2013 PE2 = mgh1 \u2013 mgh2 = 1 \u00d7 10 \u00d7 2 \u2013 1 \u00d7 10 \u00d7 1 = 10 J",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+      "QUESTION_FIGURE_CUSTODY_UNRESOLVED"
+    ],
+    "stem_sha256": "3a750d54e63d35d0453ec0da0e458d63b0314f13d594ef41cd8f6a6c2c866319"
+  },
+  {
+    "index": 63,
+    "ref": "Q63",
+    "id": "AN-1",
+    "task_id": "Q-ID-63",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2023 (Online), 29 January, Evening Shift",
+    "origin": "Anchor_Historical",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-12",
+    "stem": "Identify the correct statements from the following:\nA. Work done by a man in lifting a bucket out of a well by means of a rope tied to the bucket is negative.\nB. Work done by gravitational force in lifting a bucket out of a well by a rope tied to the bucket is negative.\nC. Work done by friction on a body sliding down an inclined plane is positive.\nD. Work done by an applied force on a body moving on a rough horizontal plane with uniform velocity is zero.\nE. Work done by the air resistance on an oscillating pendulum is negative.",
+    "options": {
+      "A": "A and C only",
+      "B": "B and D only",
+      "C": "B, D and E only",
+      "D": "B and E only"
+    },
+    "figure_status": "NONE",
+    "figure_note": "",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "Solved by the Oracle: A false (positive), B true, C false (negative), D false (the pull does positive work; only the net work is zero), E true. Publisher key not read; NTA key match NOT_RUN.",
+    "holds": [
+      "FORCE_FRAME_CONTACT_QUALIFICATIONS_REQUIRE_REVIEW",
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "cc6b080a4f624f51212a3211728edabfd3d0ce12589564eb0ec9873c55dde8f8"
+  },
+  {
+    "index": 64,
+    "ref": "Q64",
+    "id": "AN-2",
+    "task_id": "Q-ID-64",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2026 (Online), 22 January, Evening Shift",
+    "origin": "Anchor_Historical",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-12",
+    "stem": "Given below are two statements:\nStatement I: An object moves from position r\u2081 to position r\u2082 under a conservative force field F\u20d7. The work done by the force is W = \u2212\u222b(r\u2081\u2192r\u2082) F\u20d7\u00b7dr\u20d7.\nStatement II: Any object moving from one location to another location can follow infinite number of paths. Therefore, the amount of work done by the object changes with the path it follows for a conservative force.",
+    "options": {
+      "A": "Statement I is true but Statement II is false",
+      "B": "Statement I is false but Statement II is true",
+      "C": "Both Statement I and Statement II are false",
+      "D": "Both Statement I and Statement II are true"
+    },
+    "figure_status": "NONE",
+    "figure_note": "",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "Solved by the Oracle: work done BY the force is +\u222bF\u00b7dr; \u2212\u222bF\u00b7dr is \u0394U, so I is false. II contradicts path independence, so false. Publisher key not read; NTA key match NOT_RUN.",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "f55524808b7e173fa787c96f13a1df0ea75a0a2147a7fe60576d7af1c4697ced"
+  },
+  {
+    "index": 65,
+    "ref": "Q65",
+    "id": "AN-3",
+    "task_id": "Q-ID-65",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2025 (Online), 28 January, Morning Shift",
+    "origin": "Anchor_Historical",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-13",
+    "stem": "Assertion A: In a central force field, the work done is independent of the path chosen.\nReason R: Every force encountered in mechanics does not have an associated potential energy.",
+    "options": {
+      "A": "A is false but R is true",
+      "B": "Both A and R are true but R is NOT the correct explanation of A",
+      "C": "A is true but R is false",
+      "D": "Both A and R are true and R is the correct explanation of A"
+    },
+    "figure_status": "NONE",
+    "figure_note": "",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "Solved by the Oracle: A is true for central forces whose size depends only on distance (the JEE reading); R is true (friction has no potential energy) but does not explain A. Publisher key not read; NTA key match NOT_RUN.",
+    "holds": [
+      "CENTRAL_FORCE_QUALIFICATION",
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "7e4f3c7265264c89a289192bedc6248bc10a35301854870e87f749b83a006339"
+  },
+  {
+    "index": 66,
+    "ref": "Q66",
+    "id": "AN-4",
+    "task_id": "Q-ID-66",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2023 (Online), 12 April, Morning Shift",
+    "origin": "Anchor_Historical",
+    "scope": "PREREQUISITE_BRIDGE",
+    "scope_note": "Vertical loop circular trajectory",
+    "lot": "UNASSIGNED",
+    "stem": "Statement I: A truck and a car moving with same kinetic energy are brought to rest by applying brakes which provide equal retarding forces. Both come to rest in equal distance.\nStatement II: A car moving towards east takes a turn and moves towards north, the speed remains unchanged. The acceleration of the car is zero.",
+    "options": {
+      "A": "Statement I is incorrect but Statement II is correct.",
+      "B": "Statement I is correct but Statement II is incorrect.",
+      "C": "Both Statement I and Statement II are correct.",
+      "D": "Both Statement I and Statement II are incorrect."
+    },
+    "figure_status": "NONE",
+    "figure_note": "",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "Solved by the Oracle: F\u00b7d = K, so equal distances (I correct); velocity direction changes, so acceleration is not zero (II incorrect). Publisher key not read; NTA key match NOT_RUN.",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "e95acf85a8573bf21ae6fb4b25eb5bf7026b64136db9d1e832e5131c694fdb2a"
+  },
+  {
+    "index": 67,
+    "ref": "Q67",
+    "id": "AN-5",
+    "task_id": "Q-ID-67",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "AIEEE 2004",
+    "origin": "Anchor_Historical",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-13",
+    "stem": "A particle is acted upon by a force of constant magnitude which is always perpendicular to the velocity of the particle, the motion of the particles takes place in a plane. It follows that",
+    "options": {
+      "A": "its kinetic energy is constant",
+      "B": "its acceleration is constant",
+      "C": "its velocity is constant",
+      "D": "it moves in a straight line"
+    },
+    "figure_status": "NONE",
+    "figure_note": "",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "Solved by the Oracle: zero work so speed constant; acceleration's direction changes, so not constant. Publisher key not read.",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "418e81b2f767cac56cbc06edf988ea400744d74b0990258dc5c881508c5a55b1"
+  },
+  {
+    "index": 68,
+    "ref": "Q68",
+    "id": "AN-6",
+    "task_id": "Q-ID-68",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2025 (Online), 7 April, Evening Shift",
+    "origin": "Anchor_Historical",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-13",
+    "stem": "Which one of the following forces cannot be expressed in terms of potential energy?",
+    "options": {
+      "A": "Frictional force",
+      "B": "Coulomb's force",
+      "C": "Restoring force",
+      "D": "Gravitational force"
+    },
+    "figure_status": "NONE",
+    "figure_note": "",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "Publisher answer A read by the ExamSIDE research (candidates.json); agrees with the canonical library.",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND"
+    ],
+    "stem_sha256": "67effd544d50be89bc80c6bdd4b23423bc52f315f7009f5fdeb8e84a29038af2"
+  },
+  {
+    "index": 69,
+    "ref": "Q69",
+    "id": "JEE-2026-04-04-S1-Q46",
+    "task_id": "Q-ID-69",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2026 Session 2 / 2026-04-04 / Shift 1 (Morning)",
+    "origin": "NTA_Pass2_Raw",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-13",
+    "stem": "A 1 kg block subjected to two simultaneous forces (2i^ + 3j^ + 4k^) N and (3i^ - j^ - 2k^) N is moved a distance of 25 m along (3i^ - 4j^) direction. The work done in this process is _____ J.",
+    "options": null,
+    "figure_status": "REQUIRED_RETAINED",
+    "figure_note": "",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "1. Resultant force: F_net = F_1 + F_2 = (2 + 3)i^ + (3 - 1)j^ + (4 - 2)k^ = (5i^ + 2j^ + 2k^) N.\n2. Unit displacement vector along direction (3i^ - 4j^): u^ = (3i^ - 4j^) / sqrt(3^2 + (-4)^2) = (3i^ - 4j^) / 5.\n3. Total displacement vector: s = 25 * u^ = 25 * (3i^ - 4j^) / 5 = (15i^ - 20j^) m.\n4. Work done by net force: W = F_net . s = (5)(15) + (2)(-20) + (2)(0) = 75 - 40 = 35 J.",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING"
+    ],
+    "stem_sha256": "5ad3a190498785dd07144b65cababc08875eccd1c1fe3cae60fcfaffc2a7a27e"
+  },
+  {
+    "index": 70,
+    "ref": "Q70",
+    "id": "JEE-2026-04-06-S2-Q29",
+    "task_id": "Q-ID-70",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2026 Session 2 / 2026-04-06 / Shift 2 (Evening)",
+    "origin": "NTA_Pass2_Raw",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-13",
+    "stem": "A body of mass 1 kg moves along a straight line with a velocity v = 2x^2. The work done by the body during displacement from x = 0 to 5 m is _____ J.",
+    "options": {
+      "6911214178": "0",
+      "6911214179": "250",
+      "6911214180": "1250",
+      "6911214181": "1000"
+    },
+    "figure_status": "REQUIRED_RETAINED",
+    "figure_note": "",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "1. At initial position x_i = 0 m: v_i = 2(0)^2 = 0 m/s, so initial kinetic energy K_i = 0 J.\n2. At final position x_f = 5 m: v_f = 2(5)^2 = 50 m/s.\n3. By Work-Energy Theorem: W_net = Delta K = 1/2 m (v_f^2 - v_i^2) = 1/2 (1 kg) (50^2 - 0) = 1250 J.\n(Alternative calculus route: F = m v dv/dx = 1 * (2x^2) * (4x) = 8x^3 N. W = int_0^5 8x^3 dx = [2x^4]_0^5 = 2(625) = 1250 J.)",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "WORK_BY_VS_ON_WORDING_AMBIGUITY"
+    ],
+    "stem_sha256": "4ee2f5ef155a22e2906cb7dd9fcfb0e6e4409a2e21fb691fbce58dacfec00ed3"
+  },
+  {
+    "index": 71,
+    "ref": "Q71",
+    "id": "JEE-2026-04-06-S1-Q28",
+    "task_id": "Q-ID-71",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2026 Session 2 / 2026-04-06 / Shift 1 (Morning)",
+    "origin": "NTA_Pass2_Raw",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-14",
+    "stem": "The rain drop of mass 1 g, starts with zero velocity from a height of 1 km. It hits the ground with a speed of 5 m/s. The work done by the unknown resistive force is _____ J. (take g = 10 m/s^2)",
+    "options": {
+      "6952787589": "- 8.75",
+      "6952787590": "- 8.35",
+      "6952787591": "- 9.55",
+      "6952787592": "- 9.98"
+    },
+    "figure_status": "REQUIRED_RETAINED",
+    "figure_note": "",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "1. Mass of raindrop: m = 1 g = 10^-3 kg. Fall distance: h = 1 km = 1000 m.\n2. Work done by gravity: W_g = m g h = (10^-3 kg)(10 m/s^2)(1000 m) = +10.0 J.\n3. Change in kinetic energy: Delta K = 1/2 m v^2 - 0 = 1/2 (10^-3 kg)(5 m/s)^2 = 0.0125 J.\n4. Work-Energy Theorem: W_g + W_res = Delta K ==> W_res = Delta K - W_g = 0.0125 J - 10.0 J = -9.9875 J ~= -9.98 J.",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "NEAREST_OPTION_VS_ROUNDING_REQUIRES_REVIEW"
+    ],
+    "stem_sha256": "bd9a429a1793415df658c78ddc1b3c13b8e6a64063471a389b041a6ef38ea5be"
+  },
+  {
+    "index": 72,
+    "ref": "Q72",
+    "id": "JEE-2026-04-02-S2-Q31",
+    "task_id": "Q-ID-72",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2026 Session 2 / 2026-04-02 / Shift 2 (Evening)",
+    "origin": "NTA_Pass2_Raw",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-14",
+    "stem": "If a body of mass 1 kg falls on the earth from infinity, it attains velocity (v) and kinetic energy (k) on reaching the surface of earth. The values of v and k respectively are _____ . (Take radius of earth to be 6400 km and g = 9.8 m/s^2)",
+    "options": {
+      "691121616": "11.2 km/s; 6.27 x 10^7 J",
+      "691121617": "11.2 km/s; 12.54 x 10^7 J",
+      "691121618": "8.8 km/s; 6.27 x 10^7 J",
+      "691121619": "8.8 km/s; 12.54 x 10^7 J"
+    },
+    "figure_status": "REQUIRED_RETAINED",
+    "figure_note": "",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "1. Conservation of mechanical energy between infinity (r = infty) and Earth surface (r = R):\n   E_i = K_i + U_i = 0 + 0 = 0 J.\n   E_f = K_f + U_f = K_f - G M m / R = 0 ==> K_f = G M m / R.\n2. Express in terms of surface gravity g = G M / R^2 ==> G M / R = g R:\n   k = K_f = m g R = (1 kg)(9.8 m/s^2)(6.4 x 10^6 m) = 6.272 x 10^7 J ~= 6.27 x 10^7 J.\n3. Velocity attained: 1/2 m v^2 = k ==> v = sqrt(2 g R) = sqrt(2 * 9.8 * 6.4 x 10^6) = sqrt(1.2544 x 10^8) = 11.2 x 10^3 m/s = 11.2 km/s.\n4. Matching pair: 11.2 km/s; 6.27 x 10^7 J corresponds to option 691121616.",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "NONUNIFORM_GRAVITY_PREREQUISITE_UNQUALIFIED"
+    ],
+    "stem_sha256": "854dfa83856e4d30d96041b64041918319bda6eb1cdb32748b4c14692d768385"
+  },
+  {
+    "index": 73,
+    "ref": "Q73",
+    "id": "JEE-2026-04-05-S2-Q28",
+    "task_id": "Q-ID-02",
+    "primary": false,
+    "duplicate_status": "PROVISIONAL_ALIAS",
+    "alias_of": "EX-M4",
+    "paper": "JEE Main 2026 Session 2 / 2026-04-05 / Shift 2 (Evening)",
+    "origin": "NTA_Pass2_Raw",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-14 (PENDING)",
+    "stem": "A mass of 1 kg is kept on a inclined plane with 30\u00b0 inclination with respect to horizontal plane and it is at rest initially. Then the whole assembly is moved up with constant velocity of 4 m/s. The work done by the frictional force in time 2 s is _____ J. (Take g = 10 m/s^2)",
+    "options": {
+      "6911211624": "20",
+      "6911211625": "25",
+      "6911211626": "30",
+      "6911211627": "10"
+    },
+    "figure_status": "REQUIRED_RETAINED",
+    "figure_note": "",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "1. Incline angle theta = 30\u00b0 to horizontal. Since block remains at rest relative to the incline moving at constant velocity, net acceleration is zero.\n2. Force balance along the incline: static friction f_s balances the component of gravity down the incline:\n   f_s = m g sin(30\u00b0) = (1 kg)(10 m/s^2)(0.5) = 5 N directed upward along the incline (at 30\u00b0 to horizontal).\n3. Displacement of the assembly: moves vertically upward with speed v = 4 m/s for time t = 2 s:\n   s = v * t = 4 * 2 = 8 m vertically upward.\n4. Angle phi between friction force vector f_s and vertical displacement vector s: phi = 90\u00b0 - 30\u00b0 = 60\u00b0.\n5. Work done by static friction in the ground frame: W_f = f_s * s * cos(60\u00b0) = 5 N * 8 m * 0.5 = 20 J.",
+    "holds": [
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "TRANSLATION_DIRECTION_AMBIGUITY"
+    ],
+    "stem_sha256": "90c93c0590800e6010895b00413c491fc8ad143da28cb5858c85f792d887ee65"
+  },
+  {
+    "index": 74,
+    "ref": "Q74",
+    "id": "JEE-2026-04-04-S1-Q49",
+    "task_id": "Q-ID-73",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "JEE Main 2026 Session 2 / 2026-04-04 / Shift 1 (Morning)",
+    "origin": "NTA_Pass2_Raw",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-14",
+    "stem": "A body of mass 2 kg begins to move under the influence of time dependent force F^ = (2t i^ + 6t^2 j^) N, where i^ and j^ are unit vectors along x and y-axis respectively. The power produced by the force at t = 2 s is _____ W.",
+    "options": null,
+    "figure_status": "REQUIRED_RETAINED",
+    "figure_note": "",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": "1. Acceleration: a(t) = F(t) / m = (2t i^ + 6t^2 j^) / 2 = t i^ + 3t^2 j^ m/s^2.\n2. Initial condition 'begins to move' implies v(0) = 0.\n3. Velocity at time t: v(t) = int_0^t a(t') dt' = (t^2 / 2) i^ + t^3 j^ m/s.\n4. At t = 2 s:\n   F(2) = 2(2) i^ + 6(2^2) j^ = 4 i^ + 24 j^ N.\n   v(2) = (2^2 / 2) i^ + (2^3) j^ = 2 i^ + 8 j^ m/s.\n5. Instantaneous power: P = F . v = (4)(2) + (24)(8) = 8 + 192 = 200 W.",
+    "holds": [
+      "CALCULUS_PREREQUISITE_UNQUALIFIED",
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING"
+    ],
+    "stem_sha256": "ea34503673c915695c8545282bb04f3f2c6afb3b104f240c8c9508cb2e9e24e3"
+  },
+  {
+    "index": 75,
+    "ref": "Q75",
+    "id": "WEP07-01",
+    "task_id": "Q-ID-74",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "NSEP 2024 code 61 Q4",
+    "origin": "NSEP_Extension",
+    "scope": "PREREQUISITE_BRIDGE",
+    "scope_note": "Rolling on incline / moment of inertia (rotational bridge)",
+    "lot": "UNASSIGNED",
+    "stem": null,
+    "options": null,
+    "figure_status": "REQUIRED_RETAINED",
+    "figure_note": "",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": {
+      "crux_move_ref": "WEP07-01-s2",
+      "reasoning_route": [
+        {
+          "step_ref": "WEP07-01-s1",
+          "description": "At the initial equilibrium the original force gives F=k\u03be."
+        },
+        {
+          "step_ref": "WEP07-01-s2",
+          "description": "Choose x positive along the new applied force, so the initial coordinate is \u2212\u03be; after switching, U_eff(x)=kx\u00b2/2\u22122Fx."
+        },
+        {
+          "step_ref": "WEP07-01-s3",
+          "description": "Immediately after switching the spring is still at \u2212\u03be with zero speed: E= k\u03be\u00b2/2+2F\u03be=5k\u03be\u00b2/2."
+        },
+        {
+          "step_ref": "WEP07-01-s4",
+          "description": "At an extreme extension K=0, hence kx\u00b2/2\u22122k\u03bex=5k\u03be\u00b2/2."
+        },
+        {
+          "step_ref": "WEP07-01-s5",
+          "description": "Thus x\u00b2\u22124\u03bex\u22125\u03be\u00b2=(x\u22125\u03be)(x+\u03be)=0; exclude the already-known initial root x=\u2212\u03be."
+        },
+        {
+          "step_ref": "WEP07-01-s6",
+          "description": "The other turning point is x=5\u03be, choice d."
+        }
+      ],
+      "writer_solution": "Use F=k\u03be. A constant force of magnitude 2F directed toward extension has potential \u22122Fx. Conservation after the switch is (k/2)x\u00b2\u22122k\u03bex=(5/2)k\u03be\u00b2 at the two zero-velocity points. Factoring yields x=\u2212\u03be (starting point) and x=5\u03be (maximum extension). Therefore d.",
+      "calculated_answer": [
+        "d"
+      ],
+      "agrees_with_official_key": true
+    },
+    "holds": [
+      "EXACT_TEXT_EXTRACTION_NOT_COMPLETED",
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_KEY_NOT_RETAINED"
+    ],
+    "stem_sha256": null
+  },
+  {
+    "index": 76,
+    "ref": "Q76",
+    "id": "WEP07-02",
+    "task_id": "Q-ID-75",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "NSEP 2024 code 61 Q32",
+    "origin": "NSEP_Extension",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-14",
+    "stem": null,
+    "options": null,
+    "figure_status": "REQUIRED_RETAINED",
+    "figure_note": "",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": {
+      "crux_move_ref": "WEP07-02-s1",
+      "reasoning_route": [
+        {
+          "step_ref": "WEP07-02-s1",
+          "description": "When length y hangs, that portion has mass \u03bby and mean gravitational height \u2212y/2; therefore U(y)=\u2212\u03bbgy\u00b2/2."
+        },
+        {
+          "step_ref": "WEP07-02-s2",
+          "description": "The initial energy is E_i=\u2212\u03bbgy\u2080\u00b2/2 because the chain is released from rest."
+        },
+        {
+          "step_ref": "WEP07-02-s3",
+          "description": "Just before leaving the edge, U_f=\u2212\u03bbgL\u00b2/2 and K_f=(\u03bbL)v\u00b2/2."
+        },
+        {
+          "step_ref": "WEP07-02-s4",
+          "description": "Set E_i=U_f+K_f and cancel \u03bb/2."
+        },
+        {
+          "step_ref": "WEP07-02-s5",
+          "description": "Obtain Lv\u00b2=g(L\u00b2\u2212y\u2080\u00b2), hence v=\u221a[g(L\u2212y\u2080\u00b2/L)], choice a."
+        }
+      ],
+      "writer_solution": "Take the table-edge height as U=0. The initial dangling segment has mass \u03bby\u2080 and its centre of mass lies y\u2080/2 below the edge, so U_i=\u2212\u03bbgy\u2080\u00b2/2. The final chain has mass \u03bbL and COM L/2 below the edge, so U_f=\u2212\u03bbgL\u00b2/2. Thus (\u03bbL)v\u00b2/2=\u03bbg(L\u00b2\u2212y\u2080\u00b2)/2. Divide through: v\u00b2=g(L\u2212y\u2080\u00b2/L), giving a.",
+      "calculated_answer": [
+        "a"
+      ],
+      "agrees_with_official_key": true
+    },
+    "holds": [
+      "EXACT_TEXT_EXTRACTION_NOT_COMPLETED",
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_KEY_NOT_RETAINED"
+    ],
+    "stem_sha256": null
+  },
+  {
+    "index": 77,
+    "ref": "Q77",
+    "id": "WEP07-03",
+    "task_id": "Q-ID-76",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "NSEP 2025 code 61 Q57",
+    "origin": "NSEP_Extension",
+    "scope": "IN_SCOPE",
+    "scope_note": "Core Work, Power and Energy physics",
+    "lot": "LOT-14",
+    "stem": null,
+    "options": null,
+    "figure_status": "REQUIRED_RETAINED",
+    "figure_note": "",
+    "key_status": "VERIFIED",
+    "key_note": "Inherited legacy claim (IAPT final official key verified for NSEP 2025 code 61 Q57: options a, b, c, d); primary source artifacts pending independent re-check. Academic admission remains HOLD.",
+    "solution": {
+      "crux_move_ref": "WEP07-03-s2",
+      "reasoning_route": [
+        {
+          "step_ref": "WEP07-03-s1",
+          "description": "Since x\u2080=\u03b1/\u03b2, write \u03b2=\u03b1/x\u2080 and U(x)=\u03b1/x\u2080\u00b2[(x\u2080/x)\u00b2\u2212x\u2080/x]."
+        },
+        {
+          "step_ref": "WEP07-03-s2",
+          "description": "At the release point x=x\u2080, U(x\u2080)=0 and K=0; thus the conserved total energy E=0."
+        },
+        {
+          "step_ref": "WEP07-03-s3",
+          "description": "Hence K(x)=\u2212U(x)=\u03b1/x\u2080\u00b2[z\u2212z\u00b2] where z=x\u2080/x, and v(x)=\u221a{2\u03b1/[mx\u2080\u00b2]\u00b7[z\u2212z\u00b2]}."
+        },
+        {
+          "step_ref": "WEP07-03-s4",
+          "description": "The accessible outward branch has x\u2265x\u2080 and thus 0<z\u22641; x\u2080 is its finite turning point and no smaller positive x is accessible."
+        },
+        {
+          "step_ref": "WEP07-03-s5",
+          "description": "Complete the square z\u2212z\u00b2=1/4\u2212(z\u22121/2)\u00b2; its maximum 1/4 occurs at z=1/2 or x=2x\u2080."
+        },
+        {
+          "step_ref": "WEP07-03-s6",
+          "description": "Then v_max\u00b2=\u03b1/(2mx\u2080\u00b2). Claims a, b, c and d all hold."
+        }
+      ],
+      "writer_solution": "Substitute \u03b2=\u03b1/x\u2080. At release, U(x\u2080)=\u03b1/x\u2080\u00b2\u2212\u03b1/x\u2080\u00b2=0, so E=K+U=0 for the motion. Set z=x\u2080/x: U=\u03b1(z\u00b2\u2212z)/x\u2080\u00b2 and v\u00b2=(2\u03b1/(mx\u2080\u00b2))(z\u2212z\u00b2). Thus statements a, b and d are true. For maximum speed, complete the square: z\u2212z\u00b2=1/4\u2212(z\u22121/2)\u00b2; maximum at z=1/2 (x=2x\u2080), giving v_max=\u221a[\u03b1/(2mx\u2080\u00b2)]. Thus c true and official set a,b,c,d agrees. Motion on the positive axis cannot enter 0<x<x\u2080 because then U>0=E.",
+      "calculated_answer": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "agrees_with_official_key": true
+    },
+    "holds": [
+      "EXACT_TEXT_EXTRACTION_NOT_COMPLETED",
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_KEY_NOT_RETAINED",
+      "PAPER_CODE_61_VS_611_RECONCILIATION"
+    ],
+    "stem_sha256": null
+  },
+  {
+    "index": 78,
+    "ref": "Q78",
+    "id": "WEP07-04",
+    "task_id": "Q-ID-77",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "NSEP 2024 code 61 Q59",
+    "origin": "NSEP_Extension",
+    "scope": "PREREQUISITE_BRIDGE",
+    "scope_note": "Potential energy of coupled oscillator / SHM",
+    "lot": "UNASSIGNED",
+    "stem": null,
+    "options": null,
+    "figure_status": "REQUIRED_RETAINED",
+    "figure_note": "",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": {
+      "crux_move_ref": "WEP07-04-s5",
+      "reasoning_route": [
+        {
+          "step_ref": "WEP07-04-s1",
+          "description": "Let total rod mass be M. From horizontal rest, its COM descends L/2; equate MgL/2=(1/2)(ML\u00b2/3)\u03c9\u00b2."
+        },
+        {
+          "step_ref": "WEP07-04-s2",
+          "description": "This gives \u03c9\u00b2=3g/L, confirming statement b."
+        },
+        {
+          "step_ref": "WEP07-04-s3",
+          "description": "Immediately after impulse-free fracture, the upper half has mass M/2, length L/2 and inertia about O: I_top=ML\u00b2/24."
+        },
+        {
+          "step_ref": "WEP07-04-s4",
+          "description": "At the break its kinetic energy about O is (1/2)I_top\u03c9\u00b2=MgL/16."
+        },
+        {
+          "step_ref": "WEP07-04-s5",
+          "description": "When the upper piece reaches a turning angle \u03b8, K=0 and its COM rises by (L/4)(1\u2212cos\u03b8). Set MgL/16=(MgL/8)(1\u2212cos\u03b8), obtaining \u03b8=60\u00b0; this confirms c under the horizontal-release state."
+        },
+        {
+          "step_ref": "WEP07-04-s6",
+          "description": "The physical pendulum period is 2\u03c0\u221a[2L/(3g)], not the claim in a; the lower piece retains nonzero horizontal COM velocity and so does not fall strictly vertically, refuting d."
+        }
+      ],
+      "writer_solution": "For a uniform intact rod released from horizontal, E_g=M gL/2 goes into K_rot=(ML\u00b2/6)\u03c9\u00b2, so \u03c9=\u221a(3g/L) (b). If it breaks without impulse at the vertical, the attached top half has inertia (M/2)(L/2)\u00b2/3=ML\u00b2/24, with kinetic energy MgL/16. At its angular turning point: (M/2)g(L/4)(1\u2212cos\u03b8)=MgL/16, so cos\u03b8=1/2 and \u03b8=60\u00b0 (c). Meanwhile a misstates the physical-pendulum period, and d overlooks the lower fragment\u2019s horizontal COM velocity.",
+      "calculated_answer": [
+        "b",
+        "c"
+      ],
+      "agrees_with_official_key": true
+    },
+    "holds": [
+      "EXACT_TEXT_EXTRACTION_NOT_COMPLETED",
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_KEY_NOT_RETAINED"
+    ],
+    "stem_sha256": null
+  },
+  {
+    "index": 79,
+    "ref": "Q79",
+    "id": "WEP07-05",
+    "task_id": "Q-ID-78",
+    "primary": true,
+    "duplicate_status": "PROVISIONAL_DISTINCT",
+    "alias_of": null,
+    "paper": "NSEP 2019 code 61 Q19",
+    "origin": "NSEP_Extension",
+    "scope": "PREREQUISITE_BRIDGE",
+    "scope_note": "Planetary / inverse square non-uniform gravity",
+    "lot": "UNASSIGNED",
+    "stem": null,
+    "options": null,
+    "figure_status": "NONE",
+    "figure_note": "",
+    "key_status": "UNRESOLVED",
+    "key_note": "Third-party / coaching answer only; authentic official question/option ID chain unmapped. Academic admission remains HOLD.",
+    "solution": {
+      "crux_move_ref": "WEP07-05-s2",
+      "reasoning_route": [
+        {
+          "step_ref": "WEP07-05-s1",
+          "description": "Read amplitude A\u22485 cm=0.05 m and period T\u22488 s from peak-to-peak spacing."
+        },
+        {
+          "step_ref": "WEP07-05-s2",
+          "description": "Use the SHM relation v_max=2\u03c0A/T=2\u03c0\u00b70.05/8\u22480.03927 m/s."
+        },
+        {
+          "step_ref": "WEP07-05-s3",
+          "description": "With U=0 at equilibrium, E=K_max=(1/2)(1 kg)(0.03927 m/s)\u00b2\u22487.71\u00d710\u207b\u2074 J."
+        },
+        {
+          "step_ref": "WEP07-05-s4",
+          "description": "This corresponds to option c in the official final key."
+        }
+      ],
+      "writer_solution": "For a sinusoidal displacement of amplitude 0.05 m and period 8 s, the speed amplitude is \u03c9A=(2\u03c0/8)\u00b70.05=0.03927 m/s. Evaluating E=K_max=(1/2)(1)(0.03927)\u00b2 gives 7.71\u00d710\u207b\u2074 J, choice c. This is total mechanical energy only with the conventional equilibrium potential chosen as zero.",
+      "calculated_answer": [
+        "c"
+      ],
+      "agrees_with_official_key": true
+    },
+    "holds": [
+      "EXACT_TEXT_EXTRACTION_NOT_COMPLETED",
+      "INDEPENDENT_KEY_REVIEW_MISSING",
+      "INDEPENDENT_QRT_REVIEW_MISSING",
+      "INDEPENDENT_SOURCE_REVIEW_MISSING",
+      "OFFICIAL_KEY_ITEM_NOT_BOUND",
+      "OFFICIAL_KEY_NOT_RETAINED",
+      "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+      "QUESTION_NOT_CAPTURED"
+    ],
+    "stem_sha256": null
+  }
+]
+</script>
+
+<script>
+const records = JSON.parse(document.getElementById('recordsData').textContent);
+
+const cardsView = document.getElementById('cardsView');
+const tableView = document.getElementById('tableView');
+const tableBody = document.getElementById('tableBody');
+const searchInput = document.getElementById('searchInput');
+const scopeFilter = document.getElementById('scopeFilter');
+const lotFilter = document.getElementById('lotFilter');
+const figureFilter = document.getElementById('figureFilter');
+const resultsCount = document.getElementById('resultsCount');
+const btnCardView = document.getElementById('btnCardView');
+const btnTableView = document.getElementById('btnTableView');
+
+let activeView = 'cards';
+
+function getScopeBadge(scope) {
+    if (scope === 'IN_SCOPE') return '<span class="pill pill-in-scope">In-Scope WPE</span>';
+    if (scope === 'PREREQUISITE_BRIDGE') return '<span class="pill pill-prereq">Prereq Bridge</span>';
+    return '<span class="pill pill-collision">Collision / Out-of-Scope</span>';
+}
+
+function getFigureBadge(figStatus) {
+    if (figStatus === 'TEXT_ONLY_NO_FIGURE') return '<span class="pill pill-textonly">Text Only</span>';
+    return '<span class="pill pill-figure">Requires Figure</span>';
+}
+
+function renderCards(filtered) {
+    cardsView.innerHTML = '';
+    filtered.forEach(r => {
+        const card = document.createElement('article');
+        card.className = 'question-card';
+
+        let optionsHtml = '';
+        if (r.options && r.options.length > 0) {
+            optionsHtml = '<div class="options-grid">' + 
+                r.options.map(opt => `<div class="option-box">${escapeHtml(opt)}</div>`).join('') +
+                '</div>';
+        }
+
+        let figureHtml = '';
+        if (r.figure_note) {
+            figureHtml = `<div style="font-size: 12px; color: var(--warn-text); background: var(--warn-bg); padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; border: 1px solid var(--warn-border);">
+                <strong>Figure Description Note:</strong> ${escapeHtml(r.figure_note)}
+            </div>`;
+        }
+
+        let duplicateNotice = '';
+        if (r.duplicate_status === 'CANDIDATE_ALIAS') {
+            duplicateNotice = `<span style="font-size: 11px; background: #4c1d95; color: #e9d5ff; padding: 2px 6px; border-radius: 4px;">Candidate Alias of ${r.alias_of}</span>`;
+        }
+
+        let holdsHtml = '';
+        if (r.holds && r.holds.length > 0) {
+            holdsHtml = `<div class="hold-tags">` + 
+                r.holds.map(h => `<span class="hold-tag">${h}</span>`).join('') +
+                `</div>`;
+        }
+
+        let solutionHtml = '';
+        if (r.solution) {
+            solutionHtml = `<div style="margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--border-subtle); color: var(--text-muted);">
+                <strong style="color: var(--text);">Solution / Derivation Excerpt:</strong><br>${escapeHtml(r.solution)}
+            </div>`;
+        }
+
+        card.innerHTML = `
+            <div class="card-top">
+                <div class="card-identifiers">
+                    <span class="ref-pill">${r.ref}</span>
+                    <span class="id-badge">${r.id}</span>
+                    <span class="task-id">${r.task_id || ''}</span>
+                    ${duplicateNotice}
+                </div>
+                <div class="card-badges">
+                    <span class="pill pill-lot">${r.lot}</span>
+                    ${getScopeBadge(r.scope)}
+                    ${getFigureBadge(r.figure_status)}
+                    <span class="pill pill-hold">Hold: Admission</span>
+                </div>
+            </div>
+            <div class="card-paper">
+                <strong>Paper / Sitting:</strong> ${escapeHtml(r.paper)} &bull; <strong>Origin:</strong> ${r.origin}
+            </div>
+            <div class="card-stem">
+                ${escapeHtml(r.stem) || '<em style="color: var(--text-muted);">Stem text not bound in registry.</em>'}
+            </div>
+            ${figureHtml}
+            ${optionsHtml}
+            <div class="card-accordion">
+                <button type="button" class="accordion-toggle" onclick="toggleDetails(this)">
+                    <span>Show Technical Holds &amp; Audit Metadata</span> &darr;
+                </button>
+                <div class="accordion-body">
+                    <div><strong>Official Key Status:</strong> ${r.key_status} &bull; ${escapeHtml(r.key_note || 'Unmapped')}</div>
+                    <div style="margin-top: 4px;"><strong>Stem SHA-256:</strong> <code style="font-size: 11px;">${r.stem_sha256 || 'None'}</code></div>
+                    ${solutionHtml}
+                    <div style="margin-top: 8px;"><strong>Active Blocker Holds (${r.holds ? r.holds.length : 0}):</strong></div>
+                    ${holdsHtml}
+                </div>
+            </div>
+        `;
+        cardsView.appendChild(card);
+    });
+}
+
+function renderTable(filtered) {
+    tableBody.innerHTML = '';
+    filtered.forEach(r => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td><strong>${r.ref}</strong></td>
+            <td><code>${r.id}</code><br><small style="color: var(--text-muted);">${r.task_id || ''}</small></td>
+            <td><span class="pill pill-lot">${r.lot}</span></td>
+            <td>${getScopeBadge(r.scope)}</td>
+            <td><small>${escapeHtml(r.paper)}</small></td>
+            <td>${getFigureBadge(r.figure_status)}</td>
+            <td><small>${r.key_status}</small></td>
+            <td style="max-width: 320px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                <span title="${escapeHtml(r.stem || '')}">${escapeHtml((r.stem || '').substring(0, 80))}...</span>
+            </td>
+            <td><small style="color: #fca5a5;">${r.holds ? r.holds.length : 0} holds</small></td>
+        `;
+        tableBody.appendChild(row);
+    });
+}
+
+function toggleDetails(btn) {
+    const body = btn.nextElementSibling;
+    const isOpen = body.classList.toggle('open');
+    btn.innerHTML = isOpen ? '<span>Hide Technical Holds &amp; Audit Metadata</span> &uarr;' : '<span>Show Technical Holds &amp; Audit Metadata</span> &darr;';
+}
+
+function escapeHtml(text) {
+    if (!text) return '';
+    return String(text)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+}
+
+function applyFilters() {
+    const query = searchInput.value.toLowerCase().trim();
+    const scopeVal = scopeFilter.value;
+    const lotVal = lotFilter.value;
+    const figureVal = figureFilter.value;
+
+    const filtered = records.filter(r => {
+        // Scope
+        if (scopeVal !== 'ALL' && r.scope !== scopeVal) return false;
+
+        // Lot
+        if (lotVal !== 'ALL') {
+            if (lotVal === 'UNASSIGNED') {
+                if (r.lot !== 'UNASSIGNED') return false;
+            } else {
+                if (!r.lot.startsWith(lotVal)) return false;
+            }
+        }
+
+        // Figure
+        if (figureVal === 'TEXT_ONLY_NO_FIGURE' && r.figure_status !== 'TEXT_ONLY_NO_FIGURE') return false;
+        if (figureVal === 'REQUIRED' && r.figure_status === 'TEXT_ONLY_NO_FIGURE') return false;
+
+        // Search query
+        if (query) {
+            const matchId = (r.id || '').toLowerCase().includes(query);
+            const matchRef = (r.ref || '').toLowerCase().includes(query);
+            const matchTask = (r.task_id || '').toLowerCase().includes(query);
+            const matchPaper = (r.paper || '').toLowerCase().includes(query);
+            const matchStem = (r.stem || '').toLowerCase().includes(query);
+            const matchHolds = (r.holds || []).some(h => h.toLowerCase().includes(query));
+            if (!matchId && !matchRef && !matchTask && !matchPaper && !matchStem && !matchHolds) return false;
+        }
+
+        return true;
+    });
+
+    resultsCount.textContent = `Showing ${filtered.length} of ${records.length} records`;
+
+    if (activeView === 'cards') {
+        renderCards(filtered);
+    } else {
+        renderTable(filtered);
+    }
+}
+
+searchInput.addEventListener('input', applyFilters);
+scopeFilter.addEventListener('change', applyFilters);
+lotFilter.addEventListener('change', applyFilters);
+figureFilter.addEventListener('change', applyFilters);
+
+btnCardView.addEventListener('click', () => {
+    activeView = 'cards';
+    btnCardView.classList.add('active');
+    btnTableView.classList.remove('active');
+    cardsView.style.display = 'flex';
+    tableView.style.display = 'none';
+    applyFilters();
+});
+
+btnTableView.addEventListener('click', () => {
+    activeView = 'table';
+    btnTableView.classList.add('active');
+    btnCardView.classList.remove('active');
+    cardsView.style.display = 'none';
+    tableView.style.display = 'block';
+    applyFilters();
+});
+
+// Initial render
+applyFilters();
+</script>
+</body>
+</html>

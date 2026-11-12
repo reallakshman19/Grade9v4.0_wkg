@@ -1,0 +1,18 @@
+﻿python : ......
+At line:1 char:39
++ ... utput/G9V4_LOTS/LOT-07; python -m unittest test_lot07.py 2>&1 | Out-F ...
++                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (......:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+----------------------------------------------------------------------
+Ran 6 tests in 0.005s
+
+OK
+Starting LOT-07 Viewport Verification...
+Target URL: file:///D:/CodeD/grade9v4/workspace/output/G9V4_LOTS/LOT-07/review/index.html
+[Mobile 375x667] Window: 375, DocScrollWidth: 375, BodyScrollWidth: 375
+PASSED: Mobile viewport cleanly rendered without horizontal page overflow.
+[Desktop 1365x900] Window: 1365, DocScrollWidth: 1365, BodyScrollWidth: 1365
+PASSED: Desktop viewport cleanly rendered without horizontal page overflow.
+ALL LOT-07 VIEWPORT CHECKS PASSED.

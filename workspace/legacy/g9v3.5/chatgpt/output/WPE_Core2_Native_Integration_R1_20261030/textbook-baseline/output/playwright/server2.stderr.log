@@ -1,0 +1,7 @@
+127.0.0.1 - - [30/Oct/2026 16:53:41] "GET /rendered/core2.html HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 16:53:41] "GET /css/modern-learner.css HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 16:53:41] "GET /js/display-controls.js HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 16:53:41] "GET /js/site-header.js HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 16:53:41] "GET /css/tablet-12-7.css HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 16:53:42] code 404, message File not found
+127.0.0.1 - - [30/Oct/2026 16:53:42] "GET /favicon.ico HTTP/1.1" 404 -

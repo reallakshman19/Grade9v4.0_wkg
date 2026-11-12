@@ -1,0 +1,18 @@
+{
+  "source_id": "JEE-2026-04-06-S1-Q28",
+  "task_identity": "Q-ID-71",
+  "sequence": 61,
+  "lot_sequence": 1,
+  "paper": "JEE Main 2026 Session 2 / 2026-04-06 / Shift 1 (Morning)",
+  "stem_status": "VERIFIED_BOUND_TEXT",
+  "stem_text": "The rain drop of mass 1 g, starts with zero velocity from a height of 1 km. It hits the ground with a speed of 5 m/s. The work done by the unknown resistive force is _____ J. (take g = 10 m/s^2)",
+  "stem_sha256": "bd9a429a1793415df658c78ddc1b3c13b8e6a64063471a389b041a6ef38ea5be",
+  "options": [
+    "6952787589: - 8.75",
+    "6952787590: - 8.35",
+    "6952787591: - 9.55",
+    "6952787592: - 9.98"
+  ],
+  "figure_reference": null,
+  "confidentiality_notice": "Source custody blind packet. Academic solve, answer key, and scoring omitted. Private review only."
+}

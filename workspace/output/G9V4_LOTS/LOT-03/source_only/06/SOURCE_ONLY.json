@@ -1,0 +1,16 @@
+{
+  "source_id": "EX-M11",
+  "task_identity": "Q-ID-06",
+  "sequence": 6,
+  "paper": "JEE Main 2026 (Online) 21st January Morning Shift",
+  "stem_text": "Potential energy ( \ud835\udc49 ) versus distance ( \ud835\udc65 ) is given by the graph. Rank various regions as per the magnitudes of the force ( \ud835\udc39 ) acting on a particle from high to low. [FIG-stem-1]",
+  "stem_sha256": "dc5006b422da3095c1eb3f9d14810987971898073fa6e37fcfd7af34a35fd90f",
+  "options": [
+    "A: \ud835\udc39_\ud835\udc35\ud835\udc36>\ud835\udc39_\ud835\udc34\ud835\udc35>\ud835\udc39_\ud835\udc37\ud835\udc38>\ud835\udc39_\ud835\udc36\ud835\udc37",
+    "B: \ud835\udc39_\ud835\udc35\ud835\udc36>\ud835\udc39_\ud835\udc36\ud835\udc37>\ud835\udc39_\ud835\udc37\ud835\udc38>\ud835\udc39_\ud835\udc34\ud835\udc35",
+    "C: \ud835\udc39_\ud835\udc36\ud835\udc37>\ud835\udc39_\ud835\udc34\ud835\udc35>\ud835\udc39_\ud835\udc35\ud835\udc36>\ud835\udc39_\ud835\udc37\ud835\udc38",
+    "D: \ud835\udc39_\ud835\udc36\ud835\udc37>\ud835\udc39_\ud835\udc37\ud835\udc38>\ud835\udc39_\ud835\udc34\ud835\udc35>\ud835\udc39_\ud835\udc35\ud835\udc36"
+  ],
+  "figure_reference": "https://app-content.cdn.examgoal.net/fly/1000/image/6y3zli1ml8b57ie/549f4be0-42f3-4404-b29b-42ccf8e0d8a7/cd04ee60-01ef-11f1-bb8c-db351d97a854/file-6y3zli1ml8b57if.png?format=png",
+  "confidentiality_notice": "SEALED SOURCE-ONLY PACKET FOR BLIND INDEPENDENT REVIEW. Contains NO answers, keys, explanations, candidate solutions, SL2 factor scores, or prior review commentary."
+}

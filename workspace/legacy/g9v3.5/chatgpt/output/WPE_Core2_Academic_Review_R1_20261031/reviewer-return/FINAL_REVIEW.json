@@ -1,0 +1,156 @@
+{
+  "review_id": "WPE-CORE2-ACADEMIC-REVIEW-R1",
+  "phase": "FINAL_AFTER_AUTHORIZED_COMPARISON",
+  "completed_at_utc": "2026-10-31T10:35:11.319178+00:00",
+  "authorship_and_authority": "Fresh Independent Reviewer /root/independent_academic_review. All first-pass reasoning/scoring and this reconciliation are mine. No Coder/product writing, admissions, remote writes, agent spawning or deployment was performed.",
+  "first_pass": {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Core2_Academic_Review_R1_20261031\\reviewer-return\\FIRST_PASS.json",
+    "sha256": "99ac9b27be8fc9924b905449696fe693f2f369395b4227a615602d4d83b7a0e3",
+    "seal_verified_unchanged_during_final_write": true,
+    "sealed_at_utc": "2026-10-31T10:31:34.246806+00:00",
+    "original_verdict": "A=D,D2/APPLY4; B=C under ideal lifting work,D2/APPLY3; C=A,D2/APPLY4; D=all a,b,c,d,D2/APPLY5. No directD3/D4 coverage."
+  },
+  "final_outcome": "Preserve all four first-pass answers, operation proposals and scores. Source inspection disproves the author-cued claim that TASK-D option(c) is unsquared: both provided original crop and actual paper print x0 squared. The mathematically derived expression, literal printed option and published marking key agree for the provided bytes. No directD3/D4 coverage is established by this independent review.",
+  "phase2_exposure_boundary": {
+    "authorization": "Parent collaboration message after confirming FIRST_PASS sealed hash; message asked comparison and specifically proposed a denominator discrepancy. This cue is prior-author exposure, not independent blind evidence.",
+    "first_phase2_tool_exposure_utc": "2026-10-31T10:32:46.997217+00:00",
+    "exact_access": [
+      "comparison/AUTHOR_COMPARISON.json: all prior proposals and author-exposed audits for A-D",
+      "comparison/official-worked-solution.pdf: printed page20 (authorized page includes adjacentQ55/Q56 fragments as well asQ57; these other fragments were exposed by full-page text extraction but were not used)",
+      "comparison/official-final-key.pdf: page1 (authorized full-page extraction exposed other key rows; no identities of A-C were provided or mapped)",
+      "oracle-research/FINAL_KEY_RECEIPT.json: supplied retrieval receipt",
+      "Re-examination and magnification of named original crop plus a new scoped actual-PDF render of option(c)"
+    ],
+    "private_identity_map_or_sibling_analysis_read": false,
+    "network_requests_by_reviewer": 0,
+    "historical_independence": "First-pass no-prior-conclusions exposure statement remains historically true. After this boundary the reconciliation is author-exposed; it is not a second blind independent pass. No historical claim is retracted merely because later comparison is authorized."
+  },
+  "phase2_source_receipt": [
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Core2_Academic_Review_R1_20261031\\comparison\\AUTHOR_COMPARISON.json",
+      "bytes": 4588,
+      "sha256": "96292ebb638b8b24ce401a7c8cff072c4d57727730f09f9b4fcdf768e8e4a6eb"
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Core2_Academic_Review_R1_20261031\\comparison\\official-worked-solution.pdf",
+      "bytes": 608090,
+      "sha256": "0cfece545a0fd3f9cb2c77bd8d685d1c197eaac7d0a36cdfcfaa4ff8b6110c33"
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Core2_Academic_Review_R1_20261031\\comparison\\official-final-key.pdf",
+      "bytes": 452627,
+      "sha256": "b640115a6d05c5bb3bc86440070832f8a9501bf94740a942f696f6ce24d01859"
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Core2_Academic_Review_R1_20261031\\oracle-research\\FINAL_KEY_RECEIPT.json",
+      "bytes": 694,
+      "sha256": "2fbb4f7b5cd2f365496fcd8acaa74b6de1f77961db07aca4418fa6a29068a8b8"
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Core2_Academic_Review_R1_20261031\\reviewer-return\\option-c-original-magnified.png",
+      "bytes": 42669,
+      "sha256": "3d80737d0519fa000e97a35c318482401e8e7ab8ab40cc36713371254b5cfc19"
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Core2_Academic_Review_R1_20261031\\reviewer-return\\option-c-from-actual-PDF.png",
+      "bytes": 20143,
+      "sha256": "b7582ec115589b39bc2557e1b526a8ecc0756c22be7b4268ce847ce77bde12db"
+    }
+  ],
+  "TASK_D_literal_intended_and_key": {
+    "literal_crop": "original-saved-crop.png visibly shows sqrt(alpha/(2*m*x0^2)) in option(c). Enlarged source region x660..950,y420..570 shows superscript2 above and subscript0 below the x.",
+    "literal_pdf": "Fresh288dpi Poppler render directly from blind-input/official-paper.pdf page15 option(c), bounded around pdfplumber top369.15464 for the(c) label, also visibly shows superscript2 above subscript0. See option-c-from-actual-PDF.png. This is the actual original PDF, not the worked solution or a rewritten index.",
+    "independent_mathematical_expression": "With beta=alpha/x0,E=0, and y=x0/x, v^2=(2alpha/(m*x0^2))*(y-y^2). Maximum y-y^2=1/4 atx=2x0, hence vmax=sqrt(alpha/(2*m*x0^2)).",
+    "worked_solution": "The supplied official-worked-solution.pdf page20 derives the same energy/velocity maximum and labels c correct; Q57 answer is a,b,c,d. The longer force-integration derivation is not the minimum learner route.",
+    "published_marking_key": "The actual supplied official-final-key.pdf page1 text row57, code61 column, is a,b,c,d. Actual SHA256 b640115a6d05c5bb3bc86440070832f8a9501bf94740a942f696f6ce24d01859 matches FINAL_KEY_RECEIPT.json.",
+    "comparison_verdict": "The author comparison claim that the original crop/PDF prints unsquared x0 is CONTRADICTED by the visible source. The implied paper/solution/key discrepancy is NOT_ESTABLISHED for these bytes. A missing-erratum search cannot establish a discrepancy when the premise is false.",
+    "first_pass_revision": "No transcription, scientific-answer, band or operation change. First pass was accurate on x0^2. The author cue prompted a stronger source check, not agreement with the cue.",
+    "literal_vs_hypothetical_repair": "There is no corrected variant needed for the supplied printed expression. A hypothetical variant with x0 rather than x0^2 would be dimensionally wrong because alpha has units energy*length^2; such a variant would need separate source custody and its literal answer/scoring distinguished. It is not the task actually observed here.",
+    "provenance_limits": "Reviewer verifies actual provided bytes and receipt agreement; reviewer did not independently retrieve the URL or authenticate publisher origin. The provided paper identifies NSEP2025, not JEE Main. It must not be counted as native JEE Main merely by being an examination item."
+  },
+  "comparison_by_task": [
+    {
+      "id": "TASK-A",
+      "prior_proposal": "APPLY/D3,total7",
+      "author_audit_hypothesis": "APPLY/D2,factors1,1,2,1,0,total5",
+      "reviewer_preserved": "APPLY/D2,factors1,1,1,1,0,total4",
+      "supported": "AnswerD and net-power/ideal-start qualifications; familiar derivation is not automaticallyD3.",
+      "difference": "The derivative check on the surviving candidate forms is a valid shorter MCQ route; chain1 is supported for that route. Even chain2 produces only5/D2.",
+      "direct_D3_D4": "NOT_SUPPORTED"
+    },
+    {
+      "id": "TASK-B",
+      "prior_proposal": "MODEL/D3,total7",
+      "author_audit_hypothesis": "APPLY/D2,factors1,1,1,1,1,total5",
+      "reviewer_preserved": "APPLY/D2,factors1,1,1,0,0,total3 for ideal lifting work",
+      "supported": "AnswerC; COM route; dissipation/final-energy qualification; no required model-choice bottleneck.",
+      "difference": "Multiplying M/n by gL/(2n) is incidental symbolic arithmetic, so algebra0. The source omission about friction/process is a qualification, not a learner exception to score, so trap0. Neither extra point would produceD3 anyway. Literal arbitrary total-agent-work equality remains underdetermined/HOLD outside the stated ideal interpretation.",
+      "direct_D3_D4": "NOT_SUPPORTED"
+    },
+    {
+      "id": "TASK-C",
+      "prior_proposal": "JUSTIFY/D3,total7",
+      "author_audit_hypothesis": "APPLY/D2,factors1,1,1,1,1,total5",
+      "reviewer_preserved": "APPLY/D2,factors1,1,1,0,1,total4",
+      "supported": "AnswerA; fixed-force and fixed-extension dependence must be distinguished; useful justification teaching bridge is not automatically nativeJUSTIFY/D3 coverage.",
+      "difference": "Proportional/reciprocal inequality comparison needs no material multi-operation algebra, so algebra0. Assertion/statement format does not itself settle operation or band.",
+      "direct_D3_D4": "NOT_SUPPORTED"
+    },
+    {
+      "id": "TASK-D",
+      "prior_proposal": "JUSTIFY/D4,total9",
+      "author_audit_hypothesis": "Operation/difficulty unresolved pending alleged denominator repair; JUSTIFY versusSYNTHESIZE left open",
+      "reviewer_preserved": "APPLY/D2,factors1,0,2,1,1,total5; all a,b,c,d",
+      "supported": "Analytic maximum has squaredx0; key and worked solution label all four true.",
+      "contradicted": "Source denominator mismatch and silent correction premise. Native printed source already has squaredx0.",
+      "difference": "Exact options supply symbolic forms; substitution/conserved-energy execution and quadratic maximum suffice. A longer force-time derivation or explicit proof is not required. The positive-velocity branch is a familiar local check fixed by rest release and positive force, not an unfamiliar regime exception.",
+      "direct_D3_D4": "NOT_SUPPORTED on independent score; if a new higher-band claim is raised it needs exact-task anchor evidence, not source-error burden."
+    }
+  ],
+  "operation_and_demand_limits": {
+    "governing_refs": [
+      "physics-blueprint.json common.band_check.primary_demand_rule",
+      "common.band_check.lower_level_material",
+      "columns.1..7.boundary and evidence_criterion",
+      "difficulty-rubric.json question_difficulty_component_rubric"
+    ],
+    "lower_band_support": "A-C and D can be labelled real-band bridges/support under authorized custody, without counting as directD3/D4. This report does not admit them.",
+    "all_seven_columns": "No directD3/D4 cell among the seven operations is filled by these four items on this review. A/D may use synthesis in a longer solution, and C/D may support teaching warrants; those do not establish exact-task high-band native operation coverage.",
+    "representation": "D remains symbolic throughout; optional nondimensional substitution is not representation_translation2.",
+    "learner_evidence": "NONE. Correct MCQ selection does not by itself satisfy any blueprint DEMONSTRATED criterion or establish mastery.",
+    "format": "Single/multiple correct and assertion wording are not difficulty factors by themselves.",
+    "source_flaws": "A literal flaw must be observed before it is used as a hold reason; it must never be used to inflate difficulty."
+  },
+  "unresolved_dependencies": [
+    "A-C: authenticated original-paper question identity and final-key correspondence remain not established by this review packet.",
+    "A/B: retain explicit intended ideal no-loss/end-rest interpretation for equality claims, or clarify the intended physical quantity; do not use unspecified friction/process as difficulty.",
+    "D: if someone maintains a different unsquared printing, require that distinct file hash and a native source crop; the currently supplied paper/crop contradict that claim.",
+    "Any futureD3/D4 proposal needs a reproducible exact-task shortest-route score, a single primary operation and specific evidence for every factor changed from this report.",
+    "Actual admission, Core2 placement, lessons, D3.1 resume and release require existing project authority and gates; reviewer performed none."
+  ],
+  "actionable_next_step": "Oracle should withdraw the TASK-D denominator-mismatch/HOLD rationale for the supplied bytes, preserve all-four correctness and lower-band independent findings, and return the directD3/D4 coverage gap to Owner with any proposed rescoring grounded in exact required work. Do not silently relabel these four items to fill the grid.",
+  "resource_receipt": {
+    "overall_approved_start_utc": "2026-10-31T10:24:36Z",
+    "hard_deadline_utc": "2026-10-31T11:09:36Z",
+    "completed_at_utc": "2026-10-31T10:35:11.319178+00:00",
+    "elapsed_time_basis": "Elapsed from supplied overall routine start; reviewer exact activation timestamp was not instrumented. First observed UTC10:26:11.7232302.",
+    "token_telemetry": "UNKNOWN; explicitly approved bounded routine. No account or context percentage observed.",
+    "call_metric": "Underlying tools.exec_command/tools.view_image service invocations plus direct collaboration calls, including wait; functions.exec wrappers not additional services.",
+    "underlying_calls_through_this_final_write": 17,
+    "phase2_ledger": [
+      "10 collaboration.send_message: sealed-first-pass status",
+      "11 collaboration.wait_agent: awaited comparison authorization",
+      "12 exec_command: comparison packet, authorized selected PDF pages, key receipt, magnified original image",
+      "13 view_image: magnified actual original option(c)",
+      "14 exec_command: fresh actual paperPDF option(c) render",
+      "15 view_image: actual paperPDF option(c), superscript2 confirmed",
+      "16 collaboration.send_message: source-based contradiction of author cue and remaining calls",
+      "17 exec_command: preserve seal, write final JSON/Markdown and final hash"
+    ],
+    "planned_final_verification_call": 18,
+    "max_calls_if_verification_completes": 18,
+    "allowed_maximum": 20,
+    "phase2_complete": true,
+    "no_installation_or_remote_mutations": true
+  }
+}

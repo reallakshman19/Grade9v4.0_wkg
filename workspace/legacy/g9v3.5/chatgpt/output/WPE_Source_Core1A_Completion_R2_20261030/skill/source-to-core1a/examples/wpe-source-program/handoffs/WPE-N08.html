@@ -1,0 +1,1458 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>WPE-N08 author preparation</title><style>body{font:17px/1.6 system-ui,sans-serif;max-width:1120px;margin:auto;padding:28px;color:#1b3045;background:#f5f7fa}body{overflow-wrap:anywhere}code{overflow-wrap:anywhere;word-break:break-word}h1,h2,h3{line-height:1.2}h2{margin-top:2em}a{color:#145ba1}article,details,.panel{background:#fff;border:1px solid #d3dde6;border-radius:10px;padding:18px;margin:14px 0}.hold{border-left:6px solid #b77a11;background:#fff3d7;padding:18px}.flow{display:flex;flex-wrap:wrap;gap:8px}.flow span{background:#e5edf6;padding:8px 12px;border-radius:6px}table{border-collapse:collapse;width:100%}th,td{text-align:left;vertical-align:top;border-bottom:1px solid #ccd6df;padding:10px;overflow-wrap:anywhere}th:nth-child(2),th:nth-child(3){white-space:nowrap}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px}img{max-width:100%;max-height:420px;object-fit:contain}.scroll{overflow:auto}.meta{font-size:14px;color:#4b6075}summary{cursor:pointer}@media print{body{background:white;padding:0}details{break-inside:avoid}.hold{background:white}}</style></head><body><nav><a href="../index.html">All ten WPE nodes</a> · <a href="WPE-N08.json">Exact JSON</a></nav><h1>WPE-N08 · Conservation, distributed energy and contact regimes</h1><div class="hold"><strong>AUTHOR PREPARATION · CANDIDATE · LESSON AUTHORING HOLD</strong><br>Mechanical integrity PASS; source pins EXTERNAL_PIN_BYTES_MATCH. Science NOT_QUALIFIED. Reviewed SL2 join missing. No learner lesson or native package.</div><h2>Required construction</h2><p>Brief for selecting a valid energy account and preserving the initial state and regime changes before inferring motion.</p><p><strong>Obstacle:</strong> Conservation is applied because friction is absent while other transfers, initial energy or contact conditions are omitted.</p><p><strong>Decisive move:</strong> Close the chosen system’s energy ledger, then identify admissible positions and the regime in which each relation applies.</p><h3>Inputs</h3><ul><li>Initial/final system configurations and a closed transfer account.</li><li>Distributed mass or unilateral spring contact when those models are invoked.</li></ul><h3>Prerequisites and conventions</h3><ul><li>Prerequisite nodes: WPE-N03, WPE-N06, WPE-N07, WPE-N09</li><li>Choose system, interval, all transfers, potential zero and initial state explicitly.</li><li>Uniform chain, smooth support, ideal spring/contact model and piecewise regime conditions must be checked separately.</li><li>Choose system, interval, all transfers, potential zero and initial state explicitly.</li><li>Uniform chain, smooth support, ideal spring/contact model and piecewise regime conditions must be checked separately.</li></ul><h2>Source custody and original assets</h2><div class="scroll"><table><tr><th>ID / role</th><th>Retained file</th><th>Authority / digest</th></tr><tr><td>REFERENCE / REFERENCE_SOURCE</td><td><a href="sources/reference-ontology.json">sources/reference-ontology.json</a></td><td>CANDIDATE_REFERENCE<br><code>0fb53c653d7cd5b5f6e94ba5ed096278aa42f5d1429eac24981ee8dffa168acf</code></td></tr><tr><td>BOOK / BOOK_TEXT</td><td><a href="sources/book.md">sources/book.md</a></td><td>OWNER_LOCAL_UNAUTHENTICATED<br><code>a33f19b308ea81c7eb527546e44b6bbd4b4adf26aed7116013ac01218cc1bbb8</code></td></tr><tr><td>SPINE / SYLLABUS</td><td><a href="sources/spine.md">sources/spine.md</a></td><td>OWNER_LOCAL_UNAUTHENTICATED<br><code>07338e242e363becf2e55a9637d29fd178e37236fd730e5aac0a1211f1d8ecf9</code></td></tr><tr><td>LIBRARY / CANONICAL_CANDIDATE</td><td><a href="sources/library.json">sources/library.json</a></td><td>CANDIDATE_REFERENCE<br><code>84fe88387e33a03bf87bf1f537bae8c447f5b86f0d77a854c899ad70f12d8258</code></td></tr><tr><td>PKG_SCHEMA / NATIVE_CONTRACT</td><td><a href="sources/package.schema.json">sources/package.schema.json</a></td><td>LOCAL_CONTRACT<br><code>b645f4b5beb9132d6e38b628b1416846201d44dec16a5f04af9a252e9e891d93</code></td></tr><tr><td>SCAN-7 / SOURCE_SCAN</td><td><a href="sources/page_07.jpg">sources/page_07.jpg</a></td><td>OWNER_LOCAL_UNAUTHENTICATED<br><code>e05651537a9b3ea961304ef281f30cc900b3e6331076346273bc82c57a2ed6b9</code></td></tr><tr><td>SCAN-9 / SOURCE_SCAN</td><td><a href="sources/page_09.jpg">sources/page_09.jpg</a></td><td>OWNER_LOCAL_UNAUTHENTICATED<br><code>4847ec6173954d7e50d89af62db0972db12a3cfde654666a4e9fd97ce734d646</code></td></tr><tr><td>FIG-9 / DERIVED_FIGURE</td><td><a href="sources/images/fig_09_overhanging_chain.svg">sources/images/fig_09_overhanging_chain.svg</a></td><td>OWNER_LOCAL_UNAUTHENTICATED<br><code>40510540074ad29b0f7634e680f8235356f64dbe969eb28b164edb7e30a00aa0</code></td></tr><tr><td>FIG-10 / DERIVED_FIGURE</td><td><a href="sources/images/fig_10_spring_block_wall.svg">sources/images/fig_10_spring_block_wall.svg</a></td><td>OWNER_LOCAL_UNAUTHENTICATED<br><code>c0a90c6fffcc88731316cb17fe34439e4bdccceda7a34d8deb585a2ba1d61bbc</code></td></tr></table></div><h2>Concept claims, conditions and disputes</h2><article id="C1"><h3>C1 · UNREVIEWED</h3><p>The extract obtains conservation as a condition on the mechanical-energy transfer ledger.</p><p>Exact units: <a href="#U-BOOK-1">U-BOOK-1</a></p><p>Retained scan IDs: SCAN-7, SCAN-9</p><h4>Conditions</h4><ul><li>Choose system, interval, all transfers, potential zero and initial state explicitly.</li><li>Uniform chain, smooth support, ideal spring/contact model and piecewise regime conditions must be checked separately.</li></ul><h4>Disputes / qualification work</h4><ul><li>The extract’s chain problem statement omits initial rest while its solution assumes it; the scan supplies that condition in the solution.</li><li>The printed spring discussion says no external forces, while the relevant requirement concerns energy transfer; not all external forces must vanish.</li><li>Generic turning-point/allowed-region coverage is not developed simply by these two examples.</li></ul></article><article id="C2"><h3>C2 · UNREVIEWED</h3><p>The chain illustration uses a uniform distributed-mass gravitational account and an initial-rest condition supplied by the printed solution.</p><p>Exact units: <a href="#U-BOOK-2">U-BOOK-2</a></p><p>Retained scan IDs: SCAN-7, SCAN-9</p><h4>Conditions</h4><ul><li>Choose system, interval, all transfers, potential zero and initial state explicitly.</li><li>Uniform chain, smooth support, ideal spring/contact model and piecewise regime conditions must be checked separately.</li></ul><h4>Disputes / qualification work</h4><ul><li>The extract’s chain problem statement omits initial rest while its solution assumes it; the scan supplies that condition in the solution.</li><li>The printed spring discussion says no external forces, while the relevant requirement concerns energy transfer; not all external forces must vanish.</li><li>Generic turning-point/allowed-region coverage is not developed simply by these two examples.</li></ul></article><article id="C3"><h3>C3 · UNREVIEWED</h3><p>The spring-block illustration changes regime when an unattached block loses contact; extraction algebra is more extensive than the printed solution.</p><p>Exact units: <a href="#U-BOOK-2">U-BOOK-2</a></p><p>Retained scan IDs: SCAN-7, SCAN-9</p><h4>Conditions</h4><ul><li>Choose system, interval, all transfers, potential zero and initial state explicitly.</li><li>Uniform chain, smooth support, ideal spring/contact model and piecewise regime conditions must be checked separately.</li></ul><h4>Disputes / qualification work</h4><ul><li>The extract’s chain problem statement omits initial rest while its solution assumes it; the scan supplies that condition in the solution.</li><li>The printed spring discussion says no external forces, while the relevant requirement concerns energy transfer; not all external forces must vanish.</li><li>Generic turning-point/allowed-region coverage is not developed simply by these two examples.</li></ul></article><h2>Canonical candidates and missing warrants</h2><p>Canonical matches are provisional relationships, never qualified science.</p><ul><li>MIC-PHY-WEP-MECH-ENERGY-CONDITION / CAP-WEP-MECH-ENERGY-CONDITION · DIRECT_CANDIDATE</li></ul><ul><li>Distributed-chain and unilateral-contact/turning-point derivations need additional qualified warrants not supplied by the general conservation relation.</li></ul><article id="W-CANDIDATE"><h3>W-CANDIDATE · CANDIDATE</h3><p>Candidate support for the stated requirement; correspondence and scientific conditions require distinct review.</p><p>Support: <a href="#U-REL-6">U-REL-6</a>, <a href="#U-REL-4">U-REL-4</a>, <a href="#U-REL-3">U-REL-3</a>; reference leads (unqualified): <a href="#U-REFERENCE-WEP-07">U-REFERENCE-WEP-07</a>; claims: <a href="#C1">C1</a>, <a href="#C2">C2</a>, <a href="#C3">C3</a></p><ul><li>Choose system, interval, all transfers, potential zero and initial state explicitly.</li><li>Uniform chain, smooth support, ideal spring/contact model and piecewise regime conditions must be checked separately.</li></ul><p><strong>Unresolved:</strong> No independent qualification receipt; scope may be partial.</p></article><article id="W-GAP"><h3>W-GAP · MISSING</h3><p>A missing decisive warrant is retained rather than replaced with a nearby formula.</p><p>Support: None; reference leads (unqualified): <a href="#U-REFERENCE-WEP-07">U-REFERENCE-WEP-07</a>; claims: <a href="#C1">C1</a>, <a href="#C2">C2</a>, <a href="#C3">C3</a></p><ul><li>Choose system, interval, all transfers, potential zero and initial state explicitly.</li><li>Uniform chain, smooth support, ideal spring/contact model and piecewise regime conditions must be checked separately.</li></ul><p><strong>Unresolved:</strong> Distributed-chain and unilateral-contact/turning-point derivations need additional qualified warrants not supplied by the general conservation relation.</p></article><h2>Construction requirements and dependencies</h2><article id="REQ-INPUT"><h3>REQ-INPUT · INPUT</h3><p>Fix the chosen model and inputs: Initial/final system configurations and a closed transfer account.; Distributed mass or unilateral spring contact when those models are invoked.</p><p><strong>Why:</strong> Prevents a change of body, reference or given condition.</p><p>Depends on None; source <a href="#U-BOOK-1">U-BOOK-1</a>; claims <a href="#C1">C1</a>; warrant requirements <a href="#W-CANDIDATE">W-CANDIDATE</a>, <a href="#W-GAP">W-GAP</a></p></article><article id="REQ-REPRESENT"><h3>REQ-REPRESENT · REPRESENT</h3><p>Bind energy ledger, chain element / center of mass, contact versus detached interval to the chosen physical situation.</p><p><strong>Why:</strong> Correspondence is needed before symbolic manipulation.</p><p>Depends on <a href="#REQ-INPUT">REQ-INPUT</a>; source <a href="#U-BOOK-1">U-BOOK-1</a>; claims <a href="#C2">C2</a>; warrant requirements <a href="#W-CANDIDATE">W-CANDIDATE</a>, <a href="#W-GAP">W-GAP</a></p></article><article id="REQ-CONNECT"><h3>REQ-CONNECT · CONNECT</h3><p>Close the chosen system’s energy ledger, then identify admissible positions and the regime in which each relation applies.</p><p><strong>Why:</strong> This is the required intellectual bridge, not a formula label.</p><p>Depends on <a href="#REQ-REPRESENT">REQ-REPRESENT</a>; source <a href="#U-BOOK-1">U-BOOK-1</a>; claims <a href="#C1">C1</a>, <a href="#C2">C2</a>, <a href="#C3">C3</a>; warrant requirements <a href="#W-CANDIDATE">W-CANDIDATE</a>, <a href="#W-GAP">W-GAP</a></p></article><article id="REQ-TRANSFORM"><h3>REQ-TRANSFORM · TRANSFORM</h3><p>Require separate distributed-mass and contact warrants, and a genuine turning/allowed-region bridge if that capability is claimed.</p><p><strong>Why:</strong> Every consequential transformation needs its actual warrant and conditions.</p><p>Depends on <a href="#REQ-CONNECT">REQ-CONNECT</a>; source <a href="#U-BOOK-1">U-BOOK-1</a>; claims <a href="#C1">C1</a>; warrant requirements <a href="#W-CANDIDATE">W-CANDIDATE</a>, <a href="#W-GAP">W-GAP</a></p></article><article id="REQ-VERIFY"><h3>REQ-VERIFY · VERIFY</h3><p>Compare integral and center-of-mass gravitational accounts where both apply; check continuity at the spring-contact boundary.</p><p><strong>Why:</strong> A second account must test the same claim without merely repeating its expression.</p><p>Depends on <a href="#REQ-TRANSFORM">REQ-TRANSFORM</a>; source <a href="#U-BOOK-1">U-BOOK-1</a>; claims <a href="#C2">C2</a>; warrant requirements <a href="#W-CANDIDATE">W-CANDIDATE</a>, <a href="#W-GAP">W-GAP</a></p></article><article id="REQ-BOUNDARY"><h3>REQ-BOUNDARY · BOUNDARY</h3><p>Preserve: A zero speed is not by itself proof of a subsequent reversal; dynamics/domain matter.</p><p><strong>Why:</strong> The result must not be generalized outside its reviewed scope.</p><p>Depends on <a href="#REQ-VERIFY">REQ-VERIFY</a>; source <a href="#U-BOOK-1">U-BOOK-1</a>; claims <a href="#C3">C3</a>; warrant requirements <a href="#W-CANDIDATE">W-CANDIDATE</a>, <a href="#W-GAP">W-GAP</a></p></article><h2>Representation and source-figure obligations</h2><article><h3>DERIVED_UNREVIEWED</h3><p>Retain original scan evidence; qualify generated redraws and author a suitable native teaching representation with correct objects, axes, signs and regime. No new teaching figure is emitted.</p><img src="sources/images/fig_09_overhanging_chain.svg" alt="Retained derived source figure; correspondence unreviewed"><ul><li>energy ledger → Required scene/graph element 1: Future teacher must bind energy ledger to this node’s chosen object, coordinate and interval.</li><li>chain element / center of mass → Required scene/graph element 2: Future teacher must bind chain element / center of mass to this node’s chosen object, coordinate and interval.</li><li>contact versus detached interval → Required scene/graph element 3: Future teacher must bind contact versus detached interval to this node’s chosen object, coordinate and interval.</li></ul></article><h2>Boundaries and distinct-example obligation</h2><ul><li>A zero speed is not by itself proof of a subsequent reversal; dynamics/domain matter.</li></ul><p>Use retained illustrations as author references only. After the approval gate, author a distinct complete non-exam teaching example with why-valid steps; do not expose a protected Core2/Core1B route.</p><h2>Wrong-path hypotheses and repair requirements</h2><article><p><strong>Hypothesis:</strong> A released but unattached spring can pull the detached block back; frictionless alone proves all energy assumptions.</p><p><strong>Contrast:</strong> Contrast attached and push-only spring models and preserve initial kinetic energy as a named term.</p><p><strong>Required repair:</strong> State attachment/contact and initial conditions before solving the energy equation or extending a formula.</p><p>Learner observation: NONE.</p></article><h2>Independent-check designs</h2><article><p>Compare integral and center-of-mass gravitational accounts where both apply; check continuity at the spring-contact boundary.</p><p><strong>Expected invariant:</strong> Independent energy accounts agree under matched assumptions, and the piecewise state is continuous at the valid transition.</p><p>Different representation or conservation/force account under matched assumptions; independence must be reviewed, not inferred from a new sentence.</p><p>DESIGN_ONLY; no academic check or learner result claimed.</p></article><h2>Reviewed SL2 requirement mapping</h2><div class="hold">PENDING_REVIEWED_REQUIREMENT<p>No independently adjudicated exact SL2/QRT requirement with matching current task/source/dependency and authority evidence has been supplied. Do not infer an exam operation/band from this book node.</p></div><h2>Native Core1A field targets</h2><div class="scroll"><table><tr><th>Existing property</th><th>Preparation pointer</th><th>Future action</th></tr><tr><td>entry_assumptions</td><td>/construction/entry_assumptions</td><td>AUTHOR_FROM_EVIDENCE</td></tr><tr><td>inferential_jump</td><td>/construction/decisive_move</td><td>AUTHOR_FROM_EVIDENCE</td></tr><tr><td>teaching_path</td><td>/construction/steps</td><td>AUTHOR_FROM_EVIDENCE</td></tr><tr><td>why_valid</td><td>/construction/steps</td><td>AUTHOR_FROM_EVIDENCE</td></tr><tr><td>correspondence</td><td>/construction/representation_needs</td><td>AUTHOR_FROM_EVIDENCE</td></tr><tr><td>worked_anchor_ref</td><td>/construction/worked_example_requirement</td><td>AUTHOR_DISTINCT_EXAMPLE</td></tr><tr><td>primary_capability_ref</td><td>/binding/canonical_matches</td><td>RESOLVE_EXISTING_REFS</td></tr></table></div><h2>Version-bound review requests</h2><details><summary>REVIEW-CLAIM-1 · /claims/0</summary><p>Is the interpreted claim faithful to its exact source and valid under these explicit conditions?</p><code>sha256:d144664d3250065a3b367ec6b8c8788a5af23be742b1138b12dc51e017ceacb4</code><ul><li>Exact original passage/scan locator and any transcription discrepancy.</li><li>Distinct qualified scientific disposition with reasoning, scope, reviewer identity/exposure and exact dependency versions.</li></ul></details><details><summary>REVIEW-CLAIM-2 · /claims/1</summary><p>Is the interpreted claim faithful to its exact source and valid under these explicit conditions?</p><code>sha256:435e9eacd135b5b305503d3435d67100fc8df326feb7074807adba7add9ba6ff</code><ul><li>Exact original passage/scan locator and any transcription discrepancy.</li><li>Distinct qualified scientific disposition with reasoning, scope, reviewer identity/exposure and exact dependency versions.</li></ul></details><details><summary>REVIEW-CLAIM-3 · /claims/2</summary><p>Is the interpreted claim faithful to its exact source and valid under these explicit conditions?</p><code>sha256:825f36057fc98f14a9c9c5f77642a79508c3cf80216d1af827b2a4d8b7c7d4e6</code><ul><li>Exact original passage/scan locator and any transcription discrepancy.</li><li>Distinct qualified scientific disposition with reasoning, scope, reviewer identity/exposure and exact dependency versions.</li></ul></details><details><summary>REVIEW-WARRANTS · /warrants</summary><p>Resolve the load-bearing warrants boundary against actual source and task evidence.</p><code>sha256:6833dd0a42d73387fb3058cebf5c6f278c565fb1b072f89f49b1a18d64587c0f</code><ul><li>Exact target digest and source/claim dependencies.</li><li>Authorized non-author review or actual adjudicated task; no status-enum substitution.</li></ul></details><details><summary>REVIEW-CONSTRUCTION · /construction</summary><p>Resolve the load-bearing construction boundary against actual source and task evidence.</p><code>sha256:542eec9d09a83995a42a0b05d43da550014357131ef78d82361fa8d22507d87f</code><ul><li>Exact target digest and source/claim dependencies.</li><li>Authorized non-author review or actual adjudicated task; no status-enum substitution.</li></ul></details><details><summary>REVIEW-SL2_REQUIREMENT_MAPPING · /sl2_requirement_mapping</summary><p>Resolve the load-bearing sl2_requirement_mapping boundary against actual source and task evidence.</p><code>sha256:26e9e0977453f5cf9c1c43eb72e225594b01c75dec8fe21fd439af3e39e8c4c5</code><ul><li>Exact target digest and source/claim dependencies.</li><li>Authorized non-author review or actual adjudicated task; no status-enum substitution.</li></ul></details><h2>Open issues</h2><ul><li>H-SCIENCE: All interpreted claims and candidate warrants remain unqualified.</li><li>H-QRT: Missing exact reviewed SL2/QRT task and selected adapter/resolver.</li><li>H-OWNER: Completed Core2 Owner approval precedes lesson authoring; Core1B follows Core1A approval. D3.1 paused.</li><li>H-WARRANT: Distributed-chain and unilateral-contact/turning-point derivations need additional qualified warrants not supplied by the general conservation relation.</li></ul><h2>Exact retained source units</h2><details id="U-BOOK-1"><summary>U-BOOK-1 / BOOK / {&quot;start&quot;: 351, &quot;end&quot;: 372}</summary><pre>## 9. Work-Energy Theorem
+
+The work done on a particle by the net resultant force equals the change in its kinetic energy:
+
+$$W_{\text{net}} = K_f - K_i = \Delta K \quad \text{--- (i)}$$
+
+This theorem holds generally for both constant and variable forces, along arbitrary curved paths, in any inertial frame of reference.
+
+### Partitioning Forces
+Decomposing the total work into conservative ($W_c$), non-conservative ($W_{NC}$), and other external/pseudo forces ($W_{\text{oth}}$):
+
+$$W_c + W_{NC} + W_{\text{oth}} = \Delta K \quad \text{--- (ii)}$$
+
+Substituting $W_c = -\Delta U$:
+$$-\Delta U + W_{NC} + W_{\text{oth}} = \Delta K$$
+$$W_{NC} + W_{\text{oth}} = \Delta K + \Delta U = \Delta(K + U) \quad \text{--- (iii)}$$
+
+Defining the total **Mechanical Energy** $E = K + U$:
+$$\mathbf{W_{NC} + W_{\text{oth}} = \Delta E}$$
+
+If only conservative forces perform work ($W_{NC} = 0, W_{\text{oth}} = 0$):
+$$\Delta E = 0 \implies E = K + U = \text{constant (Conservation of Mechanical Energy)}$$</pre><code>sha256:b5ce79d2890d97a0a2650a18846235907c07510a2dbcbc66d957f4d2c47838cd</code></details><details id="U-BOOK-2"><summary>U-BOOK-2 / BOOK / {&quot;start&quot;: 410, &quot;end&quot;: 470}</summary><pre>## 11. Advanced Master Illustrations
+
+### Illustration 11 (JEE Main): Overhanging Slipping Chain
+
+**Problem**:  
+A uniform flexible chain of length $l$ and mass $m$ overhangs a smooth horizontal table with two-thirds ($2l/3$) of its length lying on the table. Find the kinetic energy of the chain as it completely slips off the table.
+
+![Uniform Overhanging Chain Slipping Off Table](images/fig_09_overhanging_chain.svg)
+
+**Solution**:  
+Choose the table surface as the gravitational potential energy reference plane ($U_{\text{table}} = 0$).
+
+1. **Initial Potential Energy ($U_1$)**:  
+   The portion on the table ($2l/3$) has $U = 0$.  
+   The hanging portion has length $l/3$. Consider an infinitesimal element of length $dx$ at depth $x$ below the table edge ($0 \le x \le l/3$):
+   $$dm = \frac{m}{l}dx$$
+   $$dU = - (dm) g x = -\frac{m}{l}g x dx$$
+   $$U_1 = \int_{0}^{l/3} -\frac{m}{l}g x dx = -\frac{m g}{l} \left[ \frac{x^2}{2} \right]_{0}^{l/3} = -\frac{mg}{l}\left( \frac{l^2}{18} \right) = -\frac{1}{18}mgl$$
+
+2. **Final Potential Energy ($U_2$)**:  
+   When the entire chain has just slipped off the table, the chain hangs vertically between $x = 0$ and $x = l$:
+   $$U_2 = \int_{0}^{l} -\frac{m}{l}g x dx = -\frac{mg}{l} \left[ \frac{l^2}{2} \right] = -\frac{1}{2}mgl$$
+
+3. **Loss in Potential Energy = Gain in Kinetic Energy**:  
+   Since the table is frictionless and no non-conservative forces act:
+   $$\Delta K = -\Delta U = U_1 - U_2$$
+   $$K_{\text{final}} - 0 = \left( -\frac{1}{18}mgl \right) - \left( -\frac{1}{2}mgl \right) = \left( \frac{1}{2} - \frac{1}{18} \right)mgl = \frac{8}{18}mgl = \frac{4}{9}mgl$$
+
+$$\mathbf{K = \frac{4}{9}mgl}$$
+
+---
+
+### Illustration 12 (JEE Advanced): Spring-Block System Release
+
+**Problem**:  
+A block of mass $m$ is pushed against a light spring of spring constant $k$ fixed at one end to a rigid vertical wall. The block slides on a frictionless horizontal table. The natural length of the spring is $L_0$. The spring is compressed to half its natural length ($x_{\text{init}} = L_0/2$) and the block is released from rest. Find the velocity of the block as a function of its distance $x$ from the wall.
+
+![Block Released from Compressed Spring](images/fig_10_spring_block_wall.svg)
+
+**Solution**:  
+The system consists of the block and the spring. The surface is frictionless, so mechanical energy is conserved throughout the motion.
+
+1. **Initial State ($x = L_0/2$)**:  
+   The block is released from rest ($v = 0 \implies K = 0$).  
+   The compression of the spring is:
+   $$\Delta x_{\text{init}} = L_0 - \frac{L_0}{2} = \frac{L_0}{2}$$
+   Total initial mechanical energy:
+   $$E = \frac{1}{2}k (\Delta x_{\text{init}})^2 = \frac{1}{2}k \left(\frac{L_0}{2}\right)^2 = \frac{1}{8}k L_0^2$$
+
+2. **Motion while in Contact with Spring ($\frac{L_0}{2} \le x \le L_0$)**:  
+   At any position $x$, the compression of the spring is $(L_0 - x)$.  
+   By conservation of mechanical energy:
+   $$\frac{1}{2}mv^2 + \frac{1}{2}k(L_0 - x)^2 = \frac{1}{8}k L_0^2$$
+   $$\frac{1}{2}mv^2 = \frac{1}{2}k \left[ \frac{L_0^2}{4} - (L_0 - x)^2 \right]$$
+   $$v(x) = \sqrt{\frac{k}{m} \left[ \frac{L_0^2}{4} - (L_0 - x)^2 \right]}$$
+
+3. **Motion after Losing Contact ($x &gt; L_0$)**:  
+   At $x = L_0$, the spring reaches its natural length and cannot pull on the detached block. The block loses contact with the spring and travels with constant maximum velocity:
+   $$v_{\max} = \sqrt{\frac{k}{m}} \left(\frac{L_0}{2}\right)$$
+
+$$\mathbf{v(x) = \begin{cases} \sqrt{\frac{k}{m}\left[\frac{L_0^2}{4} - (L_0 - x)^2\right]}, &amp; \frac{L_0}{2} \le x \le L_0 \\[8pt] \frac{L_0}{2}\sqrt{\frac{k}{m}}, &amp; x &gt; L_0 \end{cases}}$$</pre><code>sha256:411372012140dc287e148b6e670146011c36cfc803dedc7dcf8f17b1e25f0143</code></details><details id="U-SPINE"><summary>U-SPINE / SPINE / {&quot;start&quot;: 18, &quot;end&quot;: 18}</summary><pre>| WPE-N08 | §9 conservation case; §11 Illus 11 (chain), Illus 12 (spring-block) | WEP-07 Conservation and turning points | core | 7 · PILOT DONE (pair d04e98dc, W5 page) |</pre><code>sha256:5cf7da6bf7fb2269ccebc84dc523a8c61fd7279b3beb8f50d79f6f1356b2ada4</code></details><details id="U-REFERENCE-WEP-07"><summary>U-REFERENCE-WEP-07 / REFERENCE / {&quot;pointer&quot;: &quot;/atomic_competencies/WEP-07&quot;}</summary><pre>{
+  &quot;title&quot;: &quot;Mechanical Energy Conservation &amp; Turning Points&quot;,
+  &quot;definition&quot;: &quot;In systems with only conservative forces acting, total mechanical energy E = K + U remains constant. Motion is constrained to regions where E &gt;= U(x), with turning points located where E = U(x) (K = 0).&quot;,
+  &quot;canonical_rules&quot;: [
+    &quot;Energy conservation equation: 0.5 m v_1^2 + U(x_1) = 0.5 m v_2^2 + U(x_2).&quot;,
+    &quot;Classical turning points occur where kinetic energy drops to zero: v = 0 =&gt; U(x) = E.&quot;,
+    &quot;In vertical circular loops, maintaining string tension at top requires v_top &gt;= sqrt(g L), leading to critical release velocity v_bot = sqrt(5 g L).&quot;
+  ],
+  &quot;operational_heuristics&quot;: [
+    &quot;Write total energy E = K + U at the initial reference state.&quot;,
+    &quot;Set K = 0 to find spatial boundaries / turning points of motion.&quot;,
+    &quot;Combine energy conservation with centripetal force balance (Sigma F_radial = m v^2 / R) for curved paths.&quot;
+  ],
+  &quot;boundary_conditions&quot;: [
+    &quot;E &lt; U_min: classically forbidden region.&quot;,
+    &quot;Top of vertical circle: T_top = m v_top^2 / L - m g &gt;= 0 =&gt; v_top &gt;= sqrt(g L).&quot;
+  ],
+  &quot;prerequisites&quot;: [
+    &quot;P3&quot;
+  ],
+  &quot;transfer_targets&quot;: [
+    &quot;PHYS-WEP-010&quot;,
+    &quot;PHYS-WEP-012&quot;,
+    &quot;PHYS-WEP-018&quot;,
+    &quot;PHYS-WEP-019&quot;,
+    &quot;PHYS-WEP-020&quot;,
+    &quot;PHYS-WEP-021&quot;
+  ]
+}</pre><code>sha256:68492fb23a9473357c348652074e7b31237871d16b19dc3c39426a9ade9fa316</code></details><details id="U-MICRO"><summary>U-MICRO / LIBRARY / {&quot;pointer&quot;: &quot;/microtopics/3&quot;}</summary><pre>{
+  &quot;id&quot;: &quot;MIC-PHY-WEP-MECH-ENERGY-CONDITION&quot;,
+  &quot;version&quot;: &quot;0.1.0&quot;,
+  &quot;status&quot;: &quot;CANDIDATE&quot;,
+  &quot;source_refs&quot;: [
+    &quot;SRC-AUTHOR-WEP&quot;
+  ],
+  &quot;evidence_refs&quot;: [],
+  &quot;extensions&quot;: {},
+  &quot;title&quot;: &quot;Mechanical energy is constant only after the system and transfer account close&quot;,
+  &quot;bucket_id&quot;: &quot;BUCKET-PHY-WORK-ENERGY-POWER&quot;,
+  &quot;primary_capability_ref&quot;: &quot;CAP-WEP-MECH-ENERGY-CONDITION&quot;,
+  &quot;intrinsic_badge&quot;: &quot;HARD&quot;,
+  &quot;badge_reason&quot;: &quot;The familiar K+U equality is easy to apply before declaring the system or checking friction/external transfer, which confuses total-energy conservation with the narrower mechanical-energy shortcut.&quot;,
+  &quot;entry_assumptions&quot;: [
+    &quot;Can decide which interactions belong in potential energy and which transfers must remain explicit.&quot;,
+    &quot;Can identify a chosen physical system and its initial/final states.&quot;
+  ],
+  &quot;inferential_jump&quot;: &quot;Energy conservation is broader than K+U conservation: after the system boundary and energy stores/transfers are declared, K+U may be treated as constant only when no non-conservative or unaccounted dissipative/external transfer changes that mechanical account.&quot;,
+  &quot;teaching_path&quot;: [
+    {
+      &quot;id&quot;: &quot;WEP4-0&quot;,
+      &quot;role&quot;: &quot;DECLARE&quot;,
+      &quot;action&quot;: &quot;Choose the physical system and initial/final states, then list which energy stores are inside the account and which transfers cross its boundary.&quot;,
+      &quot;why_valid&quot;: &quot;The same physical interaction can appear as an internal store change or an external transfer depending on the declared system; declaring the boundary prevents omission and double counting.&quot;,
+      &quot;inputs&quot;: [
+        &quot;CAP-WEP-POTENTIAL-ELIGIBILITY&quot;
+      ],
+      &quot;output&quot;: &quot;explicit system boundary, K/U stores and crossing transfers&quot;
+    },
+    {
+      &quot;id&quot;: &quot;WEP4-1&quot;,
+      &quot;role&quot;: &quot;DECLARE&quot;,
+      &quot;action&quot;: &quot;Compare a smooth descent with a rough descent between the same endpoints using the same declared system and reference.&quot;,
+      &quot;why_valid&quot;: &quot;Holding the states and account fixed isolates frictional/non-conservative transfer as the changed condition.&quot;,
+      &quot;inputs&quot;: [],
+      &quot;output&quot;: &quot;smooth case: no dissipative transfer in the mechanical account; rough case: dissipative transfer present&quot;
+    },
+    {
+      &quot;id&quot;: &quot;WEP4-2&quot;,
+      &quot;role&quot;: &quot;TRANSFORM&quot;,
+      &quot;action&quot;: &quot;Track K and U in both cases and mark an explicit transfer/non-mechanical channel in the rough case instead of forcing K+U to stay constant.&quot;,
+      &quot;why_valid&quot;: &quot;Total energy can remain conserved while the selected mechanical stores decrease because energy is transferred to other stores or the environment.&quot;,
+      &quot;inputs&quot;: [],
+      &quot;output&quot;: &quot;smooth -&gt; K+U can remain constant when conditions close; rough -&gt; Δ(K+U) follows the non-conservative transfer&quot;
+    },
+    {
+      &quot;id&quot;: &quot;WEP4-3&quot;,
+      &quot;role&quot;: &quot;VERIFY&quot;,
+      &quot;action&quot;: &quot;Before writing K_i + U_i = K_f + U_f, ask whether non-conservative work or dissipative/external transfer is zero for the chosen interval and account.&quot;,
+      &quot;why_valid&quot;: &quot;The mechanical-energy conservation equation is a conditional simplification, not the general conservation law.&quot;,
+      &quot;inputs&quot;: [
+        &quot;REL-MECHANICAL-ENERGY-CONSERVATION&quot;
+      ],
+      &quot;output&quot;: &quot;conservation shortcut used only after the zero-extra-transfer condition is established&quot;
+    }
+  ],
+  &quot;relation_refs&quot;: [],
+  &quot;representation_refs&quot;: [],
+  &quot;question_family_refs&quot;: [],
+  &quot;misconceptions&quot;: [
+    {
+      &quot;wrong_idea&quot;: &quot;Because energy is conserved, K + U must be constant in every mechanical situation.&quot;,
+      &quot;diagnostic_prompt&quot;: &quot;A block slides down a rough ramp. Does the law of conservation of energy by itself justify K_i + U_i = K_f + U_f?&quot;,
+      &quot;repair&quot;: &quot;No. Declare the system and account for frictional/non-conservative transfer. Total energy conservation is broader than constancy of the selected mechanical stores.&quot;
+    },
+    {
+      &quot;wrong_idea&quot;: &quot;When friction reduces K + U, energy has been destroyed.&quot;,
+      &quot;diagnostic_prompt&quot;: &quot;A sliding block stops on a rough horizontal surface. If K decreases to zero, where can the energy go?&quot;,
+      &quot;repair&quot;: &quot;Expand the account or mark the transfer to thermal/internal/environmental stores. Mechanical energy can decrease without violating total-energy conservation.&quot;
+    }
+  ],
+  &quot;exit_task&quot;: {
+    &quot;prompt&quot;: &quot;A block descends from the same height on a smooth track and a rough track. State the system/account you are using, decide whether K_i + U_i = K_f + U_f is justified in each case, and explain where the &#x27;missing&#x27; mechanical energy goes in the rough case.&quot;,
+    &quot;source_ref&quot;: &quot;SRC-AUTHOR-WEP&quot;,
+    &quot;answer&quot;: {
+      &quot;kind&quot;: &quot;MODEL_RESPONSE&quot;,
+      &quot;summary&quot;: &quot;For the smooth case, K+U may be constant if no other transfer changes the chosen mechanical account. For the rough case, friction/non-conservative transfer must be represented; the decrease in mechanical energy is transferred to other stores rather than destroyed.&quot;,
+      &quot;reasoning&quot;: [
+        &quot;Declare one physical system and use the same reference across the compared states.&quot;,
+        &quot;Mechanical-energy conservation is the special case with zero non-conservative/unaccounted transfer.&quot;,
+        &quot;Friction opens the K+U-only account, so an explicit transfer or expanded store inventory is needed.&quot;,
+        &quot;Total energy conservation does not require the selected mechanical stores to remain constant.&quot;
+      ],
+      &quot;check&quot;: &quot;Remove friction while keeping the same system/states: the extra transfer channel should vanish and the mechanical K+U account may close.&quot;,
+      &quot;acceptable_alternatives&quot;: [],
+      &quot;subpart_answers&quot;: [],
+      &quot;verification_status&quot;: &quot;CHECKED_BY_AUTHOR&quot;
+    },
+    &quot;oracle&quot;: {
+      &quot;no_numeric_claim&quot;: &quot;The answer decides whether a conservation form is applicable and computes no energy or speed.&quot;
+    }
+  },
+  &quot;research_contribution&quot;: &quot;Copied and adapted into the local Grade9V3 contract from richer prior internal Work/Energy engineering, especially the system-boundary and conditional-mechanical-conservation distinction.&quot;,
+  &quot;prerequisite_refs&quot;: [
+    &quot;CAP-WEP-POTENTIAL-ELIGIBILITY&quot;
+  ],
+  &quot;lineage&quot;: [],
+  &quot;elicitation&quot;: {
+    &quot;predict&quot;: {
+      &quot;prompt&quot;: &quot;A block reaches the bottom of a rough track from the same starting height as on a smooth track. Before writing K plus U, should you expect the same final kinetic energy?&quot;,
+      &quot;defensible_answer&quot;: &quot;No. Friction transfers energy out of the mechanical K-plus-U account, so the rough case can end with less kinetic energy.&quot;
+    },
+    &quot;attempt&quot;: {
+      &quot;produces&quot;: &quot;A smooth-versus-rough energy account that marks whether an extra transfer is present before deciding if K plus U stays constant.&quot;,
+      &quot;closure&quot;: &quot;RUBRIC&quot;,
+      &quot;rubric&quot;: [
+        {
+          &quot;criterion&quot;: &quot;The smooth case is allowed an unchanged K-plus-U account only after checking that no extra transfer is present.&quot;,
+          &quot;evidence_of&quot;: &quot;Making conservation conditional rather than automatic.&quot;
+        },
+        {
+          &quot;criterion&quot;: &quot;The rough case carries friction explicitly outside the K-plus-U-only account.&quot;,
+          &quot;evidence_of&quot;: &quot;Not hiding a path-dependent transfer inside the conservation statement.&quot;
+        }
+      ],
+      &quot;accepted&quot;: [
+        &quot;&#x27;Smooth: no extra transfer, so K + U can remain constant. Rough: friction transfers energy, so include that transfer explicitly.&#x27;&quot;
+      ],
+      &quot;rejected&quot;: [
+        &quot;&#x27;K + U is conserved in both because energy is always conserved.&#x27; This confuses total energy conservation with the narrower mechanical account.&quot;
+      ]
+    },
+    &quot;reconstruct&quot;: {
+      &quot;route&quot;: [
+        {
+          &quot;ask&quot;: &quot;What is held the same between the smooth and rough descents?&quot;,
+          &quot;why_this_ask&quot;: &quot;It fixes the endpoint energy change so roughness is the meaningful difference.&quot;,
+          &quot;from_step_ref&quot;: &quot;WEP4-1&quot;
+        },
+        {
+          &quot;ask&quot;: &quot;What extra transfer exists only on the rough track?&quot;,
+          &quot;why_this_ask&quot;: &quot;The conservation decision depends on identifying what crosses the mechanical account.&quot;
+        },
+        {
+          &quot;ask&quot;: &quot;If that transfer removes part of the mechanical energy, can the same K-plus-U total stay unchanged by itself?&quot;,
+          &quot;why_this_ask&quot;: &quot;The learner must connect the transfer inventory to the conservation condition.&quot;,
+          &quot;from_step_ref&quot;: &quot;WEP4-2&quot;
+        },
+        {
+          &quot;ask&quot;: &quot;What question should you ask before writing an unchanged K-plus-U statement in any new problem?&quot;,
+          &quot;why_this_ask&quot;: &quot;It turns the comparison into a reusable model-choice check.&quot;,
+          &quot;from_step_ref&quot;: &quot;WEP4-3&quot;
+        }
+      ],
+      &quot;differs_from_teaching_path&quot;: &quot;The teaching path compares smooth and rough accounts directly. The learner route first identifies the one changed transfer, then uses it to decide whether the mechanical account can close.&quot;
+    },
+    &quot;boundary_test&quot;: {
+      &quot;prompt&quot;: &quot;A rough surface is present but no relative displacement occurs during the interval. Does the label &#x27;rough&#x27; alone prove mechanical energy was dissipated?&quot;,
+      &quot;answer&quot;: &quot;No. The actual transfer/work over the stated interval must be established; a named interaction alone is not enough.&quot;,
+      &quot;confirms&quot;: &quot;The conservation decision is based on the actual account and transfer, not a keyword.&quot;
+    }
+  },
+  &quot;construction_units&quot;: [
+    {
+      &quot;id&quot;: &quot;CU-PHY-WEP-MECH-ENERGY-CONDITION-1&quot;,
+      &quot;decision_from&quot;: &quot;inferential_jump&quot;,
+      &quot;step_refs&quot;: [
+        &quot;WEP4-0&quot;,
+        &quot;WEP4-1&quot;,
+        &quot;WEP4-2&quot;,
+        &quot;WEP4-3&quot;
+      ],
+      &quot;representation_ref&quot;: null,
+      &quot;reveal_stage_refs&quot;: [],
+      &quot;worked_anchor_ref&quot;: null,
+      &quot;misconception_indexes&quot;: [
+        0,
+        1
+      ],
+      &quot;independent_checks&quot;: [],
+      &quot;migrated_from&quot;: &quot;teaching_path&quot;
+    }
+  ]
+}</pre><code>sha256:b86190afab29adbd161850a4783b33ce4f22ede082f7301d997cb5a044e7de66</code></details><details id="U-REL-6"><summary>U-REL-6 / LIBRARY / {&quot;pointer&quot;: &quot;/relations/6&quot;}</summary><pre>{
+  &quot;version&quot;: &quot;0.1.0&quot;,
+  &quot;status&quot;: &quot;CANDIDATE&quot;,
+  &quot;source_refs&quot;: [
+    &quot;SRC-AUTHOR-WEP&quot;
+  ],
+  &quot;evidence_refs&quot;: [],
+  &quot;extensions&quot;: {
+    &quot;issue19:scope_class&quot;: &quot;OWNER_EXTENSION&quot;,
+    &quot;issue19:donor&quot;: &quot;PR9&quot;
+  },
+  &quot;id&quot;: &quot;REL-MECHANICAL-ENERGY-CONSERVATION&quot;,
+  &quot;expression&quot;: &quot;K_i + U_i = K_f + U_f&quot;,
+  &quot;meaning&quot;: &quot;The chosen mechanical-energy account remains constant when no additional transfer crosses it.&quot;,
+  &quot;symbols&quot;: [
+    {
+      &quot;symbol&quot;: &quot;K_i&quot;,
+      &quot;meaning&quot;: &quot;Initial kinetic energy&quot;,
+      &quot;unit_or_domain&quot;: &quot;J; scalar&quot;
+    },
+    {
+      &quot;symbol&quot;: &quot;U_i&quot;,
+      &quot;meaning&quot;: &quot;Initial potential energy&quot;,
+      &quot;unit_or_domain&quot;: &quot;J; scalar&quot;
+    },
+    {
+      &quot;symbol&quot;: &quot;K_f&quot;,
+      &quot;meaning&quot;: &quot;Final kinetic energy&quot;,
+      &quot;unit_or_domain&quot;: &quot;J; scalar&quot;
+    },
+    {
+      &quot;symbol&quot;: &quot;U_f&quot;,
+      &quot;meaning&quot;: &quot;Final potential energy&quot;,
+      &quot;unit_or_domain&quot;: &quot;J; scalar&quot;
+    }
+  ],
+  &quot;conditions&quot;: [
+    &quot;No frictional or outside transfer changes the chosen mechanical-energy account.&quot;,
+    &quot;Initial and final energies use the same potential-energy reference.&quot;
+  ],
+  &quot;derivation&quot;: [
+    {
+      &quot;id&quot;: &quot;WEP6-C1&quot;,
+      &quot;role&quot;: &quot;DECLARE&quot;,
+      &quot;action&quot;: &quot;Inventory whether any frictional or outside transfer crosses the chosen mechanical account.&quot;,
+      &quot;why_valid&quot;: &quot;Conservation is conditional on a closed account.&quot;,
+      &quot;inputs&quot;: [],
+      &quot;output&quot;: &quot;no extra transfer -&gt; K + U can remain constant.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;WEP6-C2&quot;,
+      &quot;role&quot;: &quot;TRANSFORM&quot;,
+      &quot;action&quot;: &quot;Equate initial and final K + U when the account is closed.&quot;,
+      &quot;why_valid&quot;: &quot;REL-MECHANICAL-ENERGY-CONSERVATION owns the endpoint ledger under the stated condition.&quot;,
+      &quot;inputs&quot;: [],
+      &quot;output&quot;: &quot;K_i + U_i = K_f + U_f.&quot;
+    }
+  ],
+  &quot;limits&quot;: [
+    &quot;If friction or an outside agent transfers energy, include that transfer instead of forcing K + U to remain constant.&quot;
+  ],
+  &quot;checks&quot;: [
+    &quot;A rough path can share endpoints with a smooth path but not the same mechanical-energy conservation statement.&quot;
+  ],
+  &quot;gate_relation_ref&quot;: &quot;REL-MECHANICAL-ENERGY-CONSERVATION&quot;
+}</pre><code>sha256:95286b6c4cdc9b0e1072b8904acbdff3568c21d77e9ac0572e77166d21453bea</code></details><details id="U-REL-4"><summary>U-REL-4 / LIBRARY / {&quot;pointer&quot;: &quot;/relations/4&quot;}</summary><pre>{
+  &quot;version&quot;: &quot;0.1.0&quot;,
+  &quot;status&quot;: &quot;CANDIDATE&quot;,
+  &quot;source_refs&quot;: [
+    &quot;SRC-AUTHOR-WEP&quot;
+  ],
+  &quot;evidence_refs&quot;: [],
+  &quot;extensions&quot;: {
+    &quot;issue19:scope_class&quot;: &quot;OWNER_EXTENSION&quot;,
+    &quot;issue19:donor&quot;: &quot;PR9&quot;
+  },
+  &quot;id&quot;: &quot;REL-GRAVITATIONAL-POTENTIAL-NEAR-EARTH&quot;,
+  &quot;expression&quot;: &quot;Delta U_g = m g Delta h&quot;,
+  &quot;meaning&quot;: &quot;Near Earth&#x27;s surface with approximately uniform g, gravitational potential-energy change equals mass times g times vertical height change.&quot;,
+  &quot;symbols&quot;: [
+    {
+      &quot;symbol&quot;: &quot;Delta U_g&quot;,
+      &quot;meaning&quot;: &quot;Change in gravitational potential energy&quot;,
+      &quot;unit_or_domain&quot;: &quot;J; signed scalar&quot;
+    },
+    {
+      &quot;symbol&quot;: &quot;m&quot;,
+      &quot;meaning&quot;: &quot;Mass&quot;,
+      &quot;unit_or_domain&quot;: &quot;kg; positive scalar&quot;
+    },
+    {
+      &quot;symbol&quot;: &quot;g&quot;,
+      &quot;meaning&quot;: &quot;Gravitational acceleration magnitude&quot;,
+      &quot;unit_or_domain&quot;: &quot;m/s^2; positive scalar&quot;
+    },
+    {
+      &quot;symbol&quot;: &quot;Delta h&quot;,
+      &quot;meaning&quot;: &quot;Final height minus initial height&quot;,
+      &quot;unit_or_domain&quot;: &quot;m; signed scalar&quot;
+    }
+  ],
+  &quot;conditions&quot;: [
+    &quot;m &gt; 0.&quot;,
+    &quot;g is approximately uniform over the height change.&quot;,
+    &quot;One height reference and positive-up convention are used.&quot;
+  ],
+  &quot;derivation&quot;: [
+    {
+      &quot;id&quot;: &quot;WEP6-U1&quot;,
+      &quot;role&quot;: &quot;TRANSFORM&quot;,
+      &quot;action&quot;: &quot;Multiply mass, local g and signed vertical height change.&quot;,
+      &quot;why_valid&quot;: &quot;REL-GRAVITATIONAL-POTENTIAL-NEAR-EARTH owns the near-Earth change relation.&quot;,
+      &quot;inputs&quot;: [],
+      &quot;output&quot;: &quot;Delta U_g = m g Delta h.&quot;
+    }
+  ],
+  &quot;limits&quot;: [
+    &quot;Only changes are physically meaningful until a zero reference is declared.&quot;,
+    &quot;Do not extend uniform g to large height ranges without review.&quot;
+  ],
+  &quot;checks&quot;: [
+    &quot;Raising the body gives positive Delta U_g under positive-up convention.&quot;,
+    &quot;Returning to the original height gives net Delta U_g = 0.&quot;
+  ],
+  &quot;gate_relation_ref&quot;: &quot;REL-GRAVITATIONAL-POTENTIAL-NEAR-EARTH&quot;
+}</pre><code>sha256:fb2ae0cee44c61b3bc2f6c28f85e0e10be5df9c8d2bdff867e03bba1cfa847fc</code></details><details id="U-REL-3"><summary>U-REL-3 / LIBRARY / {&quot;pointer&quot;: &quot;/relations/3&quot;}</summary><pre>{
+  &quot;version&quot;: &quot;0.1.0&quot;,
+  &quot;status&quot;: &quot;CANDIDATE&quot;,
+  &quot;source_refs&quot;: [
+    &quot;SRC-AUTHOR-WEP&quot;
+  ],
+  &quot;evidence_refs&quot;: [],
+  &quot;extensions&quot;: {
+    &quot;issue19:scope_class&quot;: &quot;OWNER_EXTENSION&quot;,
+    &quot;issue19:donor&quot;: &quot;PR9&quot;
+  },
+  &quot;id&quot;: &quot;REL-KINETIC-ENERGY&quot;,
+  &quot;expression&quot;: &quot;K = 0.5 m v^2&quot;,
+  &quot;meaning&quot;: &quot;Translational kinetic energy of a body in the declared reference frame.&quot;,
+  &quot;symbols&quot;: [
+    {
+      &quot;symbol&quot;: &quot;K&quot;,
+      &quot;meaning&quot;: &quot;Kinetic energy&quot;,
+      &quot;unit_or_domain&quot;: &quot;J; nonnegative scalar&quot;
+    },
+    {
+      &quot;symbol&quot;: &quot;m&quot;,
+      &quot;meaning&quot;: &quot;Mass&quot;,
+      &quot;unit_or_domain&quot;: &quot;kg; positive scalar&quot;
+    },
+    {
+      &quot;symbol&quot;: &quot;v&quot;,
+      &quot;meaning&quot;: &quot;Speed&quot;,
+      &quot;unit_or_domain&quot;: &quot;m/s; nonnegative scalar&quot;
+    }
+  ],
+  &quot;conditions&quot;: [
+    &quot;m &gt; 0.&quot;,
+    &quot;v &gt;= 0.&quot;,
+    &quot;One declared reference frame is used.&quot;
+  ],
+  &quot;derivation&quot;: [
+    {
+      &quot;id&quot;: &quot;WEP6-K1&quot;,
+      &quot;role&quot;: &quot;TRANSFORM&quot;,
+      &quot;action&quot;: &quot;Square the speed, multiply by mass, then take one half.&quot;,
+      &quot;why_valid&quot;: &quot;REL-KINETIC-ENERGY owns the translational kinetic-energy relation.&quot;,
+      &quot;inputs&quot;: [],
+      &quot;output&quot;: &quot;K = 0.5 m v^2.&quot;
+    }
+  ],
+  &quot;limits&quot;: [
+    &quot;This record covers translational kinetic energy only.&quot;
+  ],
+  &quot;checks&quot;: [
+    &quot;Doubling speed quadruples K at fixed mass.&quot;,
+    &quot;At v = 0, K = 0.&quot;
+  ],
+  &quot;gate_relation_ref&quot;: &quot;REL-KINETIC-ENERGY&quot;
+}</pre><code>sha256:6d60108c3f9fc18bde856f127893475700ab1c35d54b76550063286634e8f4af</code></details><details id="NATIVE-MICROTOPIC"><summary>NATIVE-MICROTOPIC / PKG_SCHEMA / {&quot;pointer&quot;: &quot;/$defs/microtopic&quot;}</summary><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;additionalProperties&quot;: false,
+  &quot;properties&quot;: {
+    &quot;id&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;version&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;status&quot;: {
+      &quot;enum&quot;: [
+        &quot;DISCOVERED&quot;,
+        &quot;CANDIDATE&quot;,
+        &quot;REVIEWED&quot;,
+        &quot;CURATED&quot;,
+        &quot;DISPUTED&quot;,
+        &quot;STALE&quot;,
+        &quot;RETIRED&quot;
+      ]
+    },
+    &quot;source_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;evidence_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;extensions&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;description&quot;: &quot;Namespaced subject extensions; no scientific authority is inferred.&quot;
+    },
+    &quot;title&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;bucket_id&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;primary_capability_ref&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;intrinsic_badge&quot;: {
+      &quot;enum&quot;: [
+        &quot;EASY&quot;,
+        &quot;MEDIUM&quot;,
+        &quot;HARD&quot;
+      ]
+    },
+    &quot;badge_reason&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;entry_assumptions&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;inferential_jump&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;teaching_path&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/step&quot;
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;relation_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;representation_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;question_family_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;misconceptions&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;object&quot;,
+        &quot;additionalProperties&quot;: false,
+        &quot;properties&quot;: {
+          &quot;wrong_idea&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;minLength&quot;: 1
+          },
+          &quot;diagnostic_prompt&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;minLength&quot;: 1
+          },
+          &quot;repair&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;minLength&quot;: 1
+          }
+        },
+        &quot;required&quot;: [
+          &quot;wrong_idea&quot;,
+          &quot;diagnostic_prompt&quot;,
+          &quot;repair&quot;
+        ]
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;exit_task&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;additionalProperties&quot;: false,
+      &quot;properties&quot;: {
+        &quot;prompt&quot;: {
+          &quot;type&quot;: &quot;string&quot;,
+          &quot;minLength&quot;: 1
+        },
+        &quot;source_ref&quot;: {
+          &quot;type&quot;: &quot;string&quot;,
+          &quot;minLength&quot;: 1
+        },
+        &quot;answer&quot;: {
+          &quot;$ref&quot;: &quot;#/$defs/answer&quot;
+        },
+        &quot;oracle&quot;: {
+          &quot;description&quot;: &quot;How this exit answer is stood behind. Exactly one of: `verification`, naming a subject validator and binding its inputs to declared data; `held_by`, naming the known issue that explains why no oracle exists yet; or `no_numeric_claim`, saying why the answer asserts no computed value. Silence is not an option, because the exit answer is what a learner measures themselves against.&quot;,
+          &quot;type&quot;: &quot;object&quot;,
+          &quot;minProperties&quot;: 1,
+          &quot;maxProperties&quot;: 1,
+          &quot;properties&quot;: {
+            &quot;verification&quot;: {
+              &quot;type&quot;: &quot;object&quot;,
+              &quot;required&quot;: [
+                &quot;validator_id&quot;,
+                &quot;bindings&quot;
+              ],
+              &quot;properties&quot;: {
+                &quot;validator_id&quot;: {
+                  &quot;type&quot;: &quot;string&quot;,
+                  &quot;minLength&quot;: 1
+                },
+                &quot;bindings&quot;: {
+                  &quot;type&quot;: &quot;object&quot;,
+                  &quot;additionalProperties&quot;: {
+                    &quot;type&quot;: &quot;string&quot;,
+                    &quot;minLength&quot;: 1
+                  }
+                }
+              },
+              &quot;additionalProperties&quot;: {
+                &quot;type&quot;: [
+                  &quot;string&quot;,
+                  &quot;number&quot;,
+                  &quot;boolean&quot;
+                ]
+              }
+            },
+            &quot;held_by&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;minLength&quot;: 1
+            },
+            &quot;no_numeric_claim&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;minLength&quot;: 1
+            }
+          },
+          &quot;additionalProperties&quot;: false
+        }
+      },
+      &quot;required&quot;: [
+        &quot;prompt&quot;,
+        &quot;source_ref&quot;,
+        &quot;answer&quot;,
+        &quot;oracle&quot;
+      ]
+    },
+    &quot;research_contribution&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;prerequisite_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0,
+      &quot;description&quot;: &quot;Capability ids this microtopic assumes. A capability of another subject is written &#x27;&lt;Subject&gt;:&lt;capability id&gt;&#x27; (e.g. &#x27;Mathematics:CAP-MATH-DERIVATIVE-RATE&#x27;); package_depth.py emits TEACH_PREREQUISITE_BRIDGE for any ref no library teaches.&quot;
+    },
+    &quot;lineage&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;object&quot;,
+        &quot;additionalProperties&quot;: false,
+        &quot;properties&quot;: {
+          &quot;relation&quot;: {
+            &quot;enum&quot;: [
+              &quot;SUPERSEDES&quot;,
+              &quot;SPLIT_FROM&quot;,
+              &quot;MERGED_FROM&quot;
+            ]
+          },
+          &quot;target_ref&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;minLength&quot;: 1
+          }
+        },
+        &quot;required&quot;: [
+          &quot;relation&quot;,
+          &quot;target_ref&quot;
+        ]
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;elicitation&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;additionalProperties&quot;: false,
+      &quot;description&quot;: &quot;The self-tutor cycle. Four of its six steps live here; diagnose and repair are misconceptions[].wrong_idea, .diagnostic_prompt and .repair, which already hold the same claim for the declarative product. A second home for one truth is the defect the authority gate exists to close.&quot;,
+      &quot;properties&quot;: {
+        &quot;predict&quot;: {
+          &quot;type&quot;: &quot;object&quot;,
+          &quot;additionalProperties&quot;: false,
+          &quot;description&quot;: &quot;Pose the decision before revealing anything.&quot;,
+          &quot;properties&quot;: {
+            &quot;prompt&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;minLength&quot;: 1,
+              &quot;description&quot;: &quot;The decision, posed so a learner can commit to an answer.&quot;
+            },
+            &quot;defensible_answer&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;minLength&quot;: 1,
+              &quot;description&quot;: &quot;The answer that commitment is judged against. A prompt with no defensible answer is a musing, not a prediction.&quot;
+            }
+          },
+          &quot;required&quot;: [
+            &quot;prompt&quot;,
+            &quot;defensible_answer&quot;
+          ]
+        },
+        &quot;attempt&quot;: {
+          &quot;type&quot;: &quot;object&quot;,
+          &quot;additionalProperties&quot;: false,
+          &quot;description&quot;: &quot;What the learner produces, and how it closes without a tutor.&quot;,
+          &quot;properties&quot;: {
+            &quot;produces&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;minLength&quot;: 1,
+              &quot;description&quot;: &quot;What the learner should construct, draw, discriminate or explain.&quot;
+            },
+            &quot;closure&quot;: {
+              &quot;enum&quot;: [
+                &quot;MODEL_RESPONSE&quot;,
+                &quot;RUBRIC&quot;,
+                &quot;CRITERIA&quot;
+              ],
+              &quot;description&quot;: &quot;Which form of closure this attempt uses. Each value demands something the others do not, so that none is a synonym an author can pick to avoid work: MODEL_RESPONSE requires model_response, CRITERIA requires rubric, and RUBRIC requires rubric with accepted and rejected examples -- the spec&#x27;s &#x27;a rubric plus representative accepted and rejected answers&#x27;, which is the stronger claim of the three.&quot;
+            },
+            &quot;model_response&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;minLength&quot;: 1,
+              &quot;description&quot;: &quot;Closure as one response, where one is right.&quot;
+            },
+            &quot;rubric&quot;: {
+              &quot;type&quot;: &quot;array&quot;,
+              &quot;items&quot;: {
+                &quot;$ref&quot;: &quot;#/$defs/rubric_criterion&quot;
+              },
+              &quot;minItems&quot;: 1,
+              &quot;description&quot;: &quot;Closure as a rubric, where several responses are valid.&quot;
+            },
+            &quot;accepted&quot;: {
+              &quot;type&quot;: &quot;array&quot;,
+              &quot;items&quot;: {
+                &quot;type&quot;: &quot;string&quot;,
+                &quot;minLength&quot;: 1
+              },
+              &quot;minItems&quot;: 1,
+              &quot;description&quot;: &quot;Representative responses the rubric accepts.&quot;
+            },
+            &quot;rejected&quot;: {
+              &quot;type&quot;: &quot;array&quot;,
+              &quot;items&quot;: {
+                &quot;type&quot;: &quot;string&quot;,
+                &quot;minLength&quot;: 1
+              },
+              &quot;minItems&quot;: 1,
+              &quot;description&quot;: &quot;Representative responses it rejects. A rubric with no rejected example has not been tested against anything.&quot;
+            },
+            &quot;task&quot;: {
+              &quot;type&quot;: &quot;object&quot;,
+              &quot;additionalProperties&quot;: false,
+              &quot;required&quot;: [
+                &quot;prompt&quot;
+              ],
+              &quot;description&quot;: &quot;Schema 0.2.0: the concrete reconstruction task the learner performs (a body, givens, numbers or a situation). `produces` says what the attempt should contain; `task` is what the learner is asked to do. Rendered as the Core1B attempt.&quot;,
+              &quot;properties&quot;: {
+                &quot;prompt&quot;: {
+                  &quot;type&quot;: &quot;string&quot;,
+                  &quot;minLength&quot;: 1
+                },
+                &quot;givens&quot;: {
+                  &quot;type&quot;: &quot;array&quot;,
+                  &quot;items&quot;: {
+                    &quot;type&quot;: &quot;string&quot;,
+                    &quot;minLength&quot;: 1
+                  }
+                },
+                &quot;representation_ref&quot;: {
+                  &quot;type&quot;: [
+                    &quot;string&quot;,
+                    &quot;null&quot;
+                  ],
+                  &quot;description&quot;: &quot;The representation of this task&#x27;s own situation (its bodies and values), shown with the Core1B attempt. When absent, Core1B falls back to the first construction unit&#x27;s (Core1A) figure, which depicts a different situation.&quot;
+                },
+                &quot;stage_refs&quot;: {
+                  &quot;type&quot;: &quot;array&quot;,
+                  &quot;items&quot;: {
+                    &quot;type&quot;: &quot;string&quot;
+                  },
+                  &quot;description&quot;: &quot;Stages of representation_ref safe to show before the attempt; default is the first stage only.&quot;
+                },
+                &quot;response&quot;: {
+                  &quot;$ref&quot;: &quot;#/$defs/response&quot;
+                }
+              }
+            }
+          },
+          &quot;required&quot;: [
+            &quot;produces&quot;,
+            &quot;closure&quot;
+          ]
+        },
+        &quot;reconstruct&quot;: {
+          &quot;type&quot;: &quot;object&quot;,
+          &quot;additionalProperties&quot;: false,
+          &quot;description&quot;: &quot;The correct construction reached the way a learner would reach it. Held as questions rather than statements: teaching_path is the expert&#x27;s summary, and a reconstruct route made of statements is that summary under a different key, which is exactly how this product became the declarative one.&quot;,
+          &quot;properties&quot;: {
+            &quot;route&quot;: {
+              &quot;type&quot;: &quot;array&quot;,
+              &quot;minItems&quot;: 1,
+              &quot;description&quot;: &quot;The sequence of asks. Order is meaning: each one is answerable only once the previous has been answered.&quot;,
+              &quot;items&quot;: {
+                &quot;type&quot;: &quot;object&quot;,
+                &quot;additionalProperties&quot;: false,
+                &quot;properties&quot;: {
+                  &quot;ask&quot;: {
+                    &quot;type&quot;: &quot;string&quot;,
+                    &quot;minLength&quot;: 1,
+                    &quot;description&quot;: &quot;A question that moves the learner one decision forward. A sentence with a question mark on it is not an ask; the learner must be able to get it wrong.&quot;
+                  },
+                  &quot;why_this_ask&quot;: {
+                    &quot;type&quot;: &quot;string&quot;,
+                    &quot;minLength&quot;: 1,
+                    &quot;description&quot;: &quot;Why this question rather than another at this point. An author who cannot say this has ordered the route by the expert&#x27;s convenience.&quot;
+                  },
+                  &quot;from_step_ref&quot;: {
+                    &quot;type&quot;: &quot;string&quot;,
+                    &quot;minLength&quot;: 1,
+                    &quot;description&quot;: &quot;The teaching_path step this ask arrives at, where one exists. Absent means the learner&#x27;s route genuinely departs from the expert&#x27;s, which is why both are held.&quot;
+                  }
+                },
+                &quot;required&quot;: [
+                  &quot;ask&quot;,
+                  &quot;why_this_ask&quot;
+                ]
+              }
+            },
+            &quot;differs_from_teaching_path&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;minLength&quot;: 1,
+              &quot;description&quot;: &quot;How the learner&#x27;s route differs from the expert&#x27;s construction. This is the sentence a reviewer checks the A/B claim against, so it may not restate the teaching path it claims to differ from.&quot;
+            }
+          },
+          &quot;required&quot;: [
+            &quot;route&quot;,
+            &quot;differs_from_teaching_path&quot;
+          ]
+        },
+        &quot;boundary_test&quot;: {
+          &quot;type&quot;: &quot;object&quot;,
+          &quot;additionalProperties&quot;: false,
+          &quot;properties&quot;: {
+            &quot;prompt&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;minLength&quot;: 1,
+              &quot;description&quot;: &quot;A limiting case, reversal or edge condition.&quot;
+            },
+            &quot;confirms&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;minLength&quot;: 1,
+              &quot;description&quot;: &quot;What passing it establishes, stated so that a recall question cannot be passed off as a boundary test.&quot;
+            },
+            &quot;answer&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;minLength&quot;: 1,
+              &quot;description&quot;: &quot;What passing it looks like. The shared closure invariant has no exception for the last prompt in a cycle.&quot;
+            }
+          },
+          &quot;required&quot;: [
+            &quot;prompt&quot;,
+            &quot;answer&quot;,
+            &quot;confirms&quot;
+          ]
+        }
+      },
+      &quot;required&quot;: [
+        &quot;predict&quot;,
+        &quot;attempt&quot;,
+        &quot;reconstruct&quot;,
+        &quot;boundary_test&quot;
+      ]
+    },
+    &quot;construction_units&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/construction_unit&quot;
+      }
+    },
+    &quot;compact_anchor&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;additionalProperties&quot;: false,
+      &quot;required&quot;: [
+        &quot;prompt&quot;,
+        &quot;result&quot;
+      ],
+      &quot;description&quot;: &quot;Schema 0.2.0: the Core1 compact anchor, a one-line instance of the governing relation that makes the map usable before Core1A.&quot;,
+      &quot;properties&quot;: {
+        &quot;prompt&quot;: {
+          &quot;type&quot;: &quot;string&quot;,
+          &quot;minLength&quot;: 1
+        },
+        &quot;result&quot;: {
+          &quot;type&quot;: &quot;string&quot;,
+          &quot;minLength&quot;: 1
+        },
+        &quot;representation_ref&quot;: {
+          &quot;type&quot;: [
+            &quot;string&quot;,
+            &quot;null&quot;
+          ],
+          &quot;description&quot;: &quot;The representation of this compact anchor&#x27;s own situation, shown on the Core1 map. When absent, Core1 falls back to the microtopic&#x27;s first representation_refs entry, which is often shared across microtopics.&quot;
+        }
+      }
+    }
+  },
+  &quot;required&quot;: [
+    &quot;id&quot;,
+    &quot;version&quot;,
+    &quot;status&quot;,
+    &quot;source_refs&quot;,
+    &quot;evidence_refs&quot;,
+    &quot;extensions&quot;,
+    &quot;title&quot;,
+    &quot;bucket_id&quot;,
+    &quot;primary_capability_ref&quot;,
+    &quot;intrinsic_badge&quot;,
+    &quot;badge_reason&quot;,
+    &quot;entry_assumptions&quot;,
+    &quot;inferential_jump&quot;,
+    &quot;teaching_path&quot;,
+    &quot;relation_refs&quot;,
+    &quot;representation_refs&quot;,
+    &quot;question_family_refs&quot;,
+    &quot;misconceptions&quot;,
+    &quot;exit_task&quot;,
+    &quot;research_contribution&quot;,
+    &quot;prerequisite_refs&quot;,
+    &quot;lineage&quot;
+  ]
+}</pre><code>sha256:1686d613a7e669b7219db2e969b3a74ffda954bb7f4966bcd221abf16148e57d</code></details><details id="NATIVE-STEP"><summary>NATIVE-STEP / PKG_SCHEMA / {&quot;pointer&quot;: &quot;/$defs/step&quot;}</summary><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;additionalProperties&quot;: false,
+  &quot;properties&quot;: {
+    &quot;id&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;action&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;why_valid&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;inputs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;output&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;role&quot;: {
+      &quot;description&quot;: &quot;What the step does to the state. A DECLARE step fixes a convention or a domain and legitimately produces no computation; a TRANSFORM step changes the mathematical state and must show the changed state, not describe it; a VERIFY step checks a result against something already established.&quot;,
+      &quot;enum&quot;: [
+        &quot;DECLARE&quot;,
+        &quot;TRANSFORM&quot;,
+        &quot;VERIFY&quot;
+      ]
+    },
+    &quot;source_ref&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1,
+      &quot;description&quot;: &quot;The source this step&#x27;s claim rests on. Absent means the step is the author&#x27;s own construction, which is legitimate and is not the same as source-supported.&quot;
+    }
+  },
+  &quot;required&quot;: [
+    &quot;id&quot;,
+    &quot;role&quot;,
+    &quot;action&quot;,
+    &quot;why_valid&quot;,
+    &quot;inputs&quot;,
+    &quot;output&quot;
+  ]
+}</pre><code>sha256:bef05081da5d29b5d9840965decc3edc4f41c61eca3d657a6a33f3c8f7eb3407</code></details><details id="NATIVE-CONSTRUCTION_UNIT"><summary>NATIVE-CONSTRUCTION_UNIT / PKG_SCHEMA / {&quot;pointer&quot;: &quot;/$defs/construction_unit&quot;}</summary><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;additionalProperties&quot;: false,
+  &quot;description&quot;: &quot;One distinct decision/event of a microtopic&#x27;s construction, taught as its own unit (Core1A) and reconstructed in Core1B.&quot;,
+  &quot;required&quot;: [
+    &quot;id&quot;,
+    &quot;step_refs&quot;
+  ],
+  &quot;properties&quot;: {
+    &quot;id&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;pattern&quot;: &quot;^CU-[A-Z0-9-]+$&quot;
+    },
+    &quot;extensions&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;description&quot;: &quot;Namespaced unit-level extensions. Repeated blueprint applicability may use extensions[&#x27;grade9v3:component_waivers&#x27;] with the same {COMPONENT_ID: reason} contract as a top-level record.&quot;
+    },
+    &quot;decision&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1,
+      &quot;description&quot;: &quot;The move the learner must make in this unit, in words.&quot;
+    },
+    &quot;step_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 1,
+      &quot;description&quot;: &quot;teaching_path step ids this unit covers, in order.&quot;
+    },
+    &quot;representation_ref&quot;: {
+      &quot;type&quot;: [
+        &quot;string&quot;,
+        &quot;null&quot;
+      ],
+      &quot;description&quot;: &quot;Representation that stages this unit.&quot;
+    },
+    &quot;reveal_stage_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;
+      },
+      &quot;description&quot;: &quot;That representation&#x27;s reveal stages used by this unit, in order.&quot;
+    },
+    &quot;worked_anchor_ref&quot;: {
+      &quot;type&quot;: [
+        &quot;string&quot;,
+        &quot;null&quot;
+      ],
+      &quot;description&quot;: &quot;Question (exposure CORE1A) whose route exercises this unit&#x27;s move.&quot;
+    },
+    &quot;bank_anchor_ref&quot;: {
+      &quot;type&quot;: [
+        &quot;string&quot;,
+        &quot;null&quot;
+      ],
+      &quot;minLength&quot;: 1,
+      &quot;description&quot;: &quot;A question of the product&#x27;s bank (an owner-supplied or exam question, not a question of this package) that this unit works through as its worked example: the page shows the question as its owner wrote it with its verified route. Resolved when the product is built, so a package does not carry a copy of the question. Use it for the question the unit builds toward; use worked_anchor_ref for a question the package authors itself.&quot;
+    },
+    &quot;crux_question_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 1,
+      &quot;description&quot;: &quot;Bank questions whose crux this unit builds: the move a learner is most likely to miss in each. The toughest question of a set must be named here by a unit of the concept it belongs to; its difficulty band does not prescribe the unit&#x27;s component or panel count.&quot;
+    },
+    &quot;crux_step_ref&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1,
+      &quot;description&quot;: &quot;The teaching_path step of this unit (one of its step_refs) that builds the move named questions in crux_question_refs turn on. The page marks that step, so a reader can see where the unit does the work the hard question needs.&quot;
+    },
+    &quot;misconception_indexes&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;integer&quot;,
+        &quot;minimum&quot;: 0
+      },
+      &quot;description&quot;: &quot;Indexes into microtopic.misconceptions (wrong path, diagnose, repair).&quot;
+    },
+    &quot;relation_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;description&quot;: &quot;The microtopic&#x27;s relations this unit uses, shown as the unit&#x27;s own equation card. Absent: the first unit shows all of the microtopic&#x27;s relations.&quot;
+    },
+    &quot;independent_checks&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/independent_check&quot;
+      }
+    },
+    &quot;migrated_from&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;Set by package_migrate.py when the unit was derived mechanically (e.g. &#x27;teaching_path&#x27;); cleared when an author reviews it.&quot;
+    },
+    &quot;decision_from&quot;: {
+      &quot;enum&quot;: [
+        &quot;inferential_jump&quot;
+      ],
+      &quot;description&quot;: &quot;Set instead of `decision` when the unit&#x27;s decision is the microtopic&#x27;s own field (migration); one source of truth, no copied text.&quot;
+    }
+  },
+  &quot;anyOf&quot;: [
+    {
+      &quot;required&quot;: [
+        &quot;decision&quot;
+      ]
+    },
+    {
+      &quot;required&quot;: [
+        &quot;decision_from&quot;
+      ]
+    }
+  ]
+}</pre><code>sha256:6087cdf85dbacc13bc16269c97e18a6d397fb69ad04e18ed0e56ad8bd27b1dfa</code></details><details id="NATIVE-REPRESENTATION"><summary>NATIVE-REPRESENTATION / PKG_SCHEMA / {&quot;pointer&quot;: &quot;/$defs/representation&quot;}</summary><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;additionalProperties&quot;: false,
+  &quot;properties&quot;: {
+    &quot;id&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;version&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;status&quot;: {
+      &quot;enum&quot;: [
+        &quot;DISCOVERED&quot;,
+        &quot;CANDIDATE&quot;,
+        &quot;REVIEWED&quot;,
+        &quot;CURATED&quot;,
+        &quot;DISPUTED&quot;,
+        &quot;STALE&quot;,
+        &quot;RETIRED&quot;
+      ]
+    },
+    &quot;source_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;evidence_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;extensions&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;description&quot;: &quot;Namespaced subject extensions; no scientific authority is inferred.&quot;
+    },
+    &quot;kind&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;purpose&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;required_elements&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;relation_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;read_order&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;instance_constraints&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;accessibility&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;misleading_alternatives&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;rendered_asset_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;scene_instances&quot;: {
+      &quot;description&quot;: &quot;Concrete figures satisfying this representation. Everything above states what a figure of this kind must show; an instance states one actual figure, bound to the data it draws, so the library can compile a figure instead of only requiring one.&quot;,
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/scene_instance&quot;
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;correspondence&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;object&quot;,
+        &quot;additionalProperties&quot;: false,
+        &quot;properties&quot;: {
+          &quot;element&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;minLength&quot;: 1,
+            &quot;description&quot;: &quot;The part of the picture, named as required_elements names it.&quot;
+          },
+          &quot;symbol&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;minLength&quot;: 1,
+            &quot;description&quot;: &quot;The symbol it stands for, as the governing relation writes it.&quot;
+          },
+          &quot;in_words&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;minLength&quot;: 1,
+            &quot;description&quot;: &quot;The same thing said in words, which is the third leg of the bridge.&quot;
+          }
+        },
+        &quot;required&quot;: [
+          &quot;element&quot;,
+          &quot;symbol&quot;,
+          &quot;in_words&quot;
+        ]
+      },
+      &quot;minItems&quot;: 0,
+      &quot;description&quot;: &quot;The representation bridge. required_elements says what the picture must contain and the relation&#x27;s symbols say what the algebra means, but nothing bound one to the other, so the correspondence a learner must make was asserted rather than held. Naming all three legs is what makes it explicit in both directions rather than a caption pointing one way.&quot;
+    },
+    &quot;interactive_resource_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0,
+      &quot;description&quot;: &quot;ACTIVITY resources that implement or manipulate this canonical representation. The representation remains academic authority.&quot;
+    },
+    &quot;reveal_stages&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/visual_stage&quot;
+      },
+      &quot;minItems&quot;: 0,
+      &quot;description&quot;: &quot;Ordered author-defined reveal states for progressive visual support. No global stage count is imposed.&quot;
+    },
+    &quot;support_stage_map&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/support_stage_binding&quot;
+      },
+      &quot;minItems&quot;: 0,
+      &quot;description&quot;: &quot;Optional mapping from matrix pre-attempt support level to initial representation stage.&quot;
+    }
+  },
+  &quot;required&quot;: [
+    &quot;id&quot;,
+    &quot;version&quot;,
+    &quot;status&quot;,
+    &quot;source_refs&quot;,
+    &quot;evidence_refs&quot;,
+    &quot;extensions&quot;,
+    &quot;kind&quot;,
+    &quot;purpose&quot;,
+    &quot;required_elements&quot;,
+    &quot;relation_refs&quot;,
+    &quot;read_order&quot;,
+    &quot;instance_constraints&quot;,
+    &quot;accessibility&quot;,
+    &quot;misleading_alternatives&quot;,
+    &quot;rendered_asset_refs&quot;,
+    &quot;scene_instances&quot;
+  ]
+}</pre><code>sha256:b9d7645031777bfc8abda988531e7cc77957329f012d0e58dcd04ed261940b56</code></details><details id="NATIVE-RELATION"><summary>NATIVE-RELATION / PKG_SCHEMA / {&quot;pointer&quot;: &quot;/$defs/relation&quot;}</summary><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;additionalProperties&quot;: false,
+  &quot;properties&quot;: {
+    &quot;id&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;version&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;status&quot;: {
+      &quot;enum&quot;: [
+        &quot;DISCOVERED&quot;,
+        &quot;CANDIDATE&quot;,
+        &quot;REVIEWED&quot;,
+        &quot;CURATED&quot;,
+        &quot;DISPUTED&quot;,
+        &quot;STALE&quot;,
+        &quot;RETIRED&quot;
+      ]
+    },
+    &quot;source_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;evidence_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;extensions&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;description&quot;: &quot;Namespaced subject extensions; no scientific authority is inferred.&quot;
+    },
+    &quot;expression&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;meaning&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;symbols&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;object&quot;,
+        &quot;additionalProperties&quot;: false,
+        &quot;properties&quot;: {
+          &quot;symbol&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;minLength&quot;: 1
+          },
+          &quot;meaning&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;minLength&quot;: 1
+          },
+          &quot;unit_or_domain&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;minLength&quot;: 1
+          }
+        },
+        &quot;required&quot;: [
+          &quot;symbol&quot;,
+          &quot;meaning&quot;,
+          &quot;unit_or_domain&quot;
+        ]
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;conditions&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;derivation&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/step&quot;
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;limits&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;checks&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;mathml&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1,
+      &quot;description&quot;: &quot;Restricted presentation MathML for this relation, so a product can render it without re-authoring.&quot;
+    },
+    &quot;gate_relation_ref&quot;: {
+      &quot;description&quot;: &quot;The engineering gate relation this is a bound copy of. Subject truth is owned by the gate registry; the library holds a copy so the compiler can reach it, and that copy is checked against the owner. null says no gate backs this relation: that is true of a subject that declares no gates (a sandbox, or a contract-only subject), and for a subject that has gates Shared/library/authority.py reports it as GATE_RELATION_BINDING_ABSENT.&quot;,
+      &quot;type&quot;: [
+        &quot;string&quot;,
+        &quot;null&quot;
+      ],
+      &quot;minLength&quot;: 1
+    }
+  },
+  &quot;required&quot;: [
+    &quot;id&quot;,
+    &quot;version&quot;,
+    &quot;status&quot;,
+    &quot;source_refs&quot;,
+    &quot;evidence_refs&quot;,
+    &quot;extensions&quot;,
+    &quot;expression&quot;,
+    &quot;meaning&quot;,
+    &quot;symbols&quot;,
+    &quot;conditions&quot;,
+    &quot;derivation&quot;,
+    &quot;limits&quot;,
+    &quot;checks&quot;,
+    &quot;gate_relation_ref&quot;
+  ]
+}</pre><code>sha256:ecbfa4eeda8187c8418eb9116384cbea37434ca4d21fb034727742bc45cf8909</code></details><h2>Exposure and limitations</h2><ul><li>Author/exposed preparation; no independent academic review or learner observation.</li><li>All nine source images were visually inspected in this routine; the selected regions and limitations are in program.json. This is not full OCR, diagram equivalence or scientific acceptance.</li><li>Generated SVGs are derived material and remain unreviewed. Every original scan and SVG is retained; all linked source chapter assets resolve locally.</li><li>Book illustration badges are not official examination provenance. No new question or lesson is authored.</li><li>A matching source hash proves retained bytes, not accurate transcription or scientific truth.</li><li>The retained reference ontology supplies proposed material under WEP-07. It is a review lead, not the canonical library or a qualified replacement for missing chapter derivations. Its source_authority/canonical_rules labels are claims, not acceptance receipts.</li></ul><p class="meta">Dependency fingerprint sha256:dbd83a5de57fee4140c541638d9691ddd152e7e27b4abf760bf8b54d862f22b0</p></body></html>

@@ -1,0 +1,93 @@
+{
+  "sequence": 26,
+  "batch_sequence": 11,
+  "task_identity": "Q-ID-29",
+  "stable_id": "G9V4-PHYS-WPE-EX-M78",
+  "source_id": "EX-M78",
+  "lot": "LOT-07",
+  "batch": "BATCH-B",
+  "paper": "JEE Main 2019 (Online) 9th January Morning Slot",
+  "source_type": "JEE_MAIN_PAST_EXAM_QUESTION",
+  "source_custody": "PARTIAL (spring-block diagram unresolved)",
+  "stem_text": "A block of mass m, lying on a smooth horizontal surface, is attached to a spring (of negligible mass) of spring constant k. The other end of the spring is fixed, as shown in the figure. The block is initially at rest in its equilibrium position. If now the block is pulled with a constant force F, the maximum speed of the block is : [FIG-stem-1]",
+  "stem_sha256": "4f16a1508ca866152bc5523d0bc6719aede0028234b3b8ea49571c2e9c4d260f",
+  "source_hash": "4f16a1508ca866152bc5523d0bc6719aede0028234b3b8ea49571c2e9c4d260f",
+  "source_record_digest": "4f16a1508ca866152bc5523d0bc6719aede0028234b3b8ea49571c2e9c4d260f",
+  "duplicate_parent": null,
+  "scope": "IN_SCOPE_WPE_ONLY",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "HOLD:FIGURE_UNRESOLVED",
+  "figure_reference": "[FIG-stem-1] Horizontal spring-block setup unverified against master",
+  "options": [
+    "A: (2𝐹)/(√(𝑚𝑘))",
+    "B: (𝐹)/(𝜋√(𝑚𝑘))",
+    "C: (𝜋𝐹)/(√(𝑚𝑘))",
+    "D: (𝐹)/(√(𝑚𝑘))"
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "SPRING_BLOCK_WORK_ENERGY_MAX_SPEED",
+    "derivation": "Maximum speed occurs at the equilibrium position where net force is zero: F_net = F - k*x = 0 => x_0 = F/k. By Work-Energy Theorem from rest (x=0, v=0) to equilibrium position (x_0, v_max): W_net = W_force + W_spring = Delta KE => F*x_0 - 1/2 k x_0^2 = 1/2 m v_max^2. Substituting x_0 = F/k: F*(F/k) - 1/2 k*(F/k)^2 = F^2/k - F^2/(2k) = F^2/(2k) = 1/2 m v_max^2 => v_max^2 = F^2 / (mk) => v_max = F / sqrt(mk). Matches Option D.",
+    "predicted_option": "D: (𝐹)/(√(𝑚𝑘))",
+    "limiting_cases": "If k -> infinity, v_max -> 0. If m -> infinity, v_max -> 0. Simple harmonic motion verification: equilibrium shift x_0 = F/k, amplitude A = F/k, angular frequency omega = sqrt(k/m), maximum speed v_max = omega * A = sqrt(k/m) * (F/k) = F / sqrt(mk)."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Work-energy theorem with friction and spring force"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Kinetic energy lost equals spring potential plus work against friction"
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Single conservation equation setup"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Quadratic evaluation or linear friction subtraction"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Direction of friction opposing motion during compression"
+        }
+      },
+      "total": 5,
+      "band": "D2",
+      "prior_proposal": {
+        "source": "PRODUCER_HISTORICAL_ESTIMATE",
+        "scores": "1/1/1/1/1",
+        "total": 5
+      },
+      "differences": "Rescored to native five-factor rubric per B2 CP-4 review"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "MODEL"
+      ],
+      "rationale": "Standard work-energy balance with spring and dissipative forces",
+      "candidate_cell": "QRT-APPLY-D2",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_CP4_GATE",
+  "b2_blind_status": "UNREVIEWED",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:FIGURE_UNRESOLVED (diagram needed to verify spring anchoring and axis orientation)",
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)",
+    "HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)"
+  ],
+  "next_action": "Verify official NTA diagram and key for 09-01-2019 Morning Slot."
+}

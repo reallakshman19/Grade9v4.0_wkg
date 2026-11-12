@@ -1,0 +1,17 @@
+{
+  "source_id": "EX-M96",
+  "task_identity": "Q-ID-39",
+  "sequence": 34,
+  "batch_sequence": 4,
+  "paper": "JEE Main 2013 (Online) 25th April Morning Slot",
+  "stem_text": "A wind-powered generator converts wind energy into electrical energy. Assume that the generator converts a fixed fraction of the wind energy intercepted by its blades into electrical energy. For wind speed 𝑣 , the electrical power output will be most likely proportional to",
+  "stem_sha256": "833b0038bb505b5298837eda5fceb2bfa58f0149c3dbf52a2168b78b42cd29cc",
+  "options": [
+    "A: 𝑣^(4)",
+    "B: 𝑣^(2)",
+    "C: 𝑣",
+    "D: 𝑣^(3)"
+  ],
+  "figure_reference": null,
+  "confidentiality_notice": "Source custody blind packet. Academic solve, answer key, and scoring omitted. Private review only."
+}

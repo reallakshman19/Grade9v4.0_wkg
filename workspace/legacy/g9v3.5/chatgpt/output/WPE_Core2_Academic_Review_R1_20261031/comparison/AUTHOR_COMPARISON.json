@@ -1,0 +1,87 @@
+{
+  "warning": "Phase2 only, after FIRST_PASS sealed. Prior material is author-exposed, not an override of independent conclusions.",
+  "records": [
+    {
+      "alias": "TASK-A",
+      "prior_proposal": {
+        "operation": "APPLY",
+        "band": "D3",
+        "score": 7
+      },
+      "author_exposed_audit": {
+        "answer": "D, x = sqrt(8P/(9m)) t^(3/2)",
+        "route": "Pt = mv²/2 for net mechanical power; integrate v = sqrt(2Pt/m) from rest.",
+        "condition": "P is net power delivered to translational kinetic energy; no unmodelled resistance; ideal start at t=0.",
+        "finding": "No official 2021 stem-to-question-ID-to-final-key map. The familiar two-stage derivation is not automatically D3.",
+        "demand_challenge": "Reconsider APPLY-D2: exposed audit factors [1,1,2,1,0] total5. This is a hypothesis, not an SL2 adjudication."
+      }
+    },
+    {
+      "alias": "TASK-B",
+      "prior_proposal": {
+        "operation": "MODEL",
+        "band": "D3",
+        "score": 7
+      },
+      "author_exposed_audit": {
+        "answer": "C, MgL/(2n²)",
+        "route": "Lift mass M/n through the hanging segment centre-of-mass height L/(2n). Equivalently integrate (M/L)g x dx over [0,L/n].",
+        "condition": "Uniform cable, hanging portion lifted onto the surface with no additional dissipative work or final kinetic energy.",
+        "finding": "The centre-of-mass route is shorter than the exposed calculus solution. Difficulty must follow the least adequate legitimate route.",
+        "demand_challenge": "Reconsider familiar APPLY-D2 rather than assuming MODEL-D3 from the distributed object. Exposed audit factors [1,1,1,1,1] total5."
+      }
+    },
+    {
+      "alias": "TASK-C",
+      "prior_proposal": {
+        "operation": "JUSTIFY",
+        "band": "D3",
+        "score": 7
+      },
+      "author_exposed_audit": {
+        "answer": "A, Statement1 false and Statement2 true",
+        "route": "Under equal applied force, W=F²/(2k), so W1>W2 implies k1<k2. Under equal extension, W=kx²/2, so W1<W2.",
+        "condition": "Ideal linear springs loaded from their natural lengths under the same relevant work convention.",
+        "finding": "The two constraint regimes are essential. This exact statement-selection task is not the separate cut-spring MAIN task.",
+        "demand_challenge": "Reconsider APPLY-D2 [1,1,1,1,1] total5. A useful JUSTIFY teaching bridge is not automatically direct JUSTIFY-D3 exam coverage."
+      }
+    },
+    {
+      "alias": "TASK-D",
+      "prior_proposal": {
+        "operation": "JUSTIFY",
+        "band": "D4",
+        "score": 9
+      },
+      "author_exposed_audit": {
+        "answer": "Official worked-solution answer a,b,c,d; printed c has a denominator mismatch",
+        "route": "Substitute β=α/x0: E=0 and U=α(z²-z)/x0² for z=x0/x. Then v²=2α(z-z²)/(mx0²), with maximum at z=1/2. The derived maximum speed has x0² in the denominator.",
+        "condition": "Positive x branch from rest at x0; no nonconservative work. The printed option(c) shows x0, while the solution uses x0².",
+        "finding": "Official paper bytes freshly retrieved and equal the saved local PDF. Printed page15 and official worked-solution page20 were rendered and visually inspected; the saved crop agrees with the printed discrepancy. The inherited option index silently uses the corrected squared denominator.",
+        "demand_challenge": "JUSTIFY versus SYNTHESIZE remains open. The item is plausibly demanding, but a corrupted/implicitly corrected option must be resolved before scoring or admission."
+      }
+    }
+  ],
+  "new_official_key": {
+    "url": "https://iapt.org.in/wp-content/uploads/images/NSEP_-_2025_Final_Answer_Key.pdf",
+    "final_url": "https://iapt.org.in/wp-content/uploads/images/NSEP_-_2025_Final_Answer_Key.pdf",
+    "bytes": 452627,
+    "sha256": "b640115a6d05c5bb3bc86440070832f8a9501bf94740a942f696f6ce24d01859",
+    "pages": 1,
+    "source_anchor_text": "NSEJS (mislabeled on linked resource page)",
+    "actual_document_identity": "INDIAN ASSOCIATION OF PHYSICS TEACHERS / FINAL ANSWER KEY NSEP - 2025",
+    "visually_checked_row": {
+      "question": 57,
+      "paper_code": 61,
+      "answer": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "page": 1
+    },
+    "paper_key_discrepancy_resolved": false
+  },
+  "erratum_status": "No erratum found on official homepage,2025-26resources,papers-solutions or bounded domain searches. This is not proof none exists."
+}

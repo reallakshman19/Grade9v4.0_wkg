@@ -1,0 +1,12 @@
+{
+  "source_id": "EX-N39",
+  "task_identity": "Q-ID-60",
+  "sequence": 52,
+  "batch_sequence": 7,
+  "paper": "JEE Main 2020 (Online) 3rd September Evening Slot",
+  "stem_text": "A block starts moving up an inclined plane of inclination 30o with an initial velocity of v0 . It comes back to its initial position with velocity (𝑣_0)/(2) . The value of the coefficient of kinetic friction between the block and the inclined plane is close to (𝐼)/(1000) . The nearest integer to I is____.",
+  "stem_sha256": "cd38aa00009c960631e41be9ab231e928c80b805c64c8780f54c2953967869cd",
+  "options": [],
+  "figure_reference": null,
+  "confidentiality_notice": "Source custody blind packet. Academic solve, answer key, and scoring omitted. Private review only."
+}

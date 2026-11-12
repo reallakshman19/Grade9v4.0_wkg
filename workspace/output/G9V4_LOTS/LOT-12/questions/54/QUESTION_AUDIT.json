@@ -1,0 +1,106 @@
+{
+  "sequence": 54,
+  "batch_sequence": 9,
+  "task_identity": "Q-ID-63",
+  "stable_id": "PHYS-WPE-LOT12-Q54",
+  "source_id": "AN-1",
+  "lot": "LOT-12",
+  "batch": "BATCH-D",
+  "paper": "JEE Main 2023 (Online), 29 January, Evening Shift",
+  "source_type": "EXAM_PAPER_TRANSCRIBED",
+  "source_custody": "VERIFIED_TEXT",
+  "stem_text": "Identify the correct statements from the following:\nA. Work done by a man in lifting a bucket out of a well by means of a rope tied to the bucket is negative.\nB. Work done by gravitational force in lifting a bucket out of a well by a rope tied to the bucket is negative.\nC. Work done by friction on a body sliding down an inclined plane is positive.\nD. Work done by an applied force on a body moving on a rough horizontal plane with uniform velocity is zero.\nE. Work done by the air resistance on an oscillating pendulum is negative.",
+  "stem_sha256": "cc6b080a4f624f51212a3211728edabfd3d0ce12589564eb0ec9873c55dde8f8",
+  "source_hash": "cc6b080a4f624f51212a3211728edabfd3d0ce12589564eb0ec9873c55dde8f8",
+  "source_record_digest": "sha256:cc6b080a4f624f51212a3211728edabfd3d0ce12589564eb0ec9873c55dde8f8",
+  "duplicate_parent": null,
+  "scope": "PRIMARY_IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "key_issuing_authority": "NTA",
+  "figure_status": "NOT_REQUIRED",
+  "figure_reference": null,
+  "options": [
+    "A: A and C only",
+    "B: B and D only",
+    "C: B, D and E only",
+    "D: B and E only"
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "WORK_SIGN_CONVENTIONS_FORCE_DISPLACEMENT_EVALUATION",
+    "predicted_option": "D: B and E only",
+    "derivation": "A. Force by man on rope/bucket is upward, displacement upward => W > 0 (False). B. Gravitational force downward, displacement upward => W < 0 (True). C. Friction opposes downward slide along plane => W < 0 (False). D. Applied force is in direction of motion => W_applied > 0, even though net work W_net = 0 (False). E. Air resistance opposes instantaneous velocity of pendulum => W < 0 (True). Thus only B and E are correct (Option D)."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 2,
+          "evidence": "Sign determination of work done W = F . d across multiple dynamic force vectors"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Multi-statement qualitative verbal analysis"
+        },
+        "reasoning_chain_length": {
+          "score": 2,
+          "evidence": "Evaluate 5 individual physical assertions against dot product sign conventions"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Zero algebraic computation; qualitative sign auditing"
+        },
+        "trap_exception_sensitivity": {
+          "score": 2,
+          "evidence": "Trap in statement D: confusing net work = 0 for uniform velocity with work done by applied force alone; trap in statement A: work done by man vs gravity"
+        }
+      },
+      "total": 8,
+      "band": "D3",
+      "prior_proposal": {
+        "source": "INITIAL_CALIBRATION",
+        "scores": "2/1/2/1/2",
+        "total": 8
+      },
+      "differences": "Initial native factor audit"
+    },
+    "demand_proposal": {
+      "primary": "JUSTIFY",
+      "secondary": [
+        "EVALUATE"
+      ],
+      "rationale": "Evaluating correctness of work sign assertions across diverse physical mechanical interactions",
+      "candidate_cell": "QRT-JUSTIFY-D3",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": {
+    "blueprint_id": "PHYS-QRT-BLUEPRINT",
+    "version": "0.2.0",
+    "sha256": "ac32dc937403cac33c76343f2e7e0dabd7c2c4a3188cb3b453ddf2576578ddf9",
+    "blueprint_cell_ref": "D3.3",
+    "topic_tag": "WPE-01-WORK",
+    "status": "PINNED_CELL_UNQUALIFIED"
+  },
+  "adapter_fit": {
+    "adapter_id": "PHYS-TOPIC-WPE",
+    "sha256": "899e61e59370a3fc5d6f73b7d8cbb65165d0782c9fba20acd83439ae441e6a9b",
+    "status": "CELL_UNQUALIFIED_ADAPTER_GAP",
+    "note": "WPE adapter defines cell D3.1 only. Target cell D3.3 requires adapter cell expansion; flagged as SPEC_GAP."
+  },
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_INDEPENDENT_REVIEW",
+  "b2_blind_status": "PENDING_BLIND_SOLVE",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (Option D unverified against official NTA master)",
+    "HOLD:FORCE_FRAME_CONTACT_QUALIFICATIONS (Force frame contact qualifications require review)",
+    "HOLD:ADAPTER_CELL_GAP (WPE adapter lacks D3.3 cell authority)",
+    "HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)"
+  ],
+  "next_action": "B2 independent source-only solve + official NTA master key reconciliation"
+}

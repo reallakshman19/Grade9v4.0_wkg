@@ -1,0 +1,17 @@
+{
+  "source_id": "EX-M84",
+  "task_identity": "Q-ID-33",
+  "sequence": 29,
+  "batch_sequence": 14,
+  "paper": "JEE Main 2016 (Online) 10th April Morning Slot",
+  "stem_text": "A particle of mass M is moving in a circle of fixed radius R in such a way that its centripetal acceleration at time t is given by n2 R t2 where n is a constant. The power delivered to the particle by the force acting on it, is :",
+  "stem_sha256": "352d2efd930e969bf02e088778a6079f020e71e0cd3a4265a468d3df90ef34c2",
+  "options": [
+    "A: M n2 R2 t",
+    "B: M n R2 t",
+    "C: M n R2 t2",
+    "D: (1)/(2) M n2 R2 t2"
+  ],
+  "figure_reference": "NONE (pure text question)",
+  "confidentiality_notice": "SEALED SOURCE-ONLY PACKET FOR BLIND INDEPENDENT REVIEW. Contains NO answers, keys, explanations, candidate solutions, SL2 factor scores, or prior review commentary."
+}

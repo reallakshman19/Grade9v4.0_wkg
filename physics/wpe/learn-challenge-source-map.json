@@ -1,0 +1,330 @@
+{
+  "schema": "wpe-core1a-core1b-synthetic-learning-path/v1",
+  "as_of": "2026-11-02",
+  "chapter": "PHYSICS/WPE",
+  "surface": "TECHNICAL_TEACHING_CANDIDATE",
+  "source_file": "W,E and P Theory questions.pdf",
+  "source_page": "1",
+  "source_state": "USER_SUPPLIED_SCAN__ORIGINAL_PUBLISHER_AND_ANSWER_KEY_NOT_ATTESTED",
+  "source_question_scope": "Q1–Q11 visually complete; Q12 cut off and excluded",
+  "rights": "No exam stems, original question options, scanned figures or handwritten key reproduced in this public exercise; all A/B stems and diagrams newly authored.",
+  "auth": {
+    "native_core1a": "NOT_ACCEPTED",
+    "native_core1b": "NOT_ACCEPTED",
+    "native_core2": "NOT_ADMITTED_BY_THIS_WORK",
+    "qrt": "NOT_RUN",
+    "blueprint_adapter": "UNSELECTED",
+    "owner": "PENDING"
+  },
+  "source_flags": [
+    {
+      "id": "Q7",
+      "issue": "Net tangential force, distance and instantaneous-versus-average interpretation need precise source wording."
+    },
+    {
+      "id": "Q9",
+      "issue": "K = E−U permits K = 0 at turning points; 'always strictly positive' is not a universal choice."
+    },
+    {
+      "id": "Q10",
+      "issue": "Conservative force component is −dU/dx, not simply dU/dx."
+    },
+    {
+      "id": "Q11",
+      "issue": "Conclusions about opposite fragment momenta need a stated initial-system momentum condition."
+    },
+    {
+      "id": "Q12",
+      "issue": "Truncated on the scan; excluded from construction map."
+    }
+  ],
+  "program": [
+    {
+      "id": "work-sign",
+      "title": "Work and its sign",
+      "source_qids": [
+        "Q1",
+        "Q3",
+        "Q7"
+      ],
+      "source_gate_note": "Q7 wording needs clarification",
+      "learning_goal": "Decide whether a force adds energy, removes energy, or does no work.",
+      "core1a": {
+        "title": "A guide: the moving crate",
+        "authored_question": "A 10 N friction force acts left while a crate slides 3 m right. What work does friction do?",
+        "walkthrough_steps": [
+          "Choose the motion direction: 3 m right.",
+          "Choose the force direction: 10 N left.",
+          "Calculate W = 10 × 3 × cos 180° = −30 J.",
+          "Interpret the sign: friction removes mechanical energy from the moving crate."
+        ],
+        "conditions": "Constant 10 N force, straight 3 m displacement, and no change of force direction within this step."
+      },
+      "core1b": {
+        "title": "Your turn: two journeys",
+        "authored_question": "A robot travels 4 m to the right while a 6 N braking force acts left. It then travels 2 m to the left while a 4 N resistive force acts right. What is the combined work done by these two resistive forces?",
+        "option_count": 4,
+        "correct_option_index_AUTHOR_ONLY": 0,
+        "change_of_conditions": "Two sequential displacement directions; requires tracking the sign twice rather than copying one-step friction arithmetic."
+      },
+      "duplicate_a_b_stem": false,
+      "role": "AUTHOR_EXPOSED_SYNTHETIC_LESSON_AND_FRESH_CHECK_NOT_APPROVED",
+      "scope_note": "For change of kinetic energy per distance, the relevant force is net tangential force; source Q7 wording remains unqualified."
+    },
+    {
+      "id": "momentum-energy",
+      "title": "Momentum and kinetic energy",
+      "source_qids": [
+        "Q2",
+        "Q4",
+        "Q8"
+      ],
+      "source_gate_note": "Source answer marks unverified",
+      "learning_goal": "Explain why equal momentum does not imply equal kinetic energy.",
+      "core1a": {
+        "title": "A guide: a toy trolley’s energy",
+        "authored_question": "A 2 kg toy trolley has momentum 6 kg·m/s. How much kinetic energy does it have?",
+        "walkthrough_steps": [
+          "Find the speed v=p/m=6/2=3 m/s.",
+          "Find kinetic energy K=½mv²=½×2×3²=9 J.",
+          "Check using K=p²/(2m)=36/4=9 J.",
+          "Compare the same 2 kg trolley at momentum magnitudes 0, 2, 6 and 10 kg·m/s: kinetic energies 0, 1, 9 and 25 J; a curved, not linear, K-versus-p relationship."
+        ],
+        "conditions": "Classical, nonrelativistic momentum; the stated momentum and mass are measured in one inertial frame."
+      },
+      "core1b": {
+        "title": "Your turn: two mystery toy carts",
+        "authored_question": "A class measures two toy carts. Cart A has mass 2 kg and momentum magnitude 4 kg·m/s. Cart B has mass 4 kg and momentum magnitude 8 kg·m/s. Which cart has more kinetic energy, and by how much?",
+        "option_count": 4,
+        "correct_option_index_AUTHOR_ONLY": 2,
+        "change_of_conditions": "Unlike the guide's single trolley or fixed-mass table, both momentum and mass change. The learner must select K=p²/(2m) for each and compare resulting values, rather than apply one fixed-variable rule.",
+        "practice_revision": 2
+      },
+      "duplicate_a_b_stem": false,
+      "role": "AUTHOR_EXPOSED_SYNTHETIC_LESSON_AND_FRESH_CHECK_NOT_APPROVED",
+      "scope_note": "Q2, Q4 and Q8 theme grouping, learner-facing candidate only; guided same-mass pattern table, same-energy and same-momentum boundaries; no QRT classification assigned."
+    },
+    {
+      "id": "energy-motion",
+      "title": "Energy and motion",
+      "source_qids": [
+        "Q5",
+        "Q6",
+        "Q9"
+      ],
+      "source_gate_note": "Q9 must allow K = 0",
+      "learning_goal": "Find kinetic energy and possible heights on a smooth path, understand K=0 turning points, and distinguish changes with time from changes with height.",
+      "core1a": {
+        "title": "A guide: a toy cart climbing a ramp",
+        "authored_question": "A 2 kg toy cart has 80 J of total mechanical energy on a smooth ramp. When it reaches a height of 2 m, how fast is it going? Take g = 10 m/s².",
+        "walkthrough_steps": [
+          "Use U=mgh=2×10×2=40 J at height 2 m.",
+          "Compute K=E−U=80−40=40 J; then v=√(2K/m)=√40≈6.3 m/s.",
+          "Compare other locations on the same ramp: h=0 gives K=80 J, h=4 gives K=0, and h=5 is impossible because U would exceed E.",
+          "Model a separate ball launched straight upward at 20 m/s with constant g=10 m/s² and no drag: at t=1 s its vertical velocity is 10 m/s and rise is 15 m; at t=2 s its velocity is zero and rise is 20 m. Velocity changes equally each second, not for every metre."
+        ],
+        "conditions": "Smooth ramp with no friction, no mechanical energy loss, zero height reference, g=10 m/s² constant; vertical-ball example assumes no drag."
+      },
+      "core1b": {
+        "title": "Your turn: can the cart reach the flag?",
+        "authored_question": "A 1 kg toy cart starts in a valley at height 1 m with 50 J of total mechanical energy. The finish flag is at a height of 3 m, but to get there the cart must first cross a hilltop 6 m high. The track is smooth, with no motor or friction. Take g = 10 m/s². Can the cart reach the flag?",
+        "option_count": 4,
+        "correct_option_index_AUTHOR_ONLY": 1,
+        "change_of_conditions": "Guide: single ramp with a height–energy table and a separate vertical-flight comparison. Challenge: determine accessibility of a finish beyond an intervening hilltop; the learner must check whole-path energy rather than only final height.",
+        "practice_revision": 2
+      },
+      "duplicate_a_b_stem": false,
+      "role": "AUTHOR_EXPOSED_SYNTHETIC_LESSON_AND_FRESH_CHECK_NOT_APPROVED",
+      "scope_note": "Original Q5/Q6/Q9 remain unverified source themes, not repeated learner-facing tasks. Simplified child-facing teaching candidate; Q9 must allow K=0."
+    },
+    {
+      "id": "potential-force",
+      "title": "Potential energy and force",
+      "source_qids": [
+        "Q10"
+      ],
+      "source_gate_note": "Source wording omits the minus sign",
+      "learning_goal": "Find direction and magnitude of a one-dimensional conservative force from how potential energy changes with position, including a flat interval and sharp-corner limitation.",
+      "core1a": {
+        "title": "A guide: follow a sloping energy line",
+        "authored_question": "On a straight track, a particle’s potential energy is 12 J at x = 0 m and 6 J at x = 2 m. The graph is a straight line. What force acts along the track?",
+        "walkthrough_steps": [
+          "Read U(0 m)=12 J and U(2 m)=6 J; find the slope ΔU/Δx=(6−12)/(2−0)=−3 J/m=−3 N.",
+          "Use Fₓ=−dU/dx for a one-dimensional conservative force; a straight segment has Fₓ=−(slope)=+3 N, directed right.",
+          "Contrast three line shapes: rising slope means force left, flat slope means zero force, falling slope means force right.",
+          "Explain that a sharp corner does not have a unique ordinary derivative at the join; the force can still be calculated separately on open straight intervals."
+        ],
+        "conditions": "One-dimensional conservative potential, positive x to the right, slope defined within each straight segment. 1 J/m=1 N. The force sign does not by itself determine velocity direction."
+      },
+      "core1b": {
+        "title": "Your turn: decode a new energy map",
+        "authored_question": "An explorer measures the potential energy at four positions on a straight track: (0 m, 2 J), (2 m, 10 J), (4 m, 10 J), and (6 m, 4 J). The graph joins the points with straight lines. What are the conservative force components on the three open sections: 0–2 m, 2–4 m, and 4–6 m?",
+        "option_count": 4,
+        "correct_option_index_AUTHOR_ONLY": 2,
+        "change_of_conditions": "Unlike the guide's single falling line, the unfamiliar piecewise graph rises, stays flat and falls. The learner has to calculate three slopes, reverse each sign, identify zero-force interval and avoid treating the corners as differentiable.",
+        "practice_revision": 2
+      },
+      "duplicate_a_b_stem": false,
+      "role": "AUTHOR_EXPOSED_SYNTHETIC_LESSON_AND_FRESH_CHECK_NOT_APPROVED",
+      "scope_note": "Source Q10 remains an unverified scanned theme and is not reproduced. One-dimensional negative gradient relation retained; sharp joins excluded by asking only open intervals."
+    },
+    {
+      "id": "momentum-fragments",
+      "title": "Push-apart carts and energy",
+      "source_qids": [
+        "Q11"
+      ],
+      "source_gate_note": "Initial motion not specified in source",
+      "learning_goal": "Understand signed momentum conservation in a spring-powered push-apart event, and explain that kinetic energy may increase when stored internal energy is released.",
+      "core1a": {
+        "title": "A guide: spring-powered toy carts",
+        "authored_question": "Two toy carts (1 kg and 3 kg) start at rest together on a smooth track. A compressed spring between them is released. The 1 kg cart rolls right at 3 m/s. Which way does the 3 kg cart move, and how fast?",
+        "walkthrough_steps": [
+          "Set right positive: light cart momentum = 1 × (+3) = +3 kg·m/s.",
+          "Conserve total momentum from initial rest: 0 = +3 + 3v, giving v = −1 m/s (heavier cart left).",
+          "Check that final momenta +3 and −3 kg·m/s cancel, maintaining the initial total of zero.",
+          "Compare total kinetic energy before (0 J) and after (½×1×3² + ½×3×1² = 6 J); stored spring energy supplied the kinetic energy."
+        ],
+        "conditions": "Initially stationary two-cart system with internal spring release, no significant external horizontal impulse or friction, nonrelativistic motion, right chosen positive."
+      },
+      "core1b": {
+        "title": "Your turn: the moving toy cart splits",
+        "authored_question": "A 4 kg toy cart is already rolling right at 3 m/s when an internal spring releases and separates it into a 1 kg cart and a 3 kg cart. The 1 kg part rolls right at 6 m/s. The track is smooth and the external horizontal impulse is negligible. What is the 3 kg cart's velocity, and how does the total kinetic energy change?",
+        "option_count": 4,
+        "correct_option_index_AUTHOR_ONLY": 2,
+        "change_of_conditions": "The guided spring cart pair starts from rest, so total initial momentum is zero; the new independent cart is moving already, with nonzero +12 kg·m/s initial momentum. The learner must conserve nonzero momentum, infer remaining cart speed and independently compare kinetic energy before and after release.",
+        "practice_revision": 2
+      },
+      "duplicate_a_b_stem": false,
+      "role": "AUTHOR_EXPOSED_SYNTHETIC_LESSON_AND_FRESH_CHECK_NOT_APPROVED",
+      "scope_note": "Source Q11 remains a visually complete but scientifically under-specified original (initial condition unresolved), not copied into the practice lesson. Cross-topic momentum prerequisite remains a candidate rather than an assumed accepted WPE exam demand."
+    }
+  ],
+  "separation_rules": [
+    "No original PDF question stems used as learner-facing text.",
+    "Core1A and Core1B within each subtopic use different physical setups, not mere numeric permutations.",
+    "Core1B initial choice and explanation must be locked before hints.",
+    "Question type and QRT difficulty not inferred from original sheet's LEVEL–IA label.",
+    "Core1A/B formal B1–B7 and Owner academic reviews are outstanding.",
+    "Both hints remain optional and progressive after the first attempt is locked; the student may open the worked check directly after a locked attempt.",
+    "A visible worked-check counter is practice navigation only and does not imply that free-text reasoning was graded."
+  ],
+  "technical_review": {
+    "id": "WPE-01",
+    "status": "TECHNICAL_REMEDIATION_ONLY__ACADEMIC_HOLD",
+    "review_file": "learn-challenge-wpe01-review.json",
+    "scope": [
+      "Four guided diagrams separated from challenge-specific setups",
+      "Guided teaching contrast and transfer paragraphs added for five subtopics",
+      "Local-only attempt persistence, option-specific feedback and reflection added"
+    ],
+    "limits": [
+      "Static public challenge key is readable in page code",
+      "LocalStorage is not secure or independent first-attempt evidence",
+      "No semantic grading of free-text reasoning",
+      "QRT, adapter, Owner and native Core1A/B acceptance remain pending"
+    ]
+  },
+  "author_exposed_b3_b4_review": {
+    "id": "WPE-02",
+    "status": "AUTHOR_EXPOSED_CANDIDATE_REVIEW__NO_INDEPENDENT_ACADEMIC_ACCEPTANCE",
+    "human_readable_review": "learn-challenge-wpe02-b3-b4-review.md",
+    "machine_readable_review": "learn-challenge-wpe02-b3-b4-review.json",
+    "scope": "Five existing Core1A/Core1B construction pairs: teaching sufficiency, design novelty and evidence gaps",
+    "technical_editorial_adjustments": [
+      "Energy-motion challenge now states g=10 m/s² explicitly",
+      "Potential-force transfer record no longer claims the corner is tested by the question"
+    ],
+    "native_core1a": "NOT_ACCEPTED",
+    "native_core1b": "NOT_ACCEPTED",
+    "qrt": "NOT_RUN",
+    "owner": "PENDING"
+  },
+  "learner_facing_iteration": {
+    "id": "WPE_TOPIC_05_PUSH_APART_ENERGY",
+    "date": "2026-11-02",
+    "topic_id": "momentum-fragments",
+    "purpose": "Complete all five child-friendly WPE guided lessons and fresh challenges in one batch with end-to-end UI checks",
+    "challenge_revision": 2,
+    "storage_key_suffix": "momentum-fragments-r2",
+    "previous_iterations": [
+      "WPE_TOPIC_02_MOMENTUM_KINETIC_ENERGY",
+      "WPE_TOPIC_03_ENERGY_MOTION",
+      "WPE_TOPIC_04_POTENTIAL_FORCE"
+    ],
+    "source_topic_complete_count": 5,
+    "technical_batch": "COMPLETE_5_SYNTHETIC_PAIRS_ONLY",
+    "academic_admissions_unchanged": true
+  },
+  "batch_completion": {
+    "id": "WPE_LEARN_CHALLENGE_5_OF_5",
+    "scope": "Five existing synthetic WPE teaching-and-challenge pairs in the single tile",
+    "topics": [
+      {
+        "id": "work-sign",
+        "source_qids": [
+          "Q1",
+          "Q3",
+          "Q7"
+        ],
+        "learner_practice_revision": 1
+      },
+      {
+        "id": "momentum-energy",
+        "source_qids": [
+          "Q2",
+          "Q4",
+          "Q8"
+        ],
+        "learner_practice_revision": 2
+      },
+      {
+        "id": "energy-motion",
+        "source_qids": [
+          "Q5",
+          "Q6",
+          "Q9"
+        ],
+        "learner_practice_revision": 2
+      },
+      {
+        "id": "potential-force",
+        "source_qids": [
+          "Q10"
+        ],
+        "learner_practice_revision": 2
+      },
+      {
+        "id": "momentum-fragments",
+        "source_qids": [
+          "Q11"
+        ],
+        "learner_practice_revision": 2
+      }
+    ],
+    "original_question_custody": "Unverified original Q1–Q11 remain mapped as source-reference themes; cut-off Q12 excluded.",
+    "release_role": "STUDENT_PRACTICE_PREVIEW_NOT_NATIVE_ACADEMIC_ADMISSION",
+    "verification": "Automated UI/pytest; not independent subject, QRT or Owner sign-off"
+  },
+  "student_journey_batch": {
+    "id": "WPE_STUDENT_JOURNEY_5_TOPICS",
+    "date": "2026-11-02",
+    "scope": "All five existing student practice topics; no original source question reauthoring or independent learner test",
+    "improvements": [
+      "Short reasoning prompt personalized to each challenge",
+      "After an initial choice and written reason are locked, either one/two optional hints or immediate worked check",
+      "Post-check two-point explanation self-check for each topic, with option-specific misconception note and changed-condition reflection",
+      "Worked checks viewed counter and per-topic practice status restored after browser reload",
+      "Next-topic links, simpler introductory instructions, three worked sign-of-work contrasts"
+    ],
+    "progress_definition": "Counts worked checks opened locally, NOT demonstrated mastery or academic qualification",
+    "learner_testing": "AUTOMATED_SIMULATIONS_ONLY__NO_CHILD_OR_STUDENT_PARTICIPANTS",
+    "practice_states": [
+      "Not started",
+      "First try saved",
+      "Worked check viewed"
+    ],
+    "publication_scope": "EXISTING_STUDENT_PRACTICE_PREVIEW",
+    "academic_admissions_changed": false
+  }
+}

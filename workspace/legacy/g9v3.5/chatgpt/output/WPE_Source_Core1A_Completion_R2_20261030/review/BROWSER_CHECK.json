@@ -1,0 +1,22 @@
+{
+  "tool": "Installed cached Playwright CLI, Chrome headless, loopback127.0.0.1 only",
+  "performed": [
+    "Root entry\u2192ten-node catalogue native click",
+    "Catalogue\u2192N07 gap dossier native click",
+    "N07 desktop1280: missing warrant and pending reviewed SL2 visible; no horizontal overflow",
+    "N09 source-derived figure loaded1/1",
+    "N09 mobile390: initial overflow reproduced, fixed in renderer CSS, final documentWidth390 equals viewport390",
+    "Screenshots catalogue and N07 desktop / N09 mobile inspected"
+  ],
+  "not_run": [
+    "Actual learner lesson/Core2 runtime or scientific review",
+    "All ten dossiers individually exercised in browser",
+    "Catalogue mobile DOM count/overflow measurement: CLI selector quoting error; no PASS inferred"
+  ],
+  "known_console": [
+    "Missing favicon404; not a missing source figure or script exception"
+  ],
+  "cleanup": "Both task browser sessions closed; both verified port8773 server processes stopped",
+  "static_link_checks": 528,
+  "semantic_acceptance": "NONE"
+}

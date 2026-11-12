@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade9 v4.0 — Lot 08 Private Review Dashboard (Questions 31–35)</title>
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --border: #e2e8f0;
+            --text: #0f172a;
+            --text-muted: #64748b;
+            --primary: #2563eb;
+            --warning: #d97706;
+            --warning-bg: #fffbeb;
+            --danger: #b91c1c;
+            --danger-bg: #fef2f2;
+            --info: #0891b2;
+            --info-bg: #ecfeff;
+            --badge-bg: #f1f5f9;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            padding: 16px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        h1 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+        .header-meta { font-size: 13px; color: var(--text-muted); }
+
+        .table-wrap {
+            overflow-x: auto;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            text-align: left;
+        }
+
+        th {
+            background: #f1f5f9;
+            padding: 10px 12px;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border);
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        .col-seq { width: 100px; }
+        .col-source { width: 180px; }
+        .col-stem { width: 340px; }
+        .col-cog { width: 140px; }
+        .col-bp { width: 180px; }
+        .col-gates { width: 260px; }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 6px;
+            font-size: 11px;
+            font-weight: 600;
+            border-radius: 4px;
+            margin-top: 4px;
+        }
+
+        .badge-lot { background: #e0e7ff; color: #3730a3; }
+        .badge-source { background: #dcfce7; color: #166534; }
+        .badge-fig { background: #fef9c3; color: #854d0e; }
+        .badge-prop { background: #f3e8ff; color: #6b21a8; }
+        .badge-hold { background: var(--warning-bg); color: var(--warning); border: 1px solid #fde68a; }
+        .badge-admission { background: var(--danger-bg); color: var(--danger); font-weight: 700; }
+
+        .stem-preview {
+            font-size: 12px;
+            color: #334155;
+            margin-bottom: 6px;
+        }
+
+        .solve-summary {
+            font-size: 11px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 6px;
+            border-radius: 4px;
+        }
+
+        .blocker-list {
+            list-style: disc;
+            padding-left: 16px;
+            font-size: 11px;
+            color: var(--danger);
+        }
+
+        footer {
+            margin-top: 24px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Grade9 v4.0 — Lot 08 Candidate Review (Batch C, Questions 31–35)</h1>
+            <div class="header-meta">
+                Status: <strong>PROCEEDING_CANDIDATE_TRIAGE_ONLY</strong> | Admissions: <strong>0/5 ADMITTED</strong> | PR Status: <strong>HOLD_BASE_NOT_READY</strong><br>
+                Governance Rule: Fail-closed on missing official keys and unverified figures. Zero public leakages.
+            </div>
+        </header>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sequence</th>
+                        <th>Source Identity</th>
+                        <th>Transcribed Stem & Solve Model</th>
+                        <th>Cognitive (SL2)</th>
+                        <th>Blueprint Fit</th>
+                        <th>Admission & Blockers</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+    <tr>
+        <td class="col-seq">
+            <strong>#31</strong><br>
+            <span class="badge badge-lot">LOT-08</span><br>
+            <small class="mono">Q-ID-36</small><br>
+            <small>Batch #1</small>
+        </td>
+        <td class="col-source">
+            <strong>EX-M89</strong><br>
+            <small class="text-muted">JEE Main 2015 (Online) 11th April Morning Slot</small><br>
+            <span class="badge badge-source">VERIFIED_TEXT</span>
+            <span class="badge badge-fig">NOT_REQUIRED</span>
+        </td>
+        <td class="col-stem">
+            <div class="stem-preview">A particle is moving in a circle of radius r under the action of a force F = 𝛼 r2 which is directed towards center of the circle. Total mech...</div>
+            <div class="solve-summary">
+                <strong>Method:</strong> <code>CENTRAL_FORCE_ENERGY_INTEGRATION</code><br>
+                <strong>Predicted Option:</strong> D: (5)/(6) 𝛼 r3
+            </div>
+        </td>
+        <td class="col-cog">
+            <strong>MODEL</strong> (D3)<br>
+            <small>Score: 7/10</small><br>
+            <span class="badge badge-prop">PROPOSED</span>
+        </td>
+        <td class="col-bp"><strong>PHYS-QRT-BLUEPRINT</strong><br><small>D3.4 (WPE-02-POTENTIAL)</small></td>
+        <td class="col-gates">
+            <span class="badge badge-admission">NOT_ADMITTED</span>
+            <ul class="blocker-list">
+                <li>HOLD:OFFICIAL_KEY_UNRESOLVED (Coaching key unverified against official NTA master)</li><li>HOLD:ADAPTER_CELL_GAP (WPE adapter lacks D3.4 cell authority)</li><li>HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)</li>
+            </ul>
+        </td>
+    </tr>
+    
+    <tr>
+        <td class="col-seq">
+            <strong>#32</strong><br>
+            <span class="badge badge-lot">LOT-08</span><br>
+            <small class="mono">Q-ID-37</small><br>
+            <small>Batch #2</small>
+        </td>
+        <td class="col-source">
+            <strong>EX-M90</strong><br>
+            <small class="text-muted">JEE Main 2015 (Online) 10th April Morning Slot</small><br>
+            <span class="badge badge-source">VERIFIED_TEXT</span>
+            <span class="badge badge-fig">NOT_REQUIRED</span>
+        </td>
+        <td class="col-stem">
+            <div class="stem-preview">A block of mass m = 0.1 kg is connected to a spring of unknown spring constant k. It is compressed to a distance x from its equilibrium posi...</div>
+            <div class="solve-summary">
+                <strong>Method:</strong> <code>SPRING_ENERGY_ELASTIC_COLLISION</code><br>
+                <strong>Predicted Option:</strong> B: 0.6 J
+            </div>
+        </td>
+        <td class="col-cog">
+            <strong>APPLY</strong> (D2)<br>
+            <small>Score: 5/10</small><br>
+            <span class="badge badge-prop">PROPOSED</span>
+        </td>
+        <td class="col-bp"><span class='badge badge-hold'>BLUEPRINT=SPEC_PENDING</span></td>
+        <td class="col-gates">
+            <span class="badge badge-admission">NOT_ADMITTED</span>
+            <ul class="blocker-list">
+                <li>HOLD:OFFICIAL_KEY_UNRESOLVED (Coaching key unverified against official NTA master)</li><li>HOLD:SPEC_PENDING (No qualified D1/D2 common blueprint or topic adapter)</li><li>HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)</li>
+            </ul>
+        </td>
+    </tr>
+    
+    <tr>
+        <td class="col-seq">
+            <strong>#33</strong><br>
+            <span class="badge badge-lot">LOT-08</span><br>
+            <small class="mono">Q-ID-38</small><br>
+            <small>Batch #3</small>
+        </td>
+        <td class="col-source">
+            <strong>EX-M92</strong><br>
+            <small class="text-muted">JEE Main 2014 (Online) 12th April Morning Slot</small><br>
+            <span class="badge badge-source">VERIFIED_TEXT</span>
+            <span class="badge badge-fig">NOT_REQUIRED</span>
+        </td>
+        <td class="col-stem">
+            <div class="stem-preview">A spring of unstretched length 𝑙 has a mass m with one end fixed to a rigid support. Assuming spring to be made of a uniform wire, the kinet...</div>
+            <div class="solve-summary">
+                <strong>Method:</strong> <code>CONTINUOUS_SPRING_MASS_INTEGRATION</code><br>
+                <strong>Predicted Option:</strong> D: (1)/(6) m 𝑣 2
+            </div>
+        </td>
+        <td class="col-cog">
+            <strong>APPLY</strong> (D3)<br>
+            <small>Score: 7/10</small><br>
+            <span class="badge badge-prop">PROPOSED</span>
+        </td>
+        <td class="col-bp"><strong>PHYS-QRT-BLUEPRINT</strong><br><small>D3.3 (WPE-02-POTENTIAL)</small></td>
+        <td class="col-gates">
+            <span class="badge badge-admission">NOT_ADMITTED</span>
+            <ul class="blocker-list">
+                <li>HOLD:OFFICIAL_KEY_UNRESOLVED (Coaching key unverified against official NTA master)</li><li>HOLD:ADAPTER_CELL_GAP (WPE adapter lacks D3.3 cell authority)</li><li>HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)</li>
+            </ul>
+        </td>
+    </tr>
+    
+    <tr>
+        <td class="col-seq">
+            <strong>#34</strong><br>
+            <span class="badge badge-lot">LOT-08</span><br>
+            <small class="mono">Q-ID-39</small><br>
+            <small>Batch #4</small>
+        </td>
+        <td class="col-source">
+            <strong>EX-M96</strong><br>
+            <small class="text-muted">JEE Main 2013 (Online) 25th April Morning Slot</small><br>
+            <span class="badge badge-source">VERIFIED_TEXT</span>
+            <span class="badge badge-fig">NOT_REQUIRED</span>
+        </td>
+        <td class="col-stem">
+            <div class="stem-preview">A wind-powered generator converts wind energy into electrical energy. Assume that the generator converts a fixed fraction of the wind energy...</div>
+            <div class="solve-summary">
+                <strong>Method:</strong> <code>FLUID_POWER_VELOCITY_SCALING</code><br>
+                <strong>Predicted Option:</strong> D: 𝑣^(3)
+            </div>
+        </td>
+        <td class="col-cog">
+            <strong>APPLY</strong> (D2)<br>
+            <small>Score: 4/10</small><br>
+            <span class="badge badge-prop">PROPOSED</span>
+        </td>
+        <td class="col-bp"><span class='badge badge-hold'>BLUEPRINT=SPEC_PENDING</span></td>
+        <td class="col-gates">
+            <span class="badge badge-admission">NOT_ADMITTED</span>
+            <ul class="blocker-list">
+                <li>HOLD:OFFICIAL_KEY_UNRESOLVED (Coaching key unverified against official NTA master)</li><li>HOLD:SPEC_PENDING (No qualified D1/D2 common blueprint or topic adapter)</li><li>HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)</li>
+            </ul>
+        </td>
+    </tr>
+    
+    <tr>
+        <td class="col-seq">
+            <strong>#35</strong><br>
+            <span class="badge badge-lot">LOT-08</span><br>
+            <small class="mono">Q-ID-40</small><br>
+            <small>Batch #5</small>
+        </td>
+        <td class="col-source">
+            <strong>EX-M97</strong><br>
+            <small class="text-muted">JEE Main 2013 (Online) 23th April Morning Slot</small><br>
+            <span class="badge badge-source">VERIFIED_TEXT</span>
+            <span class="badge badge-fig">NOT_REQUIRED</span>
+        </td>
+        <td class="col-stem">
+            <div class="stem-preview">A 70 kg man leaps vertically into the air from a crouching position. To take the leap the man pushes the ground with a constant force F to r...</div>
+            <div class="solve-summary">
+                <strong>Method:</strong> <code>VERTICAL_LEAP_DYNAMICS_AND_POWER</code><br>
+                <strong>Predicted Option:</strong> B: 6.26×10^(3) Watts at take off
+            </div>
+        </td>
+        <td class="col-cog">
+            <strong>APPLY</strong> (D3)<br>
+            <small>Score: 7/10</small><br>
+            <span class="badge badge-prop">PROPOSED</span>
+        </td>
+        <td class="col-bp"><strong>PHYS-QRT-BLUEPRINT</strong><br><small>D3.3 (WPE-03-POWER)</small></td>
+        <td class="col-gates">
+            <span class="badge badge-admission">NOT_ADMITTED</span>
+            <ul class="blocker-list">
+                <li>HOLD:OFFICIAL_KEY_UNRESOLVED (Coaching key unverified against official NTA master)</li><li>HOLD:KEY_DISPUTE (Coaching key evaluates net accelerating force F_net=1400N rather than ground contact force F_ground=2100N)</li><li>HOLD:ADAPTER_CELL_GAP (WPE adapter lacks D3.3 cell authority)</li><li>HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)</li>
+            </ul>
+        </td>
+    </tr>
+    
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            <div>Grade9 v4.0 Local Workspace | Physics WPE Topic Adapter (Pilot)</div>
+            <div>No academic approval inferred from software validation.</div>
+        </footer>
+    </div>
+</body>
+</html>

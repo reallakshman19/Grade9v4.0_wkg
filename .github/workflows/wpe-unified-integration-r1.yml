@@ -1,0 +1,39 @@
+name: WPE Unified Core1A/Core1B Student Journey R1
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "physics/wpe/**"
+      - "preview/question-status.html"
+      - "workspace/output/WPE_Core2_Consolidated_20261102/MANIFEST.review.json"
+      - "tests/test_wpe_unified_integration_r1.py"
+      - "tools/wpe_unified_integration_r1_ui.py"
+      - "tools/wpe_learn_challenge_coverage_r1_ui.py"
+      - ".github/workflows/wpe-unified-integration-r1.yml"
+jobs:
+  integrity-science-and-real-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install Python QA and Chromium
+        run: |
+          python -m pip install -e ".[dev]" playwright==1.55.0
+          python -m playwright install --with-deps chromium
+      - name: Run full existing Python regressions and new scientific checks
+        run: python -m pytest -q
+      - name: Direct source question to C03 and all C01–C08 browser journeys
+        run: |
+          python tools/wpe_student_journey_r1_ui.py
+          python tools/wpe_d3d4_self_tutor_ui.py
+      - name: All E01–E05 and F01–F03 existing browser journeys
+        run: |
+          python tools/wpe_extensions_interactive_ui.py
+          python tools/wpe_learn_challenge_coverage_r1_ui.py
+      - name: Persisted original attempts and independent optional transfer variants on desktop and mobile
+        run: python tools/wpe_unified_integration_r1_ui.py
+      - name: Five foundational mini-lessons remain directly usable
+        run: python tools/wpe_learn_challenge_ui.py

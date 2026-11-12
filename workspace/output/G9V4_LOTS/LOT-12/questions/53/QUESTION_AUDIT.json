@@ -1,0 +1,89 @@
+{
+  "sequence": 53,
+  "batch_sequence": 8,
+  "task_identity": "Q-ID-62",
+  "stable_id": "PHYS-WPE-LOT12-Q53",
+  "source_id": "EX-N42",
+  "lot": "LOT-12",
+  "batch": "BATCH-D",
+  "paper": "JEE Main 2020 (Online) 7th January Morning Slot",
+  "source_type": "EXAM_PAPER_TRANSCRIBED",
+  "source_custody": "VERIFIED_TEXT_FIGURE_PENDING",
+  "stem_text": "A particle (m = 1 kg) slides down a frictionless track (AOC) starting from rest at a point A (height 2 m). After reaching C, the particle continues to move freely in air as a projectile. When it reaches its highest point P (height 1 m), the kinetic energy of the particle (in J) is : (Figure drawn is schematic and not to scale; take g = 10 ms-2) [FIG-stem-1]",
+  "stem_sha256": "3a750d54e63d35d0453ec0da0e458d63b0314f13d594ef41cd8f6a6c2c866319",
+  "source_hash": "3a750d54e63d35d0453ec0da0e458d63b0314f13d594ef41cd8f6a6c2c866319",
+  "source_record_digest": "sha256:3a750d54e63d35d0453ec0da0e458d63b0314f13d594ef41cd8f6a6c2c866319",
+  "duplicate_parent": null,
+  "scope": "PRIMARY_IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "key_issuing_authority": "NTA",
+  "figure_status": "REQUIRED_UNRESOLVED",
+  "figure_reference": "FIG-stem-1",
+  "options": [],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "MECHANICAL_ENERGY_CONSERVATION_TRAJECTORY_EXTREMA",
+    "predicted_option": "10",
+    "derivation": "Mass m = 1 kg, g = 10 m/s^2. Since track is frictionless and air resistance is absent, mechanical energy is conserved throughout. E_total = K_A + U_A = 0 + m*g*h_A = 1 * 10 * 2 = 20 J. At apex point P (height h_P = 1 m): U_P = m*g*h_P = 1 * 10 * 1 = 10 J. Kinetic energy at P: K_P = E_total - U_P = 20 - 10 = 10 J."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Conservation of total mechanical energy in conservative gravitational field"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Reading elevation coordinates hA = 2 m and hP = 1 m from schematic track and projectile description"
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Direct energy conservation: KE_P = E_initial - PE_P = mg(hA - hP)"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Direct arithmetic: 1 * 10 * (2 - 1) = 10 J"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Recognizing intermediate track profile AOC and launch projectile angle are superfluous"
+        }
+      },
+      "total": 5,
+      "band": "D2",
+      "prior_proposal": {
+        "source": "INITIAL_CALIBRATION",
+        "scores": "1/1/1/1/1",
+        "total": 5
+      },
+      "differences": "Initial native factor audit"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "REPRESENT"
+      ],
+      "rationale": "Applying mechanical energy conservation across elevation points",
+      "candidate_cell": "QRT-APPLY-D2",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_INDEPENDENT_REVIEW",
+  "b2_blind_status": "PENDING_BLIND_SOLVE",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (Numerical answer 10 unverified against official NTA master)",
+    "HOLD:FIGURE_CUSTODY_UNRESOLVED (Question figure [FIG-stem-1] custody unverified)",
+    "HOLD:SPEC_PENDING (No qualified D1/D2 common blueprint or topic adapter)",
+    "HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)"
+  ],
+  "next_action": "B2 independent source-only solve + official NTA master key reconciliation"
+}

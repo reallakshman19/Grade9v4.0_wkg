@@ -1,0 +1,104 @@
+{
+  "sequence": 33,
+  "batch_sequence": 3,
+  "task_identity": "Q-ID-38",
+  "stable_id": "PHYS-WPE-LOT08-Q33",
+  "source_id": "EX-M92",
+  "lot": "LOT-08",
+  "batch": "BATCH-C",
+  "paper": "JEE Main 2014 (Online) 12th April Morning Slot",
+  "source_type": "EXAM_PAPER_TRANSCRIBED",
+  "source_custody": "VERIFIED_TEXT",
+  "stem_text": "A spring of unstretched length 𝑙 has a mass m with one end fixed to a rigid support. Assuming spring to be made of a uniform wire, the kinetic energy possessed by it if its free end is pulled with uniform velocity 𝑣 is :",
+  "stem_sha256": "24ef3006cdb28b6eea3dc564f08194f099c08e3c1de42bed2d6dcf7eec6babf4",
+  "source_hash": "24ef3006cdb28b6eea3dc564f08194f099c08e3c1de42bed2d6dcf7eec6babf4",
+  "source_record_digest": "sha256:24ef3006cdb28b6eea3dc564f08194f099c08e3c1de42bed2d6dcf7eec6babf4",
+  "duplicate_parent": null,
+  "scope": "PRIMARY_IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "NOT_REQUIRED",
+  "figure_reference": null,
+  "options": [
+    "A: (1)/(2) m 𝑣 2",
+    "B: m 𝑣 2",
+    "C: (1)/(3) m 𝑣 2",
+    "D: (1)/(6) m 𝑣 2"
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "CONTINUOUS_SPRING_MASS_INTEGRATION",
+    "predicted_option": "D: (1)/(6) m 𝑣 2",
+    "derivation": "Element at distance y from fixed end has speed v(y) = v*(y/l). Element mass dm = (m/l)dy. Total kinetic energy KE = int_0^l (1/2)*dm*(v(y))^2 = (1/2)*(m/l)*(v^2/l^2) * int_0^l y^2 dy = (1/2)*(m*v^2 / l^3) * (l^3 / 3) = (1/6)*m*v^2."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 2,
+          "evidence": "Continuous mass integration under linear affine velocity profile v(y) = v*(y/l)"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Setting up 1D continuum integral for kinetic energy over spring length"
+        },
+        "reasoning_chain_length": {
+          "score": 2,
+          "evidence": "Formulate differential mass element dm = (m/l)dy, express local speed, evaluate polynomial integral"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Definite integration of y^2 yielding l^3/3 and resulting 1/6 prefactor"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Avoiding trap of treating spring as point mass (1/2 mv^2) or average speed (1/8 mv^2)"
+        }
+      },
+      "total": 7,
+      "band": "D3",
+      "prior_proposal": {
+        "source": "INITIAL_CALIBRATION",
+        "scores": "2/1/2/1/1",
+        "total": 7
+      },
+      "differences": "Initial native factor audit"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "MODEL"
+      ],
+      "rationale": "Applying continuum kinetic energy integration to distributed mass spring",
+      "candidate_cell": "QRT-APPLY-D3",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": {
+    "blueprint_id": "PHYS-QRT-BLUEPRINT",
+    "version": "0.2.0",
+    "sha256": "ac32dc937403cac33c76343f2e7e0dabd7c2c4a3188cb3b453ddf2576578ddf9",
+    "blueprint_cell_ref": "D3.3",
+    "topic_tag": "WPE-02-POTENTIAL",
+    "status": "PINNED_CELL_UNQUALIFIED"
+  },
+  "adapter_fit": {
+    "adapter_id": "PHYS-TOPIC-WPE",
+    "sha256": "899e61e59370a3fc5d6f73b7d8cbb65165d0782c9fba20acd83439ae441e6a9b",
+    "status": "CELL_UNQUALIFIED_ADAPTER_GAP",
+    "note": "WPE adapter defines cell D3.1 only. Target cell D3.3 requires adapter cell expansion; flagged as SPEC_GAP."
+  },
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_INDEPENDENT_REVIEW",
+  "b2_blind_status": "PENDING_BLIND_SOLVE",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (Coaching key unverified against official NTA master)",
+    "HOLD:ADAPTER_CELL_GAP (WPE adapter lacks D3.3 cell authority)",
+    "HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)"
+  ],
+  "next_action": "B2 independent source-only solve + official NTA master key reconciliation"
+}

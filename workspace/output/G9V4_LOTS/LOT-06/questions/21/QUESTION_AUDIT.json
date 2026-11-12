@@ -1,0 +1,92 @@
+{
+  "sequence": 21,
+  "batch_sequence": 6,
+  "task_identity": "Q-ID-24",
+  "stable_id": "G9V4-PHYS-WPE-EX-M68",
+  "source_id": "EX-M68",
+  "lot": "LOT-06",
+  "batch": "BATCH-B",
+  "paper": "JEE Main 2020 (Online) 4th September Evening Slot",
+  "source_type": "JEE_MAIN_PAST_EXAM_QUESTION",
+  "source_custody": "VERIFIED_TEXT_ONLY (Self-contained mathematical question)",
+  "stem_text": "A person pushes a box on a rough horizontal platform surface. He applies a force of 200 N over a distance of 15 m. Thereafter, he gets progressively tired and his applied force reduces linearly with distance to 100 N. The total distance through which the box has been moved is 30 m. What is the work done by the person during the total movement of the box?",
+  "stem_sha256": "4dcf7e7341d2ffd1554a7b9ca5a03d26271172b9ea4c8c0ab2b3efc57c1b96da",
+  "source_hash": "4dcf7e7341d2ffd1554a7b9ca5a03d26271172b9ea4c8c0ab2b3efc57c1b96da",
+  "source_record_digest": "4dcf7e7341d2ffd1554a7b9ca5a03d26271172b9ea4c8c0ab2b3efc57c1b96da",
+  "duplicate_parent": null,
+  "scope": "IN_SCOPE_WPE_ONLY",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "NOT_REQUIRED",
+  "figure_reference": "NONE (pure text question)",
+  "options": [
+    "A: 5690 J",
+    "B: 5250 J",
+    "C: 2780 J",
+    "D: 3280 J"
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "PIECEWISE_LINEAR_WORK_INTEGRATION",
+    "derivation": "First phase (0 to 15 m): Force F1 = 200 N is constant. Work W1 = 200 N * 15 m = 3000 J. Second phase (15 to 30 m): Force decreases linearly from 200 N to 100 N over displacement delta_x = 15 m. Work W2 = ((200 + 100) / 2) * 15 m = 150 * 15 = 2250 J. Total work done W = W1 + W2 = 3000 + 2250 = 5250 J. Matches Option B.",
+    "predicted_option": "B: 5250 J",
+    "limiting_cases": "If force remained 200 N throughout 30 m, W = 6000 J. If force dropped to 0 N at 30 m, W = 3000 + 1500 = 4500 J. With linear drop to 100 N, W = 5250 J exactly."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Partition of work into constant force phase and linear decay phase"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Translating verbal decay of force into trapezoidal area"
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Calculate W1 and W2 independently and sum"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Arithmetic multiplication and trapezoid area evaluation"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Correctly applying average force over second 15m interval"
+        }
+      },
+      "total": 5,
+      "band": "D2",
+      "prior_proposal": {
+        "source": "PRODUCER_HISTORICAL_ESTIMATE",
+        "scores": "1/1/1/1/1",
+        "total": 5
+      },
+      "differences": "Rescored to native five-factor rubric per B2 CP-4 review"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "MODEL"
+      ],
+      "rationale": "Piecewise application of work definition across distinct force regimes",
+      "candidate_cell": "QRT-APPLY-D2",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_CP4_GATE",
+  "b2_blind_status": "UNREVIEWED",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)",
+    "HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)"
+  ],
+  "next_action": "Verify official NTA key and submit for independent blind review."
+}

@@ -1,0 +1,17 @@
+{
+  "source_id": "EX-M109",
+  "task_identity": "Q-ID-46",
+  "sequence": 40,
+  "batch_sequence": 10,
+  "paper": "AIEEE 2006",
+  "stem_text": "The potential energy of a 1 𝑘𝑔 particle free to move along the 𝑥 -axis is given by 𝑉(𝑥)=((𝑥^(4))/(4)−(𝑥^(2))/(2))𝐽 . The total mechanical energy of the particle is 2𝐽. Then, the maximum speed (in 𝑚/𝑠 ) is",
+  "stem_sha256": "33513889a1163bb0ae5baeb9251958e4131319985cfb8fd452a700f855d66b07",
+  "options": [
+    "A: (3)/(√(2))",
+    "B: √(2)",
+    "C: (1)/(√(2))",
+    "D: 2"
+  ],
+  "figure_reference": null,
+  "confidentiality_notice": "Source custody blind packet. Academic solve, answer key, and scoring omitted. Private review only."
+}

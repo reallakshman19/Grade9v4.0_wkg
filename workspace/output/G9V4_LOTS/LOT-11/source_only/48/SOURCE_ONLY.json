@@ -1,0 +1,12 @@
+{
+  "source_id": "EX-N30",
+  "task_identity": "Q-ID-56",
+  "sequence": 48,
+  "batch_sequence": 3,
+  "paper": "JEE Main 2021 (Online) 26th August Morning Shift",
+  "stem_text": "A uniform chain of length 3 meter and mass 3 kg overhangs a smooth table with 2 meter lying on the table. If k is the kinetic energy of the chain in joule as it completely slips off the table, then the value of k is ................. . (Take g = 10 m/s2)",
+  "stem_sha256": "7c21556444e97731374f766f14f37a90cfb488abd5f66e30d1777cc4811cbd73",
+  "options": [],
+  "figure_reference": null,
+  "confidentiality_notice": "Source custody blind packet. Academic solve, answer key, and scoring omitted. Private review only."
+}

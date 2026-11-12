@@ -1,0 +1,16 @@
+{
+  "source_id": "EX-M50",
+  "task_identity": "Q-ID-15",
+  "sequence": 15,
+  "paper": "JEE Main 2022 (Online) 26th July Morning Shift",
+  "stem_text": "As per the given figure, two blocks each of mass 250g are connected to a spring of spring constant 2Nm^(\u22121) . If both are given velocity \ud835\udc63 in opposite directions, then maximum elongation of the spring is : [FIG-stem-1]",
+  "stem_sha256": "eb9b4c3b60984e3eba754ab63859475dfa45b5cc75f7824e40dd3a845bd04501",
+  "options": [
+    "A: (\ud835\udc63)/(2\u221a(2))",
+    "B: (\ud835\udc63)/(2)",
+    "C: (\ud835\udc63)/(4)",
+    "D: (\ud835\udc63)/(\u221a2)"
+  ],
+  "figure_reference": "https://app-content.cdn.examgoal.net/fly/1000/image/1l6hyjitw/5b480b82-4ccb-4844-a465-4ee34620c9bb/52950d40-158f-11ed-abd2-c5f8c222b719/file-1l6hyjitx.png?format=png",
+  "confidentiality_notice": "SEALED SOURCE-ONLY PACKET FOR BLIND INDEPENDENT REVIEW. Contains NO answers, keys, explanations, candidate solutions, SL2 factor scores, or prior review commentary."
+}

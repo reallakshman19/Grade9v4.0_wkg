@@ -1,0 +1,93 @@
+{
+  "sequence": 22,
+  "batch_sequence": 7,
+  "task_identity": "Q-ID-25",
+  "stable_id": "G9V4-PHYS-WPE-EX-M69",
+  "source_id": "EX-M69",
+  "lot": "LOT-06",
+  "batch": "BATCH-B",
+  "paper": "JEE Main 2020 (Online) 3rd September Evening Slot",
+  "source_type": "JEE_MAIN_PAST_EXAM_QUESTION",
+  "source_custody": "PARTIAL (graphical options unresolved)",
+  "stem_text": "A particle is moving unidirectionally on a horizontal plane under the action of a constant power supplying energy source. The displacement (s) - time (t) graph that describes the motion of the particle is (graphs are drawn schematically and are not to scale) :",
+  "stem_sha256": "9761db6873712de6b069cc95d817491c45f5018250ef8deac3885ab0c7525add",
+  "source_hash": "9761db6873712de6b069cc95d817491c45f5018250ef8deac3885ab0c7525add",
+  "source_record_digest": "9761db6873712de6b069cc95d817491c45f5018250ef8deac3885ab0c7525add",
+  "duplicate_parent": null,
+  "scope": "IN_SCOPE_WPE_ONLY",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "HOLD:FIGURE_UNRESOLVED",
+  "figure_reference": "[FIG-options-1..4] 4 remote graphical option images unverified against master",
+  "options": [
+    "A: [FIG-options-1]",
+    "B: [FIG-options-2]",
+    "C: [FIG-options-3]",
+    "D: [FIG-options-4]"
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "HOLD:FIGURE_UNRESOLVED",
+  "candidate_solve": {
+    "method": "CONSTANT_POWER_GRAPH_CURVATURE_ANALYSIS",
+    "derivation": "Constant power P = m v (dv/dt) => v proportional to t^(1/2) => s proportional to t^(3/2). Graph of s vs t must start at origin (s=0, t=0), have zero initial slope (ds/dt = 0 at t=0), positive slope everywhere (v > 0), and positive curvature d^2s/dt^2 = a proportional to t^(-1/2) > 0 (concave upwards). However, without authentic option images, choice binding is impossible.",
+    "predicted_option": "HOLD:FIGURE_UNRESOLVED",
+    "limiting_cases": "Option curves cannot be inspected or bound without authentic exam PDF assets."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Hooke's law F = -kx and spring energy U = (1/2)kx^2"
+        },
+        "representation_translation": {
+          "score": 2,
+          "evidence": "Graph translation between force-displacement and energy-displacement"
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Mapping linear force to parabolic potential curve"
+        },
+        "algebra_computational_load": {
+          "score": 0,
+          "evidence": "Qualitative curve matching"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Identifying vertex location and curvature sign"
+        }
+      },
+      "total": 5,
+      "band": "D2",
+      "prior_proposal": {
+        "source": "PRODUCER_HISTORICAL_ESTIMATE",
+        "scores": "1/1/1/1/1",
+        "total": 5
+      },
+      "differences": "Rescored to native five-factor rubric per B2 CP-4 review"
+    },
+    "demand_proposal": {
+      "primary": "REPRESENT",
+      "secondary": [
+        "EXPLAIN"
+      ],
+      "rationale": "Translation between graphical force domain and potential energy curve",
+      "candidate_cell": "QRT-REPRESENT-D2",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_CP4_GATE",
+  "b2_blind_status": "UNREVIEWED",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:FIGURE_UNRESOLVED (4 remote graphical options unverified against official master)",
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)",
+    "HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)"
+  ],
+  "next_action": "Retrieve original NTA paper PDF for 03-09-2020 Evening Slot to capture option graphs."
+}

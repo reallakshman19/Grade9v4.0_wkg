@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade9 v4.0 — LOT-02 Source & Candidate Solve Audit (Questions 1–5)</title>
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --border: #e2e8f0;
+            --text: #0f172a;
+            --text-muted: #64748b;
+            --primary: #2563eb;
+            --danger: #b91c1c;
+            --warning: #d97706;
+            --success: #15803d;
+            --neutral-bg: #f1f5f9;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            padding: 16px;
+            font-size: 14px;
+            min-width: 0;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1365px;
+            margin: 0 auto;
+            background: var(--surface);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            min-width: 0;
+        }
+        header {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+        }
+        h1 { font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 6px; word-break: break-word; }
+        .header-meta {
+            font-size: 12px;
+            color: var(--text-muted);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .notice-banner {
+            background: #fffbeb;
+            border-left: 4px solid var(--warning);
+            padding: 12px 16px;
+            margin-bottom: 20px;
+            border-radius: 0 4px 4px 0;
+            font-size: 13px;
+            color: #92400e;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .metric-card {
+            background: var(--neutral-bg);
+            padding: 14px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+        .metric-title { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); }
+        .metric-val { font-size: 22px; font-weight: 700; margin-top: 4px; }
+        .metric-sub { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+        .table-wrapper {
+            overflow-x: auto;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            margin-bottom: 24px;
+            -webkit-overflow-scrolling: touch;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            min-width: 800px;
+        }
+        th, td {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        th {
+            background: #f8fafc;
+            font-weight: 600;
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+        .col-seq { width: 80px; }
+        .col-source { width: 200px; word-break: break-word; }
+        .col-stem { min-width: 280px; word-break: break-word; }
+        .col-cog { width: 140px; }
+        .col-bp { width: 140px; word-break: break-word; }
+        .col-gates { width: 260px; word-break: break-word; }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin: 2px 0;
+            word-break: break-all;
+        }
+        .badge-admission { background: #fef2f2; color: var(--danger); border: 1px solid #fecaca; }
+        .badge-hold { background: #fff7ed; color: var(--warning); border: 1px solid #fed7aa; }
+        .badge-source { background: #eff6ff; color: var(--primary); }
+        .badge-fig { background: #f1f5f9; color: var(--text-muted); }
+        .badge-prop { background: #f3e8ff; color: #7e22ce; }
+
+        .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+        .text-muted { color: var(--text-muted); }
+        .stem-preview { font-size: 13px; margin-bottom: 6px; color: #334155; }
+        .candidate-details { margin-top: 6px; font-size: 12px; }
+        .candidate-details summary { cursor: pointer; color: var(--primary); font-weight: 600; }
+        .solve-box {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin-top: 6px;
+        }
+        .solve-box p { margin: 4px 0; }
+        .blocker-list {
+            margin-top: 4px;
+            padding-left: 16px;
+            font-size: 11px;
+            color: var(--danger);
+        }
+        .blocker-list li { margin-bottom: 2px; }
+        footer {
+            border-top: 1px solid var(--border);
+            padding-top: 16px;
+            font-size: 12px;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        @media (max-width: 600px) {
+            body { padding: 8px; }
+            .container { padding: 12px; }
+            .metrics-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Grade9 v4.0 — LOT-02 Audit: Candidates 1–5</h1>
+            <div class="header-meta">
+                <span><strong>Batch:</strong> BATCH-A / CP-1</span>
+                <span><strong>Scope:</strong> Physics / WPE</span>
+                <span><strong>Audit Date:</strong> 2026-11-01</span>
+                <span><strong>Roster SHA:</strong> <code class="mono">5c6c0a41dcd2970e...</code></span>
+            </div>
+        </header>
+
+        <div class="notice-banner">
+            <strong>Mandatory Governance Boundary:</strong> ZERO academic approvals inferred. All 5 candidates are marked <code>NOT_ADMITTED</code>. No learner cards constructed. Official answer keys and NTA source figures remain on HOLD.
+        </div>
+
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-title">Candidates Audited</div>
+                <div class="metric-val">5 / 5</div>
+                <div class="metric-sub">Roster Seq 1–5 (100% accounted)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-title">Academic Admissions</div>
+                <div class="metric-val" style="color: var(--danger);">0</div>
+                <div class="metric-sub">All gated on independent review</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-title">Solve Status</div>
+                <div class="metric-val">1 Derived / 4 Hold</div>
+                <div class="metric-sub">Exposure: 5 EXPOSED (prior scrape)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-title">Cognitive Proposals</div>
+                <div class="metric-val">4 D2 / 1 D4</div>
+                <div class="metric-sub">All 5 SL2 factors scored</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-title">Blueprint Fit</div>
+                <div class="metric-val">4 Pending / 1 Pinned</div>
+                <div class="metric-sub">QRT-JUSTIFY-D4 pinned for EX-M6</div>
+            </div>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="col-seq">Seq</th>
+                        <th class="col-source">Source & Custody</th>
+                        <th class="col-stem">Stem & Candidate Solve</th>
+                        <th class="col-cog">SL2 Proposal</th>
+                        <th class="col-bp">Blueprint / Adapter</th>
+                        <th class="col-gates">Academic Gate & Blockers</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+        <tr>
+            <td class="col-seq"><strong>#1</strong><br><small class="mono">Q-ID-01</small></td>
+            <td class="col-source">
+                <strong>EX-M2</strong><br>
+                <small class="text-muted">JEE Main 2026 (Online) 6th April Evening Shift</small><br>
+                <span class="badge badge-source">PARTIAL</span>
+                <span class="badge badge-fig">HOLD:FIGURE_UNRESOLVED</span>
+            </td>
+            <td class="col-stem">
+                <div class="stem-preview">The velocity at which 6 kg mass (shown in figure) strikes the ground when it is released from a height of 6 m above the ground is ____ m/s . Assume pulley is ma...</div>
+                <details class="candidate-details">
+                    <summary>View Full Candidate Solve & Reasoning</summary>
+                    <div class="solve-box">
+                        <p><strong>Predicted Option:</strong> A: 7.74</p>
+                        <p><strong>Method:</strong> <code>WORK_ENERGY_TWO_BODY_PULLEY</code></p>
+                        <p><strong>Derivation:</strong> Conservation of mechanical energy for connected two-body system: Delta K = W_net => 1/2(M+m)v^2 = (M-m)gh => v = sqrt(2(M-m)gh / (M+m)) = sqrt(2(6-2)(10)(6)/(6+2)) = sqrt(480/8) = sqrt(60) approx 7.74596 m/s.</p>
+                        <p><strong>Limiting Cases:</strong> If m = M, v = 0 (equilibrium). If m = 0, v = sqrt(2gh) = sqrt(120) approx 10.95 m/s. Bound: 0 < 7.746 < 10.95 m/s.</p>
+                    </div>
+                </details>
+            </td>
+            <td class="col-cog">
+                <strong>APPLY</strong> (D2)<br>
+                <small>Score: 5/10</small><br>
+                <span class="badge badge-prop">PROPOSED</span>
+            </td>
+            <td class="col-bp"><span class='badge badge-hold'>BLUEPRINT=SPEC_PENDING</span></td>
+            <td class="col-gates">
+                <span class="badge badge-admission">NOT_ADMITTED</span>
+                <ul class="blocker-list">
+                    <li>HOLD:FIGURE_UNRESOLVED (opposing mass value m=2kg not in stem; unbound remote figure)</li><li>HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)</li><li>HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)</li>
+                </ul>
+            </td>
+        </tr>
+        
+        <tr>
+            <td class="col-seq"><strong>#2</strong><br><small class="mono">Q-ID-02</small></td>
+            <td class="col-source">
+                <strong>EX-M4</strong><br>
+                <small class="text-muted">JEE Main 2026 (Online) 5th April Evening Shift</small><br>
+                <span class="badge badge-source">VERIFIED_TEXT_ONLY</span>
+                <span class="badge badge-fig">VERIFIED_NONE_REQUIRED</span>
+            </td>
+            <td class="col-stem">
+                <div class="stem-preview">A mass of 1 kg is kept on an inclined plane with 30^(∘) inclination with respect to horizontal plane and it is at rest initially. Then the whole assembly is mov...</div>
+                <details class="candidate-details">
+                    <summary>View Full Candidate Solve & Reasoning</summary>
+                    <div class="solve-box">
+                        <p><strong>Predicted Option:</strong> A: 20</p>
+                        <p><strong>Method:</strong> <code>STATIC_FRICTION_FRAME_TRANSLATION</code></p>
+                        <p><strong>Derivation:</strong> Block rests on incline at theta = 30 deg. Tangential gravity balance gives static friction f_s = mg sin(30 deg) = 1 * 10 * 0.5 = 5 N directed up the incline. The incline assembly translates vertically upward at constant v = 4 m/s for t = 2 s, so vertical displacement s_y = 4 * 2 = 8 m. Since acceleration a = 0, dynamic equilibrium holds and f_s remains 5 N up the incline. Incline angle is 30 deg to horizontal, so friction vector angle to vertical is 60 deg (or angle to horizontal is 30 deg). Vertical component of static friction f_s,y = f_s * sin(30 deg) = 5 * 0.5 = 2.5 N. Work done by friction W = f_s,y * s_y = 2.5 N * 8 m = 20 J.</p>
+                        <p><strong>Limiting Cases:</strong> If theta = 0 deg, f_s = 0 => W = 0 J. If theta -> 90 deg, normal force -> 0 (block falls). For theta = 30 deg, W = 20 J.</p>
+                    </div>
+                </details>
+            </td>
+            <td class="col-cog">
+                <strong>APPLY</strong> (D2)<br>
+                <small>Score: 4/10</small><br>
+                <span class="badge badge-prop">PROPOSED</span>
+            </td>
+            <td class="col-bp"><span class='badge badge-hold'>BLUEPRINT=SPEC_PENDING</span></td>
+            <td class="col-gates">
+                <span class="badge badge-admission">NOT_ADMITTED</span>
+                <ul class="blocker-list">
+                    <li>HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)</li><li>HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)</li>
+                </ul>
+            </td>
+        </tr>
+        
+        <tr>
+            <td class="col-seq"><strong>#3</strong><br><small class="mono">Q-ID-03</small></td>
+            <td class="col-source">
+                <strong>EX-M6</strong><br>
+                <small class="text-muted">JEE Main 2026 (Online) 23rd January Evening Shift</small><br>
+                <span class="badge badge-source">PARTIAL</span>
+                <span class="badge badge-fig">HOLD:FIGURE_UNRESOLVED</span>
+            </td>
+            <td class="col-stem">
+                <div class="stem-preview">A bead 𝑃 sliding on a frictionless semi-circular string (𝐴𝐶𝐵) and it is at point 𝑆 at 𝑡=0 and at this instant the horizontal component of its velocity is 𝑣 . An...</div>
+                <details class="candidate-details">
+                    <summary>View Full Candidate Solve & Reasoning</summary>
+                    <div class="solve-box">
+                        <p><strong>Predicted Option:</strong> A: 𝑡_𝑃<𝑡_𝑄 (coaching proposal)</p>
+                        <p><strong>Method:</strong> <code>COMPARATIVE_TRAJECTORY_TIME_INTEGRAL</code></p>
+                        <p><strong>Derivation:</strong> Bead Q traverses straight chord AB of length 2R with uniform horizontal velocity v: t_Q = 2R/v. Bead P traverses curved semi-circular wire ACB. Under gravity, as P descends below AB, mechanical energy conservation gives v_P(theta) = sqrt(v_0^2 + 2gy) > v. However, the path length is pi*R approx 3.14 R, whereas AB is 2R. Whether t_P < t_Q depends on the exact initial point S, the ratio v^2/(gR), and whether the horizontal velocity component remains greater than v throughout. In the coaching solution, t_P < t_Q (Option A) is asserted based on average horizontal speed enhancement, but without the exact figure and rigorous bound, the result cannot be conclusively certified.</p>
+                        <p><strong>Limiting Cases:</strong> If g -> 0, path ACB is longer (pi*R > 2R) with constant speed v, so t_P = pi*R/v > 2R/v = t_Q. If g is very large, descent velocity becomes extremely high, driving t_P -> 0, so t_P < t_Q. Crossover depends sensitively on v^2/(gR).</p>
+                    </div>
+                </details>
+            </td>
+            <td class="col-cog">
+                <strong>JUSTIFY</strong> (D4)<br>
+                <small>Score: 8/10</small><br>
+                <span class="badge badge-prop">PROPOSED</span>
+            </td>
+            <td class="col-bp"><strong>PHYS-QRT-BLUEPRINT</strong><br><small>QRT-JUSTIFY-D4</small></td>
+            <td class="col-gates">
+                <span class="badge badge-admission">NOT_ADMITTED</span>
+                <ul class="blocker-list">
+                    <li>HOLD:FIGURE_UNRESOLVED (diagram needed to verify location of S, C, orientation of track)</li><li>HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)</li><li>HOLD:B2_INDEPENDENT_PENDING (requires blind expert derivation of integral bound)</li>
+                </ul>
+            </td>
+        </tr>
+        
+        <tr>
+            <td class="col-seq"><strong>#4</strong><br><small class="mono">Q-ID-04</small></td>
+            <td class="col-source">
+                <strong>EX-M7</strong><br>
+                <small class="text-muted">JEE Main 2026 (Online) 23rd January Morning Shift</small><br>
+                <span class="badge badge-source">PARTIAL</span>
+                <span class="badge badge-fig">HOLD:FIGURE_UNRESOLVED</span>
+            </td>
+            <td class="col-stem">
+                <div class="stem-preview">An object is projected with kinetic energy 𝐾 from a point 𝐴 at an angle 60^(∘) with the horizontal. The ratio of the difference in kinetic energies at points 𝐵 ...</div>
+                <details class="candidate-details">
+                    <summary>View Full Candidate Solve & Reasoning</summary>
+                    <div class="solve-box">
+                        <p><strong>Predicted Option:</strong> A: 3:4</p>
+                        <p><strong>Method:</strong> <code>PROJECTILE_ENERGY_DECOMPOSITION</code></p>
+                        <p><strong>Derivation:</strong> Initial launch KE at A: K_A = K = 1/2 m u^2. At apex B, vertical velocity is zero; speed is horizontal component v_B = u cos(60 deg) = u/2. Kinetic energy at B: K_B = 1/2 m (u/2)^2 = K/4. At ground impact C, speed is restored to u: K_C = K. Difference in KE between B and C: Delta K_BC = K_C - K_B = K - K/4 = 3/4 K. Ratio to KE at A: Delta K_BC / K_A = (3/4 K) / K = 3/4 = 3:4.</p>
+                        <p><strong>Limiting Cases:</strong> If launch angle theta = 0 deg, v_B = u => Delta K = 0. If theta = 90 deg, v_B = 0 => Delta K = K => ratio 1:1. For 60 deg, ratio is sin^2(60 deg) = 3/4.</p>
+                    </div>
+                </details>
+            </td>
+            <td class="col-cog">
+                <strong>APPLY</strong> (D2)<br>
+                <small>Score: 3/10</small><br>
+                <span class="badge badge-prop">PROPOSED</span>
+            </td>
+            <td class="col-bp"><span class='badge badge-hold'>BLUEPRINT=SPEC_PENDING</span></td>
+            <td class="col-gates">
+                <span class="badge badge-admission">NOT_ADMITTED</span>
+                <ul class="blocker-list">
+                    <li>HOLD:FIGURE_UNRESOLVED (points B and C defined on diagram, unbound remote URL)</li><li>HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)</li><li>HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)</li>
+                </ul>
+            </td>
+        </tr>
+        
+        <tr>
+            <td class="col-seq"><strong>#5</strong><br><small class="mono">Q-ID-05</small></td>
+            <td class="col-source">
+                <strong>EX-M8</strong><br>
+                <small class="text-muted">JEE Main 2026 (Online) 23rd January Morning Shift</small><br>
+                <span class="badge badge-source">PARTIAL</span>
+                <span class="badge badge-fig">HOLD:FIGURE_UNRESOLVED</span>
+            </td>
+            <td class="col-stem">
+                <div class="stem-preview">Two blocks with masses 100 g and 200 g are attached to the ends of springs 𝐴 and 𝐵 as shown in figure. The energy stored in 𝐴 is 𝐸 . The energy stored in 𝐵 , wh...</div>
+                <details class="candidate-details">
+                    <summary>View Full Candidate Solve & Reasoning</summary>
+                    <div class="solve-box">
+                        <p><strong>Predicted Option:</strong> D: 3𝐸</p>
+                        <p><strong>Method:</strong> <code>SPRING_STATIC_EQUILIBRIUM_ENERGY</code></p>
+                        <p><strong>Derivation:</strong> In vertical static equilibrium, spring tension equals suspended weight: k x = mg => x = mg / k. Elastic potential energy stored: U = 1/2 k x^2 = (mg)^2 / (2k). For spring A: m_A = 100 g, stiffness k_A => E_A = E = (m_A g)^2 / (2 k_A). For spring B: m_B = 200 g = 2 m_A, stiffness k_B = 4/3 k_A. Energy stored in B: E_B = (m_B g)^2 / (2 k_B) = (2 m_A g)^2 / (2 * (4/3) k_A) = (4 / (4/3)) * [ (m_A g)^2 / (2 k_A) ] = 3 E_A = 3E.</p>
+                        <p><strong>Limiting Cases:</strong> If m_B = m_A and k_B = k_A, E_B = E. If k_B -> infinity, E_B -> 0. With m ratio 2 and k ratio 4/3, factor is 2^2 / (4/3) = 3.</p>
+                    </div>
+                </details>
+            </td>
+            <td class="col-cog">
+                <strong>APPLY</strong> (D2)<br>
+                <small>Score: 4/10</small><br>
+                <span class="badge badge-prop">PROPOSED</span>
+            </td>
+            <td class="col-bp"><span class='badge badge-hold'>BLUEPRINT=SPEC_PENDING</span></td>
+            <td class="col-gates">
+                <span class="badge badge-admission">NOT_ADMITTED</span>
+                <ul class="blocker-list">
+                    <li>HOLD:FIGURE_UNRESOLVED (diagram needed to verify separate suspension topology)</li><li>HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)</li><li>HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)</li>
+                </ul>
+            </td>
+        </tr>
+        
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            <div>Produced by Local Coding Agent | Low-Discretion Autonomous Mode</div>
+            <div>No academic approval inferred from software validation.</div>
+        </footer>
+    </div>
+</body>
+</html>

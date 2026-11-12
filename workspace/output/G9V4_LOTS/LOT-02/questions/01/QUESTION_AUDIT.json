@@ -1,0 +1,111 @@
+{
+  "sequence": 1,
+  "task_identity": "Q-ID-01",
+  "stable_id": "Q-PHY-WPE-JEEM-2026-04-06-S2-01",
+  "source_id": "EX-M2",
+  "lot": "LOT-02",
+  "paper": "JEE Main 2026 (Online) 6th April Evening Shift",
+  "source_type": "SCRAPED_EXTRACT_EXAMGOAL",
+  "source_custody": "PARTIAL",
+  "stem_text": "The velocity at which 6 kg mass (shown in figure) strikes the ground when it is released from a height of 6 m above the ground is ____ m/s . Assume pulley is massless and string is light and inextensible. (Take g=10m/s^(2) ) [FIG-stem-1]",
+  "stem_sha256": "a5c763f95741876d7e1c31a53aa6049a439d0aa91b0b28512c9aece32b8bb52d",
+  "source_hash": "a5c763f95741876d7e1c31a53aa6049a439d0aa91b0b28512c9aece32b8bb52d",
+  "source_record_digest": "a5c763f95741876d7e1c31a53aa6049a439d0aa91b0b28512c9aece32b8bb52d",
+  "duplicate_parent": null,
+  "scope": "IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "HOLD:FIGURE_UNRESOLVED",
+  "options": [
+    "A: 7.74",
+    "B: 7.20",
+    "C: 6.55",
+    "D: 4.50"
+  ],
+  "unbound_remote_figures": [
+    {
+      "role": "stem",
+      "url": "https://app-content.cdn.examgoal.net/fly/1000/image/6y3zli1mo4fpv2y/9e0021cb-81a5-42b5-9355-64909243bdc1/33773fa0-3b33-11f1-8c42-c7a7a182458c/file-6y3zli1mo4fpv2z.webp?format=png"
+    }
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "HOLD:FIGURE_UNRESOLVED",
+  "candidate_solve": {
+    "method": "WORK_ENERGY_TWO_BODY_PULLEY",
+    "assumed_parameters_from_coaching_figure": "Opposing suspended mass m = 2 kg, released from rest at height h = 6 m for M = 6 kg.",
+    "derivation": "Conservation of mechanical energy for connected two-body system: Delta K = W_net => 1/2(M+m)v^2 = (M-m)gh => v = sqrt(2(M-m)gh / (M+m)) = sqrt(2(6-2)(10)(6)/(6+2)) = sqrt(480/8) = sqrt(60) approx 7.74596 m/s.",
+    "predicted_option": "A: 7.74",
+    "limiting_cases": "If m = M, v = 0 (equilibrium). If m = 0, v = sqrt(2gh) = sqrt(120) approx 10.95 m/s. Bound: 0 < 7.746 < 10.95 m/s."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "status": "UNREVIEWED",
+    "decisive_operation": "APPLY",
+    "crux": "Setting up the coupled two-body kinetic energy ledger where both bodies move at identical instantaneous speed v while one descends and the other ascends.",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Standard coupled Atwood work-energy model."
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Interpreting pulley system schematic to assign mass parameters."
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Combined kinetic energy and potential energy ledger to speed."
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Square root approximation: sqrt(60) approx 7.74."
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Must avoid treating 6 kg mass as unconstrained free fall."
+        }
+      },
+      "total": 5,
+      "band": "D2"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "MODEL"
+      ],
+      "candidate_cell": "QRT-APPLY-D2",
+      "status": "PROPOSED"
+    },
+    "representation_requirements": [
+      "DIAGRAM",
+      "EQUATION"
+    ],
+    "independent_checks": [
+      "UNITS",
+      "LIMITING_CASE"
+    ],
+    "wrong_route_hypotheses": [
+      {
+        "route": "Single body free fall v = sqrt(2gh) = sqrt(120) = 10.95 m/s",
+        "status": "HYPOTHESIS"
+      },
+      {
+        "route": "Omitting m in kinetic energy denominator v = sqrt(2(M-m)gh / M) = 8.94 m/s",
+        "status": "HYPOTHESIS"
+      }
+    ]
+  },
+  "qrt": "UNREVIEWED",
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_REVIEW",
+  "b2_blind_status": "NOT_RUN",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:FIGURE_UNRESOLVED (opposing mass value m=2kg not in stem; unbound remote figure)",
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)",
+    "HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)"
+  ],
+  "next_action": "Secure local copy of NTA original PDF figure and master answer key sheet."
+}

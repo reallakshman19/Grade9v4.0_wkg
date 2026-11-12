@@ -1,0 +1,3749 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:common:v3b:microtopic-library:0.1.0",
+  "title": "V3B Microtopic Library Package — PROPOSED",
+  "description": "Structural exchange proposal only. State labels do not authorize acceptance; references, semantics, review authority and curriculum support require separate validation.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "enum": [
+        "0.1.0",
+        "0.2.0"
+      ],
+      "description": "0.2.0 adds the depth fields the learner quality contract (Shared/quality/learner-quality.v1.json) needs: microtopic.construction_units, question.hint_ladder, representation_roles, independent_check, failure_signal, family_exposure. They are optional in the schema so every package loads; Shared/tools/package_depth.py turns each missing one into a named duty. Migrate with Shared/tools/package_migrate.py."
+    },
+    "package_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "description": "Learner-facing unit title; existing packages own this instead of a manifest override."
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "DISCOVERED",
+        "CANDIDATE",
+        "REVIEWED",
+        "CURATED",
+        "DISPUTED",
+        "STALE",
+        "RETIRED"
+      ]
+    },
+    "subject": {
+      "enum": [
+        "Physics",
+        "Mathematics",
+        "Chemistry",
+        "TEST"
+      ]
+    },
+    "scope_summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "curriculum_mappings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/scope"
+      },
+      "minItems": 0
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/resource"
+      },
+      "minItems": 1
+    },
+    "buckets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/bucket"
+      },
+      "minItems": 1
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/capability"
+      },
+      "minItems": 1
+    },
+    "microtopics": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/microtopic"
+      },
+      "minItems": 1
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/relation"
+      },
+      "minItems": 0
+    },
+    "representations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/representation"
+      },
+      "minItems": 0
+    },
+    "question_families": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/question_family"
+      },
+      "minItems": 0
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/question"
+      },
+      "minItems": 0
+    },
+    "teaching_routes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/route"
+      },
+      "minItems": 0
+    },
+    "practice_profiles": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/profile"
+      },
+      "minItems": 0
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence"
+      },
+      "minItems": 0
+    },
+    "known_issues": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/issue"
+      },
+      "minItems": 0
+    },
+    "extensions": {
+      "type": "object"
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/datum"
+      },
+      "minItems": 0
+    },
+    "application_contexts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/application_context"
+      },
+      "minItems": 0,
+      "description": "Application/scenario contexts for question families and items. Contexts describe where capabilities are exercised; they are not capabilities, prerequisites, learner-state keys, or mastery targets."
+    }
+  },
+  "required": [
+    "schema_version",
+    "package_id",
+    "version",
+    "status",
+    "subject",
+    "scope_summary",
+    "curriculum_mappings",
+    "resources",
+    "buckets",
+    "capabilities",
+    "microtopics",
+    "relations",
+    "representations",
+    "question_families",
+    "questions",
+    "teaching_routes",
+    "practice_profiles",
+    "evidence",
+    "known_issues",
+    "extensions",
+    "data"
+  ],
+  "$defs": {
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "board": {
+          "type": "string",
+          "minLength": 1
+        },
+        "grade": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "academic_year": {
+          "type": "string",
+          "minLength": 1
+        },
+        "track": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope_class": {
+          "enum": [
+            "PRESCRIBED",
+            "PREREQUISITE_BRIDGE",
+            "OWNER_EXTENSION",
+            "UNMAPPED"
+          ]
+        },
+        "source_ref": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "locator": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mapping_status": {
+          "enum": [
+            "CANDIDATE",
+            "VERIFIED",
+            "DISPUTED"
+          ]
+        }
+      },
+      "required": [
+        "board",
+        "grade",
+        "academic_year",
+        "track",
+        "scope_class",
+        "source_ref",
+        "locator",
+        "mapping_status"
+      ]
+    },
+    "step": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "action": {
+          "type": "string",
+          "minLength": 1
+        },
+        "why_valid": {
+          "type": "string",
+          "minLength": 1
+        },
+        "inputs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "output": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "description": "What the step does to the state. A DECLARE step fixes a convention or a domain and legitimately produces no computation; a TRANSFORM step changes the mathematical state and must show the changed state, not describe it; a VERIFY step checks a result against something already established.",
+          "enum": [
+            "DECLARE",
+            "TRANSFORM",
+            "VERIFY"
+          ]
+        },
+        "source_ref": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The source this step's claim rests on. Absent means the step is the author's own construction, which is legitimate and is not the same as source-supported."
+        }
+      },
+      "required": [
+        "id",
+        "role",
+        "action",
+        "why_valid",
+        "inputs",
+        "output"
+      ]
+    },
+    "reasoning_move": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "One explicit application reasoning move. This is a cognitive state transition (why/which move and its result), not merely a line of arithmetic working.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "REPRESENT",
+            "DECIDE",
+            "CONNECT",
+            "TRANSFORM",
+            "VERIFY"
+          ]
+        },
+        "action": {
+          "type": "string",
+          "minLength": 1
+        },
+        "why_valid": {
+          "type": "string",
+          "minLength": 1
+        },
+        "inputs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "output": {
+          "type": "string",
+          "minLength": 1
+        },
+        "representation_ref": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Optional canonical representation that makes this reasoning move visible."
+        },
+        "visual_stage_ref": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Optional reveal-stage id within representation_ref."
+        },
+        "source_ref": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Optional source binding for a claim carried by this move."
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "action",
+        "why_valid",
+        "inputs",
+        "output"
+      ],
+      "dependentRequired": {
+        "representation_ref": [
+          "visual_stage_ref"
+        ],
+        "visual_stage_ref": [
+          "representation_ref"
+        ]
+      }
+    },
+    "scaffold": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "An authored pedagogical scaffold usable by Core2, Core2A or Core2B. It is deliberately separate from question.hints[], which preserves source/question hint custody; Core2B additionally constrains scaffolds through transfer.protected_move_ref.",
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The bounded reveal/support body. For Core2 Prompt/Reveal support this is what becomes visible only after the learner requests the reveal."
+        },
+        "prompt": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Optional Core2 v2 learner prompt shown before the bounded reveal. When present it is paired with learner_stage so stage semantics are explicit rather than inferred from prose."
+        },
+        "learner_stage": {
+          "enum": [
+            "KEY_CONCEPT",
+            "REPRESENTATION",
+            "FIRST_MOVE",
+            "CRUX",
+            "FORMAL_MODEL",
+            "CHECKPOINT",
+            "OTHER"
+          ],
+          "description": "Optional Core2 v2 learner-facing support stage. This classifies the Prompt/Reveal job; it does not change source custody or support_kind. CRUX names the move a learner is most likely to miss, FORMAL_MODEL gives the relation or equation to use, CHECKPOINT gives the intermediate result to compare against."
+        },
+        "support_kind": {
+          "enum": [
+            "REPRESENT",
+            "CONNECT",
+            "EXECUTE"
+          ],
+          "description": "What cognitive help the scaffold provides."
+        },
+        "reveals": {
+          "enum": [
+            "CONCEPT",
+            "METHOD",
+            "ANSWER"
+          ],
+          "description": "How much of the route/result the scaffold discloses."
+        },
+        "supports_move_ref": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Stable id of the reasoning_route move this scaffold supports."
+        },
+        "visual_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "visual_stage_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "text",
+        "support_kind",
+        "reveals",
+        "supports_move_ref"
+      ],
+      "dependentRequired": {
+        "prompt": [
+          "learner_stage"
+        ],
+        "learner_stage": [
+          "prompt"
+        ],
+        "visual_ref": [
+          "visual_stage_ref"
+        ],
+        "visual_stage_ref": [
+          "visual_ref"
+        ]
+      }
+    },
+    "response": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type"
+      ],
+      "description": "An honest self-learner's commitment control, not a grading or anti-cheating rule.",
+      "properties": {
+        "type": {
+          "enum": [
+            "single_choice",
+            "multiple_choice",
+            "true_false",
+            "numeric",
+            "short_text",
+            "free_response",
+            "multipart",
+            "match"
+          ]
+        },
+        "parts": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "label"
+                ],
+                "properties": {
+                  "label": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "type": {
+                    "enum": [
+                      "numeric",
+                      "short_text",
+                      "free_response"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "match_left": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "match_right": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "paper_ok": {
+          "type": "boolean"
+        }
+      }
+    },
+    "answer": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "EXACT",
+            "MODEL_RESPONSE",
+            "RUBRIC"
+          ]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reasoning": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "reasoning_route": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/reasoning_move"
+          },
+          "minItems": 1,
+          "description": "Structured application reasoning route. When present with crux_move_ref, this is authoritative for Core2/Core2A/Core2B reasoning semantics; reasoning[] remains the legacy prose fallback."
+        },
+        "crux_move_ref": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Stable id of the question-specific reasoning move that is the primary learner crux. Intake validates that it resolves inside reasoning_route[]."
+        },
+        "check": {
+          "type": "string",
+          "minLength": 1
+        },
+        "acceptable_alternatives": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "subpart_answers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "verification_status": {
+          "enum": [
+            "NOT_RUN",
+            "CHECKED_BY_AUTHOR",
+            "INDEPENDENTLY_CHECKED",
+            "DISPUTED"
+          ]
+        },
+        "numeric": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "unit"
+          ],
+          "description": "The answer's headline result as a structured candidate, so a subject validator can actually check it. A value stated only inside prose is not machine-checkable, and dropping the check because the value is unstructured would silently discard the oracle.",
+          "properties": {
+            "value": {},
+            "unit": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "source_key": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "state"
+          ],
+          "properties": {
+            "state": {
+              "enum": [
+                "PRESENT",
+                "ABSENT",
+                "AMBIGUOUS"
+              ]
+            },
+            "value": {
+              "type": "string",
+              "minLength": 1
+            },
+            "card": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "key_relation": {
+          "enum": [
+            "MATCHES_KEY",
+            "CONFLICTS_WITH_KEY",
+            "NO_KEY"
+          ]
+        },
+        "key_conflict_explanation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "rubric": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/rubric_criterion"
+          },
+          "minItems": 1,
+          "description": "What a good justification contains, not only what the final result is. answer.kind already has a RUBRIC value; this is where that value points."
+        },
+        "difficult_move": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Legacy index into reasoning[] of the first move a learner is likely to miss. During migration, reasoning_route[] + crux_move_ref are authoritative when present; this index remains the backward-compatible fallback for older records."
+        }
+      },
+      "required": [
+        "kind",
+        "summary",
+        "reasoning",
+        "check",
+        "acceptable_alternatives",
+        "subpart_answers",
+        "verification_status"
+      ]
+    },
+    "resource": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "DISCOVERED",
+            "CANDIDATE",
+            "REVIEWED",
+            "CURATED",
+            "DISPUTED",
+            "STALE",
+            "RETIRED"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "extensions": {
+          "type": "object",
+          "description": "Namespaced subject extensions; no scientific authority is inferred."
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "origin": {
+          "enum": [
+            "LOCAL",
+            "WEB",
+            "AUTHORED"
+          ]
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "edition": {
+          "type": "string",
+          "minLength": 1
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "last_checked": {
+          "type": "string",
+          "minLength": 1
+        },
+        "access_status": {
+          "enum": [
+            "DISCOVERED",
+            "LANDING_INSPECTED",
+            "SECTION_INSPECTED",
+            "FULL_ITEM_INSPECTED",
+            "UNAVAILABLE"
+          ]
+        },
+        "rights_status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "snapshot_ref": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "snapshot_digest": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "role": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "CURRICULUM",
+              "SCIENTIFIC_CHECK",
+              "EXPLANATION",
+              "QUESTION_BANK",
+              "ACTIVITY",
+              "AUTHOR_CREATED"
+            ]
+          },
+          "minItems": 1
+        },
+        "supports_claims": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "entry_capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "depth": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "selection_reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "fallback": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "caption": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The text printed with a figure in its source, where this resource is a figure. Its title is what the resource is called; its caption is what the source said about it, and custody of an original figure that drops the caption is not custody."
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "status",
+        "source_refs",
+        "evidence_refs",
+        "extensions",
+        "title",
+        "origin",
+        "locator",
+        "edition",
+        "section",
+        "last_checked",
+        "access_status",
+        "rights_status",
+        "snapshot_ref",
+        "snapshot_digest",
+        "role",
+        "supports_claims",
+        "entry_capabilities",
+        "depth",
+        "selection_reason",
+        "fallback"
+      ]
+    },
+    "capability": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "DISCOVERED",
+            "CANDIDATE",
+            "REVIEWED",
+            "CURATED",
+            "DISPUTED",
+            "STALE",
+            "RETIRED"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "extensions": {
+          "type": "object",
+          "description": "Namespaced subject extensions; no scientific authority is inferred."
+        },
+        "action": {
+          "type": "string",
+          "minLength": 1
+        },
+        "success_criterion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "prerequisite_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "curriculum_mappings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/scope"
+          },
+          "minItems": 0
+        },
+        "external_provider": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "acceptance_status": {
+          "enum": [
+            "CANDIDATE",
+            "PROVIDER_REVIEW_REQUIRED",
+            "REVIEWED"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "status",
+        "source_refs",
+        "evidence_refs",
+        "extensions",
+        "action",
+        "success_criterion",
+        "prerequisite_refs",
+        "curriculum_mappings",
+        "external_provider",
+        "acceptance_status"
+      ]
+    },
+    "bucket": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "DISCOVERED",
+            "CANDIDATE",
+            "REVIEWED",
+            "CURATED",
+            "DISPUTED",
+            "STALE",
+            "RETIRED"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "extensions": {
+          "type": "object",
+          "description": "Namespaced subject extensions; no scientific authority is inferred."
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "topic": {
+          "type": "string",
+          "minLength": 1
+        },
+        "intrinsic_badge": {
+          "enum": [
+            "EASY",
+            "MEDIUM",
+            "HARD"
+          ]
+        },
+        "badge_reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "depth_overlay": {
+          "enum": [
+            "FOUNDATION",
+            "EXAM",
+            "ADVANCED",
+            "RESEARCH"
+          ]
+        },
+        "curriculum_mappings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/scope"
+          },
+          "minItems": 0
+        },
+        "prerequisite_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "conventions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Stable identifier, so a teaching step can cite the convention it uses."
+              },
+              "statement": {
+                "type": "string",
+                "minLength": 1,
+                "description": "What is fixed, in the words a learner reads."
+              }
+            },
+            "required": [
+              "id",
+              "statement"
+            ]
+          },
+          "minItems": 0,
+          "description": "Whatever must be fixed before the bucket's quantities can be read. The engine does not enumerate the kinds: an axis convention, a sign convention, a reference state and a phase are all one thing here, and which of them exist is the subject's to say."
+        },
+        "scope": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "The bucket's own scope statement. The package carries a scope_summary for the whole package; a learner reading one bucket needs that bucket's.",
+          "properties": {
+            "covers": {
+              "type": "string",
+              "minLength": 1,
+              "description": "What this bucket covers."
+            },
+            "excluded": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 0,
+              "description": "What is deliberately excluded. An exclusion stated here is a decision; an exclusion nobody wrote down is a gap."
+            },
+            "extension_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 0,
+              "description": "What is carried as labelled extension rather than excluded, by extension id."
+            }
+          },
+          "required": [
+            "covers"
+          ]
+        },
+        "primary_representation_ref": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The one figure that orients the whole bucket, for the compact notes. Declared rather than inferred: picking the first representation, or the one with the most instances, would make the map of a bucket depend on authoring order. A bucket with representations and no declared primary is a finding, because the omission is then visible instead of silent."
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "status",
+        "source_refs",
+        "evidence_refs",
+        "extensions",
+        "title",
+        "topic",
+        "intrinsic_badge",
+        "badge_reason",
+        "depth_overlay",
+        "curriculum_mappings",
+        "prerequisite_refs"
+      ]
+    },
+    "microtopic": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "DISCOVERED",
+            "CANDIDATE",
+            "REVIEWED",
+            "CURATED",
+            "DISPUTED",
+            "STALE",
+            "RETIRED"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "extensions": {
+          "type": "object",
+          "description": "Namespaced subject extensions; no scientific authority is inferred."
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "bucket_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "primary_capability_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "intrinsic_badge": {
+          "enum": [
+            "EASY",
+            "MEDIUM",
+            "HARD"
+          ]
+        },
+        "badge_reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "entry_assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "inferential_jump": {
+          "type": "string",
+          "minLength": 1
+        },
+        "teaching_path": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/step"
+          },
+          "minItems": 1
+        },
+        "relation_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "representation_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "question_family_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "misconceptions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "wrong_idea": {
+                "type": "string",
+                "minLength": 1
+              },
+              "diagnostic_prompt": {
+                "type": "string",
+                "minLength": 1
+              },
+              "repair": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "wrong_idea",
+              "diagnostic_prompt",
+              "repair"
+            ]
+          },
+          "minItems": 1
+        },
+        "exit_task": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "prompt": {
+              "type": "string",
+              "minLength": 1
+            },
+            "source_ref": {
+              "type": "string",
+              "minLength": 1
+            },
+            "answer": {
+              "$ref": "#/$defs/answer"
+            },
+            "oracle": {
+              "description": "How this exit answer is stood behind. Exactly one of: `verification`, naming a subject validator and binding its inputs to declared data; `held_by`, naming the known issue that explains why no oracle exists yet; or `no_numeric_claim`, saying why the answer asserts no computed value. Silence is not an option, because the exit answer is what a learner measures themselves against.",
+              "type": "object",
+              "minProperties": 1,
+              "maxProperties": 1,
+              "properties": {
+                "verification": {
+                  "type": "object",
+                  "required": [
+                    "validator_id",
+                    "bindings"
+                  ],
+                  "properties": {
+                    "validator_id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "bindings": {
+                      "type": "object",
+                      "additionalProperties": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  },
+                  "additionalProperties": {
+                    "type": [
+                      "string",
+                      "number",
+                      "boolean"
+                    ]
+                  }
+                },
+                "held_by": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "no_numeric_claim": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "prompt",
+            "source_ref",
+            "answer",
+            "oracle"
+          ]
+        },
+        "research_contribution": {
+          "type": "string",
+          "minLength": 1
+        },
+        "prerequisite_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "description": "Capability ids this microtopic assumes. A capability of another subject is written '<Subject>:<capability id>' (e.g. 'Mathematics:CAP-MATH-DERIVATIVE-RATE'); package_depth.py emits TEACH_PREREQUISITE_BRIDGE for any ref no library teaches."
+        },
+        "lineage": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "relation": {
+                "enum": [
+                  "SUPERSEDES",
+                  "SPLIT_FROM",
+                  "MERGED_FROM"
+                ]
+              },
+              "target_ref": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "relation",
+              "target_ref"
+            ]
+          },
+          "minItems": 0
+        },
+        "elicitation": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "The self-tutor cycle. Four of its six steps live here; diagnose and repair are misconceptions[].wrong_idea, .diagnostic_prompt and .repair, which already hold the same claim for the declarative product. A second home for one truth is the defect the authority gate exists to close.",
+          "properties": {
+            "predict": {
+              "type": "object",
+              "additionalProperties": false,
+              "description": "Pose the decision before revealing anything.",
+              "properties": {
+                "prompt": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "The decision, posed so a learner can commit to an answer."
+                },
+                "defensible_answer": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "The answer that commitment is judged against. A prompt with no defensible answer is a musing, not a prediction."
+                }
+              },
+              "required": [
+                "prompt",
+                "defensible_answer"
+              ]
+            },
+            "attempt": {
+              "type": "object",
+              "additionalProperties": false,
+              "description": "What the learner produces, and how it closes without a tutor.",
+              "properties": {
+                "produces": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "What the learner should construct, draw, discriminate or explain."
+                },
+                "closure": {
+                  "enum": [
+                    "MODEL_RESPONSE",
+                    "RUBRIC",
+                    "CRITERIA"
+                  ],
+                  "description": "Which form of closure this attempt uses. Each value demands something the others do not, so that none is a synonym an author can pick to avoid work: MODEL_RESPONSE requires model_response, CRITERIA requires rubric, and RUBRIC requires rubric with accepted and rejected examples -- the spec's 'a rubric plus representative accepted and rejected answers', which is the stronger claim of the three."
+                },
+                "model_response": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Closure as one response, where one is right."
+                },
+                "rubric": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/rubric_criterion"
+                  },
+                  "minItems": 1,
+                  "description": "Closure as a rubric, where several responses are valid."
+                },
+                "accepted": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "minItems": 1,
+                  "description": "Representative responses the rubric accepts."
+                },
+                "rejected": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "minItems": 1,
+                  "description": "Representative responses it rejects. A rubric with no rejected example has not been tested against anything."
+                },
+                "task": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "prompt"
+                  ],
+                  "description": "Schema 0.2.0: the concrete reconstruction task the learner performs (a body, givens, numbers or a situation). `produces` says what the attempt should contain; `task` is what the learner is asked to do. Rendered as the Core1B attempt.",
+                  "properties": {
+                    "prompt": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "givens": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "representation_ref": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "description": "The representation of this task's own situation (its bodies and values), shown with the Core1B attempt. When absent, Core1B falls back to the first construction unit's (Core1A) figure, which depicts a different situation."
+                    },
+                    "stage_refs": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Stages of representation_ref safe to show before the attempt; default is the first stage only."
+                    },
+                    "response": {
+                      "$ref": "#/$defs/response"
+                    }
+                  }
+                }
+              },
+              "required": [
+                "produces",
+                "closure"
+              ]
+            },
+            "reconstruct": {
+              "type": "object",
+              "additionalProperties": false,
+              "description": "The correct construction reached the way a learner would reach it. Held as questions rather than statements: teaching_path is the expert's summary, and a reconstruct route made of statements is that summary under a different key, which is exactly how this product became the declarative one.",
+              "properties": {
+                "route": {
+                  "type": "array",
+                  "minItems": 1,
+                  "description": "The sequence of asks. Order is meaning: each one is answerable only once the previous has been answered.",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "ask": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "A question that moves the learner one decision forward. A sentence with a question mark on it is not an ask; the learner must be able to get it wrong."
+                      },
+                      "why_this_ask": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Why this question rather than another at this point. An author who cannot say this has ordered the route by the expert's convenience."
+                      },
+                      "from_step_ref": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "The teaching_path step this ask arrives at, where one exists. Absent means the learner's route genuinely departs from the expert's, which is why both are held."
+                      }
+                    },
+                    "required": [
+                      "ask",
+                      "why_this_ask"
+                    ]
+                  }
+                },
+                "differs_from_teaching_path": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "How the learner's route differs from the expert's construction. This is the sentence a reviewer checks the A/B claim against, so it may not restate the teaching path it claims to differ from."
+                }
+              },
+              "required": [
+                "route",
+                "differs_from_teaching_path"
+              ]
+            },
+            "boundary_test": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "prompt": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "A limiting case, reversal or edge condition."
+                },
+                "confirms": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "What passing it establishes, stated so that a recall question cannot be passed off as a boundary test."
+                },
+                "answer": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "What passing it looks like. The shared closure invariant has no exception for the last prompt in a cycle."
+                }
+              },
+              "required": [
+                "prompt",
+                "answer",
+                "confirms"
+              ]
+            }
+          },
+          "required": [
+            "predict",
+            "attempt",
+            "reconstruct",
+            "boundary_test"
+          ]
+        },
+        "construction_units": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/construction_unit"
+          }
+        },
+        "compact_anchor": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "prompt",
+            "result"
+          ],
+          "description": "Schema 0.2.0: the Core1 compact anchor, a one-line instance of the governing relation that makes the map usable before Core1A.",
+          "properties": {
+            "prompt": {
+              "type": "string",
+              "minLength": 1
+            },
+            "result": {
+              "type": "string",
+              "minLength": 1
+            },
+            "representation_ref": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "The representation of this compact anchor's own situation, shown on the Core1 map. When absent, Core1 falls back to the microtopic's first representation_refs entry, which is often shared across microtopics."
+            }
+          }
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "status",
+        "source_refs",
+        "evidence_refs",
+        "extensions",
+        "title",
+        "bucket_id",
+        "primary_capability_ref",
+        "intrinsic_badge",
+        "badge_reason",
+        "entry_assumptions",
+        "inferential_jump",
+        "teaching_path",
+        "relation_refs",
+        "representation_refs",
+        "question_family_refs",
+        "misconceptions",
+        "exit_task",
+        "research_contribution",
+        "prerequisite_refs",
+        "lineage"
+      ]
+    },
+    "relation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "DISCOVERED",
+            "CANDIDATE",
+            "REVIEWED",
+            "CURATED",
+            "DISPUTED",
+            "STALE",
+            "RETIRED"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "extensions": {
+          "type": "object",
+          "description": "Namespaced subject extensions; no scientific authority is inferred."
+        },
+        "expression": {
+          "type": "string",
+          "minLength": 1
+        },
+        "meaning": {
+          "type": "string",
+          "minLength": 1
+        },
+        "symbols": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "symbol": {
+                "type": "string",
+                "minLength": 1
+              },
+              "meaning": {
+                "type": "string",
+                "minLength": 1
+              },
+              "unit_or_domain": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "symbol",
+              "meaning",
+              "unit_or_domain"
+            ]
+          },
+          "minItems": 1
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "derivation": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/step"
+          },
+          "minItems": 1
+        },
+        "limits": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "mathml": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Restricted presentation MathML for this relation, so a product can render it without re-authoring."
+        },
+        "gate_relation_ref": {
+          "description": "The engineering gate relation this is a bound copy of. Subject truth is owned by the gate registry; the library holds a copy so the compiler can reach it, and that copy is checked against the owner. null says no gate backs this relation: that is true of a subject that declares no gates (a sandbox, or a contract-only subject), and for a subject that has gates Shared/library/authority.py reports it as GATE_RELATION_BINDING_ABSENT.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "status",
+        "source_refs",
+        "evidence_refs",
+        "extensions",
+        "expression",
+        "meaning",
+        "symbols",
+        "conditions",
+        "derivation",
+        "limits",
+        "checks",
+        "gate_relation_ref"
+      ]
+    },
+    "representation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "DISCOVERED",
+            "CANDIDATE",
+            "REVIEWED",
+            "CURATED",
+            "DISPUTED",
+            "STALE",
+            "RETIRED"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "extensions": {
+          "type": "object",
+          "description": "Namespaced subject extensions; no scientific authority is inferred."
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "purpose": {
+          "type": "string",
+          "minLength": 1
+        },
+        "required_elements": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "relation_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "read_order": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "instance_constraints": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "accessibility": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "misleading_alternatives": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "rendered_asset_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "scene_instances": {
+          "description": "Concrete figures satisfying this representation. Everything above states what a figure of this kind must show; an instance states one actual figure, bound to the data it draws, so the library can compile a figure instead of only requiring one.",
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/scene_instance"
+          },
+          "minItems": 0
+        },
+        "correspondence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "element": {
+                "type": "string",
+                "minLength": 1,
+                "description": "The part of the picture, named as required_elements names it."
+              },
+              "symbol": {
+                "type": "string",
+                "minLength": 1,
+                "description": "The symbol it stands for, as the governing relation writes it."
+              },
+              "in_words": {
+                "type": "string",
+                "minLength": 1,
+                "description": "The same thing said in words, which is the third leg of the bridge."
+              }
+            },
+            "required": [
+              "element",
+              "symbol",
+              "in_words"
+            ]
+          },
+          "minItems": 0,
+          "description": "The representation bridge. required_elements says what the picture must contain and the relation's symbols say what the algebra means, but nothing bound one to the other, so the correspondence a learner must make was asserted rather than held. Naming all three legs is what makes it explicit in both directions rather than a caption pointing one way."
+        },
+        "interactive_resource_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "description": "ACTIVITY resources that implement or manipulate this canonical representation. The representation remains academic authority."
+        },
+        "reveal_stages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/visual_stage"
+          },
+          "minItems": 0,
+          "description": "Ordered author-defined reveal states for progressive visual support. No global stage count is imposed."
+        },
+        "support_stage_map": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/support_stage_binding"
+          },
+          "minItems": 0,
+          "description": "Optional mapping from matrix pre-attempt support level to initial representation stage."
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "status",
+        "source_refs",
+        "evidence_refs",
+        "extensions",
+        "kind",
+        "purpose",
+        "required_elements",
+        "relation_refs",
+        "read_order",
+        "instance_constraints",
+        "accessibility",
+        "misleading_alternatives",
+        "rendered_asset_refs",
+        "scene_instances"
+      ]
+    },
+    "scene_instance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cores": {
+          "description": "Which learner products this figure appears in.",
+          "type": "array",
+          "items": {
+            "enum": [
+              "CORE1",
+              "CORE2",
+              "CORE1A",
+              "CORE1B",
+              "CORE2A",
+              "CORE2B"
+            ]
+          },
+          "minItems": 1
+        },
+        "microtopic_ref": {
+          "description": "The microtopic this figure carries. Its obligation is what the compiled figure block is bound to, so a figure can never float free of the teaching it serves.",
+          "type": "string",
+          "minLength": 1
+        },
+        "datum_refs": {
+          "description": "The data records this figure draws. A renderer may only draw values named here.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "scene": {
+          "description": "The scene passed to the subject's renderer. Beyond kind, frame and caption the engine enumerates nothing: a renderer declares its own requirements, and a schema that listed them here would have to be edited for every new representation.",
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "minLength": 1
+            },
+            "frame": {
+              "type": "string",
+              "minLength": 1
+            },
+            "caption": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "kind",
+            "frame",
+            "caption"
+          ]
+        },
+        "asset_ref": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Authored SVG for this bound scene instance. Optional for legacy topic assets; source snapshots retain their custody path."
+        },
+        "question_ref": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The question this scene is bound to, where it illustrates a question rather than a microtopic. Exactly one of microtopic_ref and question_ref carries the binding; a figure bound to neither is the decoration the role specs refuse."
+        }
+      },
+      "required": [
+        "id",
+        "cores",
+        "datum_refs",
+        "scene"
+      ],
+      "oneOf": [
+        {
+          "required": [
+            "microtopic_ref"
+          ]
+        },
+        {
+          "required": [
+            "question_ref"
+          ]
+        }
+      ]
+    },
+    "question_family": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "DISCOVERED",
+            "CANDIDATE",
+            "REVIEWED",
+            "CURATED",
+            "DISPUTED",
+            "STALE",
+            "RETIRED"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "extensions": {
+          "type": "object",
+          "description": "Namespaced subject extensions; no scientific authority is inferred."
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "capability_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "solution_structure": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "demand_dimensions": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "model_choice": {
+              "type": "string",
+              "minLength": 1
+            },
+            "representation_translation": {
+              "type": "string",
+              "minLength": 1
+            },
+            "reasoning_steps": {
+              "type": "string",
+              "minLength": 1
+            },
+            "novelty": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "model_choice",
+            "representation_translation",
+            "reasoning_steps",
+            "novelty"
+          ]
+        },
+        "safe_variations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "transfer_boundaries": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "common_wrong_routes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "item_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "context_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "description": "References application_context records. These classify the scenario/application only and do not add prerequisite or mastery semantics."
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "status",
+        "source_refs",
+        "evidence_refs",
+        "extensions",
+        "title",
+        "capability_refs",
+        "solution_structure",
+        "demand_dimensions",
+        "safe_variations",
+        "transfer_boundaries",
+        "common_wrong_routes",
+        "item_refs"
+      ]
+    },
+    "question": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "DISCOVERED",
+            "CANDIDATE",
+            "REVIEWED",
+            "CURATED",
+            "DISPUTED",
+            "STALE",
+            "RETIRED"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "extensions": {
+          "type": "object",
+          "description": "Namespaced subject extensions; no scientific authority is inferred.",
+          "properties": {
+            "grade9v3:core2_support_plan": {
+              "$ref": "#/$defs/core2_support_plan"
+            }
+          }
+        },
+        "origin": {
+          "enum": [
+            "ORIGINAL",
+            "ADAPTED",
+            "AUTHORED"
+          ]
+        },
+        "origin_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "original_identifier": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stem": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subparts": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "figure_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "response": {
+          "$ref": "#/$defs/response"
+        },
+        "answer": {
+          "$ref": "#/$defs/answer"
+        },
+        "primary_capability_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "secondary_capability_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "family_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "adaptation": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "parent_ref": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "changed_fields": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "minItems": 1
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "parent_ref",
+                "changed_fields",
+                "reason"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "exposure": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "core": {
+                "enum": [
+                  "CORE1",
+                  "CORE2",
+                  "CORE1A",
+                  "CORE1B",
+                  "CORE2A",
+                  "CORE2B"
+                ]
+              },
+              "role": {
+                "type": "string",
+                "minLength": 1
+              },
+              "artifact_ref": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "core",
+              "role",
+              "artifact_ref"
+            ]
+          },
+          "minItems": 0
+        },
+        "verification": {
+          "type": "object",
+          "additionalProperties": {
+            "type": [
+              "string",
+              "number",
+              "boolean"
+            ]
+          },
+          "required": [
+            "validator_id",
+            "bindings"
+          ],
+          "description": "Optional. Names a subject validator family and binds its inputs to datum ids. Absence means no oracle exists, not that the answer is wrong. Additional keys are subject-declared preconditions, passed through to the validator unchanged.",
+          "properties": {
+            "validator_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "bindings": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "model": {
+              "type": "string",
+              "minLength": 1
+            },
+            "axis_convention": {
+              "type": "string",
+              "minLength": 1
+            },
+            "result": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "hints": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "description": "The hint as the learner reads it."
+              },
+              "reveals": {
+                "enum": [
+                  "CONCEPT",
+                  "METHOD",
+                  "ANSWER"
+                ],
+                "description": "How far this hint goes. Declared rather than inferred, so that a hint handing over the answer is detectable: an ANSWER hint before the last position defeats the question it is attached to, and for a transfer task a hint revealing the model choice defeats the task itself."
+              },
+              "visual_ref": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Optional canonical representation used by this hint."
+              },
+              "visual_stage_ref": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Optional reveal-stage id within visual_ref; controls how much of canonical visual truth is shown after difficulty."
+              }
+            },
+            "required": [
+              "text",
+              "reveals"
+            ],
+            "dependentRequired": {
+              "visual_ref": [
+                "visual_stage_ref"
+              ],
+              "visual_stage_ref": [
+                "visual_ref"
+              ]
+            }
+          },
+          "minItems": 0,
+          "description": "The ladder of source/question hints, in order. Order is meaning here -- Core2 preserves source ordering and custody. Authored Core2/Core2A/Core2B pedagogy belongs in scaffolds[] so source support and authored support are not conflated."
+        },
+        "scaffolds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/scaffold"
+          },
+          "minItems": 0,
+          "description": "Optional authored Core2/Core2A/Core2B pedagogical support, separate from source/question hints[]. Core2 Prompt/Reveal metadata may use prompt + learner_stage; Core2B help must preserve the transfer-protected decision."
+        },
+        "transfer": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "The changed demand this task assesses, relative to prior exposure. A task with no transfer block is same-family practice, which is honest; a cover story declared as transfer is what the exposure audit exists to dispute.",
+          "properties": {
+            "dimension": {
+              "enum": [
+                "model_choice",
+                "novelty",
+                "reasoning_steps",
+                "representation_translation"
+              ],
+              "description": "Which dimension of demand changes. These are question_family.demand_dimensions' own keys: the family says how much each dimension demands, and this says which one this task moves, in the same words. A cover story is not a dimension, and an enum is what makes that refusable rather than arguable."
+            },
+            "statement": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The changed demand, stated explicitly, so a reviewer can check the transfer claim rather than take the label."
+            },
+            "builds_on": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1,
+              "description": "Exposure lineage: the question or microtopic ids the learner has already seen that this builds on. A transfer claim with no lineage is a claim about a learner nobody has described."
+            },
+            "protected_move_ref": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Stable reasoning-move id for the changed learner decision that pre-attempt help must not hand over."
+            },
+            "invariant": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Schema 0.2.0: what stays valid from the prior exposure (builds_on) while `statement` changes; the learner-facing lineage_continuity_check pairs the two."
+            },
+            "novelty": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "checked_against",
+                "why_new"
+              ],
+              "description": "Schema 0.2.0: the author's check that this transfer is not a restatement of something the learner has already seen answered (a Core1A worked anchor or diagnose/repair, a Core1B boundary test, a Core2A item). The verifier confirms it.",
+              "properties": {
+                "checked_against": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "why_new": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "required": [
+            "dimension",
+            "statement",
+            "builds_on"
+          ]
+        },
+        "repair_ref": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The teaching_path step or misconception this task's predictable failure routes back to. A repair route that points at a whole microtopic is a reading assignment; the spec asks for the specific construction that addresses the failure."
+        },
+        "context_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "description": "References application_context records. These classify the scenario/application only and do not add prerequisite or mastery semantics."
+        },
+        "hint_ladder": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/hint_rung"
+          }
+        },
+        "representation_roles": {
+          "$ref": "#/$defs/representation_roles"
+        },
+        "independent_check": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/independent_check"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Schema 0.2.0: a structured independent check (with its check_type) when answer.check does not already state it. Not copied from answer.check by migration."
+        },
+        "failure_signal": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The observable sign that this item's learner took the tempting wrong route."
+        },
+        "family_exposure": {
+          "$ref": "#/$defs/family_exposure"
+        },
+        "learner_question_type": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Canonical learner response/question type. Values are governed by Shared/vocabularies/learner-question-metadata.v1.json and must be authored, never inferred from role, stem wording or option shape."
+        },
+        "difficulty": {
+          "$ref": "#/$defs/question_difficulty",
+          "description": "Canonical authored-question difficulty using the same D1-D4 component model as the competitive-exam bank. Optional at schema level for migration; selected learner products fail closed when it is required and absent."
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "status",
+        "source_refs",
+        "evidence_refs",
+        "extensions",
+        "origin",
+        "origin_ref",
+        "original_identifier",
+        "stem",
+        "subparts",
+        "options",
+        "conditions",
+        "figure_refs",
+        "answer",
+        "primary_capability_ref",
+        "secondary_capability_refs",
+        "family_ref",
+        "adaptation",
+        "exposure"
+      ]
+    },
+    "route": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "DISCOVERED",
+            "CANDIDATE",
+            "REVIEWED",
+            "CURATED",
+            "DISPUTED",
+            "STALE",
+            "RETIRED"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "extensions": {
+          "type": "object",
+          "description": "Namespaced subject extensions; no scientific authority is inferred."
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cores": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "CORE1A",
+              "CORE1B",
+              "CORE2A",
+              "CORE2B"
+            ]
+          },
+          "minItems": 1
+        },
+        "microtopic_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "entry_needs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "learner_actions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "help_plan": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "reveal_plan": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_preferences": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "resource_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "purpose": {
+                "type": "string",
+                "minLength": 1
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "resource_ref",
+              "purpose",
+              "reason"
+            ]
+          },
+          "minItems": 0
+        },
+        "when_not_suitable": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "practice_profile_ref": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "status",
+        "source_refs",
+        "evidence_refs",
+        "extensions",
+        "title",
+        "cores",
+        "microtopic_refs",
+        "entry_needs",
+        "learner_actions",
+        "help_plan",
+        "reveal_plan",
+        "source_preferences",
+        "when_not_suitable",
+        "practice_profile_ref"
+      ]
+    },
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "knowledge_percentage": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "provenance": {
+          "enum": [
+            "DIAGNOSTIC",
+            "OWNER_ESTIMATE",
+            "SYNTHETIC_TEST",
+            "UNKNOWN"
+          ]
+        },
+        "capability_scope": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "observation_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "owner_waiver": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "instruction_ref": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "instruction": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "instruction_ref",
+                "instruction"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "support_plan": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "measured_fit_claim": {
+          "const": false
+        },
+        "support_posture": {
+          "enum": [
+            "SIMPLEST_FOUNDATION",
+            "BRIDGE_FIRST",
+            "STANDARD",
+            "MINIMAL"
+          ],
+          "description": "How much scaffolding this profile standing-instructs. Not the same as practice_control.purpose, which is what a run is for; the two shared the name `purpose`, used different vocabularies, and neither checked the other."
+        }
+      },
+      "required": [
+        "capability_scope",
+        "id",
+        "knowledge_percentage",
+        "measured_fit_claim",
+        "observation_refs",
+        "owner_waiver",
+        "provenance",
+        "support_plan",
+        "support_posture"
+      ]
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "method": {
+          "type": "string",
+          "minLength": 1
+        },
+        "observation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "result": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            "NOT_RUN",
+            "UNKNOWN",
+            "STALE"
+          ]
+        },
+        "producer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "independence": {
+          "type": "string",
+          "minLength": 1
+        },
+        "limitation": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "target_ref",
+        "target_version",
+        "method",
+        "observation",
+        "result",
+        "producer",
+        "independence",
+        "limitation"
+      ]
+    },
+    "issue": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "affected_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "classification": {
+          "enum": [
+            "ADVISORY",
+            "BLOCKING_DEFECT",
+            "CAPABILITY_LIMIT",
+            "SCIENTIFIC_REVIEW_REQUIRED",
+            "SOURCE_CUSTODY_HELD"
+          ],
+          "description": "SOURCE_CUSTODY_HELD is Core2's hold: the bucket has no frozen or authorised question corpus, next_action names what acquisition would close it, and affected_refs names the bucket. It is a classification rather than a bucket field because a hold is a claim that must say why it is not backed, which is what known_issues is for."
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "next_action": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "affected_refs",
+        "classification",
+        "description",
+        "next_action"
+      ]
+    },
+    "datum": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "A governed quantitative or symbolic value a product may bind to. Without this, the numbers a lesson uses live in a build script and the library cannot drive production. A datum carries its own provenance; it is evidence, not decoration.",
+      "required": [
+        "id",
+        "version",
+        "status",
+        "source_refs",
+        "evidence_refs",
+        "extensions",
+        "kind",
+        "value",
+        "locator",
+        "meaning"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "DISCOVERED",
+            "CANDIDATE",
+            "REVIEWED",
+            "CURATED",
+            "DISPUTED",
+            "STALE",
+            "RETIRED"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "extensions": {
+          "type": "object",
+          "description": "Namespaced subject extensions; no scientific authority is inferred."
+        },
+        "kind": {
+          "enum": [
+            "DATUM",
+            "EQUATION"
+          ],
+          "description": "DATUM carries a number with a unit; EQUATION carries a restricted presentation-MathML string."
+        },
+        "value": {
+          "description": "A finite number for DATUM, a MathML string for EQUATION."
+        },
+        "unit": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Required for DATUM. A number without a unit is not a governed physical value."
+        },
+        "symbol": {
+          "type": "string",
+          "minLength": 1
+        },
+        "meaning": {
+          "type": "string",
+          "minLength": 1
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Where this value came from: a source location, or an explicit author-created marker."
+        },
+        "relation_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "rubric_criterion": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "criterion": {
+          "type": "string",
+          "minLength": 1,
+          "description": "What the response must show."
+        },
+        "evidence_of": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The understanding that criterion is evidence of, so a rubric line cannot be a restatement of the task."
+        }
+      },
+      "required": [
+        "criterion",
+        "evidence_of"
+      ]
+    },
+    "application_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "DISCOVERED",
+            "CANDIDATE",
+            "REVIEWED",
+            "CURATED",
+            "DISPUTED",
+            "STALE",
+            "RETIRED"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "extensions": {
+          "type": "object",
+          "description": "Namespaced subject extensions; no scientific authority is inferred."
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "invariants": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "variation_dimensions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "name",
+              "description"
+            ]
+          },
+          "minItems": 0
+        },
+        "task_objectives": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "scope_limits": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "status",
+        "source_refs",
+        "evidence_refs",
+        "extensions",
+        "title",
+        "description",
+        "invariants",
+        "variation_dimensions",
+        "task_objectives",
+        "scope_limits"
+      ]
+    },
+    "visual_stage": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "One author-defined reveal state of a canonical representation. Array order is escalation order; ids are addressable so hints and support mappings can reference stages without copying visual truth.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "purpose": {
+          "type": "string",
+          "minLength": 1
+        },
+        "visible_elements": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "purpose",
+        "visible_elements"
+      ]
+    },
+    "support_stage_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Maps one matrix starting-support level to the representation stage visible before the learner attempts. This remains separate from post-failure hint depth.",
+      "properties": {
+        "support_level": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "visual_stage_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "support_level",
+        "visual_stage_ref"
+      ]
+    },
+    "construction_unit": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "One distinct decision/event of a microtopic's construction, taught as its own unit (Core1A) and reconstructed in Core1B.",
+      "required": [
+        "id",
+        "step_refs"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^CU-[A-Z0-9-]+$"
+        },
+        "extensions": {
+          "type": "object",
+          "description": "Namespaced unit-level extensions. Repeated blueprint applicability may use extensions['grade9v3:component_waivers'] with the same {COMPONENT_ID: reason} contract as a top-level record."
+        },
+        "decision": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The move the learner must make in this unit, in words."
+        },
+        "step_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "description": "teaching_path step ids this unit covers, in order."
+        },
+        "representation_ref": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Representation that stages this unit."
+        },
+        "reveal_stage_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "That representation's reveal stages used by this unit, in order."
+        },
+        "worked_anchor_ref": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Question (exposure CORE1A) whose route exercises this unit's move."
+        },
+        "bank_anchor_ref": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1,
+          "description": "A question of the product's bank (an owner-supplied or exam question, not a question of this package) that this unit works through as its worked example: the page shows the question as its owner wrote it with its verified route. Resolved when the product is built, so a package does not carry a copy of the question. Use it for the question the unit builds toward; use worked_anchor_ref for a question the package authors itself."
+        },
+        "crux_question_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "description": "Bank questions whose crux this unit builds: the move a learner is most likely to miss in each. The toughest question of a set must be named here by a unit of the concept it belongs to; its difficulty band does not prescribe the unit's component or panel count."
+        },
+        "crux_step_ref": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The teaching_path step of this unit (one of its step_refs) that builds the move named questions in crux_question_refs turn on. The page marks that step, so a reader can see where the unit does the work the hard question needs."
+        },
+        "misconception_indexes": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "description": "Indexes into microtopic.misconceptions (wrong path, diagnose, repair)."
+        },
+        "relation_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "The microtopic's relations this unit uses, shown as the unit's own equation card. Absent: the first unit shows all of the microtopic's relations."
+        },
+        "independent_checks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/independent_check"
+          }
+        },
+        "migrated_from": {
+          "type": "string",
+          "description": "Set by package_migrate.py when the unit was derived mechanically (e.g. 'teaching_path'); cleared when an author reviews it."
+        },
+        "decision_from": {
+          "enum": [
+            "inferential_jump"
+          ],
+          "description": "Set instead of `decision` when the unit's decision is the microtopic's own field (migration); one source of truth, no copied text."
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "decision"
+          ]
+        },
+        {
+          "required": [
+            "decision_from"
+          ]
+        }
+      ]
+    },
+    "independent_check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "statement"
+      ],
+      "properties": {
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "check_type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "From <Subject>/adapter/QualityVocabulary.json check_types."
+        },
+        "role": {
+          "enum": [
+            "CHECK",
+            "APPLY",
+            "CONNECT"
+          ],
+          "description": "Optional semantic role of this intermediate check. CHECK recalls the idea, APPLY uses it on a small case, and CONNECT links onward; these are available labels, not a required three-item sequence."
+        }
+      }
+    },
+    "hint_rung": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "order",
+        "purpose",
+        "provenance"
+      ],
+      "properties": {
+        "order": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "purpose": {
+          "enum": [
+            "ORIENT",
+            "REPRESENT",
+            "FIRST_RELATION",
+            "CONNECT",
+            "CHECK",
+            "ANSWER"
+          ],
+          "description": "What the rung does for the learner; a ladder climbs from ORIENT to FIRST_RELATION before any ANSWER."
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provenance": {
+          "enum": [
+            "SOURCE_HINT",
+            "AUTHORED_HINT",
+            "AUTHORED_SCAFFOLD"
+          ]
+        },
+        "supports_move_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "visual_stage_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "from": {
+          "type": "string",
+          "pattern": "^(hints|scaffolds)\\[[0-9]+\\]$",
+          "description": "The legacy hint or scaffold this rung is; its text is read from there (no copied text)."
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "text"
+          ]
+        },
+        {
+          "required": [
+            "from"
+          ]
+        }
+      ]
+    },
+    "representation_roles": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "initial_ref": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Shown with the stem, before any attempt (Core2A initial_representation)."
+        },
+        "safe_ref": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Shown before commitment; must not show the protected move (Core2B)."
+        },
+        "bound_ref": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Shown with support or the solution (may show the move)."
+        },
+        "stage_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "family_exposure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "family_ref"
+      ],
+      "properties": {
+        "family_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "closure": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "What this item establishes for the family, which a later transfer (Core2B) builds on."
+        }
+      }
+    },
+    "question_difficulty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "band",
+        "score",
+        "components",
+        "basis"
+      ],
+      "properties": {
+        "band": {
+          "enum": [
+            "D1",
+            "D2",
+            "D3",
+            "D4"
+          ],
+          "description": "Derived D-band. Must match the component sum through Shared/vocabularies/learner-question-metadata.v1.json; consumers must not treat an intended cohort as authority for this field."
+        },
+        "requested_band": {
+          "enum": [
+            "D1",
+            "D2",
+            "D3",
+            "D4"
+          ],
+          "description": "Optional planning/stress-cohort target. It may differ from band and is never used to select the QRT cell."
+        },
+        "score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "components": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "concept_model_selection",
+            "representation_translation",
+            "reasoning_chain_length",
+            "algebra_computational_load",
+            "trap_exception_sensitivity"
+          ],
+          "properties": {
+            "concept_model_selection": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 2
+            },
+            "representation_translation": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 2
+            },
+            "reasoning_chain_length": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 2
+            },
+            "algebra_computational_load": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 2
+            },
+            "trap_exception_sensitivity": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 2
+            }
+          }
+        },
+        "basis": {
+          "type": "string",
+          "minLength": 1
+        },
+        "component_evidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Optional question-specific evidence for the five authored 0–2 difficulty components. When present, every component must be justified against Shared/vocabularies/learner-question-metadata.v1.json question_difficulty_component_rubric. Omission preserves legacy records; acceptance policy may require it for newly adjudicated classifications.",
+          "required": [
+            "concept_model_selection",
+            "representation_translation",
+            "reasoning_chain_length",
+            "algebra_computational_load",
+            "trap_exception_sensitivity"
+          ],
+          "properties": {
+            "concept_model_selection": {
+              "type": "string",
+              "minLength": 1
+            },
+            "representation_translation": {
+              "type": "string",
+              "minLength": 1
+            },
+            "reasoning_chain_length": {
+              "type": "string",
+              "minLength": 1
+            },
+            "algebra_computational_load": {
+              "type": "string",
+              "minLength": 1
+            },
+            "trap_exception_sensitivity": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "core2_support_plan": {
+      "type": "object",
+      "properties": {
+        "protected_move_refs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "support_completions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "support_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "completed_move_refs": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "availability": {
+                "enum": [
+                  "PRE_ATTEMPT_SAFE",
+                  "AFTER_ATTEMPT",
+                  "POST_SOLUTION"
+                ],
+                "description": "Optional disclosure boundary for this authored completion. PRE_ATTEMPT_SAFE is allowed before commitment, AFTER_ATTEMPT becomes available after a valid learner commitment without revealing the full solution, and POST_SOLUTION stays inside the solution disclosure. Omission preserves legacy behavior."
+              }
+            },
+            "required": [
+              "support_ref",
+              "completed_move_refs"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0
+        },
+        "visuals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "representation_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "instance_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "stages": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "stage_ref": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "completed_move_refs": {
+                      "type": "array",
+                      "uniqueItems": true,
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "availability": {
+                      "enum": [
+                        "PRE_ATTEMPT_SAFE",
+                        "AFTER_ATTEMPT",
+                        "POST_SOLUTION"
+                      ],
+                      "description": "Optional disclosure boundary for this authored completion. PRE_ATTEMPT_SAFE is allowed before commitment, AFTER_ATTEMPT becomes available after a valid learner commitment without revealing the full solution, and POST_SOLUTION stays inside the solution disclosure. Omission preserves legacy behavior."
+                    }
+                  },
+                  "required": [
+                    "stage_ref",
+                    "completed_move_refs"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "representation_ref",
+              "instance_ref",
+              "stages"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "protected_move_refs"
+      ],
+      "additionalProperties": false,
+      "description": "Opt-in links to existing question reasoning moves, support rows and bound visual stages. Availability may distinguish pre-attempt-safe, after-attempt support, and solution-only disclosure. Omitted availability preserves legacy behavior: support completing protected work remains solution-only. Unlisted support retains its existing reveal semantics; authors must record completion honestly."
+    }
+  }
+}

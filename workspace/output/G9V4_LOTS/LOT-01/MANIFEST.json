@@ -1,0 +1,55 @@
+{
+  "lot_id": "LOT-01",
+  "title": "Grade9 v4.0 — Lot 01 Single-Question Gated Source Qualification: EX-M39 (Documentation Repaired)",
+  "timestamp_utc": "2026-11-01T08:58:00Z",
+  "disposition": "PARTIAL (NTA_OPTION_TEXT_BINDING_NOT_VERIFIED) -> HOLD (Academic Admission & Learner Card Authoring Blocked)",
+  "active_question": {
+    "source_id": "EX-M39",
+    "registry_index": 12,
+    "task_identity": "Q-ID-12",
+    "paper": "JEE Main 2024 (Online) 27th January Evening Shift (Shift 2)",
+    "stem_sha256": "cfa7368ff62d1c68f2fe15fa57659bb29d2110c950c45da62fcb5e7d598b5071",
+    "stem_length": 228,
+    "scope": "PREREQUISITE_BRIDGE",
+    "scope_role": "Vertical circular motion / swing acceleration (circular dynamics bridge)",
+    "official_key_status": "PARTIAL (NTA_OPTION_TEXT_BINDING_NOT_VERIFIED)",
+    "academic_admission": "NOT_ADMITTED"
+  },
+  "source_chain_audit": {
+    "link_1_exam_sitting": "SUPPORTED",
+    "link_2_nta_question_id": "THIRD_PARTY_ID_MAPPING_FOUND",
+    "link_2_locator": "Matrix Academy, JEE Main 27-01-2024 Shift 2 Physics, p. 4, Q8: https://www.matrixedu.in/assets/default/physics/27_jan_shift2_2024.pdf (NTA Question ID 533543498)",
+    "dropped_question_533543501": "COUNTEREVIDENCED (Matrix Q6 associates 533543501 Drop with separate bullet-penetration problem)",
+    "link_3_nta_final_key": "VERIFIED_FOR_GIVEN_ID",
+    "link_3_locator": "NTA Final Answer Key Notice 12 Feb 2024, 27 Jan S2 Physics, p. 2: https://jeemain.nta.ac.in/images/Final_Answer_Key_P1_12022024.pdf (533543498 -> Option ID 5335431726)",
+    "link_4_option_text_binding": "PARTIAL_NTA_OPTION_TEXT_BINDING_NOT_VERIFIED",
+    "link_4_finding": "Matrix lists answer as Choice (1); extract lists as Choice (B); option IDs per choice not printed; authentic candidate response sheet needed to bind option ID 5335431726 to 2 tan^-1(1/2)",
+    "overall_verdict": "PARTIAL (NTA_OPTION_TEXT_BINDING_NOT_VERIFIED)"
+  },
+  "academic_gates": {
+    "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+    "source_chain_gate": "HOLD:NTA_OPTION_TEXT_BINDING_NOT_VERIFIED",
+    "scope_gate": "HOLD:SCOPE_AUTHORIZATION",
+    "adapter_gate": "HOLD:ADAPTER_PIN",
+    "pr_base_gate": "HOLD:BASE_NOT_READY",
+    "learner_card_construction": "BLOCKED"
+  },
+  "files": [
+    "review/source-gate.html",
+    "review/verify_source_gate_viewport.js",
+    "SOURCE_INVESTIGATION_REPORT.md",
+    "LOT01_TEST.log",
+    "MANIFEST.json",
+    "historical/HISTORICAL_R1_SOURCE_CHECK.md"
+  ],
+  "historical_references": {
+    "historical/HISTORICAL_R1_SOURCE_CHECK.md": {
+      "status": "SUPERSEDED",
+      "superseded_by": "SOURCE_INVESTIGATION_REPORT.md",
+      "superseded_claims": [
+        "Unmapped NTA Question ID (superseded by Matrix Academy Q8 -> 533543498)",
+        "Unruled dropped Question ID 533543501 (superseded by Matrix Academy Q6 associating 533543501 with bullet problem)"
+      ]
+    }
+  }
+}

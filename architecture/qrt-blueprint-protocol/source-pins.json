@@ -1,0 +1,56 @@
+{
+  "schema": "g9v4-qrt-blueprint-source-pins/v1",
+  "as_of": "2026-11-03",
+  "authority": "AUTHOR_EXPOSED_ENGINEERING_REFERENCE_ONLY__NOT_OWNER_APPROVAL",
+  "scope": "Pinned documentary inputs for QRT×Blueprint training fixtures. Exact Git blob SHA, not SHA-256. Update pins only after deliberately auditing changed inputs.",
+  "sources": {
+    "question_reader": {
+      "path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+      "git_blob_sha": "cd7cb5c705ce12b0f97edee213be2afedc04abb1",
+      "record_count": 74,
+      "proposed_d3": 17,
+      "proposed_d4": 5,
+      "admitted": 0
+    },
+    "blueprint": {
+      "path": "templates/physics-blueprint/physics-blueprint.D3-D4.json",
+      "git_blob_sha": "700dafcbe86d76442637bcf214eeb544497cf4ea",
+      "version": "0.2.0",
+      "status": "DRAFT_OWNER_REVIEW",
+      "cells": 14
+    },
+    "qrt_b07": {
+      "path": "preview/batches/b07-qrt-evidence.json",
+      "git_blob_sha": "5a1eaa5eca44c13c9f5034ab5856af6bb21852b5",
+      "recorded_d2_first_pass": 4,
+      "contested": 1,
+      "admitted": 0
+    },
+    "pilot_21": {
+      "path": "WPE_Source_to_Core1A_Concept/evidence/RECEIVED_selection_21_places.json",
+      "git_blob_sha": "531a5027da2649310b4660e9e812b774eb883de9",
+      "places": 21,
+      "pending": 14,
+      "vacant": 7,
+      "admitted": 0
+    },
+    "reasoning_routes": {
+      "path": "physics/wpe/reasoning-paths.review.json",
+      "git_blob_sha": "f5640abfcd6684413b1102987ef5485b5a7150a7",
+      "qualification_status": "REVIEW_NAVIGATION_ONLY"
+    },
+    "learner_practice": {
+      "path": "physics/wpe/d3d4-self-tutor.review.json",
+      "git_blob_sha": "98bd01443fa3b8a8caabda7b2280fd90f730026a",
+      "interactive_constructions": 8,
+      "qualified_learner_routes": 0
+    }
+  },
+  "nonclaims": [
+    "Exact source originals still require independent custody.",
+    "Native SL1 and SL2 cannot be replaced by review-reader evidence.",
+    "Blueprint is a draft; adapter not selected.",
+    "No golden fixture is an independently sealed QRT decision.",
+    "No published native or Owner academic admission."
+  ]
+}

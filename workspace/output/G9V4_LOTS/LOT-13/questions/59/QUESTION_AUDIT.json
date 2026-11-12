@@ -1,0 +1,100 @@
+{
+  "sequence": 59,
+  "batch_sequence": 14,
+  "task_identity": "Q-ID-69",
+  "stable_id": "PHYS-WPE-LOT13-Q59",
+  "source_id": "JEE-2026-04-04-S1-Q46",
+  "lot": "LOT-13",
+  "batch": "BATCH-D",
+  "paper": "JEE Main 2026 Session 2 / 2026-04-04 / Shift 1 (Morning)",
+  "source_type": "EXAM_PAPER_TRANSCRIBED",
+  "source_custody": "VERIFIED_TEXT",
+  "stem_text": "A 1 kg block subjected to two simultaneous forces (2i^ + 3j^ + 4k^) N and (3i^ - j^ - 2k^) N is moved a distance of 25 m along (3i^ - 4j^) direction. The work done in this process is _____ J.",
+  "stem_sha256": "5ad3a190498785dd07144b65cababc08875eccd1c1fe3cae60fcfaffc2a7a27e",
+  "source_hash": "5ad3a190498785dd07144b65cababc08875eccd1c1fe3cae60fcfaffc2a7a27e",
+  "source_record_digest": "sha256:5ad3a190498785dd07144b65cababc08875eccd1c1fe3cae60fcfaffc2a7a27e",
+  "duplicate_parent": null,
+  "scope": "PRIMARY_IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "key_issuing_authority": "NTA",
+  "figure_status": "REQUIRED_RETAINED",
+  "figure_reference": null,
+  "options": null,
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "SUPERPOSED_FORCES_3D_VECTOR_WORK_DOT_PRODUCT",
+    "predicted_option": "35",
+    "derivation": "1. Resultant force: F_net = F_1 + F_2 = (2 + 3)i^ + (3 - 1)j^ + (4 - 2)k^ = (5i^ + 2j^ + 2k^) N. 2. Unit displacement vector along direction (3i^ - 4j^): u^ = (3i^ - 4j^) / sqrt(3^2 + (-4)^2) = (3i^ - 4j^) / 5. 3. Total displacement vector: s = 25 * u^ = 25 * (3i^ - 4j^) / 5 = (15i^ - 20j^) m. 4. Work done by net force: W = F_net . s = (5)(15) + (2)(-20) + (2)(0) = 75 - 40 = 35 J."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 2,
+          "evidence": "Superposition of simultaneous 3D vector forces and directional unit vector displacement projection"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Normalizing direction vector (3i^ - 4j^)/5 and scaling by distance 25 m to construct displacement vector"
+        },
+        "reasoning_chain_length": {
+          "score": 2,
+          "evidence": "Calculate resultant force F_net, calculate full displacement vector s, evaluate 3D dot product W = F_net . s"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Evaluating vector components: (5)(15) + (2)(-20) + (2)(0) = 75 - 40 = 35 J"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Remembering to normalize (3i^ - 4j^) by magnitude 5 before multiplying by 25 m"
+        }
+      },
+      "total": 7,
+      "band": "D3",
+      "prior_proposal": {
+        "source": "INITIAL_CALIBRATION",
+        "scores": "2/1/2/1/1",
+        "total": 7
+      },
+      "differences": "Initial native factor audit"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "REPRESENT"
+      ],
+      "rationale": "Applying 3D vector dot product work calculations with resultant force and directional displacement",
+      "candidate_cell": "QRT-APPLY-D3",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": {
+    "blueprint_id": "PHYS-QRT-BLUEPRINT",
+    "version": "0.2.0",
+    "sha256": "ac32dc937403cac33c76343f2e7e0dabd7c2c4a3188cb3b453ddf2576578ddf9",
+    "blueprint_cell_ref": "D3.3",
+    "topic_tag": "WPE-01-WORK",
+    "status": "PINNED_CELL_UNQUALIFIED"
+  },
+  "adapter_fit": {
+    "adapter_id": "PHYS-TOPIC-WPE",
+    "sha256": "899e61e59370a3fc5d6f73b7d8cbb65165d0782c9fba20acd83439ae441e6a9b",
+    "status": "CELL_UNQUALIFIED_ADAPTER_GAP",
+    "note": "WPE adapter defines cell D3.1 only. Target cell D3.3 requires adapter cell expansion; flagged as SPEC_GAP."
+  },
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_INDEPENDENT_REVIEW",
+  "b2_blind_status": "PENDING_BLIND_SOLVE",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (Numerical answer 35 unverified against official NTA master)",
+    "HOLD:ADAPTER_CELL_GAP (WPE adapter lacks D3.3 cell authority)",
+    "HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)"
+  ],
+  "next_action": "B2 independent source-only solve + official NTA master key reconciliation"
+}

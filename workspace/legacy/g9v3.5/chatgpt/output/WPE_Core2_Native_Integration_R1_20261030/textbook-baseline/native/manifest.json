@@ -1,0 +1,44 @@
+{
+  "schema": "product-manifest/v1",
+  "product_id": "WPE-TEXTBOOK-CORE2-R1",
+  "subject": "Physics",
+  "home_href": "../index.html",
+  "question_bank_href": "../review.html",
+  "package_refs": [
+    "D:/CodeD/g9v3.5/chatgpt/output/WPE_Textbook_Core2_R1_20261030/native/records.json"
+  ],
+  "bank_refs": [
+    "D:/CodeD/g9v3.5/chatgpt/output/WPE_Textbook_Core2_R1_20261030/native/bank.json"
+  ],
+  "output_roles": [
+    "CORE2"
+  ],
+  "selection": {
+    "microtopics": [],
+    "core2": [
+      "TB-WPE-ILL-01",
+      "TB-WPE-ILL-02",
+      "TB-WPE-ILL-03",
+      "TB-WPE-ILL-04",
+      "TB-WPE-ILL-05",
+      "TB-WPE-ILL-06",
+      "TB-WPE-ILL-11",
+      "TB-WPE-ILL-12"
+    ],
+    "core2a": [],
+    "core2b": []
+  },
+  "coverage": {
+    "omitted": {},
+    "sources": [
+      {
+        "source": "Supplied chapter extract, Illustrations 1–6 and 11–12",
+        "kind": "TEXTBOOK",
+        "questions": 8,
+        "ingested": 8,
+        "status": "INGESTED",
+        "reason": "All eight exact supplied illustrations retained; no claim about missing illustrations or examination identity."
+      }
+    ]
+  }
+}

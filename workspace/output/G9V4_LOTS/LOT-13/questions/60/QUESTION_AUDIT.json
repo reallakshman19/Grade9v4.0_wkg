@@ -1,0 +1,106 @@
+{
+  "sequence": 60,
+  "batch_sequence": 15,
+  "task_identity": "Q-ID-70",
+  "stable_id": "PHYS-WPE-LOT13-Q60",
+  "source_id": "JEE-2026-04-06-S2-Q29",
+  "lot": "LOT-13",
+  "batch": "BATCH-D",
+  "paper": "JEE Main 2026 Session 2 / 2026-04-06 / Shift 2 (Evening)",
+  "source_type": "EXAM_PAPER_TRANSCRIBED",
+  "source_custody": "VERIFIED_TEXT",
+  "stem_text": "A body of mass 1 kg moves along a straight line with a velocity v = 2x^2. The work done by the body during displacement from x = 0 to 5 m is _____ J.",
+  "stem_sha256": "4ee2f5ef155a22e2906cb7dd9fcfb0e6e4409a2e21fb691fbce58dacfec00ed3",
+  "source_hash": "4ee2f5ef155a22e2906cb7dd9fcfb0e6e4409a2e21fb691fbce58dacfec00ed3",
+  "source_record_digest": "sha256:4ee2f5ef155a22e2906cb7dd9fcfb0e6e4409a2e21fb691fbce58dacfec00ed3",
+  "duplicate_parent": null,
+  "scope": "PRIMARY_IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "key_issuing_authority": "NTA",
+  "figure_status": "REQUIRED_RETAINED",
+  "figure_reference": null,
+  "options": [
+    "6911214178: 0",
+    "6911214179: 250",
+    "6911214180: 1250",
+    "6911214181: 1000"
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "WORK_ENERGY_THEOREM_POSITION_DEPENDENT_VELOCITY",
+    "predicted_option": "6911214180: 1250",
+    "derivation": "1. At initial position x_i = 0 m: v_i = 2(0)^2 = 0 m/s, so K_i = 0 J. 2. At final position x_f = 5 m: v_f = 2(5)^2 = 50 m/s. 3. By Work-Energy Theorem: W_net = Delta K = 0.5 * m * (v_f^2 - v_i^2) = 0.5 * (1 kg) * (50^2 - 0) = 1250 J. (Alternative calculus route: F = m * v * dv/dx = 1 * (2x^2) * (4x) = 8x^3 N. W = int_0^5 8x^3 dx = [2x^4]_0^5 = 2(625) = 1250 J.) Matches option ID 6911214180."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 2,
+          "evidence": "Work-energy theorem applied to 1D motion under position-dependent velocity function v(x) = 2x^2"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Evaluating initial and final kinematic states at position boundaries x = 0 and x = 5 m"
+        },
+        "reasoning_chain_length": {
+          "score": 2,
+          "evidence": "Compute v(0) = 0, v(5) = 50 m/s, evaluate kinetic energy change W_net = 0.5 * m * (vf^2 - vi^2)"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Arithmetic evaluation: 0.5 * 1 * (50^2) = 0.5 * 2500 = 1250 J"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Evaluating work done by the body vs on the body phrasing ambiguity"
+        }
+      },
+      "total": 7,
+      "band": "D3",
+      "prior_proposal": {
+        "source": "INITIAL_CALIBRATION",
+        "scores": "2/1/2/1/1",
+        "total": 7
+      },
+      "differences": "Initial native factor audit"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "MODEL"
+      ],
+      "rationale": "Applying work-energy theorem to non-linear position-dependent velocity profile",
+      "candidate_cell": "QRT-APPLY-D3",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": {
+    "blueprint_id": "PHYS-QRT-BLUEPRINT",
+    "version": "0.2.0",
+    "sha256": "ac32dc937403cac33c76343f2e7e0dabd7c2c4a3188cb3b453ddf2576578ddf9",
+    "blueprint_cell_ref": "D3.3",
+    "topic_tag": "WPE-01-WORK",
+    "status": "PINNED_CELL_UNQUALIFIED"
+  },
+  "adapter_fit": {
+    "adapter_id": "PHYS-TOPIC-WPE",
+    "sha256": "899e61e59370a3fc5d6f73b7d8cbb65165d0782c9fba20acd83439ae441e6a9b",
+    "status": "CELL_UNQUALIFIED_ADAPTER_GAP",
+    "note": "WPE adapter defines cell D3.1 only. Target cell D3.3 requires adapter cell expansion; flagged as SPEC_GAP."
+  },
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_INDEPENDENT_REVIEW",
+  "b2_blind_status": "PENDING_BLIND_SOLVE",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (Option 6911214180 unverified against official NTA master)",
+    "HOLD:WORK_BY_VS_ON_WORDING_AMBIGUITY (Work done by vs on the body wording requires clarification)",
+    "HOLD:ADAPTER_CELL_GAP (WPE adapter lacks D3.3 cell authority)",
+    "HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)"
+  ],
+  "next_action": "B2 independent source-only solve + official NTA master key reconciliation"
+}

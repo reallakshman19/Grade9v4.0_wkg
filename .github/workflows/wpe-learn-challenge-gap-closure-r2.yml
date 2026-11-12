@@ -1,0 +1,45 @@
+name: WPE Learn Challenge Gap Closure R2 — Physics and Browser
+on:
+  pull_request:
+    paths:
+      - "physics/wpe/gap-six-stage-engine.js"
+      - "physics/wpe/gap-journeys.js"
+      - "physics/wpe/gap-journeys.html"
+      - "physics/wpe/learning-coverage-r1.json"
+      - "physics/wpe/learn-challenge-coverage.js"
+      - "physics/wpe/learn-challenge.html"
+      - "physics/wpe/question-coverage.html"
+      - "physics/wpe/reasoning-paths.html"
+      - "physics/wpe/study-bridge.html"
+      - "preview/question-status.html"
+      - "workspace/output/WPE_Core2_Consolidated_20261102/MANIFEST.review.json"
+      - "tests/test_wpe_learn_challenge_gap_closure_r2.py"
+      - "tools/wpe_learn_challenge_gap_closure_r2_ui.py"
+      - ".github/workflows/wpe-learn-challenge-gap-closure-r2.yml"
+  workflow_dispatch:
+jobs:
+  correct-physics-and-real-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install test dependencies and real Chromium
+        run: |
+          python -m pip install -e ".[dev]" playwright==1.55.0
+          python -m playwright install --with-deps chromium
+      - name: Verify five new JS modules parse
+        run: |
+          node --check physics/wpe/gap-six-stage-engine.js
+          node --check physics/wpe/gap-journeys.js
+          node --check physics/wpe/learn-challenge-coverage.js
+          node --check physics/wpe/question-coverage-r1.js
+      - name: Source identity, independent numerical models, limits and scientific ambiguities
+        run: |
+          python -m pytest -q tests/test_wpe_learn_challenge_gap_closure_r2.py tests/test_wpe_learn_challenge_coverage_r1.py
+      - name: All five distinct six-stage journeys on desktop and mobile
+        run: python tools/wpe_learn_challenge_gap_closure_r2_ui.py
+      - name: Earlier three focused journeys and complete source map remain working
+        run: python tools/wpe_learn_challenge_coverage_r1_ui.py

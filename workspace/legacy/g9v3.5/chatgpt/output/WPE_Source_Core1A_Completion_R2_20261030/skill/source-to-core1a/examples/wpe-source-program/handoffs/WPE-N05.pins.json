@@ -1,0 +1,54 @@
+{
+  "schema": "source-pin-set/v1",
+  "sources": [
+    {
+      "id": "REFERENCE",
+      "path": "sources/reference-ontology.json",
+      "sha256": "0fb53c653d7cd5b5f6e94ba5ed096278aa42f5d1429eac24981ee8dffa168acf",
+      "role": "REFERENCE_SOURCE",
+      "authority": "CANDIDATE_REFERENCE"
+    },
+    {
+      "id": "BOOK",
+      "path": "sources/book.md",
+      "sha256": "a33f19b308ea81c7eb527546e44b6bbd4b4adf26aed7116013ac01218cc1bbb8",
+      "role": "BOOK_TEXT",
+      "authority": "OWNER_LOCAL_UNAUTHENTICATED"
+    },
+    {
+      "id": "SPINE",
+      "path": "sources/spine.md",
+      "sha256": "07338e242e363becf2e55a9637d29fd178e37236fd730e5aac0a1211f1d8ecf9",
+      "role": "SYLLABUS",
+      "authority": "OWNER_LOCAL_UNAUTHENTICATED"
+    },
+    {
+      "id": "LIBRARY",
+      "path": "sources/library.json",
+      "sha256": "84fe88387e33a03bf87bf1f537bae8c447f5b86f0d77a854c899ad70f12d8258",
+      "role": "CANONICAL_CANDIDATE",
+      "authority": "CANDIDATE_REFERENCE"
+    },
+    {
+      "id": "PKG_SCHEMA",
+      "path": "sources/package.schema.json",
+      "sha256": "b645f4b5beb9132d6e38b628b1416846201d44dec16a5f04af9a252e9e891d93",
+      "role": "NATIVE_CONTRACT",
+      "authority": "LOCAL_CONTRACT"
+    },
+    {
+      "id": "SCAN-4",
+      "path": "sources/page_04.jpg",
+      "sha256": "6ca8b187415073f13a5c4638fc1dc42c4a09a7c682f663d58b384c089701257c",
+      "role": "SOURCE_SCAN",
+      "authority": "OWNER_LOCAL_UNAUTHENTICATED"
+    },
+    {
+      "id": "SCAN-6",
+      "path": "sources/page_06.jpg",
+      "sha256": "bef1126f750a833860588c49295fc50e28de5eb485b8acb5932e7a2388e5d500",
+      "role": "SOURCE_SCAN",
+      "authority": "OWNER_LOCAL_UNAUTHENTICATED"
+    }
+  ]
+}

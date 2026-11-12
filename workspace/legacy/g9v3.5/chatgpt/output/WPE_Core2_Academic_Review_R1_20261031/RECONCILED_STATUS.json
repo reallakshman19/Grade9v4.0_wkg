@@ -1,0 +1,87 @@
+{
+  "as_of_utc": "2026-10-31T10:38:57.885040+00:00",
+  "status": "PARTIAL",
+  "scope": "Four exact-task independent reviews plus official key research",
+  "coverage": {
+    "target": 21,
+    "historical_conditional_nominations": 14,
+    "historical_original_vacancies": 7,
+    "reviewed_lower_band_items": 4,
+    "remaining_unreviewed_nominations": 10,
+    "slots_without_currently_supported_D3_D4_candidate": 11,
+    "independent_admissions": 0,
+    "native_labels_changed": false,
+    "interpretation": "Working reconciliation, not a new academic admission or executed matrix edit. Ten unreviewed nominations are not ten qualified items. Historical 14/7 lineage retained."
+  },
+  "reviewed_items": [
+    {
+      "id": "EX-M62",
+      "answer": "D",
+      "operation": "APPLY",
+      "factors": [
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "total": 4,
+      "band": "D2",
+      "limits": "Net translational power/no-loss idealization; shorter MCQ derivative check. Official paper/key join open.",
+      "admitted": false
+    },
+    {
+      "id": "EX-M73",
+      "answer": "C",
+      "operation": "APPLY",
+      "factors": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "total": 3,
+      "band": "D2",
+      "limits": "Ideal/minimum lifting work via centre of mass. Arbitrary dissipative total-agent work is not determined. Official join open.",
+      "admitted": false
+    },
+    {
+      "id": "EX-M101",
+      "answer": "A",
+      "operation": "APPLY",
+      "factors": [
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "total": 4,
+      "band": "D2",
+      "limits": "Distinguish fixed-force from fixed-extension spring work. This is not cut-spring MAIN. Official join open.",
+      "admitted": false
+    },
+    {
+      "id": "WEP07-03",
+      "answer": "a,b,c,d",
+      "operation": "APPLY",
+      "factors": [
+        1,
+        0,
+        2,
+        1,
+        1
+      ],
+      "total": 5,
+      "band": "D2",
+      "limits": "NSEP2025/code61/Q57; actual paper, solution and final key agree. Source-conflict claim withdrawn.",
+      "admitted": false
+    }
+  ],
+  "source_conflict_claim": "WITHDRAWN",
+  "technical_QA": "NOT_PERFORMED_BY_THIS_ACADEMIC_REVIEW",
+  "core1a": "Ten-node preparation only; no new lesson",
+  "core1b": "NOT_STARTED",
+  "d31": "PAUSED"
+}

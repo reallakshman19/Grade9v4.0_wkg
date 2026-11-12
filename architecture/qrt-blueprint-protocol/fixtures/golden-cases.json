@@ -1,0 +1,541 @@
+{
+  "schema": "g9v4-qrt-blueprint-golden-cases/v1",
+  "source_authority": "AUTHOR_EXPOSED_DOCUMENTARY_EXAMPLES_NOT_BLIND_QRT",
+  "as_of": "2026-11-03",
+  "operation_order": [
+    "RETRIEVE",
+    "EXPLAIN",
+    "APPLY",
+    "MODEL",
+    "REPRESENT",
+    "SYNTHESIZE",
+    "JUSTIFY"
+  ],
+  "cases": [
+    {
+      "id": "G01",
+      "name": "D3 reader proposal reviewed at D2: never force into D3",
+      "route": {
+        "schema": "g9v4-qrt-blueprint-question-route/v1",
+        "fixture_not_evidence": true,
+        "question_id": "EX-M62",
+        "kind": "EXAM_CLAIM",
+        "source": {
+          "source_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+          "source_locator": "EX-M62",
+          "custody": "READER_COPY_ONLY",
+          "figure": "UNQUALIFIED",
+          "key": "PENDING",
+          "independent_original_receipt": null
+        },
+        "sl2": {
+          "operation": "MODEL",
+          "band": "D3",
+          "status": "PROPOSED",
+          "evidence_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json"
+        },
+        "qrt": {
+          "status": "FIRST_PASS_RECORDED",
+          "operation": "APPLY",
+          "band": "D2",
+          "total": 4,
+          "factors": {
+            "concept_model_selection": {
+              "score": 1,
+              "evidence": "Historical B07 reported numeric factor; per-factor warrant not supplied in this training fixture. Do not promote to verified."
+            },
+            "representation_translation": {
+              "score": 1,
+              "evidence": "Historical B07 reported numeric factor; per-factor warrant not supplied in this training fixture. Do not promote to verified."
+            },
+            "reasoning_chain_length": {
+              "score": 1,
+              "evidence": "Historical B07 reported numeric factor; per-factor warrant not supplied in this training fixture. Do not promote to verified."
+            },
+            "algebra_computational_load": {
+              "score": 1,
+              "evidence": "Historical B07 reported numeric factor; per-factor warrant not supplied in this training fixture. Do not promote to verified."
+            },
+            "trap_exception_sensitivity": {
+              "score": 0,
+              "evidence": "Historical B07 reported numeric factor; per-factor warrant not supplied in this training fixture. Do not promote to verified."
+            }
+          },
+          "reviewer_receipt": null,
+          "sealed_first_pass_digest": null,
+          "evidence_path": "preview/batches/b07-qrt-evidence.json",
+          "exposure": "UNKNOWN"
+        },
+        "blueprint": {
+          "id": "PHYS-QRT-BLUEPRINT",
+          "version": "0.2.0",
+          "status": "DRAFT_OWNER_REVIEW",
+          "path": "templates/physics-blueprint/physics-blueprint.D3-D4.json",
+          "candidate_cell": null,
+          "approved_binding_receipt": null
+        },
+        "adapter": {
+          "id": "PHYS-TOPIC-WPE",
+          "status": "UNSELECTED",
+          "selected_exact_path": null,
+          "selected_git_blob_sha": null,
+          "owner_receipt": null
+        },
+        "learning": {
+          "construction_ids": [
+            "WPE-C03"
+          ],
+          "status": "INTERACTIVE_PRACTICE",
+          "semantic_join": "UNREVIEWED_PROPOSAL",
+          "b1_b7_receipt": null
+        },
+        "admission": {
+          "status": "NOT_ADMITTED",
+          "owner_receipt": null,
+          "native_core2_receipt": null
+        },
+        "next_action": "D1_D2_SPEC_HOLD"
+      },
+      "expect": {
+        "candidate_cell": null,
+        "contains": [
+          "DEMAND_DISAGREEMENT",
+          "D1_D2_BLUEPRINT_SPEC_PENDING",
+          "NO_QRT_ADMISSION"
+        ],
+        "release": "HOLD"
+      }
+    },
+    {
+      "id": "G02",
+      "name": "Conditional D4 nomination reviewed at D2: source answer agreement does not upgrade band",
+      "route": {
+        "schema": "g9v4-qrt-blueprint-question-route/v1",
+        "fixture_not_evidence": true,
+        "question_id": "WEP07-03",
+        "kind": "EXAM_CLAIM",
+        "source": {
+          "source_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+          "source_locator": "WEP07-03",
+          "custody": "READER_COPY_ONLY",
+          "figure": "NOT_APPLICABLE",
+          "key": "CORROBORATED_NOT_ADMITTED",
+          "independent_original_receipt": null
+        },
+        "sl2": {
+          "operation": "JUSTIFY",
+          "band": "D4",
+          "status": "PROPOSED",
+          "evidence_path": "WPE_Source_to_Core1A_Concept/evidence/RECEIVED_selection_21_places.json"
+        },
+        "qrt": {
+          "status": "FIRST_PASS_RECORDED",
+          "operation": "APPLY",
+          "band": "D2",
+          "total": 5,
+          "factors": {
+            "concept_model_selection": {
+              "score": 1,
+              "evidence": "Historical B07 reported numeric factor; per-factor warrant not supplied in this training fixture. Do not promote to verified."
+            },
+            "representation_translation": {
+              "score": 0,
+              "evidence": "Historical B07 reported numeric factor; per-factor warrant not supplied in this training fixture. Do not promote to verified."
+            },
+            "reasoning_chain_length": {
+              "score": 2,
+              "evidence": "Historical B07 reported numeric factor; per-factor warrant not supplied in this training fixture. Do not promote to verified."
+            },
+            "algebra_computational_load": {
+              "score": 1,
+              "evidence": "Historical B07 reported numeric factor; per-factor warrant not supplied in this training fixture. Do not promote to verified."
+            },
+            "trap_exception_sensitivity": {
+              "score": 1,
+              "evidence": "Historical B07 reported numeric factor; per-factor warrant not supplied in this training fixture. Do not promote to verified."
+            }
+          },
+          "reviewer_receipt": null,
+          "sealed_first_pass_digest": null,
+          "evidence_path": "preview/batches/b07-qrt-evidence.json",
+          "exposure": "UNKNOWN"
+        },
+        "blueprint": {
+          "id": "PHYS-QRT-BLUEPRINT",
+          "version": "0.2.0",
+          "status": "DRAFT_OWNER_REVIEW",
+          "path": "templates/physics-blueprint/physics-blueprint.D3-D4.json",
+          "candidate_cell": null,
+          "approved_binding_receipt": null
+        },
+        "adapter": {
+          "id": "PHYS-TOPIC-WPE",
+          "status": "UNSELECTED",
+          "selected_exact_path": null,
+          "selected_git_blob_sha": null,
+          "owner_receipt": null
+        },
+        "learning": {
+          "construction_ids": [
+            "WPE-E01"
+          ],
+          "status": "AUTHOR_PACK_ONLY",
+          "semantic_join": "UNREVIEWED_PROPOSAL",
+          "b1_b7_receipt": null
+        },
+        "admission": {
+          "status": "NOT_ADMITTED",
+          "owner_receipt": null,
+          "native_core2_receipt": null
+        },
+        "next_action": "RECONCILE_QRT"
+      },
+      "expect": {
+        "candidate_cell": null,
+        "contains": [
+          "DEMAND_DISAGREEMENT",
+          "D1_D2_BLUEPRINT_SPEC_PENDING",
+          "NO_QRT_ADMISSION"
+        ],
+        "release": "HOLD"
+      }
+    },
+    {
+      "id": "G03",
+      "name": "C07 interactive practice with unreviewed D3 MODEL proposal: D3.4 is only a candidate",
+      "route": {
+        "schema": "g9v4-qrt-blueprint-question-route/v1",
+        "fixture_not_evidence": true,
+        "question_id": "EX-M16",
+        "kind": "EXAM_CLAIM",
+        "source": {
+          "source_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+          "source_locator": "EX-M16",
+          "custody": "READER_COPY_ONLY",
+          "figure": "UNQUALIFIED",
+          "key": "PENDING",
+          "independent_original_receipt": null
+        },
+        "sl2": {
+          "operation": "MODEL",
+          "band": "D3",
+          "status": "PROPOSED",
+          "evidence_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json"
+        },
+        "qrt": {
+          "status": "NOT_RUN",
+          "operation": null,
+          "band": null,
+          "total": null,
+          "factors": null,
+          "reviewer_receipt": null,
+          "sealed_first_pass_digest": null,
+          "evidence_path": null,
+          "exposure": "UNKNOWN"
+        },
+        "blueprint": {
+          "id": "PHYS-QRT-BLUEPRINT",
+          "version": "0.2.0",
+          "status": "DRAFT_OWNER_REVIEW",
+          "path": "templates/physics-blueprint/physics-blueprint.D3-D4.json",
+          "candidate_cell": "D3.4",
+          "approved_binding_receipt": null
+        },
+        "adapter": {
+          "id": "PHYS-TOPIC-WPE",
+          "status": "UNSELECTED",
+          "selected_exact_path": null,
+          "selected_git_blob_sha": null,
+          "owner_receipt": null
+        },
+        "learning": {
+          "construction_ids": [
+            "WPE-C07"
+          ],
+          "status": "INTERACTIVE_PRACTICE",
+          "semantic_join": "UNREVIEWED_PROPOSAL",
+          "b1_b7_receipt": null
+        },
+        "admission": {
+          "status": "NOT_ADMITTED",
+          "owner_receipt": null,
+          "native_core2_receipt": null
+        },
+        "next_action": "INDEPENDENT_QRT"
+      },
+      "expect": {
+        "candidate_cell": "D3.4",
+        "contains": [
+          "QRT_NOT_ADJUDICATED",
+          "BLUEPRINT_DRAFT",
+          "ADAPTER_UNSELECTED",
+          "NO_QRT_ADMISSION"
+        ],
+        "release": "HOLD"
+      }
+    },
+    {
+      "id": "G04",
+      "name": "Potential-well source theme has only E01 author pack, not interactive coverage",
+      "route": {
+        "schema": "g9v4-qrt-blueprint-question-route/v1",
+        "fixture_not_evidence": true,
+        "question_id": "EX-M109",
+        "kind": "EXAM_CLAIM",
+        "source": {
+          "source_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+          "source_locator": "EX-M109",
+          "custody": "READER_COPY_ONLY",
+          "figure": "UNQUALIFIED",
+          "key": "PENDING",
+          "independent_original_receipt": null
+        },
+        "sl2": {
+          "operation": "SYNTHESIZE",
+          "band": "D3",
+          "status": "PROPOSED",
+          "evidence_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json"
+        },
+        "qrt": {
+          "status": "NOT_RUN",
+          "operation": null,
+          "band": null,
+          "total": null,
+          "factors": null,
+          "reviewer_receipt": null,
+          "sealed_first_pass_digest": null,
+          "evidence_path": null,
+          "exposure": "UNKNOWN"
+        },
+        "blueprint": {
+          "id": "PHYS-QRT-BLUEPRINT",
+          "version": "0.2.0",
+          "status": "DRAFT_OWNER_REVIEW",
+          "path": "templates/physics-blueprint/physics-blueprint.D3-D4.json",
+          "candidate_cell": "D3.6",
+          "approved_binding_receipt": null
+        },
+        "adapter": {
+          "id": "PHYS-TOPIC-WPE",
+          "status": "UNSELECTED",
+          "selected_exact_path": null,
+          "selected_git_blob_sha": null,
+          "owner_receipt": null
+        },
+        "learning": {
+          "construction_ids": [
+            "WPE-E01"
+          ],
+          "status": "AUTHOR_PACK_ONLY",
+          "semantic_join": "UNREVIEWED_PROPOSAL",
+          "b1_b7_receipt": null
+        },
+        "admission": {
+          "status": "NOT_ADMITTED",
+          "owner_receipt": null,
+          "native_core2_receipt": null
+        },
+        "next_action": "BUILD_AUTHOR_BRIDGE"
+      },
+      "expect": {
+        "candidate_cell": "D3.6",
+        "contains": [
+          "QRT_NOT_ADJUDICATED",
+          "AUTHOR_PACK_NOT_INTERACTIVE",
+          "NO_QRT_ADMISSION"
+        ],
+        "release": "HOLD"
+      }
+    },
+    {
+      "id": "G05",
+      "name": "D3 synthesis question with no mapped construction is a real learning gap",
+      "route": {
+        "schema": "g9v4-qrt-blueprint-question-route/v1",
+        "fixture_not_evidence": true,
+        "question_id": "EX-M97",
+        "kind": "EXAM_CLAIM",
+        "source": {
+          "source_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+          "source_locator": "EX-M97",
+          "custody": "READER_COPY_ONLY",
+          "figure": "UNQUALIFIED",
+          "key": "PENDING",
+          "independent_original_receipt": null
+        },
+        "sl2": {
+          "operation": "SYNTHESIZE",
+          "band": "D3",
+          "status": "PROPOSED",
+          "evidence_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json"
+        },
+        "qrt": {
+          "status": "NOT_RUN",
+          "operation": null,
+          "band": null,
+          "total": null,
+          "factors": null,
+          "reviewer_receipt": null,
+          "sealed_first_pass_digest": null,
+          "evidence_path": null,
+          "exposure": "UNKNOWN"
+        },
+        "blueprint": {
+          "id": "PHYS-QRT-BLUEPRINT",
+          "version": "0.2.0",
+          "status": "DRAFT_OWNER_REVIEW",
+          "path": "templates/physics-blueprint/physics-blueprint.D3-D4.json",
+          "candidate_cell": "D3.6",
+          "approved_binding_receipt": null
+        },
+        "adapter": {
+          "id": "PHYS-TOPIC-WPE",
+          "status": "UNSELECTED",
+          "selected_exact_path": null,
+          "selected_git_blob_sha": null,
+          "owner_receipt": null
+        },
+        "learning": {
+          "construction_ids": [],
+          "status": "UNMAPPED",
+          "semantic_join": "UNREVIEWED_PROPOSAL",
+          "b1_b7_receipt": null
+        },
+        "admission": {
+          "status": "NOT_ADMITTED",
+          "owner_receipt": null,
+          "native_core2_receipt": null
+        },
+        "next_action": "BUILD_AUTHOR_BRIDGE"
+      },
+      "expect": {
+        "candidate_cell": "D3.6",
+        "contains": [
+          "QRT_NOT_ADJUDICATED",
+          "LEARNING_UNMAPPED",
+          "NO_QRT_ADMISSION"
+        ],
+        "release": "HOLD"
+      }
+    },
+    {
+      "id": "G06",
+      "name": "EX-M79 contested task: do not treat prior author labels as first-pass QRT",
+      "route": {
+        "schema": "g9v4-qrt-blueprint-question-route/v1",
+        "fixture_not_evidence": true,
+        "question_id": "EX-M79",
+        "kind": "EXAM_CLAIM",
+        "source": {
+          "source_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+          "source_locator": "EX-M79",
+          "custody": "READER_COPY_ONLY",
+          "figure": "UNQUALIFIED",
+          "key": "PENDING",
+          "independent_original_receipt": null
+        },
+        "sl2": {
+          "operation": "APPLY",
+          "band": "D3",
+          "status": "PROPOSED",
+          "evidence_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json"
+        },
+        "qrt": {
+          "status": "CONTESTED",
+          "operation": null,
+          "band": null,
+          "total": null,
+          "factors": null,
+          "reviewer_receipt": null,
+          "sealed_first_pass_digest": null,
+          "evidence_path": "preview/batches/b07-qrt-evidence.json",
+          "exposure": "PRIOR_EXPOSURE_DECLARED"
+        },
+        "blueprint": {
+          "id": "PHYS-QRT-BLUEPRINT",
+          "version": "0.2.0",
+          "status": "DRAFT_OWNER_REVIEW",
+          "path": "templates/physics-blueprint/physics-blueprint.D3-D4.json",
+          "candidate_cell": "D3.3",
+          "approved_binding_receipt": null
+        },
+        "adapter": {
+          "id": "PHYS-TOPIC-WPE",
+          "status": "UNSELECTED",
+          "selected_exact_path": null,
+          "selected_git_blob_sha": null,
+          "owner_receipt": null
+        },
+        "learning": {
+          "construction_ids": [
+            "WPE-C03"
+          ],
+          "status": "INTERACTIVE_PRACTICE",
+          "semantic_join": "UNREVIEWED_PROPOSAL",
+          "b1_b7_receipt": null
+        },
+        "admission": {
+          "status": "NOT_ADMITTED",
+          "owner_receipt": null,
+          "native_core2_receipt": null
+        },
+        "next_action": "RECONCILE_QRT"
+      },
+      "expect": {
+        "candidate_cell": "D3.3",
+        "contains": [
+          "QRT_CONTESTED",
+          "NO_QRT_ADMISSION"
+        ],
+        "release": "HOLD"
+      }
+    }
+  ],
+  "negative_controls": [
+    {
+      "id": "N01",
+      "based_on": "G03",
+      "mutation": {
+        "path": "admission.status",
+        "value": "ADMITTED"
+      },
+      "expected_reason": "NO_TRUSTED_RECEIPTS"
+    },
+    {
+      "id": "N02",
+      "based_on": "G03",
+      "mutation": {
+        "path": "blueprint.candidate_cell",
+        "value": "D3.6"
+      },
+      "expected_reason": "CELL_OPERATION_MISMATCH"
+    },
+    {
+      "id": "N03",
+      "based_on": "G01",
+      "mutation": {
+        "path": "blueprint.candidate_cell",
+        "value": "D3.3"
+      },
+      "expected_reason": "D1_D2_BLUEPRINT_SPEC_PENDING"
+    },
+    {
+      "id": "N04",
+      "based_on": "G01",
+      "mutation": {
+        "path": "qrt.total",
+        "value": 7
+      },
+      "expected_reason": "QRT_SCORE_SUM_MISMATCH"
+    },
+    {
+      "id": "N05",
+      "based_on": "G04",
+      "mutation": {
+        "path": "learning.status",
+        "value": "QUALIFIED_TILE"
+      },
+      "expected_reason": "NO_TRUSTED_RECEIPTS"
+    }
+  ]
+}

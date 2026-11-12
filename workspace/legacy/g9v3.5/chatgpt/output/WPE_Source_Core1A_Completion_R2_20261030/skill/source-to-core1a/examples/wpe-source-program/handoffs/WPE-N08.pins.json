@@ -1,0 +1,68 @@
+{
+  "schema": "source-pin-set/v1",
+  "sources": [
+    {
+      "id": "REFERENCE",
+      "path": "sources/reference-ontology.json",
+      "sha256": "0fb53c653d7cd5b5f6e94ba5ed096278aa42f5d1429eac24981ee8dffa168acf",
+      "role": "REFERENCE_SOURCE",
+      "authority": "CANDIDATE_REFERENCE"
+    },
+    {
+      "id": "BOOK",
+      "path": "sources/book.md",
+      "sha256": "a33f19b308ea81c7eb527546e44b6bbd4b4adf26aed7116013ac01218cc1bbb8",
+      "role": "BOOK_TEXT",
+      "authority": "OWNER_LOCAL_UNAUTHENTICATED"
+    },
+    {
+      "id": "SPINE",
+      "path": "sources/spine.md",
+      "sha256": "07338e242e363becf2e55a9637d29fd178e37236fd730e5aac0a1211f1d8ecf9",
+      "role": "SYLLABUS",
+      "authority": "OWNER_LOCAL_UNAUTHENTICATED"
+    },
+    {
+      "id": "LIBRARY",
+      "path": "sources/library.json",
+      "sha256": "84fe88387e33a03bf87bf1f537bae8c447f5b86f0d77a854c899ad70f12d8258",
+      "role": "CANONICAL_CANDIDATE",
+      "authority": "CANDIDATE_REFERENCE"
+    },
+    {
+      "id": "PKG_SCHEMA",
+      "path": "sources/package.schema.json",
+      "sha256": "b645f4b5beb9132d6e38b628b1416846201d44dec16a5f04af9a252e9e891d93",
+      "role": "NATIVE_CONTRACT",
+      "authority": "LOCAL_CONTRACT"
+    },
+    {
+      "id": "SCAN-7",
+      "path": "sources/page_07.jpg",
+      "sha256": "e05651537a9b3ea961304ef281f30cc900b3e6331076346273bc82c57a2ed6b9",
+      "role": "SOURCE_SCAN",
+      "authority": "OWNER_LOCAL_UNAUTHENTICATED"
+    },
+    {
+      "id": "SCAN-9",
+      "path": "sources/page_09.jpg",
+      "sha256": "4847ec6173954d7e50d89af62db0972db12a3cfde654666a4e9fd97ce734d646",
+      "role": "SOURCE_SCAN",
+      "authority": "OWNER_LOCAL_UNAUTHENTICATED"
+    },
+    {
+      "id": "FIG-9",
+      "path": "sources/images/fig_09_overhanging_chain.svg",
+      "sha256": "40510540074ad29b0f7634e680f8235356f64dbe969eb28b164edb7e30a00aa0",
+      "role": "DERIVED_FIGURE",
+      "authority": "OWNER_LOCAL_UNAUTHENTICATED"
+    },
+    {
+      "id": "FIG-10",
+      "path": "sources/images/fig_10_spring_block_wall.svg",
+      "sha256": "c0a90c6fffcc88731316cb17fe34439e4bdccceda7a34d8deb585a2ba1d61bbc",
+      "role": "DERIVED_FIGURE",
+      "authority": "OWNER_LOCAL_UNAUTHENTICATED"
+    }
+  ]
+}

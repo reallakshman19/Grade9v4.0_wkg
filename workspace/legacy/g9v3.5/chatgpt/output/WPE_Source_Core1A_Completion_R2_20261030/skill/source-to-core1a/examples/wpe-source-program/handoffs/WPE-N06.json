@@ -1,0 +1,1895 @@
+{
+  "schema": "core1a-source-handoff/v2",
+  "id": "WPE-N06",
+  "title": "Potential-energy changes, reference zero and elastic storage",
+  "status": "CANDIDATE",
+  "purpose": "CORE1A_PREPARATION",
+  "sources": [
+    {
+      "id": "REFERENCE",
+      "path": "sources/reference-ontology.json",
+      "sha256": "0fb53c653d7cd5b5f6e94ba5ed096278aa42f5d1429eac24981ee8dffa168acf",
+      "role": "REFERENCE_SOURCE",
+      "authority": "CANDIDATE_REFERENCE"
+    },
+    {
+      "id": "BOOK",
+      "path": "sources/book.md",
+      "sha256": "a33f19b308ea81c7eb527546e44b6bbd4b4adf26aed7116013ac01218cc1bbb8",
+      "role": "BOOK_TEXT",
+      "authority": "OWNER_LOCAL_UNAUTHENTICATED"
+    },
+    {
+      "id": "SPINE",
+      "path": "sources/spine.md",
+      "sha256": "07338e242e363becf2e55a9637d29fd178e37236fd730e5aac0a1211f1d8ecf9",
+      "role": "SYLLABUS",
+      "authority": "OWNER_LOCAL_UNAUTHENTICATED"
+    },
+    {
+      "id": "LIBRARY",
+      "path": "sources/library.json",
+      "sha256": "84fe88387e33a03bf87bf1f537bae8c447f5b86f0d77a854c899ad70f12d8258",
+      "role": "CANONICAL_CANDIDATE",
+      "authority": "CANDIDATE_REFERENCE"
+    },
+    {
+      "id": "PKG_SCHEMA",
+      "path": "sources/package.schema.json",
+      "sha256": "b645f4b5beb9132d6e38b628b1416846201d44dec16a5f04af9a252e9e891d93",
+      "role": "NATIVE_CONTRACT",
+      "authority": "LOCAL_CONTRACT"
+    },
+    {
+      "id": "SCAN-6",
+      "path": "sources/page_06.jpg",
+      "sha256": "bef1126f750a833860588c49295fc50e28de5eb485b8acb5932e7a2388e5d500",
+      "role": "SOURCE_SCAN",
+      "authority": "OWNER_LOCAL_UNAUTHENTICATED"
+    }
+  ],
+  "units": [
+    {
+      "id": "U-BOOK-1",
+      "source_ref": "BOOK",
+      "kind": "LINES",
+      "locator": {
+        "start": 311,
+        "end": 347
+      },
+      "content": "## 7. Energy\n\nEnergy is defined as the capacity of a body to perform work. It is a scalar quantity sharing the same SI unit as work (**Joule**).\n\n### 7.1 Potential Energy\n\n#### 7.1.1 Concept\nPotential energy ($U$) is the energy possessed by a body or system by virtue of its position, configuration, or spatial state. It is independent of the dynamic trajectory by which the system arrived at that state.\n\nPotential energy is intrinsically a relative quantity and requires the choice of a reference zero level ($U = 0$).\n\n#### 7.1.2 Definition\n$$\\Delta U = U_B - U_A = -W_{c}(A \\to B) = -\\int_{A}^{B} \\vec{F}_c \\cdot d\\vec{r}$$\n\n> [!IMPORTANT]\n> Potential energy is defined **strictly for conservative forces**. It cannot be defined for non-conservative forces because their work depends on the path taken.\n\n#### 7.1.3 Gravitational Potential Energy (GPE)\nWhen lifting a body of mass $m$ vertically through height $h$:\n$$W_{\\text{ext}} = mgh, \\quad W_{\\text{gravity}} = -mgh$$\n$$\\Delta U = -W_{\\text{gravity}} = mgh$$\n\n- When the center of mass of a body is raised by height $h$, $\\Delta \\text{GPE} = +mgh$.\n- When the center of mass of a body is lowered by distance $h$, $\\Delta \\text{GPE} = -mgh$.\n\n#### 7.1.4 Elastic Potential Energy\nWork performed against the internal restoring force of an elastic medium is stored as elastic potential energy.\n\n#### 7.1.5 Nature of Restoring Force\nWhen a spring is stretched or compressed by displacement $x$ from its natural length, it exerts a Hookean restoring force:\n$$F_s = -kx$$\n\nThe work done by the spring force during displacement from $0$ to $x$ is:\n$$W_s = \\int_{0}^{x} (-kx')dx' = -\\frac{1}{2}kx^2$$\n\nThe elastic potential energy stored in the spring is:\n$$U = -W_s = \\frac{1}{2}kx^2$$",
+      "digest": "sha256:03a1dbc62538b262e7e803370f414d8a3c57232cae137efe26ad00d2f1b7e1a0"
+    },
+    {
+      "id": "U-SPINE",
+      "source_ref": "SPINE",
+      "kind": "LINES",
+      "locator": {
+        "start": 16,
+        "end": 16
+      },
+      "content": "| WPE-N06 | §7.1 PE: GPE, elastic PE | WEP-05 Gravitational and elastic PE | core | 5 |",
+      "digest": "sha256:d7998c6fb0b5053837a916a30350ceb3aa25d10ee45201a5c0c3ef8bf5992120"
+    },
+    {
+      "id": "U-REFERENCE-WEP-05",
+      "source_ref": "REFERENCE",
+      "kind": "JSON_POINTER",
+      "locator": {
+        "pointer": "/atomic_competencies/WEP-05"
+      },
+      "content": {
+        "title": "Gravitational & Elastic Potential Energy Wells",
+        "definition": "Potential energy U represents stored energy of configuration defined exclusively for conservative interactions via Delta U = -W_c.",
+        "canonical_rules": [
+          "Gravitational potential energy near Earth surface: U_g = m g h (relative to chosen datum h = 0).",
+          "Ideal spring elastic potential energy: U_s = 0.5 k x^2 (where x is extension/compression from unstretched equilibrium).",
+          "Datum choice is an arbitrary gauge convention; only potential energy differences Delta U have physical significance."
+        ],
+        "operational_heuristics": [
+          "Declare datum line U = 0 at the lowest geometric point or relaxed spring position.",
+          "Account for both gravitational and elastic components in total potential energy: U = U_g + U_s."
+        ],
+        "boundary_conditions": [
+          "h = 0: U_g = 0.",
+          "x = 0: U_s = 0 (relaxed spring stores zero energy)."
+        ],
+        "prerequisites": [
+          "P3"
+        ],
+        "transfer_targets": [
+          "PHYS-WEP-006",
+          "PHYS-WEP-017"
+        ]
+      },
+      "digest": "sha256:75b99e4d846429ca9e2ef9ec52f1c0eb4f80d5d5b920bf115992d3d17abece35"
+    },
+    {
+      "id": "U-MICRO",
+      "source_ref": "LIBRARY",
+      "kind": "JSON_POINTER",
+      "locator": {
+        "pointer": "/microtopics/5"
+      },
+      "content": {
+        "id": "MIC-PHY-WEP-GRADE9-QUANT",
+        "version": "0.1.0",
+        "status": "CANDIDATE",
+        "source_refs": [
+          "SRC-AUTHOR-WEP"
+        ],
+        "evidence_refs": [],
+        "extensions": {
+          "issue19:scope_class": "OWNER_EXTENSION",
+          "issue19:donor": "PR9"
+        },
+        "title": "Grade 9 work and mechanical-energy equations are one ledger",
+        "bucket_id": "BUCKET-PHY-WORK-ENERGY-POWER",
+        "primary_capability_ref": "CAP-WEP-GRADE9-QUANT",
+        "intrinsic_badge": "MEDIUM",
+        "badge_reason": "The arithmetic is direct; the difficult part is deciding which account and relation the situation permits.",
+        "entry_assumptions": [
+          "Can classify work sign and decide whether extra frictional/outside transfer closes or opens the mechanical-energy account."
+        ],
+        "inferential_jump": "Work, kinetic energy, near-Earth gravitational potential-energy change, work-energy and mechanical-energy conservation are linked bookkeeping statements with explicit body/system, frame/reference and model conditions; K+U conservation is only the zero-nonconservative-transfer special case.",
+        "teaching_path": [
+          {
+            "id": "WEP6-1",
+            "role": "DECLARE",
+            "action": "Choose the body/system, displacement direction, reference frame and height reference before calculating.",
+            "why_valid": "Work sign and energy values depend on these declarations.",
+            "inputs": [
+              "CAP-WEP-MECH-ENERGY-CONDITION"
+            ],
+            "output": "chosen body/account; path direction; frame; height reference."
+          },
+          {
+            "id": "WEP6-2",
+            "role": "TRANSFORM",
+            "action": "Use W = F_parallel s, K = 0.5 m v^2 and Delta U_g = m g Delta h for the matching quantities.",
+            "why_valid": "Each gate-owned relation defines one distinct part of the energy ledger.",
+            "inputs": [
+              "REL-WORK-CONSTANT-FORCE",
+              "REL-KINETIC-ENERGY",
+              "REL-GRAVITATIONAL-POTENTIAL-NEAR-EARTH"
+            ],
+            "output": "W = F_parallel s; K = 0.5 m v^2; Delta U_g = m g Delta h, all in joules under their stated conditions."
+          },
+          {
+            "id": "WEP6-3",
+            "role": "TRANSFORM",
+            "action": "Relate net work to Delta K, or equate endpoint K + U only when no extra transfer crosses the chosen account.",
+            "why_valid": "The work-energy theorem and mechanical-energy conservation answer different bookkeeping questions.",
+            "inputs": [
+              "REL-WORK-ENERGY-THEOREM",
+              "REL-MECHANICAL-ENERGY-CONSERVATION"
+            ],
+            "output": "W_net = Delta K; closed account -> K_i + U_i = K_f + U_f."
+          },
+          {
+            "id": "WEP6-4",
+            "role": "VERIFY",
+            "action": "Use a rough-track counterexample to test whether a claimed K + U conservation statement is allowed.",
+            "why_valid": "Frictional transfer opens the mechanical account and invalidates unchanged K + U by itself.",
+            "inputs": [],
+            "output": "rough path -> include transfer; do not force K + U constant."
+          }
+        ],
+        "relation_refs": [
+          "REL-WORK-CONSTANT-FORCE",
+          "REL-KINETIC-ENERGY",
+          "REL-GRAVITATIONAL-POTENTIAL-NEAR-EARTH",
+          "REL-WORK-ENERGY-THEOREM",
+          "REL-MECHANICAL-ENERGY-CONSERVATION"
+        ],
+        "representation_refs": [],
+        "question_family_refs": [],
+        "misconceptions": [
+          {
+            "wrong_idea": "Once kinetic and potential energy appear, K + U must always be conserved.",
+            "diagnostic_prompt": "A block descends the same height on a rough track and a smooth track. Must the final kinetic energies match?",
+            "repair": "Inventory transfers first. Friction can move energy out of the mechanical account, so identical endpoints do not guarantee the same K + U ledger."
+          }
+        ],
+        "exit_task": {
+          "prompt": "A 2 kg object moves at 3 m/s. Find its translational kinetic energy. Then state what additional condition is required before using K_i + U_i = K_f + U_f for a later motion.",
+          "source_ref": "SRC-AUTHOR-WEP",
+          "answer": {
+            "kind": "MODEL_RESPONSE",
+            "summary": "K = 9 J. Mechanical-energy conservation additionally requires that no frictional or outside transfer change the chosen K + U account.",
+            "reasoning": [
+              "K = 0.5 x 2 x 3^2 = 9 J.",
+              "The conservation equation is conditional, not automatic.",
+              "If friction or an outside agent transfers energy, that transfer must be included."
+            ],
+            "check": "Doubling the speed to 6 m/s would quadruple K to 36 J.",
+            "acceptable_alternatives": [],
+            "subpart_answers": [],
+            "verification_status": "CHECKED_BY_AUTHOR"
+          },
+          "oracle": {
+            "verification": {
+              "validator_id": "KINETIC_ENERGY",
+              "bindings": {
+                "mass": "DAT-WEP-KE-M",
+                "speed": "DAT-WEP-KE-V"
+              }
+            }
+          }
+        },
+        "research_contribution": "Local quantitative Grade-9 Work/Energy closure enriched from prior internal engineering with system-boundary, reference-consistency and model-validity checks.",
+        "prerequisite_refs": [
+          "CAP-WEP-MECH-ENERGY-CONDITION"
+        ],
+        "lineage": [],
+        "elicitation": {
+          "predict": {
+            "prompt": "Two 2 kg objects move at 3 m/s and 6 m/s. Does the faster one have twice the kinetic energy?",
+            "defensible_answer": "No. K depends on speed squared, so doubling speed gives four times the kinetic energy."
+          },
+          "attempt": {
+            "produces": "A kinetic-energy calculation plus a conservation-condition statement.",
+            "closure": "RUBRIC",
+            "rubric": [
+              {
+                "criterion": "Computes kinetic energy with speed squared.",
+                "evidence_of": "Using the gate-owned Grade 9 relation."
+              },
+              {
+                "criterion": "States the no-extra-transfer condition before using mechanical-energy conservation.",
+                "evidence_of": "Treating conservation as a conditional ledger."
+              }
+            ],
+            "accepted": [
+              "2 kg at 3 m/s -> 9 J; conserve K+U only when no extra transfer changes the account."
+            ],
+            "rejected": [
+              "K = m v or automatic K+U conservation on a rough path."
+            ]
+          },
+          "reconstruct": {
+            "route": [
+              {
+                "ask": "Which energy depends on motion in the declared frame?",
+                "why_this_ask": "It identifies K."
+              },
+              {
+                "ask": "How does speed enter that relation?",
+                "why_this_ask": "It protects the square dependence.",
+                "from_step_ref": "WEP6-2"
+              },
+              {
+                "ask": "What transfer inventory must be checked before conserving K + U?",
+                "why_this_ask": "It reconstructs the model condition.",
+                "from_step_ref": "WEP6-3"
+              },
+              {
+                "ask": "What does a rough path do to the account?",
+                "why_this_ask": "It provides the boundary falsifier.",
+                "from_step_ref": "WEP6-4"
+              }
+            ],
+            "differs_from_teaching_path": "The teaching path builds the ledger from declarations; the learner route starts from a kinetic-energy scaling question and then tests the conservation boundary."
+          },
+          "boundary_test": {
+            "prompt": "If a body is instantaneously at rest in the declared frame, what is its translational kinetic energy?",
+            "answer": "Zero.",
+            "confirms": "K is nonnegative and vanishes at zero speed."
+          }
+        },
+        "construction_units": [
+          {
+            "id": "CU-PHY-WEP-GRADE9-QUANT-1",
+            "decision_from": "inferential_jump",
+            "step_refs": [
+              "WEP6-1",
+              "WEP6-2",
+              "WEP6-3",
+              "WEP6-4"
+            ],
+            "representation_ref": null,
+            "reveal_stage_refs": [],
+            "worked_anchor_ref": null,
+            "misconception_indexes": [
+              0
+            ],
+            "independent_checks": [],
+            "migrated_from": "teaching_path"
+          }
+        ]
+      },
+      "digest": "sha256:b05f1bb52d86a39df12c6cd79e5b7aeebcfa28ef408af7df584431f882cbc1d4"
+    },
+    {
+      "id": "U-REL-4",
+      "source_ref": "LIBRARY",
+      "kind": "JSON_POINTER",
+      "locator": {
+        "pointer": "/relations/4"
+      },
+      "content": {
+        "version": "0.1.0",
+        "status": "CANDIDATE",
+        "source_refs": [
+          "SRC-AUTHOR-WEP"
+        ],
+        "evidence_refs": [],
+        "extensions": {
+          "issue19:scope_class": "OWNER_EXTENSION",
+          "issue19:donor": "PR9"
+        },
+        "id": "REL-GRAVITATIONAL-POTENTIAL-NEAR-EARTH",
+        "expression": "Delta U_g = m g Delta h",
+        "meaning": "Near Earth's surface with approximately uniform g, gravitational potential-energy change equals mass times g times vertical height change.",
+        "symbols": [
+          {
+            "symbol": "Delta U_g",
+            "meaning": "Change in gravitational potential energy",
+            "unit_or_domain": "J; signed scalar"
+          },
+          {
+            "symbol": "m",
+            "meaning": "Mass",
+            "unit_or_domain": "kg; positive scalar"
+          },
+          {
+            "symbol": "g",
+            "meaning": "Gravitational acceleration magnitude",
+            "unit_or_domain": "m/s^2; positive scalar"
+          },
+          {
+            "symbol": "Delta h",
+            "meaning": "Final height minus initial height",
+            "unit_or_domain": "m; signed scalar"
+          }
+        ],
+        "conditions": [
+          "m > 0.",
+          "g is approximately uniform over the height change.",
+          "One height reference and positive-up convention are used."
+        ],
+        "derivation": [
+          {
+            "id": "WEP6-U1",
+            "role": "TRANSFORM",
+            "action": "Multiply mass, local g and signed vertical height change.",
+            "why_valid": "REL-GRAVITATIONAL-POTENTIAL-NEAR-EARTH owns the near-Earth change relation.",
+            "inputs": [],
+            "output": "Delta U_g = m g Delta h."
+          }
+        ],
+        "limits": [
+          "Only changes are physically meaningful until a zero reference is declared.",
+          "Do not extend uniform g to large height ranges without review."
+        ],
+        "checks": [
+          "Raising the body gives positive Delta U_g under positive-up convention.",
+          "Returning to the original height gives net Delta U_g = 0."
+        ],
+        "gate_relation_ref": "REL-GRAVITATIONAL-POTENTIAL-NEAR-EARTH"
+      },
+      "digest": "sha256:fb2ae0cee44c61b3bc2f6c28f85e0e10be5df9c8d2bdff867e03bba1cfa847fc"
+    },
+    {
+      "id": "NATIVE-MICROTOPIC",
+      "source_ref": "PKG_SCHEMA",
+      "kind": "JSON_POINTER",
+      "locator": {
+        "pointer": "/$defs/microtopic"
+      },
+      "content": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "DISCOVERED",
+              "CANDIDATE",
+              "REVIEWED",
+              "CURATED",
+              "DISPUTED",
+              "STALE",
+              "RETIRED"
+            ]
+          },
+          "source_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "extensions": {
+            "type": "object",
+            "description": "Namespaced subject extensions; no scientific authority is inferred."
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "bucket_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "primary_capability_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "intrinsic_badge": {
+            "enum": [
+              "EASY",
+              "MEDIUM",
+              "HARD"
+            ]
+          },
+          "badge_reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "entry_assumptions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "inferential_jump": {
+            "type": "string",
+            "minLength": 1
+          },
+          "teaching_path": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/step"
+            },
+            "minItems": 1
+          },
+          "relation_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "representation_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "question_family_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "misconceptions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "wrong_idea": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "diagnostic_prompt": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "repair": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "wrong_idea",
+                "diagnostic_prompt",
+                "repair"
+              ]
+            },
+            "minItems": 1
+          },
+          "exit_task": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "prompt": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "answer": {
+                "$ref": "#/$defs/answer"
+              },
+              "oracle": {
+                "description": "How this exit answer is stood behind. Exactly one of: `verification`, naming a subject validator and binding its inputs to declared data; `held_by`, naming the known issue that explains why no oracle exists yet; or `no_numeric_claim`, saying why the answer asserts no computed value. Silence is not an option, because the exit answer is what a learner measures themselves against.",
+                "type": "object",
+                "minProperties": 1,
+                "maxProperties": 1,
+                "properties": {
+                  "verification": {
+                    "type": "object",
+                    "required": [
+                      "validator_id",
+                      "bindings"
+                    ],
+                    "properties": {
+                      "validator_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "bindings": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    },
+                    "additionalProperties": {
+                      "type": [
+                        "string",
+                        "number",
+                        "boolean"
+                      ]
+                    }
+                  },
+                  "held_by": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "no_numeric_claim": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "prompt",
+              "source_ref",
+              "answer",
+              "oracle"
+            ]
+          },
+          "research_contribution": {
+            "type": "string",
+            "minLength": 1
+          },
+          "prerequisite_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0,
+            "description": "Capability ids this microtopic assumes. A capability of another subject is written '<Subject>:<capability id>' (e.g. 'Mathematics:CAP-MATH-DERIVATIVE-RATE'); package_depth.py emits TEACH_PREREQUISITE_BRIDGE for any ref no library teaches."
+          },
+          "lineage": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "relation": {
+                  "enum": [
+                    "SUPERSEDES",
+                    "SPLIT_FROM",
+                    "MERGED_FROM"
+                  ]
+                },
+                "target_ref": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "relation",
+                "target_ref"
+              ]
+            },
+            "minItems": 0
+          },
+          "elicitation": {
+            "type": "object",
+            "additionalProperties": false,
+            "description": "The self-tutor cycle. Four of its six steps live here; diagnose and repair are misconceptions[].wrong_idea, .diagnostic_prompt and .repair, which already hold the same claim for the declarative product. A second home for one truth is the defect the authority gate exists to close.",
+            "properties": {
+              "predict": {
+                "type": "object",
+                "additionalProperties": false,
+                "description": "Pose the decision before revealing anything.",
+                "properties": {
+                  "prompt": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "The decision, posed so a learner can commit to an answer."
+                  },
+                  "defensible_answer": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "The answer that commitment is judged against. A prompt with no defensible answer is a musing, not a prediction."
+                  }
+                },
+                "required": [
+                  "prompt",
+                  "defensible_answer"
+                ]
+              },
+              "attempt": {
+                "type": "object",
+                "additionalProperties": false,
+                "description": "What the learner produces, and how it closes without a tutor.",
+                "properties": {
+                  "produces": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "What the learner should construct, draw, discriminate or explain."
+                  },
+                  "closure": {
+                    "enum": [
+                      "MODEL_RESPONSE",
+                      "RUBRIC",
+                      "CRITERIA"
+                    ],
+                    "description": "Which form of closure this attempt uses. Each value demands something the others do not, so that none is a synonym an author can pick to avoid work: MODEL_RESPONSE requires model_response, CRITERIA requires rubric, and RUBRIC requires rubric with accepted and rejected examples -- the spec's 'a rubric plus representative accepted and rejected answers', which is the stronger claim of the three."
+                  },
+                  "model_response": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "Closure as one response, where one is right."
+                  },
+                  "rubric": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/$defs/rubric_criterion"
+                    },
+                    "minItems": 1,
+                    "description": "Closure as a rubric, where several responses are valid."
+                  },
+                  "accepted": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 1,
+                    "description": "Representative responses the rubric accepts."
+                  },
+                  "rejected": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 1,
+                    "description": "Representative responses it rejects. A rubric with no rejected example has not been tested against anything."
+                  },
+                  "task": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "prompt"
+                    ],
+                    "description": "Schema 0.2.0: the concrete reconstruction task the learner performs (a body, givens, numbers or a situation). `produces` says what the attempt should contain; `task` is what the learner is asked to do. Rendered as the Core1B attempt.",
+                    "properties": {
+                      "prompt": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "givens": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "representation_ref": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "description": "The representation of this task's own situation (its bodies and values), shown with the Core1B attempt. When absent, Core1B falls back to the first construction unit's (Core1A) figure, which depicts a different situation."
+                      },
+                      "stage_refs": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "Stages of representation_ref safe to show before the attempt; default is the first stage only."
+                      },
+                      "response": {
+                        "$ref": "#/$defs/response"
+                      }
+                    }
+                  }
+                },
+                "required": [
+                  "produces",
+                  "closure"
+                ]
+              },
+              "reconstruct": {
+                "type": "object",
+                "additionalProperties": false,
+                "description": "The correct construction reached the way a learner would reach it. Held as questions rather than statements: teaching_path is the expert's summary, and a reconstruct route made of statements is that summary under a different key, which is exactly how this product became the declarative one.",
+                "properties": {
+                  "route": {
+                    "type": "array",
+                    "minItems": 1,
+                    "description": "The sequence of asks. Order is meaning: each one is answerable only once the previous has been answered.",
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "ask": {
+                          "type": "string",
+                          "minLength": 1,
+                          "description": "A question that moves the learner one decision forward. A sentence with a question mark on it is not an ask; the learner must be able to get it wrong."
+                        },
+                        "why_this_ask": {
+                          "type": "string",
+                          "minLength": 1,
+                          "description": "Why this question rather than another at this point. An author who cannot say this has ordered the route by the expert's convenience."
+                        },
+                        "from_step_ref": {
+                          "type": "string",
+                          "minLength": 1,
+                          "description": "The teaching_path step this ask arrives at, where one exists. Absent means the learner's route genuinely departs from the expert's, which is why both are held."
+                        }
+                      },
+                      "required": [
+                        "ask",
+                        "why_this_ask"
+                      ]
+                    }
+                  },
+                  "differs_from_teaching_path": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "How the learner's route differs from the expert's construction. This is the sentence a reviewer checks the A/B claim against, so it may not restate the teaching path it claims to differ from."
+                  }
+                },
+                "required": [
+                  "route",
+                  "differs_from_teaching_path"
+                ]
+              },
+              "boundary_test": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "prompt": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "A limiting case, reversal or edge condition."
+                  },
+                  "confirms": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "What passing it establishes, stated so that a recall question cannot be passed off as a boundary test."
+                  },
+                  "answer": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "What passing it looks like. The shared closure invariant has no exception for the last prompt in a cycle."
+                  }
+                },
+                "required": [
+                  "prompt",
+                  "answer",
+                  "confirms"
+                ]
+              }
+            },
+            "required": [
+              "predict",
+              "attempt",
+              "reconstruct",
+              "boundary_test"
+            ]
+          },
+          "construction_units": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/construction_unit"
+            }
+          },
+          "compact_anchor": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "prompt",
+              "result"
+            ],
+            "description": "Schema 0.2.0: the Core1 compact anchor, a one-line instance of the governing relation that makes the map usable before Core1A.",
+            "properties": {
+              "prompt": {
+                "type": "string",
+                "minLength": 1
+              },
+              "result": {
+                "type": "string",
+                "minLength": 1
+              },
+              "representation_ref": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The representation of this compact anchor's own situation, shown on the Core1 map. When absent, Core1 falls back to the microtopic's first representation_refs entry, which is often shared across microtopics."
+              }
+            }
+          }
+        },
+        "required": [
+          "id",
+          "version",
+          "status",
+          "source_refs",
+          "evidence_refs",
+          "extensions",
+          "title",
+          "bucket_id",
+          "primary_capability_ref",
+          "intrinsic_badge",
+          "badge_reason",
+          "entry_assumptions",
+          "inferential_jump",
+          "teaching_path",
+          "relation_refs",
+          "representation_refs",
+          "question_family_refs",
+          "misconceptions",
+          "exit_task",
+          "research_contribution",
+          "prerequisite_refs",
+          "lineage"
+        ]
+      },
+      "digest": "sha256:1686d613a7e669b7219db2e969b3a74ffda954bb7f4966bcd221abf16148e57d"
+    },
+    {
+      "id": "NATIVE-STEP",
+      "source_ref": "PKG_SCHEMA",
+      "kind": "JSON_POINTER",
+      "locator": {
+        "pointer": "/$defs/step"
+      },
+      "content": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "action": {
+            "type": "string",
+            "minLength": 1
+          },
+          "why_valid": {
+            "type": "string",
+            "minLength": 1
+          },
+          "inputs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "output": {
+            "type": "string",
+            "minLength": 1
+          },
+          "role": {
+            "description": "What the step does to the state. A DECLARE step fixes a convention or a domain and legitimately produces no computation; a TRANSFORM step changes the mathematical state and must show the changed state, not describe it; a VERIFY step checks a result against something already established.",
+            "enum": [
+              "DECLARE",
+              "TRANSFORM",
+              "VERIFY"
+            ]
+          },
+          "source_ref": {
+            "type": "string",
+            "minLength": 1,
+            "description": "The source this step's claim rests on. Absent means the step is the author's own construction, which is legitimate and is not the same as source-supported."
+          }
+        },
+        "required": [
+          "id",
+          "role",
+          "action",
+          "why_valid",
+          "inputs",
+          "output"
+        ]
+      },
+      "digest": "sha256:bef05081da5d29b5d9840965decc3edc4f41c61eca3d657a6a33f3c8f7eb3407"
+    },
+    {
+      "id": "NATIVE-CONSTRUCTION_UNIT",
+      "source_ref": "PKG_SCHEMA",
+      "kind": "JSON_POINTER",
+      "locator": {
+        "pointer": "/$defs/construction_unit"
+      },
+      "content": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "One distinct decision/event of a microtopic's construction, taught as its own unit (Core1A) and reconstructed in Core1B.",
+        "required": [
+          "id",
+          "step_refs"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^CU-[A-Z0-9-]+$"
+          },
+          "extensions": {
+            "type": "object",
+            "description": "Namespaced unit-level extensions. Repeated blueprint applicability may use extensions['grade9v3:component_waivers'] with the same {COMPONENT_ID: reason} contract as a top-level record."
+          },
+          "decision": {
+            "type": "string",
+            "minLength": 1,
+            "description": "The move the learner must make in this unit, in words."
+          },
+          "step_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1,
+            "description": "teaching_path step ids this unit covers, in order."
+          },
+          "representation_ref": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Representation that stages this unit."
+          },
+          "reveal_stage_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "That representation's reveal stages used by this unit, in order."
+          },
+          "worked_anchor_ref": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Question (exposure CORE1A) whose route exercises this unit's move."
+          },
+          "bank_anchor_ref": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "description": "A question of the product's bank (an owner-supplied or exam question, not a question of this package) that this unit works through as its worked example: the page shows the question as its owner wrote it with its verified route. Resolved when the product is built, so a package does not carry a copy of the question. Use it for the question the unit builds toward; use worked_anchor_ref for a question the package authors itself."
+          },
+          "crux_question_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1,
+            "description": "Bank questions whose crux this unit builds: the move a learner is most likely to miss in each. The toughest question of a set must be named here by a unit of the concept it belongs to; its difficulty band does not prescribe the unit's component or panel count."
+          },
+          "crux_step_ref": {
+            "type": "string",
+            "minLength": 1,
+            "description": "The teaching_path step of this unit (one of its step_refs) that builds the move named questions in crux_question_refs turn on. The page marks that step, so a reader can see where the unit does the work the hard question needs."
+          },
+          "misconception_indexes": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "description": "Indexes into microtopic.misconceptions (wrong path, diagnose, repair)."
+          },
+          "relation_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "description": "The microtopic's relations this unit uses, shown as the unit's own equation card. Absent: the first unit shows all of the microtopic's relations."
+          },
+          "independent_checks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/independent_check"
+            }
+          },
+          "migrated_from": {
+            "type": "string",
+            "description": "Set by package_migrate.py when the unit was derived mechanically (e.g. 'teaching_path'); cleared when an author reviews it."
+          },
+          "decision_from": {
+            "enum": [
+              "inferential_jump"
+            ],
+            "description": "Set instead of `decision` when the unit's decision is the microtopic's own field (migration); one source of truth, no copied text."
+          }
+        },
+        "anyOf": [
+          {
+            "required": [
+              "decision"
+            ]
+          },
+          {
+            "required": [
+              "decision_from"
+            ]
+          }
+        ]
+      },
+      "digest": "sha256:6087cdf85dbacc13bc16269c97e18a6d397fb69ad04e18ed0e56ad8bd27b1dfa"
+    },
+    {
+      "id": "NATIVE-REPRESENTATION",
+      "source_ref": "PKG_SCHEMA",
+      "kind": "JSON_POINTER",
+      "locator": {
+        "pointer": "/$defs/representation"
+      },
+      "content": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "DISCOVERED",
+              "CANDIDATE",
+              "REVIEWED",
+              "CURATED",
+              "DISPUTED",
+              "STALE",
+              "RETIRED"
+            ]
+          },
+          "source_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "extensions": {
+            "type": "object",
+            "description": "Namespaced subject extensions; no scientific authority is inferred."
+          },
+          "kind": {
+            "type": "string",
+            "minLength": 1
+          },
+          "purpose": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required_elements": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "relation_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "read_order": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "instance_constraints": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "accessibility": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "misleading_alternatives": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "rendered_asset_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "scene_instances": {
+            "description": "Concrete figures satisfying this representation. Everything above states what a figure of this kind must show; an instance states one actual figure, bound to the data it draws, so the library can compile a figure instead of only requiring one.",
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/scene_instance"
+            },
+            "minItems": 0
+          },
+          "correspondence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "element": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "The part of the picture, named as required_elements names it."
+                },
+                "symbol": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "The symbol it stands for, as the governing relation writes it."
+                },
+                "in_words": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "The same thing said in words, which is the third leg of the bridge."
+                }
+              },
+              "required": [
+                "element",
+                "symbol",
+                "in_words"
+              ]
+            },
+            "minItems": 0,
+            "description": "The representation bridge. required_elements says what the picture must contain and the relation's symbols say what the algebra means, but nothing bound one to the other, so the correspondence a learner must make was asserted rather than held. Naming all three legs is what makes it explicit in both directions rather than a caption pointing one way."
+          },
+          "interactive_resource_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0,
+            "description": "ACTIVITY resources that implement or manipulate this canonical representation. The representation remains academic authority."
+          },
+          "reveal_stages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/visual_stage"
+            },
+            "minItems": 0,
+            "description": "Ordered author-defined reveal states for progressive visual support. No global stage count is imposed."
+          },
+          "support_stage_map": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/support_stage_binding"
+            },
+            "minItems": 0,
+            "description": "Optional mapping from matrix pre-attempt support level to initial representation stage."
+          }
+        },
+        "required": [
+          "id",
+          "version",
+          "status",
+          "source_refs",
+          "evidence_refs",
+          "extensions",
+          "kind",
+          "purpose",
+          "required_elements",
+          "relation_refs",
+          "read_order",
+          "instance_constraints",
+          "accessibility",
+          "misleading_alternatives",
+          "rendered_asset_refs",
+          "scene_instances"
+        ]
+      },
+      "digest": "sha256:b9d7645031777bfc8abda988531e7cc77957329f012d0e58dcd04ed261940b56"
+    },
+    {
+      "id": "NATIVE-RELATION",
+      "source_ref": "PKG_SCHEMA",
+      "kind": "JSON_POINTER",
+      "locator": {
+        "pointer": "/$defs/relation"
+      },
+      "content": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "DISCOVERED",
+              "CANDIDATE",
+              "REVIEWED",
+              "CURATED",
+              "DISPUTED",
+              "STALE",
+              "RETIRED"
+            ]
+          },
+          "source_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "extensions": {
+            "type": "object",
+            "description": "Namespaced subject extensions; no scientific authority is inferred."
+          },
+          "expression": {
+            "type": "string",
+            "minLength": 1
+          },
+          "meaning": {
+            "type": "string",
+            "minLength": 1
+          },
+          "symbols": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "symbol": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "meaning": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "unit_or_domain": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "symbol",
+                "meaning",
+                "unit_or_domain"
+              ]
+            },
+            "minItems": 1
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "derivation": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/step"
+            },
+            "minItems": 1
+          },
+          "limits": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "checks": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "mathml": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Restricted presentation MathML for this relation, so a product can render it without re-authoring."
+          },
+          "gate_relation_ref": {
+            "description": "The engineering gate relation this is a bound copy of. Subject truth is owned by the gate registry; the library holds a copy so the compiler can reach it, and that copy is checked against the owner. null says no gate backs this relation: that is true of a subject that declares no gates (a sandbox, or a contract-only subject), and for a subject that has gates Shared/library/authority.py reports it as GATE_RELATION_BINDING_ABSENT.",
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "version",
+          "status",
+          "source_refs",
+          "evidence_refs",
+          "extensions",
+          "expression",
+          "meaning",
+          "symbols",
+          "conditions",
+          "derivation",
+          "limits",
+          "checks",
+          "gate_relation_ref"
+        ]
+      },
+      "digest": "sha256:ecbfa4eeda8187c8418eb9116384cbea37434ca4d21fb034727742bc45cf8909"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "The extract defines potential-energy change using conservative work and a chosen zero.",
+      "unit_refs": [
+        "U-BOOK-1"
+      ],
+      "source_scan_refs": [
+        "SCAN-6"
+      ],
+      "conditions": [
+        "Specify system, conservative interaction and a common potential zero.",
+        "Uniform-g approximation and height convention are required; external lifting work equals mgh only with the required kinetic-energy/other-transfer conditions."
+      ],
+      "disputes": [
+        "The source lifting statement omits a full external-work/kinetic-energy qualification.",
+        "Printed scan support for the extraction’s detailed spring equations is incomplete."
+      ],
+      "qualification": "UNREVIEWED"
+    },
+    {
+      "id": "C2",
+      "statement": "It gives the near-Earth gravitational energy change from vertical height change.",
+      "unit_refs": [
+        "U-BOOK-1"
+      ],
+      "source_scan_refs": [
+        "SCAN-6"
+      ],
+      "conditions": [
+        "Specify system, conservative interaction and a common potential zero.",
+        "Uniform-g approximation and height convention are required; external lifting work equals mgh only with the required kinetic-energy/other-transfer conditions."
+      ],
+      "disputes": [
+        "The source lifting statement omits a full external-work/kinetic-energy qualification.",
+        "Printed scan support for the extraction’s detailed spring equations is incomplete."
+      ],
+      "qualification": "UNREVIEWED"
+    },
+    {
+      "id": "C3",
+      "statement": "Elastic storage formulas appear in the extraction, while the retained page6 image is cut at the lower concepts region.",
+      "unit_refs": [
+        "U-BOOK-1"
+      ],
+      "source_scan_refs": [
+        "SCAN-6"
+      ],
+      "conditions": [
+        "Specify system, conservative interaction and a common potential zero.",
+        "Uniform-g approximation and height convention are required; external lifting work equals mgh only with the required kinetic-energy/other-transfer conditions."
+      ],
+      "disputes": [
+        "The source lifting statement omits a full external-work/kinetic-energy qualification.",
+        "Printed scan support for the extraction’s detailed spring equations is incomplete."
+      ],
+      "qualification": "UNREVIEWED"
+    }
+  ],
+  "binding": {
+    "spine_node": "WPE-N06",
+    "spine_unit_ref": "U-SPINE",
+    "canonical_matches": [
+      {
+        "unit_ref": "U-MICRO",
+        "microtopic_id": "MIC-PHY-WEP-GRADE9-QUANT",
+        "capability_id": "CAP-WEP-GRADE9-QUANT",
+        "relationship": "PREREQUISITE_BRIDGE",
+        "semantic_status": "UNREVIEWED"
+      }
+    ],
+    "canonical_gaps": [
+      "The selected canonical library lacks the required elastic-force and elastic-storage relations."
+    ]
+  },
+  "warrants": [
+    {
+      "id": "W-CANDIDATE",
+      "claim_refs": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "unit_refs": [
+        "U-REL-4"
+      ],
+      "reference_unit_refs": [
+        "U-REFERENCE-WEP-05"
+      ],
+      "needed_reason": "Candidate support for the stated requirement; correspondence and scientific conditions require distinct review.",
+      "conditions": [
+        "Specify system, conservative interaction and a common potential zero.",
+        "Uniform-g approximation and height convention are required; external lifting work equals mgh only with the required kinetic-energy/other-transfer conditions."
+      ],
+      "qualification": "CANDIDATE",
+      "gap": "No independent qualification receipt; scope may be partial."
+    },
+    {
+      "id": "W-GAP",
+      "claim_refs": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "unit_refs": [],
+      "reference_unit_refs": [
+        "U-REFERENCE-WEP-05"
+      ],
+      "needed_reason": "A missing decisive warrant is retained rather than replaced with a nearby formula.",
+      "conditions": [
+        "Specify system, conservative interaction and a common potential zero.",
+        "Uniform-g approximation and height convention are required; external lifting work equals mgh only with the required kinetic-energy/other-transfer conditions."
+      ],
+      "qualification": "MISSING",
+      "gap": "The selected canonical library lacks the required elastic-force and elastic-storage relations."
+    }
+  ],
+  "construction": {
+    "inputs": [
+      "Initial/final configurations, conservative work and chosen zero.",
+      "Uniform-g height change or an explicitly qualified elastic model."
+    ],
+    "output": "Brief for constructing an energy difference from interaction work, separating reference choice from observable change.",
+    "obstacle": "Potential zero is treated as unique, or all external work is equated with stored energy.",
+    "decisive_move": "Define the system and conservative-work sign first, then form the potential difference using one reference.",
+    "entry_assumptions": [
+      "Prerequisite nodes: WPE-N05",
+      "Specify system, conservative interaction and a common potential zero.",
+      "Uniform-g approximation and height convention are required; external lifting work equals mgh only with the required kinetic-energy/other-transfer conditions."
+    ],
+    "conventions": [
+      "Specify system, conservative interaction and a common potential zero.",
+      "Uniform-g approximation and height convention are required; external lifting work equals mgh only with the required kinetic-energy/other-transfer conditions."
+    ],
+    "steps": [
+      {
+        "id": "REQ-INPUT",
+        "role": "INPUT",
+        "requirement": "Fix the chosen model and inputs: Initial/final configurations, conservative work and chosen zero.; Uniform-g height change or an explicitly qualified elastic model.",
+        "why_needed": "Prevents a change of body, reference or given condition.",
+        "unit_refs": [
+          "U-BOOK-1"
+        ],
+        "claim_refs": [
+          "C1"
+        ],
+        "warrant_refs": [
+          "W-CANDIDATE",
+          "W-GAP"
+        ],
+        "depends_on": []
+      },
+      {
+        "id": "REQ-REPRESENT",
+        "role": "REPRESENT",
+        "requirement": "Bind U_A,U_B, Delta h, reference plane to the chosen physical situation.",
+        "why_needed": "Correspondence is needed before symbolic manipulation.",
+        "unit_refs": [
+          "U-BOOK-1"
+        ],
+        "claim_refs": [
+          "C2"
+        ],
+        "warrant_refs": [
+          "W-CANDIDATE",
+          "W-GAP"
+        ],
+        "depends_on": [
+          "REQ-INPUT"
+        ]
+      },
+      {
+        "id": "REQ-CONNECT",
+        "role": "CONNECT",
+        "requirement": "Define the system and conservative-work sign first, then form the potential difference using one reference.",
+        "why_needed": "This is the required intellectual bridge, not a formula label.",
+        "unit_refs": [
+          "U-BOOK-1"
+        ],
+        "claim_refs": [
+          "C1",
+          "C2",
+          "C3"
+        ],
+        "warrant_refs": [
+          "W-CANDIDATE",
+          "W-GAP"
+        ],
+        "depends_on": [
+          "REQ-REPRESENT"
+        ]
+      },
+      {
+        "id": "REQ-TRANSFORM",
+        "role": "TRANSFORM",
+        "requirement": "Require the reason for the minus sign and distinguish Delta U from external work and kinetic-energy change.",
+        "why_needed": "Every consequential transformation needs its actual warrant and conditions.",
+        "unit_refs": [
+          "U-BOOK-1"
+        ],
+        "claim_refs": [
+          "C1"
+        ],
+        "warrant_refs": [
+          "W-CANDIDATE",
+          "W-GAP"
+        ],
+        "depends_on": [
+          "REQ-CONNECT"
+        ]
+      },
+      {
+        "id": "REQ-VERIFY",
+        "role": "VERIFY",
+        "requirement": "Change only the potential reference and compare the resulting energy differences and ledger predictions.",
+        "why_needed": "A second account must test the same claim without merely repeating its expression.",
+        "unit_refs": [
+          "U-BOOK-1"
+        ],
+        "claim_refs": [
+          "C2"
+        ],
+        "warrant_refs": [
+          "W-CANDIDATE",
+          "W-GAP"
+        ],
+        "depends_on": [
+          "REQ-TRANSFORM"
+        ]
+      },
+      {
+        "id": "REQ-BOUNDARY",
+        "role": "BOUNDARY",
+        "requirement": "Preserve: Elastic storage requires separate Hooke/elastic-range justification, and body versus system wording must remain consistent.",
+        "why_needed": "The result must not be generalized outside its reviewed scope.",
+        "unit_refs": [
+          "U-BOOK-1"
+        ],
+        "claim_refs": [
+          "C3"
+        ],
+        "warrant_refs": [
+          "W-CANDIDATE",
+          "W-GAP"
+        ],
+        "depends_on": [
+          "REQ-VERIFY"
+        ]
+      }
+    ],
+    "representation_needs": [
+      {
+        "id": "REP-1",
+        "asset_ref": null,
+        "status": "MISSING",
+        "source_scan_refs": [
+          "SCAN-6"
+        ],
+        "correspondence": [
+          {
+            "symbol": "U_A,U_B",
+            "element": "Required scene/graph element 1",
+            "in_words": "Future teacher must bind U_A,U_B to this node’s chosen object, coordinate and interval."
+          },
+          {
+            "symbol": "Delta h",
+            "element": "Required scene/graph element 2",
+            "in_words": "Future teacher must bind Delta h to this node’s chosen object, coordinate and interval."
+          },
+          {
+            "symbol": "reference plane",
+            "element": "Required scene/graph element 3",
+            "in_words": "Future teacher must bind reference plane to this node’s chosen object, coordinate and interval."
+          }
+        ],
+        "requirement": "Retain original scan evidence; qualify generated redraws and author a suitable native teaching representation with correct objects, axes, signs and regime. No new teaching figure is emitted."
+      }
+    ],
+    "worked_example_requirement": "Use retained illustrations as author references only. After the approval gate, author a distinct complete non-exam teaching example with why-valid steps; do not expose a protected Core2/Core1B route.",
+    "boundary_requirements": [
+      "Elastic storage requires separate Hooke/elastic-range justification, and body versus system wording must remain consistent."
+    ],
+    "wrong_path_candidates": [
+      {
+        "id": "WRONG-1",
+        "hypothesis": "Raising always requires exactly mgh external work regardless of speed change or losses.",
+        "claim_refs": [
+          "C1",
+          "C2",
+          "C3"
+        ],
+        "diagnostic_contrast": "Compare the same height change with different final kinetic energies while keeping the system explicit.",
+        "repair_requirement": "Write the complete energy/transfer account before equating a particular work with Delta U.",
+        "observation": "NONE"
+      }
+    ],
+    "check_requirements": [
+      {
+        "id": "CHECK-1",
+        "claim_refs": [
+          "C1",
+          "C2",
+          "C3"
+        ],
+        "method": "Change only the potential reference and compare the resulting energy differences and ledger predictions.",
+        "expected_invariant": "Changing a common zero does not change a potential difference or predicted physical result.",
+        "independence_basis": "Different representation or conservation/force account under matched assumptions; independence must be reviewed, not inferred from a new sentence.",
+        "status": "DESIGN_ONLY"
+      }
+    ]
+  },
+  "sl2_requirement_mapping": {
+    "status": "PENDING_REVIEWED_REQUIREMENT",
+    "task_identity": null,
+    "requirement_bindings": [],
+    "missing_input": "No independently adjudicated exact SL2/QRT requirement with matching current task/source/dependency and authority evidence has been supplied. Do not infer an exam operation/band from this book node."
+  },
+  "native_mapping": [
+    {
+      "schema_unit_ref": "NATIVE-MICROTOPIC",
+      "native_property": "entry_assumptions",
+      "handoff_pointer": "/construction/entry_assumptions",
+      "action": "AUTHOR_FROM_EVIDENCE"
+    },
+    {
+      "schema_unit_ref": "NATIVE-MICROTOPIC",
+      "native_property": "inferential_jump",
+      "handoff_pointer": "/construction/decisive_move",
+      "action": "AUTHOR_FROM_EVIDENCE"
+    },
+    {
+      "schema_unit_ref": "NATIVE-MICROTOPIC",
+      "native_property": "teaching_path",
+      "handoff_pointer": "/construction/steps",
+      "action": "AUTHOR_FROM_EVIDENCE"
+    },
+    {
+      "schema_unit_ref": "NATIVE-STEP",
+      "native_property": "why_valid",
+      "handoff_pointer": "/construction/steps",
+      "action": "AUTHOR_FROM_EVIDENCE"
+    },
+    {
+      "schema_unit_ref": "NATIVE-REPRESENTATION",
+      "native_property": "correspondence",
+      "handoff_pointer": "/construction/representation_needs",
+      "action": "AUTHOR_FROM_EVIDENCE"
+    },
+    {
+      "schema_unit_ref": "NATIVE-CONSTRUCTION_UNIT",
+      "native_property": "worked_anchor_ref",
+      "handoff_pointer": "/construction/worked_example_requirement",
+      "action": "AUTHOR_DISTINCT_EXAMPLE"
+    },
+    {
+      "schema_unit_ref": "NATIVE-MICROTOPIC",
+      "native_property": "primary_capability_ref",
+      "handoff_pointer": "/binding/canonical_matches",
+      "action": "RESOLVE_EXISTING_REFS"
+    }
+  ],
+  "review_requests": [
+    {
+      "id": "REVIEW-CLAIM-1",
+      "target_pointer": "/claims/0",
+      "target_digest": "sha256:d63fe245dd5aea8feec0860c3ea53e8bc684abb5a8bbc4bfc26add5eb950ffbb",
+      "question": "Is the interpreted claim faithful to its exact source and valid under these explicit conditions?",
+      "required_evidence": [
+        "Exact original passage/scan locator and any transcription discrepancy.",
+        "Distinct qualified scientific disposition with reasoning, scope, reviewer identity/exposure and exact dependency versions."
+      ],
+      "status": "OPEN"
+    },
+    {
+      "id": "REVIEW-CLAIM-2",
+      "target_pointer": "/claims/1",
+      "target_digest": "sha256:74b92431da336fb77c856e85449ad97342938d2b3d78abf5a5a46d6c36d2d906",
+      "question": "Is the interpreted claim faithful to its exact source and valid under these explicit conditions?",
+      "required_evidence": [
+        "Exact original passage/scan locator and any transcription discrepancy.",
+        "Distinct qualified scientific disposition with reasoning, scope, reviewer identity/exposure and exact dependency versions."
+      ],
+      "status": "OPEN"
+    },
+    {
+      "id": "REVIEW-CLAIM-3",
+      "target_pointer": "/claims/2",
+      "target_digest": "sha256:eba6f410dce07f9b97ccc59cd4ca890778edf8894dc9d1fc8d13631ca434b634",
+      "question": "Is the interpreted claim faithful to its exact source and valid under these explicit conditions?",
+      "required_evidence": [
+        "Exact original passage/scan locator and any transcription discrepancy.",
+        "Distinct qualified scientific disposition with reasoning, scope, reviewer identity/exposure and exact dependency versions."
+      ],
+      "status": "OPEN"
+    },
+    {
+      "id": "REVIEW-WARRANTS",
+      "target_pointer": "/warrants",
+      "target_digest": "sha256:9b72376f17c495c3f5591e4cb6415963209d092eb2d3ae8e97cb02511cb20e12",
+      "question": "Resolve the load-bearing warrants boundary against actual source and task evidence.",
+      "required_evidence": [
+        "Exact target digest and source/claim dependencies.",
+        "Authorized non-author review or actual adjudicated task; no status-enum substitution."
+      ],
+      "status": "OPEN"
+    },
+    {
+      "id": "REVIEW-CONSTRUCTION",
+      "target_pointer": "/construction",
+      "target_digest": "sha256:c3fe0fc54009672077351c202e9ae3dfe808ace914224b161f10ec7cdc2204cf",
+      "question": "Resolve the load-bearing construction boundary against actual source and task evidence.",
+      "required_evidence": [
+        "Exact target digest and source/claim dependencies.",
+        "Authorized non-author review or actual adjudicated task; no status-enum substitution."
+      ],
+      "status": "OPEN"
+    },
+    {
+      "id": "REVIEW-SL2_REQUIREMENT_MAPPING",
+      "target_pointer": "/sl2_requirement_mapping",
+      "target_digest": "sha256:26e9e0977453f5cf9c1c43eb72e225594b01c75dec8fe21fd439af3e39e8c4c5",
+      "question": "Resolve the load-bearing sl2_requirement_mapping boundary against actual source and task evidence.",
+      "required_evidence": [
+        "Exact target digest and source/claim dependencies.",
+        "Authorized non-author review or actual adjudicated task; no status-enum substitution."
+      ],
+      "status": "OPEN"
+    }
+  ],
+  "holds": [
+    {
+      "id": "H-SCIENCE",
+      "detail": "All interpreted claims and candidate warrants remain unqualified.",
+      "affects": [
+        "SCIENCE_QUALIFICATION"
+      ]
+    },
+    {
+      "id": "H-QRT",
+      "detail": "Missing exact reviewed SL2/QRT task and selected adapter/resolver.",
+      "affects": [
+        "CORE1A_TASK_ALIGNMENT"
+      ]
+    },
+    {
+      "id": "H-OWNER",
+      "detail": "Completed Core2 Owner approval precedes lesson authoring; Core1B follows Core1A approval. D3.1 paused.",
+      "affects": [
+        "CORE1A_AUTHORING",
+        "CORE1B_AUTHORING"
+      ]
+    },
+    {
+      "id": "H-WARRANT",
+      "detail": "The selected canonical library lacks the required elastic-force and elastic-storage relations.",
+      "affects": [
+        "WARRANT_QUALIFICATION",
+        "CORE1A_AUTHORING"
+      ]
+    }
+  ],
+  "review": {
+    "semantic": "NOT_RUN",
+    "core2_owner_approval": "PENDING",
+    "core1a_authoring": "NOT_STARTED",
+    "core1b_correspondence": "NOT_RUN"
+  },
+  "notes": [
+    "Author/exposed preparation; no independent academic review or learner observation.",
+    "All nine source images were visually inspected in this routine; the selected regions and limitations are in program.json. This is not full OCR, diagram equivalence or scientific acceptance.",
+    "Generated SVGs are derived material and remain unreviewed. Every original scan and SVG is retained; all linked source chapter assets resolve locally.",
+    "Book illustration badges are not official examination provenance. No new question or lesson is authored.",
+    "A matching source hash proves retained bytes, not accurate transcription or scientific truth.",
+    "The retained reference ontology supplies proposed material under WEP-05. It is a review lead, not the canonical library or a qualified replacement for missing chapter derivations. Its source_authority/canonical_rules labels are claims, not acceptance receipts."
+  ],
+  "dependency_digest": "sha256:eb963e4710e6312001ef8e3e022cc0b23abe1678458b72b7d4466b747e8a674e"
+}

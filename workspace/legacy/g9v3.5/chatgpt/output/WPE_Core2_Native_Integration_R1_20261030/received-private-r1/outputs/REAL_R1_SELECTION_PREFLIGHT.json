@@ -1,0 +1,3512 @@
+{
+  "schema": "wpe-core2-r1-bridge/v1",
+  "scope": "UNVERIFIED_PROPOSALS_ONLY",
+  "records": [
+    {
+      "canonical_id": "EX-M105",
+      "duplicate_of": null,
+      "origin": "EXAM_ORIGINAL_UPSTREAM_UNVERIFIED",
+      "source_role": "DIRECT_EXAM_EVIDENCE_PENDING",
+      "question": {
+        "id": "EX-M105",
+        "original_identifier": "EX-M105",
+        "origin": "EXAM_ORIGINAL",
+        "stem": "A 2 𝑘𝑔 block slides on a horizontal floor with a speed of 4𝑚/𝑠. It strikes an uncompressed spring and compresses it till the block is motionless. The kinetic friction force is 15𝑁 and spring constant is 10,000 𝑁/𝑚. The spring compresses by",
+        "options": [
+          {
+            "id": "A",
+            "text": "8.5𝑐𝑚"
+          },
+          {
+            "id": "B",
+            "text": "5.5𝑐𝑚"
+          },
+          {
+            "id": "C",
+            "text": "2.5𝑐𝑚"
+          },
+          {
+            "id": "D",
+            "text": "11.0𝑐𝑚"
+          }
+        ],
+        "subparts": [],
+        "conditions": [],
+        "figure_refs": [],
+        "hints": [],
+        "scaffolds": [],
+        "answer": {},
+        "extensions": {
+          "wpe:response_type": "SINGLE_CHOICE",
+          "wpe:r1_record_id": "EX-M105",
+          "wpe:review_status": "EXPOSED_UNREVIEWED"
+        }
+      },
+      "source": {
+        "original_r1_custody": {
+          "record_id": "EX-M105",
+          "native_alias": "Q-PHY-WPE-JEEM-M105",
+          "raw_source": {
+            "path": "evidence/cfa7368f9504cc72c3f05fa61328a3086496e89f6eb56c389927d2673b895071.json",
+            "sha256": "cfa7368f9504cc72c3f05fa61328a3086496e89f6eb56c389927d2673b895071",
+            "locator": "/items/43",
+            "original_name": "examside-wpe-extract.json"
+          },
+          "question_digest": "sha256:7a97bb08190faaad6c55f7973d885b479274c2788ce50ab9d7d59f0110762db9",
+          "answer_digest": "sha256:88993c8604788fd8b254af7054c7c6dfbf874b3c12012b5651fcec6bcc1121fc",
+          "paper": "AIEEE 2007",
+          "paper_evidence": null,
+          "question_assets": [],
+          "unbound_figure_refs": [],
+          "answer_key_claim": null,
+          "claim_kind": "UNRESOLVED",
+          "key_evidence": null,
+          "publisher_solution_exists": true,
+          "upstream_verified": false,
+          "source_version_aliases": [],
+          "family_links": [
+            "spring-oscillation"
+          ],
+          "question_and_key_independently_bound": false
+        },
+        "question_digest": "f7c9cc6f2f35ee25de117c4ce9af309d8dfb4367f9beb8ab6c930f9ca68ceb07",
+        "options_digest": "11952798484457e2914ad2b0a24de8d9f5c99a13c3391be0f4fd03e43f204498",
+        "figure_digests": [],
+        "required_figures_bound": false,
+        "official_paper": null,
+        "official_key": null,
+        "answer_versions": {
+          "inherited_claim_digest": "sha256:88993c8604788fd8b254af7054c7c6dfbf874b3c12012b5651fcec6bcc1121fc",
+          "official_claim_digest": null,
+          "reconciliation": "OPEN"
+        }
+      },
+      "curriculum": {
+        "semantic_cell_resolved": false,
+        "capability_ref": null,
+        "microtopic_ref": null
+      },
+      "assessment": {
+        "factors": {
+          "concept_model_selection": 1,
+          "representation_translation": 1,
+          "reasoning_chain_length": 2,
+          "algebra_computational_load": 1,
+          "trap_exception_sensitivity": 1
+        },
+        "total": 6,
+        "band": "D3",
+        "primary_operation": "APPLY",
+        "factor_evidence": {
+          "concept_model_selection": "Recognise the familiar work-energy relation with a linear spring and constant kinetic friction.",
+          "representation_translation": "Represent the compression distance as the same x in frictional work and spring energy.",
+          "reasoning_chain_length": "Calculate 16 J initial kinetic energy, write 5000x²+15x=16, solve and select the physically admissible root.",
+          "algebra_computational_load": "A standard quadratic and metre-to-centimetre conversion are material local computations.",
+          "trap_exception_sensitivity": "Ignoring friction during spring compression or retaining the negative root gives the wrong compression."
+        },
+        "decisive_move_evidence": "Use initial kinetic energy for both spring storage and frictional loss during compression; select the positive compression root.",
+        "competing_operations": [
+          {
+            "operation": "MODEL",
+            "reason": "If deciding to include friction during compression is the decisive model choice, MODEL may be primary; this proposal treats that as a familiar applicability check."
+          }
+        ],
+        "source_stage": "AUTHOR_EXPOSED_HYPOTHESIS"
+      },
+      "governance": {
+        "reviewer_exposure_disclosed": null,
+        "qrt_adjudication": "HOLD"
+      },
+      "grading_policy": {},
+      "prior_exposure": true,
+      "r1_preserved_proposals": {
+        "sl1": {
+          "status": "UNREVIEWED",
+          "source_status": "LOCAL_BYTES_BOUND_UPSTREAM_UNVERIFIED",
+          "answer_status": "INHERITED_CLAIM_NOT_OFFICIAL",
+          "figure_status": "PENDING_WITNESS",
+          "first_try_ok": false,
+          "source_role": "DIRECT_EXAM_EVIDENCE_PENDING",
+          "flags": [
+            "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+            "OFFICIAL_KEY_NOT_BOUND"
+          ],
+          "duplicate_of": null,
+          "rights": "OWNER_LOCAL_ONLY"
+        },
+        "sl2": {
+          "mode": "QUESTION",
+          "status": "UNREVIEWED",
+          "operation": "APPLY",
+          "alternative": {
+            "operation": "MODEL",
+            "reason": "If deciding to include friction during compression is the decisive model choice, MODEL may be primary; this proposal treats that as a familiar applicability check."
+          },
+          "scores": {
+            "concept_model_selection": 1,
+            "representation_translation": 1,
+            "reasoning_chain_length": 2,
+            "algebra_computational_load": 1,
+            "trap_exception_sensitivity": 1
+          },
+          "factor_evidence": [
+            {
+              "factor": "concept_model_selection",
+              "score": 1,
+              "evidence": "Recognise the familiar work-energy relation with a linear spring and constant kinetic friction."
+            },
+            {
+              "factor": "representation_translation",
+              "score": 1,
+              "evidence": "Represent the compression distance as the same x in frictional work and spring energy."
+            },
+            {
+              "factor": "reasoning_chain_length",
+              "score": 2,
+              "evidence": "Calculate 16 J initial kinetic energy, write 5000x²+15x=16, solve and select the physically admissible root."
+            },
+            {
+              "factor": "algebra_computational_load",
+              "score": 1,
+              "evidence": "A standard quadratic and metre-to-centimetre conversion are material local computations."
+            },
+            {
+              "factor": "trap_exception_sensitivity",
+              "score": 1,
+              "evidence": "Ignoring friction during spring compression or retaining the negative root gives the wrong compression."
+            }
+          ],
+          "total": 6,
+          "band": "D3",
+          "band_status": "PROPOSED_UNREVIEWED",
+          "crux": "Use initial kinetic energy for both spring storage and frictional loss during compression; select the positive compression root.",
+          "worked_resolution": "Positive compression about 5.5 cm; independently verify option B.",
+          "conditions": [
+            "Kinetic friction force remains 15 N during compression.",
+            "The spring is initially uncompressed and the floor is stationary."
+          ],
+          "learner_evidence": "NOT_SUPPLIED",
+          "prior_score_seen": true
+        }
+      },
+      "source_record_id": "EX-M105"
+    },
+    {
+      "canonical_id": "EX-M62",
+      "duplicate_of": null,
+      "origin": "EXAM_ORIGINAL_UPSTREAM_UNVERIFIED",
+      "source_role": "DIRECT_EXAM_EVIDENCE_PENDING",
+      "question": {
+        "id": "EX-M62",
+        "original_identifier": "EX-M62",
+        "origin": "EXAM_ORIGINAL",
+        "stem": "An automobile of mass 'm' accelerates starting from origin and initially at rest, while the engine supplies constant power P. The position is given as a function of time by :",
+        "options": [
+          {
+            "id": "A",
+            "text": "((9𝑃)/(8𝑚))^((1)/(2))𝑡^((3)/(2))"
+          },
+          {
+            "id": "B",
+            "text": "((8𝑃)/(9𝑚))^((1)/(2))𝑡^((2)/(3))"
+          },
+          {
+            "id": "C",
+            "text": "((9𝑚)/(8𝑃))^((1)/(2))𝑡^((3)/(2))"
+          },
+          {
+            "id": "D",
+            "text": "((8𝑃)/(9𝑚))^((1)/(2))𝑡^((3)/(2))"
+          }
+        ],
+        "subparts": [],
+        "conditions": [],
+        "figure_refs": [],
+        "hints": [],
+        "scaffolds": [],
+        "answer": {},
+        "extensions": {
+          "wpe:response_type": "SINGLE_CHOICE",
+          "wpe:r1_record_id": "EX-M62",
+          "wpe:review_status": "EXPOSED_UNREVIEWED"
+        }
+      },
+      "source": {
+        "original_r1_custody": {
+          "record_id": "EX-M62",
+          "native_alias": "Q-PHY-WPE-JEEM-M62",
+          "raw_source": {
+            "path": "evidence/cfa7368f9504cc72c3f05fa61328a3086496e89f6eb56c389927d2673b895071.json",
+            "sha256": "cfa7368f9504cc72c3f05fa61328a3086496e89f6eb56c389927d2673b895071",
+            "locator": "/items/20",
+            "original_name": "examside-wpe-extract.json"
+          },
+          "question_digest": "sha256:a7aada49206b660e9e6bad393f614f9b3b140787406d4ad5f9d9b35ee4aa3ac1",
+          "answer_digest": "sha256:de74003848299f54705fae773c110cb140c235333d210ecfe3cb3b0b6a267df3",
+          "paper": "JEE Main 2021 (Online) 27th July Evening Shift",
+          "paper_evidence": null,
+          "question_assets": [],
+          "unbound_figure_refs": [],
+          "answer_key_claim": null,
+          "claim_kind": "UNRESOLVED",
+          "key_evidence": null,
+          "publisher_solution_exists": true,
+          "upstream_verified": false,
+          "source_version_aliases": [],
+          "family_links": [
+            "constant-power-rest-start"
+          ],
+          "question_and_key_independently_bound": false
+        },
+        "question_digest": "a8f5a499d2a35d7390b47348b356e8e6176975538f689676eb456aded48d1ae8",
+        "options_digest": "1b0ab8972d4558a26d6617c809b6fe6c5c231e2b83b29b3b771c32d23fd0ca50",
+        "figure_digests": [],
+        "required_figures_bound": false,
+        "official_paper": null,
+        "official_key": null,
+        "answer_versions": {
+          "inherited_claim_digest": "sha256:de74003848299f54705fae773c110cb140c235333d210ecfe3cb3b0b6a267df3",
+          "official_claim_digest": null,
+          "reconciliation": "OPEN"
+        }
+      },
+      "curriculum": {
+        "semantic_cell_resolved": false,
+        "capability_ref": null,
+        "microtopic_ref": null
+      },
+      "assessment": {
+        "factors": {
+          "concept_model_selection": 1,
+          "representation_translation": 1,
+          "reasoning_chain_length": 2,
+          "algebra_computational_load": 2,
+          "trap_exception_sensitivity": 1
+        },
+        "total": 7,
+        "band": "D3",
+        "primary_operation": "APPLY",
+        "factor_evidence": {
+          "concept_model_selection": "Anchor 1: Constant net power P=dK/dt for an automobile starting at rest.",
+          "representation_translation": "Anchor 1: Translate time-energy relation into velocity and position.",
+          "reasoning_chain_length": "Anchor 2: Pt=mv²/2, then integrate dx/dt=√(2Pt/m).",
+          "algebra_computational_load": "Anchor 2: x=√(8P/(9m)) t^(3/2).",
+          "trap_exception_sensitivity": "Anchor 1: Engine power must be net propulsive power with no omitted road drag."
+        },
+        "decisive_move_evidence": "Constant net power P=dK/dt for an automobile starting at rest.",
+        "competing_operations": [
+          {
+            "operation": "SYNTHESIZE",
+            "reason": "Alternative if the decisive burden shifts; contrast with Constant net power P=dK/dt for an automobile starting at rest."
+          }
+        ],
+        "source_stage": "AUTHOR_EXPOSED_HYPOTHESIS"
+      },
+      "governance": {
+        "reviewer_exposure_disclosed": null,
+        "qrt_adjudication": "HOLD"
+      },
+      "grading_policy": {},
+      "prior_exposure": true,
+      "r1_preserved_proposals": {
+        "sl1": {
+          "status": "UNREVIEWED",
+          "source_status": "LOCAL_BYTES_BOUND_UPSTREAM_UNVERIFIED",
+          "answer_status": "INHERITED_CLAIM_NOT_OFFICIAL",
+          "figure_status": "PENDING_WITNESS",
+          "first_try_ok": false,
+          "source_role": "DIRECT_EXAM_EVIDENCE_PENDING",
+          "flags": [
+            "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+            "OFFICIAL_KEY_NOT_BOUND"
+          ],
+          "duplicate_of": null,
+          "rights": "OWNER_LOCAL_ONLY"
+        },
+        "sl2": {
+          "mode": "QUESTION",
+          "status": "UNREVIEWED",
+          "operation": "APPLY",
+          "alternative": {
+            "operation": "SYNTHESIZE",
+            "reason": "Alternative if the decisive burden shifts; contrast with Constant net power P=dK/dt for an automobile starting at rest."
+          },
+          "scores": {
+            "concept_model_selection": 1,
+            "representation_translation": 1,
+            "reasoning_chain_length": 2,
+            "algebra_computational_load": 2,
+            "trap_exception_sensitivity": 1
+          },
+          "factor_evidence": [
+            {
+              "factor": "concept_model_selection",
+              "score": 1,
+              "evidence": "Anchor 1: Constant net power P=dK/dt for an automobile starting at rest."
+            },
+            {
+              "factor": "representation_translation",
+              "score": 1,
+              "evidence": "Anchor 1: Translate time-energy relation into velocity and position."
+            },
+            {
+              "factor": "reasoning_chain_length",
+              "score": 2,
+              "evidence": "Anchor 2: Pt=mv²/2, then integrate dx/dt=√(2Pt/m)."
+            },
+            {
+              "factor": "algebra_computational_load",
+              "score": 2,
+              "evidence": "Anchor 2: x=√(8P/(9m)) t^(3/2)."
+            },
+            {
+              "factor": "trap_exception_sensitivity",
+              "score": 1,
+              "evidence": "Anchor 1: Engine power must be net propulsive power with no omitted road drag."
+            }
+          ],
+          "total": 7,
+          "band": "D3",
+          "band_status": "PROPOSED_UNREVIEWED",
+          "crux": "Constant net power P=dK/dt for an automobile starting at rest.",
+          "worked_resolution": "x=√(8P/(9m)) t^(3/2).",
+          "conditions": [
+            "Initial rest and no resistive power implicit in idealized engine model."
+          ],
+          "learner_evidence": "NOT_SUPPLIED",
+          "prior_score_seen": true
+        }
+      },
+      "source_record_id": "EX-M62"
+    },
+    {
+      "canonical_id": "EX-M79",
+      "duplicate_of": null,
+      "origin": "EXAM_ORIGINAL_UPSTREAM_UNVERIFIED",
+      "source_role": "DIRECT_EXAM_EVIDENCE_PENDING",
+      "question": {
+        "id": "EX-M79",
+        "original_identifier": "EX-M79",
+        "origin": "EXAM_ORIGINAL",
+        "stem": "A body of mass m starts moving from rest along x-axis so that its velocity varies as 𝜐=𝑎√(𝑠) where a is a constant and s is the distance covered by the body. The total work done by all the forces acting on the body in the first t seconds after the start of the motion is :",
+        "options": [
+          {
+            "id": "A",
+            "text": "(1)/(8) m a4 t2"
+          },
+          {
+            "id": "B",
+            "text": "8 m a4 t2"
+          },
+          {
+            "id": "C",
+            "text": "4 m a4 t2"
+          },
+          {
+            "id": "D",
+            "text": "(1)/(4) m a4 t2"
+          }
+        ],
+        "subparts": [],
+        "conditions": [],
+        "figure_refs": [],
+        "hints": [],
+        "scaffolds": [],
+        "answer": {},
+        "extensions": {
+          "wpe:response_type": "SINGLE_CHOICE",
+          "wpe:r1_record_id": "EX-M79",
+          "wpe:review_status": "EXPOSED_UNREVIEWED"
+        }
+      },
+      "source": {
+        "original_r1_custody": {
+          "record_id": "EX-M79",
+          "native_alias": "Q-PHY-WPE-JEEM-M79",
+          "raw_source": {
+            "path": "evidence/cfa7368f9504cc72c3f05fa61328a3086496e89f6eb56c389927d2673b895071.json",
+            "sha256": "cfa7368f9504cc72c3f05fa61328a3086496e89f6eb56c389927d2673b895071",
+            "locator": "/items/29",
+            "original_name": "examside-wpe-extract.json"
+          },
+          "question_digest": "sha256:ae772f85d9ff0f9e18964e9b49b2c513ae22a74247dc2116f27024a73f08f478",
+          "answer_digest": "sha256:89c38696b84903fc722dec5a1b0433be36fa95175eaac4f6af708ed583c16763",
+          "paper": "JEE Main 2018 (Online) 16th April Morning Slot",
+          "paper_evidence": null,
+          "question_assets": [],
+          "unbound_figure_refs": [],
+          "answer_key_claim": null,
+          "claim_kind": "UNRESOLVED",
+          "key_evidence": null,
+          "publisher_solution_exists": true,
+          "upstream_verified": false,
+          "source_version_aliases": [],
+          "family_links": [],
+          "question_and_key_independently_bound": false
+        },
+        "question_digest": "85d18d46873ca81280ba08700370f4310d115866dc903286810a0bba410466ed",
+        "options_digest": "d8206fda19cddb2a25b64c4ced60a106c0f60fdc67c73675cc3b14f3e8548caa",
+        "figure_digests": [],
+        "required_figures_bound": false,
+        "official_paper": null,
+        "official_key": null,
+        "answer_versions": {
+          "inherited_claim_digest": "sha256:89c38696b84903fc722dec5a1b0433be36fa95175eaac4f6af708ed583c16763",
+          "official_claim_digest": null,
+          "reconciliation": "OPEN"
+        }
+      },
+      "curriculum": {
+        "semantic_cell_resolved": false,
+        "capability_ref": null,
+        "microtopic_ref": null
+      },
+      "assessment": {
+        "factors": {
+          "concept_model_selection": 1,
+          "representation_translation": 1,
+          "reasoning_chain_length": 2,
+          "algebra_computational_load": 2,
+          "trap_exception_sensitivity": 1
+        },
+        "total": 7,
+        "band": "D3",
+        "primary_operation": "APPLY",
+        "factor_evidence": {
+          "concept_model_selection": "Anchor 1: Given velocity as a function of displacement, first recover trajectory or acceleration.",
+          "representation_translation": "Anchor 1: Map v=a√s into ds/dt=a√s, then use kinetic-energy theorem.",
+          "reasoning_chain_length": "Anchor 2: Integration gives s=a²t²/4 then v=a²t/2.",
+          "algebra_computational_load": "Anchor 2: W=(1/2)m(a²t/2)²=ma⁴t²/8.",
+          "trap_exception_sensitivity": "Anchor 1: Do not misread a as acceleration; dimensions differ."
+        },
+        "decisive_move_evidence": "Given velocity as a function of displacement, first recover trajectory or acceleration.",
+        "competing_operations": [
+          {
+            "operation": "SYNTHESIZE",
+            "reason": "Alternative if the decisive burden shifts; contrast with Given velocity as a function of displacement, first recover trajectory or acceleration."
+          }
+        ],
+        "source_stage": "AUTHOR_EXPOSED_HYPOTHESIS"
+      },
+      "governance": {
+        "reviewer_exposure_disclosed": null,
+        "qrt_adjudication": "HOLD"
+      },
+      "grading_policy": {},
+      "prior_exposure": true,
+      "r1_preserved_proposals": {
+        "sl1": {
+          "status": "UNREVIEWED",
+          "source_status": "LOCAL_BYTES_BOUND_UPSTREAM_UNVERIFIED",
+          "answer_status": "INHERITED_CLAIM_NOT_OFFICIAL",
+          "figure_status": "PENDING_WITNESS",
+          "first_try_ok": false,
+          "source_role": "DIRECT_EXAM_EVIDENCE_PENDING",
+          "flags": [
+            "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+            "OFFICIAL_KEY_NOT_BOUND"
+          ],
+          "duplicate_of": null,
+          "rights": "OWNER_LOCAL_ONLY"
+        },
+        "sl2": {
+          "mode": "QUESTION",
+          "status": "UNREVIEWED",
+          "operation": "APPLY",
+          "alternative": {
+            "operation": "SYNTHESIZE",
+            "reason": "Alternative if the decisive burden shifts; contrast with Given velocity as a function of displacement, first recover trajectory or acceleration."
+          },
+          "scores": {
+            "concept_model_selection": 1,
+            "representation_translation": 1,
+            "reasoning_chain_length": 2,
+            "algebra_computational_load": 2,
+            "trap_exception_sensitivity": 1
+          },
+          "factor_evidence": [
+            {
+              "factor": "concept_model_selection",
+              "score": 1,
+              "evidence": "Anchor 1: Given velocity as a function of displacement, first recover trajectory or acceleration."
+            },
+            {
+              "factor": "representation_translation",
+              "score": 1,
+              "evidence": "Anchor 1: Map v=a√s into ds/dt=a√s, then use kinetic-energy theorem."
+            },
+            {
+              "factor": "reasoning_chain_length",
+              "score": 2,
+              "evidence": "Anchor 2: Integration gives s=a²t²/4 then v=a²t/2."
+            },
+            {
+              "factor": "algebra_computational_load",
+              "score": 2,
+              "evidence": "Anchor 2: W=(1/2)m(a²t/2)²=ma⁴t²/8."
+            },
+            {
+              "factor": "trap_exception_sensitivity",
+              "score": 1,
+              "evidence": "Anchor 1: Do not misread a as acceleration; dimensions differ."
+            }
+          ],
+          "total": 7,
+          "band": "D3",
+          "band_status": "PROPOSED_UNREVIEWED",
+          "crux": "Given velocity as a function of displacement, first recover trajectory or acceleration.",
+          "worked_resolution": "ma⁴t²/8.",
+          "conditions": [],
+          "learner_evidence": "NOT_SUPPLIED",
+          "prior_score_seen": true
+        }
+      },
+      "source_record_id": "EX-M79"
+    },
+    {
+      "canonical_id": "EX-M16",
+      "duplicate_of": null,
+      "origin": "EXAM_ORIGINAL_UPSTREAM_UNVERIFIED",
+      "source_role": "DIRECT_EXAM_EVIDENCE_PENDING",
+      "question": {
+        "id": "EX-M16",
+        "original_identifier": "EX-M16",
+        "origin": "EXAM_ORIGINAL",
+        "stem": "A sand dropper drops sand of mass m(t) on a conveyer belt at a rate proportional to the square root of speed (v) of the belt, i.e., (𝑑𝑚)/(𝑑𝑡)∝√(𝑣) . If P is the power delivered to run the belt at constant speed then which of the following relationship is true?",
+        "options": [
+          {
+            "id": "A",
+            "text": "P ∝√(𝑣)"
+          },
+          {
+            "id": "B",
+            "text": "P ∝𝑣"
+          },
+          {
+            "id": "C",
+            "text": "𝑃^(2)∝𝑣^(3)"
+          },
+          {
+            "id": "D",
+            "text": "𝑃^(2)∝𝑣^(5)"
+          }
+        ],
+        "subparts": [],
+        "conditions": [],
+        "figure_refs": [],
+        "hints": [],
+        "scaffolds": [],
+        "answer": {},
+        "extensions": {
+          "wpe:response_type": "SINGLE_CHOICE",
+          "wpe:r1_record_id": "EX-M16",
+          "wpe:review_status": "EXPOSED_UNREVIEWED"
+        }
+      },
+      "source": {
+        "original_r1_custody": {
+          "record_id": "EX-M16",
+          "native_alias": "Q-PHY-WPE-JEEM-M16",
+          "raw_source": {
+            "path": "evidence/cfa7368f9504cc72c3f05fa61328a3086496e89f6eb56c389927d2673b895071.json",
+            "sha256": "cfa7368f9504cc72c3f05fa61328a3086496e89f6eb56c389927d2673b895071",
+            "locator": "/items/7",
+            "original_name": "examside-wpe-extract.json"
+          },
+          "question_digest": "sha256:0205b2350755489e85174f167fb9c9c4ab5219e9d5e132f3650881158b9c7d59",
+          "answer_digest": "sha256:8f0dd1a7b698140e66233de54c31d2f60ca281a1e947c10de4e3f286f36fb0b5",
+          "paper": "JEE Main 2025 (Online) 29th January Evening Shift",
+          "paper_evidence": null,
+          "question_assets": [],
+          "unbound_figure_refs": [],
+          "answer_key_claim": null,
+          "claim_kind": "UNRESOLVED",
+          "key_evidence": null,
+          "publisher_solution_exists": true,
+          "upstream_verified": false,
+          "source_version_aliases": [],
+          "family_links": [
+            "momentum-flux"
+          ],
+          "question_and_key_independently_bound": false
+        },
+        "question_digest": "48346f9c10c3d4865063e107b2ce68bc3bde7c1e243ae7f92488577a3db9607a",
+        "options_digest": "c67cff81d2cdba3e23d9f74fb43f6ac4feab55a58a9d893c1b35155b77c00bb9",
+        "figure_digests": [],
+        "required_figures_bound": false,
+        "official_paper": null,
+        "official_key": null,
+        "answer_versions": {
+          "inherited_claim_digest": "sha256:8f0dd1a7b698140e66233de54c31d2f60ca281a1e947c10de4e3f286f36fb0b5",
+          "official_claim_digest": null,
+          "reconciliation": "OPEN"
+        }
+      },
+      "curriculum": {
+        "semantic_cell_resolved": false,
+        "capability_ref": null,
+        "microtopic_ref": null
+      },
+      "assessment": {
+        "factors": {
+          "concept_model_selection": 2,
+          "representation_translation": 1,
+          "reasoning_chain_length": 2,
+          "algebra_computational_load": 1,
+          "trap_exception_sensitivity": 1
+        },
+        "total": 7,
+        "band": "D3",
+        "primary_operation": "MODEL",
+        "factor_evidence": {
+          "concept_model_selection": "Choose an open-system momentum-flux description for sand joining a constant-speed belt.",
+          "representation_translation": "Translate dm/dt proportional to sqrt(v) into a rate variable and a horizontal speed increment v.",
+          "reasoning_chain_length": "Find F=v dm/dt, form motor power Fv and combine exponents to get P proportional to v^(5/2).",
+          "algebra_computational_load": "Combine routine exponents and square the proportionality; no extended computation is needed.",
+          "trap_exception_sensitivity": "Equating motor power to one-half v² dm/dt omits dissipation during capture; this is a local check, not a second model-selection score."
+        },
+        "decisive_move_evidence": "Model horizontal momentum supplied to incoming sand as a flux, rather than equating motor work only to the final kinetic-energy flux.",
+        "competing_operations": [
+          {
+            "operation": "SYNTHESIZE",
+            "reason": "Momentum flux, power and the supplied feed law are coordinated; MODEL is proposed because selecting the open-system description determines the route."
+          }
+        ],
+        "source_stage": "AUTHOR_EXPOSED_HYPOTHESIS"
+      },
+      "governance": {
+        "reviewer_exposure_disclosed": null,
+        "qrt_adjudication": "HOLD"
+      },
+      "grading_policy": {},
+      "prior_exposure": true,
+      "r1_preserved_proposals": {
+        "sl1": {
+          "status": "UNREVIEWED",
+          "source_status": "LOCAL_BYTES_BOUND_UPSTREAM_UNVERIFIED",
+          "answer_status": "INHERITED_CLAIM_NOT_OFFICIAL",
+          "figure_status": "PENDING_WITNESS",
+          "first_try_ok": false,
+          "source_role": "DIRECT_EXAM_EVIDENCE_PENDING",
+          "flags": [
+            "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+            "OFFICIAL_KEY_NOT_BOUND"
+          ],
+          "duplicate_of": null,
+          "rights": "OWNER_LOCAL_ONLY"
+        },
+        "sl2": {
+          "mode": "QUESTION",
+          "status": "UNREVIEWED",
+          "operation": "MODEL",
+          "alternative": {
+            "operation": "SYNTHESIZE",
+            "reason": "Momentum flux, power and the supplied feed law are coordinated; MODEL is proposed because selecting the open-system description determines the route."
+          },
+          "scores": {
+            "concept_model_selection": 2,
+            "representation_translation": 1,
+            "reasoning_chain_length": 2,
+            "algebra_computational_load": 1,
+            "trap_exception_sensitivity": 1
+          },
+          "factor_evidence": [
+            {
+              "factor": "concept_model_selection",
+              "score": 2,
+              "evidence": "Choose an open-system momentum-flux description for sand joining a constant-speed belt."
+            },
+            {
+              "factor": "representation_translation",
+              "score": 1,
+              "evidence": "Translate dm/dt proportional to sqrt(v) into a rate variable and a horizontal speed increment v."
+            },
+            {
+              "factor": "reasoning_chain_length",
+              "score": 2,
+              "evidence": "Find F=v dm/dt, form motor power Fv and combine exponents to get P proportional to v^(5/2)."
+            },
+            {
+              "factor": "algebra_computational_load",
+              "score": 1,
+              "evidence": "Combine routine exponents and square the proportionality; no extended computation is needed."
+            },
+            {
+              "factor": "trap_exception_sensitivity",
+              "score": 1,
+              "evidence": "Equating motor power to one-half v² dm/dt omits dissipation during capture; this is a local check, not a second model-selection score."
+            }
+          ],
+          "total": 7,
+          "band": "D3",
+          "band_status": "PROPOSED_UNREVIEWED",
+          "crux": "Model horizontal momentum supplied to incoming sand as a flux, rather than equating motor work only to the final kinetic-energy flux.",
+          "worked_resolution": "P² proportional to v^5, option D.",
+          "conditions": [
+            "Incoming sand has zero horizontal speed and leaves capture moving at belt speed.",
+            "Steady ideal operation and no extra belt losses are assumed."
+          ],
+          "learner_evidence": "NOT_SUPPLIED",
+          "prior_score_seen": true
+        }
+      },
+      "source_record_id": "EX-M16"
+    },
+    {
+      "canonical_id": "EX-M73",
+      "duplicate_of": null,
+      "origin": "EXAM_ORIGINAL_UPSTREAM_UNVERIFIED",
+      "source_role": "DIRECT_EXAM_EVIDENCE_PENDING",
+      "question": {
+        "id": "EX-M73",
+        "original_identifier": "EX-M73",
+        "origin": "EXAM_ORIGINAL",
+        "stem": "A uniform cable of mass 'M' and length 'L' is placed on a horizontal surface such that its (1/n)th part is hanging below the edge of the surface. To lift the hanging part of the cable upto the surface, the work done should be :",
+        "options": [
+          {
+            "id": "A",
+            "text": "(2𝑀𝑔𝐿)/(𝑛^(2))"
+          },
+          {
+            "id": "B",
+            "text": "nMgL"
+          },
+          {
+            "id": "C",
+            "text": "(𝑀𝑔𝐿)/(2𝑛^(2))"
+          },
+          {
+            "id": "D",
+            "text": "(𝑀𝑔𝐿)/(𝑛^(2))"
+          }
+        ],
+        "subparts": [],
+        "conditions": [],
+        "figure_refs": [],
+        "hints": [],
+        "scaffolds": [],
+        "answer": {},
+        "extensions": {
+          "wpe:response_type": "SINGLE_CHOICE",
+          "wpe:r1_record_id": "EX-M73",
+          "wpe:review_status": "EXPOSED_UNREVIEWED"
+        }
+      },
+      "source": {
+        "original_r1_custody": {
+          "record_id": "EX-M73",
+          "native_alias": "Q-PHY-WPE-JEEM-M73",
+          "raw_source": {
+            "path": "evidence/cfa7368f9504cc72c3f05fa61328a3086496e89f6eb56c389927d2673b895071.json",
+            "sha256": "cfa7368f9504cc72c3f05fa61328a3086496e89f6eb56c389927d2673b895071",
+            "locator": "/items/25",
+            "original_name": "examside-wpe-extract.json"
+          },
+          "question_digest": "sha256:d57b4f8f22dfef6f4f7114698b4915ce283b28b7035714ebeaea4434c44d21cd",
+          "answer_digest": "sha256:4b3461bcf69a1a2a75f78a1a94b6654411a5038c895fe6adcee42c6cd868892a",
+          "paper": "JEE Main 2019 (Online) 9th April Morning Slot",
+          "paper_evidence": null,
+          "question_assets": [],
+          "unbound_figure_refs": [],
+          "answer_key_claim": null,
+          "claim_kind": "UNRESOLVED",
+          "key_evidence": null,
+          "publisher_solution_exists": true,
+          "upstream_verified": false,
+          "source_version_aliases": [],
+          "family_links": [
+            "chain-energy"
+          ],
+          "question_and_key_independently_bound": false
+        },
+        "question_digest": "10b53eed079bce671ac01e40710843d367a4bd47986c0f249e3d053e1f42d991",
+        "options_digest": "31aeba29e8f22e108690b0d7511399fe040156609f55e63738bf2fa508e32c31",
+        "figure_digests": [],
+        "required_figures_bound": false,
+        "official_paper": null,
+        "official_key": null,
+        "answer_versions": {
+          "inherited_claim_digest": "sha256:4b3461bcf69a1a2a75f78a1a94b6654411a5038c895fe6adcee42c6cd868892a",
+          "official_claim_digest": null,
+          "reconciliation": "OPEN"
+        }
+      },
+      "curriculum": {
+        "semantic_cell_resolved": false,
+        "capability_ref": null,
+        "microtopic_ref": null
+      },
+      "assessment": {
+        "factors": {
+          "concept_model_selection": 2,
+          "representation_translation": 1,
+          "reasoning_chain_length": 2,
+          "algebra_computational_load": 1,
+          "trap_exception_sensitivity": 1
+        },
+        "total": 7,
+        "band": "D3",
+        "primary_operation": "MODEL",
+        "factor_evidence": {
+          "concept_model_selection": "Anchor 2: Model the suspended uniform cable with distributed gravitational potential.",
+          "representation_translation": "Anchor 1: Convert hanging fraction L/n into hanging mass M/n and COM depth L/(2n).",
+          "reasoning_chain_length": "Anchor 2: Required lift equals increase in gravitational potential of only the overhang.",
+          "algebra_computational_load": "Anchor 1: (M/n)g[L/(2n)]=MgL/(2n²).",
+          "trap_exception_sensitivity": "Anchor 1: Moving the full cable as a point mass by L/n overestimates the lift."
+        },
+        "decisive_move_evidence": "Model the suspended uniform cable with distributed gravitational potential.",
+        "competing_operations": [
+          {
+            "operation": "SYNTHESIZE",
+            "reason": "Alternative if the decisive burden shifts; contrast with Model the suspended uniform cable with distributed gravitational potential."
+          }
+        ],
+        "source_stage": "AUTHOR_EXPOSED_HYPOTHESIS"
+      },
+      "governance": {
+        "reviewer_exposure_disclosed": null,
+        "qrt_adjudication": "HOLD"
+      },
+      "grading_policy": {},
+      "prior_exposure": true,
+      "r1_preserved_proposals": {
+        "sl1": {
+          "status": "UNREVIEWED",
+          "source_status": "LOCAL_BYTES_BOUND_UPSTREAM_UNVERIFIED",
+          "answer_status": "INHERITED_CLAIM_NOT_OFFICIAL",
+          "figure_status": "PENDING_WITNESS",
+          "first_try_ok": false,
+          "source_role": "DIRECT_EXAM_EVIDENCE_PENDING",
+          "flags": [
+            "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+            "OFFICIAL_KEY_NOT_BOUND"
+          ],
+          "duplicate_of": null,
+          "rights": "OWNER_LOCAL_ONLY"
+        },
+        "sl2": {
+          "mode": "QUESTION",
+          "status": "UNREVIEWED",
+          "operation": "MODEL",
+          "alternative": {
+            "operation": "SYNTHESIZE",
+            "reason": "Alternative if the decisive burden shifts; contrast with Model the suspended uniform cable with distributed gravitational potential."
+          },
+          "scores": {
+            "concept_model_selection": 2,
+            "representation_translation": 1,
+            "reasoning_chain_length": 2,
+            "algebra_computational_load": 1,
+            "trap_exception_sensitivity": 1
+          },
+          "factor_evidence": [
+            {
+              "factor": "concept_model_selection",
+              "score": 2,
+              "evidence": "Anchor 2: Model the suspended uniform cable with distributed gravitational potential."
+            },
+            {
+              "factor": "representation_translation",
+              "score": 1,
+              "evidence": "Anchor 1: Convert hanging fraction L/n into hanging mass M/n and COM depth L/(2n)."
+            },
+            {
+              "factor": "reasoning_chain_length",
+              "score": 2,
+              "evidence": "Anchor 2: Required lift equals increase in gravitational potential of only the overhang."
+            },
+            {
+              "factor": "algebra_computational_load",
+              "score": 1,
+              "evidence": "Anchor 1: (M/n)g[L/(2n)]=MgL/(2n²)."
+            },
+            {
+              "factor": "trap_exception_sensitivity",
+              "score": 1,
+              "evidence": "Anchor 1: Moving the full cable as a point mass by L/n overestimates the lift."
+            }
+          ],
+          "total": 7,
+          "band": "D3",
+          "band_status": "PROPOSED_UNREVIEWED",
+          "crux": "Model the suspended uniform cable with distributed gravitational potential.",
+          "worked_resolution": "MgL/(2n²), assuming no dissipative force and the cable stays on table.",
+          "conditions": [],
+          "learner_evidence": "NOT_SUPPLIED",
+          "prior_score_seen": true
+        }
+      },
+      "source_record_id": "EX-M73"
+    },
+    {
+      "canonical_id": "EX-M81",
+      "duplicate_of": null,
+      "origin": "EXAM_ORIGINAL_UPSTREAM_UNVERIFIED",
+      "source_role": "DIRECT_EXAM_EVIDENCE_PENDING",
+      "question": {
+        "id": "EX-M81",
+        "original_identifier": "EX-M81",
+        "origin": "EXAM_ORIGINAL",
+        "stem": "A particle is moving in a circular path of radius 𝑎 under the action of an attractive potential 𝑈=−(𝑘)/(2𝑟^(2)) . Its total energy is:",
+        "options": [
+          {
+            "id": "A",
+            "text": "−(3)/(2)(𝑘)/(𝑎^(2))"
+          },
+          {
+            "id": "B",
+            "text": "Zero"
+          },
+          {
+            "id": "C",
+            "text": "−(𝑘)/(4𝑎^(2))"
+          },
+          {
+            "id": "D",
+            "text": "(𝑘)/(2𝑎^(2))"
+          }
+        ],
+        "subparts": [],
+        "conditions": [],
+        "figure_refs": [],
+        "hints": [],
+        "scaffolds": [],
+        "answer": {},
+        "extensions": {
+          "wpe:response_type": "SINGLE_CHOICE",
+          "wpe:r1_record_id": "EX-M81",
+          "wpe:review_status": "EXPOSED_UNREVIEWED"
+        }
+      },
+      "source": {
+        "original_r1_custody": {
+          "record_id": "EX-M81",
+          "native_alias": "Q-PHY-WPE-JEEM-M81",
+          "raw_source": {
+            "path": "evidence/cfa7368f9504cc72c3f05fa61328a3086496e89f6eb56c389927d2673b895071.json",
+            "sha256": "cfa7368f9504cc72c3f05fa61328a3086496e89f6eb56c389927d2673b895071",
+            "locator": "/items/30",
+            "original_name": "examside-wpe-extract.json"
+          },
+          "question_digest": "sha256:07698b6569fdb71f3ae45e6227985af40583f1d1d6d07cf19d893f2a068a7151",
+          "answer_digest": "sha256:fdf69303f2e2b78d0808beeabe2411e73121704ea70f34bc21c7364591830772",
+          "paper": "JEE Main 2018 (Offline)",
+          "paper_evidence": null,
+          "question_assets": [],
+          "unbound_figure_refs": [],
+          "answer_key_claim": null,
+          "claim_kind": "UNRESOLVED",
+          "key_evidence": null,
+          "publisher_solution_exists": true,
+          "upstream_verified": false,
+          "source_version_aliases": [],
+          "family_links": [
+            "central-force-energy"
+          ],
+          "question_and_key_independently_bound": false
+        },
+        "question_digest": "92de757b94d90a67b50646738b7da88cad0b491a3782f8d7c7d195734f81696e",
+        "options_digest": "b9ee3da9a61be5f07fc5b06f1770f6474342fab68ac7d5ba74fc4adb857fb264",
+        "figure_digests": [],
+        "required_figures_bound": false,
+        "official_paper": null,
+        "official_key": null,
+        "answer_versions": {
+          "inherited_claim_digest": "sha256:fdf69303f2e2b78d0808beeabe2411e73121704ea70f34bc21c7364591830772",
+          "official_claim_digest": null,
+          "reconciliation": "OPEN"
+        }
+      },
+      "curriculum": {
+        "semantic_cell_resolved": false,
+        "capability_ref": null,
+        "microtopic_ref": null
+      },
+      "assessment": {
+        "factors": {
+          "concept_model_selection": 2,
+          "representation_translation": 1,
+          "reasoning_chain_length": 2,
+          "algebra_computational_load": 1,
+          "trap_exception_sensitivity": 1
+        },
+        "total": 7,
+        "band": "D3",
+        "primary_operation": "MODEL",
+        "factor_evidence": {
+          "concept_model_selection": "Anchor 2: Choose radial force from derivative of U and circular centripetal dynamics.",
+          "representation_translation": "Anchor 1: Potential U(r) to F_r=-dU/dr to v².",
+          "reasoning_chain_length": "Anchor 2: |F|=k/a³=mv²/a; then K=k/(2a²).",
+          "algebra_computational_load": "Anchor 1: U=−k/(2a²), so E=0.",
+          "trap_exception_sensitivity": "Anchor 1: Derivative sign and force direction must be consistent for attractive orbit."
+        },
+        "decisive_move_evidence": "Choose radial force from derivative of U and circular centripetal dynamics.",
+        "competing_operations": [
+          {
+            "operation": "SYNTHESIZE",
+            "reason": "Alternative if the decisive burden shifts; contrast with Choose radial force from derivative of U and circular centripetal dynamics."
+          }
+        ],
+        "source_stage": "AUTHOR_EXPOSED_HYPOTHESIS"
+      },
+      "governance": {
+        "reviewer_exposure_disclosed": null,
+        "qrt_adjudication": "HOLD"
+      },
+      "grading_policy": {},
+      "prior_exposure": true,
+      "r1_preserved_proposals": {
+        "sl1": {
+          "status": "UNREVIEWED",
+          "source_status": "LOCAL_BYTES_BOUND_UPSTREAM_UNVERIFIED",
+          "answer_status": "INHERITED_CLAIM_NOT_OFFICIAL",
+          "figure_status": "PENDING_WITNESS",
+          "first_try_ok": false,
+          "source_role": "DIRECT_EXAM_EVIDENCE_PENDING",
+          "flags": [
+            "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+            "OFFICIAL_KEY_NOT_BOUND"
+          ],
+          "duplicate_of": null,
+          "rights": "OWNER_LOCAL_ONLY"
+        },
+        "sl2": {
+          "mode": "QUESTION",
+          "status": "UNREVIEWED",
+          "operation": "MODEL",
+          "alternative": {
+            "operation": "SYNTHESIZE",
+            "reason": "Alternative if the decisive burden shifts; contrast with Choose radial force from derivative of U and circular centripetal dynamics."
+          },
+          "scores": {
+            "concept_model_selection": 2,
+            "representation_translation": 1,
+            "reasoning_chain_length": 2,
+            "algebra_computational_load": 1,
+            "trap_exception_sensitivity": 1
+          },
+          "factor_evidence": [
+            {
+              "factor": "concept_model_selection",
+              "score": 2,
+              "evidence": "Anchor 2: Choose radial force from derivative of U and circular centripetal dynamics."
+            },
+            {
+              "factor": "representation_translation",
+              "score": 1,
+              "evidence": "Anchor 1: Potential U(r) to F_r=-dU/dr to v²."
+            },
+            {
+              "factor": "reasoning_chain_length",
+              "score": 2,
+              "evidence": "Anchor 2: |F|=k/a³=mv²/a; then K=k/(2a²)."
+            },
+            {
+              "factor": "algebra_computational_load",
+              "score": 1,
+              "evidence": "Anchor 1: U=−k/(2a²), so E=0."
+            },
+            {
+              "factor": "trap_exception_sensitivity",
+              "score": 1,
+              "evidence": "Anchor 1: Derivative sign and force direction must be consistent for attractive orbit."
+            }
+          ],
+          "total": 7,
+          "band": "D3",
+          "band_status": "PROPOSED_UNREVIEWED",
+          "crux": "Choose radial force from derivative of U and circular centripetal dynamics.",
+          "worked_resolution": "Total energy zero for the stipulated circular orbit.",
+          "conditions": [],
+          "learner_evidence": "NOT_SUPPLIED",
+          "prior_score_seen": true
+        }
+      },
+      "source_record_id": "EX-M81"
+    },
+    {
+      "canonical_id": "EX-M56",
+      "duplicate_of": null,
+      "origin": "EXAM_ORIGINAL_UPSTREAM_UNVERIFIED",
+      "source_role": "DIRECT_EXAM_EVIDENCE_PENDING",
+      "question": {
+        "id": "EX-M56",
+        "original_identifier": "EX-M56",
+        "origin": "EXAM_ORIGINAL",
+        "stem": "Arrange the four graphs in descending order of total work done; where W1, W2, W3 and W4 are the work done corresponding to figure a, b, c and d respectively. [FIG-stem-1] [FIG-stem-2] [FIG-stem-3] [FIG-stem-4]",
+        "options": [
+          {
+            "id": "A",
+            "text": "W3 > W2 > W1 > W4"
+          },
+          {
+            "id": "B",
+            "text": "W3 > W2 > W4 > W1"
+          },
+          {
+            "id": "C",
+            "text": "W2 > W3 > W4 > W1"
+          },
+          {
+            "id": "D",
+            "text": "W2 > W3 > W1 > W4"
+          }
+        ],
+        "subparts": [],
+        "conditions": [],
+        "figure_refs": [
+          "https://app-content.cdn.examgoal.net/fly/1000/image/1l5ah46w1/19b6561e-2f38-4824-b96c-df1520545b81/7919d510-fda5-11ec-9895-953d7c4166fb/file-1l5ah46w2.png?format=png",
+          "https://app-content.cdn.examgoal.net/fly/1000/image/1l5ah52rt/6a19f5cc-1894-4cb1-b557-f3fdd5175443/91bac390-fda5-11ec-9895-953d7c4166fb/file-1l5ah52ru.png?format=png",
+          "https://app-content.cdn.examgoal.net/fly/1000/image/1l5ah6aud/80d5c84a-be08-4e0e-9d83-6e9e75e53b18/b3c5f950-fda5-11ec-9895-953d7c4166fb/file-1l5ah6aue.png?format=png",
+          "https://app-content.cdn.examgoal.net/fly/1000/image/1l5ah9iaz/f30c9fac-2cf6-4a4d-bfd3-127c8e4eb756/0cf6ebb0-fda6-11ec-9895-953d7c4166fb/file-1l5ah9ib0.png?format=png"
+        ],
+        "hints": [],
+        "scaffolds": [],
+        "answer": {},
+        "extensions": {
+          "wpe:response_type": "SINGLE_CHOICE",
+          "wpe:r1_record_id": "EX-M56",
+          "wpe:review_status": "EXPOSED_UNREVIEWED"
+        }
+      },
+      "source": {
+        "original_r1_custody": {
+          "record_id": "EX-M56",
+          "native_alias": "Q-PHY-WPE-JEEM-M56",
+          "raw_source": {
+            "path": "evidence/cfa7368f9504cc72c3f05fa61328a3086496e89f6eb56c389927d2673b895071.json",
+            "sha256": "cfa7368f9504cc72c3f05fa61328a3086496e89f6eb56c389927d2673b895071",
+            "locator": "/items/17",
+            "original_name": "examside-wpe-extract.json"
+          },
+          "question_digest": "sha256:6ba717f613e80e1bd04632aa9c00e34d0bb7ae4d5e3867a1e256f308aeaf5674",
+          "answer_digest": "sha256:77aa519613370d6b9f10b49a13ccb945dab8f1e6601fc7a7c5ebbf23b4d0f125",
+          "paper": "JEE Main 2022 (Online) 26th June Evening Shift",
+          "paper_evidence": null,
+          "question_assets": [],
+          "unbound_figure_refs": [
+            {
+              "role": "stem",
+              "url": "https://app-content.cdn.examgoal.net/fly/1000/image/1l5ah46w1/19b6561e-2f38-4824-b96c-df1520545b81/7919d510-fda5-11ec-9895-953d7c4166fb/file-1l5ah46w2.png?format=png",
+              "status": "UNBOUND_REMOTE_REFERENCE"
+            },
+            {
+              "role": "stem",
+              "url": "https://app-content.cdn.examgoal.net/fly/1000/image/1l5ah52rt/6a19f5cc-1894-4cb1-b557-f3fdd5175443/91bac390-fda5-11ec-9895-953d7c4166fb/file-1l5ah52ru.png?format=png",
+              "status": "UNBOUND_REMOTE_REFERENCE"
+            },
+            {
+              "role": "stem",
+              "url": "https://app-content.cdn.examgoal.net/fly/1000/image/1l5ah6aud/80d5c84a-be08-4e0e-9d83-6e9e75e53b18/b3c5f950-fda5-11ec-9895-953d7c4166fb/file-1l5ah6aue.png?format=png",
+              "status": "UNBOUND_REMOTE_REFERENCE"
+            },
+            {
+              "role": "stem",
+              "url": "https://app-content.cdn.examgoal.net/fly/1000/image/1l5ah9iaz/f30c9fac-2cf6-4a4d-bfd3-127c8e4eb756/0cf6ebb0-fda6-11ec-9895-953d7c4166fb/file-1l5ah9ib0.png?format=png",
+              "status": "UNBOUND_REMOTE_REFERENCE"
+            }
+          ],
+          "answer_key_claim": null,
+          "claim_kind": "UNRESOLVED",
+          "key_evidence": null,
+          "publisher_solution_exists": true,
+          "upstream_verified": false,
+          "source_version_aliases": [],
+          "family_links": [],
+          "question_and_key_independently_bound": false
+        },
+        "question_digest": "ce0483b01f2b968aade2ed1b666012e0a779bb3cd288140c151344dcda773237",
+        "options_digest": "7285f918128374399ce03c919e593a39f8920c442f522eb349c2c3a6744165e7",
+        "figure_digests": [],
+        "required_figures_bound": false,
+        "official_paper": null,
+        "official_key": null,
+        "answer_versions": {
+          "inherited_claim_digest": "sha256:77aa519613370d6b9f10b49a13ccb945dab8f1e6601fc7a7c5ebbf23b4d0f125",
+          "official_claim_digest": null,
+          "reconciliation": "OPEN"
+        }
+      },
+      "curriculum": {
+        "semantic_cell_resolved": false,
+        "capability_ref": null,
+        "microtopic_ref": null
+      },
+      "assessment": {
+        "factors": {
+          "concept_model_selection": 1,
+          "representation_translation": 2,
+          "reasoning_chain_length": 2,
+          "algebra_computational_load": 1,
+          "trap_exception_sensitivity": 1
+        },
+        "total": 7,
+        "band": "D3",
+        "primary_operation": "REPRESENT",
+        "factor_evidence": {
+          "concept_model_selection": "Select work as signed force-displacement area.",
+          "representation_translation": "Coordinate four graphs, their scales and oriented areas; the visual-to-work translation is the proposed decisive move.",
+          "reasoning_chain_length": "Read each graph, accumulate each signed area and rank four work totals.",
+          "algebra_computational_load": "Piecewise geometric areas and comparisons are expected but cannot be fully assessed before exact graphs are bound.",
+          "trap_exception_sensitivity": "A visually larger shape need not represent greater work if axes or negative regions differ; exact exceptions remain to be checked against the figures."
+        },
+        "decisive_move_evidence": "Compare signed work represented by four force-displacement graphs while preserving axis meanings and scales.",
+        "competing_operations": [
+          {
+            "operation": "APPLY",
+            "reason": "If the actual graphs demand only four immediate triangle areas, APPLY/D2 may suffice. Current D3 proposal is conditional."
+          }
+        ],
+        "source_stage": "AUTHOR_EXPOSED_HYPOTHESIS"
+      },
+      "governance": {
+        "reviewer_exposure_disclosed": null,
+        "qrt_adjudication": "HOLD"
+      },
+      "grading_policy": {},
+      "prior_exposure": true,
+      "r1_preserved_proposals": {
+        "sl1": {
+          "status": "UNREVIEWED",
+          "source_status": "LOCAL_BYTES_BOUND_UPSTREAM_UNVERIFIED",
+          "answer_status": "INHERITED_CLAIM_NOT_OFFICIAL",
+          "figure_status": "BLOCKED",
+          "first_try_ok": false,
+          "source_role": "DIRECT_EXAM_EVIDENCE_PENDING",
+          "flags": [
+            "QUESTION_ASSET_UNBOUND",
+            "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+            "OFFICIAL_KEY_NOT_BOUND"
+          ],
+          "duplicate_of": null,
+          "rights": "OWNER_LOCAL_ONLY"
+        },
+        "sl2": {
+          "mode": "QUESTION",
+          "status": "UNREVIEWED",
+          "operation": "REPRESENT",
+          "alternative": {
+            "operation": "APPLY",
+            "reason": "If the actual graphs demand only four immediate triangle areas, APPLY/D2 may suffice. Current D3 proposal is conditional."
+          },
+          "scores": {
+            "concept_model_selection": 1,
+            "representation_translation": 2,
+            "reasoning_chain_length": 2,
+            "algebra_computational_load": 1,
+            "trap_exception_sensitivity": 1
+          },
+          "factor_evidence": [
+            {
+              "factor": "concept_model_selection",
+              "score": 1,
+              "evidence": "Select work as signed force-displacement area."
+            },
+            {
+              "factor": "representation_translation",
+              "score": 2,
+              "evidence": "Coordinate four graphs, their scales and oriented areas; the visual-to-work translation is the proposed decisive move."
+            },
+            {
+              "factor": "reasoning_chain_length",
+              "score": 2,
+              "evidence": "Read each graph, accumulate each signed area and rank four work totals."
+            },
+            {
+              "factor": "algebra_computational_load",
+              "score": 1,
+              "evidence": "Piecewise geometric areas and comparisons are expected but cannot be fully assessed before exact graphs are bound."
+            },
+            {
+              "factor": "trap_exception_sensitivity",
+              "score": 1,
+              "evidence": "A visually larger shape need not represent greater work if axes or negative regions differ; exact exceptions remain to be checked against the figures."
+            }
+          ],
+          "total": 7,
+          "band": "D3",
+          "band_status": "CONDITIONAL",
+          "crux": "Compare signed work represented by four force-displacement graphs while preserving axis meanings and scales.",
+          "worked_resolution": "Descending order of W1,W2,W3,W4 from the four original graphs.",
+          "conditions": [
+            "All four exact original graphs, axis labels and scales must be retained."
+          ],
+          "learner_evidence": "NOT_SUPPLIED",
+          "prior_score_seen": true
+        }
+      },
+      "source_record_id": "EX-M56"
+    },
+    {
+      "canonical_id": "EX-M61",
+      "duplicate_of": null,
+      "origin": "EXAM_ORIGINAL_UPSTREAM_UNVERIFIED",
+      "source_role": "DIRECT_EXAM_EVIDENCE_PENDING",
+      "question": {
+        "id": "EX-M61",
+        "original_identifier": "EX-M61",
+        "origin": "EXAM_ORIGINAL",
+        "stem": "Given below is the plot of a potential energy function U(x) for a system, in which a particle is in one dimensional motion, while a conservative force F(x) acts on it. Suppose that Emech = 8 J, the incorrect statement for this system is : [FIG-stem-1] [ where K.E. = kinetic energy ]",
+        "options": [
+          {
+            "id": "A",
+            "text": "at x > x4 K.E. is constant throughout the region."
+          },
+          {
+            "id": "B",
+            "text": "at x < x1, K.E. is smallest and the particle is moving at the slowest speed."
+          },
+          {
+            "id": "C",
+            "text": "at x = x2, K.E. is greatest and the particle is moving at the fastest speed."
+          },
+          {
+            "id": "D",
+            "text": "at x = x3, K.E. = 4 J."
+          }
+        ],
+        "subparts": [],
+        "conditions": [],
+        "figure_refs": [
+          "https://imagex.cdn.examgoal.net/1ks43nu47/ed784684-fb95-41b2-b955-8015cfaa1ca7/57c95470-f8c5-11eb-a1d4-495922108aa7/file-1ks43nu48.jpg"
+        ],
+        "hints": [],
+        "scaffolds": [],
+        "answer": {},
+        "extensions": {
+          "wpe:response_type": "SINGLE_CHOICE",
+          "wpe:r1_record_id": "EX-M61",
+          "wpe:review_status": "EXPOSED_UNREVIEWED"
+        }
+      },
+      "source": {
+        "original_r1_custody": {
+          "record_id": "EX-M61",
+          "native_alias": "Q-PHY-WPE-JEEM-M61",
+          "raw_source": {
+            "path": "evidence/cfa7368f9504cc72c3f05fa61328a3086496e89f6eb56c389927d2673b895071.json",
+            "sha256": "cfa7368f9504cc72c3f05fa61328a3086496e89f6eb56c389927d2673b895071",
+            "locator": "/items/19",
+            "original_name": "examside-wpe-extract.json"
+          },
+          "question_digest": "sha256:186724f2ecb99b802e756fc00644e6e98636becbf84f0a18573cd4802cfac744",
+          "answer_digest": "sha256:0ff986ca5003da3ef180af1654e1d2fbed93857a79f84f9b9c7984b95f6d890c",
+          "paper": "JEE Main 2021 (Online) 27th July Evening Shift",
+          "paper_evidence": null,
+          "question_assets": [],
+          "unbound_figure_refs": [
+            {
+              "role": "stem",
+              "url": "https://imagex.cdn.examgoal.net/1ks43nu47/ed784684-fb95-41b2-b955-8015cfaa1ca7/57c95470-f8c5-11eb-a1d4-495922108aa7/file-1ks43nu48.jpg",
+              "status": "UNBOUND_REMOTE_REFERENCE"
+            }
+          ],
+          "answer_key_claim": null,
+          "claim_kind": "UNRESOLVED",
+          "key_evidence": null,
+          "publisher_solution_exists": true,
+          "upstream_verified": false,
+          "source_version_aliases": [],
+          "family_links": [],
+          "question_and_key_independently_bound": false
+        },
+        "question_digest": "8ba2a379f1d997428ed215e17450d0b233585789fcff5425fecaf5f52e8fa65a",
+        "options_digest": "171563f3c21cc256a5f4336e97e9cdbd0ad74dfffa7541987759afa5a22a9850",
+        "figure_digests": [],
+        "required_figures_bound": false,
+        "official_paper": null,
+        "official_key": null,
+        "answer_versions": {
+          "inherited_claim_digest": "sha256:0ff986ca5003da3ef180af1654e1d2fbed93857a79f84f9b9c7984b95f6d890c",
+          "official_claim_digest": null,
+          "reconciliation": "OPEN"
+        }
+      },
+      "curriculum": {
+        "semantic_cell_resolved": false,
+        "capability_ref": null,
+        "microtopic_ref": null
+      },
+      "assessment": {
+        "factors": {
+          "concept_model_selection": 1,
+          "representation_translation": 2,
+          "reasoning_chain_length": 2,
+          "algebra_computational_load": 1,
+          "trap_exception_sensitivity": 1
+        },
+        "total": 7,
+        "band": "D3",
+        "primary_operation": "REPRESENT",
+        "factor_evidence": {
+          "concept_model_selection": "Identify the familiar total-energy relation K=E-U for the supplied E=8 J.",
+          "representation_translation": "Coordinate graph height, position, kinetic energy and speed across several regions.",
+          "reasoning_chain_length": "Read candidate values and trends, derive kinetic energies and compare them with each statement.",
+          "algebra_computational_load": "Several local subtractions and comparisons may be required; exact load awaits the source graph.",
+          "trap_exception_sensitivity": "Potential height is not kinetic energy, and constant potential is not zero kinetic energy; only the actual graph can establish which traps are substantive."
+        },
+        "decisive_move_evidence": "Translate each marked position on U(x) into K=8-U(x), preserving accessibility and speed meaning before rejecting a statement.",
+        "competing_operations": [
+          {
+            "operation": "APPLY",
+            "reason": "A simple graph read followed by one subtraction could reduce the demand to D2. No graph-independent D3 certification is claimed."
+          }
+        ],
+        "source_stage": "AUTHOR_EXPOSED_HYPOTHESIS"
+      },
+      "governance": {
+        "reviewer_exposure_disclosed": null,
+        "qrt_adjudication": "HOLD"
+      },
+      "grading_policy": {},
+      "prior_exposure": true,
+      "r1_preserved_proposals": {
+        "sl1": {
+          "status": "UNREVIEWED",
+          "source_status": "LOCAL_BYTES_BOUND_UPSTREAM_UNVERIFIED",
+          "answer_status": "INHERITED_CLAIM_NOT_OFFICIAL",
+          "figure_status": "BLOCKED",
+          "first_try_ok": false,
+          "source_role": "DIRECT_EXAM_EVIDENCE_PENDING",
+          "flags": [
+            "QUESTION_ASSET_UNBOUND",
+            "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+            "OFFICIAL_KEY_NOT_BOUND"
+          ],
+          "duplicate_of": null,
+          "rights": "OWNER_LOCAL_ONLY"
+        },
+        "sl2": {
+          "mode": "QUESTION",
+          "status": "UNREVIEWED",
+          "operation": "REPRESENT",
+          "alternative": {
+            "operation": "APPLY",
+            "reason": "A simple graph read followed by one subtraction could reduce the demand to D2. No graph-independent D3 certification is claimed."
+          },
+          "scores": {
+            "concept_model_selection": 1,
+            "representation_translation": 2,
+            "reasoning_chain_length": 2,
+            "algebra_computational_load": 1,
+            "trap_exception_sensitivity": 1
+          },
+          "factor_evidence": [
+            {
+              "factor": "concept_model_selection",
+              "score": 1,
+              "evidence": "Identify the familiar total-energy relation K=E-U for the supplied E=8 J."
+            },
+            {
+              "factor": "representation_translation",
+              "score": 2,
+              "evidence": "Coordinate graph height, position, kinetic energy and speed across several regions."
+            },
+            {
+              "factor": "reasoning_chain_length",
+              "score": 2,
+              "evidence": "Read candidate values and trends, derive kinetic energies and compare them with each statement."
+            },
+            {
+              "factor": "algebra_computational_load",
+              "score": 1,
+              "evidence": "Several local subtractions and comparisons may be required; exact load awaits the source graph."
+            },
+            {
+              "factor": "trap_exception_sensitivity",
+              "score": 1,
+              "evidence": "Potential height is not kinetic energy, and constant potential is not zero kinetic energy; only the actual graph can establish which traps are substantive."
+            }
+          ],
+          "total": 7,
+          "band": "D3",
+          "band_status": "CONDITIONAL",
+          "crux": "Translate each marked position on U(x) into K=8-U(x), preserving accessibility and speed meaning before rejecting a statement.",
+          "worked_resolution": "Identify the incorrect statement from the original U(x) graph.",
+          "conditions": [
+            "Exact U(x) graph and all x1–x4 values must be bound.",
+            "Only dynamically accessible positions are considered."
+          ],
+          "learner_evidence": "NOT_SUPPLIED",
+          "prior_score_seen": true
+        }
+      },
+      "source_record_id": "EX-M61"
+    },
+    {
+      "canonical_id": "EX-M69",
+      "duplicate_of": null,
+      "origin": "EXAM_ORIGINAL_UPSTREAM_UNVERIFIED",
+      "source_role": "DIRECT_EXAM_EVIDENCE_PENDING",
+      "question": {
+        "id": "EX-M69",
+        "original_identifier": "EX-M69",
+        "origin": "EXAM_ORIGINAL",
+        "stem": "A particle is moving unidirectionally on a horizontal plane under the action of a constant power supplying energy source. The displacement (s) - time (t) graph that describes the motion of the particle is (graphs are drawn schematically and are not to scale) :",
+        "options": [
+          {
+            "id": "A",
+            "text": "[FIG-options-1]"
+          },
+          {
+            "id": "B",
+            "text": "[FIG-options-2]"
+          },
+          {
+            "id": "C",
+            "text": "[FIG-options-3]"
+          },
+          {
+            "id": "D",
+            "text": "[FIG-options-4]"
+          }
+        ],
+        "subparts": [],
+        "conditions": [],
+        "figure_refs": [
+          "https://imagex.cdn.examgoal.net/jgy2xukf3rbp6b/e4abc273-a276-4e75-8084-523e8cd97561/48c8b830-f736-11ea-8293-3b6cc591631c/file-jgy2xukf3rbp6c-324w.png",
+          "https://imagex.cdn.examgoal.net/jgy2xukf3rcn0i/b7eba6f2-a20b-4846-a943-1c6705c5bc1b/62ec7620-f736-11ea-8293-3b6cc591631c/file-jgy2xukf3rcn0j-299w.png",
+          "https://imagex.cdn.examgoal.net/jgy2xukf3rdcd0/88a845b5-2e40-471b-a32e-c9e124314742/7680f940-f736-11ea-8293-3b6cc591631c/file-jgy2xukf3rdcd1-296w.png",
+          "https://imagex.cdn.examgoal.net/jgy2xukf3re3vu/fbeffea8-c1ff-45a5-bc13-6c9fb24101dc/8bc3c8a0-f736-11ea-8293-3b6cc591631c/file-jgy2xukf3re3vv-319w.png"
+        ],
+        "hints": [],
+        "scaffolds": [],
+        "answer": {},
+        "extensions": {
+          "wpe:response_type": "SINGLE_CHOICE",
+          "wpe:r1_record_id": "EX-M69",
+          "wpe:review_status": "EXPOSED_UNREVIEWED"
+        }
+      },
+      "source": {
+        "original_r1_custody": {
+          "record_id": "EX-M69",
+          "native_alias": "Q-PHY-WPE-JEEM-M69",
+          "raw_source": {
+            "path": "evidence/cfa7368f9504cc72c3f05fa61328a3086496e89f6eb56c389927d2673b895071.json",
+            "sha256": "cfa7368f9504cc72c3f05fa61328a3086496e89f6eb56c389927d2673b895071",
+            "locator": "/items/24",
+            "original_name": "examside-wpe-extract.json"
+          },
+          "question_digest": "sha256:37118d3cdd1023c057b2c27928391d633cdb419eab2b86e546d9ee73b119a23f",
+          "answer_digest": "sha256:e62dfae6d12b0d9371ff38074b919fa726b76263ae8c9b72df27b05c61debdd0",
+          "paper": "JEE Main 2020 (Online) 3rd September Evening Slot",
+          "paper_evidence": null,
+          "question_assets": [],
+          "unbound_figure_refs": [
+            {
+              "role": "options",
+              "url": "https://imagex.cdn.examgoal.net/jgy2xukf3rbp6b/e4abc273-a276-4e75-8084-523e8cd97561/48c8b830-f736-11ea-8293-3b6cc591631c/file-jgy2xukf3rbp6c-324w.png",
+              "status": "UNBOUND_REMOTE_REFERENCE"
+            },
+            {
+              "role": "options",
+              "url": "https://imagex.cdn.examgoal.net/jgy2xukf3rcn0i/b7eba6f2-a20b-4846-a943-1c6705c5bc1b/62ec7620-f736-11ea-8293-3b6cc591631c/file-jgy2xukf3rcn0j-299w.png",
+              "status": "UNBOUND_REMOTE_REFERENCE"
+            },
+            {
+              "role": "options",
+              "url": "https://imagex.cdn.examgoal.net/jgy2xukf3rdcd0/88a845b5-2e40-471b-a32e-c9e124314742/7680f940-f736-11ea-8293-3b6cc591631c/file-jgy2xukf3rdcd1-296w.png",
+              "status": "UNBOUND_REMOTE_REFERENCE"
+            },
+            {
+              "role": "options",
+              "url": "https://imagex.cdn.examgoal.net/jgy2xukf3re3vu/fbeffea8-c1ff-45a5-bc13-6c9fb24101dc/8bc3c8a0-f736-11ea-8293-3b6cc591631c/file-jgy2xukf3re3vv-319w.png",
+              "status": "UNBOUND_REMOTE_REFERENCE"
+            }
+          ],
+          "answer_key_claim": null,
+          "claim_kind": "UNRESOLVED",
+          "key_evidence": null,
+          "publisher_solution_exists": true,
+          "upstream_verified": false,
+          "source_version_aliases": [],
+          "family_links": [
+            "constant-power-rest-start"
+          ],
+          "question_and_key_independently_bound": false
+        },
+        "question_digest": "cb46b4f47707544d17fe4af8936d0d384707ed597c67db83479972e8c957e596",
+        "options_digest": "45767dcd60cf38b1de60a50ba14ea849445e2d740ed2534793c7d2337b8765b9",
+        "figure_digests": [],
+        "required_figures_bound": false,
+        "official_paper": null,
+        "official_key": null,
+        "answer_versions": {
+          "inherited_claim_digest": "sha256:e62dfae6d12b0d9371ff38074b919fa726b76263ae8c9b72df27b05c61debdd0",
+          "official_claim_digest": null,
+          "reconciliation": "OPEN"
+        }
+      },
+      "curriculum": {
+        "semantic_cell_resolved": false,
+        "capability_ref": null,
+        "microtopic_ref": null
+      },
+      "assessment": {
+        "factors": {
+          "concept_model_selection": 1,
+          "representation_translation": 2,
+          "reasoning_chain_length": 2,
+          "algebra_computational_load": 1,
+          "trap_exception_sensitivity": 1
+        },
+        "total": 7,
+        "band": "D3",
+        "primary_operation": "REPRESENT",
+        "factor_evidence": {
+          "concept_model_selection": "Use kinetic-energy rate equal to constant delivered net power under the ideal motion model.",
+          "representation_translation": "Translate power into speed-time dependence and then into the curvature of a displacement-time graph.",
+          "reasoning_chain_length": "Relate Pt to change in kinetic energy, derive increasing speed and match the resulting s(t) curve to the options.",
+          "algebra_computational_load": "Integrating the rest-start ideal model yields s proportional to t^(3/2); the qualitative choice may require less algebra.",
+          "trap_exception_sensitivity": "A straight-line or concave-down displacement graph contradicts positive constant power. A precise t^(3/2) law also needs an initial condition absent from the retained stem."
+        },
+        "decisive_move_evidence": "Translate constant-power dynamics into displacement-time curvature and choose the matching original sketch.",
+        "competing_operations": [
+          {
+            "operation": "SYNTHESIZE",
+            "reason": "The derivation coordinates power and kinematics; if translating to a graph is incidental, SYNTHESIZE may be primary."
+          }
+        ],
+        "source_stage": "AUTHOR_EXPOSED_HYPOTHESIS"
+      },
+      "governance": {
+        "reviewer_exposure_disclosed": null,
+        "qrt_adjudication": "HOLD"
+      },
+      "grading_policy": {},
+      "prior_exposure": true,
+      "r1_preserved_proposals": {
+        "sl1": {
+          "status": "UNREVIEWED",
+          "source_status": "LOCAL_BYTES_BOUND_UPSTREAM_UNVERIFIED",
+          "answer_status": "INHERITED_CLAIM_NOT_OFFICIAL",
+          "figure_status": "BLOCKED",
+          "first_try_ok": false,
+          "source_role": "DIRECT_EXAM_EVIDENCE_PENDING",
+          "flags": [
+            "QUESTION_ASSET_UNBOUND",
+            "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+            "OFFICIAL_KEY_NOT_BOUND"
+          ],
+          "duplicate_of": null,
+          "rights": "OWNER_LOCAL_ONLY"
+        },
+        "sl2": {
+          "mode": "QUESTION",
+          "status": "UNREVIEWED",
+          "operation": "REPRESENT",
+          "alternative": {
+            "operation": "SYNTHESIZE",
+            "reason": "The derivation coordinates power and kinematics; if translating to a graph is incidental, SYNTHESIZE may be primary."
+          },
+          "scores": {
+            "concept_model_selection": 1,
+            "representation_translation": 2,
+            "reasoning_chain_length": 2,
+            "algebra_computational_load": 1,
+            "trap_exception_sensitivity": 1
+          },
+          "factor_evidence": [
+            {
+              "factor": "concept_model_selection",
+              "score": 1,
+              "evidence": "Use kinetic-energy rate equal to constant delivered net power under the ideal motion model."
+            },
+            {
+              "factor": "representation_translation",
+              "score": 2,
+              "evidence": "Translate power into speed-time dependence and then into the curvature of a displacement-time graph."
+            },
+            {
+              "factor": "reasoning_chain_length",
+              "score": 2,
+              "evidence": "Relate Pt to change in kinetic energy, derive increasing speed and match the resulting s(t) curve to the options."
+            },
+            {
+              "factor": "algebra_computational_load",
+              "score": 1,
+              "evidence": "Integrating the rest-start ideal model yields s proportional to t^(3/2); the qualitative choice may require less algebra."
+            },
+            {
+              "factor": "trap_exception_sensitivity",
+              "score": 1,
+              "evidence": "A straight-line or concave-down displacement graph contradicts positive constant power. A precise t^(3/2) law also needs an initial condition absent from the retained stem."
+            }
+          ],
+          "total": 7,
+          "band": "D3",
+          "band_status": "CONDITIONAL",
+          "crux": "Translate constant-power dynamics into displacement-time curvature and choose the matching original sketch.",
+          "worked_resolution": "The original concave-up s(t) option; original option images are not yet retained.",
+          "conditions": [
+            "Positive constant net power and fixed mass.",
+            "Rest-start condition is needed for the specific pure power law, though positive curvature can be inferred more generally."
+          ],
+          "learner_evidence": "NOT_SUPPLIED",
+          "prior_score_seen": true
+        }
+      },
+      "source_record_id": "EX-M69"
+    },
+    {
+      "canonical_id": "EX-M39",
+      "duplicate_of": null,
+      "origin": "EXAM_ORIGINAL_UPSTREAM_UNVERIFIED",
+      "source_role": "DIRECT_EXAM_EVIDENCE_PENDING",
+      "question": {
+        "id": "EX-M39",
+        "original_identifier": "EX-M39",
+        "origin": "EXAM_ORIGINAL",
+        "stem": "A ball suspended by a thread swings in a vertical plane so that its magnitude of acceleration in the extreme position and lowest position are equal. The angle (𝜃) of thread deflection in the extreme position will be :",
+        "options": [
+          {
+            "id": "A",
+            "text": "tan^(−1)⁡((1)/(2))"
+          },
+          {
+            "id": "B",
+            "text": "2tan^(−1)⁡((1)/(2))"
+          },
+          {
+            "id": "C",
+            "text": "2tan^(−1)⁡((1)/(√5))"
+          },
+          {
+            "id": "D",
+            "text": "tan^(−1)⁡(√(2))"
+          }
+        ],
+        "subparts": [],
+        "conditions": [],
+        "figure_refs": [],
+        "hints": [],
+        "scaffolds": [],
+        "answer": {},
+        "extensions": {
+          "wpe:response_type": "SINGLE_CHOICE",
+          "wpe:r1_record_id": "EX-M39",
+          "wpe:review_status": "EXPOSED_UNREVIEWED"
+        }
+      },
+      "source": {
+        "original_r1_custody": {
+          "record_id": "EX-M39",
+          "native_alias": "Q-PHY-WPE-JEEM-M39",
+          "raw_source": {
+            "path": "evidence/cfa7368f9504cc72c3f05fa61328a3086496e89f6eb56c389927d2673b895071.json",
+            "sha256": "cfa7368f9504cc72c3f05fa61328a3086496e89f6eb56c389927d2673b895071",
+            "locator": "/items/12",
+            "original_name": "examside-wpe-extract.json"
+          },
+          "question_digest": "sha256:c9f1914aa38ebf9e79addf6e529c66fc39c7518bec788d794baf2b81c513e775",
+          "answer_digest": "sha256:49b3fe8131ea9f5bc842e1ee11534bcb1251863965a8c95cdedb363e5154fb40",
+          "paper": "JEE Main 2024 (Online) 27th January Evening Shift",
+          "paper_evidence": null,
+          "question_assets": [],
+          "unbound_figure_refs": [],
+          "answer_key_claim": null,
+          "claim_kind": "UNRESOLVED",
+          "key_evidence": null,
+          "publisher_solution_exists": true,
+          "upstream_verified": false,
+          "source_version_aliases": [],
+          "family_links": [],
+          "question_and_key_independently_bound": false
+        },
+        "question_digest": "c455f814ad4931291fd75bc1195da4136dbe40a4f07fd28509538cb7b2900e48",
+        "options_digest": "d6fbd5aa2c636fcf5e59f2765b278862db85bbf5752e99e2b77d706d248f9ae2",
+        "figure_digests": [],
+        "required_figures_bound": false,
+        "official_paper": null,
+        "official_key": null,
+        "answer_versions": {
+          "inherited_claim_digest": "sha256:49b3fe8131ea9f5bc842e1ee11534bcb1251863965a8c95cdedb363e5154fb40",
+          "official_claim_digest": null,
+          "reconciliation": "OPEN"
+        }
+      },
+      "curriculum": {
+        "semantic_cell_resolved": false,
+        "capability_ref": null,
+        "microtopic_ref": null
+      },
+      "assessment": {
+        "factors": {
+          "concept_model_selection": 1,
+          "representation_translation": 1,
+          "reasoning_chain_length": 2,
+          "algebra_computational_load": 1,
+          "trap_exception_sensitivity": 1
+        },
+        "total": 6,
+        "band": "D3",
+        "primary_operation": "SYNTHESIZE",
+        "factor_evidence": {
+          "concept_model_selection": "Identify endpoint acceleration components for an ideal swinging pendulum.",
+          "representation_translation": "Represent height rise as l(1-cos(theta)) and bottom radial acceleration as v²/l.",
+          "reasoning_chain_length": "Use energy to find v²/l, equate it to g sin(theta) and solve for the nontrivial deflection.",
+          "algebra_computational_load": "Routine trigonometric rearrangement gives tan(theta/2)=1/2.",
+          "trap_exception_sensitivity": "Acceleration at the extreme is tangential despite zero speed; at the bottom it is radial despite zero tangential component."
+        },
+        "decisive_move_evidence": "Compare tangential acceleration at the extreme with radial acceleration at the bottom, using energy to supply the bottom speed.",
+        "competing_operations": [
+          {
+            "operation": "MODEL",
+            "reason": "Selecting the correct acceleration components could be the primary decision; the proposal emphasizes the energy-to-acceleration bridge."
+          }
+        ],
+        "source_stage": "AUTHOR_EXPOSED_HYPOTHESIS"
+      },
+      "governance": {
+        "reviewer_exposure_disclosed": null,
+        "qrt_adjudication": "HOLD"
+      },
+      "grading_policy": {},
+      "prior_exposure": true,
+      "r1_preserved_proposals": {
+        "sl1": {
+          "status": "UNREVIEWED",
+          "source_status": "LOCAL_BYTES_BOUND_UPSTREAM_UNVERIFIED",
+          "answer_status": "INHERITED_CLAIM_NOT_OFFICIAL",
+          "figure_status": "PENDING_WITNESS",
+          "first_try_ok": false,
+          "source_role": "DIRECT_EXAM_EVIDENCE_PENDING",
+          "flags": [
+            "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+            "OFFICIAL_KEY_NOT_BOUND"
+          ],
+          "duplicate_of": null,
+          "rights": "OWNER_LOCAL_ONLY"
+        },
+        "sl2": {
+          "mode": "QUESTION",
+          "status": "UNREVIEWED",
+          "operation": "SYNTHESIZE",
+          "alternative": {
+            "operation": "MODEL",
+            "reason": "Selecting the correct acceleration components could be the primary decision; the proposal emphasizes the energy-to-acceleration bridge."
+          },
+          "scores": {
+            "concept_model_selection": 1,
+            "representation_translation": 1,
+            "reasoning_chain_length": 2,
+            "algebra_computational_load": 1,
+            "trap_exception_sensitivity": 1
+          },
+          "factor_evidence": [
+            {
+              "factor": "concept_model_selection",
+              "score": 1,
+              "evidence": "Identify endpoint acceleration components for an ideal swinging pendulum."
+            },
+            {
+              "factor": "representation_translation",
+              "score": 1,
+              "evidence": "Represent height rise as l(1-cos(theta)) and bottom radial acceleration as v²/l."
+            },
+            {
+              "factor": "reasoning_chain_length",
+              "score": 2,
+              "evidence": "Use energy to find v²/l, equate it to g sin(theta) and solve for the nontrivial deflection."
+            },
+            {
+              "factor": "algebra_computational_load",
+              "score": 1,
+              "evidence": "Routine trigonometric rearrangement gives tan(theta/2)=1/2."
+            },
+            {
+              "factor": "trap_exception_sensitivity",
+              "score": 1,
+              "evidence": "Acceleration at the extreme is tangential despite zero speed; at the bottom it is radial despite zero tangential component."
+            }
+          ],
+          "total": 6,
+          "band": "D3",
+          "band_status": "PROPOSED_UNREVIEWED",
+          "crux": "Compare tangential acceleration at the extreme with radial acceleration at the bottom, using energy to supply the bottom speed.",
+          "worked_resolution": "theta=2 arctan(1/2), option B, for a nonzero swing.",
+          "conditions": [
+            "Ideal fixed-length pendulum with taut string and no dissipation.",
+            "Exclude the trivial non-swinging theta=0 case."
+          ],
+          "learner_evidence": "NOT_SUPPLIED",
+          "prior_score_seen": true
+        }
+      },
+      "source_record_id": "EX-M39"
+    },
+    {
+      "canonical_id": "EX-M44",
+      "duplicate_of": null,
+      "origin": "EXAM_ORIGINAL_UPSTREAM_UNVERIFIED",
+      "source_role": "DIRECT_EXAM_EVIDENCE_PENDING",
+      "question": {
+        "id": "EX-M44",
+        "original_identifier": "EX-M44",
+        "origin": "EXAM_ORIGINAL",
+        "stem": "A bullet of mass 0.1kg moving horizontally with speed 400ms^(−1) hits a wooden block of mass 3.9kg kept on a horizontal rough surface. The bullet gets embedded into the block and moves 20m before coming to rest. The coefficient of friction between the block and the surface is __________. (Given 𝑔=10m/s^(2) )",
+        "options": [
+          {
+            "id": "A",
+            "text": "0.65"
+          },
+          {
+            "id": "B",
+            "text": "0.25"
+          },
+          {
+            "id": "C",
+            "text": "0.50"
+          },
+          {
+            "id": "D",
+            "text": "0.90"
+          }
+        ],
+        "subparts": [],
+        "conditions": [],
+        "figure_refs": [],
+        "hints": [],
+        "scaffolds": [],
+        "answer": {},
+        "extensions": {
+          "wpe:response_type": "SINGLE_CHOICE",
+          "wpe:r1_record_id": "EX-M44",
+          "wpe:review_status": "EXPOSED_UNREVIEWED"
+        }
+      },
+      "source": {
+        "original_r1_custody": {
+          "record_id": "EX-M44",
+          "native_alias": "Q-PHY-WPE-JEEM-M44",
+          "raw_source": {
+            "path": "evidence/cfa7368f9504cc72c3f05fa61328a3086496e89f6eb56c389927d2673b895071.json",
+            "sha256": "cfa7368f9504cc72c3f05fa61328a3086496e89f6eb56c389927d2673b895071",
+            "locator": "/items/13",
+            "original_name": "examside-wpe-extract.json"
+          },
+          "question_digest": "sha256:e67b6d08ba8b92bc547c5d0339544b790365c066a5a7cc1b6844b675a28c0250",
+          "answer_digest": "sha256:590d93e061d8bce3cff7bbfe8a7e4c5de8f617ad24c6b3eb82348d0b5995bbf2",
+          "paper": "JEE Main 2023 (Online) 8th April Evening Shift",
+          "paper_evidence": null,
+          "question_assets": [],
+          "unbound_figure_refs": [],
+          "answer_key_claim": null,
+          "claim_kind": "UNRESOLVED",
+          "key_evidence": null,
+          "publisher_solution_exists": true,
+          "upstream_verified": false,
+          "source_version_aliases": [],
+          "family_links": [],
+          "question_and_key_independently_bound": false
+        },
+        "question_digest": "951de7e7cb59040ba170bdd93df68b1e983485fcdc2c420f3e3d4e08610f96e6",
+        "options_digest": "5c8f0f874f6238119a7309e9db55d689da040a7619a19c9719f937c080d01582",
+        "figure_digests": [],
+        "required_figures_bound": false,
+        "official_paper": null,
+        "official_key": null,
+        "answer_versions": {
+          "inherited_claim_digest": "sha256:590d93e061d8bce3cff7bbfe8a7e4c5de8f617ad24c6b3eb82348d0b5995bbf2",
+          "official_claim_digest": null,
+          "reconciliation": "OPEN"
+        }
+      },
+      "curriculum": {
+        "semantic_cell_resolved": false,
+        "capability_ref": null,
+        "microtopic_ref": null
+      },
+      "assessment": {
+        "factors": {
+          "concept_model_selection": 1,
+          "representation_translation": 1,
+          "reasoning_chain_length": 2,
+          "algebra_computational_load": 1,
+          "trap_exception_sensitivity": 2
+        },
+        "total": 7,
+        "band": "D3",
+        "primary_operation": "SYNTHESIZE",
+        "factor_evidence": {
+          "concept_model_selection": "Recognise the familiar inelastic-impact stage followed by rough-floor stopping.",
+          "representation_translation": "Map two masses and bullet speed into a common post-impact speed, then into the combined moving mass.",
+          "reasoning_chain_length": "Compute V=10 m/s from momentum, form post-impact kinetic energy and equate it to mu Mg times 20 m.",
+          "algebra_computational_load": "Execute the local momentum and stopping-distance algebra to obtain mu=0.25.",
+          "trap_exception_sensitivity": "Mechanical energy is not conserved through embedding; starting the stopping calculation with the bullet's original kinetic energy is materially wrong."
+        },
+        "decisive_move_evidence": "Use horizontal momentum conservation for the short embedding collision, then transfer the shared speed into the frictional stopping-energy calculation.",
+        "competing_operations": [
+          {
+            "operation": "MODEL",
+            "reason": "Selecting different valid laws for different intervals is essential; SYNTHESIZE is proposed because shared post-impact speed is the decisive bridge."
+          }
+        ],
+        "source_stage": "AUTHOR_EXPOSED_HYPOTHESIS"
+      },
+      "governance": {
+        "reviewer_exposure_disclosed": null,
+        "qrt_adjudication": "HOLD"
+      },
+      "grading_policy": {},
+      "prior_exposure": true,
+      "r1_preserved_proposals": {
+        "sl1": {
+          "status": "UNREVIEWED",
+          "source_status": "LOCAL_BYTES_BOUND_UPSTREAM_UNVERIFIED",
+          "answer_status": "INHERITED_CLAIM_NOT_OFFICIAL",
+          "figure_status": "PENDING_WITNESS",
+          "first_try_ok": false,
+          "source_role": "DIRECT_EXAM_EVIDENCE_PENDING",
+          "flags": [
+            "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+            "OFFICIAL_KEY_NOT_BOUND"
+          ],
+          "duplicate_of": null,
+          "rights": "OWNER_LOCAL_ONLY"
+        },
+        "sl2": {
+          "mode": "QUESTION",
+          "status": "UNREVIEWED",
+          "operation": "SYNTHESIZE",
+          "alternative": {
+            "operation": "MODEL",
+            "reason": "Selecting different valid laws for different intervals is essential; SYNTHESIZE is proposed because shared post-impact speed is the decisive bridge."
+          },
+          "scores": {
+            "concept_model_selection": 1,
+            "representation_translation": 1,
+            "reasoning_chain_length": 2,
+            "algebra_computational_load": 1,
+            "trap_exception_sensitivity": 2
+          },
+          "factor_evidence": [
+            {
+              "factor": "concept_model_selection",
+              "score": 1,
+              "evidence": "Recognise the familiar inelastic-impact stage followed by rough-floor stopping."
+            },
+            {
+              "factor": "representation_translation",
+              "score": 1,
+              "evidence": "Map two masses and bullet speed into a common post-impact speed, then into the combined moving mass."
+            },
+            {
+              "factor": "reasoning_chain_length",
+              "score": 2,
+              "evidence": "Compute V=10 m/s from momentum, form post-impact kinetic energy and equate it to mu Mg times 20 m."
+            },
+            {
+              "factor": "algebra_computational_load",
+              "score": 1,
+              "evidence": "Execute the local momentum and stopping-distance algebra to obtain mu=0.25."
+            },
+            {
+              "factor": "trap_exception_sensitivity",
+              "score": 2,
+              "evidence": "Mechanical energy is not conserved through embedding; starting the stopping calculation with the bullet's original kinetic energy is materially wrong."
+            }
+          ],
+          "total": 7,
+          "band": "D3",
+          "band_status": "PROPOSED_UNREVIEWED",
+          "crux": "Use horizontal momentum conservation for the short embedding collision, then transfer the shared speed into the frictional stopping-energy calculation.",
+          "worked_resolution": "Coefficient of kinetic friction 0.25, option B.",
+          "conditions": [
+            "Impact duration is short enough that horizontal floor impulse is negligible during embedding.",
+            "After impact the combined body slides on a stationary horizontal floor."
+          ],
+          "learner_evidence": "NOT_SUPPLIED",
+          "prior_score_seen": true
+        }
+      },
+      "source_record_id": "EX-M44"
+    },
+    {
+      "canonical_id": "EX-M60",
+      "duplicate_of": null,
+      "origin": "EXAM_ORIGINAL_UPSTREAM_UNVERIFIED",
+      "source_role": "DIRECT_EXAM_EVIDENCE_PENDING",
+      "question": {
+        "id": "EX-M60",
+        "original_identifier": "EX-M60",
+        "origin": "EXAM_ORIGINAL",
+        "stem": "A block moving horizontally on a smooth surface with a speed of 40 m/s splits into two parts with masses in the ratio of 1 : 2. If the smaller part moves at 60 m/s in the same direction, then the fractional change in kinetic energy is :-",
+        "options": [
+          {
+            "id": "A",
+            "text": "(1)/(3)"
+          },
+          {
+            "id": "B",
+            "text": "(2)/(3)"
+          },
+          {
+            "id": "C",
+            "text": "(1)/(8)"
+          },
+          {
+            "id": "D",
+            "text": "(1)/(4)"
+          }
+        ],
+        "subparts": [],
+        "conditions": [],
+        "figure_refs": [],
+        "hints": [],
+        "scaffolds": [],
+        "answer": {},
+        "extensions": {
+          "wpe:response_type": "SINGLE_CHOICE",
+          "wpe:r1_record_id": "EX-M60",
+          "wpe:review_status": "EXPOSED_UNREVIEWED"
+        }
+      },
+      "source": {
+        "original_r1_custody": {
+          "record_id": "EX-M60",
+          "native_alias": "Q-PHY-WPE-JEEM-M60",
+          "raw_source": {
+            "path": "evidence/cfa7368f9504cc72c3f05fa61328a3086496e89f6eb56c389927d2673b895071.json",
+            "sha256": "cfa7368f9504cc72c3f05fa61328a3086496e89f6eb56c389927d2673b895071",
+            "locator": "/items/18",
+            "original_name": "examside-wpe-extract.json"
+          },
+          "question_digest": "sha256:4649ca9965c348ef32779dfe34f3aff70abf83a9894d1dff9ad2b3f3ae79956c",
+          "answer_digest": "sha256:a2ec57a3d5c92e385971f86bce4bac5425aec9f512c5dd207242bcc9b3dd8119",
+          "paper": "JEE Main 2021 (Online) 31st August Evening Shift",
+          "paper_evidence": null,
+          "question_assets": [],
+          "unbound_figure_refs": [],
+          "answer_key_claim": null,
+          "claim_kind": "UNRESOLVED",
+          "key_evidence": null,
+          "publisher_solution_exists": true,
+          "upstream_verified": false,
+          "source_version_aliases": [],
+          "family_links": [],
+          "question_and_key_independently_bound": false
+        },
+        "question_digest": "7599ee715caa9b227a3423fe5240e66b2a813d3d16dae414affe26fa0af9641b",
+        "options_digest": "b20bf6fe973e9abae7f5295428dce124292f8e11a547310c5b7eba6ed351cff3",
+        "figure_digests": [],
+        "required_figures_bound": false,
+        "official_paper": null,
+        "official_key": null,
+        "answer_versions": {
+          "inherited_claim_digest": "sha256:a2ec57a3d5c92e385971f86bce4bac5425aec9f512c5dd207242bcc9b3dd8119",
+          "official_claim_digest": null,
+          "reconciliation": "OPEN"
+        }
+      },
+      "curriculum": {
+        "semantic_cell_resolved": false,
+        "capability_ref": null,
+        "microtopic_ref": null
+      },
+      "assessment": {
+        "factors": {
+          "concept_model_selection": 1,
+          "representation_translation": 1,
+          "reasoning_chain_length": 2,
+          "algebra_computational_load": 1,
+          "trap_exception_sensitivity": 1
+        },
+        "total": 6,
+        "band": "D3",
+        "primary_operation": "SYNTHESIZE",
+        "factor_evidence": {
+          "concept_model_selection": "Anchor 1: Momentum conservation through a split, then compare kinetic energies.",
+          "representation_translation": "Anchor 1: Distinguish fragment mass ratio 1:2 and common initial velocity.",
+          "reasoning_chain_length": "Anchor 2: m60+2m v2=3m40 → v2=30 m/s; calculate pre/post K.",
+          "algebra_computational_load": "Anchor 1: K_i=2400m; K_f=2700m; fractional gain 1/8.",
+          "trap_exception_sensitivity": "Anchor 1: Kinetic energy is not conserved in an internally driven split."
+        },
+        "decisive_move_evidence": "Momentum conservation through a split, then compare kinetic energies.",
+        "competing_operations": [
+          {
+            "operation": "APPLY",
+            "reason": "Alternative if the decisive burden shifts; contrast with Momentum conservation through a split, then compare kinetic energies."
+          }
+        ],
+        "source_stage": "AUTHOR_EXPOSED_HYPOTHESIS"
+      },
+      "governance": {
+        "reviewer_exposure_disclosed": null,
+        "qrt_adjudication": "HOLD"
+      },
+      "grading_policy": {},
+      "prior_exposure": true,
+      "r1_preserved_proposals": {
+        "sl1": {
+          "status": "UNREVIEWED",
+          "source_status": "LOCAL_BYTES_BOUND_UPSTREAM_UNVERIFIED",
+          "answer_status": "INHERITED_CLAIM_NOT_OFFICIAL",
+          "figure_status": "PENDING_WITNESS",
+          "first_try_ok": false,
+          "source_role": "DIRECT_EXAM_EVIDENCE_PENDING",
+          "flags": [
+            "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+            "OFFICIAL_KEY_NOT_BOUND"
+          ],
+          "duplicate_of": null,
+          "rights": "OWNER_LOCAL_ONLY"
+        },
+        "sl2": {
+          "mode": "QUESTION",
+          "status": "UNREVIEWED",
+          "operation": "SYNTHESIZE",
+          "alternative": {
+            "operation": "APPLY",
+            "reason": "Alternative if the decisive burden shifts; contrast with Momentum conservation through a split, then compare kinetic energies."
+          },
+          "scores": {
+            "concept_model_selection": 1,
+            "representation_translation": 1,
+            "reasoning_chain_length": 2,
+            "algebra_computational_load": 1,
+            "trap_exception_sensitivity": 1
+          },
+          "factor_evidence": [
+            {
+              "factor": "concept_model_selection",
+              "score": 1,
+              "evidence": "Anchor 1: Momentum conservation through a split, then compare kinetic energies."
+            },
+            {
+              "factor": "representation_translation",
+              "score": 1,
+              "evidence": "Anchor 1: Distinguish fragment mass ratio 1:2 and common initial velocity."
+            },
+            {
+              "factor": "reasoning_chain_length",
+              "score": 2,
+              "evidence": "Anchor 2: m60+2m v2=3m40 → v2=30 m/s; calculate pre/post K."
+            },
+            {
+              "factor": "algebra_computational_load",
+              "score": 1,
+              "evidence": "Anchor 1: K_i=2400m; K_f=2700m; fractional gain 1/8."
+            },
+            {
+              "factor": "trap_exception_sensitivity",
+              "score": 1,
+              "evidence": "Anchor 1: Kinetic energy is not conserved in an internally driven split."
+            }
+          ],
+          "total": 6,
+          "band": "D3",
+          "band_status": "PROPOSED_UNREVIEWED",
+          "crux": "Momentum conservation through a split, then compare kinetic energies.",
+          "worked_resolution": "Fractional K change = +1/8.",
+          "conditions": [
+            "Negligible external horizontal impulse."
+          ],
+          "learner_evidence": "NOT_SUPPLIED",
+          "prior_score_seen": true
+        }
+      },
+      "source_record_id": "EX-M60"
+    },
+    {
+      "canonical_id": "EX-M101",
+      "duplicate_of": null,
+      "origin": "EXAM_ORIGINAL_UPSTREAM_UNVERIFIED",
+      "source_role": "DIRECT_EXAM_EVIDENCE_PENDING",
+      "question": {
+        "id": "EX-M101",
+        "original_identifier": "EX-M101",
+        "origin": "EXAM_ORIGINAL",
+        "stem": "This question has Statement 1 and Statement 2. Of the four choices given after the Statements, choose the one that best describes the two Statements. If two springs 𝑆_1 and 𝑆_2 of force constants 𝑘_1 and 𝑘_2 , respectively, are stretched by the same force, it is found that more work is done on spring 𝑆_1 than on spring 𝑆_2 . STATEMENT 1: If stretched by the same amount, work done on 𝑆_1 is more than that on 𝑆_2 STATEMENT 2: 𝑘_1<𝑘_2",
+        "options": [
+          {
+            "id": "A",
+            "text": "Statement 1 is false, Statement 2 is true"
+          },
+          {
+            "id": "B",
+            "text": "Statement 1 is true, Statement 2 is false"
+          },
+          {
+            "id": "C",
+            "text": "Statement 1 is true, Statement 2 is true, Statement 2 is the correct explanation for Statement 1"
+          },
+          {
+            "id": "D",
+            "text": "Statement 1 is true, Statement 2 is true, Statement 2 is not the correct explanation for Statement 1"
+          }
+        ],
+        "subparts": [],
+        "conditions": [],
+        "figure_refs": [],
+        "hints": [],
+        "scaffolds": [],
+        "answer": {},
+        "extensions": {
+          "wpe:response_type": "SINGLE_CHOICE",
+          "wpe:r1_record_id": "EX-M101",
+          "wpe:review_status": "EXPOSED_UNREVIEWED"
+        }
+      },
+      "source": {
+        "original_r1_custody": {
+          "record_id": "EX-M101",
+          "native_alias": "Q-PHY-WPE-JEEM-M101",
+          "raw_source": {
+            "path": "evidence/cfa7368f9504cc72c3f05fa61328a3086496e89f6eb56c389927d2673b895071.json",
+            "sha256": "cfa7368f9504cc72c3f05fa61328a3086496e89f6eb56c389927d2673b895071",
+            "locator": "/items/42",
+            "original_name": "examside-wpe-extract.json"
+          },
+          "question_digest": "sha256:c6e3def68f357fa81e9290202db1392761f514f8fccc10c2bda458be9f9ec7dd",
+          "answer_digest": "sha256:99cf6c048398bf7dd296e910eb652746b94633183e6dcbec35debf4dec0ffb0a",
+          "paper": "AIEEE 2012",
+          "paper_evidence": null,
+          "question_assets": [],
+          "unbound_figure_refs": [],
+          "answer_key_claim": null,
+          "claim_kind": "UNRESOLVED",
+          "key_evidence": null,
+          "publisher_solution_exists": true,
+          "upstream_verified": false,
+          "source_version_aliases": [],
+          "family_links": [],
+          "question_and_key_independently_bound": false
+        },
+        "question_digest": "5b8d7d35f419b5d9becc541997e83f6d95275a204c2f10beda922a325aad72e5",
+        "options_digest": "46a081dff0b5ee04be31522033193dea17e85f2dd1e802a9d6cd8653888edd8a",
+        "figure_digests": [],
+        "required_figures_bound": false,
+        "official_paper": null,
+        "official_key": null,
+        "answer_versions": {
+          "inherited_claim_digest": "sha256:99cf6c048398bf7dd296e910eb652746b94633183e6dcbec35debf4dec0ffb0a",
+          "official_claim_digest": null,
+          "reconciliation": "OPEN"
+        }
+      },
+      "curriculum": {
+        "semantic_cell_resolved": false,
+        "capability_ref": null,
+        "microtopic_ref": null
+      },
+      "assessment": {
+        "factors": {
+          "concept_model_selection": 1,
+          "representation_translation": 1,
+          "reasoning_chain_length": 2,
+          "algebra_computational_load": 1,
+          "trap_exception_sensitivity": 2
+        },
+        "total": 7,
+        "band": "D3",
+        "primary_operation": "JUSTIFY",
+        "factor_evidence": {
+          "concept_model_selection": "Identify Hooke-law elastic work as the familiar warrant for both comparisons.",
+          "representation_translation": "Rewrite kx²/2 as F²/(2k) to preserve which input is held fixed.",
+          "reasoning_chain_length": "Infer stiffness ordering from equal-force work, carry that ordering into equal-extension work and classify both statements.",
+          "algebra_computational_load": "Perform routine symbolic substitutions and inequality comparison; no long computation is needed.",
+          "trap_exception_sensitivity": "Equal force and equal extension reverse how work depends on k. Reusing the first comparison while changing the controlled variable produces a plausible but wrong conclusion."
+        },
+        "decisive_move_evidence": "Establish k1<k2 from the equal-force work premise, then refute the same-extension claim using the reversed dependence on stiffness.",
+        "competing_operations": [
+          {
+            "operation": "APPLY",
+            "reason": "This MCQ may be resolved by applying two familiar formulas without making explicit warrants the assessed output. JUSTIFY remains a proposal requiring independent adjudication."
+          }
+        ],
+        "source_stage": "AUTHOR_EXPOSED_HYPOTHESIS"
+      },
+      "governance": {
+        "reviewer_exposure_disclosed": null,
+        "qrt_adjudication": "HOLD"
+      },
+      "grading_policy": {},
+      "prior_exposure": true,
+      "r1_preserved_proposals": {
+        "sl1": {
+          "status": "UNREVIEWED",
+          "source_status": "LOCAL_BYTES_BOUND_UPSTREAM_UNVERIFIED",
+          "answer_status": "INHERITED_CLAIM_NOT_OFFICIAL",
+          "figure_status": "PENDING_WITNESS",
+          "first_try_ok": false,
+          "source_role": "DIRECT_EXAM_EVIDENCE_PENDING",
+          "flags": [
+            "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+            "OFFICIAL_KEY_NOT_BOUND"
+          ],
+          "duplicate_of": null,
+          "rights": "OWNER_LOCAL_ONLY"
+        },
+        "sl2": {
+          "mode": "QUESTION",
+          "status": "UNREVIEWED",
+          "operation": "JUSTIFY",
+          "alternative": {
+            "operation": "APPLY",
+            "reason": "This MCQ may be resolved by applying two familiar formulas without making explicit warrants the assessed output. JUSTIFY remains a proposal requiring independent adjudication."
+          },
+          "scores": {
+            "concept_model_selection": 1,
+            "representation_translation": 1,
+            "reasoning_chain_length": 2,
+            "algebra_computational_load": 1,
+            "trap_exception_sensitivity": 2
+          },
+          "factor_evidence": [
+            {
+              "factor": "concept_model_selection",
+              "score": 1,
+              "evidence": "Identify Hooke-law elastic work as the familiar warrant for both comparisons."
+            },
+            {
+              "factor": "representation_translation",
+              "score": 1,
+              "evidence": "Rewrite kx²/2 as F²/(2k) to preserve which input is held fixed."
+            },
+            {
+              "factor": "reasoning_chain_length",
+              "score": 2,
+              "evidence": "Infer stiffness ordering from equal-force work, carry that ordering into equal-extension work and classify both statements."
+            },
+            {
+              "factor": "algebra_computational_load",
+              "score": 1,
+              "evidence": "Perform routine symbolic substitutions and inequality comparison; no long computation is needed."
+            },
+            {
+              "factor": "trap_exception_sensitivity",
+              "score": 2,
+              "evidence": "Equal force and equal extension reverse how work depends on k. Reusing the first comparison while changing the controlled variable produces a plausible but wrong conclusion."
+            }
+          ],
+          "total": 7,
+          "band": "D3",
+          "band_status": "PROPOSED_UNREVIEWED",
+          "crux": "Establish k1<k2 from the equal-force work premise, then refute the same-extension claim using the reversed dependence on stiffness.",
+          "worked_resolution": "Statement 1 false, Statement 2 true, option A in this extract.",
+          "conditions": [
+            "Ideal linear springs start from zero extension and remain in their elastic regime.",
+            "M101 contains no cut-spring or uniform-length premise."
+          ],
+          "learner_evidence": "NOT_SUPPLIED",
+          "prior_score_seen": true
+        }
+      },
+      "source_record_id": "EX-M101"
+    },
+    {
+      "canonical_id": "WEP07-03",
+      "duplicate_of": null,
+      "origin": "EXAM_ORIGINAL_UPSTREAM_UNVERIFIED",
+      "source_role": "DIRECT_EXAM_EVIDENCE_PENDING",
+      "question": {
+        "id": "WEP07-03",
+        "original_identifier": "WEP07-03",
+        "origin": "EXAM_ORIGINAL",
+        "stem": null,
+        "options": [],
+        "subparts": [],
+        "conditions": [],
+        "figure_refs": [],
+        "hints": [],
+        "scaffolds": [],
+        "answer": {},
+        "extensions": {
+          "wpe:response_type": "TEXT",
+          "wpe:r1_record_id": "WEP07-03",
+          "wpe:review_status": "EXPOSED_UNREVIEWED"
+        }
+      },
+      "source": {
+        "original_r1_custody": {
+          "record_id": "WEP07-03",
+          "native_alias": null,
+          "raw_source": {
+            "path": "evidence/01f1c19305c9db57d7bc9d4565b9baf213f099149b73e7cb0858bb8d5fe50dc2.json",
+            "sha256": "01f1c19305c9db57d7bc9d4565b9baf213f099149b73e7cb0858bb8d5fe50dc2",
+            "locator": "/items/2",
+            "original_name": "wpe07-originals-01f1c193.json"
+          },
+          "question_digest": "sha256:d950d2675d6f850c6bc688be4931fe72ce4f2a76758adb43d37292ae5834b3c9",
+          "answer_digest": "sha256:f483afa17df1f5c67b2ab9242c1d47fcdcd741a3ebd8552e78e6fe1b370a29fd",
+          "paper": "NSEP 2025 code 61 Q57",
+          "paper_evidence": {
+            "path": "evidence/c3e5770f56d60d4245ad5c707b53bbbee35745b643b063de11f51287261e5973.pdf",
+            "sha256": "c3e5770f56d60d4245ad5c707b53bbbee35745b643b063de11f51287261e5973",
+            "locator": "PDF page 15, printed Q57",
+            "original_name": "NSEP_-_2025_Set_611.pdf"
+          },
+          "question_assets": [
+            {
+              "path": "evidence/ae826bc82e01199473958c6c622c94851ef60fd54792d0e3b1f4ffd5442e13e7.png",
+              "sha256": "ae826bc82e01199473958c6c622c94851ef60fd54792d0e3b1f4ffd5442e13e7",
+              "locator": "saved item crop; original paper correspondence requires independent witness",
+              "original_name": "WEP07-03_NSEP2025-611_Q57.png",
+              "role": "SAVED_ITEM_CROP",
+              "status": "PENDING_WITNESS"
+            }
+          ],
+          "unbound_figure_refs": [],
+          "answer_key_claim": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "claim_kind": "INHERITED_CLAIM",
+          "key_evidence": null,
+          "publisher_solution_exists": true,
+          "upstream_verified": false,
+          "source_version_aliases": [],
+          "family_links": [],
+          "question_and_key_independently_bound": false
+        },
+        "question_digest": "7f0eadfcfaa26fbab6b688845559a7360f842f90ab1ea2c1ea0ebe8653beb5a9",
+        "options_digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "figure_digests": [],
+        "required_figures_bound": false,
+        "official_paper": null,
+        "official_key": null,
+        "answer_versions": {
+          "inherited_claim_digest": "sha256:f483afa17df1f5c67b2ab9242c1d47fcdcd741a3ebd8552e78e6fe1b370a29fd",
+          "official_claim_digest": null,
+          "reconciliation": "OPEN"
+        }
+      },
+      "curriculum": {
+        "semantic_cell_resolved": false,
+        "capability_ref": null,
+        "microtopic_ref": null
+      },
+      "assessment": {
+        "factors": {
+          "concept_model_selection": 2,
+          "representation_translation": 2,
+          "reasoning_chain_length": 2,
+          "algebra_computational_load": 1,
+          "trap_exception_sensitivity": 2
+        },
+        "total": 9,
+        "band": "D4",
+        "primary_operation": "JUSTIFY",
+        "factor_evidence": {
+          "concept_model_selection": "Anchor 2: Test each of four statements from U(x)=α/x²−β/x and release E=0.",
+          "representation_translation": "Anchor 2: Map z=x₀/x, U(z) into v(z); preserve x≥x₀ domain.",
+          "reasoning_chain_length": "Anchor 2: Substitute β=α/x₀, prove U(x₀)=0, derive v and maximize z−z².",
+          "algebra_computational_load": "Anchor 1: At z=1/2, v_max²=α/(2mx₀²); all four claims follow for reachable x.",
+          "trap_exception_sensitivity": "Anchor 2: Outward accessible branch excludes 0<x<x₀; do not use complex speeds."
+        },
+        "decisive_move_evidence": "Test each of four statements from U(x)=α/x²−β/x and release E=0.",
+        "competing_operations": [
+          {
+            "operation": "MODEL",
+            "reason": "Alternative if the decisive burden shifts; contrast with Test each of four statements from U(x)=α/x²−β/x and release E=0."
+          }
+        ],
+        "source_stage": "AUTHOR_EXPOSED_HYPOTHESIS"
+      },
+      "governance": {
+        "reviewer_exposure_disclosed": null,
+        "qrt_adjudication": "HOLD"
+      },
+      "grading_policy": {},
+      "prior_exposure": true,
+      "r1_preserved_proposals": {
+        "sl1": {
+          "status": "UNREVIEWED",
+          "source_status": "LOCAL_BYTES_BOUND_UPSTREAM_UNVERIFIED",
+          "answer_status": "INHERITED_CLAIM_NOT_OFFICIAL",
+          "figure_status": "PENDING_WITNESS",
+          "first_try_ok": false,
+          "source_role": "DIRECT_EXAM_EVIDENCE_PENDING",
+          "flags": [
+            "QUESTION_ASSET_WITNESS_PENDING",
+            "NO_CANONICAL_EXACT_STEM_IN_REGISTRY",
+            "PAPER_WITNESS_PENDING",
+            "OFFICIAL_KEY_NOT_BOUND",
+            "PAPER_CODE_RECONCILIATION",
+            "OFFICIAL_KEY_NOT_RETAINED"
+          ],
+          "duplicate_of": null,
+          "rights": "OWNER_LOCAL_ONLY"
+        },
+        "sl2": {
+          "mode": "QUESTION",
+          "status": "UNREVIEWED",
+          "operation": "JUSTIFY",
+          "alternative": {
+            "operation": "MODEL",
+            "reason": "Alternative if the decisive burden shifts; contrast with Test each of four statements from U(x)=α/x²−β/x and release E=0."
+          },
+          "scores": {
+            "concept_model_selection": 2,
+            "representation_translation": 2,
+            "reasoning_chain_length": 2,
+            "algebra_computational_load": 1,
+            "trap_exception_sensitivity": 2
+          },
+          "factor_evidence": [
+            {
+              "factor": "concept_model_selection",
+              "score": 2,
+              "evidence": "Anchor 2: Test each of four statements from U(x)=α/x²−β/x and release E=0."
+            },
+            {
+              "factor": "representation_translation",
+              "score": 2,
+              "evidence": "Anchor 2: Map z=x₀/x, U(z) into v(z); preserve x≥x₀ domain."
+            },
+            {
+              "factor": "reasoning_chain_length",
+              "score": 2,
+              "evidence": "Anchor 2: Substitute β=α/x₀, prove U(x₀)=0, derive v and maximize z−z²."
+            },
+            {
+              "factor": "algebra_computational_load",
+              "score": 1,
+              "evidence": "Anchor 1: At z=1/2, v_max²=α/(2mx₀²); all four claims follow for reachable x."
+            },
+            {
+              "factor": "trap_exception_sensitivity",
+              "score": 2,
+              "evidence": "Anchor 2: Outward accessible branch excludes 0<x<x₀; do not use complex speeds."
+            }
+          ],
+          "total": 9,
+          "band": "D4",
+          "band_status": "CONDITIONAL",
+          "crux": "Test each of four statements from U(x)=α/x²−β/x and release E=0.",
+          "worked_resolution": "Claims (a),(b),(c),(d) valid on x≥x₀, under energy conservation.",
+          "conditions": [
+            "Crop bound; 2025 code 61/611 discrepancy, official key absent."
+          ],
+          "learner_evidence": "NOT_SUPPLIED",
+          "prior_score_seen": true
+        }
+      },
+      "source_record_id": "WEP07-03"
+    }
+  ],
+  "legacy_selection": {
+    "schema": "wpe-core2-coverage-r1-selection/v1",
+    "target": 21,
+    "proposed_conditional": 14,
+    "vacant": 7,
+    "admitted": 0,
+    "selected_questions_are_unique": true,
+    "review_state": "OPEN",
+    "operation_coverage": {
+      "RETRIEVE": {
+        "pending": 0,
+        "vacant": 3,
+        "admitted": 0
+      },
+      "EXPLAIN": {
+        "pending": 0,
+        "vacant": 3,
+        "admitted": 0
+      },
+      "APPLY": {
+        "pending": 3,
+        "vacant": 0,
+        "admitted": 0
+      },
+      "MODEL": {
+        "pending": 3,
+        "vacant": 0,
+        "admitted": 0
+      },
+      "REPRESENT": {
+        "pending": 3,
+        "vacant": 0,
+        "admitted": 0
+      },
+      "SYNTHESIZE": {
+        "pending": 3,
+        "vacant": 0,
+        "admitted": 0
+      },
+      "JUSTIFY": {
+        "pending": 2,
+        "vacant": 1,
+        "admitted": 0
+      }
+    },
+    "places": [
+      {
+        "place_id": "RETRIEVE-1",
+        "operation": "RETRIEVE",
+        "candidate_id": null,
+        "status": "VACANT",
+        "band": null,
+        "primary_counting_home": null,
+        "reason": "No additional distinct D3/D4 examination original established for decisive RETRIEVE operation",
+        "holds": []
+      },
+      {
+        "place_id": "RETRIEVE-2",
+        "operation": "RETRIEVE",
+        "candidate_id": null,
+        "status": "VACANT",
+        "band": null,
+        "primary_counting_home": null,
+        "reason": "No additional distinct D3/D4 examination original established for decisive RETRIEVE operation",
+        "holds": []
+      },
+      {
+        "place_id": "RETRIEVE-3",
+        "operation": "RETRIEVE",
+        "candidate_id": null,
+        "status": "VACANT",
+        "band": null,
+        "primary_counting_home": null,
+        "reason": "No additional distinct D3/D4 examination original established for decisive RETRIEVE operation",
+        "holds": []
+      },
+      {
+        "place_id": "EXPLAIN-1",
+        "operation": "EXPLAIN",
+        "candidate_id": null,
+        "status": "VACANT",
+        "band": null,
+        "primary_counting_home": null,
+        "reason": "No additional distinct D3/D4 examination original established for decisive EXPLAIN operation",
+        "holds": []
+      },
+      {
+        "place_id": "EXPLAIN-2",
+        "operation": "EXPLAIN",
+        "candidate_id": null,
+        "status": "VACANT",
+        "band": null,
+        "primary_counting_home": null,
+        "reason": "No additional distinct D3/D4 examination original established for decisive EXPLAIN operation",
+        "holds": []
+      },
+      {
+        "place_id": "EXPLAIN-3",
+        "operation": "EXPLAIN",
+        "candidate_id": null,
+        "status": "VACANT",
+        "band": null,
+        "primary_counting_home": null,
+        "reason": "No additional distinct D3/D4 examination original established for decisive EXPLAIN operation",
+        "holds": []
+      },
+      {
+        "place_id": "APPLY-1",
+        "operation": "APPLY",
+        "candidate_id": "EX-M105",
+        "status": "PENDING_REVIEW_HOLD",
+        "band": "D3",
+        "primary_counting_home": "APPLY-1",
+        "reason": "Pending independent source, official-key, exact-task and demand review; local source witnesses alone do not admit",
+        "holds": [
+          "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+          "OFFICIAL_KEY_NOT_BOUND"
+        ]
+      },
+      {
+        "place_id": "APPLY-2",
+        "operation": "APPLY",
+        "candidate_id": "EX-M62",
+        "status": "PENDING_REVIEW_HOLD",
+        "band": "D3",
+        "primary_counting_home": "APPLY-2",
+        "reason": "Pending independent source, official-key, exact-task and demand review; local source witnesses alone do not admit",
+        "holds": [
+          "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+          "OFFICIAL_KEY_NOT_BOUND"
+        ]
+      },
+      {
+        "place_id": "APPLY-3",
+        "operation": "APPLY",
+        "candidate_id": "EX-M79",
+        "status": "PENDING_REVIEW_HOLD",
+        "band": "D3",
+        "primary_counting_home": "APPLY-3",
+        "reason": "Pending independent source, official-key, exact-task and demand review; local source witnesses alone do not admit",
+        "holds": [
+          "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+          "OFFICIAL_KEY_NOT_BOUND"
+        ]
+      },
+      {
+        "place_id": "MODEL-1",
+        "operation": "MODEL",
+        "candidate_id": "EX-M16",
+        "status": "PENDING_REVIEW_HOLD",
+        "band": "D3",
+        "primary_counting_home": "MODEL-1",
+        "reason": "Pending independent source, official-key, exact-task and demand review; local source witnesses alone do not admit",
+        "holds": [
+          "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+          "OFFICIAL_KEY_NOT_BOUND"
+        ]
+      },
+      {
+        "place_id": "MODEL-2",
+        "operation": "MODEL",
+        "candidate_id": "EX-M73",
+        "status": "PENDING_REVIEW_HOLD",
+        "band": "D3",
+        "primary_counting_home": "MODEL-2",
+        "reason": "Pending independent source, official-key, exact-task and demand review; local source witnesses alone do not admit",
+        "holds": [
+          "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+          "OFFICIAL_KEY_NOT_BOUND"
+        ]
+      },
+      {
+        "place_id": "MODEL-3",
+        "operation": "MODEL",
+        "candidate_id": "EX-M81",
+        "status": "PENDING_REVIEW_HOLD",
+        "band": "D3",
+        "primary_counting_home": "MODEL-3",
+        "reason": "Pending independent source, official-key, exact-task and demand review; local source witnesses alone do not admit",
+        "holds": [
+          "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+          "OFFICIAL_KEY_NOT_BOUND"
+        ]
+      },
+      {
+        "place_id": "REPRESENT-1",
+        "operation": "REPRESENT",
+        "candidate_id": "EX-M56",
+        "status": "PENDING_REVIEW_HOLD",
+        "band": "D3",
+        "primary_counting_home": "REPRESENT-1",
+        "reason": "Pending independent source, official-key, exact-task and demand review; local source witnesses alone do not admit",
+        "holds": [
+          "QUESTION_ASSET_UNBOUND",
+          "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+          "OFFICIAL_KEY_NOT_BOUND"
+        ]
+      },
+      {
+        "place_id": "REPRESENT-2",
+        "operation": "REPRESENT",
+        "candidate_id": "EX-M61",
+        "status": "PENDING_REVIEW_HOLD",
+        "band": "D3",
+        "primary_counting_home": "REPRESENT-2",
+        "reason": "Pending independent source, official-key, exact-task and demand review; local source witnesses alone do not admit",
+        "holds": [
+          "QUESTION_ASSET_UNBOUND",
+          "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+          "OFFICIAL_KEY_NOT_BOUND"
+        ]
+      },
+      {
+        "place_id": "REPRESENT-3",
+        "operation": "REPRESENT",
+        "candidate_id": "EX-M69",
+        "status": "PENDING_REVIEW_HOLD",
+        "band": "D3",
+        "primary_counting_home": "REPRESENT-3",
+        "reason": "Pending independent source, official-key, exact-task and demand review; local source witnesses alone do not admit",
+        "holds": [
+          "QUESTION_ASSET_UNBOUND",
+          "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+          "OFFICIAL_KEY_NOT_BOUND"
+        ]
+      },
+      {
+        "place_id": "SYNTHESIZE-1",
+        "operation": "SYNTHESIZE",
+        "candidate_id": "EX-M39",
+        "status": "PENDING_REVIEW_HOLD",
+        "band": "D3",
+        "primary_counting_home": "SYNTHESIZE-1",
+        "reason": "Pending independent source, official-key, exact-task and demand review; local source witnesses alone do not admit",
+        "holds": [
+          "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+          "OFFICIAL_KEY_NOT_BOUND"
+        ]
+      },
+      {
+        "place_id": "SYNTHESIZE-2",
+        "operation": "SYNTHESIZE",
+        "candidate_id": "EX-M44",
+        "status": "PENDING_REVIEW_HOLD",
+        "band": "D3",
+        "primary_counting_home": "SYNTHESIZE-2",
+        "reason": "Pending independent source, official-key, exact-task and demand review; local source witnesses alone do not admit",
+        "holds": [
+          "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+          "OFFICIAL_KEY_NOT_BOUND"
+        ]
+      },
+      {
+        "place_id": "SYNTHESIZE-3",
+        "operation": "SYNTHESIZE",
+        "candidate_id": "EX-M60",
+        "status": "PENDING_REVIEW_HOLD",
+        "band": "D3",
+        "primary_counting_home": "SYNTHESIZE-3",
+        "reason": "Pending independent source, official-key, exact-task and demand review; local source witnesses alone do not admit",
+        "holds": [
+          "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+          "OFFICIAL_KEY_NOT_BOUND"
+        ]
+      },
+      {
+        "place_id": "JUSTIFY-1",
+        "operation": "JUSTIFY",
+        "candidate_id": "EX-M101",
+        "status": "PENDING_REVIEW_HOLD",
+        "band": "D3",
+        "primary_counting_home": "JUSTIFY-1",
+        "reason": "Pending independent source, official-key, exact-task and demand review; local source witnesses alone do not admit",
+        "holds": [
+          "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+          "OFFICIAL_KEY_NOT_BOUND"
+        ]
+      },
+      {
+        "place_id": "JUSTIFY-2",
+        "operation": "JUSTIFY",
+        "candidate_id": "WEP07-03",
+        "status": "PENDING_REVIEW_HOLD",
+        "band": "D4",
+        "primary_counting_home": "JUSTIFY-2",
+        "reason": "Pending independent source, official-key, exact-task and demand review; local source witnesses alone do not admit",
+        "holds": [
+          "QUESTION_ASSET_WITNESS_PENDING",
+          "NO_CANONICAL_EXACT_STEM_IN_REGISTRY",
+          "PAPER_WITNESS_PENDING",
+          "OFFICIAL_KEY_NOT_BOUND",
+          "PAPER_CODE_RECONCILIATION",
+          "OFFICIAL_KEY_NOT_RETAINED"
+        ]
+      },
+      {
+        "place_id": "JUSTIFY-3",
+        "operation": "JUSTIFY",
+        "candidate_id": null,
+        "status": "VACANT",
+        "band": null,
+        "primary_counting_home": null,
+        "reason": "No additional distinct D3/D4 examination original established for decisive JUSTIFY operation",
+        "holds": []
+      }
+    ],
+    "secondary_not_counted": [
+      "EX-M14",
+      "EX-M18",
+      "EX-M92",
+      "EX-M106",
+      "EX-M49",
+      "EX-M78",
+      "WEP07-02",
+      "WEP07-04"
+    ]
+  },
+  "gate": {
+    "state": "BLOCKED",
+    "errors": [
+      "SELECTION_NOT_21",
+      "OPERATION_QUOTA:RETRIEVE",
+      "OPERATION_QUOTA:EXPLAIN",
+      "OPERATION_QUOTA:JUSTIFY",
+      "ITEMS_BLOCKED"
+    ],
+    "by_operation": {
+      "RETRIEVE": 0,
+      "EXPLAIN": 0,
+      "APPLY": 3,
+      "MODEL": 3,
+      "REPRESENT": 3,
+      "SYNTHESIZE": 3,
+      "JUSTIFY": 2
+    },
+    "items": [
+      {
+        "id": "EX-M105",
+        "state": "BLOCKED",
+        "reasons": [
+          "ADAPTER_AUTHORITY_OPEN",
+          "ANSWER_RECONCILIATION_OPEN",
+          "ANSWER_RECONCILIATION_UNBOUND",
+          "ASSESSMENT_SUBJECT_STALE",
+          "CANONICAL_CURRICULUM_REF_MISSING",
+          "COUNTING_HOME_MISMATCH",
+          "DIRECT_EXAM_NOT_ESTABLISHED",
+          "EXECUTION_AUTHORITY_OPEN",
+          "GRADING_TYPE_MISMATCH",
+          "INDEPENDENT_SOLUTION_MISSING",
+          "OFFICIAL_ANSWER_MISSING",
+          "OFFICIAL_KEY_CUSTODY_OPEN",
+          "OFFICIAL_PAPER_CUSTODY_OPEN",
+          "ORIGINAL_AUTHENTICITY_OPEN",
+          "PIN_MISSING_ADAPTER_SHA256",
+          "PIN_MISSING_BLUEPRINT_SHA256",
+          "PIN_MISSING_RUBRIC_SHA256",
+          "QRT_ADMISSION_OPEN",
+          "QRT_CELL_NOT_RESOLVED",
+          "REVIEWER_APPOINTMENT_OPEN",
+          "REVIEWER_EXPOSURE_UNDISCLOSED",
+          "REVIEWER_INDEPENDENCE_OPEN",
+          "REVIEW_FIRST_PASS_UNBOUND",
+          "SOURCE_FIGURES_OR_OPTIONS_UNBOUND"
+        ],
+        "score": 6,
+        "band": "D3",
+        "operation": "APPLY",
+        "fingerprint": "68c0e1f0b1e4245451a9bea43667143aff95c06810c67080793aff530acbce3a"
+      },
+      {
+        "id": "EX-M62",
+        "state": "BLOCKED",
+        "reasons": [
+          "ADAPTER_AUTHORITY_OPEN",
+          "ANSWER_RECONCILIATION_OPEN",
+          "ANSWER_RECONCILIATION_UNBOUND",
+          "ASSESSMENT_SUBJECT_STALE",
+          "CANONICAL_CURRICULUM_REF_MISSING",
+          "COUNTING_HOME_MISMATCH",
+          "DIRECT_EXAM_NOT_ESTABLISHED",
+          "EXECUTION_AUTHORITY_OPEN",
+          "GRADING_TYPE_MISMATCH",
+          "INDEPENDENT_SOLUTION_MISSING",
+          "OFFICIAL_ANSWER_MISSING",
+          "OFFICIAL_KEY_CUSTODY_OPEN",
+          "OFFICIAL_PAPER_CUSTODY_OPEN",
+          "ORIGINAL_AUTHENTICITY_OPEN",
+          "PIN_MISSING_ADAPTER_SHA256",
+          "PIN_MISSING_BLUEPRINT_SHA256",
+          "PIN_MISSING_RUBRIC_SHA256",
+          "QRT_ADMISSION_OPEN",
+          "QRT_CELL_NOT_RESOLVED",
+          "REVIEWER_APPOINTMENT_OPEN",
+          "REVIEWER_EXPOSURE_UNDISCLOSED",
+          "REVIEWER_INDEPENDENCE_OPEN",
+          "REVIEW_FIRST_PASS_UNBOUND",
+          "SOURCE_FIGURES_OR_OPTIONS_UNBOUND"
+        ],
+        "score": 7,
+        "band": "D3",
+        "operation": "APPLY",
+        "fingerprint": "9f62de0cd41aba57990e78003a50683044c31407babbf84e678e6f23c7770e71"
+      },
+      {
+        "id": "EX-M79",
+        "state": "BLOCKED",
+        "reasons": [
+          "ADAPTER_AUTHORITY_OPEN",
+          "ANSWER_RECONCILIATION_OPEN",
+          "ANSWER_RECONCILIATION_UNBOUND",
+          "ASSESSMENT_SUBJECT_STALE",
+          "CANONICAL_CURRICULUM_REF_MISSING",
+          "COUNTING_HOME_MISMATCH",
+          "DIRECT_EXAM_NOT_ESTABLISHED",
+          "EXECUTION_AUTHORITY_OPEN",
+          "GRADING_TYPE_MISMATCH",
+          "INDEPENDENT_SOLUTION_MISSING",
+          "OFFICIAL_ANSWER_MISSING",
+          "OFFICIAL_KEY_CUSTODY_OPEN",
+          "OFFICIAL_PAPER_CUSTODY_OPEN",
+          "ORIGINAL_AUTHENTICITY_OPEN",
+          "PIN_MISSING_ADAPTER_SHA256",
+          "PIN_MISSING_BLUEPRINT_SHA256",
+          "PIN_MISSING_RUBRIC_SHA256",
+          "QRT_ADMISSION_OPEN",
+          "QRT_CELL_NOT_RESOLVED",
+          "REVIEWER_APPOINTMENT_OPEN",
+          "REVIEWER_EXPOSURE_UNDISCLOSED",
+          "REVIEWER_INDEPENDENCE_OPEN",
+          "REVIEW_FIRST_PASS_UNBOUND",
+          "SOURCE_FIGURES_OR_OPTIONS_UNBOUND"
+        ],
+        "score": 7,
+        "band": "D3",
+        "operation": "APPLY",
+        "fingerprint": "1073390a1f1521cf7cf905aaf07b8d9208d75b161291b59a2b1db381074492be"
+      },
+      {
+        "id": "EX-M16",
+        "state": "BLOCKED",
+        "reasons": [
+          "ADAPTER_AUTHORITY_OPEN",
+          "ANSWER_RECONCILIATION_OPEN",
+          "ANSWER_RECONCILIATION_UNBOUND",
+          "ASSESSMENT_SUBJECT_STALE",
+          "CANONICAL_CURRICULUM_REF_MISSING",
+          "COUNTING_HOME_MISMATCH",
+          "DIRECT_EXAM_NOT_ESTABLISHED",
+          "EXECUTION_AUTHORITY_OPEN",
+          "GRADING_TYPE_MISMATCH",
+          "INDEPENDENT_SOLUTION_MISSING",
+          "OFFICIAL_ANSWER_MISSING",
+          "OFFICIAL_KEY_CUSTODY_OPEN",
+          "OFFICIAL_PAPER_CUSTODY_OPEN",
+          "ORIGINAL_AUTHENTICITY_OPEN",
+          "PIN_MISSING_ADAPTER_SHA256",
+          "PIN_MISSING_BLUEPRINT_SHA256",
+          "PIN_MISSING_RUBRIC_SHA256",
+          "QRT_ADMISSION_OPEN",
+          "QRT_CELL_NOT_RESOLVED",
+          "REVIEWER_APPOINTMENT_OPEN",
+          "REVIEWER_EXPOSURE_UNDISCLOSED",
+          "REVIEWER_INDEPENDENCE_OPEN",
+          "REVIEW_FIRST_PASS_UNBOUND",
+          "SOURCE_FIGURES_OR_OPTIONS_UNBOUND"
+        ],
+        "score": 7,
+        "band": "D3",
+        "operation": "MODEL",
+        "fingerprint": "e1e2b622f56cf30b2c0b051e54e81517f2a4166e6dcd3eb41f374d26384a0045"
+      },
+      {
+        "id": "EX-M73",
+        "state": "BLOCKED",
+        "reasons": [
+          "ADAPTER_AUTHORITY_OPEN",
+          "ANSWER_RECONCILIATION_OPEN",
+          "ANSWER_RECONCILIATION_UNBOUND",
+          "ASSESSMENT_SUBJECT_STALE",
+          "CANONICAL_CURRICULUM_REF_MISSING",
+          "COUNTING_HOME_MISMATCH",
+          "DIRECT_EXAM_NOT_ESTABLISHED",
+          "EXECUTION_AUTHORITY_OPEN",
+          "GRADING_TYPE_MISMATCH",
+          "INDEPENDENT_SOLUTION_MISSING",
+          "OFFICIAL_ANSWER_MISSING",
+          "OFFICIAL_KEY_CUSTODY_OPEN",
+          "OFFICIAL_PAPER_CUSTODY_OPEN",
+          "ORIGINAL_AUTHENTICITY_OPEN",
+          "PIN_MISSING_ADAPTER_SHA256",
+          "PIN_MISSING_BLUEPRINT_SHA256",
+          "PIN_MISSING_RUBRIC_SHA256",
+          "QRT_ADMISSION_OPEN",
+          "QRT_CELL_NOT_RESOLVED",
+          "REVIEWER_APPOINTMENT_OPEN",
+          "REVIEWER_EXPOSURE_UNDISCLOSED",
+          "REVIEWER_INDEPENDENCE_OPEN",
+          "REVIEW_FIRST_PASS_UNBOUND",
+          "SOURCE_FIGURES_OR_OPTIONS_UNBOUND"
+        ],
+        "score": 7,
+        "band": "D3",
+        "operation": "MODEL",
+        "fingerprint": "8110ae9a9472e0d06a790ec6df2def0792756637abd2d2e9fbdfe285a5d37075"
+      },
+      {
+        "id": "EX-M81",
+        "state": "BLOCKED",
+        "reasons": [
+          "ADAPTER_AUTHORITY_OPEN",
+          "ANSWER_RECONCILIATION_OPEN",
+          "ANSWER_RECONCILIATION_UNBOUND",
+          "ASSESSMENT_SUBJECT_STALE",
+          "CANONICAL_CURRICULUM_REF_MISSING",
+          "COUNTING_HOME_MISMATCH",
+          "DIRECT_EXAM_NOT_ESTABLISHED",
+          "EXECUTION_AUTHORITY_OPEN",
+          "GRADING_TYPE_MISMATCH",
+          "INDEPENDENT_SOLUTION_MISSING",
+          "OFFICIAL_ANSWER_MISSING",
+          "OFFICIAL_KEY_CUSTODY_OPEN",
+          "OFFICIAL_PAPER_CUSTODY_OPEN",
+          "ORIGINAL_AUTHENTICITY_OPEN",
+          "PIN_MISSING_ADAPTER_SHA256",
+          "PIN_MISSING_BLUEPRINT_SHA256",
+          "PIN_MISSING_RUBRIC_SHA256",
+          "QRT_ADMISSION_OPEN",
+          "QRT_CELL_NOT_RESOLVED",
+          "REVIEWER_APPOINTMENT_OPEN",
+          "REVIEWER_EXPOSURE_UNDISCLOSED",
+          "REVIEWER_INDEPENDENCE_OPEN",
+          "REVIEW_FIRST_PASS_UNBOUND",
+          "SOURCE_FIGURES_OR_OPTIONS_UNBOUND"
+        ],
+        "score": 7,
+        "band": "D3",
+        "operation": "MODEL",
+        "fingerprint": "a9a47a31a7676d4de26fd8cbb6f6219fd6f642658a8782beec0204bfe8ec2677"
+      },
+      {
+        "id": "EX-M56",
+        "state": "BLOCKED",
+        "reasons": [
+          "ADAPTER_AUTHORITY_OPEN",
+          "ANSWER_RECONCILIATION_OPEN",
+          "ANSWER_RECONCILIATION_UNBOUND",
+          "ASSESSMENT_SUBJECT_STALE",
+          "CANONICAL_CURRICULUM_REF_MISSING",
+          "COUNTING_HOME_MISMATCH",
+          "DIRECT_EXAM_NOT_ESTABLISHED",
+          "EXECUTION_AUTHORITY_OPEN",
+          "FIGURE_DIGESTS_INCOMPLETE",
+          "GRADING_TYPE_MISMATCH",
+          "INDEPENDENT_SOLUTION_MISSING",
+          "OFFICIAL_ANSWER_MISSING",
+          "OFFICIAL_KEY_CUSTODY_OPEN",
+          "OFFICIAL_PAPER_CUSTODY_OPEN",
+          "ORIGINAL_AUTHENTICITY_OPEN",
+          "PIN_MISSING_ADAPTER_SHA256",
+          "PIN_MISSING_BLUEPRINT_SHA256",
+          "PIN_MISSING_RUBRIC_SHA256",
+          "QRT_ADMISSION_OPEN",
+          "QRT_CELL_NOT_RESOLVED",
+          "REVIEWER_APPOINTMENT_OPEN",
+          "REVIEWER_EXPOSURE_UNDISCLOSED",
+          "REVIEWER_INDEPENDENCE_OPEN",
+          "REVIEW_FIRST_PASS_UNBOUND",
+          "SOURCE_FIGURES_OR_OPTIONS_UNBOUND"
+        ],
+        "score": 7,
+        "band": "D3",
+        "operation": "REPRESENT",
+        "fingerprint": "c90d1dfaa67a2ba32af04f690bfbabc1d5fd5bd45dd6f16cab36b8e467832b5a"
+      },
+      {
+        "id": "EX-M61",
+        "state": "BLOCKED",
+        "reasons": [
+          "ADAPTER_AUTHORITY_OPEN",
+          "ANSWER_RECONCILIATION_OPEN",
+          "ANSWER_RECONCILIATION_UNBOUND",
+          "ASSESSMENT_SUBJECT_STALE",
+          "CANONICAL_CURRICULUM_REF_MISSING",
+          "COUNTING_HOME_MISMATCH",
+          "DIRECT_EXAM_NOT_ESTABLISHED",
+          "EXECUTION_AUTHORITY_OPEN",
+          "FIGURE_DIGESTS_INCOMPLETE",
+          "GRADING_TYPE_MISMATCH",
+          "INDEPENDENT_SOLUTION_MISSING",
+          "OFFICIAL_ANSWER_MISSING",
+          "OFFICIAL_KEY_CUSTODY_OPEN",
+          "OFFICIAL_PAPER_CUSTODY_OPEN",
+          "ORIGINAL_AUTHENTICITY_OPEN",
+          "PIN_MISSING_ADAPTER_SHA256",
+          "PIN_MISSING_BLUEPRINT_SHA256",
+          "PIN_MISSING_RUBRIC_SHA256",
+          "QRT_ADMISSION_OPEN",
+          "QRT_CELL_NOT_RESOLVED",
+          "REVIEWER_APPOINTMENT_OPEN",
+          "REVIEWER_EXPOSURE_UNDISCLOSED",
+          "REVIEWER_INDEPENDENCE_OPEN",
+          "REVIEW_FIRST_PASS_UNBOUND",
+          "SOURCE_FIGURES_OR_OPTIONS_UNBOUND"
+        ],
+        "score": 7,
+        "band": "D3",
+        "operation": "REPRESENT",
+        "fingerprint": "d981352530b54081f9a4eb5e22b1cf86e1b4c0dc2d82662bd53b5773343fe465"
+      },
+      {
+        "id": "EX-M69",
+        "state": "BLOCKED",
+        "reasons": [
+          "ADAPTER_AUTHORITY_OPEN",
+          "ANSWER_RECONCILIATION_OPEN",
+          "ANSWER_RECONCILIATION_UNBOUND",
+          "ASSESSMENT_SUBJECT_STALE",
+          "CANONICAL_CURRICULUM_REF_MISSING",
+          "COUNTING_HOME_MISMATCH",
+          "DIRECT_EXAM_NOT_ESTABLISHED",
+          "EXECUTION_AUTHORITY_OPEN",
+          "FIGURE_DIGESTS_INCOMPLETE",
+          "GRADING_TYPE_MISMATCH",
+          "INDEPENDENT_SOLUTION_MISSING",
+          "OFFICIAL_ANSWER_MISSING",
+          "OFFICIAL_KEY_CUSTODY_OPEN",
+          "OFFICIAL_PAPER_CUSTODY_OPEN",
+          "ORIGINAL_AUTHENTICITY_OPEN",
+          "PIN_MISSING_ADAPTER_SHA256",
+          "PIN_MISSING_BLUEPRINT_SHA256",
+          "PIN_MISSING_RUBRIC_SHA256",
+          "QRT_ADMISSION_OPEN",
+          "QRT_CELL_NOT_RESOLVED",
+          "REVIEWER_APPOINTMENT_OPEN",
+          "REVIEWER_EXPOSURE_UNDISCLOSED",
+          "REVIEWER_INDEPENDENCE_OPEN",
+          "REVIEW_FIRST_PASS_UNBOUND",
+          "SOURCE_FIGURES_OR_OPTIONS_UNBOUND"
+        ],
+        "score": 7,
+        "band": "D3",
+        "operation": "REPRESENT",
+        "fingerprint": "2b610f50c7bc0f6125c55c53f94635c11322e2517348389b99197f1c4fc217de"
+      },
+      {
+        "id": "EX-M39",
+        "state": "BLOCKED",
+        "reasons": [
+          "ADAPTER_AUTHORITY_OPEN",
+          "ANSWER_RECONCILIATION_OPEN",
+          "ANSWER_RECONCILIATION_UNBOUND",
+          "ASSESSMENT_SUBJECT_STALE",
+          "CANONICAL_CURRICULUM_REF_MISSING",
+          "COUNTING_HOME_MISMATCH",
+          "DIRECT_EXAM_NOT_ESTABLISHED",
+          "EXECUTION_AUTHORITY_OPEN",
+          "GRADING_TYPE_MISMATCH",
+          "INDEPENDENT_SOLUTION_MISSING",
+          "OFFICIAL_ANSWER_MISSING",
+          "OFFICIAL_KEY_CUSTODY_OPEN",
+          "OFFICIAL_PAPER_CUSTODY_OPEN",
+          "ORIGINAL_AUTHENTICITY_OPEN",
+          "PIN_MISSING_ADAPTER_SHA256",
+          "PIN_MISSING_BLUEPRINT_SHA256",
+          "PIN_MISSING_RUBRIC_SHA256",
+          "QRT_ADMISSION_OPEN",
+          "QRT_CELL_NOT_RESOLVED",
+          "REVIEWER_APPOINTMENT_OPEN",
+          "REVIEWER_EXPOSURE_UNDISCLOSED",
+          "REVIEWER_INDEPENDENCE_OPEN",
+          "REVIEW_FIRST_PASS_UNBOUND",
+          "SOURCE_FIGURES_OR_OPTIONS_UNBOUND"
+        ],
+        "score": 6,
+        "band": "D3",
+        "operation": "SYNTHESIZE",
+        "fingerprint": "770f34e39c5769d51ac7359f886ea524614178e85d32c1aa0d1649a84e243c3c"
+      },
+      {
+        "id": "EX-M44",
+        "state": "BLOCKED",
+        "reasons": [
+          "ADAPTER_AUTHORITY_OPEN",
+          "ANSWER_RECONCILIATION_OPEN",
+          "ANSWER_RECONCILIATION_UNBOUND",
+          "ASSESSMENT_SUBJECT_STALE",
+          "CANONICAL_CURRICULUM_REF_MISSING",
+          "COUNTING_HOME_MISMATCH",
+          "DIRECT_EXAM_NOT_ESTABLISHED",
+          "EXECUTION_AUTHORITY_OPEN",
+          "GRADING_TYPE_MISMATCH",
+          "INDEPENDENT_SOLUTION_MISSING",
+          "OFFICIAL_ANSWER_MISSING",
+          "OFFICIAL_KEY_CUSTODY_OPEN",
+          "OFFICIAL_PAPER_CUSTODY_OPEN",
+          "ORIGINAL_AUTHENTICITY_OPEN",
+          "PIN_MISSING_ADAPTER_SHA256",
+          "PIN_MISSING_BLUEPRINT_SHA256",
+          "PIN_MISSING_RUBRIC_SHA256",
+          "QRT_ADMISSION_OPEN",
+          "QRT_CELL_NOT_RESOLVED",
+          "REVIEWER_APPOINTMENT_OPEN",
+          "REVIEWER_EXPOSURE_UNDISCLOSED",
+          "REVIEWER_INDEPENDENCE_OPEN",
+          "REVIEW_FIRST_PASS_UNBOUND",
+          "SOURCE_FIGURES_OR_OPTIONS_UNBOUND"
+        ],
+        "score": 7,
+        "band": "D3",
+        "operation": "SYNTHESIZE",
+        "fingerprint": "270de9c383ad42afe53a7756b8b4d86995ecc9428ff3306cde547040ee94e039"
+      },
+      {
+        "id": "EX-M60",
+        "state": "BLOCKED",
+        "reasons": [
+          "ADAPTER_AUTHORITY_OPEN",
+          "ANSWER_RECONCILIATION_OPEN",
+          "ANSWER_RECONCILIATION_UNBOUND",
+          "ASSESSMENT_SUBJECT_STALE",
+          "CANONICAL_CURRICULUM_REF_MISSING",
+          "COUNTING_HOME_MISMATCH",
+          "DIRECT_EXAM_NOT_ESTABLISHED",
+          "EXECUTION_AUTHORITY_OPEN",
+          "GRADING_TYPE_MISMATCH",
+          "INDEPENDENT_SOLUTION_MISSING",
+          "OFFICIAL_ANSWER_MISSING",
+          "OFFICIAL_KEY_CUSTODY_OPEN",
+          "OFFICIAL_PAPER_CUSTODY_OPEN",
+          "ORIGINAL_AUTHENTICITY_OPEN",
+          "PIN_MISSING_ADAPTER_SHA256",
+          "PIN_MISSING_BLUEPRINT_SHA256",
+          "PIN_MISSING_RUBRIC_SHA256",
+          "QRT_ADMISSION_OPEN",
+          "QRT_CELL_NOT_RESOLVED",
+          "REVIEWER_APPOINTMENT_OPEN",
+          "REVIEWER_EXPOSURE_UNDISCLOSED",
+          "REVIEWER_INDEPENDENCE_OPEN",
+          "REVIEW_FIRST_PASS_UNBOUND",
+          "SOURCE_FIGURES_OR_OPTIONS_UNBOUND"
+        ],
+        "score": 6,
+        "band": "D3",
+        "operation": "SYNTHESIZE",
+        "fingerprint": "1ffec3e95e107bc9be3827c07c3dd0375306a5d09dc854cbe9a25e655d1db4d0"
+      },
+      {
+        "id": "EX-M101",
+        "state": "BLOCKED",
+        "reasons": [
+          "ADAPTER_AUTHORITY_OPEN",
+          "ANSWER_RECONCILIATION_OPEN",
+          "ANSWER_RECONCILIATION_UNBOUND",
+          "ASSESSMENT_SUBJECT_STALE",
+          "CANONICAL_CURRICULUM_REF_MISSING",
+          "COUNTING_HOME_MISMATCH",
+          "DIRECT_EXAM_NOT_ESTABLISHED",
+          "EXECUTION_AUTHORITY_OPEN",
+          "GRADING_TYPE_MISMATCH",
+          "INDEPENDENT_SOLUTION_MISSING",
+          "OFFICIAL_ANSWER_MISSING",
+          "OFFICIAL_KEY_CUSTODY_OPEN",
+          "OFFICIAL_PAPER_CUSTODY_OPEN",
+          "ORIGINAL_AUTHENTICITY_OPEN",
+          "PIN_MISSING_ADAPTER_SHA256",
+          "PIN_MISSING_BLUEPRINT_SHA256",
+          "PIN_MISSING_RUBRIC_SHA256",
+          "QRT_ADMISSION_OPEN",
+          "QRT_CELL_NOT_RESOLVED",
+          "REVIEWER_APPOINTMENT_OPEN",
+          "REVIEWER_EXPOSURE_UNDISCLOSED",
+          "REVIEWER_INDEPENDENCE_OPEN",
+          "REVIEW_FIRST_PASS_UNBOUND",
+          "SOURCE_FIGURES_OR_OPTIONS_UNBOUND"
+        ],
+        "score": 7,
+        "band": "D3",
+        "operation": "JUSTIFY",
+        "fingerprint": "3b208ad5c6d356198d6daf483a318ffc3167f9e37c639409a71c092732764140"
+      },
+      {
+        "id": "WEP07-03",
+        "state": "BLOCKED",
+        "reasons": [
+          "ADAPTER_AUTHORITY_OPEN",
+          "ANSWER_RECONCILIATION_OPEN",
+          "ANSWER_RECONCILIATION_UNBOUND",
+          "ASSESSMENT_SUBJECT_STALE",
+          "CANONICAL_CURRICULUM_REF_MISSING",
+          "COUNTING_HOME_MISMATCH",
+          "DIRECT_EXAM_NOT_ESTABLISHED",
+          "EXECUTION_AUTHORITY_OPEN",
+          "GRADING_TYPE_MISMATCH",
+          "INDEPENDENT_SOLUTION_MISSING",
+          "OFFICIAL_ANSWER_MISSING",
+          "OFFICIAL_KEY_CUSTODY_OPEN",
+          "OFFICIAL_PAPER_CUSTODY_OPEN",
+          "ORIGINAL_AUTHENTICITY_OPEN",
+          "PIN_MISSING_ADAPTER_SHA256",
+          "PIN_MISSING_BLUEPRINT_SHA256",
+          "PIN_MISSING_RUBRIC_SHA256",
+          "QRT_ADMISSION_OPEN",
+          "QRT_CELL_NOT_RESOLVED",
+          "QUESTION_STEM_MISSING",
+          "REVIEWER_APPOINTMENT_OPEN",
+          "REVIEWER_EXPOSURE_UNDISCLOSED",
+          "REVIEWER_INDEPENDENCE_OPEN",
+          "REVIEW_FIRST_PASS_UNBOUND",
+          "SOURCE_FIGURES_OR_OPTIONS_UNBOUND"
+        ],
+        "score": 9,
+        "band": "D4",
+        "operation": "JUSTIFY",
+        "fingerprint": "4fa2ba7778985dc21ddaf1e63dadf2077ee99d5d8c4b8a93b5690b31463a8065"
+      }
+    ],
+    "academic_verification": "EXTERNAL",
+    "owner_release": "NOT_EVALUATED"
+  }
+}

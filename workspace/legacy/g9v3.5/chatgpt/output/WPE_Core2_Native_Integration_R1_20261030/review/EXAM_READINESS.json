@@ -1,0 +1,1044 @@
+{
+  "status": "HOLD",
+  "target": 21,
+  "conditional_leads": 14,
+  "vacancies": 7,
+  "admitted": 0,
+  "engineering_metadata_gate": {
+    "state": "BLOCKED",
+    "errors": [
+      "SELECTION_NOT_21",
+      "OPERATION_QUOTA:RETRIEVE",
+      "OPERATION_QUOTA:EXPLAIN",
+      "OPERATION_QUOTA:JUSTIFY",
+      "ITEMS_BLOCKED"
+    ],
+    "by_operation": {
+      "RETRIEVE": 0,
+      "EXPLAIN": 0,
+      "APPLY": 3,
+      "MODEL": 3,
+      "REPRESENT": 3,
+      "SYNTHESIZE": 3,
+      "JUSTIFY": 2
+    },
+    "items": [
+      {
+        "id": "EX-M105",
+        "state": "BLOCKED",
+        "reasons": [
+          "ADAPTER_AUTHORITY_OPEN",
+          "ANSWER_RECONCILIATION_OPEN",
+          "ANSWER_RECONCILIATION_UNBOUND",
+          "ASSESSMENT_SUBJECT_STALE",
+          "CANONICAL_CURRICULUM_REF_MISSING",
+          "COUNTING_HOME_MISMATCH",
+          "DIRECT_EXAM_NOT_ESTABLISHED",
+          "EXECUTION_AUTHORITY_OPEN",
+          "EXTERNAL_REFERENCE_CUSTODY_NOT_IMPLEMENTED",
+          "GRADING_TYPE_MISMATCH",
+          "INDEPENDENT_SOLUTION_MISSING",
+          "OFFICIAL_ANSWER_MISSING",
+          "OFFICIAL_KEY_CUSTODY_OPEN",
+          "OFFICIAL_PAPER_CUSTODY_OPEN",
+          "ORIGINAL_AUTHENTICITY_OPEN",
+          "PIN_MISSING_ADAPTER_SHA256",
+          "PIN_MISSING_BLUEPRINT_SHA256",
+          "PIN_MISSING_RUBRIC_SHA256",
+          "QRT_ADMISSION_OPEN",
+          "QRT_CELL_NOT_RESOLVED",
+          "REVIEWER_APPOINTMENT_OPEN",
+          "REVIEWER_EXPOSURE_UNDISCLOSED",
+          "REVIEWER_INDEPENDENCE_OPEN",
+          "REVIEW_FIRST_PASS_UNBOUND",
+          "SOURCE_FIGURES_OR_OPTIONS_UNBOUND",
+          "SOURCE_REPRODUCTION_RIGHTS_OPEN"
+        ],
+        "score": 6,
+        "band": "D3",
+        "operation": "APPLY",
+        "fingerprint": "68c0e1f0b1e4245451a9bea43667143aff95c06810c67080793aff530acbce3a"
+      },
+      {
+        "id": "EX-M62",
+        "state": "BLOCKED",
+        "reasons": [
+          "ADAPTER_AUTHORITY_OPEN",
+          "ANSWER_RECONCILIATION_OPEN",
+          "ANSWER_RECONCILIATION_UNBOUND",
+          "ASSESSMENT_SUBJECT_STALE",
+          "CANONICAL_CURRICULUM_REF_MISSING",
+          "COUNTING_HOME_MISMATCH",
+          "DIRECT_EXAM_NOT_ESTABLISHED",
+          "EXECUTION_AUTHORITY_OPEN",
+          "EXTERNAL_REFERENCE_CUSTODY_NOT_IMPLEMENTED",
+          "GRADING_TYPE_MISMATCH",
+          "INDEPENDENT_SOLUTION_MISSING",
+          "OFFICIAL_ANSWER_MISSING",
+          "OFFICIAL_KEY_CUSTODY_OPEN",
+          "OFFICIAL_PAPER_CUSTODY_OPEN",
+          "ORIGINAL_AUTHENTICITY_OPEN",
+          "PIN_MISSING_ADAPTER_SHA256",
+          "PIN_MISSING_BLUEPRINT_SHA256",
+          "PIN_MISSING_RUBRIC_SHA256",
+          "QRT_ADMISSION_OPEN",
+          "QRT_CELL_NOT_RESOLVED",
+          "REVIEWER_APPOINTMENT_OPEN",
+          "REVIEWER_EXPOSURE_UNDISCLOSED",
+          "REVIEWER_INDEPENDENCE_OPEN",
+          "REVIEW_FIRST_PASS_UNBOUND",
+          "SOURCE_FIGURES_OR_OPTIONS_UNBOUND",
+          "SOURCE_REPRODUCTION_RIGHTS_OPEN"
+        ],
+        "score": 7,
+        "band": "D3",
+        "operation": "APPLY",
+        "fingerprint": "9f62de0cd41aba57990e78003a50683044c31407babbf84e678e6f23c7770e71"
+      },
+      {
+        "id": "EX-M79",
+        "state": "BLOCKED",
+        "reasons": [
+          "ADAPTER_AUTHORITY_OPEN",
+          "ANSWER_RECONCILIATION_OPEN",
+          "ANSWER_RECONCILIATION_UNBOUND",
+          "ASSESSMENT_SUBJECT_STALE",
+          "CANONICAL_CURRICULUM_REF_MISSING",
+          "COUNTING_HOME_MISMATCH",
+          "DIRECT_EXAM_NOT_ESTABLISHED",
+          "EXECUTION_AUTHORITY_OPEN",
+          "EXTERNAL_REFERENCE_CUSTODY_NOT_IMPLEMENTED",
+          "GRADING_TYPE_MISMATCH",
+          "INDEPENDENT_SOLUTION_MISSING",
+          "OFFICIAL_ANSWER_MISSING",
+          "OFFICIAL_KEY_CUSTODY_OPEN",
+          "OFFICIAL_PAPER_CUSTODY_OPEN",
+          "ORIGINAL_AUTHENTICITY_OPEN",
+          "PIN_MISSING_ADAPTER_SHA256",
+          "PIN_MISSING_BLUEPRINT_SHA256",
+          "PIN_MISSING_RUBRIC_SHA256",
+          "QRT_ADMISSION_OPEN",
+          "QRT_CELL_NOT_RESOLVED",
+          "REVIEWER_APPOINTMENT_OPEN",
+          "REVIEWER_EXPOSURE_UNDISCLOSED",
+          "REVIEWER_INDEPENDENCE_OPEN",
+          "REVIEW_FIRST_PASS_UNBOUND",
+          "SOURCE_FIGURES_OR_OPTIONS_UNBOUND",
+          "SOURCE_REPRODUCTION_RIGHTS_OPEN"
+        ],
+        "score": 7,
+        "band": "D3",
+        "operation": "APPLY",
+        "fingerprint": "1073390a1f1521cf7cf905aaf07b8d9208d75b161291b59a2b1db381074492be"
+      },
+      {
+        "id": "EX-M16",
+        "state": "BLOCKED",
+        "reasons": [
+          "ADAPTER_AUTHORITY_OPEN",
+          "ANSWER_RECONCILIATION_OPEN",
+          "ANSWER_RECONCILIATION_UNBOUND",
+          "ASSESSMENT_SUBJECT_STALE",
+          "CANONICAL_CURRICULUM_REF_MISSING",
+          "COUNTING_HOME_MISMATCH",
+          "DIRECT_EXAM_NOT_ESTABLISHED",
+          "EXECUTION_AUTHORITY_OPEN",
+          "EXTERNAL_REFERENCE_CUSTODY_NOT_IMPLEMENTED",
+          "GRADING_TYPE_MISMATCH",
+          "INDEPENDENT_SOLUTION_MISSING",
+          "OFFICIAL_ANSWER_MISSING",
+          "OFFICIAL_KEY_CUSTODY_OPEN",
+          "OFFICIAL_PAPER_CUSTODY_OPEN",
+          "ORIGINAL_AUTHENTICITY_OPEN",
+          "PIN_MISSING_ADAPTER_SHA256",
+          "PIN_MISSING_BLUEPRINT_SHA256",
+          "PIN_MISSING_RUBRIC_SHA256",
+          "QRT_ADMISSION_OPEN",
+          "QRT_CELL_NOT_RESOLVED",
+          "REVIEWER_APPOINTMENT_OPEN",
+          "REVIEWER_EXPOSURE_UNDISCLOSED",
+          "REVIEWER_INDEPENDENCE_OPEN",
+          "REVIEW_FIRST_PASS_UNBOUND",
+          "SOURCE_FIGURES_OR_OPTIONS_UNBOUND",
+          "SOURCE_REPRODUCTION_RIGHTS_OPEN"
+        ],
+        "score": 7,
+        "band": "D3",
+        "operation": "MODEL",
+        "fingerprint": "e1e2b622f56cf30b2c0b051e54e81517f2a4166e6dcd3eb41f374d26384a0045"
+      },
+      {
+        "id": "EX-M73",
+        "state": "BLOCKED",
+        "reasons": [
+          "ADAPTER_AUTHORITY_OPEN",
+          "ANSWER_RECONCILIATION_OPEN",
+          "ANSWER_RECONCILIATION_UNBOUND",
+          "ASSESSMENT_SUBJECT_STALE",
+          "CANONICAL_CURRICULUM_REF_MISSING",
+          "COUNTING_HOME_MISMATCH",
+          "DIRECT_EXAM_NOT_ESTABLISHED",
+          "EXECUTION_AUTHORITY_OPEN",
+          "EXTERNAL_REFERENCE_CUSTODY_NOT_IMPLEMENTED",
+          "GRADING_TYPE_MISMATCH",
+          "INDEPENDENT_SOLUTION_MISSING",
+          "OFFICIAL_ANSWER_MISSING",
+          "OFFICIAL_KEY_CUSTODY_OPEN",
+          "OFFICIAL_PAPER_CUSTODY_OPEN",
+          "ORIGINAL_AUTHENTICITY_OPEN",
+          "PIN_MISSING_ADAPTER_SHA256",
+          "PIN_MISSING_BLUEPRINT_SHA256",
+          "PIN_MISSING_RUBRIC_SHA256",
+          "QRT_ADMISSION_OPEN",
+          "QRT_CELL_NOT_RESOLVED",
+          "REVIEWER_APPOINTMENT_OPEN",
+          "REVIEWER_EXPOSURE_UNDISCLOSED",
+          "REVIEWER_INDEPENDENCE_OPEN",
+          "REVIEW_FIRST_PASS_UNBOUND",
+          "SOURCE_FIGURES_OR_OPTIONS_UNBOUND",
+          "SOURCE_REPRODUCTION_RIGHTS_OPEN"
+        ],
+        "score": 7,
+        "band": "D3",
+        "operation": "MODEL",
+        "fingerprint": "8110ae9a9472e0d06a790ec6df2def0792756637abd2d2e9fbdfe285a5d37075"
+      },
+      {
+        "id": "EX-M81",
+        "state": "BLOCKED",
+        "reasons": [
+          "ADAPTER_AUTHORITY_OPEN",
+          "ANSWER_RECONCILIATION_OPEN",
+          "ANSWER_RECONCILIATION_UNBOUND",
+          "ASSESSMENT_SUBJECT_STALE",
+          "CANONICAL_CURRICULUM_REF_MISSING",
+          "COUNTING_HOME_MISMATCH",
+          "DIRECT_EXAM_NOT_ESTABLISHED",
+          "EXECUTION_AUTHORITY_OPEN",
+          "EXTERNAL_REFERENCE_CUSTODY_NOT_IMPLEMENTED",
+          "GRADING_TYPE_MISMATCH",
+          "INDEPENDENT_SOLUTION_MISSING",
+          "OFFICIAL_ANSWER_MISSING",
+          "OFFICIAL_KEY_CUSTODY_OPEN",
+          "OFFICIAL_PAPER_CUSTODY_OPEN",
+          "ORIGINAL_AUTHENTICITY_OPEN",
+          "PIN_MISSING_ADAPTER_SHA256",
+          "PIN_MISSING_BLUEPRINT_SHA256",
+          "PIN_MISSING_RUBRIC_SHA256",
+          "QRT_ADMISSION_OPEN",
+          "QRT_CELL_NOT_RESOLVED",
+          "REVIEWER_APPOINTMENT_OPEN",
+          "REVIEWER_EXPOSURE_UNDISCLOSED",
+          "REVIEWER_INDEPENDENCE_OPEN",
+          "REVIEW_FIRST_PASS_UNBOUND",
+          "SOURCE_FIGURES_OR_OPTIONS_UNBOUND",
+          "SOURCE_REPRODUCTION_RIGHTS_OPEN"
+        ],
+        "score": 7,
+        "band": "D3",
+        "operation": "MODEL",
+        "fingerprint": "a9a47a31a7676d4de26fd8cbb6f6219fd6f642658a8782beec0204bfe8ec2677"
+      },
+      {
+        "id": "EX-M56",
+        "state": "BLOCKED",
+        "reasons": [
+          "ADAPTER_AUTHORITY_OPEN",
+          "ANSWER_RECONCILIATION_OPEN",
+          "ANSWER_RECONCILIATION_UNBOUND",
+          "ASSESSMENT_SUBJECT_STALE",
+          "CANONICAL_CURRICULUM_REF_MISSING",
+          "COUNTING_HOME_MISMATCH",
+          "DIRECT_EXAM_NOT_ESTABLISHED",
+          "EXECUTION_AUTHORITY_OPEN",
+          "EXTERNAL_REFERENCE_CUSTODY_NOT_IMPLEMENTED",
+          "FIGURE_DIGESTS_INCOMPLETE",
+          "GRADING_TYPE_MISMATCH",
+          "INDEPENDENT_SOLUTION_MISSING",
+          "OFFICIAL_ANSWER_MISSING",
+          "OFFICIAL_KEY_CUSTODY_OPEN",
+          "OFFICIAL_PAPER_CUSTODY_OPEN",
+          "ORIGINAL_AUTHENTICITY_OPEN",
+          "PIN_MISSING_ADAPTER_SHA256",
+          "PIN_MISSING_BLUEPRINT_SHA256",
+          "PIN_MISSING_RUBRIC_SHA256",
+          "QRT_ADMISSION_OPEN",
+          "QRT_CELL_NOT_RESOLVED",
+          "REVIEWER_APPOINTMENT_OPEN",
+          "REVIEWER_EXPOSURE_UNDISCLOSED",
+          "REVIEWER_INDEPENDENCE_OPEN",
+          "REVIEW_FIRST_PASS_UNBOUND",
+          "SOURCE_FIGURES_OR_OPTIONS_UNBOUND",
+          "SOURCE_REPRODUCTION_RIGHTS_OPEN"
+        ],
+        "score": 7,
+        "band": "D3",
+        "operation": "REPRESENT",
+        "fingerprint": "c90d1dfaa67a2ba32af04f690bfbabc1d5fd5bd45dd6f16cab36b8e467832b5a"
+      },
+      {
+        "id": "EX-M61",
+        "state": "BLOCKED",
+        "reasons": [
+          "ADAPTER_AUTHORITY_OPEN",
+          "ANSWER_RECONCILIATION_OPEN",
+          "ANSWER_RECONCILIATION_UNBOUND",
+          "ASSESSMENT_SUBJECT_STALE",
+          "CANONICAL_CURRICULUM_REF_MISSING",
+          "COUNTING_HOME_MISMATCH",
+          "DIRECT_EXAM_NOT_ESTABLISHED",
+          "EXECUTION_AUTHORITY_OPEN",
+          "EXTERNAL_REFERENCE_CUSTODY_NOT_IMPLEMENTED",
+          "FIGURE_DIGESTS_INCOMPLETE",
+          "GRADING_TYPE_MISMATCH",
+          "INDEPENDENT_SOLUTION_MISSING",
+          "OFFICIAL_ANSWER_MISSING",
+          "OFFICIAL_KEY_CUSTODY_OPEN",
+          "OFFICIAL_PAPER_CUSTODY_OPEN",
+          "ORIGINAL_AUTHENTICITY_OPEN",
+          "PIN_MISSING_ADAPTER_SHA256",
+          "PIN_MISSING_BLUEPRINT_SHA256",
+          "PIN_MISSING_RUBRIC_SHA256",
+          "QRT_ADMISSION_OPEN",
+          "QRT_CELL_NOT_RESOLVED",
+          "REVIEWER_APPOINTMENT_OPEN",
+          "REVIEWER_EXPOSURE_UNDISCLOSED",
+          "REVIEWER_INDEPENDENCE_OPEN",
+          "REVIEW_FIRST_PASS_UNBOUND",
+          "SOURCE_FIGURES_OR_OPTIONS_UNBOUND",
+          "SOURCE_REPRODUCTION_RIGHTS_OPEN"
+        ],
+        "score": 7,
+        "band": "D3",
+        "operation": "REPRESENT",
+        "fingerprint": "d981352530b54081f9a4eb5e22b1cf86e1b4c0dc2d82662bd53b5773343fe465"
+      },
+      {
+        "id": "EX-M69",
+        "state": "BLOCKED",
+        "reasons": [
+          "ADAPTER_AUTHORITY_OPEN",
+          "ANSWER_RECONCILIATION_OPEN",
+          "ANSWER_RECONCILIATION_UNBOUND",
+          "ASSESSMENT_SUBJECT_STALE",
+          "CANONICAL_CURRICULUM_REF_MISSING",
+          "COUNTING_HOME_MISMATCH",
+          "DIRECT_EXAM_NOT_ESTABLISHED",
+          "EXECUTION_AUTHORITY_OPEN",
+          "EXTERNAL_REFERENCE_CUSTODY_NOT_IMPLEMENTED",
+          "FIGURE_DIGESTS_INCOMPLETE",
+          "GRADING_TYPE_MISMATCH",
+          "INDEPENDENT_SOLUTION_MISSING",
+          "OFFICIAL_ANSWER_MISSING",
+          "OFFICIAL_KEY_CUSTODY_OPEN",
+          "OFFICIAL_PAPER_CUSTODY_OPEN",
+          "ORIGINAL_AUTHENTICITY_OPEN",
+          "PIN_MISSING_ADAPTER_SHA256",
+          "PIN_MISSING_BLUEPRINT_SHA256",
+          "PIN_MISSING_RUBRIC_SHA256",
+          "QRT_ADMISSION_OPEN",
+          "QRT_CELL_NOT_RESOLVED",
+          "REVIEWER_APPOINTMENT_OPEN",
+          "REVIEWER_EXPOSURE_UNDISCLOSED",
+          "REVIEWER_INDEPENDENCE_OPEN",
+          "REVIEW_FIRST_PASS_UNBOUND",
+          "SOURCE_FIGURES_OR_OPTIONS_UNBOUND",
+          "SOURCE_REPRODUCTION_RIGHTS_OPEN"
+        ],
+        "score": 7,
+        "band": "D3",
+        "operation": "REPRESENT",
+        "fingerprint": "2b610f50c7bc0f6125c55c53f94635c11322e2517348389b99197f1c4fc217de"
+      },
+      {
+        "id": "EX-M39",
+        "state": "BLOCKED",
+        "reasons": [
+          "ADAPTER_AUTHORITY_OPEN",
+          "ANSWER_RECONCILIATION_OPEN",
+          "ANSWER_RECONCILIATION_UNBOUND",
+          "ASSESSMENT_SUBJECT_STALE",
+          "CANONICAL_CURRICULUM_REF_MISSING",
+          "COUNTING_HOME_MISMATCH",
+          "DIRECT_EXAM_NOT_ESTABLISHED",
+          "EXECUTION_AUTHORITY_OPEN",
+          "EXTERNAL_REFERENCE_CUSTODY_NOT_IMPLEMENTED",
+          "GRADING_TYPE_MISMATCH",
+          "INDEPENDENT_SOLUTION_MISSING",
+          "OFFICIAL_ANSWER_MISSING",
+          "OFFICIAL_KEY_CUSTODY_OPEN",
+          "OFFICIAL_PAPER_CUSTODY_OPEN",
+          "ORIGINAL_AUTHENTICITY_OPEN",
+          "PIN_MISSING_ADAPTER_SHA256",
+          "PIN_MISSING_BLUEPRINT_SHA256",
+          "PIN_MISSING_RUBRIC_SHA256",
+          "QRT_ADMISSION_OPEN",
+          "QRT_CELL_NOT_RESOLVED",
+          "REVIEWER_APPOINTMENT_OPEN",
+          "REVIEWER_EXPOSURE_UNDISCLOSED",
+          "REVIEWER_INDEPENDENCE_OPEN",
+          "REVIEW_FIRST_PASS_UNBOUND",
+          "SOURCE_FIGURES_OR_OPTIONS_UNBOUND",
+          "SOURCE_REPRODUCTION_RIGHTS_OPEN"
+        ],
+        "score": 6,
+        "band": "D3",
+        "operation": "SYNTHESIZE",
+        "fingerprint": "770f34e39c5769d51ac7359f886ea524614178e85d32c1aa0d1649a84e243c3c"
+      },
+      {
+        "id": "EX-M44",
+        "state": "BLOCKED",
+        "reasons": [
+          "ADAPTER_AUTHORITY_OPEN",
+          "ANSWER_RECONCILIATION_OPEN",
+          "ANSWER_RECONCILIATION_UNBOUND",
+          "ASSESSMENT_SUBJECT_STALE",
+          "CANONICAL_CURRICULUM_REF_MISSING",
+          "COUNTING_HOME_MISMATCH",
+          "DIRECT_EXAM_NOT_ESTABLISHED",
+          "EXECUTION_AUTHORITY_OPEN",
+          "EXTERNAL_REFERENCE_CUSTODY_NOT_IMPLEMENTED",
+          "GRADING_TYPE_MISMATCH",
+          "INDEPENDENT_SOLUTION_MISSING",
+          "OFFICIAL_ANSWER_MISSING",
+          "OFFICIAL_KEY_CUSTODY_OPEN",
+          "OFFICIAL_PAPER_CUSTODY_OPEN",
+          "ORIGINAL_AUTHENTICITY_OPEN",
+          "PIN_MISSING_ADAPTER_SHA256",
+          "PIN_MISSING_BLUEPRINT_SHA256",
+          "PIN_MISSING_RUBRIC_SHA256",
+          "QRT_ADMISSION_OPEN",
+          "QRT_CELL_NOT_RESOLVED",
+          "REVIEWER_APPOINTMENT_OPEN",
+          "REVIEWER_EXPOSURE_UNDISCLOSED",
+          "REVIEWER_INDEPENDENCE_OPEN",
+          "REVIEW_FIRST_PASS_UNBOUND",
+          "SOURCE_FIGURES_OR_OPTIONS_UNBOUND",
+          "SOURCE_REPRODUCTION_RIGHTS_OPEN"
+        ],
+        "score": 7,
+        "band": "D3",
+        "operation": "SYNTHESIZE",
+        "fingerprint": "270de9c383ad42afe53a7756b8b4d86995ecc9428ff3306cde547040ee94e039"
+      },
+      {
+        "id": "EX-M60",
+        "state": "BLOCKED",
+        "reasons": [
+          "ADAPTER_AUTHORITY_OPEN",
+          "ANSWER_RECONCILIATION_OPEN",
+          "ANSWER_RECONCILIATION_UNBOUND",
+          "ASSESSMENT_SUBJECT_STALE",
+          "CANONICAL_CURRICULUM_REF_MISSING",
+          "COUNTING_HOME_MISMATCH",
+          "DIRECT_EXAM_NOT_ESTABLISHED",
+          "EXECUTION_AUTHORITY_OPEN",
+          "EXTERNAL_REFERENCE_CUSTODY_NOT_IMPLEMENTED",
+          "GRADING_TYPE_MISMATCH",
+          "INDEPENDENT_SOLUTION_MISSING",
+          "OFFICIAL_ANSWER_MISSING",
+          "OFFICIAL_KEY_CUSTODY_OPEN",
+          "OFFICIAL_PAPER_CUSTODY_OPEN",
+          "ORIGINAL_AUTHENTICITY_OPEN",
+          "PIN_MISSING_ADAPTER_SHA256",
+          "PIN_MISSING_BLUEPRINT_SHA256",
+          "PIN_MISSING_RUBRIC_SHA256",
+          "QRT_ADMISSION_OPEN",
+          "QRT_CELL_NOT_RESOLVED",
+          "REVIEWER_APPOINTMENT_OPEN",
+          "REVIEWER_EXPOSURE_UNDISCLOSED",
+          "REVIEWER_INDEPENDENCE_OPEN",
+          "REVIEW_FIRST_PASS_UNBOUND",
+          "SOURCE_FIGURES_OR_OPTIONS_UNBOUND",
+          "SOURCE_REPRODUCTION_RIGHTS_OPEN"
+        ],
+        "score": 6,
+        "band": "D3",
+        "operation": "SYNTHESIZE",
+        "fingerprint": "1ffec3e95e107bc9be3827c07c3dd0375306a5d09dc854cbe9a25e655d1db4d0"
+      },
+      {
+        "id": "EX-M101",
+        "state": "BLOCKED",
+        "reasons": [
+          "ADAPTER_AUTHORITY_OPEN",
+          "ANSWER_RECONCILIATION_OPEN",
+          "ANSWER_RECONCILIATION_UNBOUND",
+          "ASSESSMENT_SUBJECT_STALE",
+          "CANONICAL_CURRICULUM_REF_MISSING",
+          "COUNTING_HOME_MISMATCH",
+          "DIRECT_EXAM_NOT_ESTABLISHED",
+          "EXECUTION_AUTHORITY_OPEN",
+          "EXTERNAL_REFERENCE_CUSTODY_NOT_IMPLEMENTED",
+          "GRADING_TYPE_MISMATCH",
+          "INDEPENDENT_SOLUTION_MISSING",
+          "OFFICIAL_ANSWER_MISSING",
+          "OFFICIAL_KEY_CUSTODY_OPEN",
+          "OFFICIAL_PAPER_CUSTODY_OPEN",
+          "ORIGINAL_AUTHENTICITY_OPEN",
+          "PIN_MISSING_ADAPTER_SHA256",
+          "PIN_MISSING_BLUEPRINT_SHA256",
+          "PIN_MISSING_RUBRIC_SHA256",
+          "QRT_ADMISSION_OPEN",
+          "QRT_CELL_NOT_RESOLVED",
+          "REVIEWER_APPOINTMENT_OPEN",
+          "REVIEWER_EXPOSURE_UNDISCLOSED",
+          "REVIEWER_INDEPENDENCE_OPEN",
+          "REVIEW_FIRST_PASS_UNBOUND",
+          "SOURCE_FIGURES_OR_OPTIONS_UNBOUND",
+          "SOURCE_REPRODUCTION_RIGHTS_OPEN"
+        ],
+        "score": 7,
+        "band": "D3",
+        "operation": "JUSTIFY",
+        "fingerprint": "3b208ad5c6d356198d6daf483a318ffc3167f9e37c639409a71c092732764140"
+      },
+      {
+        "id": "WEP07-03",
+        "state": "BLOCKED",
+        "reasons": [
+          "ADAPTER_AUTHORITY_OPEN",
+          "ANSWER_RECONCILIATION_OPEN",
+          "ANSWER_RECONCILIATION_UNBOUND",
+          "ASSESSMENT_SUBJECT_STALE",
+          "CANONICAL_CURRICULUM_REF_MISSING",
+          "COUNTING_HOME_MISMATCH",
+          "DIRECT_EXAM_NOT_ESTABLISHED",
+          "EXECUTION_AUTHORITY_OPEN",
+          "EXTERNAL_REFERENCE_CUSTODY_NOT_IMPLEMENTED",
+          "GRADING_TYPE_MISMATCH",
+          "INDEPENDENT_SOLUTION_MISSING",
+          "OFFICIAL_ANSWER_MISSING",
+          "OFFICIAL_KEY_CUSTODY_OPEN",
+          "OFFICIAL_PAPER_CUSTODY_OPEN",
+          "ORIGINAL_AUTHENTICITY_OPEN",
+          "PIN_MISSING_ADAPTER_SHA256",
+          "PIN_MISSING_BLUEPRINT_SHA256",
+          "PIN_MISSING_RUBRIC_SHA256",
+          "QRT_ADMISSION_OPEN",
+          "QRT_CELL_NOT_RESOLVED",
+          "QUESTION_STEM_MISSING",
+          "REVIEWER_APPOINTMENT_OPEN",
+          "REVIEWER_EXPOSURE_UNDISCLOSED",
+          "REVIEWER_INDEPENDENCE_OPEN",
+          "REVIEW_FIRST_PASS_UNBOUND",
+          "SOURCE_FIGURES_OR_OPTIONS_UNBOUND",
+          "SOURCE_REPRODUCTION_RIGHTS_OPEN"
+        ],
+        "score": 9,
+        "band": "D4",
+        "operation": "JUSTIFY",
+        "fingerprint": "4fa2ba7778985dc21ddaf1e63dadf2077ee99d5d8c4b8a93b5690b31463a8065"
+      }
+    ],
+    "academic_verification": "EXTERNAL",
+    "owner_release": "NOT_EVALUATED"
+  },
+  "native_readiness": [
+    {
+      "id": "EX-M105",
+      "state": "HOLD",
+      "selected": false,
+      "admitted": false,
+      "native_mapping_reasons": [
+        "ACADEMIC_ADMISSION_NOT_ESTABLISHED",
+        "NATIVE_EXAM_CONVERSION_NOT_AUTHORIZED_BY_THIS_FIXTURE_PROFILE",
+        "NATIVE_ANSWER_ROUTE_MISSING",
+        "NATIVE_ANSWER_SUMMARY_MISSING"
+      ],
+      "source_record_digest": "ab919ff4f76c9f96adb131a027cc716b79e9851867d51000a440bbe22a2b8ed8"
+    },
+    {
+      "id": "EX-M62",
+      "state": "HOLD",
+      "selected": false,
+      "admitted": false,
+      "native_mapping_reasons": [
+        "ACADEMIC_ADMISSION_NOT_ESTABLISHED",
+        "NATIVE_EXAM_CONVERSION_NOT_AUTHORIZED_BY_THIS_FIXTURE_PROFILE",
+        "NATIVE_ANSWER_ROUTE_MISSING",
+        "NATIVE_ANSWER_SUMMARY_MISSING"
+      ],
+      "source_record_digest": "d804c79370a3b0b71358711512f80515daca0b07864ef9b8eba8278876d9cadf"
+    },
+    {
+      "id": "EX-M79",
+      "state": "HOLD",
+      "selected": false,
+      "admitted": false,
+      "native_mapping_reasons": [
+        "ACADEMIC_ADMISSION_NOT_ESTABLISHED",
+        "NATIVE_EXAM_CONVERSION_NOT_AUTHORIZED_BY_THIS_FIXTURE_PROFILE",
+        "NATIVE_ANSWER_ROUTE_MISSING",
+        "NATIVE_ANSWER_SUMMARY_MISSING"
+      ],
+      "source_record_digest": "41af6d5e9bffc8bceccbedd29270c2c6bb2894d98162e1b3a555a78f0db62598"
+    },
+    {
+      "id": "EX-M16",
+      "state": "HOLD",
+      "selected": false,
+      "admitted": false,
+      "native_mapping_reasons": [
+        "ACADEMIC_ADMISSION_NOT_ESTABLISHED",
+        "NATIVE_EXAM_CONVERSION_NOT_AUTHORIZED_BY_THIS_FIXTURE_PROFILE",
+        "NATIVE_ANSWER_ROUTE_MISSING",
+        "NATIVE_ANSWER_SUMMARY_MISSING"
+      ],
+      "source_record_digest": "79ff60457d5c0237911b5ac3304a27255758caee45ae931ea8de7490d64c09b1"
+    },
+    {
+      "id": "EX-M73",
+      "state": "HOLD",
+      "selected": false,
+      "admitted": false,
+      "native_mapping_reasons": [
+        "ACADEMIC_ADMISSION_NOT_ESTABLISHED",
+        "NATIVE_EXAM_CONVERSION_NOT_AUTHORIZED_BY_THIS_FIXTURE_PROFILE",
+        "NATIVE_ANSWER_ROUTE_MISSING",
+        "NATIVE_ANSWER_SUMMARY_MISSING"
+      ],
+      "source_record_digest": "04050b018fbf3db3c23878e274dbebf181c4eb46188d7e712a5c28c600e5591c"
+    },
+    {
+      "id": "EX-M81",
+      "state": "HOLD",
+      "selected": false,
+      "admitted": false,
+      "native_mapping_reasons": [
+        "ACADEMIC_ADMISSION_NOT_ESTABLISHED",
+        "NATIVE_EXAM_CONVERSION_NOT_AUTHORIZED_BY_THIS_FIXTURE_PROFILE",
+        "NATIVE_ANSWER_ROUTE_MISSING",
+        "NATIVE_ANSWER_SUMMARY_MISSING"
+      ],
+      "source_record_digest": "cf3528e06af849d8e58bfe3d2a222511ff8a8c0a4c651851d188fd22dc6919da"
+    },
+    {
+      "id": "EX-M56",
+      "state": "HOLD",
+      "selected": false,
+      "admitted": false,
+      "native_mapping_reasons": [
+        "ACADEMIC_ADMISSION_NOT_ESTABLISHED",
+        "NATIVE_EXAM_CONVERSION_NOT_AUTHORIZED_BY_THIS_FIXTURE_PROFILE",
+        "NATIVE_ANSWER_ROUTE_MISSING",
+        "NATIVE_ANSWER_SUMMARY_MISSING",
+        "REQUIRED_FIGURES_UNBOUND"
+      ],
+      "source_record_digest": "383dc09e0da9bc147423631668d19b7a98b240bef543ea1db85f8bf64f6ca7b3"
+    },
+    {
+      "id": "EX-M61",
+      "state": "HOLD",
+      "selected": false,
+      "admitted": false,
+      "native_mapping_reasons": [
+        "ACADEMIC_ADMISSION_NOT_ESTABLISHED",
+        "NATIVE_EXAM_CONVERSION_NOT_AUTHORIZED_BY_THIS_FIXTURE_PROFILE",
+        "NATIVE_ANSWER_ROUTE_MISSING",
+        "NATIVE_ANSWER_SUMMARY_MISSING",
+        "REQUIRED_FIGURES_UNBOUND"
+      ],
+      "source_record_digest": "18337559bb8301b8fccc2c66d66539e2d61c263457e5f034311fbb24d26e9fc8"
+    },
+    {
+      "id": "EX-M69",
+      "state": "HOLD",
+      "selected": false,
+      "admitted": false,
+      "native_mapping_reasons": [
+        "ACADEMIC_ADMISSION_NOT_ESTABLISHED",
+        "NATIVE_EXAM_CONVERSION_NOT_AUTHORIZED_BY_THIS_FIXTURE_PROFILE",
+        "NATIVE_ANSWER_ROUTE_MISSING",
+        "NATIVE_ANSWER_SUMMARY_MISSING",
+        "REQUIRED_FIGURES_UNBOUND"
+      ],
+      "source_record_digest": "ec816f315fbe0bd79b3d040fb6580a4d934d6e6648cc3eba0c7d0a130f1878e9"
+    },
+    {
+      "id": "EX-M39",
+      "state": "HOLD",
+      "selected": false,
+      "admitted": false,
+      "native_mapping_reasons": [
+        "ACADEMIC_ADMISSION_NOT_ESTABLISHED",
+        "NATIVE_EXAM_CONVERSION_NOT_AUTHORIZED_BY_THIS_FIXTURE_PROFILE",
+        "NATIVE_ANSWER_ROUTE_MISSING",
+        "NATIVE_ANSWER_SUMMARY_MISSING"
+      ],
+      "source_record_digest": "a39abe937210baa5fdf0444fd55efb15345b8369a67b7fb92faebc613d865992"
+    },
+    {
+      "id": "EX-M44",
+      "state": "HOLD",
+      "selected": false,
+      "admitted": false,
+      "native_mapping_reasons": [
+        "ACADEMIC_ADMISSION_NOT_ESTABLISHED",
+        "NATIVE_EXAM_CONVERSION_NOT_AUTHORIZED_BY_THIS_FIXTURE_PROFILE",
+        "NATIVE_ANSWER_ROUTE_MISSING",
+        "NATIVE_ANSWER_SUMMARY_MISSING"
+      ],
+      "source_record_digest": "7b83c193e1e247549e6475b8c3474a6b83abbc0da34d42b5feb44de58171f686"
+    },
+    {
+      "id": "EX-M60",
+      "state": "HOLD",
+      "selected": false,
+      "admitted": false,
+      "native_mapping_reasons": [
+        "ACADEMIC_ADMISSION_NOT_ESTABLISHED",
+        "NATIVE_EXAM_CONVERSION_NOT_AUTHORIZED_BY_THIS_FIXTURE_PROFILE",
+        "NATIVE_ANSWER_ROUTE_MISSING",
+        "NATIVE_ANSWER_SUMMARY_MISSING"
+      ],
+      "source_record_digest": "f583df95c643c7effb43b18a07db84f3218e43d9be5d15c5bd59dd99698b2f51"
+    },
+    {
+      "id": "EX-M101",
+      "state": "HOLD",
+      "selected": false,
+      "admitted": false,
+      "native_mapping_reasons": [
+        "ACADEMIC_ADMISSION_NOT_ESTABLISHED",
+        "NATIVE_EXAM_CONVERSION_NOT_AUTHORIZED_BY_THIS_FIXTURE_PROFILE",
+        "NATIVE_ANSWER_ROUTE_MISSING",
+        "NATIVE_ANSWER_SUMMARY_MISSING"
+      ],
+      "source_record_digest": "340cf2d9e62aef6ef34b95f93ae0d3091b45bc1a51bc156a74c66520b7c59d52"
+    },
+    {
+      "id": "WEP07-03",
+      "state": "HOLD",
+      "selected": false,
+      "admitted": false,
+      "native_mapping_reasons": [
+        "ACADEMIC_ADMISSION_NOT_ESTABLISHED",
+        "NATIVE_EXAM_CONVERSION_NOT_AUTHORIZED_BY_THIS_FIXTURE_PROFILE",
+        "STEM_MISSING",
+        "NATIVE_ANSWER_ROUTE_MISSING",
+        "NATIVE_ANSWER_SUMMARY_MISSING"
+      ],
+      "source_record_digest": "a4fa0cbf7ffef511a94752de7bc9d3db1a01b76e29b0895273ec241addd3affa"
+    }
+  ],
+  "legacy_selection": {
+    "schema": "wpe-core2-coverage-r1-selection/v1",
+    "target": 21,
+    "proposed_conditional": 14,
+    "vacant": 7,
+    "admitted": 0,
+    "selected_questions_are_unique": true,
+    "review_state": "OPEN",
+    "operation_coverage": {
+      "RETRIEVE": {
+        "pending": 0,
+        "vacant": 3,
+        "admitted": 0
+      },
+      "EXPLAIN": {
+        "pending": 0,
+        "vacant": 3,
+        "admitted": 0
+      },
+      "APPLY": {
+        "pending": 3,
+        "vacant": 0,
+        "admitted": 0
+      },
+      "MODEL": {
+        "pending": 3,
+        "vacant": 0,
+        "admitted": 0
+      },
+      "REPRESENT": {
+        "pending": 3,
+        "vacant": 0,
+        "admitted": 0
+      },
+      "SYNTHESIZE": {
+        "pending": 3,
+        "vacant": 0,
+        "admitted": 0
+      },
+      "JUSTIFY": {
+        "pending": 2,
+        "vacant": 1,
+        "admitted": 0
+      }
+    },
+    "places": [
+      {
+        "place_id": "RETRIEVE-1",
+        "operation": "RETRIEVE",
+        "candidate_id": null,
+        "status": "VACANT",
+        "band": null,
+        "primary_counting_home": null,
+        "reason": "No additional distinct D3/D4 examination original established for decisive RETRIEVE operation",
+        "holds": []
+      },
+      {
+        "place_id": "RETRIEVE-2",
+        "operation": "RETRIEVE",
+        "candidate_id": null,
+        "status": "VACANT",
+        "band": null,
+        "primary_counting_home": null,
+        "reason": "No additional distinct D3/D4 examination original established for decisive RETRIEVE operation",
+        "holds": []
+      },
+      {
+        "place_id": "RETRIEVE-3",
+        "operation": "RETRIEVE",
+        "candidate_id": null,
+        "status": "VACANT",
+        "band": null,
+        "primary_counting_home": null,
+        "reason": "No additional distinct D3/D4 examination original established for decisive RETRIEVE operation",
+        "holds": []
+      },
+      {
+        "place_id": "EXPLAIN-1",
+        "operation": "EXPLAIN",
+        "candidate_id": null,
+        "status": "VACANT",
+        "band": null,
+        "primary_counting_home": null,
+        "reason": "No additional distinct D3/D4 examination original established for decisive EXPLAIN operation",
+        "holds": []
+      },
+      {
+        "place_id": "EXPLAIN-2",
+        "operation": "EXPLAIN",
+        "candidate_id": null,
+        "status": "VACANT",
+        "band": null,
+        "primary_counting_home": null,
+        "reason": "No additional distinct D3/D4 examination original established for decisive EXPLAIN operation",
+        "holds": []
+      },
+      {
+        "place_id": "EXPLAIN-3",
+        "operation": "EXPLAIN",
+        "candidate_id": null,
+        "status": "VACANT",
+        "band": null,
+        "primary_counting_home": null,
+        "reason": "No additional distinct D3/D4 examination original established for decisive EXPLAIN operation",
+        "holds": []
+      },
+      {
+        "place_id": "APPLY-1",
+        "operation": "APPLY",
+        "candidate_id": "EX-M105",
+        "status": "PENDING_REVIEW_HOLD",
+        "band": "D3",
+        "primary_counting_home": "APPLY-1",
+        "reason": "Pending independent source, official-key, exact-task and demand review; local source witnesses alone do not admit",
+        "holds": [
+          "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+          "OFFICIAL_KEY_NOT_BOUND"
+        ]
+      },
+      {
+        "place_id": "APPLY-2",
+        "operation": "APPLY",
+        "candidate_id": "EX-M62",
+        "status": "PENDING_REVIEW_HOLD",
+        "band": "D3",
+        "primary_counting_home": "APPLY-2",
+        "reason": "Pending independent source, official-key, exact-task and demand review; local source witnesses alone do not admit",
+        "holds": [
+          "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+          "OFFICIAL_KEY_NOT_BOUND"
+        ]
+      },
+      {
+        "place_id": "APPLY-3",
+        "operation": "APPLY",
+        "candidate_id": "EX-M79",
+        "status": "PENDING_REVIEW_HOLD",
+        "band": "D3",
+        "primary_counting_home": "APPLY-3",
+        "reason": "Pending independent source, official-key, exact-task and demand review; local source witnesses alone do not admit",
+        "holds": [
+          "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+          "OFFICIAL_KEY_NOT_BOUND"
+        ]
+      },
+      {
+        "place_id": "MODEL-1",
+        "operation": "MODEL",
+        "candidate_id": "EX-M16",
+        "status": "PENDING_REVIEW_HOLD",
+        "band": "D3",
+        "primary_counting_home": "MODEL-1",
+        "reason": "Pending independent source, official-key, exact-task and demand review; local source witnesses alone do not admit",
+        "holds": [
+          "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+          "OFFICIAL_KEY_NOT_BOUND"
+        ]
+      },
+      {
+        "place_id": "MODEL-2",
+        "operation": "MODEL",
+        "candidate_id": "EX-M73",
+        "status": "PENDING_REVIEW_HOLD",
+        "band": "D3",
+        "primary_counting_home": "MODEL-2",
+        "reason": "Pending independent source, official-key, exact-task and demand review; local source witnesses alone do not admit",
+        "holds": [
+          "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+          "OFFICIAL_KEY_NOT_BOUND"
+        ]
+      },
+      {
+        "place_id": "MODEL-3",
+        "operation": "MODEL",
+        "candidate_id": "EX-M81",
+        "status": "PENDING_REVIEW_HOLD",
+        "band": "D3",
+        "primary_counting_home": "MODEL-3",
+        "reason": "Pending independent source, official-key, exact-task and demand review; local source witnesses alone do not admit",
+        "holds": [
+          "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+          "OFFICIAL_KEY_NOT_BOUND"
+        ]
+      },
+      {
+        "place_id": "REPRESENT-1",
+        "operation": "REPRESENT",
+        "candidate_id": "EX-M56",
+        "status": "PENDING_REVIEW_HOLD",
+        "band": "D3",
+        "primary_counting_home": "REPRESENT-1",
+        "reason": "Pending independent source, official-key, exact-task and demand review; local source witnesses alone do not admit",
+        "holds": [
+          "QUESTION_ASSET_UNBOUND",
+          "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+          "OFFICIAL_KEY_NOT_BOUND"
+        ]
+      },
+      {
+        "place_id": "REPRESENT-2",
+        "operation": "REPRESENT",
+        "candidate_id": "EX-M61",
+        "status": "PENDING_REVIEW_HOLD",
+        "band": "D3",
+        "primary_counting_home": "REPRESENT-2",
+        "reason": "Pending independent source, official-key, exact-task and demand review; local source witnesses alone do not admit",
+        "holds": [
+          "QUESTION_ASSET_UNBOUND",
+          "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+          "OFFICIAL_KEY_NOT_BOUND"
+        ]
+      },
+      {
+        "place_id": "REPRESENT-3",
+        "operation": "REPRESENT",
+        "candidate_id": "EX-M69",
+        "status": "PENDING_REVIEW_HOLD",
+        "band": "D3",
+        "primary_counting_home": "REPRESENT-3",
+        "reason": "Pending independent source, official-key, exact-task and demand review; local source witnesses alone do not admit",
+        "holds": [
+          "QUESTION_ASSET_UNBOUND",
+          "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+          "OFFICIAL_KEY_NOT_BOUND"
+        ]
+      },
+      {
+        "place_id": "SYNTHESIZE-1",
+        "operation": "SYNTHESIZE",
+        "candidate_id": "EX-M39",
+        "status": "PENDING_REVIEW_HOLD",
+        "band": "D3",
+        "primary_counting_home": "SYNTHESIZE-1",
+        "reason": "Pending independent source, official-key, exact-task and demand review; local source witnesses alone do not admit",
+        "holds": [
+          "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+          "OFFICIAL_KEY_NOT_BOUND"
+        ]
+      },
+      {
+        "place_id": "SYNTHESIZE-2",
+        "operation": "SYNTHESIZE",
+        "candidate_id": "EX-M44",
+        "status": "PENDING_REVIEW_HOLD",
+        "band": "D3",
+        "primary_counting_home": "SYNTHESIZE-2",
+        "reason": "Pending independent source, official-key, exact-task and demand review; local source witnesses alone do not admit",
+        "holds": [
+          "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+          "OFFICIAL_KEY_NOT_BOUND"
+        ]
+      },
+      {
+        "place_id": "SYNTHESIZE-3",
+        "operation": "SYNTHESIZE",
+        "candidate_id": "EX-M60",
+        "status": "PENDING_REVIEW_HOLD",
+        "band": "D3",
+        "primary_counting_home": "SYNTHESIZE-3",
+        "reason": "Pending independent source, official-key, exact-task and demand review; local source witnesses alone do not admit",
+        "holds": [
+          "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+          "OFFICIAL_KEY_NOT_BOUND"
+        ]
+      },
+      {
+        "place_id": "JUSTIFY-1",
+        "operation": "JUSTIFY",
+        "candidate_id": "EX-M101",
+        "status": "PENDING_REVIEW_HOLD",
+        "band": "D3",
+        "primary_counting_home": "JUSTIFY-1",
+        "reason": "Pending independent source, official-key, exact-task and demand review; local source witnesses alone do not admit",
+        "holds": [
+          "OFFICIAL_PAPER_ITEM_NOT_BOUND",
+          "OFFICIAL_KEY_NOT_BOUND"
+        ]
+      },
+      {
+        "place_id": "JUSTIFY-2",
+        "operation": "JUSTIFY",
+        "candidate_id": "WEP07-03",
+        "status": "PENDING_REVIEW_HOLD",
+        "band": "D4",
+        "primary_counting_home": "JUSTIFY-2",
+        "reason": "Pending independent source, official-key, exact-task and demand review; local source witnesses alone do not admit",
+        "holds": [
+          "QUESTION_ASSET_WITNESS_PENDING",
+          "NO_CANONICAL_EXACT_STEM_IN_REGISTRY",
+          "PAPER_WITNESS_PENDING",
+          "OFFICIAL_KEY_NOT_BOUND",
+          "PAPER_CODE_RECONCILIATION",
+          "OFFICIAL_KEY_NOT_RETAINED"
+        ]
+      },
+      {
+        "place_id": "JUSTIFY-3",
+        "operation": "JUSTIFY",
+        "candidate_id": null,
+        "status": "VACANT",
+        "band": null,
+        "primary_counting_home": null,
+        "reason": "No additional distinct D3/D4 examination original established for decisive JUSTIFY operation",
+        "holds": []
+      }
+    ],
+    "secondary_not_counted": [
+      "EX-M14",
+      "EX-M18",
+      "EX-M92",
+      "EX-M106",
+      "EX-M49",
+      "EX-M78",
+      "WEP07-02",
+      "WEP07-04"
+    ]
+  },
+  "review": "AUTHOR_TECHNICAL_ONLY; distinct academic/QA NOT_RUN"
+}

@@ -1,0 +1,46 @@
+{
+  "mapping": [
+    [
+      "Custom origin AUTHORED_TECHNICAL_FIXTURE",
+      "Native origin AUTHORED; synthetic label and no-admission extension",
+      "Real EXAM_ORIGINAL remains held; no official-exam fields invented."
+    ],
+    [
+      "Option objects with source IDs",
+      "Native option text strings; A… labels supplied by native renderer; reversible source ID/index map",
+      "Non-A… order/unknown labels are rejected rather than silently renamed."
+    ],
+    [
+      "Answer kind SINGLE_CHOICE and grading policy",
+      "Native MODEL_RESPONSE, supplied prose and explicit typed route",
+      "No automatic grading code or academic verification claim is imported."
+    ],
+    [
+      "Three supplied method scaffolds declared safe upstream",
+      "Retained unchanged in the mapping sidecar; two explicit authored orientation prompts project",
+      "Original prompts are not silently certified safe; independent semantic review remains open."
+    ],
+    [
+      "Original textbook owner bank",
+      "Byte-identical bank and intake copied; all eight selected",
+      "Printed/extract correspondence and source assumptions remain open."
+    ],
+    [
+      "Derived textbook package",
+      "Existing scientific fields preserved; title changed; asset paths relocated; one synthetic representation appended",
+      "Original canonical library and source package remain untouched."
+    ],
+    [
+      "Handoff cloned manifest",
+      "New absolute candidate package/bank refs; only CORE2 outputs; exact nine IDs",
+      "Relocation verified with C: runtime; no standalone native toolchain claim."
+    ],
+    [
+      "Fourteen examination projections",
+      "Rerun unchanged metadata gate + explicit native readiness report; searchable source catalogue",
+      "None selected, mapped into a fake complete bank, or counted as admitted."
+    ]
+  ],
+  "profile": "SYNTHETIC_NATIVE_INTEGRATION_ONLY; textbook reuse",
+  "academic_admissions": 0
+}

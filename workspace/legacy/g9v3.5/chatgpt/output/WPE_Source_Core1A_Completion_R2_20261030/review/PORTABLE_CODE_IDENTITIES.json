@@ -1,0 +1,37 @@
+[
+  {
+    "path": "scripts\\check_handoff.py",
+    "sha256": "346cd5b973bb245b39b882807ef05596e2432d884e29aac0f7628c73b987e6d3",
+    "relocated_matches": true
+  },
+  {
+    "path": "scripts\\check_program.py",
+    "sha256": "e037b970f0b9ee901ae4eedb2bd6cdf9dd626c7bb30c81f2a1414122e9e79f0f",
+    "relocated_matches": true
+  },
+  {
+    "path": "scripts\\render_handoff.py",
+    "sha256": "9f67b25a533d50f9a5388025227a0cacf0d1965d7760a210a37823ad6aed206b",
+    "relocated_matches": true
+  },
+  {
+    "path": "scripts\\render_program.py",
+    "sha256": "ea3e48515f6bfbb723c852eeccf8a617b52a9f6d38e4791b1d0f86afbf0de44c",
+    "relocated_matches": true
+  },
+  {
+    "path": "tests\\test_handoff.py",
+    "sha256": "9124aa2651557e871186f5d27137e1b5ddc2f400e488e310b68c9a1935650a9b",
+    "relocated_matches": true
+  },
+  {
+    "path": "tests\\test_program.py",
+    "sha256": "cc5360ef3f98efe33f9319592c973b3ab787d03079754eb5ad14b7ef07c80548",
+    "relocated_matches": true
+  },
+  {
+    "path": "examples\\wpe-source-program\\handoffs\\sources\\generate_wpe_svgs.py",
+    "sha256": "d59622c3df1e884602238e8e5f3548a521e5a73ebb6468d36ce14f101f2999da",
+    "relocated_matches": true
+  }
+]

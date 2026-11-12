@@ -1,0 +1,104 @@
+{
+  "sequence": 27,
+  "batch_sequence": 12,
+  "task_identity": "Q-ID-30",
+  "stable_id": "G9V4-PHYS-WPE-EX-M79",
+  "source_id": "EX-M79",
+  "lot": "LOT-07",
+  "batch": "BATCH-B",
+  "paper": "JEE Main 2018 (Online) 16th April Morning Slot",
+  "source_type": "JEE_MAIN_PAST_EXAM_QUESTION",
+  "source_custody": "VERIFIED_TEXT_ONLY (Self-contained mathematical question)",
+  "stem_text": "A body of mass m starts moving from rest along x-axis so that its velocity varies as 𝜐=𝑎√(𝑠) where a is a constant and s is the distance covered by the body. The total work done by all the forces acting on the body in the first t seconds after the start of the motion is :",
+  "stem_sha256": "6050eaed83530c31e53b0b03afcae65b9a6011f89d27085e95a50f1da7c2c51a",
+  "source_hash": "6050eaed83530c31e53b0b03afcae65b9a6011f89d27085e95a50f1da7c2c51a",
+  "source_record_digest": "6050eaed83530c31e53b0b03afcae65b9a6011f89d27085e95a50f1da7c2c51a",
+  "duplicate_parent": null,
+  "scope": "IN_SCOPE_WPE_ONLY",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "NOT_REQUIRED",
+  "figure_reference": "NONE (pure text question)",
+  "options": [
+    "A: (1)/(8) m a4 t2",
+    "B: 8 m a4 t2",
+    "C: 4 m a4 t2",
+    "D: (1)/(4) m a4 t2"
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "WORK_ENERGY_THEOREM_VELOCITY_DISTANCE_RELATION",
+    "derivation": "Velocity definition: v = ds/dt = a * s^(1/2). Separating variables: s^(-1/2) ds = a dt. Integrating from s=0 at t=0: 2 * s^(1/2) = a * t => s^(1/2) = (a * t) / 2 => s(t) = (a^2 * t^2) / 4. Velocity as a function of time: v(t) = ds/dt = (a^2 * t) / 2. By Work-Energy Theorem: Total work done W = Delta KE = 1/2 m v(t)^2 - 0 = 1/2 m [ (a^2 * t) / 2 ]^2 = 1/2 m [ (a^4 * t^2) / 4 ] = (1/8) m a^4 t^2. Matches Option A.",
+    "predicted_option": "A: (1)/(8) m a4 t2",
+    "limiting_cases": "If a=0, W=0. If t=0, W=0. Dimensional verification: [a] = m^(1/2) s^(-1). [m a^4 t^2] = kg * (m^2 s^(-4)) * s^2 = kg m^2 s^(-2) = Joules. Factor 1/8 matches uniquely."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 2,
+          "evidence": "Relating position-dependent velocity v = a*s^(1/2) to time via calculus"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Setting up ds/dt = a*s^(1/2) or chain rule a = v dv/ds"
+        },
+        "reasoning_chain_length": {
+          "score": 2,
+          "evidence": "Find acceleration a_net = a^2 / 2, then compute KE(t) = (1/2) m v(t)^2 = (1/8) m a^4 t^2"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Separation of variables integration and squaring relations"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Distinguishing work over time t from work over distance s"
+        }
+      },
+      "total": 7,
+      "band": "D3",
+      "prior_proposal": {
+        "source": "PRODUCER_HISTORICAL_ESTIMATE",
+        "scores": "1/1/1/1/1",
+        "total": 5
+      },
+      "differences": "Rescored to native five-factor rubric per B2 CP-4 review"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "MODEL"
+      ],
+      "rationale": "Calculus-based derivation of time-dependent work from non-linear kinematics",
+      "candidate_cell": "QRT-APPLY-D3",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": {
+    "blueprint_id": "PHYS-QRT-BLUEPRINT",
+    "version": "0.2.0",
+    "sha256": "ac32dc937403cac33c76343f2e7e0dabd7c2c4a3188cb3b453ddf2576578ddf9",
+    "blueprint_cell_ref": "D3.3",
+    "topic_tag": "WPE-01-WORK",
+    "status": "PINNED_CELL_UNQUALIFIED"
+  },
+  "adapter_fit": {
+    "adapter_id": "PHYS-TOPIC-WPE",
+    "sha256": "899e61e59370a3fc5d6f73b7d8cbb65165d0782c9fba20acd83439ae441e6a9b",
+    "status": "CELL_UNQUALIFIED_ADAPTER_GAP",
+    "note": "WPE adapter currently defines cell D3.1 only. Target cell requires adapter cell expansion; flagged as SPEC_GAP."
+  },
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_CP4_GATE",
+  "b2_blind_status": "UNREVIEWED",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)",
+    "HOLD:INDEPENDENT_REVIEW_PENDING (requires unexposed blind physics review before admission)"
+  ],
+  "next_action": "Verify official NTA key and submit for independent blind review."
+}

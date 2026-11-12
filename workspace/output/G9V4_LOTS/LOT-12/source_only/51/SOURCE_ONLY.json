@@ -1,0 +1,12 @@
+{
+  "source_id": "EX-N38",
+  "task_identity": "Q-ID-59",
+  "sequence": 51,
+  "batch_sequence": 6,
+  "paper": "JEE Main 2020 (Online) 5th September Evening Slot",
+  "stem_text": "A body of mass 2 kg is driven by an engine delivering a constant power of 1 J/s. The body starts from rest and moves in a straight line. After 9 seconds, the body has moved a distance (in m) _______.",
+  "stem_sha256": "a1ae424276a151020133e8093c67432b4d5ed499ede455da4039ce5cc513c2a4",
+  "options": [],
+  "figure_reference": null,
+  "confidentiality_notice": "Source custody blind packet. Academic solve, answer key, and scoring omitted. Private review only."
+}

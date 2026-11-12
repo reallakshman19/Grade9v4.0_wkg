@@ -1,0 +1,17 @@
+{
+  "source_id": "EX-M89",
+  "task_identity": "Q-ID-36",
+  "sequence": 31,
+  "batch_sequence": 1,
+  "paper": "JEE Main 2015 (Online) 11th April Morning Slot",
+  "stem_text": "A particle is moving in a circle of radius r under the action of a force F = 𝛼 r2 which is directed towards center of the circle. Total mechanical energy (kinetic energy + potential energy) of the particle is (take potential energy = 0 for r = 0) :",
+  "stem_sha256": "794f05ed6f9302a63fe556ff98ee3644e5b0a419983ea559f9a9c517d3221379",
+  "options": [
+    "A: 𝛼 r3",
+    "B: (1)/(2) 𝛼 r3",
+    "C: (4)/(3) 𝛼 r3",
+    "D: (5)/(6) 𝛼 r3"
+  ],
+  "figure_reference": null,
+  "confidentiality_notice": "Source custody blind packet. Academic solve, answer key, and scoring omitted. Private review only."
+}

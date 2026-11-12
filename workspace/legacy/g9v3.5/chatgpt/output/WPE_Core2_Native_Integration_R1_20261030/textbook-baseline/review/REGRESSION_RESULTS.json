@@ -1,0 +1,9 @@
+{
+  "tests": 20,
+  "failures": 0,
+  "errors": 0,
+  "success": true,
+  "type": "AUTHOR_MECHANICAL_AND_LIMITED_ARITHMETIC_CHECKS",
+  "independent_review": "NOT_RUN",
+  "limitations": "Arithmetic checks do not qualify all science or authenticate printed/examination custody."
+}

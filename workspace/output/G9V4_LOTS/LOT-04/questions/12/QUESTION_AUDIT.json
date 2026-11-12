@@ -1,0 +1,112 @@
+{
+  "sequence": 12,
+  "task_identity": "Q-ID-12",
+  "stable_id": "Q-PHY-WPE-JEEM-2024-01-29-S2-12",
+  "source_id": "EX-M36",
+  "lot": "LOT-04",
+  "paper": "JEE Main 2024 (Online) 29th January Evening Shift",
+  "source_type": "SCRAPED_EXTRACT_EXAMGOAL",
+  "source_custody": "PARTIAL",
+  "stem_text": "A bob of mass ' \ud835\udc5a ' is suspended by a light string of length ' \ud835\udc3f '. It is imparted a minimum horizontal velocity at the lowest point \ud835\udc34 such that it just completes half circle reaching the top most position B. The ratio of kinetic energies ((\ud835\udc3e.\ud835\udc38)_\ud835\udc34)/((\ud835\udc3e.\ud835\udc38)_\ud835\udc35) is : [FIG-stem-1]",
+  "stem_sha256": "5cd94ff098ab3cb5375207898d793623c5465f00ad2c4990a19f7ebaabc8fb1d",
+  "source_hash": "5cd94ff098ab3cb5375207898d793623c5465f00ad2c4990a19f7ebaabc8fb1d",
+  "source_record_digest": "5cd94ff098ab3cb5375207898d793623c5465f00ad2c4990a19f7ebaabc8fb1d",
+  "duplicate_parent": null,
+  "scope": "IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "HOLD:FIGURE_UNRESOLVED",
+  "options": [
+    "A: 5 : 1",
+    "B: 3 : 2",
+    "C: 1 : 5",
+    "D: 2 : 5"
+  ],
+  "unbound_remote_figures": [
+    {
+      "role": "stem",
+      "url": "https://app-content.cdn.examgoal.net/fly/1000/image/6y3zli1lsg9qpea/62f3b2e1-f2c4-419e-a727-6e93b7cd3116/4fc6bf20-c82e-11ee-8c6b-bfa4f1fff66a/file-6y3zli1lsg9qpeb.png?format=png"
+    }
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "HOLD:FIGURE_UNRESOLVED",
+  "candidate_solve": {
+    "method": "VERTICAL_CIRCLE_CRITICAL_SPEED_ENERGY_RATIO",
+    "assumed_parameters_from_coaching_figure": "String length L, vertical circle in gravity field g. Lowest point A, uppermost point B at height 2L.",
+    "derivation": "Condition to just complete vertical circle: string tension at apex B must satisfy T_B >= 0 => m v_B^2 / L = mg => v_B = sqrt(gL). By conservation of mechanical energy between bottom A and top B: 1/2 m v_A^2 = 1/2 m v_B^2 + mg(2L) = 1/2 m (gL) + 2mgL = 5/2 mgL => v_A = sqrt(5gL). Ratio of kinetic energies: (K.E)_A / (K.E)_B = (1/2 m v_A^2) / (1/2 m v_B^2) = (5/2 mgL) / (1/2 mgL) = 5 / 1 = 5 : 1.",
+    "predicted_option": "A: 5 : 1",
+    "limiting_cases": "If B were at height L (reaching horizontal), v_A^2 = v_B^2 + 2gL => ratio depends on apex speed. For complete circle apex B, critical ratio is exactly 5 : 1."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "status": "UNREVIEWED",
+    "decisive_operation": "APPLY",
+    "crux": "Applying the vertical circular motion boundary condition T_B >= 0 to determine apex kinetic energy and using energy conservation over height 2L.",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Vertical circular motion threshold dynamics and energy conservation."
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Interpreting vertical circle diagram geometry."
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Threshold condition -> energy conservation -> kinetic energy ratio."
+        },
+        "algebra_computational_load": {
+          "score": 0,
+          "evidence": "Elementary integer ratio: 5 / 1."
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Must avoid assuming v_B = 0 at the top (which would cause string slackening)."
+        }
+      },
+      "total": 4,
+      "band": "D2"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "MODEL"
+      ],
+      "candidate_cell": "QRT-APPLY-D2",
+      "status": "PROPOSED"
+    },
+    "representation_requirements": [
+      "DIAGRAM",
+      "FREE_BODY_DIAGRAM",
+      "EQUATION"
+    ],
+    "independent_checks": [
+      "UNITS",
+      "LIMITING_CASE"
+    ],
+    "wrong_route_hypotheses": [
+      {
+        "route": "Assuming speed at top is zero v_B = 0 => ratio undefined / infinite",
+        "status": "HYPOTHESIS"
+      },
+      {
+        "route": "Taking reciprocal ratio (K.E)_B / (K.E)_A = 1 : 5 (Option C)",
+        "status": "HYPOTHESIS"
+      }
+    ]
+  },
+  "qrt": "UNREVIEWED",
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_REVIEW",
+  "b2_blind_status": "NOT_RUN",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:FIGURE_UNRESOLVED (diagram needed to verify labels A and B and string configuration)",
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)",
+    "HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)"
+  ],
+  "next_action": "Source official NTA figure asset and master answer key for 2024-01-29 S2."
+}

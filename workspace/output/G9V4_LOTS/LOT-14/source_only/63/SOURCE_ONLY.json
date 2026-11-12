@@ -1,0 +1,13 @@
+{
+  "source_id": "JEE-2026-04-04-S1-Q49",
+  "task_identity": "Q-ID-73",
+  "sequence": 63,
+  "lot_sequence": 3,
+  "paper": "JEE Main 2026 Session 2 / 2026-04-04 / Shift 1 (Morning)",
+  "stem_status": "VERIFIED_BOUND_TEXT",
+  "stem_text": "A body of mass 2 kg begins to move under the influence of time dependent force F^ = (2t i^ + 6t^2 j^) N, where i^ and j^ are unit vectors along x and y-axis respectively. The power produced by the force at t = 2 s is _____ W.",
+  "stem_sha256": "ea34503673c915695c8545282bb04f3f2c6afb3b104f240c8c9508cb2e9e24e3",
+  "options": null,
+  "figure_reference": null,
+  "confidentiality_notice": "Source custody blind packet. Academic solve, answer key, and scoring omitted. Private review only."
+}

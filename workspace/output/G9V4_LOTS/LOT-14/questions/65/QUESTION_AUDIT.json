@@ -1,0 +1,89 @@
+{
+  "sequence": 65,
+  "lot_sequence": 5,
+  "task_identity": "Q-ID-76",
+  "stable_id": "PHYS-WPE-LOT14-Q65",
+  "source_id": "WEP07-03",
+  "lot": "LOT-14",
+  "paper": "NSEP 2025 code 61 Q57",
+  "source_type": "UNBOUND_NSEP_DESCRIPTOR",
+  "source_custody": "UNBOUND_ORIGINAL_PENDING_WITNESS",
+  "stem_binding": "TEXT_NOT_BOUND_IN_REGISTRY",
+  "stem_text": null,
+  "stem_sha256": null,
+  "source_hash": null,
+  "source_record_digest": null,
+  "duplicate_parent": null,
+  "scope": "PRIMARY_IN_SCOPE_WPE",
+  "key_status": "VERIFIED_IAPT_KEY_RECEIPT",
+  "key_issuing_authority": "IAPT",
+  "figure_status": "REQUIRED_RETAINED",
+  "figure_reference": "PDF_PAGE:15_Q57:NSEP_-_2025_Set_611.pdf",
+  "options": null,
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "POTENTIAL_WELL_TURNING_POINT_AND_VELOCITY_EXTREMUM",
+    "predicted_option": "a, b, c, d (All four statements verified)",
+    "derivation": "Potential U(x) = alpha/x^2 - beta/x with alpha, beta > 0. Released from rest at x0 = alpha/beta => beta = alpha/x0. Substitute beta: U(x) = (alpha/x0^2)[(x0/x)^2 - x0/x]. At release point x = x0: U(x0) = 0 and K(x0) = 0, so conserved total energy E = 0. Statement (d) holds. Statement (a) holds. Speed: 0.5 * m * v^2 = -U(x) => v(x) = [(2*alpha/(m*x0^2)) * (x0/x - (x0/x)^2)]^(1/2). Statement (b) holds. Complete square for maximum speed: z - z^2 = 1/4 - (z - 1/2)^2, maximum is 1/4 at z = 1/2 (x = 2*x0) => v_max = sqrt(alpha / (2*m*x0^2)). Statement (c) holds. Official key (a, b, c, d) verified by IAPT final key receipt."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Applying mechanical energy conservation E = K + U = 0 to 1D non-linear potential well"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Substituting beta = alpha/x0 and writing potential in terms of dimensionless ratio z = x0/x"
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Execute energy conservation to extract v(x) and complete the square for velocity extremum"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Algebraic completing of the square: z - z^2 = 1/4 - (z - 1/2)^2"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Verifying turning point constraint x >= x0 where 0 < z <= 1 coexists with E = 0"
+        }
+      },
+      "total": 5,
+      "band": "D2",
+      "prior_proposal": {
+        "source": "ADJUDICATED_RECONCILIATION",
+        "scores": "1/1/1/1/1",
+        "total": 5
+      },
+      "differences": "Preserved previously adjudicated APPLY/D2 decision per B2 CP-4 checkpoint instructions"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "MODEL"
+      ],
+      "rationale": "Applying energy conservation and quadratic extremum formulas to 1D potential function",
+      "candidate_cell": "QRT-APPLY-D2",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_INDEPENDENT_REVIEW",
+  "b2_blind_status": "PENDING_BLIND_SOLVE",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:EXACT_TEXT_EXTRACTION_NOT_COMPLETED (Registry lacks bound stem text; pending independent witness)",
+    "HOLD:SPEC_PENDING (No qualified D1/D2 common blueprint or topic adapter)",
+    "HOLD:PAPER_CODE_61_VS_611_RECONCILIATION (Paper code 61 vs 611 reconciliation requires review)",
+    "HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)"
+  ],
+  "next_action": "B2 independent source-only solve + official IAPT master key reconciliation"
+}

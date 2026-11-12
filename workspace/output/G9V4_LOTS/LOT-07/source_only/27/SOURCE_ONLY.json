@@ -1,0 +1,17 @@
+{
+  "source_id": "EX-M79",
+  "task_identity": "Q-ID-30",
+  "sequence": 27,
+  "batch_sequence": 12,
+  "paper": "JEE Main 2018 (Online) 16th April Morning Slot",
+  "stem_text": "A body of mass m starts moving from rest along x-axis so that its velocity varies as \ud835\udf10=\ud835\udc4e\u221a(\ud835\udc60) where a is a constant and s is the distance covered by the body. The total work done by all the forces acting on the body in the first t seconds after the start of the motion is :",
+  "stem_sha256": "6050eaed83530c31e53b0b03afcae65b9a6011f89d27085e95a50f1da7c2c51a",
+  "options": [
+    "A: (1)/(8) m a4 t2",
+    "B: 8 m a4 t2",
+    "C: 4 m a4 t2",
+    "D: (1)/(4) m a4 t2"
+  ],
+  "figure_reference": "NONE (pure text question)",
+  "confidentiality_notice": "SEALED SOURCE-ONLY PACKET FOR BLIND INDEPENDENT REVIEW. Contains NO answers, keys, explanations, candidate solutions, SL2 factor scores, or prior review commentary."
+}

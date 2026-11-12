@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 260" width="100%" height="100%">
+  <defs>
+    <style>
+      .label { font-family: system-ui, -apple-system, sans-serif; font-size: 15px; font-weight: 600; fill: #1e293b; }
+      .dim { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; fill: #475569; }
+      .ground { stroke: #64748b; stroke-width: 3; }
+      .traj { stroke: #2563eb; stroke-dasharray: 6 4; stroke-width: 2.5; fill: none; }
+      .ball { fill: #e11d48; stroke: #9f1239; stroke-width: 2; }
+    </style>
+  </defs>
+  <!-- Ground -->
+  <line x1="30" y1="210" x2="410" y2="210" class="ground"/>
+  
+  <!-- Initial drop from h -->
+  <line x1="60" y1="50" x2="60" y2="210" stroke="#0f172a" stroke-width="2"/>
+  <circle cx="60" cy="50" r="7" class="ball"/>
+  <text x="45" y="130" class="label" text-anchor="end">h</text>
+  
+  <!-- First bounce (peak h/2) -->
+  <path d="M 60 210 Q 130 50 200 210" class="traj"/>
+  <circle cx="130" cy="130" r="6" class="ball"/>
+  <text x="130" y="115" class="dim" text-anchor="middle">h/2</text>
+  
+  <!-- Second bounce (peak h/4) -->
+  <path d="M 200 210 Q 250 130 300 210" class="traj"/>
+  <circle cx="250" cy="170" r="5" class="ball"/>
+  <text x="250" y="155" class="dim" text-anchor="middle">h/4</text>
+  
+  <!-- Subsequent bounces -->
+  <path d="M 300 210 Q 330 170 360 210" class="traj"/>
+  <path d="M 360 210 Q 380 190 400 210" class="traj"/>
+  <text x="350" y="195" class="dim">...</text>
+  
+  <!-- Total distance label -->
+  <text x="220" y="35" class="label" style="fill:#16a34a;" text-anchor="middle">Total Distance D = h + 2(h/2 + h/4 + ...) = 3h</text>
+</svg>

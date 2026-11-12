@@ -1,0 +1,10 @@
+{
+  "tests_run": 110,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "successful": true,
+  "elapsed_seconds": 23.66,
+  "output": "..............................................................................................................\n----------------------------------------------------------------------\nRan 110 tests in 23.581s\n\nOK\n",
+  "scope": "Author-side mechanical regression; not independent scientific review"
+}

@@ -1,0 +1,90 @@
+{
+  "batch_id": "BATCH-02",
+  "title": "Grade9 v4.0 — Work, Power & Energy Core 2 Review Package (Batch 2: Q16-Q30)",
+  "timestamp_utc": "2026-11-02T10:19:55.865897+00:00",
+  "scope": "PHYSICS_WPE_PILOT",
+  "total_questions": 15,
+  "included_lots": [
+    "LOT-05",
+    "LOT-06",
+    "LOT-07"
+  ],
+  "academic_admission": "NOT_ADMITTED",
+  "disposition": "HOLD:ACADEMIC_ADMISSION",
+  "governance_notice": "No academic approval inferred from software validation. Green CI means automatic tests passed; it never means student release is authorized.",
+  "total_manifested_files": 13,
+  "runtime_dependencies": {
+    "python": ">=3.11 (tested on Python 3.14.0)",
+    "node": ">=v18 (tested on Node v22.23.2)",
+    "playwright": "playwright-core with chromium",
+    "os": "Windows 11 (build 26100)",
+    "shell": "PowerShell 5.1 / 7"
+  },
+  "files": [
+    {
+      "path": "bank/core2_batch02_bank.json",
+      "bytes": 116194,
+      "sha256": "95ff4ec7543d09962dd81c851cb503bb54414e46171e68db04f884e854ae9140"
+    },
+    {
+      "path": "rendered/core2_batch02.html",
+      "bytes": 111899,
+      "sha256": "c30b5e5b9cd75b815f23e8e6f0b10b0d77ac34caa5a8924268116d0d05c47772"
+    },
+    {
+      "path": "assets/fig_q16_work_graphs.svg",
+      "bytes": 2253,
+      "sha256": "2c5e59f922af97dec8e1379a6b681fc8af50e40a6763bc8703e5d7e8cd6900e7"
+    },
+    {
+      "path": "assets/fig_q17_potential_curve.svg",
+      "bytes": 1950,
+      "sha256": "85c497c8c7bf420d572d434a2652a605d57b5d7ca1dc0dd9ebe7e7f57a74ba2c"
+    },
+    {
+      "path": "assets/fig_q23_hanging_cable.svg",
+      "bytes": 1279,
+      "sha256": "849c893b4239be647ae7054b58962d5dd3ff67c157564a1f9299cd3454eb196d"
+    },
+    {
+      "path": "assets/fig_q25_accelerating_platform.svg",
+      "bytes": 1247,
+      "sha256": "0df54cb86f1145a1514ca305cb3292cc7f3d0608572e80de9cd47d368fa4b189"
+    },
+    {
+      "path": "assets/fig_q26_spring_block_pull.svg",
+      "bytes": 1624,
+      "sha256": "4e3a262de220a5b6e762ab6ddecd5533e4a9107193e475355f5b6dd5d1e81de1"
+    },
+    {
+      "path": "assets/fig_q28_bouncing_ball.svg",
+      "bytes": 1673,
+      "sha256": "ebaa7829768eaf9f26da79db5e0c5612bc94fa3b628a484a87cdcc33e190a861"
+    },
+    {
+      "path": "assets/fig_q30_vt_graph.svg",
+      "bytes": 1574,
+      "sha256": "c77c85f7f56e32ce593a083b2a39364fafb43c6639c5b9b595da5f047961d42b"
+    },
+    {
+      "path": "test_batch02.py",
+      "bytes": 8573,
+      "sha256": "635883ad41073a50c717a6def2ac445fee49becb56ad367d8fd7c4491e2972ec"
+    },
+    {
+      "path": "verify_batch02_playwright.js",
+      "bytes": 5524,
+      "sha256": "f356b00f41d4808354aa13cb493ddbac5fc4785b2ec96206be72fcc16dec8ec5"
+    },
+    {
+      "path": "BATCH02_TEST.log",
+      "bytes": 1487,
+      "sha256": "0652afa2750a9fe8d15111c5c3d53c772141fac1c0208ecee7f5693186225612"
+    },
+    {
+      "path": "BATCH02_PLAYWRIGHT_TEST.log",
+      "bytes": 1022,
+      "sha256": "8fdffc5f7b105c66b74552822a488dccb46f2787a3f9c33b850d891b0d2bfe7b"
+    }
+  ]
+}

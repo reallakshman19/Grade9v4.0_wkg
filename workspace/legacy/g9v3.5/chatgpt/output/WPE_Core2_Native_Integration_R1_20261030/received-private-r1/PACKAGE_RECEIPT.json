@@ -1,0 +1,39 @@
+{
+  "schema": "wpe-core2-coding-receipt/v1",
+  "task": "G9V35-WPE-CORE2-CODING-R1",
+  "wbs": "R5/4.2/4.2.1",
+  "code_status": "LOCAL_CANDIDATE_SELF_TESTED",
+  "source_original_archive_sha256": "f9f5cf75652f20483d44e837c564fe4635e55aa75dd6007d988c297e82ef82c4",
+  "repo_main_pinned": "8a02a8eb23ea37a7d8acb74d1bc193dd17657e5b",
+  "unit_tests": {
+    "passed": 33,
+    "total": 33,
+    "scope": "SYNTHETIC_METADATA",
+    "actor": "AUTHOR_SELF_TEST"
+  },
+  "browser": {
+    "passed": 26,
+    "total": 26,
+    "mode": "Chromium set_content / synthetic fixture",
+    "deployed_navigation": "NOT_RUN"
+  },
+  "real_gate": {
+    "selected": 14,
+    "blocked": 14,
+    "vacant": 7,
+    "admitted": 0,
+    "status": "HOLD",
+    "expected_exit": 2
+  },
+  "code_hashes_manifest": "FILE_SHA256_MANIFEST.json",
+  "native_grade9_renderer": "NOT_RUN",
+  "academic_review": "NOT_RUN",
+  "owner_approval": "NOT_RUN",
+  "agent_dispatch": "NOT_RUN",
+  "common_relay": "LOCAL_ONLY_NOT_TRANSFERRED",
+  "page": "NOT_UPDATED_MODE_CONFLICT",
+  "rights": "NOT_CLEARED_FOR_PUBLIC_SOURCE_TEXT",
+  "native_SL1_SL2": "UNALTERED",
+  "assets": "SYNTHETIC_ONLY",
+  "created_at": "2026-10-30"
+}

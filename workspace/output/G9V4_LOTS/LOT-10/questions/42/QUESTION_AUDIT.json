@@ -1,0 +1,103 @@
+{
+  "sequence": 42,
+  "batch_sequence": 12,
+  "task_identity": "Q-ID-49",
+  "stable_id": "PHYS-WPE-LOT10-Q42",
+  "source_id": "EX-M120",
+  "lot": "LOT-10",
+  "batch": "BATCH-C",
+  "paper": "AIEEE 2003",
+  "source_type": "EXAM_PAPER_TRANSCRIBED",
+  "source_custody": "VERIFIED_TEXT",
+  "stem_text": "A body is moved along a straight line by a machine delivering a constant power. The distance moved by the body in time ^(′)𝑡^(′) is proportional to",
+  "stem_sha256": "ba2a01004368fd62fdd85b1dedd32e3171cdeda5b1e08edd87b4da2db74d7f66",
+  "source_hash": "ba2a01004368fd62fdd85b1dedd32e3171cdeda5b1e08edd87b4da2db74d7f66",
+  "source_record_digest": "sha256:ba2a01004368fd62fdd85b1dedd32e3171cdeda5b1e08edd87b4da2db74d7f66",
+  "duplicate_parent": null,
+  "scope": "PRIMARY_IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "NOT_REQUIRED",
+  "figure_reference": null,
+  "options": [
+    "A: 𝑡^(3/4)",
+    "B: 𝑡^(3/2)",
+    "C: 𝑡^(1/4)",
+    "D: 𝑡^(1/2)"
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "CONSTANT_POWER_DISTANCE_SCALING",
+    "predicted_option": "B: 𝑡^(3/2)",
+    "derivation": "Constant power P delivered: W = P*t = (1/2)*m*v^2 => v = sqrt(2*P*t/m) proportional to t^(1/2). Distance x = int v dt proportional to int t^(1/2) dt proportional to t^(3/2)."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Constant power kinematic scaling: Pt = (1/2)mv^2 => v ~ t^(1/2)"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Integrating proportional speed with respect to time to find distance scaling"
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Two-step proportionality: power -> speed -> distance"
+        },
+        "algebra_computational_load": {
+          "score": 0,
+          "evidence": "Power law integration: 1/2 + 1 = 3/2"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Distinguishing constant power displacement (t^(3/2)) from constant acceleration (t^2)"
+        }
+      },
+      "total": 4,
+      "band": "D2",
+      "prior_proposal": {
+        "source": "INITIAL_CALIBRATION",
+        "scores": "1/1/1/0/1",
+        "total": 4
+      },
+      "differences": "Initial native factor audit"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "RETRIEVE"
+      ],
+      "rationale": "Applying work-energy power scaling to 1D straight-line kinematics",
+      "candidate_cell": "QRT-APPLY-D2",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_INDEPENDENT_REVIEW",
+  "b2_blind_status": "PENDING_BLIND_SOLVE",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (Coaching key unverified against official NTA master)",
+    "HOLD:SPEC_PENDING (No qualified D1/D2 common blueprint or topic adapter)",
+    "HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)"
+  ],
+  "next_action": "B2 independent source-only solve + official NTA master key reconciliation",
+  "teaching_construction_family": {
+    "construction_id": "TC-WPE-CONST-POWER-TRAJECTORY-01",
+    "shared_candidates": [
+      "EX-M62",
+      "EX-M64",
+      "EX-M65",
+      "EX-M120",
+      "EX-N19"
+    ],
+    "note": "Shares the ideal constant-power kinematic trajectory construction family with EX-M62, EX-M64, EX-M65."
+  }
+}

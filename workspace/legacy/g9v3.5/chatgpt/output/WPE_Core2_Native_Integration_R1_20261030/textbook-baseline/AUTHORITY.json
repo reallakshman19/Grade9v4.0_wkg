@@ -1,0 +1,22 @@
+{
+  "task": "WPE-TEXTBOOK-CORE2-R1",
+  "thread_id": "01a188e5-af7a-7881-b414-b465ca99680f",
+  "session_role": "Oracle (standalone)",
+  "scoped_role": "Coder",
+  "owner_receipt": "Following the explicit offer of scoped Coder assignment and 45-minute/45-call routine, Owner replied: update you concept note and then proceed. Interpreted as approval of the offered scope with concept-note update first.",
+  "start_utc": "2026-10-30T12:44:02Z",
+  "max_minutes": 45,
+  "max_calls": 45,
+  "token_metric": "reported input plus output",
+  "token_telemetry": "UNKNOWN",
+  "one_agent": true,
+  "exclusions": [
+    "remote writes",
+    "installation",
+    "new agents",
+    "D3.1 resume",
+    "Core1A lesson construction",
+    "independent admission by author"
+  ],
+  "state": "ACTIVE"
+}

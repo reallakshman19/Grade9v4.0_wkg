@@ -1,0 +1,26 @@
+{
+  "schema": "g9v4-qrt-first-pass/v1",
+  "record_role": "SOURCE_ONLY_PACKET",
+  "question_id": "EX-M16",
+  "source": {
+    "source_kind": "EXAM_CLAIM",
+    "locator": "ORIGINAL_PAPER_NOT_BOUND__DO_NOT_SEND_TO_BLIND_REVIEWER",
+    "original_digest": null,
+    "figure_status": "UNQUALIFIED",
+    "key_visibility": "WITHHELD_IN_FIRST_PASS",
+    "source_text_or_trusted_locator": "REQUIRES_AUTHENTICATED_PAPER_ITEM_AND_FIGURE__NOT_CONSOLIDATED_REVIEW_BANK"
+  },
+  "exposure_declaration": "UNKNOWN",
+  "reviewer_assignment": {
+    "independently_assigned": false,
+    "assignment_receipt": null
+  },
+  "first_pass": null,
+  "seal": {
+    "status": "NOT_SEALED",
+    "content_sha256": null,
+    "sealed_before_exposure": false,
+    "sealed_receipt": null
+  },
+  "admission": "NOT_GRANTED_BY_THIS_RECORD"
+}

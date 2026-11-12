@@ -1,0 +1,16 @@
+{
+  "task": "WPE-CORE2-NATIVE-INTEGRATION-R1",
+  "role": "Coder (scoped); Oracle standalone outside task",
+  "approval": "Assign Coder and approve bounded integration",
+  "start_utc": "2026-10-30T16:35:36Z",
+  "limits": {
+    "minutes": 60,
+    "calls": 60
+  },
+  "telemetry": "UNKNOWN",
+  "preserve_originals": true,
+  "remote_writes": false,
+  "independent_admissions": 0,
+  "core1a_authoring": false,
+  "d31": "PAUSED"
+}

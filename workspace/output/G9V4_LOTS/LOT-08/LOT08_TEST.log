@@ -1,0 +1,28 @@
+....D:\CodeD\grade9v4\workspace\output\G9V4_LOTS\LOT-08\test_lot08.py:95: ResourceWarning: unclosed file <_io.TextIOWrapper name='D:\\CodeD\\grade9v4\\workspace\\output\\G9V4_LOTS\\LOT-08\\questions\\31\\QUESTION_AUDIT.json' mode='r' encoding='utf-8'>
+  q31 = json.load(open(os.path.join(LOT_DIR, "questions", "31", "QUESTION_AUDIT.json"), encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+D:\CodeD\grade9v4\workspace\output\G9V4_LOTS\LOT-08\test_lot08.py:99: ResourceWarning: unclosed file <_io.TextIOWrapper name='D:\\CodeD\\grade9v4\\workspace\\output\\G9V4_LOTS\\LOT-08\\questions\\32\\QUESTION_AUDIT.json' mode='r' encoding='utf-8'>
+  q32 = json.load(open(os.path.join(LOT_DIR, "questions", "32", "QUESTION_AUDIT.json"), encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+D:\CodeD\grade9v4\workspace\output\G9V4_LOTS\LOT-08\test_lot08.py:103: ResourceWarning: unclosed file <_io.TextIOWrapper name='D:\\CodeD\\grade9v4\\workspace\\output\\G9V4_LOTS\\LOT-08\\questions\\33\\QUESTION_AUDIT.json' mode='r' encoding='utf-8'>
+  q33 = json.load(open(os.path.join(LOT_DIR, "questions", "33", "QUESTION_AUDIT.json"), encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+D:\CodeD\grade9v4\workspace\output\G9V4_LOTS\LOT-08\test_lot08.py:107: ResourceWarning: unclosed file <_io.TextIOWrapper name='D:\\CodeD\\grade9v4\\workspace\\output\\G9V4_LOTS\\LOT-08\\questions\\34\\QUESTION_AUDIT.json' mode='r' encoding='utf-8'>
+  q34 = json.load(open(os.path.join(LOT_DIR, "questions", "34", "QUESTION_AUDIT.json"), encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+D:\CodeD\grade9v4\workspace\output\G9V4_LOTS\LOT-08\test_lot08.py:111: ResourceWarning: unclosed file <_io.TextIOWrapper name='D:\\CodeD\\grade9v4\\workspace\\output\\G9V4_LOTS\\LOT-08\\questions\\35\\QUESTION_AUDIT.json' mode='r' encoding='utf-8'>
+  q35 = json.load(open(os.path.join(LOT_DIR, "questions", "35", "QUESTION_AUDIT.json"), encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+..
+----------------------------------------------------------------------
+Ran 6 tests in 0.008s
+
+OK
+
+Starting LOT-08 Viewport Verification...
+Target URL: file:///D:/CodeD/grade9v4/workspace/output/G9V4_LOTS/LOT-08/review/index.html
+[Mobile 375x667] Window: 375, DocScrollWidth: 375, BodyScrollWidth: 375
+PASSED: Mobile viewport cleanly rendered without horizontal page overflow.
+[Desktop 1365x900] Window: 1365, DocScrollWidth: 1365, BodyScrollWidth: 1365
+PASSED: Desktop viewport cleanly rendered without horizontal page overflow.
+ALL LOT-08 VIEWPORT CHECKS PASSED.

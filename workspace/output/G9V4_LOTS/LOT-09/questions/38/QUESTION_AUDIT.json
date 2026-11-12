@@ -1,0 +1,92 @@
+{
+  "sequence": 38,
+  "batch_sequence": 8,
+  "task_identity": "Q-ID-44",
+  "stable_id": "PHYS-WPE-LOT09-Q38",
+  "source_id": "EX-M105",
+  "lot": "LOT-09",
+  "batch": "BATCH-C",
+  "paper": "AIEEE 2007",
+  "source_type": "EXAM_PAPER_TRANSCRIBED",
+  "source_custody": "VERIFIED_TEXT",
+  "stem_text": "A 2 𝑘𝑔 block slides on a horizontal floor with a speed of 4𝑚/𝑠. It strikes an uncompressed spring and compresses it till the block is motionless. The kinetic friction force is 15𝑁 and spring constant is 10,000 𝑁/𝑚. The spring compresses by",
+  "stem_sha256": "7f1f8bdb0ec27dc0c8dafc016414d1dd70d15932139624a0a03f7f629b437ed4",
+  "source_hash": "7f1f8bdb0ec27dc0c8dafc016414d1dd70d15932139624a0a03f7f629b437ed4",
+  "source_record_digest": "sha256:7f1f8bdb0ec27dc0c8dafc016414d1dd70d15932139624a0a03f7f629b437ed4",
+  "duplicate_parent": null,
+  "scope": "PRIMARY_IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "NOT_REQUIRED",
+  "figure_reference": null,
+  "options": [
+    "A: 8.5𝑐𝑚",
+    "B: 5.5𝑐𝑚",
+    "C: 2.5𝑐𝑚",
+    "D: 11.0𝑐𝑚"
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "WORK_ENERGY_SPRING_WITH_FRICTION",
+    "predicted_option": "B: 5.5𝑐𝑚",
+    "derivation": "Initial KE = (1/2)*m*v^2 = 0.5 * 2 * 16 = 16 J. Energy balance: 16 = f_k * x + (1/2)*k*x^2 = 15*x + 5000*x^2 => 5000*x^2 + 15*x - 16 = 0. Using quadratic formula: x = (-15 + sqrt(225 + 320000)) / 10000 = (-15 + 565.88) / 10000 = 0.05509 m = 5.5 cm."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Work-energy theorem combining dissipative friction work and spring elastic potential energy"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Formulating quadratic energy balance: KE_initial = f_k * x + (1/2) * k * x^2"
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Set up energy equation and solve quadratic for physical compression distance"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Solving quadratic equation with large spring constant 10000 N/m"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Not neglecting friction work over spring compression distance x"
+        }
+      },
+      "total": 5,
+      "band": "D2",
+      "prior_proposal": {
+        "source": "INITIAL_CALIBRATION",
+        "scores": "1/1/1/1/1",
+        "total": 5
+      },
+      "differences": "Initial native factor audit"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "MODEL"
+      ],
+      "rationale": "Applying work-energy balance to combined spring-friction system",
+      "candidate_cell": "QRT-APPLY-D2",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_INDEPENDENT_REVIEW",
+  "b2_blind_status": "PENDING_BLIND_SOLVE",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (Coaching key unverified against official NTA master)",
+    "HOLD:SPEC_PENDING (No qualified D1/D2 common blueprint or topic adapter)",
+    "HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)"
+  ],
+  "next_action": "B2 independent source-only solve + official NTA master key reconciliation"
+}

@@ -1,0 +1,93 @@
+{
+  "sequence": 57,
+  "batch_sequence": 12,
+  "task_identity": "Q-ID-67",
+  "stable_id": "PHYS-WPE-LOT13-Q57",
+  "source_id": "AN-5",
+  "lot": "LOT-13",
+  "batch": "BATCH-D",
+  "paper": "AIEEE 2004",
+  "source_type": "EXAM_PAPER_TRANSCRIBED",
+  "source_custody": "VERIFIED_TEXT",
+  "stem_text": "A particle is acted upon by a force of constant magnitude which is always perpendicular to the velocity of the particle, the motion of the particles takes place in a plane. It follows that",
+  "stem_sha256": "418e81b2f767cac56cbc06edf988ea400744d74b0990258dc5c881508c5a55b1",
+  "source_hash": "418e81b2f767cac56cbc06edf988ea400744d74b0990258dc5c881508c5a55b1",
+  "source_record_digest": "sha256:418e81b2f767cac56cbc06edf988ea400744d74b0990258dc5c881508c5a55b1",
+  "duplicate_parent": null,
+  "scope": "PRIMARY_IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "key_issuing_authority": "CBSE",
+  "figure_status": "NOT_REQUIRED",
+  "figure_reference": null,
+  "options": [
+    "A: its kinetic energy is constant",
+    "B: its acceleration is constant",
+    "C: its velocity is constant",
+    "D: it moves in a straight line"
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "ORTHOGONAL_FORCE_POWER_AND_KINETIC_ENERGY_INVARIANCE",
+    "predicted_option": "A: its kinetic energy is constant",
+    "derivation": "The instantaneous power delivered by the force is P = F . v. Given that F is always perpendicular to v, F . v = 0 at every instant. By the Work-Energy Theorem, dK/dt = P = 0, which implies that kinetic energy K is constant (Option A). Because the force has constant magnitude and is always perpendicular to velocity, the speed is constant while the direction of motion continuously changes (uniform circular motion in a plane). Thus velocity and acceleration vectors change direction continuously and are not constant."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Power scalar product orthogonality condition P = F . v = 0 implying zero rate of change of kinetic energy"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Multiple choice qualitative vector invariant deduction"
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Orthogonal force does zero work => speed is constant => kinetic energy is strictly constant"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Zero algebraic computation; qualitative vector mechanics"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Confusing constant magnitude of acceleration with constant vector acceleration; velocity and acceleration rotate continuously"
+        }
+      },
+      "total": 5,
+      "band": "D2",
+      "prior_proposal": {
+        "source": "INITIAL_CALIBRATION",
+        "scores": "1/1/1/1/1",
+        "total": 5
+      },
+      "differences": "Initial native factor audit"
+    },
+    "demand_proposal": {
+      "primary": "JUSTIFY",
+      "secondary": [
+        "MODEL"
+      ],
+      "rationale": "Applying scalar work-energy theorem to perpendicular directional force constraints",
+      "candidate_cell": "QRT-JUSTIFY-D2",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_INDEPENDENT_REVIEW",
+  "b2_blind_status": "PENDING_BLIND_SOLVE",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (Option A unverified against official CBSE master)",
+    "HOLD:SPEC_PENDING (No qualified D1/D2 common blueprint or topic adapter)",
+    "HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)"
+  ],
+  "next_action": "B2 independent source-only solve + official CBSE master key reconciliation"
+}

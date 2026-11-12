@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" width="100%" height="100%">
+  <defs>
+    <style>
+      .label { font-family: system-ui, -apple-system, sans-serif; font-size: 15px; font-weight: 600; fill: #1e293b; }
+      .dim { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; fill: #475569; }
+      .table { fill: #e2e8f0; stroke: #475569; stroke-width: 2.5; }
+      .cable { stroke: #0284c7; stroke-width: 6; stroke-linecap: round; fill: none; }
+    </style>
+  </defs>
+  <!-- Table Top and Leg -->
+  <polygon points="40,90 280,90 280,105 40,105" class="table"/>
+  <rect x="255" y="105" width="25" height="130" class="table"/>
+  <line x1="20" y1="235" x2="380" y2="235" stroke="#64748b" stroke-width="2.5"/>
+  <text x="60" y="80" class="dim">Smooth Table Surface</text>
+  
+  <!-- Cable on table and hanging over edge -->
+  <line x1="80" y1="87" x2="280" y2="87" class="cable"/>
+  <path d="M 280 87 Q 285 87 285 92 L 285 180" class="cable"/>
+  
+  <!-- Dimensions -->
+  <text x="170" y="75" class="label" style="fill:#0284c7;">Table part: L(1 - 1/n)</text>
+  <line x1="305" y1="90" x2="305" y2="180" stroke="#e11d48" stroke-width="1.5"/>
+  <text x="315" y="140" class="label" style="fill:#e11d48;">Hanging: L/n</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 300" width="100%" height="100%">
+  <defs>
+    <style>
+      .label { font-family: system-ui, -apple-system, sans-serif; font-size: 15px; font-weight: 600; fill: #1e293b; }
+      .circle-track { stroke: #94a3b8; stroke-dasharray: 6 4; stroke-width: 2; fill: none; }
+      .string { stroke: #0f172a; stroke-width: 2; }
+      .bob { fill: #e11d48; stroke: #881337; stroke-width: 2; }
+    </style>
+  </defs>
+  <!-- Center O -->
+  <circle cx="190" cy="150" r="4" fill="#0f172a"/>
+  <text x="205" y="155" class="label">O</text>
+  
+  <!-- Circular Track -->
+  <circle cx="190" cy="150" r="100" class="circle-track"/>
+  
+  <!-- Top Point B -->
+  <circle cx="190" cy="50" r="8" class="bob"/>
+  <text x="190" y="35" class="label" text-anchor="middle">B (Top, v_B)</text>
+  
+  <!-- Bottom Point A -->
+  <circle cx="190" cy="250" r="8" class="bob"/>
+  <text x="190" y="275" class="label" text-anchor="middle">A (Lowest, v_A)</text>
+  
+  <!-- Vertical String line -->
+  <line x1="190" y1="150" x2="190" y2="250" class="string"/>
+  <text x="175" y="205" class="label">L</text>
+</svg>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade9 v4.0 — LOT-04 Source & Candidate Solve Audit (Questions 11–15)</title>
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --border: #e2e8f0;
+            --text: #0f172a;
+            --text-muted: #64748b;
+            --primary: #2563eb;
+            --danger: #b91c1c;
+            --warning: #d97706;
+            --success: #15803d;
+            --neutral-bg: #f1f5f9;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            padding: 16px;
+            font-size: 14px;
+            min-width: 0;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1365px;
+            margin: 0 auto;
+            background: var(--surface);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            min-width: 0;
+        }
+        header {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+        }
+        h1 { font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 6px; word-break: break-word; }
+        .header-meta {
+            font-size: 12px;
+            color: var(--text-muted);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .notice-banner {
+            background: #fffbeb;
+            border-left: 4px solid var(--warning);
+            padding: 12px 16px;
+            margin-bottom: 20px;
+            border-radius: 0 4px 4px 0;
+            font-size: 13px;
+            color: #92400e;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .metric-card {
+            background: var(--neutral-bg);
+            padding: 14px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+        .metric-title { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); }
+        .metric-val { font-size: 22px; font-weight: 700; margin-top: 4px; }
+        .metric-sub { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+        .table-wrapper {
+            overflow-x: auto;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            margin-bottom: 24px;
+            -webkit-overflow-scrolling: touch;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            min-width: 800px;
+        }
+        th, td {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        th {
+            background: #f8fafc;
+            font-weight: 600;
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+        .col-seq { width: 80px; }
+        .col-source { width: 200px; word-break: break-word; }
+        .col-stem { min-width: 280px; word-break: break-word; }
+        .col-cog { width: 140px; }
+        .col-bp { width: 140px; word-break: break-word; }
+        .col-gates { width: 260px; word-break: break-word; }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin: 2px 0;
+            word-break: break-all;
+        }
+        .badge-admission { background: #fef2f2; color: var(--danger); border: 1px solid #fecaca; }
+        .badge-hold { background: #fff7ed; color: var(--warning); border: 1px solid #fed7aa; }
+        .badge-source { background: #eff6ff; color: var(--primary); }
+        .badge-fig { background: #f1f5f9; color: var(--text-muted); }
+        .badge-prop { background: #f3e8ff; color: #7e22ce; }
+
+        .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+        .text-muted { color: var(--text-muted); }
+        .stem-preview { font-size: 13px; margin-bottom: 6px; color: #334155; }
+        .candidate-details { margin-top: 6px; font-size: 12px; }
+        .candidate-details summary { cursor: pointer; color: var(--primary); font-weight: 600; }
+        .solve-box {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin-top: 6px;
+        }
+        .solve-box p { margin: 4px 0; }
+        .blocker-list {
+            margin-top: 4px;
+            padding-left: 16px;
+            font-size: 11px;
+            color: var(--danger);
+        }
+        .blocker-list li { margin-bottom: 2px; }
+        footer {
+            border-top: 1px solid var(--border);
+            padding-top: 16px;
+            font-size: 12px;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        @media (max-width: 600px) {
+            body { padding: 8px; }
+            .container { padding: 12px; }
+            .metrics-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Grade9 v4.0 — LOT-04 Audit: Candidates 11–15</h1>
+            <div class="header-meta">
+                <span><strong>Batch:</strong> BATCH-A / CP-3</span>
+                <span><strong>Scope:</strong> Physics / WPE</span>
+                <span><strong>Audit Date:</strong> 2026-11-01</span>
+                <span><strong>Roster SHA:</strong> <code class="mono">5c6c0a41dcd2970e...</code></span>
+            </div>
+        </header>
+
+        <div class="notice-banner">
+            <strong>Mandatory Governance Boundary:</strong> ZERO academic approvals inferred. All 5 candidates are marked <code>NOT_ADMITTED</code>. No learner cards constructed. Official answer keys and NTA source figures remain on HOLD.
+        </div>
+
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-title">Candidates Audited</div>
+                <div class="metric-val">5 / 5</div>
+                <div class="metric-sub">Roster Seq 11–15 (100% accounted)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-title">Academic Admissions</div>
+                <div class="metric-val" style="color: var(--danger);">0</div>
+                <div class="metric-sub">All gated on independent review</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-title">Solve Status</div>
+                <div class="metric-val">3 Derived / 2 Hold</div>
+                <div class="metric-sub">Exposure: 5 EXPOSED (prior scrape)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-title">Cognitive Proposals</div>
+                <div class="metric-val">1 D1 / 4 D2</div>
+                <div class="metric-sub">All 5 SL2 factors scored</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-title">Blueprint Fit</div>
+                <div class="metric-val">5 Pending (D1/D2)</div>
+                <div class="metric-sub">Common teaching spec pending</div>
+            </div>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="col-seq">Seq</th>
+                        <th class="col-source">Source & Custody</th>
+                        <th class="col-stem">Stem & Candidate Solve</th>
+                        <th class="col-cog">SL2 Proposal</th>
+                        <th class="col-bp">Blueprint / Adapter</th>
+                        <th class="col-gates">Academic Gate & Blockers</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+        <tr>
+            <td class="col-seq"><strong>#11</strong><br><small class="mono">Q-ID-11</small></td>
+            <td class="col-source">
+                <strong>EX-M29</strong><br>
+                <small class="text-muted">JEE Main 2024 (Online) 5th April Evening Shift</small><br>
+                <span class="badge badge-source">VERIFIED_TEXT_ONLY</span>
+                <span class="badge badge-fig">VERIFIED_NONE_REQUIRED</span>
+            </td>
+            <td class="col-stem">
+                <div class="stem-preview">A body is moving unidirectionally under the influence of a constant power source. Its displacement in time t is proportional to :...</div>
+                <details class="candidate-details">
+                    <summary>View Full Candidate Solve & Reasoning</summary>
+                    <div class="solve-box">
+                        <p><strong>Predicted Option:</strong> B: t3/2</p>
+                        <p><strong>Method:</strong> <code>CONSTANT_POWER_DISPLACEMENT_INTEGRAL</code></p>
+                        <p><strong>Derivation:</strong> Constant power P = F * v = m * v * (dv/dt) = constant. Separating variables: v dv = (P/m) dt. Integrating both sides: 1/2 v^2 = (P/m) t => v = sqrt(2P/m) * t^(1/2). Since v = ds/dt: ds = sqrt(2P/m) * t^(1/2) dt. Integrating from rest: s = sqrt(2P/m) * (2/3 t^(3/2)) => s proportional to t^(3/2).</p>
+                        <p><strong>Limiting Cases:</strong> If acceleration were constant (constant force), P = F*a*t proportional to t, and s proportional to t^2. Under constant power, acceleration decreases as v increases, yielding s proportional to t^(3/2), which is intermediate between t and t^2.</p>
+                    </div>
+                </details>
+            </td>
+            <td class="col-cog">
+                <strong>APPLY</strong> (D2)<br>
+                <small>Score: 5/10</small><br>
+                <span class="badge badge-prop">PROPOSED</span>
+            </td>
+            <td class="col-bp"><span class='badge badge-hold'>BLUEPRINT=SPEC_PENDING</span></td>
+            <td class="col-gates">
+                <span class="badge badge-admission">NOT_ADMITTED</span>
+                <ul class="blocker-list">
+                    <li>HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)</li><li>HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)</li>
+                </ul>
+            </td>
+        </tr>
+        
+        <tr>
+            <td class="col-seq"><strong>#12</strong><br><small class="mono">Q-ID-12</small></td>
+            <td class="col-source">
+                <strong>EX-M36</strong><br>
+                <small class="text-muted">JEE Main 2024 (Online) 29th January Evening Shift</small><br>
+                <span class="badge badge-source">PARTIAL</span>
+                <span class="badge badge-fig">HOLD:FIGURE_UNRESOLVED</span>
+            </td>
+            <td class="col-stem">
+                <div class="stem-preview">A bob of mass ' 𝑚 ' is suspended by a light string of length ' 𝐿 '. It is imparted a minimum horizontal velocity at the lowest point 𝐴 such that it just complet...</div>
+                <details class="candidate-details">
+                    <summary>View Full Candidate Solve & Reasoning</summary>
+                    <div class="solve-box">
+                        <p><strong>Predicted Option:</strong> A: 5 : 1</p>
+                        <p><strong>Method:</strong> <code>VERTICAL_CIRCLE_CRITICAL_SPEED_ENERGY_RATIO</code></p>
+                        <p><strong>Derivation:</strong> Condition to just complete vertical circle: string tension at apex B must satisfy T_B >= 0 => m v_B^2 / L = mg => v_B = sqrt(gL). By conservation of mechanical energy between bottom A and top B: 1/2 m v_A^2 = 1/2 m v_B^2 + mg(2L) = 1/2 m (gL) + 2mgL = 5/2 mgL => v_A = sqrt(5gL). Ratio of kinetic energies: (K.E)_A / (K.E)_B = (1/2 m v_A^2) / (1/2 m v_B^2) = (5/2 mgL) / (1/2 mgL) = 5 / 1 = 5 : 1.</p>
+                        <p><strong>Limiting Cases:</strong> If B were at height L (reaching horizontal), v_A^2 = v_B^2 + 2gL => ratio depends on apex speed. For complete circle apex B, critical ratio is exactly 5 : 1.</p>
+                    </div>
+                </details>
+            </td>
+            <td class="col-cog">
+                <strong>APPLY</strong> (D2)<br>
+                <small>Score: 4/10</small><br>
+                <span class="badge badge-prop">PROPOSED</span>
+            </td>
+            <td class="col-bp"><span class='badge badge-hold'>BLUEPRINT=SPEC_PENDING</span></td>
+            <td class="col-gates">
+                <span class="badge badge-admission">NOT_ADMITTED</span>
+                <ul class="blocker-list">
+                    <li>HOLD:FIGURE_UNRESOLVED (diagram needed to verify labels A and B and string configuration)</li><li>HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)</li><li>HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)</li>
+                </ul>
+            </td>
+        </tr>
+        
+        <tr>
+            <td class="col-seq"><strong>#13</strong><br><small class="mono">Q-ID-13</small></td>
+            <td class="col-source">
+                <strong>EX-M47</strong><br>
+                <small class="text-muted">JEE Main 2022 (Online) 29th July Morning Shift</small><br>
+                <span class="badge badge-source">VERIFIED_TEXT_ONLY</span>
+                <span class="badge badge-fig">VERIFIED_NONE_REQUIRED</span>
+            </td>
+            <td class="col-stem">
+                <div class="stem-preview">A ball is projected with kinetic energy E, at an angle of 60^(∘) to the horizontal. The kinetic energy of this ball at the highest point of its flight will beco...</div>
+                <details class="candidate-details">
+                    <summary>View Full Candidate Solve & Reasoning</summary>
+                    <div class="solve-box">
+                        <p><strong>Predicted Option:</strong> C: (𝐸)/(4)</p>
+                        <p><strong>Method:</strong> <code>PROJECTILE_PEAK_KINETIC_ENERGY</code></p>
+                        <p><strong>Derivation:</strong> Initial launch kinetic energy: E = 1/2 m v^2. At the highest point of projectile flight, the vertical velocity component is zero (v_y = 0), while horizontal velocity remains constant: v_x = v * cos(60 deg) = v * (1/2) = v/2. Kinetic energy at peak: E' = 1/2 m (v_x)^2 = 1/2 m (v/2)^2 = 1/4 (1/2 m v^2) = E/4.</p>
+                        <p><strong>Limiting Cases:</strong> If projected vertically (90 deg), KE at peak is zero (Option A). If projected horizontally (0 deg), KE at peak is E (Option D). For 60 deg, KE is E * cos^2(60 deg) = E/4.</p>
+                    </div>
+                </details>
+            </td>
+            <td class="col-cog">
+                <strong>RETRIEVE</strong> (D1)<br>
+                <small>Score: 2/10</small><br>
+                <span class="badge badge-prop">PROPOSED</span>
+            </td>
+            <td class="col-bp"><span class='badge badge-hold'>BLUEPRINT=SPEC_PENDING</span></td>
+            <td class="col-gates">
+                <span class="badge badge-admission">NOT_ADMITTED</span>
+                <ul class="blocker-list">
+                    <li>HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)</li><li>HOLD:SPEC_PENDING_D1 (no common D1/D2 teaching blueprint qualified)</li>
+                </ul>
+            </td>
+        </tr>
+        
+        <tr>
+            <td class="col-seq"><strong>#14</strong><br><small class="mono">Q-ID-14</small></td>
+            <td class="col-source">
+                <strong>EX-M49</strong><br>
+                <small class="text-muted">JEE Main 2022 (Online) 27th July Morning Shift</small><br>
+                <span class="badge badge-source">VERIFIED_TEXT_ONLY</span>
+                <span class="badge badge-fig">VERIFIED_NONE_REQUIRED</span>
+            </td>
+            <td class="col-stem">
+                <div class="stem-preview">Sand is being dropped from a stationary dropper at a rate of 0.5kgs^(−1) on a conveyor belt moving with a velocity of 5ms^(−1) . The power needed to keep the be...</div>
+                <details class="candidate-details">
+                    <summary>View Full Candidate Solve & Reasoning</summary>
+                    <div class="solve-box">
+                        <p><strong>Predicted Option:</strong> D: 12.5 W</p>
+                        <p><strong>Method:</strong> <code>VARIABLE_MASS_BELT_POWER_NUMERICAL</code></p>
+                        <p><strong>Derivation:</strong> Mass rate dm/dt = 0.5 kg/s, belt velocity v = 5 m/s. The horizontal force required to accelerate newly dropped sand to belt speed is F = v * (dm/dt) = 5 m/s * 0.5 kg/s = 2.5 N. The power supplied by the motor to maintain constant velocity is P = F * v = 2.5 N * 5 m/s = 12.5 W.</p>
+                        <p><strong>Limiting Cases:</strong> Rate of gain of kinetic energy of sand is d(KE)/dt = 1/2 (dm/dt) v^2 = 1/2 (0.5)(25) = 6.25 W. An equal amount of power (6.25 W) is dissipated as heat in friction as the sand slips on the belt. Total power input by the motor must be 6.25 + 6.25 = 12.5 W.</p>
+                    </div>
+                </details>
+            </td>
+            <td class="col-cog">
+                <strong>APPLY</strong> (D2)<br>
+                <small>Score: 4/10</small><br>
+                <span class="badge badge-prop">PROPOSED</span>
+            </td>
+            <td class="col-bp"><span class='badge badge-hold'>BLUEPRINT=SPEC_PENDING</span></td>
+            <td class="col-gates">
+                <span class="badge badge-admission">NOT_ADMITTED</span>
+                <ul class="blocker-list">
+                    <li>HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)</li><li>HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)</li>
+                </ul>
+            </td>
+        </tr>
+        
+        <tr>
+            <td class="col-seq"><strong>#15</strong><br><small class="mono">Q-ID-15</small></td>
+            <td class="col-source">
+                <strong>EX-M50</strong><br>
+                <small class="text-muted">JEE Main 2022 (Online) 26th July Morning Shift</small><br>
+                <span class="badge badge-source">PARTIAL</span>
+                <span class="badge badge-fig">HOLD:FIGURE_UNRESOLVED</span>
+            </td>
+            <td class="col-stem">
+                <div class="stem-preview">As per the given figure, two blocks each of mass 250g are connected to a spring of spring constant 2Nm^(−1) . If both are given velocity 𝑣 in opposite direction...</div>
+                <details class="candidate-details">
+                    <summary>View Full Candidate Solve & Reasoning</summary>
+                    <div class="solve-box">
+                        <p><strong>Predicted Option:</strong> B: (𝑣)/(2)</p>
+                        <p><strong>Method:</strong> <code>TWO_BODY_SPRING_CENTER_OF_MASS_ENERGY</code></p>
+                        <p><strong>Derivation:</strong> Initial total momentum: P = m(-v) + m(+v) = 0. The center of mass is stationary. At maximum spring elongation x_m, relative speed between the two blocks is zero, so both blocks are instantaneously at rest relative to the center of mass (v_1 = v_2 = 0). By conservation of mechanical energy: Total Initial KE = Maximum Spring Elastic PE => 1/2 m v^2 + 1/2 m v^2 = 1/2 k x_m^2 => m v^2 = 1/2 k x_m^2 => x_m = sqrt(2 m v^2 / k) = v * sqrt(2m / k). Substituting m = 0.25 kg and k = 2 N/m: x_m = v * sqrt(2 * 0.25 / 2) = v * sqrt(0.25) = v * 0.5 = v / 2.</p>
+                        <p><strong>Limiting Cases:</strong> If k -> infinity (rigid rod), x_m -> 0. If only one block were given velocity v (total momentum mv), V_cm = v/2, and internal KE = 1/2 mu v^2 = 1/4 m v^2, yielding x_m = v/(2*sqrt(2)) (Option A). With equal and opposite velocities, all initial KE is converted into spring PE, yielding x_m = v/2.</p>
+                    </div>
+                </details>
+            </td>
+            <td class="col-cog">
+                <strong>APPLY</strong> (D2)<br>
+                <small>Score: 4/10</small><br>
+                <span class="badge badge-prop">PROPOSED</span>
+            </td>
+            <td class="col-bp"><span class='badge badge-hold'>BLUEPRINT=SPEC_PENDING</span></td>
+            <td class="col-gates">
+                <span class="badge badge-admission">NOT_ADMITTED</span>
+                <ul class="blocker-list">
+                    <li>HOLD:FIGURE_UNRESOLVED (diagram needed to confirm initial velocity vectors and spring anchoring)</li><li>HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)</li><li>HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)</li>
+                </ul>
+            </td>
+        </tr>
+        
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            <div>Produced by Local Coding Agent | Low-Discretion Autonomous Mode</div>
+            <div>No academic approval inferred from software validation.</div>
+        </footer>
+    </div>
+</body>
+</html>

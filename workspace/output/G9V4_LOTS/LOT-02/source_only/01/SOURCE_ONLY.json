@@ -1,0 +1,16 @@
+{
+  "source_id": "EX-M2",
+  "task_identity": "Q-ID-01",
+  "sequence": 1,
+  "paper": "JEE Main 2026 (Online) 6th April Evening Shift",
+  "stem_text": "The velocity at which 6 kg mass (shown in figure) strikes the ground when it is released from a height of 6 m above the ground is ____ m/s . Assume pulley is massless and string is light and inextensible. (Take g=10m/s^(2) ) [FIG-stem-1]",
+  "stem_sha256": "a5c763f95741876d7e1c31a53aa6049a439d0aa91b0b28512c9aece32b8bb52d",
+  "options": [
+    "A: 7.74",
+    "B: 7.20",
+    "C: 6.55",
+    "D: 4.50"
+  ],
+  "figure_reference": "https://app-content.cdn.examgoal.net/fly/1000/image/6y3zli1mo4fpv2y/9e0021cb-81a5-42b5-9355-64909243bdc1/33773fa0-3b33-11f1-8c42-c7a7a182458c/file-6y3zli1mo4fpv2z.webp?format=png",
+  "confidentiality_notice": "SEALED SOURCE-ONLY PACKET FOR BLIND INDEPENDENT REVIEW. Contains NO answers, keys, explanations, candidate solutions, SL2 factor scores, or prior review commentary."
+}

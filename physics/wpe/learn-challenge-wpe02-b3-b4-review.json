@@ -1,0 +1,196 @@
+{
+  "schema": "wpe02-author-exposed-b3-b4-review/v1",
+  "as_of": "2026-11-02",
+  "review_id": "WPE-02",
+  "scope": "Existing five Learn → Challenge pairs; neither new native authoring nor academic promotion",
+  "role": "AUTHOR_EXPOSED_ANALYTICAL_REVIEW__NOT_INDEPENDENT_QRT_OR_SUBJECT_SIGNOFF",
+  "reviewed_artifacts": [
+    {
+      "path": "physics/wpe/learn-challenge.html",
+      "blob_sha": "5a76c88035d6083f4707d4c20507b1468529d61d"
+    },
+    {
+      "path": "physics/wpe/learn-challenge-source-map.json",
+      "blob_sha": "eb6090afd5f015f0b32d36c0be65c4cda63e0acb"
+    },
+    {
+      "path": "physics/wpe/learn-challenge-wpe01-review.json",
+      "status": "prior technical review"
+    }
+  ],
+  "method": [
+    "Compare each existing Core1A demonstrated solution, contrast note and conditions against source-question reasoning targets in source map",
+    "Check each Core1B operation against taught model, possible response copying, fresh-condition or representation changes, and answer physics",
+    "Distinguish question design plausibility from witnessed learner reconstruction; do not assert independent review or QRT grades"
+  ],
+  "guidebook_criterion": {
+    "B3": "Do worked and guided steps actually establish the decisive move and its validity conditions?",
+    "B4": "Can a learner perform an unseen but appropriately matched task without copying the demonstrated route?",
+    "rule": "B3 and B4 are noncompensatory; a technically working page cannot substitute for either."
+  },
+  "result": {
+    "B3": "HOLD_ALL_5_DESIGN_COVERAGE_GAPS",
+    "B4": "HOLD_ALL_5_NO_OBSERVED_INDEPENDENT_RECONSTRUCTION",
+    "B4_design_strengths": {
+      "weak_transfer": 2,
+      "promising_transfer": 3
+    },
+    "academic_acceptance": "NONE",
+    "native_core1a": "NOT_ACCEPTED",
+    "native_core1b": "NOT_ACCEPTED",
+    "qrt": "NOT_RUN",
+    "owner": "PENDING"
+  },
+  "cross_cutting": [
+    "Source Q1–Q11 form an unverified scan; source claims, publisher, rights and answer-key custody are not qualified",
+    "Source maps describe themes rather than accepted task-level QRT operations; Q7/Q9/Q10/Q11 flags remain",
+    "Core1A and Core1B appear simultaneously side-by-side (desktop); students can consult worked steps while answering, and the answer key is available in downloaded JS",
+    "Locking with a choice and eight characters cannot show that reasoning is correct; localStorage and reset are learner-controlled; no independent attempt witness",
+    "No protected learner-response dataset, independent reasoning rubrics or observed changed-condition transfer is present",
+    "The optional two hints and worked check are provided after the local lock but are not validated independent learning evidence",
+    "Original Q12 is truncated and excluded"
+  ],
+  "technical_editorial_fix": {
+    "id": "ENERGY_CORE1B_G_EXPLICIT",
+    "before": "No gravitational acceleration specified in the standalone challenge stem",
+    "after": "Added 'Take g = 10 m/s²' to challenge and source map",
+    "type": "SCIENTIFIC_CLARITY_NOT_ACADEMIC_PROMOTION"
+  },
+  "per_construction": [
+    {
+      "id": "work-sign",
+      "source_qids": [
+        "Q1",
+        "Q3",
+        "Q7"
+      ],
+      "B3": {
+        "decision": "HOLD",
+        "reason": "The sole guided calculation gives negative friction work (−30 J). Positive/zero cases and the net-work versus one-force distinction appear only as general prose, not demonstrated decisions. Q7's source force/distance ambiguity is still unresolved.",
+        "missing": [
+          "Guided worked positive and perpendicular zero-work contrasts",
+          "Explicit net-work versus individual-work example with net tangential force qualification"
+        ],
+        "remediation": "Add distinct guided force–displacement decisions for +, − and zero work and demonstrate net work without copying the reserved robot task."
+      },
+      "B4": {
+        "decision": "HOLD",
+        "design_strength": "WEAK_TRANSFER",
+        "reason": "The robot challenge repeats an opposed-force calculation twice and adds the values; it is not merely a numerical clone, but the decisive sign rule is repeated without meaningful new force-model selection.",
+        "remediation": "Review replacement with a changed condition where the learner chooses which force reverses, distinguish fixed-direction and resistive forces, and justify each sign; preserve a genuinely unseen stem."
+      },
+      "check": {
+        "correct_option": "A",
+        "physics": "−6×4−4×2=−32 J"
+      }
+    },
+    {
+      "id": "momentum-energy",
+      "source_qids": [
+        "Q2",
+        "Q4",
+        "Q8"
+      ],
+      "B3": {
+        "decision": "HOLD",
+        "reason": "The worked case is one numerical K=p²/(2m) substitution. Equal-p mass comparison, equal-K mass comparison, momentum doubling and the K–p parabola are stated in a note, not worked or graphically reasoned.",
+        "missing": [
+          "Guided same-energy momentum comparison p=√(2mK)",
+          "Graph/table reasoning for K versus signed p at fixed mass",
+          "Explicit conditional comparison examples"
+        ],
+        "remediation": "Construct two or three non-reserved guided comparison/graph moves, with conditions; retain the separate original Q2/Q4/Q8 source references."
+      },
+      "B4": {
+        "decision": "HOLD",
+        "design_strength": "WEAK_TRANSFER",
+        "reason": "The equal-p 1 kg/4 kg comparison is a near-direct application of a rule explicitly displayed directly above the challenge; the new ratio calculation is not sufficient evidence of independent model selection.",
+        "remediation": "Propose a fresh data/graph interpretation requiring the student to determine whether mass or momentum is held fixed, then justify which relationship applies."
+      },
+      "check": {
+        "correct_option": "A",
+        "physics": "K_A=64/2=32 J, K_B=64/8=8 J, ratio 4:1"
+      }
+    },
+    {
+      "id": "energy-motion",
+      "source_qids": [
+        "Q5",
+        "Q6",
+        "Q9"
+      ],
+      "B3": {
+        "decision": "HOLD",
+        "reason": "The guided step evaluates K and v at one point, then states reachability and turning-point rules. It does not demonstrate a guided whole-path decision. Source Q5's distinction between uniform change with time and nonlinear change with height remains a note, not an assessed construction.",
+        "missing": [
+          "Guided decision about a full connected path using a different physical example than the reserved ridge task",
+          "Worked K=0 turning-point contrast and E>U requirement for nonzero speed",
+          "Time-versus-height reasoning for vertical projection if Q5 remains in the construction target"
+        ],
+        "remediation": "Create a different guided path/turning-point sequence before the reserved ridge challenge; handle Q5 as an explicit additional construction or narrow the mapping."
+      },
+      "B4": {
+        "decision": "HOLD",
+        "design_strength": "PROMISING_TRANSFER_DESIGN",
+        "reason": "Testing reachability across an intervening energy barrier is a meaningful operation change from a one-point energy calculation. The initial task omitted g; it now explicitly states 10 m/s². No independent learner reconstruction has been observed.",
+        "remediation": "Preserve the distinct ridge task and first-response record; get independent review that the taught path reasoning is sufficient without leaking the exact barrier decision."
+      },
+      "check": {
+        "correct_option": "B",
+        "physics": "At ridge U=(1 kg)(10 m/s²)(6 m)=60 J > E=50 J; inaccessible"
+      }
+    },
+    {
+      "id": "potential-force",
+      "source_qids": [
+        "Q10"
+      ],
+      "B3": {
+        "decision": "HOLD",
+        "reason": "Core1A solves one differentiable algebraic linear potential and includes a prose finite-slope example. It has no guided two-interval reconstruction of force from a plotted potential, nor a worked nondifferentiable-corner boundary.",
+        "missing": [
+          "A non-reserved guided graphical interval-slope decision",
+          "Explicit worked distinction between an open linear interval and the potential's corner"
+        ],
+        "remediation": "Teach a contrasting graph-slope example and differentiability boundary without reproducing the reserved piecewise values or shapes."
+      },
+      "B4": {
+        "decision": "HOLD",
+        "design_strength": "PROMISING_TRANSFER_DESIGN",
+        "reason": "The student must calculate two interval slopes and apply the negative-gradient sign, which is a genuine representation/segmentation change. The answer options do not test the corner, even though the old mapping claimed it did; mapping now corrected.",
+        "remediation": "Keep the open-interval claim precise. If corner interpretation is an intended target, assess it with a separate genuinely fresh prompt after sufficient teaching."
+      },
+      "check": {
+        "correct_option": "A",
+        "physics": "Slopes +4 and −3 J/m imply forces −4 and +3 N on the two open intervals; at x=2 derivative undefined"
+      }
+    },
+    {
+      "id": "momentum-fragments",
+      "source_qids": [
+        "Q11"
+      ],
+      "B3": {
+        "decision": "HOLD",
+        "reason": "The example relies on a rest-start system with zero initial momentum. A prose transfer note says to compute nonzero initial momentum if moving, but does not guide such a model decision. The calculation of energy change for moving-parent fragmentation is also not guided.",
+        "missing": [
+          "A distinct worked example with nonzero initial momentum and explicit signed-frame choice",
+          "A worked distinction between momentum conservation and kinetic-energy change through stored energy",
+          "Scope approval for cross-topic momentum content within WPE"
+        ],
+        "remediation": "Teach a guided nonzero-initial-momentum conservation setup using a different context and values, plus explicit energy-source accounting; retain the reserved moving-parent task."
+      },
+      "B4": {
+        "decision": "HOLD",
+        "design_strength": "PROMISING_TRANSFER_DESIGN",
+        "reason": "Unlike the guided rest case, the challenge requires conservation with nonzero initial momentum plus an independent kinetic-energy comparison; physics answer is consistent, but no student reconstruction or approved scope evidence is present.",
+        "remediation": "Obtain WPE scope authorization and independent B3/B4 review; use first-attempt reasoning evidence rather than answer-option agreement."
+      },
+      "check": {
+        "correct_option": "A",
+        "physics": "p_initial=8; p_small=5, v_heavy=(8−5)/1.5=2 m/s; K_initial=16 J, K_final=28 J, change +12 J"
+      }
+    }
+  ],
+  "decision_rule": "Do not promote Core1A or Core1B; revise candidate teaching and challenge specifications, preserve the original reserved B tasks until a governed review authorizes any change, then seek independent subject/QRT/Owner acceptance."
+}

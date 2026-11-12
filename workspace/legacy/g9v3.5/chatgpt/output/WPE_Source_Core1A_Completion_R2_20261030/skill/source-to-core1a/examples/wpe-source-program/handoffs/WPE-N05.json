@@ -1,0 +1,1813 @@
+{
+  "schema": "core1a-source-handoff/v2",
+  "id": "WPE-N05",
+  "title": "Conservative interaction and path independence",
+  "status": "CANDIDATE",
+  "purpose": "CORE1A_PREPARATION",
+  "sources": [
+    {
+      "id": "REFERENCE",
+      "path": "sources/reference-ontology.json",
+      "sha256": "0fb53c653d7cd5b5f6e94ba5ed096278aa42f5d1429eac24981ee8dffa168acf",
+      "role": "REFERENCE_SOURCE",
+      "authority": "CANDIDATE_REFERENCE"
+    },
+    {
+      "id": "BOOK",
+      "path": "sources/book.md",
+      "sha256": "a33f19b308ea81c7eb527546e44b6bbd4b4adf26aed7116013ac01218cc1bbb8",
+      "role": "BOOK_TEXT",
+      "authority": "OWNER_LOCAL_UNAUTHENTICATED"
+    },
+    {
+      "id": "SPINE",
+      "path": "sources/spine.md",
+      "sha256": "07338e242e363becf2e55a9637d29fd178e37236fd730e5aac0a1211f1d8ecf9",
+      "role": "SYLLABUS",
+      "authority": "OWNER_LOCAL_UNAUTHENTICATED"
+    },
+    {
+      "id": "LIBRARY",
+      "path": "sources/library.json",
+      "sha256": "84fe88387e33a03bf87bf1f537bae8c447f5b86f0d77a854c899ad70f12d8258",
+      "role": "CANONICAL_CANDIDATE",
+      "authority": "CANDIDATE_REFERENCE"
+    },
+    {
+      "id": "PKG_SCHEMA",
+      "path": "sources/package.schema.json",
+      "sha256": "b645f4b5beb9132d6e38b628b1416846201d44dec16a5f04af9a252e9e891d93",
+      "role": "NATIVE_CONTRACT",
+      "authority": "LOCAL_CONTRACT"
+    },
+    {
+      "id": "SCAN-4",
+      "path": "sources/page_04.jpg",
+      "sha256": "6ca8b187415073f13a5c4638fc1dc42c4a09a7c682f663d58b384c089701257c",
+      "role": "SOURCE_SCAN",
+      "authority": "OWNER_LOCAL_UNAUTHENTICATED"
+    },
+    {
+      "id": "SCAN-6",
+      "path": "sources/page_06.jpg",
+      "sha256": "bef1126f750a833860588c49295fc50e28de5eb485b8acb5932e7a2388e5d500",
+      "role": "SOURCE_SCAN",
+      "authority": "OWNER_LOCAL_UNAUTHENTICATED"
+    }
+  ],
+  "units": [
+    {
+      "id": "U-BOOK-1",
+      "source_ref": "BOOK",
+      "kind": "LINES",
+      "locator": {
+        "start": 170,
+        "end": 185
+      },
+      "content": "## 4. Conservative and Non-Conservative Forces\n\n### Conservative Forces\nA force is said to be **conservative** if:\n1. The work done by it in moving a particle from one point to another depends **only on the initial and final positions**, and is independent of the path taken.\n2. The work done by the force along any closed path is identically zero:\n   $$\\oint \\vec{F} \\cdot d\\vec{r} = 0$$\n\n*Examples*: Gravitational force, electrostatic force, elastic spring force. All central forces are conservative.\n\n### Non-Conservative Forces\nIf the work done by a force in moving a body between two points depends on the specific path followed, the force is **non-conservative**.\n- The work done along a closed path is non-zero: $\\oint \\vec{F} \\cdot d\\vec{r} \\ne 0$.\n- Energy is dissipated into non-recoverable thermal, acoustic, or internal forms.\n\n*Examples*: Frictional force, viscous drag.",
+      "digest": "sha256:d7dc4d32bca842894cf253b7822966f7b3e07b13193c81d67a8a1604dba29d74"
+    },
+    {
+      "id": "U-BOOK-2",
+      "source_ref": "BOOK",
+      "kind": "LINES",
+      "locator": {
+        "start": 315,
+        "end": 326
+      },
+      "content": "### 7.1 Potential Energy\n\n#### 7.1.1 Concept\nPotential energy ($U$) is the energy possessed by a body or system by virtue of its position, configuration, or spatial state. It is independent of the dynamic trajectory by which the system arrived at that state.\n\nPotential energy is intrinsically a relative quantity and requires the choice of a reference zero level ($U = 0$).\n\n#### 7.1.2 Definition\n$$\\Delta U = U_B - U_A = -W_{c}(A \\to B) = -\\int_{A}^{B} \\vec{F}_c \\cdot d\\vec{r}$$\n\n> [!IMPORTANT]\n> Potential energy is defined **strictly for conservative forces**. It cannot be defined for non-conservative forces because their work depends on the path taken.",
+      "digest": "sha256:94c0b419853bc43b310800d3cd14337b3b0c45753656888e3dfb9a56cb955cd8"
+    },
+    {
+      "id": "U-SPINE",
+      "source_ref": "SPINE",
+      "kind": "LINES",
+      "locator": {
+        "start": 15,
+        "end": 15
+      },
+      "content": "| WPE-N05 | §4 Conservative and non-conservative forces | WEP-04 Path independence | core; the closed-loop integral and curl form are beyond Grade 9 | 4 |",
+      "digest": "sha256:9252b210de93b7d2a71ead8738bd05e84960368646eb1e76c210ecba67726daf"
+    },
+    {
+      "id": "U-REFERENCE-WEP-04",
+      "source_ref": "REFERENCE",
+      "kind": "JSON_POINTER",
+      "locator": {
+        "pointer": "/atomic_competencies/WEP-04"
+      },
+      "content": {
+        "title": "Conservative Forces & Path Independence",
+        "definition": "A force is conservative if the work it performs along any path depends solely on the initial and final coordinates, which is mathematically equivalent to having zero curl and zero closed-loop line integral.",
+        "canonical_rules": [
+          "Closed path invariant: oint F_c . dr = 0 for any closed contour.",
+          "In 2D Cartesian fields F = F_x i + F_y j, conservative condition requires dF_x/dy = dF_y/dx.",
+          "Path independence allows selecting the algebraically simplest integration path between two points."
+        ],
+        "operational_heuristics": [
+          "Test partial derivative cross-symmetry: dF_x/dy == dF_y/dx.",
+          "If symmetric, compute work by path-independent potential difference: W = U(A) - U(B)."
+        ],
+        "boundary_conditions": [
+          "Closed loop: W_closed = 0.",
+          "Friction / drag: oint f . dr < 0 (strictly non-conservative)."
+        ],
+        "prerequisites": [
+          "P2"
+        ],
+        "transfer_targets": [
+          "PHYS-WEP-023"
+        ]
+      },
+      "digest": "sha256:4f15ebaccfc5441615ca86dced12e09e8e7585ef2b5ef294904f983536008228"
+    },
+    {
+      "id": "U-MICRO",
+      "source_ref": "LIBRARY",
+      "kind": "JSON_POINTER",
+      "locator": {
+        "pointer": "/microtopics/2"
+      },
+      "content": {
+        "id": "MIC-PHY-WEP-POTENTIAL-ELIGIBILITY",
+        "version": "0.1.0",
+        "status": "CANDIDATE",
+        "source_refs": [
+          "SRC-AUTHOR-WEP"
+        ],
+        "evidence_refs": [],
+        "extensions": {},
+        "title": "Potential energy belongs only to endpoint-determined interactions",
+        "bucket_id": "BUCKET-PHY-WORK-ENERGY-POWER",
+        "primary_capability_ref": "CAP-WEP-POTENTIAL-ELIGIBILITY",
+        "intrinsic_badge": "HARD",
+        "badge_reason": "It is tempting to hide every force inside an energy label, especially once gravitational potential energy is familiar.",
+        "entry_assumptions": [
+          "Can distinguish work contributions by sign and can reason about the net work over a path."
+        ],
+        "inferential_jump": "Potential energy can replace the work bookkeeping for an interaction only when the relevant energy change is fixed by the endpoints; path-dependent friction must remain an explicit transfer.",
+        "teaching_path": [
+          {
+            "id": "WEP3-1",
+            "role": "DECLARE",
+            "action": "Choose two routes between the same starting and ending heights and compare the gravitational energy change.",
+            "why_valid": "If the endpoint change is the same for both routes, the account does not need the detailed path to determine that interaction's energy change.",
+            "inputs": [],
+            "output": "route A: same start/end heights.  route B: same start/end heights.  gravitational potential-energy change: same."
+          },
+          {
+            "id": "WEP3-2",
+            "role": "TRANSFORM",
+            "action": "Now add kinetic friction and compare a short route with a longer route between comparable endpoints.",
+            "why_valid": "Friction acts along the travelled path, so changing path length changes its energy transfer even when endpoints are comparable.",
+            "inputs": [],
+            "output": "short path -> smaller friction transfer.  longer path -> larger friction transfer."
+          },
+          {
+            "id": "WEP3-3",
+            "role": "VERIFY",
+            "action": "Ask whether one endpoint-only energy label could predict both friction cases without knowing which path was taken.",
+            "why_valid": "If two paths with comparable endpoints give different friction transfers, endpoint information alone cannot represent that interaction.",
+            "inputs": [],
+            "output": "friction: path identity required; endpoint-only potential-energy replacement rejected."
+          }
+        ],
+        "relation_refs": [],
+        "representation_refs": [],
+        "question_family_refs": [],
+        "misconceptions": [
+          {
+            "wrong_idea": "Every force can be assigned a potential energy so that its work can be hidden inside U.",
+            "diagnostic_prompt": "Can kinetic friction be represented by a single potential-energy difference that depends only on the start and finish positions?",
+            "repair": "Use potential energy only for interactions whose energy change is fixed by endpoints; keep path-dependent friction as an explicit transfer."
+          }
+        ],
+        "exit_task": {
+          "prompt": "Two routes share the same start and finish heights. Gravity gives the same potential-energy change on both, while friction removes more energy on the longer route. Which interaction is eligible for endpoint-only potential-energy bookkeeping?",
+          "source_ref": "SRC-AUTHOR-WEP",
+          "answer": {
+            "kind": "MODEL_RESPONSE",
+            "summary": "Gravity is eligible in this comparison; kinetic friction is not, because its transfer changes with the path.",
+            "reasoning": [
+              "The gravitational potential-energy change is fixed by the shared endpoints.",
+              "The frictional transfer changes when the route length changes.",
+              "An endpoint-only account cannot represent a path-dependent interaction."
+            ],
+            "check": "Change the route while keeping the endpoints fixed; an eligible endpoint-only contribution stays the same while the frictional transfer need not.",
+            "acceptable_alternatives": [],
+            "subpart_answers": [],
+            "verification_status": "CHECKED_BY_AUTHOR"
+          },
+          "oracle": {
+            "no_numeric_claim": "The answer classifies interactions by endpoint versus path dependence and computes no energy value."
+          }
+        },
+        "research_contribution": "Author-created path-dependence discrimination; no potential-energy formula is asserted.",
+        "prerequisite_refs": [
+          "CAP-WEP-NET-WORK-SIGN"
+        ],
+        "lineage": [],
+        "elicitation": {
+          "predict": {
+            "prompt": "Two paths start and end at the same heights, but one is much longer and rough. Before calculating, can one endpoint-only energy label represent the frictional transfer on both paths?",
+            "defensible_answer": "No. Friction depends on the travelled path, so comparable endpoints do not fix its transfer."
+          },
+          "attempt": {
+            "produces": "A two-column classification of gravity and kinetic friction as endpoint-determined or path-dependent, supported by the two-route comparison.",
+            "closure": "RUBRIC",
+            "rubric": [
+              {
+                "criterion": "Gravity is classified as endpoint-determined for the stated height comparison.",
+                "evidence_of": "Using the unchanged start/end heights across routes."
+              },
+              {
+                "criterion": "Kinetic friction is classified as path-dependent.",
+                "evidence_of": "Recognizing that route length changes the frictional transfer."
+              }
+            ],
+            "accepted": [
+              "'Gravity: endpoint-determined here. Friction: path-dependent, so keep its transfer explicit.'"
+            ],
+            "rejected": [
+              "'Both get potential energy because both are forces.' This ignores the path test."
+            ]
+          },
+          "reconstruct": {
+            "route": [
+              {
+                "ask": "If the start and finish heights are unchanged, what happens to the gravitational potential-energy change when the route bends?",
+                "why_this_ask": "It establishes the endpoint-only comparison using a familiar interaction.",
+                "from_step_ref": "WEP3-1"
+              },
+              {
+                "ask": "What changes for friction when the travelled route becomes longer?",
+                "why_this_ask": "The contrasting interaction exposes path dependence.",
+                "from_step_ref": "WEP3-2"
+              },
+              {
+                "ask": "Could one endpoint-only label distinguish the short and long friction routes?",
+                "why_this_ask": "The learner must test the proposed bookkeeping against two cases it would have to separate.",
+                "from_step_ref": "WEP3-3"
+              },
+              {
+                "ask": "Which interaction can therefore be replaced by an endpoint energy change in this comparison?",
+                "why_this_ask": "The classification is produced from the path test rather than memorized as a list."
+              }
+            ],
+            "differs_from_teaching_path": "The teaching path gives the two-route comparisons. The learner route first establishes one endpoint-determined case, then breaks the same idea with friction and derives the eligibility rule."
+          },
+          "boundary_test": {
+            "prompt": "Two different routes have the same start and finish but, by coincidence, friction removes the same amount of energy on both. Does that coincidence prove friction is endpoint-determined?",
+            "answer": "No. A single matching pair does not remove the path dependence; changing the path can still change the frictional transfer.",
+            "confirms": "Eligibility is about dependence on endpoints in general, not accidental equality in one example."
+          }
+        },
+        "construction_units": [
+          {
+            "id": "CU-PHY-WEP-POTENTIAL-ELIGIBILITY-1",
+            "decision_from": "inferential_jump",
+            "step_refs": [
+              "WEP3-1",
+              "WEP3-2",
+              "WEP3-3"
+            ],
+            "representation_ref": null,
+            "reveal_stage_refs": [],
+            "worked_anchor_ref": null,
+            "misconception_indexes": [
+              0
+            ],
+            "independent_checks": [],
+            "migrated_from": "teaching_path"
+          }
+        ]
+      },
+      "digest": "sha256:e17760a112539ce36043d182fe2ee9a7ed163f58f86fcff58e0075d26f574f52"
+    },
+    {
+      "id": "NATIVE-MICROTOPIC",
+      "source_ref": "PKG_SCHEMA",
+      "kind": "JSON_POINTER",
+      "locator": {
+        "pointer": "/$defs/microtopic"
+      },
+      "content": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "DISCOVERED",
+              "CANDIDATE",
+              "REVIEWED",
+              "CURATED",
+              "DISPUTED",
+              "STALE",
+              "RETIRED"
+            ]
+          },
+          "source_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "extensions": {
+            "type": "object",
+            "description": "Namespaced subject extensions; no scientific authority is inferred."
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "bucket_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "primary_capability_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "intrinsic_badge": {
+            "enum": [
+              "EASY",
+              "MEDIUM",
+              "HARD"
+            ]
+          },
+          "badge_reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "entry_assumptions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "inferential_jump": {
+            "type": "string",
+            "minLength": 1
+          },
+          "teaching_path": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/step"
+            },
+            "minItems": 1
+          },
+          "relation_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "representation_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "question_family_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "misconceptions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "wrong_idea": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "diagnostic_prompt": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "repair": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "wrong_idea",
+                "diagnostic_prompt",
+                "repair"
+              ]
+            },
+            "minItems": 1
+          },
+          "exit_task": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "prompt": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "answer": {
+                "$ref": "#/$defs/answer"
+              },
+              "oracle": {
+                "description": "How this exit answer is stood behind. Exactly one of: `verification`, naming a subject validator and binding its inputs to declared data; `held_by`, naming the known issue that explains why no oracle exists yet; or `no_numeric_claim`, saying why the answer asserts no computed value. Silence is not an option, because the exit answer is what a learner measures themselves against.",
+                "type": "object",
+                "minProperties": 1,
+                "maxProperties": 1,
+                "properties": {
+                  "verification": {
+                    "type": "object",
+                    "required": [
+                      "validator_id",
+                      "bindings"
+                    ],
+                    "properties": {
+                      "validator_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "bindings": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    },
+                    "additionalProperties": {
+                      "type": [
+                        "string",
+                        "number",
+                        "boolean"
+                      ]
+                    }
+                  },
+                  "held_by": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "no_numeric_claim": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "prompt",
+              "source_ref",
+              "answer",
+              "oracle"
+            ]
+          },
+          "research_contribution": {
+            "type": "string",
+            "minLength": 1
+          },
+          "prerequisite_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0,
+            "description": "Capability ids this microtopic assumes. A capability of another subject is written '<Subject>:<capability id>' (e.g. 'Mathematics:CAP-MATH-DERIVATIVE-RATE'); package_depth.py emits TEACH_PREREQUISITE_BRIDGE for any ref no library teaches."
+          },
+          "lineage": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "relation": {
+                  "enum": [
+                    "SUPERSEDES",
+                    "SPLIT_FROM",
+                    "MERGED_FROM"
+                  ]
+                },
+                "target_ref": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "relation",
+                "target_ref"
+              ]
+            },
+            "minItems": 0
+          },
+          "elicitation": {
+            "type": "object",
+            "additionalProperties": false,
+            "description": "The self-tutor cycle. Four of its six steps live here; diagnose and repair are misconceptions[].wrong_idea, .diagnostic_prompt and .repair, which already hold the same claim for the declarative product. A second home for one truth is the defect the authority gate exists to close.",
+            "properties": {
+              "predict": {
+                "type": "object",
+                "additionalProperties": false,
+                "description": "Pose the decision before revealing anything.",
+                "properties": {
+                  "prompt": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "The decision, posed so a learner can commit to an answer."
+                  },
+                  "defensible_answer": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "The answer that commitment is judged against. A prompt with no defensible answer is a musing, not a prediction."
+                  }
+                },
+                "required": [
+                  "prompt",
+                  "defensible_answer"
+                ]
+              },
+              "attempt": {
+                "type": "object",
+                "additionalProperties": false,
+                "description": "What the learner produces, and how it closes without a tutor.",
+                "properties": {
+                  "produces": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "What the learner should construct, draw, discriminate or explain."
+                  },
+                  "closure": {
+                    "enum": [
+                      "MODEL_RESPONSE",
+                      "RUBRIC",
+                      "CRITERIA"
+                    ],
+                    "description": "Which form of closure this attempt uses. Each value demands something the others do not, so that none is a synonym an author can pick to avoid work: MODEL_RESPONSE requires model_response, CRITERIA requires rubric, and RUBRIC requires rubric with accepted and rejected examples -- the spec's 'a rubric plus representative accepted and rejected answers', which is the stronger claim of the three."
+                  },
+                  "model_response": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "Closure as one response, where one is right."
+                  },
+                  "rubric": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/$defs/rubric_criterion"
+                    },
+                    "minItems": 1,
+                    "description": "Closure as a rubric, where several responses are valid."
+                  },
+                  "accepted": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 1,
+                    "description": "Representative responses the rubric accepts."
+                  },
+                  "rejected": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 1,
+                    "description": "Representative responses it rejects. A rubric with no rejected example has not been tested against anything."
+                  },
+                  "task": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "prompt"
+                    ],
+                    "description": "Schema 0.2.0: the concrete reconstruction task the learner performs (a body, givens, numbers or a situation). `produces` says what the attempt should contain; `task` is what the learner is asked to do. Rendered as the Core1B attempt.",
+                    "properties": {
+                      "prompt": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "givens": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "representation_ref": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "description": "The representation of this task's own situation (its bodies and values), shown with the Core1B attempt. When absent, Core1B falls back to the first construction unit's (Core1A) figure, which depicts a different situation."
+                      },
+                      "stage_refs": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "Stages of representation_ref safe to show before the attempt; default is the first stage only."
+                      },
+                      "response": {
+                        "$ref": "#/$defs/response"
+                      }
+                    }
+                  }
+                },
+                "required": [
+                  "produces",
+                  "closure"
+                ]
+              },
+              "reconstruct": {
+                "type": "object",
+                "additionalProperties": false,
+                "description": "The correct construction reached the way a learner would reach it. Held as questions rather than statements: teaching_path is the expert's summary, and a reconstruct route made of statements is that summary under a different key, which is exactly how this product became the declarative one.",
+                "properties": {
+                  "route": {
+                    "type": "array",
+                    "minItems": 1,
+                    "description": "The sequence of asks. Order is meaning: each one is answerable only once the previous has been answered.",
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "ask": {
+                          "type": "string",
+                          "minLength": 1,
+                          "description": "A question that moves the learner one decision forward. A sentence with a question mark on it is not an ask; the learner must be able to get it wrong."
+                        },
+                        "why_this_ask": {
+                          "type": "string",
+                          "minLength": 1,
+                          "description": "Why this question rather than another at this point. An author who cannot say this has ordered the route by the expert's convenience."
+                        },
+                        "from_step_ref": {
+                          "type": "string",
+                          "minLength": 1,
+                          "description": "The teaching_path step this ask arrives at, where one exists. Absent means the learner's route genuinely departs from the expert's, which is why both are held."
+                        }
+                      },
+                      "required": [
+                        "ask",
+                        "why_this_ask"
+                      ]
+                    }
+                  },
+                  "differs_from_teaching_path": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "How the learner's route differs from the expert's construction. This is the sentence a reviewer checks the A/B claim against, so it may not restate the teaching path it claims to differ from."
+                  }
+                },
+                "required": [
+                  "route",
+                  "differs_from_teaching_path"
+                ]
+              },
+              "boundary_test": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "prompt": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "A limiting case, reversal or edge condition."
+                  },
+                  "confirms": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "What passing it establishes, stated so that a recall question cannot be passed off as a boundary test."
+                  },
+                  "answer": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "What passing it looks like. The shared closure invariant has no exception for the last prompt in a cycle."
+                  }
+                },
+                "required": [
+                  "prompt",
+                  "answer",
+                  "confirms"
+                ]
+              }
+            },
+            "required": [
+              "predict",
+              "attempt",
+              "reconstruct",
+              "boundary_test"
+            ]
+          },
+          "construction_units": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/construction_unit"
+            }
+          },
+          "compact_anchor": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "prompt",
+              "result"
+            ],
+            "description": "Schema 0.2.0: the Core1 compact anchor, a one-line instance of the governing relation that makes the map usable before Core1A.",
+            "properties": {
+              "prompt": {
+                "type": "string",
+                "minLength": 1
+              },
+              "result": {
+                "type": "string",
+                "minLength": 1
+              },
+              "representation_ref": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The representation of this compact anchor's own situation, shown on the Core1 map. When absent, Core1 falls back to the microtopic's first representation_refs entry, which is often shared across microtopics."
+              }
+            }
+          }
+        },
+        "required": [
+          "id",
+          "version",
+          "status",
+          "source_refs",
+          "evidence_refs",
+          "extensions",
+          "title",
+          "bucket_id",
+          "primary_capability_ref",
+          "intrinsic_badge",
+          "badge_reason",
+          "entry_assumptions",
+          "inferential_jump",
+          "teaching_path",
+          "relation_refs",
+          "representation_refs",
+          "question_family_refs",
+          "misconceptions",
+          "exit_task",
+          "research_contribution",
+          "prerequisite_refs",
+          "lineage"
+        ]
+      },
+      "digest": "sha256:1686d613a7e669b7219db2e969b3a74ffda954bb7f4966bcd221abf16148e57d"
+    },
+    {
+      "id": "NATIVE-STEP",
+      "source_ref": "PKG_SCHEMA",
+      "kind": "JSON_POINTER",
+      "locator": {
+        "pointer": "/$defs/step"
+      },
+      "content": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "action": {
+            "type": "string",
+            "minLength": 1
+          },
+          "why_valid": {
+            "type": "string",
+            "minLength": 1
+          },
+          "inputs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "output": {
+            "type": "string",
+            "minLength": 1
+          },
+          "role": {
+            "description": "What the step does to the state. A DECLARE step fixes a convention or a domain and legitimately produces no computation; a TRANSFORM step changes the mathematical state and must show the changed state, not describe it; a VERIFY step checks a result against something already established.",
+            "enum": [
+              "DECLARE",
+              "TRANSFORM",
+              "VERIFY"
+            ]
+          },
+          "source_ref": {
+            "type": "string",
+            "minLength": 1,
+            "description": "The source this step's claim rests on. Absent means the step is the author's own construction, which is legitimate and is not the same as source-supported."
+          }
+        },
+        "required": [
+          "id",
+          "role",
+          "action",
+          "why_valid",
+          "inputs",
+          "output"
+        ]
+      },
+      "digest": "sha256:bef05081da5d29b5d9840965decc3edc4f41c61eca3d657a6a33f3c8f7eb3407"
+    },
+    {
+      "id": "NATIVE-CONSTRUCTION_UNIT",
+      "source_ref": "PKG_SCHEMA",
+      "kind": "JSON_POINTER",
+      "locator": {
+        "pointer": "/$defs/construction_unit"
+      },
+      "content": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "One distinct decision/event of a microtopic's construction, taught as its own unit (Core1A) and reconstructed in Core1B.",
+        "required": [
+          "id",
+          "step_refs"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^CU-[A-Z0-9-]+$"
+          },
+          "extensions": {
+            "type": "object",
+            "description": "Namespaced unit-level extensions. Repeated blueprint applicability may use extensions['grade9v3:component_waivers'] with the same {COMPONENT_ID: reason} contract as a top-level record."
+          },
+          "decision": {
+            "type": "string",
+            "minLength": 1,
+            "description": "The move the learner must make in this unit, in words."
+          },
+          "step_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1,
+            "description": "teaching_path step ids this unit covers, in order."
+          },
+          "representation_ref": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Representation that stages this unit."
+          },
+          "reveal_stage_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "That representation's reveal stages used by this unit, in order."
+          },
+          "worked_anchor_ref": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Question (exposure CORE1A) whose route exercises this unit's move."
+          },
+          "bank_anchor_ref": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "description": "A question of the product's bank (an owner-supplied or exam question, not a question of this package) that this unit works through as its worked example: the page shows the question as its owner wrote it with its verified route. Resolved when the product is built, so a package does not carry a copy of the question. Use it for the question the unit builds toward; use worked_anchor_ref for a question the package authors itself."
+          },
+          "crux_question_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1,
+            "description": "Bank questions whose crux this unit builds: the move a learner is most likely to miss in each. The toughest question of a set must be named here by a unit of the concept it belongs to; its difficulty band does not prescribe the unit's component or panel count."
+          },
+          "crux_step_ref": {
+            "type": "string",
+            "minLength": 1,
+            "description": "The teaching_path step of this unit (one of its step_refs) that builds the move named questions in crux_question_refs turn on. The page marks that step, so a reader can see where the unit does the work the hard question needs."
+          },
+          "misconception_indexes": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "description": "Indexes into microtopic.misconceptions (wrong path, diagnose, repair)."
+          },
+          "relation_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "description": "The microtopic's relations this unit uses, shown as the unit's own equation card. Absent: the first unit shows all of the microtopic's relations."
+          },
+          "independent_checks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/independent_check"
+            }
+          },
+          "migrated_from": {
+            "type": "string",
+            "description": "Set by package_migrate.py when the unit was derived mechanically (e.g. 'teaching_path'); cleared when an author reviews it."
+          },
+          "decision_from": {
+            "enum": [
+              "inferential_jump"
+            ],
+            "description": "Set instead of `decision` when the unit's decision is the microtopic's own field (migration); one source of truth, no copied text."
+          }
+        },
+        "anyOf": [
+          {
+            "required": [
+              "decision"
+            ]
+          },
+          {
+            "required": [
+              "decision_from"
+            ]
+          }
+        ]
+      },
+      "digest": "sha256:6087cdf85dbacc13bc16269c97e18a6d397fb69ad04e18ed0e56ad8bd27b1dfa"
+    },
+    {
+      "id": "NATIVE-REPRESENTATION",
+      "source_ref": "PKG_SCHEMA",
+      "kind": "JSON_POINTER",
+      "locator": {
+        "pointer": "/$defs/representation"
+      },
+      "content": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "DISCOVERED",
+              "CANDIDATE",
+              "REVIEWED",
+              "CURATED",
+              "DISPUTED",
+              "STALE",
+              "RETIRED"
+            ]
+          },
+          "source_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "extensions": {
+            "type": "object",
+            "description": "Namespaced subject extensions; no scientific authority is inferred."
+          },
+          "kind": {
+            "type": "string",
+            "minLength": 1
+          },
+          "purpose": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required_elements": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "relation_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "read_order": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "instance_constraints": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "accessibility": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "misleading_alternatives": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "rendered_asset_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "scene_instances": {
+            "description": "Concrete figures satisfying this representation. Everything above states what a figure of this kind must show; an instance states one actual figure, bound to the data it draws, so the library can compile a figure instead of only requiring one.",
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/scene_instance"
+            },
+            "minItems": 0
+          },
+          "correspondence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "element": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "The part of the picture, named as required_elements names it."
+                },
+                "symbol": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "The symbol it stands for, as the governing relation writes it."
+                },
+                "in_words": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "The same thing said in words, which is the third leg of the bridge."
+                }
+              },
+              "required": [
+                "element",
+                "symbol",
+                "in_words"
+              ]
+            },
+            "minItems": 0,
+            "description": "The representation bridge. required_elements says what the picture must contain and the relation's symbols say what the algebra means, but nothing bound one to the other, so the correspondence a learner must make was asserted rather than held. Naming all three legs is what makes it explicit in both directions rather than a caption pointing one way."
+          },
+          "interactive_resource_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0,
+            "description": "ACTIVITY resources that implement or manipulate this canonical representation. The representation remains academic authority."
+          },
+          "reveal_stages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/visual_stage"
+            },
+            "minItems": 0,
+            "description": "Ordered author-defined reveal states for progressive visual support. No global stage count is imposed."
+          },
+          "support_stage_map": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/support_stage_binding"
+            },
+            "minItems": 0,
+            "description": "Optional mapping from matrix pre-attempt support level to initial representation stage."
+          }
+        },
+        "required": [
+          "id",
+          "version",
+          "status",
+          "source_refs",
+          "evidence_refs",
+          "extensions",
+          "kind",
+          "purpose",
+          "required_elements",
+          "relation_refs",
+          "read_order",
+          "instance_constraints",
+          "accessibility",
+          "misleading_alternatives",
+          "rendered_asset_refs",
+          "scene_instances"
+        ]
+      },
+      "digest": "sha256:b9d7645031777bfc8abda988531e7cc77957329f012d0e58dcd04ed261940b56"
+    },
+    {
+      "id": "NATIVE-RELATION",
+      "source_ref": "PKG_SCHEMA",
+      "kind": "JSON_POINTER",
+      "locator": {
+        "pointer": "/$defs/relation"
+      },
+      "content": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "DISCOVERED",
+              "CANDIDATE",
+              "REVIEWED",
+              "CURATED",
+              "DISPUTED",
+              "STALE",
+              "RETIRED"
+            ]
+          },
+          "source_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "extensions": {
+            "type": "object",
+            "description": "Namespaced subject extensions; no scientific authority is inferred."
+          },
+          "expression": {
+            "type": "string",
+            "minLength": 1
+          },
+          "meaning": {
+            "type": "string",
+            "minLength": 1
+          },
+          "symbols": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "symbol": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "meaning": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "unit_or_domain": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "symbol",
+                "meaning",
+                "unit_or_domain"
+              ]
+            },
+            "minItems": 1
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "derivation": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/step"
+            },
+            "minItems": 1
+          },
+          "limits": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "checks": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "mathml": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Restricted presentation MathML for this relation, so a product can render it without re-authoring."
+          },
+          "gate_relation_ref": {
+            "description": "The engineering gate relation this is a bound copy of. Subject truth is owned by the gate registry; the library holds a copy so the compiler can reach it, and that copy is checked against the owner. null says no gate backs this relation: that is true of a subject that declares no gates (a sandbox, or a contract-only subject), and for a subject that has gates Shared/library/authority.py reports it as GATE_RELATION_BINDING_ABSENT.",
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "version",
+          "status",
+          "source_refs",
+          "evidence_refs",
+          "extensions",
+          "expression",
+          "meaning",
+          "symbols",
+          "conditions",
+          "derivation",
+          "limits",
+          "checks",
+          "gate_relation_ref"
+        ]
+      },
+      "digest": "sha256:ecbfa4eeda8187c8418eb9116384cbea37434ca4d21fb034727742bc45cf8909"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "The extract characterizes conservative work by endpoint dependence and zero closed-loop work.",
+      "unit_refs": [
+        "U-BOOK-1"
+      ],
+      "source_scan_refs": [
+        "SCAN-4",
+        "SCAN-6"
+      ],
+      "conditions": [
+        "Specify force field, path class, domain and any time or velocity dependence before invoking equivalence tests.",
+        "Endpoint independence must hold for the relevant allowed paths; one successful loop is insufficient."
+      ],
+      "disputes": [
+        "All central forces are conservative is too broad without the force law/domain assumptions.",
+        "A non-conservative force need not perform nonzero work on every possible closed path."
+      ],
+      "qualification": "UNREVIEWED"
+    },
+    {
+      "id": "C2",
+      "statement": "It contrasts path-dependent dissipative processes with conservative interactions.",
+      "unit_refs": [
+        "U-BOOK-1"
+      ],
+      "source_scan_refs": [
+        "SCAN-4",
+        "SCAN-6"
+      ],
+      "conditions": [
+        "Specify force field, path class, domain and any time or velocity dependence before invoking equivalence tests.",
+        "Endpoint independence must hold for the relevant allowed paths; one successful loop is insufficient."
+      ],
+      "disputes": [
+        "All central forces are conservative is too broad without the force law/domain assumptions.",
+        "A non-conservative force need not perform nonzero work on every possible closed path."
+      ],
+      "qualification": "UNREVIEWED"
+    },
+    {
+      "id": "C3",
+      "statement": "Its blanket central-force statement and converse-style descriptions require a specified force law and domain.",
+      "unit_refs": [
+        "U-BOOK-1"
+      ],
+      "source_scan_refs": [
+        "SCAN-4",
+        "SCAN-6"
+      ],
+      "conditions": [
+        "Specify force field, path class, domain and any time or velocity dependence before invoking equivalence tests.",
+        "Endpoint independence must hold for the relevant allowed paths; one successful loop is insufficient."
+      ],
+      "disputes": [
+        "All central forces are conservative is too broad without the force law/domain assumptions.",
+        "A non-conservative force need not perform nonzero work on every possible closed path."
+      ],
+      "qualification": "UNREVIEWED"
+    }
+  ],
+  "binding": {
+    "spine_node": "WPE-N05",
+    "spine_unit_ref": "U-SPINE",
+    "canonical_matches": [
+      {
+        "unit_ref": "U-MICRO",
+        "microtopic_id": "MIC-PHY-WEP-POTENTIAL-ELIGIBILITY",
+        "capability_id": "CAP-WEP-POTENTIAL-ELIGIBILITY",
+        "relationship": "DIRECT_CANDIDATE",
+        "semantic_status": "UNREVIEWED"
+      }
+    ],
+    "canonical_gaps": [
+      "Canonical microtopic is only a candidate concept; no complete force-field/path-independence derivation relation is bound."
+    ]
+  },
+  "warrants": [
+    {
+      "id": "W-CANDIDATE",
+      "claim_refs": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "unit_refs": [
+        "U-MICRO"
+      ],
+      "reference_unit_refs": [
+        "U-REFERENCE-WEP-04"
+      ],
+      "needed_reason": "Candidate support for the stated requirement; correspondence and scientific conditions require distinct review.",
+      "conditions": [
+        "Specify force field, path class, domain and any time or velocity dependence before invoking equivalence tests.",
+        "Endpoint independence must hold for the relevant allowed paths; one successful loop is insufficient."
+      ],
+      "qualification": "CANDIDATE",
+      "gap": "No independent qualification receipt; scope may be partial."
+    },
+    {
+      "id": "W-GAP",
+      "claim_refs": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "unit_refs": [],
+      "reference_unit_refs": [
+        "U-REFERENCE-WEP-04"
+      ],
+      "needed_reason": "A missing decisive warrant is retained rather than replaced with a nearby formula.",
+      "conditions": [
+        "Specify force field, path class, domain and any time or velocity dependence before invoking equivalence tests.",
+        "Endpoint independence must hold for the relevant allowed paths; one successful loop is insufficient."
+      ],
+      "qualification": "MISSING",
+      "gap": "Canonical microtopic is only a candidate concept; no complete force-field/path-independence derivation relation is bound."
+    }
+  ],
+  "construction": {
+    "inputs": [
+      "A specified interaction/force law, endpoints and allowed paths.",
+      "A proposed work comparison or closed-loop criterion."
+    ],
+    "output": "Brief for deciding when a potential-energy construction is licensed by endpoint-determined work.",
+    "obstacle": "One convenient path or the word central is treated as sufficient proof of conservativeness.",
+    "decisive_move": "Identify the actual force/work dependence and test the claimed endpoint criterion across the specified admissible paths.",
+    "entry_assumptions": [
+      "Prerequisite nodes: WPE-N01, WPE-N02",
+      "Specify force field, path class, domain and any time or velocity dependence before invoking equivalence tests.",
+      "Endpoint independence must hold for the relevant allowed paths; one successful loop is insufficient."
+    ],
+    "conventions": [
+      "Specify force field, path class, domain and any time or velocity dependence before invoking equivalence tests.",
+      "Endpoint independence must hold for the relevant allowed paths; one successful loop is insufficient."
+    ],
+    "steps": [
+      {
+        "id": "REQ-INPUT",
+        "role": "INPUT",
+        "requirement": "Fix the chosen model and inputs: A specified interaction/force law, endpoints and allowed paths.; A proposed work comparison or closed-loop criterion.",
+        "why_needed": "Prevents a change of body, reference or given condition.",
+        "unit_refs": [
+          "U-BOOK-1"
+        ],
+        "claim_refs": [
+          "C1"
+        ],
+        "warrant_refs": [
+          "W-CANDIDATE",
+          "W-GAP"
+        ],
+        "depends_on": []
+      },
+      {
+        "id": "REQ-REPRESENT",
+        "role": "REPRESENT",
+        "requirement": "Bind A,B and two paths, closed loop, Delta U=-W_c to the chosen physical situation.",
+        "why_needed": "Correspondence is needed before symbolic manipulation.",
+        "unit_refs": [
+          "U-BOOK-1"
+        ],
+        "claim_refs": [
+          "C2"
+        ],
+        "warrant_refs": [
+          "W-CANDIDATE",
+          "W-GAP"
+        ],
+        "depends_on": [
+          "REQ-INPUT"
+        ]
+      },
+      {
+        "id": "REQ-CONNECT",
+        "role": "CONNECT",
+        "requirement": "Identify the actual force/work dependence and test the claimed endpoint criterion across the specified admissible paths.",
+        "why_needed": "This is the required intellectual bridge, not a formula label.",
+        "unit_refs": [
+          "U-BOOK-1"
+        ],
+        "claim_refs": [
+          "C1",
+          "C2",
+          "C3"
+        ],
+        "warrant_refs": [
+          "W-CANDIDATE",
+          "W-GAP"
+        ],
+        "depends_on": [
+          "REQ-REPRESENT"
+        ]
+      },
+      {
+        "id": "REQ-TRANSFORM",
+        "role": "TRANSFORM",
+        "requirement": "State the scope of the endpoint criterion and why a potential difference can be introduced under those conditions.",
+        "why_needed": "Every consequential transformation needs its actual warrant and conditions.",
+        "unit_refs": [
+          "U-BOOK-1"
+        ],
+        "claim_refs": [
+          "C1"
+        ],
+        "warrant_refs": [
+          "W-CANDIDATE",
+          "W-GAP"
+        ],
+        "depends_on": [
+          "REQ-CONNECT"
+        ]
+      },
+      {
+        "id": "REQ-VERIFY",
+        "role": "VERIFY",
+        "requirement": "Compare alternate path work and a loop account under the same stated force model.",
+        "why_needed": "A second account must test the same claim without merely repeating its expression.",
+        "unit_refs": [
+          "U-BOOK-1"
+        ],
+        "claim_refs": [
+          "C2"
+        ],
+        "warrant_refs": [
+          "W-CANDIDATE",
+          "W-GAP"
+        ],
+        "depends_on": [
+          "REQ-TRANSFORM"
+        ]
+      },
+      {
+        "id": "REQ-BOUNDARY",
+        "role": "BOUNDARY",
+        "requirement": "Preserve: Do not import curl/gradient equivalences without their domain and differentiability conditions.",
+        "why_needed": "The result must not be generalized outside its reviewed scope.",
+        "unit_refs": [
+          "U-BOOK-1"
+        ],
+        "claim_refs": [
+          "C3"
+        ],
+        "warrant_refs": [
+          "W-CANDIDATE",
+          "W-GAP"
+        ],
+        "depends_on": [
+          "REQ-VERIFY"
+        ]
+      }
+    ],
+    "representation_needs": [
+      {
+        "id": "REP-1",
+        "asset_ref": null,
+        "status": "MISSING",
+        "source_scan_refs": [
+          "SCAN-4",
+          "SCAN-6"
+        ],
+        "correspondence": [
+          {
+            "symbol": "A,B and two paths",
+            "element": "Required scene/graph element 1",
+            "in_words": "Future teacher must bind A,B and two paths to this node’s chosen object, coordinate and interval."
+          },
+          {
+            "symbol": "closed loop",
+            "element": "Required scene/graph element 2",
+            "in_words": "Future teacher must bind closed loop to this node’s chosen object, coordinate and interval."
+          },
+          {
+            "symbol": "Delta U=-W_c",
+            "element": "Required scene/graph element 3",
+            "in_words": "Future teacher must bind Delta U=-W_c to this node’s chosen object, coordinate and interval."
+          }
+        ],
+        "requirement": "Retain original scan evidence; qualify generated redraws and author a suitable native teaching representation with correct objects, axes, signs and regime. No new teaching figure is emitted."
+      }
+    ],
+    "worked_example_requirement": "Use retained illustrations as author references only. After the approval gate, author a distinct complete non-exam teaching example with why-valid steps; do not expose a protected Core2/Core1B route.",
+    "boundary_requirements": [
+      "Do not import curl/gradient equivalences without their domain and differentiability conditions."
+    ],
+    "wrong_path_candidates": [
+      {
+        "id": "WRONG-1",
+        "hypothesis": "A force directed toward a center is automatically conservative in every model.",
+        "claim_refs": [
+          "C1",
+          "C2",
+          "C3"
+        ],
+        "diagnostic_contrast": "Separate direction-only information from a specified position-only radial law and its domain.",
+        "repair_requirement": "Demand the actual law and allowed paths rather than a category label.",
+        "observation": "NONE"
+      }
+    ],
+    "check_requirements": [
+      {
+        "id": "CHECK-1",
+        "claim_refs": [
+          "C1",
+          "C2",
+          "C3"
+        ],
+        "method": "Compare alternate path work and a loop account under the same stated force model.",
+        "expected_invariant": "A qualified endpoint-only potential predicts consistent differences around the permitted loop.",
+        "independence_basis": "Different representation or conservation/force account under matched assumptions; independence must be reviewed, not inferred from a new sentence.",
+        "status": "DESIGN_ONLY"
+      }
+    ]
+  },
+  "sl2_requirement_mapping": {
+    "status": "PENDING_REVIEWED_REQUIREMENT",
+    "task_identity": null,
+    "requirement_bindings": [],
+    "missing_input": "No independently adjudicated exact SL2/QRT requirement with matching current task/source/dependency and authority evidence has been supplied. Do not infer an exam operation/band from this book node."
+  },
+  "native_mapping": [
+    {
+      "schema_unit_ref": "NATIVE-MICROTOPIC",
+      "native_property": "entry_assumptions",
+      "handoff_pointer": "/construction/entry_assumptions",
+      "action": "AUTHOR_FROM_EVIDENCE"
+    },
+    {
+      "schema_unit_ref": "NATIVE-MICROTOPIC",
+      "native_property": "inferential_jump",
+      "handoff_pointer": "/construction/decisive_move",
+      "action": "AUTHOR_FROM_EVIDENCE"
+    },
+    {
+      "schema_unit_ref": "NATIVE-MICROTOPIC",
+      "native_property": "teaching_path",
+      "handoff_pointer": "/construction/steps",
+      "action": "AUTHOR_FROM_EVIDENCE"
+    },
+    {
+      "schema_unit_ref": "NATIVE-STEP",
+      "native_property": "why_valid",
+      "handoff_pointer": "/construction/steps",
+      "action": "AUTHOR_FROM_EVIDENCE"
+    },
+    {
+      "schema_unit_ref": "NATIVE-REPRESENTATION",
+      "native_property": "correspondence",
+      "handoff_pointer": "/construction/representation_needs",
+      "action": "AUTHOR_FROM_EVIDENCE"
+    },
+    {
+      "schema_unit_ref": "NATIVE-CONSTRUCTION_UNIT",
+      "native_property": "worked_anchor_ref",
+      "handoff_pointer": "/construction/worked_example_requirement",
+      "action": "AUTHOR_DISTINCT_EXAMPLE"
+    },
+    {
+      "schema_unit_ref": "NATIVE-MICROTOPIC",
+      "native_property": "primary_capability_ref",
+      "handoff_pointer": "/binding/canonical_matches",
+      "action": "RESOLVE_EXISTING_REFS"
+    }
+  ],
+  "review_requests": [
+    {
+      "id": "REVIEW-CLAIM-1",
+      "target_pointer": "/claims/0",
+      "target_digest": "sha256:4bcbcad1a1b15501d1b36c652b63a47b26872d548b1c8cd77c8b407a369dc38e",
+      "question": "Is the interpreted claim faithful to its exact source and valid under these explicit conditions?",
+      "required_evidence": [
+        "Exact original passage/scan locator and any transcription discrepancy.",
+        "Distinct qualified scientific disposition with reasoning, scope, reviewer identity/exposure and exact dependency versions."
+      ],
+      "status": "OPEN"
+    },
+    {
+      "id": "REVIEW-CLAIM-2",
+      "target_pointer": "/claims/1",
+      "target_digest": "sha256:e3c97e888bec3b290a51076f09e82bc3e3fd3340486c2525f51f480629232341",
+      "question": "Is the interpreted claim faithful to its exact source and valid under these explicit conditions?",
+      "required_evidence": [
+        "Exact original passage/scan locator and any transcription discrepancy.",
+        "Distinct qualified scientific disposition with reasoning, scope, reviewer identity/exposure and exact dependency versions."
+      ],
+      "status": "OPEN"
+    },
+    {
+      "id": "REVIEW-CLAIM-3",
+      "target_pointer": "/claims/2",
+      "target_digest": "sha256:490b56f7268e9743d1e1d5c8ff35f3548e69a3e930262548767c30bcd8febf84",
+      "question": "Is the interpreted claim faithful to its exact source and valid under these explicit conditions?",
+      "required_evidence": [
+        "Exact original passage/scan locator and any transcription discrepancy.",
+        "Distinct qualified scientific disposition with reasoning, scope, reviewer identity/exposure and exact dependency versions."
+      ],
+      "status": "OPEN"
+    },
+    {
+      "id": "REVIEW-WARRANTS",
+      "target_pointer": "/warrants",
+      "target_digest": "sha256:eb18c466523426353f2c766558fff7319398302b8a495ff0a850e70d4372680c",
+      "question": "Resolve the load-bearing warrants boundary against actual source and task evidence.",
+      "required_evidence": [
+        "Exact target digest and source/claim dependencies.",
+        "Authorized non-author review or actual adjudicated task; no status-enum substitution."
+      ],
+      "status": "OPEN"
+    },
+    {
+      "id": "REVIEW-CONSTRUCTION",
+      "target_pointer": "/construction",
+      "target_digest": "sha256:352ae96004f8828ed018baaf175aeebbb703ec7cbd66f6f35696ee6e45593d97",
+      "question": "Resolve the load-bearing construction boundary against actual source and task evidence.",
+      "required_evidence": [
+        "Exact target digest and source/claim dependencies.",
+        "Authorized non-author review or actual adjudicated task; no status-enum substitution."
+      ],
+      "status": "OPEN"
+    },
+    {
+      "id": "REVIEW-SL2_REQUIREMENT_MAPPING",
+      "target_pointer": "/sl2_requirement_mapping",
+      "target_digest": "sha256:26e9e0977453f5cf9c1c43eb72e225594b01c75dec8fe21fd439af3e39e8c4c5",
+      "question": "Resolve the load-bearing sl2_requirement_mapping boundary against actual source and task evidence.",
+      "required_evidence": [
+        "Exact target digest and source/claim dependencies.",
+        "Authorized non-author review or actual adjudicated task; no status-enum substitution."
+      ],
+      "status": "OPEN"
+    }
+  ],
+  "holds": [
+    {
+      "id": "H-SCIENCE",
+      "detail": "All interpreted claims and candidate warrants remain unqualified.",
+      "affects": [
+        "SCIENCE_QUALIFICATION"
+      ]
+    },
+    {
+      "id": "H-QRT",
+      "detail": "Missing exact reviewed SL2/QRT task and selected adapter/resolver.",
+      "affects": [
+        "CORE1A_TASK_ALIGNMENT"
+      ]
+    },
+    {
+      "id": "H-OWNER",
+      "detail": "Completed Core2 Owner approval precedes lesson authoring; Core1B follows Core1A approval. D3.1 paused.",
+      "affects": [
+        "CORE1A_AUTHORING",
+        "CORE1B_AUTHORING"
+      ]
+    },
+    {
+      "id": "H-WARRANT",
+      "detail": "Canonical microtopic is only a candidate concept; no complete force-field/path-independence derivation relation is bound.",
+      "affects": [
+        "WARRANT_QUALIFICATION",
+        "CORE1A_AUTHORING"
+      ]
+    }
+  ],
+  "review": {
+    "semantic": "NOT_RUN",
+    "core2_owner_approval": "PENDING",
+    "core1a_authoring": "NOT_STARTED",
+    "core1b_correspondence": "NOT_RUN"
+  },
+  "notes": [
+    "Author/exposed preparation; no independent academic review or learner observation.",
+    "All nine source images were visually inspected in this routine; the selected regions and limitations are in program.json. This is not full OCR, diagram equivalence or scientific acceptance.",
+    "Generated SVGs are derived material and remain unreviewed. Every original scan and SVG is retained; all linked source chapter assets resolve locally.",
+    "Book illustration badges are not official examination provenance. No new question or lesson is authored.",
+    "A matching source hash proves retained bytes, not accurate transcription or scientific truth.",
+    "The retained reference ontology supplies proposed material under WEP-04. It is a review lead, not the canonical library or a qualified replacement for missing chapter derivations. Its source_authority/canonical_rules labels are claims, not acceptance receipts."
+  ],
+  "dependency_digest": "sha256:eafcb91e76322e51d7c25a6aa40705571b28371c109d72bd124ad1fe92d652eb"
+}

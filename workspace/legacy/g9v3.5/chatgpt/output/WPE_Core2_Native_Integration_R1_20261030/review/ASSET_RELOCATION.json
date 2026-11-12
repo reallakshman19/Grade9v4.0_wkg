@@ -1,0 +1,27 @@
+[
+  {
+    "before": "D:/CodeD/g9v3.5/chatgpt/output/WPE_Textbook_Core2_R1_20261030/sources/images/fig_03_fbd_string_raising.svg",
+    "after": "D:/CodeD/g9v3.5/chatgpt/output/WPE_Core2_Native_Integration_R1_20261030/textbook-baseline/sources/images/fig_03_fbd_string_raising.svg",
+    "sha256": "9d408dcca1198fd6f5b08f63359c12007ae9428732be9d48dde32e8170e36df4"
+  },
+  {
+    "before": "D:/CodeD/g9v3.5/chatgpt/output/WPE_Textbook_Core2_R1_20261030/sources/images/fig_06_incline_block.svg",
+    "after": "D:/CodeD/g9v3.5/chatgpt/output/WPE_Core2_Native_Integration_R1_20261030/textbook-baseline/sources/images/fig_06_incline_block.svg",
+    "sha256": "c5a896866e7fcca2b2dd82e8408394e655ab8b4ef8edda3a3eb6d80cbad6ccd5"
+  },
+  {
+    "before": "D:/CodeD/g9v3.5/chatgpt/output/WPE_Textbook_Core2_R1_20261030/sources/images/fig_07_incline_fbd.svg",
+    "after": "D:/CodeD/g9v3.5/chatgpt/output/WPE_Core2_Native_Integration_R1_20261030/textbook-baseline/sources/images/fig_07_incline_fbd.svg",
+    "sha256": "98c664df1595322694f974c7fde38699fc337a6f7829786b00e0dd5fd133e6bd"
+  },
+  {
+    "before": "D:/CodeD/g9v3.5/chatgpt/output/WPE_Textbook_Core2_R1_20261030/sources/images/fig_09_overhanging_chain.svg",
+    "after": "D:/CodeD/g9v3.5/chatgpt/output/WPE_Core2_Native_Integration_R1_20261030/textbook-baseline/sources/images/fig_09_overhanging_chain.svg",
+    "sha256": "40510540074ad29b0f7634e680f8235356f64dbe969eb28b164edb7e30a00aa0"
+  },
+  {
+    "before": "D:/CodeD/g9v3.5/chatgpt/output/WPE_Textbook_Core2_R1_20261030/sources/images/fig_10_spring_block_wall.svg",
+    "after": "D:/CodeD/g9v3.5/chatgpt/output/WPE_Core2_Native_Integration_R1_20261030/textbook-baseline/sources/images/fig_10_spring_block_wall.svg",
+    "sha256": "c0a90c6fffcc88731316cb17fe34439e4bdccceda7a34d8deb585a2ba1d61bbc"
+  }
+]

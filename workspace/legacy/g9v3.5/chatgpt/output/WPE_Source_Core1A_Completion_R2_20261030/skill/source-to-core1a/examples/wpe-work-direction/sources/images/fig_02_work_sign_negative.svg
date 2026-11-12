@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 320" width="100%" height="100%" role="img" aria-label="Negative Work: Force applied at obtuse angle to displacement">
+  <title>Negative Work Done by Force</title>
+  <desc>A block moving horizontally forward experiences a backward retarding force at an obtuse angle theta, resulting in negative work.</desc>
+  <defs>
+    <marker id="arr-red-02" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arr-dark-02" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1e293b"/>
+    </marker>
+    <pattern id="hatch-02" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#94a3b8" stroke-width="1.5" />
+    </pattern>
+  </defs>
+  <style>
+    text { font-family: system-ui, -apple-system, sans-serif; fill: #1e293b; }
+    .bold { font-weight: bold; }
+    .math { font-style: italic; font-family: 'Times New Roman', serif; }
+  </style>
+
+  <!-- Ground surface -->
+  <line x1="60" y1="210" x2="590" y2="210" stroke="#1e293b" stroke-width="2.5" />
+  <rect x="60" y="210" width="530" height="20" fill="url(#hatch-02)" />
+
+  <!-- Block -->
+  <rect x="250" y="120" width="140" height="90" fill="#fef2f2" stroke="#1e293b" stroke-width="2.5" rx="2" />
+  <circle cx="320" cy="165" r="4" fill="#1e293b" />
+
+  <!-- Forward reference line -->
+  <line x1="320" y1="165" x2="450" y2="165" stroke="#64748b" stroke-width="1.5" stroke-dasharray="5,4" />
+
+  <!-- Force Vector F backwards at obtuse angle -->
+  <line x1="320" y1="165" x2="190" y2="85" stroke="#dc2626" stroke-width="3" marker-end="url(#arr-red-02)" />
+  <text x="170" y="85" font-size="18px" class="bold" fill="#dc2626">F</text>
+
+  <!-- Obtuse angle arc from horizontal around to F vector -->
+  <path d="M 380 165 A 60 60 0 0 0 255 125" fill="none" stroke="#1e293b" stroke-width="2" />
+  <text x="315" y="85" font-size="16px" class="math">&#952;</text>
+
+  <!-- Direction of motion vector -->
+  <line x1="450" y1="165" x2="560" y2="165" stroke="#1e293b" stroke-width="2.5" marker-end="url(#arr-dark-02)" />
+  <text x="455" y="145" font-size="16px" class="bold">Direction of Motion</text>
+
+  <!-- Caption -->
+  <text x="325" y="270" text-anchor="middle" font-size="16px" font-weight="600">Motion of block (Obtuse angle 90&#176; &lt; &#952; &#8804; 180&#176; &#8658; W = Fs cos&#952; &lt; 0)</text>
+</svg>

@@ -1,0 +1,17 @@
+{
+  "schema": "wpe-core2-public-projection-checks/v1",
+  "date": "2026-11-02",
+  "status": "ENGINEERING_ONLY; ACADEMIC_NOT_ADMITTED",
+  "asserted": {
+    "master_source_question_count": 70,
+    "source_display_count": 73,
+    "synthetic_control_count": 1,
+    "total_display": 74,
+    "unique_display_ids": true,
+    "nsep_once": true,
+    "nsep_multiselect": true,
+    "source_archive_owner_supplied": true,
+    "no_student_release_approval": true
+  },
+  "prior_checks": "Standalone local offline browser checks recorded PASS prior to rename. No post-deployment browser qualification claimed."
+}

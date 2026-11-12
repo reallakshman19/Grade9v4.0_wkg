@@ -1,0 +1,12 @@
+{
+  "source_id": "EX-N19",
+  "task_identity": "Q-ID-52",
+  "sequence": 45,
+  "batch_sequence": 15,
+  "paper": "JEE Main 2023 (Online) 30th January Evening Shift",
+  "stem_text": "A body of mass 2kg is initially at rest. It starts moving unidirectionally under the influence of a source of constant power P. Its displacement in 4s is (1)/(3)𝛼^(2)√(𝑃)m . The value of 𝛼 will be ______.",
+  "stem_sha256": "9739b34ab0a515db095df3f20655720d10bf0a5f3d057f175610930caf9d38ca",
+  "options": [],
+  "figure_reference": null,
+  "confidentiality_notice": "Source custody blind packet. Academic solve, answer key, and scoring omitted. Private review only."
+}

@@ -1,0 +1,11 @@
+node,title,claims,units,construction_roles,canonical_match,missing_warrant,science,reviewed_SL2,lesson
+WPE-N01,"Work, direction and signed contributions",3,12,6,DIRECT_CANDIDATE,False,UNQUALIFIED,MISSING,NOT_AUTHORED
+WPE-N02,Variable-force work and the spring bridge,3,11,6,PREREQUISITE_BRIDGE,True,UNQUALIFIED,MISSING,NOT_AUTHORED
+WPE-N03,Work–energy theorem and complete force accounting,3,12,6,DIRECT_CANDIDATE,False,UNQUALIFIED,MISSING,NOT_AUTHORED
+WPE-N04,"Kinetic energy, momentum relation and frame",3,12,6,SCOPE_NEARBY,True,UNQUALIFIED,MISSING,NOT_AUTHORED
+WPE-N05,Conservative interaction and path independence,3,10,6,DIRECT_CANDIDATE,True,UNQUALIFIED,MISSING,NOT_AUTHORED
+WPE-N06,"Potential-energy changes, reference zero and elastic storage",3,10,6,PREREQUISITE_BRIDGE,True,UNQUALIFIED,MISSING,NOT_AUTHORED
+WPE-N07,Force–potential slope: chapter and qualification gap,3,8,6,MISSING,True,UNQUALIFIED,MISSING,NOT_AUTHORED
+WPE-N08,"Conservation, distributed energy and contact regimes",3,13,6,DIRECT_CANDIDATE,True,UNQUALIFIED,MISSING,NOT_AUTHORED
+WPE-N09,"Friction work with body, frame and contact specified",3,10,6,MISSING,True,UNQUALIFIED,MISSING,NOT_AUTHORED
+WPE-N10,Average and instantaneous power; force versus net rate,3,11,6,DIRECT_CANDIDATE,False,UNQUALIFIED,MISSING,NOT_AUTHORED

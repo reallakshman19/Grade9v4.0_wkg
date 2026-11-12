@@ -1,0 +1,345 @@
+{
+  "review_id": "WPE-CORE2-ACADEMIC-REVIEW-R1",
+  "phase": "SEALED_BLIND_FIRST_PASS",
+  "sealed_at_utc": "2026-10-31T10:31:34.246806+00:00",
+  "author": "Fresh Independent Reviewer sub-agent /root/independent_academic_review",
+  "role_and_authority": "Source-bound Independent Reviewer: isolated inspection, derivation, checks, report only. No question admission, provenance authentication, product implementation, agents or release authority.",
+  "outcome": "A: D; B: C for the ideal lifting work; C: A; D: all a,b,c,d. No direct D3/D4 support in these four exact tasks under this independently applied rubric. Standard idealization qualifications are stated below, not scored as difficulty.",
+  "exposure": {
+    "prior_author_conclusions_seen": false,
+    "identity_map_seen": false,
+    "answer_keys_seen": false,
+    "sibling_material_seen": false,
+    "sources_seen": "Only six named blind inputs; original crop; official PDF page1 instructions and qualified Q57 extraction/render on printed page15. The 58. locator alone was used to terminate the crop; no Q58 stem/options were exposed. No network lookup.",
+    "other_guidance_seen": "PDF SKILL.md at C:/Users/reall/.codex/plugins/cache/openai-primary-runtime/pdf/26.1026.10807/skills/pdf/SKILL.md, read solely for source-reading technique. No author or source solution in it.",
+    "authorship": "All derivations, checks, scores and distinctions here are this reviewer's work. Parent supplied only source-bound assignment and source locators, not prior classifications or answers."
+  },
+  "source_receipt": {
+    "hash_algorithm": "SHA256",
+    "manifest_all_five_entries_match_actual_hash_and_byte_size": true,
+    "files": [
+      {
+        "path": "difficulty-rubric.json",
+        "sha256": "6e6f28bef1182222babf79508288c599585f5f55245abcb934892a1e2b65cfdf",
+        "bytes": 5594
+      },
+      {
+        "path": "official-paper.pdf",
+        "sha256": "c3e5770f56d60d4245ad5c707b53bbbee35745b643b063de11f51287261e5973",
+        "bytes": 1599358
+      },
+      {
+        "path": "original-saved-crop.png",
+        "sha256": "ae826bc82e01199473958c6c622c94851ef60fd54792d0e3b1f4ffd5442e13e7",
+        "bytes": 112366
+      },
+      {
+        "path": "physics-blueprint.json",
+        "sha256": "e6030a5933a803ddc39708414e6831c89c9565def78c09c99f58f95052c2b45f",
+        "bytes": 42675
+      },
+      {
+        "path": "questions.json",
+        "sha256": "b78803ed0b28c10158b94748b8a75e40fca4f6d93e152bb04cb1b7dda9497b1b",
+        "bytes": 3260
+      },
+      {
+        "path": "SOURCE_MANIFEST.json",
+        "sha256": "70d272faf3f6d3dccdd875966253e5700293a81e39f8a0c60bce9370d4fcef5d",
+        "bytes": 758
+      }
+    ],
+    "pdf_identity_observed": "Indian Association of Physics Teachers; National Standard Examination in Physics 2025; paper code61; November23 2025; 17 printed pages. This identifies the provided bytes, not their authenticated official origin.",
+    "pdf_instructions_observed": "Page1 instruction6: Q49-60 are Part A-2, with 1,2,3 or4 correct alternatives and all correct alternatives must be chosen. Instruction7:6 marks for all correct alternatives; no negative marking in A-2. Thus Q57 is multiple-correct.",
+    "visual_correspondence": "Q57-scoped-render.png made directly from page15 agrees in all substantive wording/formula/options with original-saved-crop.png. Render inspected visually. No edited task was used."
+  },
+  "method": {
+    "rubric": "difficulty-rubric.json question_difficulty_component_rubric; highest fully supported anchor, five independent0..2 factors. D1=0..2,D2=3..5,D3=6..7,D4=8..10.",
+    "blueprint": "physics-blueprint.json v0.2.0; common.band_check.primary_demand_rule; score exact task before support, do not force the suggested cell recipes.",
+    "short_route_policy": "Use valid answer-selection routes including option checking, not only a long pedagogical derivation. Extra proofs and source repairs do not become learner-required demand.",
+    "no_learner_evidence": "No saved first answer, condition/warrant explanation, help history or independent performance exists. Therefore no DEMONSTRATED/mastery classification for any learner; column evidence_criterion requirements are not asserted satisfied."
+  },
+  "tasks": [
+    {
+      "id": "TASK-A",
+      "source": "questions.json questions[0] exact stem/options; publisher extract only; official correspondence not established.",
+      "answer": "D: x(t)=sqrt(8P/(9m))*t^(3/2).",
+      "derivation": [
+        "For the standard ideal particle model in which P is the net rate of increase of translational kinetic energy, d(mv^2/2)/dt=P. With initial rest, v(t)=sqrt(2Pt/m) on the positive-going branch.",
+        "Starting from x(0)=0, integrate v: x(t)=(2/3)*sqrt(2P/m)*t^(3/2)=sqrt(8P/(9m))*t^(3/2).",
+        "A shorter exact-MCQ route eliminates B/C by units, leaving x=c*t^(3/2). Differentiate: v=(3/2)c*t^(1/2), a=(3/4)c*t^(-1/2); P=mva=(9/8)m*c^2. Only D has the required coefficient. No full quadrature is required to select it."
+      ],
+      "conditions_and_limits": [
+        "P>0,m>0,t>=0 and positive x orientation. The formula is a limiting ideal solution: a and F=P/v diverge as t approaches0+; no finite-force engine literally supplies constant positive mechanical power at exactly rest. This does not change the ideal t>0 answer.",
+        "Engine output equals net translational power only if losses/drag, rotational energy and other energy channels are neglected or included in a suitable net P. They are not specified in the source; if literal engine output with unknown losses is demanded, x(t) is not uniquely determined. This is a conditional idealization, not a source repair or difficulty point."
+      ],
+      "checks": [
+        "Units: sqrt(P/m)*t^(3/2) has units of length. x(0)=v(0)=0 in the limiting sense. Substitution into mva returns P.",
+        "Isolated numeric substitution P=7,m=3,t=2 gave mva=6.999999999999998 against P=7."
+      ],
+      "primary_operation": {
+        "column": 3,
+        "demand": "APPLY",
+        "refs": [
+          "columns.3.her_move",
+          "columns.3.boundary",
+          "common.band_check.primary_demand_rule"
+        ],
+        "reason": "Executing the familiar power relation on candidate x(t) decides this exact MCQ; the derivative check is a valid short route.",
+        "competing": "SYNTHESIZE (columns.6): power -> kinetic energy -> speed -> position is a legitimate longer construction, but the exact options allow routine relation checking without a nontrivial bridge/order decision. It does not support a D3 synthesis claim.",
+        "evidence_limit": "columns.3.evidence_criterion additionally requires applicability, mapping and check; selecting D alone does not supply that learner evidence."
+      },
+      "factors": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Recognize net mechanical power P=dK/dt or P=mva; the stated constant power and initial rest make the familiar route clear, without decisive competition between physical models."
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "One familiar mapping from the verbal constant-power condition and a position candidate to its derivative-based power expression."
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "The shortest selection route differentiates the remaining candidate form and checks one resulting coefficient against P; this is a short local dependency, not a required multi-stage construction."
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Routine power-law differentiation and coefficient matching materially distinguish A from D."
+        },
+        "trap_exception_sensitivity": {
+          "score": 0,
+          "evidence": "No hidden domain change or exception is required for the conventional ideal answer. Constant power is explicit. The t=0 singular limit/source omissions are not scored as extra learner work."
+        }
+      },
+      "total": 4,
+      "band": "D2",
+      "alternate_route_sensitivity": "Scoring the full integration chain as2 instead of1 would give5,D2. Neither valid route reachesD3.",
+      "coverage": "LABELLED_LOWER_BAND_SUPPORT_ONLY; no direct D3/D4. Native classification proposal APPLY/D2, not admitted."
+    },
+    {
+      "id": "TASK-B",
+      "source": "questions.json questions[1]; publisher extract only; official correspondence not established.",
+      "answer": "C for the minimum/ideal lifting work: MgL/(2n^2).",
+      "derivation": [
+        "Let hanging length ell=L/n and uniform line density M/L. Hanging mass is M/n; its centre of mass starts ell/2 below the tabletop.",
+        "Raising that mass to the tabletop increases gravitational potential energy by (M/n)*g*(L/(2n))=MgL/(2n^2).",
+        "Independent distributed check: integrate (M/L)*g*y dy from0 to L/n, giving MgL/(2n^2). No variable-force integration is necessary for the shortest route."
+      ],
+      "conditions_and_limits": [
+        "M,L>0 and n>=1 so the stated fraction is physically possible. Uniformity is explicit and makes the COM halfway down.",
+        "The gravitational energy increase is fixed by the endpoints. Equality to external lifting work requires no dissipative work and equal initial/final kinetic energies (usually quasi-static). An unspecified rough tabletop, pulling motion or final speed can increase the required external work. Source conditions are empty, so an unconditional external-work equality is not established. No friction model is silently added.",
+        "The conventional ideal question is usable conditionally; no intrinsic algebraic contradiction or necessary repair was found. If its intended quantity is total agent work in an unspecified dissipative process, literal task is underdetermined and that claim is HOLD."
+      ],
+      "checks": [
+        "For n=1 this is MgL/2, the work raising a fully hanging uniform length by its half-length COM distance. For n -> infinity it tends to0 quadratically.",
+        "Midpoint distributed-work sum with M=9,L=4,n=3,g=10 and10000 slices gave19.999999999999993, agreeing with COM result20."
+      ],
+      "primary_operation": {
+        "column": 3,
+        "demand": "APPLY",
+        "refs": [
+          "columns.3.her_move",
+          "columns.3.boundary",
+          "columns.5.boundary"
+        ],
+        "reason": "Once uniformity gives mass and COM height, execute gravitational work mgh. The direct geometry is incidental translation.",
+        "competing": "MODEL (columns.4) if a rewritten task expressly required comparison of energy versus force methods or frictional assumptions. That is not the demand of the actual stem. A longer variable-force integral does not make it SYNTHESIZE.",
+        "evidence_limit": "Applicability/mapping/check required by columns.3.evidence_criterion are absent from any learner record."
+      },
+      "factors": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Identify the familiar increase-of-gravitational-energy strategy for ideal lifting; no decisive model comparison is required."
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Translate uniform hanging fraction into hanging mass M/n and COM displacement L/(2n); direct geometry preserves the hanging segment entity."
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Hanging length fixes its mass and midpoint; those feed one mgh evaluation. This is a short dependency available without integration."
+        },
+        "algebra_computational_load": {
+          "score": 0,
+          "evidence": "Multiplying the two simple fractions is incidental symbolic arithmetic, not material multi-operation algebra."
+        },
+        "trap_exception_sensitivity": {
+          "score": 0,
+          "evidence": "No nonstandard exception is required in the intended ideal COM route. Unspecified friction/process conditions are a source qualification, not difficulty."
+        }
+      },
+      "total": 3,
+      "band": "D2",
+      "score_scope": "Score applies to the conventional ideal task. An unconditional total external-work task with arbitrary unknown friction/final motion has no unique numerical answer, so that literal claim is unscorable/HOLD.",
+      "coverage": "LABELLED_LOWER_BAND_SUPPORT_ONLY under explicit idealization; no direct D3/D4. No admission."
+    },
+    {
+      "id": "TASK-C",
+      "source": "questions.json questions[2]; publisher extract only; official correspondence not established.",
+      "answer": "A: Statement1 false, Statement2 true.",
+      "derivation": [
+        "For initially unstretched ideal Hooke-law springs, elastic work to extension x is W=k*x^2/2. In terms of the common final force F=kx it is W=F^2/(2k).",
+        "At common F, the premise W1>W2 implies1/k1>1/k2, hence k1<k2. Statement2 is true.",
+        "At common extension x, W1/W2=k1/k2<1. Statement1 says the reverse and is false. No explanation-choice discrimination between optionsC/D is needed once Statement1 is refuted."
+      ],
+      "conditions_and_limits": [
+        "Positive k values, ideal Hookean elastic regime and work measured from the same unstretched reference. The standard force comparison means a common final stretching force in the elastic-work relation. If actual force histories/initial strains differ, extra information would be needed; that alternative is not silently substituted.",
+        "The statement format alone does not demand a formal proof, causal explanation or D3/D4 reasoning."
+      ],
+      "checks": [
+        "Concrete counterexample to Statement1: k1=2,k2=8,F=4 gives work4 and1; at common extension3 gives work9 and36. Both the premise and Statement2 hold while Statement1 fails."
+      ],
+      "primary_operation": {
+        "column": 3,
+        "demand": "APPLY",
+        "refs": [
+          "columns.3.her_move",
+          "columns.1.boundary",
+          "columns.7.her_move",
+          "common.band_check.primary_demand_rule"
+        ],
+        "reason": "Use the same elastic-energy relation under two controlled variables; resulting inequality signs decide the options. Formula execution/comparison, not response format, decides the classification.",
+        "competing": "JUSTIFY (columns.7) because the reasoning can be written as a refutation from warrants. But the actual task requires the two truth values, with a short familiar comparison sufficient; explicit law-condition proof production is not required. RETRIEVE also fails columns.1.boundary because the relation must be executed under changed fixed variable.",
+        "evidence_limit": "No explicit warrant, conditions or boundary response exists from a learner, so columns.7.evidence_criterion cannot be claimed demonstrated."
+      },
+      "factors": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Identify the familiar elastic-work law; the route is otherwise clear for ideal springs."
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Make the direct familiar translation between the verbal controlled quantity and W=F^2/(2k) versus W=kx^2/2."
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "One intermediate inequality k1<k2 from the given common-force comparison feeds the common-extension comparison."
+        },
+        "algebra_computational_load": {
+          "score": 0,
+          "evidence": "Only reciprocal/proportional inequalities are needed; no material multi-operation algebra or numeric computation."
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "The familiar local switch from fixed force to fixed extension reverses dependence on k; keeping the same proportionality gives the plausible wrong Statement1 verdict. It is not an unfamiliar exception or regime change."
+        }
+      },
+      "total": 4,
+      "band": "D2",
+      "coverage": "LABELLED_LOWER_BAND_SUPPORT_ONLY; could support a lesson on controlled variables/warrants, but is not native D3/D4 JUSTIFY coverage. No admission."
+    },
+    {
+      "id": "TASK-D",
+      "source": "original-saved-crop.png and official-paper.pdf printed page15 Q57; paper page1 instructions6-7.",
+      "answer": "All four alternatives a,b,c,d are true on the stated conservative motion.",
+      "task_transcription": "U(x)=alpha/x^2-beta/x; alpha,beta>0; released from rest at x0=alpha/beta. (a) U=(alpha/x0^2)*[(x0/x)^2-x0/x]; (b) v=sqrt((2alpha/(m*x0^2))*[x0/x-(x0/x)^2]); (c) vmax=sqrt(alpha/(2m*x0^2)); (d) KE+U=0.",
+      "derivation": [
+        "Since beta=alpha/x0, substituting in U establishes(a). At x0, U=0; initial v=0, so conserved total energy E=0 and(d) follows.",
+        "The force F=-dU/dx=2alpha/x^3-beta/x^2 is positive at release: F(x0)=alpha/x0^3>0. The particle moves right. Its allowed connected region is x>=x0, with no finite right-hand turning point; it cannot cross x=0.",
+        "Energy gives v^2=-2U/m=(2alpha/(m*x0^2))*[x0/x-(x0/x)^2]. The positive square root is velocity, not merely speed, because the particle moves right for every finite x>x0; hence(b) holds on the physical trajectory.",
+        "Let y=x0/x. On the physical region0<y<=1, y-y^2=1/4-(y-1/2)^2 has maximum1/4 at y=1/2, i.e.x=2x0. Thus vmax^2=alpha/(2m*x0^2), giving(c). This direct square-completion route avoids a lengthy force-time solution."
+      ],
+      "conditions_and_limits": [
+        "m>0; autonomous conservative potential with standard F=-dU/dx, no additional nonconservative forces. x=0 is singular, but initial x0>0 fixes the connected accessible branch.",
+        "The displayed positive-root v(x) is valid on this released trajectory. Arbitrary left-moving initial data would require a negative branch; those are not the given task. At x -> infinity, v approaches0; no finite return occurs.",
+        "All-correct is expressly allowed by the original A-2 instructions. Treating this as single-correct would manufacture a source flaw. No official key was consulted or authenticated."
+      ],
+      "checks": [
+        "At x=x0, U=v=0. At x=2x0, U=-alpha/(4x0^2); maximum speed follows directly from K=-U. At infinity, U and v approach0 consistently with E=0.",
+        "Isolated values alpha=18,beta=6,m=2 gave x0=3,E0=0,F0=2/3; U(6)=-0.5 and vmax=0.7071067811865476 from both formulas. Option(a) identity tested at four x values with maximum floating discrepancy2.78e-17. Numeric examples check implementation only; analytic derivation establishes the claims."
+      ],
+      "primary_operation": {
+        "column": 3,
+        "demand": "APPLY",
+        "refs": [
+          "columns.3.her_move",
+          "columns.3.boundary",
+          "columns.6.boundary",
+          "columns.7.her_move"
+        ],
+        "reason": "The task checks several supplied expressions by direct substitution and execution of conservation of mechanical energy plus a routine maximum. The supplied symbolic forms make representation construction incidental.",
+        "competing": "SYNTHESIZE (columns.6) is credible for a solution emphasizing E0 as a shared bridge from release to speed and maximum. But direct energy substitution and square completion are sufficient for the exact option set; it lacks a nontrivial stage-order/model coordination bottleneck. JUSTIFY is not established solely by selecting true supplied statements.",
+        "evidence_limit": "A full solution can expose warrants/branch checks, but the response demand is selecting all alternatives; no learner warrant/second-route performance is supplied."
+      },
+      "factors": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Recognize the familiar conserved mechanical energy strategy from a time-independent potential and release from rest. No rival physical model is a decisive required comparison."
+        },
+        "representation_translation": {
+          "score": 0,
+          "evidence": "Source and options already supply algebraic U and v forms. Substitution beta=alpha/x0 and optional square completion remain in the given symbolic representation; no graph or other required translation must be constructed."
+        },
+        "reasoning_chain_length": {
+          "score": 2,
+          "evidence": "Initial E=0 is the intermediate conclusion needed for the velocity relation and then its maximum; this shared dependency must be coordinated across the option checks."
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Routine symbolic substitution, square-root extraction and local quadratic maximum/square completion are material; no extended multiregime or error-sensitive algebra."
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "A local velocity-sign/domain check matters: force at release and the accessible branch justify the positive root. No boundary changes along the finite trajectory."
+        }
+      },
+      "total": 5,
+      "band": "D2",
+      "uncertainty": "The branch check is scientifically necessary; weighting it as2 rather than1 could push total to6. I do not find anchor2 fully supported: the given rest release immediately fixes rightward motion, and there is no return or changed regime. Upbanding on general square-root ambiguity would overstate the exact task.",
+      "coverage": "LABELLED_LOWER_BAND_SUPPORT_ONLY on this independent scoring; no native D3/D4 support established. Official provenance/key verification and actual admission remain separate."
+    }
+  ],
+  "representative_source_to_decision_trace": {
+    "source": "official-paper.pdf page1 instruction6 plus Q57 on printed15",
+    "observed": "A-2 explicitly allows all four options. Release x0=alpha/beta makes U0=0; option(b) uses a positive square root.",
+    "inference": "Use E=0, then check F(x0)>0 to license that positive-root velocity on the accessible right-moving branch; max y-y^2=1/4 at2x0.",
+    "decision": "All a,b,c,d are true; task demand is belowD3 under the supplied rubric; answer correctness does not imply JUSTIFY/D3 or authenticated official provenance.",
+    "plausible_wrong_interpretation": "Assuming only one correct answer (despite A-2 instructions), or rejecting(b) merely because velocity can in general have either sign, without checking the actual released trajectory."
+  },
+  "seven_column_coverage_assessment": {
+    "RETRIEVE": "No direct native D3/D4 evidence; formula/result recall alone is insufficient.",
+    "EXPLAIN": "No required causal-chain production plus changed-condition prediction.",
+    "APPLY": "All four have plausible APPLY demand; this reviewer scores all belowD3.",
+    "MODEL": "No task makes a defended comparison of plausible governing models its decisive required act.",
+    "REPRESENT": "No task requires invariant-preserving translation as the decisive act; equations and simple mappings do not meet representation_translation2.",
+    "SYNTHESIZE": "A/D have dependent routes, but available shorter routes/total scores remain belowD3; no D3/D4 coverage supported.",
+    "JUSTIFY": "Can be taught with explicit warrants, but native answer-selection format neither proves nor forbids JUSTIFY; here short relation checks/inequality comparisons suffice and scores remain belowD3.",
+    "rule_refs": [
+      "common.band_check.lower_level_material",
+      "common.band_check.primary_demand_rule",
+      "columns.1..7.boundary",
+      "common.evidence_record.rule"
+    ],
+    "no_quota_filling": "No operation/band is filled merely to complete the seven-column grid. A pedagogical extension would be a separate authored/adapted task, scored anew and not native exam coverage."
+  },
+  "unresolved_dependencies": [
+    "Owner/Oracle judgment on acceptable conventional idealizations versus explicit qualification for A/B; equality claims outside ideal no-loss/end-rest interpretations are not established.",
+    "Authenticated source custody and exact paper/key correspondence for A/B/C remain not established by the packet. D is consistent across provided PDF/crop bytes but official authenticity and official-key agreement are not independently verified.",
+    "If a different primary operation or D3/D4 score is proposed, require the shortest valid exact-task route plus question-specific evidence for each changed rubric factor.",
+    "Any admission needs the authorized project gate; this report alone cannot admit questions or resume D3.1."
+  ],
+  "next_action": "Compare these sealed scores against the author claims without editing this first pass; ask for the exact task-required step supporting any proposed additional point or operation, retaining any lower-band items only with their real band labels.",
+  "resource_receipt": {
+    "approved_overall_start_utc": "2026-10-31T10:24:36Z",
+    "hard_deadline_utc": "2026-10-31T11:09:36Z",
+    "first_observed_clock_utc": "2026-10-31T10:26:11.7232302Z",
+    "last_preseal_clock_utc": "2026-10-31T10:28:10.6327441Z",
+    "token_telemetry": "UNKNOWN; this work is within the explicitly approved bounded routine. No account/context percentage meter was observed.",
+    "call_metric": "Count each underlying tools.exec_command/tools.view_image service invocation and each direct collaboration call; functions.exec orchestration wrappers are not additional service invocations.",
+    "underlying_calls_through_seal": 9,
+    "call_ledger": [
+      "1 exec_command: exact hashes, named JSON inputs",
+      "2 view_image: original-saved-crop",
+      "3 exec_command: all seven column rules, failed fitz import, clock/byte sizes",
+      "4 exec_command: PDF skill and available local extraction/render libraries",
+      "5 exec_command: pypdf qualified page1 instructions and page15 Q57 extraction",
+      "6 exec_command: manifest and isolated numeric checks, clock",
+      "7 exec_command: render only Q57 bounded by next question locator",
+      "8 view_image: Q57 scoped PDF render",
+      "9 exec_command: write this report and SHA256 seal"
+    ],
+    "planned_next_call": "10 direct collaboration status with seal hash, then wait for comparison packet. Same20-call cap applies to both phases.",
+    "failed_checks": "fitz unavailable; no install attempted. Used already installed pypdf/pdfplumber and Poppler instead.",
+    "phase2_status": "WAITING_FOR_COMPARISON_PACKET_AFTER_SEAL"
+  }
+}

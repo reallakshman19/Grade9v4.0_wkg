@@ -1,0 +1,69 @@
+{
+  "schema": "g9v4-qrt-first-pass/v1",
+  "record_role": "TRAINING_EXAMPLE_NOT_EVIDENCE",
+  "question_id": "SIM-QRT-001",
+  "source": {
+    "source_kind": "SYNTHETIC_CONTROL",
+    "locator": "AUTHORED_TRAINING_ONLY_NOT_ORIGINAL_EXAM",
+    "original_digest": null,
+    "figure_status": "NOT_APPLICABLE",
+    "key_visibility": "WITHHELD_IN_FIRST_PASS",
+    "source_text_or_trusted_locator": "Invented task: an ideal cart travels up a ramp under a motor and friction. Select the correct work-energy model and justify which forces contribute over the displacement."
+  },
+  "exposure_declaration": "UNKNOWN",
+  "reviewer_assignment": {
+    "independently_assigned": false,
+    "assignment_receipt": null
+  },
+  "first_pass": {
+    "primary_operation": "MODEL",
+    "competing_operation": "SYNTHESIZE",
+    "decisive_move": "Choose the system and signed work model before evaluating forces; this is an authored demonstration, not a QRT finding.",
+    "shortest_valid_route": [
+      "Define cart and uphill displacement; draw forces and their signs.",
+      "Apply total signed work equals change in kinetic energy, with height change where appropriate.",
+      "Check physical feasibility and units without claiming any original-exam band."
+    ],
+    "boundary_reason": "For this invented illustration, selecting the signed work model is presented as decisive; a real task might be synthesis and needs genuine independent review.",
+    "conditions": [
+      "Conservative gravity; stated friction and motor idealization.",
+      "No original source/question identity or reviewer authority."
+    ],
+    "ambiguities": [
+      "No authentic problem dimensions or rubric reviewed; do not score as official D3."
+    ],
+    "factors": {
+      "concept_model_selection": {
+        "score": 1,
+        "evidence": "Training judgment only: must choose which object/forces the proposed synthetic task follows."
+      },
+      "representation_translation": {
+        "score": 1,
+        "evidence": "Training judgment only: translate a worded before/after system into an energy ledger."
+      },
+      "reasoning_chain_length": {
+        "score": 2,
+        "evidence": "Training judgment only: one dependent bridge relates motor, friction and potential change."
+      },
+      "algebra_computational_load": {
+        "score": 1,
+        "evidence": "Training judgment only: moderate arithmetic with stated units, no advanced algebra."
+      },
+      "trap_exception_sensitivity": {
+        "score": 1,
+        "evidence": "Training judgment only: distinguish the motor's input from net energy; includes a sign trap."
+      }
+    },
+    "total": 6,
+    "band": "D3",
+    "source_role": "AUTHORED_TRANSFER",
+    "solution_check": "Check work units joule, force × slope-distance signs, and final kinetic energy nonnegative."
+  },
+  "seal": {
+    "status": "NOT_SEALED",
+    "content_sha256": null,
+    "sealed_before_exposure": false,
+    "sealed_receipt": null
+  },
+  "admission": "NOT_GRANTED_BY_THIS_RECORD"
+}

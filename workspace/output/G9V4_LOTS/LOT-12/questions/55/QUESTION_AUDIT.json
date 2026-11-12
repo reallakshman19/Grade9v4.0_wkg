@@ -1,0 +1,105 @@
+{
+  "sequence": 55,
+  "batch_sequence": 10,
+  "task_identity": "Q-ID-64",
+  "stable_id": "PHYS-WPE-LOT12-Q55",
+  "source_id": "AN-2",
+  "lot": "LOT-12",
+  "batch": "BATCH-D",
+  "paper": "JEE Main 2026 (Online), 22 January, Evening Shift",
+  "source_type": "EXAM_PAPER_TRANSCRIBED",
+  "source_custody": "VERIFIED_TEXT",
+  "stem_text": "Given below are two statements:\nStatement I: An object moves from position r₁ to position r₂ under a conservative force field F⃗. The work done by the force is W = −∫(r₁→r₂) F⃗·dr⃗.\nStatement II: Any object moving from one location to another location can follow infinite number of paths. Therefore, the amount of work done by the object changes with the path it follows for a conservative force.",
+  "stem_sha256": "f55524808b7e173fa787c96f13a1df0ea75a0a2147a7fe60576d7af1c4697ced",
+  "source_hash": "f55524808b7e173fa787c96f13a1df0ea75a0a2147a7fe60576d7af1c4697ced",
+  "source_record_digest": "sha256:f55524808b7e173fa787c96f13a1df0ea75a0a2147a7fe60576d7af1c4697ced",
+  "duplicate_parent": null,
+  "scope": "PRIMARY_IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "key_issuing_authority": "NTA",
+  "figure_status": "NOT_REQUIRED",
+  "figure_reference": null,
+  "options": [
+    "A: Statement I is true but Statement II is false",
+    "B: Statement I is false but Statement II is true",
+    "C: Both Statement I and Statement II are false",
+    "D: Both Statement I and Statement II are true"
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "CONSERVATIVE_FORCE_LINE_INTEGRAL_AND_PATH_INDEPENDENCE_EVALUATION",
+    "predicted_option": "C: Both Statement I and Statement II are false",
+    "derivation": "Statement I: Work done BY the force is defined as W = +int_(r1)^(r2) F.dr. The negative integral -int F.dr represents Delta U (change in potential energy), not work done by force. Statement I is FALSE. Statement II: For any conservative force field, the work done is independent of the path taken between r1 and r2. Statement II claims it changes with the path, which is directly contradictory to the definition of a conservative force. Statement II is FALSE. Therefore, both Statement I and Statement II are false (Option C)."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 2,
+          "evidence": "Rigorous definition of work done by force field W = +int F.dr vs potential energy change Delta U = -int F.dr"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Dual statement logical verification"
+        },
+        "reasoning_chain_length": {
+          "score": 2,
+          "evidence": "Audit integral sign convention in Statement I; audit path independence axiom of conservative force in Statement II"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Checking sign convention on line integral definition"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Sign error confusion between work done by force (+W) and potential energy change (-W = Delta U)"
+        }
+      },
+      "total": 7,
+      "band": "D3",
+      "prior_proposal": {
+        "source": "INITIAL_CALIBRATION",
+        "scores": "2/1/2/1/1",
+        "total": 7
+      },
+      "differences": "Initial native factor audit"
+    },
+    "demand_proposal": {
+      "primary": "JUSTIFY",
+      "secondary": [
+        "EVALUATE"
+      ],
+      "rationale": "Evaluating theoretical consistency of line integral signs and conservative force path-independence theorems",
+      "candidate_cell": "QRT-JUSTIFY-D3",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": {
+    "blueprint_id": "PHYS-QRT-BLUEPRINT",
+    "version": "0.2.0",
+    "sha256": "ac32dc937403cac33c76343f2e7e0dabd7c2c4a3188cb3b453ddf2576578ddf9",
+    "blueprint_cell_ref": "D3.4",
+    "topic_tag": "WPE-02-POTENTIAL",
+    "status": "PINNED_CELL_UNQUALIFIED"
+  },
+  "adapter_fit": {
+    "adapter_id": "PHYS-TOPIC-WPE",
+    "sha256": "899e61e59370a3fc5d6f73b7d8cbb65165d0782c9fba20acd83439ae441e6a9b",
+    "status": "CELL_UNQUALIFIED_ADAPTER_GAP",
+    "note": "WPE adapter defines cell D3.1 only. Target cell D3.4 requires adapter cell expansion; flagged as SPEC_GAP."
+  },
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_INDEPENDENT_REVIEW",
+  "b2_blind_status": "PENDING_BLIND_SOLVE",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (Option C unverified against official NTA master)",
+    "HOLD:ADAPTER_CELL_GAP (WPE adapter lacks D3.4 cell authority)",
+    "HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)"
+  ],
+  "next_action": "B2 independent source-only solve + official NTA master key reconciliation"
+}

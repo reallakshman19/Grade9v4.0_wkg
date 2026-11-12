@@ -1,0 +1,241 @@
+[
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\SKILL.md",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\references\\benchmarks.md",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\references\\protocol.md",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\references\\record-contract.md",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\scripts\\check_handoff.py",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\scripts\\render_handoff.py",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\tests\\test_handoff.py",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\handoff.json",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\index.html",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\source-pins.json",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\book.md",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\library.json",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\package.schema.json",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\page_01.jpg",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\positive-work.svg",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\spine.md",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\images\\fig_01_work_sign_positive.svg",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\images\\fig_02_work_sign_negative.svg",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\images\\fig_03_fbd_string_raising.svg",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\images\\fig_04_variable_force_calculus.svg",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\images\\fig_05_friction_direction.svg",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\images\\fig_06_incline_block.svg",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\images\\fig_07_incline_fbd.svg",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\images\\fig_08_curved_path_work.svg",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\images\\fig_09_overhanging_chain.svg",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\images\\fig_10_spring_block_wall.svg",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\work_energy_power.md",
+    "unchanged": true,
+    "copy_matches": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\02_Syllabus_and_Book_Notes\\wpe-pilot\\syllabus\\WPE-SPINE.md",
+    "unchanged": true,
+    "copy_matches": true
+  },
+  {
+    "path": "C:\\CodeC\\Grade9v3.5\\Physics\\library\\phy-work-energy-power.v1.json",
+    "unchanged": true,
+    "copy_matches": true
+  },
+  {
+    "path": "C:\\CodeC\\Grade9v3.5\\Shared\\library\\package.schema.json",
+    "unchanged": true,
+    "copy_matches": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\03_Reference_Ontology\\reference-wpe\\core1a_physics_wep_ontology.v1.json",
+    "unchanged": true,
+    "copy_matches": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\02_Syllabus_and_Book_Notes\\wpe-pilot\\qrt\\recall-topics-from-book.md",
+    "unchanged": true,
+    "copy_matches": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\START_HERE.md",
+    "unchanged": true,
+    "copy_matches": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\generate_wpe_svgs.py",
+    "unchanged": true,
+    "copy_matches": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_01.jpg",
+    "unchanged": true,
+    "copy_matches": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_02.jpg",
+    "unchanged": true,
+    "copy_matches": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_03.jpg",
+    "unchanged": true,
+    "copy_matches": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_04.jpg",
+    "unchanged": true,
+    "copy_matches": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_05.jpg",
+    "unchanged": true,
+    "copy_matches": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_06.jpg",
+    "unchanged": true,
+    "copy_matches": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_07.jpg",
+    "unchanged": true,
+    "copy_matches": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_08.jpg",
+    "unchanged": true,
+    "copy_matches": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_09.jpg",
+    "unchanged": true,
+    "copy_matches": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\images\\fig_01_work_sign_positive.svg",
+    "unchanged": true,
+    "copy_matches": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\images\\fig_02_work_sign_negative.svg",
+    "unchanged": true,
+    "copy_matches": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\images\\fig_03_fbd_string_raising.svg",
+    "unchanged": true,
+    "copy_matches": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\images\\fig_04_variable_force_calculus.svg",
+    "unchanged": true,
+    "copy_matches": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\images\\fig_05_friction_direction.svg",
+    "unchanged": true,
+    "copy_matches": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\images\\fig_06_incline_block.svg",
+    "unchanged": true,
+    "copy_matches": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\images\\fig_07_incline_fbd.svg",
+    "unchanged": true,
+    "copy_matches": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\images\\fig_08_curved_path_work.svg",
+    "unchanged": true,
+    "copy_matches": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\images\\fig_09_overhanging_chain.svg",
+    "unchanged": true,
+    "copy_matches": true
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\images\\fig_10_spring_block_wall.svg",
+    "unchanged": true,
+    "copy_matches": true
+  }
+]

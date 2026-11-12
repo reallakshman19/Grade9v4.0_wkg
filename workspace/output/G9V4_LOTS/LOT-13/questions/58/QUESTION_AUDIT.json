@@ -1,0 +1,93 @@
+{
+  "sequence": 58,
+  "batch_sequence": 13,
+  "task_identity": "Q-ID-68",
+  "stable_id": "PHYS-WPE-LOT13-Q58",
+  "source_id": "AN-6",
+  "lot": "LOT-13",
+  "batch": "BATCH-D",
+  "paper": "JEE Main 2025 (Online), 7 April, Evening Shift",
+  "source_type": "EXAM_PAPER_TRANSCRIBED",
+  "source_custody": "VERIFIED_TEXT",
+  "stem_text": "Which one of the following forces cannot be expressed in terms of potential energy?",
+  "stem_sha256": "67effd544d50be89bc80c6bdd4b23423bc52f315f7009f5fdeb8e84a29038af2",
+  "source_hash": "67effd544d50be89bc80c6bdd4b23423bc52f315f7009f5fdeb8e84a29038af2",
+  "source_record_digest": "sha256:67effd544d50be89bc80c6bdd4b23423bc52f315f7009f5fdeb8e84a29038af2",
+  "duplicate_parent": null,
+  "scope": "PRIMARY_IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "key_issuing_authority": "NTA",
+  "figure_status": "NOT_REQUIRED",
+  "figure_reference": null,
+  "options": [
+    "A: Frictional force",
+    "B: Coulomb's force",
+    "C: Restoring force",
+    "D: Gravitational force"
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "CONSERVATIVE_FORCE_POTENTIAL_ENERGY_EXISTENCE_IDENTIFICATION",
+    "predicted_option": "A: Frictional force",
+    "derivation": "Potential energy U is defined exclusively for conservative forces, such that F = -grad(U). Coulomb's electrostatic force, spring restoring force, and gravitational force are conservative forces with well-defined potential energies. Frictional force is non-conservative and dissipative (work done along a path is dissipated as thermal internal energy and cannot be recovered as mechanical potential energy). Therefore, frictional force cannot be expressed in terms of potential energy (Option A)."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Potential energy definition criterion: potential energy exists if and only if the force is conservative"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Single-choice qualitative physical taxonomy"
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Evaluate Coulomb, restoring, and gravity forces as conservative; identify friction as dissipative"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Zero computation"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Direct identification of non-conservative dissipative force"
+        }
+      },
+      "total": 5,
+      "band": "D2",
+      "prior_proposal": {
+        "source": "INITIAL_CALIBRATION",
+        "scores": "1/1/1/1/1",
+        "total": 5
+      },
+      "differences": "Initial native factor audit"
+    },
+    "demand_proposal": {
+      "primary": "IDENTIFY",
+      "secondary": [
+        "JUSTIFY"
+      ],
+      "rationale": "Identifying non-conservative dissipative forces incapable of potential energy representation",
+      "candidate_cell": "QRT-IDENTIFY-D2",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_INDEPENDENT_REVIEW",
+  "b2_blind_status": "PENDING_BLIND_SOLVE",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (Option A unverified against official NTA master)",
+    "HOLD:SPEC_PENDING (No qualified D1/D2 common blueprint or topic adapter)",
+    "HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)"
+  ],
+  "next_action": "B2 independent source-only solve + official NTA master key reconciliation"
+}

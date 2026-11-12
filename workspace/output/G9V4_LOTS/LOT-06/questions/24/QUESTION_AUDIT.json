@@ -1,0 +1,93 @@
+{
+  "sequence": 24,
+  "batch_sequence": 9,
+  "task_identity": "Q-ID-27",
+  "stable_id": "G9V4-PHYS-WPE-EX-M74",
+  "source_id": "EX-M74",
+  "lot": "LOT-06",
+  "batch": "BATCH-B",
+  "paper": "JEE Main 2019 (Online) 8th April Morning Slot",
+  "source_type": "JEE_MAIN_PAST_EXAM_QUESTION",
+  "source_custody": "PARTIAL (F(x) graph unresolved)",
+  "stem_text": "A particle moves in one dimension from rest under the influence of a force that varies with the distance travelled by the particle as shown in the figure. The kinetic energy of the particle after it has travelled 3m is : [FIG-stem-1]",
+  "stem_sha256": "e3b751177c3295210a19fa1d3b4f8cfb5091ac8475e868095191cefde40ef5e8",
+  "source_hash": "e3b751177c3295210a19fa1d3b4f8cfb5091ac8475e868095191cefde40ef5e8",
+  "source_record_digest": "e3b751177c3295210a19fa1d3b4f8cfb5091ac8475e868095191cefde40ef5e8",
+  "duplicate_parent": null,
+  "scope": "IN_SCOPE_WPE_ONLY",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "HOLD:FIGURE_UNRESOLVED",
+  "figure_reference": "[FIG-stem-1] F(x) vs x graph unverified against authentic master",
+  "options": [
+    "A: 6.5 J",
+    "B: 2.5 J",
+    "C: 5 J",
+    "D: 4 J"
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "HOLD:FIGURE_UNRESOLVED",
+  "candidate_solve": {
+    "method": "WORK_ENERGY_FORCE_DISPLACEMENT_INTEGRATION",
+    "derivation": "By Work-Energy Theorem: KE(at 3m) - KE(initial) = W = integral_0^3 F(x) dx. Since particle starts from rest, KE = integral_0^3 F(x) dx. Area under F(x) curve from x=0 to x=3m cannot be computed without the exact numerical grid and vertices in the diagram.",
+    "predicted_option": "HOLD:FIGURE_UNRESOLVED",
+    "limiting_cases": "Cannot perform independent integration without original figure."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Work as area under force-displacement graph"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Reading geometric shapes (triangles/rectangles) from grid"
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Summing signed areas over specified interval"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Basic geometric area calculation"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Handling negative force regions below axis"
+        }
+      },
+      "total": 5,
+      "band": "D2",
+      "prior_proposal": {
+        "source": "PRODUCER_HISTORICAL_ESTIMATE",
+        "scores": "1/1/1/1/1",
+        "total": 5
+      },
+      "differences": "Rescored to native five-factor rubric per B2 CP-4 review"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "REPRESENT"
+      ],
+      "rationale": "Geometric computation of work from force-displacement graph",
+      "candidate_cell": "QRT-APPLY-D2",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_CP4_GATE",
+  "b2_blind_status": "UNREVIEWED",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:FIGURE_UNRESOLVED (Force-displacement graph unverified against authentic master)",
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)",
+    "HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)"
+  ],
+  "next_action": "Obtain original NTA question paper for 08-04-2019 Morning Slot to extract F(x) graph."
+}

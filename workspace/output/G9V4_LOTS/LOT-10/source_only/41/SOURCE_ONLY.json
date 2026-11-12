@@ -1,0 +1,17 @@
+{
+  "source_id": "EX-M111",
+  "task_identity": "Q-ID-47",
+  "sequence": 41,
+  "batch_sequence": 11,
+  "paper": "AIEEE 2005",
+  "stem_text": "The upper half of an inclined plane with inclination 𝜙 is perfectly smooth while the lower half is rough. A body starting from rest at the top will again come to rest at the bottom if the coefficient of friction for the lower half is given by",
+  "stem_sha256": "1897b95b307743efe3c36a1e9b49cb6fb7c2957e7391efa13b84bbecb71f10fc",
+  "options": [
+    "A: 2cos𝜙",
+    "B: 2𝑠𝑖𝑛𝜙",
+    "C: tan𝜙",
+    "D: 2tan𝜙"
+  ],
+  "figure_reference": null,
+  "confidentiality_notice": "Source custody blind packet. Academic solve, answer key, and scoring omitted. Private review only."
+}

@@ -1,0 +1,12 @@
+{
+  "source_id": "EX-N8",
+  "task_identity": "Q-ID-50",
+  "sequence": 43,
+  "batch_sequence": 13,
+  "paper": "JEE Main 2023 (Online) 11th April Evening Shift",
+  "stem_text": "A block of mass 5kg starting from rest is pulled up on a smooth inclined plane making an angle of 30^(∘) with horizontal with an effective acceleration of 1ms^(−2) . The power delivered by the pulling force at 𝑡=10s from the start is ___________ W. [use g=10ms^(−2) ] (calculate the nearest integer value)",
+  "stem_sha256": "d19ba8fc4762a1acb93b9059c01f13e25bdb4874bcd50ef8dcd71375500d4fef",
+  "options": [],
+  "figure_reference": null,
+  "confidentiality_notice": "Source custody blind packet. Academic solve, answer key, and scoring omitted. Private review only."
+}

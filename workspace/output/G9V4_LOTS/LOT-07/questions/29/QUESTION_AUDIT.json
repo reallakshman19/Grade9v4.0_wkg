@@ -1,0 +1,92 @@
+{
+  "sequence": 29,
+  "batch_sequence": 14,
+  "task_identity": "Q-ID-33",
+  "stable_id": "G9V4-PHYS-WPE-EX-M84",
+  "source_id": "EX-M84",
+  "lot": "LOT-07",
+  "batch": "BATCH-B",
+  "paper": "JEE Main 2016 (Online) 10th April Morning Slot",
+  "source_type": "JEE_MAIN_PAST_EXAM_QUESTION",
+  "source_custody": "VERIFIED_TEXT_ONLY (Self-contained mathematical question)",
+  "stem_text": "A particle of mass M is moving in a circle of fixed radius R in such a way that its centripetal acceleration at time t is given by n2 R t2 where n is a constant. The power delivered to the particle by the force acting on it, is :",
+  "stem_sha256": "352d2efd930e969bf02e088778a6079f020e71e0cd3a4265a468d3df90ef34c2",
+  "source_hash": "352d2efd930e969bf02e088778a6079f020e71e0cd3a4265a468d3df90ef34c2",
+  "source_record_digest": "352d2efd930e969bf02e088778a6079f020e71e0cd3a4265a468d3df90ef34c2",
+  "duplicate_parent": null,
+  "scope": "IN_SCOPE_WPE_ONLY",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "NOT_REQUIRED",
+  "figure_reference": "NONE (pure text question)",
+  "options": [
+    "A: M n2 R2 t",
+    "B: M n R2 t",
+    "C: M n R2 t2",
+    "D: (1)/(2) M n2 R2 t2"
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "CIRCULAR_DYNAMICS_TANGENTIAL_POWER",
+    "derivation": "Centripetal acceleration a_c = v^2 / R = n^2 R t^2 => v^2 = n^2 R^2 t^2 => v(t) = n R t. Tangential acceleration a_t = dv/dt = n R. Centripetal force is perpendicular to velocity and does zero work (zero power). Tangential force F_t = M a_t = M (n R). Power delivered P = F_t * v = (M n R) * (n R t) = M n^2 R^2 t. Alternatively: KE = 1/2 M v^2 = 1/2 M (n^2 R^2 t^2) => Power P = d(KE)/dt = 1/2 M n^2 R^2 (2t) = M n^2 R^2 t. Matches Option A.",
+    "predicted_option": "A: M n2 R2 t",
+    "limiting_cases": "If n=0 or t=0, P=0. Dimensional analysis: [M n^2 R^2 t] = kg * (s^-2) * (m^2) * s = kg m^2 s^-3 = Watt. Option A is the unique exact result."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Centripetal acceleration a_c = v^2/R related to tangential power"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "v^2/R = n^2 R t^2 => v = nRt; tangential force F_t = M dv/dt"
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Power P = F_t * v = (M n R) * (n R t) = M n^2 R^2 t"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Basic algebraic substitutions"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Centripetal force does zero work; only tangential force delivers power"
+        }
+      },
+      "total": 5,
+      "band": "D2",
+      "prior_proposal": {
+        "source": "PRODUCER_HISTORICAL_ESTIMATE",
+        "scores": "1/1/1/1/1",
+        "total": 5
+      },
+      "differences": "Rescored to native five-factor rubric per B2 CP-4 review"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "MODEL"
+      ],
+      "rationale": "Applying tangential power definition to accelerated circular motion",
+      "candidate_cell": "QRT-APPLY-D2",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_CP4_GATE",
+  "b2_blind_status": "UNREVIEWED",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)",
+    "HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)"
+  ],
+  "next_action": "Verify official NTA key and submit for independent blind review."
+}

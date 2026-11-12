@@ -1,0 +1,532 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://reallakshman19.github.io/Grade9v4.0/architecture/qrt-blueprint-protocol/schemas/question-route.schema.json",
+  "title": "WPE QRT × Physics Blueprint single-question audit record — candidate, not authoritative",
+  "description": "A strictly typed engineering review row. Accepted JSON shape never implies source authenticity, independent QRT, Blueprint/adapter selection, construction approval, or release.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "fixture_not_evidence",
+    "question_id",
+    "kind",
+    "source",
+    "sl2",
+    "qrt",
+    "blueprint",
+    "adapter",
+    "learning",
+    "admission",
+    "next_action"
+  ],
+  "properties": {
+    "schema": {
+      "const": "g9v4-qrt-blueprint-question-route/v1"
+    },
+    "fixture_not_evidence": {
+      "type": "boolean",
+      "description": "Use true for demo/golden rows; never treat them as academic evidence."
+    },
+    "question_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9._:-]{2,127}$"
+    },
+    "kind": {
+      "enum": [
+        "EXAM_CLAIM",
+        "TEXTBOOK",
+        "SYNTHETIC_CONTROL"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_path",
+        "source_locator",
+        "custody",
+        "figure",
+        "key",
+        "independent_original_receipt"
+      ],
+      "properties": {
+        "source_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "custody": {
+          "enum": [
+            "UNVERIFIED",
+            "READER_COPY_ONLY",
+            "EXACT_SOURCE_REVIEWED",
+            "AUTHENTICATED"
+          ]
+        },
+        "figure": {
+          "enum": [
+            "NOT_APPLICABLE",
+            "UNQUALIFIED",
+            "PENDING",
+            "VERIFIED"
+          ]
+        },
+        "key": {
+          "enum": [
+            "UNQUALIFIED",
+            "PENDING",
+            "CORROBORATED_NOT_ADMITTED",
+            "VERIFIED"
+          ]
+        },
+        "independent_original_receipt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      }
+    },
+    "sl2": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "operation",
+        "band",
+        "status",
+        "evidence_path"
+      ],
+      "properties": {
+        "operation": {
+          "enum": [
+            "RETRIEVE",
+            "EXPLAIN",
+            "APPLY",
+            "MODEL",
+            "REPRESENT",
+            "SYNTHESIZE",
+            "JUSTIFY",
+            null
+          ]
+        },
+        "band": {
+          "enum": [
+            "D1",
+            "D2",
+            "D3",
+            "D4",
+            null
+          ]
+        },
+        "status": {
+          "enum": [
+            "UNREVIEWED",
+            "PROPOSED"
+          ]
+        },
+        "evidence_path": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      }
+    },
+    "qrt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "operation",
+        "band",
+        "total",
+        "factors",
+        "reviewer_receipt",
+        "sealed_first_pass_digest",
+        "evidence_path",
+        "exposure"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "NOT_RUN",
+            "FIRST_PASS_RECORDED",
+            "CONTESTED",
+            "ADJUDICATED"
+          ]
+        },
+        "operation": {
+          "enum": [
+            "RETRIEVE",
+            "EXPLAIN",
+            "APPLY",
+            "MODEL",
+            "REPRESENT",
+            "SYNTHESIZE",
+            "JUSTIFY",
+            null
+          ]
+        },
+        "band": {
+          "enum": [
+            "D1",
+            "D2",
+            "D3",
+            "D4",
+            null
+          ]
+        },
+        "total": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 10
+        },
+        "factors": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "concept_model_selection",
+                "representation_translation",
+                "reasoning_chain_length",
+                "algebra_computational_load",
+                "trap_exception_sensitivity"
+              ],
+              "properties": {
+                "concept_model_selection": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "score",
+                    "evidence"
+                  ],
+                  "properties": {
+                    "score": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 2
+                    },
+                    "evidence": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "representation_translation": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "score",
+                    "evidence"
+                  ],
+                  "properties": {
+                    "score": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 2
+                    },
+                    "evidence": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "reasoning_chain_length": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "score",
+                    "evidence"
+                  ],
+                  "properties": {
+                    "score": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 2
+                    },
+                    "evidence": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "algebra_computational_load": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "score",
+                    "evidence"
+                  ],
+                  "properties": {
+                    "score": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 2
+                    },
+                    "evidence": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "trap_exception_sensitivity": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "score",
+                    "evidence"
+                  ],
+                  "properties": {
+                    "score": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 2
+                    },
+                    "evidence": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "reviewer_receipt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "sealed_first_pass_digest": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          ]
+        },
+        "evidence_path": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "exposure": {
+          "enum": [
+            "UNKNOWN",
+            "SEALED_SOURCE_ONLY",
+            "PRIOR_EXPOSURE_DECLARED"
+          ]
+        }
+      }
+    },
+    "blueprint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "version",
+        "status",
+        "path",
+        "candidate_cell",
+        "approved_binding_receipt"
+      ],
+      "properties": {
+        "id": {
+          "const": "PHYS-QRT-BLUEPRINT"
+        },
+        "version": {
+          "const": "0.2.0"
+        },
+        "status": {
+          "enum": [
+            "DRAFT_OWNER_REVIEW",
+            "APPROVED"
+          ]
+        },
+        "path": {
+          "const": "templates/physics-blueprint/physics-blueprint.D3-D4.json"
+        },
+        "candidate_cell": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "pattern": "^D[34]\\.[1-7]$"
+            }
+          ]
+        },
+        "approved_binding_receipt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      }
+    },
+    "adapter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "status",
+        "selected_exact_path",
+        "selected_git_blob_sha",
+        "owner_receipt"
+      ],
+      "properties": {
+        "id": {
+          "const": "PHYS-TOPIC-WPE"
+        },
+        "status": {
+          "enum": [
+            "UNSELECTED",
+            "CANDIDATE_ONLY",
+            "APPROVED_SELECTED"
+          ]
+        },
+        "selected_exact_path": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "selected_git_blob_sha": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            }
+          ]
+        },
+        "owner_receipt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      }
+    },
+    "learning": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "construction_ids",
+        "status",
+        "semantic_join",
+        "b1_b7_receipt"
+      ],
+      "properties": {
+        "construction_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "status": {
+          "enum": [
+            "UNMAPPED",
+            "AUTHOR_PACK_ONLY",
+            "INTERACTIVE_PRACTICE",
+            "QUALIFIED_TILE"
+          ]
+        },
+        "semantic_join": {
+          "enum": [
+            "UNREVIEWED_PROPOSAL",
+            "INDEPENDENTLY_REVIEWED"
+          ]
+        },
+        "b1_b7_receipt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      }
+    },
+    "admission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "owner_receipt",
+        "native_core2_receipt"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "NOT_ADMITTED",
+            "ADMITTED"
+          ]
+        },
+        "owner_receipt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "native_core2_receipt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      }
+    },
+    "next_action": {
+      "enum": [
+        "SOURCE_REVIEW",
+        "INDEPENDENT_QRT",
+        "RECONCILE_QRT",
+        "D1_D2_SPEC_HOLD",
+        "BUILD_AUTHOR_BRIDGE",
+        "REVIEW_BLUEPRINT_ADAPTER",
+        "B1_B7_REVIEW",
+        "OWNER_ADMISSION"
+      ]
+    }
+  },
+  "$defs": {
+    "factor_names": {
+      "enum": [
+        "concept_model_selection",
+        "representation_translation",
+        "reasoning_chain_length",
+        "algebra_computational_load",
+        "trap_exception_sensitivity"
+      ]
+    }
+  }
+}

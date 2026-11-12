@@ -1,0 +1,10 @@
+{
+  "command": "python -B -m unittest discover -s tests -p test_engine.py -v",
+  "cwd": "received-engineering",
+  "tests": 33,
+  "failures": 0,
+  "errors": 0,
+  "observed_exit_code": 0,
+  "evidence": "Executed in this approved routine; terminal output lists all 33 tests. Original source/tests unchanged.",
+  "scope": "Structural prototype tests with synthetic fake review/source witnesses; not native or academic acceptance."
+}

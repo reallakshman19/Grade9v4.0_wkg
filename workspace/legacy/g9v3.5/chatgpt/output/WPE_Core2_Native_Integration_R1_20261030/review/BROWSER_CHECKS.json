@@ -1,0 +1,255 @@
+{
+  "scope": "AUTHOR_BROWSER_CHECKS; native nine-record reader and received synthetic standalone viewer; no independent QA",
+  "browser": "Chrome via Playwright CLI",
+  "results": [
+    {
+      "name": "1280:native:nine records",
+      "pass": true
+    },
+    {
+      "name": "1280:native:source type clearly synthetic",
+      "pass": true
+    },
+    {
+      "name": "1280:native:no visible answer before commitment",
+      "pass": true
+    },
+    {
+      "name": "1280:native:premature solution opening refused",
+      "pass": true
+    },
+    {
+      "name": "1280:native:empty commitment refused",
+      "pass": true
+    },
+    {
+      "name": "1280:native:one support rung",
+      "pass": true
+    },
+    {
+      "name": "1280:native:support body revealed",
+      "pass": true
+    },
+    {
+      "name": "1280:native:two support rungs",
+      "pass": true
+    },
+    {
+      "name": "1280:native:support ladder ends",
+      "pass": true
+    },
+    {
+      "name": "1280:native:assistance retained",
+      "pass": true
+    },
+    {
+      "name": "1280:native:help does not reveal answer",
+      "pass": true
+    },
+    {
+      "name": "1280:native:keyboard commits chosen response",
+      "pass": true
+    },
+    {
+      "name": "1280:native:commit unlocks solution",
+      "pass": true
+    },
+    {
+      "name": "1280:native:source answer now visible",
+      "pass": true
+    },
+    {
+      "name": "1280:native:native did not grade wrong choice",
+      "pass": true
+    },
+    {
+      "name": "1280:native:reload retains attempted state",
+      "pass": true
+    },
+    {
+      "name": "1280:native:reload retains response B",
+      "pass": true
+    },
+    {
+      "name": "1280:native:reload retains assisted state",
+      "pass": true
+    },
+    {
+      "name": "1280:native:keyboard radio choice C retained",
+      "pass": true
+    },
+    {
+      "name": "1280:native:textbook typed commitment",
+      "pass": true
+    },
+    {
+      "name": "1280:native:textbook MCQ commitment",
+      "pass": true
+    },
+    {
+      "name": "1280:native:no page horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "1280:received-viewer:exact B",
+      "pass": true
+    },
+    {
+      "name": "1280:received-viewer:negative control rejects positive verdict",
+      "pass": true
+    },
+    {
+      "name": "1280:received-viewer:old substring oracle demonstrated unsafe",
+      "pass": true
+    },
+    {
+      "name": "1280:received-viewer:exact C",
+      "pass": true
+    },
+    {
+      "name": "390:native:nine records",
+      "pass": true
+    },
+    {
+      "name": "390:native:source type clearly synthetic",
+      "pass": true
+    },
+    {
+      "name": "390:native:no visible answer before commitment",
+      "pass": true
+    },
+    {
+      "name": "390:native:premature solution opening refused",
+      "pass": true
+    },
+    {
+      "name": "390:native:empty commitment refused",
+      "pass": true
+    },
+    {
+      "name": "390:native:one support rung",
+      "pass": true
+    },
+    {
+      "name": "390:native:support body revealed",
+      "pass": true
+    },
+    {
+      "name": "390:native:two support rungs",
+      "pass": true
+    },
+    {
+      "name": "390:native:support ladder ends",
+      "pass": true
+    },
+    {
+      "name": "390:native:assistance retained",
+      "pass": true
+    },
+    {
+      "name": "390:native:help does not reveal answer",
+      "pass": true
+    },
+    {
+      "name": "390:native:keyboard commits chosen response",
+      "pass": true
+    },
+    {
+      "name": "390:native:commit unlocks solution",
+      "pass": true
+    },
+    {
+      "name": "390:native:source answer now visible",
+      "pass": true
+    },
+    {
+      "name": "390:native:native did not grade wrong choice",
+      "pass": true
+    },
+    {
+      "name": "390:native:reload retains attempted state",
+      "pass": true
+    },
+    {
+      "name": "390:native:reload retains response B",
+      "pass": true
+    },
+    {
+      "name": "390:native:reload retains assisted state",
+      "pass": true
+    },
+    {
+      "name": "390:native:keyboard radio choice C retained",
+      "pass": true
+    },
+    {
+      "name": "390:native:textbook typed commitment",
+      "pass": true
+    },
+    {
+      "name": "390:native:textbook MCQ commitment",
+      "pass": true
+    },
+    {
+      "name": "390:native:no page horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "390:received-viewer:exact B",
+      "pass": true
+    },
+    {
+      "name": "390:received-viewer:negative control rejects positive verdict",
+      "pass": true
+    },
+    {
+      "name": "390:received-viewer:old substring oracle demonstrated unsafe",
+      "pass": true
+    },
+    {
+      "name": "390:received-viewer:exact C",
+      "pass": true
+    },
+    {
+      "name": "Owner matrix has fourteen cells",
+      "pass": true
+    },
+    {
+      "name": "Owner catalogue has twenty-three records",
+      "pass": true
+    },
+    {
+      "name": "examination filter shows fourteen leads",
+      "pass": true
+    },
+    {
+      "name": "search isolates the exact lead",
+      "pass": true
+    },
+    {
+      "name": "textbook filter shows eight",
+      "pass": true
+    },
+    {
+      "name": "synthetic filter shows one",
+      "pass": true
+    },
+    {
+      "name": "empty matrix cell remains an honest gap",
+      "pass": true
+    },
+    {
+      "name": "no runtime page exceptions",
+      "pass": true
+    }
+  ],
+  "passed": 60,
+  "total": 60,
+  "page_errors": [],
+  "limitations": [
+    "Native UI is commitment/reveal/self-check, not automatic grading.",
+    "Local storage is not independently saved P1 research evidence.",
+    "Static source inspection can recover answer bytes.",
+    "Inherited presentation and portal-link findings remain open."
+  ]
+}

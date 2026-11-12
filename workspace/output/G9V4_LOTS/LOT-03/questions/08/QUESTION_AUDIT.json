@@ -1,0 +1,115 @@
+{
+  "sequence": 8,
+  "task_identity": "Q-ID-08",
+  "stable_id": "Q-PHY-WPE-JEEM-2025-01-29-S2-08",
+  "source_id": "EX-M16",
+  "lot": "LOT-03",
+  "paper": "JEE Main 2025 (Online) 29th January Evening Shift",
+  "source_type": "SCRAPED_EXTRACT_EXAMGOAL",
+  "source_custody": "VERIFIED_TEXT_ONLY",
+  "stem_text": "A sand dropper drops sand of mass m(t) on a conveyer belt at a rate proportional to the square root of speed (v) of the belt, i.e., (\ud835\udc51\ud835\udc5a)/(\ud835\udc51\ud835\udc61)\u221d\u221a(\ud835\udc63) . If P is the power delivered to run the belt at constant speed then which of the following relationship is true?",
+  "stem_sha256": "d2abc9e9b5d095977abadd84bae36f1a5f40a58e4341dd4e8593efa216f7c0a2",
+  "source_hash": "d2abc9e9b5d095977abadd84bae36f1a5f40a58e4341dd4e8593efa216f7c0a2",
+  "source_record_digest": "d2abc9e9b5d095977abadd84bae36f1a5f40a58e4341dd4e8593efa216f7c0a2",
+  "next_scope_recommendation": "PROPOSED_NEXT_TEXT_ONLY_D3_CANDIDATE: Recommended for next scoping decision by Owner. Requires independent blind physics solve and NTA official key verification before any Core2 authoring.",
+  "duplicate_parent": null,
+  "scope": "IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "VERIFIED_NONE_REQUIRED",
+  "options": [
+    "A: P \u221d\u221a(\ud835\udc63)",
+    "B: P \u221d\ud835\udc63",
+    "C: \ud835\udc43^(2)\u221d\ud835\udc63^(3)",
+    "D: \ud835\udc43^(2)\u221d\ud835\udc63^(5)"
+  ],
+  "unbound_remote_figures": [],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "VARIABLE_MASS_BELT_POWER_PROPORTIONALITY",
+    "assumed_parameters_from_coaching_figure": "None required (pure text). Constant speed v, sand dropped from rest relative to ground.",
+    "derivation": "Rate of mass addition: dm/dt = k * v^(1/2). To maintain constant speed v, the force required to accelerate newly dropped sand from rest to speed v is F = v * (dm/dt) = v * (k * v^(1/2)) = k * v^(3/2). Total power delivered to the belt: P = F * v = (k * v^(3/2)) * v = k * v^(5/2). Squaring both sides to eliminate fractional powers: P^2 = k^2 * v^5, which implies P^2 proportional to v^5.",
+    "predicted_option": "D: \ud835\udc43^(2)\u221d\ud835\udc63^(5)",
+    "limiting_cases": "If dm/dt were constant (independent of v), P = v^2 (dm/dt) => P proportional to v^2 => P^2 proportional to v^4. With dm/dt proportional to v^(1/2), P proportional to v^(5/2) => P^2 proportional to v^5."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "status": "UNREVIEWED",
+    "decisive_operation": "MODEL",
+    "crux": "Modeling variable-mass thrust F = v(dm/dt) and input power P = F*v = v^2(dm/dt) under velocity-dependent mass flux dm/dt proportional to v^(1/2).",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 2,
+          "evidence": "Variable-mass dynamics and continuous conveyor belt mechanical power."
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Converting proportionality statement to power scaling law."
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Force formulation -> power multiplication -> squaring operation."
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Index laws: v * v^(1/2) * v = v^(5/2), (v^(5/2))^2 = v^5."
+        },
+        "trap_exception_sensitivity": {
+          "score": 2,
+          "evidence": "Critical trap: confusing rate of KE increase (1/2 v^2 dm/dt) with motor power input (v^2 dm/dt)."
+        }
+      },
+      "total": 7,
+      "band": "D3"
+    },
+    "demand_proposal": {
+      "primary": "MODEL",
+      "secondary": [
+        "APPLY"
+      ],
+      "candidate_cell": "QRT-MODEL-D3",
+      "status": "PROPOSED"
+    },
+    "representation_requirements": [
+      "EQUATION"
+    ],
+    "independent_checks": [
+      "UNITS",
+      "LIMITING_CASE"
+    ],
+    "wrong_route_hypotheses": [
+      {
+        "route": "Using rate of change of KE: P = d(1/2 m v^2)/dt = 1/2 v^2 (dm/dt) = 1/2 k v^(5/2) (gives same power scaling, but conceptually flawed by missing inelastic dissipation)",
+        "status": "HYPOTHESIS"
+      },
+      {
+        "route": "Setting F = (dm/dt) => P = F*v = v^(3/2) => P^2 proportional to v^3 (Option C)",
+        "status": "HYPOTHESIS"
+      }
+    ]
+  },
+  "qrt": "UNREVIEWED",
+  "blueprint_fit": {
+    "blueprint_id": "PHYS-QRT-BLUEPRINT",
+    "version": "0.2.0",
+    "sha256": "ac32dc937403cac33c76343f2e7e0dabd7c2c4a3188cb3b453ddf2576578ddf9",
+    "cell": "QRT-MODEL-D3"
+  },
+  "adapter_fit": {
+    "adapter_id": "PHYS-TOPIC-WPE",
+    "version": "0.1.0",
+    "sha256": "899e61e59370a3fc5d6f73b7d8cbb65165d0782c9fba20acd83439ae441e6a9b",
+    "topic": "WPE"
+  },
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_REVIEW",
+  "b2_blind_status": "NOT_RUN",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)",
+    "HOLD:B2_INDEPENDENT_PENDING (requires independent confirmation of variable-mass power model)"
+  ],
+  "next_action": "Verify official NTA key and submit source-only packet for B2 blind solve."
+}

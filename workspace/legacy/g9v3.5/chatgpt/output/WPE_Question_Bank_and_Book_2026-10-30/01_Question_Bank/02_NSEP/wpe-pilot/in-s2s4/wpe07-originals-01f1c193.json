@@ -1,0 +1,741 @@
+{
+  "task_id": "P1-WPE-G9v35",
+  "card": "S2",
+  "move": "M1",
+  "as_of": "2026-10-27",
+  "key_idea": "WEP-07",
+  "role": "writer — not independent reviewer",
+  "purpose": "Find original NSEP questions about E=K+U constant, E>=U and turning positions E=U, K=0; no authored assessment questions.",
+  "status": "RESEARCHED_WRITER_DRAFT_NOT_APPROVED",
+  "vocabularies": {
+    "learner_metadata_url": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Shared/vocabularies/learner-question-metadata.v1.json",
+    "version": "1.1.0",
+    "cognitive_demand_url": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Shared/vocabularies/cognitive-demand.v1.json",
+    "cognitive_demand_version": "1.1.0",
+    "core2_url": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Shared/roles/CORE2.md",
+    "shared_role_invariants_url": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Shared/roles/README.md",
+    "scoring_rule": "Five independent 0–2 dimensions, D3=6–7, D4=8–10."
+  },
+  "copyright_and_source_custody": {
+    "original_stems_and_options_embedded": false,
+    "reason": "Original exam PDF wording is copyrighted; supply source-exact official paper links, printed page and question locators instead of reproducing long stems/options or inventing them. Authored short synopses are not questions.",
+    "fidelity_status_explanation": "VERBATIM_CONFIRMED here means inspected the original publisher paper directly; it does not mean that full exam text is embedded in this JSON.",
+    "source_pdf_bytes_retained_in_json": false,
+    "source_sha256_available": false,
+    "core2_promotion_ready": false,
+    "remaining_custody_action": "Retain authorised source PDF bytes and digests and independently witness item-level stem, options and figure without making this draft an approved canonical Core2 record."
+  },
+  "items": [
+    {
+      "id": "WEP07-01",
+      "key_idea": "WEP-07",
+      "source": {
+        "exam": "NSEP",
+        "exam_body": "IAPT",
+        "year": 2024,
+        "date": "2024-11-24",
+        "time_local": "08:30–10:30 IST",
+        "shift": "single morning sitting; paper code 61",
+        "paper_code": "61",
+        "question_number": 4,
+        "paper_printed_page": 3,
+        "paper_pdf_page_index": 2,
+        "paper_url": "https://iapt.org.in/wp-content/uploads/NSEP_-_2024_Set_61.pdf",
+        "official_key_url": "https://iapt.org.in/wp-content/uploads/NSEP_-_2024_Final_Answer_key.pdf",
+        "key_printed_page": 1,
+        "official_key_kind": "IAPT final answer key",
+        "paper_exam_fidelity": "VERBATIM_CONFIRMED",
+        "original_source_viewed": true,
+        "source_acquisition_sha256": null,
+        "source_pdf_bytes_retained": false
+      },
+      "original": {
+        "custody_mode": "EXTERNAL_REFERENCE_NOT_EMBEDDED",
+        "stem_verbatim": null,
+        "options_verbatim": null,
+        "conditions_verbatim": null,
+        "original_hints": "absent in paper",
+        "figure_exact_visual_description": "none",
+        "original_figure_embedded": false,
+        "source_component_verification": {
+          "identity": "VERIFIED_EXTERNAL",
+          "stem": "VERIFIED_EXTERNAL",
+          "options": "VERIFIED_EXTERNAL",
+          "conditions": "VERIFIED_EXTERNAL",
+          "figure": "NONE_IN_SOURCE",
+          "source_key": "VERIFIED_EXTERNAL"
+        },
+        "non_verbatim_indexing_synopsis": "Initially a spring is compressed by a constant force F to a distance ξ; the force is suddenly reversed and doubled; find the farthest extension beyond natural length.",
+        "option_values_index_not_original_wording": {
+          "a": "2ξ",
+          "b": "3ξ",
+          "c": "4ξ",
+          "d": "5ξ"
+        },
+        "official_answer": [
+          "d"
+        ],
+        "question_type": "single_correct_mcq",
+        "provenance": "PYQ_VERIFIED",
+        "do_not_treat_synopsis_as_question_stem": true
+      },
+      "labelling": {
+        "primary_demand": "MODEL",
+        "difficulty_factors": {
+          "concept_model_selection": {
+            "score": 1,
+            "evidence": "Select a post-reversal effective potential for spring plus applied constant force, rather than spring potential alone."
+          },
+          "representation_translation": {
+            "score": 1,
+            "evidence": "Convert compression and extension into signed positions x = −ξ and x > 0."
+          },
+          "reasoning_chain_length": {
+            "score": 2,
+            "evidence": "First infer kξ=F, then set the post-switch conserved energy, then locate the other rest position."
+          },
+          "algebra_computational_load": {
+            "score": 1,
+            "evidence": "Expand and factor a quadratic in x/ξ."
+          },
+          "trap_exception_sensitivity": {
+            "score": 2,
+            "evidence": "A changed applied force invalidates conservation of spring energy alone; the −2Fx contribution is decisive."
+          }
+        },
+        "difficulty_total": 7,
+        "difficulty_band": "D3",
+        "difficulty_reason": "Score 7: switching the force changes the appropriate potential, and a second turning root must be selected.",
+        "key_step": "Choose x positive along the new applied force, so the initial coordinate is −ξ; after switching, U_eff(x)=kx²/2−2Fx.",
+        "prerequisites": [
+          "Hooke law F=kξ",
+          "spring elastic energy kx²/2",
+          "work of a constant force",
+          "signed displacement and quadratic factorisation"
+        ],
+        "hint_ladder_authored_not_source": [
+          "Decide what happens to the conserved energy expression immediately after the force changes.",
+          "Measure x from natural length; compression and extension have opposite signs.",
+          "At the extreme extension, speed is again zero; compare the total potential at the two rest points."
+        ],
+        "answer": {
+          "crux_move_ref": "WEP07-01-s2",
+          "reasoning_route": [
+            {
+              "step_ref": "WEP07-01-s1",
+              "description": "At the initial equilibrium the original force gives F=kξ."
+            },
+            {
+              "step_ref": "WEP07-01-s2",
+              "description": "Choose x positive along the new applied force, so the initial coordinate is −ξ; after switching, U_eff(x)=kx²/2−2Fx."
+            },
+            {
+              "step_ref": "WEP07-01-s3",
+              "description": "Immediately after switching the spring is still at −ξ with zero speed: E= kξ²/2+2Fξ=5kξ²/2."
+            },
+            {
+              "step_ref": "WEP07-01-s4",
+              "description": "At an extreme extension K=0, hence kx²/2−2kξx=5kξ²/2."
+            },
+            {
+              "step_ref": "WEP07-01-s5",
+              "description": "Thus x²−4ξx−5ξ²=(x−5ξ)(x+ξ)=0; exclude the already-known initial root x=−ξ."
+            },
+            {
+              "step_ref": "WEP07-01-s6",
+              "description": "The other turning point is x=5ξ, choice d."
+            }
+          ],
+          "writer_solution": "Use F=kξ. A constant force of magnitude 2F directed toward extension has potential −2Fx. Conservation after the switch is (k/2)x²−2kξx=(5/2)kξ² at the two zero-velocity points. Factoring yields x=−ξ (starting point) and x=5ξ (maximum extension). Therefore d.",
+          "calculated_answer": [
+            "d"
+          ],
+          "agrees_with_official_key": true
+        },
+        "needs_more_than_energy_conservation_alone": false,
+        "extra_knowledge_needed": []
+      },
+      "fidelity_status": "VERBATIM_CONFIRMED",
+      "promotion_decision": "NOT_REVIEWED_NOT_APPROVED"
+    },
+    {
+      "id": "WEP07-02",
+      "key_idea": "WEP-07",
+      "source": {
+        "exam": "NSEP",
+        "exam_body": "IAPT",
+        "year": 2024,
+        "date": "2024-11-24",
+        "time_local": "08:30–10:30 IST",
+        "shift": "single morning sitting; paper code 61",
+        "paper_code": "61",
+        "question_number": 32,
+        "paper_printed_page": 8,
+        "paper_pdf_page_index": 7,
+        "paper_url": "https://iapt.org.in/wp-content/uploads/NSEP_-_2024_Set_61.pdf",
+        "official_key_url": "https://iapt.org.in/wp-content/uploads/NSEP_-_2024_Final_Answer_key.pdf",
+        "key_printed_page": 1,
+        "official_key_kind": "IAPT final answer key",
+        "paper_exam_fidelity": "VERBATIM_CONFIRMED",
+        "original_source_viewed": true,
+        "source_acquisition_sha256": null,
+        "source_pdf_bytes_retained": false
+      },
+      "original": {
+        "custody_mode": "EXTERNAL_REFERENCE_NOT_EMBEDDED",
+        "stem_verbatim": null,
+        "options_verbatim": null,
+        "conditions_verbatim": null,
+        "original_hints": "absent in paper",
+        "figure_exact_visual_description": "A single uniform chain is drawn as open oval links lying horizontally across a frictionless tabletop, bending around the rounded right edge and hanging vertically. A vertical line marks the edge; a downward arrow on the hanging side is labelled y. No masses or angles are separately marked.",
+        "original_figure_embedded": false,
+        "source_component_verification": {
+          "identity": "VERIFIED_EXTERNAL",
+          "stem": "VERIFIED_EXTERNAL",
+          "options": "VERIFIED_EXTERNAL",
+          "conditions": "VERIFIED_EXTERNAL",
+          "figure": "VERIFIED_EXTERNAL",
+          "source_key": "VERIFIED_EXTERNAL"
+        },
+        "non_verbatim_indexing_synopsis": "A uniform flexible chain (length L, mass/length λ) starts stationary with hanging length y₀ over a smooth table edge; obtain its speed when fully vertical.",
+        "option_values_index_not_original_wording": {
+          "a": "√[g(L−y₀²/L)]",
+          "b": "√[2g(L−y₀²/L)]",
+          "c": "√[g(L−y₀)]",
+          "d": "√[2g(L−y₀)]"
+        },
+        "official_answer": [
+          "a"
+        ],
+        "question_type": "single_correct_mcq",
+        "provenance": "PYQ_VERIFIED",
+        "do_not_treat_synopsis_as_question_stem": true
+      },
+      "labelling": {
+        "primary_demand": "SYNTHESIZE",
+        "difficulty_factors": {
+          "concept_model_selection": {
+            "score": 1,
+            "evidence": "Recognise a constant-mass chain as one energy-conserving system despite changing hanging mass."
+          },
+          "representation_translation": {
+            "score": 2,
+            "evidence": "Translate changing dangling length into gravitational energy of a uniform segment at centre-of-mass depth y/2."
+          },
+          "reasoning_chain_length": {
+            "score": 2,
+            "evidence": "Form U_initial and U_final, calculate their difference, and equate to whole-chain kinetic energy."
+          },
+          "algebra_computational_load": {
+            "score": 1,
+            "evidence": "Simplify λg(L²−y₀²)/2 against the kinetic energy λLv²/2."
+          },
+          "trap_exception_sensitivity": {
+            "score": 1,
+            "evidence": "The hanging segment alone does not supply the complete kinetic mass; all of λL moves."
+          }
+        },
+        "difficulty_total": 7,
+        "difficulty_band": "D3",
+        "difficulty_reason": "Score 7: distributed gravitational energy and all-chain kinetic energy must be coordinated.",
+        "key_step": "When length y hangs, that portion has mass λy and mean gravitational height −y/2; therefore U(y)=−λgy²/2.",
+        "prerequisites": [
+          "gravitational potential mgh",
+          "centre of mass of a uniform straight segment at its midpoint",
+          "mechanical energy conservation on a frictionless surface",
+          "all chain links have the same speed"
+        ],
+        "hint_ladder_authored_not_source": [
+          "Use the tabletop edge as zero gravitational height.",
+          "At a hanging length y, determine the hanging mass and its centre-of-mass depth.",
+          "For kinetic energy, remember the entire chain is moving when it leaves the table."
+        ],
+        "answer": {
+          "crux_move_ref": "WEP07-02-s1",
+          "reasoning_route": [
+            {
+              "step_ref": "WEP07-02-s1",
+              "description": "When length y hangs, that portion has mass λy and mean gravitational height −y/2; therefore U(y)=−λgy²/2."
+            },
+            {
+              "step_ref": "WEP07-02-s2",
+              "description": "The initial energy is E_i=−λgy₀²/2 because the chain is released from rest."
+            },
+            {
+              "step_ref": "WEP07-02-s3",
+              "description": "Just before leaving the edge, U_f=−λgL²/2 and K_f=(λL)v²/2."
+            },
+            {
+              "step_ref": "WEP07-02-s4",
+              "description": "Set E_i=U_f+K_f and cancel λ/2."
+            },
+            {
+              "step_ref": "WEP07-02-s5",
+              "description": "Obtain Lv²=g(L²−y₀²), hence v=√[g(L−y₀²/L)], choice a."
+            }
+          ],
+          "writer_solution": "Take the table-edge height as U=0. The initial dangling segment has mass λy₀ and its centre of mass lies y₀/2 below the edge, so U_i=−λgy₀²/2. The final chain has mass λL and COM L/2 below the edge, so U_f=−λgL²/2. Thus (λL)v²/2=λg(L²−y₀²)/2. Divide through: v²=g(L−y₀²/L), giving a.",
+          "calculated_answer": [
+            "a"
+          ],
+          "agrees_with_official_key": true
+        },
+        "needs_more_than_energy_conservation_alone": false,
+        "extra_knowledge_needed": []
+      },
+      "fidelity_status": "VERBATIM_CONFIRMED",
+      "promotion_decision": "NOT_REVIEWED_NOT_APPROVED"
+    },
+    {
+      "id": "WEP07-03",
+      "key_idea": "WEP-07",
+      "source": {
+        "exam": "NSEP",
+        "exam_body": "IAPT",
+        "year": 2025,
+        "date": "2025-11-23",
+        "time_local": "08:30–10:30 IST",
+        "shift": "single morning sitting; paper code 61",
+        "paper_code": "61",
+        "question_number": 57,
+        "paper_printed_page": 15,
+        "paper_pdf_page_index": 14,
+        "paper_url": "https://iapt.org.in/wp-content/uploads/images/NSEP_-_2025_Set_611.pdf",
+        "official_key_url": "https://iapt.org.in/wp-content/uploads/images/NSEP_-_2025_Solution_1_compressed.pdf",
+        "key_printed_page": 20,
+        "official_key_kind": "IAPT official published worked solution with explicit Ans field",
+        "paper_exam_fidelity": "VERBATIM_CONFIRMED",
+        "original_source_viewed": true,
+        "source_acquisition_sha256": null,
+        "source_pdf_bytes_retained": false
+      },
+      "original": {
+        "custody_mode": "EXTERNAL_REFERENCE_NOT_EMBEDDED",
+        "stem_verbatim": null,
+        "options_verbatim": null,
+        "conditions_verbatim": null,
+        "original_hints": "absent in paper",
+        "figure_exact_visual_description": "none",
+        "original_figure_embedded": false,
+        "source_component_verification": {
+          "identity": "VERIFIED_EXTERNAL",
+          "stem": "VERIFIED_EXTERNAL",
+          "options": "VERIFIED_EXTERNAL",
+          "conditions": "VERIFIED_EXTERNAL",
+          "figure": "NONE_IN_SOURCE",
+          "source_key": "VERIFIED_EXTERNAL"
+        },
+        "non_verbatim_indexing_synopsis": "A particle is released from rest at x₀=α/β in U(x)=α/x²−β/x for α,β>0. Test four claims about rewriting U, finding v(x), maximum speed and total mechanical energy.",
+        "option_values_index_not_original_wording": {
+          "a": "equivalent scaled expression for U(x)",
+          "b": "v(x)=√{2α/[mx₀²]·[x₀/x−(x₀/x)²]}",
+          "c": "v_max=√[α/(2mx₀²)]",
+          "d": "K(x)+U(x)=0"
+        },
+        "official_answer": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "question_type": "multi_correct_mcq",
+        "provenance": "PYQ_VERIFIED",
+        "do_not_treat_synopsis_as_question_stem": true
+      },
+      "labelling": {
+        "primary_demand": "SYNTHESIZE",
+        "difficulty_factors": {
+          "concept_model_selection": {
+            "score": 1,
+            "evidence": "Apply a single conserved energy to all four statements, identifying E=U(x₀)=0."
+          },
+          "representation_translation": {
+            "score": 2,
+            "evidence": "Introduce dimensionless z=x₀/x and preserve the admissible interval 0≤z≤1 implied by E≥U."
+          },
+          "reasoning_chain_length": {
+            "score": 2,
+            "evidence": "Coordinate potential rescaling, energy conservation, velocity expression, domain and maximum-speed evaluation."
+          },
+          "algebra_computational_load": {
+            "score": 2,
+            "evidence": "Symbolically substitute β=α/x₀, solve for square-root velocity and complete a square to maximise z−z²."
+          },
+          "trap_exception_sensitivity": {
+            "score": 1,
+            "evidence": "A positive kinetic energy coexists with E=0 because U can be negative; the x-domain cannot be ignored."
+          }
+        },
+        "difficulty_total": 8,
+        "difficulty_band": "D4",
+        "difficulty_reason": "Score 8: several symbolic conclusions depend on one conserved-energy invariant and careful domain handling.",
+        "key_step": "At the release point x=x₀, U(x₀)=0 and K=0; thus the conserved total energy E=0.",
+        "prerequisites": [
+          "rational functions",
+          "potential energy functions",
+          "K=mv²/2",
+          "nonnegative square roots",
+          "completing the square",
+          "inequalities and position domains; calculus not required"
+        ],
+        "hint_ladder_authored_not_source": [
+          "Find the starting value of potential energy before writing the speed formula.",
+          "Express U in terms of the dimensionless ratio x₀/x.",
+          "A quadratic of the form z−z² has a maximum that can be found by completing the square."
+        ],
+        "answer": {
+          "crux_move_ref": "WEP07-03-s2",
+          "reasoning_route": [
+            {
+              "step_ref": "WEP07-03-s1",
+              "description": "Since x₀=α/β, write β=α/x₀ and U(x)=α/x₀²[(x₀/x)²−x₀/x]."
+            },
+            {
+              "step_ref": "WEP07-03-s2",
+              "description": "At the release point x=x₀, U(x₀)=0 and K=0; thus the conserved total energy E=0."
+            },
+            {
+              "step_ref": "WEP07-03-s3",
+              "description": "Hence K(x)=−U(x)=α/x₀²[z−z²] where z=x₀/x, and v(x)=√{2α/[mx₀²]·[z−z²]}."
+            },
+            {
+              "step_ref": "WEP07-03-s4",
+              "description": "The accessible outward branch has x≥x₀ and thus 0<z≤1; x₀ is its finite turning point and no smaller positive x is accessible."
+            },
+            {
+              "step_ref": "WEP07-03-s5",
+              "description": "Complete the square z−z²=1/4−(z−1/2)²; its maximum 1/4 occurs at z=1/2 or x=2x₀."
+            },
+            {
+              "step_ref": "WEP07-03-s6",
+              "description": "Then v_max²=α/(2mx₀²). Claims a, b, c and d all hold."
+            }
+          ],
+          "writer_solution": "Substitute β=α/x₀. At release, U(x₀)=α/x₀²−α/x₀²=0, so E=K+U=0 for the motion. Set z=x₀/x: U=α(z²−z)/x₀² and v²=(2α/(mx₀²))(z−z²). Thus statements a, b and d are true. For maximum speed, complete the square: z−z²=1/4−(z−1/2)²; maximum at z=1/2 (x=2x₀), giving v_max=√[α/(2mx₀²)]. Thus c true and official set a,b,c,d agrees. Motion on the positive axis cannot enter 0<x<x₀ because then U>0=E.",
+          "calculated_answer": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "agrees_with_official_key": true
+        },
+        "needs_more_than_energy_conservation_alone": true,
+        "extra_knowledge_needed": [
+          "Requires algebraic domain awareness beyond routine Grade 9; maximum is obtainable without differentiation."
+        ]
+      },
+      "fidelity_status": "VERBATIM_CONFIRMED",
+      "promotion_decision": "NOT_REVIEWED_NOT_APPROVED"
+    },
+    {
+      "id": "WEP07-04",
+      "key_idea": "WEP-07",
+      "source": {
+        "exam": "NSEP",
+        "exam_body": "IAPT",
+        "year": 2024,
+        "date": "2024-11-24",
+        "time_local": "08:30–10:30 IST",
+        "shift": "single morning sitting; paper code 61",
+        "paper_code": "61",
+        "question_number": 59,
+        "paper_printed_page": 13,
+        "paper_pdf_page_index": 12,
+        "paper_url": "https://iapt.org.in/wp-content/uploads/NSEP_-_2024_Set_61.pdf",
+        "official_key_url": "https://iapt.org.in/wp-content/uploads/NSEP_-_2024_Final_Answer_key.pdf",
+        "key_printed_page": 1,
+        "official_key_kind": "IAPT final answer key",
+        "paper_exam_fidelity": "VERBATIM_CONFIRMED",
+        "original_source_viewed": true,
+        "source_acquisition_sha256": null,
+        "source_pdf_bytes_retained": false
+      },
+      "original": {
+        "custody_mode": "EXTERNAL_REFERENCE_NOT_EMBEDDED",
+        "stem_verbatim": null,
+        "options_verbatim": null,
+        "conditions_verbatim": null,
+        "original_hints": "absent in paper",
+        "figure_exact_visual_description": "A thin vertical uniform rod OA is attached to a small pin pivot at top O with three short hatch strokes indicating support. Its midpoint is marked by a black dot labelled C, and the free lower endpoint is labelled A. There is no arrow or additional angular position drawn.",
+        "original_figure_embedded": false,
+        "source_component_verification": {
+          "identity": "VERIFIED_EXTERNAL",
+          "stem": "VERIFIED_EXTERNAL",
+          "options": "VERIFIED_EXTERNAL",
+          "conditions": "VERIFIED_EXTERNAL",
+          "figure": "VERIFIED_EXTERNAL",
+          "source_key": "VERIFIED_EXTERNAL"
+        },
+        "non_verbatim_indexing_synopsis": "A rod of length L pivots at its end O, has midpoint C, and is considered under various oscillation, release and midpoint-break scenarios; assess statements on period, speed and post-break motion.",
+        "option_values_index_not_original_wording": {
+          "a": "asserted small-oscillation T=2π√[L/(2g)]",
+          "b": "from horizontal rest ω at vertical =√(3g/L)",
+          "c": "after impulse-free fracture at C, upper half rises to 60° from vertical",
+          "d": "lower half falls vertically while rotating about own centre"
+        },
+        "official_answer": [
+          "b",
+          "c"
+        ],
+        "question_type": "multi_correct_mcq",
+        "provenance": "PYQ_VERIFIED",
+        "do_not_treat_synopsis_as_question_stem": true
+      },
+      "labelling": {
+        "primary_demand": "SYNTHESIZE",
+        "difficulty_factors": {
+          "concept_model_selection": {
+            "score": 2,
+            "evidence": "Choose rotational kinetic-energy model for the intact rod and separately model the upper-half pendulum after break."
+          },
+          "representation_translation": {
+            "score": 1,
+            "evidence": "Convert uniform rod geometry to gravitational centre-of-mass height changes and pivot inertias."
+          },
+          "reasoning_chain_length": {
+            "score": 2,
+            "evidence": "Obtain intact angular speed, partition instantaneous kinetic energy, then solve the subsequent upper-half turning angle."
+          },
+          "algebra_computational_load": {
+            "score": 1,
+            "evidence": "Several short inertia and energy substitutions with consistent lengths and masses."
+          },
+          "trap_exception_sensitivity": {
+            "score": 2,
+            "evidence": "After break the lower fragment retains horizontal COM velocity; assuming it drops vertically makes d falsely plausible."
+          }
+        },
+        "difficulty_total": 8,
+        "difficulty_band": "D4",
+        "difficulty_reason": "Score 8: transfer from one rigid-body system to a post-break subsystem and an impulse-free velocity condition.",
+        "key_step": "When the upper piece reaches a turning angle θ, K=0 and its COM rises by (L/4)(1−cosθ). Set MgL/16=(MgL/8)(1−cosθ), obtaining θ=60°; this confirms c under the horizontal-release state.",
+        "prerequisites": [
+          "uniform-rod moment of inertia I_end=ML²/3",
+          "rotational kinetic energy Iω²/2",
+          "physical pendulum period",
+          "centre of mass",
+          "velocity continuity in non-impulsive fracture",
+          "mechanical energy conservation"
+        ],
+        "hint_ladder_authored_not_source": [
+          "For the intact rod, determine the height through which its centre of mass descends.",
+          "At the instant of a fracture without impulse, each piece keeps the instantaneous velocities it had just before breaking.",
+          "For the upper half, compare its rotational kinetic energy at the bottom with the gain in its centre-of-mass height at its furthest position."
+        ],
+        "answer": {
+          "crux_move_ref": "WEP07-04-s5",
+          "reasoning_route": [
+            {
+              "step_ref": "WEP07-04-s1",
+              "description": "Let total rod mass be M. From horizontal rest, its COM descends L/2; equate MgL/2=(1/2)(ML²/3)ω²."
+            },
+            {
+              "step_ref": "WEP07-04-s2",
+              "description": "This gives ω²=3g/L, confirming statement b."
+            },
+            {
+              "step_ref": "WEP07-04-s3",
+              "description": "Immediately after impulse-free fracture, the upper half has mass M/2, length L/2 and inertia about O: I_top=ML²/24."
+            },
+            {
+              "step_ref": "WEP07-04-s4",
+              "description": "At the break its kinetic energy about O is (1/2)I_topω²=MgL/16."
+            },
+            {
+              "step_ref": "WEP07-04-s5",
+              "description": "When the upper piece reaches a turning angle θ, K=0 and its COM rises by (L/4)(1−cosθ). Set MgL/16=(MgL/8)(1−cosθ), obtaining θ=60°; this confirms c under the horizontal-release state."
+            },
+            {
+              "step_ref": "WEP07-04-s6",
+              "description": "The physical pendulum period is 2π√[2L/(3g)], not the claim in a; the lower piece retains nonzero horizontal COM velocity and so does not fall strictly vertically, refuting d."
+            }
+          ],
+          "writer_solution": "For a uniform intact rod released from horizontal, E_g=M gL/2 goes into K_rot=(ML²/6)ω², so ω=√(3g/L) (b). If it breaks without impulse at the vertical, the attached top half has inertia (M/2)(L/2)²/3=ML²/24, with kinetic energy MgL/16. At its angular turning point: (M/2)g(L/4)(1−cosθ)=MgL/16, so cosθ=1/2 and θ=60° (c). Meanwhile a misstates the physical-pendulum period, and d overlooks the lower fragment’s horizontal COM velocity.",
+          "calculated_answer": [
+            "b",
+            "c"
+          ],
+          "agrees_with_official_key": true
+        },
+        "needs_more_than_energy_conservation_alone": true,
+        "extra_knowledge_needed": [
+          "Rotational energy, rotational inertia and physical-pendulum formula are beyond Grade 9 energy alone.",
+          "The interpretation of c uses the horizontal-release condition discussed in b; the standalone wording of c does not restate its starting amplitude."
+        ]
+      },
+      "fidelity_status": "VERBATIM_CONFIRMED",
+      "promotion_decision": "NOT_REVIEWED_NOT_APPROVED"
+    },
+    {
+      "id": "WEP07-05",
+      "key_idea": "WEP-07",
+      "source": {
+        "exam": "NSEP",
+        "exam_body": "IAPT",
+        "year": 2019,
+        "date": "2019-11-24",
+        "time_local": "08:30–10:30 IST",
+        "shift": "single morning sitting; paper code 61",
+        "paper_code": "61",
+        "question_number": 19,
+        "paper_printed_page": 6,
+        "paper_pdf_page_index": 5,
+        "paper_url": "https://iapt.org.in/wp-content/uploads/Physics_QP_2019.pdf",
+        "official_key_url": "https://iapt.org.in/wp-content/uploads/NSEP_FINAL_ANSWER_KEY_2019.pdf",
+        "key_printed_page": 1,
+        "official_key_kind": "IAPT final answer key",
+        "paper_exam_fidelity": "VERBATIM_CONFIRMED",
+        "original_source_viewed": true,
+        "source_acquisition_sha256": null,
+        "source_pdf_bytes_retained": false
+      },
+      "original": {
+        "custody_mode": "EXTERNAL_REFERENCE_NOT_EMBEDDED",
+        "stem_verbatim": null,
+        "options_verbatim": null,
+        "conditions_verbatim": null,
+        "original_hints": "absent in paper",
+        "figure_exact_visual_description": "On a small rectangular graph, horizontal axis t(s) has labelled ticks 0,2,4,6,8,10; vertical axis x(cm) marks −15,−10,−5,0,5,10,15. A smooth nearly sinusoidal curve starts at (0,0) increasing, peaks near (2,5 cm), crosses zero near (4,0), reaches a trough near (6,−5 cm), crosses zero near (8,0), and rises to +5 cm near t=10 s. Axes form a boxed plot.",
+        "original_figure_embedded": false,
+        "source_component_verification": {
+          "identity": "VERIFIED_EXTERNAL",
+          "stem": "VERIFIED_EXTERNAL",
+          "options": "VERIFIED_EXTERNAL",
+          "conditions": "VERIFIED_EXTERNAL",
+          "figure": "VERIFIED_EXTERNAL",
+          "source_key": "VERIFIED_EXTERNAL"
+        },
+        "non_verbatim_indexing_synopsis": "A sinusoidal position–time plot (x in cm versus t in s) for a 1 kg particle in a potential field is used to determine approximate total mechanical energy.",
+        "option_values_index_not_original_wording": {
+          "a": "15.45×10⁻⁴ J",
+          "b": "30.78×10⁻⁴ J",
+          "c": "7.71×10⁻⁴ J",
+          "d": "3.85×10⁻⁴ J"
+        },
+        "official_answer": [
+          "c"
+        ],
+        "question_type": "single_correct_mcq",
+        "provenance": "PYQ_VERIFIED",
+        "do_not_treat_synopsis_as_question_stem": true
+      },
+      "labelling": {
+        "primary_demand": "REPRESENT",
+        "difficulty_factors": {
+          "concept_model_selection": {
+            "score": 1,
+            "evidence": "Identify near-sinusoidal motion and relate maximum speed to amplitude and period."
+          },
+          "representation_translation": {
+            "score": 2,
+            "evidence": "Extract amplitude and period from the plotted x–t curve and convert 5 cm to 0.05 m."
+          },
+          "reasoning_chain_length": {
+            "score": 1,
+            "evidence": "Determine frequency from graph, then use a maximum-speed relation before calculating energy."
+          },
+          "algebra_computational_load": {
+            "score": 1,
+            "evidence": "Compute 1/2·m·(2πA/T)² with units and rounding."
+          },
+          "trap_exception_sensitivity": {
+            "score": 1,
+            "evidence": "The energy reference must be taken at equilibrium and the centimetre-to-metre conversion affects the result by 10⁴."
+          }
+        },
+        "difficulty_total": 6,
+        "difficulty_band": "D3",
+        "difficulty_reason": "Score 6: graph-to-physics translation and careful period, amplitude and units control the answer.",
+        "key_step": "Use the SHM relation v_max=2πA/T=2π·0.05/8≈0.03927 m/s.",
+        "prerequisites": [
+          "reading a position–time sinusoid",
+          "amplitude and period",
+          "SHM relation v_max=2πA/T (additional prerequisite)",
+          "K=mv²/2",
+          "conventional U=0 at equilibrium"
+        ],
+        "hint_ladder_authored_not_source": [
+          "Read the time between successive peaks, not the time from the first crossing to a peak.",
+          "Convert graph amplitude to metres before using energy in joules.",
+          "At the equilibrium position the sinusoidal motion is fastest."
+        ],
+        "answer": {
+          "crux_move_ref": "WEP07-05-s2",
+          "reasoning_route": [
+            {
+              "step_ref": "WEP07-05-s1",
+              "description": "Read amplitude A≈5 cm=0.05 m and period T≈8 s from peak-to-peak spacing."
+            },
+            {
+              "step_ref": "WEP07-05-s2",
+              "description": "Use the SHM relation v_max=2πA/T=2π·0.05/8≈0.03927 m/s."
+            },
+            {
+              "step_ref": "WEP07-05-s3",
+              "description": "With U=0 at equilibrium, E=K_max=(1/2)(1 kg)(0.03927 m/s)²≈7.71×10⁻⁴ J."
+            },
+            {
+              "step_ref": "WEP07-05-s4",
+              "description": "This corresponds to option c in the official final key."
+            }
+          ],
+          "writer_solution": "For a sinusoidal displacement of amplitude 0.05 m and period 8 s, the speed amplitude is ωA=(2π/8)·0.05=0.03927 m/s. Evaluating E=K_max=(1/2)(1)(0.03927)² gives 7.71×10⁻⁴ J, choice c. This is total mechanical energy only with the conventional equilibrium potential chosen as zero.",
+          "calculated_answer": [
+            "c"
+          ],
+          "agrees_with_official_key": true
+        },
+        "needs_more_than_energy_conservation_alone": true,
+        "extra_knowledge_needed": [
+          "Requires v_max=ωA for SHM, not derivable solely from E=K+U unless the potential model or SHM relation is supplied.",
+          "The exam gives no explicit potential-zero datum; official value presumes U_equilibrium=0."
+        ]
+      },
+      "fidelity_status": "VERBATIM_CONFIRMED",
+      "promotion_decision": "NOT_REVIEWED_NOT_APPROVED"
+    }
+  ],
+  "rejected_candidates": [
+    {
+      "candidate": "NSEP 2025 code 61 Q58",
+      "paper_url": "https://iapt.org.in/wp-content/uploads/images/NSEP_-_2025_Set_611.pdf",
+      "key_url": "https://iapt.org.in/wp-content/uploads/images/NSEP_-_2025_Solution_1_compressed.pdf",
+      "reason": "Maximum spring compression is a relative-coordinate turning point while the blocks retain common translational kinetic energy. Collisions, momentum and reduced-mass oscillation period are extra; distracts from K_total=0 at a one-particle turning point. Official b,d; not selected."
+    },
+    {
+      "candidate": "NSEP 2024 code 61 Q58",
+      "paper_url": "https://iapt.org.in/wp-content/uploads/NSEP_-_2024_Set_61.pdf",
+      "key_url": "https://iapt.org.in/wp-content/uploads/NSEP_-_2024_Final_Answer_key.pdf",
+      "reason": "Potential U(x)=−100x/(x²+4) is tested mainly by force differentiation, equilibrium stability and small-oscillation frequency. Requires derivatives, not primarily WEP-07 conservation/turning; official a,b,c."
+    },
+    {
+      "candidate": "NSEP 2019 code 61 Q7",
+      "paper_url": "https://iapt.org.in/wp-content/uploads/Physics_QP_2019.pdf",
+      "key_url": "https://iapt.org.in/wp-content/uploads/NSEP_FINAL_ANSWER_KEY_2019.pdf",
+      "reason": "A potential-versus-position graph primarily asks for corresponding force plot via F=−dU/dx. WEP-07 E≥U and turning points are not the decisive act; official d."
+    },
+    {
+      "candidate": "NSEP 2023 code 61 Q49",
+      "paper_url": "https://iapt.org.in/wp-content/uploads/NSEP_2023_Set_61.pdf",
+      "key_url": "https://iapt.org.in/wp-content/uploads/NSEP_2023_TENTATIVE_ANSWER_KEY.pdf",
+      "reason": "Source has a force graph and asks for potential-energy properties, requiring force-to-potential area methods; not a direct conservation/turning-point item."
+    }
+  ],
+  "not_done_or_unsure": [
+    "Verbatim copyrighted exam stems, conditions, option sentences and figure binaries not embedded; read original publisher PDFs at the exact pages.",
+    "Official NSEP 2025 final-answer-key web link on IAPT 2025–26 page incorrectly points to an NSEJS key; used IAPT NSEP published solution key with explicit answers a,b,c,d instead.",
+    "No source PDF byte-acquisition hash or retained source-byte custody is supplied in the JSON.",
+    "Independent verifier has not reviewed fidelity, grade-level fit, rubric scoring or solution correctness.",
+    "NSEP 2024 Q59(c) presumes the horizontal-release initial condition of adjacent statement (b); question does not explicitly restate amplitude in (c).",
+    "NSEP 2019 Q19 assumes U=0 at equilibrium and SHM kinematics; not deducible from energy conservation alone."
+  ],
+  "self_check_what_it_could_miss": [
+    "Mistaken assignment of cognitive primary demand or over-counting of difficulty score from prerequisites or option count.",
+    "IAPT 2025 official worked solution could conceivably differ from a later corrected final key; official final key PDF was not independently retrieved.",
+    "Graph period/amplitude extraction or small mathematical formatting details in a viewer could differ from the printed original.",
+    "2024 Q59(c) is not fully specified unless options (b) and (c) share a release amplitude.",
+    "Accessibility of publisher PDF links could change, and publisher-hosted PDFs were viewed rather than locally hashed.",
+    "These are author-level reasoned solutions, not approval by an independent checker."
+  ]
+}

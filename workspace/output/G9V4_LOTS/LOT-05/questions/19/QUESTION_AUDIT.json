@@ -1,0 +1,101 @@
+{
+  "sequence": 19,
+  "batch_sequence": 4,
+  "task_identity": "Q-ID-22",
+  "stable_id": "G9V4-PHYS-WPE-EX-M64",
+  "source_id": "EX-M64",
+  "lot": "LOT-05",
+  "batch": "BATCH-B",
+  "paper": "JEE Main 2021 (Online) 20th July Evening Shift",
+  "source_type": "JEE_MAIN_PAST_EXAM_QUESTION",
+  "source_custody": "VERIFIED_TEXT_ONLY (Self-contained scaling relation question)",
+  "stem_text": "A body at rest is moved along a horizontal straight line by a machine delivering a constant power. The distance moved by the body in time 't' is proportional to :",
+  "stem_sha256": "780d5949eaaafe9e699eff01f856c9fd7e5aaf2eb1589fbf4ce4713220907e1c",
+  "source_hash": "780d5949eaaafe9e699eff01f856c9fd7e5aaf2eb1589fbf4ce4713220907e1c",
+  "source_record_digest": "780d5949eaaafe9e699eff01f856c9fd7e5aaf2eb1589fbf4ce4713220907e1c",
+  "duplicate_parent": null,
+  "scope": "IN_SCOPE_WPE_ONLY",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "NOT_REQUIRED",
+  "figure_reference": "NONE (pure text question)",
+  "options": [
+    "A: 𝑡^((3)/(2))",
+    "B: 𝑡^((1)/(2))",
+    "C: 𝑡^((1)/(4))",
+    "D: 𝑡^((3)/(4))"
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "CONSTANT_POWER_SCALING_RELATION",
+    "derivation": "By Work-Energy Theorem: Total work done W = P * t. Assuming initial rest: 1/2 m v^2 = P * t => v^2 proportional to t => v proportional to t^(1/2). Distance x = integral v dt proportional to integral t^(1/2) dt proportional to t^(3/2). Matches Option A.",
+    "predicted_option": "A: 𝑡^((3)/(2))",
+    "limiting_cases": "If constant force F acted, v proportional to t and x proportional to t^2. Under constant power P, force F = P/v decreases as speed increases, so distance grows as t^(3/2) (between linear and quadratic)."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Work-energy theorem for constant power engine Pt = (1/2)mv^2"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Scaling analysis v proportional to t^(1/2)"
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Integrating proportional speed to find distance proportional to t^(3/2)"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Power law integration"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Separating distance proportional to t^(3/2) from linear or quadratic rates"
+        }
+      },
+      "total": 5,
+      "band": "D2",
+      "prior_proposal": {
+        "source": "PRODUCER_HISTORICAL_ESTIMATE",
+        "scores": "1/1/1/1/1",
+        "total": 5
+      },
+      "differences": "Rescored to native five-factor rubric per B2 CP-4 review"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "MODEL"
+      ],
+      "rationale": "Applying work-energy scaling to find power of time t",
+      "candidate_cell": "QRT-APPLY-D2",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_CP4_GATE",
+  "b2_blind_status": "UNREVIEWED",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)",
+    "HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)"
+  ],
+  "next_action": "Verify official NTA key and submit for independent blind review.",
+  "teaching_construction_family": {
+    "construction_id": "TC-WPE-CONST-POWER-TRAJECTORY-01",
+    "shared_candidates": [
+      "EX-M62",
+      "EX-M64",
+      "EX-M65"
+    ],
+    "note": "These 3 candidates explore the same ideal constant-power kinematic trajectory. Under QRT governance, they share a single instructional construction rather than 3 separate lessons."
+  }
+}

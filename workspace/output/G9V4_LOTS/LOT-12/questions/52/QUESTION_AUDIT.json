@@ -1,0 +1,100 @@
+{
+  "sequence": 52,
+  "batch_sequence": 7,
+  "task_identity": "Q-ID-60",
+  "stable_id": "PHYS-WPE-LOT12-Q52",
+  "source_id": "EX-N39",
+  "lot": "LOT-12",
+  "batch": "BATCH-D",
+  "paper": "JEE Main 2020 (Online) 3rd September Evening Slot",
+  "source_type": "EXAM_PAPER_TRANSCRIBED",
+  "source_custody": "VERIFIED_TEXT",
+  "stem_text": "A block starts moving up an inclined plane of inclination 30o with an initial velocity of v0 . It comes back to its initial position with velocity (𝑣_0)/(2) . The value of the coefficient of kinetic friction between the block and the inclined plane is close to (𝐼)/(1000) . The nearest integer to I is____.",
+  "stem_sha256": "cd38aa00009c960631e41be9ab231e928c80b805c64c8780f54c2953967869cd",
+  "source_hash": "cd38aa00009c960631e41be9ab231e928c80b805c64c8780f54c2953967869cd",
+  "source_record_digest": "sha256:cd38aa00009c960631e41be9ab231e928c80b805c64c8780f54c2953967869cd",
+  "duplicate_parent": null,
+  "scope": "PRIMARY_IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "key_issuing_authority": "NTA",
+  "figure_status": "NOT_REQUIRED",
+  "figure_reference": null,
+  "options": [],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "INCLINE_ROUND_TRIP_WORK_ENERGY_FRICTION_DISSIPATION",
+    "predicted_option": "346",
+    "derivation": "Ascent retardation a_up = g*(sin 30 + mu*cos 30). Distance to stop: d = v0^2 / (2*a_up). Round-trip net work done is solely due to friction: W_f = -2 * mu * m * g * cos 30 * d. Change in KE: Delta K = 0.5*m*(v0/2)^2 - 0.5*m*v0^2 = -(3/8)*m*v0^2. Equating: 2 * mu * m * g * cos 30 * [v0^2 / (2*g*(sin 30 + mu*cos 30))] = (3/8)*m*v0^2 => mu*cos 30 / (sin 30 + mu*cos 30) = 3/8 => 8*mu*cos 30 = 3*sin 30 + 3*mu*cos 30 => 5*mu*cos 30 = 3*sin 30 => mu = (3/5)*tan 30 = sqrt(3)/5 = 1.73205/5 = 0.34641. Since mu = I/1000, nearest integer to I is 346."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 2,
+          "evidence": "Round-trip inclined plane work-energy balance under non-conservative friction dissipation"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Translating ascent/descent kinematics to total path length 2d and velocity deficit (v0/2)"
+        },
+        "reasoning_chain_length": {
+          "score": 2,
+          "evidence": "Relate ascent deceleration to distance d, equate two-way friction loss to net kinetic deficit 3/8 mv0^2, solve for mu"
+        },
+        "algebra_computational_load": {
+          "score": 2,
+          "evidence": "Trigonometric simplification yielding mu = sqrt(3)/5 and integer scaling I = 1000 * 0.3464 = 346"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Recognizing friction does negative work in both ascent and descent directions"
+        }
+      },
+      "total": 8,
+      "band": "D3",
+      "prior_proposal": {
+        "source": "INITIAL_CALIBRATION",
+        "scores": "2/1/2/2/1",
+        "total": 8
+      },
+      "differences": "Initial native factor audit"
+    },
+    "demand_proposal": {
+      "primary": "MODEL",
+      "secondary": [
+        "APPLY"
+      ],
+      "rationale": "Modeling coupled dissipative ascent/descent on inclined plane using work-energy theorem",
+      "candidate_cell": "QRT-MODEL-D3",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": {
+    "blueprint_id": "PHYS-QRT-BLUEPRINT",
+    "version": "0.2.0",
+    "sha256": "ac32dc937403cac33c76343f2e7e0dabd7c2c4a3188cb3b453ddf2576578ddf9",
+    "blueprint_cell_ref": "D3.3",
+    "topic_tag": "WPE-01-WORK",
+    "status": "PINNED_CELL_UNQUALIFIED"
+  },
+  "adapter_fit": {
+    "adapter_id": "PHYS-TOPIC-WPE",
+    "sha256": "899e61e59370a3fc5d6f73b7d8cbb65165d0782c9fba20acd83439ae441e6a9b",
+    "status": "CELL_UNQUALIFIED_ADAPTER_GAP",
+    "note": "WPE adapter defines cell D3.1 only. Target cell D3.3 requires adapter cell expansion; flagged as SPEC_GAP."
+  },
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_INDEPENDENT_REVIEW",
+  "b2_blind_status": "PENDING_BLIND_SOLVE",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (Numerical answer 346 unverified against official NTA master)",
+    "HOLD:ADAPTER_CELL_GAP (WPE adapter lacks D3.3 cell authority)",
+    "HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)"
+  ],
+  "next_action": "B2 independent source-only solve + official NTA master key reconciliation"
+}

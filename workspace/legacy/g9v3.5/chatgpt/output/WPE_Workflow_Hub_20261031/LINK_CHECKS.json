@@ -1,0 +1,543 @@
+{
+  "scope": "All links emitted by the new hub; preserved destinations internal links not recursively certified",
+  "links_checked": 107,
+  "passed": 107,
+  "source_files_unchanged": 55,
+  "checks": [
+    {
+      "href": "#intake",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Workflow_Hub_20261031\\index.html"
+    },
+    {
+      "href": "#intake",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Workflow_Hub_20261031\\index.html"
+    },
+    {
+      "href": "#labelling",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Workflow_Hub_20261031\\index.html"
+    },
+    {
+      "href": "#core2",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Workflow_Hub_20261031\\index.html"
+    },
+    {
+      "href": "#core1a",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Workflow_Hub_20261031\\index.html"
+    },
+    {
+      "href": "#core1b",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Workflow_Hub_20261031\\index.html"
+    },
+    {
+      "href": "#inventory",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Workflow_Hub_20261031\\index.html"
+    },
+    {
+      "href": "#records",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Workflow_Hub_20261031\\index.html"
+    },
+    {
+      "href": "#intake",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Workflow_Hub_20261031\\index.html"
+    },
+    {
+      "href": "#labelling",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Workflow_Hub_20261031\\index.html"
+    },
+    {
+      "href": "#core2",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Workflow_Hub_20261031\\index.html"
+    },
+    {
+      "href": "#core1a",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Workflow_Hub_20261031\\index.html"
+    },
+    {
+      "href": "#core1b",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Workflow_Hub_20261031\\index.html"
+    },
+    {
+      "href": "#inventory",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Workflow_Hub_20261031\\index.html"
+    },
+    {
+      "href": "../WPE_Core2_Native_Integration_R1_20261030/review.html?category=examination",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Core2_Native_Integration_R1_20261030\\review.html"
+    },
+    {
+      "href": "#book-scans",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Workflow_Hub_20261031\\index.html"
+    },
+    {
+      "href": "#core1a",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Workflow_Hub_20261031\\index.html"
+    },
+    {
+      "href": "../WPE_Core2_Academic_Review_R1_20261031/index.html",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Core2_Academic_Review_R1_20261031\\index.html"
+    },
+    {
+      "href": "../SMART_LABELLING_QRT_HARDENING_R2_CANDIDATE.zip",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\SMART_LABELLING_QRT_HARDENING_R2_CANDIDATE.zip"
+    },
+    {
+      "href": "../WPE_Core2_Native_Integration_R1_20261030/rendered/core2.html",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Core2_Native_Integration_R1_20261030\\rendered\\core2.html"
+    },
+    {
+      "href": "../WPE_Core2_Native_Integration_R1_20261030/textbook-baseline/rendered/core2.html",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Core2_Native_Integration_R1_20261030\\textbook-baseline\\rendered\\core2.html"
+    },
+    {
+      "href": "../WPE_Core2_Native_Integration_R1_20261030/synthetic-rendered/core2.html",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Core2_Native_Integration_R1_20261030\\synthetic-rendered\\core2.html"
+    },
+    {
+      "href": "../WPE_Core2_Native_Integration_R1_20261030/review/INTEGRATION_TESTS.json",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Core2_Native_Integration_R1_20261030\\review\\INTEGRATION_TESTS.json"
+    },
+    {
+      "href": "../WPE_Source_Core1A_Completion_R2_20261030/index.html",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Source_Core1A_Completion_R2_20261030\\index.html"
+    },
+    {
+      "href": "../WPE_Source_Core1A_Completion_R2_20261030/skill/source-to-core1a/examples/wpe-source-program/index.html",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Source_Core1A_Completion_R2_20261030\\skill\\source-to-core1a\\examples\\wpe-source-program\\index.html"
+    },
+    {
+      "href": "../WPE_Source_Core1A_Completion_R2_20261030/skill/source-to-core1a/SKILL.md",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Source_Core1A_Completion_R2_20261030\\skill\\source-to-core1a\\SKILL.md"
+    },
+    {
+      "href": "../WPE_Source_Core1A_Completion_R2_20261030/skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N01.html",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Source_Core1A_Completion_R2_20261030\\skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\WPE-N01.html"
+    },
+    {
+      "href": "../WPE_Source_Core1A_Completion_R2_20261030/skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N02.html",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Source_Core1A_Completion_R2_20261030\\skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\WPE-N02.html"
+    },
+    {
+      "href": "../WPE_Source_Core1A_Completion_R2_20261030/skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N03.html",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Source_Core1A_Completion_R2_20261030\\skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\WPE-N03.html"
+    },
+    {
+      "href": "../WPE_Source_Core1A_Completion_R2_20261030/skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N04.html",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Source_Core1A_Completion_R2_20261030\\skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\WPE-N04.html"
+    },
+    {
+      "href": "../WPE_Source_Core1A_Completion_R2_20261030/skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N05.html",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Source_Core1A_Completion_R2_20261030\\skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\WPE-N05.html"
+    },
+    {
+      "href": "../WPE_Source_Core1A_Completion_R2_20261030/skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N06.html",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Source_Core1A_Completion_R2_20261030\\skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\WPE-N06.html"
+    },
+    {
+      "href": "../WPE_Source_Core1A_Completion_R2_20261030/skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N07.html",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Source_Core1A_Completion_R2_20261030\\skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\WPE-N07.html"
+    },
+    {
+      "href": "../WPE_Source_Core1A_Completion_R2_20261030/skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N08.html",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Source_Core1A_Completion_R2_20261030\\skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\WPE-N08.html"
+    },
+    {
+      "href": "../WPE_Source_Core1A_Completion_R2_20261030/skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N09.html",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Source_Core1A_Completion_R2_20261030\\skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\WPE-N09.html"
+    },
+    {
+      "href": "../WPE_Source_Core1A_Completion_R2_20261030/skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N10.html",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Source_Core1A_Completion_R2_20261030\\skill\\source-to-core1a\\examples\\wpe-source-program\\handoffs\\WPE-N10.html"
+    },
+    {
+      "href": "#core1a",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Workflow_Hub_20261031\\index.html"
+    },
+    {
+      "href": "../WPE_QUESTION_TO_CORE2_END_TO_END_PLAN_20261030.md",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_QUESTION_TO_CORE2_END_TO_END_PLAN_20261030.md"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/01_Chapter_Extract/work_energy_power_extracted/page_01.jpg",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_01.jpg"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/01_Chapter_Extract/work_energy_power_extracted/page_02.jpg",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_02.jpg"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/01_Chapter_Extract/work_energy_power_extracted/page_03.jpg",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_03.jpg"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/01_Chapter_Extract/work_energy_power_extracted/page_04.jpg",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_04.jpg"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/01_Chapter_Extract/work_energy_power_extracted/page_05.jpg",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_05.jpg"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/01_Chapter_Extract/work_energy_power_extracted/page_06.jpg",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_06.jpg"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/01_Chapter_Extract/work_energy_power_extracted/page_07.jpg",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_07.jpg"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/01_Chapter_Extract/work_energy_power_extracted/page_08.jpg",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_08.jpg"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/01_Chapter_Extract/work_energy_power_extracted/page_09.jpg",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_09.jpg"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/01_Question_Bank/01_JEE_Main_Pass2/pass2/wpe/_rejected-ba55fa02/COVERAGE.md",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank\\01_JEE_Main_Pass2\\pass2\\wpe\\_rejected-ba55fa02\\COVERAGE.md"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/01_Question_Bank/01_JEE_Main_Pass2/pass2/wpe/_rejected-ba55fa02/jee-main-wpe-ba55fa02.json",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank\\01_JEE_Main_Pass2\\pass2\\wpe\\_rejected-ba55fa02\\jee-main-wpe-ba55fa02.json"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/01_Question_Bank/01_JEE_Main_Pass2/pass2/wpe/_rejected-ba55fa02/SOURCES.md",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank\\01_JEE_Main_Pass2\\pass2\\wpe\\_rejected-ba55fa02\\SOURCES.md"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/01_Question_Bank/01_JEE_Main_Pass2/pass2/wpe/COVERAGE.md",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank\\01_JEE_Main_Pass2\\pass2\\wpe\\COVERAGE.md"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/01_Question_Bank/01_JEE_Main_Pass2/pass2/wpe/jee-main-wpe-4ac47110.json",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank\\01_JEE_Main_Pass2\\pass2\\wpe\\jee-main-wpe-4ac47110.json"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/01_Question_Bank/01_JEE_Main_Pass2/pass2/wpe/QUESTION_INDEX.md",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank\\01_JEE_Main_Pass2\\pass2\\wpe\\QUESTION_INDEX.md"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/01_Question_Bank/01_JEE_Main_Pass2/pass2/wpe/sources/JEE_Main_2025_Session_1_Final_Answer_Key.pdf",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank\\01_JEE_Main_Pass2\\pass2\\wpe\\sources\\JEE_Main_2025_Session_1_Final_Answer_Key.pdf"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/01_Question_Bank/01_JEE_Main_Pass2/pass2/wpe/sources/JEE_Main_2025_Session_2_Final_Answer_Key.pdf",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank\\01_JEE_Main_Pass2\\pass2\\wpe\\sources\\JEE_Main_2025_Session_2_Final_Answer_Key.pdf"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/01_Question_Bank/01_JEE_Main_Pass2/pass2/wpe/sources/JEE_Main_2026_04_02_Shift_1_Question_Paper.pdf",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank\\01_JEE_Main_Pass2\\pass2\\wpe\\sources\\JEE_Main_2026_04_02_Shift_1_Question_Paper.pdf"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/01_Question_Bank/01_JEE_Main_Pass2/pass2/wpe/sources/JEE_Main_2026_04_02_Shift_2_Question_Paper.pdf",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank\\01_JEE_Main_Pass2\\pass2\\wpe\\sources\\JEE_Main_2026_04_02_Shift_2_Question_Paper.pdf"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/01_Question_Bank/01_JEE_Main_Pass2/pass2/wpe/sources/JEE_Main_2026_04_04_Shift_1_Question_Paper.pdf",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank\\01_JEE_Main_Pass2\\pass2\\wpe\\sources\\JEE_Main_2026_04_04_Shift_1_Question_Paper.pdf"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/01_Question_Bank/01_JEE_Main_Pass2/pass2/wpe/sources/JEE_Main_2026_04_04_Shift_2_Question_Paper.pdf",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank\\01_JEE_Main_Pass2\\pass2\\wpe\\sources\\JEE_Main_2026_04_04_Shift_2_Question_Paper.pdf"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/01_Question_Bank/01_JEE_Main_Pass2/pass2/wpe/sources/JEE_Main_2026_04_05_Shift_1_Question_Paper.pdf",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank\\01_JEE_Main_Pass2\\pass2\\wpe\\sources\\JEE_Main_2026_04_05_Shift_1_Question_Paper.pdf"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/01_Question_Bank/01_JEE_Main_Pass2/pass2/wpe/sources/JEE_Main_2026_04_05_Shift_2_Question_Paper.pdf",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank\\01_JEE_Main_Pass2\\pass2\\wpe\\sources\\JEE_Main_2026_04_05_Shift_2_Question_Paper.pdf"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/01_Question_Bank/01_JEE_Main_Pass2/pass2/wpe/sources/JEE_Main_2026_04_06_Shift_1_Question_Paper.pdf",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank\\01_JEE_Main_Pass2\\pass2\\wpe\\sources\\JEE_Main_2026_04_06_Shift_1_Question_Paper.pdf"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/01_Question_Bank/01_JEE_Main_Pass2/pass2/wpe/sources/JEE_Main_2026_04_06_Shift_2_Question_Paper.pdf",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank\\01_JEE_Main_Pass2\\pass2\\wpe\\sources\\JEE_Main_2026_04_06_Shift_2_Question_Paper.pdf"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/01_Question_Bank/01_JEE_Main_Pass2/pass2/wpe/sources/JEE_Main_2026_04_08_Shift_2_Question_Paper.pdf",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank\\01_JEE_Main_Pass2\\pass2\\wpe\\sources\\JEE_Main_2026_04_08_Shift_2_Question_Paper.pdf"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/01_Question_Bank/01_JEE_Main_Pass2/pass2/wpe/sources/JEE_Main_2026_Session_1_Final_Answer_Key.pdf",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank\\01_JEE_Main_Pass2\\pass2\\wpe\\sources\\JEE_Main_2026_Session_1_Final_Answer_Key.pdf"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/01_Question_Bank/01_JEE_Main_Pass2/pass2/wpe/sources/JEE_Main_2026_Session_2_Final_Answer_Key.pdf",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank\\01_JEE_Main_Pass2\\pass2\\wpe\\sources\\JEE_Main_2026_Session_2_Final_Answer_Key.pdf"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/01_Question_Bank/01_JEE_Main_Pass2/pass2/wpe/SOURCES.md",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank\\01_JEE_Main_Pass2\\pass2\\wpe\\SOURCES.md"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/01_Question_Bank/02_NSEP/wpe-pilot/core2/MANIFEST.md",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank\\02_NSEP\\wpe-pilot\\core2\\MANIFEST.md"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/01_Question_Bank/02_NSEP/wpe-pilot/core2/WEP07-01_NSEP2024-61_Q4.png",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank\\02_NSEP\\wpe-pilot\\core2\\WEP07-01_NSEP2024-61_Q4.png"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/01_Question_Bank/02_NSEP/wpe-pilot/core2/WEP07-02_NSEP2024-61_Q32.png",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank\\02_NSEP\\wpe-pilot\\core2\\WEP07-02_NSEP2024-61_Q32.png"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/01_Question_Bank/02_NSEP/wpe-pilot/core2/WEP07-03_NSEP2025-611_Q57.png",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank\\02_NSEP\\wpe-pilot\\core2\\WEP07-03_NSEP2025-611_Q57.png"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/01_Question_Bank/02_NSEP/wpe-pilot/core2/WEP07-04_NSEP2024-61_Q59.png",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank\\02_NSEP\\wpe-pilot\\core2\\WEP07-04_NSEP2024-61_Q59.png"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/01_Question_Bank/02_NSEP/wpe-pilot/core2-src/NSEP_-_2024_Set_61.pdf",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank\\02_NSEP\\wpe-pilot\\core2-src\\NSEP_-_2024_Set_61.pdf"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/01_Question_Bank/02_NSEP/wpe-pilot/core2-src/NSEP_-_2025_Set_611.pdf",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank\\02_NSEP\\wpe-pilot\\core2-src\\NSEP_-_2025_Set_611.pdf"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/01_Question_Bank/02_NSEP/wpe-pilot/in-s2s4/wpe07-originals-01f1c193.json",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank\\02_NSEP\\wpe-pilot\\in-s2s4\\wpe07-originals-01f1c193.json"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/01_Question_Bank/03_Reference_Practice_Bank/reference-wpe/question_bank_wep_grade9.v1.json",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank\\03_Reference_Practice_Bank\\reference-wpe\\question_bank_wep_grade9.v1.json"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/01_Question_Bank/START_HERE.md",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank\\START_HERE.md"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/01_Chapter_Extract/work_energy_power_extracted/generate_wpe_svgs.py",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\generate_wpe_svgs.py"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/01_Chapter_Extract/work_energy_power_extracted/images/fig_01_work_sign_positive.svg",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\images\\fig_01_work_sign_positive.svg"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/01_Chapter_Extract/work_energy_power_extracted/images/fig_02_work_sign_negative.svg",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\images\\fig_02_work_sign_negative.svg"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/01_Chapter_Extract/work_energy_power_extracted/images/fig_03_fbd_string_raising.svg",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\images\\fig_03_fbd_string_raising.svg"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/01_Chapter_Extract/work_energy_power_extracted/images/fig_04_variable_force_calculus.svg",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\images\\fig_04_variable_force_calculus.svg"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/01_Chapter_Extract/work_energy_power_extracted/images/fig_05_friction_direction.svg",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\images\\fig_05_friction_direction.svg"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/01_Chapter_Extract/work_energy_power_extracted/images/fig_06_incline_block.svg",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\images\\fig_06_incline_block.svg"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/01_Chapter_Extract/work_energy_power_extracted/images/fig_07_incline_fbd.svg",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\images\\fig_07_incline_fbd.svg"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/01_Chapter_Extract/work_energy_power_extracted/images/fig_08_curved_path_work.svg",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\images\\fig_08_curved_path_work.svg"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/01_Chapter_Extract/work_energy_power_extracted/images/fig_09_overhanging_chain.svg",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\images\\fig_09_overhanging_chain.svg"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/01_Chapter_Extract/work_energy_power_extracted/images/fig_10_spring_block_wall.svg",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\images\\fig_10_spring_block_wall.svg"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/01_Chapter_Extract/work_energy_power_extracted/page_01.jpg",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_01.jpg"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/01_Chapter_Extract/work_energy_power_extracted/page_02.jpg",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_02.jpg"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/01_Chapter_Extract/work_energy_power_extracted/page_03.jpg",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_03.jpg"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/01_Chapter_Extract/work_energy_power_extracted/page_04.jpg",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_04.jpg"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/01_Chapter_Extract/work_energy_power_extracted/page_05.jpg",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_05.jpg"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/01_Chapter_Extract/work_energy_power_extracted/page_06.jpg",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_06.jpg"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/01_Chapter_Extract/work_energy_power_extracted/page_07.jpg",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_07.jpg"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/01_Chapter_Extract/work_energy_power_extracted/page_08.jpg",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_08.jpg"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/01_Chapter_Extract/work_energy_power_extracted/page_09.jpg",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\page_09.jpg"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/01_Chapter_Extract/work_energy_power_extracted/work_energy_power.md",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\01_Chapter_Extract\\work_energy_power_extracted\\work_energy_power.md"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/02_Syllabus_and_Book_Notes/wpe-pilot/qrt/recall-topics-from-book.md",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\02_Syllabus_and_Book_Notes\\wpe-pilot\\qrt\\recall-topics-from-book.md"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/02_Syllabus_and_Book_Notes/wpe-pilot/syllabus/WPE-SPINE.md",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\02_Syllabus_and_Book_Notes\\wpe-pilot\\syllabus\\WPE-SPINE.md"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/03_Reference_Ontology/reference-wpe/core1a_physics_wep_ontology.v1.json",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\03_Reference_Ontology\\reference-wpe\\core1a_physics_wep_ontology.v1.json"
+    },
+    {
+      "href": "../WPE_Question_Bank_and_Book_2026-10-30/02_Book_and_Syllabus/START_HERE.md",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus\\START_HERE.md"
+    },
+    {
+      "href": "../WPE_QUESTION_TO_CORE2_END_TO_END_PLAN_20261030.md",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_QUESTION_TO_CORE2_END_TO_END_PLAN_20261030.md"
+    },
+    {
+      "href": "../WPE_Core2_Academic_Review_R1_20261031/RECONCILIATION_REPORT.md",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Core2_Academic_Review_R1_20261031\\RECONCILIATION_REPORT.md"
+    },
+    {
+      "href": "../WPE_Core2_Academic_Review_R1_20261031/CORRECTION_NOTICE.md",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Core2_Academic_Review_R1_20261031\\CORRECTION_NOTICE.md"
+    },
+    {
+      "href": "../WPE_ORACLE_CURRENT.md",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_ORACLE_CURRENT.md"
+    },
+    {
+      "href": "../WPE_QUESTION_TO_CORE2_INPUT_REGISTER_20261030.json",
+      "resolved": true,
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_QUESTION_TO_CORE2_INPUT_REGISTER_20261030.json"
+    }
+  ]
+}

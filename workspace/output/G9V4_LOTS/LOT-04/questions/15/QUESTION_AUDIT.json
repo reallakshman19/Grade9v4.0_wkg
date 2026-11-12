@@ -1,0 +1,111 @@
+{
+  "sequence": 15,
+  "task_identity": "Q-ID-15",
+  "stable_id": "Q-PHY-WPE-JEEM-2022-07-26-S1-15",
+  "source_id": "EX-M50",
+  "lot": "LOT-04",
+  "paper": "JEE Main 2022 (Online) 26th July Morning Shift",
+  "source_type": "SCRAPED_EXTRACT_EXAMGOAL",
+  "source_custody": "PARTIAL",
+  "stem_text": "As per the given figure, two blocks each of mass 250g are connected to a spring of spring constant 2Nm^(\u22121) . If both are given velocity \ud835\udc63 in opposite directions, then maximum elongation of the spring is : [FIG-stem-1]",
+  "stem_sha256": "eb9b4c3b60984e3eba754ab63859475dfa45b5cc75f7824e40dd3a845bd04501",
+  "source_hash": "eb9b4c3b60984e3eba754ab63859475dfa45b5cc75f7824e40dd3a845bd04501",
+  "source_record_digest": "eb9b4c3b60984e3eba754ab63859475dfa45b5cc75f7824e40dd3a845bd04501",
+  "duplicate_parent": null,
+  "scope": "IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "HOLD:FIGURE_UNRESOLVED",
+  "options": [
+    "A: (\ud835\udc63)/(2\u221a(2))",
+    "B: (\ud835\udc63)/(2)",
+    "C: (\ud835\udc63)/(4)",
+    "D: (\ud835\udc63)/(\u221a2)"
+  ],
+  "unbound_remote_figures": [
+    {
+      "role": "stem",
+      "url": "https://app-content.cdn.examgoal.net/fly/1000/image/1l6hyjitw/5b480b82-4ccb-4844-a465-4ee34620c9bb/52950d40-158f-11ed-abd2-c5f8c222b719/file-1l6hyjitx.png?format=png"
+    }
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "HOLD:FIGURE_UNRESOLVED",
+  "candidate_solve": {
+    "method": "TWO_BODY_SPRING_CENTER_OF_MASS_ENERGY",
+    "assumed_parameters_from_coaching_figure": "Two identical blocks m = 250 g = 0.25 kg connected by horizontal spring k = 2 N/m on frictionless horizontal plane.",
+    "derivation": "Initial total momentum: P = m(-v) + m(+v) = 0. The center of mass is stationary. At maximum spring elongation x_m, relative speed between the two blocks is zero, so both blocks are instantaneously at rest relative to the center of mass (v_1 = v_2 = 0). By conservation of mechanical energy: Total Initial KE = Maximum Spring Elastic PE => 1/2 m v^2 + 1/2 m v^2 = 1/2 k x_m^2 => m v^2 = 1/2 k x_m^2 => x_m = sqrt(2 m v^2 / k) = v * sqrt(2m / k). Substituting m = 0.25 kg and k = 2 N/m: x_m = v * sqrt(2 * 0.25 / 2) = v * sqrt(0.25) = v * 0.5 = v / 2.",
+    "predicted_option": "B: (\ud835\udc63)/(2)",
+    "limiting_cases": "If k -> infinity (rigid rod), x_m -> 0. If only one block were given velocity v (total momentum mv), V_cm = v/2, and internal KE = 1/2 mu v^2 = 1/4 m v^2, yielding x_m = v/(2*sqrt(2)) (Option A). With equal and opposite velocities, all initial KE is converted into spring PE, yielding x_m = v/2."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "status": "UNREVIEWED",
+    "decisive_operation": "APPLY",
+    "crux": "Setting up the coupled two-block spring energy ledger in the zero-momentum center of mass frame where total kinetic energy m*v^2 fully transfers into spring potential 1/2 k x_m^2.",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Two-body symmetric oscillator energy conservation."
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Interpreting spring-mass schematic and opposite velocity arrows."
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Center of mass rest condition -> full KE to PE transfer -> solve x_m."
+        },
+        "algebra_computational_load": {
+          "score": 0,
+          "evidence": "Elementary square root: sqrt(0.25) = 0.5."
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Must avoid accounting for only one block's kinetic energy (which gives Option D: v/sqrt(2))."
+        }
+      },
+      "total": 4,
+      "band": "D2"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "MODEL"
+      ],
+      "candidate_cell": "QRT-APPLY-D2",
+      "status": "PROPOSED"
+    },
+    "representation_requirements": [
+      "DIAGRAM",
+      "EQUATION"
+    ],
+    "independent_checks": [
+      "UNITS",
+      "LIMITING_CASE"
+    ],
+    "wrong_route_hypotheses": [
+      {
+        "route": "Accounting for only single block KE: 1/2 m v^2 = 1/2 k x^2 => x = v*sqrt(m/k) = v/sqrt(8) = v/(2*sqrt(2)) (Option A)",
+        "status": "HYPOTHESIS"
+      },
+      {
+        "route": "Forgetting the 1/2 on spring PE: m v^2 = k x^2 => x = v*sqrt(m/k) = v/sqrt(8)",
+        "status": "HYPOTHESIS"
+      }
+    ]
+  },
+  "qrt": "UNREVIEWED",
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_REVIEW",
+  "b2_blind_status": "NOT_RUN",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:FIGURE_UNRESOLVED (diagram needed to confirm initial velocity vectors and spring anchoring)",
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)",
+    "HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)"
+  ],
+  "next_action": "Source official NTA figure asset and master answer key for 2022-07-26 S1."
+}

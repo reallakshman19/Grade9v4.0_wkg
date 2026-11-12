@@ -1,0 +1,65 @@
+{
+  "handoff_id": "G9V35-WPE-CORE2-R2-HANDOFF-20261030",
+  "schema": "wpe-core2-r2-handoff-status/v1",
+  "timestamp_utc": "2026-10-30T13:27:39Z",
+  "authority": {
+    "owner_asked": "hand over updated zip files",
+    "published_wbs": "R6/4.3.2",
+    "progress_page_mode": "otm (not transferred to standalone)",
+    "wbs_previous": "R5/4.2.1 (historical engineering candidate at time of construction)"
+  },
+  "source_identity": {
+    "immutable_r1_coding_zip_sha256": "fca105392a2bcb579c9d382dc6d61afddb643af8b46d57d1fed2555a65f188a6",
+    "original_source_archive_sha256": "f9f5cf75652f20483d44e837c564fe4635e55aa75dd6007d988c297e82ef82c4",
+    "grade9v35_original_pinned_source_commit": "8a02a8eb23ea37a7d8acb74d1bc193dd17657e5b"
+  },
+  "progress_page": {
+    "pr": 96,
+    "merged": true,
+    "merge_commit": "c2235832566245452b29395b75ea4d0a4aeab4cd",
+    "wbs": "R6/4.3.2",
+    "card_id": "wpe-core2-coding-r1",
+    "source_receipt": "https://github.com/reallakshman19/CoordinatorLandingpage/issues/1#issuecomment-6521619329",
+    "publication": "GITHUB_MAIN_MERGED_READBACK",
+    "pages_browser_deployment": "NOT_VERIFIED"
+  },
+  "engineering": {
+    "scope": "synthetic metadata, isolated engine and learner fixture only",
+    "unit_tests": {
+      "passed": 33,
+      "total": 33,
+      "method": "executed_again_from_zip_this_turn"
+    },
+    "browser_assertions": {
+      "passed": 26,
+      "total": 26,
+      "method": "executed_again_from_zip_this_turn (Chromium set_content)"
+    },
+    "native_grade9_renderer": "NOT_RUN",
+    "independent_technical_review": "NOT_RUN",
+    "integrated_git_commit": null
+  },
+  "academic": {
+    "candidate_leads": 14,
+    "leads_holding": 14,
+    "vacancies": 7,
+    "independently_admitted": 0,
+    "independent_academic_review": "NOT_RUN",
+    "full_product": "NOT_BUILT"
+  },
+  "handoff": {
+    "local_zip": "CREATED_FOR_OWNER",
+    "common_public_relay": "NOT_PUBLISHED",
+    "private_drive_upload": "NOT_RUN",
+    "recipient_assigned": "UNKNOWN",
+    "recipient_retrieval": "NOT_RUN",
+    "recipient_byte_verification": "NOT_RUN",
+    "overall": "LOCAL_ONLY_NOT_TRANSFERRED_TO_AGENT"
+  },
+  "restrictions": [
+    "Do not publish R1 real question/option text to public GitHub",
+    "Do not call a synthetic fixture an admitted WPE original",
+    "Do not treat author self-tests as independent QA",
+    "Do not promote a question on page-status evidence"
+  ]
+}

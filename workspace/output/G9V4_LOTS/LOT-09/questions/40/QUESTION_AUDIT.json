@@ -1,0 +1,104 @@
+{
+  "sequence": 40,
+  "batch_sequence": 10,
+  "task_identity": "Q-ID-46",
+  "stable_id": "PHYS-WPE-LOT09-Q40",
+  "source_id": "EX-M109",
+  "lot": "LOT-09",
+  "batch": "BATCH-C",
+  "paper": "AIEEE 2006",
+  "source_type": "EXAM_PAPER_TRANSCRIBED",
+  "source_custody": "VERIFIED_TEXT",
+  "stem_text": "The potential energy of a 1 𝑘𝑔 particle free to move along the 𝑥 -axis is given by 𝑉(𝑥)=((𝑥^(4))/(4)−(𝑥^(2))/(2))𝐽 . The total mechanical energy of the particle is 2𝐽. Then, the maximum speed (in 𝑚/𝑠 ) is",
+  "stem_sha256": "33513889a1163bb0ae5baeb9251958e4131319985cfb8fd452a700f855d66b07",
+  "source_hash": "33513889a1163bb0ae5baeb9251958e4131319985cfb8fd452a700f855d66b07",
+  "source_record_digest": "sha256:33513889a1163bb0ae5baeb9251958e4131319985cfb8fd452a700f855d66b07",
+  "duplicate_parent": null,
+  "scope": "PRIMARY_IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "NOT_REQUIRED",
+  "figure_reference": null,
+  "options": [
+    "A: (3)/(√(2))",
+    "B: √(2)",
+    "C: (1)/(√(2))",
+    "D: 2"
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "POTENTIAL_ENERGY_MINIMA_AND_MAX_SPEED",
+    "predicted_option": "A: (3)/(√(2))",
+    "derivation": "Potential energy V(x) = x^4/4 - x^2/2. Critical points: dV/dx = x^3 - x = x(x^2 - 1) = 0 => x = 0, +-1. At x = +-1: V''(+-1) = 3(1) - 1 = 2 > 0 (minima). Minimum potential energy: V_min = 1/4 - 1/2 = -1/4 J = -0.25 J. Conservation of energy: E = KE_max + V_min => 2 = KE_max - 0.25 => KE_max = 2.25 J = 9/4 J. Speed: (1/2)*m*v_max^2 = 9/4 => (1/2)*(1)*v_max^2 = 9/4 => v_max^2 = 9/2 => v_max = 3 / sqrt(2) m/s."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 2,
+          "evidence": "Connecting maximum kinetic energy to potential energy minima via mechanical energy conservation"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Finding potential energy minimum using calculus first and second derivatives"
+        },
+        "reasoning_chain_length": {
+          "score": 2,
+          "evidence": "Differentiate V(x) to locate minima at x=+-1, evaluate V_min=-1/4 J, subtract from total energy E=2 J to get KE_max=9/4 J, and solve for speed"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Negative sign subtraction: 2 - (-1/4) = 9/4 J, and radical reduction: sqrt(9/2) = 3/sqrt(2)"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Avoiding false minimum at x=0 (which is an unstable local maximum with V=0)"
+        }
+      },
+      "total": 7,
+      "band": "D3",
+      "prior_proposal": {
+        "source": "INITIAL_CALIBRATION",
+        "scores": "2/1/2/1/1",
+        "total": 7
+      },
+      "differences": "Initial native factor audit"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "MODEL"
+      ],
+      "rationale": "Applying calculus extrema to 1D potential energy well and conservation of energy",
+      "candidate_cell": "QRT-APPLY-D3",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": {
+    "blueprint_id": "PHYS-QRT-BLUEPRINT",
+    "version": "0.2.0",
+    "sha256": "ac32dc937403cac33c76343f2e7e0dabd7c2c4a3188cb3b453ddf2576578ddf9",
+    "blueprint_cell_ref": "D3.3",
+    "topic_tag": "WPE-02-POTENTIAL",
+    "status": "PINNED_CELL_UNQUALIFIED"
+  },
+  "adapter_fit": {
+    "adapter_id": "PHYS-TOPIC-WPE",
+    "sha256": "899e61e59370a3fc5d6f73b7d8cbb65165d0782c9fba20acd83439ae441e6a9b",
+    "status": "CELL_UNQUALIFIED_ADAPTER_GAP",
+    "note": "WPE adapter defines cell D3.1 only. Target cell D3.3 requires adapter cell expansion; flagged as SPEC_GAP."
+  },
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_INDEPENDENT_REVIEW",
+  "b2_blind_status": "PENDING_BLIND_SOLVE",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (Coaching key unverified against official NTA master)",
+    "HOLD:ADAPTER_CELL_GAP (WPE adapter lacks D3.3 cell authority)",
+    "HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)"
+  ],
+  "next_action": "B2 independent source-only solve + official NTA master key reconciliation"
+}

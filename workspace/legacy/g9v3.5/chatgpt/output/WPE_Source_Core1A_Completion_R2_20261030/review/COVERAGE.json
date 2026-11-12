@@ -1,0 +1,122 @@
+[
+  {
+    "node": "WPE-N01",
+    "title": "Work, direction and signed contributions",
+    "claims": 3,
+    "units": 12,
+    "construction_roles": 6,
+    "canonical_match": "DIRECT_CANDIDATE",
+    "missing_warrant": false,
+    "science": "UNQUALIFIED",
+    "reviewed_SL2": "MISSING",
+    "lesson": "NOT_AUTHORED"
+  },
+  {
+    "node": "WPE-N02",
+    "title": "Variable-force work and the spring bridge",
+    "claims": 3,
+    "units": 11,
+    "construction_roles": 6,
+    "canonical_match": "PREREQUISITE_BRIDGE",
+    "missing_warrant": true,
+    "science": "UNQUALIFIED",
+    "reviewed_SL2": "MISSING",
+    "lesson": "NOT_AUTHORED"
+  },
+  {
+    "node": "WPE-N03",
+    "title": "Work–energy theorem and complete force accounting",
+    "claims": 3,
+    "units": 12,
+    "construction_roles": 6,
+    "canonical_match": "DIRECT_CANDIDATE",
+    "missing_warrant": false,
+    "science": "UNQUALIFIED",
+    "reviewed_SL2": "MISSING",
+    "lesson": "NOT_AUTHORED"
+  },
+  {
+    "node": "WPE-N04",
+    "title": "Kinetic energy, momentum relation and frame",
+    "claims": 3,
+    "units": 12,
+    "construction_roles": 6,
+    "canonical_match": "SCOPE_NEARBY",
+    "missing_warrant": true,
+    "science": "UNQUALIFIED",
+    "reviewed_SL2": "MISSING",
+    "lesson": "NOT_AUTHORED"
+  },
+  {
+    "node": "WPE-N05",
+    "title": "Conservative interaction and path independence",
+    "claims": 3,
+    "units": 10,
+    "construction_roles": 6,
+    "canonical_match": "DIRECT_CANDIDATE",
+    "missing_warrant": true,
+    "science": "UNQUALIFIED",
+    "reviewed_SL2": "MISSING",
+    "lesson": "NOT_AUTHORED"
+  },
+  {
+    "node": "WPE-N06",
+    "title": "Potential-energy changes, reference zero and elastic storage",
+    "claims": 3,
+    "units": 10,
+    "construction_roles": 6,
+    "canonical_match": "PREREQUISITE_BRIDGE",
+    "missing_warrant": true,
+    "science": "UNQUALIFIED",
+    "reviewed_SL2": "MISSING",
+    "lesson": "NOT_AUTHORED"
+  },
+  {
+    "node": "WPE-N07",
+    "title": "Force–potential slope: chapter and qualification gap",
+    "claims": 3,
+    "units": 8,
+    "construction_roles": 6,
+    "canonical_match": "MISSING",
+    "missing_warrant": true,
+    "science": "UNQUALIFIED",
+    "reviewed_SL2": "MISSING",
+    "lesson": "NOT_AUTHORED"
+  },
+  {
+    "node": "WPE-N08",
+    "title": "Conservation, distributed energy and contact regimes",
+    "claims": 3,
+    "units": 13,
+    "construction_roles": 6,
+    "canonical_match": "DIRECT_CANDIDATE",
+    "missing_warrant": true,
+    "science": "UNQUALIFIED",
+    "reviewed_SL2": "MISSING",
+    "lesson": "NOT_AUTHORED"
+  },
+  {
+    "node": "WPE-N09",
+    "title": "Friction work with body, frame and contact specified",
+    "claims": 3,
+    "units": 10,
+    "construction_roles": 6,
+    "canonical_match": "MISSING",
+    "missing_warrant": true,
+    "science": "UNQUALIFIED",
+    "reviewed_SL2": "MISSING",
+    "lesson": "NOT_AUTHORED"
+  },
+  {
+    "node": "WPE-N10",
+    "title": "Average and instantaneous power; force versus net rate",
+    "claims": 3,
+    "units": 11,
+    "construction_roles": 6,
+    "canonical_match": "DIRECT_CANDIDATE",
+    "missing_warrant": false,
+    "science": "UNQUALIFIED",
+    "reviewed_SL2": "MISSING",
+    "lesson": "NOT_AUTHORED"
+  }
+]

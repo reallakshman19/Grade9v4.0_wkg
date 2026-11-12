@@ -1,0 +1,101 @@
+{
+  "sequence": 64,
+  "lot_sequence": 4,
+  "task_identity": "Q-ID-75",
+  "stable_id": "PHYS-WPE-LOT14-Q64",
+  "source_id": "WEP07-02",
+  "lot": "LOT-14",
+  "paper": "NSEP 2024 code 61 Q32",
+  "source_type": "UNBOUND_NSEP_DESCRIPTOR",
+  "source_custody": "UNBOUND_ORIGINAL_PENDING_WITNESS",
+  "stem_binding": "TEXT_NOT_BOUND_IN_REGISTRY",
+  "stem_text": null,
+  "stem_sha256": null,
+  "source_hash": null,
+  "source_record_digest": null,
+  "duplicate_parent": null,
+  "scope": "PRIMARY_IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_NOT_RETAINED",
+  "key_issuing_authority": "IAPT",
+  "figure_status": "REQUIRED_RETAINED",
+  "figure_reference": "SAVED_ITEM_CROP:WEP07-02_NSEP2024-61_Q32.png",
+  "options": null,
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "UNIFORM_CHAIN_OVERHANG_POTENTIAL_ENERGY_CONSERVATION",
+    "predicted_option": "a: v = sqrt(g(L - y0^2/L))",
+    "derivation": "Take tabletop edge as U = 0. Dangling segment of length y0 has mass lambda*y0 with center of mass at -y0/2, so U_i = -0.5 * lambda * g * y0^2. When entire chain leaves edge, hanging mass is lambda*L with center of mass at -L/2, so U_f = -0.5 * lambda * g * L^2. Kinetic energy of entire chain: K_f = 0.5 * (lambda * L) * v^2. By conservation of energy: 0.5 * lambda * L * v^2 = 0.5 * lambda * g * (L^2 - y0^2) => L * v^2 = g * (L^2 - y0^2) => v = sqrt(g * (L - y0^2 / L)). Matches option a."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Recognizing a constant-mass flexible chain as an energy-conserving system despite varying hanging fraction"
+        },
+        "representation_translation": {
+          "score": 2,
+          "evidence": "Translating changing dangling length into gravitational potential energy of uniform segment at center-of-mass depth y/2"
+        },
+        "reasoning_chain_length": {
+          "score": 2,
+          "evidence": "Formulate U_initial and U_final, calculate energy difference, equate to whole-chain kinetic energy"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Simplify lambda*g*(L^2 - y0^2)/2 against kinetic energy lambda*L*v^2/2"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Recognizing entire chain of mass lambda*L moves with speed v as it leaves table"
+        }
+      },
+      "total": 7,
+      "band": "D3",
+      "prior_proposal": {
+        "source": "AUDITED_PRIOR_RECORD",
+        "scores": "1/2/2/1/1",
+        "total": 7
+      },
+      "differences": "Preserved audited five-factor score 7, mapped to D3.6 (SYNTHESIZE)"
+    },
+    "demand_proposal": {
+      "primary": "SYNTHESIZE",
+      "secondary": [
+        "MODEL"
+      ],
+      "rationale": "Coordinating distributed gravitational potential energy states with full-continuum kinetic energy",
+      "candidate_cell": "QRT-SYNTHESIZE-D3",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": {
+    "blueprint_id": "PHYS-QRT-BLUEPRINT",
+    "version": "0.2.0",
+    "sha256": "ac32dc937403cac33c76343f2e7e0dabd7c2c4a3188cb3b453ddf2576578ddf9",
+    "blueprint_cell_ref": "D3.6",
+    "topic_tag": "WPE-02-POTENTIAL",
+    "status": "PINNED_CELL_UNQUALIFIED"
+  },
+  "adapter_fit": {
+    "adapter_id": "PHYS-TOPIC-WPE",
+    "sha256": "899e61e59370a3fc5d6f73b7d8cbb65165d0782c9fba20acd83439ae441e6a9b",
+    "status": "CELL_UNQUALIFIED_ADAPTER_GAP",
+    "note": "WPE adapter defines cell D3.1 only. Target cell D3.6 requires adapter cell expansion; flagged as SPEC_GAP."
+  },
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_INDEPENDENT_REVIEW",
+  "b2_blind_status": "PENDING_BLIND_SOLVE",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:EXACT_TEXT_EXTRACTION_NOT_COMPLETED (Registry lacks bound stem text; pending independent witness)",
+    "HOLD:OFFICIAL_KEY_NOT_RETAINED (Official key not bound/retained in local registry)",
+    "HOLD:ADAPTER_CELL_GAP (WPE adapter lacks D3.6 cell authority)",
+    "HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)"
+  ],
+  "next_action": "B2 independent source-only solve + official IAPT master key reconciliation"
+}

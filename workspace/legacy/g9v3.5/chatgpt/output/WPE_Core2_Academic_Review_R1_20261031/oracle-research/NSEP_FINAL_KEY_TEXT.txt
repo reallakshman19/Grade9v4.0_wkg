@@ -1,0 +1,36 @@
+QUESTION PAPER CODE 61 PAPER CODE 62 PAPER CODE 63 PAPER CODE 64 QUESTION PAPER CODE 61 PAPER CODE 62 PAPER CODE 63 PAPER CODE 64
+1 a c c c 31 a a c c
+2 d b b d 32 b b b d
+3 b c d c 33 c a d d
+4 d b d c 34 b b c b
+5 c a c a 35 d c c a
+6 a b c d 36 d c d c
+7 c c d b 37 c c d b
+8 b b c d 38 c b d c
+9 a d c b 39 d d b b
+10 a d a d 40 c c a a
+11 b c d a 41 c d a a
+12 a c d d 42 a c c b
+13 b d b b 43 d d b c
+14 c c d d 44 d d c b
+15 c c b c 45 b b b d
+16 c a a a 46 d a a d
+17 b d d c 47 b a b c
+18 d d b b 48 c c c c
+19 c b d a 49 a, d a, b, d a, b, c a, b, c
+20 d d c a 50 a, d a, c, d or c, d a, b, c, d a, c
+21 c b a b 51 b, c, d a, c b, d a, b, c, d
+22 d a c a 52 a, b, d a, b, c a, d b, d
+23 d d b b 53 a, c, d or c, d a, b, c, d a, d b, c
+24 b b a c 54 a, b, c b, d b, c, d a, d
+25 a d a c 55 a, c b, c a, b, d a, d
+26 a c b c 56 a, b, c a, d a, c, d or c, d b, c, d
+27 c a a b 57 a, b, c, d a, d a, b, c a, b, d
+28 b c b d 58 b, d b, c, d a, c a, c, d or c, d
+29 c b c c 59 b, c a, b, c b, c a, b, c
+30 b a c d 60 dropped dropped dropped dropped
+INDIAN ASSOCIATION OF PHYSICS TEACHERS
+ NATIONAL STANDARD EXAMINATION IN PHYSICS
+FINAL ANSWER KEY NSEP - 2025 
+Prof B P Tyagi
+Chief Coordinator (Examination)

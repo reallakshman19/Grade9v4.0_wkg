@@ -1,0 +1,101 @@
+{
+  "sequence": 20,
+  "batch_sequence": 5,
+  "task_identity": "Q-ID-23",
+  "stable_id": "G9V4-PHYS-WPE-EX-M65",
+  "source_id": "EX-M65",
+  "lot": "LOT-05",
+  "batch": "BATCH-B",
+  "paper": "JEE Main 2021 (Online) 18th March Morning Shift",
+  "source_type": "JEE_MAIN_PAST_EXAM_QUESTION",
+  "source_custody": "VERIFIED_TEXT_ONLY (Self-contained scaling relation question)",
+  "stem_text": "A constant power delivering machine has towed a box, which was initially at rest, along a horizontal straight line. The distance moved by the box in time 't' is proportional to :-",
+  "stem_sha256": "7b6b64cb8888f1591598b0ba9bbb9fc432e4fe2071040755328667c3437330a8",
+  "source_hash": "7b6b64cb8888f1591598b0ba9bbb9fc432e4fe2071040755328667c3437330a8",
+  "source_record_digest": "7b6b64cb8888f1591598b0ba9bbb9fc432e4fe2071040755328667c3437330a8",
+  "duplicate_parent": null,
+  "scope": "IN_SCOPE_WPE_ONLY",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "NOT_REQUIRED",
+  "figure_reference": "NONE (pure text question)",
+  "options": [
+    "A: t2/3",
+    "B: t3/2",
+    "C: t",
+    "D: t1/2"
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "CONSTANT_POWER_SCALING_RELATION",
+    "derivation": "Constant power P = m v (dv/dt). Integrating from rest: P t = 1/2 m v^2 => v proportional to t^(1/2). Distance x = integral v dt proportional to t^(3/2). Matches Option B (t3/2).",
+    "predicted_option": "B: t3/2",
+    "limiting_cases": "Consistent with EX-M64 and EX-M62. Demonstrates robust cross-sitting invariance of the constant-power scaling law x ~ t^(3/2)."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Recognizing power-velocity relation for towed mass"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Relating displacement to time under constant power"
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Two-step proportionality: v ~ t^(1/2) => x ~ t^(3/2)"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Direct exponent addition"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Contrasting with constant acceleration displacement (t^2)"
+        }
+      },
+      "total": 5,
+      "band": "D2",
+      "prior_proposal": {
+        "source": "PRODUCER_HISTORICAL_ESTIMATE",
+        "scores": "1/1/1/1/1",
+        "total": 5
+      },
+      "differences": "Rescored to native five-factor rubric per B2 CP-4 review"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "RETRIEVE"
+      ],
+      "rationale": "Application of constant power displacement scaling",
+      "candidate_cell": "QRT-APPLY-D2",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_CP4_GATE",
+  "b2_blind_status": "UNREVIEWED",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)",
+    "HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)"
+  ],
+  "next_action": "Verify official NTA key and submit for independent blind review.",
+  "teaching_construction_family": {
+    "construction_id": "TC-WPE-CONST-POWER-TRAJECTORY-01",
+    "shared_candidates": [
+      "EX-M62",
+      "EX-M64",
+      "EX-M65"
+    ],
+    "note": "These 3 candidates explore the same ideal constant-power kinematic trajectory. Under QRT governance, they share a single instructional construction rather than 3 separate lessons."
+  }
+}

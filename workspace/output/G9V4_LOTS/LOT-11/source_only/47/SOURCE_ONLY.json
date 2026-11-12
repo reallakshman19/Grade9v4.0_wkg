@@ -1,0 +1,12 @@
+{
+  "source_id": "EX-N27",
+  "task_identity": "Q-ID-55",
+  "sequence": 47,
+  "batch_sequence": 2,
+  "paper": "JEE Main 2021 (Online) 1st September Evening Shift",
+  "stem_text": "An engine is attached to a wagon through a shock absorber of length 1.5 m. The system with a total mass of 40,000 kg is moving with a speed of 72 kmh − 1 when the brakes are applied to bring it to rest. In the process of the system being brought to rest, the spring of the shock absorber gets compressed by 1.0 m. If 90% of energy of the wagon is lost due to friction, the spring constant is ____________ × 105 N/m.",
+  "stem_sha256": "a6819daad7442b9720739551885301d5aa100cae1563cc8e3fe64518a08fae3d",
+  "options": [],
+  "figure_reference": null,
+  "confidentiality_notice": "Source custody blind packet. Academic solve, answer key, and scoring omitted. Private review only."
+}

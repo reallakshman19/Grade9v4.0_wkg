@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WEP-07 Turning Points</title>
+<style>
+:root{--bg:#f7f6f2;--card:#fff;--ink:#1d1d1b;--muted:#5e5d58;--line:#dedbd2;--accent:#1f5f8b;--ext:#8a4b0f;--ok:#2f6b3a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161615;--card:#20201e;--ink:#ecebe6;--muted:#a9a79f;--line:#3a3935;--accent:#7db7e0;--ext:#e0a565;--ok:#8fcf9b}}
+:root[data-theme="dark"]{--bg:#161615;--card:#20201e;--ink:#ecebe6;--muted:#a9a79f;--line:#3a3935;--accent:#7db7e0;--ext:#e0a565;--ok:#8fcf9b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+header.top{padding:20px 16px 8px;max-width:920px;margin:auto}
+h1{font-size:1.45rem;margin:0 0 4px}
+.sub{color:var(--muted);margin:0}
+nav{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:2}
+nav .in{max-width:920px;margin:auto;display:flex;gap:4px;padding:6px 16px;overflow-x:auto}
+nav button{min-height:44px;padding:0 14px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;font:inherit;cursor:pointer;white-space:nowrap}
+nav button[aria-selected="true"]{border-color:var(--accent);color:var(--accent);font-weight:600}
+main{max-width:920px;margin:auto;padding:12px 16px 60px}
+section[hidden]{display:none}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin:14px 0}
+.card header{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.card h3{margin:0;font-size:1.05rem}
+.tag{font-size:.8rem;padding:2px 8px;border-radius:99px;border:1px solid var(--accent);color:var(--accent)}
+.tag.ext{border-color:var(--ext);color:var(--ext)}
+.crop{width:100%;height:auto;background:#fff;border:1px solid var(--line);border-radius:6px;margin-top:10px}
+.note{color:var(--ext);font-size:.92rem}
+.muted{color:var(--muted)}
+.jump{border-left:4px solid var(--accent);padding:8px 12px;background:var(--card)}
+label{display:block;margin:10px 0 6px;font-weight:600}
+input,textarea{display:block;width:100%;margin-top:6px;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit}
+button[data-record]{min-height:44px;padding:0 16px;border:0;border-radius:8px;background:var(--accent);color:var(--bg);font:inherit;font-weight:600;cursor:pointer}
+.reveal{margin-top:12px;border-top:1px dashed var(--line);padding-top:10px}
+.recorded{color:var(--ok);font-size:.9rem;margin-left:8px}
+details{border:1px solid var(--line);border-radius:8px;padding:8px 12px;margin:8px 0;background:var(--card)}
+summary{cursor:pointer;min-height:28px}
+dl{margin:6px 0}dt{font-weight:600;color:var(--muted);text-transform:capitalize;margin-top:6px}dd{margin:2px 0 6px 14px;overflow-wrap:anywhere}
+ul,ol{padding-left:22px}
+.owner{font-size:.9rem}
+footer{color:var(--muted);font-size:.85rem;max-width:920px;margin:auto;padding:0 16px 30px}
+</style>
+</head>
+<body>
+<header class="top">
+  <h1>Energy conservation and turning points (WEP-07)</h1>
+  <p class="sub">Try the originals first (Core 2), study the worked route (Core 1A), then rebuild it yourself (Core 1B).</p>
+</header>
+<nav><div class="in" role="tablist">
+  <button role="tab" data-tab="c2" aria-selected="true">1 · Original questions</button>
+  <button role="tab" data-tab="c1a" aria-selected="false">2 · Core 1A: worked route</button>
+  <button role="tab" data-tab="c1b" aria-selected="false">3 · Core 1B: rebuild it</button>
+  <button role="tab" data-tab="own" aria-selected="false">Owner view</button>
+</div></nav>
+<main>
+<section id="c2"><p class="muted">Four real NSEP questions, cropped unchanged from the official IAPT papers. Record an answer to see the official key.</p>{{CORE2}}</section>
+<section id="c1a" hidden>{{CORE1A}}</section>
+<section id="c1b" hidden><p class="muted">Each answer opens only after you record your own attempt. An empty attempt still counts, but try first.</p>{{CORE1B}}</section>
+<section id="own" hidden class="owner"><p><strong>Owner / source view.</strong> Pilot page, OTM-BUILT beside B2. Not accepted until the Owner validates it.</p>{{OWNER}}</section>
+</main>
+<footer>Pair {{PAIR}} · personal-use study page · works offline · your attempts are kept only in this browser.</footer>
+<script>
+(function(){
+  var KEY='wep07-w5:';
+  function load(k){try{return localStorage.getItem(KEY+k)}catch(e){return null}}
+  function save(k,v){try{localStorage.setItem(KEY+k,v)}catch(e){}}
+  var tabs=document.querySelectorAll('nav [data-tab]');
+  function show(id){tabs.forEach(function(t){var on=t.dataset.tab===id;t.setAttribute('aria-selected',on);document.getElementById(t.dataset.tab).hidden=!on});save('tab',id);window.scrollTo(0,0)}
+  tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.tab)})});
+  var t0=load('tab');if(t0&&document.getElementById(t0))show(t0);
+  document.querySelectorAll('[data-save]').forEach(function(el){var v=load('f:'+el.dataset.save);if(v!==null)el.value=v;el.addEventListener('input',function(){save('f:'+el.dataset.save,el.value)})});
+  function checkAll(){var g=document.querySelectorAll('#c1b [data-gate]');var all=Array.prototype.every.call(g,function(x){return load('r:'+x.dataset.gate)});var a=document.querySelector('.after-all');if(a)a.hidden=!all}
+  function open(gate){var r=gate.querySelector('.reveal');r.hidden=false;var b=gate.querySelector('[data-record]');if(!b.nextElementSibling||!b.nextElementSibling.classList.contains('recorded')){var s=document.createElement('span');s.className='recorded';s.textContent='Attempt recorded';b.after(s)}}
+  document.querySelectorAll('[data-gate]').forEach(function(g){
+    if(load('r:'+g.dataset.gate))open(g);
+    g.querySelector('[data-record]').addEventListener('click',function(){save('r:'+g.dataset.gate,new Date().toISOString());open(g);checkAll()});
+  });
+  checkAll();
+})();
+</script>
+</body>
+</html>

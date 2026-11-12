@@ -1,0 +1,17 @@
+{
+  "source_id": "EX-M85",
+  "task_identity": "Q-ID-34",
+  "sequence": 30,
+  "batch_sequence": 15,
+  "paper": "JEE Main 2016 (Online) 10th April Morning Slot",
+  "stem_text": "Velocity-time graph for a body of mass 10 kg is shown in figure. Work-done on the body in first two seconds of the motion is : [FIG-stem-1]",
+  "stem_sha256": "f6d74f6517bbe210d4c24f23ae99bb632c436f2fb4c12a40b4fce0ced91bcfb8",
+  "options": [
+    "A: 12000 J",
+    "B: \u2212 12000 J",
+    "C: \u2212 4500 J",
+    "D: \u2212 9300 J"
+  ],
+  "figure_reference": "[FIG-stem-1] Velocity-time graph unverified against authentic master",
+  "confidentiality_notice": "SEALED SOURCE-ONLY PACKET FOR BLIND INDEPENDENT REVIEW. Contains NO answers, keys, explanations, candidate solutions, SL2 factor scores, or prior review commentary."
+}

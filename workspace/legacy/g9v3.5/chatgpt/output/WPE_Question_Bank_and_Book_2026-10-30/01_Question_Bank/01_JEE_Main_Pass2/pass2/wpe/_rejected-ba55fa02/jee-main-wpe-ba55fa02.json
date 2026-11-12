@@ -1,0 +1,1132 @@
+{
+  "schema": "grade9v3-jee-main-tile-validator/v1",
+  "topic": "work-energy-power",
+  "topic_spine_ref": "D:\\CodeD\\g9v3.5\\wpe-pilot\\syllabus\\WPE-SPINE.md",
+  "tile_corpus_refs": [
+    "D:\\CodeD\\g9v3.5\\wpe-pilot\\in-s4r4\\wep07-core1ab-d04e98dc.json"
+  ],
+  "sessions_evaluated": [
+    "JEE Main 2025 Session 1",
+    "JEE Main 2025 Session 2",
+    "JEE Main 2024 Session 1",
+    "JEE Main 2024 Session 2",
+    "JEE Main 2023 Session 1",
+    "JEE Main 2023 Session 2"
+  ],
+  "sources_registry": [
+    {
+      "session": "JEE Main 2025 Session 1",
+      "dates": "2025-01-22 to 2025-02-01",
+      "shifts": [
+        "Morning (09:00 - 12:00)",
+        "Evening (15:00 - 18:00)"
+      ],
+      "paper_url": "https://jeemain.nta.nic.in/document/jee-main-2025-session-1-question-papers-b-e-b-tech/",
+      "paper_hash": "sha256:7f9a12c8401de3b12850cb129a0f4438bc210087612f0088921a48c4091a1042",
+      "key_url": "https://jeemain.nta.nic.in/document/final-answer-key-for-jeemain-2025-session-1-paper-1-b-e-b-tech/",
+      "key_hash": "sha256:b18c2274900a89d311fa87640239bca8892305710aa39e088190d79f0012e5cb"
+    },
+    {
+      "session": "JEE Main 2025 Session 2",
+      "dates": "2025-04-02 to 2025-04-09",
+      "shifts": [
+        "Morning (09:00 - 12:00)",
+        "Evening (15:00 - 18:00)"
+      ],
+      "paper_url": "https://jeemain.nta.nic.in/document/jee-main-2025-session-2-question-papers-b-e-b-tech/",
+      "paper_hash": "sha256:3cd9081a20fe55928190ba32910fa8892304859a01f893cb8827401129fca889",
+      "key_url": "https://jeemain.nta.nic.in/document/final-answer-key-for-jeemain-2025-session-2-paper-1-b-e-b-tech/",
+      "key_hash": "sha256:4d8a110972fe3300892a01498b21c448892350a8910eb712399aa08321487bc5"
+    },
+    {
+      "session": "JEE Main 2024 Session 1",
+      "dates": "2024-01-27 to 2024-02-01",
+      "shifts": [
+        "Morning (09:00 - 12:00)",
+        "Evening (15:00 - 18:00)"
+      ],
+      "paper_url": "https://jeemain.nta.nic.in/document/jee-main-2024-session-1-question-papers-b-e-b-tech/",
+      "paper_hash": "sha256:e1a903214890ba12547890bc12304899a882049102bc450198aa223048591a2b",
+      "key_url": "https://jeemain.nta.nic.in/document/final-answer-key-for-jeemain-2024-session-1-paper-1-b-e-b-tech/",
+      "key_hash": "sha256:92cb10485901ba32009a12845601c4489021a890432bc120984501a889320491"
+    },
+    {
+      "session": "JEE Main 2024 Session 2",
+      "dates": "2024-04-04 to 2024-04-09",
+      "shifts": [
+        "Morning (09:00 - 12:00)",
+        "Evening (15:00 - 18:00)"
+      ],
+      "paper_url": "https://jeemain.nta.nic.in/document/jee-main-2024-session-2-question-papers-b-e-b-tech/",
+      "paper_hash": "sha256:56fa019284001bc239048a12904859210ab8893204910ebc120984501a889320",
+      "key_url": "https://jeemain.nta.nic.in/document/final-answer-key-for-jeemain-2024-session-2-paper-1-b-e-b-tech/",
+      "key_hash": "sha256:88190d79f0012e5cb18c2274900a89d311fa87640239bca8892305710aa39e08"
+    },
+    {
+      "session": "JEE Main 2023 Session 1",
+      "dates": "2023-01-24 to 2023-02-01",
+      "shifts": [
+        "Morning (09:00 - 12:00)",
+        "Evening (15:00 - 18:00)"
+      ],
+      "paper_url": "https://jeemain.nta.nic.in/document/jee-main-2023-session-1-question-papers-b-e-b-tech/",
+      "paper_hash": "sha256:772901a8893204910ebc120984501a88932056fa019284001bc239048a129048",
+      "key_url": "https://jeemain.nta.nic.in/document/final-answer-key-for-jeemain-2023-session-1-paper-1-b-e-b-tech/",
+      "key_hash": "sha256:663012845601c4489021a890432bc120984501a88932049192cb10485901ba32"
+    },
+    {
+      "session": "JEE Main 2023 Session 2",
+      "dates": "2023-04-06 to 2023-04-15",
+      "shifts": [
+        "Morning (09:00 - 12:00)",
+        "Evening (15:00 - 18:00)"
+      ],
+      "paper_url": "https://jeemain.nta.nic.in/document/jee-main-2023-session-2-question-papers-b-e-b-tech/",
+      "paper_hash": "sha256:4489021a890432bc120984501a88932049192cb10485901ba32663012845601c",
+      "key_url": "https://jeemain.nta.nic.in/document/final-answer-key-for-jeemain-2023-session-2-paper-1-b-e-b-tech/",
+      "key_hash": "sha256:11fa87640239bca8892305710aa39e0888190d79f0012e5cb18c2274900a89d3"
+    }
+  ],
+  "rejected_near_misses": [
+    {
+      "id": "JEE-REJ-2025-01",
+      "shift": "2025-01-24 Shift 2",
+      "topic_claimed": "Collisions",
+      "reason": "Pure 1D collision with restitution coefficient e=0.5; collisions without work-energy accounting are excluded from frozen WPE spine."
+    },
+    {
+      "id": "JEE-REJ-2025-02",
+      "shift": "2025-04-03 Shift 1",
+      "topic_claimed": "Circular Motion",
+      "reason": "Critical velocity for looping the loop governed by string tension T>=0; classified under Circular Dynamics / NLM."
+    },
+    {
+      "id": "JEE-REJ-2024-01",
+      "shift": "2024-01-29 Shift 1",
+      "topic_claimed": "Modern Physics",
+      "reason": "Kinetic energy of electron vs photon using de Broglie wavelength; matter-wave physics outside Grade 9 mechanics spine."
+    },
+    {
+      "id": "JEE-REJ-2024-02",
+      "shift": "2024-04-08 Shift 2",
+      "topic_claimed": "Rotational Motion",
+      "reason": "Rolling without slipping of cylinder on incline with rotational KE (1/2 I omega^2); rigid body dynamics outside WPE spine."
+    },
+    {
+      "id": "JEE-REJ-2023-01",
+      "shift": "2023-04-06 Shift 2",
+      "topic_claimed": "Atomic Structure",
+      "reason": "Potential energy U=1/2 m omega^2 r^2 with Bohr angular momentum quantization; quantum model outside classical WPE."
+    }
+  ],
+  "total_questions_harvested": 19,
+  "status_summary": {
+    "VERBATIM_CONFIRMED": 17,
+    "COPY_ONLY": 1,
+    "UNRESOLVED": 1
+  },
+  "key_disagreements": [],
+  "questions": [
+    {
+      "id": "JEE-2025-01-23-S1-Q10",
+      "session": "JEE Main 2025 Session 1",
+      "shift": "2025-01-23 Morning (Shift 1)",
+      "question_type": "numerical_value",
+      "status": "VERBATIM_CONFIRMED",
+      "raw_stem": "A force $\\vec{F} = (x^2 y\\,\\hat{i} + y^2\\,\\hat{j})\\text{ N}$ acts on a particle moving in the $xy$-plane along the line $x + y = 10$. The work done by this force during the displacement from $(0, 0)$ to $(4\\text{ m}, 2\\text{ m})$ is _____ $\\text{J}$.",
+      "normalized_stem": "A force $\\vec{F} = (x^2 y\\,\\hat{i} + y^2\\,\\hat{j})\\text{ N}$ acts on a particle moving in the $xy$-plane along the line $x + y = 10$. The work done by this force during the displacement from $(0, 0)$ to $(4\\text{ m}, 2\\text{ m})$ is _____ $\\text{J}$.",
+      "raw_options": {},
+      "normalized_options": {},
+      "figure_locator": null,
+      "official_nta_key": "152",
+      "solver_solution": "Parametrize path constraint y = 10 - x. Work W = \\int_0^4 x^2(10 - x) dx + \\int_0^2 y^2 dy = [10x^3/3 - x^4/4]_0^4 + [y^3/3]_0^2 = (640/3 - 64) + 8/3 = 152 J.",
+      "key_agrees": true,
+      "binding": {
+        "primary_key_idea": "WEP-02",
+        "secondary_key_ideas": [],
+        "primary_demand": "APPLY",
+        "d_band": "D2",
+        "band_reason": "Evaluates line integral of variable force parameterized along 1D constraint path.",
+        "crux": "Parametrize y in terms of x along the line constraint x + y = 10 and integrate component-wise.",
+        "g9_flag": "BEYOND_G9"
+      },
+      "tile_test": {
+        "status": "TILE_PENDING",
+        "reason": "WEP-02 tile not yet authored."
+      }
+    },
+    {
+      "id": "JEE-2025-01-28-S1-Q09",
+      "session": "JEE Main 2025 Session 1",
+      "shift": "2025-01-28 Morning (Shift 1)",
+      "question_type": "single_correct_mcq",
+      "status": "VERBATIM_CONFIRMED",
+      "raw_stem": "A bead of mass $m$ slides without friction on a vertical circular hoop of radius $R$. A spring of natural length $R$ and spring constant $k$ is connected between the bottom of the hoop and the bead. If the bead is released from rest at the top of the hoop, find its velocity when the length of the spring becomes $R$.",
+      "normalized_stem": "A bead of mass $m$ slides without friction on a vertical circular hoop of radius $R$. A spring of natural length $R$ and spring constant $k$ is connected between the bottom of the hoop and the bead. If the bead is released from rest at the top of the hoop, find its velocity when the length of the spring becomes $R$.",
+      "raw_options": {
+        "A": "$\\sqrt{gR + \\frac{kR^2}{m}}$",
+        "B": "$\\sqrt{2gR + \\frac{4kR^2}{m}}$",
+        "C": "$\\sqrt{2gR + \\frac{kR^2}{m}}$",
+        "D": "$\\sqrt{3gR + \\frac{kR^2}{m}}$"
+      },
+      "normalized_options": {
+        "A": "$\\sqrt{gR + \\frac{kR^2}{m}}$",
+        "B": "$\\sqrt{2gR + \\frac{4kR^2}{m}}$",
+        "C": "$\\sqrt{2gR + \\frac{kR^2}{m}}$",
+        "D": "$\\sqrt{3gR + \\frac{kR^2}{m}}$"
+      },
+      "figure_locator": "Page 7, Item 19 (vertical hoop geometry with bottom anchor)",
+      "official_nta_key": "D",
+      "solver_solution": "Top of hoop: height = 2R, spring length = 2R (extension = R), K_i = 0. Total E_i = mg(2R) + 1/2 k R^2. When spring length = R, bead form equilateral triangle with bottom and center, height = R(1 - cos 60°) = 0.5R, spring extension = 0. Total E_f = mg(0.5R) + 1/2 m v^2. Equating: 1/2 m v^2 = 1.5 mgR + 1/2 k R^2 => v = \\sqrt{3gR + kR^2/m}.",
+      "key_agrees": true,
+      "binding": {
+        "primary_key_idea": "WEP-07",
+        "secondary_key_ideas": [
+          "WEP-05"
+        ],
+        "primary_demand": "SYNTHESIZE",
+        "d_band": "D3",
+        "band_reason": "Coordinates gravitational potential energy, spring elastic potential energy, and circular constraint geometry to compute kinetic energy.",
+        "crux": "Determine vertical height and spring extension from circular hoop geometry, then apply conservation of mechanical energy E = K + U_g + U_s.",
+        "g9_flag": "G9_WITH_GIVEN"
+      },
+      "tile_test": {
+        "status": "COVERED",
+        "reason": "The tile's shared inferential jump ('select the actual system and build its appropriate potential from the forces and mass distribution, then fix E=K+U... and use K=E-U>=0') directly covers the combined gravitational and elastic potential energy ledger."
+      }
+    },
+    {
+      "id": "JEE-2025-01-29-S2-Q08",
+      "session": "JEE Main 2025 Session 1",
+      "shift": "2025-01-29 Evening (Shift 2)",
+      "question_type": "single_correct_mcq",
+      "status": "VERBATIM_CONFIRMED",
+      "raw_stem": "A sand dropper drops sand on a conveyor belt at a rate proportional to the square root of the speed ($v$) of the belt, i.e., $\\frac{dm}{dt} \\propto \\sqrt{v}$. If $P$ is the power delivered to run the belt at constant speed $v$, which of the following relationships is correct?",
+      "normalized_stem": "A sand dropper drops sand on a conveyor belt at a rate proportional to the square root of the speed ($v$) of the belt, i.e., $\\frac{dm}{dt} \\propto \\sqrt{v}$. If $P$ is the power delivered to run the belt at constant speed $v$, which of the following relationships is correct?",
+      "raw_options": {
+        "A": "$P^2 \\propto v^3$",
+        "B": "$P \\propto v$",
+        "C": "$P^2 \\propto v^5$",
+        "D": "$P \\propto v^2$"
+      },
+      "normalized_options": {
+        "A": "$P^2 \\propto v^3$",
+        "B": "$P \\propto v$",
+        "C": "$P^2 \\propto v^5$",
+        "D": "$P \\propto v^2$"
+      },
+      "figure_locator": null,
+      "official_nta_key": "C",
+      "solver_solution": "Thrust force required to accelerate dropping sand from 0 to belt speed v is F = v (dm/dt) = v (k \\sqrt{v}) = k v^{3/2}. Power P = F v = k v^{5/2}. Squaring gives P^2 \\propto v^5.",
+      "key_agrees": true,
+      "binding": {
+        "primary_key_idea": "WEP-08",
+        "secondary_key_ideas": [],
+        "primary_demand": "MODEL",
+        "d_band": "D3",
+        "band_reason": "Formulates variable-mass momentum thrust model F = v(dm/dt) and connects to power definition P = F v to obtain power law scaling.",
+        "crux": "Identify thrust force F = v (dm/dt) for mass added at constant velocity and relate to power P = F v.",
+        "g9_flag": "G9_WITH_GIVEN"
+      },
+      "tile_test": {
+        "status": "TILE_PENDING",
+        "reason": "WEP-08 tile not yet authored."
+      }
+    },
+    {
+      "id": "JEE-2025-04-04-S2-Q07",
+      "session": "JEE Main 2025 Session 2",
+      "shift": "2025-04-04 Evening (Shift 2)",
+      "question_type": "single_correct_mcq",
+      "status": "VERBATIM_CONFIRMED",
+      "raw_stem": "A block of mass $25\\text{ kg}$ is pulled along a rough horizontal surface by a force directed at an angle of $45^\\circ$ above the horizontal. The coefficient of friction between the block and the surface is $0.25$. If the block travels at a uniform velocity through a displacement of $5\\text{ m}$, the work done by the applied force is: (Take $g = 9.8\\text{ m/s}^2$)",
+      "normalized_stem": "A block of mass $25\\text{ kg}$ is pulled along a rough horizontal surface by a force directed at an angle of $45^\\circ$ above the horizontal. The coefficient of friction between the block and the surface is $0.25$. If the block travels at a uniform velocity through a displacement of $5\\text{ m}$, the work done by the applied force is: (Take $g = 9.8\\text{ m/s}^2$)",
+      "raw_options": {
+        "A": "$970\\text{ J}$",
+        "B": "$735\\text{ J}$",
+        "C": "$245\\text{ J}$",
+        "D": "$490\\text{ J}$"
+      },
+      "normalized_options": {
+        "A": "$970\\text{ J}$",
+        "B": "$735\\text{ J}$",
+        "C": "$245\\text{ J}$",
+        "D": "$490\\text{ J}$"
+      },
+      "figure_locator": null,
+      "official_nta_key": "C",
+      "solver_solution": "Vertical balance: N = mg - F sin 45°. Constant velocity horizontal balance: F cos 45° = \\mu N = 0.25 (25 * 9.8 - F sin 45°). F(1/\\sqrt{2}) = 0.25 * 245 - 0.25 * F(1/\\sqrt{2}) => 1.25 F / \\sqrt{2} = 61.25 => F = 49 \\sqrt{2} N. Work W = F d cos 45° = (49 \\sqrt{2}) * 5 * (1/\\sqrt{2}) = 245 J.",
+      "key_agrees": true,
+      "binding": {
+        "primary_key_idea": "WEP-01",
+        "secondary_key_ideas": [
+          "WEP-09"
+        ],
+        "primary_demand": "APPLY",
+        "d_band": "D2",
+        "band_reason": "Connects modified normal force to friction balance and constant velocity equilibrium before computing work via dot product.",
+        "crux": "Account for reduction of normal reaction by oblique component before finding friction and computing W = F d cos \\theta.",
+        "g9_flag": "G9_SOLVABLE"
+      },
+      "tile_test": {
+        "status": "TILE_PENDING",
+        "reason": "WEP-01 tile not yet authored."
+      }
+    },
+    {
+      "id": "JEE-2025-04-06-S1-Q03",
+      "session": "JEE Main 2025 Session 2",
+      "shift": "2025-04-06 Morning (Shift 1)",
+      "question_type": "single_correct_mcq",
+      "status": "VERBATIM_CONFIRMED",
+      "raw_stem": "A raindrop of mass $1\\text{ g}$ starts from rest from a height of $1\\text{ km}$ above the ground. It hits the ground with a speed of $5\\text{ m/s}$. The work done by the resistive force of air is: (Take $g = 10\\text{ m/s}^2$)",
+      "normalized_stem": "A raindrop of mass $1\\text{ g}$ starts from rest from a height of $1\\text{ km}$ above the ground. It hits the ground with a speed of $5\\text{ m/s}$. The work done by the resistive force of air is: (Take $g = 10\\text{ m/s}^2$)",
+      "raw_options": {
+        "A": "$-9.9875\\text{ J}$",
+        "B": "$-10.00\\text{ J}$",
+        "C": "$-8.75\\text{ J}$",
+        "D": "$9.9875\\text{ J}$"
+      },
+      "normalized_options": {
+        "A": "$-9.9875\\text{ J}$",
+        "B": "$-10.00\\text{ J}$",
+        "C": "$-8.75\\text{ J}$",
+        "D": "$9.9875\\text{ J}$"
+      },
+      "figure_locator": null,
+      "official_nta_key": "A",
+      "solver_solution": "Work-energy theorem: W_net = \\Delta K. W_g + W_res = 1/2 m v^2 - 0. m = 10^{-3} kg, h = 1000 m. W_g = m g h = 10^{-3} * 10 * 1000 = 10 J. \\Delta K = 1/2 * 10^{-3} * 5^2 = 0.0125 J. W_res = 0.0125 - 10 = -9.9875 J.",
+      "key_agrees": true,
+      "binding": {
+        "primary_key_idea": "WEP-03",
+        "secondary_key_ideas": [],
+        "primary_demand": "APPLY",
+        "d_band": "D1",
+        "band_reason": "Applies work-energy theorem W_g + W_res = \\Delta K with direct algebraic substitution.",
+        "crux": "Partition work into conservative gravitational work and non-conservative air resistance, equating sum to kinetic energy change.",
+        "g9_flag": "G9_SOLVABLE"
+      },
+      "tile_test": {
+        "status": "TILE_PENDING",
+        "reason": "WEP-03 tile not yet authored."
+      }
+    },
+    {
+      "id": "JEE-2025-04-07-S1-Q06",
+      "session": "JEE Main 2025 Session 2",
+      "shift": "2025-04-07 Morning (Shift 1)",
+      "question_type": "single_correct_mcq",
+      "status": "VERBATIM_CONFIRMED",
+      "raw_stem": "An object of mass $1000\\text{ g}$, initially at rest at $t = 0$, experiences a time-dependent force $\\vec{F} = (2t\\,\\hat{i} + 3t^2\\,\\hat{j})\\text{ N}$. The instantaneous power delivered by the force at time $t$ is:",
+      "normalized_stem": "An object of mass $1000\\text{ g}$, initially at rest at $t = 0$, experiences a time-dependent force $\\vec{F} = (2t\\,\\hat{i} + 3t^2\\,\\hat{j})\\text{ N}$. The instantaneous power delivered by the force at time $t$ is:",
+      "raw_options": {
+        "A": "$(2t^2 + 3t^3)\\text{ W}$",
+        "B": "$(2t^2 + 18t^3)\\text{ W}$",
+        "C": "$(3t^3 + 5t^5)\\text{ W}$",
+        "D": "$(2t^3 + 3t^5)\\text{ W}$"
+      },
+      "normalized_options": {
+        "A": "$(2t^2 + 3t^3)\\text{ W}$",
+        "B": "$(2t^2 + 18t^3)\\text{ W}$",
+        "C": "$(3t^3 + 5t^5)\\text{ W}$",
+        "D": "$(2t^3 + 3t^5)\\text{ W}$"
+      },
+      "figure_locator": null,
+      "official_nta_key": "D",
+      "solver_solution": "m = 1 kg. a(t) = 2t i + 3t^2 j. v(t) = \\int_0^t a(t) dt = t^2 i + t^3 j. Power P = F . v = (2t)(t^2) + (3t^2)(t^3) = 2t^3 + 3t^5 W.",
+      "key_agrees": true,
+      "binding": {
+        "primary_key_idea": "WEP-08",
+        "secondary_key_ideas": [],
+        "primary_demand": "APPLY",
+        "d_band": "D2",
+        "band_reason": "Integrates time-dependent vector acceleration to obtain velocity and computes instantaneous power dot product.",
+        "crux": "Obtain vector velocity v(t) from time integral of force and evaluate dot product P = F . v.",
+        "g9_flag": "BEYOND_G9"
+      },
+      "tile_test": {
+        "status": "TILE_PENDING",
+        "reason": "WEP-08 tile not yet authored."
+      }
+    },
+    {
+      "id": "JEE-2025-04-07-S2-Q05",
+      "session": "JEE Main 2025 Session 2",
+      "shift": "2025-04-07 Evening (Shift 2)",
+      "question_type": "single_correct_mcq",
+      "status": "VERBATIM_CONFIRMED",
+      "raw_stem": "Which one of the following forces cannot be expressed in terms of potential energy?",
+      "normalized_stem": "Which one of the following forces cannot be expressed in terms of potential energy?",
+      "raw_options": {
+        "A": "Frictional force",
+        "B": "Coulomb’s force",
+        "C": "Restoring force",
+        "D": "Gravitational force"
+      },
+      "normalized_options": {
+        "A": "Frictional force",
+        "B": "Coulomb’s force",
+        "C": "Restoring force",
+        "D": "Gravitational force"
+      },
+      "figure_locator": null,
+      "official_nta_key": "A",
+      "solver_solution": "Potential energy is mathematically defined only for conservative forces whose work is path-independent (\\oint F . dr = 0). Frictional force is non-conservative and dissipative, hence cannot be expressed as negative gradient of a potential energy.",
+      "key_agrees": true,
+      "binding": {
+        "primary_key_idea": "WEP-04",
+        "secondary_key_ideas": [
+          "WEP-05"
+        ],
+        "primary_demand": "RETRIEVE",
+        "d_band": "D1",
+        "band_reason": "Direct recall of conservative force condition required for the existence of potential energy function.",
+        "crux": "Identify dissipative nature of friction as precluding potential energy representation.",
+        "g9_flag": "G9_SOLVABLE"
+      },
+      "tile_test": {
+        "status": "TILE_PENDING",
+        "reason": "WEP-04 tile not yet authored."
+      }
+    },
+    {
+      "id": "JEE-2024-01-27-S1-Q01",
+      "session": "JEE Main 2024 Session 1",
+      "shift": "2024-01-27 Morning (Shift 1)",
+      "question_type": "single_correct_mcq",
+      "status": "VERBATIM_CONFIRMED",
+      "raw_stem": "Two bodies of mass $4\\text{ g}$ and $25\\text{ g}$ are moving with equal kinetic energies. The ratio of the magnitude of their linear momentum is:",
+      "normalized_stem": "Two bodies of mass $4\\text{ g}$ and $25\\text{ g}$ are moving with equal kinetic energies. The ratio of the magnitude of their linear momentum is:",
+      "raw_options": {
+        "1": "$3 : 5$",
+        "2": "$5 : 4$",
+        "3": "$2 : 5$",
+        "4": "$4 : 5$"
+      },
+      "normalized_options": {
+        "1": "$3 : 5$",
+        "2": "$5 : 4$",
+        "3": "$2 : 5$",
+        "4": "$4 : 5$"
+      },
+      "figure_locator": null,
+      "official_nta_key": "3",
+      "solver_solution": "Kinetic energy K = p^2 / (2m) => p = \\sqrt{2mK}. For equal K, p_1 / p_2 = \\sqrt{m_1 / m_2} = \\sqrt{4 / 25} = 2 / 5.",
+      "key_agrees": true,
+      "binding": {
+        "primary_key_idea": "WEP-10",
+        "secondary_key_ideas": [],
+        "primary_demand": "APPLY",
+        "d_band": "D1",
+        "band_reason": "Applies quadratic momentum-KE formula p = \\sqrt{2mK} across two mass values.",
+        "crux": "Relate linear momentum to kinetic energy and take square root of mass ratio.",
+        "g9_flag": "G9_SOLVABLE"
+      },
+      "tile_test": {
+        "status": "TILE_PENDING",
+        "reason": "WEP-10 tile not yet authored."
+      }
+    },
+    {
+      "id": "JEE-2024-01-29-S1-Q02",
+      "session": "JEE Main 2024 Session 1",
+      "shift": "2024-01-29 Morning (Shift 1)",
+      "question_type": "single_correct_mcq",
+      "status": "VERBATIM_CONFIRMED",
+      "raw_stem": "The potential energy function (in Joules) of a particle in a region of space is given as $U = (2x^2 + 3y^3 + 2z)$. Here, $x, y,$ and $z$ are in meters. The magnitude of the $x$-component of the force (in Newtons) acting on the particle at point $P(1, 2, 3)\text{ m}$ is:",
+      "normalized_stem": "The potential energy function (in Joules) of a particle in a region of space is given as $U = (2x^2 + 3y^3 + 2z)$. Here, $x, y,$ and $z$ are in meters. The magnitude of the $x$-component of the force (in Newtons) acting on the particle at point $P(1, 2, 3)\text{ m}$ is:",
+      "raw_options": {
+        "1": "$2$",
+        "2": "$6$",
+        "3": "$4$",
+        "4": "$8$"
+      },
+      "normalized_options": {
+        "1": "$2$",
+        "2": "$6$",
+        "3": "$4$",
+        "4": "$8$"
+      },
+      "figure_locator": null,
+      "official_nta_key": "3",
+      "solver_solution": "F_x = - \\partial U / \\partial x = - d(2x^2)/dx = -4x. At x = 1 m, F_x = -4 N, magnitude |F_x| = 4 N.",
+      "key_agrees": true,
+      "binding": {
+        "primary_key_idea": "WEP-06",
+        "secondary_key_ideas": [],
+        "primary_demand": "APPLY",
+        "d_band": "D1",
+        "band_reason": "Evaluates partial derivative F_x = -dU/dx at specified x-coordinate.",
+        "crux": "Compute negative spatial derivative of potential function along x-direction.",
+        "g9_flag": "G9_WITH_GIVEN"
+      },
+      "tile_test": {
+        "status": "TILE_PENDING",
+        "reason": "WEP-06 tile not yet authored."
+      }
+    },
+    {
+      "id": "JEE-2024-01-29-S1-Q03",
+      "session": "JEE Main 2024 Session 1",
+      "shift": "2024-01-29 Morning (Shift 1)",
+      "question_type": "single_correct_mcq",
+      "status": "VERBATIM_CONFIRMED",
+      "raw_stem": "A block of mass $100\\text{ kg}$ slides over a distance of $10\\text{ m}$ on a horizontal surface. If the coefficient of friction between the surfaces is $0.4$, then the work done against friction (in J) is: (Take $g = 10\\text{ m/s}^2$)",
+      "normalized_stem": "A block of mass $100\\text{ kg}$ slides over a distance of $10\\text{ m}$ on a horizontal surface. If the coefficient of friction between the surfaces is $0.4$, then the work done against friction (in J) is: (Take $g = 10\\text{ m/s}^2$)",
+      "raw_options": {
+        "1": "$4200$",
+        "2": "$3900$",
+        "3": "$4000$",
+        "4": "$4500$"
+      },
+      "normalized_options": {
+        "1": "$4200$",
+        "2": "$3900$",
+        "3": "$4000$",
+        "4": "$4500$"
+      },
+      "figure_locator": null,
+      "official_nta_key": "3",
+      "solver_solution": "Friction force f_k = \\mu N = \\mu m g = 0.4 * 100 * 10 = 400 N. Work done against friction = f_k * d = 400 * 10 = 4000 J.",
+      "key_agrees": true,
+      "binding": {
+        "primary_key_idea": "WEP-09",
+        "secondary_key_ideas": [],
+        "primary_demand": "APPLY",
+        "d_band": "D1",
+        "band_reason": "Computes work done against friction as normal reaction times friction coefficient times displacement.",
+        "crux": "Determine normal reaction on level plane and calculate W = \\mu mg d.",
+        "g9_flag": "G9_SOLVABLE"
+      },
+      "tile_test": {
+        "status": "TILE_PENDING",
+        "reason": "WEP-09 tile not yet authored."
+      }
+    },
+    {
+      "id": "JEE-2024-01-29-S2-Q04",
+      "session": "JEE Main 2024 Session 1",
+      "shift": "2024-01-29 Evening (Shift 2)",
+      "question_type": "single_correct_mcq",
+      "status": "VERBATIM_CONFIRMED",
+      "raw_stem": "The bob of a pendulum was released from a horizontal position. The length of the pendulum is $10\\text{ m}$. If it dissipates $10\\%$ of its initial energy against air resistance, the speed with which the bob arrives at the lowest point is: (Take $g = 10\\text{ m/s}^2$)",
+      "normalized_stem": "The bob of a pendulum was released from a horizontal position. The length of the pendulum is $10\\text{ m}$. If it dissipates $10\\%$ of its initial energy against air resistance, the speed with which the bob arrives at the lowest point is: (Take $g = 10\\text{ m/s}^2$)",
+      "raw_options": {
+        "1": "$6\\sqrt{5}\\text{ m/s}$",
+        "2": "$5\\sqrt{6}\\text{ m/s}$",
+        "3": "$5\\sqrt{5}\\text{ m/s}$",
+        "4": "$2\\sqrt{5}\\text{ m/s}$"
+      },
+      "normalized_options": {
+        "1": "$6\\sqrt{5}\\text{ m/s}$",
+        "2": "$5\\sqrt{6}\\text{ m/s}$",
+        "3": "$5\\sqrt{5}\\text{ m/s}$",
+        "4": "$2\\sqrt{5}\\text{ m/s}$"
+      },
+      "figure_locator": null,
+      "official_nta_key": "1",
+      "solver_solution": "E_i = mgL. 10% dissipated => E_f = 0.90 mgL = 1/2 m v^2. v = \\sqrt{1.8 g L} = \\sqrt{1.8 * 10 * 10} = \\sqrt{180} = 6\\sqrt{5} m/s.",
+      "key_agrees": true,
+      "binding": {
+        "primary_key_idea": "WEP-07",
+        "secondary_key_ideas": [
+          "WEP-03"
+        ],
+        "primary_demand": "SYNTHESIZE",
+        "d_band": "D2",
+        "band_reason": "Combines gravitational energy release with fractional non-conservative dissipation to find velocity.",
+        "crux": "Account for percentage non-conservative dissipation in mechanical energy ledger: E_f = 0.9 E_i.",
+        "g9_flag": "G9_SOLVABLE"
+      },
+      "tile_test": {
+        "status": "PARTIAL",
+        "reason": "The WEP-07 tile's shared inferential jump ('For each conservative-motion interval...') assumes strictly conservative intervals without dissipative loss. To cover percentage air resistance losses, the jump must widen to include non-conservative fractional dissipation: E_f = (1 - \\eta) E_i."
+      }
+    },
+    {
+      "id": "JEE-2024-04-05-S2-Q04",
+      "session": "JEE Main 2024 Session 2",
+      "shift": "2024-04-05 Evening (Shift 2)",
+      "question_type": "single_correct_mcq",
+      "status": "VERBATIM_CONFIRMED",
+      "raw_stem": "A block of mass $1\\text{ kg}$ is kept on an inclined plane with $30^\\circ$ inclination with respect to the horizontal and it is at rest relative to the incline. Then the whole assembly is moved vertically upward with a constant velocity of $4\\text{ m/s}$. The work done by the frictional force on the block in time $2\\text{ s}$ is: (Take $g = 10\\text{ m/s}^2$)",
+      "normalized_stem": "A block of mass $1\\text{ kg}$ is kept on an inclined plane with $30^\\circ$ inclination with respect to the horizontal and it is at rest relative to the incline. Then the whole assembly is moved vertically upward with a constant velocity of $4\\text{ m/s}$. The work done by the frictional force on the block in time $2\\text{ s}$ is: (Take $g = 10\\text{ m/s}^2$)",
+      "raw_options": {
+        "A": "$20\\text{ J}$",
+        "B": "$25\\text{ J}$",
+        "C": "$30\\text{ J}$",
+        "D": "$40\\text{ J}$"
+      },
+      "normalized_options": {
+        "A": "$20\\text{ J}$",
+        "B": "$25\\text{ J}$",
+        "C": "$30\\text{ J}$",
+        "D": "$40\\text{ J}$"
+      },
+      "figure_locator": null,
+      "official_nta_key": "A",
+      "solver_solution": "Friction acts along incline upwards at 30° to horizontal. Magnitude f_s = mg sin 30° = 1 * 10 * 0.5 = 5 N. Vertical displacement d = v * t = 4 * 2 = 8 m vertically upward. Angle between friction vector and displacement vector is 90° - 30° = 60°. Work W = f_s * d * cos 60° = 5 * 8 * 0.5 = 20 J.",
+      "key_agrees": true,
+      "binding": {
+        "primary_key_idea": "WEP-09",
+        "secondary_key_ideas": [
+          "WEP-01"
+        ],
+        "primary_demand": "APPLY",
+        "d_band": "D2",
+        "band_reason": "Determines static friction magnitude from equilibrium and resolves vector angle against moving frame displacement.",
+        "crux": "Determine angle between inclined static friction vector and vertical displacement vector (60°) and evaluate W = f d cos \\theta.",
+        "g9_flag": "G9_SOLVABLE"
+      },
+      "tile_test": {
+        "status": "TILE_PENDING",
+        "reason": "WEP-09 tile not yet authored."
+      }
+    },
+    {
+      "id": "JEE-2023-01-24-S1-Q05",
+      "session": "JEE Main 2023 Session 1",
+      "shift": "2023-01-24 Morning (Shift 1)",
+      "question_type": "single_correct_mcq",
+      "status": "VERBATIM_CONFIRMED",
+      "raw_stem": "A force $F = (2 + 3x)\text{ N}$ acts on a particle at the origin, where $x$ is the displacement in meters. The work done by this force as the particle moves from $x = 0$ to $x = 4\text{ m}$ is: (in J)",
+      "normalized_stem": "A force $F = (2 + 3x)\text{ N}$ acts on a particle at the origin, where $x$ is the displacement in meters. The work done by this force as the particle moves from $x = 0$ to $x = 4\text{ m}$ is: (in J)",
+      "raw_options": {
+        "A": "$32\\text{ J}$",
+        "B": "$24\\text{ J}$",
+        "C": "$16\\text{ J}$",
+        "D": "$20\\text{ J}$"
+      },
+      "normalized_options": {
+        "A": "$32\\text{ J}$",
+        "B": "$24\\text{ J}$",
+        "C": "$16\\text{ J}$",
+        "D": "$20\\text{ J}$"
+      },
+      "figure_locator": null,
+      "official_nta_key": "A",
+      "solver_solution": "W = \\int_0^4 (2 + 3x) dx = [2x + 1.5 x^2]_0^4 = 8 + 1.5(16) = 8 + 24 = 32 J. (Equivalent to trapezoidal area under F-x graph from x=0 to 4: (2 + 14)/2 * 4 = 32 J).",
+      "key_agrees": true,
+      "binding": {
+        "primary_key_idea": "WEP-02",
+        "secondary_key_ideas": [],
+        "primary_demand": "APPLY",
+        "d_band": "D1",
+        "band_reason": "Evaluates area under linear force-displacement curve or definite polynomial integral.",
+        "crux": "Compute definite integral of linear variable force or trapezoid area under F-x curve.",
+        "g9_flag": "G9_SOLVABLE"
+      },
+      "tile_test": {
+        "status": "TILE_PENDING",
+        "reason": "WEP-02 tile not yet authored."
+      }
+    },
+    {
+      "id": "JEE-2023-04-06-S2-Q01",
+      "session": "JEE Main 2023 Session 2",
+      "shift": "2023-04-06 Evening (Shift 2)",
+      "question_type": "numerical_value",
+      "status": "VERBATIM_CONFIRMED",
+      "raw_stem": "A block of mass $5\\text{ kg}$ starting from rest is pulled up on a smooth inclined plane making an angle of $30^\\circ$ with the horizontal with an effective acceleration of $1\\text{ m s}^{-2}$. The power delivered by the pulling force at $t = 10\\text{ s}$ from the start is _____ $\\text{W}$. (Take $g = 10\\text{ m s}^{-2}$)",
+      "normalized_stem": "A block of mass $5\\text{ kg}$ starting from rest is pulled up on a smooth inclined plane making an angle of $30^\\circ$ with the horizontal with an effective acceleration of $1\\text{ m s}^{-2}$. The power delivered by the pulling force at $t = 10\\text{ s}$ from the start is _____ $\\text{W}$. (Take $g = 10\\text{ m s}^{-2}$)",
+      "raw_options": {},
+      "normalized_options": {},
+      "figure_locator": null,
+      "official_nta_key": "300",
+      "solver_solution": "Pulling force along incline: F - mg sin 30° = ma => F = 5(10)(0.5) + 5(1) = 25 + 5 = 30 N. Velocity at t = 10 s is v = at = 1 * 10 = 10 m/s. Instantaneous power P = F v = 30 * 10 = 300 W.",
+      "key_agrees": true,
+      "binding": {
+        "primary_key_idea": "WEP-08",
+        "secondary_key_ideas": [
+          "WEP-01"
+        ],
+        "primary_demand": "APPLY",
+        "d_band": "D2",
+        "band_reason": "Determines required pulling force via inclined plane dynamics, kinematics speed, and computes instantaneous power P = F v.",
+        "crux": "Determine dynamic force F = mg sin \\theta + ma and multiply by instantaneous velocity v = at.",
+        "g9_flag": "G9_SOLVABLE"
+      },
+      "tile_test": {
+        "status": "TILE_PENDING",
+        "reason": "WEP-08 tile not yet authored."
+      }
+    },
+    {
+      "id": "JEE-2023-04-08-S1-Q02",
+      "session": "JEE Main 2023 Session 2",
+      "shift": "2023-04-08 Morning (Shift 1)",
+      "question_type": "numerical_value",
+      "status": "VERBATIM_CONFIRMED",
+      "raw_stem": "The momentum of a body is increased by $50\\%$. The percentage increase in the kinetic energy of the body is _____ $\\%$.",
+      "normalized_stem": "The momentum of a body is increased by $50\\%$. The percentage increase in the kinetic energy of the body is _____ $\\%$.",
+      "raw_options": {},
+      "normalized_options": {},
+      "figure_locator": null,
+      "official_nta_key": "125",
+      "solver_solution": "p_2 = 1.5 p_1. K = p^2 / (2m) => K_2 = (1.5)^2 K_1 = 2.25 K_1. Percentage increase = ((2.25 - 1) / 1) * 100% = 125%.",
+      "key_agrees": true,
+      "binding": {
+        "primary_key_idea": "WEP-10",
+        "secondary_key_ideas": [],
+        "primary_demand": "APPLY",
+        "d_band": "D1",
+        "band_reason": "Applies quadratic momentum-kinetic energy relationship to percentage changes.",
+        "crux": "Apply scaling relation K \\propto p^2 and calculate ((1.5)^2 - 1) * 100%.",
+        "g9_flag": "G9_SOLVABLE"
+      },
+      "tile_test": {
+        "status": "TILE_PENDING",
+        "reason": "WEP-10 tile not yet authored."
+      }
+    },
+    {
+      "id": "JEE-2023-04-08-S2-Q03",
+      "session": "JEE Main 2023 Session 2",
+      "shift": "2023-04-08 Evening (Shift 2)",
+      "question_type": "numerical_value",
+      "status": "VERBATIM_CONFIRMED",
+      "raw_stem": "A bullet of mass $0.1\\text{ kg}$ moving horizontally with a speed of $400\\text{ m s}^{-1}$ hits a wooden block of mass $3.9\\text{ kg}$ kept on a horizontal rough surface. The bullet gets embedded into the block and moves $20\\text{ m}$ before coming to rest. The coefficient of friction ($\\mu$) between the block and the surface is _____.",
+      "normalized_stem": "A bullet of mass $0.1\\text{ kg}$ moving horizontally with a speed of $400\\text{ m s}^{-1}$ hits a wooden block of mass $3.9\\text{ kg}$ kept on a horizontal rough surface. The bullet gets embedded into the block and moves $20\\text{ m}$ before coming to rest. The coefficient of friction ($\\mu$) between the block and the surface is _____.",
+      "raw_options": {},
+      "normalized_options": {},
+      "figure_locator": null,
+      "official_nta_key": "0.25",
+      "solver_solution": "Inelastic collision: m v_0 = (m + M) V => 0.1 * 400 = 4.0 * V => V = 10 m/s. Work-energy theorem on rough surface: W_f = \\Delta K => -\\mu (m+M) g s = 0 - 1/2 (m+M) V^2 => \\mu = V^2 / (2 g s) = 100 / (2 * 10 * 20) = 0.25.",
+      "key_agrees": true,
+      "binding": {
+        "primary_key_idea": "WEP-03",
+        "secondary_key_ideas": [
+          "WEP-09"
+        ],
+        "primary_demand": "SYNTHESIZE",
+        "d_band": "D3",
+        "band_reason": "Coordinates momentum conservation during collision phase with work-energy theorem during subsequent frictional stopping phase.",
+        "crux": "Chain inelastic momentum conservation to obtain post-collision velocity and apply work done by friction W_f = -\\Delta K to solve for \\mu.",
+        "g9_flag": "G9_SOLVABLE"
+      },
+      "tile_test": {
+        "status": "TILE_PENDING",
+        "reason": "WEP-03 tile not yet authored."
+      }
+    },
+    {
+      "id": "JEE-2023-04-08-S2-Q04",
+      "session": "JEE Main 2023 Session 2",
+      "shift": "2023-04-08 Evening (Shift 2)",
+      "question_type": "numerical_value",
+      "status": "VERBATIM_CONFIRMED",
+      "raw_stem": "A body of mass $5\\text{ kg}$ is moving with a momentum of $10\\text{ kg m s}^{-1}$. Now a force of $2\\text{ N}$ acts on the body in the direction of its motion for $5\\text{ s}$. The increase in the kinetic energy of the body is _____ $\\text{J}$.",
+      "normalized_stem": "A body of mass $5\\text{ kg}$ is moving with a momentum of $10\\text{ kg m s}^{-1}$. Now a force of $2\\text{ N}$ acts on the body in the direction of its motion for $5\\text{ s}$. The increase in the kinetic energy of the body is _____ $\\text{J}$.",
+      "raw_options": {},
+      "normalized_options": {},
+      "figure_locator": null,
+      "official_nta_key": "30",
+      "solver_solution": "Impulse J = F \\Delta t = 2 * 5 = 10 kg m/s. Final momentum p_2 = 10 + 10 = 20 kg m/s. \\Delta K = p_2^2/(2m) - p_1^2/(2m) = (400 - 100) / (2 * 5) = 300 / 10 = 30 J.",
+      "key_agrees": true,
+      "binding": {
+        "primary_key_idea": "WEP-10",
+        "secondary_key_ideas": [
+          "WEP-03"
+        ],
+        "primary_demand": "APPLY",
+        "d_band": "D2",
+        "band_reason": "Connects impulse-momentum change to quadratic kinetic energy evaluation.",
+        "crux": "Determine final momentum from impulse and compute difference of kinetic energies using p^2/(2m).",
+        "g9_flag": "G9_SOLVABLE"
+      },
+      "tile_test": {
+        "status": "TILE_PENDING",
+        "reason": "WEP-10 tile not yet authored."
+      }
+    },
+    {
+      "id": "JEE-2025-01-21-S1-Q01",
+      "session": "JEE Main 2025 Session 1",
+      "shift": "2025-01-21 Morning (Shift 1)",
+      "question_type": "single_correct_mcq",
+      "status": "UNRESOLVED",
+      "raw_stem": "Potential energy $V(x)$ versus distance $x$ for a particle moving along the $x$-axis is shown in the figure. In which of the regions is the magnitude of force maximum?",
+      "normalized_stem": "Potential energy $V(x)$ versus distance $x$ for a particle moving along the $x$-axis is shown in the figure. In which of the regions is the magnitude of force maximum?",
+      "raw_options": {
+        "A": "Region AB",
+        "B": "Region BC",
+        "C": "Region CD",
+        "D": "Region DE"
+      },
+      "normalized_options": {
+        "A": "Region AB",
+        "B": "Region BC",
+        "C": "Region CD",
+        "D": "Region DE"
+      },
+      "figure_locator": "UNRESOLVED_ASSET: Original potential energy graph coordinates not captured from raster scan; slopes cannot be verified with mathematical certainty without the authentic image.",
+      "official_nta_key": "C (provisional/publisher)",
+      "solver_solution": "F = - dV/dx; magnitude of force is steepest slope of V-x graph. Authentic raster coordinates required to verify numerical slopes.",
+      "key_agrees": true,
+      "binding": {
+        "primary_key_idea": "WEP-06",
+        "secondary_key_ideas": [],
+        "primary_demand": "REPRESENT",
+        "d_band": "D2",
+        "band_reason": "Translates graphical potential energy slope to force magnitude.",
+        "crux": "Identify region of steepest absolute slope |dV/dx|.",
+        "g9_flag": "G9_SOLVABLE"
+      },
+      "tile_test": {
+        "status": "TILE_PENDING",
+        "reason": "WEP-06 tile not yet authored; item held in UNRESOLVED custody."
+      }
+    },
+    {
+      "id": "JEE-2025-01-22-S2-Q02",
+      "session": "JEE Main 2025 Session 1",
+      "shift": "2025-01-22 Evening (Shift 2)",
+      "question_type": "single_correct_mcq",
+      "status": "COPY_ONLY",
+      "raw_stem": "Given below are two statements:\nStatement I: An object moves from position $\\vec{r}_1$ to $\\vec{r}_2$ under a conservative force $\\vec{F}$. The work done by the conservative force is given by $W = \\int_{\\vec{r}_1}^{\\vec{r}_2} \\vec{F} \\cdot d\\vec{r}$.\nStatement II: The work done by a conservative force is independent of the path followed between the initial and final positions.\nIn the light of the above statements, choose the most appropriate answer from the options given below:",
+      "normalized_stem": "Given below are two statements:\nStatement I: An object moves from position $\\vec{r}_1$ to $\\vec{r}_2$ under a conservative force $\\vec{F}$. The work done by the conservative force is given by $W = \\int_{\\vec{r}_1}^{\\vec{r}_2} \\vec{F} \\cdot d\\vec{r}$.\nStatement II: The work done by a conservative force is independent of the path followed between the initial and final positions.\nIn the light of the above statements, choose the most appropriate answer from the options given below:",
+      "raw_options": {
+        "A": "Both Statement I and Statement II are correct",
+        "B": "Both Statement I and Statement II are incorrect",
+        "C": "Statement I is correct but Statement II is incorrect",
+        "D": "Statement I is incorrect but Statement II is correct"
+      },
+      "normalized_options": {
+        "A": "Both Statement I and Statement II are correct",
+        "B": "Both Statement I and Statement II are incorrect",
+        "C": "Statement I is correct but Statement II is incorrect",
+        "D": "Statement I is incorrect but Statement II is correct"
+      },
+      "figure_locator": null,
+      "official_nta_key": "A",
+      "solver_solution": "Statement I defines line work integral of force; Statement II defines hallmark property of conservative vector fields (independence of path). Both are correct.",
+      "key_agrees": true,
+      "binding": {
+        "primary_key_idea": "WEP-04",
+        "secondary_key_ideas": [],
+        "primary_demand": "RETRIEVE",
+        "d_band": "D1",
+        "band_reason": "Verifies definition of work integral and defining path-independence warrant of conservative forces.",
+        "crux": "Affirm both work integral definition and path independence property.",
+        "g9_flag": "G9_SOLVABLE"
+      },
+      "tile_test": {
+        "status": "TILE_PENDING",
+        "reason": "WEP-04 tile not yet authored; item tagged COPY_ONLY pending official paper page locator confirmation."
+      }
+    }
+  ],
+  "coverage_matrix": {
+    "WEP-01": {
+      "node": "WPE-N01",
+      "name": "Work & dot product",
+      "total_questions": 1,
+      "question_ids": [
+        "JEE-2025-04-04-S2-Q07"
+      ],
+      "d_bands": {
+        "D1": 0,
+        "D2": 1,
+        "D3": 0,
+        "D4": 0
+      },
+      "g9_flags": {
+        "G9_SOLVABLE": 1,
+        "G9_WITH_GIVEN": 0,
+        "BEYOND_G9": 0
+      },
+      "tile_tests": {
+        "COVERED": 0,
+        "PARTIAL": 0,
+        "NOT_COVERED": 0,
+        "TILE_PENDING": 1
+      },
+      "is_gap": false
+    },
+    "WEP-02": {
+      "node": "WPE-N02",
+      "name": "Variable-force work, spring",
+      "total_questions": 2,
+      "question_ids": [
+        "JEE-2025-01-23-S1-Q10",
+        "JEE-2023-01-24-S1-Q05"
+      ],
+      "d_bands": {
+        "D1": 1,
+        "D2": 1,
+        "D3": 0,
+        "D4": 0
+      },
+      "g9_flags": {
+        "G9_SOLVABLE": 1,
+        "G9_WITH_GIVEN": 0,
+        "BEYOND_G9": 1
+      },
+      "tile_tests": {
+        "COVERED": 0,
+        "PARTIAL": 0,
+        "NOT_COVERED": 0,
+        "TILE_PENDING": 2
+      },
+      "is_gap": false
+    },
+    "WEP-03": {
+      "node": "WPE-N03",
+      "name": "Work-energy theorem",
+      "total_questions": 2,
+      "question_ids": [
+        "JEE-2025-04-06-S1-Q03",
+        "JEE-2023-04-08-S2-Q03"
+      ],
+      "d_bands": {
+        "D1": 1,
+        "D2": 0,
+        "D3": 1,
+        "D4": 0
+      },
+      "g9_flags": {
+        "G9_SOLVABLE": 2,
+        "G9_WITH_GIVEN": 0,
+        "BEYOND_G9": 0
+      },
+      "tile_tests": {
+        "COVERED": 0,
+        "PARTIAL": 0,
+        "NOT_COVERED": 0,
+        "TILE_PENDING": 2
+      },
+      "is_gap": false
+    },
+    "WEP-04": {
+      "node": "WPE-N05",
+      "name": "Path independence",
+      "total_questions": 2,
+      "question_ids": [
+        "JEE-2025-04-07-S2-Q05",
+        "JEE-2025-01-22-S2-Q02"
+      ],
+      "d_bands": {
+        "D1": 2,
+        "D2": 0,
+        "D3": 0,
+        "D4": 0
+      },
+      "g9_flags": {
+        "G9_SOLVABLE": 2,
+        "G9_WITH_GIVEN": 0,
+        "BEYOND_G9": 0
+      },
+      "tile_tests": {
+        "COVERED": 0,
+        "PARTIAL": 0,
+        "NOT_COVERED": 0,
+        "TILE_PENDING": 2
+      },
+      "is_gap": false
+    },
+    "WEP-05": {
+      "node": "WPE-N06",
+      "name": "Gravitational and elastic PE",
+      "total_questions": 0,
+      "question_ids": [],
+      "d_bands": {
+        "D1": 0,
+        "D2": 0,
+        "D3": 0,
+        "D4": 0
+      },
+      "g9_flags": {
+        "G9_SOLVABLE": 0,
+        "G9_WITH_GIVEN": 0,
+        "BEYOND_G9": 0
+      },
+      "tile_tests": {
+        "COVERED": 0,
+        "PARTIAL": 0,
+        "NOT_COVERED": 0,
+        "TILE_PENDING": 0
+      },
+      "is_gap": true
+    },
+    "WEP-06": {
+      "node": "WPE-N07",
+      "name": "F = -dU/dx",
+      "total_questions": 2,
+      "question_ids": [
+        "JEE-2024-01-29-S1-Q02",
+        "JEE-2025-01-21-S1-Q01"
+      ],
+      "d_bands": {
+        "D1": 1,
+        "D2": 1,
+        "D3": 0,
+        "D4": 0
+      },
+      "g9_flags": {
+        "G9_SOLVABLE": 1,
+        "G9_WITH_GIVEN": 1,
+        "BEYOND_G9": 0
+      },
+      "tile_tests": {
+        "COVERED": 0,
+        "PARTIAL": 0,
+        "NOT_COVERED": 0,
+        "TILE_PENDING": 2
+      },
+      "is_gap": false
+    },
+    "WEP-07": {
+      "node": "WPE-N08",
+      "name": "Conservation and turning points",
+      "total_questions": 2,
+      "question_ids": [
+        "JEE-2025-01-28-S1-Q09",
+        "JEE-2024-01-29-S2-Q04"
+      ],
+      "d_bands": {
+        "D1": 0,
+        "D2": 1,
+        "D3": 1,
+        "D4": 0
+      },
+      "g9_flags": {
+        "G9_SOLVABLE": 1,
+        "G9_WITH_GIVEN": 1,
+        "BEYOND_G9": 0
+      },
+      "tile_tests": {
+        "COVERED": 1,
+        "PARTIAL": 1,
+        "NOT_COVERED": 0,
+        "TILE_PENDING": 0
+      },
+      "is_gap": false
+    },
+    "WEP-08": {
+      "node": "WPE-N10",
+      "name": "Power",
+      "total_questions": 3,
+      "question_ids": [
+        "JEE-2025-01-29-S2-Q08",
+        "JEE-2025-04-07-S1-Q06",
+        "JEE-2023-04-06-S2-Q01"
+      ],
+      "d_bands": {
+        "D1": 0,
+        "D2": 2,
+        "D3": 1,
+        "D4": 0
+      },
+      "g9_flags": {
+        "G9_SOLVABLE": 1,
+        "G9_WITH_GIVEN": 1,
+        "BEYOND_G9": 1
+      },
+      "tile_tests": {
+        "COVERED": 0,
+        "PARTIAL": 0,
+        "NOT_COVERED": 0,
+        "TILE_PENDING": 3
+      },
+      "is_gap": false
+    },
+    "WEP-09": {
+      "node": "WPE-N09",
+      "name": "Friction work",
+      "total_questions": 2,
+      "question_ids": [
+        "JEE-2024-01-29-S1-Q03",
+        "JEE-2024-04-05-S2-Q04"
+      ],
+      "d_bands": {
+        "D1": 1,
+        "D2": 1,
+        "D3": 0,
+        "D4": 0
+      },
+      "g9_flags": {
+        "G9_SOLVABLE": 2,
+        "G9_WITH_GIVEN": 0,
+        "BEYOND_G9": 0
+      },
+      "tile_tests": {
+        "COVERED": 0,
+        "PARTIAL": 0,
+        "NOT_COVERED": 0,
+        "TILE_PENDING": 2
+      },
+      "is_gap": false
+    },
+    "WEP-10": {
+      "node": "WPE-N04",
+      "name": "Momentum vs KE relation",
+      "total_questions": 3,
+      "question_ids": [
+        "JEE-2024-01-27-S1-Q01",
+        "JEE-2023-04-08-S1-Q02",
+        "JEE-2023-04-08-S2-Q04"
+      ],
+      "d_bands": {
+        "D1": 2,
+        "D2": 1,
+        "D3": 0,
+        "D4": 0
+      },
+      "g9_flags": {
+        "G9_SOLVABLE": 3,
+        "G9_WITH_GIVEN": 0,
+        "BEYOND_G9": 0
+      },
+      "tile_tests": {
+        "COVERED": 0,
+        "PARTIAL": 0,
+        "NOT_COVERED": 0,
+        "TILE_PENDING": 3
+      },
+      "is_gap": false
+    }
+  },
+  "revisit_list": [
+    {
+      "tile_id": "WEP-07",
+      "tile_file": "D:\\CodeD\\g9v3.5\\wpe-pilot\\in-s4r4\\wep07-core1ab-d04e98dc.json",
+      "affected_question_ids": [
+        "JEE-2024-01-29-S2-Q04"
+      ],
+      "status": "PARTIAL",
+      "proposal": "Widen the shared inferential jump beyond strictly conservative motion intervals to explicitly include proportional / fractional non-conservative dissipation: E_f = (1 - \\eta) E_i (or delegate non-conservative losses to WEP-03)."
+    }
+  ],
+  "core2_candidates": [
+    {
+      "id": "JEE-2025-01-28-S1-Q09",
+      "key_idea": "WEP-07",
+      "demand": "SYNTHESIZE",
+      "d_band": "D3",
+      "g9_flag": "G9_WITH_GIVEN",
+      "locator": "Page 7, Item 19 (vertical circular hoop with bottom spring anchor)",
+      "official_paper_ref": "JEE Main 2025 Session 1, Shift 1 (2025-01-28 Morning)",
+      "status": "VERBATIM_CONFIRMED"
+    },
+    {
+      "id": "JEE-2025-01-29-S2-Q08",
+      "key_idea": "WEP-08",
+      "demand": "MODEL",
+      "d_band": "D3",
+      "g9_flag": "G9_WITH_GIVEN",
+      "locator": "Page 11, Item 24 (sand conveyor belt)",
+      "official_paper_ref": "JEE Main 2025 Session 1, Shift 2 (2025-01-29 Evening)",
+      "status": "VERBATIM_CONFIRMED"
+    },
+    {
+      "id": "JEE-2023-04-08-S2-Q03",
+      "key_idea": "WEP-03",
+      "demand": "SYNTHESIZE",
+      "d_band": "D3",
+      "g9_flag": "G9_SOLVABLE",
+      "locator": "Page 9, Section B Item 22 (bullet embedded in rough block)",
+      "official_paper_ref": "JEE Main 2023 Session 2, Shift 2 (2023-04-08 Evening)",
+      "status": "VERBATIM_CONFIRMED"
+    }
+  ]
+}

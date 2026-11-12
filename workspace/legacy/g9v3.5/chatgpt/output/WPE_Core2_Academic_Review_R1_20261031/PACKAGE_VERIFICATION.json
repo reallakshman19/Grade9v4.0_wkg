@@ -1,0 +1,92 @@
+{
+  "scope": "Document/source receipts and immutable-history reconciliation, not scientific proof by string checks",
+  "checks": [
+    {
+      "check": "First-pass sealed bytes unchanged",
+      "pass": true
+    },
+    {
+      "check": "Reviewer final bytes unchanged",
+      "pass": true
+    },
+    {
+      "check": "Reviewer receipt preserved: AUTHOR_COMPARISON.json",
+      "pass": true
+    },
+    {
+      "check": "Reviewer receipt preserved: official-worked-solution.pdf",
+      "pass": true
+    },
+    {
+      "check": "Reviewer receipt preserved: official-final-key.pdf",
+      "pass": true
+    },
+    {
+      "check": "Reviewer receipt preserved: FINAL_KEY_RECEIPT.json",
+      "pass": true
+    },
+    {
+      "check": "Reviewer receipt preserved: option-c-original-magnified.png",
+      "pass": true
+    },
+    {
+      "check": "Reviewer receipt preserved: option-c-from-actual-PDF.png",
+      "pass": true
+    },
+    {
+      "check": "Immutable previous audit ZIP unchanged",
+      "pass": true
+    },
+    {
+      "check": "Plan prior bytes equal pre-review pin",
+      "pass": true
+    },
+    {
+      "check": "Nomination reconciliation",
+      "pass": true
+    },
+    {
+      "check": "Target reconciliation",
+      "pass": true
+    },
+    {
+      "check": "Unsupported slots reconciled",
+      "pass": true
+    },
+    {
+      "check": "No admissions or native label writes claimed",
+      "pass": true
+    },
+    {
+      "check": "All exact-task totals D2",
+      "pass": true
+    },
+    {
+      "check": "False exact-task conflict withdrawn",
+      "pass": true
+    },
+    {
+      "check": "HTML local links and images resolve",
+      "pass": true
+    },
+    {
+      "check": "Checkpoint readback equals continuity",
+      "pass": true
+    },
+    {
+      "check": "Stable pointer readback current",
+      "pass": true
+    },
+    {
+      "check": "Deliberately changed bytes fail sealed-hash comparison",
+      "pass": true
+    }
+  ],
+  "passed": 20,
+  "html_local_links_checked": 8,
+  "browser_layout_QA": "NOT_RUN",
+  "technical_product_tests": "NOT_RUN_THIS_ROUTINE",
+  "native_folder_fresh_rehash": "NOT_RUN_THIS_ROUTINE; no product write performed",
+  "independent_semantic_review": "Separate reviewer FIRST_PASS.json and FINAL_REVIEW.json",
+  "archive_integrity": "Verified externally after sealing; see delivery receipt"
+}

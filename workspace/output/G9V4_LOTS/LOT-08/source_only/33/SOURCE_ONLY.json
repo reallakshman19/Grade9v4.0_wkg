@@ -1,0 +1,17 @@
+{
+  "source_id": "EX-M92",
+  "task_identity": "Q-ID-38",
+  "sequence": 33,
+  "batch_sequence": 3,
+  "paper": "JEE Main 2014 (Online) 12th April Morning Slot",
+  "stem_text": "A spring of unstretched length 𝑙 has a mass m with one end fixed to a rigid support. Assuming spring to be made of a uniform wire, the kinetic energy possessed by it if its free end is pulled with uniform velocity 𝑣 is :",
+  "stem_sha256": "24ef3006cdb28b6eea3dc564f08194f099c08e3c1de42bed2d6dcf7eec6babf4",
+  "options": [
+    "A: (1)/(2) m 𝑣 2",
+    "B: m 𝑣 2",
+    "C: (1)/(3) m 𝑣 2",
+    "D: (1)/(6) m 𝑣 2"
+  ],
+  "figure_reference": null,
+  "confidentiality_notice": "Source custody blind packet. Academic solve, answer key, and scoring omitted. Private review only."
+}

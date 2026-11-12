@@ -1,0 +1,80 @@
+{
+  "id": "SYN-WPE-DIRECTION-CONTROL-01",
+  "source_digest": "96139b3834b776d6032da51dd3c6032c483a3688bb864700529ae251a70d8fbd",
+  "capability_ref": "CAP-WEP-WORK-DIRECTION",
+  "family_ref": "FAM-PHY-WEP-PRACTICE",
+  "representation_ref": "REP-SYN-WPE-DIRECTIONS",
+  "reasoning_route": [
+    {
+      "id": "SYN-WPE-DIRECTION-CONTROL-01-M1",
+      "kind": "CONNECT",
+      "action": "Work of a constant force is the scalar product of the force and displacement.",
+      "why_valid": "The supplied fixture explicitly assumes a constant force.",
+      "inputs": [
+        "The stated constant force and displacement."
+      ],
+      "output": "Use the scalar product.",
+      "source_ref": "SYNTHETIC-ENGINEERING-HANDOFF"
+    },
+    {
+      "id": "SYN-WPE-DIRECTION-CONTROL-01-M2",
+      "kind": "REPRESENT",
+      "action": "The perpendicular vertical force has no component along the horizontal displacement.",
+      "why_valid": "The fixture states perpendicular directions.",
+      "inputs": [
+        "Vertical force and horizontal displacement."
+      ],
+      "output": "The force component along displacement is zero.",
+      "source_ref": "SYNTHETIC-ENGINEERING-HANDOFF"
+    },
+    {
+      "id": "SYN-WPE-DIRECTION-CONTROL-01-M3",
+      "kind": "VERIFY",
+      "action": "Therefore its work is zero, regardless of the trolley's speed.",
+      "why_valid": "The force has no component in the displacement direction.",
+      "inputs": [
+        "The perpendicular directions."
+      ],
+      "output": "Zero work by this force.",
+      "source_ref": "SYNTHETIC-ENGINEERING-HANDOFF"
+    }
+  ],
+  "crux_move_ref": "SYN-WPE-DIRECTION-CONTROL-01-M2",
+  "difficulty": {
+    "band": "D2",
+    "score": 3,
+    "components": {
+      "concept_model_selection": 1,
+      "representation_translation": 1,
+      "reasoning_chain_length": 0,
+      "algebra_computational_load": 0,
+      "trap_exception_sensitivity": 1
+    },
+    "basis": "Author-only technical fixture proposal; no D3/D4 coverage or academic admission.",
+    "component_evidence": {
+      "concept_model_selection": "Choose constant-force work.",
+      "representation_translation": "Compare the stated directions.",
+      "reasoning_chain_length": "No chained calculation.",
+      "algebra_computational_load": "No numerical calculation.",
+      "trap_exception_sensitivity": "Distinguish one force from all forces."
+    }
+  },
+  "safe_orientation": [
+    {
+      "prompt": "What quantity does the question ask you to find?",
+      "text": "Keep your response about the work of the stated force.",
+      "learner_stage": "KEY_CONCEPT",
+      "support_kind": "CONNECT",
+      "reveals": "CONCEPT",
+      "supports_move_ref": "SYN-WPE-DIRECTION-CONTROL-01-M1"
+    },
+    {
+      "prompt": "Which givens are stated explicitly?",
+      "text": "Reread the two stated directions before choosing an option.",
+      "learner_stage": "REPRESENTATION",
+      "support_kind": "REPRESENT",
+      "reveals": "CONCEPT",
+      "supports_move_ref": "SYN-WPE-DIRECTION-CONTROL-01-M2"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "files": {
+    "native/bank.json": "5fc11d368f8264494b86364ab06c6bf454525cb511d0cee3c17df7aa4eaadcd8",
+    "native/records.json": "14e07f1c459b43d5f73ef355558637b9ee776121de24b1b4482ea654e8c49bee",
+    "native/intake.json": "8dfc0ad204179f4c9954e4d4fb78b022bb3e7913a9c02daa13fae84539fca181",
+    "native/manifest.json": "dc97d33a35a7cb7bb9b209156905033b16278b4596a1523989ba0ab231d63a75",
+    "review/questions.json": "072bb3d8e3b9a17ca029f5178082f62ec9dde53159e7bc1495cd7dfb873ec000"
+  },
+  "trust": "LOCAL_AUTHOR_RECEIPT_ONLY",
+  "science": "UNREVIEWED"
+}

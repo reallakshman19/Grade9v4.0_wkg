@@ -1,0 +1,106 @@
+{
+  "sequence": 62,
+  "lot_sequence": 2,
+  "task_identity": "Q-ID-72",
+  "stable_id": "PHYS-WPE-LOT14-Q62",
+  "source_id": "JEE-2026-04-02-S2-Q31",
+  "lot": "LOT-14",
+  "paper": "JEE Main 2026 Session 2 / 2026-04-02 / Shift 2 (Evening)",
+  "source_type": "EXAM_PAPER_TRANSCRIBED",
+  "source_custody": "VERIFIED_TEXT",
+  "stem_binding": "BOUND_IN_REGISTRY",
+  "stem_text": "If a body of mass 1 kg falls on the earth from infinity, it attains velocity (v) and kinetic energy (k) on reaching the surface of earth. The values of v and k respectively are _____ . (Take radius of earth to be 6400 km and g = 9.8 m/s^2)",
+  "stem_sha256": "854dfa83856e4d30d96041b64041918319bda6eb1cdb32748b4c14692d768385",
+  "source_hash": "854dfa83856e4d30d96041b64041918319bda6eb1cdb32748b4c14692d768385",
+  "source_record_digest": "sha256:854dfa83856e4d30d96041b64041918319bda6eb1cdb32748b4c14692d768385",
+  "duplicate_parent": null,
+  "scope": "PRIMARY_IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "key_issuing_authority": "NTA",
+  "figure_status": "REQUIRED_RETAINED",
+  "figure_reference": null,
+  "options": [
+    "691121616: 11.2 km/s; 6.27 x 10^7 J",
+    "691121617: 11.2 km/s; 12.54 x 10^7 J",
+    "691121618: 8.8 km/s; 6.27 x 10^7 J",
+    "691121619: 8.8 km/s; 12.54 x 10^7 J"
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "UNIVERSAL_GRAVITATION_MECHANICAL_ENERGY_CONSERVATION",
+    "predicted_option": "691121616: 11.2 km/s; 6.27 x 10^7 J",
+    "derivation": "Conservation of energy between r = infty and r = R (Earth radius): E_initial = 0 + 0 = 0. E_final = K_f - GMm/R = 0 => K_f = GMm/R = m*g*R = (1 kg)(9.8 m/s^2)(6.4 x 10^6 m) = 6.272 x 10^7 J ~= 6.27 x 10^7 J. Impact speed: 0.5 * m * v^2 = K_f => v = sqrt(2*g*R) = sqrt(2 * 9.8 * 6.4 x 10^6) = sqrt(1.2544 x 10^8) = 11.2 x 10^3 m/s = 11.2 km/s. Matches option 691121616."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 2,
+          "evidence": "Conservation of mechanical energy in non-uniform 1/r gravitational potential field from infinity to Earth surface"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Relating surface potential GMm/R to surface gravity acceleration parameter g*R"
+        },
+        "reasoning_chain_length": {
+          "score": 2,
+          "evidence": "Determine potential difference U(infty) - U(R) = mgR, equate to kinetic energy k, solve for impact speed v"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Numerical calculation: k = 1 * 9.8 * 6.4e6 = 6.272e7 J, v = sqrt(2*9.8*6.4e6) = 11.2 km/s"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Prerequisite boundary: non-uniform inverse-square gravitation required rather than uniform mgh"
+        }
+      },
+      "total": 7,
+      "band": "D3",
+      "prior_proposal": {
+        "source": "INITIAL_CALIBRATION",
+        "scores": "2/1/2/1/1",
+        "total": 7
+      },
+      "differences": "Initial native factor audit"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "MODEL"
+      ],
+      "rationale": "Applying energy conservation to escape/infall potential in central gravitational field",
+      "candidate_cell": "QRT-APPLY-D3",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": {
+    "blueprint_id": "PHYS-QRT-BLUEPRINT",
+    "version": "0.2.0",
+    "sha256": "ac32dc937403cac33c76343f2e7e0dabd7c2c4a3188cb3b453ddf2576578ddf9",
+    "blueprint_cell_ref": "D3.3",
+    "topic_tag": "WPE-02-POTENTIAL",
+    "status": "PINNED_CELL_UNQUALIFIED"
+  },
+  "adapter_fit": {
+    "adapter_id": "PHYS-TOPIC-WPE",
+    "sha256": "899e61e59370a3fc5d6f73b7d8cbb65165d0782c9fba20acd83439ae441e6a9b",
+    "status": "CELL_UNQUALIFIED_ADAPTER_GAP",
+    "note": "WPE adapter defines cell D3.1 only. Target cell D3.3 requires adapter cell expansion; flagged as SPEC_GAP."
+  },
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_INDEPENDENT_REVIEW",
+  "b2_blind_status": "PENDING_BLIND_SOLVE",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (Option 691121616 unverified against official NTA master)",
+    "HOLD:NONUNIFORM_GRAVITY_PREREQUISITE (Inverse square gravitation prerequisite requires qualification in WPE)",
+    "HOLD:ADAPTER_CELL_GAP (WPE adapter lacks D3.3 cell authority)",
+    "HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)"
+  ],
+  "next_action": "B2 independent source-only solve + official NTA master key reconciliation"
+}

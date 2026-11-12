@@ -1,0 +1,39 @@
+{
+  "tool": "Installed Playwright CLI / Chrome; loopback only",
+  "initial_launch": "Sandbox Chrome crash-handler failure; approved outside-sandbox route used. Initial sandbox preview unavailable from browser; hidden outside-sandbox preview then used.",
+  "before_commit": {
+    "questions": 8,
+    "live_solution_moves": 0,
+    "inert_templates": 32,
+    "chain_answer_visible": false,
+    "document_width": 1280,
+    "viewport": 1280
+  },
+  "exercised": [
+    "Illustration 1 typed answer and commitment",
+    "Illustration 1 solution opened and final work visible",
+    "Illustration 1 first guided prompt requested; later Reveal support body intentionally remained closed",
+    "Illustration 6 option B selected and committed; three solution moves materialized",
+    "Illustration 11 remained uncommitted with no solution moves and no visible 4/9 answer",
+    "Mobile width390 fits390 document; desktop1280 fits1280",
+    "Screenshots desktop and mobile visually inspected"
+  ],
+  "known_tool_event": "One stale solution ref after commitment was rejected; a fresh snapshot supplied the current ref and the later click succeeded.",
+  "not_run": [
+    "All eight solutions and every hint reveal individually exercised",
+    "Independent P1 collection or academic review",
+    "Full source-to-print and original-figure equivalence",
+    "Native portal and PDF integration"
+  ],
+  "console": [
+    "favicon404 only during exercised paths"
+  ],
+  "cleanup": {
+    "task_browser": "CLOSED",
+    "stopped_task_pids": [
+      3732
+    ],
+    "port_listener_remaining": false
+  },
+  "independent_acceptance": "NONE"
+}

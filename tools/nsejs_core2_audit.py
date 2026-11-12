@@ -11,7 +11,7 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "preview/question-status.html"
+SOURCE = ROOT / "nsejs/data/legacy-physics-candidate-source.html"
 TOPICS = ("OPTICS","ELECTROSTATICS","CURRENT_ELECTRICITY","MAGNETISM_AND_EMI","MECHANICS")
 FACTORS = ("concept_model_selection","representation_translation","reasoning_chain_length",
            "algebra_computational_load","trap_exception_sensitivity")

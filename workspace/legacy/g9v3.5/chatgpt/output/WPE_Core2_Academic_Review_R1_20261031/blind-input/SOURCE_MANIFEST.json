@@ -1,0 +1,27 @@
+[
+  {
+    "path": "difficulty-rubric.json",
+    "sha256": "6e6f28bef1182222babf79508288c599585f5f55245abcb934892a1e2b65cfdf",
+    "bytes": 5594
+  },
+  {
+    "path": "official-paper.pdf",
+    "sha256": "c3e5770f56d60d4245ad5c707b53bbbee35745b643b063de11f51287261e5973",
+    "bytes": 1599358
+  },
+  {
+    "path": "original-saved-crop.png",
+    "sha256": "ae826bc82e01199473958c6c622c94851ef60fd54792d0e3b1f4ffd5442e13e7",
+    "bytes": 112366
+  },
+  {
+    "path": "physics-blueprint.json",
+    "sha256": "e6030a5933a803ddc39708414e6831c89c9565def78c09c99f58f95052c2b45f",
+    "bytes": 42675
+  },
+  {
+    "path": "questions.json",
+    "sha256": "b78803ed0b28c10158b94748b8a75e40fca4f6d93e152bb04cb1b7dda9497b1b",
+    "bytes": 3260
+  }
+]

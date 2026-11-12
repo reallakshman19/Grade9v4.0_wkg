@@ -1,0 +1,17 @@
+{
+  "source_id": "AN-6",
+  "task_identity": "Q-ID-68",
+  "sequence": 58,
+  "batch_sequence": 13,
+  "paper": "JEE Main 2025 (Online), 7 April, Evening Shift",
+  "stem_text": "Which one of the following forces cannot be expressed in terms of potential energy?",
+  "stem_sha256": "67effd544d50be89bc80c6bdd4b23423bc52f315f7009f5fdeb8e84a29038af2",
+  "options": [
+    "A: Frictional force",
+    "B: Coulomb's force",
+    "C: Restoring force",
+    "D: Gravitational force"
+  ],
+  "figure_reference": null,
+  "confidentiality_notice": "Source custody blind packet. Academic solve, answer key, and scoring omitted. Private review only."
+}

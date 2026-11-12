@@ -1,0 +1,8 @@
+{
+  "input_files": 25,
+  "retained_input_files": 25,
+  "missing": [],
+  "extra_context_files": 2,
+  "original_generator": "RETAINED_NOT_EXECUTED",
+  "reference_ontology": "REFERENCE_SOURCE_NOT_CANONICAL"
+}

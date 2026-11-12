@@ -1,0 +1,18 @@
+{
+  "nodes": 10,
+  "claims": 30,
+  "exact_units": 109,
+  "construction_requirements": 60,
+  "review_requests": 60,
+  "native_mapping_rows": 70,
+  "wrong_path_designs": 10,
+  "independent_check_designs": 10,
+  "missing_warrant_groups": 7,
+  "candidate_warrant_groups": 9,
+  "retained_original_files": 27,
+  "source_lines_accounted": 486,
+  "source_scans_author_viewed": 9,
+  "qualified_warrants": 0,
+  "reviewed_SL2_joins": 0,
+  "native_lessons": 0
+}

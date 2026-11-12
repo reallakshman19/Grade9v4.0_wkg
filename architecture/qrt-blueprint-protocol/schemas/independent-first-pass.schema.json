@@ -1,0 +1,422 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://reallakshman19.github.io/Grade9v4.0/architecture/qrt-blueprint-protocol/schemas/independent-first-pass.schema.json",
+  "title": "Source-only QRT independent first-pass packet and result shape",
+  "description": "Source-only packets MUST exclude author-proposed answer, band, operation and past labels. Schema checks structure, not reviewer independence or reviewer trust.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "record_role",
+    "question_id",
+    "source",
+    "exposure_declaration",
+    "reviewer_assignment",
+    "first_pass",
+    "seal",
+    "admission"
+  ],
+  "properties": {
+    "schema": {
+      "const": "g9v4-qrt-first-pass/v1"
+    },
+    "record_role": {
+      "enum": [
+        "SOURCE_ONLY_PACKET",
+        "REVIEWER_FIRST_PASS",
+        "TRAINING_EXAMPLE_NOT_EVIDENCE"
+      ]
+    },
+    "question_id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_kind",
+        "locator",
+        "original_digest",
+        "figure_status",
+        "key_visibility",
+        "source_text_or_trusted_locator"
+      ],
+      "properties": {
+        "source_kind": {
+          "enum": [
+            "EXAM_CLAIM",
+            "TEXTBOOK",
+            "SYNTHETIC_CONTROL"
+          ]
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "original_digest": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          ]
+        },
+        "figure_status": {
+          "enum": [
+            "NOT_APPLICABLE",
+            "ATTACHED_AND_PINNED",
+            "MISSING",
+            "UNQUALIFIED"
+          ]
+        },
+        "key_visibility": {
+          "const": "WITHHELD_IN_FIRST_PASS"
+        },
+        "source_text_or_trusted_locator": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "exposure_declaration": {
+      "enum": [
+        "NO_PRIOR_LABELS_SEEN",
+        "EXPOSED_TO_AUTHOR_OUTCOMES",
+        "UNKNOWN"
+      ]
+    },
+    "reviewer_assignment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "independently_assigned",
+        "assignment_receipt"
+      ],
+      "properties": {
+        "independently_assigned": {
+          "type": "boolean"
+        },
+        "assignment_receipt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      }
+    },
+    "first_pass": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "primary_operation",
+            "competing_operation",
+            "decisive_move",
+            "shortest_valid_route",
+            "boundary_reason",
+            "conditions",
+            "ambiguities",
+            "factors",
+            "total",
+            "band",
+            "source_role",
+            "solution_check"
+          ],
+          "properties": {
+            "primary_operation": {
+              "enum": [
+                "RETRIEVE",
+                "EXPLAIN",
+                "APPLY",
+                "MODEL",
+                "REPRESENT",
+                "SYNTHESIZE",
+                "JUSTIFY"
+              ]
+            },
+            "competing_operation": {
+              "enum": [
+                "RETRIEVE",
+                "EXPLAIN",
+                "APPLY",
+                "MODEL",
+                "REPRESENT",
+                "SYNTHESIZE",
+                "JUSTIFY",
+                null
+              ]
+            },
+            "decisive_move": {
+              "type": "string",
+              "minLength": 1
+            },
+            "shortest_valid_route": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1
+            },
+            "boundary_reason": {
+              "type": "string",
+              "minLength": 1
+            },
+            "conditions": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "ambiguities": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "factors": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "concept_model_selection",
+                "representation_translation",
+                "reasoning_chain_length",
+                "algebra_computational_load",
+                "trap_exception_sensitivity"
+              ],
+              "properties": {
+                "concept_model_selection": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "score",
+                    "evidence"
+                  ],
+                  "properties": {
+                    "score": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 2
+                    },
+                    "evidence": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "representation_translation": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "score",
+                    "evidence"
+                  ],
+                  "properties": {
+                    "score": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 2
+                    },
+                    "evidence": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "reasoning_chain_length": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "score",
+                    "evidence"
+                  ],
+                  "properties": {
+                    "score": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 2
+                    },
+                    "evidence": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "algebra_computational_load": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "score",
+                    "evidence"
+                  ],
+                  "properties": {
+                    "score": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 2
+                    },
+                    "evidence": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "trap_exception_sensitivity": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "score",
+                    "evidence"
+                  ],
+                  "properties": {
+                    "score": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 2
+                    },
+                    "evidence": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                }
+              }
+            },
+            "total": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "band": {
+              "enum": [
+                "D1",
+                "D2",
+                "D3",
+                "D4"
+              ]
+            },
+            "source_role": {
+              "enum": [
+                "DIRECT_EXAM_EVIDENCE",
+                "PREREQUISITE_BRIDGE",
+                "AUTHORED_TRANSFER",
+                "UNRESOLVED"
+              ]
+            },
+            "solution_check": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      ]
+    },
+    "seal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "content_sha256",
+        "sealed_before_exposure",
+        "sealed_receipt"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "NOT_SEALED",
+            "SEALED"
+          ]
+        },
+        "content_sha256": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          ]
+        },
+        "sealed_before_exposure": {
+          "type": "boolean"
+        },
+        "sealed_receipt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      }
+    },
+    "admission": {
+      "const": "NOT_GRANTED_BY_THIS_RECORD"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "record_role": {
+            "const": "SOURCE_ONLY_PACKET"
+          }
+        },
+        "required": [
+          "record_role"
+        ]
+      },
+      "then": {
+        "properties": {
+          "first_pass": {
+            "type": "null"
+          },
+          "seal": {
+            "properties": {
+              "status": {
+                "const": "NOT_SEALED"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "record_role": {
+            "const": "TRAINING_EXAMPLE_NOT_EVIDENCE"
+          }
+        },
+        "required": [
+          "record_role"
+        ]
+      },
+      "then": {
+        "properties": {
+          "reviewer_assignment": {
+            "properties": {
+              "independently_assigned": {
+                "const": false
+              }
+            }
+          },
+          "admission": {
+            "const": "NOT_GRANTED_BY_THIS_RECORD"
+          }
+        }
+      }
+    }
+  ]
+}

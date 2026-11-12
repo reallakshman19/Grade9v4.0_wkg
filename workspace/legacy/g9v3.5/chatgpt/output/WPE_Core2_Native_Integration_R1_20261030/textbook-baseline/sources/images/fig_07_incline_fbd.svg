@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" width="100%" height="100%" role="img" aria-label="Free body diagram on inclined plane">
+  <title>Free Body Diagram of Block on Incline</title>
+  <desc>Shows normal reaction R, friction mu R up the plane, displacement s down the plane, and gravity mg vertically downward.</desc>
+  <defs>
+    <marker id="arr-blue-07" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arr-red-07" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arr-dark-07" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1e293b"/>
+    </marker>
+    <marker id="arr-green-07" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#16a34a"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: system-ui, -apple-system, sans-serif; fill: #1e293b; }
+    .bold { font-weight: bold; }
+    .math { font-style: italic; font-family: 'Times New Roman', serif; }
+  </style>
+
+  <!-- Incline surface line tilted at -37 degrees -->
+  <line x1="80" y1="80" x2="400" y2="320" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6,4" />
+
+  <!-- Block body tilted at -37 deg -->
+  <g transform="translate(240, 200) rotate(-37)">
+    <rect x="-40" y="-30" width="80" height="60" fill="#f8fafc" stroke="#1e293b" stroke-width="2.5" rx="3" />
+    <circle cx="0" cy="0" r="3.5" fill="#1e293b" />
+
+    <!-- Normal force R perpendicular to incline (pointing up-left) -->
+    <line x1="0" y1="-30" x2="0" y2="-120" stroke="#2563eb" stroke-width="3" marker-end="url(#arr-blue-07)" />
+    <text x="12" y="-115" font-size="18px" class="bold" fill="#2563eb">R</text>
+
+    <!-- Friction force mu R up the plane -->
+    <line x1="-40" y1="0" x2="-125" y2="0" stroke="#dc2626" stroke-width="3" marker-end="url(#arr-red-07)" />
+    <text x="-135" y="-10" font-size="18px" class="bold" fill="#dc2626">&#956;R</text>
+
+    <!-- Displacement vector s down the plane -->
+    <line x1="40" y1="0" x2="125" y2="0" stroke="#16a34a" stroke-width="3" marker-end="url(#arr-green-07)" />
+    <text x="135" y="-5" font-size="18px" class="bold" fill="#16a34a">s</text>
+  </g>
+
+  <!-- Weight mg vertically downwards (unrotated, from 240, 200) -->
+  <line x1="240" y1="200" x2="240" y2="340" stroke="#1e293b" stroke-width="3" marker-end="url(#arr-dark-07)" />
+  <text x="250" y="335" font-size="18px" class="bold">mg</text>
+
+  <!-- Normal axis label -->
+  <line x1="240" y1="200" x2="180" y2="120" stroke="#64748b" stroke-width="1.5" stroke-dasharray="4,4" />
+  <text x="175" y="105" font-size="14px" fill="#64748b">Normal Axis</text>
+
+  <!-- Caption -->
+  <text x="260" y="390" font-size="16px" text-anchor="middle" font-weight="600">FBD on Incline: W_N = 0, W_g = mgs sin(37&#176;), W_f = -&#956;Rs</text>
+</svg>

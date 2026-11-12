@@ -1,0 +1,1323 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>WPE-N01 author preparation</title><style>body{font:17px/1.6 system-ui,sans-serif;max-width:1120px;margin:auto;padding:28px;color:#1b3045;background:#f5f7fa}body{overflow-wrap:anywhere}code{overflow-wrap:anywhere;word-break:break-word}h1,h2,h3{line-height:1.2}h2{margin-top:2em}a{color:#145ba1}article,details,.panel{background:#fff;border:1px solid #d3dde6;border-radius:10px;padding:18px;margin:14px 0}.hold{border-left:6px solid #b77a11;background:#fff3d7;padding:18px}.flow{display:flex;flex-wrap:wrap;gap:8px}.flow span{background:#e5edf6;padding:8px 12px;border-radius:6px}table{border-collapse:collapse;width:100%}th,td{text-align:left;vertical-align:top;border-bottom:1px solid #ccd6df;padding:10px;overflow-wrap:anywhere}th:nth-child(2),th:nth-child(3){white-space:nowrap}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px}img{max-width:100%;max-height:420px;object-fit:contain}.scroll{overflow:auto}.meta{font-size:14px;color:#4b6075}summary{cursor:pointer}@media print{body{background:white;padding:0}details{break-inside:avoid}.hold{background:white}}</style></head><body><nav><a href="../index.html">All ten WPE nodes</a> · <a href="WPE-N01.json">Exact JSON</a></nav><h1>WPE-N01 · Work, direction and signed contributions</h1><div class="hold"><strong>AUTHOR PREPARATION · CANDIDATE · LESSON AUTHORING HOLD</strong><br>Mechanical integrity PASS; source pins EXTERNAL_PIN_BYTES_MATCH. Science NOT_QUALIFIED. Reviewed SL2 join missing. No learner lesson or native package.</div><h2>Required construction</h2><p>Construction brief for determining signed work from the along-displacement contribution and summing the correct force contributions.</p><p><strong>Obstacle:</strong> Magnitude-only reasoning can give the wrong work sign or substitute position for displacement.</p><p><strong>Decisive move:</strong> Fix displacement and body first, then identify the signed force projection before forming the work ledger.</p><h3>Inputs</h3><ul><li>Force vector and initial/final positions or a specified motion segment.</li><li>Chosen body and separate forces when net work is sought.</li></ul><h3>Prerequisites and conventions</h3><ul><li>Prerequisite nodes: declared vector, force and displacement knowledge</li><li>One chosen body, event, inertial frame and actual force point/displacement model.</li><li>Force constant over the interval for the finite scalar-product formula; distinguish zero force, zero displacement and perpendicular directions.</li><li>One chosen body, event, inertial frame and actual force point/displacement model.</li><li>Force constant over the interval for the finite scalar-product formula; distinguish zero force, zero displacement and perpendicular directions.</li></ul><h2>Source custody and original assets</h2><div class="scroll"><table><tr><th>ID / role</th><th>Retained file</th><th>Authority / digest</th></tr><tr><td>REFERENCE / REFERENCE_SOURCE</td><td><a href="sources/reference-ontology.json">sources/reference-ontology.json</a></td><td>CANDIDATE_REFERENCE<br><code>0fb53c653d7cd5b5f6e94ba5ed096278aa42f5d1429eac24981ee8dffa168acf</code></td></tr><tr><td>BOOK / BOOK_TEXT</td><td><a href="sources/book.md">sources/book.md</a></td><td>OWNER_LOCAL_UNAUTHENTICATED<br><code>a33f19b308ea81c7eb527546e44b6bbd4b4adf26aed7116013ac01218cc1bbb8</code></td></tr><tr><td>SPINE / SYLLABUS</td><td><a href="sources/spine.md">sources/spine.md</a></td><td>OWNER_LOCAL_UNAUTHENTICATED<br><code>07338e242e363becf2e55a9637d29fd178e37236fd730e5aac0a1211f1d8ecf9</code></td></tr><tr><td>LIBRARY / CANONICAL_CANDIDATE</td><td><a href="sources/library.json">sources/library.json</a></td><td>CANDIDATE_REFERENCE<br><code>84fe88387e33a03bf87bf1f537bae8c447f5b86f0d77a854c899ad70f12d8258</code></td></tr><tr><td>PKG_SCHEMA / NATIVE_CONTRACT</td><td><a href="sources/package.schema.json">sources/package.schema.json</a></td><td>LOCAL_CONTRACT<br><code>b645f4b5beb9132d6e38b628b1416846201d44dec16a5f04af9a252e9e891d93</code></td></tr><tr><td>SCAN-1 / SOURCE_SCAN</td><td><a href="sources/page_01.jpg">sources/page_01.jpg</a></td><td>OWNER_LOCAL_UNAUTHENTICATED<br><code>577fa3448aeb2cb72387d827ab67d7ad2c47041fa8dba8473d74193455ceb55a</code></td></tr><tr><td>SCAN-2 / SOURCE_SCAN</td><td><a href="sources/page_02.jpg">sources/page_02.jpg</a></td><td>OWNER_LOCAL_UNAUTHENTICATED<br><code>49dfbcfdf5c17eddd3a88c5383ffb702d55150118bcb825d9b9257417e2214d0</code></td></tr><tr><td>SCAN-3 / SOURCE_SCAN</td><td><a href="sources/page_03.jpg">sources/page_03.jpg</a></td><td>OWNER_LOCAL_UNAUTHENTICATED<br><code>74af7bf6ef7a57d63259c68e871eaa6db14d4912153d253a545ab1f018c346b9</code></td></tr><tr><td>FIG-1 / DERIVED_FIGURE</td><td><a href="sources/images/fig_01_work_sign_positive.svg">sources/images/fig_01_work_sign_positive.svg</a></td><td>OWNER_LOCAL_UNAUTHENTICATED<br><code>912c3b84c157e78916584db95bd520c45ed31e76ad73c900175a1ea93ac1b804</code></td></tr><tr><td>FIG-2 / DERIVED_FIGURE</td><td><a href="sources/images/fig_02_work_sign_negative.svg">sources/images/fig_02_work_sign_negative.svg</a></td><td>OWNER_LOCAL_UNAUTHENTICATED<br><code>a6ffa32dbc3e6918f06660f3f5b4b61f9ef965d9849c72663c88fb71ae9f16c9</code></td></tr><tr><td>FIG-3 / DERIVED_FIGURE</td><td><a href="sources/images/fig_03_fbd_string_raising.svg">sources/images/fig_03_fbd_string_raising.svg</a></td><td>OWNER_LOCAL_UNAUTHENTICATED<br><code>9d408dcca1198fd6f5b08f63359c12007ae9428732be9d48dde32e8170e36df4</code></td></tr></table></div><h2>Concept claims, conditions and disputes</h2><article id="C1"><h3>C1 · UNREVIEWED</h3><p>The retained extract defines constant-force work through a force/displacement scalar product and distinguishes sign cases.</p><p>Exact units: <a href="#U-BOOK-1">U-BOOK-1</a></p><p>Retained scan IDs: SCAN-1, SCAN-2, SCAN-3</p><h4>Conditions</h4><ul><li>One chosen body, event, inertial frame and actual force point/displacement model.</li><li>Force constant over the interval for the finite scalar-product formula; distinguish zero force, zero displacement and perpendicular directions.</li></ul><h4>Disputes / qualification work</h4><ul><li>The printed opening definition and the point-of-application insight need interpretation for extended bodies.</li><li>The book JEE badges have no official paper/key binding.</li></ul></article><article id="C2"><h3>C2 · UNREVIEWED</h3><p>Its existing vector and raised-block illustrations partition work by named forces; they remain book evidence.</p><p>Exact units: <a href="#U-BOOK-2">U-BOOK-2</a></p><p>Retained scan IDs: SCAN-1, SCAN-2, SCAN-3</p><h4>Conditions</h4><ul><li>One chosen body, event, inertial frame and actual force point/displacement model.</li><li>Force constant over the interval for the finite scalar-product formula; distinguish zero force, zero displacement and perpendicular directions.</li></ul><h4>Disputes / qualification work</h4><ul><li>The printed opening definition and the point-of-application insight need interpretation for extended bodies.</li><li>The book JEE badges have no official paper/key binding.</li></ul></article><article id="C3"><h3>C3 · UNREVIEWED</h3><p>The point-of-application insight needs a declared body/model; its broad second case cannot be copied as a general zero-work rule.</p><p>Exact units: <a href="#U-BOOK-3">U-BOOK-3</a></p><p>Retained scan IDs: SCAN-1, SCAN-2, SCAN-3</p><h4>Conditions</h4><ul><li>One chosen body, event, inertial frame and actual force point/displacement model.</li><li>Force constant over the interval for the finite scalar-product formula; distinguish zero force, zero displacement and perpendicular directions.</li></ul><h4>Disputes / qualification work</h4><ul><li>The printed opening definition and the point-of-application insight need interpretation for extended bodies.</li><li>The book JEE badges have no official paper/key binding.</li></ul></article><h2>Canonical candidates and missing warrants</h2><p>Canonical matches are provisional relationships, never qualified science.</p><ul><li>MIC-PHY-WEP-WORK-DIRECTION / CAP-WEP-WORK-DIRECTION · DIRECT_CANDIDATE</li></ul><ul></ul><article id="W-CANDIDATE"><h3>W-CANDIDATE · CANDIDATE</h3><p>Candidate support for the stated requirement; correspondence and scientific conditions require distinct review.</p><p>Support: <a href="#U-REL-2">U-REL-2</a>; reference leads (unqualified): <a href="#U-REFERENCE-WEP-01">U-REFERENCE-WEP-01</a>; claims: <a href="#C1">C1</a>, <a href="#C2">C2</a>, <a href="#C3">C3</a></p><ul><li>One chosen body, event, inertial frame and actual force point/displacement model.</li><li>Force constant over the interval for the finite scalar-product formula; distinguish zero force, zero displacement and perpendicular directions.</li></ul><p><strong>Unresolved:</strong> No independent qualification receipt; scope may be partial.</p></article><h2>Construction requirements and dependencies</h2><article id="REQ-INPUT"><h3>REQ-INPUT · INPUT</h3><p>Fix the chosen model and inputs: Force vector and initial/final positions or a specified motion segment.; Chosen body and separate forces when net work is sought.</p><p><strong>Why:</strong> Prevents a change of body, reference or given condition.</p><p>Depends on None; source <a href="#U-BOOK-1">U-BOOK-1</a>; claims <a href="#C1">C1</a>; warrant requirements <a href="#W-CANDIDATE">W-CANDIDATE</a></p></article><article id="REQ-REPRESENT"><h3>REQ-REPRESENT · REPRESENT</h3><p>Bind r_B-r_A, F parallel / perpendicular, signed work to the chosen physical situation.</p><p><strong>Why:</strong> Correspondence is needed before symbolic manipulation.</p><p>Depends on <a href="#REQ-INPUT">REQ-INPUT</a>; source <a href="#U-BOOK-1">U-BOOK-1</a>; claims <a href="#C2">C2</a>; warrant requirements <a href="#W-CANDIDATE">W-CANDIDATE</a></p></article><article id="REQ-CONNECT"><h3>REQ-CONNECT · CONNECT</h3><p>Fix displacement and body first, then identify the signed force projection before forming the work ledger.</p><p><strong>Why:</strong> This is the required intellectual bridge, not a formula label.</p><p>Depends on <a href="#REQ-REPRESENT">REQ-REPRESENT</a>; source <a href="#U-BOOK-1">U-BOOK-1</a>; claims <a href="#C1">C1</a>, <a href="#C2">C2</a>, <a href="#C3">C3</a>; warrant requirements <a href="#W-CANDIDATE">W-CANDIDATE</a></p></article><article id="REQ-TRANSFORM"><h3>REQ-TRANSFORM · TRANSFORM</h3><p>Specify why the position difference is the displacement and why individual signed force works may be summed for that body.</p><p><strong>Why:</strong> Every consequential transformation needs its actual warrant and conditions.</p><p>Depends on <a href="#REQ-CONNECT">REQ-CONNECT</a>; source <a href="#U-BOOK-1">U-BOOK-1</a>; claims <a href="#C1">C1</a>; warrant requirements <a href="#W-CANDIDATE">W-CANDIDATE</a></p></article><article id="REQ-VERIFY"><h3>REQ-VERIFY · VERIFY</h3><p>Compare the signed dot product with an independently resolved along-path component account.</p><p><strong>Why:</strong> A second account must test the same claim without merely repeating its expression.</p><p>Depends on <a href="#REQ-TRANSFORM">REQ-TRANSFORM</a>; source <a href="#U-BOOK-1">U-BOOK-1</a>; claims <a href="#C2">C2</a>; warrant requirements <a href="#W-CANDIDATE">W-CANDIDATE</a></p></article><article id="REQ-BOUNDARY"><h3>REQ-BOUNDARY · BOUNDARY</h3><p>Preserve: Do not transfer particle/translational work directly to deformation or rotational work without point-of-application analysis.</p><p><strong>Why:</strong> The result must not be generalized outside its reviewed scope.</p><p>Depends on <a href="#REQ-VERIFY">REQ-VERIFY</a>; source <a href="#U-BOOK-1">U-BOOK-1</a>; claims <a href="#C3">C3</a>; warrant requirements <a href="#W-CANDIDATE">W-CANDIDATE</a></p></article><h2>Representation and source-figure obligations</h2><article><h3>DERIVED_UNREVIEWED</h3><p>Retain original scan evidence; qualify generated redraws and author a suitable native teaching representation with correct objects, axes, signs and regime. No new teaching figure is emitted.</p><img src="sources/images/fig_01_work_sign_positive.svg" alt="Retained derived source figure; correspondence unreviewed"><ul><li>r_B-r_A → Required scene/graph element 1: Future teacher must bind r_B-r_A to this node’s chosen object, coordinate and interval.</li><li>F parallel / perpendicular → Required scene/graph element 2: Future teacher must bind F parallel / perpendicular to this node’s chosen object, coordinate and interval.</li><li>signed work → Required scene/graph element 3: Future teacher must bind signed work to this node’s chosen object, coordinate and interval.</li></ul></article><h2>Boundaries and distinct-example obligation</h2><ul><li>Do not transfer particle/translational work directly to deformation or rotational work without point-of-application analysis.</li></ul><p>Use retained illustrations as author references only. After the approval gate, author a distinct complete non-exam teaching example with why-valid steps; do not expose a protected Core2/Core1B route.</p><h2>Wrong-path hypotheses and repair requirements</h2><article><p><strong>Hypothesis:</strong> Force size alone determines work; an upward force always gives positive work.</p><p><strong>Contrast:</strong> Keep force magnitude fixed while changing the specified displacement direction.</p><p><strong>Required repair:</strong> Require explicit displacement and force projection before any product or sum.</p><p>Learner observation: NONE.</p></article><h2>Independent-check designs</h2><article><p>Compare the signed dot product with an independently resolved along-path component account.</p><p><strong>Expected invariant:</strong> Perpendicular contribution is zero; reversing only displacement reverses the constant-force work sign.</p><p>Different representation or conservation/force account under matched assumptions; independence must be reviewed, not inferred from a new sentence.</p><p>DESIGN_ONLY; no academic check or learner result claimed.</p></article><h2>Reviewed SL2 requirement mapping</h2><div class="hold">PENDING_REVIEWED_REQUIREMENT<p>No independently adjudicated exact SL2/QRT requirement with matching current task/source/dependency and authority evidence has been supplied. Do not infer an exam operation/band from this book node.</p></div><h2>Native Core1A field targets</h2><div class="scroll"><table><tr><th>Existing property</th><th>Preparation pointer</th><th>Future action</th></tr><tr><td>entry_assumptions</td><td>/construction/entry_assumptions</td><td>AUTHOR_FROM_EVIDENCE</td></tr><tr><td>inferential_jump</td><td>/construction/decisive_move</td><td>AUTHOR_FROM_EVIDENCE</td></tr><tr><td>teaching_path</td><td>/construction/steps</td><td>AUTHOR_FROM_EVIDENCE</td></tr><tr><td>why_valid</td><td>/construction/steps</td><td>AUTHOR_FROM_EVIDENCE</td></tr><tr><td>correspondence</td><td>/construction/representation_needs</td><td>AUTHOR_FROM_EVIDENCE</td></tr><tr><td>worked_anchor_ref</td><td>/construction/worked_example_requirement</td><td>AUTHOR_DISTINCT_EXAMPLE</td></tr><tr><td>primary_capability_ref</td><td>/binding/canonical_matches</td><td>RESOLVE_EXISTING_REFS</td></tr></table></div><h2>Version-bound review requests</h2><details><summary>REVIEW-CLAIM-1 · /claims/0</summary><p>Is the interpreted claim faithful to its exact source and valid under these explicit conditions?</p><code>sha256:41b5aca0dc4226fcbfae46b1e462549bfed4b7f2149b8e419bf3d2a7579f6472</code><ul><li>Exact original passage/scan locator and any transcription discrepancy.</li><li>Distinct qualified scientific disposition with reasoning, scope, reviewer identity/exposure and exact dependency versions.</li></ul></details><details><summary>REVIEW-CLAIM-2 · /claims/1</summary><p>Is the interpreted claim faithful to its exact source and valid under these explicit conditions?</p><code>sha256:6a2d5ab7546616a05fac7bbc0982f781403eb6a093ed0c9e2e9eba5b2c9e4054</code><ul><li>Exact original passage/scan locator and any transcription discrepancy.</li><li>Distinct qualified scientific disposition with reasoning, scope, reviewer identity/exposure and exact dependency versions.</li></ul></details><details><summary>REVIEW-CLAIM-3 · /claims/2</summary><p>Is the interpreted claim faithful to its exact source and valid under these explicit conditions?</p><code>sha256:d505d27c6fc4ca885ce682cdb4c1289d561e8192a557cb3e58adc73bf26e7dea</code><ul><li>Exact original passage/scan locator and any transcription discrepancy.</li><li>Distinct qualified scientific disposition with reasoning, scope, reviewer identity/exposure and exact dependency versions.</li></ul></details><details><summary>REVIEW-WARRANTS · /warrants</summary><p>Resolve the load-bearing warrants boundary against actual source and task evidence.</p><code>sha256:9c4e7ddddda061b5abde49769d09791a32fdb9377e9f5e13894b4048368ee94c</code><ul><li>Exact target digest and source/claim dependencies.</li><li>Authorized non-author review or actual adjudicated task; no status-enum substitution.</li></ul></details><details><summary>REVIEW-CONSTRUCTION · /construction</summary><p>Resolve the load-bearing construction boundary against actual source and task evidence.</p><code>sha256:fe2e276fbd5df92252bec8ce783285317ec76886ec58645809a083920ccd22a3</code><ul><li>Exact target digest and source/claim dependencies.</li><li>Authorized non-author review or actual adjudicated task; no status-enum substitution.</li></ul></details><details><summary>REVIEW-SL2_REQUIREMENT_MAPPING · /sl2_requirement_mapping</summary><p>Resolve the load-bearing sl2_requirement_mapping boundary against actual source and task evidence.</p><code>sha256:26e9e0977453f5cf9c1c43eb72e225594b01c75dec8fe21fd439af3e39e8c4c5</code><ul><li>Exact target digest and source/claim dependencies.</li><li>Authorized non-author review or actual adjudicated task; no status-enum substitution.</li></ul></details><h2>Open issues</h2><ul><li>H-SCIENCE: All interpreted claims and candidate warrants remain unqualified.</li><li>H-QRT: Missing exact reviewed SL2/QRT task and selected adapter/resolver.</li><li>H-OWNER: Completed Core2 Owner approval precedes lesson authoring; Core1B follows Core1A approval. D3.1 paused.</li></ul><h2>Exact retained source units</h2><details id="U-BOOK-1"><summary>U-BOOK-1 / BOOK / {&quot;start&quot;: 23, &quot;end&quot;: 66}</summary><pre>In physics, a force is said to do work only when it acts on a body, and if there is a consequential displacement of the point of application in the direction of the force.
+
+For example, say if a constant force $\vec{F}$ displaces a body through displacement $\vec{s}$, then the work done, $W$, is given by:
+
+$$W = F s \cos\theta = \vec{F} \cdot \vec{s}$$
+
+where:
+- $s$ is the magnitude of displacement,
+- $\theta$ is the angle between force and displacement vectors.
+
+The SI unit of work is **Joule** ($\text{J}$) or **Newton-metre** ($\text{N}\cdot\text{m}$).
+
+### Sign Convention of Work
+
+![Motion of block in direction of applied force](images/fig_01_work_sign_positive.svg)
+
+We now define the sign convention of work as follows:
+- When $0^\circ \le \theta &lt; 90^\circ$, then $W = F s \cos\theta$ is **positive**, i.e., when the force constantly supports the motion of a body, work done by that force is said to be positive.
+
+![Motion of block with obtuse force](images/fig_02_work_sign_negative.svg)
+
+- When $90^\circ &lt; \theta \le 180^\circ$, then $W = F s \cos\theta$ is **negative**, i.e., in this case force is not truly supporting the motion of the body and hence the work done by that force is said to be negative.
+
+---
+
+### 2.2 Nature of Work
+
+Work done is signified by the scalar product equation:
+
+$$W = \vec{F} \cdot \vec{s}$$
+
+Based on this equation, three possible situations are possible regarding the nature or sign of the work done as listed here under:
+
+**(a) Positive Work**:  
+The work done is said to be positive if the angle $\theta$ between the force and displacement vectors is an acute angle ($0^\circ \le \theta &lt; 90^\circ$).  
+*Example*: When a horse pulls a cart on a level road, the work done by the horse is positive.
+
+**(b) Zero Work**:  
+The work done is zero if the force and displacement vectors are perpendicular to each other ($\theta = 90^\circ \implies \cos 90^\circ = 0$), or if either the force or displacement is zero.  
+*Example*: When a body is moved along a circular path by a string, the work done due to the tension in the string is zero.
+
+**(c) Negative Work**:  
+The work done is said to be negative if the angle $\theta$ between the force and displacement vectors is an obtuse angle ($90^\circ &lt; \theta \le 180^\circ$).  
+*Example*: When a body slides over a rough surface, the resultant work done due to the frictional force is negative (the angle between the friction force and the displacement is $180^\circ$).</pre><code>sha256:c3146b1f2d9dd2b476d29f103e8f14888174f94d28d1750578c8b42e842647e7</code></details><details id="U-BOOK-2"><summary>U-BOOK-2 / BOOK / {&quot;start&quot;: 74, &quot;end&quot;: 123}</summary><pre>### Illustration 1 (JEE Main)
+
+**Problem**:  
+Assume that a body is displaced from $\vec{r}_A = (2\text{m}, 4\text{m}, -6\text{m})$ to $\vec{r}_B = (6\hat{i} - 4\hat{j} + 2\hat{k})\text{ m}$ under a constant force $\vec{F} = (2\hat{i} + 3\hat{j} - \hat{k})\text{ N}$. Calculate the total work done.
+
+**Solution**:  
+The work done by the constant force $\vec{F}$ during displacement $\vec{s}$ of a particle is the scalar product of force and displacement:
+
+$$W = \vec{F} \cdot \vec{s}$$
+
+The position vectors are:
+$$\vec{r}_A = 2\hat{i} + 4\hat{j} - 6\hat{k}\text{ m}$$
+$$\vec{r}_B = 6\hat{i} - 4\hat{j} + 2\hat{k}\text{ m}$$
+
+The displacement vector $\vec{s}$ is:
+$$\vec{s} = \vec{r}_B - \vec{r}_A = (6\hat{i} - 4\hat{j} + 2\hat{k}) - (2\hat{i} + 4\hat{j} - 6\hat{k}) = 4\hat{i} - 8\hat{j} + 8\hat{k}\text{ m}$$
+
+Taking the scalar product:
+$$W = \vec{F} \cdot \vec{s} = (2\hat{i} + 3\hat{j} - \hat{k}) \cdot (4\hat{i} - 8\hat{j} + 8\hat{k})$$
+$$W = (2)(4) + (3)(-8) + (-1)(8) = 8 - 24 - 8 = -24\text{ J}$$
+
+$$\mathbf{W = -24\text{ J}}$$
+
+---
+
+### Illustration 2 (JEE Advanced)
+
+**Problem**:  
+A block of total mass $5\text{ kg}$ is being raised vertically upwards with the help of a string attached to it and it rises with an acceleration of $2\text{ m/s}^2$. Find the work done due to the tension in the string if the block rises by $2.5\text{ m}$. Also, calculate the work done due to gravity and the net work done. ($g = 9.8\text{ m/s}^2$).
+
+![Free Body Diagram: String Raising](images/fig_03_fbd_string_raising.svg)
+
+**Solution**:  
+The tension in the string acts vertically upwards and the block is also moving vertically upwards, so the work done by the tension will be positive. The force of gravity acts vertically downwards, so the work done by gravity will be negative.
+
+1. **Calculate the Tension $T$**:  
+   From the free-body diagram:
+   $$T - mg = ma \implies T = m(g + a)$$
+   $$T = 5(9.8 + 2) = 5(11.8) = 59\text{ N}$$
+
+2. **Work Done by Tension $W_T$**:  
+   Since tension $\vec{T}$ and displacement $\vec{s}$ are both directed upwards ($\theta = 0^\circ$):
+   $$W_T = T s = 59 \times 2.5 = 147.5\text{ J}$$
+
+3. **Work Done by Gravity $W_g$**:  
+   Since gravity acts downwards while displacement is upwards ($\theta = 180^\circ$):
+   $$W_g = -m g s = -5 \times 9.8 \times 2.5 = -122.5\text{ J}$$
+
+4. **Net Work Done $W_{\text{net}}$**:  
+   $$W_{\text{net}} = W_T + W_g = 147.5 + (-122.5) = 25\text{ J}$$</pre><code>sha256:e23bef645b7d0b5ca308c5b9e50faad97fd33a0caebbfcc74808c4703350b107</code></details><details id="U-BOOK-3"><summary>U-BOOK-3 / BOOK / {&quot;start&quot;: 125, &quot;end&quot;: 130}</summary><pre>&gt; [!TIP]
+&gt; **Concepts Insight — Nivvedan (JEE 2009, AIR 113)**  
+&gt; Point of application of force also plays a major role.  
+&gt; Zero work is done by a force in the following cases:
+&gt; - If the point of application of force is not changed in space even though the body moves (e.g. static friction in rolling without slipping).
+&gt; - If the body doesn&#x27;t move but the point of application of force moves.</pre><code>sha256:27cc5c707fa4efe552cb3dfe864feb550134d369d212b0cc57bc5d8926ef4f6b</code></details><details id="U-SPINE"><summary>U-SPINE / SPINE / {&quot;start&quot;: 11, &quot;end&quot;: 11}</summary><pre>| WPE-N01 | §2 Work, sign, nature (Illus 1, 2) | WEP-01 Work &amp; dot product | core | 1 |</pre><code>sha256:5a15adc227b92851d5a33bead010f2aa9b85247d8cb9582048e7125d923d44b5</code></details><details id="U-REFERENCE-WEP-01"><summary>U-REFERENCE-WEP-01 / REFERENCE / {&quot;pointer&quot;: &quot;/atomic_competencies/WEP-01&quot;}</summary><pre>{
+  &quot;title&quot;: &quot;Definition of Mechanical Work &amp; Dot Product&quot;,
+  &quot;definition&quot;: &quot;Work is defined as the scalar line integral of vector force along the spatial path of displacement: W = integral F . dr = F s cos theta.&quot;,
+  &quot;canonical_rules&quot;: [
+    &quot;Only force components collinear with instantaneous displacement do work: dW = F_parallel ds.&quot;,
+    &quot;Forces perpendicular to instantaneous velocity (such as centripetal tension or frictionless normal reaction on fixed rails) do identically zero work: theta = 90 deg =&gt; W = 0.&quot;,
+    &quot;Work is a coordinate-invariant scalar quantity measured in Joules (1 J = 1 N m = 1 kg m^2 s^-2).&quot;
+  ],
+  &quot;operational_heuristics&quot;: [
+    &quot;Identify the angle theta between force vector and displacement vector.&quot;,
+    &quot;If force is constant: W = F s cos theta.&quot;,
+    &quot;If force is perpendicular to velocity at all points: immediately set W = 0.&quot;
+  ],
+  &quot;boundary_conditions&quot;: [
+    &quot;theta = 0 deg: maximum positive work W = +F s.&quot;,
+    &quot;theta = 90 deg: zero work W = 0.&quot;,
+    &quot;theta = 180 deg: maximum negative work W = -F s.&quot;
+  ],
+  &quot;prerequisites&quot;: [
+    &quot;P1&quot;
+  ],
+  &quot;transfer_targets&quot;: [
+    &quot;PHYS-WEP-001&quot;,
+    &quot;PHYS-WEP-002&quot;
+  ]
+}</pre><code>sha256:ac1b72608567f38ff702f45b573f8cdb1b2694ee14be1451195cb0327c011359</code></details><details id="U-MICRO"><summary>U-MICRO / LIBRARY / {&quot;pointer&quot;: &quot;/microtopics/0&quot;}</summary><pre>{
+  &quot;id&quot;: &quot;MIC-PHY-WEP-WORK-DIRECTION&quot;,
+  &quot;version&quot;: &quot;0.1.0&quot;,
+  &quot;status&quot;: &quot;CANDIDATE&quot;,
+  &quot;source_refs&quot;: [
+    &quot;SRC-AUTHOR-WEP&quot;
+  ],
+  &quot;evidence_refs&quot;: [],
+  &quot;extensions&quot;: {},
+  &quot;title&quot;: &quot;Only the along-path part of a force contributes to work&quot;,
+  &quot;bucket_id&quot;: &quot;BUCKET-PHY-WORK-ENERGY-POWER&quot;,
+  &quot;primary_capability_ref&quot;: &quot;CAP-WEP-WORK-DIRECTION&quot;,
+  &quot;intrinsic_badge&quot;: &quot;MEDIUM&quot;,
+  &quot;badge_reason&quot;: &quot;Force size alone feels decisive until a strong perpendicular force is contrasted with the actual displacement.&quot;,
+  &quot;entry_assumptions&quot;: [
+    &quot;Can identify one chosen body, its displacement over the stated interval, and the direction of a force acting on that same body.&quot;
+  ],
+  &quot;inferential_jump&quot;: &quot;Work depends on how a force points relative to the actual displacement: along the motion gives positive work, opposite gives negative work, and a perpendicular force gives zero work.&quot;,
+  &quot;teaching_path&quot;: [
+    {
+      &quot;id&quot;: &quot;WEP1-1&quot;,
+      &quot;role&quot;: &quot;DECLARE&quot;,
+      &quot;action&quot;: &quot;Draw one displacement direction and compare three force arrows: along it, perpendicular to it, and opposite it.&quot;,
+      &quot;why_valid&quot;: &quot;Holding the path fixed isolates orientation as the only thing changing.&quot;,
+      &quot;inputs&quot;: [],
+      &quot;output&quot;: &quot;case A: force along path.  case B: force perpendicular to path.  case C: force opposite path.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;WEP1-2&quot;,
+      &quot;role&quot;: &quot;TRANSFORM&quot;,
+      &quot;action&quot;: &quot;For each case, ask whether the force has a part that carries the object along the path direction.&quot;,
+      &quot;why_valid&quot;: &quot;Work records transfer through displacement, so only the force contribution along that displacement can change the work sign.&quot;,
+      &quot;inputs&quot;: [],
+      &quot;output&quot;: &quot;along -&gt; positive.  perpendicular -&gt; zero.  opposite -&gt; negative.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;WEP1-3&quot;,
+      &quot;role&quot;: &quot;VERIFY&quot;,
+      &quot;action&quot;: &quot;Increase the size of the perpendicular force while keeping it exactly perpendicular to the same path.&quot;,
+      &quot;why_valid&quot;: &quot;If orientation, not force size alone, controls the zero-work case, enlarging a perpendicular force must leave the work classification unchanged.&quot;,
+      &quot;inputs&quot;: [],
+      &quot;output&quot;: &quot;larger perpendicular force -&gt; work still zero.&quot;
+    }
+  ],
+  &quot;relation_refs&quot;: [],
+  &quot;representation_refs&quot;: [],
+  &quot;question_family_refs&quot;: [],
+  &quot;misconceptions&quot;: [
+    {
+      &quot;wrong_idea&quot;: &quot;Any force acting on a moving object does positive work because the object moves.&quot;,
+      &quot;diagnostic_prompt&quot;: &quot;A mass moves in a circle while a force points toward the centre. Does that inward force do work along the instantaneous tangential displacement?&quot;,
+      &quot;repair&quot;: &quot;Compare the force direction with the actual displacement direction; only the along-path contribution can produce work.&quot;
+    }
+  ],
+  &quot;exit_task&quot;: {
+    &quot;prompt&quot;: &quot;Three forces act separately during the same rightward displacement: one rightward, one upward, and one leftward. Classify the work sign in each case without calculating a magnitude.&quot;,
+    &quot;source_ref&quot;: &quot;SRC-AUTHOR-WEP&quot;,
+    &quot;answer&quot;: {
+      &quot;kind&quot;: &quot;MODEL_RESPONSE&quot;,
+      &quot;summary&quot;: &quot;Rightward force: positive work. Upward force: zero work. Leftward force: negative work.&quot;,
+      &quot;reasoning&quot;: [
+        &quot;The rightward force points with the displacement.&quot;,
+        &quot;The upward force is perpendicular to the displacement.&quot;,
+        &quot;The leftward force points against the displacement.&quot;
+      ],
+      &quot;check&quot;: &quot;Rotate the path instead of the force arrows; the classifications must follow the relative orientation, not page directions by themselves.&quot;,
+      &quot;acceptable_alternatives&quot;: [],
+      &quot;subpart_answers&quot;: [],
+      &quot;verification_status&quot;: &quot;CHECKED_BY_AUTHOR&quot;
+    },
+    &quot;oracle&quot;: {
+      &quot;no_numeric_claim&quot;: &quot;The answer classifies work sign only; it contains no computed work value.&quot;
+    }
+  },
+  &quot;research_contribution&quot;: &quot;Local Grade9V3 work-sign construction enriched from prior internal engineering with same-object/event and constant-force model discipline; no donor runtime link remains.&quot;,
+  &quot;prerequisite_refs&quot;: [],
+  &quot;lineage&quot;: [],
+  &quot;elicitation&quot;: {
+    &quot;predict&quot;: {
+      &quot;prompt&quot;: &quot;A strong force points exactly upward while an object moves exactly right. Before using any formula, should that force do positive work on the rightward displacement?&quot;,
+      &quot;defensible_answer&quot;: &quot;No. Because the force is perpendicular to the displacement, its work on that displacement is zero.&quot;
+    },
+    &quot;attempt&quot;: {
+      &quot;produces&quot;: &quot;A positive/zero/negative classification for three force directions relative to one fixed displacement, plus a short reason for each.&quot;,
+      &quot;closure&quot;: &quot;RUBRIC&quot;,
+      &quot;rubric&quot;: [
+        {
+          &quot;criterion&quot;: &quot;The perpendicular case is classified as zero even when the force is large.&quot;,
+          &quot;evidence_of&quot;: &quot;Using orientation rather than force size alone.&quot;
+        },
+        {
+          &quot;criterion&quot;: &quot;Along and opposite cases receive opposite work signs.&quot;,
+          &quot;evidence_of&quot;: &quot;Tracking whether the force contribution aids or opposes the displacement.&quot;
+        }
+      ],
+      &quot;accepted&quot;: [
+        &quot;&#x27;Along: positive; perpendicular: zero; opposite: negative, because only the along-path contribution sets the sign.&#x27;&quot;
+      ],
+      &quot;rejected&quot;: [
+        &quot;&#x27;All three are positive because a force acts while the object moves.&#x27; This ignores the force/path orientation.&quot;
+      ]
+    },
+    &quot;reconstruct&quot;: {
+      &quot;route&quot;: [
+        {
+          &quot;ask&quot;: &quot;Which way does the object actually move during the interval?&quot;,
+          &quot;why_this_ask&quot;: &quot;The path direction must be fixed before the force can be compared with it.&quot;,
+          &quot;from_step_ref&quot;: &quot;WEP1-1&quot;
+        },
+        {
+          &quot;ask&quot;: &quot;For the upward force, does any part of that arrow point along the rightward path?&quot;,
+          &quot;why_this_ask&quot;: &quot;The learner reaches the zero case geometrically before receiving a sign rule.&quot;
+        },
+        {
+          &quot;ask&quot;: &quot;What changes when the force is flipped to point left while the path stays rightward?&quot;,
+          &quot;why_this_ask&quot;: &quot;The opposite case makes the sign distinction visible.&quot;,
+          &quot;from_step_ref&quot;: &quot;WEP1-2&quot;
+        },
+        {
+          &quot;ask&quot;: &quot;If the upward arrow gets longer but stays perpendicular, should the classification change?&quot;,
+          &quot;why_this_ask&quot;: &quot;The variation checks whether force size has been incorrectly substituted for orientation.&quot;,
+          &quot;from_step_ref&quot;: &quot;WEP1-3&quot;
+        }
+      ],
+      &quot;differs_from_teaching_path&quot;: &quot;The teaching path states all three orientation cases. The learner route begins from the perpendicular counterexample, then reconstructs the sign pattern and tests it by changing force size.&quot;
+    },
+    &quot;boundary_test&quot;: {
+      &quot;prompt&quot;: &quot;The object has no displacement during the interval. Can a force do work through that interval in this displacement-based account?&quot;,
+      &quot;answer&quot;: &quot;No. With no displacement, there is no along-path transfer to count as work in this account.&quot;,
+      &quot;confirms&quot;: &quot;Work here requires displacement as well as force orientation.&quot;
+    }
+  },
+  &quot;construction_units&quot;: [
+    {
+      &quot;id&quot;: &quot;CU-PHY-WEP-WORK-DIRECTION-1&quot;,
+      &quot;decision_from&quot;: &quot;inferential_jump&quot;,
+      &quot;step_refs&quot;: [
+        &quot;WEP1-1&quot;,
+        &quot;WEP1-2&quot;,
+        &quot;WEP1-3&quot;
+      ],
+      &quot;representation_ref&quot;: null,
+      &quot;reveal_stage_refs&quot;: [],
+      &quot;worked_anchor_ref&quot;: null,
+      &quot;misconception_indexes&quot;: [
+        0
+      ],
+      &quot;independent_checks&quot;: [],
+      &quot;migrated_from&quot;: &quot;teaching_path&quot;
+    }
+  ]
+}</pre><code>sha256:22d0fbde85df257fd99d9091df0bf7bbe742489ec51d0ee50a89fc222580150a</code></details><details id="U-REL-2"><summary>U-REL-2 / LIBRARY / {&quot;pointer&quot;: &quot;/relations/2&quot;}</summary><pre>{
+  &quot;version&quot;: &quot;0.1.0&quot;,
+  &quot;status&quot;: &quot;CANDIDATE&quot;,
+  &quot;source_refs&quot;: [
+    &quot;SRC-AUTHOR-WEP&quot;
+  ],
+  &quot;evidence_refs&quot;: [],
+  &quot;extensions&quot;: {
+    &quot;issue19:scope_class&quot;: &quot;OWNER_EXTENSION&quot;,
+    &quot;issue19:donor&quot;: &quot;PR9&quot;
+  },
+  &quot;id&quot;: &quot;REL-WORK-CONSTANT-FORCE&quot;,
+  &quot;expression&quot;: &quot;W = F_parallel s&quot;,
+  &quot;meaning&quot;: &quot;For a constant force component along a straight displacement, work equals the signed along-path component times displacement.&quot;,
+  &quot;symbols&quot;: [
+    {
+      &quot;symbol&quot;: &quot;W&quot;,
+      &quot;meaning&quot;: &quot;Work done by the force&quot;,
+      &quot;unit_or_domain&quot;: &quot;J; signed scalar&quot;
+    },
+    {
+      &quot;symbol&quot;: &quot;F_parallel&quot;,
+      &quot;meaning&quot;: &quot;Signed force component along displacement&quot;,
+      &quot;unit_or_domain&quot;: &quot;N; signed scalar&quot;
+    },
+    {
+      &quot;symbol&quot;: &quot;s&quot;,
+      &quot;meaning&quot;: &quot;Displacement magnitude&quot;,
+      &quot;unit_or_domain&quot;: &quot;m; nonnegative scalar&quot;
+    }
+  ],
+  &quot;conditions&quot;: [
+    &quot;Force component is constant over the displacement.&quot;,
+    &quot;F_parallel uses the displacement direction as positive.&quot;,
+    &quot;s &gt;= 0.&quot;
+  ],
+  &quot;derivation&quot;: [
+    {
+      &quot;id&quot;: &quot;WEP6-W1&quot;,
+      &quot;role&quot;: &quot;TRANSFORM&quot;,
+      &quot;action&quot;: &quot;Multiply the signed force component along the path by displacement magnitude.&quot;,
+      &quot;why_valid&quot;: &quot;REL-WORK-CONSTANT-FORCE owns the Grade 9 constant-force work relation.&quot;,
+      &quot;inputs&quot;: [],
+      &quot;output&quot;: &quot;W = F_parallel s.&quot;
+    }
+  ],
+  &quot;limits&quot;: [
+    &quot;A varying force requires a different treatment.&quot;
+  ],
+  &quot;checks&quot;: [
+    &quot;Perpendicular force gives F_parallel = 0 and zero work.&quot;,
+    &quot;Opposing force gives negative work.&quot;
+  ],
+  &quot;gate_relation_ref&quot;: &quot;REL-WORK-CONSTANT-FORCE&quot;
+}</pre><code>sha256:d8353dd6c9d425f6b5e4dba00155def4f895ae44fa321223b819b4e58914b254</code></details><details id="NATIVE-MICROTOPIC"><summary>NATIVE-MICROTOPIC / PKG_SCHEMA / {&quot;pointer&quot;: &quot;/$defs/microtopic&quot;}</summary><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;additionalProperties&quot;: false,
+  &quot;properties&quot;: {
+    &quot;id&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;version&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;status&quot;: {
+      &quot;enum&quot;: [
+        &quot;DISCOVERED&quot;,
+        &quot;CANDIDATE&quot;,
+        &quot;REVIEWED&quot;,
+        &quot;CURATED&quot;,
+        &quot;DISPUTED&quot;,
+        &quot;STALE&quot;,
+        &quot;RETIRED&quot;
+      ]
+    },
+    &quot;source_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;evidence_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;extensions&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;description&quot;: &quot;Namespaced subject extensions; no scientific authority is inferred.&quot;
+    },
+    &quot;title&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;bucket_id&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;primary_capability_ref&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;intrinsic_badge&quot;: {
+      &quot;enum&quot;: [
+        &quot;EASY&quot;,
+        &quot;MEDIUM&quot;,
+        &quot;HARD&quot;
+      ]
+    },
+    &quot;badge_reason&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;entry_assumptions&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;inferential_jump&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;teaching_path&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/step&quot;
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;relation_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;representation_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;question_family_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;misconceptions&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;object&quot;,
+        &quot;additionalProperties&quot;: false,
+        &quot;properties&quot;: {
+          &quot;wrong_idea&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;minLength&quot;: 1
+          },
+          &quot;diagnostic_prompt&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;minLength&quot;: 1
+          },
+          &quot;repair&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;minLength&quot;: 1
+          }
+        },
+        &quot;required&quot;: [
+          &quot;wrong_idea&quot;,
+          &quot;diagnostic_prompt&quot;,
+          &quot;repair&quot;
+        ]
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;exit_task&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;additionalProperties&quot;: false,
+      &quot;properties&quot;: {
+        &quot;prompt&quot;: {
+          &quot;type&quot;: &quot;string&quot;,
+          &quot;minLength&quot;: 1
+        },
+        &quot;source_ref&quot;: {
+          &quot;type&quot;: &quot;string&quot;,
+          &quot;minLength&quot;: 1
+        },
+        &quot;answer&quot;: {
+          &quot;$ref&quot;: &quot;#/$defs/answer&quot;
+        },
+        &quot;oracle&quot;: {
+          &quot;description&quot;: &quot;How this exit answer is stood behind. Exactly one of: `verification`, naming a subject validator and binding its inputs to declared data; `held_by`, naming the known issue that explains why no oracle exists yet; or `no_numeric_claim`, saying why the answer asserts no computed value. Silence is not an option, because the exit answer is what a learner measures themselves against.&quot;,
+          &quot;type&quot;: &quot;object&quot;,
+          &quot;minProperties&quot;: 1,
+          &quot;maxProperties&quot;: 1,
+          &quot;properties&quot;: {
+            &quot;verification&quot;: {
+              &quot;type&quot;: &quot;object&quot;,
+              &quot;required&quot;: [
+                &quot;validator_id&quot;,
+                &quot;bindings&quot;
+              ],
+              &quot;properties&quot;: {
+                &quot;validator_id&quot;: {
+                  &quot;type&quot;: &quot;string&quot;,
+                  &quot;minLength&quot;: 1
+                },
+                &quot;bindings&quot;: {
+                  &quot;type&quot;: &quot;object&quot;,
+                  &quot;additionalProperties&quot;: {
+                    &quot;type&quot;: &quot;string&quot;,
+                    &quot;minLength&quot;: 1
+                  }
+                }
+              },
+              &quot;additionalProperties&quot;: {
+                &quot;type&quot;: [
+                  &quot;string&quot;,
+                  &quot;number&quot;,
+                  &quot;boolean&quot;
+                ]
+              }
+            },
+            &quot;held_by&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;minLength&quot;: 1
+            },
+            &quot;no_numeric_claim&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;minLength&quot;: 1
+            }
+          },
+          &quot;additionalProperties&quot;: false
+        }
+      },
+      &quot;required&quot;: [
+        &quot;prompt&quot;,
+        &quot;source_ref&quot;,
+        &quot;answer&quot;,
+        &quot;oracle&quot;
+      ]
+    },
+    &quot;research_contribution&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;prerequisite_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0,
+      &quot;description&quot;: &quot;Capability ids this microtopic assumes. A capability of another subject is written &#x27;&lt;Subject&gt;:&lt;capability id&gt;&#x27; (e.g. &#x27;Mathematics:CAP-MATH-DERIVATIVE-RATE&#x27;); package_depth.py emits TEACH_PREREQUISITE_BRIDGE for any ref no library teaches.&quot;
+    },
+    &quot;lineage&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;object&quot;,
+        &quot;additionalProperties&quot;: false,
+        &quot;properties&quot;: {
+          &quot;relation&quot;: {
+            &quot;enum&quot;: [
+              &quot;SUPERSEDES&quot;,
+              &quot;SPLIT_FROM&quot;,
+              &quot;MERGED_FROM&quot;
+            ]
+          },
+          &quot;target_ref&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;minLength&quot;: 1
+          }
+        },
+        &quot;required&quot;: [
+          &quot;relation&quot;,
+          &quot;target_ref&quot;
+        ]
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;elicitation&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;additionalProperties&quot;: false,
+      &quot;description&quot;: &quot;The self-tutor cycle. Four of its six steps live here; diagnose and repair are misconceptions[].wrong_idea, .diagnostic_prompt and .repair, which already hold the same claim for the declarative product. A second home for one truth is the defect the authority gate exists to close.&quot;,
+      &quot;properties&quot;: {
+        &quot;predict&quot;: {
+          &quot;type&quot;: &quot;object&quot;,
+          &quot;additionalProperties&quot;: false,
+          &quot;description&quot;: &quot;Pose the decision before revealing anything.&quot;,
+          &quot;properties&quot;: {
+            &quot;prompt&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;minLength&quot;: 1,
+              &quot;description&quot;: &quot;The decision, posed so a learner can commit to an answer.&quot;
+            },
+            &quot;defensible_answer&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;minLength&quot;: 1,
+              &quot;description&quot;: &quot;The answer that commitment is judged against. A prompt with no defensible answer is a musing, not a prediction.&quot;
+            }
+          },
+          &quot;required&quot;: [
+            &quot;prompt&quot;,
+            &quot;defensible_answer&quot;
+          ]
+        },
+        &quot;attempt&quot;: {
+          &quot;type&quot;: &quot;object&quot;,
+          &quot;additionalProperties&quot;: false,
+          &quot;description&quot;: &quot;What the learner produces, and how it closes without a tutor.&quot;,
+          &quot;properties&quot;: {
+            &quot;produces&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;minLength&quot;: 1,
+              &quot;description&quot;: &quot;What the learner should construct, draw, discriminate or explain.&quot;
+            },
+            &quot;closure&quot;: {
+              &quot;enum&quot;: [
+                &quot;MODEL_RESPONSE&quot;,
+                &quot;RUBRIC&quot;,
+                &quot;CRITERIA&quot;
+              ],
+              &quot;description&quot;: &quot;Which form of closure this attempt uses. Each value demands something the others do not, so that none is a synonym an author can pick to avoid work: MODEL_RESPONSE requires model_response, CRITERIA requires rubric, and RUBRIC requires rubric with accepted and rejected examples -- the spec&#x27;s &#x27;a rubric plus representative accepted and rejected answers&#x27;, which is the stronger claim of the three.&quot;
+            },
+            &quot;model_response&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;minLength&quot;: 1,
+              &quot;description&quot;: &quot;Closure as one response, where one is right.&quot;
+            },
+            &quot;rubric&quot;: {
+              &quot;type&quot;: &quot;array&quot;,
+              &quot;items&quot;: {
+                &quot;$ref&quot;: &quot;#/$defs/rubric_criterion&quot;
+              },
+              &quot;minItems&quot;: 1,
+              &quot;description&quot;: &quot;Closure as a rubric, where several responses are valid.&quot;
+            },
+            &quot;accepted&quot;: {
+              &quot;type&quot;: &quot;array&quot;,
+              &quot;items&quot;: {
+                &quot;type&quot;: &quot;string&quot;,
+                &quot;minLength&quot;: 1
+              },
+              &quot;minItems&quot;: 1,
+              &quot;description&quot;: &quot;Representative responses the rubric accepts.&quot;
+            },
+            &quot;rejected&quot;: {
+              &quot;type&quot;: &quot;array&quot;,
+              &quot;items&quot;: {
+                &quot;type&quot;: &quot;string&quot;,
+                &quot;minLength&quot;: 1
+              },
+              &quot;minItems&quot;: 1,
+              &quot;description&quot;: &quot;Representative responses it rejects. A rubric with no rejected example has not been tested against anything.&quot;
+            },
+            &quot;task&quot;: {
+              &quot;type&quot;: &quot;object&quot;,
+              &quot;additionalProperties&quot;: false,
+              &quot;required&quot;: [
+                &quot;prompt&quot;
+              ],
+              &quot;description&quot;: &quot;Schema 0.2.0: the concrete reconstruction task the learner performs (a body, givens, numbers or a situation). `produces` says what the attempt should contain; `task` is what the learner is asked to do. Rendered as the Core1B attempt.&quot;,
+              &quot;properties&quot;: {
+                &quot;prompt&quot;: {
+                  &quot;type&quot;: &quot;string&quot;,
+                  &quot;minLength&quot;: 1
+                },
+                &quot;givens&quot;: {
+                  &quot;type&quot;: &quot;array&quot;,
+                  &quot;items&quot;: {
+                    &quot;type&quot;: &quot;string&quot;,
+                    &quot;minLength&quot;: 1
+                  }
+                },
+                &quot;representation_ref&quot;: {
+                  &quot;type&quot;: [
+                    &quot;string&quot;,
+                    &quot;null&quot;
+                  ],
+                  &quot;description&quot;: &quot;The representation of this task&#x27;s own situation (its bodies and values), shown with the Core1B attempt. When absent, Core1B falls back to the first construction unit&#x27;s (Core1A) figure, which depicts a different situation.&quot;
+                },
+                &quot;stage_refs&quot;: {
+                  &quot;type&quot;: &quot;array&quot;,
+                  &quot;items&quot;: {
+                    &quot;type&quot;: &quot;string&quot;
+                  },
+                  &quot;description&quot;: &quot;Stages of representation_ref safe to show before the attempt; default is the first stage only.&quot;
+                },
+                &quot;response&quot;: {
+                  &quot;$ref&quot;: &quot;#/$defs/response&quot;
+                }
+              }
+            }
+          },
+          &quot;required&quot;: [
+            &quot;produces&quot;,
+            &quot;closure&quot;
+          ]
+        },
+        &quot;reconstruct&quot;: {
+          &quot;type&quot;: &quot;object&quot;,
+          &quot;additionalProperties&quot;: false,
+          &quot;description&quot;: &quot;The correct construction reached the way a learner would reach it. Held as questions rather than statements: teaching_path is the expert&#x27;s summary, and a reconstruct route made of statements is that summary under a different key, which is exactly how this product became the declarative one.&quot;,
+          &quot;properties&quot;: {
+            &quot;route&quot;: {
+              &quot;type&quot;: &quot;array&quot;,
+              &quot;minItems&quot;: 1,
+              &quot;description&quot;: &quot;The sequence of asks. Order is meaning: each one is answerable only once the previous has been answered.&quot;,
+              &quot;items&quot;: {
+                &quot;type&quot;: &quot;object&quot;,
+                &quot;additionalProperties&quot;: false,
+                &quot;properties&quot;: {
+                  &quot;ask&quot;: {
+                    &quot;type&quot;: &quot;string&quot;,
+                    &quot;minLength&quot;: 1,
+                    &quot;description&quot;: &quot;A question that moves the learner one decision forward. A sentence with a question mark on it is not an ask; the learner must be able to get it wrong.&quot;
+                  },
+                  &quot;why_this_ask&quot;: {
+                    &quot;type&quot;: &quot;string&quot;,
+                    &quot;minLength&quot;: 1,
+                    &quot;description&quot;: &quot;Why this question rather than another at this point. An author who cannot say this has ordered the route by the expert&#x27;s convenience.&quot;
+                  },
+                  &quot;from_step_ref&quot;: {
+                    &quot;type&quot;: &quot;string&quot;,
+                    &quot;minLength&quot;: 1,
+                    &quot;description&quot;: &quot;The teaching_path step this ask arrives at, where one exists. Absent means the learner&#x27;s route genuinely departs from the expert&#x27;s, which is why both are held.&quot;
+                  }
+                },
+                &quot;required&quot;: [
+                  &quot;ask&quot;,
+                  &quot;why_this_ask&quot;
+                ]
+              }
+            },
+            &quot;differs_from_teaching_path&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;minLength&quot;: 1,
+              &quot;description&quot;: &quot;How the learner&#x27;s route differs from the expert&#x27;s construction. This is the sentence a reviewer checks the A/B claim against, so it may not restate the teaching path it claims to differ from.&quot;
+            }
+          },
+          &quot;required&quot;: [
+            &quot;route&quot;,
+            &quot;differs_from_teaching_path&quot;
+          ]
+        },
+        &quot;boundary_test&quot;: {
+          &quot;type&quot;: &quot;object&quot;,
+          &quot;additionalProperties&quot;: false,
+          &quot;properties&quot;: {
+            &quot;prompt&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;minLength&quot;: 1,
+              &quot;description&quot;: &quot;A limiting case, reversal or edge condition.&quot;
+            },
+            &quot;confirms&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;minLength&quot;: 1,
+              &quot;description&quot;: &quot;What passing it establishes, stated so that a recall question cannot be passed off as a boundary test.&quot;
+            },
+            &quot;answer&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;minLength&quot;: 1,
+              &quot;description&quot;: &quot;What passing it looks like. The shared closure invariant has no exception for the last prompt in a cycle.&quot;
+            }
+          },
+          &quot;required&quot;: [
+            &quot;prompt&quot;,
+            &quot;answer&quot;,
+            &quot;confirms&quot;
+          ]
+        }
+      },
+      &quot;required&quot;: [
+        &quot;predict&quot;,
+        &quot;attempt&quot;,
+        &quot;reconstruct&quot;,
+        &quot;boundary_test&quot;
+      ]
+    },
+    &quot;construction_units&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/construction_unit&quot;
+      }
+    },
+    &quot;compact_anchor&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;additionalProperties&quot;: false,
+      &quot;required&quot;: [
+        &quot;prompt&quot;,
+        &quot;result&quot;
+      ],
+      &quot;description&quot;: &quot;Schema 0.2.0: the Core1 compact anchor, a one-line instance of the governing relation that makes the map usable before Core1A.&quot;,
+      &quot;properties&quot;: {
+        &quot;prompt&quot;: {
+          &quot;type&quot;: &quot;string&quot;,
+          &quot;minLength&quot;: 1
+        },
+        &quot;result&quot;: {
+          &quot;type&quot;: &quot;string&quot;,
+          &quot;minLength&quot;: 1
+        },
+        &quot;representation_ref&quot;: {
+          &quot;type&quot;: [
+            &quot;string&quot;,
+            &quot;null&quot;
+          ],
+          &quot;description&quot;: &quot;The representation of this compact anchor&#x27;s own situation, shown on the Core1 map. When absent, Core1 falls back to the microtopic&#x27;s first representation_refs entry, which is often shared across microtopics.&quot;
+        }
+      }
+    }
+  },
+  &quot;required&quot;: [
+    &quot;id&quot;,
+    &quot;version&quot;,
+    &quot;status&quot;,
+    &quot;source_refs&quot;,
+    &quot;evidence_refs&quot;,
+    &quot;extensions&quot;,
+    &quot;title&quot;,
+    &quot;bucket_id&quot;,
+    &quot;primary_capability_ref&quot;,
+    &quot;intrinsic_badge&quot;,
+    &quot;badge_reason&quot;,
+    &quot;entry_assumptions&quot;,
+    &quot;inferential_jump&quot;,
+    &quot;teaching_path&quot;,
+    &quot;relation_refs&quot;,
+    &quot;representation_refs&quot;,
+    &quot;question_family_refs&quot;,
+    &quot;misconceptions&quot;,
+    &quot;exit_task&quot;,
+    &quot;research_contribution&quot;,
+    &quot;prerequisite_refs&quot;,
+    &quot;lineage&quot;
+  ]
+}</pre><code>sha256:1686d613a7e669b7219db2e969b3a74ffda954bb7f4966bcd221abf16148e57d</code></details><details id="NATIVE-STEP"><summary>NATIVE-STEP / PKG_SCHEMA / {&quot;pointer&quot;: &quot;/$defs/step&quot;}</summary><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;additionalProperties&quot;: false,
+  &quot;properties&quot;: {
+    &quot;id&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;action&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;why_valid&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;inputs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;output&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;role&quot;: {
+      &quot;description&quot;: &quot;What the step does to the state. A DECLARE step fixes a convention or a domain and legitimately produces no computation; a TRANSFORM step changes the mathematical state and must show the changed state, not describe it; a VERIFY step checks a result against something already established.&quot;,
+      &quot;enum&quot;: [
+        &quot;DECLARE&quot;,
+        &quot;TRANSFORM&quot;,
+        &quot;VERIFY&quot;
+      ]
+    },
+    &quot;source_ref&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1,
+      &quot;description&quot;: &quot;The source this step&#x27;s claim rests on. Absent means the step is the author&#x27;s own construction, which is legitimate and is not the same as source-supported.&quot;
+    }
+  },
+  &quot;required&quot;: [
+    &quot;id&quot;,
+    &quot;role&quot;,
+    &quot;action&quot;,
+    &quot;why_valid&quot;,
+    &quot;inputs&quot;,
+    &quot;output&quot;
+  ]
+}</pre><code>sha256:bef05081da5d29b5d9840965decc3edc4f41c61eca3d657a6a33f3c8f7eb3407</code></details><details id="NATIVE-CONSTRUCTION_UNIT"><summary>NATIVE-CONSTRUCTION_UNIT / PKG_SCHEMA / {&quot;pointer&quot;: &quot;/$defs/construction_unit&quot;}</summary><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;additionalProperties&quot;: false,
+  &quot;description&quot;: &quot;One distinct decision/event of a microtopic&#x27;s construction, taught as its own unit (Core1A) and reconstructed in Core1B.&quot;,
+  &quot;required&quot;: [
+    &quot;id&quot;,
+    &quot;step_refs&quot;
+  ],
+  &quot;properties&quot;: {
+    &quot;id&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;pattern&quot;: &quot;^CU-[A-Z0-9-]+$&quot;
+    },
+    &quot;extensions&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;description&quot;: &quot;Namespaced unit-level extensions. Repeated blueprint applicability may use extensions[&#x27;grade9v3:component_waivers&#x27;] with the same {COMPONENT_ID: reason} contract as a top-level record.&quot;
+    },
+    &quot;decision&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1,
+      &quot;description&quot;: &quot;The move the learner must make in this unit, in words.&quot;
+    },
+    &quot;step_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 1,
+      &quot;description&quot;: &quot;teaching_path step ids this unit covers, in order.&quot;
+    },
+    &quot;representation_ref&quot;: {
+      &quot;type&quot;: [
+        &quot;string&quot;,
+        &quot;null&quot;
+      ],
+      &quot;description&quot;: &quot;Representation that stages this unit.&quot;
+    },
+    &quot;reveal_stage_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;
+      },
+      &quot;description&quot;: &quot;That representation&#x27;s reveal stages used by this unit, in order.&quot;
+    },
+    &quot;worked_anchor_ref&quot;: {
+      &quot;type&quot;: [
+        &quot;string&quot;,
+        &quot;null&quot;
+      ],
+      &quot;description&quot;: &quot;Question (exposure CORE1A) whose route exercises this unit&#x27;s move.&quot;
+    },
+    &quot;bank_anchor_ref&quot;: {
+      &quot;type&quot;: [
+        &quot;string&quot;,
+        &quot;null&quot;
+      ],
+      &quot;minLength&quot;: 1,
+      &quot;description&quot;: &quot;A question of the product&#x27;s bank (an owner-supplied or exam question, not a question of this package) that this unit works through as its worked example: the page shows the question as its owner wrote it with its verified route. Resolved when the product is built, so a package does not carry a copy of the question. Use it for the question the unit builds toward; use worked_anchor_ref for a question the package authors itself.&quot;
+    },
+    &quot;crux_question_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 1,
+      &quot;description&quot;: &quot;Bank questions whose crux this unit builds: the move a learner is most likely to miss in each. The toughest question of a set must be named here by a unit of the concept it belongs to; its difficulty band does not prescribe the unit&#x27;s component or panel count.&quot;
+    },
+    &quot;crux_step_ref&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1,
+      &quot;description&quot;: &quot;The teaching_path step of this unit (one of its step_refs) that builds the move named questions in crux_question_refs turn on. The page marks that step, so a reader can see where the unit does the work the hard question needs.&quot;
+    },
+    &quot;misconception_indexes&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;integer&quot;,
+        &quot;minimum&quot;: 0
+      },
+      &quot;description&quot;: &quot;Indexes into microtopic.misconceptions (wrong path, diagnose, repair).&quot;
+    },
+    &quot;relation_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;description&quot;: &quot;The microtopic&#x27;s relations this unit uses, shown as the unit&#x27;s own equation card. Absent: the first unit shows all of the microtopic&#x27;s relations.&quot;
+    },
+    &quot;independent_checks&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/independent_check&quot;
+      }
+    },
+    &quot;migrated_from&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;Set by package_migrate.py when the unit was derived mechanically (e.g. &#x27;teaching_path&#x27;); cleared when an author reviews it.&quot;
+    },
+    &quot;decision_from&quot;: {
+      &quot;enum&quot;: [
+        &quot;inferential_jump&quot;
+      ],
+      &quot;description&quot;: &quot;Set instead of `decision` when the unit&#x27;s decision is the microtopic&#x27;s own field (migration); one source of truth, no copied text.&quot;
+    }
+  },
+  &quot;anyOf&quot;: [
+    {
+      &quot;required&quot;: [
+        &quot;decision&quot;
+      ]
+    },
+    {
+      &quot;required&quot;: [
+        &quot;decision_from&quot;
+      ]
+    }
+  ]
+}</pre><code>sha256:6087cdf85dbacc13bc16269c97e18a6d397fb69ad04e18ed0e56ad8bd27b1dfa</code></details><details id="NATIVE-REPRESENTATION"><summary>NATIVE-REPRESENTATION / PKG_SCHEMA / {&quot;pointer&quot;: &quot;/$defs/representation&quot;}</summary><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;additionalProperties&quot;: false,
+  &quot;properties&quot;: {
+    &quot;id&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;version&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;status&quot;: {
+      &quot;enum&quot;: [
+        &quot;DISCOVERED&quot;,
+        &quot;CANDIDATE&quot;,
+        &quot;REVIEWED&quot;,
+        &quot;CURATED&quot;,
+        &quot;DISPUTED&quot;,
+        &quot;STALE&quot;,
+        &quot;RETIRED&quot;
+      ]
+    },
+    &quot;source_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;evidence_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;extensions&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;description&quot;: &quot;Namespaced subject extensions; no scientific authority is inferred.&quot;
+    },
+    &quot;kind&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;purpose&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;required_elements&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;relation_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;read_order&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;instance_constraints&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;accessibility&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;misleading_alternatives&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;rendered_asset_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;scene_instances&quot;: {
+      &quot;description&quot;: &quot;Concrete figures satisfying this representation. Everything above states what a figure of this kind must show; an instance states one actual figure, bound to the data it draws, so the library can compile a figure instead of only requiring one.&quot;,
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/scene_instance&quot;
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;correspondence&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;object&quot;,
+        &quot;additionalProperties&quot;: false,
+        &quot;properties&quot;: {
+          &quot;element&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;minLength&quot;: 1,
+            &quot;description&quot;: &quot;The part of the picture, named as required_elements names it.&quot;
+          },
+          &quot;symbol&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;minLength&quot;: 1,
+            &quot;description&quot;: &quot;The symbol it stands for, as the governing relation writes it.&quot;
+          },
+          &quot;in_words&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;minLength&quot;: 1,
+            &quot;description&quot;: &quot;The same thing said in words, which is the third leg of the bridge.&quot;
+          }
+        },
+        &quot;required&quot;: [
+          &quot;element&quot;,
+          &quot;symbol&quot;,
+          &quot;in_words&quot;
+        ]
+      },
+      &quot;minItems&quot;: 0,
+      &quot;description&quot;: &quot;The representation bridge. required_elements says what the picture must contain and the relation&#x27;s symbols say what the algebra means, but nothing bound one to the other, so the correspondence a learner must make was asserted rather than held. Naming all three legs is what makes it explicit in both directions rather than a caption pointing one way.&quot;
+    },
+    &quot;interactive_resource_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0,
+      &quot;description&quot;: &quot;ACTIVITY resources that implement or manipulate this canonical representation. The representation remains academic authority.&quot;
+    },
+    &quot;reveal_stages&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/visual_stage&quot;
+      },
+      &quot;minItems&quot;: 0,
+      &quot;description&quot;: &quot;Ordered author-defined reveal states for progressive visual support. No global stage count is imposed.&quot;
+    },
+    &quot;support_stage_map&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/support_stage_binding&quot;
+      },
+      &quot;minItems&quot;: 0,
+      &quot;description&quot;: &quot;Optional mapping from matrix pre-attempt support level to initial representation stage.&quot;
+    }
+  },
+  &quot;required&quot;: [
+    &quot;id&quot;,
+    &quot;version&quot;,
+    &quot;status&quot;,
+    &quot;source_refs&quot;,
+    &quot;evidence_refs&quot;,
+    &quot;extensions&quot;,
+    &quot;kind&quot;,
+    &quot;purpose&quot;,
+    &quot;required_elements&quot;,
+    &quot;relation_refs&quot;,
+    &quot;read_order&quot;,
+    &quot;instance_constraints&quot;,
+    &quot;accessibility&quot;,
+    &quot;misleading_alternatives&quot;,
+    &quot;rendered_asset_refs&quot;,
+    &quot;scene_instances&quot;
+  ]
+}</pre><code>sha256:b9d7645031777bfc8abda988531e7cc77957329f012d0e58dcd04ed261940b56</code></details><details id="NATIVE-RELATION"><summary>NATIVE-RELATION / PKG_SCHEMA / {&quot;pointer&quot;: &quot;/$defs/relation&quot;}</summary><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;additionalProperties&quot;: false,
+  &quot;properties&quot;: {
+    &quot;id&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;version&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;status&quot;: {
+      &quot;enum&quot;: [
+        &quot;DISCOVERED&quot;,
+        &quot;CANDIDATE&quot;,
+        &quot;REVIEWED&quot;,
+        &quot;CURATED&quot;,
+        &quot;DISPUTED&quot;,
+        &quot;STALE&quot;,
+        &quot;RETIRED&quot;
+      ]
+    },
+    &quot;source_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;evidence_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;extensions&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;description&quot;: &quot;Namespaced subject extensions; no scientific authority is inferred.&quot;
+    },
+    &quot;expression&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;meaning&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;symbols&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;object&quot;,
+        &quot;additionalProperties&quot;: false,
+        &quot;properties&quot;: {
+          &quot;symbol&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;minLength&quot;: 1
+          },
+          &quot;meaning&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;minLength&quot;: 1
+          },
+          &quot;unit_or_domain&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;minLength&quot;: 1
+          }
+        },
+        &quot;required&quot;: [
+          &quot;symbol&quot;,
+          &quot;meaning&quot;,
+          &quot;unit_or_domain&quot;
+        ]
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;conditions&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;derivation&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/step&quot;
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;limits&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;checks&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;mathml&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1,
+      &quot;description&quot;: &quot;Restricted presentation MathML for this relation, so a product can render it without re-authoring.&quot;
+    },
+    &quot;gate_relation_ref&quot;: {
+      &quot;description&quot;: &quot;The engineering gate relation this is a bound copy of. Subject truth is owned by the gate registry; the library holds a copy so the compiler can reach it, and that copy is checked against the owner. null says no gate backs this relation: that is true of a subject that declares no gates (a sandbox, or a contract-only subject), and for a subject that has gates Shared/library/authority.py reports it as GATE_RELATION_BINDING_ABSENT.&quot;,
+      &quot;type&quot;: [
+        &quot;string&quot;,
+        &quot;null&quot;
+      ],
+      &quot;minLength&quot;: 1
+    }
+  },
+  &quot;required&quot;: [
+    &quot;id&quot;,
+    &quot;version&quot;,
+    &quot;status&quot;,
+    &quot;source_refs&quot;,
+    &quot;evidence_refs&quot;,
+    &quot;extensions&quot;,
+    &quot;expression&quot;,
+    &quot;meaning&quot;,
+    &quot;symbols&quot;,
+    &quot;conditions&quot;,
+    &quot;derivation&quot;,
+    &quot;limits&quot;,
+    &quot;checks&quot;,
+    &quot;gate_relation_ref&quot;
+  ]
+}</pre><code>sha256:ecbfa4eeda8187c8418eb9116384cbea37434ca4d21fb034727742bc45cf8909</code></details><h2>Exposure and limitations</h2><ul><li>Author/exposed preparation; no independent academic review or learner observation.</li><li>All nine source images were visually inspected in this routine; the selected regions and limitations are in program.json. This is not full OCR, diagram equivalence or scientific acceptance.</li><li>Generated SVGs are derived material and remain unreviewed. Every original scan and SVG is retained; all linked source chapter assets resolve locally.</li><li>Book illustration badges are not official examination provenance. No new question or lesson is authored.</li><li>A matching source hash proves retained bytes, not accurate transcription or scientific truth.</li><li>The retained reference ontology supplies proposed material under WEP-01. It is a review lead, not the canonical library or a qualified replacement for missing chapter derivations. Its source_authority/canonical_rules labels are claims, not acceptance receipts.</li></ul><p class="meta">Dependency fingerprint sha256:9a13d1971b23d6c389f2753665b6995961c97b00622937744567ff5316f07c6b</p></body></html>

@@ -1,0 +1,16 @@
+{
+  "source_id": "EX-M4",
+  "task_identity": "Q-ID-02",
+  "sequence": 2,
+  "paper": "JEE Main 2026 (Online) 5th April Evening Shift",
+  "stem_text": "A mass of 1 kg is kept on an inclined plane with 30^(\u2218) inclination with respect to horizontal plane and it is at rest initially. Then the whole assembly is moved up with constant velocity of 4m/s . The work done by the frictional force in time 2 s is ____ J. (Take \ud835\udc54=10m/s^(2) )",
+  "stem_sha256": "1c74525b1b16d7448675a4f5fdb9586a47da156a0650291c7fdb9d5c577c89e1",
+  "options": [
+    "A: 20",
+    "B: 25",
+    "C: 30",
+    "D: 10"
+  ],
+  "figure_reference": "NONE",
+  "confidentiality_notice": "SEALED SOURCE-ONLY PACKET FOR BLIND INDEPENDENT REVIEW. Contains NO answers, keys, explanations, candidate solutions, SL2 factor scores, or prior review commentary."
+}

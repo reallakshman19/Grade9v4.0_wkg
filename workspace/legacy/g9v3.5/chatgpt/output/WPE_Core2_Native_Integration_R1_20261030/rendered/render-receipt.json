@@ -1,0 +1,100 @@
+{
+  "renderer": "render_core/2",
+  "digest": "a13a70605acf789d",
+  "semantic_digest": "610f7f28f32a4a26",
+  "manifest": "D:/CodeD/g9v3.5/chatgpt/output/WPE_Core2_Native_Integration_R1_20261030/native/manifest.json",
+  "mode": "PAGES",
+  "held_to": "REFERENCE",
+  "draft": true,
+  "gaps": [
+    {
+      "duty": "AUTHOR_COMPONENT",
+      "record": "TB-WPE-ILL-01",
+      "detail": "REPRESENTATION is absent",
+      "core": "CORE2",
+      "product": "WPE-CORE2-NATIVE-INTEGRATION-R1",
+      "component": "REPRESENTATION"
+    },
+    {
+      "duty": "AUTHOR_COMPONENT",
+      "record": "TB-WPE-ILL-02",
+      "detail": "REPRESENTATION is absent",
+      "core": "CORE2",
+      "product": "WPE-CORE2-NATIVE-INTEGRATION-R1",
+      "component": "REPRESENTATION"
+    },
+    {
+      "duty": "AUTHOR_COMPONENT",
+      "record": "TB-WPE-ILL-03",
+      "detail": "REPRESENTATION is absent",
+      "core": "CORE2",
+      "product": "WPE-CORE2-NATIVE-INTEGRATION-R1",
+      "component": "REPRESENTATION"
+    },
+    {
+      "duty": "AUTHOR_FIGURE_TEXT",
+      "record": "REP-TB-FIG-06-INCLINE-BLOCK",
+      "detail": "label(s) run outside the viewBox and are cut off at the figure's edge: '4 kg', 's = 3 m', 'Block Sliding Down Rough Inc'",
+      "core": "CORE2",
+      "product": "WPE-CORE2-NATIVE-INTEGRATION-R1",
+      "component": "REPRESENTATION"
+    },
+    {
+      "duty": "AUTHOR_FIGURE_TEXT",
+      "record": "REP-TB-FIG-07-INCLINE-FBD",
+      "detail": "label(s) run outside the viewBox and are cut off at the figure's edge: '&#956;R', 'FBD on Incline: W_N = 0, W_g'",
+      "core": "CORE2",
+      "product": "WPE-CORE2-NATIVE-INTEGRATION-R1",
+      "component": "REPRESENTATION"
+    },
+    {
+      "duty": "AUTHOR_COMPONENT",
+      "record": "TB-WPE-ILL-05",
+      "detail": "REPRESENTATION is absent",
+      "core": "CORE2",
+      "product": "WPE-CORE2-NATIVE-INTEGRATION-R1",
+      "component": "REPRESENTATION"
+    },
+    {
+      "duty": "AUTHOR_COMPONENT",
+      "record": "TB-WPE-ILL-06",
+      "detail": "REPRESENTATION is absent",
+      "core": "CORE2",
+      "product": "WPE-CORE2-NATIVE-INTEGRATION-R1",
+      "component": "REPRESENTATION"
+    },
+    {
+      "duty": "AUTHOR_FIGURE_TEXT",
+      "record": "REP-TB-FIG-09-OVERHANGING-CHAIN",
+      "detail": "label(s) run outside the viewBox and are cut off at the figure's edge: 'Uniform Chain Slipping Off T'",
+      "core": "CORE2",
+      "product": "WPE-CORE2-NATIVE-INTEGRATION-R1",
+      "component": "REPRESENTATION"
+    },
+    {
+      "duty": "AUTHOR_COMPONENT",
+      "record": "TB-WPE-ILL-11",
+      "detail": "REPRESENTATION is absent",
+      "core": "CORE2",
+      "product": "WPE-CORE2-NATIVE-INTEGRATION-R1",
+      "component": "REPRESENTATION"
+    },
+    {
+      "duty": "AUTHOR_FIGURE_TEXT",
+      "record": "REP-TB-FIG-10-SPRING-BLOCK-WALL",
+      "detail": "label(s) run outside the viewBox and are cut off at the figure's edge: 'Block Released from Compress'",
+      "core": "CORE2",
+      "product": "WPE-CORE2-NATIVE-INTEGRATION-R1",
+      "component": "REPRESENTATION"
+    }
+  ],
+  "pages": [
+    "core2.html",
+    "index.html"
+  ],
+  "output_roles": [
+    "CORE2"
+  ],
+  "ledger": [],
+  "diagnostic_min": 0
+}

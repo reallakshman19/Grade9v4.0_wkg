@@ -1,0 +1,17 @@
+{
+  "source_id": "EX-M73",
+  "task_identity": "Q-ID-26",
+  "sequence": 23,
+  "batch_sequence": 8,
+  "paper": "JEE Main 2019 (Online) 9th April Morning Slot",
+  "stem_text": "A uniform cable of mass 'M' and length 'L' is placed on a horizontal surface such that its (1/n)th part is hanging below the edge of the surface. To lift the hanging part of the cable upto the surface, the work done should be :",
+  "stem_sha256": "f2bd1e9620ea2ee16dea9acb4f06f5f5098f93a46960dfdda5a8a62f670a88bf",
+  "options": [
+    "A: (2\ud835\udc40\ud835\udc54\ud835\udc3f)/(\ud835\udc5b^(2))",
+    "B: nMgL",
+    "C: (\ud835\udc40\ud835\udc54\ud835\udc3f)/(2\ud835\udc5b^(2))",
+    "D: (\ud835\udc40\ud835\udc54\ud835\udc3f)/(\ud835\udc5b^(2))"
+  ],
+  "figure_reference": "NONE (pure text question)",
+  "confidentiality_notice": "SEALED SOURCE-ONLY PACKET FOR BLIND INDEPENDENT REVIEW. Contains NO answers, keys, explanations, candidate solutions, SL2 factor scores, or prior review commentary."
+}

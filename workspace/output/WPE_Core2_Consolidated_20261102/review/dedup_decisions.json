@@ -1,0 +1,47 @@
+{
+  "authority_note": "Display dedupe only. Original records retained in Owner source ZIP.",
+  "decisions": [
+    {
+      "group": "source_alias",
+      "kept": "JEE-2026-04-05-S2-Q28",
+      "suppressed": [
+        "EX-M4"
+      ],
+      "reason": "Same 1 kg / 30° incline/friction problem; Q68 has the explicit force–displacement dot-product route and schematic. Vertical motion assumption remains to be checked against official source."
+    },
+    {
+      "group": "equivalent_reasoning_task",
+      "kept": "EX-M65",
+      "suppressed": [
+        "EX-M29",
+        "EX-M64",
+        "EX-M120"
+      ],
+      "reason": "Four constant-power → displacement proportional to t^(3/2) variants; retain EX-M65 because the body starts from rest, making the pure power-law result technically determinate. Distinct historical source identities are NOT asserted as aliases."
+    },
+    {
+      "group": "near_identical_physics_task",
+      "kept": "TB-WPE-ILL-06",
+      "suppressed": [
+        "EX-M84"
+      ],
+      "reason": "Same a_c(t)=k²rt² circular-power task; retain the textbook source-derived wording and internally checked dK/dt proof. The exam-labelled occurrence remains an unresolved, separately tracked source identity."
+    },
+    {
+      "group": "reader_revision",
+      "kept": "WEP07-03",
+      "suppressed": [
+        "R2-NSEP-WEP07-03",
+        "R3-NSEP-WEP07-03"
+      ],
+      "reason": "Only one WEP07-03/NSEP Q57 record; R3 hints-first presentation preferred over R2/R1. Use multi-select because each statement is independently evaluated; the master single-choice flag and SYNTHESIZE/D4 label are not accepted as reviewed QRT facts."
+    }
+  ],
+  "suppressed_master_source_ids": [
+    "EX-M4",
+    "EX-M29",
+    "EX-M64",
+    "EX-M120",
+    "EX-M84"
+  ]
+}

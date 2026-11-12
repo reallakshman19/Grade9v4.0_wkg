@@ -1,0 +1,22 @@
+{
+  "task": "WPE-CORE2-ACADEMIC-REVIEW-R1",
+  "role": "Oracle standalone; one explicitly authorized Independent Reviewer",
+  "owner_words": "Approve research and one reviewer",
+  "approved_scope": "Official key/erratum follow-up plus one fresh reviewer of four tasks; seal first pass before author conclusions",
+  "start_utc": "2026-10-31T10:24:36Z",
+  "deadline_utc": "2026-10-31T11:09:36Z",
+  "aggregate_limit": {
+    "minutes": 45,
+    "inspection_calls": 60
+  },
+  "allocation": {
+    "root_max_calls": 35,
+    "reviewer_max_calls": 20,
+    "coordination_and_closeout_reserve": 5
+  },
+  "token_telemetry": "UNKNOWN",
+  "no_product_edits": true,
+  "no_remote_writes": true,
+  "no_admissions": true,
+  "d31": "PAUSED"
+}

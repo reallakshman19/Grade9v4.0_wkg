@@ -1,0 +1,85 @@
+{
+  "questions": [
+    {
+      "id": "TASK-A",
+      "source_status": "Owner-provided saved publisher extract; official paper/key correspondence NOT_ESTABLISHED",
+      "stem": "An automobile of mass 'm' accelerates starting from origin and initially at rest, while the engine supplies constant power P. The position is given as a function of time by :",
+      "options": [
+        {
+          "id": "A",
+          "text": "((9𝑃)/(8𝑚))^((1)/(2))𝑡^((3)/(2))"
+        },
+        {
+          "id": "B",
+          "text": "((8𝑃)/(9𝑚))^((1)/(2))𝑡^((2)/(3))"
+        },
+        {
+          "id": "C",
+          "text": "((9𝑚)/(8𝑃))^((1)/(2))𝑡^((3)/(2))"
+        },
+        {
+          "id": "D",
+          "text": "((8𝑃)/(9𝑚))^((1)/(2))𝑡^((3)/(2))"
+        }
+      ],
+      "question_type": "single-choice",
+      "conditions": []
+    },
+    {
+      "id": "TASK-B",
+      "source_status": "Owner-provided saved publisher extract; official paper/key correspondence NOT_ESTABLISHED",
+      "stem": "A uniform cable of mass 'M' and length 'L' is placed on a horizontal surface such that its (1/n)th part is hanging below the edge of the surface. To lift the hanging part of the cable upto the surface, the work done should be :",
+      "options": [
+        {
+          "id": "A",
+          "text": "(2𝑀𝑔𝐿)/(𝑛^(2))"
+        },
+        {
+          "id": "B",
+          "text": "nMgL"
+        },
+        {
+          "id": "C",
+          "text": "(𝑀𝑔𝐿)/(2𝑛^(2))"
+        },
+        {
+          "id": "D",
+          "text": "(𝑀𝑔𝐿)/(𝑛^(2))"
+        }
+      ],
+      "question_type": "single-choice",
+      "conditions": []
+    },
+    {
+      "id": "TASK-C",
+      "source_status": "Owner-provided saved publisher extract; official paper/key correspondence NOT_ESTABLISHED",
+      "stem": "This question has Statement 1 and Statement 2. Of the four choices given after the Statements, choose the one that best describes the two Statements. If two springs 𝑆_1 and 𝑆_2 of force constants 𝑘_1 and 𝑘_2 , respectively, are stretched by the same force, it is found that more work is done on spring 𝑆_1 than on spring 𝑆_2 . STATEMENT 1: If stretched by the same amount, work done on 𝑆_1 is more than that on 𝑆_2 STATEMENT 2: 𝑘_1<𝑘_2",
+      "options": [
+        {
+          "id": "A",
+          "text": "Statement 1 is false, Statement 2 is true"
+        },
+        {
+          "id": "B",
+          "text": "Statement 1 is true, Statement 2 is false"
+        },
+        {
+          "id": "C",
+          "text": "Statement 1 is true, Statement 2 is true, Statement 2 is the correct explanation for Statement 1"
+        },
+        {
+          "id": "D",
+          "text": "Statement 1 is true, Statement 2 is true, Statement 2 is not the correct explanation for Statement 1"
+        }
+      ],
+      "question_type": "single-choice",
+      "conditions": []
+    }
+  ],
+  "fourth_task": {
+    "id": "TASK-D",
+    "source": "official-paper.pdf printed page15 question57; original-saved-crop.png",
+    "response_type": "multiple-correct; consult original paper instructions",
+    "read_only": true
+  }
+}

@@ -1,0 +1,1956 @@
+{
+  "document_profile": "wpe-plan-input-register/v1",
+  "purpose": "Documentation inventory, not a native product schema or approved adapter resolver",
+  "created_utc": "2026-10-30T14:19:35.201786+00:00",
+  "thread_id": "01a188e5-af7a-7881-b414-b465ca99680f",
+  "authority": "Owner approved documentation-only consolidation, 15 minutes/12 calls; no product implementation",
+  "plan": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_QUESTION_TO_CORE2_END_TO_END_PLAN_20261030.md",
+  "pre_consolidation_plan": {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_QUESTION_TO_CORE2_END_TO_END_PLAN_20261030.before_consolidation.md",
+    "sha256": "8c6dc414b00f67b4cc891ab10f393b813e43c5a5930b524cfa283113ae7045dc"
+  },
+  "inputs": [
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\01_Question_Bank",
+      "category": "question_source_collection",
+      "exists": true,
+      "kind": "directory",
+      "directory_scope": "Path existence only; not a hash of all descendants"
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Question_Bank_and_Book_2026-10-30\\02_Book_and_Syllabus",
+      "category": "book_syllabus_source_collection",
+      "exists": true,
+      "kind": "directory",
+      "directory_scope": "Path existence only; not a hash of all descendants"
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\SMART_LABELLING_QRT_HARDENING_R2_CANDIDATE.zip",
+      "category": "uninstalled_skill_candidate",
+      "exists": true,
+      "kind": "file",
+      "bytes": 120080,
+      "sha256": "96f7f3dea6efb0ec7bff729392ed6b53a08a6496fb53663f002fb9998e9c1286"
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\QRT_Methodology_Concept_Note_REVISED_WITH_APPENDIX.md",
+      "category": "methodology_reference",
+      "exists": true,
+      "kind": "file",
+      "bytes": 243160,
+      "sha256": "43a2638f7bd2e4e47777c7fa98cbf600986b595549aa683148c1d2a903c8443f"
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30",
+      "category": "organized_WPE_reference_collection",
+      "exists": true,
+      "kind": "directory",
+      "directory_scope": "Path existence only; not a hash of all descendants"
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\qrt\\physics-blueprint.D3-D4.json",
+      "category": "shared_physics_blueprint",
+      "exists": true,
+      "kind": "file",
+      "bytes": 42675,
+      "sha256": "e6030a5933a803ddc39708414e6831c89c9565def78c09c99f58f95052c2b45f",
+      "declared_metadata": {
+        "blueprint_id": "PHYS-QRT-BLUEPRINT",
+        "version": "0.2.0",
+        "status": "DRAFT_OWNER_REVIEW"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\qrt\\physics-blueprint.D3-D4.resolved.v0.2.0.json",
+      "category": "shared_physics_blueprint",
+      "exists": true,
+      "kind": "file",
+      "bytes": 164487,
+      "sha256": "ac32dc937403cac33c76343f2e7e0dabd7c2c4a3188cb3b453ddf2576578ddf9",
+      "declared_metadata": {
+        "blueprint_id": "PHYS-QRT-BLUEPRINT",
+        "version": "0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\qrt\\subtiles\\blueprint\\physics-blueprint.D3.v0.2.1.json",
+      "category": "shared_physics_blueprint",
+      "exists": true,
+      "kind": "file",
+      "bytes": 5535,
+      "sha256": "2077ac87345d35ed639c22c4049e2d4840dab604509ca3409c2c1a9621178f86",
+      "declared_metadata": {
+        "blueprint_id": "PHYS-QRT-BLUEPRINT",
+        "version": "0.2.1",
+        "status": "DRAFT"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\qrt\\topic-adapter.work-power-energy.json",
+      "category": "root_WPE_adapter_draft",
+      "exists": true,
+      "kind": "file",
+      "bytes": 51078,
+      "sha256": "899e61e59370a3fc5d6f73b7d8cbb65165d0782c9fba20acd83439ae441e6a9b",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE",
+        "version": "0.1.0",
+        "status": "DRAFT_OWNER_REVIEW",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0"
+      }
+    },
+    {
+      "path": "C:\\CodeC\\Grade9v3.5\\Shared\\web\\interactive-page-blueprints.v1.json",
+      "category": "native_contract",
+      "exists": true,
+      "kind": "file",
+      "bytes": 90186,
+      "sha256": "75f6bd43b31dfdf555fb26e8b36417e9c830a563898264dbe917d4254828653e",
+      "declared_metadata": {
+        "schema_version": "1.0",
+        "registry_version": "1.17.0"
+      }
+    },
+    {
+      "path": "C:\\CodeC\\Grade9v3.5\\Shared\\roles\\CORE2.md",
+      "category": "native_contract",
+      "exists": true,
+      "kind": "file",
+      "bytes": 5553,
+      "sha256": "490331afdef62e711f347a763f3cb0b138e87ac67abbaabe2e5791afeeee5542"
+    },
+    {
+      "path": "C:\\CodeC\\Grade9v3.5\\Shared\\roles\\CORE1A.md",
+      "category": "native_contract",
+      "exists": true,
+      "kind": "file",
+      "bytes": 5346,
+      "sha256": "c6fb6b45d3128c9b335d2670eedd3e7d55ca467045de92368436a3d22fd866fa"
+    },
+    {
+      "path": "C:\\CodeC\\Grade9v3.5\\Shared\\roles\\CORE1B.md",
+      "category": "native_contract",
+      "exists": true,
+      "kind": "file",
+      "bytes": 4897,
+      "sha256": "be81c8e403875dd423872c29c254a363178b34f06e429141c038ee80dfacbf6a"
+    },
+    {
+      "path": "C:\\CodeC\\Grade9v3.5\\Shared\\library\\package.schema.json",
+      "category": "native_contract",
+      "exists": true,
+      "kind": "file",
+      "bytes": 108010,
+      "sha256": "b645f4b5beb9132d6e38b628b1416846201d44dec16a5f04af9a252e9e891d93",
+      "declared_metadata": {}
+    },
+    {
+      "path": "C:\\CodeC\\Grade9v3.5\\Shared\\library\\competitive-exam-bank.schema.json",
+      "category": "native_contract",
+      "exists": true,
+      "kind": "file",
+      "bytes": 15314,
+      "sha256": "1447c7219a94bf1480878c79943d95478d82360a37ea8817c69fa1aac6660918",
+      "declared_metadata": {}
+    },
+    {
+      "path": "C:\\CodeC\\Grade9v3.5\\Shared\\vocabularies\\learner-question-metadata.v1.json",
+      "category": "native_contract",
+      "exists": true,
+      "kind": "file",
+      "bytes": 5594,
+      "sha256": "6e6f28bef1182222babf79508288c599585f5f55245abcb934892a1e2b65cfdf",
+      "declared_metadata": {
+        "schema": "grade9v3-learner-question-metadata/v1",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "path": "C:\\CodeC\\Grade9v3.5\\Shared\\tools\\render_core.py",
+      "category": "native_contract",
+      "exists": true,
+      "kind": "file",
+      "bytes": 220887,
+      "sha256": "0ec1acc79750f24af2000adeb2549068414032ddcc72347b4bae97551fcceb06"
+    },
+    {
+      "path": "C:\\CodeC\\Grade9v3.5\\Shared\\tools\\core2_v2.py",
+      "category": "native_contract",
+      "exists": true,
+      "kind": "file",
+      "bytes": 19392,
+      "sha256": "2ce88d609785c8f82be2c5ef2d2455d43593cddc1d8e1bcc410f55d174d2c1ae"
+    },
+    {
+      "path": "C:\\CodeC\\Grade9v3.5\\Shared\\tools\\owner_bank.py",
+      "category": "native_contract",
+      "exists": true,
+      "kind": "file",
+      "bytes": 20179,
+      "sha256": "5f662c331d50d9976dbb43a17fff1725d93bbf6715120c1e6b29d2953e6a0648"
+    },
+    {
+      "path": "C:\\CodeC\\Grade9v3.5\\Shared\\tools\\product_manifest.py",
+      "category": "native_contract",
+      "exists": true,
+      "kind": "file",
+      "bytes": 10854,
+      "sha256": "a0c72f33a65ac77cfa3deee7c3b048c9f6b3f23c7be976bbc37f97b5d256ade2"
+    },
+    {
+      "path": "C:\\CodeC\\Grade9v3.5\\Shared\\quality\\learner-quality.v1.json",
+      "category": "native_contract",
+      "exists": true,
+      "kind": "file",
+      "bytes": 35559,
+      "sha256": "b129f5395e0c9717b5b4f5aaca888fe5d7e5dd893ce00ecc9e3d736c6ea7a2a4",
+      "declared_metadata": {
+        "schema": "learner-quality-contract/v1",
+        "version": "1.9.0"
+      }
+    },
+    {
+      "path": "C:\\CodeC\\Grade9v3.5\\docs\\specs\\TABLET-SHELL-AND-NAVIGATION.md",
+      "category": "native_contract",
+      "exists": true,
+      "kind": "file",
+      "bytes": 31064,
+      "sha256": "f4eed21549b12c412b8cc81e6fab6ba41b93e799dd219ee8e258586c584e316f"
+    },
+    {
+      "path": "C:\\CodeC\\Grade9v3.5\\golden\\INDEX.md",
+      "category": "template_or_reference",
+      "exists": true,
+      "kind": "file",
+      "bytes": 1680,
+      "sha256": "df40f2b308b30e7bd18fe0a5e76cc9b3c885a8495a35c2070430007e2078f622"
+    },
+    {
+      "path": "C:\\CodeC\\Grade9v3.5\\golden\\units\\G-CORE2-R2\\GOLDEN.md",
+      "category": "template_or_reference",
+      "exists": true,
+      "kind": "file",
+      "bytes": 1850,
+      "sha256": "2ad7d1ff1d48709eb823dcbb96300c530876044de418b5b7fad80b7502a311e1"
+    },
+    {
+      "path": "C:\\CodeC\\Grade9v3.5\\golden\\units\\G-CORE2-R2\\core 2 template.zip",
+      "category": "template_or_reference",
+      "exists": true,
+      "kind": "file",
+      "bytes": 47703,
+      "sha256": "433b356a26ebfdbfa922cbaa7401e7c224f5c095f4bae8f951b4e97154937d74"
+    },
+    {
+      "path": "C:\\CodeC\\Grade9v3.5\\golden\\units\\G-MATH-LINEAR-CONSTRAINT\\GOLDEN.md",
+      "category": "template_or_reference",
+      "exists": true,
+      "kind": "file",
+      "bytes": 1303,
+      "sha256": "224199b6377e32cc99139c6aaab2c3bb9e8f1ab303574e14ea2d6f4f5208d17b"
+    },
+    {
+      "path": "C:\\CodeC\\Grade9v3.5\\golden\\units\\G-MATH-LINEAR-CONSTRAINT\\records.json",
+      "category": "template_or_reference",
+      "exists": true,
+      "kind": "file",
+      "bytes": 108055,
+      "sha256": "978c930a3242cf98b967d109b92422ac28d16fb182febbc77ffb5bbf49214521",
+      "declared_metadata": {
+        "schema_version": "0.2.0",
+        "package_id": "LIB-MATH-LINEAR-EQUATIONS",
+        "version": "0.1.0",
+        "status": "CANDIDATE"
+      }
+    },
+    {
+      "path": "C:\\CodeC\\Grade9v3.5\\golden\\units\\G-MATH-LINEAR-CONSTRAINT\\bank.json",
+      "category": "template_or_reference",
+      "exists": true,
+      "kind": "file",
+      "bytes": 6745,
+      "sha256": "fd55868ae3ed44fef65f19f4edbfab4eaf0a2881ca7387cd0c0e175638c83f65",
+      "declared_metadata": {}
+    },
+    {
+      "path": "C:\\CodeC\\Grade9v3.5\\golden\\units\\G-MATH-LINEAR-CONSTRAINT\\manifest.json",
+      "category": "template_or_reference",
+      "exists": true,
+      "kind": "file",
+      "bytes": 596,
+      "sha256": "cd58496a69e057321cd97659cd61630b878a0880808fc540bbe01ecb2a308947",
+      "declared_metadata": {
+        "schema": "product-manifest/v1",
+        "product_id": "FIXTURE-MATH-LINEAR"
+      }
+    },
+    {
+      "path": "C:\\CodeC\\Grade9v3.5\\standalone\\study\\nlm-core1ab\\index.html",
+      "category": "template_or_reference",
+      "exists": true,
+      "kind": "file",
+      "bytes": 692773,
+      "sha256": "1f943b623548a2f4457e075d92c46b6f7b2042216f8de0609ca96be2f0e34ec8"
+    },
+    {
+      "path": "C:\\CodeC\\Grade9v3.5\\evidence\\stress-tests\\polynomials-six-core\\prototype\\manifest.json",
+      "category": "template_or_reference",
+      "exists": true,
+      "kind": "file",
+      "bytes": 522,
+      "sha256": "941e2bfa218b1f1f1614928740379e1960b45b689019e4a9d712675031732584",
+      "declared_metadata": {
+        "schema": "product-manifest/v1",
+        "product_id": "STRESS-MATH-POLY-DEGREE"
+      }
+    },
+    {
+      "path": "C:\\CodeC\\Grade9v3.5\\evidence\\stress-tests\\polynomials-six-core\\prototype\\records.json",
+      "category": "template_or_reference",
+      "exists": true,
+      "kind": "file",
+      "bytes": 22718,
+      "sha256": "b031a55efeadad04d70beda31aaf8db1cf80f7e811bac210e60bc18e66842bae",
+      "declared_metadata": {
+        "schema_version": "0.2.0",
+        "package_id": "STRESS-LIB-MATH-POLY-DEGREE",
+        "version": "0.1.0",
+        "status": "CANDIDATE"
+      }
+    },
+    {
+      "path": "C:\\CodeC\\Grade9v3.5\\evidence\\stress-tests\\polynomials-six-core\\prototype\\rendered\\core1a.html",
+      "category": "template_or_reference",
+      "exists": true,
+      "kind": "file",
+      "bytes": 16742,
+      "sha256": "ddf9248b113c17174863c0c70503332ead82a9d5c92d14fcfc5e2d92055f3d06"
+    },
+    {
+      "path": "C:\\CodeC\\Grade9v3.5\\evidence\\stress-tests\\polynomials-six-core\\prototype\\rendered\\core1b.html",
+      "category": "template_or_reference",
+      "exists": true,
+      "kind": "file",
+      "bytes": 17549,
+      "sha256": "e0c55ff40b0d5998728232cd7b9ac7a8d77341410d2398ce1b3d56df138b8de2"
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\index.html",
+      "category": "completed_textbook_Core2_candidate",
+      "exists": true,
+      "kind": "file",
+      "bytes": 5629,
+      "sha256": "b14eae66d21eaecbe2e894aa613d91061acb6901ce35af9379b003cf1615a3a1"
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\rendered\\core2.html",
+      "category": "completed_textbook_Core2_candidate",
+      "exists": true,
+      "kind": "file",
+      "bytes": 191582,
+      "sha256": "fc17badf85ff872e1e7c0fefae848229093fb50962d3dcc835c31ed11540d8ab"
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\review.html",
+      "category": "completed_textbook_Core2_candidate",
+      "exists": true,
+      "kind": "file",
+      "bytes": 43709,
+      "sha256": "9e00f8bf4c624cf31f000a33b2b00cbc25ac3ea85fa714a4860776e9caced446"
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\CONCEPT_NOTE.md",
+      "category": "completed_textbook_Core2_candidate",
+      "exists": true,
+      "kind": "file",
+      "bytes": 6145,
+      "sha256": "e60eb53a49d71ae9ba930881c9aa422f4c42b99074d15a37acf82218e28ffd93"
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\concept.html",
+      "category": "completed_textbook_Core2_candidate",
+      "exists": true,
+      "kind": "file",
+      "bytes": 7296,
+      "sha256": "a04044d22651487428fb7c9b8bcf0724d0c5b01185e6ce18591d6989b80414a3"
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\CONTINUITY.md",
+      "category": "completed_textbook_Core2_candidate",
+      "exists": true,
+      "kind": "file",
+      "bytes": 2347,
+      "sha256": "8104dd4db45f7a4d4bb3036dd61aca155f2e7407ee46507a1bbd52217744e4f3"
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\native\\intake.json",
+      "category": "completed_textbook_Core2_candidate",
+      "exists": true,
+      "kind": "file",
+      "bytes": 3544,
+      "sha256": "8dfc0ad204179f4c9954e4d4fb78b022bb3e7913a9c02daa13fae84539fca181",
+      "declared_metadata": {
+        "schema": "wpe-textbook-intake/v1"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\native\\bank.json",
+      "category": "completed_textbook_Core2_candidate",
+      "exists": true,
+      "kind": "file",
+      "bytes": 79000,
+      "sha256": "5fc11d368f8264494b86364ab06c6bf454525cb511d0cee3c17df7aa4eaadcd8",
+      "declared_metadata": {
+        "schema_version": "grade9v3-owner-supplied-bank-v1"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\native\\records.json",
+      "category": "completed_textbook_Core2_candidate",
+      "exists": true,
+      "kind": "file",
+      "bytes": 103072,
+      "sha256": "14e07f1c459b43d5f73ef355558637b9ee776121de24b1b4482ea654e8c49bee",
+      "declared_metadata": {
+        "schema_version": "0.2.0",
+        "package_id": "WPE-TEXTBOOK-CORE2-R1-CONTEXT",
+        "version": "0.2.0",
+        "status": "CANDIDATE"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\native\\manifest.json",
+      "category": "completed_textbook_Core2_candidate",
+      "exists": true,
+      "kind": "file",
+      "bytes": 1157,
+      "sha256": "dc97d33a35a7cb7bb9b209156905033b16278b4596a1523989ba0ab231d63a75",
+      "declared_metadata": {
+        "schema": "product-manifest/v1",
+        "product_id": "WPE-TEXTBOOK-CORE2-R1"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\review\\SOURCE_PINS.json",
+      "category": "completed_textbook_Core2_candidate",
+      "exists": true,
+      "kind": "file",
+      "bytes": 10092,
+      "sha256": "5f84a0b7fe7e7c063475a999bbf9b2036a12d46cc9eb50b6f6ca8d54d103a09c"
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\review\\REGRESSION_RESULTS.json",
+      "category": "completed_textbook_Core2_candidate",
+      "exists": true,
+      "kind": "file",
+      "bytes": 284,
+      "sha256": "63cc7d86201908399c1d72ee8528571680a55acd1228c7bdf49144f88e6bdb7a",
+      "declared_metadata": {}
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Textbook_Core2_R1_20261030\\review\\BROWSER_CHECK.json",
+      "category": "completed_textbook_Core2_candidate",
+      "exists": true,
+      "kind": "file",
+      "bytes": 1652,
+      "sha256": "81519a8df5ca8a0645055a59288dd70e906c502431414311026eead5eb943a07",
+      "declared_metadata": {}
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_TEXTBOOK_CORE2_R1_DELIVERY_RECEIPT.json",
+      "category": "completed_preparation_or_receipt",
+      "exists": true,
+      "kind": "file",
+      "bytes": 2898,
+      "sha256": "cebc2b632fdfd2098a993855e4d0f7abb1bdfbb5b70796b61f130a50358a384b",
+      "declared_metadata": {}
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Source_Core1A_Completion_R2_20261030\\CONTINUITY.md",
+      "category": "completed_preparation_or_receipt",
+      "exists": true,
+      "kind": "file",
+      "bytes": 6284,
+      "sha256": "94a76cd6a9b95f4b2119859059f24093c605c1c4051e00620f478386adbc2255"
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Source_Core1A_Completion_R2_20261030\\skill\\source-to-core1a\\examples\\wpe-source-program\\program.json",
+      "category": "completed_preparation_or_receipt",
+      "exists": true,
+      "kind": "file",
+      "bytes": 12469,
+      "sha256": "41ae676c77ace2d727696b2a8d7fc6a3ec6f9d4c90972bfff1c6c75c6d838b2f",
+      "declared_metadata": {
+        "schema": "core1a-source-program/v1",
+        "status": "CANDIDATE"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_SOURCE_CORE1A_R2_DELIVERY_RECEIPT.json",
+      "category": "completed_preparation_or_receipt",
+      "exists": true,
+      "kind": "file",
+      "bytes": 5758,
+      "sha256": "5ad1902ee9b7f6640b5db606f2c3ed244cec1f5391755acc4050720cc62eeab3",
+      "declared_metadata": {}
+    },
+    {
+      "path": "C:\\Users\\reall\\Downloads\\WPE_CORE2_R2_ENGINEERING_HANDOFF_PUBLIC_SAFE_20261030.zip",
+      "category": "received_engineering_handoff",
+      "exists": true,
+      "kind": "file",
+      "bytes": 121229,
+      "sha256": "d2a24619b1def84bcc538615f6032a94f4161a5697067f60984280f1186a40e2"
+    },
+    {
+      "path": "C:\\Users\\reall\\Downloads\\WPE_CORE2_R2_OWNER_FULL_HANDOFF_20261030.zip",
+      "category": "received_engineering_handoff",
+      "exists": true,
+      "kind": "file",
+      "bytes": 272897,
+      "sha256": "8609bcbdcb224abc37f7b72c50a15ecfb6abcacfbac5b585a40f164f900a6b1e"
+    }
+  ],
+  "organized_blueprint_section_json": [
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D31_RECALL_FULL_PACKAGE\\02_blueprint\\physics-blueprint.D3-D4.json",
+      "category": "02_blueprint",
+      "exists": true,
+      "kind": "file",
+      "bytes": 42675,
+      "sha256": "e6030a5933a803ddc39708414e6831c89c9565def78c09c99f58f95052c2b45f",
+      "declared_metadata": {
+        "blueprint_id": "PHYS-QRT-BLUEPRINT",
+        "version": "0.2.0",
+        "status": "DRAFT_OWNER_REVIEW"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D31_RECALL_FULL_PACKAGE\\02_blueprint\\resolved-blueprint.json",
+      "category": "02_blueprint",
+      "exists": true,
+      "kind": "file",
+      "bytes": 164487,
+      "sha256": "ac32dc937403cac33c76343f2e7e0dabd7c2c4a3188cb3b453ddf2576578ddf9",
+      "declared_metadata": {
+        "blueprint_id": "PHYS-QRT-BLUEPRINT",
+        "version": "0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D31_RECALL_FULL_PACKAGE\\02_blueprint\\subset_coverage_manifest.json",
+      "category": "02_blueprint",
+      "exists": true,
+      "kind": "file",
+      "bytes": 4248,
+      "sha256": "af12a50b2dc2f5161f62fe6267f3fb1ed8d0add1d4dffe0fb5be6f9106dcdd79",
+      "declared_metadata": {}
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D32_EXPLAIN_FULL_PACKAGE\\02_blueprint\\COMMON_EXPLAIN_CONTRACT.derived.json",
+      "category": "02_blueprint",
+      "exists": true,
+      "kind": "file",
+      "bytes": 3765,
+      "sha256": "a10643cec459ca80bbf8f9e028e1bdc576e90b05ef5f4fbbe309718c2999d158",
+      "declared_metadata": {}
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D32_EXPLAIN_FULL_PACKAGE\\02_blueprint\\historical_proposals\\D3.2.routes.challenged.proposal.json",
+      "category": "02_blueprint",
+      "exists": true,
+      "kind": "file",
+      "bytes": 12067,
+      "sha256": "7f55e1b32bb6c1224d52d37b7299942e18031d7c7f6432141b27b1d1bd861606",
+      "declared_metadata": {
+        "blueprint_id": "PHYS-QRT-D3.2-THREE-ROUTES",
+        "version": "0.2.0-QUESTION-CHALLENGE-R4",
+        "status": "PROPOSAL_LOCAL_QUESTION_TESTED_NOT_CANONICAL"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D32_EXPLAIN_FULL_PACKAGE\\02_blueprint\\physics-blueprint.D3-D4.json",
+      "category": "02_blueprint",
+      "exists": true,
+      "kind": "file",
+      "bytes": 42675,
+      "sha256": "e6030a5933a803ddc39708414e6831c89c9565def78c09c99f58f95052c2b45f",
+      "declared_metadata": {
+        "blueprint_id": "PHYS-QRT-BLUEPRINT",
+        "version": "0.2.0",
+        "status": "DRAFT_OWNER_REVIEW"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D32_EXPLAIN_FULL_PACKAGE\\02_blueprint\\resolved-blueprint.json",
+      "category": "02_blueprint",
+      "exists": true,
+      "kind": "file",
+      "bytes": 164487,
+      "sha256": "ac32dc937403cac33c76343f2e7e0dabd7c2c4a3188cb3b453ddf2576578ddf9",
+      "declared_metadata": {
+        "blueprint_id": "PHYS-QRT-BLUEPRINT",
+        "version": "0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D32_EXPLAIN_FULL_PACKAGE\\02_blueprint\\SOURCE_HASHES.R5.json",
+      "category": "02_blueprint",
+      "exists": true,
+      "kind": "file",
+      "bytes": 964,
+      "sha256": "0f9911169ac57a72ac527d24f982f296ce293c0c1a96b04870a5f32259936d0e",
+      "declared_metadata": {}
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D32_EXPLAIN_FULL_PACKAGE\\02_blueprint\\subset_coverage_manifest.json",
+      "category": "02_blueprint",
+      "exists": true,
+      "kind": "file",
+      "bytes": 1850,
+      "sha256": "638c008832a0549ef7966d8cff2f369d471dc10b9113e763fe03b8d21134b90a",
+      "declared_metadata": {}
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D33_FULL_PACKAGE_R1\\02_blueprint\\physics-blueprint.D3-D4.json",
+      "category": "02_blueprint",
+      "exists": true,
+      "kind": "file",
+      "bytes": 42675,
+      "sha256": "e6030a5933a803ddc39708414e6831c89c9565def78c09c99f58f95052c2b45f",
+      "declared_metadata": {
+        "blueprint_id": "PHYS-QRT-BLUEPRINT",
+        "version": "0.2.0",
+        "status": "DRAFT_OWNER_REVIEW"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D33_FULL_PACKAGE_R1\\02_blueprint\\resolved-blueprint.json",
+      "category": "02_blueprint",
+      "exists": true,
+      "kind": "file",
+      "bytes": 164487,
+      "sha256": "ac32dc937403cac33c76343f2e7e0dabd7c2c4a3188cb3b453ddf2576578ddf9",
+      "declared_metadata": {
+        "blueprint_id": "PHYS-QRT-BLUEPRINT",
+        "version": "0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D33_FULL_PACKAGE_R1\\02_blueprint\\subset_coverage_manifest.json",
+      "category": "02_blueprint",
+      "exists": true,
+      "kind": "file",
+      "bytes": 5430,
+      "sha256": "ac836c0ac81ce8f45b0702f3ae9a23f8fc93915565d87c27a98a8b49487a7bed",
+      "declared_metadata": {
+        "status": "PROVISIONAL_VIEWS_NOT_QUALIFIED_SUBTILES"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D34_MODEL_FULL_PACKAGE\\02_blueprint\\LOCAL_PROPOSED_SUBSET_BINDINGS_R4.json",
+      "category": "02_blueprint",
+      "exists": true,
+      "kind": "file",
+      "bytes": 9440,
+      "sha256": "ad7d8163f888e6c060dcbcfa9c0578b61e2a6e97efa41c0919a7a9ce554d40a3",
+      "declared_metadata": {
+        "blueprint_id": "PHYS-QRT-BLUEPRINT-D34-SUBSETS",
+        "version": "0.2.0-local-R4-construction-bindings",
+        "status": "DRAFT_OWNER_REVIEW_HOLD"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D34_MODEL_FULL_PACKAGE\\02_blueprint\\physics-blueprint.D3-D4.json",
+      "category": "02_blueprint",
+      "exists": true,
+      "kind": "file",
+      "bytes": 42675,
+      "sha256": "e6030a5933a803ddc39708414e6831c89c9565def78c09c99f58f95052c2b45f",
+      "declared_metadata": {
+        "blueprint_id": "PHYS-QRT-BLUEPRINT",
+        "version": "0.2.0",
+        "status": "DRAFT_OWNER_REVIEW"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D34_MODEL_FULL_PACKAGE\\02_blueprint\\resolved-blueprint.json",
+      "category": "02_blueprint",
+      "exists": true,
+      "kind": "file",
+      "bytes": 164487,
+      "sha256": "ac32dc937403cac33c76343f2e7e0dabd7c2c4a3188cb3b453ddf2576578ddf9",
+      "declared_metadata": {
+        "blueprint_id": "PHYS-QRT-BLUEPRINT",
+        "version": "0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D34_MODEL_FULL_PACKAGE\\02_blueprint\\subset_coverage_manifest.json",
+      "category": "02_blueprint",
+      "exists": true,
+      "kind": "file",
+      "bytes": 1725,
+      "sha256": "33cee20d322b5b4412f79e765e75192644696c50afc7690ed09c0699bc49a949",
+      "declared_metadata": {
+        "status": "PROVISIONAL_COVERAGE_VIEWS"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D35_TRANSLATE_FULL_PACKAGE_IR4\\02_blueprint\\candidate-coverage-lenses.NONCANONICAL.json",
+      "category": "02_blueprint",
+      "exists": true,
+      "kind": "file",
+      "bytes": 6783,
+      "sha256": "67cd639456a2a048845fa95f9c3c63bcd9a1bb39b268e27f6b8777a5eee0c1e9",
+      "declared_metadata": {
+        "status": "DRAFT_NOT_CANONICAL__SOURCE_STRESS_TESTED",
+        "version": "candidate-r3-source-validation"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D35_TRANSLATE_FULL_PACKAGE_IR4\\02_blueprint\\dependency_graph.json",
+      "category": "02_blueprint",
+      "exists": true,
+      "kind": "file",
+      "bytes": 1652,
+      "sha256": "542f123a6aa76139604cac6982c0453bb0cd13953361556ce6db4ca98929f908",
+      "declared_metadata": {
+        "status": "CANDIDATE"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D35_TRANSLATE_FULL_PACKAGE_IR4\\02_blueprint\\physics-blueprint.D3-D4.json",
+      "category": "02_blueprint",
+      "exists": true,
+      "kind": "file",
+      "bytes": 42675,
+      "sha256": "e6030a5933a803ddc39708414e6831c89c9565def78c09c99f58f95052c2b45f",
+      "declared_metadata": {
+        "blueprint_id": "PHYS-QRT-BLUEPRINT",
+        "version": "0.2.0",
+        "status": "DRAFT_OWNER_REVIEW"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D35_TRANSLATE_FULL_PACKAGE_IR4\\02_blueprint\\resolved-blueprint.json",
+      "category": "02_blueprint",
+      "exists": true,
+      "kind": "file",
+      "bytes": 164487,
+      "sha256": "ac32dc937403cac33c76343f2e7e0dabd7c2c4a3188cb3b453ddf2576578ddf9",
+      "declared_metadata": {
+        "blueprint_id": "PHYS-QRT-BLUEPRINT",
+        "version": "0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D35_TRANSLATE_FULL_PACKAGE_IR4\\02_blueprint\\subset_coverage_manifest.json",
+      "category": "02_blueprint",
+      "exists": true,
+      "kind": "file",
+      "bytes": 23633,
+      "sha256": "d5cc8e955f3414020f70a1dc50bfda682a26dedc5671f8a645916d09a42f9da0",
+      "declared_metadata": {}
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D36_FULL_PACKAGE_R3\\02_blueprint\\physics-blueprint.D3-D4.json",
+      "category": "02_blueprint",
+      "exists": true,
+      "kind": "file",
+      "bytes": 42675,
+      "sha256": "e6030a5933a803ddc39708414e6831c89c9565def78c09c99f58f95052c2b45f",
+      "declared_metadata": {
+        "blueprint_id": "PHYS-QRT-BLUEPRINT",
+        "version": "0.2.0",
+        "status": "DRAFT_OWNER_REVIEW"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D36_FULL_PACKAGE_R3\\02_blueprint\\resolved-blueprint.json",
+      "category": "02_blueprint",
+      "exists": true,
+      "kind": "file",
+      "bytes": 164487,
+      "sha256": "ac32dc937403cac33c76343f2e7e0dabd7c2c4a3188cb3b453ddf2576578ddf9",
+      "declared_metadata": {
+        "blueprint_id": "PHYS-QRT-BLUEPRINT",
+        "version": "0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D36_FULL_PACKAGE_R3\\02_blueprint\\subset_coverage_manifest.json",
+      "category": "02_blueprint",
+      "exists": true,
+      "kind": "file",
+      "bytes": 2013,
+      "sha256": "65d28372fbe7658ee06ca45d067298468e2d444d94d9e156ceaaf2939776814f",
+      "declared_metadata": {}
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D37_FULL_QUALIFICATION_R5\\02_blueprint\\physics-blueprint.D3-D4.json",
+      "category": "02_blueprint",
+      "exists": true,
+      "kind": "file",
+      "bytes": 42675,
+      "sha256": "e6030a5933a803ddc39708414e6831c89c9565def78c09c99f58f95052c2b45f",
+      "declared_metadata": {
+        "blueprint_id": "PHYS-QRT-BLUEPRINT",
+        "version": "0.2.0",
+        "status": "DRAFT_OWNER_REVIEW"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D37_FULL_QUALIFICATION_R5\\02_blueprint\\physics-blueprint.D3-D4.resolved.v0.2.0.json",
+      "category": "02_blueprint",
+      "exists": true,
+      "kind": "file",
+      "bytes": 164487,
+      "sha256": "ac32dc937403cac33c76343f2e7e0dabd7c2c4a3188cb3b453ddf2576578ddf9",
+      "declared_metadata": {
+        "blueprint_id": "PHYS-QRT-BLUEPRINT",
+        "version": "0.2.0"
+      }
+    }
+  ],
+  "organized_adapter_section_json": [
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D31_RECALL_FULL_PACKAGE\\04_topic_adapter\\native_D3.1_S4_repaired_candidate.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 51461,
+      "sha256": "f7465852f0d55181fc3fc8af8ea9345c662a34796829fd59c8ec60ebe4c3c7ce",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE",
+        "version": "0.1.1",
+        "status": "DRAFT_OWNER_REVIEW",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D31_RECALL_FULL_PACKAGE\\04_topic_adapter\\native_D4.1_followup_candidate.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 59012,
+      "sha256": "69b5ffe082d0e5386e12c6084fbd82762321f598d3e14a92a55f6a054a51552e",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE",
+        "version": "0.1.1",
+        "status": "DRAFT_OWNER_REVIEW",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D31_RECALL_FULL_PACKAGE\\04_topic_adapter\\R5_NONCANONICAL_HISTORY\\physics-blueprint.D3.v0.2.2.CANDIDATE.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 8738,
+      "sha256": "61e57b9bbaeee63e889d97e328aaf1483ae24c48ef4bbdee14a6bb8308acef01",
+      "declared_metadata": {
+        "blueprint_id": "PHYS-QRT-BLUEPRINT",
+        "version": "0.2.2",
+        "status": "DRAFT_SOURCE_CHALLENGE_REVIEW"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D31_RECALL_FULL_PACKAGE\\04_topic_adapter\\R5_NONCANONICAL_HISTORY\\topic-adapter.wpe.v0.2.4.CANDIDATE.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 9066,
+      "sha256": "71c4cee17032a37370335709c26aa258d0e393989f4b0579ae33162259e70bbd",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE",
+        "version": "0.2.4",
+        "status": "DRAFT_SOURCE_CHALLENGE_CANDIDATE",
+        "for_blueprint": {
+          "id": "PHYS-QRT-BLUEPRINT",
+          "version": "0.2.2"
+        },
+        "topic_id": "WPE"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D31_RECALL_FULL_PACKAGE\\04_topic_adapter\\subset_projections\\D3.1.1\\projection.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 5156,
+      "sha256": "571e1ed847d86293de41e28727d94d79b6fef8030859b6159078badb7d79aedb",
+      "declared_metadata": {}
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D31_RECALL_FULL_PACKAGE\\04_topic_adapter\\subset_projections\\D3.1.1\\R4_candidate_tile_pack.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 103630,
+      "sha256": "7c5b3eb452079a95310b2f856cfd547984361facc45fbf4d166b482bc0c88291",
+      "declared_metadata": {}
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D31_RECALL_FULL_PACKAGE\\04_topic_adapter\\subset_projections\\D3.1.2\\projection.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 4988,
+      "sha256": "4e7f5b4500f9c9b07cddf2dd380e2c708dc291ee1ae244bf484366ba07538175",
+      "declared_metadata": {}
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D31_RECALL_FULL_PACKAGE\\04_topic_adapter\\subset_projections\\D3.1.2\\R4_candidate_tile_pack.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 87573,
+      "sha256": "dd958a56eea7273a9d3ae3e9953eea0eb714f62d85d8a7c81b8a02d49f6e0b3d",
+      "declared_metadata": {}
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D31_RECALL_FULL_PACKAGE\\04_topic_adapter\\subset_projections\\D3.1.3\\projection.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 5108,
+      "sha256": "f2959182d31c18a704ea3e93bfa840816633bed5fed2ab1d1a44703a0de4cfe4",
+      "declared_metadata": {}
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D31_RECALL_FULL_PACKAGE\\04_topic_adapter\\subset_projections\\D3.1.3\\R4_candidate_tile_pack.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 80625,
+      "sha256": "255c1f39debfa7cb0b7e368861973a9841119c26f8451c4a6506788c251b0e3c",
+      "declared_metadata": {}
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D31_RECALL_FULL_PACKAGE\\04_topic_adapter\\subset_projections\\D3.1.4\\projection.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 1693,
+      "sha256": "03f1c069d5d3b9f726ee46ea5d6437dc949b876d4e33c4f5afc33aeb9392058f",
+      "declared_metadata": {}
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D31_RECALL_FULL_PACKAGE\\04_topic_adapter\\subset_projections\\D3.1.4\\R4_candidate_authoring.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 15090,
+      "sha256": "ae900f88f3bce8641d4fcfbfd5e0f0cb728a4addfd9a90171cba0631f0c3e89c",
+      "declared_metadata": {}
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D31_RECALL_FULL_PACKAGE\\04_topic_adapter\\subset_projections\\D3.1.5\\projection.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 1758,
+      "sha256": "5d4662475e691d929d270eb3fbc4d2766f4443b489000c5d835d10f926dd63b6",
+      "declared_metadata": {}
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D31_RECALL_FULL_PACKAGE\\04_topic_adapter\\subset_projections\\D3.1.5\\R4_candidate_authoring.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 15579,
+      "sha256": "b550de6566b64206f850d7ede9c93e81240faf410c374a05edeae18b1162ef7d",
+      "declared_metadata": {}
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D31_RECALL_FULL_PACKAGE\\04_topic_adapter\\subset_projections\\D3.1.6\\projection.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 1826,
+      "sha256": "f347dd347675a2b3ae012a0f6433d9f21b0aa60e8d247c0bb2589377c707775d",
+      "declared_metadata": {}
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D31_RECALL_FULL_PACKAGE\\04_topic_adapter\\subset_projections\\D3.1.6\\R4_candidate_authoring.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 15449,
+      "sha256": "d134b5f1bf248e308597ef8d741298d0e16d79a9934578810f09b9a8bad31b16",
+      "declared_metadata": {}
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D31_RECALL_FULL_PACKAGE\\04_topic_adapter\\topic-adapter.work-power-energy.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 51078,
+      "sha256": "899e61e59370a3fc5d6f73b7d8cbb65165d0782c9fba20acd83439ae441e6a9b",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE",
+        "version": "0.1.0",
+        "status": "DRAFT_OWNER_REVIEW",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D32_EXPLAIN_FULL_PACKAGE\\04_topic_adapter\\subset_projections\\D3.2.1.R3.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 2050,
+      "sha256": "9e83fb62705fe0ef6186a40158efd318f31b22439b5d4f147d6542aa00c4467e",
+      "declared_metadata": {
+        "adapter_id": "PHYS-WPE-D3.2.1",
+        "version": "0.1.0",
+        "status": "DRAFT_ROUTING_ONLY"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D32_EXPLAIN_FULL_PACKAGE\\04_topic_adapter\\subset_projections\\D3.2.1.R4.question-challenged.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 961,
+      "sha256": "036308a1d031cc1813a97ed914712fac39bfdaa6c5a83ad830c30b1669d7a609",
+      "declared_metadata": {
+        "status": "LOCAL_3_SOURCE_RECORD_TESTS_NOT_ACADEMIC_ACCEPTANCE"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D32_EXPLAIN_FULL_PACKAGE\\04_topic_adapter\\subset_projections\\D3.2.2.R3.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 3216,
+      "sha256": "b14d2f5e632118e7d69fec72fc0800a27ef7ba002a46be45a899768cf55fd88b",
+      "declared_metadata": {
+        "adapter_id": "PHYS-WPE-D3.2.2",
+        "version": "0.1.0",
+        "status": "DRAFT_ROUTING_ONLY"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D32_EXPLAIN_FULL_PACKAGE\\04_topic_adapter\\subset_projections\\D3.2.2.R4.question-challenged.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 814,
+      "sha256": "a4629e36d9966e910dacdc15309e32a14988da0c4d98b53829b4bef2a6b207fe",
+      "declared_metadata": {
+        "status": "LOCAL_3_SOURCE_RECORD_TESTS_NOT_ACADEMIC_ACCEPTANCE"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D32_EXPLAIN_FULL_PACKAGE\\04_topic_adapter\\subset_projections\\D3.2.3.E3.R1.fresh-cycle.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 7708,
+      "sha256": "dfd232a5b76ea325bb4e6ccc24e5a0267e0d67e4c9b4bf40830db73aa5a3f3a7",
+      "declared_metadata": {}
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D32_EXPLAIN_FULL_PACKAGE\\04_topic_adapter\\subset_projections\\D3.2.3.R3.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 3467,
+      "sha256": "c0b77ca5d21288ce9c00f0c2f14dae51a82ac98f766e9e3d1e41221bb0d9a9a7",
+      "declared_metadata": {
+        "adapter_id": "PHYS-WPE-D3.2.3",
+        "version": "0.1.0",
+        "status": "DRAFT_ROUTING_ONLY"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D32_EXPLAIN_FULL_PACKAGE\\04_topic_adapter\\subset_projections\\D3.2.3.R4.question-challenged.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 1020,
+      "sha256": "7a8e7f35d5e961f109995bb34a8d5603026e07e1d8795b2651e0e9385f581f7c",
+      "declared_metadata": {
+        "status": "LOCAL_3_SOURCE_RECORD_TESTS_NOT_ACADEMIC_ACCEPTANCE"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D32_EXPLAIN_FULL_PACKAGE\\04_topic_adapter\\topic-adapter.work-power-energy.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 85258,
+      "sha256": "a84e8c3630a7f1b69521330c2ece7653678accc5e5a9d1b7bc9475a0502b4353",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE",
+        "version": "0.1.1",
+        "status": "DRAFT_OWNER_REVIEW",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D32_EXPLAIN_FULL_PACKAGE\\04_topic_adapter\\topic-adapter.WPE.D3.2.R4.CANDIDATE.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 14436,
+      "sha256": "267d51118b35f30d806d504232ec4cf082f34e2b25e1d3bdee30161b18bd1e6a",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE-D3.2-ROUTED",
+        "version": "0.2.0-QUESTION-CHALLENGE-R4",
+        "status": "LOCAL_CHALLENGE_TESTED_SOURCE_AND_ACADEMIC_HOLDS",
+        "topic_id": "WPE"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D32_EXPLAIN_FULL_PACKAGE\\04_topic_adapter\\topic-teaching-overlay.WPE.R3.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 28018,
+      "sha256": "a5caf271e162ae9cc5dbd90ea19de7350ff96fd8d3b45361e37b90b794c8a2e6",
+      "declared_metadata": {
+        "status": "AUTHOR_LOCAL_NOT_CANONICAL",
+        "version": "R3"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D33_FULL_PACKAGE_R1\\04_topic_adapter\\historical_R3_PROPOSED_NOT_PROMOTED.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 7785,
+      "sha256": "f904d4e473aa4ec3520bec0aefcaafdb49cb24831c421952a215714cf1e95c70",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE-D3.3-SUBSETS",
+        "version": "0.3.0-proposed",
+        "status": "LOCAL_VALIDATION_CANDIDATE_ACADEMIC_HOLD"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D33_FULL_PACKAGE_R1\\04_topic_adapter\\subset_projections\\D3.3.1.projection.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 445,
+      "sha256": "70aeaeaf444a91475272a74efa8c34e4f8d23d59b2e47dccf40bf52196f04217",
+      "declared_metadata": {
+        "status": "PROPOSED_COVERAGE_VIEW"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D33_FULL_PACKAGE_R1\\04_topic_adapter\\subset_projections\\D3.3.2.projection.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 445,
+      "sha256": "bdf82084eeb5bceb065190ac39b9a43d8e60606a998e1e908a33a41e14c2c576",
+      "declared_metadata": {
+        "status": "PROPOSED_COVERAGE_VIEW"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D33_FULL_PACKAGE_R1\\04_topic_adapter\\subset_projections\\D3.3.3.projection.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 453,
+      "sha256": "3747b1931eaff5e1df4c98916397bc9e911666bb37d7ee4675f282708ffc5eb9",
+      "declared_metadata": {
+        "status": "PROPOSED_COVERAGE_VIEW"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D33_FULL_PACKAGE_R1\\04_topic_adapter\\subset_projections\\D3.3.4.projection.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 453,
+      "sha256": "3e462106d8df19afd417fadba48dae789af043d67728fe5d37d0404dbe53faf3",
+      "declared_metadata": {
+        "status": "PROPOSED_COVERAGE_VIEW"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D33_FULL_PACKAGE_R1\\04_topic_adapter\\subset_projections\\D3.3.5.projection.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 437,
+      "sha256": "2c42e838242d82969793be8f663e534a4253027bf70ac2e8f512ed2edfa1b26b",
+      "declared_metadata": {
+        "status": "PROPOSED_COVERAGE_VIEW"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D33_FULL_PACKAGE_R1\\04_topic_adapter\\topic-adapter.work-power-energy.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 98087,
+      "sha256": "3d84e7c02a4058a38deb5cc28b00ff40dfdd32f1f7e080eadf32c3aa7b1f534c",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE",
+        "version": "0.1.1",
+        "status": "DRAFT_OWNER_REVIEW",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D33_FULL_PACKAGE_R1\\04_topic_adapter\\TOPIC_ADAPTER_MINIMAL_DELTA.PROPOSED.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 2244,
+      "sha256": "d59f915cdf6b90345ec331844b77f03f850384544ae84196fae9ce51bb774efd",
+      "declared_metadata": {
+        "status": "PROPOSED_ONLY_NOT_APPLIED"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D34_MODEL_FULL_PACKAGE\\04_topic_adapter\\subset_projections\\D3.4.1\\topic-adapter.work-power-energy.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 43996,
+      "sha256": "365a5e90fe66db8d50a06391bfdfdccd4c65a84d29493f9992d43617528bdb4e",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE-D3.4.1-LOCAL",
+        "version": "0.1.1-local-R4",
+        "status": "DRAFT_OWNER_REVIEW_HOLD",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D34_MODEL_FULL_PACKAGE\\04_topic_adapter\\subset_projections\\D3.4.2\\topic-adapter.work-power-energy.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 37654,
+      "sha256": "dc32cbbed36e045f9c0692da1797e928ee938c2b30d72ce8126d5ff29c5ce422",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE-D3.4.2-LOCAL",
+        "version": "0.1.1-local-R4",
+        "status": "DRAFT_OWNER_REVIEW_HOLD",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D34_MODEL_FULL_PACKAGE\\04_topic_adapter\\subset_projections\\D3.4.3\\topic-adapter.work-power-energy.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 35933,
+      "sha256": "5bba7264d5206dac35fc21f86c8c9dddf1c006a8abf9f9e3f6f19b391a750315",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE-D3.4.3-LOCAL",
+        "version": "0.1.1-local-R4",
+        "status": "DRAFT_OWNER_REVIEW_HOLD",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D34_MODEL_FULL_PACKAGE\\04_topic_adapter\\topic-adapter.work-power-energy.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 85650,
+      "sha256": "f0ad6bfd114bdd7640ad784651809ecd934d8de66c1a9307b512e4e0887b1fd1",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE",
+        "version": "0.1.1",
+        "status": "DRAFT_OWNER_REVIEW",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D35_TRANSLATE_FULL_PACKAGE_IR4\\04_topic_adapter\\derived-transfer-scenario-bindings.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 22553,
+      "sha256": "0258a4eddd6cbc60b82dc53f5c2de3cf75ccea9c62ab649ebc2421dbb22845d8",
+      "declared_metadata": {}
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D35_TRANSLATE_FULL_PACKAGE_IR4\\04_topic_adapter\\subset_projections\\blueprint-subset-lenses.candidate-R1.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 4149,
+      "sha256": "e0250dd2d92bbc1f70292b1de542edf1c63f4c9ef124d2ecc82df60799524bf9",
+      "declared_metadata": {
+        "status": "DRAFT_NOT_CANONICAL",
+        "version": "candidate-r1"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D35_TRANSLATE_FULL_PACKAGE_IR4\\04_topic_adapter\\subset_projections\\D3.5.1.coverage-projection.IR1.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 880,
+      "sha256": "0a85f6b457d02cc7879d6fe3c9858126f33a47462566b5b5ddf580a11dee2c70",
+      "declared_metadata": {
+        "status": "CANDIDATE_READ_ONLY_PROJECTION"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D35_TRANSLATE_FULL_PACKAGE_IR4\\04_topic_adapter\\subset_projections\\D3.5.1.teaching-studio.overlay.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 7069,
+      "sha256": "c12505a3b01fd8bf8760ff2ec51bb188dc5ec739e63180b775e3b3ffaf727e80",
+      "declared_metadata": {
+        "status": "LOCAL_CANDIDATE_NOT_CANONICAL"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D35_TRANSLATE_FULL_PACKAGE_IR4\\04_topic_adapter\\subset_projections\\D3.5.1.topic-adapter.candidate.IR2.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 71288,
+      "sha256": "9927f4e532b6da191aa3046032f095aead4d38ffe47edd1f6c52b5c6ab70e51b",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE-D3.5.1",
+        "version": "0.1.1-subset-candidate-r3-source-tested",
+        "status": "DRAFT_OWNER_REVIEW_NOT_CANONICAL",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0 (D3.5 inherited; candidate subset overlay)"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D35_TRANSLATE_FULL_PACKAGE_IR4\\04_topic_adapter\\subset_projections\\D3.5.2.coverage-projection.IR1.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 928,
+      "sha256": "8ae192e0bd0acc59215dbe5fe8073195e29d1285fa3e572fa7f37b228583fc75",
+      "declared_metadata": {
+        "status": "CANDIDATE_READ_ONLY_PROJECTION"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D35_TRANSLATE_FULL_PACKAGE_IR4\\04_topic_adapter\\subset_projections\\D3.5.2.teaching-studio.overlay.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 13437,
+      "sha256": "fb37e08a3c2d7cdf7ca0dd122f4f087ca1bd0883c3980841ac47a6a54fd856a0",
+      "declared_metadata": {
+        "status": "LOCAL_CANDIDATE_NOT_CANONICAL"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D35_TRANSLATE_FULL_PACKAGE_IR4\\04_topic_adapter\\subset_projections\\D3.5.2.topic-adapter.candidate.IR2.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 76499,
+      "sha256": "74b72dd3b977222543f0042997aa3c9d4ba4ef94f18ab9e278d340621d7aa8fb",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE-D3.5.2",
+        "version": "0.1.1-subset-candidate-r3-source-tested",
+        "status": "DRAFT_OWNER_REVIEW_NOT_CANONICAL",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0 (D3.5 inherited; candidate subset overlay)"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D35_TRANSLATE_FULL_PACKAGE_IR4\\04_topic_adapter\\subset_projections\\D3.5.3.coverage-projection.IR1.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 866,
+      "sha256": "323166b18ececfd7c4710474e50b0f1ed3b663c57053a3240d3a5dcaa88959e0",
+      "declared_metadata": {
+        "status": "CANDIDATE_READ_ONLY_PROJECTION"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D35_TRANSLATE_FULL_PACKAGE_IR4\\04_topic_adapter\\subset_projections\\D3.5.3.teaching-studio.overlay.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 7441,
+      "sha256": "7a288b76af89b60a106783541f3847f98da1ca84bf35c6ae240a96fc83b79a76",
+      "declared_metadata": {
+        "status": "LOCAL_CANDIDATE_NOT_CANONICAL"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D35_TRANSLATE_FULL_PACKAGE_IR4\\04_topic_adapter\\subset_projections\\D3.5.3.topic-adapter.candidate.IR2.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 67392,
+      "sha256": "b834ee784ad7422dd3c2f0e8b0b58a0682406ea784f8f916c7ced5d52dbd136f",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE-D3.5.3",
+        "version": "0.1.1-subset-candidate-r3-source-tested",
+        "status": "DRAFT_OWNER_REVIEW_NOT_CANONICAL",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0 (D3.5 inherited; candidate subset overlay)"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D35_TRANSLATE_FULL_PACKAGE_IR4\\04_topic_adapter\\topic-adapter.parent.candidate.IR2.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 87186,
+      "sha256": "2f6f59372b3c8d78b6feb1f7fa1619c15f73e807e6218687e9e987e401d84a2d",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE",
+        "version": "0.1.1",
+        "status": "DRAFT_OWNER_REVIEW",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D35_TRANSLATE_FULL_PACKAGE_IR4\\04_topic_adapter\\topic-adapter.work-power-energy.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 87431,
+      "sha256": "471edab47b5ad79e7323cf4d560e348b0de30da3689bcfe4762db460b24e31e2",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE",
+        "version": "0.1.1",
+        "status": "DRAFT_OWNER_REVIEW",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D36_FULL_PACKAGE_R3\\04_topic_adapter\\original_D36_builder_adapter.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 114303,
+      "sha256": "d69cdbdd9daa45e8211939bee8d20b0aa2a694b31e670d723856a6b746f0bce6",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE",
+        "version": "0.1.1",
+        "status": "DRAFT_OWNER_REVIEW",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D36_FULL_PACKAGE_R3\\04_topic_adapter\\subset_projections\\D3.6.1.candidate.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 602,
+      "sha256": "5d9a9d5694740240718563b2b8e3510d0b79756f2c967759e8ab31b7ab8febe7",
+      "declared_metadata": {
+        "version": "R3_CANDIDATE_SIDECAR",
+        "status": "PARTIAL"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D36_FULL_PACKAGE_R3\\04_topic_adapter\\subset_projections\\D3.6.2.candidate.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 670,
+      "sha256": "4db202026d7da2fb7ed3cb2d58a55b865cd6aaf5df6429964ec291354f3fa28b",
+      "declared_metadata": {
+        "version": "R3_CANDIDATE_SIDECAR",
+        "status": "PARTIAL_CHILD_VIEW_NOT_STANDALONE"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D36_FULL_PACKAGE_R3\\04_topic_adapter\\subset_projections\\D3.6.3.candidate.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 671,
+      "sha256": "423875c1a627b76f1a2bf2e817d5027005c70c6ad44ea12c3b1508272dbb90ef",
+      "declared_metadata": {
+        "version": "R3_CANDIDATE_SIDECAR",
+        "status": "PARTIAL_CHILD_VIEW_NOT_STANDALONE"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D36_FULL_PACKAGE_R3\\04_topic_adapter\\topic-adapter.work-power-energy.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 51078,
+      "sha256": "899e61e59370a3fc5d6f73b7d8cbb65165d0782c9fba20acd83439ae441e6a9b",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE",
+        "version": "0.1.0",
+        "status": "DRAFT_OWNER_REVIEW",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D37_FULL_QUALIFICATION_R5\\04_topic_adapter\\subset_projections\\D3.7.1.projection.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 3251,
+      "sha256": "e7ee6c1719597c90f5976c814f7288ac4289084f20136459902781e0d7f9eaf3",
+      "declared_metadata": {
+        "status": "PARTIAL"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D37_FULL_QUALIFICATION_R5\\04_topic_adapter\\subset_projections\\D3.7.2.projection.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 339,
+      "sha256": "a934c63916d4fb986705739aa0a10d5efa72edb10be3cc676fdd0a164b9f7b1c",
+      "declared_metadata": {
+        "status": "HOLD"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D37_FULL_QUALIFICATION_R5\\04_topic_adapter\\subset_projections\\D3.7.3.projection.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 3599,
+      "sha256": "97d9ceec2c67b8f36b5a5dd01de4f28776bc3d352c4186719df39920cba6e3e0",
+      "declared_metadata": {
+        "status": "PARTIAL"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_D3_Organized_2026-10-30\\packages\\WPE_D37_FULL_QUALIFICATION_R5\\04_topic_adapter\\topic-adapter.work-power-energy.R5.owner-local.json",
+      "category": "04_topic_adapter",
+      "exists": true,
+      "kind": "file",
+      "bytes": 106780,
+      "sha256": "a69ef5415ee7a4e051bc8311c720b0da221f5201e8e88216df4a9fd6829ab87c",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE",
+        "version": "0.1.1",
+        "status": "DRAFT_OWNER_REVIEW",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0"
+      }
+    }
+  ],
+  "legacy_build_adapter_copies": [
+    {
+      "path": "D:\\CodeD\\g9v3.5\\qrt\\builds\\PHY-WPE-D3.1\\topic-adapter.work-power-energy.json",
+      "category": "legacy_build_adapter_copy",
+      "exists": true,
+      "kind": "file",
+      "bytes": 52039,
+      "sha256": "21db1a2c6688c23ab68e8f29eb52f2ed63a8881b3ff2468b0acd10a1353454a9",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE",
+        "version": "0.1.1",
+        "status": "DRAFT_OWNER_REVIEW",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\qrt\\builds\\PHY-WPE-D3.2\\topic-adapter.work-power-energy.json",
+      "category": "legacy_build_adapter_copy",
+      "exists": true,
+      "kind": "file",
+      "bytes": 85258,
+      "sha256": "a84e8c3630a7f1b69521330c2ece7653678accc5e5a9d1b7bc9475a0502b4353",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE",
+        "version": "0.1.1",
+        "status": "DRAFT_OWNER_REVIEW",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\qrt\\builds\\PHY-WPE-D3.3\\topic-adapter.work-power-energy.json",
+      "category": "legacy_build_adapter_copy",
+      "exists": true,
+      "kind": "file",
+      "bytes": 98087,
+      "sha256": "3d84e7c02a4058a38deb5cc28b00ff40dfdd32f1f7e080eadf32c3aa7b1f534c",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE",
+        "version": "0.1.1",
+        "status": "DRAFT_OWNER_REVIEW",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\qrt\\builds\\PHY-WPE-D3.4\\topic-adapter.work-power-energy.json",
+      "category": "legacy_build_adapter_copy",
+      "exists": true,
+      "kind": "file",
+      "bytes": 85650,
+      "sha256": "f0ad6bfd114bdd7640ad784651809ecd934d8de66c1a9307b512e4e0887b1fd1",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE",
+        "version": "0.1.1",
+        "status": "DRAFT_OWNER_REVIEW",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\qrt\\builds\\PHY-WPE-D3.5\\topic-adapter.work-power-energy.json",
+      "category": "legacy_build_adapter_copy",
+      "exists": true,
+      "kind": "file",
+      "bytes": 87431,
+      "sha256": "471edab47b5ad79e7323cf4d560e348b0de30da3689bcfe4762db460b24e31e2",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE",
+        "version": "0.1.1",
+        "status": "DRAFT_OWNER_REVIEW",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\qrt\\builds\\PHY-WPE-D3.6\\topic-adapter.work-power-energy.json",
+      "category": "legacy_build_adapter_copy",
+      "exists": true,
+      "kind": "file",
+      "bytes": 114303,
+      "sha256": "d69cdbdd9daa45e8211939bee8d20b0aa2a694b31e670d723856a6b746f0bce6",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE",
+        "version": "0.1.1",
+        "status": "DRAFT_OWNER_REVIEW",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\qrt\\builds\\PHY-WPE-D3.7\\topic-adapter.work-power-energy.json",
+      "category": "legacy_build_adapter_copy",
+      "exists": true,
+      "kind": "file",
+      "bytes": 84728,
+      "sha256": "4d162ce01139828f73f13c9d87ed7d9c9afa57c8b930187ec616447f7eabd8ad",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE",
+        "version": "0.1.1",
+        "status": "DRAFT_OWNER_REVIEW",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\qrt\\builds\\PHY-WPE-D4.1\\topic-adapter.work-power-energy.json",
+      "category": "legacy_build_adapter_copy",
+      "exists": true,
+      "kind": "file",
+      "bytes": 59012,
+      "sha256": "69b5ffe082d0e5386e12c6084fbd82762321f598d3e14a92a55f6a054a51552e",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE",
+        "version": "0.1.1",
+        "status": "DRAFT_OWNER_REVIEW",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\qrt\\builds\\PHY-WPE-D4.2\\topic-adapter.work-power-energy.json",
+      "category": "legacy_build_adapter_copy",
+      "exists": true,
+      "kind": "file",
+      "bytes": 61442,
+      "sha256": "c1501905bbc67bf04d6c36aee7df80035a8f96c31e2b8d9b313f0a60b157452f",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE",
+        "version": "0.1.1",
+        "status": "DRAFT_OWNER_REVIEW",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\qrt\\builds\\PHY-WPE-D4.3\\topic-adapter.work-power-energy.json",
+      "category": "legacy_build_adapter_copy",
+      "exists": true,
+      "kind": "file",
+      "bytes": 66223,
+      "sha256": "7be9b7722932c6fd6878a67c9d2402468b18e761bd90071ab1611b6b601eca34",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE",
+        "version": "0.1.1",
+        "status": "DRAFT_OWNER_REVIEW",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\qrt\\builds\\PHY-WPE-D4.4\\topic-adapter.work-power-energy.json",
+      "category": "legacy_build_adapter_copy",
+      "exists": true,
+      "kind": "file",
+      "bytes": 67477,
+      "sha256": "579dc76c24da2415b46ca35c7f9fb096acae36ca05dac4bfada0a17c5df41dbb",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE",
+        "version": "0.1.1",
+        "status": "DRAFT_OWNER_REVIEW",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\qrt\\builds\\PHY-WPE-D4.5\\topic-adapter.work-power-energy.json",
+      "category": "legacy_build_adapter_copy",
+      "exists": true,
+      "kind": "file",
+      "bytes": 49693,
+      "sha256": "be677b02568e0d0017f19300e3a9fdc405266e44ab4a07f0edcf2dc3afe5b434",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE",
+        "version": "0.1.1",
+        "status": "DRAFT_OWNER_REVIEW",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\qrt\\builds\\PHY-WPE-D4.6\\topic-adapter.work-power-energy.json",
+      "category": "legacy_build_adapter_copy",
+      "exists": true,
+      "kind": "file",
+      "bytes": 51211,
+      "sha256": "9209e99a53aa7c63060226508d9e8f0c3da8612edb7cff82c00ce12df62aef20",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE",
+        "version": "0.1.1",
+        "status": "DRAFT_OWNER_REVIEW",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0"
+      }
+    },
+    {
+      "path": "D:\\CodeD\\g9v3.5\\qrt\\builds\\PHY-WPE-D4.7\\topic-adapter.work-power-energy.json",
+      "category": "legacy_build_adapter_copy",
+      "exists": true,
+      "kind": "file",
+      "bytes": 55814,
+      "sha256": "2538774faf9806a13d414e923a0330600065a233fececec87862b4eaba6e0cd0",
+      "declared_metadata": {
+        "adapter_id": "PHYS-TOPIC-WPE",
+        "version": "0.1.1",
+        "status": "DRAFT_OWNER_REVIEW",
+        "topic_id": "WPE",
+        "for_blueprint": "PHYS-QRT-BLUEPRINT 0.2.0"
+      }
+    }
+  ],
+  "native_role_blueprints": [
+    {
+      "id": "BP-CORE2-SOURCE-QUESTION",
+      "version": "1.11.0",
+      "status": "ACTIVE",
+      "core_roles": [
+        "CORE2"
+      ],
+      "layout_family": "QUESTION_READER",
+      "slots": [
+        {
+          "id": "identity",
+          "accepts_blocks": [
+            "source_identity_provenance",
+            "learner_metadata"
+          ],
+          "required": true,
+          "column": "FULL"
+        },
+        {
+          "id": "attempt",
+          "accepts_blocks": [
+            "source_question"
+          ],
+          "required": true,
+          "column": "PRIMARY"
+        },
+        {
+          "id": "representation",
+          "accepts_blocks": [
+            "source_figure"
+          ],
+          "required": false,
+          "column": "SUPPORT"
+        },
+        {
+          "id": "support",
+          "accepts_blocks": [
+            "source_hint_ladder",
+            "authored_core2_support",
+            "concept_navigation"
+          ],
+          "required": false,
+          "column": "SUPPORT"
+        },
+        {
+          "id": "solution",
+          "accepts_blocks": [
+            "source_answer_rubric",
+            "verified_solution_reasoning",
+            "custody_status"
+          ],
+          "required": true,
+          "column": "FULL"
+        }
+      ],
+      "interaction_policy": {
+        "attempt_before_reveal": "FROM_PROJECTION",
+        "progressive_support": true,
+        "solution_policy": "LEARNER_OPENABLE"
+      }
+    },
+    {
+      "id": "BP-CORE1A-CONSTRUCTION",
+      "version": "1.8.0",
+      "status": "ACTIVE",
+      "core_roles": [
+        "CORE1A"
+      ],
+      "layout_family": "READING_CONSTRUCTION",
+      "slots": [
+        {
+          "id": "identity",
+          "accepts_blocks": [
+            "identity_entry_assumptions",
+            "convention_declaration",
+            "learner_metadata"
+          ],
+          "required": true,
+          "column": "FULL"
+        },
+        {
+          "id": "construction",
+          "accepts_blocks": [
+            "inferential_jump",
+            "completed_construction",
+            "worked_conceptual_anchor",
+            "representation_bridge"
+          ],
+          "required": true,
+          "column": "FULL"
+        },
+        {
+          "id": "repair_closure",
+          "accepts_blocks": [
+            "plausible_wrong_path",
+            "diagnose",
+            "repair",
+            "independent_checks",
+            "exit_task_closure",
+            "practice_navigation"
+          ],
+          "required": true,
+          "column": "FULL"
+        }
+      ],
+      "interaction_policy": {
+        "attempt_before_reveal": "FROM_PROJECTION",
+        "progressive_support": true,
+        "solution_policy": "FROM_PROJECTION",
+        "secondary_reference_default": "COLLAPSED",
+        "worked_example_step_policy": "SHOW_ALL"
+      }
+    },
+    {
+      "id": "BP-CORE1B-RECONSTRUCTION",
+      "version": "1.1.0",
+      "status": "ACTIVE",
+      "core_roles": [
+        "CORE1B"
+      ],
+      "layout_family": "GUIDED_RECONSTRUCTION",
+      "slots": [
+        {
+          "id": "identity",
+          "accepts_blocks": [
+            "identity_concept",
+            "learner_metadata"
+          ],
+          "required": true,
+          "column": "FULL"
+        },
+        {
+          "id": "attempt",
+          "accepts_blocks": [
+            "predict",
+            "attempt"
+          ],
+          "required": true,
+          "column": "PRIMARY"
+        },
+        {
+          "id": "reconstruction",
+          "accepts_blocks": [
+            "reconstruct",
+            "diagnose",
+            "repair",
+            "boundary_test",
+            "model_response_or_rubric",
+            "rejoin_inferential_jump"
+          ],
+          "required": true,
+          "column": "PRIMARY"
+        }
+      ],
+      "interaction_policy": {
+        "attempt_before_reveal": "FROM_PROJECTION",
+        "progressive_support": true,
+        "solution_policy": "POST_ATTEMPT"
+      }
+    }
+  ],
+  "selection": {
+    "physics_source_baseline": "qrt/physics-blueprint.D3-D4.json v0.2.0, exact fingerprint retained; declared DRAFT_OWNER_REVIEW",
+    "unified_WPE_adapter": "NOT_SELECTED_OR_OWNER_APPROVED_BY_THIS_ROUTINE",
+    "Core1A_Core1B_visual_donor": "NLM B2 and registered candidates are references; WPE mapping/acceptance remains open",
+    "private_textbook_Core2": "Existing native draft retained for integration; not academically accepted"
+  },
+  "missing_inputs": [],
+  "consolidation_closeout": {
+    "status": "CLOSED",
+    "ended_utc": "2026-10-30T14:22:42.107637+00:00",
+    "elapsed_minutes": 7.9,
+    "calls_used": 12,
+    "max_calls": 12,
+    "max_minutes": 15,
+    "within_bounds": true,
+    "includes_failed_merge_attempt": true,
+    "plan_sha256": "4baf491f465f55713653157f3286824cee536f0ae56451712558e8a5305e8c13",
+    "document_checks_passed": 15,
+    "local_links_checked": 54,
+    "input_entries": 154,
+    "registered_file_hash_drift": [],
+    "directory_verification": "existence only",
+    "product_execution": "NOT_RUN",
+    "Core1A_Core1B_lessons": "NOT_STARTED",
+    "D31": "PAUSED",
+    "reusable_remaining_bounds": false
+  }
+}

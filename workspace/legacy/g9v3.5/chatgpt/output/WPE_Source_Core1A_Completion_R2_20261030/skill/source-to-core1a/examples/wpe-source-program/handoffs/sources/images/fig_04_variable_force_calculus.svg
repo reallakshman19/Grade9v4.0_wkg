@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" width="100%" height="100%" role="img" aria-label="Work Done by a Variable Force: Calculus Integral and Riemann Sum">
+  <title>Calculus Derivation of Work Done by Variable Force</title>
+  <desc>Two plots illustrating the continuous integral under F(x) and its discretization into narrow rectangular strips of width Delta x.</desc>
+  <defs>
+    <marker id="arr-axis-04" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1e293b"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: system-ui, -apple-system, sans-serif; fill: #1e293b; }
+    .axis-label { font-weight: bold; }
+    .math { font-style: italic; font-family: 'Times New Roman', serif; }
+  </style>
+
+  <!-- Left Graph: Continuous Area -->
+  <g transform="translate(40, 20)">
+    <!-- Axes -->
+    <line x1="50" y1="260" x2="320" y2="260" stroke="#1e293b" stroke-width="2" marker-end="url(#arr-axis-04)" />
+    <line x1="50" y1="260" x2="50" y2="30" stroke="#1e293b" stroke-width="2" marker-end="url(#arr-axis-04)" />
+    <text x="330" y="265" font-size="16px" class="math">x</text>
+    <text x="45" y="25" font-size="16px" class="axis-label" text-anchor="end">F(x)</text>
+    <text x="35" y="275" font-size="15px">O</text>
+
+    <!-- Shaded continuous area under curve -->
+    <path d="M 100 260 L 100 200 Q 180 180 260 70 L 260 260 Z" fill="#dbeafe" />
+
+    <!-- Curve F(x) -->
+    <path d="M 70 215 Q 160 190 280 50" fill="none" stroke="#2563eb" stroke-width="3" />
+
+    <!-- Dashed boundary lines -->
+    <line x1="100" y1="260" x2="100" y2="200" stroke="#64748b" stroke-width="1.5" stroke-dasharray="4,4" />
+    <line x1="260" y1="260" x2="260" y2="70" stroke="#64748b" stroke-width="1.5" stroke-dasharray="4,4" />
+
+    <text x="100" y="280" font-size="16px" text-anchor="middle" class="math">x_i</text>
+    <text x="260" y="280" font-size="16px" text-anchor="middle" class="math">x_f</text>
+    <text x="180" y="160" font-size="15px" text-anchor="middle" fill="#1e40af" font-weight="600">Area = W</text>
+    <text x="180" y="320" font-size="15px" text-anchor="middle" font-weight="600">(a) Continuous Work Integral</text>
+  </g>
+
+  <!-- Right Graph: Discretized Riemann Rectangles -->
+  <g transform="translate(410, 20)">
+    <!-- Axes -->
+    <line x1="50" y1="260" x2="320" y2="260" stroke="#1e293b" stroke-width="2" marker-end="url(#arr-axis-04)" />
+    <line x1="50" y1="260" x2="50" y2="30" stroke="#1e293b" stroke-width="2" marker-end="url(#arr-axis-04)" />
+    <text x="330" y="265" font-size="16px" class="math">x</text>
+    <text x="45" y="25" font-size="16px" class="axis-label" text-anchor="end">F(x)</text>
+    <text x="35" y="275" font-size="15px">O</text>
+
+    <!-- Discretized Rectangles -->
+    <rect x="100" y="195" width="20" height="65" fill="#f1f5f9" stroke="#64748b" stroke-width="1" />
+    <rect x="120" y="185" width="20" height="75" fill="#f1f5f9" stroke="#64748b" stroke-width="1" />
+    <rect x="140" y="170" width="20" height="90" fill="#f1f5f9" stroke="#64748b" stroke-width="1" />
+    <rect x="160" y="150" width="20" height="110" fill="#f1f5f9" stroke="#64748b" stroke-width="1" />
+    <!-- Highlighted strip abcd -->
+    <rect x="180" y="125" width="24" height="135" fill="#fef08a" stroke="#ca8a04" stroke-width="2" />
+    <text x="182" y="120" font-size="14px" font-weight="bold">a</text>
+    <text x="202" y="120" font-size="14px" font-weight="bold">b</text>
+    <text x="202" y="255" font-size="14px" font-weight="bold">c</text>
+    <text x="182" y="255" font-size="14px" font-weight="bold">d</text>
+
+    <rect x="204" y="95" width="20" height="165" fill="#f1f5f9" stroke="#64748b" stroke-width="1" />
+    <rect x="224" y="65" width="20" height="195" fill="#f1f5f9" stroke="#64748b" stroke-width="1" />
+
+    <!-- Curve F(x) overlay -->
+    <path d="M 70 215 Q 160 190 280 50" fill="none" stroke="#2563eb" stroke-width="2.5" />
+
+    <!-- Labels for strip -->
+    <line x1="180" y1="290" x2="204" y2="290" stroke="#1e293b" stroke-width="1.5" />
+    <line x1="180" y1="285" x2="180" y2="295" stroke="#1e293b" stroke-width="1.5" />
+    <line x1="204" y1="285" x2="204" y2="295" stroke="#1e293b" stroke-width="1.5" />
+    <text x="192" y="310" font-size="16px" text-anchor="middle" class="math">&#916;x</text>
+
+    <text x="100" y="280" font-size="16px" text-anchor="middle" class="math">x_i</text>
+    <text x="244" y="280" font-size="16px" text-anchor="middle" class="math">x_f</text>
+    <text x="180" y="340" font-size="15px" text-anchor="middle" font-weight="600">(b) Riemann Sum Approximation</text>
+  </g>
+</svg>

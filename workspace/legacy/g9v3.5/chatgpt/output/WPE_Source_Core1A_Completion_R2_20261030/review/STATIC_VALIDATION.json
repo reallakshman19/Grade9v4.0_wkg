@@ -1,0 +1,11 @@
+{
+  "source_nodes": 10,
+  "source_lines": 486,
+  "HTML_files": 12,
+  "local_links_and_fragments_checked": 528,
+  "findings": [],
+  "static_HTML": "PASS",
+  "original_R1_and_sources": "PASS",
+  "science": "NOT_QUALIFIED",
+  "independent_review": "NOT_RUN"
+}

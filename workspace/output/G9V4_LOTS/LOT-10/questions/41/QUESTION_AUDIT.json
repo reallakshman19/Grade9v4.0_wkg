@@ -1,0 +1,92 @@
+{
+  "sequence": 41,
+  "batch_sequence": 11,
+  "task_identity": "Q-ID-47",
+  "stable_id": "PHYS-WPE-LOT10-Q41",
+  "source_id": "EX-M111",
+  "lot": "LOT-10",
+  "batch": "BATCH-C",
+  "paper": "AIEEE 2005",
+  "source_type": "EXAM_PAPER_TRANSCRIBED",
+  "source_custody": "VERIFIED_TEXT",
+  "stem_text": "The upper half of an inclined plane with inclination 𝜙 is perfectly smooth while the lower half is rough. A body starting from rest at the top will again come to rest at the bottom if the coefficient of friction for the lower half is given by",
+  "stem_sha256": "1897b95b307743efe3c36a1e9b49cb6fb7c2957e7391efa13b84bbecb71f10fc",
+  "source_hash": "1897b95b307743efe3c36a1e9b49cb6fb7c2957e7391efa13b84bbecb71f10fc",
+  "source_record_digest": "sha256:1897b95b307743efe3c36a1e9b49cb6fb7c2957e7391efa13b84bbecb71f10fc",
+  "duplicate_parent": null,
+  "scope": "PRIMARY_IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "NOT_REQUIRED",
+  "figure_reference": null,
+  "options": [
+    "A: 2cos𝜙",
+    "B: 2𝑠𝑖𝑛𝜙",
+    "C: tan𝜙",
+    "D: 2tan𝜙"
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "WORK_ENERGY_PARTITIONED_INCLINE",
+    "predicted_option": "D: 2tan𝜙",
+    "derivation": "Body starts and ends at rest => Net work W_net = 0. Work by gravity: W_g = m*g*L*sin(phi). Work by friction over lower half: W_f = -mu * m*g*cos(phi) * (L/2). Equating: m*g*L*sin(phi) = mu * m*g*cos(phi) * (L/2) => sin(phi) = (mu/2)*cos(phi) => mu = 2*tan(phi)."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Work-energy theorem over partitioned smooth and rough incline segments"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Relating gravitational potential loss to normal friction dissipation"
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Equating gravitational work over full length L to friction work over lower half L/2"
+        },
+        "algebra_computational_load": {
+          "score": 0,
+          "evidence": "Simple trigonometric quotient sin(phi)/cos(phi) = tan(phi)"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Factoring half length L/2 for friction vs full length L for gravity"
+        }
+      },
+      "total": 4,
+      "band": "D2",
+      "prior_proposal": {
+        "source": "INITIAL_CALIBRATION",
+        "scores": "1/1/1/0/1",
+        "total": 4
+      },
+      "differences": "Initial native factor audit"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "MODEL"
+      ],
+      "rationale": "Applying work-energy balance across segmented incline with variable friction",
+      "candidate_cell": "QRT-APPLY-D2",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_INDEPENDENT_REVIEW",
+  "b2_blind_status": "PENDING_BLIND_SOLVE",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (Coaching key unverified against official NTA master)",
+    "HOLD:SPEC_PENDING (No qualified D1/D2 common blueprint or topic adapter)",
+    "HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)"
+  ],
+  "next_action": "B2 independent source-only solve + official NTA master key reconciliation"
+}

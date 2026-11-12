@@ -1,0 +1,462 @@
+{
+  "schema": "wpe-reasoning-route-preview/v1",
+  "created_on": "2026-11-02",
+  "source_head": "1bfeea16dbc3ecde991353cc09d7adf116721c59",
+  "source_git_blobs": {
+    "bridge": "255683fa36b2df733838f23a8b86b804aa812b8e",
+    "bank": "cd7cb5c705ce12b0f97edee213be2afedc04abb1",
+    "pilot": "531a5027da2649310b4660e9e812b774eb883de9",
+    "foundation_map": "b7e8449419e68398b8440c527ef5a05cbe2af811"
+  },
+  "policy": "REVIEW_NAVIGATION_ONLY__NOT_CANONICAL_PREREQUISITE",
+  "academic": {
+    "native_core1a": "NOT_ACCEPTED",
+    "native_core1b": "NOT_ACCEPTED",
+    "qrt": "NOT_RUN",
+    "owner": "PENDING",
+    "admitted": 0
+  },
+  "counts": {
+    "primary_constructions": 8,
+    "proposed_extensions": 5,
+    "author_packs": 13,
+    "missing_author_packs": 0,
+    "qualified_learner_routes": 0,
+    "pilot_candidates": 14,
+    "reader_agreements": 3,
+    "reader_conflicts": 8,
+    "reader_absent": 3
+  },
+  "foundations": [
+    "work-sign",
+    "momentum-energy",
+    "energy-motion",
+    "potential-force",
+    "momentum-fragments"
+  ],
+  "constructions": [
+    {
+      "id": "WPE-C01",
+      "group": "CONSTRUCTION",
+      "title": "Multi-force work–energy ledger",
+      "proposed_source_ids": [
+        {
+          "id": "EX-M105",
+          "reader_present": true
+        },
+        {
+          "id": "EX-M24",
+          "reader_present": true
+        },
+        {
+          "id": "TB-WPE-ILL-02",
+          "reader_present": true
+        }
+      ],
+      "foundation_anchors": [
+        "work-sign",
+        "energy-motion"
+      ],
+      "authored_pack_present": true,
+      "approved_core1a_url": null,
+      "approved_core1b_url": null,
+      "acceptance": "AUTHOR_DRAFT_ONLY"
+    },
+    {
+      "id": "WPE-C02",
+      "group": "CONSTRUCTION",
+      "title": "Spring contact and motion phases",
+      "proposed_source_ids": [
+        {
+          "id": "EX-M24",
+          "reader_present": true
+        },
+        {
+          "id": "TB-WPE-ILL-12",
+          "reader_present": true
+        },
+        {
+          "id": "EX-M18",
+          "reader_present": true
+        }
+      ],
+      "foundation_anchors": [
+        "energy-motion",
+        "momentum-fragments"
+      ],
+      "authored_pack_present": true,
+      "approved_core1a_url": null,
+      "approved_core1b_url": null,
+      "acceptance": "AUTHOR_DRAFT_ONLY"
+    },
+    {
+      "id": "WPE-C03",
+      "group": "CONSTRUCTION",
+      "title": "Constant power and speed–time–distance",
+      "proposed_source_ids": [
+        {
+          "id": "EX-M62",
+          "reader_present": true
+        },
+        {
+          "id": "EX-M79",
+          "reader_present": true
+        },
+        {
+          "id": "EX-M69",
+          "reader_present": true
+        }
+      ],
+      "foundation_anchors": [
+        "momentum-energy",
+        "energy-motion"
+      ],
+      "authored_pack_present": true,
+      "approved_core1a_url": null,
+      "approved_core1b_url": null,
+      "acceptance": "AUTHOR_DRAFT_ONLY"
+    },
+    {
+      "id": "WPE-C04",
+      "group": "CONSTRUCTION",
+      "title": "Distributed mass, chain and changing centre of mass",
+      "proposed_source_ids": [
+        {
+          "id": "EX-M73",
+          "reader_present": true
+        },
+        {
+          "id": "WEP07-02",
+          "reader_present": true
+        },
+        {
+          "id": "TB-WPE-ILL-11",
+          "reader_present": true
+        }
+      ],
+      "foundation_anchors": [
+        "energy-motion"
+      ],
+      "authored_pack_present": true,
+      "approved_core1a_url": null,
+      "approved_core1b_url": null,
+      "acceptance": "AUTHOR_DRAFT_ONLY"
+    },
+    {
+      "id": "WPE-C05",
+      "group": "CONSTRUCTION",
+      "title": "Graph decision: area, slope or time shape",
+      "proposed_source_ids": [
+        {
+          "id": "EX-M56",
+          "reader_present": true
+        },
+        {
+          "id": "EX-M61",
+          "reader_present": true
+        },
+        {
+          "id": "EX-M69",
+          "reader_present": true
+        }
+      ],
+      "foundation_anchors": [
+        "potential-force",
+        "energy-motion"
+      ],
+      "authored_pack_present": true,
+      "approved_core1a_url": null,
+      "approved_core1b_url": null,
+      "acceptance": "AUTHOR_DRAFT_ONLY"
+    },
+    {
+      "id": "WPE-C06",
+      "group": "CONSTRUCTION",
+      "title": "Vertical circle: energy plus contact/tension condition",
+      "proposed_source_ids": [
+        {
+          "id": "EX-M39",
+          "reader_present": true
+        },
+        {
+          "id": "EX-N31",
+          "reader_present": true
+        },
+        {
+          "id": "EX-M18",
+          "reader_present": true
+        },
+        {
+          "id": "EX-M6",
+          "reader_present": true
+        }
+      ],
+      "foundation_anchors": [
+        "energy-motion"
+      ],
+      "authored_pack_present": true,
+      "approved_core1a_url": null,
+      "approved_core1b_url": null,
+      "acceptance": "AUTHOR_DRAFT_ONLY"
+    },
+    {
+      "id": "WPE-C07",
+      "group": "CONSTRUCTION",
+      "title": "Variable-mass momentum transfer and conveyor power",
+      "proposed_source_ids": [
+        {
+          "id": "EX-M16",
+          "reader_present": true
+        }
+      ],
+      "foundation_anchors": [
+        "momentum-fragments"
+      ],
+      "authored_pack_present": true,
+      "approved_core1a_url": null,
+      "approved_core1b_url": null,
+      "acceptance": "AUTHOR_DRAFT_ONLY"
+    },
+    {
+      "id": "WPE-C08",
+      "group": "CONSTRUCTION",
+      "title": "Spring energy at equal force versus equal extension",
+      "proposed_source_ids": [
+        {
+          "id": "EX-M101",
+          "reader_present": true
+        }
+      ],
+      "foundation_anchors": [
+        "momentum-energy"
+      ],
+      "authored_pack_present": true,
+      "approved_core1a_url": null,
+      "approved_core1b_url": null,
+      "acceptance": "AUTHOR_DRAFT_ONLY"
+    },
+    {
+      "id": "WPE-E01",
+      "group": "EXTENSION",
+      "title": "Analytic potential wells, accessible domains and extrema",
+      "proposed_source_ids": [
+        {
+          "id": "WEP07-03",
+          "reader_present": true
+        },
+        {
+          "id": "EX-M109",
+          "reader_present": true
+        }
+      ],
+      "foundation_anchors": [],
+      "authored_pack_present": true,
+      "approved_core1a_url": null,
+      "approved_core1b_url": null,
+      "acceptance": "AUTHOR_DRAFT_ONLY"
+    },
+    {
+      "id": "WPE-E02",
+      "group": "EXTENSION",
+      "title": "Instantaneous power",
+      "proposed_source_ids": [
+        {
+          "id": "TB-WPE-ILL-05",
+          "reader_present": true
+        },
+        {
+          "id": "TB-WPE-ILL-06",
+          "reader_present": true
+        }
+      ],
+      "foundation_anchors": [],
+      "authored_pack_present": true,
+      "approved_core1a_url": null,
+      "approved_core1b_url": null,
+      "acceptance": "AUTHOR_DRAFT_ONLY"
+    },
+    {
+      "id": "WPE-E03",
+      "group": "EXTENSION",
+      "title": "Spring–projectile transitions",
+      "proposed_source_ids": [
+        {
+          "id": "EX-N34",
+          "reader_present": true
+        }
+      ],
+      "foundation_anchors": [],
+      "authored_pack_present": true,
+      "approved_core1a_url": null,
+      "approved_core1b_url": null,
+      "acceptance": "AUTHOR_DRAFT_ONLY"
+    },
+    {
+      "id": "WPE-E04",
+      "group": "EXTENSION",
+      "title": "Repeated dissipative bounces",
+      "proposed_source_ids": [
+        {
+          "id": "EX-M82",
+          "reader_present": true
+        }
+      ],
+      "foundation_anchors": [],
+      "authored_pack_present": true,
+      "approved_core1a_url": null,
+      "approved_core1b_url": null,
+      "acceptance": "AUTHOR_DRAFT_ONLY"
+    },
+    {
+      "group": "EXTENSION",
+      "title": "Radial-force potential",
+      "proposed_source_ids": [
+        {
+          "id": "EX-M89",
+          "reader_present": true
+        }
+      ],
+      "foundation_anchors": [],
+      "authored_pack_present": true,
+      "approved_core1a_url": null,
+      "approved_core1b_url": null,
+      "acceptance": "AUTHOR_DRAFT_ONLY",
+      "id": "WPE-E05"
+    }
+  ],
+  "pilot": [
+    {
+      "id": "EX-M105",
+      "comparison": "CONFLICT_IN_READER",
+      "reader_present": true,
+      "proposed_constructions": [
+        "WPE-C01"
+      ],
+      "academic_state": "NOT_ADMITTED"
+    },
+    {
+      "id": "EX-M62",
+      "comparison": "CONFLICT_IN_READER",
+      "reader_present": true,
+      "proposed_constructions": [
+        "WPE-C03"
+      ],
+      "academic_state": "NOT_ADMITTED"
+    },
+    {
+      "id": "EX-M79",
+      "comparison": "AGREES_IN_READER",
+      "reader_present": true,
+      "proposed_constructions": [
+        "WPE-C03"
+      ],
+      "academic_state": "NOT_ADMITTED"
+    },
+    {
+      "id": "EX-M16",
+      "comparison": "AGREES_IN_READER",
+      "reader_present": true,
+      "proposed_constructions": [
+        "WPE-C07"
+      ],
+      "academic_state": "NOT_ADMITTED"
+    },
+    {
+      "id": "EX-M73",
+      "comparison": "CONFLICT_IN_READER",
+      "reader_present": true,
+      "proposed_constructions": [
+        "WPE-C04"
+      ],
+      "academic_state": "NOT_ADMITTED"
+    },
+    {
+      "id": "EX-M81",
+      "comparison": "ABSENT_FROM_SELECTED_READER",
+      "reader_present": false,
+      "proposed_constructions": [],
+      "academic_state": "NOT_ADMITTED"
+    },
+    {
+      "id": "EX-M56",
+      "comparison": "CONFLICT_IN_READER",
+      "reader_present": true,
+      "proposed_constructions": [
+        "WPE-C05"
+      ],
+      "academic_state": "NOT_ADMITTED"
+    },
+    {
+      "id": "EX-M61",
+      "comparison": "CONFLICT_IN_READER",
+      "reader_present": true,
+      "proposed_constructions": [
+        "WPE-C05"
+      ],
+      "academic_state": "NOT_ADMITTED"
+    },
+    {
+      "id": "EX-M69",
+      "comparison": "CONFLICT_IN_READER",
+      "reader_present": true,
+      "proposed_constructions": [
+        "WPE-C03",
+        "WPE-C05"
+      ],
+      "academic_state": "NOT_ADMITTED"
+    },
+    {
+      "id": "EX-M39",
+      "comparison": "AGREES_IN_READER",
+      "reader_present": true,
+      "proposed_constructions": [
+        "WPE-C06"
+      ],
+      "academic_state": "NOT_ADMITTED"
+    },
+    {
+      "id": "EX-M44",
+      "comparison": "ABSENT_FROM_SELECTED_READER",
+      "reader_present": false,
+      "proposed_constructions": [],
+      "academic_state": "NOT_ADMITTED"
+    },
+    {
+      "id": "EX-M60",
+      "comparison": "ABSENT_FROM_SELECTED_READER",
+      "reader_present": false,
+      "proposed_constructions": [],
+      "academic_state": "NOT_ADMITTED"
+    },
+    {
+      "id": "EX-M101",
+      "comparison": "CONFLICT_IN_READER",
+      "reader_present": true,
+      "proposed_constructions": [
+        "WPE-C08"
+      ],
+      "academic_state": "NOT_ADMITTED"
+    },
+    {
+      "id": "WEP07-03",
+      "comparison": "CONFLICT_IN_READER",
+      "reader_present": true,
+      "proposed_constructions": [
+        "WPE-E01"
+      ],
+      "academic_state": "NOT_ADMITTED"
+    }
+  ],
+  "prohibitions": [
+    "NO_AUTHOR_ONLY_WORKED_ANSWERS",
+    "NO_CANONICAL_PREREQUISITE_CLAIMS",
+    "NO_OFFICIAL_KEY_OR_QRT_PROMOTION",
+    "NO_MASTERY_CLAIMS"
+  ],
+  "review_bank_patch": {
+    "kind": "BATCH_R2_AUTHOR_CANDIDATE_CUES",
+    "state": "NOT_ADMITTED",
+    "independent_review": "NOT_RUN",
+    "purpose": "Preview source parity with draft PR #26; no canonical prerequisite promotion"
+  }
+}

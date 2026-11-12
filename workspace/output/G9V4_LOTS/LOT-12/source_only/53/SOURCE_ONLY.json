@@ -1,0 +1,12 @@
+{
+  "source_id": "EX-N42",
+  "task_identity": "Q-ID-62",
+  "sequence": 53,
+  "batch_sequence": 8,
+  "paper": "JEE Main 2020 (Online) 7th January Morning Slot",
+  "stem_text": "A particle (m = 1 kg) slides down a frictionless track (AOC) starting from rest at a point A (height 2 m). After reaching C, the particle continues to move freely in air as a projectile. When it reaches its highest point P (height 1 m), the kinetic energy of the particle (in J) is : (Figure drawn is schematic and not to scale; take g = 10 ms-2) [FIG-stem-1]",
+  "stem_sha256": "3a750d54e63d35d0453ec0da0e458d63b0314f13d594ef41cd8f6a6c2c866319",
+  "options": [],
+  "figure_reference": "FIG-stem-1",
+  "confidentiality_notice": "Source custody blind packet. Academic solve, answer key, and scoring omitted. Private review only."
+}

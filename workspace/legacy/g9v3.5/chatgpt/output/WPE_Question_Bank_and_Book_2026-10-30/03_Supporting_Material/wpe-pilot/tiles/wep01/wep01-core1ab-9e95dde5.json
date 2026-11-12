@@ -1,0 +1,1340 @@
+{
+  "task": "P1-WPE-G9v35",
+  "card": "S5",
+  "move": "M7",
+  "as_of": "2026-10-28",
+  "deliverable": "ONE_PAIRED_CORE1A_CORE1B_JSON_WEP01_SYLLABUS_FIRST",
+  "writer_status": "WRITER_DRAFT_FOR_INDEPENDENT_CHECK_NOT_APPROVED",
+  "writer_does_not_approve": true,
+  "scope": {
+    "key_idea": "WEP-01",
+    "title": "Work done by a constant force: W=Fs cosθ, sign of work, zero work",
+    "included_core": [
+      "definition_of_work",
+      "sign_positive_negative_zero",
+      "work_force_body_frame_ownership",
+      "multiple_forces_signed_sum"
+    ],
+    "excluded": [
+      "variable_forces_and_integration",
+      "curved-path work accumulation",
+      "work_energy_theorem as a separate learning objective",
+      "power",
+      "potential_energy",
+      "noninertial_frames"
+    ],
+    "not_core2": true,
+    "no_exam_questions_required_pass_1": true,
+    "original_anchors_only": true,
+    "beyond_grade9": "none required; constant-speed moving frames treated as a labelled optional context and pre-specified inertial"
+  },
+  "shared_inferential_jump": "To determine work, identify the force and body, use that body’s displacement in a declared frame, resolve the constant force along that displacement to obtain its signed work (including zero cases), and add the signed contributions of all forces acting on the body.",
+  "authority": {
+    "academic_truth_from": {
+      "canonical_library_url": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Physics/library/phy-work-energy-power.v1.json",
+      "canonical_existing_refs": [
+        "MIC-PHY-WEP-WORK-DIRECTION",
+        "REL-WORK-CONSTANT-FORCE",
+        "CONV-WEP-SYSTEM-FIRST",
+        "CONV-WEP-PATH-FIRST"
+      ],
+      "status": "Canonical Physics library reports CANDIDATE; this pair is a draft projection for the syllabus tile, not an admitted library change."
+    },
+    "role_rules": {
+      "core1a": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Shared/roles/CORE1A.md",
+      "core1b": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Shared/roles/CORE1B.md",
+      "authority": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Shared/roles/CORE-AUTHORITY-CONTRACT.md",
+      "invariants": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Shared/roles/README.md",
+      "templates": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Shared/roles/LEARNER-PRODUCT-TEMPLATES.md"
+    },
+    "truth_sources": [
+      {
+        "id": "CAN-WEP-DIRECTION",
+        "url": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Physics/library/phy-work-energy-power.v1.json",
+        "kind": "CANDIDATE_LIBRARY_CANONICAL_SUBJECT_RECORD",
+        "use": "direction/target body/force projection and sign"
+      },
+      {
+        "id": "CAN-WEP-WORK",
+        "url": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Physics/library/phy-work-energy-power.v1.json",
+        "kind": "CANDIDATE_LIBRARY_CANONICAL_RELATION",
+        "use": "constant-force signed along-path work"
+      },
+      {
+        "id": "REF-OPENSTAX-WORK",
+        "url": "https://openstax.org/books/college-physics-2e/pages/7-1-work-the-scientific-definition",
+        "kind": "REFERENCE_ENRICHMENT",
+        "use": "Fs cosθ definition, sign and zero-work contrasts"
+      },
+      {
+        "id": "REF-OPENSTAX-NET",
+        "url": "https://openstax.org/books/college-physics/pages/7-2-kinetic-energy-and-the-work-energy-theorem",
+        "kind": "REFERENCE_ENRICHMENT",
+        "use": "signed addition across forces"
+      }
+    ],
+    "exam_custody_used": false,
+    "learner_estimate_used": false,
+    "origin": "AUTHORED_PEDAGOGICAL_EXAMPLES_GROUNDED_IN_CANONICAL_SUBJECT_MATERIAL",
+    "frozen_question_primary_capability_modified": false
+  },
+  "bucket": {
+    "id": "BUCKET-PHY-WORK-ENERGY-POWER",
+    "status": "CANDIDATE_EXISTING_LIBRARY",
+    "subject": "Physics",
+    "stage": "PASS1_SYLLABUS_FIRST",
+    "conventions": [
+      {
+        "id": "WEP01-C1",
+        "statement": "Identify the body whose displacement is measured and name each force acting ON that same body; label who exerts each force.",
+        "learner_visibility": "PRE_ATTEMPT_SAFE"
+      },
+      {
+        "id": "WEP01-C2",
+        "statement": "Specify the observation interval and one inertial frame, normally the ground frame; displacement is final position minus initial position in that frame.",
+        "learner_visibility": "PRE_ATTEMPT_SAFE"
+      },
+      {
+        "id": "WEP01-C3",
+        "statement": "In this tile, every contributing force is constant in magnitude and direction over one straight displacement; use the force on the body and that body’s displacement in the same frame.",
+        "learner_visibility": "PRE_ATTEMPT_SAFE"
+      },
+      {
+        "id": "WEP01-C4",
+        "statement": "Use s ≥ 0 for displacement magnitude (m), F ≥ 0 for force magnitude (N), θ between their directions from 0° through 180°, and a fixed right/up axis when components are used.",
+        "learner_visibility": "PRE_ATTEMPT_SAFE"
+      },
+      {
+        "id": "WEP01-C5",
+        "statement": "The signed component along displacement is F_parallel=F cosθ, hence W=F_parallel s=Fs cosθ; the sign is the sign of that component.",
+        "learner_visibility": "AFTER_ATTEMPT_ONLY"
+      },
+      {
+        "id": "WEP01-C6",
+        "statement": "For s>0, a force perpendicular to displacement has zero work despite force and motion; if s=0, every constant-force contribution is zero.",
+        "learner_visibility": "AFTER_ATTEMPT_ONLY"
+      },
+      {
+        "id": "WEP01-C7",
+        "statement": "For several forces acting on the SAME body through the SAME displacement, total work is their signed sum, W_total=ΣW_i. A force on another body does not belong in this sum.",
+        "learner_visibility": "AFTER_ATTEMPT_ONLY"
+      },
+      {
+        "id": "WEP01-C8",
+        "statement": "Units: 1 J=1 N·m. The work of an individual force may be negative, zero or positive; force magnitude and displacement magnitude cannot be negative.",
+        "learner_visibility": "AFTER_ATTEMPT_ONLY"
+      },
+      {
+        "id": "WEP01-C9",
+        "statement": "No claim of frictionlessness unless stated. Normal reaction, friction, tension and gravity are accounted for by their actual components; do not infer they vanish from an object label.",
+        "learner_visibility": "AFTER_ATTEMPT_ONLY"
+      }
+    ]
+  },
+  "microtopic": {
+    "id": "MIC-PHY-WEP-WORK-DIRECTION",
+    "version": "0.1.0",
+    "status": "CANDIDATE_EXISTING_LIBRARY",
+    "origin": "CANONICAL_CONCEPT_WITH_AUTHORED_PEDAGOGICAL_PROJECTION",
+    "source_refs": [
+      "SRC-AUTHOR-WEP"
+    ],
+    "evidence_refs": [],
+    "extensions": {},
+    "title": "Constant-force work: assign force/body/frame, project, sign and add",
+    "bucket_id": "BUCKET-PHY-WORK-ENERGY-POWER",
+    "primary_capability_ref": "CAP-WEP-WORK-DIRECTION",
+    "secondary_capability_note": "Signed addition of force contributions taught without deriving the work-energy theorem.",
+    "intrinsic_badge": "MEDIUM",
+    "badge_reason": "The difficult selection is the relevant body and displacement angle, not the multiplication; multiple forces and zero-work counterexamples expose it.",
+    "entry_assumptions": [
+      "Can distinguish a force from its magnitude and draw a direction arrow (Newton’s laws / free-body diagrams).",
+      "Can name the agent and target of a force; Newton’s third law acts on different bodies.",
+      "Can identify start/end positions, displacement direction and magnitude in metres in a selected ground frame.",
+      "Can use horizontal/vertical components and basic cosines: cos0°=1, cos60°=1/2, cos90°=0, cos120°=−1/2, cos180°=−1.",
+      "Can add positive and negative signed numbers and multiply N by m to obtain J.",
+      "Can distinguish force remaining constant during one straight displacement from a varying force, without calculus.",
+      "An inertial ground frame is the default; any co-moving frame must have constant velocity during the interval.",
+      "Given contact/weight/friction forces may act even on a moving body; frictionlessness is never silently inferred."
+    ],
+    "inferential_jump": "To determine work, identify the force and body, use that body’s displacement in a declared frame, resolve the constant force along that displacement to obtain its signed work (including zero cases), and add the signed contributions of all forces acting on the body.",
+    "teaching_path": [
+      {
+        "id": "S01",
+        "role": "DECLARE",
+        "action": "Choose the target body, force agent, actual initial/final positions, interval and frame before manipulating any equation.",
+        "why_valid": "Work is indexed to a particular force on a particular body over a particular displacement; changing one changes the work being calculated.",
+        "source_ref": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Physics/library/phy-work-energy-power.v1.json",
+        "source_ref_binding": {
+          "canonical_ref": "MIC-PHY-WEP-WORK-DIRECTION",
+          "basis": "Physics/library/phy-work-energy-power.v1.json; author-arranged teaching route"
+        },
+        "origin": "AUTHORED_PEDAGOGICAL"
+      },
+      {
+        "id": "S02",
+        "role": "DECLARE",
+        "action": "Draw the body’s displacement arrow from start to finish; label its magnitude s and the fixed coordinate axis.",
+        "why_valid": "The displacement arrow, not an assumed forward direction or distance walked, is what defines along and opposite for the constant-force calculation.",
+        "source_ref": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Physics/library/phy-work-energy-power.v1.json",
+        "source_ref_binding": {
+          "canonical_ref": "MIC-PHY-WEP-WORK-DIRECTION",
+          "basis": "Physics/library/phy-work-energy-power.v1.json; author-arranged teaching route"
+        },
+        "origin": "AUTHORED_PEDAGOGICAL"
+      },
+      {
+        "id": "S03",
+        "role": "COMPARE",
+        "action": "Draw the constant force arrow on that body and measure θ between the force and displacement arrows with tails brought together.",
+        "why_valid": "The angle in the work relation is between the actual force and the actual displacement, not between a force and a convenient vertical/horizontal line.",
+        "source_ref": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Physics/library/phy-work-energy-power.v1.json",
+        "source_ref_binding": {
+          "canonical_ref": "MIC-PHY-WEP-WORK-DIRECTION",
+          "basis": "Physics/library/phy-work-energy-power.v1.json; author-arranged teaching route"
+        },
+        "origin": "AUTHORED_PEDAGOGICAL"
+      },
+      {
+        "id": "S04",
+        "role": "CONSTRUCT",
+        "action": "Project the force onto the displacement: F_parallel=Fcosθ; multiply by s to obtain W=Fs cosθ.",
+        "why_valid": "The signed parallel component is the part of the force that transfers energy through that displacement; perpendicular parts have no contribution.",
+        "source_ref": "https://openstax.org/books/college-physics-2e/pages/7-1-work-the-scientific-definition",
+        "source_ref_binding": {
+          "canonical_ref": "MIC-PHY-WEP-WORK-DIRECTION",
+          "basis": "Physics/library/phy-work-energy-power.v1.json; author-arranged teaching route"
+        },
+        "origin": "AUTHORED_PEDAGOGICAL"
+      },
+      {
+        "id": "S05",
+        "role": "INFER",
+        "action": "Classify with θ: 0°≤θ<90° positive, θ=90° zero, 90°<θ≤180° negative for nonzero F and s.",
+        "why_valid": "The cosine changes sign across 90°; no force orientation alone determines work if s=0.",
+        "source_ref": "https://openstax.org/books/college-physics-2e/pages/7-1-work-the-scientific-definition",
+        "source_ref_binding": {
+          "canonical_ref": "MIC-PHY-WEP-WORK-DIRECTION",
+          "basis": "Physics/library/phy-work-energy-power.v1.json; author-arranged teaching route"
+        },
+        "origin": "AUTHORED_PEDAGOGICAL"
+      },
+      {
+        "id": "S06",
+        "role": "DISCRIMINATE",
+        "action": "Test two distinct zero cases: moving level while supported by a vertical normal force, and a stationary object with a horizontal applied force.",
+        "why_valid": "One has nonzero displacement but no along-displacement force component; the other has no displacement despite a force.",
+        "source_ref": "https://openstax.org/books/college-physics-2e/pages/7-1-work-the-scientific-definition",
+        "source_ref_binding": {
+          "canonical_ref": "MIC-PHY-WEP-WORK-DIRECTION",
+          "basis": "Physics/library/phy-work-energy-power.v1.json; author-arranged teaching route"
+        },
+        "origin": "AUTHORED_PEDAGOGICAL"
+      },
+      {
+        "id": "S07",
+        "role": "COORDINATE",
+        "action": "For several forces on the same body, calculate each signed work for the same interval and add: W_total=W_1+W_2+⋯.",
+        "why_valid": "Work of forces is additive; positive and negative contributions may cancel without each individually vanishing.",
+        "source_ref": "https://openstax.org/books/college-physics/pages/7-2-kinetic-energy-and-the-work-energy-theorem",
+        "source_ref_binding": {
+          "canonical_ref": "REL-WORK-CONSTANT-FORCE",
+          "basis": "Physics/library/phy-work-energy-power.v1.json; author-arranged teaching route"
+        },
+        "origin": "AUTHORED_PEDAGOGICAL"
+      },
+      {
+        "id": "S08",
+        "role": "VERIFY",
+        "action": "Check units N×m=J, reverse the displacement while force direction stays fixed (work changes sign), and test s=0 or θ=90° as limits.",
+        "why_valid": "Independent sign, zero and units tests catch mistakes that a numeric calculator alone will miss.",
+        "source_ref": "https://openstax.org/books/college-physics-2e/pages/7-1-work-the-scientific-definition",
+        "source_ref_binding": {
+          "canonical_ref": "REL-WORK-CONSTANT-FORCE",
+          "basis": "Physics/library/phy-work-energy-power.v1.json; author-arranged teaching route"
+        },
+        "origin": "AUTHORED_PEDAGOGICAL"
+      }
+    ],
+    "relation_refs": [
+      "REL-WORK-CONSTANT-FORCE"
+    ],
+    "representation_refs": [
+      "SCN01",
+      "SCN02",
+      "SCN03",
+      "SCN04",
+      "SCN05",
+      "SCN06"
+    ],
+    "question_family_refs": [],
+    "misconceptions": [
+      {
+        "id": "MIS01",
+        "wrong_idea": "Every nonzero force acting while an object moves does positive work.",
+        "diagnostic_prompt": "A suitcase moves horizontally while its supporting hand exerts a vertical upward force; is the hand’s work necessarily positive?",
+        "diagnostic_answer": "No: for horizontal displacement, the vertical supporting force is perpendicular and does zero work.",
+        "repair": "Put the displacement arrow beside the force arrow, resolve only the component parallel to it, and multiply that signed component by s."
+      },
+      {
+        "id": "MIS02",
+        "wrong_idea": "The angle in Fs cosθ is the angle to the horizontal axis even when the displacement is not horizontal.",
+        "diagnostic_prompt": "A box rises vertically while an upward force acts. Is θ=90° because the force is perpendicular to the horizontal?",
+        "diagnostic_answer": "No: force and displacement are both upward, so θ=0°.",
+        "repair": "Move arrow tails together and measure the force–displacement angle, not the force–page or force–axis angle."
+      },
+      {
+        "id": "MIS03",
+        "wrong_idea": "A negative work is impossible because F and s are positive magnitudes.",
+        "diagnostic_prompt": "An opposing force points left as an object moves right; what sets the work sign?",
+        "diagnostic_answer": "cos180°=−1, so signed work is negative.",
+        "repair": "Keep magnitudes nonnegative but retain the sign of F_parallel=Fcosθ."
+      },
+      {
+        "id": "MIS04",
+        "wrong_idea": "Zero total work means no individual force did any work.",
+        "diagnostic_prompt": "Two equal opposing horizontal forces act on a right-moving body; can their individual works be nonzero?",
+        "diagnostic_answer": "Yes: one positive, one negative, and their signed sum zero.",
+        "repair": "Show a row for each force; do not replace the ledger by a single zero row."
+      },
+      {
+        "id": "MIS05",
+        "wrong_idea": "A force exerted by the body on something else can be included as work done on the body.",
+        "diagnostic_prompt": "When a hand pulls a cart, is the force exerted by the cart on the hand part of the cart’s own-force work sum?",
+        "diagnostic_answer": "No: it acts on the hand, not on the cart.",
+        "repair": "For every force label write agent → target; retain only arrows whose target is the chosen body."
+      },
+      {
+        "id": "MIS06",
+        "wrong_idea": "The same numerical work must result in every frame, even though the body’s displacement changes.",
+        "diagnostic_prompt": "A balanced-force crate travels 3 m in ground coordinates but is stationary in its co-moving constant-speed frame. Must the individual works match?",
+        "diagnostic_answer": "No: the displacement is different across the two frames, so individual work can differ.",
+        "repair": "Declare the frame, recalculate displacement in that frame, then recompute each force’s work; the same physical force does not imply the same work value across frames."
+      },
+      {
+        "id": "MIS07",
+        "wrong_idea": "If an object stays put, the work of a nonzero applied force must still be Fs.",
+        "diagnostic_prompt": "A firm wall remains stationary under a constant push; what is s for the wall over the interval?",
+        "diagnostic_answer": "s=0, hence the push does zero mechanical work on the wall in this model.",
+        "repair": "Read actual displacement from the initial and final body positions before multiplying."
+      }
+    ],
+    "exit_task": {
+      "prompt": "A 2 kg crate moves 5 m to the left along a horizontal straight floor in the ground frame. Three constant forces act ON the crate: a 12 N pull left, an 8 N drag right, and an upward normal force equal to its weight with g=10 m/s². State the force agent/body/frame, each force’s work, total work, and why the normal has zero work. Assume no other forces.",
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Pull +60 J; drag −40 J; normal 0 J; gravity 0 J; net +20 J.",
+        "reasoning": [
+          "Target is the crate; frame is ground; displacement is 5 m LEFT. All listed forces act on the crate, plus gravity downward.",
+          "Pull left with displacement left: θ=0°, W_pull=12×5=+60 J.",
+          "Drag right opposed to leftward displacement: θ=180°, W_drag=8×5×(−1)=−40 J.",
+          "Normal upward and gravity downward: θ=90° to horizontal displacement; both do 0 J.",
+          "Signed total=60−40+0+0=+20 J."
+        ],
+        "check": "Along-displacement resultant is 12−8=4 N left; 4×5=20 J. Units J.",
+        "acceptable_alternatives": [
+          "A table of forces in the left-positive displacement axis with identical signed values."
+        ],
+        "verification_status": "AUTHOR_CALCULATED_NOT_INDEPENDENTLY_APPROVED"
+      }
+    },
+    "research_contribution": "Original Grade 9 contrasts derived from canonical Work Direction and Work Constant Force records; OpenStax 7.1/7.2 consulted for independent treatment of sign, perpendicular force, and signed net work. No coaching/question-bank content copied.",
+    "prerequisite_refs": [
+      "CAP-KIN-AVERAGE-RATES",
+      "CAP-NLM-FBD-BODY-OWNERSHIP",
+      "CAP-NLM-SECOND-LAW"
+    ],
+    "elicitation": {
+      "predict": {
+        "prompt": "A box moves to a new position while several differently directed forces act on it. Is a force magnitude multiplied by the travelled distance enough to find the work of every force?",
+        "defensible_answer": "No. Each force must be assigned to the chosen body; work uses that force’s signed component along the body’s displacement in the chosen frame, and individual contributions must be added."
+      },
+      "attempt": {
+        "produces": "Draw or describe one named target body, at least two forces with named agents, a stated inertial frame, initial/final positions and displacement. Explain how to find the angle relative to displacement, each force’s signed work, any zero contribution, and their signed sum in joules. Include the assumptions about constant forces and straight displacement.",
+        "closure": "RUBRIC",
+        "model_response": "Choose one body and frame and one straight-displacement interval. For each constant force acting on that body, measure θ from the displacement direction, compute W_i=F_i s cosθ_i, include any zero work, then add the signed values. A force on a different body is excluded. If the body has s=0, each work is zero. Example of a non-numbered model ledger: one along, one opposed, and one perpendicular force give positive, negative and zero contributions respectively.",
+        "rubric": [
+          {
+            "criterion": "Declares target body, force agents, frame, interval, displacement and constant-force straight-line assumption.",
+            "evidence_of": "The requested picture or labels identify all of these explicitly."
+          },
+          {
+            "criterion": "Relates each force’s work to the component and the actual displacement.",
+            "evidence_of": "For every included force, defines θ relative to displacement and writes W_i=F_i s cosθ_i."
+          },
+          {
+            "criterion": "Explains at least one zero contribution without confusing zero force and zero work.",
+            "evidence_of": "Perpendicular projection or zero displacement is cited in the completed explanation."
+          },
+          {
+            "criterion": "Adds the signed works and reports units.",
+            "evidence_of": "One signed sum for same-body forces, with N·m=J."
+          }
+        ],
+        "accepted": [
+          "A same-body work ledger with each force projection, signed contribution, zero possibility and total."
+        ],
+        "rejected": [
+          "Add the work by the body on another object as though that force also acts on the chosen body. Incorrect: the target of that force is different.",
+          "Every nonzero force does positive work while the body moves. Incorrect: the angle can make it negative or zero."
+        ]
+      },
+      "reconstruct": {
+        "route": [
+          {
+            "ask": "What body’s position changes in the chosen frame?",
+            "why_this_ask": "Establish the displacement owner.",
+            "model_answer": "The explicitly chosen target body."
+          },
+          {
+            "ask": "Which of the labelled forces actually act on that body?",
+            "why_this_ask": "Exclude opposite-member force from a different body.",
+            "model_answer": "Only the forces whose target is the chosen body."
+          },
+          {
+            "ask": "How do you compare each arrow to the displacement arrow?",
+            "why_this_ask": "Construct the correct angle and component.",
+            "model_answer": "Measure the angle between force and displacement, then project F along displacement."
+          },
+          {
+            "ask": "What must happen after each separate work has been found?",
+            "why_this_ask": "Elicit signed addition.",
+            "model_answer": "Sum all same-body signed works and check joules."
+          }
+        ],
+        "differs_from_teaching_path": "Core1A reveals a fixed route and fully solved numeric examples; Core1B first requires the learner to design their own labelled force ledger, then reconstructs ownership, projection and summation from that commitment."
+      },
+      "boundary_test": {
+        "prompt": "A moving trolley feels a 20 N upward normal while moving 8 m horizontally, and a separate 5 N forward drive. Can total work be zero merely because the normal does no work? Explain with one calculation.",
+        "answer": "No. Normal work is 0 J, but the 5 N forward drive does +5×8=+40 J; if no other along-path force acts, total is +40 J.",
+        "confirms": "Distinguishes zero work by one perpendicular force from total work by all forces."
+      }
+    },
+    "candidate_admission_needed": false,
+    "library_commit_performed": false
+  },
+  "relation": {
+    "id": "REL-WORK-CONSTANT-FORCE",
+    "version": "0.1.0",
+    "status": "CANDIDATE_EXISTING_LIBRARY",
+    "origin": "CANONICAL_RELATION_EXPANDED_AS_AUTHOR_PEDAGOGY",
+    "equation": "W_i = F_i s cosθ_i = F_{i,parallel}s; W_total = Σ_i W_i",
+    "model_assumptions": [
+      "Same target body, specified interval and displacement frame for each included force.",
+      "Each force constant in magnitude/direction over one straight displacement.",
+      "θ is the force/displacement angle; displacement magnitude s≥0, force magnitude F_i≥0.",
+      "Force/work of a different target body excluded.",
+      "For straight horizontal movement, gravity/normal have zero work only if genuinely perpendicular; no silent omission of friction."
+    ],
+    "axis_and_sign": "Choose displacement as positive along-path direction; along component positive, opposing negative, perpendicular zero. θ∈[0°,180°].",
+    "dimensions": "[W]=[F][s]=N·m=kg·m²·s⁻²=J; cosine dimensionless.",
+    "physical_interpretation": "Work of a constant force on a body measures the signed contribution of that force along the body’s displacement. It is not force magnitude, exertion, or the work of a different body.",
+    "checks": [
+      "At θ=0°, W=+Fs for F,s>0.",
+      "At θ=180°, W=−Fs for F,s>0.",
+      "At θ=90° or s=0, W=0.",
+      "Sum individual works before inferring the total.",
+      "Reverse displacement with all forces held fixed: each work changes sign.",
+      "A work result must report joules and the same body/frame/interval."
+    ],
+    "source_ref": "https://github.com/reallakshman19/Grade9v3.5/blob/main/Physics/library/phy-work-energy-power.v1.json"
+  },
+  "representation": {
+    "scene_instances": [
+      {
+        "id": "SCN01",
+        "microtopic_ref": "MIC-PHY-WEP-WORK-DIRECTION",
+        "kind": "force_displacement_arrows",
+        "origin": "AUTHORED_DIAGRAM_SPEC",
+        "caption": "The same rightward displacement with three different constant-force directions.",
+        "elements": [
+          "Body as a square moving from x=0 m to x=4 m; rightward displacement arrow s",
+          "Separate force arrows on the body directed right, up, and left; each arrow tail positioned at body centre",
+          "Angle markers 0°, 90°, 180° measured FROM displacement to force",
+          "For each pair: F_parallel arrow/label; signed work printed only in Core1A or after Core1B attempt"
+        ],
+        "physics_binding": "For a fixed positive displacement, force projection controls the sign of each work contribution."
+      },
+      {
+        "id": "SCN02",
+        "microtopic_ref": "MIC-PHY-WEP-WORK-DIRECTION",
+        "kind": "angled_force_component",
+        "origin": "AUTHORED_DIAGRAM_SPEC",
+        "caption": "An inclined pull and its horizontal component on a sled with rightward displacement.",
+        "elements": [
+          "Ground line and sled square with displacement right",
+          "Rope force arrow up-right at 60° measured from horizontal displacement, not from vertical",
+          "Dashed horizontal projection F_parallel=Fcos60° and vertical projection (no vertical displacement)",
+          "Read F_parallel symbol into W=F_parallel s"
+        ],
+        "physics_binding": "Horizontal component carries the contribution for a horizontal displacement."
+      },
+      {
+        "id": "SCN03",
+        "microtopic_ref": "MIC-PHY-WEP-WORK-DIRECTION",
+        "kind": "zero_work_contrast",
+        "origin": "AUTHORED_DIAGRAM_SPEC",
+        "caption": "Two different reasons that a constant force can do no work.",
+        "elements": [
+          "Panel A: a moving trolley travels right, vertical normal arrow on trolley; force and displacement perpendicular",
+          "Panel B: wall-backed block stays at same mark; applied horizontal force arrow and s=0",
+          "Display each scenario’s system, force agent, measured displacement"
+        ],
+        "physics_binding": "Perpendicularity or zero displacement can independently give zero work."
+      },
+      {
+        "id": "SCN04",
+        "microtopic_ref": "MIC-PHY-WEP-WORK-DIRECTION",
+        "kind": "force_ledger",
+        "origin": "AUTHORED_DIAGRAM_SPEC",
+        "caption": "Signed force-by-force work for a moving object; sum only forces acting on that object.",
+        "elements": [
+          "Table columns: agent, target body, F_parallel (N), s (m), W (J)",
+          "Example rows: pull +9 N, drag −6 N, support 0 N, gravity 0 N, all acting on same cart over 5 m",
+          "Signed sum row (+45−30+0+0)=+15 J; opposite-sign cancellation visible"
+        ],
+        "physics_binding": "Add signed individual work for the same body/interval."
+      },
+      {
+        "id": "SCN05",
+        "microtopic_ref": "MIC-PHY-WEP-WORK-DIRECTION",
+        "kind": "reference_frame_pair",
+        "origin": "AUTHORED_DIAGRAM_SPEC",
+        "caption": "One event in a ground frame and a co-moving constant-velocity frame.",
+        "elements": [
+          "Crate in a vehicle travelling steadily right; two opposed horizontal 5 N forces on crate",
+          "Ground frame: crate displacement +2 m to right; works +10 J and −10 J",
+          "Co-moving inertial frame: displacement 0 m; each work 0 J",
+          "Same body/forces and time interval, different stated frames"
+        ],
+        "physics_binding": "Work is associated with displacement measured in the declared reference frame."
+      },
+      {
+        "id": "SCN06",
+        "microtopic_ref": "MIC-PHY-WEP-WORK-DIRECTION",
+        "kind": "angle_sign_number_line",
+        "origin": "AUTHORED_DIAGRAM_SPEC",
+        "caption": "The angular sign test from 0° to 180°.",
+        "elements": [
+          "Horizontal θ scale with marked 0°, 90°, 180°",
+          "Positive cosine segment left of 90°, zero at 90°, negative cosine segment after 90°",
+          "F>0 and s>0 qualification displayed"
+        ],
+        "physics_binding": "Sign of work equals sign of cosθ when force and displacement magnitudes are nonzero."
+      }
+    ],
+    "correspondence": [
+      {
+        "symbol": "s (m)",
+        "element": "arrow from the body’s initial centre to its final centre in SCN01",
+        "in_words": "how far and in what direction the body’s position changed in the chosen frame"
+      },
+      {
+        "symbol": "F (N)",
+        "element": "one force arrow ending or originating on the chosen body in SCN02",
+        "in_words": "magnitude of one named agent’s force acting on the target body"
+      },
+      {
+        "symbol": "θ",
+        "element": "angle between the force arrow and the displacement arrow in SCN02",
+        "in_words": "orientation of that particular force relative to displacement"
+      },
+      {
+        "symbol": "F_parallel = F cosθ",
+        "element": "dashed component arrow alongside displacement in SCN02",
+        "in_words": "signed force part acting along the displacement"
+      },
+      {
+        "symbol": "W_i = F_i s cosθ_i",
+        "element": "one row of SCN04 ledger",
+        "in_words": "work by one named force on one chosen body"
+      },
+      {
+        "symbol": "W_total=ΣW_i",
+        "element": "total row in SCN04 ledger",
+        "in_words": "signed sum of contributions from all forces acting on that body"
+      },
+      {
+        "symbol": "s=0",
+        "element": "same starting and ending marks in SCN03 panel B",
+        "in_words": "zero displacement despite an applied force"
+      }
+    ]
+  },
+  "proposed_extension_candidate": null,
+  "core1a": {
+    "id": "CORE1A-WEP01",
+    "role": "CORE1A",
+    "title": "Constant-force work: completed construction",
+    "microtopic_ref": "MIC-PHY-WEP-WORK-DIRECTION",
+    "inferential_jump_ref": "microtopic.inferential_jump",
+    "visibility_policy": "COMPLETED_EXPLANATION_VISIBLE; EXAMPLES_SOLVED; INDEPENDENT_EXIT_CHECK_WITH_CLOSURE",
+    "ordered_blocks": [
+      {
+        "id": "identity_scope",
+        "show": "Work by constant forces on the same body, declared displacement and inertial frame; straight segments only."
+      },
+      {
+        "id": "conventions",
+        "ref": "bucket.conventions",
+        "show": "All before any worked calculations."
+      },
+      {
+        "id": "entry_assumptions",
+        "ref": "microtopic.entry_assumptions"
+      },
+      {
+        "id": "inferential_jump",
+        "ref": "microtopic.inferential_jump"
+      },
+      {
+        "id": "constructed_teaching",
+        "ref": "microtopic.teaching_path"
+      },
+      {
+        "id": "representation_bridges",
+        "ref": "representation"
+      },
+      {
+        "id": "completed_examples",
+        "ref": "core1a.questions"
+      },
+      {
+        "id": "diagnostic_repairs",
+        "ref": "microtopic.misconceptions"
+      },
+      {
+        "id": "independent_checks",
+        "ref": "relation.checks"
+      },
+      {
+        "id": "exit_with_full_closure",
+        "ref": "microtopic.exit_task"
+      },
+      {
+        "id": "provenance",
+        "ref": "authority"
+      }
+    ],
+    "questions": [
+      {
+        "id": "W01-A1",
+        "title": "An inclined tow force makes horizontal work",
+        "provenance": "AUTHORED_PEDAGOGICAL_CONCEPT_ANCHOR_NOT_EXAM_QUESTION",
+        "exposure": [
+          {
+            "core": "CORE1A",
+            "type": "COMPLETED_WORKED_EXAMPLE"
+          }
+        ],
+        "model_level": "GRADE9_CORE",
+        "setup": "On a horizontal straight section, a sled moves 5 m right in the ground frame. A rope exerts a constant 18 N on the sled at 60° above the rightward displacement. Find the rope’s work only. No other forces are being evaluated in this example.",
+        "answer": {
+          "reasoning": [
+            "Target=the sled; agent=rope. Its displacement is 5 m right in the ground frame.",
+            "θ is measured between the rope force and the rightward displacement: 60°.",
+            "The parallel component is 18cos60°=9 N to the right; the perpendicular part does not contribute to the horizontal displacement.",
+            "W_rope=(9 N)(5 m)=+45 J. Positive sign means the component is along displacement.",
+            "A dimensional check gives N·m=J."
+          ],
+          "summary": "The rope does +45 J of work on the sled.",
+          "rubric": [],
+          "check": "If the rope became vertical while the sled displacement stayed horizontal, its work would be 0 J."
+        }
+      },
+      {
+        "id": "W01-A2",
+        "title": "Zero work even while a trolley moves",
+        "provenance": "AUTHORED_PEDAGOGICAL_CONCEPT_ANCHOR_NOT_EXAM_QUESTION",
+        "exposure": [
+          {
+            "core": "CORE1A",
+            "type": "COMPLETED_WORKED_EXAMPLE"
+          }
+        ],
+        "model_level": "GRADE9_CORE",
+        "setup": "A 3 kg trolley rolls 6 m right on a horizontal straight track in the ground frame; the track’s normal force on it remains 30 N upward and its weight is 30 N downward (take g=10 m/s²). Calculate the work by each vertical force. Ignore any horizontal forces here; no claim of frictionlessness is needed.",
+        "answer": {
+          "reasoning": [
+            "Choose the trolley as the body and 6 m right as its displacement.",
+            "The track normal points up and weight points down; each is perpendicular to the horizontal displacement.",
+            "For either vertical force, θ=90° and cosθ=0.",
+            "W_normal=30×6×0=0 J and W_weight=30×6×0=0 J, although both forces and motion exist.",
+            "These results do not claim zero work by possible horizontal forces."
+          ],
+          "summary": "Normal and weight individually do zero work for this horizontal displacement.",
+          "rubric": [],
+          "check": "If the trolley rose vertically by 1 m instead, gravity would do negative work and the vertical normal’s work would depend on the force actually exerted."
+        }
+      },
+      {
+        "id": "W01-A3",
+        "title": "Several forces: a signed work ledger",
+        "provenance": "AUTHORED_PEDAGOGICAL_CONCEPT_ANCHOR_NOT_EXAM_QUESTION",
+        "exposure": [
+          {
+            "core": "CORE1A",
+            "type": "COMPLETED_WORKED_EXAMPLE"
+          }
+        ],
+        "model_level": "GRADE9_CORE",
+        "setup": "A block slides 4 m right in the ground frame. A horizontal motor-pull force of 15 N acts right, a constant resistive force of 4 N acts left, and normal and weight act vertically. The surface is horizontal; all forces remain constant during the interval. Calculate work by each and their total.",
+        "answer": {
+          "reasoning": [
+            "All forces must act on the SAME block over the SAME 4 m displacement in the ground frame.",
+            "Pull: θ=0°, W_pull=15×4=+60 J.",
+            "Resistance: θ=180°, W_resistance=4×4×(−1)=−16 J.",
+            "Normal and weight: θ=90°, so each contributes 0 J.",
+            "Sum the signed rows: W_total=60−16+0+0=+44 J. This is the total work, not the work by the motor alone."
+          ],
+          "summary": "Individual works +60 J, −16 J, 0 J, 0 J; total +44 J.",
+          "rubric": [],
+          "check": "Along-path net force is 15−4=11 N; (11 N)(4 m)=44 J as an independent recomputation."
+        }
+      },
+      {
+        "id": "W01-A4",
+        "title": "A push with no displacement",
+        "provenance": "AUTHORED_PEDAGOGICAL_CONCEPT_ANCHOR_NOT_EXAM_QUESTION",
+        "exposure": [
+          {
+            "core": "CORE1A",
+            "type": "COMPLETED_WORKED_EXAMPLE"
+          }
+        ],
+        "model_level": "GRADE9_CORE",
+        "setup": "A horizontal 50 N push acts on a rigid block secured to a rigid wall. During a 3 s interval in the ground frame, the block and its contact point stay fixed. Calculate the work of this push on the block; the wall provides whatever balancing reaction is needed.",
+        "answer": {
+          "reasoning": [
+            "The target is the block; the applied force is 50 N right.",
+            "The actual initial and final positions are equal, so the displacement magnitude is s=0 m.",
+            "Constant-force work is W=Fs cosθ; multiplying by s=0 gives W_push=0 J regardless of force magnitude.",
+            "The person may exert effort, but that is not mechanical work ON the motionless block through displacement."
+          ],
+          "summary": "The push does 0 J of mechanical work on the fixed block.",
+          "rubric": [],
+          "check": "If the contact point moved 0.2 m right under a constant 50 N rightward force, the same model would give +10 J."
+        }
+      },
+      {
+        "id": "W01-A5",
+        "title": "Whose displacement and which frame?",
+        "provenance": "AUTHORED_PEDAGOGICAL_CONCEPT_ANCHOR_NOT_EXAM_QUESTION",
+        "exposure": [
+          {
+            "core": "CORE1A",
+            "type": "COMPLETED_WORKED_EXAMPLE"
+          }
+        ],
+        "model_level": "GRADE9_CORE",
+        "setup": "A crate rides steadily on a horizontal vehicle. During 2 s the crate moves 2 m right in the ground frame. Two constant, balanced horizontal forces act on it: belt contact 5 N right and an opposing resistive force 5 N left. Compare work by these forces in the ground frame with that in the frame moving steadily with the crate. The two frames are inertial; there is no relative crate displacement in the second frame.",
+        "answer": {
+          "reasoning": [
+            "Choose the crate, not the belt or vehicle, as the target of both forces.",
+            "Ground frame: s=2 m right; belt contact does +5×2=+10 J, resistance does −5×2=−10 J; sum 0 J.",
+            "Steady co-moving frame: the same crate has s=0 m for the same 2 s; each constant-force work is 0 J in this frame.",
+            "The individual work values differ because displacement differs across the frames; the net work is 0 J in both for these balanced forces.",
+            "No change in force magnitudes is assumed; only the described inertial coordinate frame differs."
+          ],
+          "summary": "Ground: +10 J and −10 J (net zero). Co-moving: 0 J and 0 J (net zero).",
+          "rubric": [],
+          "check": "Report force agent, target body, interval and frame with every work value. Otherwise numbers from different frames can be mixed incorrectly."
+        }
+      }
+    ],
+    "coverage_keys": [
+      "force_body_owner",
+      "frame_and_displacement",
+      "constant_force_component",
+      "work_sign",
+      "zero_force_or_displacement",
+      "multiple_force_sum",
+      "units_and_checks"
+    ],
+    "coverage_evidence": {
+      "force_body_owner": "microtopic.teaching_path + core1a.questions + relation.checks",
+      "frame_and_displacement": "microtopic.teaching_path + core1a.questions + relation.checks",
+      "constant_force_component": "microtopic.teaching_path + core1a.questions + relation.checks",
+      "work_sign": "microtopic.teaching_path + core1a.questions + relation.checks",
+      "zero_force_or_displacement": "microtopic.teaching_path + core1a.questions + relation.checks",
+      "multiple_force_sum": "microtopic.teaching_path + core1a.questions + relation.checks",
+      "units_and_checks": "microtopic.teaching_path + core1a.questions + relation.checks"
+    },
+    "scope_guards": [
+      "Grade 9: basic components/cosines only; no calculus, integrals or arbitrary curved displacement.",
+      "Frame comparison uses only constant-speed inertial frames, no new dynamics.",
+      "All anchors are authored concept examples, not exam questions."
+    ],
+    "exit_ref": "microtopic.exit_task"
+  },
+  "core1b": {
+    "id": "CORE1B-WEP01",
+    "role": "CORE1B",
+    "title": "Constant-force work: predict, attempt, reconstruct, repair",
+    "microtopic_ref": "MIC-PHY-WEP-WORK-DIRECTION",
+    "inferential_jump_ref": "microtopic.inferential_jump",
+    "visibility_policy": "ATTEMPT_FIRST_PER_CYCLE; ANSWER_AND_CONVENTIONS_WITH_RULES_AFTER_ATTEMPT; NOT_A_CLOZE_COPY_OF_CORE1A",
+    "visible_convention_refs": [
+      "WEP01-C1",
+      "WEP01-C2",
+      "WEP01-C3",
+      "WEP01-C4"
+    ],
+    "deferred_convention_refs": [
+      "WEP01-C5",
+      "WEP01-C6",
+      "WEP01-C7",
+      "WEP01-C8",
+      "WEP01-C9"
+    ],
+    "pre_attempt_visible": [
+      "scope_without_conclusion",
+      "core1b.visible_convention_refs",
+      "microtopic.elicitation.predict.prompt",
+      "microtopic.elicitation.attempt.produces",
+      "core1b.concept_cycles[].predict.prompt",
+      "core1b.concept_cycles[].attempt.produces"
+    ],
+    "pre_attempt_hidden": [
+      "microtopic.inferential_jump",
+      "bucket.conventions[WEP01-C5..C9]",
+      "microtopic.teaching_path",
+      "relation.equation",
+      "relation.checks",
+      "representation.scene_instances[*].physics_binding",
+      "core1a.questions",
+      "microtopic.misconceptions",
+      "microtopic.elicitation.predict.defensible_answer",
+      "microtopic.elicitation.attempt.model_response",
+      "microtopic.elicitation.attempt.rubric",
+      "microtopic.elicitation.attempt.accepted",
+      "microtopic.elicitation.attempt.rejected",
+      "microtopic.elicitation.reconstruct",
+      "microtopic.elicitation.boundary_test.answer",
+      "core1b.concept_cycles[].predict.defensible_answer",
+      "core1b.concept_cycles[].attempt.model_response",
+      "core1b.concept_cycles[].attempt.rubric",
+      "core1b.concept_cycles[].attempt.accepted",
+      "core1b.concept_cycles[].attempt.rejected",
+      "core1b.concept_cycles[].reconstruct",
+      "core1b.concept_cycles[].boundary_test.answer",
+      "microtopic.exit_task.answer"
+    ],
+    "ordered_blocks": [
+      {
+        "id": "identity_scope",
+        "visibility": "IMMEDIATE",
+        "text": "Work of constant forces on a chosen body; commit to each attempt before revealing the relevant answer."
+      },
+      {
+        "id": "safe_conventions",
+        "visibility": "IMMEDIATE",
+        "ref": "core1b.visible_convention_refs",
+        "resolution": "Allowlist only; do not project the entire bucket.conventions."
+      },
+      {
+        "id": "predict",
+        "visibility": "PRE_ATTEMPT",
+        "ref": "microtopic.elicitation.predict.prompt"
+      },
+      {
+        "id": "attempt",
+        "visibility": "PRE_ATTEMPT",
+        "ref": "microtopic.elicitation.attempt.produces"
+      },
+      {
+        "id": "cycle_predict_attempt",
+        "visibility": "PRE_ATTEMPT",
+        "ref": "core1b.concept_cycles[].predict.prompt, .attempt.produces ONLY",
+        "answer_access": "AFTER_EACH_INDEPENDENT_ATTEMPT"
+      },
+      {
+        "id": "cycle_closure",
+        "visibility": "AFTER_ATTEMPT",
+        "ref": "core1b.concept_cycles[].predict.defensible_answer, .attempt.rubric, .attempt.model_response, .attempt.accepted, .attempt.rejected"
+      },
+      {
+        "id": "reconstruct",
+        "visibility": "AFTER_ATTEMPT",
+        "ref": "microtopic.elicitation.reconstruct and core1b.concept_cycles[].reconstruct"
+      },
+      {
+        "id": "misconceptions_and_repairs",
+        "visibility": "AFTER_ATTEMPT",
+        "ref": "microtopic.misconceptions"
+      },
+      {
+        "id": "post_attempt_conventions",
+        "visibility": "AFTER_ATTEMPT",
+        "ref": "core1b.deferred_convention_refs"
+      },
+      {
+        "id": "boundary_prompt",
+        "visibility": "BEFORE_BOUNDARY_REVEAL",
+        "ref": "core1b.concept_cycles[].boundary_test.prompt and microtopic.elicitation.boundary_test.prompt"
+      },
+      {
+        "id": "boundary_closure",
+        "visibility": "AFTER_BOUNDARY_ATTEMPT",
+        "ref": "core1b.concept_cycles[].boundary_test.answer and microtopic.elicitation.boundary_test.answer"
+      },
+      {
+        "id": "shared_jump_reveal",
+        "visibility": "AFTER_ATTEMPT",
+        "ref": "microtopic.inferential_jump"
+      }
+    ],
+    "elicitation_ref": "microtopic.elicitation",
+    "diagnostic_and_repair_ref": "microtopic.misconceptions",
+    "coverage_keys": [
+      "force_body_owner",
+      "frame_and_displacement",
+      "constant_force_component",
+      "work_sign",
+      "zero_force_or_displacement",
+      "multiple_force_sum",
+      "units_and_checks"
+    ],
+    "concept_cycles": [
+      {
+        "id": "CYCLE-ANGLE",
+        "coverage_keys": [
+          "constant_force_component",
+          "work_sign",
+          "units_and_checks"
+        ],
+        "scope": "GRADE9_CORE",
+        "visibility": "PREDICT_ATTEMPT_THEN_REVEAL",
+        "predict": {
+          "prompt": "A child pulls a wagon 6 m up a straight ramp in the ground frame with a constant 14 N force whose arrow is 60° to the wagon’s uphill displacement. Does a calculation using only the full force magnitude give the correct work?",
+          "defensible_answer": "The target is the wagon, the agent is the child, s=6 m uphill in the ground frame, and θ=60° to that displacement."
+        },
+        "attempt": {
+          "produces": "State target body, force agent, frame, displacement, and the angle relative to displacement. Calculate the force component, the signed work and units; explain your method.",
+          "closure": "RUBRIC",
+          "model_response": "The target is the wagon, the agent is the child, s=6 m uphill in the ground frame, and θ=60° to that displacement. F_parallel=14cos60°=7 N. W=7×6=+42 J. Directly multiplying 14×6 would overstate the result.",
+          "rubric": [
+            {
+              "criterion": "Declares target, agent, frame, displacement and force–displacement angle.",
+              "evidence_of": "Wagon; child; ground; 6 m uphill; θ=60°."
+            },
+            {
+              "criterion": "Computes work using the correct component and sign.",
+              "evidence_of": "F_parallel=7 N, W=+42 J."
+            },
+            {
+              "criterion": "Gives units and a reason for the component.",
+              "evidence_of": "J and only the parallel component contributes."
+            }
+          ],
+          "accepted": [
+            "The child’s pull does +42 J on the wagon, not 84 J."
+          ],
+          "rejected": [
+            "The whole 14 N acts along the 6 m displacement so W=84 J. Incorrect: the force is angled, and its parallel component is 7 N."
+          ]
+        },
+        "reconstruct": {
+          "route": [
+            {
+              "ask": "Which body is displaced?",
+              "why_this_ask": "Fix ownership before computing.",
+              "model_answer": "The wagon."
+            },
+            {
+              "ask": "Which angle is actually specified between arrows?",
+              "why_this_ask": "Prevent measuring to a different reference direction.",
+              "model_answer": "60° relative to uphill displacement."
+            },
+            {
+              "ask": "Which force component lies along the displacement?",
+              "why_this_ask": "Elicit projection instead of supplying the result in advance.",
+              "model_answer": "14cos60°=7 N."
+            },
+            {
+              "ask": "How does that signed component determine work?",
+              "why_this_ask": "Complete reasoning and units.",
+              "model_answer": "7×6=+42 J."
+            }
+          ],
+          "differs_from_teaching_path": "Unlike Core1A’s completed tow-force computation, this is a learner choice about whether an unprojected magnitude is sufficient; the learner constructs the component and owns the unit check."
+        },
+        "boundary_test": {
+          "prompt": "If θ changes from 60° to 120° while F and s stay fixed, what work results?",
+          "answer": "14×6×cos120°=−42 J.",
+          "confirms": "A sign reversal must follow cosine, not a change in force magnitude."
+        },
+        "post_attempt_fields": [
+          "predict.defensible_answer",
+          "attempt.model_response",
+          "attempt.rubric",
+          "attempt.accepted",
+          "attempt.rejected",
+          "reconstruct",
+          "boundary_test.answer",
+          "boundary_test.confirms"
+        ]
+      },
+      {
+        "id": "CYCLE-OWNERSHIP",
+        "coverage_keys": [
+          "force_body_owner",
+          "frame_and_displacement"
+        ],
+        "scope": "GRADE9_CORE",
+        "visibility": "PREDICT_ATTEMPT_THEN_REVEAL",
+        "predict": {
+          "prompt": "A student pushes a movable board rightward; the board pushes the student leftward with an equal-sized contact force. Which of these forces belongs in an account of work done ON the board?",
+          "defensible_answer": "Choose the board."
+        },
+        "attempt": {
+          "produces": "Identify the chosen body, list the two agent→target forces, identify which force acts on the chosen body, state the ground frame and board displacement direction, and explain your inclusion choice.",
+          "closure": "RUBRIC",
+          "model_response": "Choose the board. Student→board acts on the board and belongs in its work account; board→student acts on the student and must not be entered as work on the board. The board’s ground-frame displacement is rightward. Magnitudes need not be given to classify ownership.",
+          "rubric": [
+            {
+              "criterion": "Names the target and each agent→target force.",
+              "evidence_of": "Target board; student→board and board→student are distinct force-body pairs."
+            },
+            {
+              "criterion": "Keeps only the force on the chosen body.",
+              "evidence_of": "Include student→board, exclude board→student."
+            },
+            {
+              "criterion": "Names displacement and frame.",
+              "evidence_of": "Board displacement rightward in the ground frame."
+            }
+          ],
+          "accepted": [
+            "For work ON the board, include the student’s force on the board, not the board’s force on the student."
+          ],
+          "rejected": [
+            "Both action–reaction forces are forces on the board, so include both. Incorrect: one acts on the student."
+          ]
+        },
+        "reconstruct": {
+          "route": [
+            {
+              "ask": "What is the target body?",
+              "why_this_ask": "Make the work-owner decision explicit.",
+              "model_answer": "Board."
+            },
+            {
+              "ask": "What does each contact-force arrow act on?",
+              "why_this_ask": "Identify agents and targets rather than magnitudes.",
+              "model_answer": "Student pushes board; board pushes student."
+            },
+            {
+              "ask": "Which displacement belongs in the selected work ledger?",
+              "why_this_ask": "Prevent mixing bodies.",
+              "model_answer": "Board displacement in the ground frame."
+            }
+          ],
+          "differs_from_teaching_path": "Core1A lists force-by-force work for one body; here the learner discriminates which members of an interaction pair even belong in the ledger."
+        },
+        "boundary_test": {
+          "prompt": "Can action–reaction forces cancel as two work terms in a ledger for the board alone?",
+          "answer": "No; one of them is not a force acting on the board.",
+          "confirms": "Ownership comes before signed addition."
+        },
+        "post_attempt_fields": [
+          "predict.defensible_answer",
+          "attempt.model_response",
+          "attempt.rubric",
+          "attempt.accepted",
+          "attempt.rejected",
+          "reconstruct",
+          "boundary_test.answer",
+          "boundary_test.confirms"
+        ]
+      },
+      {
+        "id": "CYCLE-ZERO",
+        "coverage_keys": [
+          "zero_force_or_displacement",
+          "work_sign"
+        ],
+        "scope": "GRADE9_CORE",
+        "visibility": "PREDICT_ATTEMPT_THEN_REVEAL",
+        "predict": {
+          "prompt": "A passenger carries a 4 kg shopping bag 7 m horizontally at constant height in the ground frame while exerting a constant 40 N upward support force (g=10 m/s²). Could that support force have nonzero work on the bag for this interval?",
+          "defensible_answer": "Target: bag."
+        },
+        "attempt": {
+          "produces": "Identify bag, support-force agent, ground frame and displacement, calculate support-force work with the force–displacement angle, state the bag’s weight work separately and explain the outcome.",
+          "closure": "RUBRIC",
+          "model_response": "Target: bag. The hand exerts 40 N upward; the bag moves 7 m horizontally at fixed height in ground frame. θ=90°, so hand work=40×7×cos90°=0 J. Weight=40 N downward, also perpendicular and does 0 J. The existence of force and motion does not make the work nonzero.",
+          "rubric": [
+            {
+              "criterion": "Declares target, agent, frame and displacement.",
+              "evidence_of": "Bag, hand, ground, 7 m horizontally."
+            },
+            {
+              "criterion": "Computes hand and gravity work separately.",
+              "evidence_of": "Both 0 J because their arrows are perpendicular to displacement."
+            },
+            {
+              "criterion": "Explains why motion and force can coexist with zero work.",
+              "evidence_of": "Force component parallel to the displacement is zero."
+            }
+          ],
+          "accepted": [
+            "Support and weight each do 0 J despite the 7 m horizontal movement."
+          ],
+          "rejected": [
+            "Because the hand pushes upward with 40 N while the bag moves, its work is +280 J. Incorrect: θ=90°, so the parallel component is zero."
+          ]
+        },
+        "reconstruct": {
+          "route": [
+            {
+              "ask": "What does the bag’s displacement arrow look like?",
+              "why_this_ask": "Do not confuse position change with force direction.",
+              "model_answer": "Horizontal."
+            },
+            {
+              "ask": "What is the orientation of the hand’s arrow?",
+              "why_this_ask": "Identify the correct angle.",
+              "model_answer": "Vertical; perpendicular to displacement."
+            },
+            {
+              "ask": "What does that mean for work?",
+              "why_this_ask": "Construct the zero-work inference.",
+              "model_answer": "Each vertical force has zero parallel component and zero work."
+            }
+          ],
+          "differs_from_teaching_path": "Core1A gives a trolley’s two vertical-force zero results; this cycle asks the learner to distinguish the displacement of a held bag from the direction of support and verify with a changed path."
+        },
+        "boundary_test": {
+          "prompt": "The passenger steps upward 1 m carrying the bag while continuing to hold 40 N upward. What is the hand’s work on that segment?",
+          "answer": "+40 J for the 1 m upward segment.",
+          "confirms": "Changing the displacement direction can change work even when force magnitude is unchanged."
+        },
+        "post_attempt_fields": [
+          "predict.defensible_answer",
+          "attempt.model_response",
+          "attempt.rubric",
+          "attempt.accepted",
+          "attempt.rejected",
+          "reconstruct",
+          "boundary_test.answer",
+          "boundary_test.confirms"
+        ]
+      },
+      {
+        "id": "CYCLE-SUM",
+        "coverage_keys": [
+          "multiple_force_sum",
+          "work_sign",
+          "units_and_checks"
+        ],
+        "scope": "GRADE9_CORE",
+        "visibility": "PREDICT_ATTEMPT_THEN_REVEAL",
+        "predict": {
+          "prompt": "A powered cart moves 3 m right on level ground in the ground frame under a constant 22 N drive force right, a constant 7 N resistance left, and vertical weight and support forces. Is the drive-force work alone the total work?",
+          "defensible_answer": "On the cart over 3 m right in ground frame: drive work=+22×3=+66 J; resistance=−7×3=−21 J; support=0 J and weight=0 J since vertical."
+        },
+        "attempt": {
+          "produces": "Specify target body, all four agents/directions, the reference frame and displacement. Make a signed work table for each force and the sum in joules, then independently check the result with the resultant along-path force.",
+          "closure": "RUBRIC",
+          "model_response": "On the cart over 3 m right in ground frame: drive work=+22×3=+66 J; resistance=−7×3=−21 J; support=0 J and weight=0 J since vertical. Total=+45 J. Parallel resultant=22−7=15 N, and 15×3=+45 J. Drive work alone is not total.",
+          "rubric": [
+            {
+              "criterion": "Declares body, forces, frame and displacement.",
+              "evidence_of": "Cart; drive, resistance, support, gravity; ground; 3 m right."
+            },
+            {
+              "criterion": "Computes four signed work contributions.",
+              "evidence_of": "+66 J, −21 J, 0 J, 0 J."
+            },
+            {
+              "criterion": "Adds work and checks with the along-path resultant.",
+              "evidence_of": "+45 J, independently 15 N×3 m=45 J."
+            }
+          ],
+          "accepted": [
+            "Signed contributions +66−21+0+0 sum to +45 J."
+          ],
+          "rejected": [
+            "The motor does +66 J, so total work is +66 J. Incorrect: the resisting force does −21 J, and work must be added by force."
+          ]
+        },
+        "reconstruct": {
+          "route": [
+            {
+              "ask": "What is the same displacement for all forces acting on the cart?",
+              "why_this_ask": "Fix the common event.",
+              "model_answer": "3 m right."
+            },
+            {
+              "ask": "Which force arrows are aligned with the displacement, opposed, or vertical?",
+              "why_this_ask": "Use direction to determine signed components.",
+              "model_answer": "Drive right, resistance left, support and weight vertical."
+            },
+            {
+              "ask": "How do individual work terms combine?",
+              "why_this_ask": "Separate individual and total work.",
+              "model_answer": "Add +66−21+0+0=45 J."
+            },
+            {
+              "ask": "Can the net along-path force confirm this sum?",
+              "why_this_ask": "Build an independent validation route.",
+              "model_answer": "(22−7)×3=45 J."
+            }
+          ],
+          "differs_from_teaching_path": "Core1A reveals an individual-force ledger; this cycle requires the learner to generate and cross-check the ledger with a different force inventory."
+        },
+        "boundary_test": {
+          "prompt": "If resistance rises to 22 N while all other forces and displacement remain the same, what is total work?",
+          "answer": "0 J; +66 J and −66 J cancel, even though each is nonzero.",
+          "confirms": "Zero total does not imply zero individual force work."
+        },
+        "post_attempt_fields": [
+          "predict.defensible_answer",
+          "attempt.model_response",
+          "attempt.rubric",
+          "attempt.accepted",
+          "attempt.rejected",
+          "reconstruct",
+          "boundary_test.answer",
+          "boundary_test.confirms"
+        ]
+      },
+      {
+        "id": "CYCLE-FRAME",
+        "coverage_keys": [
+          "frame_and_displacement",
+          "force_body_owner",
+          "multiple_force_sum"
+        ],
+        "scope": "GRADE9_CORE",
+        "visibility": "PREDICT_ATTEMPT_THEN_REVEAL",
+        "predict": {
+          "prompt": "A box moves steadily on a horizontal moving platform. Over 4 s, it travels 6 m right in the ground frame while a 3 N horizontal contact force acts right and an equal 3 N resistance acts left. How should work be reported if the observer rides alongside the box at constant speed?",
+          "defensible_answer": "Target box; platform→box contact +3 N right and resistance agent→box −3 N left, balanced."
+        },
+        "attempt": {
+          "produces": "Identify body and both agent→body forces, state the same interval and each frame, determine displacement in each frame, calculate each force’s work and their total, and compare the answers.",
+          "closure": "RUBRIC",
+          "model_response": "Target box; platform→box contact +3 N right and resistance agent→box −3 N left, balanced. Ground frame: 6 m right, works +18 J and −18 J, total 0 J. In the box’s steady co-moving inertial frame, displacement is 0 m, so both works 0 J and total 0 J. Frame and displacement must be reported with each result.",
+          "rubric": [
+            {
+              "criterion": "Declares target, both forces, interval and frames.",
+              "evidence_of": "Box; two opposed 3 N forces; 4 s; ground and co-moving inertial."
+            },
+            {
+              "criterion": "Determines displacement in each frame.",
+              "evidence_of": "Ground +6 m; co-moving 0 m."
+            },
+            {
+              "criterion": "Computes individual signed works and sums in both frames.",
+              "evidence_of": "Ground +18 and −18 J sum 0; co-moving 0 and 0 J sum 0."
+            },
+            {
+              "criterion": "Interprets why individual work results differ without changing forces.",
+              "evidence_of": "Displacement depends on the declared reference frame."
+            }
+          ],
+          "accepted": [
+            "The ground observer finds +18 J and −18 J; the co-moving observer finds 0 J and 0 J."
+          ],
+          "rejected": [
+            "The contact force does +18 J in both frames because the force is the same. Incorrect: the co-moving displacement is zero."
+          ]
+        },
+        "reconstruct": {
+          "route": [
+            {
+              "ask": "Whose displacement matters for each force?",
+              "why_this_ask": "Keep target body fixed.",
+              "model_answer": "The box’s."
+            },
+            {
+              "ask": "What is the box’s displacement during the same interval in each frame?",
+              "why_this_ask": "Recognise coordinate dependence.",
+              "model_answer": "6 m right in ground frame, 0 m co-moving."
+            },
+            {
+              "ask": "What does each frame then give for work and total?",
+              "why_this_ask": "Close comparison.",
+              "model_answer": "Ground +18−18=0 J; moving 0+0=0 J."
+            }
+          ],
+          "differs_from_teaching_path": "Unlike Core1A’s vehicle comparison, the learner must independently select the two displacements and compute both force ledgers across a longer event with a different contact pairing."
+        },
+        "boundary_test": {
+          "prompt": "If the box accelerated, could you continue to treat a frame attached to it as a single constant-speed inertial frame for this whole interval?",
+          "answer": "No: the constant-velocity inertial-frame assumption would fail.",
+          "confirms": "Frame comparisons require stated assumptions, not just a moving-object label."
+        },
+        "post_attempt_fields": [
+          "predict.defensible_answer",
+          "attempt.model_response",
+          "attempt.rubric",
+          "attempt.accepted",
+          "attempt.rejected",
+          "reconstruct",
+          "boundary_test.answer",
+          "boundary_test.confirms"
+        ]
+      }
+    ],
+    "coverage_evidence": {
+      "force_body_owner": "microtopic.elicitation.attempt.produces + CYCLE-OWNERSHIP.attempt.produces, CYCLE-FRAME.attempt.produces",
+      "frame_and_displacement": "microtopic.elicitation.attempt.produces + CYCLE-OWNERSHIP.attempt.produces, CYCLE-FRAME.attempt.produces",
+      "constant_force_component": "microtopic.elicitation.attempt.produces + CYCLE-ANGLE.attempt.produces",
+      "work_sign": "microtopic.elicitation.attempt.produces + CYCLE-ANGLE.attempt.produces, CYCLE-ZERO.attempt.produces, CYCLE-SUM.attempt.produces",
+      "zero_force_or_displacement": "microtopic.elicitation.attempt.produces + CYCLE-ZERO.attempt.produces",
+      "multiple_force_sum": "microtopic.elicitation.attempt.produces + CYCLE-SUM.attempt.produces, CYCLE-FRAME.attempt.produces",
+      "units_and_checks": "microtopic.elicitation.attempt.produces + CYCLE-ANGLE.attempt.produces, CYCLE-SUM.attempt.produces"
+    },
+    "test_of_ab_distinction": "Core1A explains and completes 5 independent numerical/physical anchors; Core1B makes learner choose force ownership, force/displacement angle, zero condition, ledger composition and reference frame before any answer reveal. All numbers differ between A and B cycles.",
+    "extension_marker": "NONE",
+    "visible_scene_refs": [],
+    "deferred_scene_refs": [
+      "SCN01",
+      "SCN02",
+      "SCN03",
+      "SCN04",
+      "SCN05",
+      "SCN06"
+    ]
+  },
+  "question_bank_use": {
+    "pass_1": "NONE",
+    "pass_2": "NTA_JEE_MAIN_FINAL_KEY_COMPARISON_LATER; NOT_ATTEMPTED"
+  },
+  "answer_visibility_contract": {
+    "core1b_pre_attempt_allowlist": [
+      "core1b.visible_convention_refs",
+      "microtopic.elicitation.predict.prompt",
+      "microtopic.elicitation.attempt.produces",
+      "core1b.concept_cycles[].predict.prompt",
+      "core1b.concept_cycles[].attempt.produces"
+    ],
+    "default_for_unlisted_answer_bearing_fields": "HIDDEN_UNTIL_RELEVANT_ATTEMPT",
+    "core1b_predict_answers": "AFTER_ATTEMPT_ONLY",
+    "core1b_rubrics_model_answers": "AFTER_ATTEMPT_ONLY",
+    "core1a_completed_examples": "CORE1A_TEACHING_VISIBLE_ONLY_NOT_IMPORTED_INTO_CORE1B_PRE_ATTEMPT",
+    "microtopic.exit_task.answer": "AFTER_EXIT_ATTEMPT_ONLY_IN_CORE1B",
+    "exam_key_letters_and_option_formulas": "ABSENT_NOT_REQUIRED_PASS1",
+    "rendering_must_enforce": "NOT_TESTED"
+  },
+  "not_done_or_unsure": [
+    "Independent Checker S5 review not performed.",
+    "Canonical Physics library is status CANDIDATE; no repository commit or admission performed.",
+    "No real JEE Main paper/key comparison in syllabus Pass 1 by instruction.",
+    "The learner renderer’s pre-attempt access enforcement was not tested.",
+    "Moving-frame comparison is a conceptual enrichment: a strong Grade 9 learner may need a provided constant-speed frame sketch.",
+    "No automatic production-package schema compiler run; this is a role-aligned standalone JSON handoff."
+  ],
+  "self_check_what_could_be_wrong": [
+    "The example force labels could be projected by a renderer without sufficiently binding force agent to target body.",
+    "A learner may confuse distance travelled with straight displacement if the visual lacks clear start/end points.",
+    "The frame contrast may overload a Grade 9 learner even with inertial-frame conditions supplied.",
+    "A renderer might expose shared conclusions or hidden rubrics prior to the first attempt.",
+    "A rubric may need independent calibration to accept equivalent clear work ledgers.",
+    "Some original examples may require polishing for local syllabus style, despite academic consistency."
+  ],
+  "source_custody_visibility": "NO_EXAM_QUESTIONS_PRESENT; ALL_EXAMPLES_AUTHORED; CORE2_NOT_AUTHORED"
+}

@@ -1,0 +1,13 @@
+{
+  "source_id": "WEP07-02",
+  "task_identity": "Q-ID-75",
+  "sequence": 64,
+  "lot_sequence": 4,
+  "paper": "NSEP 2024 code 61 Q32",
+  "stem_status": "SOURCE_INCOMPLETE_UNBOUND_REGISTRY_STEM",
+  "stem_text": null,
+  "stem_sha256": null,
+  "options": null,
+  "figure_reference": "SAVED_ITEM_CROP:WEP07-02_NSEP2024-61_Q32.png",
+  "confidentiality_notice": "Source custody blind packet. Academic solve, answer key, and scoring omitted. Private review only."
+}

@@ -1,0 +1,89 @@
+{
+  "schema": "g9v4-architecture-guide-source-map/v1",
+  "as_of": "2026-11-02",
+  "scope": "Static public documentation index; not an adopted policy or reviewer receipt.",
+  "authority_note": "Source-derived rules are cited; the page's procedural synthesis is a navigation/engineering proposal and does not override Shared, Issue #1, Owner scope or independent reviewer.",
+  "sources": [
+    {
+      "id": "S01",
+      "path": "AGENTS.md",
+      "git_blob_sha": "05f393cae6fe2f4b93d3bd0b3f264893ef59325d",
+      "role": "Repository operating and fail-closed rules"
+    },
+    {
+      "id": "S02",
+      "path": "docs/product-scope.md",
+      "git_blob_sha": "c8b4643a224cccef21a9723edbe5985060c3cda8",
+      "role": "Three-subject architecture, WPE pilot and proposed v2 scope"
+    },
+    {
+      "id": "S03",
+      "path": "docs/agent-entry/CURRENT_CONCEPT_COMPANION.md",
+      "git_blob_sha": "872b14fd365e0a5b3967adb3a42ad06000b8678a",
+      "role": "Two routes, academic reconciliation and binder limits"
+    },
+    {
+      "id": "S04",
+      "path": "docs/agent-entry/CURRENT_WORKFLOW.json",
+      "git_blob_sha": "53aed5aa3fd5bee5ca6df48f9b4c87f60e0c3043",
+      "role": "Actual dependencies and Owner-specific sequence"
+    },
+    {
+      "id": "S05",
+      "path": "docs/smart-skills-integration.md",
+      "git_blob_sha": "b0f866c53e91ddc2dcf92f6141025e727b7e3f1e",
+      "role": "SL1/P1/SL2 and QRT ownership and gate semantics"
+    },
+    {
+      "id": "S06",
+      "path": "docs/agent-entry/03-blueprint-adapters.md",
+      "git_blob_sha": "3ae34406c5458f08a27b536e91fe2d33f27ee2ac",
+      "role": "Draft Physics Blueprint and no approved WPE adapter"
+    },
+    {
+      "id": "S07",
+      "path": "templates/physics-blueprint/physics-blueprint.D3-D4.json",
+      "git_blob_sha": "700dafcbe86d76442637bcf214eeb544497cf4ea",
+      "role": "Draft 14-cell Physics D3/D4 operation matrix"
+    },
+    {
+      "id": "S08",
+      "path": "docs/agent-entry/07-independent-review.md",
+      "git_blob_sha": "d096f44a8c3ad6425814004731e3dbf2ffeb1f79",
+      "role": "Blind first-pass reviewer protocol"
+    },
+    {
+      "id": "S09",
+      "path": "docs/agent-entry/04-output.md",
+      "git_blob_sha": "c3060387c98048fb15bb20c6f02caa6964f0191d",
+      "role": "Core2/Core1A/1B native construction and Owner gates"
+    },
+    {
+      "id": "S10",
+      "path": "docs/agent-entry/05-qa-publication.md",
+      "git_blob_sha": "b043777ad3aeb04f3ef1e5defa6b995342bfb422",
+      "role": "QA, source and publication boundaries"
+    },
+    {
+      "id": "S11",
+      "path": "docs/agent-entry/00-required-reading.md",
+      "git_blob_sha": "1d5eb878961188ff14fc9375a880593effc8b553",
+      "role": "Audience-specific reading and blind review exception"
+    },
+    {
+      "id": "S12",
+      "path": "docs/implementation-status.md",
+      "git_blob_sha": "39c54f63c57408ecb441af30a35bd09e7a56f8a9",
+      "role": "P0/P1/P2/P3 implementation and qualification status"
+    }
+  ],
+  "currentCaveats": [
+    "Blueprint v0.2.0 DRAFT_OWNER_REVIEW; not approved for academic binding",
+    "D1/D2 common Blueprint not qualified; SPEC_PENDING",
+    "WPE topic adapter no uniquely selected approved version",
+    "Math/Chemistry first topic and Blueprints unknown and unapproved",
+    "Native Core2/1A content and academic learner release not authorized by this guide",
+    "Author-exposed guide must not go to a sealed first-pass reviewer"
+  ],
+  "testBoundary": "Future technical tests check navigation/source references; actual expert review and authority cannot be synthesized."
+}

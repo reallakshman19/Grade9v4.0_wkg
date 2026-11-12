@@ -53,10 +53,7 @@ def test_bad_collection_type(candidate):
 
 def test_symlink_cannot_escape(candidate,tmp_path):
     external=tmp_path/"outside.json"; external.write_text("[]")
-    try:
-        (candidate/"external.json").symlink_to(external)
-    except OSError as e:
-        pytest.skip(f"Symlinks not supported or permitted on this host: {e}")
+    (candidate/"external.json").symlink_to(external)
     modify(candidate,"bundle.json",lambda d:d["files"].update(sources="external.json"))
     assert "INPUT_ERROR" in error_codes(candidate)
 

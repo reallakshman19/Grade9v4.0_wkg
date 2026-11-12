@@ -1,0 +1,12 @@
+{
+  "source_id": "EX-N34",
+  "task_identity": "Q-ID-58",
+  "sequence": 50,
+  "batch_sequence": 5,
+  "paper": "JEE Main 2021 (Online) 20th July Morning Shift",
+  "stem_text": "In a spring gun having spring constant 100 N/m a small ball 'B' of mass 100 g is put in its barrel (as shown in figure) by compressing the spring through 0.05 m. There should be a box placed at a distance 'd' on the ground so that the ball falls in it. If the ball leaves the gun horizontally at a height of 2 m above the ground. The value of d is _________ m. (g = 10 m/s2). [FIG-stem-1]",
+  "stem_sha256": "48b31fcbba7f05e5a8d22084185d0d7dee11347424a767f88564a85916624285",
+  "options": [],
+  "figure_reference": "FIG-stem-1",
+  "confidentiality_notice": "Source custody blind packet. Academic solve, answer key, and scoring omitted. Private review only."
+}

@@ -1,0 +1,77 @@
+{
+  "scope": "AUTHOR_HUB_BROWSER_CHECKS_ONLY",
+  "passed": 14,
+  "results": [
+    {
+      "name": "hub title",
+      "pass": true
+    },
+    {
+      "name": "five stages",
+      "pass": true
+    },
+    {
+      "name": "55 source links",
+      "pass": true
+    },
+    {
+      "name": "ten dossiers",
+      "pass": true
+    },
+    {
+      "name": "Core1B unbuilt",
+      "pass": true
+    },
+    {
+      "name": "current coverage",
+      "pass": true
+    },
+    {
+      "name": "source search",
+      "pass": true
+    },
+    {
+      "name": "search feedback",
+      "pass": true
+    },
+    {
+      "name": "search reset",
+      "pass": true
+    },
+    {
+      "name": "actual native reader URL",
+      "pass": true
+    },
+    {
+      "name": "native reader HTML loads",
+      "pass": true
+    },
+    {
+      "name": "actual ten-node catalogue",
+      "pass": true
+    },
+    {
+      "name": "mobile no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "Core1B stage navigation",
+      "pass": true
+    }
+  ],
+  "basis": "BROWSER_FINAL.log completed all check() assertions without error; checked tool result, actual screenshots inspected",
+  "desktop": "1365x1000",
+  "mobile": "390x844",
+  "earlier_failures": [
+    "In-app browser kernel assets unavailable",
+    "Sandbox Chrome launch failed",
+    "Browser runner blocks direct file URLs; temporary127.0.0.1 server used",
+    "Initial case-sensitive Core2 body-text assertion failed; URL correct; retried with actual target URL and readable body, no product defect established"
+  ],
+  "console": "One favicon404 observed; no product QA implied",
+  "temporary_server": "STOPPED port8789 verified",
+  "task_browser": "CLOSED named session wpe-hub-20261031; Owner in-app browser untouched",
+  "independent_QA": false,
+  "visual_inspection": "Desktop/mobile screenshot previews inspected",
+  "scope_limit": "New hub links verified; existing learner shell broken links remain documented and untouched"
+}

@@ -1,0 +1,80 @@
+{
+  "schema": "wpe-core2-handoff-file-digests/v1",
+  "files": [
+    {
+      "path": "HANDOFF_STATUS.json",
+      "bytes": 2412,
+      "sha256": "28551e1db2e08efbe56564fddf89607e0136253ddb9267b45f0a731d948dd759"
+    },
+    {
+      "path": "START_HERE.md",
+      "bytes": 3686,
+      "sha256": "72ade5d5e76a2073bfacaed97101be281fd0f2fae7b321a51b5ba465596a2569"
+    },
+    {
+      "path": "fixtures/synthetic_question.json",
+      "bytes": 1796,
+      "sha256": "7ad629b2e6f9cc57f6cbecf1445ac47e53af69849eb9f5cbd9a79e5dae27831c"
+    },
+    {
+      "path": "logs/CHROMIUM_20261030.log",
+      "bytes": 27,
+      "sha256": "9706044592eaab1df487191551f52e8f0fa8ef3d7a7c11a63d8da866670a9b14"
+    },
+    {
+      "path": "logs/PYTHON_UNIT_TESTS_20261030.log",
+      "bytes": 2976,
+      "sha256": "90f07fce3873feae909a79e103606b09e743bf7bc81418e43debbedee7309abc"
+    },
+    {
+      "path": "outputs/BROWSER_TESTS.json",
+      "bytes": 2079,
+      "sha256": "7fbfd31e31f31ded9c4fde6625f69b8111d719b81cc50ef77802575008fa316b"
+    },
+    {
+      "path": "outputs/SYNTHETIC_CORE2_GOLDEN.html",
+      "bytes": 9720,
+      "sha256": "80e84374c80d793242881b3c674d8279dd922e7738b4915042f5f00e5c3acfee"
+    },
+    {
+      "path": "outputs/SYNTHETIC_PREVIEW.png",
+      "bytes": 94810,
+      "sha256": "a77f6b6c99ffb15be98e62403eeadbaf89a971b496ad2aaa756195b956a2d164"
+    },
+    {
+      "path": "src/admission_gate_v0.py",
+      "bytes": 7668,
+      "sha256": "9555eca2df348417838ee0ea18784665c6a0ca0975595e8febf3bdba66566f62"
+    },
+    {
+      "path": "src/build_core2.py",
+      "bytes": 2305,
+      "sha256": "c89ca7b56f3f4aefc0897c0f656648da5d4d762d1be0293f41e59578d7035c1e"
+    },
+    {
+      "path": "src/core2_engine.py",
+      "bytes": 15432,
+      "sha256": "6a3f6e4fe25ac82ba3876d8806dea51e4f98db069d2bc6568c294f833aa73fd7"
+    },
+    {
+      "path": "src/learner_render.py",
+      "bytes": 9297,
+      "sha256": "a0bab8e7f3a7e5edca7ca77f6616ed5829a1c45fcc8827bf28c43f68957602eb"
+    },
+    {
+      "path": "src/r1_bridge.py",
+      "bytes": 3883,
+      "sha256": "568f5235aa547a70bc92fdcb129fd473022250defd54e67380fa0f2801ab6896"
+    },
+    {
+      "path": "tests/browser_test.py",
+      "bytes": 3222,
+      "sha256": "ec3849b5323acb0b2e3057d57878f06538012f6f04d454adc2e7521441a76890"
+    },
+    {
+      "path": "tests/test_engine.py",
+      "bytes": 9288,
+      "sha256": "8c92023ab66db67c55cd1645de7a72dc3b11d4abed379589244dc7855456301a"
+    }
+  ]
+}

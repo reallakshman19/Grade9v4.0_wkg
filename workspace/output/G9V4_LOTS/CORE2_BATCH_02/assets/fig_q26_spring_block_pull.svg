@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 220" width="100%" height="100%">
+  <defs>
+    <style>
+      .label { font-family: system-ui, -apple-system, sans-serif; font-size: 15px; font-weight: 600; fill: #1e293b; }
+      .wall { fill: #64748b; stroke: #334155; stroke-width: 2; }
+      .spring { stroke: #0284c7; stroke-width: 2.5; fill: none; }
+      .block { fill: #e2e8f0; stroke: #1e293b; stroke-width: 2; rx: 4; }
+    </style>
+  </defs>
+  <!-- Floor and Wall -->
+  <line x1="40" y1="170" x2="380" y2="170" stroke="#64748b" stroke-width="2.5"/>
+  <line x1="50" y1="50" x2="50" y2="170" stroke="#334155" stroke-width="4"/>
+  <line x1="40" y1="70" x2="50" y2="60" stroke="#334155" stroke-width="2"/>
+  <line x1="40" y1="100" x2="50" y2="90" stroke="#334155" stroke-width="2"/>
+  <line x1="40" y1="130" x2="50" y2="120" stroke="#334155" stroke-width="2"/>
+  <line x1="40" y1="160" x2="50" y2="150" stroke="#334155" stroke-width="2"/>
+  
+  <!-- Spring k -->
+  <path d="M 50 135 L 70 135 L 85 120 L 105 150 L 125 120 L 145 150 L 165 120 L 185 150 L 205 135 L 220 135" class="spring"/>
+  <text x="135" y="105" class="label" style="fill:#0284c7;" text-anchor="middle">k</text>
+  
+  <!-- Block of mass m -->
+  <rect x="220" y="105" width="65" height="65" class="block"/>
+  <text x="252" y="142" class="label" text-anchor="middle">m</text>
+  
+  <!-- Applied Force F -->
+  <line x1="285" y1="137" x2="350" y2="137" stroke="#dc2626" stroke-width="3"/>
+  <polygon points="348,132 358,137 348,142" fill="#dc2626"/>
+  <text x="365" y="142" class="label" style="fill:#dc2626;">F</text>
+</svg>

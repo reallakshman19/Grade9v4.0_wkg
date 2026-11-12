@@ -1,0 +1,16 @@
+{
+  "source_id": "EX-M47",
+  "task_identity": "Q-ID-13",
+  "sequence": 13,
+  "paper": "JEE Main 2022 (Online) 29th July Morning Shift",
+  "stem_text": "A ball is projected with kinetic energy E, at an angle of 60^(\u2218) to the horizontal. The kinetic energy of this ball at the highest point of its flight will become :",
+  "stem_sha256": "99520cf83728c938297ec6a067aa32f4635bf8a7f2bd20d581941f0d6b41753d",
+  "options": [
+    "A: Zero",
+    "B: (\ud835\udc38)/(2)",
+    "C: (\ud835\udc38)/(4)",
+    "D: E"
+  ],
+  "figure_reference": "NONE",
+  "confidentiality_notice": "SEALED SOURCE-ONLY PACKET FOR BLIND INDEPENDENT REVIEW. Contains NO answers, keys, explanations, candidate solutions, SL2 factor scores, or prior review commentary."
+}

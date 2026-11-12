@@ -1,0 +1,93 @@
+{
+  "sequence": 17,
+  "batch_sequence": 2,
+  "task_identity": "Q-ID-20",
+  "stable_id": "G9V4-PHYS-WPE-EX-M61",
+  "source_id": "EX-M61",
+  "lot": "LOT-05",
+  "batch": "BATCH-B",
+  "paper": "JEE Main 2021 (Online) 27th July Evening Shift",
+  "source_type": "JEE_MAIN_PAST_EXAM_QUESTION",
+  "source_custody": "PARTIAL (remote U(x) curve unresolved)",
+  "stem_text": "Given below is the plot of a potential energy function U(x) for a system, in which a particle is in one dimensional motion, while a conservative force F(x) acts on it. Suppose that Emech = 8 J, the incorrect statement for this system is : [FIG-stem-1] [ where K.E. = kinetic energy ]",
+  "stem_sha256": "bf7a3008c27d92309c6bd2e2e6c5881bd66ad6cef10030dd1177d2b7322e098a",
+  "source_hash": "bf7a3008c27d92309c6bd2e2e6c5881bd66ad6cef10030dd1177d2b7322e098a",
+  "source_record_digest": "bf7a3008c27d92309c6bd2e2e6c5881bd66ad6cef10030dd1177d2b7322e098a",
+  "duplicate_parent": null,
+  "scope": "IN_SCOPE_WPE_ONLY",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "HOLD:FIGURE_UNRESOLVED",
+  "figure_reference": "[FIG-stem-1] U(x) vs x graph unverified against authentic master",
+  "options": [
+    "A: at x > x4 K.E. is constant throughout the region.",
+    "B: at x < x1, K.E. is smallest and the particle is moving at the slowest speed.",
+    "C: at x = x2, K.E. is greatest and the particle is moving at the fastest speed.",
+    "D: at x = x3, K.E. = 4 J."
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "HOLD:FIGURE_UNRESOLVED",
+  "candidate_solve": {
+    "method": "POTENTIAL_ENERGY_CURVE_ANALYSIS",
+    "derivation": "Conservation of mechanical energy: E_mech = K(x) + U(x) = 8 J. At any point, K(x) = 8 - U(x). Coaching note asserts: at x < x1, U = 8 J => K = 0 J (particle at rest, speed is zero), contradicting Option B's assertion of 'moving at slowest speed'. Requires diagram to confirm potential plateau values at x1, x2, x3, x4.",
+    "predicted_option": "B: at x < x1, K.E. is smallest and the particle is moving at the slowest speed.",
+    "limiting_cases": "Without authentic U(x) plot, potential values at specific points cannot be independently checked."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 2,
+          "evidence": "Identification of conservative force F = -dU/dx and equilibrium conditions"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Slope extraction from energy-position curve"
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Sign of negative gradient at indicated point"
+        },
+        "algebra_computational_load": {
+          "score": 0,
+          "evidence": "No quantitative calculation required"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Negative sign convention in force-potential relationship"
+        }
+      },
+      "total": 5,
+      "band": "D2",
+      "prior_proposal": {
+        "source": "PRODUCER_HISTORICAL_ESTIMATE",
+        "scores": "1/1/1/1/1",
+        "total": 5
+      },
+      "differences": "Rescored to native five-factor rubric per B2 CP-4 review"
+    },
+    "demand_proposal": {
+      "primary": "EXPLAIN",
+      "secondary": [
+        "REPRESENT"
+      ],
+      "rationale": "Requires explaining directional force behavior from potential energy landscape",
+      "candidate_cell": "QRT-EXPLAIN-D2",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_CP4_GATE",
+  "b2_blind_status": "UNREVIEWED",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:FIGURE_UNRESOLVED (potential energy graph U(x) unverified against official master)",
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)",
+    "HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)"
+  ],
+  "next_action": "Retrieve original NTA paper diagram for 27-07-2021 Evening Shift."
+}

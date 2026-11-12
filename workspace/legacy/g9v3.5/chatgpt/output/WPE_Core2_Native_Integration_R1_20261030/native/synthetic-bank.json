@@ -1,0 +1,231 @@
+{
+  "schema_version": "grade9v3-owner-supplied-bank-v1",
+  "bank_id": "wpe-synthetic-native-r1",
+  "intake_digest": "sha256:7f362f4f1003c99bd6bda70054f73d0df68aca84659eb16fa1034881fc39647d",
+  "questions": [
+    {
+      "id": "SYN-WPE-DIRECTION-CONTROL-01",
+      "version": "0.1.0",
+      "status": "CANDIDATE",
+      "origin": "AUTHORED",
+      "origin_ref": "SYNTHETIC-ENGINEERING-HANDOFF",
+      "original_identifier": "SYNTHETIC CONTROL ONLY · no examination admission",
+      "stem": "An idealised trolley moves horizontally while a constant force acts vertically. What is the work done by this force on the trolley during the horizontal displacement?",
+      "subparts": [],
+      "options": [
+        "Positive",
+        "Negative",
+        "Zero",
+        "Not enough information about the speed"
+      ],
+      "conditions": [
+        "Displacement is purely horizontal.",
+        "The stated force is purely vertical and constant.",
+        "Synthetic engineering control; independently unreviewed."
+      ],
+      "figure_refs": [
+        "REP-SYN-WPE-DIRECTIONS"
+      ],
+      "source_refs": [],
+      "evidence_refs": [],
+      "primary_capability_ref": "CAP-WEP-WORK-DIRECTION",
+      "secondary_capability_refs": [],
+      "family_ref": "FAM-PHY-WEP-PRACTICE",
+      "adaptation": null,
+      "exposure": [],
+      "hints": [],
+      "scaffolds": [
+        {
+          "prompt": "What quantity does the question ask you to find?",
+          "text": "Keep your response about the work of the stated force.",
+          "learner_stage": "KEY_CONCEPT",
+          "support_kind": "CONNECT",
+          "reveals": "CONCEPT",
+          "supports_move_ref": "SYN-WPE-DIRECTION-CONTROL-01-M1"
+        },
+        {
+          "prompt": "Which givens are stated explicitly?",
+          "text": "Reread the two stated directions before choosing an option.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT",
+          "reveals": "CONCEPT",
+          "supports_move_ref": "SYN-WPE-DIRECTION-CONTROL-01-M2"
+        }
+      ],
+      "response": {
+        "type": "single_choice"
+      },
+      "learner_question_type": "single_correct_mcq",
+      "difficulty": {
+        "band": "D2",
+        "score": 3,
+        "components": {
+          "concept_model_selection": 1,
+          "representation_translation": 1,
+          "reasoning_chain_length": 0,
+          "algebra_computational_load": 0,
+          "trap_exception_sensitivity": 1
+        },
+        "basis": "Author-only technical fixture proposal; no D3/D4 coverage or academic admission.",
+        "component_evidence": {
+          "concept_model_selection": "Choose constant-force work.",
+          "representation_translation": "Compare the stated directions.",
+          "reasoning_chain_length": "No chained calculation.",
+          "algebra_computational_load": "No numerical calculation.",
+          "trap_exception_sensitivity": "Distinguish one force from all forces."
+        }
+      },
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "C — Zero work by the vertical force.",
+        "reasoning": [
+          "Work of a constant force is the scalar product of the force and displacement.",
+          "The perpendicular vertical force has no component along the horizontal displacement.",
+          "Therefore its work is zero, regardless of the trolley's speed."
+        ],
+        "check": "Doubling horizontal distance still gives no work from a purely perpendicular force.",
+        "reasoning_route": [
+          {
+            "id": "SYN-WPE-DIRECTION-CONTROL-01-M1",
+            "kind": "CONNECT",
+            "action": "Work of a constant force is the scalar product of the force and displacement.",
+            "why_valid": "The supplied fixture explicitly assumes a constant force.",
+            "inputs": [
+              "The stated constant force and displacement."
+            ],
+            "output": "Use the scalar product.",
+            "source_ref": "SYNTHETIC-ENGINEERING-HANDOFF"
+          },
+          {
+            "id": "SYN-WPE-DIRECTION-CONTROL-01-M2",
+            "kind": "REPRESENT",
+            "action": "The perpendicular vertical force has no component along the horizontal displacement.",
+            "why_valid": "The fixture states perpendicular directions.",
+            "inputs": [
+              "Vertical force and horizontal displacement."
+            ],
+            "output": "The force component along displacement is zero.",
+            "source_ref": "SYNTHETIC-ENGINEERING-HANDOFF"
+          },
+          {
+            "id": "SYN-WPE-DIRECTION-CONTROL-01-M3",
+            "kind": "VERIFY",
+            "action": "Therefore its work is zero, regardless of the trolley's speed.",
+            "why_valid": "The force has no component in the displacement direction.",
+            "inputs": [
+              "The perpendicular directions."
+            ],
+            "output": "Zero work by this force.",
+            "source_ref": "SYNTHETIC-ENGINEERING-HANDOFF"
+          }
+        ],
+        "crux_move_ref": "SYN-WPE-DIRECTION-CONTROL-01-M2",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "NOT_RUN"
+      },
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "SYN-WPE-DIRECTION-CONTROL-01",
+          "wording_custody": "VERBATIM",
+          "text_sha256": "sha256:7ef09f5ffde322a80b9015b3b3142e76c38e747ea1dd20a7bb6818a52d1baecd"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D2",
+            "score": 3,
+            "components": {
+              "concept_model_selection": 1,
+              "representation_translation": 1,
+              "reasoning_chain_length": 0,
+              "algebra_computational_load": 0,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Author-only technical fixture proposal; no D3/D4 coverage or academic admission.",
+            "component_evidence": {
+              "concept_model_selection": "Choose constant-force work.",
+              "representation_translation": "Compare the stated directions.",
+              "reasoning_chain_length": "No chained calculation.",
+              "algebra_computational_load": "No numerical calculation.",
+              "trap_exception_sensitivity": "Distinguish one force from all forces."
+            }
+          },
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "Synthetic engineering control · not an examination",
+          "common_wrong_route": "Confusing a force magnitude with its work along a displacement.",
+          "stable_crux_move": "The perpendicular vertical force has no component along the horizontal displacement.",
+          "expected_time_seconds": 0
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "SYN-WPE-DIRECTION-CONTROL-01-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "completed_move_refs": [],
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "completed_move_refs": [],
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "wpe:native_integration": {
+          "profile": "SYNTHETIC_ONLY",
+          "source_digest": "96139b3834b776d6032da51dd3c6032c483a3688bb864700529ae251a70d8fbd",
+          "binding_digest": "b7e095eeda4ff0dd6aeeb00b1e4a47e22ffa9d41c48c547989893866b1d9367f",
+          "exam_admission": false,
+          "option_identity": [
+            {
+              "source_id": "A",
+              "native_index": 0,
+              "text": "Positive"
+            },
+            {
+              "source_id": "B",
+              "native_index": 1,
+              "text": "Negative"
+            },
+            {
+              "source_id": "C",
+              "native_index": 2,
+              "text": "Zero"
+            },
+            {
+              "source_id": "D",
+              "native_index": 3,
+              "text": "Not enough information about the speed"
+            }
+          ],
+          "withheld_original_scaffolds": [
+            {
+              "learner_stage": "REPRESENTATION",
+              "text": "Represent the direction of displacement and the force as two arrows.",
+              "reveals": "CONCEPT",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "learner_stage": "KEY_CONCEPT",
+              "text": "Relate the angle between force and displacement to work.",
+              "reveals": "METHOD",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "learner_stage": "FIRST_MOVE",
+              "text": "Determine the component of the force along the displacement before multiplying by the distance.",
+              "reveals": "METHOD",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ],
+          "support_disposition": "Original method prompts retained here, not asserted safe; two explicit orientation prompts project.",
+          "grading_policy": "NATIVE_SELF_CHECK_ONLY; received automatic grader is not projected"
+        }
+      }
+    }
+  ]
+}

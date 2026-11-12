@@ -1,0 +1,22 @@
+### Ran Playwright code
+```js
+await (async (current) => {
+ const page=current.context().pages().find(p=>p.url().includes('/WPE_Workflow_Hub_20261031/'))||current;const results=[];const check=(name,value)=>{results.push({name,pass:!!value});if(!value)throw new Error(name);};
+ const root='http://127.0.0.1:8789/WPE_Workflow_Hub_20261031/index.html';await page.goto(root);await page.setViewportSize({width:1365,height:1000});
+ check('hub title',(await page.title()).includes('Core1B'));check('five stages',await page.locator('.steps a').count()===5);check('55 source links',await page.locator('[data-source-item]').count()===55);check('ten dossiers',await page.locator('.nodes li').count()===10);
+ check('Core1B unbuilt',await page.locator('#core1b').innerText().then(t=>t.includes('Not constructed')&&t.includes('No new Core1B learner HTML')));check('current coverage',await page.locator('#labelling').innerText().then(t=>t.includes('11 of 21')&&t.includes('10 nominations')));
+ await page.screenshot({path:'output/playwright/hub-desktop.png'});await page.locator('#source-search').fill('page_07');check('source search',await page.locator('[data-source-item]:visible').count()===1);check('search feedback',await page.locator('#search-status').innerText()==='1 matching physical files');await page.locator('#source-search').fill('');check('search reset',await page.locator('[data-source-item]').evaluateAll(xs=>xs.every(x=>!x.hidden)));
+ let wait=page.waitForEvent('popup');await page.getByRole('link',{name:'Open Core2 learner HTML'}).click();let pop=await wait;await pop.waitForLoadState();check('actual native reader URL',pop.url().includes('/WPE_Core2_Native_Integration_R1_20261030/rendered/core2.html'));check('native reader HTML loads',await pop.locator('body').innerText().then(t=>t.length>500));console.log('READER_TITLE',await pop.title());await pop.close();
+ wait=page.waitForEvent('popup');await page.getByRole('link',{name:'Open complete dossier catalogue'}).click();pop=await wait;await pop.waitForLoadState();check('actual ten-node catalogue',await pop.locator('body').innerText().then(t=>t.includes('10/10 syllabus nodes')));await pop.close();
+ await page.setViewportSize({width:390,height:844});await page.goto(root);await page.evaluate(()=>document.fonts.ready);check('mobile no horizontal overflow',await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await page.locator('nav').getByRole('link',{name:'05 Core1B'}).click();check('Core1B stage navigation',page.url().endsWith('#core1b'));await page.goto(root);await page.screenshot({path:'output/playwright/hub-mobile.png'});
+ console.log('HUB_CHECKS_JSON='+JSON.stringify({scope:'AUTHOR_HUB_BROWSER_CHECKS_ONLY',results,passed:results.length,earlier_failure:'Case-sensitive reader text assertion expected Core2; native renderer uses different casing. No product defect established; corrected to actual URL plus readable body.',viewport:[{width:1365,height:1000},{width:390,height:844}],layout_independent_QA:false}));
+})(page);
+```
+### Open tabs
+- 0: (current) [WPE · Intake → Core2 → Core1A → Core1B](http://127.0.0.1:8789/WPE_Workflow_Hub_20261031/index.html)
+- 1: [Source questions · WPE · textbook and synthetic native integration — unreviewed](http://127.0.0.1:8789/WPE_Core2_Native_Integration_R1_20261030/rendered/core2.html)
+### Page
+- Page URL: http://127.0.0.1:8789/WPE_Workflow_Hub_20261031/index.html
+- Page Title: WPE · Intake → Core2 → Core1A → Core1B
+### Events
+- New console entries: .playwright-cli\console-2026-10-31T10-48-15-737Z.log#L1

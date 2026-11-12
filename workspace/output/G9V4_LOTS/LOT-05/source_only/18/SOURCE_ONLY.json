@@ -1,0 +1,17 @@
+{
+  "source_id": "EX-M62",
+  "task_identity": "Q-ID-21",
+  "sequence": 18,
+  "batch_sequence": 3,
+  "paper": "JEE Main 2021 (Online) 27th July Evening Shift",
+  "stem_text": "An automobile of mass 'm' accelerates starting from origin and initially at rest, while the engine supplies constant power P. The position is given as a function of time by :",
+  "stem_sha256": "5786412e1a4c846fe36db232cd19d5c0d5007a5ad2d5a3fe72350fb01704706a",
+  "options": [
+    "A: ((9\ud835\udc43)/(8\ud835\udc5a))^((1)/(2))\ud835\udc61^((3)/(2))",
+    "B: ((8\ud835\udc43)/(9\ud835\udc5a))^((1)/(2))\ud835\udc61^((2)/(3))",
+    "C: ((9\ud835\udc5a)/(8\ud835\udc43))^((1)/(2))\ud835\udc61^((3)/(2))",
+    "D: ((8\ud835\udc43)/(9\ud835\udc5a))^((1)/(2))\ud835\udc61^((3)/(2))"
+  ],
+  "figure_reference": "NONE (pure text question)",
+  "confidentiality_notice": "SEALED SOURCE-ONLY PACKET FOR BLIND INDEPENDENT REVIEW. Contains NO answers, keys, explanations, candidate solutions, SL2 factor scores, or prior review commentary."
+}

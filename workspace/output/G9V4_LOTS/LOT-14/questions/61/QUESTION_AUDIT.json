@@ -1,0 +1,94 @@
+{
+  "sequence": 61,
+  "lot_sequence": 1,
+  "task_identity": "Q-ID-71",
+  "stable_id": "PHYS-WPE-LOT14-Q61",
+  "source_id": "JEE-2026-04-06-S1-Q28",
+  "lot": "LOT-14",
+  "paper": "JEE Main 2026 Session 2 / 2026-04-06 / Shift 1 (Morning)",
+  "source_type": "EXAM_PAPER_TRANSCRIBED",
+  "source_custody": "VERIFIED_TEXT",
+  "stem_binding": "BOUND_IN_REGISTRY",
+  "stem_text": "The rain drop of mass 1 g, starts with zero velocity from a height of 1 km. It hits the ground with a speed of 5 m/s. The work done by the unknown resistive force is _____ J. (take g = 10 m/s^2)",
+  "stem_sha256": "bd9a429a1793415df658c78ddc1b3c13b8e6a64063471a389b041a6ef38ea5be",
+  "source_hash": "bd9a429a1793415df658c78ddc1b3c13b8e6a64063471a389b041a6ef38ea5be",
+  "source_record_digest": "sha256:bd9a429a1793415df658c78ddc1b3c13b8e6a64063471a389b041a6ef38ea5be",
+  "duplicate_parent": null,
+  "scope": "PRIMARY_IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "key_issuing_authority": "NTA",
+  "figure_status": "REQUIRED_RETAINED",
+  "figure_reference": null,
+  "options": [
+    "6952787589: - 8.75",
+    "6952787590: - 8.35",
+    "6952787591: - 9.55",
+    "6952787592: - 9.98"
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "WORK_ENERGY_THEOREM_DISSIPATIVE_RESISTANCE",
+    "predicted_option": "6952787592: - 9.98",
+    "derivation": "Mass m = 1 g = 10^-3 kg, fall distance h = 1 km = 1000 m, initial speed vi = 0, final speed vf = 5 m/s. Work done by gravity: W_g = m*g*h = (10^-3)(10)(1000) = +10.0 J. Final kinetic energy: K_f = 0.5 * (10^-3) * (5^2) = 0.0125 J. By Work-Energy Theorem, W_g + W_res = Delta K = 0.0125 J => W_res = 0.0125 - 10.0 = -9.9875 J ~= -9.98 J. Matches option ID 6952787592."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Work-energy theorem with conservative gravity and unknown dissipative drag force W_g + W_res = Delta K"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Unit conversions: mass 1 g -> 10^-3 kg, height 1 km -> 1000 m"
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Compute W_g = 10 J, compute Kf = 0.0125 J, isolate W_res = Kf - W_g"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Arithmetic subtraction: 0.0125 - 10.0 = -9.9875 J"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Distinguishing negative resistive work from positive gravity work; nearest option rounding"
+        }
+      },
+      "total": 5,
+      "band": "D2",
+      "prior_proposal": {
+        "source": "INITIAL_CALIBRATION",
+        "scores": "1/1/1/1/1",
+        "total": 5
+      },
+      "differences": "Enforced strict D2 band mapping for score sum 5 (3-5 = D2)"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "MODEL"
+      ],
+      "rationale": "Applying work-energy balance to particle terminal descent with resistive dissipation",
+      "candidate_cell": "QRT-APPLY-D2",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_INDEPENDENT_REVIEW",
+  "b2_blind_status": "PENDING_BLIND_SOLVE",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (Option 6952787592 unverified against official NTA master)",
+    "HOLD:SPEC_PENDING (No qualified D1/D2 common blueprint or topic adapter)",
+    "HOLD:NEAREST_OPTION_VS_ROUNDING (Rounding of -9.9875 to -9.98 requires review)",
+    "HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)"
+  ],
+  "next_action": "B2 independent source-only solve + official NTA master key reconciliation"
+}

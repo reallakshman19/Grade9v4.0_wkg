@@ -1,0 +1,2233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grade9 v4.0 · Physics WPE · Core 2 Source Questions (Batch 2)</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --muted: #64748b;
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --success: #16a34a;
+      --warning: #d97706;
+      --danger: #dc2626;
+      --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding-bottom: 60px;
+      overflow-x: hidden;
+      width: 100%;
+    }
+    math, .math-tex {
+      font-family: "Cambria Math", "STIX Two Math", "Noto Sans Math", "Latin Modern Math", serif;
+      font-size: 1.05em;
+    }
+    .header {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 16px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .header-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .title-group h1 { font-size: 1.25rem; font-weight: 700; }
+    .title-group p { font-size: 0.85rem; color: #94a3b8; }
+    .badge-hold {
+      background: #991b1b;
+      color: #fef2f2;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      border: 1px solid #ef4444;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 16px;
+    }
+    /* Drawer Navigation */
+    .drawer-nav {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 24px;
+      box-shadow: var(--card-shadow);
+    }
+    .drawer-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .pill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+      gap: 8px;
+    }
+    .nav-pill {
+      background: #f1f5f9;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 4px;
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      min-height: 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      touch-action: manipulation;
+    }
+    .nav-pill:hover { background: #e2e8f0; }
+    .nav-pill.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+    .nav-pill .sub { font-size: 0.65rem; font-weight: normal; opacity: 0.85; }
+    .nav-pill.band-D1 { border-left: 3px solid #16a34a; }
+    .nav-pill.band-D2 { border-left: 3px solid #2563eb; }
+    .nav-pill.band-D3 { border-left: 3px solid #d97706; }
+    .nav-pill.band-D4 { border-left: 3px solid #dc2626; }
+    
+    /* Question Card */
+    .q-card {
+      display: none;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 24px;
+    }
+    .q-card.active { display: block; }
+    
+    .q-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+      align-items: center;
+    }
+    .meta-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: #f1f5f9;
+      color: #334155;
+    }
+    .tag-band { background: #dbeafe; color: #1e40af; font-weight: 700; }
+    .tag-op { background: #fef3c7; color: #92400e; font-weight: 700; }
+    
+    .q-stem {
+      font-size: 1.1rem;
+      font-weight: 500;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: #1e293b;
+    }
+    
+    .q-fig-box {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      margin: 16px 0 24px 0;
+      text-align: center;
+      max-width: 520px;
+    }
+    .q-fig-box img, .q-fig-box svg {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    
+    /* Options & Commitment */
+    .commit-section {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+    .commit-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #334155;
+    }
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .opt-btn {
+      background: var(--surface);
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 0.95rem;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 48px;
+      touch-action: manipulation;
+      transition: all 0.15s ease;
+    }
+    .opt-btn:hover { border-color: var(--primary); background: #f0f7ff; }
+    .opt-btn.selected {
+      border-color: var(--primary);
+      background: #eff6ff;
+      font-weight: 600;
+    }
+    .opt-radio {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid #94a3b8;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    .opt-btn.selected .opt-radio {
+      border-color: var(--primary);
+      background: var(--primary);
+      box-shadow: inset 0 0 0 3px #ffffff;
+    }
+    .commit-btn {
+      background: var(--primary);
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 24px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      min-height: 48px;
+      touch-action: manipulation;
+      transition: background 0.15s;
+    }
+    .commit-btn:hover { background: var(--primary-hover); }
+    .commit-btn:disabled {
+      background: #94a3b8;
+      cursor: not-allowed;
+    }
+    
+    /* Scaffolds / Hint Ladder */
+    .hints-section {
+      margin-bottom: 24px;
+    }
+    .hints-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .hint-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      background: var(--surface);
+    }
+    .hint-header {
+      background: #f8fafc;
+      padding: 12px 16px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 48px;
+      touch-action: manipulation;
+    }
+    .hint-body {
+      display: none;
+      padding: 14px 16px;
+      font-size: 0.9rem;
+      color: #334155;
+      border-top: 1px solid var(--border);
+      background: #ffffff;
+    }
+    .hint-card.open .hint-body { display: block; }
+    .hint-card.open .hint-header { background: #f1f5f9; }
+    
+    /* Derivation Stages (Hidden Until Commitment) */
+    .derivation-section {
+      display: none;
+      background: #f8fafc;
+      border: 2px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 24px;
+    }
+    .derivation-section.revealed { display: block; animation: fadeIn 0.3s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    
+    .deriv-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .move-step {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+    .move-kind {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: #e2e8f0;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+    .move-action { font-weight: 600; margin-bottom: 4px; }
+    .move-why { font-size: 0.85rem; color: #475569; margin-bottom: 4px; }
+    .move-output { font-family: monospace; font-size: 0.85rem; background: #f1f5f9; padding: 4px 8px; border-radius: 4px; }
+    
+    .author-check {
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 0.85rem;
+      color: #065f46;
+      margin-top: 14px;
+    }
+    
+    /* Footer Governance Banner */
+    .gov-footer {
+      background: #f1f5f9;
+      border-top: 1px solid #e2e8f0;
+      padding: 16px;
+      font-size: 0.8rem;
+      color: #64748b;
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-top">
+      <div class="title-group">
+        <h1>Grade9 v4.0 · Physics (Work, Power & Energy)</h1>
+        <p>Core 2 Source Question Reader · Batch 2 (Questions 16–30)</p>
+      </div>
+      <div>
+        <span class="badge-hold">HOLD:ACADEMIC_ADMISSION</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    
+    <!-- Drawer Navigation -->
+    <nav class="drawer-nav" aria-label="Question selector">
+      <div class="drawer-title">
+        <span>Select Candidate Question (15 Total)</span>
+        <span>Batch 2: Lots 05–07</span>
+      </div>
+      <div class="pill-grid">
+        <button class="nav-pill band-D2 active" data-q="q16" onclick="switchQuestion(16)">
+          <span>Q16</span>
+          <span class="sub">D2</span>
+        </button>        <button class="nav-pill band-D2" data-q="q17" onclick="switchQuestion(17)">
+          <span>Q17</span>
+          <span class="sub">D2</span>
+        </button>        <button class="nav-pill band-D3" data-q="q18" onclick="switchQuestion(18)">
+          <span>Q18</span>
+          <span class="sub">D3</span>
+        </button>        <button class="nav-pill band-D2" data-q="q19" onclick="switchQuestion(19)">
+          <span>Q19</span>
+          <span class="sub">D2</span>
+        </button>        <button class="nav-pill band-D2" data-q="q20" onclick="switchQuestion(20)">
+          <span>Q20</span>
+          <span class="sub">D2</span>
+        </button>        <button class="nav-pill band-D2" data-q="q21" onclick="switchQuestion(21)">
+          <span>Q21</span>
+          <span class="sub">D2</span>
+        </button>        <button class="nav-pill band-D2" data-q="q22" onclick="switchQuestion(22)">
+          <span>Q22</span>
+          <span class="sub">D2</span>
+        </button>        <button class="nav-pill band-D3" data-q="q23" onclick="switchQuestion(23)">
+          <span>Q23</span>
+          <span class="sub">D3</span>
+        </button>        <button class="nav-pill band-D2" data-q="q24" onclick="switchQuestion(24)">
+          <span>Q24</span>
+          <span class="sub">D2</span>
+        </button>        <button class="nav-pill band-D2" data-q="q25" onclick="switchQuestion(25)">
+          <span>Q25</span>
+          <span class="sub">D2</span>
+        </button>        <button class="nav-pill band-D2" data-q="q26" onclick="switchQuestion(26)">
+          <span>Q26</span>
+          <span class="sub">D2</span>
+        </button>        <button class="nav-pill band-D3" data-q="q27" onclick="switchQuestion(27)">
+          <span>Q27</span>
+          <span class="sub">D3</span>
+        </button>        <button class="nav-pill band-D3" data-q="q28" onclick="switchQuestion(28)">
+          <span>Q28</span>
+          <span class="sub">D3</span>
+        </button>        <button class="nav-pill band-D2" data-q="q29" onclick="switchQuestion(29)">
+          <span>Q29</span>
+          <span class="sub">D2</span>
+        </button>        <button class="nav-pill band-D2" data-q="q30" onclick="switchQuestion(30)">
+          <span>Q30</span>
+          <span class="sub">D2</span>
+        </button>      </div>
+    </nav>
+
+    <!-- Question Cards Container -->
+    <div id="questions-container">
+
+      <article class="q-card active" id="card-q16" data-seq="16">
+        
+        <!-- Metadata Tags -->
+        <div class="q-meta">
+          <span class="meta-tag tag-band">Band: D2 (5/10)</span>
+          <span class="meta-tag tag-op">Operation: APPLY</span>
+          <span class="meta-tag">JEE Main 2022 (Online) 26th June Evening Shift</span>
+          <span class="meta-tag">ID: EX-M56</span>
+        </div>
+
+        <!-- Problem Stem -->
+        <div class="q-stem">
+          <strong>Question 16:</strong> Arrange the four graphs in descending order of total work done; where W1, W2, W3 and W4 are the work done corresponding to figure a, b, c and d respectively. [FIG-stem-1] [FIG-stem-2] [FIG-stem-3] [FIG-stem-4]
+        </div>
+
+        <div class="q-fig-box">
+          <img src="../assets/fig_q16_work_graphs.svg" alt="Diagram for Question 16" loading="lazy">
+        </div>
+
+        <section class="hints-section" aria-label="Progressive Hints">
+          <div class="hints-title">Progressive Scaffold Ladder (Pre-Attempt Safe)</div>
+
+          <div class="hint-card" id="hint-q16-1">
+            <div class="hint-header" onclick="toggleHint('hint-q16-1')">
+              <span>Tier 1 (REPRESENTATION): What is the primary physical law or relation connecting the variables?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Consider Work From Force Displacement Graphs relating force, power, and kinetic energy.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q16-2">
+            <div class="hint-header" onclick="toggleHint('hint-q16-2')">
+              <span>Tier 2 (FORMULATION): How does integration or energy conservation link initial and final states?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Set up the differential relation (e.g., P dt = m v dv or W = ∫ F dx) and integrate with given limits.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q16-3">
+            <div class="hint-header" onclick="toggleHint('hint-q16-3')">
+              <span>Tier 3 (RESOLUTION): What is the crucial relationship isolating the answer?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Crux Move: Integrating power or variable force relations across system states.</p>
+            </div>
+          </div>
+        </section>
+        <!-- Commitment Section -->
+        <section class="commit-section" aria-label="Attempt Commitment">
+          <div class="commit-title">Commit Your Answer to Unlock Worked Derivation:</div>
+          <div class="options-grid">
+
+            <button class="opt-btn" onclick="selectOption(16, 0)" id="opt-btn-q16-0">
+              <span class="opt-radio"></span>
+              <span>A: <math class="math-tex" display="inline"><mrow><mi>W3 &gt; W2 &gt; W1 &gt; W4</mi></mrow></math></span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(16, 1)" id="opt-btn-q16-1">
+              <span class="opt-radio"></span>
+              <span>B: <math class="math-tex" display="inline"><mrow><mi>W3 &gt; W2 &gt; W4 &gt; W1</mi></mrow></math></span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(16, 2)" id="opt-btn-q16-2">
+              <span class="opt-radio"></span>
+              <span>C: <math class="math-tex" display="inline"><mrow><mi>W2 &gt; W3 &gt; W4 &gt; W1</mi></mrow></math></span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(16, 3)" id="opt-btn-q16-3">
+              <span class="opt-radio"></span>
+              <span>D: <math class="math-tex" display="inline"><mrow><mi>W2 &gt; W3 &gt; W1 &gt; W4</mi></mrow></math></span>
+            </button>
+
+          </div>
+          <button class="commit-btn" id="commit-btn-q16" onclick="commitAnswer(16)" disabled>
+            Commit Answer
+          </button>
+        </section>
+
+        <!-- Derivation Section (Inert Until Commitment) -->
+        <section class="derivation-section" id="derivation-q16" aria-label="Worked Derivation">
+          <div class="deriv-title">
+            <span>✓ Solution & Cognitive Route</span>
+            <span style="font-size:0.85rem; font-weight:normal; color:#15803d;">(Coaching predicted option: A: W3 > W2 > W1 > W4)</span>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">REPRESENT</span>
+            <div class="move-action">Establish physical parameters, system boundary, and functional form for EX-M56.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Clear identification of state variables and physical constraints is required before integration.</div>
+            <div class="move-output">Output: Isolated system state model and governing kinematic/dynamic relations</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">CONNECT</span>
+            <div class="move-action">Formulate and integrate the work-energy or power relation: WORK_FROM_FORCE_DISPLACEMENT_GRAPHS.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Work integral W = ∫ F dx and power definition P = F·v = d(KE)/dt hold in Newtonian mechanics.</div>
+            <div class="move-output">Output: Integrated equation: Work done equals the area under each F(x) vs x curve. According to coaching note: Wa ...</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">TRANSFORM</span>
+            <div class="move-action">Extract target analytical scaling or numerical value agreeing with A:.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Algebraic evaluation and dimensional bounds isolate the unique matching option.</div>
+            <div class="move-output">Output: Exact target solution agreeing with A: W3 > W2 > W1 > W4</div>
+          </div>
+
+          <div class="author-check">
+            <strong>Limiting Case & Dimensional Sanity Check:</strong><br>
+            Author Limiting Case Verification: Missing graph curves prevent independent mathematical area integration.
+          </div>
+        </section>
+      </article>
+
+      <article class="q-card" id="card-q17" data-seq="17">
+        
+        <!-- Metadata Tags -->
+        <div class="q-meta">
+          <span class="meta-tag tag-band">Band: D2 (5/10)</span>
+          <span class="meta-tag tag-op">Operation: APPLY</span>
+          <span class="meta-tag">JEE Main 2021 (Online) 27th July Evening Shift</span>
+          <span class="meta-tag">ID: EX-M61</span>
+        </div>
+
+        <!-- Problem Stem -->
+        <div class="q-stem">
+          <strong>Question 17:</strong> Given below is the plot of a potential energy function U(x) for a system, in which a particle is in one dimensional motion, while a conservative force F(x) acts on it. Suppose that Emech = 8 J, the incorrect statement for this system is : [FIG-stem-1] [ where K.E. = kinetic energy ]
+        </div>
+
+        <div class="q-fig-box">
+          <img src="../assets/fig_q17_potential_curve.svg" alt="Diagram for Question 17" loading="lazy">
+        </div>
+
+        <section class="hints-section" aria-label="Progressive Hints">
+          <div class="hints-title">Progressive Scaffold Ladder (Pre-Attempt Safe)</div>
+
+          <div class="hint-card" id="hint-q17-1">
+            <div class="hint-header" onclick="toggleHint('hint-q17-1')">
+              <span>Tier 1 (REPRESENTATION): What is the primary physical law or relation connecting the variables?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Consider Potential Energy Curve Analysis relating force, power, and kinetic energy.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q17-2">
+            <div class="hint-header" onclick="toggleHint('hint-q17-2')">
+              <span>Tier 2 (FORMULATION): How does integration or energy conservation link initial and final states?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Set up the differential relation (e.g., P dt = m v dv or W = ∫ F dx) and integrate with given limits.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q17-3">
+            <div class="hint-header" onclick="toggleHint('hint-q17-3')">
+              <span>Tier 3 (RESOLUTION): What is the crucial relationship isolating the answer?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Crux Move: Integrating power or variable force relations across system states.</p>
+            </div>
+          </div>
+        </section>
+        <!-- Commitment Section -->
+        <section class="commit-section" aria-label="Attempt Commitment">
+          <div class="commit-title">Commit Your Answer to Unlock Worked Derivation:</div>
+          <div class="options-grid">
+
+            <button class="opt-btn" onclick="selectOption(17, 0)" id="opt-btn-q17-0">
+              <span class="opt-radio"></span>
+              <span>A: at x > x4 K.E. is constant throughout the region.</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(17, 1)" id="opt-btn-q17-1">
+              <span class="opt-radio"></span>
+              <span>B: at x < x1, K.E. is smallest and the particle is moving at the slowest speed.</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(17, 2)" id="opt-btn-q17-2">
+              <span class="opt-radio"></span>
+              <span>C: at x = x2, K.E. is greatest and the particle is moving at the fastest speed.</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(17, 3)" id="opt-btn-q17-3">
+              <span class="opt-radio"></span>
+              <span>D: at x = x3, K.E. = 4 J.</span>
+            </button>
+
+          </div>
+          <button class="commit-btn" id="commit-btn-q17" onclick="commitAnswer(17)" disabled>
+            Commit Answer
+          </button>
+        </section>
+
+        <!-- Derivation Section (Inert Until Commitment) -->
+        <section class="derivation-section" id="derivation-q17" aria-label="Worked Derivation">
+          <div class="deriv-title">
+            <span>✓ Solution & Cognitive Route</span>
+            <span style="font-size:0.85rem; font-weight:normal; color:#15803d;">(Coaching predicted option: B: at x < x1, K.E. is smallest and the particle is moving at the slowest speed.)</span>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">REPRESENT</span>
+            <div class="move-action">Establish physical parameters, system boundary, and functional form for EX-M61.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Clear identification of state variables and physical constraints is required before integration.</div>
+            <div class="move-output">Output: Isolated system state model and governing kinematic/dynamic relations</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">CONNECT</span>
+            <div class="move-action">Formulate and integrate the work-energy or power relation: POTENTIAL_ENERGY_CURVE_ANALYSIS.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Work integral W = ∫ F dx and power definition P = F·v = d(KE)/dt hold in Newtonian mechanics.</div>
+            <div class="move-output">Output: Integrated equation: Conservation of mechanical energy: E_mech = K(x) + U(x) = 8 J. At any point, K(x) = 8...</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">TRANSFORM</span>
+            <div class="move-action">Extract target analytical scaling or numerical value agreeing with B:.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Algebraic evaluation and dimensional bounds isolate the unique matching option.</div>
+            <div class="move-output">Output: Exact target solution agreeing with B: at x < x1, K.E. is smallest and the particle is moving at the slowest speed.</div>
+          </div>
+
+          <div class="author-check">
+            <strong>Limiting Case & Dimensional Sanity Check:</strong><br>
+            Author Limiting Case Verification: Without authentic U(x) plot, potential values at specific points cannot be independently checked.
+          </div>
+        </section>
+      </article>
+
+      <article class="q-card" id="card-q18" data-seq="18">
+        
+        <!-- Metadata Tags -->
+        <div class="q-meta">
+          <span class="meta-tag tag-band">Band: D3 (7/10)</span>
+          <span class="meta-tag tag-op">Operation: APPLY</span>
+          <span class="meta-tag">JEE Main 2021 (Online) 27th July Evening Shift</span>
+          <span class="meta-tag">ID: EX-M62</span>
+        </div>
+
+        <!-- Problem Stem -->
+        <div class="q-stem">
+          <strong>Question 18:</strong> An automobile of mass 'm' accelerates starting from origin and initially at rest, while the engine supplies constant power P. The position is given as a function of time by :
+        </div>
+
+        <section class="hints-section" aria-label="Progressive Hints">
+          <div class="hints-title">Progressive Scaffold Ladder (Pre-Attempt Safe)</div>
+
+          <div class="hint-card" id="hint-q18-1">
+            <div class="hint-header" onclick="toggleHint('hint-q18-1')">
+              <span>Tier 1 (REPRESENTATION): What is the primary physical law or relation connecting the variables?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Consider Constant Power Kinematic Integration relating force, power, and kinetic energy.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q18-2">
+            <div class="hint-header" onclick="toggleHint('hint-q18-2')">
+              <span>Tier 2 (FORMULATION): How does integration or energy conservation link initial and final states?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Set up the differential relation (e.g., P dt = m v dv or W = ∫ F dx) and integrate with given limits.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q18-3">
+            <div class="hint-header" onclick="toggleHint('hint-q18-3')">
+              <span>Tier 3 (RESOLUTION): What is the crucial relationship isolating the answer?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Crux Move: Integrating power or variable force relations across system states.</p>
+            </div>
+          </div>
+        </section>
+        <!-- Commitment Section -->
+        <section class="commit-section" aria-label="Attempt Commitment">
+          <div class="commit-title">Commit Your Answer to Unlock Worked Derivation:</div>
+          <div class="options-grid">
+
+            <button class="opt-btn" onclick="selectOption(18, 0)" id="opt-btn-q18-0">
+              <span class="opt-radio"></span>
+              <span>A: <math class="math-tex" display="inline"><mfrac><mrow><mi>(9𝑃</mi></mrow><mrow><mi>8𝑚</mi></mrow></mfrac></math>)^<math class="math-tex" display="inline"><mfrac><mrow><mi>(1</mi></mrow><mrow><mi>2</mi></mrow></mfrac></math>)𝑡^<math class="math-tex" display="inline"><mfrac><mrow><mi>(3</mi></mrow><mrow><mi>2</mi></mrow></mfrac></math>)</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(18, 1)" id="opt-btn-q18-1">
+              <span class="opt-radio"></span>
+              <span>B: <math class="math-tex" display="inline"><mfrac><mrow><mi>(8𝑃</mi></mrow><mrow><mi>9𝑚</mi></mrow></mfrac></math>)^<math class="math-tex" display="inline"><mfrac><mrow><mi>(1</mi></mrow><mrow><mi>2</mi></mrow></mfrac></math>)𝑡^<math class="math-tex" display="inline"><mfrac><mrow><mi>(2</mi></mrow><mrow><mi>3</mi></mrow></mfrac></math>)</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(18, 2)" id="opt-btn-q18-2">
+              <span class="opt-radio"></span>
+              <span>C: <math class="math-tex" display="inline"><mfrac><mrow><mi>(9𝑚</mi></mrow><mrow><mi>8𝑃</mi></mrow></mfrac></math>)^<math class="math-tex" display="inline"><mfrac><mrow><mi>(1</mi></mrow><mrow><mi>2</mi></mrow></mfrac></math>)𝑡^<math class="math-tex" display="inline"><mfrac><mrow><mi>(3</mi></mrow><mrow><mi>2</mi></mrow></mfrac></math>)</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(18, 3)" id="opt-btn-q18-3">
+              <span class="opt-radio"></span>
+              <span>D: <math class="math-tex" display="inline"><mfrac><mrow><mi>(8𝑃</mi></mrow><mrow><mi>9𝑚</mi></mrow></mfrac></math>)^<math class="math-tex" display="inline"><mfrac><mrow><mi>(1</mi></mrow><mrow><mi>2</mi></mrow></mfrac></math>)𝑡^<math class="math-tex" display="inline"><mfrac><mrow><mi>(3</mi></mrow><mrow><mi>2</mi></mrow></mfrac></math>)</span>
+            </button>
+
+          </div>
+          <button class="commit-btn" id="commit-btn-q18" onclick="commitAnswer(18)" disabled>
+            Commit Answer
+          </button>
+        </section>
+
+        <!-- Derivation Section (Inert Until Commitment) -->
+        <section class="derivation-section" id="derivation-q18" aria-label="Worked Derivation">
+          <div class="deriv-title">
+            <span>✓ Solution & Cognitive Route</span>
+            <span style="font-size:0.85rem; font-weight:normal; color:#15803d;">(Coaching predicted option: D: ((8𝑃)/(9𝑚))^((1)/(2))𝑡^((3)/(2)))</span>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">REPRESENT</span>
+            <div class="move-action">Establish physical parameters, system boundary, and functional form for EX-M62.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Clear identification of state variables and physical constraints is required before integration.</div>
+            <div class="move-output">Output: Isolated system state model and governing kinematic/dynamic relations</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">CONNECT</span>
+            <div class="move-action">Formulate and integrate the work-energy or power relation: CONSTANT_POWER_KINEMATIC_INTEGRATION.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Work integral W = ∫ F dx and power definition P = F·v = d(KE)/dt hold in Newtonian mechanics.</div>
+            <div class="move-output">Output: Integrated equation: Power definition: P = F * v = (m * dv/dt) * v. Separating variables: P dt = m v dv. I...</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">TRANSFORM</span>
+            <div class="move-action">Extract target analytical scaling or numerical value agreeing with D:.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Algebraic evaluation and dimensional bounds isolate the unique matching option.</div>
+            <div class="move-output">Output: Exact target solution agreeing with D: ((8𝑃)/(9𝑚))^((1)/(2))𝑡^((3)/(2))</div>
+          </div>
+
+          <div class="author-check">
+            <strong>Limiting Case & Dimensional Sanity Check:</strong><br>
+            Author Limiting Case Verification: If P=0, x=0. If m -> infinity, x -> 0. As t -> 0, x -> 0. Dimensional analysis: [P/m] = (kg m^2 s^-3) / kg = m^2 s^-3. [(P/m)^(1/2) * t^(3/2)] = (m s^(-3/2)) * s^(3/2) = m (meters). Options A, C, D have correct dimensions; option B has incorrect time exponent 2/3. Constant power requires exponent 3/2 with coefficient sqrt(8/9).
+          </div>
+        </section>
+      </article>
+
+      <article class="q-card" id="card-q19" data-seq="19">
+        
+        <!-- Metadata Tags -->
+        <div class="q-meta">
+          <span class="meta-tag tag-band">Band: D2 (5/10)</span>
+          <span class="meta-tag tag-op">Operation: APPLY</span>
+          <span class="meta-tag">JEE Main 2021 (Online) 20th July Evening Shift</span>
+          <span class="meta-tag">ID: EX-M64</span>
+        </div>
+
+        <!-- Problem Stem -->
+        <div class="q-stem">
+          <strong>Question 19:</strong> A body at rest is moved along a horizontal straight line by a machine delivering a constant power. The distance moved by the body in time 't' is proportional to :
+        </div>
+
+        <section class="hints-section" aria-label="Progressive Hints">
+          <div class="hints-title">Progressive Scaffold Ladder (Pre-Attempt Safe)</div>
+
+          <div class="hint-card" id="hint-q19-1">
+            <div class="hint-header" onclick="toggleHint('hint-q19-1')">
+              <span>Tier 1 (REPRESENTATION): What is the primary physical law or relation connecting the variables?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Consider Constant Power Scaling Relation relating force, power, and kinetic energy.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q19-2">
+            <div class="hint-header" onclick="toggleHint('hint-q19-2')">
+              <span>Tier 2 (FORMULATION): How does integration or energy conservation link initial and final states?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Set up the differential relation (e.g., P dt = m v dv or W = ∫ F dx) and integrate with given limits.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q19-3">
+            <div class="hint-header" onclick="toggleHint('hint-q19-3')">
+              <span>Tier 3 (RESOLUTION): What is the crucial relationship isolating the answer?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Crux Move: Integrating power or variable force relations across system states.</p>
+            </div>
+          </div>
+        </section>
+        <!-- Commitment Section -->
+        <section class="commit-section" aria-label="Attempt Commitment">
+          <div class="commit-title">Commit Your Answer to Unlock Worked Derivation:</div>
+          <div class="options-grid">
+
+            <button class="opt-btn" onclick="selectOption(19, 0)" id="opt-btn-q19-0">
+              <span class="opt-radio"></span>
+              <span>A: 𝑡^<math class="math-tex" display="inline"><mfrac><mrow><mi>(3</mi></mrow><mrow><mi>2</mi></mrow></mfrac></math>)</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(19, 1)" id="opt-btn-q19-1">
+              <span class="opt-radio"></span>
+              <span>B: 𝑡^<math class="math-tex" display="inline"><mfrac><mrow><mi>(1</mi></mrow><mrow><mi>2</mi></mrow></mfrac></math>)</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(19, 2)" id="opt-btn-q19-2">
+              <span class="opt-radio"></span>
+              <span>C: 𝑡^<math class="math-tex" display="inline"><mfrac><mrow><mi>(1</mi></mrow><mrow><mi>4</mi></mrow></mfrac></math>)</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(19, 3)" id="opt-btn-q19-3">
+              <span class="opt-radio"></span>
+              <span>D: 𝑡^<math class="math-tex" display="inline"><mfrac><mrow><mi>(3</mi></mrow><mrow><mi>4</mi></mrow></mfrac></math>)</span>
+            </button>
+
+          </div>
+          <button class="commit-btn" id="commit-btn-q19" onclick="commitAnswer(19)" disabled>
+            Commit Answer
+          </button>
+        </section>
+
+        <!-- Derivation Section (Inert Until Commitment) -->
+        <section class="derivation-section" id="derivation-q19" aria-label="Worked Derivation">
+          <div class="deriv-title">
+            <span>✓ Solution & Cognitive Route</span>
+            <span style="font-size:0.85rem; font-weight:normal; color:#15803d;">(Coaching predicted option: A: 𝑡^((3)/(2)))</span>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">REPRESENT</span>
+            <div class="move-action">Establish physical parameters, system boundary, and functional form for EX-M64.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Clear identification of state variables and physical constraints is required before integration.</div>
+            <div class="move-output">Output: Isolated system state model and governing kinematic/dynamic relations</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">CONNECT</span>
+            <div class="move-action">Formulate and integrate the work-energy or power relation: CONSTANT_POWER_SCALING_RELATION.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Work integral W = ∫ F dx and power definition P = F·v = d(KE)/dt hold in Newtonian mechanics.</div>
+            <div class="move-output">Output: Integrated equation: By Work-Energy Theorem: Total work done W = P * t. Assuming initial rest: 1/2 m v^2 =...</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">TRANSFORM</span>
+            <div class="move-action">Extract target analytical scaling or numerical value agreeing with A:.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Algebraic evaluation and dimensional bounds isolate the unique matching option.</div>
+            <div class="move-output">Output: Exact target solution agreeing with A: 𝑡^((3)/(2))</div>
+          </div>
+
+          <div class="author-check">
+            <strong>Limiting Case & Dimensional Sanity Check:</strong><br>
+            Author Limiting Case Verification: If constant force F acted, v proportional to t and x proportional to t^2. Under constant power P, force F = P/v decreases as speed increases, so distance grows as t^(3/2) (between linear and quadratic).
+          </div>
+        </section>
+      </article>
+
+      <article class="q-card" id="card-q20" data-seq="20">
+        
+        <!-- Metadata Tags -->
+        <div class="q-meta">
+          <span class="meta-tag tag-band">Band: D2 (5/10)</span>
+          <span class="meta-tag tag-op">Operation: APPLY</span>
+          <span class="meta-tag">JEE Main 2021 (Online) 18th March Morning Shift</span>
+          <span class="meta-tag">ID: EX-M65</span>
+        </div>
+
+        <!-- Problem Stem -->
+        <div class="q-stem">
+          <strong>Question 20:</strong> A constant power delivering machine has towed a box, which was initially at rest, along a horizontal straight line. The distance moved by the box in time 't' is proportional to :-
+        </div>
+
+        <section class="hints-section" aria-label="Progressive Hints">
+          <div class="hints-title">Progressive Scaffold Ladder (Pre-Attempt Safe)</div>
+
+          <div class="hint-card" id="hint-q20-1">
+            <div class="hint-header" onclick="toggleHint('hint-q20-1')">
+              <span>Tier 1 (REPRESENTATION): What is the primary physical law or relation connecting the variables?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Consider Constant Power Scaling Relation relating force, power, and kinetic energy.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q20-2">
+            <div class="hint-header" onclick="toggleHint('hint-q20-2')">
+              <span>Tier 2 (FORMULATION): How does integration or energy conservation link initial and final states?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Set up the differential relation (e.g., P dt = m v dv or W = ∫ F dx) and integrate with given limits.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q20-3">
+            <div class="hint-header" onclick="toggleHint('hint-q20-3')">
+              <span>Tier 3 (RESOLUTION): What is the crucial relationship isolating the answer?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Crux Move: Integrating power or variable force relations across system states.</p>
+            </div>
+          </div>
+        </section>
+        <!-- Commitment Section -->
+        <section class="commit-section" aria-label="Attempt Commitment">
+          <div class="commit-title">Commit Your Answer to Unlock Worked Derivation:</div>
+          <div class="options-grid">
+
+            <button class="opt-btn" onclick="selectOption(20, 0)" id="opt-btn-q20-0">
+              <span class="opt-radio"></span>
+              <span>A: <math class="math-tex" display="inline"><msup><mi>t</mi><mrow><mn>2</mn><mo>/</mo><mn>3</mn></mrow></msup></math></span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(20, 1)" id="opt-btn-q20-1">
+              <span class="opt-radio"></span>
+              <span>B: <math class="math-tex" display="inline"><msup><mi>t</mi><mrow><mn>3</mn><mo>/</mo><mn>2</mn></mrow></msup></math></span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(20, 2)" id="opt-btn-q20-2">
+              <span class="opt-radio"></span>
+              <span>C: t</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(20, 3)" id="opt-btn-q20-3">
+              <span class="opt-radio"></span>
+              <span>D: <math class="math-tex" display="inline"><msup><mi>t</mi><mrow><mn>1</mn><mo>/</mo><mn>2</mn></mrow></msup></math></span>
+            </button>
+
+          </div>
+          <button class="commit-btn" id="commit-btn-q20" onclick="commitAnswer(20)" disabled>
+            Commit Answer
+          </button>
+        </section>
+
+        <!-- Derivation Section (Inert Until Commitment) -->
+        <section class="derivation-section" id="derivation-q20" aria-label="Worked Derivation">
+          <div class="deriv-title">
+            <span>✓ Solution & Cognitive Route</span>
+            <span style="font-size:0.85rem; font-weight:normal; color:#15803d;">(Coaching predicted option: B: t3/2)</span>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">REPRESENT</span>
+            <div class="move-action">Establish physical parameters, system boundary, and functional form for EX-M65.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Clear identification of state variables and physical constraints is required before integration.</div>
+            <div class="move-output">Output: Isolated system state model and governing kinematic/dynamic relations</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">CONNECT</span>
+            <div class="move-action">Formulate and integrate the work-energy or power relation: CONSTANT_POWER_SCALING_RELATION.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Work integral W = ∫ F dx and power definition P = F·v = d(KE)/dt hold in Newtonian mechanics.</div>
+            <div class="move-output">Output: Integrated equation: Constant power P = m v (dv/dt). Integrating from rest: P t = 1/2 m v^2 => v proportio...</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">TRANSFORM</span>
+            <div class="move-action">Extract target analytical scaling or numerical value agreeing with B:.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Algebraic evaluation and dimensional bounds isolate the unique matching option.</div>
+            <div class="move-output">Output: Exact target solution agreeing with B: t3/2</div>
+          </div>
+
+          <div class="author-check">
+            <strong>Limiting Case & Dimensional Sanity Check:</strong><br>
+            Author Limiting Case Verification: Consistent with EX-M64 and EX-M62. Demonstrates robust cross-sitting invariance of the constant-power scaling law x ~ t^(3/2).
+          </div>
+        </section>
+      </article>
+
+      <article class="q-card" id="card-q21" data-seq="21">
+        
+        <!-- Metadata Tags -->
+        <div class="q-meta">
+          <span class="meta-tag tag-band">Band: D2 (5/10)</span>
+          <span class="meta-tag tag-op">Operation: APPLY</span>
+          <span class="meta-tag">JEE Main 2020 (Online) 4th September Evening Slot</span>
+          <span class="meta-tag">ID: EX-M68</span>
+        </div>
+
+        <!-- Problem Stem -->
+        <div class="q-stem">
+          <strong>Question 21:</strong> A person pushes a box on a rough horizontal platform surface. He applies a force of 200 N over a distance of 15 m. Thereafter, he gets progressively tired and his applied force reduces linearly with distance to 100 N. The total distance through which the box has been moved is 30 m. What is the work done by the person during the total movement of the box?
+        </div>
+
+        <section class="hints-section" aria-label="Progressive Hints">
+          <div class="hints-title">Progressive Scaffold Ladder (Pre-Attempt Safe)</div>
+
+          <div class="hint-card" id="hint-q21-1">
+            <div class="hint-header" onclick="toggleHint('hint-q21-1')">
+              <span>Tier 1 (REPRESENTATION): What is the primary physical law or relation connecting the variables?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Consider Piecewise Linear Work Integration relating force, power, and kinetic energy.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q21-2">
+            <div class="hint-header" onclick="toggleHint('hint-q21-2')">
+              <span>Tier 2 (FORMULATION): How does integration or energy conservation link initial and final states?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Set up the differential relation (e.g., P dt = m v dv or W = ∫ F dx) and integrate with given limits.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q21-3">
+            <div class="hint-header" onclick="toggleHint('hint-q21-3')">
+              <span>Tier 3 (RESOLUTION): What is the crucial relationship isolating the answer?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Crux Move: Integrating power or variable force relations across system states.</p>
+            </div>
+          </div>
+        </section>
+        <!-- Commitment Section -->
+        <section class="commit-section" aria-label="Attempt Commitment">
+          <div class="commit-title">Commit Your Answer to Unlock Worked Derivation:</div>
+          <div class="options-grid">
+
+            <button class="opt-btn" onclick="selectOption(21, 0)" id="opt-btn-q21-0">
+              <span class="opt-radio"></span>
+              <span>A: 5690 J</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(21, 1)" id="opt-btn-q21-1">
+              <span class="opt-radio"></span>
+              <span>B: 5250 J</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(21, 2)" id="opt-btn-q21-2">
+              <span class="opt-radio"></span>
+              <span>C: 2780 J</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(21, 3)" id="opt-btn-q21-3">
+              <span class="opt-radio"></span>
+              <span>D: 3280 J</span>
+            </button>
+
+          </div>
+          <button class="commit-btn" id="commit-btn-q21" onclick="commitAnswer(21)" disabled>
+            Commit Answer
+          </button>
+        </section>
+
+        <!-- Derivation Section (Inert Until Commitment) -->
+        <section class="derivation-section" id="derivation-q21" aria-label="Worked Derivation">
+          <div class="deriv-title">
+            <span>✓ Solution & Cognitive Route</span>
+            <span style="font-size:0.85rem; font-weight:normal; color:#15803d;">(Coaching predicted option: B: 5250 J)</span>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">REPRESENT</span>
+            <div class="move-action">Establish physical parameters, system boundary, and functional form for EX-M68.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Clear identification of state variables and physical constraints is required before integration.</div>
+            <div class="move-output">Output: Isolated system state model and governing kinematic/dynamic relations</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">CONNECT</span>
+            <div class="move-action">Formulate and integrate the work-energy or power relation: PIECEWISE_LINEAR_WORK_INTEGRATION.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Work integral W = ∫ F dx and power definition P = F·v = d(KE)/dt hold in Newtonian mechanics.</div>
+            <div class="move-output">Output: Integrated equation: First phase (0 to 15 m): Force F1 = 200 N is constant. Work W1 = 200 N * 15 m = 3000 ...</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">TRANSFORM</span>
+            <div class="move-action">Extract target analytical scaling or numerical value agreeing with B:.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Algebraic evaluation and dimensional bounds isolate the unique matching option.</div>
+            <div class="move-output">Output: Exact target solution agreeing with B: 5250 J</div>
+          </div>
+
+          <div class="author-check">
+            <strong>Limiting Case & Dimensional Sanity Check:</strong><br>
+            Author Limiting Case Verification: If force remained 200 N throughout 30 m, W = 6000 J. If force dropped to 0 N at 30 m, W = 3000 + 1500 = 4500 J. With linear drop to 100 N, W = 5250 J exactly.
+          </div>
+        </section>
+      </article>
+
+      <article class="q-card" id="card-q22" data-seq="22">
+        
+        <!-- Metadata Tags -->
+        <div class="q-meta">
+          <span class="meta-tag tag-band">Band: D2 (5/10)</span>
+          <span class="meta-tag tag-op">Operation: APPLY</span>
+          <span class="meta-tag">JEE Main 2020 (Online) 3rd September Evening Slot</span>
+          <span class="meta-tag">ID: EX-M69</span>
+        </div>
+
+        <!-- Problem Stem -->
+        <div class="q-stem">
+          <strong>Question 22:</strong> A particle is moving unidirectionally on a horizontal plane under the action of a constant power supplying energy source. The displacement (s) - time (t) graph that describes the motion of the particle is (graphs are drawn schematically and are not to scale) :
+        </div>
+
+        <section class="hints-section" aria-label="Progressive Hints">
+          <div class="hints-title">Progressive Scaffold Ladder (Pre-Attempt Safe)</div>
+
+          <div class="hint-card" id="hint-q22-1">
+            <div class="hint-header" onclick="toggleHint('hint-q22-1')">
+              <span>Tier 1 (REPRESENTATION): What is the primary physical law or relation connecting the variables?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Consider Constant Power Graph Curvature Analysis relating force, power, and kinetic energy.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q22-2">
+            <div class="hint-header" onclick="toggleHint('hint-q22-2')">
+              <span>Tier 2 (FORMULATION): How does integration or energy conservation link initial and final states?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Set up the differential relation (e.g., P dt = m v dv or W = ∫ F dx) and integrate with given limits.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q22-3">
+            <div class="hint-header" onclick="toggleHint('hint-q22-3')">
+              <span>Tier 3 (RESOLUTION): What is the crucial relationship isolating the answer?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Crux Move: Integrating power or variable force relations across system states.</p>
+            </div>
+          </div>
+        </section>
+        <!-- Commitment Section -->
+        <section class="commit-section" aria-label="Attempt Commitment">
+          <div class="commit-title">Commit Your Answer to Unlock Worked Derivation:</div>
+          <div class="options-grid">
+
+            <button class="opt-btn" onclick="selectOption(22, 0)" id="opt-btn-q22-0">
+              <span class="opt-radio"></span>
+              <span>A: [FIG-options-1]</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(22, 1)" id="opt-btn-q22-1">
+              <span class="opt-radio"></span>
+              <span>B: [FIG-options-2]</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(22, 2)" id="opt-btn-q22-2">
+              <span class="opt-radio"></span>
+              <span>C: [FIG-options-3]</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(22, 3)" id="opt-btn-q22-3">
+              <span class="opt-radio"></span>
+              <span>D: [FIG-options-4]</span>
+            </button>
+
+          </div>
+          <button class="commit-btn" id="commit-btn-q22" onclick="commitAnswer(22)" disabled>
+            Commit Answer
+          </button>
+        </section>
+
+        <!-- Derivation Section (Inert Until Commitment) -->
+        <section class="derivation-section" id="derivation-q22" aria-label="Worked Derivation">
+          <div class="deriv-title">
+            <span>✓ Solution & Cognitive Route</span>
+            <span style="font-size:0.85rem; font-weight:normal; color:#15803d;">(Coaching predicted option: HOLD:FIGURE_UNRESOLVED)</span>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">REPRESENT</span>
+            <div class="move-action">Establish physical parameters, system boundary, and functional form for EX-M69.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Clear identification of state variables and physical constraints is required before integration.</div>
+            <div class="move-output">Output: Isolated system state model and governing kinematic/dynamic relations</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">CONNECT</span>
+            <div class="move-action">Formulate and integrate the work-energy or power relation: CONSTANT_POWER_GRAPH_CURVATURE_ANALYSIS.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Work integral W = ∫ F dx and power definition P = F·v = d(KE)/dt hold in Newtonian mechanics.</div>
+            <div class="move-output">Output: Integrated equation: Constant power P = m v (dv/dt) => v proportional to t^(1/2) => s proportional to t^(3...</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">TRANSFORM</span>
+            <div class="move-action">Extract target analytical scaling or numerical value agreeing with HO.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Algebraic evaluation and dimensional bounds isolate the unique matching option.</div>
+            <div class="move-output">Output: Exact target solution agreeing with HOLD:FIGURE_UNRESOLVED</div>
+          </div>
+
+          <div class="author-check">
+            <strong>Limiting Case & Dimensional Sanity Check:</strong><br>
+            Author Limiting Case Verification: Option curves cannot be inspected or bound without authentic exam PDF assets.
+          </div>
+        </section>
+      </article>
+
+      <article class="q-card" id="card-q23" data-seq="23">
+        
+        <!-- Metadata Tags -->
+        <div class="q-meta">
+          <span class="meta-tag tag-band">Band: D3 (7/10)</span>
+          <span class="meta-tag tag-op">Operation: APPLY</span>
+          <span class="meta-tag">JEE Main 2019 (Online) 9th April Morning Slot</span>
+          <span class="meta-tag">ID: EX-M73</span>
+        </div>
+
+        <!-- Problem Stem -->
+        <div class="q-stem">
+          <strong>Question 23:</strong> A uniform cable of mass 'M' and length 'L' is placed on a horizontal surface such that its (1/n)th part is hanging below the edge of the surface. To lift the hanging part of the cable upto the surface, the work done should be :
+        </div>
+
+        <div class="q-fig-box">
+          <img src="../assets/fig_q23_hanging_cable.svg" alt="Diagram for Question 23" loading="lazy">
+        </div>
+
+        <section class="hints-section" aria-label="Progressive Hints">
+          <div class="hints-title">Progressive Scaffold Ladder (Pre-Attempt Safe)</div>
+
+          <div class="hint-card" id="hint-q23-1">
+            <div class="hint-header" onclick="toggleHint('hint-q23-1')">
+              <span>Tier 1 (REPRESENTATION): What is the primary physical law or relation connecting the variables?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Consider Continuous Mass Center Of Gravity Potential relating force, power, and kinetic energy.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q23-2">
+            <div class="hint-header" onclick="toggleHint('hint-q23-2')">
+              <span>Tier 2 (FORMULATION): How does integration or energy conservation link initial and final states?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Set up the differential relation (e.g., P dt = m v dv or W = ∫ F dx) and integrate with given limits.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q23-3">
+            <div class="hint-header" onclick="toggleHint('hint-q23-3')">
+              <span>Tier 3 (RESOLUTION): What is the crucial relationship isolating the answer?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Crux Move: Integrating power or variable force relations across system states.</p>
+            </div>
+          </div>
+        </section>
+        <!-- Commitment Section -->
+        <section class="commit-section" aria-label="Attempt Commitment">
+          <div class="commit-title">Commit Your Answer to Unlock Worked Derivation:</div>
+          <div class="options-grid">
+
+            <button class="opt-btn" onclick="selectOption(23, 0)" id="opt-btn-q23-0">
+              <span class="opt-radio"></span>
+              <span>A: <math class="math-tex" display="inline"><mfrac><mrow><mi>2𝑀𝑔𝐿</mi></mrow><mrow><mi>𝑛^(2</mi></mrow></mfrac></math>)</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(23, 1)" id="opt-btn-q23-1">
+              <span class="opt-radio"></span>
+              <span>B: nMgL</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(23, 2)" id="opt-btn-q23-2">
+              <span class="opt-radio"></span>
+              <span>C: <math class="math-tex" display="inline"><mfrac><mrow><mi>𝑀𝑔𝐿</mi></mrow><mrow><mi>2𝑛^(2</mi></mrow></mfrac></math>)</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(23, 3)" id="opt-btn-q23-3">
+              <span class="opt-radio"></span>
+              <span>D: <math class="math-tex" display="inline"><mfrac><mrow><mi>𝑀𝑔𝐿</mi></mrow><mrow><mi>𝑛^(2</mi></mrow></mfrac></math>)</span>
+            </button>
+
+          </div>
+          <button class="commit-btn" id="commit-btn-q23" onclick="commitAnswer(23)" disabled>
+            Commit Answer
+          </button>
+        </section>
+
+        <!-- Derivation Section (Inert Until Commitment) -->
+        <section class="derivation-section" id="derivation-q23" aria-label="Worked Derivation">
+          <div class="deriv-title">
+            <span>✓ Solution & Cognitive Route</span>
+            <span style="font-size:0.85rem; font-weight:normal; color:#15803d;">(Coaching predicted option: C: (𝑀𝑔𝐿)/(2𝑛^(2)))</span>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">REPRESENT</span>
+            <div class="move-action">Establish physical parameters, system boundary, and functional form for EX-M73.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Clear identification of state variables and physical constraints is required before integration.</div>
+            <div class="move-output">Output: Isolated system state model and governing kinematic/dynamic relations</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">CONNECT</span>
+            <div class="move-action">Formulate and integrate the work-energy or power relation: CONTINUOUS_MASS_CENTER_OF_GRAVITY_POTENTIAL.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Work integral W = ∫ F dx and power definition P = F·v = d(KE)/dt hold in Newtonian mechanics.</div>
+            <div class="move-output">Output: Integrated equation: Hanging portion has length l_hang = L/n and mass m_hang = M/n. Cable is uniform, so c...</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">TRANSFORM</span>
+            <div class="move-action">Extract target analytical scaling or numerical value agreeing with C:.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Algebraic evaluation and dimensional bounds isolate the unique matching option.</div>
+            <div class="move-output">Output: Exact target solution agreeing with C: (𝑀𝑔𝐿)/(2𝑛^(2))</div>
+          </div>
+
+          <div class="author-check">
+            <strong>Limiting Case & Dimensional Sanity Check:</strong><br>
+            Author Limiting Case Verification: If n=1 (entire rope hanging), W = MgL/2. If n -> infinity (infinitesimal portion hanging), W -> 0. Calculus verification: W = integral_0^(L/n) (M/L) * (L/n - y) * g dy = (M g / L) * [ (L/n)^2 / 2 ] = (M g L) / (2 n^2).
+          </div>
+        </section>
+      </article>
+
+      <article class="q-card" id="card-q24" data-seq="24">
+        
+        <!-- Metadata Tags -->
+        <div class="q-meta">
+          <span class="meta-tag tag-band">Band: D2 (5/10)</span>
+          <span class="meta-tag tag-op">Operation: APPLY</span>
+          <span class="meta-tag">JEE Main 2019 (Online) 8th April Morning Slot</span>
+          <span class="meta-tag">ID: EX-M74</span>
+        </div>
+
+        <!-- Problem Stem -->
+        <div class="q-stem">
+          <strong>Question 24:</strong> A particle moves in one dimension from rest under the influence of a force that varies with the distance travelled by the particle as shown in the figure. The kinetic energy of the particle after it has travelled 3m is : [FIG-stem-1]
+        </div>
+
+        <section class="hints-section" aria-label="Progressive Hints">
+          <div class="hints-title">Progressive Scaffold Ladder (Pre-Attempt Safe)</div>
+
+          <div class="hint-card" id="hint-q24-1">
+            <div class="hint-header" onclick="toggleHint('hint-q24-1')">
+              <span>Tier 1 (REPRESENTATION): What is the primary physical law or relation connecting the variables?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Consider Work Energy Force Displacement Integration relating force, power, and kinetic energy.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q24-2">
+            <div class="hint-header" onclick="toggleHint('hint-q24-2')">
+              <span>Tier 2 (FORMULATION): How does integration or energy conservation link initial and final states?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Set up the differential relation (e.g., P dt = m v dv or W = ∫ F dx) and integrate with given limits.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q24-3">
+            <div class="hint-header" onclick="toggleHint('hint-q24-3')">
+              <span>Tier 3 (RESOLUTION): What is the crucial relationship isolating the answer?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Crux Move: Integrating power or variable force relations across system states.</p>
+            </div>
+          </div>
+        </section>
+        <!-- Commitment Section -->
+        <section class="commit-section" aria-label="Attempt Commitment">
+          <div class="commit-title">Commit Your Answer to Unlock Worked Derivation:</div>
+          <div class="options-grid">
+
+            <button class="opt-btn" onclick="selectOption(24, 0)" id="opt-btn-q24-0">
+              <span class="opt-radio"></span>
+              <span>A: 6.5 J</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(24, 1)" id="opt-btn-q24-1">
+              <span class="opt-radio"></span>
+              <span>B: 2.5 J</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(24, 2)" id="opt-btn-q24-2">
+              <span class="opt-radio"></span>
+              <span>C: 5 J</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(24, 3)" id="opt-btn-q24-3">
+              <span class="opt-radio"></span>
+              <span>D: 4 J</span>
+            </button>
+
+          </div>
+          <button class="commit-btn" id="commit-btn-q24" onclick="commitAnswer(24)" disabled>
+            Commit Answer
+          </button>
+        </section>
+
+        <!-- Derivation Section (Inert Until Commitment) -->
+        <section class="derivation-section" id="derivation-q24" aria-label="Worked Derivation">
+          <div class="deriv-title">
+            <span>✓ Solution & Cognitive Route</span>
+            <span style="font-size:0.85rem; font-weight:normal; color:#15803d;">(Coaching predicted option: HOLD:FIGURE_UNRESOLVED)</span>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">REPRESENT</span>
+            <div class="move-action">Establish physical parameters, system boundary, and functional form for EX-M74.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Clear identification of state variables and physical constraints is required before integration.</div>
+            <div class="move-output">Output: Isolated system state model and governing kinematic/dynamic relations</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">CONNECT</span>
+            <div class="move-action">Formulate and integrate the work-energy or power relation: WORK_ENERGY_FORCE_DISPLACEMENT_INTEGRATION.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Work integral W = ∫ F dx and power definition P = F·v = d(KE)/dt hold in Newtonian mechanics.</div>
+            <div class="move-output">Output: Integrated equation: By Work-Energy Theorem: KE(at 3m) - KE(initial) = W = integral_0^3 F(x) dx. Since par...</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">TRANSFORM</span>
+            <div class="move-action">Extract target analytical scaling or numerical value agreeing with HO.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Algebraic evaluation and dimensional bounds isolate the unique matching option.</div>
+            <div class="move-output">Output: Exact target solution agreeing with HOLD:FIGURE_UNRESOLVED</div>
+          </div>
+
+          <div class="author-check">
+            <strong>Limiting Case & Dimensional Sanity Check:</strong><br>
+            Author Limiting Case Verification: Cannot perform independent integration without original figure.
+          </div>
+        </section>
+      </article>
+
+      <article class="q-card" id="card-q25" data-seq="25">
+        
+        <!-- Metadata Tags -->
+        <div class="q-meta">
+          <span class="meta-tag tag-band">Band: D2 (5/10)</span>
+          <span class="meta-tag tag-op">Operation: APPLY</span>
+          <span class="meta-tag">JEE Main 2019 (Online) 10th January Morning Slot</span>
+          <span class="meta-tag">ID: EX-M76</span>
+        </div>
+
+        <!-- Problem Stem -->
+        <div class="q-stem">
+          <strong>Question 25:</strong> A block of mass m is kept on a platform which starts from rest with constant acceleration g/2 upward, as shown in figure. Work done by normal reaction on block in time t is - [FIG-stem-1]
+        </div>
+
+        <div class="q-fig-box">
+          <img src="../assets/fig_q25_accelerating_platform.svg" alt="Diagram for Question 25" loading="lazy">
+        </div>
+
+        <section class="hints-section" aria-label="Progressive Hints">
+          <div class="hints-title">Progressive Scaffold Ladder (Pre-Attempt Safe)</div>
+
+          <div class="hint-card" id="hint-q25-1">
+            <div class="hint-header" onclick="toggleHint('hint-q25-1')">
+              <span>Tier 1 (REPRESENTATION): What is the primary physical law or relation connecting the variables?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Consider Accelerated Frame Normal Force Work relating force, power, and kinetic energy.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q25-2">
+            <div class="hint-header" onclick="toggleHint('hint-q25-2')">
+              <span>Tier 2 (FORMULATION): How does integration or energy conservation link initial and final states?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Set up the differential relation (e.g., P dt = m v dv or W = ∫ F dx) and integrate with given limits.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q25-3">
+            <div class="hint-header" onclick="toggleHint('hint-q25-3')">
+              <span>Tier 3 (RESOLUTION): What is the crucial relationship isolating the answer?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Crux Move: Integrating power or variable force relations across system states.</p>
+            </div>
+          </div>
+        </section>
+        <!-- Commitment Section -->
+        <section class="commit-section" aria-label="Attempt Commitment">
+          <div class="commit-title">Commit Your Answer to Unlock Worked Derivation:</div>
+          <div class="options-grid">
+
+            <button class="opt-btn" onclick="selectOption(25, 0)" id="opt-btn-q25-0">
+              <span class="opt-radio"></span>
+              <span>A: (𝑚𝑔^(2)𝑡^(2))/(8)</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(25, 1)" id="opt-btn-q25-1">
+              <span class="opt-radio"></span>
+              <span>B: (3𝑚𝑔^(2)𝑡^(2))/(8)</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(25, 2)" id="opt-btn-q25-2">
+              <span class="opt-radio"></span>
+              <span>C: − (𝑚𝑔^(2)𝑡^(2))/(8)</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(25, 3)" id="opt-btn-q25-3">
+              <span class="opt-radio"></span>
+              <span>D: 0</span>
+            </button>
+
+          </div>
+          <button class="commit-btn" id="commit-btn-q25" onclick="commitAnswer(25)" disabled>
+            Commit Answer
+          </button>
+        </section>
+
+        <!-- Derivation Section (Inert Until Commitment) -->
+        <section class="derivation-section" id="derivation-q25" aria-label="Worked Derivation">
+          <div class="deriv-title">
+            <span>✓ Solution & Cognitive Route</span>
+            <span style="font-size:0.85rem; font-weight:normal; color:#15803d;">(Coaching predicted option: B: (3𝑚𝑔^(2)𝑡^(2))/(8))</span>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">REPRESENT</span>
+            <div class="move-action">Establish physical parameters, system boundary, and functional form for EX-M76.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Clear identification of state variables and physical constraints is required before integration.</div>
+            <div class="move-output">Output: Isolated system state model and governing kinematic/dynamic relations</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">CONNECT</span>
+            <div class="move-action">Formulate and integrate the work-energy or power relation: ACCELERATED_FRAME_NORMAL_FORCE_WORK.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Work integral W = ∫ F dx and power definition P = F·v = d(KE)/dt hold in Newtonian mechanics.</div>
+            <div class="move-output">Output: Integrated equation: Equation of motion for block in vertical direction: N - mg = m a = m (g/2) => N = mg ...</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">TRANSFORM</span>
+            <div class="move-action">Extract target analytical scaling or numerical value agreeing with B:.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Algebraic evaluation and dimensional bounds isolate the unique matching option.</div>
+            <div class="move-output">Output: Exact target solution agreeing with B: (3𝑚𝑔^(2)𝑡^(2))/(8)</div>
+          </div>
+
+          <div class="author-check">
+            <strong>Limiting Case & Dimensional Sanity Check:</strong><br>
+            Author Limiting Case Verification: If platform had zero acceleration, N = mg and s = 0 (from rest), W = 0. If platform accelerated in free fall (a = -g), N = 0, W = 0. With upward acceleration g/2, N > mg and W > 0.
+          </div>
+        </section>
+      </article>
+
+      <article class="q-card" id="card-q26" data-seq="26">
+        
+        <!-- Metadata Tags -->
+        <div class="q-meta">
+          <span class="meta-tag tag-band">Band: D2 (5/10)</span>
+          <span class="meta-tag tag-op">Operation: APPLY</span>
+          <span class="meta-tag">JEE Main 2019 (Online) 9th January Morning Slot</span>
+          <span class="meta-tag">ID: EX-M78</span>
+        </div>
+
+        <!-- Problem Stem -->
+        <div class="q-stem">
+          <strong>Question 26:</strong> A block of mass m, lying on a smooth horizontal surface, is attached to a spring (of negligible mass) of spring constant k. The other end of the spring is fixed, as shown in the figure. The block is initially at rest in its equilibrium position. If now the block is pulled with a constant force F, the maximum speed of the block is : [FIG-stem-1]
+        </div>
+
+        <div class="q-fig-box">
+          <img src="../assets/fig_q26_spring_block_pull.svg" alt="Diagram for Question 26" loading="lazy">
+        </div>
+
+        <section class="hints-section" aria-label="Progressive Hints">
+          <div class="hints-title">Progressive Scaffold Ladder (Pre-Attempt Safe)</div>
+
+          <div class="hint-card" id="hint-q26-1">
+            <div class="hint-header" onclick="toggleHint('hint-q26-1')">
+              <span>Tier 1 (REPRESENTATION): What is the primary physical law or relation connecting the variables?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Consider Spring Block Work Energy Max Speed relating force, power, and kinetic energy.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q26-2">
+            <div class="hint-header" onclick="toggleHint('hint-q26-2')">
+              <span>Tier 2 (FORMULATION): How does integration or energy conservation link initial and final states?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Set up the differential relation (e.g., P dt = m v dv or W = ∫ F dx) and integrate with given limits.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q26-3">
+            <div class="hint-header" onclick="toggleHint('hint-q26-3')">
+              <span>Tier 3 (RESOLUTION): What is the crucial relationship isolating the answer?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Crux Move: Integrating power or variable force relations across system states.</p>
+            </div>
+          </div>
+        </section>
+        <!-- Commitment Section -->
+        <section class="commit-section" aria-label="Attempt Commitment">
+          <div class="commit-title">Commit Your Answer to Unlock Worked Derivation:</div>
+          <div class="options-grid">
+
+            <button class="opt-btn" onclick="selectOption(26, 0)" id="opt-btn-q26-0">
+              <span class="opt-radio"></span>
+              <span>A: <math class="math-tex" display="inline"><mfrac><mrow><mi>2𝐹</mi></mrow><mrow><mi>√(𝑚𝑘</mi></mrow></mfrac></math>)</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(26, 1)" id="opt-btn-q26-1">
+              <span class="opt-radio"></span>
+              <span>B: <math class="math-tex" display="inline"><mfrac><mrow><mi>𝐹</mi></mrow><mrow><mi>𝜋√(𝑚𝑘</mi></mrow></mfrac></math>)</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(26, 2)" id="opt-btn-q26-2">
+              <span class="opt-radio"></span>
+              <span>C: <math class="math-tex" display="inline"><mfrac><mrow><mi>𝜋𝐹</mi></mrow><mrow><mi>√(𝑚𝑘</mi></mrow></mfrac></math>)</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(26, 3)" id="opt-btn-q26-3">
+              <span class="opt-radio"></span>
+              <span>D: <math class="math-tex" display="inline"><mfrac><mrow><mi>𝐹</mi></mrow><mrow><mi>√(𝑚𝑘</mi></mrow></mfrac></math>)</span>
+            </button>
+
+          </div>
+          <button class="commit-btn" id="commit-btn-q26" onclick="commitAnswer(26)" disabled>
+            Commit Answer
+          </button>
+        </section>
+
+        <!-- Derivation Section (Inert Until Commitment) -->
+        <section class="derivation-section" id="derivation-q26" aria-label="Worked Derivation">
+          <div class="deriv-title">
+            <span>✓ Solution & Cognitive Route</span>
+            <span style="font-size:0.85rem; font-weight:normal; color:#15803d;">(Coaching predicted option: D: (𝐹)/(√(𝑚𝑘)))</span>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">REPRESENT</span>
+            <div class="move-action">Establish physical parameters, system boundary, and functional form for EX-M78.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Clear identification of state variables and physical constraints is required before integration.</div>
+            <div class="move-output">Output: Isolated system state model and governing kinematic/dynamic relations</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">CONNECT</span>
+            <div class="move-action">Formulate and integrate the work-energy or power relation: SPRING_BLOCK_WORK_ENERGY_MAX_SPEED.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Work integral W = ∫ F dx and power definition P = F·v = d(KE)/dt hold in Newtonian mechanics.</div>
+            <div class="move-output">Output: Integrated equation: Maximum speed occurs at the equilibrium position where net force is zero: F_net = F -...</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">TRANSFORM</span>
+            <div class="move-action">Extract target analytical scaling or numerical value agreeing with D:.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Algebraic evaluation and dimensional bounds isolate the unique matching option.</div>
+            <div class="move-output">Output: Exact target solution agreeing with D: (𝐹)/(√(𝑚𝑘))</div>
+          </div>
+
+          <div class="author-check">
+            <strong>Limiting Case & Dimensional Sanity Check:</strong><br>
+            Author Limiting Case Verification: If k -> infinity, v_max -> 0. If m -> infinity, v_max -> 0. Simple harmonic motion verification: equilibrium shift x_0 = F/k, amplitude A = F/k, angular frequency omega = sqrt(k/m), maximum speed v_max = omega * A = sqrt(k/m) * (F/k) = F / sqrt(mk).
+          </div>
+        </section>
+      </article>
+
+      <article class="q-card" id="card-q27" data-seq="27">
+        
+        <!-- Metadata Tags -->
+        <div class="q-meta">
+          <span class="meta-tag tag-band">Band: D3 (7/10)</span>
+          <span class="meta-tag tag-op">Operation: APPLY</span>
+          <span class="meta-tag">JEE Main 2018 (Online) 16th April Morning Slot</span>
+          <span class="meta-tag">ID: EX-M79</span>
+        </div>
+
+        <!-- Problem Stem -->
+        <div class="q-stem">
+          <strong>Question 27:</strong> A body of mass m starts moving from rest along x-axis so that its velocity varies as 𝜐=𝑎√(𝑠) where a is a constant and s is the distance covered by the body. The total work done by all the forces acting on the body in the first t seconds after the start of the motion is :
+        </div>
+
+        <section class="hints-section" aria-label="Progressive Hints">
+          <div class="hints-title">Progressive Scaffold Ladder (Pre-Attempt Safe)</div>
+
+          <div class="hint-card" id="hint-q27-1">
+            <div class="hint-header" onclick="toggleHint('hint-q27-1')">
+              <span>Tier 1 (REPRESENTATION): What is the primary physical law or relation connecting the variables?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Consider Work Energy Theorem Velocity Distance Relation relating force, power, and kinetic energy.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q27-2">
+            <div class="hint-header" onclick="toggleHint('hint-q27-2')">
+              <span>Tier 2 (FORMULATION): How does integration or energy conservation link initial and final states?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Set up the differential relation (e.g., P dt = m v dv or W = ∫ F dx) and integrate with given limits.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q27-3">
+            <div class="hint-header" onclick="toggleHint('hint-q27-3')">
+              <span>Tier 3 (RESOLUTION): What is the crucial relationship isolating the answer?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Crux Move: Integrating power or variable force relations across system states.</p>
+            </div>
+          </div>
+        </section>
+        <!-- Commitment Section -->
+        <section class="commit-section" aria-label="Attempt Commitment">
+          <div class="commit-title">Commit Your Answer to Unlock Worked Derivation:</div>
+          <div class="options-grid">
+
+            <button class="opt-btn" onclick="selectOption(27, 0)" id="opt-btn-q27-0">
+              <span class="opt-radio"></span>
+              <span>A: <math class="math-tex" display="inline"><mfrac><mrow><mi>1</mi></mrow><mrow><mi>8</mi></mrow></mfrac></math> m a4 t2</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(27, 1)" id="opt-btn-q27-1">
+              <span class="opt-radio"></span>
+              <span>B: 8 m a4 t2</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(27, 2)" id="opt-btn-q27-2">
+              <span class="opt-radio"></span>
+              <span>C: 4 m a4 t2</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(27, 3)" id="opt-btn-q27-3">
+              <span class="opt-radio"></span>
+              <span>D: <math class="math-tex" display="inline"><mfrac><mrow><mi>1</mi></mrow><mrow><mi>4</mi></mrow></mfrac></math> m a4 t2</span>
+            </button>
+
+          </div>
+          <button class="commit-btn" id="commit-btn-q27" onclick="commitAnswer(27)" disabled>
+            Commit Answer
+          </button>
+        </section>
+
+        <!-- Derivation Section (Inert Until Commitment) -->
+        <section class="derivation-section" id="derivation-q27" aria-label="Worked Derivation">
+          <div class="deriv-title">
+            <span>✓ Solution & Cognitive Route</span>
+            <span style="font-size:0.85rem; font-weight:normal; color:#15803d;">(Coaching predicted option: A: (1)/(8) m a4 t2)</span>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">REPRESENT</span>
+            <div class="move-action">Establish physical parameters, system boundary, and functional form for EX-M79.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Clear identification of state variables and physical constraints is required before integration.</div>
+            <div class="move-output">Output: Isolated system state model and governing kinematic/dynamic relations</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">CONNECT</span>
+            <div class="move-action">Formulate and integrate the work-energy or power relation: WORK_ENERGY_THEOREM_VELOCITY_DISTANCE_RELATION.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Work integral W = ∫ F dx and power definition P = F·v = d(KE)/dt hold in Newtonian mechanics.</div>
+            <div class="move-output">Output: Integrated equation: Velocity definition: v = ds/dt = a * s^(1/2). Separating variables: s^(-1/2) ds = a d...</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">TRANSFORM</span>
+            <div class="move-action">Extract target analytical scaling or numerical value agreeing with A:.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Algebraic evaluation and dimensional bounds isolate the unique matching option.</div>
+            <div class="move-output">Output: Exact target solution agreeing with A: (1)/(8) m a4 t2</div>
+          </div>
+
+          <div class="author-check">
+            <strong>Limiting Case & Dimensional Sanity Check:</strong><br>
+            Author Limiting Case Verification: If a=0, W=0. If t=0, W=0. Dimensional verification: [a] = m^(1/2) s^(-1). [m a^4 t^2] = kg * (m^2 s^(-4)) * s^2 = kg m^2 s^(-2) = Joules. Factor 1/8 matches uniquely.
+          </div>
+        </section>
+      </article>
+
+      <article class="q-card" id="card-q28" data-seq="28">
+        
+        <!-- Metadata Tags -->
+        <div class="q-meta">
+          <span class="meta-tag tag-band">Band: D3 (7/10)</span>
+          <span class="meta-tag tag-op">Operation: APPLY</span>
+          <span class="meta-tag">JEE Main 2017 (Online) 8th April Morning Slot</span>
+          <span class="meta-tag">ID: EX-M82</span>
+        </div>
+
+        <!-- Problem Stem -->
+        <div class="q-stem">
+          <strong>Question 28:</strong> An object is dropped from a height h from the ground. Every time it hits the ground it loses 50% of its kinetic energy. The total distance covered as t → ∞ is :
+        </div>
+
+        <div class="q-fig-box">
+          <img src="../assets/fig_q28_bouncing_ball.svg" alt="Diagram for Question 28" loading="lazy">
+        </div>
+
+        <section class="hints-section" aria-label="Progressive Hints">
+          <div class="hints-title">Progressive Scaffold Ladder (Pre-Attempt Safe)</div>
+
+          <div class="hint-card" id="hint-q28-1">
+            <div class="hint-header" onclick="toggleHint('hint-q28-1')">
+              <span>Tier 1 (REPRESENTATION): What is the primary physical law or relation connecting the variables?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Consider Inelastic Bounce Infinite Series relating force, power, and kinetic energy.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q28-2">
+            <div class="hint-header" onclick="toggleHint('hint-q28-2')">
+              <span>Tier 2 (FORMULATION): How does integration or energy conservation link initial and final states?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Set up the differential relation (e.g., P dt = m v dv or W = ∫ F dx) and integrate with given limits.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q28-3">
+            <div class="hint-header" onclick="toggleHint('hint-q28-3')">
+              <span>Tier 3 (RESOLUTION): What is the crucial relationship isolating the answer?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Crux Move: Integrating power or variable force relations across system states.</p>
+            </div>
+          </div>
+        </section>
+        <!-- Commitment Section -->
+        <section class="commit-section" aria-label="Attempt Commitment">
+          <div class="commit-title">Commit Your Answer to Unlock Worked Derivation:</div>
+          <div class="options-grid">
+
+            <button class="opt-btn" onclick="selectOption(28, 0)" id="opt-btn-q28-0">
+              <span class="opt-radio"></span>
+              <span>A: 3h</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(28, 1)" id="opt-btn-q28-1">
+              <span class="opt-radio"></span>
+              <span>B: ∞</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(28, 2)" id="opt-btn-q28-2">
+              <span class="opt-radio"></span>
+              <span>C: <math class="math-tex" display="inline"><mfrac><mrow><mi>5</mi></mrow><mrow><mi>3</mi></mrow></mfrac></math> h</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(28, 3)" id="opt-btn-q28-3">
+              <span class="opt-radio"></span>
+              <span>D: <math class="math-tex" display="inline"><mfrac><mrow><mi>8</mi></mrow><mrow><mi>3</mi></mrow></mfrac></math> h</span>
+            </button>
+
+          </div>
+          <button class="commit-btn" id="commit-btn-q28" onclick="commitAnswer(28)" disabled>
+            Commit Answer
+          </button>
+        </section>
+
+        <!-- Derivation Section (Inert Until Commitment) -->
+        <section class="derivation-section" id="derivation-q28" aria-label="Worked Derivation">
+          <div class="deriv-title">
+            <span>✓ Solution & Cognitive Route</span>
+            <span style="font-size:0.85rem; font-weight:normal; color:#15803d;">(Coaching predicted option: A: 3h)</span>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">REPRESENT</span>
+            <div class="move-action">Establish physical parameters, system boundary, and functional form for EX-M82.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Clear identification of state variables and physical constraints is required before integration.</div>
+            <div class="move-output">Output: Isolated system state model and governing kinematic/dynamic relations</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">CONNECT</span>
+            <div class="move-action">Formulate and integrate the work-energy or power relation: INELASTIC_BOUNCE_INFINITE_SERIES.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Work integral W = ∫ F dx and power definition P = F·v = d(KE)/dt hold in Newtonian mechanics.</div>
+            <div class="move-output">Output: Integrated equation: Initial drop from height h: distance d0 = h, kinetic energy before 1st impact KE0 = m...</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">TRANSFORM</span>
+            <div class="move-action">Extract target analytical scaling or numerical value agreeing with A:.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Algebraic evaluation and dimensional bounds isolate the unique matching option.</div>
+            <div class="move-output">Output: Exact target solution agreeing with A: 3h</div>
+          </div>
+
+          <div class="author-check">
+            <strong>Limiting Case & Dimensional Sanity Check:</strong><br>
+            Author Limiting Case Verification: If 0% KE lost (elastic bounce), D = infinity (Option B). If 100% lost (inelastic stick), D = h. With restitution coefficient e where e^2 = 0.5: D = h * (1 + e^2) / (1 - e^2) = h * (1 + 0.5) / (1 - 0.5) = h * 1.5 / 0.5 = 3h.
+          </div>
+        </section>
+      </article>
+
+      <article class="q-card" id="card-q29" data-seq="29">
+        
+        <!-- Metadata Tags -->
+        <div class="q-meta">
+          <span class="meta-tag tag-band">Band: D2 (5/10)</span>
+          <span class="meta-tag tag-op">Operation: APPLY</span>
+          <span class="meta-tag">JEE Main 2016 (Online) 10th April Morning Slot</span>
+          <span class="meta-tag">ID: EX-M84</span>
+        </div>
+
+        <!-- Problem Stem -->
+        <div class="q-stem">
+          <strong>Question 29:</strong> A particle of mass M is moving in a circle of fixed radius R in such a way that its centripetal acceleration at time t is given by n2 R t2 where n is a constant. The power delivered to the particle by the force acting on it, is :
+        </div>
+
+        <section class="hints-section" aria-label="Progressive Hints">
+          <div class="hints-title">Progressive Scaffold Ladder (Pre-Attempt Safe)</div>
+
+          <div class="hint-card" id="hint-q29-1">
+            <div class="hint-header" onclick="toggleHint('hint-q29-1')">
+              <span>Tier 1 (REPRESENTATION): What is the primary physical law or relation connecting the variables?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Consider Circular Dynamics Tangential Power relating force, power, and kinetic energy.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q29-2">
+            <div class="hint-header" onclick="toggleHint('hint-q29-2')">
+              <span>Tier 2 (FORMULATION): How does integration or energy conservation link initial and final states?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Set up the differential relation (e.g., P dt = m v dv or W = ∫ F dx) and integrate with given limits.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q29-3">
+            <div class="hint-header" onclick="toggleHint('hint-q29-3')">
+              <span>Tier 3 (RESOLUTION): What is the crucial relationship isolating the answer?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Crux Move: Integrating power or variable force relations across system states.</p>
+            </div>
+          </div>
+        </section>
+        <!-- Commitment Section -->
+        <section class="commit-section" aria-label="Attempt Commitment">
+          <div class="commit-title">Commit Your Answer to Unlock Worked Derivation:</div>
+          <div class="options-grid">
+
+            <button class="opt-btn" onclick="selectOption(29, 0)" id="opt-btn-q29-0">
+              <span class="opt-radio"></span>
+              <span>A: M n2 R2 t</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(29, 1)" id="opt-btn-q29-1">
+              <span class="opt-radio"></span>
+              <span>B: M n R2 t</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(29, 2)" id="opt-btn-q29-2">
+              <span class="opt-radio"></span>
+              <span>C: M n R2 t2</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(29, 3)" id="opt-btn-q29-3">
+              <span class="opt-radio"></span>
+              <span>D: <math class="math-tex" display="inline"><mfrac><mrow><mi>1</mi></mrow><mrow><mi>2</mi></mrow></mfrac></math> M n2 R2 t2</span>
+            </button>
+
+          </div>
+          <button class="commit-btn" id="commit-btn-q29" onclick="commitAnswer(29)" disabled>
+            Commit Answer
+          </button>
+        </section>
+
+        <!-- Derivation Section (Inert Until Commitment) -->
+        <section class="derivation-section" id="derivation-q29" aria-label="Worked Derivation">
+          <div class="deriv-title">
+            <span>✓ Solution & Cognitive Route</span>
+            <span style="font-size:0.85rem; font-weight:normal; color:#15803d;">(Coaching predicted option: A: M n2 R2 t)</span>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">REPRESENT</span>
+            <div class="move-action">Establish physical parameters, system boundary, and functional form for EX-M84.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Clear identification of state variables and physical constraints is required before integration.</div>
+            <div class="move-output">Output: Isolated system state model and governing kinematic/dynamic relations</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">CONNECT</span>
+            <div class="move-action">Formulate and integrate the work-energy or power relation: CIRCULAR_DYNAMICS_TANGENTIAL_POWER.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Work integral W = ∫ F dx and power definition P = F·v = d(KE)/dt hold in Newtonian mechanics.</div>
+            <div class="move-output">Output: Integrated equation: Centripetal acceleration a_c = v^2 / R = n^2 R t^2 => v^2 = n^2 R^2 t^2 => v(t) = n R...</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">TRANSFORM</span>
+            <div class="move-action">Extract target analytical scaling or numerical value agreeing with A:.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Algebraic evaluation and dimensional bounds isolate the unique matching option.</div>
+            <div class="move-output">Output: Exact target solution agreeing with A: M n2 R2 t</div>
+          </div>
+
+          <div class="author-check">
+            <strong>Limiting Case & Dimensional Sanity Check:</strong><br>
+            Author Limiting Case Verification: If n=0 or t=0, P=0. Dimensional analysis: [M n^2 R^2 t] = kg * (s^-2) * (m^2) * s = kg m^2 s^-3 = Watt. Option A is the unique exact result.
+          </div>
+        </section>
+      </article>
+
+      <article class="q-card" id="card-q30" data-seq="30">
+        
+        <!-- Metadata Tags -->
+        <div class="q-meta">
+          <span class="meta-tag tag-band">Band: D2 (5/10)</span>
+          <span class="meta-tag tag-op">Operation: APPLY</span>
+          <span class="meta-tag">JEE Main 2016 (Online) 10th April Morning Slot</span>
+          <span class="meta-tag">ID: EX-M85</span>
+        </div>
+
+        <!-- Problem Stem -->
+        <div class="q-stem">
+          <strong>Question 30:</strong> Velocity-time graph for a body of mass 10 kg is shown in figure. Work-done on the body in first two seconds of the motion is : [FIG-stem-1]
+        </div>
+
+        <div class="q-fig-box">
+          <img src="../assets/fig_q30_vt_graph.svg" alt="Diagram for Question 30" loading="lazy">
+        </div>
+
+        <section class="hints-section" aria-label="Progressive Hints">
+          <div class="hints-title">Progressive Scaffold Ladder (Pre-Attempt Safe)</div>
+
+          <div class="hint-card" id="hint-q30-1">
+            <div class="hint-header" onclick="toggleHint('hint-q30-1')">
+              <span>Tier 1 (REPRESENTATION): What is the primary physical law or relation connecting the variables?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Consider Work Energy Theorem Vt Graph relating force, power, and kinetic energy.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q30-2">
+            <div class="hint-header" onclick="toggleHint('hint-q30-2')">
+              <span>Tier 2 (FORMULATION): How does integration or energy conservation link initial and final states?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Set up the differential relation (e.g., P dt = m v dv or W = ∫ F dx) and integrate with given limits.</p>
+            </div>
+          </div>
+
+          <div class="hint-card" id="hint-q30-3">
+            <div class="hint-header" onclick="toggleHint('hint-q30-3')">
+              <span>Tier 3 (RESOLUTION): What is the crucial relationship isolating the answer?</span>
+              <span class="hint-toggle-icon">▼</span>
+            </div>
+            <div class="hint-body">
+              <p>Crux Move: Integrating power or variable force relations across system states.</p>
+            </div>
+          </div>
+        </section>
+        <!-- Commitment Section -->
+        <section class="commit-section" aria-label="Attempt Commitment">
+          <div class="commit-title">Commit Your Answer to Unlock Worked Derivation:</div>
+          <div class="options-grid">
+
+            <button class="opt-btn" onclick="selectOption(30, 0)" id="opt-btn-q30-0">
+              <span class="opt-radio"></span>
+              <span>A: 12000 J</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(30, 1)" id="opt-btn-q30-1">
+              <span class="opt-radio"></span>
+              <span>B: − 12000 J</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(30, 2)" id="opt-btn-q30-2">
+              <span class="opt-radio"></span>
+              <span>C: − 4500 J</span>
+            </button>
+
+            <button class="opt-btn" onclick="selectOption(30, 3)" id="opt-btn-q30-3">
+              <span class="opt-radio"></span>
+              <span>D: − 9300 J</span>
+            </button>
+
+          </div>
+          <button class="commit-btn" id="commit-btn-q30" onclick="commitAnswer(30)" disabled>
+            Commit Answer
+          </button>
+        </section>
+
+        <!-- Derivation Section (Inert Until Commitment) -->
+        <section class="derivation-section" id="derivation-q30" aria-label="Worked Derivation">
+          <div class="deriv-title">
+            <span>✓ Solution & Cognitive Route</span>
+            <span style="font-size:0.85rem; font-weight:normal; color:#15803d;">(Coaching predicted option: HOLD:FIGURE_UNRESOLVED)</span>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">REPRESENT</span>
+            <div class="move-action">Establish physical parameters, system boundary, and functional form for EX-M85.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Clear identification of state variables and physical constraints is required before integration.</div>
+            <div class="move-output">Output: Isolated system state model and governing kinematic/dynamic relations</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">CONNECT</span>
+            <div class="move-action">Formulate and integrate the work-energy or power relation: WORK_ENERGY_THEOREM_VT_GRAPH.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Work integral W = ∫ F dx and power definition P = F·v = d(KE)/dt hold in Newtonian mechanics.</div>
+            <div class="move-output">Output: Integrated equation: Work done equals change in kinetic energy: W = Delta KE = 1/2 m (v_2^2 - v_0^2). Coac...</div>
+          </div>
+
+          <div class="move-step">
+            <span class="move-kind">TRANSFORM</span>
+            <div class="move-action">Extract target analytical scaling or numerical value agreeing with HO.</div>
+            <div class="move-why"><em>Physical Warrant:</em> Algebraic evaluation and dimensional bounds isolate the unique matching option.</div>
+            <div class="move-output">Output: Exact target solution agreeing with HOLD:FIGURE_UNRESOLVED</div>
+          </div>
+
+          <div class="author-check">
+            <strong>Limiting Case & Dimensional Sanity Check:</strong><br>
+            Author Limiting Case Verification: Cannot confirm slope or velocity values without original figure.
+          </div>
+        </section>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="gov-footer">
+    <p><strong>Grade9 v4.0 Physics Work, Power & Energy (Pilot)</strong></p>
+    <p>No academic approval inferred from software validation. Green CI means automatic tests passed; it never means student release is authorized.</p>
+    <p>Academic Admission: <strong>0 / 15 (100% HOLD:ACADEMIC_ADMISSION)</strong> · Fail-Closed Architecture</p>
+  </footer>
+
+  <script>
+    const userSelections = {};
+    const committedStates = {};
+
+    function switchQuestion(seq) {
+      document.querySelectorAll('.nav-pill').forEach(pill => pill.classList.remove('active'));
+      document.querySelectorAll('.q-card').forEach(card => card.classList.remove('active'));
+      
+      const targetPill = document.querySelector(`.nav-pill[data-q="q${String(seq).padStart(2, '0')}"]`);
+      const targetCard = document.getElementById(`card-q${String(seq).padStart(2, '0')}`);
+      
+      if (targetPill) targetPill.classList.add('active');
+      if (targetCard) targetCard.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleHint(hintId) {
+      const card = document.getElementById(hintId);
+      if (card) {
+        card.classList.toggle('open');
+        const icon = card.querySelector('.hint-toggle-icon');
+        if (icon) {
+          icon.textContent = card.classList.contains('open') ? '▲' : '▼';
+        }
+      }
+    }
+
+    function selectOption(seq, optIdx) {
+      if (committedStates[seq]) return;
+      userSelections[seq] = optIdx;
+      
+      const card = document.getElementById(`card-q${String(seq).padStart(2, '0')}`);
+      card.querySelectorAll('.opt-btn').forEach((btn, idx) => {
+        btn.classList.toggle('selected', idx === optIdx);
+      });
+      
+      const commitBtn = document.getElementById(`commit-btn-q${String(seq).padStart(2, '0')}`);
+      if (commitBtn) commitBtn.disabled = false;
+    }
+
+    function commitAnswer(seq) {
+      if (userSelections[seq] === undefined) return;
+      committedStates[seq] = true;
+      
+      const commitBtn = document.getElementById(`commit-btn-q${String(seq).padStart(2, '0')}`);
+      commitBtn.disabled = true;
+      commitBtn.textContent = 'Answer Committed ✓';
+      commitBtn.style.background = '#15803d';
+      
+      const derivSection = document.getElementById(`derivation-q${String(seq).padStart(2, '0')}`);
+      if (derivSection) {
+        derivSection.classList.add('revealed');
+        derivSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  </script>
+</body>
+</html>

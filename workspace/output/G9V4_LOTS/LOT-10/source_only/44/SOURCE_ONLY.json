@@ -1,0 +1,12 @@
+{
+  "source_id": "EX-N11",
+  "task_identity": "Q-ID-51",
+  "sequence": 44,
+  "batch_sequence": 14,
+  "paper": "JEE Main 2023 (Online) 10th April Morning Shift",
+  "stem_text": "A closed circular tube of average radius 15 cm, whose inner walls are rough, is kept in vertical plane. A block of mass 1 kg just fits inside the tube. The speed of block is 22 m/s, when it is introduced at the top of tube. After completing five oscillations, the block stops at the bottom region of tube. The work done by the tube on the block is __________ J. (Given g = 10 m/s ^(2) ). [FIG-stem-1]",
+  "stem_sha256": "12a8f2425259c6c9b25eaba9f7aed7b20549c74d6ab635daee4efb8c4bd43de7",
+  "options": [],
+  "figure_reference": "[FIG-stem-1]",
+  "confidentiality_notice": "Source custody blind packet. Academic solve, answer key, and scoring omitted. Private review only."
+}

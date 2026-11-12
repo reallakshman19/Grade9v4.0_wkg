@@ -1,0 +1,16 @@
+{
+  "schema": "g9v4-blueprint-gap-note/v1",
+  "gap_id": "GAP-9001",
+  "date": "2026-11-03",
+  "builder": "TRAINING_AUTHOR_NOT_ACTUAL_BUILDER",
+  "tile_id": "PHY-WPE-D3.4",
+  "instance_or_question": "SYNTHETIC-DEMONSTRATION-ONLY",
+  "blueprint_version": "0.2.0",
+  "adapter_version": "UNSELECTED",
+  "could_not_build": "Illustrative hypothetical: a new cross-Physics annotation rule was required for an authored scene and no existing shared rule covered it.",
+  "missing_slot_or_rule": "COMMON_PICTURE_SEMANTIC_RULE_HYPOTHETICAL__FIRST_CHECK_EXISTING_common.picture_rules",
+  "change_outside_adapter_needed": "Would have had to change common Physics page anatomy, which a topic builder is not authorized to edit.",
+  "proposed_blueprint_change": "Do not implement from this fixture. Check existing common.picture_rules and adapter first; submit a real evidence-backed gap only if neither covers the need.",
+  "oracle_decision": "PENDING",
+  "oracle_receipt": null
+}

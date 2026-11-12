@@ -1,0 +1,112 @@
+{
+  "sequence": 51,
+  "batch_sequence": 6,
+  "task_identity": "Q-ID-59",
+  "stable_id": "PHYS-WPE-LOT12-Q51",
+  "source_id": "EX-N38",
+  "lot": "LOT-12",
+  "batch": "BATCH-D",
+  "paper": "JEE Main 2020 (Online) 5th September Evening Slot",
+  "source_type": "EXAM_PAPER_TRANSCRIBED",
+  "source_custody": "VERIFIED_TEXT",
+  "stem_text": "A body of mass 2 kg is driven by an engine delivering a constant power of 1 J/s. The body starts from rest and moves in a straight line. After 9 seconds, the body has moved a distance (in m) _______.",
+  "stem_sha256": "a1ae424276a151020133e8093c67432b4d5ed499ede455da4039ce5cc513c2a4",
+  "source_hash": "a1ae424276a151020133e8093c67432b4d5ed499ede455da4039ce5cc513c2a4",
+  "source_record_digest": "sha256:a1ae424276a151020133e8093c67432b4d5ed499ede455da4039ce5cc513c2a4",
+  "duplicate_parent": null,
+  "scope": "PRIMARY_IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "key_issuing_authority": "NTA",
+  "figure_status": "NOT_REQUIRED",
+  "figure_reference": null,
+  "options": [],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "CONSTANT_POWER_DISPLACEMENT_INTEGRATION",
+    "predicted_option": "18",
+    "derivation": "Mass m = 2 kg, constant power P = 1 J/s. From work-energy theorem, P*t = 0.5*m*v^2 => (1)*t = 0.5*(2)*v^2 => v(t) = t^(1/2). Displacement x = int_0^t v(t') dt' = int_0^9 t'^(1/2) dt' = (2/3)*[t^(3/2)]_0^9 = (2/3)*(27) = 18 m."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 2,
+          "evidence": "Connecting constant engine power to kinetic energy and integrating non-linear velocity profile"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Integrating v(t) = sqrt(2Pt/m) over time to derive straight-line displacement"
+        },
+        "reasoning_chain_length": {
+          "score": 2,
+          "evidence": "Find v(t) from Pt = 0.5*m*v^2, evaluate definite integral x(t) = int_0^9 v(t')dt', compute x(9)"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Evaluating fractional power 9^(3/2) = 27 and multiplying (2/3)*27 = 18 m"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Recognizing acceleration is non-constant; standard kinematic equations v=u+at cannot be used"
+        }
+      },
+      "total": 7,
+      "band": "D3",
+      "prior_proposal": {
+        "source": "INITIAL_CALIBRATION",
+        "scores": "2/1/2/1/1",
+        "total": 7
+      },
+      "differences": "Initial native factor audit"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "MODEL"
+      ],
+      "rationale": "Applying calculus integration to constant power velocity function under rectilinear motion",
+      "candidate_cell": "QRT-APPLY-D3",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": {
+    "blueprint_id": "PHYS-QRT-BLUEPRINT",
+    "version": "0.2.0",
+    "sha256": "ac32dc937403cac33c76343f2e7e0dabd7c2c4a3188cb3b453ddf2576578ddf9",
+    "blueprint_cell_ref": "D3.3",
+    "topic_tag": "WPE-03-POWER",
+    "status": "PINNED_CELL_UNQUALIFIED"
+  },
+  "adapter_fit": {
+    "adapter_id": "PHYS-TOPIC-WPE",
+    "sha256": "899e61e59370a3fc5d6f73b7d8cbb65165d0782c9fba20acd83439ae441e6a9b",
+    "status": "CELL_UNQUALIFIED_ADAPTER_GAP",
+    "note": "WPE adapter defines cell D3.1 only. Target cell D3.3 requires adapter cell expansion; flagged as SPEC_GAP."
+  },
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_INDEPENDENT_REVIEW",
+  "b2_blind_status": "PENDING_BLIND_SOLVE",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (Numerical answer 18 unverified against official NTA master)",
+    "HOLD:ADAPTER_CELL_GAP (WPE adapter lacks D3.3 cell authority)",
+    "HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)"
+  ],
+  "next_action": "B2 independent source-only solve + official NTA master key reconciliation",
+  "teaching_construction_family": {
+    "construction_id": "TC-WPE-CONST-POWER-TRAJECTORY-01",
+    "shared_candidates": [
+      "EX-M43",
+      "EX-M62",
+      "EX-M64",
+      "EX-M65",
+      "EX-M120",
+      "EX-N19"
+    ],
+    "note": "Shares the ideal constant-power kinematic trajectory construction family with EX-M43, EX-M62, EX-M64, EX-M65, EX-M120, EX-N19."
+  }
+}

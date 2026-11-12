@@ -1,0 +1,17 @@
+{
+  "source_id": "EX-M74",
+  "task_identity": "Q-ID-27",
+  "sequence": 24,
+  "batch_sequence": 9,
+  "paper": "JEE Main 2019 (Online) 8th April Morning Slot",
+  "stem_text": "A particle moves in one dimension from rest under the influence of a force that varies with the distance travelled by the particle as shown in the figure. The kinetic energy of the particle after it has travelled 3m is : [FIG-stem-1]",
+  "stem_sha256": "e3b751177c3295210a19fa1d3b4f8cfb5091ac8475e868095191cefde40ef5e8",
+  "options": [
+    "A: 6.5 J",
+    "B: 2.5 J",
+    "C: 5 J",
+    "D: 4 J"
+  ],
+  "figure_reference": "[FIG-stem-1] F(x) vs x graph unverified against authentic master",
+  "confidentiality_notice": "SEALED SOURCE-ONLY PACKET FOR BLIND INDEPENDENT REVIEW. Contains NO answers, keys, explanations, candidate solutions, SL2 factor scores, or prior review commentary."
+}

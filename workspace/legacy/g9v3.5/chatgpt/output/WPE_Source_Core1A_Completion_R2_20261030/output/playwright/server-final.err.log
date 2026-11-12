@@ -1,0 +1,5 @@
+127.0.0.1 - - [30/Oct/2026 16:23:35] "GET /skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N09.html HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 16:23:35] "GET /skill/source-to-core1a/examples/wpe-source-program/handoffs/sources/images/fig_05_friction_direction.svg HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 16:23:35] code 404, message File not found
+127.0.0.1 - - [30/Oct/2026 16:23:35] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [30/Oct/2026 16:24:06] "GET /skill/source-to-core1a/examples/wpe-source-program/index.html HTTP/1.1" 200 -

@@ -1,0 +1,172 @@
+{
+  "renderer": "render_core/2",
+  "digest": "a990628127e92528",
+  "semantic_digest": "6af5de550960886f",
+  "manifest": "D:/CodeD/grade9v4/workspace/output/WPE_Core2_Reader_R3_HintsFirst_20261101/native/manifest.json",
+  "mode": "PAGES",
+  "held_to": "REFERENCE",
+  "draft": true,
+  "gaps": [
+    {
+      "duty": "AUTHOR_COMPONENT",
+      "record": "TB-WPE-ILL-01",
+      "detail": "CONDITIONS is absent",
+      "core": "CORE2",
+      "product": "WPE-CORE2-READER-R3-HINTSFIRST",
+      "component": "CONDITIONS"
+    },
+    {
+      "duty": "AUTHOR_COMPONENT",
+      "record": "TB-WPE-ILL-01",
+      "detail": "REPRESENTATION is absent",
+      "core": "CORE2",
+      "product": "WPE-CORE2-READER-R3-HINTSFIRST",
+      "component": "REPRESENTATION"
+    },
+    {
+      "duty": "AUTHOR_COMPONENT",
+      "record": "TB-WPE-ILL-02",
+      "detail": "CONDITIONS is absent",
+      "core": "CORE2",
+      "product": "WPE-CORE2-READER-R3-HINTSFIRST",
+      "component": "CONDITIONS"
+    },
+    {
+      "duty": "AUTHOR_COMPONENT",
+      "record": "TB-WPE-ILL-02",
+      "detail": "REPRESENTATION is absent",
+      "core": "CORE2",
+      "product": "WPE-CORE2-READER-R3-HINTSFIRST",
+      "component": "REPRESENTATION"
+    },
+    {
+      "duty": "AUTHOR_COMPONENT",
+      "record": "TB-WPE-ILL-03",
+      "detail": "CONDITIONS is absent",
+      "core": "CORE2",
+      "product": "WPE-CORE2-READER-R3-HINTSFIRST",
+      "component": "CONDITIONS"
+    },
+    {
+      "duty": "AUTHOR_COMPONENT",
+      "record": "TB-WPE-ILL-03",
+      "detail": "REPRESENTATION is absent",
+      "core": "CORE2",
+      "product": "WPE-CORE2-READER-R3-HINTSFIRST",
+      "component": "REPRESENTATION"
+    },
+    {
+      "duty": "AUTHOR_FIGURE_TEXT",
+      "record": "REP-TB-FIG-07-INCLINE-FBD",
+      "detail": "label(s) run outside the viewBox and are cut off at the figure's edge: '&#956;R', 'FBD on Incline: W_N = 0, W_g'",
+      "core": "CORE2",
+      "product": "WPE-CORE2-READER-R3-HINTSFIRST",
+      "component": "REPRESENTATION"
+    },
+    {
+      "duty": "AUTHOR_COMPONENT",
+      "record": "TB-WPE-ILL-04",
+      "detail": "CONDITIONS is absent",
+      "core": "CORE2",
+      "product": "WPE-CORE2-READER-R3-HINTSFIRST",
+      "component": "CONDITIONS"
+    },
+    {
+      "duty": "AUTHOR_COMPONENT",
+      "record": "TB-WPE-ILL-05",
+      "detail": "CONDITIONS is absent",
+      "core": "CORE2",
+      "product": "WPE-CORE2-READER-R3-HINTSFIRST",
+      "component": "CONDITIONS"
+    },
+    {
+      "duty": "AUTHOR_COMPONENT",
+      "record": "TB-WPE-ILL-05",
+      "detail": "REPRESENTATION is absent",
+      "core": "CORE2",
+      "product": "WPE-CORE2-READER-R3-HINTSFIRST",
+      "component": "REPRESENTATION"
+    },
+    {
+      "duty": "AUTHOR_COMPONENT",
+      "record": "TB-WPE-ILL-06",
+      "detail": "CONDITIONS is absent",
+      "core": "CORE2",
+      "product": "WPE-CORE2-READER-R3-HINTSFIRST",
+      "component": "CONDITIONS"
+    },
+    {
+      "duty": "AUTHOR_COMPONENT",
+      "record": "TB-WPE-ILL-06",
+      "detail": "REPRESENTATION is absent",
+      "core": "CORE2",
+      "product": "WPE-CORE2-READER-R3-HINTSFIRST",
+      "component": "REPRESENTATION"
+    },
+    {
+      "duty": "AUTHOR_FIGURE_TEXT",
+      "record": "REP-TB-FIG-09-OVERHANGING-CHAIN",
+      "detail": "label(s) run outside the viewBox and are cut off at the figure's edge: 'Uniform Chain Slipping Off T'",
+      "core": "CORE2",
+      "product": "WPE-CORE2-READER-R3-HINTSFIRST",
+      "component": "REPRESENTATION"
+    },
+    {
+      "duty": "AUTHOR_COMPONENT",
+      "record": "TB-WPE-ILL-11",
+      "detail": "CONDITIONS is absent",
+      "core": "CORE2",
+      "product": "WPE-CORE2-READER-R3-HINTSFIRST",
+      "component": "CONDITIONS"
+    },
+    {
+      "duty": "AUTHOR_COMPONENT",
+      "record": "TB-WPE-ILL-11",
+      "detail": "REPRESENTATION is absent",
+      "core": "CORE2",
+      "product": "WPE-CORE2-READER-R3-HINTSFIRST",
+      "component": "REPRESENTATION"
+    },
+    {
+      "duty": "AUTHOR_FIGURE_TEXT",
+      "record": "REP-TB-FIG-10-SPRING-BLOCK-WALL",
+      "detail": "label(s) run outside the viewBox and are cut off at the figure's edge: 'Block Released from Compress'",
+      "core": "CORE2",
+      "product": "WPE-CORE2-READER-R3-HINTSFIRST",
+      "component": "REPRESENTATION"
+    },
+    {
+      "duty": "AUTHOR_COMPONENT",
+      "record": "TB-WPE-ILL-12",
+      "detail": "CONDITIONS is absent",
+      "core": "CORE2",
+      "product": "WPE-CORE2-READER-R3-HINTSFIRST",
+      "component": "CONDITIONS"
+    },
+    {
+      "duty": "AUTHOR_COMPONENT",
+      "record": "WEP07-03",
+      "detail": "CONDITIONS is absent",
+      "core": "CORE2",
+      "product": "WPE-CORE2-READER-R3-HINTSFIRST",
+      "component": "CONDITIONS"
+    },
+    {
+      "duty": "AUTHOR_COMPONENT",
+      "record": "WEP07-03",
+      "detail": "REPRESENTATION is absent",
+      "core": "CORE2",
+      "product": "WPE-CORE2-READER-R3-HINTSFIRST",
+      "component": "REPRESENTATION"
+    }
+  ],
+  "pages": [
+    "core2.html",
+    "index.html"
+  ],
+  "output_roles": [
+    "CORE2"
+  ],
+  "ledger": [],
+  "diagnostic_min": 0
+}

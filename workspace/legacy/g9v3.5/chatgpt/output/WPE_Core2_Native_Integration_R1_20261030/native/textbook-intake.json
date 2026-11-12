@@ -1,0 +1,50 @@
+{
+  "schema": "wpe-textbook-intake/v1",
+  "inputs": {
+    "questions": [
+      {
+        "id": "TB-WPE-ILL-01",
+        "label": "Illustration 1",
+        "text": "Assume that a body is displaced from $\\vec{r}_A = (2\\text{m}, 4\\text{m}, -6\\text{m})$ to $\\vec{r}_B = (6\\hat{i} - 4\\hat{j} + 2\\hat{k})\\text{ m}$ under a constant force $\\vec{F} = (2\\hat{i} + 3\\hat{j} - \\hat{k})\\text{ N}$. Calculate the total work done."
+      },
+      {
+        "id": "TB-WPE-ILL-02",
+        "label": "Illustration 2",
+        "text": "A block of total mass $5\\text{ kg}$ is being raised vertically upwards with the help of a string attached to it and it rises with an acceleration of $2\\text{ m/s}^2$. Find the work done due to the tension in the string if the block rises by $2.5\\text{ m}$. Also, calculate the work done due to gravity and the net work done. ($g = 9.8\\text{ m/s}^2$)."
+      },
+      {
+        "id": "TB-WPE-ILL-03",
+        "label": "Illustration 3",
+        "text": "A force $F = (10 + 0.50x)\\text{ N}$ is observed to act on a particle in the $x$ direction, where $x$ is in meters. Find the actual work done by this force during a displacement from $x = 0$ to $x = 2.0\\text{ m}$."
+      },
+      {
+        "id": "TB-WPE-ILL-04",
+        "label": "Illustration 4",
+        "text": "A block of mass $4\\text{ kg}$ slides down a plane inclined at $37^\\circ$ with the horizontal. The length of the plane is $3\\text{ m}$. The coefficient of sliding friction between the block and the plane is $\\mu = 0.2$. Find:\n1. The work done due to gravity,\n2. The work done by the frictional force,\n3. The work done by the normal reaction between the block and the plane.  \n($g = 9.8\\text{ m/s}^2, \\sin 37^\\circ = 0.6, \\cos 37^\\circ = 0.8$)."
+      },
+      {
+        "id": "TB-WPE-ILL-05",
+        "label": "Illustration 5",
+        "text": "A block of mass $m$ slides down a fixed smooth inclined plane of inclination angle $\\theta$ and length $l$. Calculate the magnitude of instantaneous power developed by the gravitational force when the block reaches the bottom."
+      },
+      {
+        "id": "TB-WPE-ILL-06",
+        "label": "Illustration 6",
+        "text": "A particle of mass $m$ is moving in a circular path of constant radius $r$ such that its centripetal acceleration $a_c$ varies with time $t$ as $a_c = k^2 r t^2$, where $k$ is a constant. The power delivered to the particle by the net force acting on it is:"
+      },
+      {
+        "id": "TB-WPE-ILL-11",
+        "label": "Illustration 11",
+        "text": "A uniform flexible chain of length $l$ and mass $m$ overhangs a smooth horizontal table with two-thirds ($2l/3$) of its length lying on the table. Find the kinetic energy of the chain as it completely slips off the table."
+      },
+      {
+        "id": "TB-WPE-ILL-12",
+        "label": "Illustration 12",
+        "text": "A block of mass $m$ is pushed against a light spring of spring constant $k$ fixed at one end to a rigid vertical wall. The block slides on a frictionless horizontal table. The natural length of the spring is $L_0$. The spring is compressed to half its natural length ($x_{\\text{init}} = L_0/2$) and the block is released from rest. Find the velocity of the block as a function of its distance $x$ from the wall."
+      }
+    ]
+  },
+  "source_role": "OWNER_SUPPLIED_TEXTBOOK_EXTRACT",
+  "official_exam_status": "UNVERIFIED",
+  "intake_digest": "sha256:774be29fa55b17683d90911d490772805d7054147595261a21f9662d34a883c2"
+}

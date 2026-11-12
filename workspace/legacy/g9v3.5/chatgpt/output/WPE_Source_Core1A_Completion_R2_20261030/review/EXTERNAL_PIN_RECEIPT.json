@@ -1,0 +1,5 @@
+{
+  "program": "skill/source-to-core1a/examples/wpe-source-program/program.json",
+  "sha256": "41ae676c77ace2d727696b2a8d7fc6a3ec6f9d4c90972bfff1c6c75c6d838b2f",
+  "note": "Producer-captured expected bytes. Deliver this receipt separately to the consumer. Not upstream source authentication or science qualification."
+}

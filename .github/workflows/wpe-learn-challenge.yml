@@ -1,0 +1,60 @@
+name: WPE Learn Challenge UI QA
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "physics/wpe/learn-challenge.html"
+      - "physics/wpe/reasoning-paths.html"
+      - "physics/wpe/reasoning-paths.review.json"
+      - "preview/question-status.html"
+      - "tests/test_wpe_reasoning_routes.py"
+      - "physics/wpe/index.html"
+      - "physics/wpe/question-bank.html"
+      - "preview/physics-wpe.html"
+      - "preview/practice.html"
+      - "preview/batches/reader.html"
+      - "tools/wpe_learn_challenge_ui.py"
+      - "physics/wpe/learn-challenge-source-map.json"
+      - "physics/wpe/learn-challenge-wpe01-review.json"
+      - "tools/wpe_learn_challenge_ui.py"
+      - ".github/workflows/wpe-learn-challenge.yml"
+  push:
+    branches: [main]
+    paths:
+      - "physics/wpe/learn-challenge.html"
+      - "physics/wpe/reasoning-paths.html"
+      - "physics/wpe/reasoning-paths.review.json"
+      - "preview/question-status.html"
+      - "tests/test_wpe_reasoning_routes.py"
+      - "physics/wpe/index.html"
+      - "physics/wpe/question-bank.html"
+      - "preview/physics-wpe.html"
+      - "preview/practice.html"
+      - "preview/batches/reader.html"
+      - "tools/wpe_learn_challenge_ui.py"
+      - "physics/wpe/learn-challenge-source-map.json"
+      - "physics/wpe/learn-challenge-wpe01-review.json"
+      - "physics/wpe/index.html"
+      - "tools/wpe_learn_challenge_ui.py"
+      - ".github/workflows/wpe-learn-challenge.yml"
+jobs:
+  learn-challenge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Chromium testing environment
+        run: |
+          python -m pip install playwright==1.55.0
+          python -m playwright install --with-deps chromium
+      - name: Verify five pairs and attempt-first challenge behavior
+        run: python tools/wpe_learn_challenge_ui.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: learn-challenge-tablet-previews
+          path: wpe-learn-challenge-screenshots/
+          if-no-files-found: ignore

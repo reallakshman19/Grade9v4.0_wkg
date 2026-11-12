@@ -1,0 +1,442 @@
+{
+  "schema": "core1a-physics-ontology/v2",
+  "version": "2.0.0",
+  "subject": "Physics",
+  "topic": "Work, Energy & Power: Conservative Fields & Potential Wells",
+  "title": "Core 1A Physics Blueprint: Work, Energy & Power Conceptual Ontology",
+  "source_authority": "Owner WEP Specification & Golden Benchmark Parity",
+  "canonical_topic_id": "work-energy-power",
+  "canonical_strategy": {
+    "stage_1_choose": "Demarcate closed system boundary; identify all conservative, non-conservative, and external forces.",
+    "stage_2_represent": "Establish coordinate axes and potential energy datum U = 0; sketch force-displacement or potential well curve.",
+    "stage_3_connect": "Apply Work-Energy Theorem (W_net = Delta K) or Mechanical Energy Conservation (Delta E_mech = W_nc).",
+    "stage_4_execute_and_check": "Execute algebraic integration or balance equations; verify SI dimensions [M][L]^2[T]^-2 and boundary limits."
+  },
+  "structural_pillars": [
+    {
+      "pillar_id": "P1",
+      "name": "Work-Kinetic Energy Theorem",
+      "statement": "The net scalar work performed by all external, internal, conservative, and non-conservative forces acting on a body equals the exact change in its translational kinetic energy.",
+      "mathematical_invariant": "W_{\\text{net}} = \\int \\vec{F}_{\\text{net}} \\cdot d\\vec{r} = \\Delta K = \\frac{1}{2}m v_f^2 - \\frac{1}{2}m v_i^2",
+      "scope_condition": "Holds universally in all Newtonian inertial frames for constant or spatially varying forces.",
+      "competency_refs": [
+        "WEP-01",
+        "WEP-02",
+        "WEP-03"
+      ]
+    },
+    {
+      "pillar_id": "P2",
+      "name": "Conservative Vector Fields & Path Independence",
+      "statement": "A force field is conservative if and only if its circulation around every closed path vanishes identically, guaranteeing that work between two spatial points depends strictly on endpoints, independent of trajectory.",
+      "mathematical_invariant": "\\oint \\vec{F}_c \\cdot d\\vec{r} = 0 \\iff \\vec{\\nabla} \\times \\vec{F}_c = \\vec{0} \\iff W_{A \\to B} = U(A) - U(B)",
+      "scope_condition": "Applies to static gravitational, ideal Hookean elastic, and electrostatic fields; fails for dissipative friction or velocity-dependent drag.",
+      "competency_refs": [
+        "WEP-04",
+        "WEP-06"
+      ]
+    },
+    {
+      "pillar_id": "P3",
+      "name": "Total Mechanical Energy Conservation in Isolated Systems",
+      "statement": "In any isolated physical system where non-conservative work vanishes, the sum of total kinetic and potential energy remains strictly invariant throughout the evolution of the system.",
+      "mathematical_invariant": "W_{\\text{nc}} = 0 \\implies E_{\\text{mech}} = K + U = \\text{const} \\implies K_i + U_i = K_f + U_f",
+      "scope_condition": "Closed conservative physical systems with zero dissipation at the boundary.",
+      "competency_refs": [
+        "WEP-05",
+        "WEP-07"
+      ]
+    },
+    {
+      "pillar_id": "P4",
+      "name": "Non-Conservative Dissipation & Thermal Degradation",
+      "statement": "Non-conservative forces (such as kinetic friction and viscous drag) alter the total mechanical energy of a system, irreversibly converting organized kinetic/potential energy into microscopic internal thermal energy.",
+      "mathematical_invariant": "W_{\\text{nc}} = \\Delta E_{\\text{mech}} = \\Delta(K + U) = -Q_{\\text{diss}} \\le 0",
+      "scope_condition": "Systems undergoing dry sliding contact friction, aerodynamic fluid drag, or inelastic collisions.",
+      "competency_refs": [
+        "WEP-09"
+      ]
+    },
+    {
+      "pillar_id": "P5",
+      "name": "Instantaneous vs Average Power & Velocity Scaling",
+      "statement": "Power is the temporal rate of energy transfer. Instantaneous mechanical power equals the scalar dot product of driving force and instantaneous velocity, producing characteristic high-order power-velocity scaling laws.",
+      "mathematical_invariant": "P = \\frac{dW}{dt} = \\vec{F} \\cdot \\vec{v}, \\quad \\bar{P} = \\frac{\\Delta W}{\\Delta t}, \\quad F_{\\text{drag}} \\propto v^2 \\implies P \\propto v^3",
+      "scope_condition": "Continuous mechanical power transmission; engines, hoists, pumps, and aerodynamic resistance.",
+      "competency_refs": [
+        "WEP-08",
+        "WEP-10"
+      ]
+    }
+  ],
+  "atomic_competencies": {
+    "WEP-01": {
+      "title": "Definition of Mechanical Work & Dot Product",
+      "definition": "Work is defined as the scalar line integral of vector force along the spatial path of displacement: W = integral F . dr = F s cos theta.",
+      "canonical_rules": [
+        "Only force components collinear with instantaneous displacement do work: dW = F_parallel ds.",
+        "Forces perpendicular to instantaneous velocity (such as centripetal tension or frictionless normal reaction on fixed rails) do identically zero work: theta = 90 deg => W = 0.",
+        "Work is a coordinate-invariant scalar quantity measured in Joules (1 J = 1 N m = 1 kg m^2 s^-2)."
+      ],
+      "operational_heuristics": [
+        "Identify the angle theta between force vector and displacement vector.",
+        "If force is constant: W = F s cos theta.",
+        "If force is perpendicular to velocity at all points: immediately set W = 0."
+      ],
+      "boundary_conditions": [
+        "theta = 0 deg: maximum positive work W = +F s.",
+        "theta = 90 deg: zero work W = 0.",
+        "theta = 180 deg: maximum negative work W = -F s."
+      ],
+      "prerequisites": [
+        "P1"
+      ],
+      "transfer_targets": [
+        "PHYS-WEP-001",
+        "PHYS-WEP-002"
+      ]
+    },
+    "WEP-02": {
+      "title": "Work by Variable Forces & Spring Integration",
+      "definition": "When force varies continuously with position F(x), work equals the definite integral of force with respect to position, corresponding geometrically to the signed area under the F(x) curve.",
+      "canonical_rules": [
+        "For 1D variable force: W = int_{x_i}^{x_f} F(x) dx.",
+        "Geometric area above x-axis represents positive work; area below x-axis represents negative work.",
+        "For ideal Hookean spring (F_s = -k x), work done by external agent stretching from 0 to x is W_ext = int_0^x k x' dx' = 0.5 k x^2."
+      ],
+      "operational_heuristics": [
+        "Sketch the F-x graph; partition into recognizable geometric shapes (rectangles, triangles, trapezoids).",
+        "For polynomial forces, evaluate analytical definite integrals [int a x^n dx = a x^(n+1)/(n+1)]."
+      ],
+      "boundary_conditions": [
+        "Linear spring from relaxation: W = 0.5 k x^2.",
+        "Spring stretch between x_1 and x_2: W = 0.5 k (x_2^2 - x_1^2)."
+      ],
+      "prerequisites": [
+        "P1"
+      ],
+      "transfer_targets": [
+        "PHYS-WEP-005",
+        "PHYS-WEP-016"
+      ]
+    },
+    "WEP-03": {
+      "title": "Work-Energy Theorem & Scalar Invariance",
+      "definition": "The total work performed on a particle by the vector resultant of all forces acting upon it equals the net change in its kinetic energy: W_net = Delta K = 0.5 m v_f^2 - 0.5 m v_i^2.",
+      "canonical_rules": [
+        "W_net includes all forces without exception: conservative, non-conservative, normal, and applied.",
+        "Kinetic energy is quadratic in velocity: K = 0.5 m v^2 = p^2 / (2m).",
+        "Stopping distance under constant braking friction scales quadratically with initial speed: s_stop = v_0^2 / (2 mu g)."
+      ],
+      "operational_heuristics": [
+        "Identify initial and final states; equate algebraic sum of work terms to K_f - K_i.",
+        "Eliminates the need for time-dependent kinematic integration when trajectory time is neither given nor sought."
+      ],
+      "boundary_conditions": [
+        "v_f = v_i: net work W_net = 0.",
+        "v_f = 0: stopping condition W_net = -0.5 m v_0^2."
+      ],
+      "prerequisites": [
+        "P1"
+      ],
+      "transfer_targets": [
+        "PHYS-WEP-007",
+        "PHYS-WEP-011",
+        "PHYS-WEP-022"
+      ]
+    },
+    "WEP-04": {
+      "title": "Conservative Forces & Path Independence",
+      "definition": "A force is conservative if the work it performs along any path depends solely on the initial and final coordinates, which is mathematically equivalent to having zero curl and zero closed-loop line integral.",
+      "canonical_rules": [
+        "Closed path invariant: oint F_c . dr = 0 for any closed contour.",
+        "In 2D Cartesian fields F = F_x i + F_y j, conservative condition requires dF_x/dy = dF_y/dx.",
+        "Path independence allows selecting the algebraically simplest integration path between two points."
+      ],
+      "operational_heuristics": [
+        "Test partial derivative cross-symmetry: dF_x/dy == dF_y/dx.",
+        "If symmetric, compute work by path-independent potential difference: W = U(A) - U(B)."
+      ],
+      "boundary_conditions": [
+        "Closed loop: W_closed = 0.",
+        "Friction / drag: oint f . dr < 0 (strictly non-conservative)."
+      ],
+      "prerequisites": [
+        "P2"
+      ],
+      "transfer_targets": [
+        "PHYS-WEP-023"
+      ]
+    },
+    "WEP-05": {
+      "title": "Gravitational & Elastic Potential Energy Wells",
+      "definition": "Potential energy U represents stored energy of configuration defined exclusively for conservative interactions via Delta U = -W_c.",
+      "canonical_rules": [
+        "Gravitational potential energy near Earth surface: U_g = m g h (relative to chosen datum h = 0).",
+        "Ideal spring elastic potential energy: U_s = 0.5 k x^2 (where x is extension/compression from unstretched equilibrium).",
+        "Datum choice is an arbitrary gauge convention; only potential energy differences Delta U have physical significance."
+      ],
+      "operational_heuristics": [
+        "Declare datum line U = 0 at the lowest geometric point or relaxed spring position.",
+        "Account for both gravitational and elastic components in total potential energy: U = U_g + U_s."
+      ],
+      "boundary_conditions": [
+        "h = 0: U_g = 0.",
+        "x = 0: U_s = 0 (relaxed spring stores zero energy)."
+      ],
+      "prerequisites": [
+        "P3"
+      ],
+      "transfer_targets": [
+        "PHYS-WEP-006",
+        "PHYS-WEP-017"
+      ]
+    },
+    "WEP-06": {
+      "title": "Conservative Force as Negative Potential Gradient",
+      "definition": "In conservative fields, the force vector is the negative spatial gradient of the potential energy scalar function: F = -nabla U, or F_x = -dU/dx in 1D.",
+      "canonical_rules": [
+        "Force points in the direction of steepest potential energy descent (downhill on U(x) curve).",
+        "Equilibrium points occur where force vanishes: dU/dx = 0.",
+        "Stability is determined by the second derivative curvature: d^2U/dx^2 > 0 (stable, local minimum), d^2U/dx^2 < 0 (unstable, local maximum), d^2U/dx^2 = 0 (neutral)."
+      ],
+      "operational_heuristics": [
+        "Differentiate U(x) to find F(x) = -dU/dx.",
+        "Set dU/dx = 0 to locate equilibrium positions.",
+        "Evaluate d^2U/dx^2 to classify stability."
+      ],
+      "boundary_conditions": [
+        "dU/dx = 0 and d^2U/dx^2 > 0: stable equilibrium (potential trough).",
+        "dU/dx = 0 and d^2U/dx^2 < 0: unstable equilibrium (potential crest)."
+      ],
+      "prerequisites": [
+        "P2"
+      ],
+      "transfer_targets": [
+        "PHYS-WEP-008",
+        "PHYS-WEP-013",
+        "PHYS-WEP-025"
+      ]
+    },
+    "WEP-07": {
+      "title": "Mechanical Energy Conservation & Turning Points",
+      "definition": "In systems with only conservative forces acting, total mechanical energy E = K + U remains constant. Motion is constrained to regions where E >= U(x), with turning points located where E = U(x) (K = 0).",
+      "canonical_rules": [
+        "Energy conservation equation: 0.5 m v_1^2 + U(x_1) = 0.5 m v_2^2 + U(x_2).",
+        "Classical turning points occur where kinetic energy drops to zero: v = 0 => U(x) = E.",
+        "In vertical circular loops, maintaining string tension at top requires v_top >= sqrt(g L), leading to critical release velocity v_bot = sqrt(5 g L)."
+      ],
+      "operational_heuristics": [
+        "Write total energy E = K + U at the initial reference state.",
+        "Set K = 0 to find spatial boundaries / turning points of motion.",
+        "Combine energy conservation with centripetal force balance (Sigma F_radial = m v^2 / R) for curved paths."
+      ],
+      "boundary_conditions": [
+        "E < U_min: classically forbidden region.",
+        "Top of vertical circle: T_top = m v_top^2 / L - m g >= 0 => v_top >= sqrt(g L)."
+      ],
+      "prerequisites": [
+        "P3"
+      ],
+      "transfer_targets": [
+        "PHYS-WEP-010",
+        "PHYS-WEP-012",
+        "PHYS-WEP-018",
+        "PHYS-WEP-019",
+        "PHYS-WEP-020",
+        "PHYS-WEP-021"
+      ]
+    },
+    "WEP-08": {
+      "title": "Power as Rate of Energy Transfer & Drag Scaling",
+      "definition": "Power is the rate at which work is done or energy is transformed: P = dW/dt = F . v. When resisting drag forces proportional to speed squared (F_drag = k v^2), power required scales with the cube of speed: P = k v^3.",
+      "canonical_rules": [
+        "Instantaneous power: P = F v cos theta.",
+        "Average power: P_avg = Total Work / Total Time = Delta W / Delta t.",
+        "Constant engine power delivery yields accelerating speed v(t) = sqrt(2 P t / m) and distance x(t) = (2/3) sqrt(2 P / m) t^(3/2)."
+      ],
+      "operational_heuristics": [
+        "For vehicle cruising at constant velocity: driving force F_engine = sum of resistive forces.",
+        "Multiply total resistive force by cruising velocity to find required engine power.",
+        "Apply cubic scaling law (P_2 / P_1 = (v_2 / v_1)^3) for aerodynamic cruise regimes."
+      ],
+      "boundary_conditions": [
+        "v = 0: instantaneous mechanical power output is zero (P = 0).",
+        "Cruising against quadratic drag: doubling velocity requires an 8-fold increase in horsepower."
+      ],
+      "prerequisites": [
+        "P5"
+      ],
+      "transfer_targets": [
+        "PHYS-WEP-004",
+        "PHYS-WEP-009",
+        "PHYS-WEP-015",
+        "PHYS-WEP-024"
+      ]
+    },
+    "WEP-09": {
+      "title": "Non-Holonomic Friction Work in Multi-Body Systems",
+      "definition": "Kinetic friction performs negative work on relative slip interfaces, converting mechanical energy into heat, but can perform positive work on an individual body in a specific reference frame.",
+      "canonical_rules": [
+        "Total interface dissipation: Delta E_thermal = f_k * s_relative >= 0.",
+        "In the ground frame, kinetic friction accelerates a box placed on a moving belt, doing positive work W_box = +0.5 m v^2 on the box.",
+        "Motor work on the belt is W_motor = f_k s_belt = m v^2, with exactly 50% going to box kinetic energy and 50% dissipated as interface heat."
+      ],
+      "operational_heuristics": [
+        "Compute relative slip distance between contacting surfaces: s_rel = s_belt - s_box.",
+        "Calculate thermal loss directly: Q_diss = f_k * s_rel.",
+        "Balance the energy ledger across both bodies and driving motor."
+      ],
+      "boundary_conditions": [
+        "Zero slip (s_rel = 0): static friction performs zero net interface dissipation.",
+        "Frictionless belt (mu_k = 0): zero work done, box remains stationary in ground frame."
+      ],
+      "prerequisites": [
+        "P4"
+      ],
+      "transfer_targets": [
+        "PHYS-WEP-014"
+      ]
+    },
+    "WEP-10": {
+      "title": "Momentum vs Kinetic Energy Scaling Relations",
+      "definition": "Momentum p = m v is linear in velocity, whereas kinetic energy K = 0.5 m v^2 = p^2 / (2 m) is quadratic, governing asymmetric energy partitioning between colliding or recoiling bodies.",
+      "canonical_rules": [
+        "Direct relation: K = p^2 / (2m) and p = sqrt(2 m K).",
+        "For two bodies possessing equal momentum (p_1 = p_2), kinetic energies scale inversely with mass: K_1 / K_2 = m_2 / m_1.",
+        "In explosive or gun recoil events, the lighter body absorbs the overwhelming fraction of total released kinetic energy."
+      ],
+      "operational_heuristics": [
+        "Express energy in terms of momentum: substitute K = p^2 / (2m).",
+        "For percentage changes: if p increases by x%, K_new / K_old = (1 + x/100)^2.",
+        "If mass ratio is m_bullet / M_rifle << 1, bullet carries > 99% of explosion energy."
+      ],
+      "boundary_conditions": [
+        "m -> infinity: K -> 0 for finite momentum (immovable barrier absorbs momentum without energy).",
+        "Equal kinetic energy: p_1 / p_2 = sqrt(m_1 / m_2)."
+      ],
+      "prerequisites": [
+        "P5"
+      ],
+      "transfer_targets": [
+        "PHYS-WEP-003"
+      ]
+    }
+  },
+  "cognitive_conflict_matrix": [
+    {
+      "id": "CCM-01",
+      "concept": "Centripetal & Perpendicular Force Work Fallacy",
+      "intuitive_misconception": "Because centripetal force is large and sustains circular motion, it must perform positive work on the revolving object.",
+      "newtonian_scientific_truth": "Centripetal force is strictly orthogonal to instantaneous velocity (F_c perp v). Since cos(90 deg) = 0, instantaneous power dW/dt = F . v = 0, and kinetic energy remains strictly invariant.",
+      "decisive_experiment": "A satellite in a circular orbit revolves for billions of years under continuous gravitational pull without any change in orbital speed."
+    },
+    {
+      "id": "CCM-02",
+      "concept": "Absolute Potential Energy Fallacy",
+      "intuitive_misconception": "An object at height h possesses an intrinsic, absolute potential energy mgh regardless of the coordinate system chosen.",
+      "newtonian_scientific_truth": "Potential energy has physical meaning only through differences Delta U = -W_c. The datum U = 0 is an arbitrary coordinate gauge convention; physics is invariant under any constant shift U -> U + C.",
+      "decisive_experiment": "A book dropped from a desk to the floor acquires the identical Delta K regardless of whether datum is the desk, the floor, or the center of the Earth."
+    },
+    {
+      "id": "CCM-03",
+      "concept": "Power vs Work Rate Conflation",
+      "intuitive_misconception": "A higher-power machine always performs more total work than a lower-power machine.",
+      "newtonian_scientific_truth": "Power is the temporal rate of energy transfer (P = dW/dt). A 1000 W engine running for 2 seconds does 2000 J; a 100 W motor running for 1 hour does 360,000 J. Work is total transferred energy; power is rate.",
+      "decisive_experiment": "Comparing a 1000 W dragster engine revved for 2 seconds (2000 J) versus a 200 W cyclist pedaling for 1 hour (720,000 J)."
+    },
+    {
+      "id": "CCM-04",
+      "concept": "Spring Work Linearity Fallacy",
+      "intuitive_misconception": "Work to stretch a spring by displacement x is force times distance: W = (kx) * x = kx^2.",
+      "newtonian_scientific_truth": "Spring force increases linearly from 0 to kx. The work is the triangular integral area under Hooke's line: W = int_0^x kx' dx' = 0.5 k x^2 (exactly half the bounding rectangle).",
+      "decisive_experiment": "Integrating force sensor output during spring elongation demonstrates that average resisting force is exactly 0.5 kx, yielding W = 0.5 k x^2."
+    },
+    {
+      "id": "CCM-05",
+      "concept": "Friction Absolute Negative Work Fallacy",
+      "intuitive_misconception": "Friction always performs negative work on every object it touches.",
+      "newtonian_scientific_truth": "Kinetic friction performs positive work on a secondary object that is accelerated forward by it (e.g. box placed on moving conveyor belt). Only the net sum across both interacting surfaces is non-positive.",
+      "decisive_experiment": "Placing a stationary box on a moving conveyor belt: kinetic friction accelerates the box from rest to belt speed, performing positive work Delta K = +0.5 m v^2 on the box."
+    },
+    {
+      "id": "CCM-06",
+      "concept": "Equal Momentum Implies Equal Energy Fallacy",
+      "intuitive_misconception": "Two bodies with equal momentum must have identical kinetic energy.",
+      "newtonian_scientific_truth": "K = p^2 / (2m). For equal momentum, kinetic energy is inversely proportional to mass. The lighter body moves much faster and carries vastly greater kinetic energy.",
+      "decisive_experiment": "Firing a rifle: bullet and rifle have equal and opposite momentum (p_bullet = -p_rifle), yet the light bullet carries > 99% of the powder's kinetic energy."
+    }
+  ],
+  "first_move_atlas": [
+    {
+      "competency_id": "WEP-01",
+      "cue": "Constant force acting on moving body at an angle",
+      "representation": "Vector dot product diagram with force vector and displacement vector separated by angle theta",
+      "first_executable_move": "Identify angle theta between F and s; calculate W = F s cos theta; check if theta = 90 deg",
+      "anti_pattern": "Multiplying total force magnitude by distance without taking the cosine of the angle"
+    },
+    {
+      "competency_id": "WEP-02",
+      "cue": "Position-dependent force F(x) or spring stretch",
+      "representation": "F vs x coordinate graph showing signed area under the force curve",
+      "first_executable_move": "Set up definite integral W = int_{x_i}^{x_f} F(x) dx or compute geometric triangular/trapezoidal area",
+      "anti_pattern": "Multiplying final force F(x_f) by total displacement x as if force were constant"
+    },
+    {
+      "competency_id": "WEP-03",
+      "cue": "Speed change under applied forces without time given",
+      "representation": "Work-Energy balance ledger showing W_net = Delta K",
+      "first_executable_move": "Sum work done by all individual forces and equate to 0.5 m v_f^2 - 0.5 m v_i^2",
+      "anti_pattern": "Attempting time-dependent kinematics (v = u + at) when acceleration is non-uniform"
+    },
+    {
+      "competency_id": "WEP-04",
+      "cue": "2D force field given as F(x, y) = F_x i + F_y j",
+      "representation": "Curl check and closed-loop line integral path comparison",
+      "first_executable_move": "Compute partial derivatives dF_x/dy and dF_y/dx to test if field is conservative",
+      "anti_pattern": "Assuming any path gives different work without verifying curl first"
+    },
+    {
+      "competency_id": "WEP-05",
+      "cue": "Height changes or spring compression/extension",
+      "representation": "Energy level datum diagram declaring U = 0 reference position",
+      "first_executable_move": "Declare datum line at lowest point; write U_g = mgh and U_s = 0.5 k x^2",
+      "anti_pattern": "Confusing spring displacement from equilibrium with vertical height coordinate"
+    },
+    {
+      "competency_id": "WEP-06",
+      "cue": "Potential energy function U(x) given as algebraic formula",
+      "representation": "Potential energy landscape curve U(x) with slope tangents",
+      "first_executable_move": "Differentiate U(x) to obtain F(x) = -dU/dx; set dU/dx = 0 to find equilibrium positions",
+      "anti_pattern": "Equating force directly to U(x) or forgetting the essential leading negative sign in F = -dU/dx"
+    },
+    {
+      "competency_id": "WEP-07",
+      "cue": "Conservative motion with turning points or circular loop",
+      "representation": "Total mechanical energy horizontal line E intersecting U(x) curve",
+      "first_executable_move": "Write E = K + U = const; set K = 0 to find turning points where E = U(x)",
+      "anti_pattern": "Allowing motion in classically forbidden regions where E < U(x)"
+    },
+    {
+      "competency_id": "WEP-08",
+      "cue": "Engine power, hoist motor, or aerodynamic vehicle drag",
+      "representation": "Power-velocity diagram showing P = F . v and quadratic/cubic curves",
+      "first_executable_move": "Equate driving force to total resistive force; compute power as P = F_drive * v",
+      "anti_pattern": "Using P = W / t when velocity or force varies continuously with time"
+    },
+    {
+      "competency_id": "WEP-09",
+      "cue": "Box placed on moving belt or multi-body sliding contact",
+      "representation": "Two-body interface slip diagram showing ground vs belt displacements",
+      "first_executable_move": "Calculate relative displacement s_rel; compute thermal dissipation as Q = f_k * s_rel",
+      "anti_pattern": "Assuming kinetic friction does negative work on every body in all reference frames"
+    },
+    {
+      "competency_id": "WEP-10",
+      "cue": "Comparison of kinetic energy and momentum for different masses",
+      "representation": "K vs p parabolic scaling graph: K = p^2 / (2m)",
+      "first_executable_move": "Use K = p^2 / (2m); for constant momentum, set ratio K_1 / K_2 = m_2 / m_1",
+      "anti_pattern": "Assuming equal momentum implies equal velocities or equal kinetic energies"
+    }
+  ]
+}

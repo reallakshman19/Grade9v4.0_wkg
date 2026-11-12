@@ -1,0 +1,11 @@
+{
+  "task": "WPE-LINKED-HTML-HUB-R1",
+  "role": "Oracle standalone",
+  "owner_words": "Approve linked HTML hub",
+  "start_utc": "2026-10-31T10:44:06Z",
+  "deadline_utc": "2026-10-31T10:59:06Z",
+  "minutes": 15,
+  "aggregate_calls": 18,
+  "token_telemetry": "UNKNOWN",
+  "scope": "Separate private HTML documentation hub; verify local links and existing-stage status; no learner product changes, agents, remote writes, or D3.1 resume"
+}

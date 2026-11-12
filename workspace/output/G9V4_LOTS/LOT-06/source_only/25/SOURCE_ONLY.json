@@ -1,0 +1,17 @@
+{
+  "source_id": "EX-M76",
+  "task_identity": "Q-ID-28",
+  "sequence": 25,
+  "batch_sequence": 10,
+  "paper": "JEE Main 2019 (Online) 10th January Morning Slot",
+  "stem_text": "A block of mass m is kept on a platform which starts from rest with constant acceleration g/2 upward, as shown in figure. Work done by normal reaction on block in time t is - [FIG-stem-1]",
+  "stem_sha256": "b7e30117787ec4c78919caf7f08c4fbe70299cf0c656fb9164c20f5816f4bc91",
+  "options": [
+    "A: (\ud835\udc5a\ud835\udc54^(2)\ud835\udc61^(2))/(8)",
+    "B: (3\ud835\udc5a\ud835\udc54^(2)\ud835\udc61^(2))/(8)",
+    "C: \u2212 (\ud835\udc5a\ud835\udc54^(2)\ud835\udc61^(2))/(8)",
+    "D: 0"
+  ],
+  "figure_reference": "[FIG-stem-1] Platform and block setup unverified against authentic master",
+  "confidentiality_notice": "SEALED SOURCE-ONLY PACKET FOR BLIND INDEPENDENT REVIEW. Contains NO answers, keys, explanations, candidate solutions, SL2 factor scores, or prior review commentary."
+}

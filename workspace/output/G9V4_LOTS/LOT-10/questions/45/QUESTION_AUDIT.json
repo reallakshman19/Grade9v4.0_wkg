@@ -1,0 +1,110 @@
+{
+  "sequence": 45,
+  "batch_sequence": 15,
+  "task_identity": "Q-ID-52",
+  "stable_id": "PHYS-WPE-LOT10-Q45",
+  "source_id": "EX-N19",
+  "lot": "LOT-10",
+  "batch": "BATCH-C",
+  "paper": "JEE Main 2023 (Online) 30th January Evening Shift",
+  "source_type": "EXAM_PAPER_TRANSCRIBED",
+  "source_custody": "VERIFIED_TEXT",
+  "stem_text": "A body of mass 2kg is initially at rest. It starts moving unidirectionally under the influence of a source of constant power P. Its displacement in 4s is (1)/(3)𝛼^(2)√(𝑃)m . The value of 𝛼 will be ______.",
+  "stem_sha256": "9739b34ab0a515db095df3f20655720d10bf0a5f3d057f175610930caf9d38ca",
+  "source_hash": "9739b34ab0a515db095df3f20655720d10bf0a5f3d057f175610930caf9d38ca",
+  "source_record_digest": "sha256:9739b34ab0a515db095df3f20655720d10bf0a5f3d057f175610930caf9d38ca",
+  "duplicate_parent": null,
+  "scope": "PRIMARY_IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "NOT_REQUIRED",
+  "figure_reference": null,
+  "options": [],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "CONSTANT_POWER_DISPLACEMENT_INTEGRATION",
+    "predicted_option": "4",
+    "derivation": "Mass m = 2 kg. (1/2)*m*v^2 = P*t => (1/2)*(2)*v^2 = P*t => v = sqrt(P)*t^(1/2). Displacement x(t) = int_0^t sqrt(P)*t'^(1/2) dt' = (2/3)*sqrt(P)*t^(3/2). At t = 4s: t^(3/2) = 4^(3/2) = 8 => x(4) = (2/3)*sqrt(P)*8 = (16/3)*sqrt(P) = (1/3)*(16)*sqrt(P). Comparing with (1/3)*alpha^2*sqrt(P): alpha^2 = 16 => alpha = 4."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 2,
+          "evidence": "Connecting constant power to differential kinematics: (1/2)mv^2 = Pt => v = sqrt(2Pt/m)"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Integrating v(t) = sqrt(P)*t^(1/2) with respect to time to obtain displacement formula"
+        },
+        "reasoning_chain_length": {
+          "score": 2,
+          "evidence": "Integrate to find x(t), evaluate at t=4s, equate to target expression (1/3)alpha^2 sqrt(P) to extract alpha"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Evaluating fractional exponent 4^(3/2) = 8 and solving alpha^2 = 16 => alpha = 4"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Matching target expression prefactors carefully"
+        }
+      },
+      "total": 7,
+      "band": "D3",
+      "prior_proposal": {
+        "source": "INITIAL_CALIBRATION",
+        "scores": "2/1/2/1/1",
+        "total": 7
+      },
+      "differences": "Initial native factor audit"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "MODEL"
+      ],
+      "rationale": "Applying calculus integration to constant power velocity function",
+      "candidate_cell": "QRT-APPLY-D3",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": {
+    "blueprint_id": "PHYS-QRT-BLUEPRINT",
+    "version": "0.2.0",
+    "sha256": "ac32dc937403cac33c76343f2e7e0dabd7c2c4a3188cb3b453ddf2576578ddf9",
+    "blueprint_cell_ref": "D3.3",
+    "topic_tag": "WPE-03-POWER",
+    "status": "PINNED_CELL_UNQUALIFIED"
+  },
+  "adapter_fit": {
+    "adapter_id": "PHYS-TOPIC-WPE",
+    "sha256": "899e61e59370a3fc5d6f73b7d8cbb65165d0782c9fba20acd83439ae441e6a9b",
+    "status": "CELL_UNQUALIFIED_ADAPTER_GAP",
+    "note": "WPE adapter defines cell D3.1 only. Target cell D3.3 requires adapter cell expansion; flagged as SPEC_GAP."
+  },
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_INDEPENDENT_REVIEW",
+  "b2_blind_status": "PENDING_BLIND_SOLVE",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (Coaching key unverified against official NTA master)",
+    "HOLD:ADAPTER_CELL_GAP (WPE adapter lacks D3.3 cell authority)",
+    "HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)"
+  ],
+  "next_action": "B2 independent source-only solve + official NTA master key reconciliation",
+  "teaching_construction_family": {
+    "construction_id": "TC-WPE-CONST-POWER-TRAJECTORY-01",
+    "shared_candidates": [
+      "EX-M62",
+      "EX-M64",
+      "EX-M65",
+      "EX-M120",
+      "EX-N19"
+    ],
+    "note": "Shares the ideal constant-power kinematic trajectory construction family with EX-M62, EX-M64, EX-M65."
+  }
+}

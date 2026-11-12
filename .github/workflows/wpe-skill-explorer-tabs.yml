@@ -1,0 +1,42 @@
+name: WPE Skill Explorer Tabs — Desktop and Mobile
+
+on:
+  pull_request:
+    paths:
+      - 'physics/wpe/learn-challenge.html'
+      - 'physics/wpe/student-journey.css'
+      - 'physics/wpe/skill-explorer-tabs.js'
+      - 'physics/wpe/gap-journeys.html'
+      - 'physics/wpe/gap-journeys.js'
+      - 'tests/test_wpe_unified_integration_r1.py'
+      - 'tools/wpe_skill_tabs_ui.py'
+      - '.github/workflows/wpe-skill-explorer-tabs.yml'
+  push:
+    branches:
+      - 'feat/wpe-skill-explorer-grouped-tables-20261103'
+    paths:
+      - 'physics/wpe/learn-challenge.html'
+      - 'physics/wpe/student-journey.css'
+      - 'physics/wpe/skill-explorer-tabs.js'
+      - 'tests/test_wpe_unified_integration_r1.py'
+      - 'tools/wpe_skill_tabs_ui.py'
+      - '.github/workflows/wpe-skill-explorer-tabs.yml'
+
+jobs:
+  tabs-ui:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Python and Chromium test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pytest playwright
+          python -m playwright install --with-deps chromium
+      - name: Verify four tabs and all 26 original lesson destinations
+        run: python -m pytest -q tests/test_wpe_unified_integration_r1.py -k skill_explorer_four_subtabs
+      - name: Verify desktop and mobile tab interaction and F04–F08 deep links
+        run: python tools/wpe_skill_tabs_ui.py

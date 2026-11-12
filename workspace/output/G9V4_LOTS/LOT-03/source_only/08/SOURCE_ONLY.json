@@ -1,0 +1,16 @@
+{
+  "source_id": "EX-M16",
+  "task_identity": "Q-ID-08",
+  "sequence": 8,
+  "paper": "JEE Main 2025 (Online) 29th January Evening Shift",
+  "stem_text": "A sand dropper drops sand of mass m(t) on a conveyer belt at a rate proportional to the square root of speed (v) of the belt, i.e., (\ud835\udc51\ud835\udc5a)/(\ud835\udc51\ud835\udc61)\u221d\u221a(\ud835\udc63) . If P is the power delivered to run the belt at constant speed then which of the following relationship is true?",
+  "stem_sha256": "d2abc9e9b5d095977abadd84bae36f1a5f40a58e4341dd4e8593efa216f7c0a2",
+  "options": [
+    "A: P \u221d\u221a(\ud835\udc63)",
+    "B: P \u221d\ud835\udc63",
+    "C: \ud835\udc43^(2)\u221d\ud835\udc63^(3)",
+    "D: \ud835\udc43^(2)\u221d\ud835\udc63^(5)"
+  ],
+  "figure_reference": "NONE",
+  "confidentiality_notice": "SEALED SOURCE-ONLY PACKET FOR BLIND INDEPENDENT REVIEW. Contains NO answers, keys, explanations, candidate solutions, SL2 factor scores, or prior review commentary."
+}

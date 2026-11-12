@@ -1,0 +1,604 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://reallakshman19.github.io/Grade9v4.0/architecture/qrt-blueprint-protocol/schemas/tile-build-plan.schema.json",
+  "title": "Candidate D3/D4 Physics tile build plan, not native tile-pack.json",
+  "description": "Structured author planning worksheet for Blueprint+adapter. Never substitutes for the exact Blueprint content_pack_shape or Owner/Shared native validators.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "tile_id",
+    "band",
+    "primary_operation",
+    "blueprint",
+    "adapter",
+    "sources",
+    "instances",
+    "main_cycle",
+    "instance_cycles",
+    "b1_b7",
+    "release"
+  ],
+  "properties": {
+    "schema": {
+      "const": "g9v4-qrt-blueprint-tile-build-plan/v1"
+    },
+    "tile_id": {
+      "type": "string",
+      "pattern": "^PHY-WPE-D[34]\\.[1-7]$"
+    },
+    "band": {
+      "enum": [
+        "D3",
+        "D4"
+      ]
+    },
+    "primary_operation": {
+      "enum": [
+        "RETRIEVE",
+        "EXPLAIN",
+        "APPLY",
+        "MODEL",
+        "REPRESENT",
+        "SYNTHESIZE",
+        "JUSTIFY"
+      ]
+    },
+    "blueprint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "version",
+        "status",
+        "selected_cell"
+      ],
+      "properties": {
+        "id": {
+          "const": "PHYS-QRT-BLUEPRINT"
+        },
+        "version": {
+          "const": "0.2.0"
+        },
+        "status": {
+          "enum": [
+            "DRAFT_OWNER_REVIEW",
+            "APPROVED"
+          ]
+        },
+        "selected_cell": {
+          "type": "string",
+          "pattern": "^D[34]\\.[1-7]$"
+        }
+      }
+    },
+    "adapter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "version",
+        "status",
+        "exact_path",
+        "git_blob_sha"
+      ],
+      "properties": {
+        "id": {
+          "const": "PHYS-TOPIC-WPE"
+        },
+        "version": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "UNSELECTED",
+            "CANDIDATE_ONLY",
+            "APPROVED_SELECTED"
+          ]
+        },
+        "exact_path": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "git_blob_sha": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{40}$"
+            }
+          ]
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "question_id",
+          "role",
+          "source_gate"
+        ],
+        "properties": {
+          "question_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "role": {
+            "enum": [
+              "START",
+              "BRIDGE",
+              "WARMUP"
+            ]
+          },
+          "source_gate": {
+            "enum": [
+              "HOLD",
+              "REVIEWED",
+              "QUALIFIED"
+            ]
+          }
+        }
+      }
+    },
+    "instances": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "subtopic_ref",
+          "inferential_jump",
+          "core1a_steps",
+          "wrong_path",
+          "exit_check"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "subtopic_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "inferential_jump": {
+            "type": "string",
+            "minLength": 1
+          },
+          "core1a_steps": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "action",
+                "why_valid",
+                "source_ref"
+              ],
+              "properties": {
+                "action": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "why_valid": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "source_ref": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "wrong_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "exit_check": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "main_cycle": {
+      "$ref": "#/$defs/cycle"
+    },
+    "instance_cycles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/cycle"
+      }
+    },
+    "b1_b7": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "B5",
+        "B6",
+        "B7"
+      ],
+      "properties": {
+        "B1": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "evidence"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "NOT_RUN",
+                "AUTHOR_CHECKED",
+                "INDEPENDENT_REVIEWED"
+              ]
+            },
+            "evidence": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "B2": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "evidence"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "NOT_RUN",
+                "AUTHOR_CHECKED",
+                "INDEPENDENT_REVIEWED"
+              ]
+            },
+            "evidence": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "B3": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "evidence"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "NOT_RUN",
+                "AUTHOR_CHECKED",
+                "INDEPENDENT_REVIEWED"
+              ]
+            },
+            "evidence": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "B4": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "evidence"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "NOT_RUN",
+                "AUTHOR_CHECKED",
+                "INDEPENDENT_REVIEWED"
+              ]
+            },
+            "evidence": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "B5": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "evidence"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "NOT_RUN",
+                "AUTHOR_CHECKED",
+                "INDEPENDENT_REVIEWED"
+              ]
+            },
+            "evidence": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "B6": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "evidence"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "NOT_RUN",
+                "AUTHOR_CHECKED",
+                "INDEPENDENT_REVIEWED"
+              ]
+            },
+            "evidence": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "B7": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "evidence"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "NOT_RUN",
+                "AUTHOR_CHECKED",
+                "INDEPENDENT_REVIEWED"
+              ]
+            },
+            "evidence": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "release": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "owner_receipt",
+        "qualified_tile_receipt"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "AUTHOR_DRAFT_ONLY",
+            "HOLD",
+            "APPROVED"
+          ]
+        },
+        "owner_receipt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "qualified_tile_receipt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      }
+    }
+  },
+  "$defs": {
+    "factor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "score",
+        "evidence"
+      ],
+      "properties": {
+        "score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "cycle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "instance_refs",
+        "predict",
+        "attempt",
+        "reconstruct",
+        "diagnose",
+        "repair",
+        "boundary_test",
+        "band_check"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "MAIN",
+            "INSTANCE"
+          ]
+        },
+        "instance_refs": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "predict": {
+          "type": "string",
+          "minLength": 1
+        },
+        "attempt": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "prompt",
+            "protected_decision",
+            "h1",
+            "h2",
+            "h3",
+            "first_answer_saved_before_reveal"
+          ],
+          "properties": {
+            "prompt": {
+              "type": "string",
+              "minLength": 1
+            },
+            "protected_decision": {
+              "type": "string",
+              "minLength": 1
+            },
+            "h1": {
+              "type": "string",
+              "minLength": 1
+            },
+            "h2": {
+              "type": "string",
+              "minLength": 1
+            },
+            "h3": {
+              "type": "string",
+              "minLength": 1
+            },
+            "first_answer_saved_before_reveal": {
+              "type": "boolean"
+            }
+          }
+        },
+        "reconstruct": {
+          "type": "string",
+          "minLength": 1
+        },
+        "diagnose": {
+          "type": "string",
+          "minLength": 1
+        },
+        "repair": {
+          "type": "string",
+          "minLength": 1
+        },
+        "boundary_test": {
+          "type": "string",
+          "minLength": 1
+        },
+        "band_check": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "claimed_band",
+            "factors",
+            "total",
+            "independent_receipt"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "PROPOSED",
+                "SUPPORTED",
+                "UNCERTAIN",
+                "MISMATCH"
+              ]
+            },
+            "claimed_band": {
+              "enum": [
+                "D1",
+                "D2",
+                "D3",
+                "D4"
+              ]
+            },
+            "factors": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "concept_model_selection",
+                "representation_translation",
+                "reasoning_chain_length",
+                "algebra_computational_load",
+                "trap_exception_sensitivity"
+              ],
+              "properties": {
+                "concept_model_selection": {
+                  "$ref": "#/$defs/factor"
+                },
+                "representation_translation": {
+                  "$ref": "#/$defs/factor"
+                },
+                "reasoning_chain_length": {
+                  "$ref": "#/$defs/factor"
+                },
+                "algebra_computational_load": {
+                  "$ref": "#/$defs/factor"
+                },
+                "trap_exception_sensitivity": {
+                  "$ref": "#/$defs/factor"
+                }
+              }
+            },
+            "total": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "independent_receipt": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "minLength": 1
+            }
+          }
+        }
+      }
+    }
+  }
+}

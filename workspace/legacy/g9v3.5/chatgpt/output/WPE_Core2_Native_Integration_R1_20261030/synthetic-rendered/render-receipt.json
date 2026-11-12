@@ -1,0 +1,19 @@
+{
+  "renderer": "render_core/2",
+  "digest": "148a35207e07b6d1",
+  "semantic_digest": "d9c6175105677da1",
+  "manifest": "D:/CodeD/g9v3.5/chatgpt/output/WPE_Core2_Native_Integration_R1_20261030/native/synthetic-manifest.json",
+  "mode": "PAGES",
+  "held_to": "REFERENCE",
+  "draft": false,
+  "gaps": [],
+  "pages": [
+    "core2.html",
+    "index.html"
+  ],
+  "output_roles": [
+    "CORE2"
+  ],
+  "ledger": [],
+  "diagnostic_min": 0
+}

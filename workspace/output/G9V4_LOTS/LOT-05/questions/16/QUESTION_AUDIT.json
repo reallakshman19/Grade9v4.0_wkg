@@ -1,0 +1,93 @@
+{
+  "sequence": 16,
+  "batch_sequence": 1,
+  "task_identity": "Q-ID-18",
+  "stable_id": "G9V4-PHYS-WPE-EX-M56",
+  "source_id": "EX-M56",
+  "lot": "LOT-05",
+  "batch": "BATCH-B",
+  "paper": "JEE Main 2022 (Online) 26th June Evening Shift",
+  "source_type": "JEE_MAIN_PAST_EXAM_QUESTION",
+  "source_custody": "PARTIAL (4 remote figure placeholders unresolved)",
+  "stem_text": "Arrange the four graphs in descending order of total work done; where W1, W2, W3 and W4 are the work done corresponding to figure a, b, c and d respectively. [FIG-stem-1] [FIG-stem-2] [FIG-stem-3] [FIG-stem-4]",
+  "stem_sha256": "57330c99d1445aaf20f549a6e6eeec59f9c0e8d7a3bca2ae24ae5a686275fe17",
+  "source_hash": "57330c99d1445aaf20f549a6e6eeec59f9c0e8d7a3bca2ae24ae5a686275fe17",
+  "source_record_digest": "57330c99d1445aaf20f549a6e6eeec59f9c0e8d7a3bca2ae24ae5a686275fe17",
+  "duplicate_parent": null,
+  "scope": "IN_SCOPE_WPE_ONLY",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "HOLD:FIGURE_UNRESOLVED",
+  "figure_reference": "[FIG-stem-1..4] 4 remote figure graphs unverified against authentic master",
+  "options": [
+    "A: W3 > W2 > W1 > W4",
+    "B: W3 > W2 > W4 > W1",
+    "C: W2 > W3 > W4 > W1",
+    "D: W2 > W3 > W1 > W4"
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "HOLD:FIGURE_UNRESOLVED",
+  "candidate_solve": {
+    "method": "WORK_FROM_FORCE_DISPLACEMENT_GRAPHS",
+    "derivation": "Work done equals the area under each F(x) vs x curve. According to coaching note: Wa = 0, Wb > 0, Wc > Wb > 0, Wd < 0, giving W3 > W2 > W1 > W4. However, numerical coordinates and axis scales are unverified in absence of original figures.",
+    "predicted_option": "A: W3 > W2 > W1 > W4",
+    "limiting_cases": "Missing graph curves prevent independent mathematical area integration."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Direct identification of work as area under force-displacement curve"
+        },
+        "representation_translation": {
+          "score": 2,
+          "evidence": "Translation between verbal situation and four distinct graphical plots"
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Single step comparison of area bounds"
+        },
+        "algebra_computational_load": {
+          "score": 0,
+          "evidence": "Purely qualitative geometric comparison"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Distinguishing positive vs negative areas"
+        }
+      },
+      "total": 5,
+      "band": "D2",
+      "prior_proposal": {
+        "source": "PRODUCER_HISTORICAL_ESTIMATE",
+        "scores": "1/1/1/1/1",
+        "total": 5
+      },
+      "differences": "Rescored to native five-factor rubric per B2 CP-4 review"
+    },
+    "demand_proposal": {
+      "primary": "REPRESENT",
+      "secondary": [
+        "APPLY"
+      ],
+      "rationale": "Task evaluates visual mapping between geometric slope/area and mechanical work",
+      "candidate_cell": "QRT-REPRESENT-D2",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_CP4_GATE",
+  "b2_blind_status": "UNREVIEWED",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:FIGURE_UNRESOLVED (4 remote sub-figures unverified against authentic exam master)",
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)",
+    "HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)"
+  ],
+  "next_action": "Source verified original NTA exam paper PDF to retrieve the four figures."
+}

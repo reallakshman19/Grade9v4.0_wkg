@@ -1,0 +1,16 @@
+{
+  "source_id": "EX-M7",
+  "task_identity": "Q-ID-04",
+  "sequence": 4,
+  "paper": "JEE Main 2026 (Online) 23rd January Morning Shift",
+  "stem_text": "An object is projected with kinetic energy \ud835\udc3e from a point \ud835\udc34 at an angle 60^(\u2218) with the horizontal. The ratio of the difference in kinetic energies at points \ud835\udc35 and \ud835\udc36 to that at point \ud835\udc34 (see figure), in the absence of air friction is : [FIG-stem-1]",
+  "stem_sha256": "0a7d0a44e9eeb70842e0730dd0f34bbaacf362ddd7f7951b81e47eb3883e5489",
+  "options": [
+    "A: 3:4",
+    "B: 1:4",
+    "C: 2:3",
+    "D: 1:2"
+  ],
+  "figure_reference": "https://app-content.cdn.examgoal.net/fly/1000/image/6y3zli1mlutkti1/ec272730-93fd-443e-becd-35ed913d1e41/21c14490-0e51-11f1-97f7-91791681dff2/file-6y3zli1mlutkti2.png?format=png",
+  "confidentiality_notice": "SEALED SOURCE-ONLY PACKET FOR BLIND INDEPENDENT REVIEW. Contains NO answers, keys, explanations, candidate solutions, SL2 factor scores, or prior review commentary."
+}

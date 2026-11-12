@@ -1,0 +1,1391 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>WPE-N10 author preparation</title><style>body{font:17px/1.6 system-ui,sans-serif;max-width:1120px;margin:auto;padding:28px;color:#1b3045;background:#f5f7fa}body{overflow-wrap:anywhere}code{overflow-wrap:anywhere;word-break:break-word}h1,h2,h3{line-height:1.2}h2{margin-top:2em}a{color:#145ba1}article,details,.panel{background:#fff;border:1px solid #d3dde6;border-radius:10px;padding:18px;margin:14px 0}.hold{border-left:6px solid #b77a11;background:#fff3d7;padding:18px}.flow{display:flex;flex-wrap:wrap;gap:8px}.flow span{background:#e5edf6;padding:8px 12px;border-radius:6px}table{border-collapse:collapse;width:100%}th,td{text-align:left;vertical-align:top;border-bottom:1px solid #ccd6df;padding:10px;overflow-wrap:anywhere}th:nth-child(2),th:nth-child(3){white-space:nowrap}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px}img{max-width:100%;max-height:420px;object-fit:contain}.scroll{overflow:auto}.meta{font-size:14px;color:#4b6075}summary{cursor:pointer}@media print{body{background:white;padding:0}details{break-inside:avoid}.hold{background:white}}</style></head><body><nav><a href="../index.html">All ten WPE nodes</a> · <a href="WPE-N10.json">Exact JSON</a></nav><h1>WPE-N10 · Average and instantaneous power; force versus net rate</h1><div class="hold"><strong>AUTHOR PREPARATION · CANDIDATE · LESSON AUTHORING HOLD</strong><br>Mechanical integrity PASS; source pins EXTERNAL_PIN_BYTES_MATCH. Science NOT_QUALIFIED. Reviewed SL2 join missing. No learner lesson or native package.</div><h2>Required construction</h2><p>Brief for constructing a transfer-rate account and distinguishing average, instantaneous, individual-force and net power.</p><p><strong>Obstacle:</strong> Equal work is taken to imply equal power, or zero centripetal power is taken to imply zero net power.</p><p><strong>Decisive move:</strong> Choose the relevant energy transfer and time scale, then resolve the force component along instantaneous velocity.</p><h3>Inputs</h3><ul><li>Work over a stated interval, or force and velocity at a stated instant.</li><li>Chosen body, force/agent and frame.</li></ul><h3>Prerequisites and conventions</h3><ul><li>Prerequisite nodes: WPE-N01, WPE-N03</li><li>Use a positive time interval for average power and one instant for force/velocity in instantaneous power.</li><li>Specify whether power is by one force, an agent, or the net force; align body/frame and initial state.</li><li>Use a positive time interval for average power and one instant for force/velocity in instantaneous power.</li><li>Specify whether power is by one force, an agent, or the net force; align body/frame and initial state.</li></ul><h2>Source custody and original assets</h2><div class="scroll"><table><tr><th>ID / role</th><th>Retained file</th><th>Authority / digest</th></tr><tr><td>REFERENCE / REFERENCE_SOURCE</td><td><a href="sources/reference-ontology.json">sources/reference-ontology.json</a></td><td>CANDIDATE_REFERENCE<br><code>0fb53c653d7cd5b5f6e94ba5ed096278aa42f5d1429eac24981ee8dffa168acf</code></td></tr><tr><td>BOOK / BOOK_TEXT</td><td><a href="sources/book.md">sources/book.md</a></td><td>OWNER_LOCAL_UNAUTHENTICATED<br><code>a33f19b308ea81c7eb527546e44b6bbd4b4adf26aed7116013ac01218cc1bbb8</code></td></tr><tr><td>SPINE / SYLLABUS</td><td><a href="sources/spine.md">sources/spine.md</a></td><td>OWNER_LOCAL_UNAUTHENTICATED<br><code>07338e242e363becf2e55a9637d29fd178e37236fd730e5aac0a1211f1d8ecf9</code></td></tr><tr><td>LIBRARY / CANONICAL_CANDIDATE</td><td><a href="sources/library.json">sources/library.json</a></td><td>CANDIDATE_REFERENCE<br><code>84fe88387e33a03bf87bf1f537bae8c447f5b86f0d77a854c899ad70f12d8258</code></td></tr><tr><td>PKG_SCHEMA / NATIVE_CONTRACT</td><td><a href="sources/package.schema.json">sources/package.schema.json</a></td><td>LOCAL_CONTRACT<br><code>b645f4b5beb9132d6e38b628b1416846201d44dec16a5f04af9a252e9e891d93</code></td></tr><tr><td>SCAN-5 / SOURCE_SCAN</td><td><a href="sources/page_05.jpg">sources/page_05.jpg</a></td><td>OWNER_LOCAL_UNAUTHENTICATED<br><code>f399adb7fa0231871a2a4ec753cbcd0e81c27644daf5511286098c3292f26612</code></td></tr></table></div><h2>Concept claims, conditions and disputes</h2><article id="C1"><h3>C1 · UNREVIEWED</h3><p>The extract distinguishes interval-average power from an instantaneous rate.</p><p>Exact units: <a href="#U-BOOK-1">U-BOOK-1</a></p><p>Retained scan IDs: SCAN-5</p><h4>Conditions</h4><ul><li>Use a positive time interval for average power and one instant for force/velocity in instantaneous power.</li><li>Specify whether power is by one force, an agent, or the net force; align body/frame and initial state.</li></ul><h4>Disputes / qualification work</h4><ul><li>The library average-power condition says net work; it must not erase legitimate individual-agent work/rate distinctions.</li><li>The incline speed formula assumes release from rest although the extracted statement does not explicitly give that initial speed.</li></ul></article><article id="C2"><h3>C2 · UNREVIEWED</h3><p>Its force-power relation uses the force and velocity at the same instant; the chosen agent or net force must be identified.</p><p>Exact units: <a href="#U-BOOK-1">U-BOOK-1</a></p><p>Retained scan IDs: SCAN-5</p><h4>Conditions</h4><ul><li>Use a positive time interval for average power and one instant for force/velocity in instantaneous power.</li><li>Specify whether power is by one force, an agent, or the net force; align body/frame and initial state.</li></ul><h4>Disputes / qualification work</h4><ul><li>The library average-power condition says net work; it must not erase legitimate individual-agent work/rate distinctions.</li><li>The incline speed formula assumes release from rest although the extracted statement does not explicitly give that initial speed.</li></ul></article><article id="C3"><h3>C3 · UNREVIEWED</h3><p>The circular-motion example separates perpendicular and tangential contributions, while the incline example’s solution needs an initial-rest condition.</p><p>Exact units: <a href="#U-BOOK-1">U-BOOK-1</a></p><p>Retained scan IDs: SCAN-5</p><h4>Conditions</h4><ul><li>Use a positive time interval for average power and one instant for force/velocity in instantaneous power.</li><li>Specify whether power is by one force, an agent, or the net force; align body/frame and initial state.</li></ul><h4>Disputes / qualification work</h4><ul><li>The library average-power condition says net work; it must not erase legitimate individual-agent work/rate distinctions.</li><li>The incline speed formula assumes release from rest although the extracted statement does not explicitly give that initial speed.</li></ul></article><h2>Canonical candidates and missing warrants</h2><p>Canonical matches are provisional relationships, never qualified science.</p><ul><li>MIC-PHY-WEP-POWER-RATES / CAP-WEP-POWER-RATES · DIRECT_CANDIDATE</li></ul><ul></ul><article id="W-CANDIDATE"><h3>W-CANDIDATE · CANDIDATE</h3><p>Candidate support for the stated requirement; correspondence and scientific conditions require distinct review.</p><p>Support: <a href="#U-REL-0">U-REL-0</a>, <a href="#U-REL-1">U-REL-1</a>; reference leads (unqualified): <a href="#U-REFERENCE-WEP-08">U-REFERENCE-WEP-08</a>; claims: <a href="#C1">C1</a>, <a href="#C2">C2</a>, <a href="#C3">C3</a></p><ul><li>Use a positive time interval for average power and one instant for force/velocity in instantaneous power.</li><li>Specify whether power is by one force, an agent, or the net force; align body/frame and initial state.</li></ul><p><strong>Unresolved:</strong> No independent qualification receipt; scope may be partial.</p></article><h2>Construction requirements and dependencies</h2><article id="REQ-INPUT"><h3>REQ-INPUT · INPUT</h3><p>Fix the chosen model and inputs: Work over a stated interval, or force and velocity at a stated instant.; Chosen body, force/agent and frame.</p><p><strong>Why:</strong> Prevents a change of body, reference or given condition.</p><p>Depends on None; source <a href="#U-BOOK-1">U-BOOK-1</a>; claims <a href="#C1">C1</a>; warrant requirements <a href="#W-CANDIDATE">W-CANDIDATE</a></p></article><article id="REQ-REPRESENT"><h3>REQ-REPRESENT · REPRESENT</h3><p>Bind Delta W / Delta t, F dot v, radial/tangential components to the chosen physical situation.</p><p><strong>Why:</strong> Correspondence is needed before symbolic manipulation.</p><p>Depends on <a href="#REQ-INPUT">REQ-INPUT</a>; source <a href="#U-BOOK-1">U-BOOK-1</a>; claims <a href="#C2">C2</a>; warrant requirements <a href="#W-CANDIDATE">W-CANDIDATE</a></p></article><article id="REQ-CONNECT"><h3>REQ-CONNECT · CONNECT</h3><p>Choose the relevant energy transfer and time scale, then resolve the force component along instantaneous velocity.</p><p><strong>Why:</strong> This is the required intellectual bridge, not a formula label.</p><p>Depends on <a href="#REQ-REPRESENT">REQ-REPRESENT</a>; source <a href="#U-BOOK-1">U-BOOK-1</a>; claims <a href="#C1">C1</a>, <a href="#C2">C2</a>, <a href="#C3">C3</a>; warrant requirements <a href="#W-CANDIDATE">W-CANDIDATE</a></p></article><article id="REQ-TRANSFORM"><h3>REQ-TRANSFORM · TRANSFORM</h3><p>Require explicit force decomposition and initial-state conditions before using a speed formula to evaluate power.</p><p><strong>Why:</strong> Every consequential transformation needs its actual warrant and conditions.</p><p>Depends on <a href="#REQ-CONNECT">REQ-CONNECT</a>; source <a href="#U-BOOK-1">U-BOOK-1</a>; claims <a href="#C1">C1</a>; warrant requirements <a href="#W-CANDIDATE">W-CANDIDATE</a></p></article><article id="REQ-VERIFY"><h3>REQ-VERIFY · VERIFY</h3><p>Compare the instantaneous force-power account with the derivative of the matched kinetic-energy expression where the model allows it.</p><p><strong>Why:</strong> A second account must test the same claim without merely repeating its expression.</p><p>Depends on <a href="#REQ-TRANSFORM">REQ-TRANSFORM</a>; source <a href="#U-BOOK-1">U-BOOK-1</a>; claims <a href="#C2">C2</a>; warrant requirements <a href="#W-CANDIDATE">W-CANDIDATE</a></p></article><article id="REQ-BOUNDARY"><h3>REQ-BOUNDARY · BOUNDARY</h3><p>Preserve: Work divided by time and force times speed are not interchangeable without the actual angle/time assumptions.</p><p><strong>Why:</strong> The result must not be generalized outside its reviewed scope.</p><p>Depends on <a href="#REQ-VERIFY">REQ-VERIFY</a>; source <a href="#U-BOOK-1">U-BOOK-1</a>; claims <a href="#C3">C3</a>; warrant requirements <a href="#W-CANDIDATE">W-CANDIDATE</a></p></article><h2>Representation and source-figure obligations</h2><article><h3>MISSING</h3><p>Retain original scan evidence; qualify generated redraws and author a suitable native teaching representation with correct objects, axes, signs and regime. No new teaching figure is emitted.</p><ul><li>Delta W / Delta t → Required scene/graph element 1: Future teacher must bind Delta W / Delta t to this node’s chosen object, coordinate and interval.</li><li>F dot v → Required scene/graph element 2: Future teacher must bind F dot v to this node’s chosen object, coordinate and interval.</li><li>radial/tangential components → Required scene/graph element 3: Future teacher must bind radial/tangential components to this node’s chosen object, coordinate and interval.</li></ul></article><h2>Boundaries and distinct-example obligation</h2><ul><li>Work divided by time and force times speed are not interchangeable without the actual angle/time assumptions.</li></ul><p>Use retained illustrations as author references only. After the approval gate, author a distinct complete non-exam teaching example with why-valid steps; do not expose a protected Core2/Core1B route.</p><h2>Wrong-path hypotheses and repair requirements</h2><article><p><strong>Hypothesis:</strong> A perpendicular force implies zero net power even when tangential acceleration exists.</p><p><strong>Contrast:</strong> Compare a purely perpendicular force with a combined radial/tangential force at the same instant.</p><p><strong>Required repair:</strong> Separate force contributions and time scale before summing power or averaging it.</p><p>Learner observation: NONE.</p></article><h2>Independent-check designs</h2><article><p>Compare the instantaneous force-power account with the derivative of the matched kinetic-energy expression where the model allows it.</p><p><strong>Expected invariant:</strong> Both methods refer to the same body, instant and net-versus-individual-force scope; average power need not equal either endpoint rate.</p><p>Different representation or conservation/force account under matched assumptions; independence must be reviewed, not inferred from a new sentence.</p><p>DESIGN_ONLY; no academic check or learner result claimed.</p></article><h2>Reviewed SL2 requirement mapping</h2><div class="hold">PENDING_REVIEWED_REQUIREMENT<p>No independently adjudicated exact SL2/QRT requirement with matching current task/source/dependency and authority evidence has been supplied. Do not infer an exam operation/band from this book node.</p></div><h2>Native Core1A field targets</h2><div class="scroll"><table><tr><th>Existing property</th><th>Preparation pointer</th><th>Future action</th></tr><tr><td>entry_assumptions</td><td>/construction/entry_assumptions</td><td>AUTHOR_FROM_EVIDENCE</td></tr><tr><td>inferential_jump</td><td>/construction/decisive_move</td><td>AUTHOR_FROM_EVIDENCE</td></tr><tr><td>teaching_path</td><td>/construction/steps</td><td>AUTHOR_FROM_EVIDENCE</td></tr><tr><td>why_valid</td><td>/construction/steps</td><td>AUTHOR_FROM_EVIDENCE</td></tr><tr><td>correspondence</td><td>/construction/representation_needs</td><td>AUTHOR_FROM_EVIDENCE</td></tr><tr><td>worked_anchor_ref</td><td>/construction/worked_example_requirement</td><td>AUTHOR_DISTINCT_EXAMPLE</td></tr><tr><td>primary_capability_ref</td><td>/binding/canonical_matches</td><td>RESOLVE_EXISTING_REFS</td></tr></table></div><h2>Version-bound review requests</h2><details><summary>REVIEW-CLAIM-1 · /claims/0</summary><p>Is the interpreted claim faithful to its exact source and valid under these explicit conditions?</p><code>sha256:5e334765dc7116eda8583501f3c8fa81de0a3a7bc9c9c8f325cba50829b74705</code><ul><li>Exact original passage/scan locator and any transcription discrepancy.</li><li>Distinct qualified scientific disposition with reasoning, scope, reviewer identity/exposure and exact dependency versions.</li></ul></details><details><summary>REVIEW-CLAIM-2 · /claims/1</summary><p>Is the interpreted claim faithful to its exact source and valid under these explicit conditions?</p><code>sha256:9a37d3670421b94e7aa5fa51e281a6370a533b6e7baa23923c6b287766c6c75b</code><ul><li>Exact original passage/scan locator and any transcription discrepancy.</li><li>Distinct qualified scientific disposition with reasoning, scope, reviewer identity/exposure and exact dependency versions.</li></ul></details><details><summary>REVIEW-CLAIM-3 · /claims/2</summary><p>Is the interpreted claim faithful to its exact source and valid under these explicit conditions?</p><code>sha256:34c4a610cffc970a370b951ce20fdcba22e28408b70d92f7ab33453d2261b05a</code><ul><li>Exact original passage/scan locator and any transcription discrepancy.</li><li>Distinct qualified scientific disposition with reasoning, scope, reviewer identity/exposure and exact dependency versions.</li></ul></details><details><summary>REVIEW-WARRANTS · /warrants</summary><p>Resolve the load-bearing warrants boundary against actual source and task evidence.</p><code>sha256:eb1fdb64f4ab45e0d4bd51bc0b96749edb3deead131c2b1e90297416373c9c03</code><ul><li>Exact target digest and source/claim dependencies.</li><li>Authorized non-author review or actual adjudicated task; no status-enum substitution.</li></ul></details><details><summary>REVIEW-CONSTRUCTION · /construction</summary><p>Resolve the load-bearing construction boundary against actual source and task evidence.</p><code>sha256:6e62eb1d511adfc6a1c7f58c6ef717204b3c6fd1ba77af917633e8b2eb2cdfc9</code><ul><li>Exact target digest and source/claim dependencies.</li><li>Authorized non-author review or actual adjudicated task; no status-enum substitution.</li></ul></details><details><summary>REVIEW-SL2_REQUIREMENT_MAPPING · /sl2_requirement_mapping</summary><p>Resolve the load-bearing sl2_requirement_mapping boundary against actual source and task evidence.</p><code>sha256:26e9e0977453f5cf9c1c43eb72e225594b01c75dec8fe21fd439af3e39e8c4c5</code><ul><li>Exact target digest and source/claim dependencies.</li><li>Authorized non-author review or actual adjudicated task; no status-enum substitution.</li></ul></details><h2>Open issues</h2><ul><li>H-SCIENCE: All interpreted claims and candidate warrants remain unqualified.</li><li>H-QRT: Missing exact reviewed SL2/QRT task and selected adapter/resolver.</li><li>H-OWNER: Completed Core2 Owner approval precedes lesson authoring; Core1B follows Core1A approval. D3.1 paused.</li></ul><h2>Exact retained source units</h2><details id="U-BOOK-1"><summary>U-BOOK-1 / BOOK / {&quot;start&quot;: 239, &quot;end&quot;: 307}</summary><pre>## 6. Power
+
+**Power** is defined as the time rate at which work is done.
+
+- **Average Power**:
+  $$P_{\text{avg}} = \frac{\Delta W}{\Delta t}$$
+
+- **Instantaneous Power**:
+  $$P = \lim_{\Delta t \to 0} \frac{\Delta W}{\Delta t} = \frac{dW}{dt}$$
+
+Since $dW = \vec{F} \cdot d\vec{s}$:
+$$P = \frac{\vec{F} \cdot d\vec{s}}{dt} = \vec{F} \cdot \vec{v}$$
+
+- **SI Unit**: **Watt** ($\text{W}$) or **Joule/second** ($\text{J/s}$).  
+- **Dimensions**: $[M L^2 T^{-3}]$. Power is a scalar quantity.
+
+---
+
+### Illustration 5 (JEE Advanced)
+
+**Problem**:  
+A block of mass $m$ slides down a fixed smooth inclined plane of inclination angle $\theta$ and length $l$. Calculate the magnitude of instantaneous power developed by the gravitational force when the block reaches the bottom.
+
+**Solution**:  
+The power delivered by gravity is $P = \vec{F}_g \cdot \vec{v}$.
+
+When the block reaches the bottom, its speed is given by Torricelli&#x27;s theorem:
+$$v = \sqrt{2gh} = \sqrt{2gl\sin\theta}$$
+
+The velocity vector $\vec{v}$ is directed along the incline, which makes an angle of $(90^\circ - \theta)$ with the downward vertical gravity force $m\vec{g}$.
+$$P = mg v \cos(90^\circ - \theta) = mg v \sin\theta$$
+$$P = mg \sin\theta \sqrt{2gl\sin\theta} = \sqrt{2m^2 g^3 l \sin^3\theta}$$
+
+$$\mathbf{P = \sqrt{2m^2 g^3 l \sin^3\theta}}$$
+
+---
+
+### Illustration 6 (JEE Main)
+
+**Problem**:  
+A particle of mass $m$ is moving in a circular path of constant radius $r$ such that its centripetal acceleration $a_c$ varies with time $t$ as $a_c = k^2 r t^2$, where $k$ is a constant. The power delivered to the particle by the net force acting on it is:  
+(A) $2\pi m k^2 r^2$  
+(B) $m k^2 r^2 t$  
+(C) $\frac{m k^4 r^2 t^5}{3}$  
+(D) Zero  
+
+**Solution: (B)**  
+The net force acting on the particle can be decomposed into centripetal and tangential components:
+$$\vec{F} = \vec{F}_c + \vec{F}_t$$
+
+1. Since centripetal force is perpendicular to velocity ($\vec{F}_c \perp \vec{v}$), the power delivered by the centripetal force is zero:
+   $$P_c = \vec{F}_c \cdot \vec{v} = 0$$
+
+2. Tangential force is collinear with velocity, so:
+   $$P = P_t = F_t v$$
+
+From the given centripetal acceleration:
+$$a_c = \frac{v^2}{r} = k^2 r t^2 \implies v = krt$$
+
+Differentiating with respect to time to find tangential acceleration:
+$$a_t = \frac{dv}{dt} = kr$$
+
+The tangential force is:
+$$F_t = m a_t = mkr$$
+
+Therefore, the instantaneous power delivered is:
+$$P = F_t v = (mkr)(krt) = m k^2 r^2 t$$
+
+$$\mathbf{\text{Correct Option: (B) } m k^2 r^2 t}$$</pre><code>sha256:997a1bcae3041b327daf281f836a0fa5d66c81e7f3d245a3b9c7f0a6ead1e995</code></details><details id="U-SPINE"><summary>U-SPINE / SPINE / {&quot;start&quot;: 20, &quot;end&quot;: 20}</summary><pre>| WPE-N10 | §6 Power (Illus 5, 6) | WEP-08 Power | core; P = dW/dt is given | 9 |</pre><code>sha256:2fd45a435cdc5fed681dd585c2b2763d95ae77613d9ae31d395e2d260bc204e2</code></details><details id="U-REFERENCE-WEP-08"><summary>U-REFERENCE-WEP-08 / REFERENCE / {&quot;pointer&quot;: &quot;/atomic_competencies/WEP-08&quot;}</summary><pre>{
+  &quot;title&quot;: &quot;Power as Rate of Energy Transfer &amp; Drag Scaling&quot;,
+  &quot;definition&quot;: &quot;Power is the rate at which work is done or energy is transformed: P = dW/dt = F . v. When resisting drag forces proportional to speed squared (F_drag = k v^2), power required scales with the cube of speed: P = k v^3.&quot;,
+  &quot;canonical_rules&quot;: [
+    &quot;Instantaneous power: P = F v cos theta.&quot;,
+    &quot;Average power: P_avg = Total Work / Total Time = Delta W / Delta t.&quot;,
+    &quot;Constant engine power delivery yields accelerating speed v(t) = sqrt(2 P t / m) and distance x(t) = (2/3) sqrt(2 P / m) t^(3/2).&quot;
+  ],
+  &quot;operational_heuristics&quot;: [
+    &quot;For vehicle cruising at constant velocity: driving force F_engine = sum of resistive forces.&quot;,
+    &quot;Multiply total resistive force by cruising velocity to find required engine power.&quot;,
+    &quot;Apply cubic scaling law (P_2 / P_1 = (v_2 / v_1)^3) for aerodynamic cruise regimes.&quot;
+  ],
+  &quot;boundary_conditions&quot;: [
+    &quot;v = 0: instantaneous mechanical power output is zero (P = 0).&quot;,
+    &quot;Cruising against quadratic drag: doubling velocity requires an 8-fold increase in horsepower.&quot;
+  ],
+  &quot;prerequisites&quot;: [
+    &quot;P5&quot;
+  ],
+  &quot;transfer_targets&quot;: [
+    &quot;PHYS-WEP-004&quot;,
+    &quot;PHYS-WEP-009&quot;,
+    &quot;PHYS-WEP-015&quot;,
+    &quot;PHYS-WEP-024&quot;
+  ]
+}</pre><code>sha256:4f20c6ff550b80cd595303fa0b60a1fc11e57021883989210af404131f2ebf2d</code></details><details id="U-MICRO"><summary>U-MICRO / LIBRARY / {&quot;pointer&quot;: &quot;/microtopics/4&quot;}</summary><pre>{
+  &quot;id&quot;: &quot;MIC-PHY-WEP-POWER-RATES&quot;,
+  &quot;version&quot;: &quot;0.1.0&quot;,
+  &quot;status&quot;: &quot;CANDIDATE&quot;,
+  &quot;source_refs&quot;: [
+    &quot;SRC-AUTHOR-WEP&quot;
+  ],
+  &quot;evidence_refs&quot;: [],
+  &quot;extensions&quot;: {
+    &quot;issue19:scope_class&quot;: &quot;OWNER_EXTENSION&quot;,
+    &quot;issue19:donor&quot;: &quot;PR9&quot;
+  },
+  &quot;title&quot;: &quot;Power is an energy-transfer rate, not the work itself&quot;,
+  &quot;bucket_id&quot;: &quot;BUCKET-PHY-WORK-ENERGY-POWER&quot;,
+  &quot;primary_capability_ref&quot;: &quot;CAP-WEP-POWER-RATES&quot;,
+  &quot;intrinsic_badge&quot;: &quot;MEDIUM&quot;,
+  &quot;badge_reason&quot;: &quot;Learners often keep the same units and reasoning for work and power or treat an interval average as an instantaneous value.&quot;,
+  &quot;entry_assumptions&quot;: [
+    &quot;Can identify work as an energy transfer and can keep an energy account over a stated interval.&quot;
+  ],
+  &quot;inferential_jump&quot;: &quot;Average power uses total work over a positive interval, while instantaneous power needs force and velocity information at the same instant; equal total work does not imply equal power.&quot;,
+  &quot;teaching_path&quot;: [
+    {
+      &quot;id&quot;: &quot;WEP5-1&quot;,
+      &quot;role&quot;: &quot;DECLARE&quot;,
+      &quot;action&quot;: &quot;Compare two machines that perform the same work over different elapsed times.&quot;,
+      &quot;why_valid&quot;: &quot;Holding work fixed isolates time as the factor that changes average power.&quot;,
+      &quot;inputs&quot;: [],
+      &quot;output&quot;: &quot;same W; shorter Delta t -&gt; larger W / Delta t.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;WEP5-2&quot;,
+      &quot;role&quot;: &quot;TRANSFORM&quot;,
+      &quot;action&quot;: &quot;Calculate average power from total work divided by the positive elapsed interval.&quot;,
+      &quot;why_valid&quot;: &quot;REL-AVERAGE-POWER is the gate-owned interval-rate relation.&quot;,
+      &quot;inputs&quot;: [
+        &quot;REL-AVERAGE-POWER&quot;
+      ],
+      &quot;output&quot;: &quot;P_avg = W / Delta t.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;WEP5-3&quot;,
+      &quot;role&quot;: &quot;DECLARE&quot;,
+      &quot;action&quot;: &quot;At one instant, resolve the force onto the velocity direction and pair that component with the instantaneous speed.&quot;,
+      &quot;why_valid&quot;: &quot;Instantaneous power depends on the force-velocity alignment at that same instant, not on the whole interval total.&quot;,
+      &quot;inputs&quot;: [
+        &quot;REL-INSTANTANEOUS-POWER&quot;
+      ],
+      &quot;output&quot;: &quot;same instant: F_parallel and v.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;WEP5-4&quot;,
+      &quot;role&quot;: &quot;VERIFY&quot;,
+      &quot;action&quot;: &quot;Use a perpendicular-force case as a boundary check.&quot;,
+      &quot;why_valid&quot;: &quot;F_parallel becomes zero although a nonzero force and nonzero speed are both present.&quot;,
+      &quot;inputs&quot;: [],
+      &quot;output&quot;: &quot;force perpendicular to velocity -&gt; F_parallel = 0 -&gt; instantaneous power = 0.&quot;
+    }
+  ],
+  &quot;relation_refs&quot;: [
+    &quot;REL-AVERAGE-POWER&quot;,
+    &quot;REL-INSTANTANEOUS-POWER&quot;
+  ],
+  &quot;representation_refs&quot;: [],
+  &quot;question_family_refs&quot;: [],
+  &quot;misconceptions&quot;: [
+    {
+      &quot;wrong_idea&quot;: &quot;If two machines do the same work, they have the same power.&quot;,
+      &quot;diagnostic_prompt&quot;: &quot;Two machines each transfer the same energy, but one finishes in half the time. Must their average powers be equal?&quot;,
+      &quot;repair&quot;: &quot;Keep work fixed and divide by each machine&#x27;s own elapsed time; power is a rate, not the transfer total.&quot;
+    }
+  ],
+  &quot;exit_task&quot;: {
+    &quot;prompt&quot;: &quot;A machine transfers 120 J of work in 4 s. Find its average power. Then state whether that average alone is enough to know the instantaneous power halfway through the interval.&quot;,
+    &quot;source_ref&quot;: &quot;SRC-AUTHOR-WEP&quot;,
+    &quot;answer&quot;: {
+      &quot;kind&quot;: &quot;MODEL_RESPONSE&quot;,
+      &quot;summary&quot;: &quot;Average power is 30 W. The average alone is not enough to determine the instantaneous power halfway through the interval.&quot;,
+      &quot;reasoning&quot;: [
+        &quot;Use P_avg = 120 J / 4 s = 30 W.&quot;,
+        &quot;An interval average does not specify how the rate varied within the four seconds.&quot;,
+        &quot;Instantaneous power would require same-instant force and velocity information, such as F_parallel and v.&quot;
+      ],
+      &quot;check&quot;: &quot;A second machine could transfer the same 120 J in the same 4 s with a varying rate and still have the same 30 W average.&quot;,
+      &quot;acceptable_alternatives&quot;: [],
+      &quot;subpart_answers&quot;: [],
+      &quot;verification_status&quot;: &quot;CHECKED_BY_AUTHOR&quot;
+    },
+    &quot;oracle&quot;: {
+      &quot;verification&quot;: {
+        &quot;validator_id&quot;: &quot;AVERAGE_POWER&quot;,
+        &quot;bindings&quot;: {
+          &quot;work&quot;: &quot;DAT-WEP-POWER-WORK&quot;,
+          &quot;dt&quot;: &quot;DAT-WEP-POWER-DT&quot;
+        }
+      }
+    }
+  },
+  &quot;research_contribution&quot;: &quot;Author-created power-rate distinction bound to gate-owned average and instantaneous relations and Physics validators.&quot;,
+  &quot;prerequisite_refs&quot;: [
+    &quot;CAP-WEP-WORK-DIRECTION&quot;
+  ],
+  &quot;lineage&quot;: [],
+  &quot;elicitation&quot;: {
+    &quot;predict&quot;: {
+      &quot;prompt&quot;: &quot;Two machines do the same work, but one takes twice as long. Before calculating, must their powers be equal?&quot;,
+      &quot;defensible_answer&quot;: &quot;No. The machine taking longer has the smaller average power because the same transfer is spread over more time.&quot;
+    },
+    &quot;attempt&quot;: {
+      &quot;produces&quot;: &quot;An average-power calculation plus a statement of what extra information would be needed for instantaneous power.&quot;,
+      &quot;closure&quot;: &quot;RUBRIC&quot;,
+      &quot;rubric&quot;: [
+        {
+          &quot;criterion&quot;: &quot;Computes average power as work divided by elapsed time.&quot;,
+          &quot;evidence_of&quot;: &quot;Treating power as a rate rather than another name for work.&quot;
+        },
+        {
+          &quot;criterion&quot;: &quot;Does not infer instantaneous power from the average alone.&quot;,
+          &quot;evidence_of&quot;: &quot;Separating interval and same-instant information.&quot;
+        }
+      ],
+      &quot;accepted&quot;: [
+        &quot;120 J / 4 s = 30 W; instantaneous power still needs same-instant force and velocity information.&quot;
+      ],
+      &quot;rejected&quot;: [
+        &quot;120 J or 120 W, or saying the instantaneous power must also be 30 W solely because the average is 30 W.&quot;
+      ]
+    },
+    &quot;reconstruct&quot;: {
+      &quot;route&quot;: [
+        {
+          &quot;ask&quot;: &quot;What total energy transfer is fixed over the whole interval?&quot;,
+          &quot;why_this_ask&quot;: &quot;It identifies the numerator without yet supplying the rate relation.&quot;,
+          &quot;from_step_ref&quot;: &quot;WEP5-1&quot;
+        },
+        {
+          &quot;ask&quot;: &quot;What positive time interval belongs to that transfer?&quot;,
+          &quot;why_this_ask&quot;: &quot;It establishes the averaging window.&quot;
+        },
+        {
+          &quot;ask&quot;: &quot;What would you need to know at one instant instead of over the whole interval?&quot;,
+          &quot;why_this_ask&quot;: &quot;It forces the distinction between average and instantaneous information.&quot;,
+          &quot;from_step_ref&quot;: &quot;WEP5-3&quot;
+        },
+        {
+          &quot;ask&quot;: &quot;What happens if force is perpendicular to velocity?&quot;,
+          &quot;why_this_ask&quot;: &quot;The boundary checks the force-direction dependence of instantaneous power.&quot;,
+          &quot;from_step_ref&quot;: &quot;WEP5-4&quot;
+        }
+      ],
+      &quot;differs_from_teaching_path&quot;: &quot;The teaching path contrasts the two rate definitions directly; the learner route begins from equal-work machines and reconstructs why interval totals cannot determine a same-instant rate.&quot;
+    },
+    &quot;boundary_test&quot;: {
+      &quot;prompt&quot;: &quot;A nonzero force is exactly perpendicular to a nonzero velocity. What is the instantaneous mechanical power from that force?&quot;,
+      &quot;answer&quot;: &quot;Zero, because the signed force component along the velocity direction is zero.&quot;,
+      &quot;confirms&quot;: &quot;Instantaneous power depends on force-velocity alignment, not force magnitude alone.&quot;
+    }
+  },
+  &quot;construction_units&quot;: [
+    {
+      &quot;id&quot;: &quot;CU-PHY-WEP-POWER-RATES-1&quot;,
+      &quot;decision_from&quot;: &quot;inferential_jump&quot;,
+      &quot;step_refs&quot;: [
+        &quot;WEP5-1&quot;,
+        &quot;WEP5-2&quot;,
+        &quot;WEP5-3&quot;,
+        &quot;WEP5-4&quot;
+      ],
+      &quot;representation_ref&quot;: null,
+      &quot;reveal_stage_refs&quot;: [],
+      &quot;worked_anchor_ref&quot;: null,
+      &quot;misconception_indexes&quot;: [
+        0
+      ],
+      &quot;independent_checks&quot;: [],
+      &quot;migrated_from&quot;: &quot;teaching_path&quot;
+    }
+  ]
+}</pre><code>sha256:984b431b94fd5b9c2c95a761c6577c6ada844f9077329a351c5ce6558e20232f</code></details><details id="U-REL-0"><summary>U-REL-0 / LIBRARY / {&quot;pointer&quot;: &quot;/relations/0&quot;}</summary><pre>{
+  &quot;id&quot;: &quot;REL-AVERAGE-POWER&quot;,
+  &quot;version&quot;: &quot;0.1.0&quot;,
+  &quot;status&quot;: &quot;CANDIDATE&quot;,
+  &quot;source_refs&quot;: [
+    &quot;SRC-AUTHOR-WEP&quot;
+  ],
+  &quot;evidence_refs&quot;: [],
+  &quot;extensions&quot;: {
+    &quot;issue19:scope_class&quot;: &quot;OWNER_EXTENSION&quot;,
+    &quot;issue19:donor&quot;: &quot;PR9&quot;
+  },
+  &quot;expression&quot;: &quot;P_avg = W / Delta t&quot;,
+  &quot;meaning&quot;: &quot;Average power is work transferred over a positive elapsed interval.&quot;,
+  &quot;symbols&quot;: [
+    {
+      &quot;symbol&quot;: &quot;P_avg&quot;,
+      &quot;meaning&quot;: &quot;Average power&quot;,
+      &quot;unit_or_domain&quot;: &quot;W; scalar&quot;
+    },
+    {
+      &quot;symbol&quot;: &quot;W&quot;,
+      &quot;meaning&quot;: &quot;Net work transferred over the interval&quot;,
+      &quot;unit_or_domain&quot;: &quot;J; signed scalar&quot;
+    },
+    {
+      &quot;symbol&quot;: &quot;Delta t&quot;,
+      &quot;meaning&quot;: &quot;Positive elapsed interval&quot;,
+      &quot;unit_or_domain&quot;: &quot;s; positive scalar&quot;
+    }
+  ],
+  &quot;conditions&quot;: [
+    &quot;Delta t &gt; 0.&quot;,
+    &quot;W is the net work assigned to the chosen system over that same interval.&quot;
+  ],
+  &quot;derivation&quot;: [
+    {
+      &quot;id&quot;: &quot;WEP-PAVG-1&quot;,
+      &quot;role&quot;: &quot;DECLARE&quot;,
+      &quot;action&quot;: &quot;Choose the interval and total work transferred over exactly that interval.&quot;,
+      &quot;why_valid&quot;: &quot;Average power compares one total transfer with the duration over which it occurred.&quot;,
+      &quot;inputs&quot;: [],
+      &quot;output&quot;: &quot;interval: Delta t; transfer: W.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;WEP-PAVG-2&quot;,
+      &quot;role&quot;: &quot;TRANSFORM&quot;,
+      &quot;action&quot;: &quot;Divide the signed work by the positive elapsed time.&quot;,
+      &quot;why_valid&quot;: &quot;Average power is the interval energy-transfer rate.&quot;,
+      &quot;inputs&quot;: [],
+      &quot;output&quot;: &quot;P_avg = W / Delta t.&quot;
+    }
+  ],
+  &quot;limits&quot;: [
+    &quot;The interval average does not reveal how power varied within the interval.&quot;
+  ],
+  &quot;checks&quot;: [
+    &quot;Doing the same positive work in half the time doubles average power.&quot;,
+    &quot;Zero net work over a positive interval gives zero average power even if instantaneous power varied.&quot;
+  ],
+  &quot;gate_relation_ref&quot;: &quot;REL-AVERAGE-POWER&quot;
+}</pre><code>sha256:36c1c9587dabdbfa216039b2aa78aeaec83522b114e606a52d42bae2f83dfc3e</code></details><details id="U-REL-1"><summary>U-REL-1 / LIBRARY / {&quot;pointer&quot;: &quot;/relations/1&quot;}</summary><pre>{
+  &quot;id&quot;: &quot;REL-INSTANTANEOUS-POWER&quot;,
+  &quot;version&quot;: &quot;0.1.0&quot;,
+  &quot;status&quot;: &quot;CANDIDATE&quot;,
+  &quot;source_refs&quot;: [
+    &quot;SRC-AUTHOR-WEP&quot;
+  ],
+  &quot;evidence_refs&quot;: [],
+  &quot;extensions&quot;: {
+    &quot;issue19:scope_class&quot;: &quot;OWNER_EXTENSION&quot;,
+    &quot;issue19:donor&quot;: &quot;PR9&quot;
+  },
+  &quot;expression&quot;: &quot;P = F_parallel v&quot;,
+  &quot;meaning&quot;: &quot;Instantaneous mechanical power is the signed force component along velocity times instantaneous speed.&quot;,
+  &quot;symbols&quot;: [
+    {
+      &quot;symbol&quot;: &quot;P&quot;,
+      &quot;meaning&quot;: &quot;Instantaneous power&quot;,
+      &quot;unit_or_domain&quot;: &quot;W; signed scalar&quot;
+    },
+    {
+      &quot;symbol&quot;: &quot;F_parallel&quot;,
+      &quot;meaning&quot;: &quot;Signed component of force along the instantaneous velocity direction&quot;,
+      &quot;unit_or_domain&quot;: &quot;N; signed scalar&quot;
+    },
+    {
+      &quot;symbol&quot;: &quot;v&quot;,
+      &quot;meaning&quot;: &quot;Instantaneous speed&quot;,
+      &quot;unit_or_domain&quot;: &quot;m/s; nonnegative scalar&quot;
+    }
+  ],
+  &quot;conditions&quot;: [
+    &quot;v &gt;= 0.&quot;,
+    &quot;F_parallel carries the sign of the force component along or opposite the velocity direction.&quot;
+  ],
+  &quot;derivation&quot;: [
+    {
+      &quot;id&quot;: &quot;WEP-PINST-1&quot;,
+      &quot;role&quot;: &quot;DECLARE&quot;,
+      &quot;action&quot;: &quot;Resolve the force onto the instantaneous velocity direction.&quot;,
+      &quot;why_valid&quot;: &quot;Only the along-velocity component contributes to F dot v.&quot;,
+      &quot;inputs&quot;: [],
+      &quot;output&quot;: &quot;force contribution along motion: F_parallel.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;WEP-PINST-2&quot;,
+      &quot;role&quot;: &quot;TRANSFORM&quot;,
+      &quot;action&quot;: &quot;Multiply the signed along-velocity force component by instantaneous speed.&quot;,
+      &quot;why_valid&quot;: &quot;This is the scalar dot-product form of instantaneous mechanical power.&quot;,
+      &quot;inputs&quot;: [],
+      &quot;output&quot;: &quot;P = F_parallel v.&quot;
+    }
+  ],
+  &quot;limits&quot;: [
+    &quot;This form assumes F_parallel and v are evaluated at the same instant.&quot;,
+    &quot;The validator does not decide whether the supplied force resolution is physically correct.&quot;
+  ],
+  &quot;checks&quot;: [
+    &quot;A perpendicular force has F_parallel = 0 and zero instantaneous power.&quot;,
+    &quot;A force opposing motion gives negative instantaneous power.&quot;
+  ],
+  &quot;gate_relation_ref&quot;: &quot;REL-INSTANTANEOUS-POWER&quot;
+}</pre><code>sha256:464ac328d23e9e6c1c4a0a56a99fc59f6bbb767ff2e801b3701fb11e20730de3</code></details><details id="NATIVE-MICROTOPIC"><summary>NATIVE-MICROTOPIC / PKG_SCHEMA / {&quot;pointer&quot;: &quot;/$defs/microtopic&quot;}</summary><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;additionalProperties&quot;: false,
+  &quot;properties&quot;: {
+    &quot;id&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;version&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;status&quot;: {
+      &quot;enum&quot;: [
+        &quot;DISCOVERED&quot;,
+        &quot;CANDIDATE&quot;,
+        &quot;REVIEWED&quot;,
+        &quot;CURATED&quot;,
+        &quot;DISPUTED&quot;,
+        &quot;STALE&quot;,
+        &quot;RETIRED&quot;
+      ]
+    },
+    &quot;source_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;evidence_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;extensions&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;description&quot;: &quot;Namespaced subject extensions; no scientific authority is inferred.&quot;
+    },
+    &quot;title&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;bucket_id&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;primary_capability_ref&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;intrinsic_badge&quot;: {
+      &quot;enum&quot;: [
+        &quot;EASY&quot;,
+        &quot;MEDIUM&quot;,
+        &quot;HARD&quot;
+      ]
+    },
+    &quot;badge_reason&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;entry_assumptions&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;inferential_jump&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;teaching_path&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/step&quot;
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;relation_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;representation_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;question_family_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;misconceptions&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;object&quot;,
+        &quot;additionalProperties&quot;: false,
+        &quot;properties&quot;: {
+          &quot;wrong_idea&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;minLength&quot;: 1
+          },
+          &quot;diagnostic_prompt&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;minLength&quot;: 1
+          },
+          &quot;repair&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;minLength&quot;: 1
+          }
+        },
+        &quot;required&quot;: [
+          &quot;wrong_idea&quot;,
+          &quot;diagnostic_prompt&quot;,
+          &quot;repair&quot;
+        ]
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;exit_task&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;additionalProperties&quot;: false,
+      &quot;properties&quot;: {
+        &quot;prompt&quot;: {
+          &quot;type&quot;: &quot;string&quot;,
+          &quot;minLength&quot;: 1
+        },
+        &quot;source_ref&quot;: {
+          &quot;type&quot;: &quot;string&quot;,
+          &quot;minLength&quot;: 1
+        },
+        &quot;answer&quot;: {
+          &quot;$ref&quot;: &quot;#/$defs/answer&quot;
+        },
+        &quot;oracle&quot;: {
+          &quot;description&quot;: &quot;How this exit answer is stood behind. Exactly one of: `verification`, naming a subject validator and binding its inputs to declared data; `held_by`, naming the known issue that explains why no oracle exists yet; or `no_numeric_claim`, saying why the answer asserts no computed value. Silence is not an option, because the exit answer is what a learner measures themselves against.&quot;,
+          &quot;type&quot;: &quot;object&quot;,
+          &quot;minProperties&quot;: 1,
+          &quot;maxProperties&quot;: 1,
+          &quot;properties&quot;: {
+            &quot;verification&quot;: {
+              &quot;type&quot;: &quot;object&quot;,
+              &quot;required&quot;: [
+                &quot;validator_id&quot;,
+                &quot;bindings&quot;
+              ],
+              &quot;properties&quot;: {
+                &quot;validator_id&quot;: {
+                  &quot;type&quot;: &quot;string&quot;,
+                  &quot;minLength&quot;: 1
+                },
+                &quot;bindings&quot;: {
+                  &quot;type&quot;: &quot;object&quot;,
+                  &quot;additionalProperties&quot;: {
+                    &quot;type&quot;: &quot;string&quot;,
+                    &quot;minLength&quot;: 1
+                  }
+                }
+              },
+              &quot;additionalProperties&quot;: {
+                &quot;type&quot;: [
+                  &quot;string&quot;,
+                  &quot;number&quot;,
+                  &quot;boolean&quot;
+                ]
+              }
+            },
+            &quot;held_by&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;minLength&quot;: 1
+            },
+            &quot;no_numeric_claim&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;minLength&quot;: 1
+            }
+          },
+          &quot;additionalProperties&quot;: false
+        }
+      },
+      &quot;required&quot;: [
+        &quot;prompt&quot;,
+        &quot;source_ref&quot;,
+        &quot;answer&quot;,
+        &quot;oracle&quot;
+      ]
+    },
+    &quot;research_contribution&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;prerequisite_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0,
+      &quot;description&quot;: &quot;Capability ids this microtopic assumes. A capability of another subject is written &#x27;&lt;Subject&gt;:&lt;capability id&gt;&#x27; (e.g. &#x27;Mathematics:CAP-MATH-DERIVATIVE-RATE&#x27;); package_depth.py emits TEACH_PREREQUISITE_BRIDGE for any ref no library teaches.&quot;
+    },
+    &quot;lineage&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;object&quot;,
+        &quot;additionalProperties&quot;: false,
+        &quot;properties&quot;: {
+          &quot;relation&quot;: {
+            &quot;enum&quot;: [
+              &quot;SUPERSEDES&quot;,
+              &quot;SPLIT_FROM&quot;,
+              &quot;MERGED_FROM&quot;
+            ]
+          },
+          &quot;target_ref&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;minLength&quot;: 1
+          }
+        },
+        &quot;required&quot;: [
+          &quot;relation&quot;,
+          &quot;target_ref&quot;
+        ]
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;elicitation&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;additionalProperties&quot;: false,
+      &quot;description&quot;: &quot;The self-tutor cycle. Four of its six steps live here; diagnose and repair are misconceptions[].wrong_idea, .diagnostic_prompt and .repair, which already hold the same claim for the declarative product. A second home for one truth is the defect the authority gate exists to close.&quot;,
+      &quot;properties&quot;: {
+        &quot;predict&quot;: {
+          &quot;type&quot;: &quot;object&quot;,
+          &quot;additionalProperties&quot;: false,
+          &quot;description&quot;: &quot;Pose the decision before revealing anything.&quot;,
+          &quot;properties&quot;: {
+            &quot;prompt&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;minLength&quot;: 1,
+              &quot;description&quot;: &quot;The decision, posed so a learner can commit to an answer.&quot;
+            },
+            &quot;defensible_answer&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;minLength&quot;: 1,
+              &quot;description&quot;: &quot;The answer that commitment is judged against. A prompt with no defensible answer is a musing, not a prediction.&quot;
+            }
+          },
+          &quot;required&quot;: [
+            &quot;prompt&quot;,
+            &quot;defensible_answer&quot;
+          ]
+        },
+        &quot;attempt&quot;: {
+          &quot;type&quot;: &quot;object&quot;,
+          &quot;additionalProperties&quot;: false,
+          &quot;description&quot;: &quot;What the learner produces, and how it closes without a tutor.&quot;,
+          &quot;properties&quot;: {
+            &quot;produces&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;minLength&quot;: 1,
+              &quot;description&quot;: &quot;What the learner should construct, draw, discriminate or explain.&quot;
+            },
+            &quot;closure&quot;: {
+              &quot;enum&quot;: [
+                &quot;MODEL_RESPONSE&quot;,
+                &quot;RUBRIC&quot;,
+                &quot;CRITERIA&quot;
+              ],
+              &quot;description&quot;: &quot;Which form of closure this attempt uses. Each value demands something the others do not, so that none is a synonym an author can pick to avoid work: MODEL_RESPONSE requires model_response, CRITERIA requires rubric, and RUBRIC requires rubric with accepted and rejected examples -- the spec&#x27;s &#x27;a rubric plus representative accepted and rejected answers&#x27;, which is the stronger claim of the three.&quot;
+            },
+            &quot;model_response&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;minLength&quot;: 1,
+              &quot;description&quot;: &quot;Closure as one response, where one is right.&quot;
+            },
+            &quot;rubric&quot;: {
+              &quot;type&quot;: &quot;array&quot;,
+              &quot;items&quot;: {
+                &quot;$ref&quot;: &quot;#/$defs/rubric_criterion&quot;
+              },
+              &quot;minItems&quot;: 1,
+              &quot;description&quot;: &quot;Closure as a rubric, where several responses are valid.&quot;
+            },
+            &quot;accepted&quot;: {
+              &quot;type&quot;: &quot;array&quot;,
+              &quot;items&quot;: {
+                &quot;type&quot;: &quot;string&quot;,
+                &quot;minLength&quot;: 1
+              },
+              &quot;minItems&quot;: 1,
+              &quot;description&quot;: &quot;Representative responses the rubric accepts.&quot;
+            },
+            &quot;rejected&quot;: {
+              &quot;type&quot;: &quot;array&quot;,
+              &quot;items&quot;: {
+                &quot;type&quot;: &quot;string&quot;,
+                &quot;minLength&quot;: 1
+              },
+              &quot;minItems&quot;: 1,
+              &quot;description&quot;: &quot;Representative responses it rejects. A rubric with no rejected example has not been tested against anything.&quot;
+            },
+            &quot;task&quot;: {
+              &quot;type&quot;: &quot;object&quot;,
+              &quot;additionalProperties&quot;: false,
+              &quot;required&quot;: [
+                &quot;prompt&quot;
+              ],
+              &quot;description&quot;: &quot;Schema 0.2.0: the concrete reconstruction task the learner performs (a body, givens, numbers or a situation). `produces` says what the attempt should contain; `task` is what the learner is asked to do. Rendered as the Core1B attempt.&quot;,
+              &quot;properties&quot;: {
+                &quot;prompt&quot;: {
+                  &quot;type&quot;: &quot;string&quot;,
+                  &quot;minLength&quot;: 1
+                },
+                &quot;givens&quot;: {
+                  &quot;type&quot;: &quot;array&quot;,
+                  &quot;items&quot;: {
+                    &quot;type&quot;: &quot;string&quot;,
+                    &quot;minLength&quot;: 1
+                  }
+                },
+                &quot;representation_ref&quot;: {
+                  &quot;type&quot;: [
+                    &quot;string&quot;,
+                    &quot;null&quot;
+                  ],
+                  &quot;description&quot;: &quot;The representation of this task&#x27;s own situation (its bodies and values), shown with the Core1B attempt. When absent, Core1B falls back to the first construction unit&#x27;s (Core1A) figure, which depicts a different situation.&quot;
+                },
+                &quot;stage_refs&quot;: {
+                  &quot;type&quot;: &quot;array&quot;,
+                  &quot;items&quot;: {
+                    &quot;type&quot;: &quot;string&quot;
+                  },
+                  &quot;description&quot;: &quot;Stages of representation_ref safe to show before the attempt; default is the first stage only.&quot;
+                },
+                &quot;response&quot;: {
+                  &quot;$ref&quot;: &quot;#/$defs/response&quot;
+                }
+              }
+            }
+          },
+          &quot;required&quot;: [
+            &quot;produces&quot;,
+            &quot;closure&quot;
+          ]
+        },
+        &quot;reconstruct&quot;: {
+          &quot;type&quot;: &quot;object&quot;,
+          &quot;additionalProperties&quot;: false,
+          &quot;description&quot;: &quot;The correct construction reached the way a learner would reach it. Held as questions rather than statements: teaching_path is the expert&#x27;s summary, and a reconstruct route made of statements is that summary under a different key, which is exactly how this product became the declarative one.&quot;,
+          &quot;properties&quot;: {
+            &quot;route&quot;: {
+              &quot;type&quot;: &quot;array&quot;,
+              &quot;minItems&quot;: 1,
+              &quot;description&quot;: &quot;The sequence of asks. Order is meaning: each one is answerable only once the previous has been answered.&quot;,
+              &quot;items&quot;: {
+                &quot;type&quot;: &quot;object&quot;,
+                &quot;additionalProperties&quot;: false,
+                &quot;properties&quot;: {
+                  &quot;ask&quot;: {
+                    &quot;type&quot;: &quot;string&quot;,
+                    &quot;minLength&quot;: 1,
+                    &quot;description&quot;: &quot;A question that moves the learner one decision forward. A sentence with a question mark on it is not an ask; the learner must be able to get it wrong.&quot;
+                  },
+                  &quot;why_this_ask&quot;: {
+                    &quot;type&quot;: &quot;string&quot;,
+                    &quot;minLength&quot;: 1,
+                    &quot;description&quot;: &quot;Why this question rather than another at this point. An author who cannot say this has ordered the route by the expert&#x27;s convenience.&quot;
+                  },
+                  &quot;from_step_ref&quot;: {
+                    &quot;type&quot;: &quot;string&quot;,
+                    &quot;minLength&quot;: 1,
+                    &quot;description&quot;: &quot;The teaching_path step this ask arrives at, where one exists. Absent means the learner&#x27;s route genuinely departs from the expert&#x27;s, which is why both are held.&quot;
+                  }
+                },
+                &quot;required&quot;: [
+                  &quot;ask&quot;,
+                  &quot;why_this_ask&quot;
+                ]
+              }
+            },
+            &quot;differs_from_teaching_path&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;minLength&quot;: 1,
+              &quot;description&quot;: &quot;How the learner&#x27;s route differs from the expert&#x27;s construction. This is the sentence a reviewer checks the A/B claim against, so it may not restate the teaching path it claims to differ from.&quot;
+            }
+          },
+          &quot;required&quot;: [
+            &quot;route&quot;,
+            &quot;differs_from_teaching_path&quot;
+          ]
+        },
+        &quot;boundary_test&quot;: {
+          &quot;type&quot;: &quot;object&quot;,
+          &quot;additionalProperties&quot;: false,
+          &quot;properties&quot;: {
+            &quot;prompt&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;minLength&quot;: 1,
+              &quot;description&quot;: &quot;A limiting case, reversal or edge condition.&quot;
+            },
+            &quot;confirms&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;minLength&quot;: 1,
+              &quot;description&quot;: &quot;What passing it establishes, stated so that a recall question cannot be passed off as a boundary test.&quot;
+            },
+            &quot;answer&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;minLength&quot;: 1,
+              &quot;description&quot;: &quot;What passing it looks like. The shared closure invariant has no exception for the last prompt in a cycle.&quot;
+            }
+          },
+          &quot;required&quot;: [
+            &quot;prompt&quot;,
+            &quot;answer&quot;,
+            &quot;confirms&quot;
+          ]
+        }
+      },
+      &quot;required&quot;: [
+        &quot;predict&quot;,
+        &quot;attempt&quot;,
+        &quot;reconstruct&quot;,
+        &quot;boundary_test&quot;
+      ]
+    },
+    &quot;construction_units&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/construction_unit&quot;
+      }
+    },
+    &quot;compact_anchor&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;additionalProperties&quot;: false,
+      &quot;required&quot;: [
+        &quot;prompt&quot;,
+        &quot;result&quot;
+      ],
+      &quot;description&quot;: &quot;Schema 0.2.0: the Core1 compact anchor, a one-line instance of the governing relation that makes the map usable before Core1A.&quot;,
+      &quot;properties&quot;: {
+        &quot;prompt&quot;: {
+          &quot;type&quot;: &quot;string&quot;,
+          &quot;minLength&quot;: 1
+        },
+        &quot;result&quot;: {
+          &quot;type&quot;: &quot;string&quot;,
+          &quot;minLength&quot;: 1
+        },
+        &quot;representation_ref&quot;: {
+          &quot;type&quot;: [
+            &quot;string&quot;,
+            &quot;null&quot;
+          ],
+          &quot;description&quot;: &quot;The representation of this compact anchor&#x27;s own situation, shown on the Core1 map. When absent, Core1 falls back to the microtopic&#x27;s first representation_refs entry, which is often shared across microtopics.&quot;
+        }
+      }
+    }
+  },
+  &quot;required&quot;: [
+    &quot;id&quot;,
+    &quot;version&quot;,
+    &quot;status&quot;,
+    &quot;source_refs&quot;,
+    &quot;evidence_refs&quot;,
+    &quot;extensions&quot;,
+    &quot;title&quot;,
+    &quot;bucket_id&quot;,
+    &quot;primary_capability_ref&quot;,
+    &quot;intrinsic_badge&quot;,
+    &quot;badge_reason&quot;,
+    &quot;entry_assumptions&quot;,
+    &quot;inferential_jump&quot;,
+    &quot;teaching_path&quot;,
+    &quot;relation_refs&quot;,
+    &quot;representation_refs&quot;,
+    &quot;question_family_refs&quot;,
+    &quot;misconceptions&quot;,
+    &quot;exit_task&quot;,
+    &quot;research_contribution&quot;,
+    &quot;prerequisite_refs&quot;,
+    &quot;lineage&quot;
+  ]
+}</pre><code>sha256:1686d613a7e669b7219db2e969b3a74ffda954bb7f4966bcd221abf16148e57d</code></details><details id="NATIVE-STEP"><summary>NATIVE-STEP / PKG_SCHEMA / {&quot;pointer&quot;: &quot;/$defs/step&quot;}</summary><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;additionalProperties&quot;: false,
+  &quot;properties&quot;: {
+    &quot;id&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;action&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;why_valid&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;inputs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;output&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;role&quot;: {
+      &quot;description&quot;: &quot;What the step does to the state. A DECLARE step fixes a convention or a domain and legitimately produces no computation; a TRANSFORM step changes the mathematical state and must show the changed state, not describe it; a VERIFY step checks a result against something already established.&quot;,
+      &quot;enum&quot;: [
+        &quot;DECLARE&quot;,
+        &quot;TRANSFORM&quot;,
+        &quot;VERIFY&quot;
+      ]
+    },
+    &quot;source_ref&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1,
+      &quot;description&quot;: &quot;The source this step&#x27;s claim rests on. Absent means the step is the author&#x27;s own construction, which is legitimate and is not the same as source-supported.&quot;
+    }
+  },
+  &quot;required&quot;: [
+    &quot;id&quot;,
+    &quot;role&quot;,
+    &quot;action&quot;,
+    &quot;why_valid&quot;,
+    &quot;inputs&quot;,
+    &quot;output&quot;
+  ]
+}</pre><code>sha256:bef05081da5d29b5d9840965decc3edc4f41c61eca3d657a6a33f3c8f7eb3407</code></details><details id="NATIVE-CONSTRUCTION_UNIT"><summary>NATIVE-CONSTRUCTION_UNIT / PKG_SCHEMA / {&quot;pointer&quot;: &quot;/$defs/construction_unit&quot;}</summary><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;additionalProperties&quot;: false,
+  &quot;description&quot;: &quot;One distinct decision/event of a microtopic&#x27;s construction, taught as its own unit (Core1A) and reconstructed in Core1B.&quot;,
+  &quot;required&quot;: [
+    &quot;id&quot;,
+    &quot;step_refs&quot;
+  ],
+  &quot;properties&quot;: {
+    &quot;id&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;pattern&quot;: &quot;^CU-[A-Z0-9-]+$&quot;
+    },
+    &quot;extensions&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;description&quot;: &quot;Namespaced unit-level extensions. Repeated blueprint applicability may use extensions[&#x27;grade9v3:component_waivers&#x27;] with the same {COMPONENT_ID: reason} contract as a top-level record.&quot;
+    },
+    &quot;decision&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1,
+      &quot;description&quot;: &quot;The move the learner must make in this unit, in words.&quot;
+    },
+    &quot;step_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 1,
+      &quot;description&quot;: &quot;teaching_path step ids this unit covers, in order.&quot;
+    },
+    &quot;representation_ref&quot;: {
+      &quot;type&quot;: [
+        &quot;string&quot;,
+        &quot;null&quot;
+      ],
+      &quot;description&quot;: &quot;Representation that stages this unit.&quot;
+    },
+    &quot;reveal_stage_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;
+      },
+      &quot;description&quot;: &quot;That representation&#x27;s reveal stages used by this unit, in order.&quot;
+    },
+    &quot;worked_anchor_ref&quot;: {
+      &quot;type&quot;: [
+        &quot;string&quot;,
+        &quot;null&quot;
+      ],
+      &quot;description&quot;: &quot;Question (exposure CORE1A) whose route exercises this unit&#x27;s move.&quot;
+    },
+    &quot;bank_anchor_ref&quot;: {
+      &quot;type&quot;: [
+        &quot;string&quot;,
+        &quot;null&quot;
+      ],
+      &quot;minLength&quot;: 1,
+      &quot;description&quot;: &quot;A question of the product&#x27;s bank (an owner-supplied or exam question, not a question of this package) that this unit works through as its worked example: the page shows the question as its owner wrote it with its verified route. Resolved when the product is built, so a package does not carry a copy of the question. Use it for the question the unit builds toward; use worked_anchor_ref for a question the package authors itself.&quot;
+    },
+    &quot;crux_question_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 1,
+      &quot;description&quot;: &quot;Bank questions whose crux this unit builds: the move a learner is most likely to miss in each. The toughest question of a set must be named here by a unit of the concept it belongs to; its difficulty band does not prescribe the unit&#x27;s component or panel count.&quot;
+    },
+    &quot;crux_step_ref&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1,
+      &quot;description&quot;: &quot;The teaching_path step of this unit (one of its step_refs) that builds the move named questions in crux_question_refs turn on. The page marks that step, so a reader can see where the unit does the work the hard question needs.&quot;
+    },
+    &quot;misconception_indexes&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;integer&quot;,
+        &quot;minimum&quot;: 0
+      },
+      &quot;description&quot;: &quot;Indexes into microtopic.misconceptions (wrong path, diagnose, repair).&quot;
+    },
+    &quot;relation_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;description&quot;: &quot;The microtopic&#x27;s relations this unit uses, shown as the unit&#x27;s own equation card. Absent: the first unit shows all of the microtopic&#x27;s relations.&quot;
+    },
+    &quot;independent_checks&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/independent_check&quot;
+      }
+    },
+    &quot;migrated_from&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;Set by package_migrate.py when the unit was derived mechanically (e.g. &#x27;teaching_path&#x27;); cleared when an author reviews it.&quot;
+    },
+    &quot;decision_from&quot;: {
+      &quot;enum&quot;: [
+        &quot;inferential_jump&quot;
+      ],
+      &quot;description&quot;: &quot;Set instead of `decision` when the unit&#x27;s decision is the microtopic&#x27;s own field (migration); one source of truth, no copied text.&quot;
+    }
+  },
+  &quot;anyOf&quot;: [
+    {
+      &quot;required&quot;: [
+        &quot;decision&quot;
+      ]
+    },
+    {
+      &quot;required&quot;: [
+        &quot;decision_from&quot;
+      ]
+    }
+  ]
+}</pre><code>sha256:6087cdf85dbacc13bc16269c97e18a6d397fb69ad04e18ed0e56ad8bd27b1dfa</code></details><details id="NATIVE-REPRESENTATION"><summary>NATIVE-REPRESENTATION / PKG_SCHEMA / {&quot;pointer&quot;: &quot;/$defs/representation&quot;}</summary><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;additionalProperties&quot;: false,
+  &quot;properties&quot;: {
+    &quot;id&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;version&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;status&quot;: {
+      &quot;enum&quot;: [
+        &quot;DISCOVERED&quot;,
+        &quot;CANDIDATE&quot;,
+        &quot;REVIEWED&quot;,
+        &quot;CURATED&quot;,
+        &quot;DISPUTED&quot;,
+        &quot;STALE&quot;,
+        &quot;RETIRED&quot;
+      ]
+    },
+    &quot;source_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;evidence_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;extensions&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;description&quot;: &quot;Namespaced subject extensions; no scientific authority is inferred.&quot;
+    },
+    &quot;kind&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;purpose&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;required_elements&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;relation_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;read_order&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;instance_constraints&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;accessibility&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;misleading_alternatives&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;rendered_asset_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;scene_instances&quot;: {
+      &quot;description&quot;: &quot;Concrete figures satisfying this representation. Everything above states what a figure of this kind must show; an instance states one actual figure, bound to the data it draws, so the library can compile a figure instead of only requiring one.&quot;,
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/scene_instance&quot;
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;correspondence&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;object&quot;,
+        &quot;additionalProperties&quot;: false,
+        &quot;properties&quot;: {
+          &quot;element&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;minLength&quot;: 1,
+            &quot;description&quot;: &quot;The part of the picture, named as required_elements names it.&quot;
+          },
+          &quot;symbol&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;minLength&quot;: 1,
+            &quot;description&quot;: &quot;The symbol it stands for, as the governing relation writes it.&quot;
+          },
+          &quot;in_words&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;minLength&quot;: 1,
+            &quot;description&quot;: &quot;The same thing said in words, which is the third leg of the bridge.&quot;
+          }
+        },
+        &quot;required&quot;: [
+          &quot;element&quot;,
+          &quot;symbol&quot;,
+          &quot;in_words&quot;
+        ]
+      },
+      &quot;minItems&quot;: 0,
+      &quot;description&quot;: &quot;The representation bridge. required_elements says what the picture must contain and the relation&#x27;s symbols say what the algebra means, but nothing bound one to the other, so the correspondence a learner must make was asserted rather than held. Naming all three legs is what makes it explicit in both directions rather than a caption pointing one way.&quot;
+    },
+    &quot;interactive_resource_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0,
+      &quot;description&quot;: &quot;ACTIVITY resources that implement or manipulate this canonical representation. The representation remains academic authority.&quot;
+    },
+    &quot;reveal_stages&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/visual_stage&quot;
+      },
+      &quot;minItems&quot;: 0,
+      &quot;description&quot;: &quot;Ordered author-defined reveal states for progressive visual support. No global stage count is imposed.&quot;
+    },
+    &quot;support_stage_map&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/support_stage_binding&quot;
+      },
+      &quot;minItems&quot;: 0,
+      &quot;description&quot;: &quot;Optional mapping from matrix pre-attempt support level to initial representation stage.&quot;
+    }
+  },
+  &quot;required&quot;: [
+    &quot;id&quot;,
+    &quot;version&quot;,
+    &quot;status&quot;,
+    &quot;source_refs&quot;,
+    &quot;evidence_refs&quot;,
+    &quot;extensions&quot;,
+    &quot;kind&quot;,
+    &quot;purpose&quot;,
+    &quot;required_elements&quot;,
+    &quot;relation_refs&quot;,
+    &quot;read_order&quot;,
+    &quot;instance_constraints&quot;,
+    &quot;accessibility&quot;,
+    &quot;misleading_alternatives&quot;,
+    &quot;rendered_asset_refs&quot;,
+    &quot;scene_instances&quot;
+  ]
+}</pre><code>sha256:b9d7645031777bfc8abda988531e7cc77957329f012d0e58dcd04ed261940b56</code></details><details id="NATIVE-RELATION"><summary>NATIVE-RELATION / PKG_SCHEMA / {&quot;pointer&quot;: &quot;/$defs/relation&quot;}</summary><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;additionalProperties&quot;: false,
+  &quot;properties&quot;: {
+    &quot;id&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;version&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;status&quot;: {
+      &quot;enum&quot;: [
+        &quot;DISCOVERED&quot;,
+        &quot;CANDIDATE&quot;,
+        &quot;REVIEWED&quot;,
+        &quot;CURATED&quot;,
+        &quot;DISPUTED&quot;,
+        &quot;STALE&quot;,
+        &quot;RETIRED&quot;
+      ]
+    },
+    &quot;source_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;evidence_refs&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 0
+    },
+    &quot;extensions&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;description&quot;: &quot;Namespaced subject extensions; no scientific authority is inferred.&quot;
+    },
+    &quot;expression&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;meaning&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;symbols&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;object&quot;,
+        &quot;additionalProperties&quot;: false,
+        &quot;properties&quot;: {
+          &quot;symbol&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;minLength&quot;: 1
+          },
+          &quot;meaning&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;minLength&quot;: 1
+          },
+          &quot;unit_or_domain&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;minLength&quot;: 1
+          }
+        },
+        &quot;required&quot;: [
+          &quot;symbol&quot;,
+          &quot;meaning&quot;,
+          &quot;unit_or_domain&quot;
+        ]
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;conditions&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;derivation&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/step&quot;
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;limits&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;checks&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      },
+      &quot;minItems&quot;: 1
+    },
+    &quot;mathml&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1,
+      &quot;description&quot;: &quot;Restricted presentation MathML for this relation, so a product can render it without re-authoring.&quot;
+    },
+    &quot;gate_relation_ref&quot;: {
+      &quot;description&quot;: &quot;The engineering gate relation this is a bound copy of. Subject truth is owned by the gate registry; the library holds a copy so the compiler can reach it, and that copy is checked against the owner. null says no gate backs this relation: that is true of a subject that declares no gates (a sandbox, or a contract-only subject), and for a subject that has gates Shared/library/authority.py reports it as GATE_RELATION_BINDING_ABSENT.&quot;,
+      &quot;type&quot;: [
+        &quot;string&quot;,
+        &quot;null&quot;
+      ],
+      &quot;minLength&quot;: 1
+    }
+  },
+  &quot;required&quot;: [
+    &quot;id&quot;,
+    &quot;version&quot;,
+    &quot;status&quot;,
+    &quot;source_refs&quot;,
+    &quot;evidence_refs&quot;,
+    &quot;extensions&quot;,
+    &quot;expression&quot;,
+    &quot;meaning&quot;,
+    &quot;symbols&quot;,
+    &quot;conditions&quot;,
+    &quot;derivation&quot;,
+    &quot;limits&quot;,
+    &quot;checks&quot;,
+    &quot;gate_relation_ref&quot;
+  ]
+}</pre><code>sha256:ecbfa4eeda8187c8418eb9116384cbea37434ca4d21fb034727742bc45cf8909</code></details><h2>Exposure and limitations</h2><ul><li>Author/exposed preparation; no independent academic review or learner observation.</li><li>All nine source images were visually inspected in this routine; the selected regions and limitations are in program.json. This is not full OCR, diagram equivalence or scientific acceptance.</li><li>Generated SVGs are derived material and remain unreviewed. Every original scan and SVG is retained; all linked source chapter assets resolve locally.</li><li>Book illustration badges are not official examination provenance. No new question or lesson is authored.</li><li>A matching source hash proves retained bytes, not accurate transcription or scientific truth.</li><li>The retained reference ontology supplies proposed material under WEP-08. It is a review lead, not the canonical library or a qualified replacement for missing chapter derivations. Its source_authority/canonical_rules labels are claims, not acceptance receipts.</li></ul><p class="meta">Dependency fingerprint sha256:5bd8f0df4a1e743435954b7515affad6249406a05dcdcd1ae4e7903d77c35a76</p></body></html>

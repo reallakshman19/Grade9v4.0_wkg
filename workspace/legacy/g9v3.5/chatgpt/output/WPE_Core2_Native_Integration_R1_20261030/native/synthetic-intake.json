@@ -1,0 +1,11 @@
+{
+  "inputs": {
+    "questions": [
+      {
+        "id": "SYN-WPE-DIRECTION-CONTROL-01",
+        "text": "An idealised trolley moves horizontally while a constant force acts vertically. What is the work done by this force on the trolley during the horizontal displacement?"
+      }
+    ]
+  },
+  "intake_digest": "sha256:7f362f4f1003c99bd6bda70054f73d0df68aca84659eb16fa1034881fc39647d"
+}

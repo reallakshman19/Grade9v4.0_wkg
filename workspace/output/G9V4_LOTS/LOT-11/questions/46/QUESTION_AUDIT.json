@@ -1,0 +1,101 @@
+{
+  "sequence": 46,
+  "batch_sequence": 1,
+  "task_identity": "Q-ID-53",
+  "stable_id": "PHYS-WPE-LOT11-Q46",
+  "source_id": "EX-N21",
+  "lot": "LOT-11",
+  "batch": "BATCH-D",
+  "paper": "JEE Main 2023 (Online) 25th January Morning Shift",
+  "source_type": "EXAM_PAPER_TRANSCRIBED",
+  "source_custody": "VERIFIED_TEXT_FIGURE_PENDING",
+  "stem_text": "An object of mass 'm' initially at rest on a smooth horizontal plane starts moving under the action of force F = 2N. In the process of its linear motion, the angle 𝜃 (as shown in figure) between the direction of force and horizontal varies as 𝜃=k𝑥 , where k is a constant and 𝑥 is the distance covered by the object from its initial position. The expression of kinetic energy of the object will be 𝐸=(𝑛)/(𝑘)sin⁡𝜃 . The value of n is ___________. [FIG-stem-1]",
+  "stem_sha256": "9138f7c80c15935a01e5518199ae4da9a95c8e3c4945c05da65f61ee14a11375",
+  "source_hash": "9138f7c80c15935a01e5518199ae4da9a95c8e3c4945c05da65f61ee14a11375",
+  "source_record_digest": "sha256:9138f7c80c15935a01e5518199ae4da9a95c8e3c4945c05da65f61ee14a11375",
+  "duplicate_parent": null,
+  "scope": "PRIMARY_IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "key_issuing_authority": "NTA",
+  "figure_status": "REQUIRED_UNRESOLVED",
+  "figure_reference": "FIG-stem-1",
+  "options": [],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "POSITION_DEPENDENT_FORCE_WORK_INTEGRAL",
+    "predicted_option": "2",
+    "derivation": "Work done by variable force: W = int_0^x F_x dx' = int_0^x 2*cos(kx') dx' = (2/k)*sin(kx) = (2/k)*sin(theta). By Work-Energy Theorem, Delta K = E = W = (2/k)*sin(theta). Comparing with E = (n/k)*sin(theta) yields n = 2."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 2,
+          "evidence": "Work integral with position-dependent directional force F = 2N at angle theta = kx"
+        },
+        "representation_translation": {
+          "score": 2,
+          "evidence": "Parameterizing horizontal force component Fx = F*cos(kx) and integrating along x"
+        },
+        "reasoning_chain_length": {
+          "score": 2,
+          "evidence": "Formulate W = int_0^x 2*cos(kx')dx', evaluate definite integral to (2/k)*sin(kx), equate to (n/k)*sin(theta)"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Direct calculus evaluation of cosine integral yielding coefficient n = 2"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Normal force and vertical component do no work on smooth horizontal plane"
+        }
+      },
+      "total": 8,
+      "band": "D3",
+      "prior_proposal": {
+        "source": "INITIAL_CALIBRATION",
+        "scores": "2/2/2/1/1",
+        "total": 8
+      },
+      "differences": "Initial native factor audit"
+    },
+    "demand_proposal": {
+      "primary": "MODEL",
+      "secondary": [
+        "APPLY"
+      ],
+      "rationale": "Constructing dynamic work integral model with coupled variable angle force on frictionless plane",
+      "candidate_cell": "QRT-MODEL-D3",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": {
+    "blueprint_id": "PHYS-QRT-BLUEPRINT",
+    "version": "0.2.0",
+    "sha256": "ac32dc937403cac33c76343f2e7e0dabd7c2c4a3188cb3b453ddf2576578ddf9",
+    "blueprint_cell_ref": "D3.3",
+    "topic_tag": "WPE-01-WORK",
+    "status": "PINNED_CELL_UNQUALIFIED"
+  },
+  "adapter_fit": {
+    "adapter_id": "PHYS-TOPIC-WPE",
+    "sha256": "899e61e59370a3fc5d6f73b7d8cbb65165d0782c9fba20acd83439ae441e6a9b",
+    "status": "CELL_UNQUALIFIED_ADAPTER_GAP",
+    "note": "WPE adapter defines cell D3.1 only. Target cell D3.3 requires adapter cell expansion; flagged as SPEC_GAP."
+  },
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_INDEPENDENT_REVIEW",
+  "b2_blind_status": "PENDING_BLIND_SOLVE",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (Numerical answer 2 unverified against official NTA master)",
+    "HOLD:FIGURE_CUSTODY_UNRESOLVED (Question figure [FIG-stem-1] custody unverified)",
+    "HOLD:ADAPTER_CELL_GAP (WPE adapter lacks D3.3 cell authority)",
+    "HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)"
+  ],
+  "next_action": "B2 independent source-only solve + official NTA master key reconciliation"
+}

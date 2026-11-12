@@ -1,0 +1,18 @@
+{
+  "source_id": "JEE-2026-04-02-S2-Q31",
+  "task_identity": "Q-ID-72",
+  "sequence": 62,
+  "lot_sequence": 2,
+  "paper": "JEE Main 2026 Session 2 / 2026-04-02 / Shift 2 (Evening)",
+  "stem_status": "VERIFIED_BOUND_TEXT",
+  "stem_text": "If a body of mass 1 kg falls on the earth from infinity, it attains velocity (v) and kinetic energy (k) on reaching the surface of earth. The values of v and k respectively are _____ . (Take radius of earth to be 6400 km and g = 9.8 m/s^2)",
+  "stem_sha256": "854dfa83856e4d30d96041b64041918319bda6eb1cdb32748b4c14692d768385",
+  "options": [
+    "691121616: 11.2 km/s; 6.27 x 10^7 J",
+    "691121617: 11.2 km/s; 12.54 x 10^7 J",
+    "691121618: 8.8 km/s; 6.27 x 10^7 J",
+    "691121619: 8.8 km/s; 12.54 x 10^7 J"
+  ],
+  "figure_reference": null,
+  "confidentiality_notice": "Source custody blind packet. Academic solve, answer key, and scoring omitted. Private review only."
+}

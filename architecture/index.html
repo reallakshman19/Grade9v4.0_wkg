@@ -1,0 +1,353 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Architecture tab: source governance, SL1 and SL2, QRT, subject Blueprint and adapter, Core construction, checks and review protocol."><title>Architecture & Documentation | Grade9 v4.0</title><link rel="stylesheet" href="../site.css">
+<style>
+/* Student-facing Core-role map; the original architecture material remains below, collapsed. */
+.core-map{margin:0 0 24px}
+.core-intro{background:#f0f8fb;border:1px solid #c8dfe8;border-radius:16px;padding:22px 24px;margin-bottom:18px}
+.core-intro h2{font-size:clamp(1.4rem,2.8vw,2rem);line-height:1.25;margin:8px 0}
+.core-intro p{max-width:850px;line-height:1.6}
+.core-kicker{display:inline-block;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#276574}
+.core-path{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin:16px 0 6px}
+.core-path span{display:inline-block;background:white;border:1px solid #bed4dd;border-radius:8px;padding:9px 12px;font-size:.9rem;font-weight:750}
+.core-path .core-arrow{border:0;background:transparent;color:#527583;padding:0 2px}
+.core-roles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:14px 0 18px}
+.core-role{background:#fff;border:1px solid #d5e4e9;border-radius:14px;padding:19px 20px;min-width:0}
+.core-role h3{margin:6px 0 10px;font-size:1.3rem}
+.core-role p{line-height:1.55;margin:9px 0}
+.core-role small{display:block;color:#446b78;font-weight:700;letter-spacing:.02em}
+.core-role ul{padding-left:20px;line-height:1.6;margin:11px 0}
+.core-role a{display:inline-block;margin:5px 12px 2px 0}
+.core-entry{background:#f1f8f1;border:1px solid #c7dec6;border-radius:14px;padding:19px 22px;margin:0 0 18px}
+.core-entry h3{margin:4px 0 9px;font-size:1.23rem}
+.core-entry p{max-width:920px;line-height:1.6}
+.core-mini-table{width:100%;border-collapse:collapse;background:white;font-size:.92rem}
+.core-mini-table th,.core-mini-table td{border-bottom:1px solid #dce7eb;padding:11px 12px;vertical-align:top;text-align:left}
+.core-mini-table th{background:#e8f3f7}
+.core-table-wrap{overflow-x:auto;border:1px solid #d9e6e9;border-radius:12px;margin:15px 0 18px}
+.core-map a:focus-visible,.legacy-archive summary:focus-visible{outline:3px solid #c08325;outline-offset:3px}
+.core-note{padding:13px 16px;border-left:4px solid #557f90;background:#f5f9fb;border-radius:6px;line-height:1.55}
+.legacy-archive{border:2px solid #bfd3dd;border-radius:14px;background:white;margin:24px 0 32px}
+.legacy-archive>summary{cursor:pointer;list-style:revert;font-size:1.12rem;font-weight:800;padding:18px 22px;color:#1f4658}
+.legacy-archive>summary:hover{background:#edf6f8}
+.legacy-archive[open]>summary{border-bottom:1px solid #dce7eb}
+.legacy-content{padding:18px 18px 22px}
+@media(max-width:780px){.core-roles{grid-template-columns:1fr}.core-intro,.core-entry{padding:16px}.core-path{gap:6px}.core-path span{font-size:.8rem}.legacy-content{padding:12px}.core-mini-table{min-width:560px}}
+</style>
+<style>
+/* In-page concept and agent runbook; intentionally independent of JavaScript/iframe. */
+.arch-guide{margin:24px 0 30px;max-width:100%;line-height:1.65}
+.arch-guide p{max-width:100ch}
+.arch-guide .guide-lead{background:#e9f5f8;border:1px solid #c0dce4;padding:21px 24px;border-radius:15px}
+.arch-guide .guide-lead h2{font-size:clamp(1.55rem,3vw,2.1rem);margin:4px 0 10px}
+.arch-guide nav{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}
+.arch-guide nav a{display:inline-block;border:1px solid #bdd1da;background:white;color:#1a5c68;text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:700}
+.arch-guide nav a:focus-visible,.arch-guide a:focus-visible{outline:3px solid #b78329;outline-offset:3px}
+.arch-guide .chapter{background:white;border:1px solid #d4e4e8;border-radius:15px;padding:20px 24px;margin:17px 0}
+.arch-guide .chapter h3{font-size:clamp(1.18rem,2vw,1.55rem);margin:3px 0 10px}
+.arch-guide .chapter h4{font-size:1.04rem;margin:18px 0 8px}
+.arch-guide .kicker{display:block;color:#226473;font-size:.76rem;letter-spacing:.07em;font-weight:800;text-transform:uppercase}
+.arch-guide .cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:12px 0}
+.arch-guide .panel-lite{background:#f5fafb;border:1px solid #d3e5e9;border-radius:11px;padding:14px 16px;min-width:0}
+.arch-guide .panel-lite h4{margin:0 0 7px}
+.arch-guide .panel-lite p{margin:8px 0}
+.arch-guide .steps-list{padding-left:24px}
+.arch-guide .steps-list li{padding:5px 0 10px 5px}
+.arch-guide .steps-list li strong{color:#183c53}
+.arch-guide .table-scroll{overflow-x:auto;border:1px solid #d5e3e8;border-radius:10px;margin:12px 0}
+.arch-guide table{border-collapse:collapse;width:100%;min-width:630px;font-size:.91rem}
+.arch-guide th,.arch-guide td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #dae5e9}
+.arch-guide th{background:#e9f3f6}
+.arch-guide .example{border-left:4px solid #507d8e;padding:10px 16px;background:#f3f8fb;margin:14px 0}
+.arch-guide .caution{border-left:4px solid #b58b45;padding:12px 16px;background:#fff8ed;margin:12px 0}
+.arch-guide code{background:#eef3f6;padding:2px 4px;border-radius:3px;overflow-wrap:anywhere}
+.arch-guide pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#132f3d;color:#f2f8f9;padding:15px;border-radius:10px}
+.arch-guide pre code{background:none;color:inherit;padding:0}
+.arch-guide .inline-link{font-weight:700}
+.arch-guide .status-row{display:flex;gap:9px;flex-wrap:wrap;margin:12px 0}
+.arch-guide .status-row span{border:1px solid #c3d9df;border-radius:8px;padding:7px 10px;background:#f5f9fa}
+@media(max-width:760px){.arch-guide .cols{grid-template-columns:1fr}.arch-guide .chapter,.arch-guide .guide-lead{padding:15px}.arch-guide table{min-width:570px}}
+@media(prefers-reduced-motion:reduce){.arch-guide *{scroll-behavior:auto}}
+</style></head><body><header class="mast"><div class="container top"><a class="logo" href="../index.html"><i>G9</i>Grade9 v4.0</a><nav class="tabs" aria-label="School subjects and NSEJS"><a href="../physics/index.html"><span class="nav-icon" aria-hidden="true">⚛️</span> Physics</a><a href="../mathematics/index.html"><span class="nav-icon" aria-hidden="true">📐</span> Mathematics</a><a href="../chemistry/index.html"><span class="nav-icon" aria-hidden="true">🧪</span> Chemistry</a><a href="index.html" aria-current="page"><span class="nav-icon" aria-hidden="true">🧭</span> Architecture</a><a href="../nsejs/index.html"><span class="nav-icon" aria-hidden="true">🎯</span> NSEJS</a></nav></div><div class="container hero"><div class="kicker">Fourth tab · Architecture</div><h1>How do great lessons get made?</h1><p>Explore what happens behind each lesson: where questions come from, how difficulty is checked, and how teachers and reviewers decide what's ready to learn.</p><div class="breadcrumbs"><a href="../index.html">Subjects</a> / Architecture</div></div></header><main class="container main">
+
+<section class="core-map" id="core-role-map" aria-labelledby="core-map-title">
+  <div class="core-intro">
+    <span class="core-kicker">Student learning architecture · WPE Physics pilot</span>
+    <h2 id="core-map-title">Which tiles belong to Core1A, Core1B and Core2?</h2>
+    <p><strong>Learn → Challenge is the way in—not a fourth Core.</strong> The three Core roles describe what the learner does. One lesson page can contain both Core1A explanation and Core1B independent practice. The Question Bank remains Core2.</p>
+    <div class="core-path" aria-label="Student journey from original question through learning and back">
+      <span>Core2 · Original question</span><span class="core-arrow" aria-hidden="true">→</span>
+      <span>Core1A · Learn</span><span class="core-arrow" aria-hidden="true">→</span>
+      <span>Core1B · Challenge</span><span class="core-arrow" aria-hidden="true">→</span>
+      <span>Core2 · Try again</span>
+    </div>
+    <p><small>This is a <strong>learner navigation path</strong>, not an academic approval sequence or a replacement for source, QRT, Blueprint and adapter governance.</small></p>
+  </div>
+
+  <section class="core-entry" aria-labelledby="gateway-title">
+    <span class="core-kicker">Shared gateway · Orchestration, not a Core</span>
+    <h3 id="gateway-title">🧭 Learn → Challenge</h3>
+    <p>Start from an exact Question Bank ID or explore a Physics skill. The gateway recommends a relevant teaching journey, explains whether it is a close match or related practice only, and returns the child to the same original question.</p>
+    <div class="linklist">
+      <a class="button" href="../physics/wpe/learn-challenge.html">Open Learn → Challenge →</a>
+      <a href="../physics/wpe/question-coverage.html">See the 74-question learning map</a>
+    </div>
+  </section>
+
+  <div class="core-roles" aria-label="Core role descriptions">
+    <article class="core-role" id="core1a-role">
+      <small>CORE1A · TEACHING</small>
+      <h3>📘 Learn the reasoning</h3>
+      <p>Develop the physical model through guided explanations, worked examples, interactive diagrams, assumptions and misconceptions.</p>
+      <ul><li>Five foundation mini-lessons</li><li>Guided teaching within C01–C08, E01–E05 and F01–F08</li></ul>
+      <a href="../physics/wpe/learn-challenge.html#work-sign">Foundation example</a>
+      <a href="../physics/wpe/d3d4-self-tutor.html#C03">Deep reasoning example · C03</a>
+    </article>
+    <article class="core-role" id="core1b-role">
+      <small>CORE1B · INDEPENDENT PRACTICE</small>
+      <h3>🧠 Try a fresh challenge</h3>
+      <p>Choose a model, predict, commit an independent attempt, optionally use progressive hints, diagnose and repair errors, and test a changed condition.</p>
+      <ul><li>Six-stage challenges in the 21 C/E/F journeys</li><li>Optional second challenges for F01–F03 are <strong>planned</strong> from PR #55, not yet integrated</li></ul>
+      <a href="../physics/wpe/focused-journeys.html?question=EX-M97#F01">Focused challenge · F01</a>
+      <a href="https://github.com/reallakshman19/Grade9v4.0/pull/55">PR #55 variants (source only)</a>
+    </article>
+    <article class="core-role" id="core2-role">
+      <small>CORE2 · SOURCE QUESTION</small>
+      <h3>📚 Original Question Bank</h3>
+      <p>Read the original source question, give an independent answer, and return after learning. Protect the source attempt and answer reveal; never replace the original problem with a practice version.</p>
+      <ul><li>74 Question Bank entries</li><li>Exact-question return is central to the intended learning loop</li></ul>
+      <a href="../preview/question-status.html?question=EX-M79">Original question · EX-M79</a>
+      <a href="../physics/wpe/question-bank.html">Question Bank</a>
+    </article>
+  </div>
+
+  <section class="panel" aria-labelledby="tile-map-title">
+    <span class="core-kicker">Page / tile map</span>
+    <h3 id="tile-map-title" style="margin:9px 0 4px">What does each student-facing tile do?</h3>
+    <div class="core-table-wrap">
+      <table class="core-mini-table">
+        <thead><tr><th scope="col">Tile / page</th><th scope="col">Core role</th><th scope="col">How it fits</th></tr></thead>
+        <tbody>
+          <tr><td><a href="../physics/wpe/learn-challenge.html">Learn → Challenge</a></td><td>Gateway · not a Core</td><td>Choose a question or skill; route to teaching and practice</td></tr>
+          <tr><td>Five foundation mini-lessons</td><td>Core1A + basic Core1B</td><td>Introduce key WPE concepts and try a different simple challenge</td></tr>
+          <tr><td><a href="../physics/wpe/d3d4-self-tutor.html">C01–C08 · Eight thinking challenges</a></td><td>Core1A + Core1B</td><td>Guided physical model followed by six-stage independent reconstruction</td></tr>
+          <tr><td><a href="../physics/wpe/extension-learning.html#E01">E01–E05 · Advanced extensions</a></td><td>Core1A + Core1B</td><td>Advanced concepts with separate fresh six-stage practice</td></tr>
+          <tr><td><a href="../physics/wpe/focused-journeys.html?question=EX-M97#F01">F01–F03 · Focused journeys</a></td><td>Core1A + Core1B</td><td>Three difficult question-specific reasoning types; optional transfer variants planned</td></tr>
+          <tr><td><a href="../physics/wpe/gap-journeys.html?question=EX-M50#F04">F04–F08 · Additional focused journeys</a></td><td>Core1A + Core1B</td><td>Five more source-specific constructions: two-body springs, massive spring, wind power, pendulum, and energy-loss models</td></tr>
+          <tr><td><a href="../physics/wpe/question-bank.html">Question Bank</a></td><td>Core2</td><td>Exact source question, learner attempt and protected answer reveal</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="core-note"><strong>No iframe integration:</strong> the merged WPE journey uses direct, source-verified lesson links and preserved learner state. The related-practice <code>study-bridge.html</code> uses a verified full-page link, not an iframe.</p>
+    <p class="core-note"><strong>Current map after R2:</strong> 74 source questions, 8 focused journeys, 18 close-practice matches, 48 related-only bridges, and 0 unmapped questions. Related practice does <em>not</em> establish sufficient teaching or independent QRT approval.</p>
+    <p class="core-note"><strong>Platform scope and authority:</strong> Physics, Mathematics and Chemistry share Core-role responsibilities; these C/E/F lesson examples are the WPE <em>Physics-only pilot</em>. Published software or passing tests do not independently certify source correctness, academic Core admission or student mastery.</p>
+  </section>
+</section>
+
+
+<section class="arch-guide" id="agent-guidebook" aria-labelledby="agent-guide-title">
+  <header class="guide-lead">
+    <span class="kicker">Working concept note and agent guidebook · Read on this page</span>
+    <h2 id="agent-guide-title">How to build a trustworthy learning journey</h2>
+    <p><strong>This is the operational explanation—not merely an index.</strong> It tells a new authoring or engineering agent why the platform has separate source, learning and review responsibilities; how to prepare a Core1A teaching construction and a Core1B fresh challenge; and how to check the result without claiming authority it does not have.</p>
+    <p>Grade9 v4.0 targets <strong>Physics, Mathematics and Chemistry</strong>. The examples below use Work, Power and Energy (WPE), a <strong>Physics-only pilot</strong>. Subject-specific laws, proof standards, Blueprint calibrations and adapters do not automatically transfer to Mathematics or Chemistry.</p>
+    <nav aria-label="On-page architecture manual chapters">
+      <a href="#guide-concept">Concept</a><a href="#guide-two-routes">Two evidence routes</a><a href="#guide-preflight">Agent preflight</a><a href="#guide-procedure">Step-by-step method</a><a href="#guide-author-decision">Author thinking</a><a href="#guide-qrt-binding">QRT + Blueprint</a><a href="#guide-construction">Core1A / Core1B</a><a href="#guide-science-tests">Physics + tests</a><a href="#guide-example">Worked example</a><a href="#guide-gates">Validation and HOLD</a><a href="#guide-delivery">Agent deliverable</a>
+    </nav>
+    <p class="caution"><strong>Review boundary:</strong> This manual is author-exposed material. A genuinely independent first-pass QRT reviewer must instead receive a separately authorized <a href="../docs/agent-entry/07-independent-review.md">source-only packet</a> <em>before</em> exposure to these explanations, coaching answers, labels or prior outcomes. Reading this page disqualifies a claim of a blind first pass for the same questions.</p>
+  </header>
+
+  <section class="chapter" id="guide-concept" aria-labelledby="guide-concept-title">
+    <span class="kicker">Concept note · 01</span><h3 id="guide-concept-title">Separate the learner's journey from the evidence that qualifies it</h3>
+    <p>The <strong>learner</strong> follows a simple loop: <strong>original question → understand the idea → independently solve a different problem → return to the original question</strong>. The <strong>author</strong> follows an evidence process that asks whether the source is real, the physics is valid, the exact reasoning has been identified, and the teaching can prepare a genuinely independent attempt. These are related workflows, not one interchangeable chain of approvals.</p>
+    <div class="cols">
+      <div class="panel-lite"><h4>What the child sees</h4><p><strong>Learn → Challenge</strong> is a gateway, not a fourth Core. It selects a question or concept and connects <strong>Core2</strong> (original question), <strong>Core1A</strong> (teaching the reasoning) and <strong>Core1B</strong> (fresh reasoning practice). The same lesson page may contain both Core1A and Core1B.</p><p>Foundation lessons, C01–C08, E01–E05 and F01–F08 are different collections of current WPE practice. Their page names are not QRT academic qualifications.</p></div>
+      <div class="panel-lite"><h4>What the agent must prove</h4><p>Can the child identify a model and its conditions? Does the guided example truly teach the decisive operation? Does the fresh task demand a <em>new</em> inference that has not been given away? Are the original question and the learner's first response preserved?</p><p><strong>Source correctness, scientific correctness, independent cognitive review, learner evidence and release permission are separate gates.</strong> A green browser test does not collapse them.</p></div>
+    </div>
+    <p>The system uses the seven candidate cognitive-operation labels <strong>RETRIEVE, EXPLAIN, APPLY, MODEL, REPRESENT, SYNTHESIZE and JUSTIFY</strong>. They describe the decisive act of an <em>exact task</em>, not a topic-wide label, the length of a solution or a chapter badge. The five task-demand factors are <strong>model selection, representation translation, reasoning chain, computational load and exception sensitivity</strong>. An author may record a proposal; an independent reviewer must judge the exact original where authorized.</p>
+    <p>The Physics D3/D4 Blueprint and WPE adapter are <strong>draft candidates</strong>; an unselected adapter, disputed QRT operation, missing figure, or source-key conflict is not repaired by a good-looking learning page. Use <code>NOT_RUN</code>, <code>HOLD</code> or <code>SPEC_PENDING</code> when that is the evidence.</p>
+  </section>
+
+  <section class="chapter" id="guide-two-routes" aria-labelledby="guide-two-routes-title">
+    <span class="kicker">Concept note · 02</span><h3 id="guide-two-routes-title">Two evidence routes meet at the construction requirement</h3>
+    <p>A new agent must not construct a lesson by reading only a question stem and its answer. There are <strong>two distinct evidence routes</strong>:</p>
+    <div class="cols">
+      <div class="panel-lite"><h4>Route A — exact question and assessment demand</h4><ol><li>Identify the exact examination or textbook question, source category, edition/session, options, diagrams and key provenance.</li><li>Retain native <strong>SL1</strong> custody and optional real <strong>P1</strong> first-attempt evidence.</li><li>Read <strong>SL2</strong> as a proposed cognitive operation and intrinsic-demand explanation, not a verdict.</li><li>Obtain separately authorized, source-only <strong>QRT</strong> review when required; determine the shortest valid inference and the distinct role of the source.</li><li>Define the precise learner-owned move the eventual fresh task must test.</li></ol></div>
+      <div class="panel-lite"><h4>Route B — source exposition and disciplinary truth</h4><ol><li>Locate a relevant textbook/syllabus passage, scientific law, graph or representation, with its source and rights.</li><li>Record claims, conditions, units, direction of inference, exceptions and plausible wrong models.</li><li>Check those warrants with appropriate subject expertise rather than relying on a coaching answer.</li><li>Identify the prerequisites and a <em>different</em> guided example that can teach the reasoning.</li><li>State what is unknown or disputed rather than silently filling gaps from an authored explanation.</li></ol></div>
+    </div>
+    <p><strong>Join point:</strong> A proposed or reviewed task demand must match a suitably grounded scientific teaching obligation. The construction binder links <em>the exact task</em> to <em>the precise concept, conditions, representations and independent reconstruction</em>. A matching ID, broad topic or syllabus term alone does not establish this join. The native/Owner-specific sequence and authoring gates still apply; preparation can precede formal acceptance without claiming it.</p>
+    <div class="example"><strong>Distinguish source roles.</strong> An authenticated original exam question, a textbook prerequisite and an authored transfer challenge can all help learning, but only the authenticated original can serve its own direct-exam evidence role. Never rename an authored task as an examination question to fill a coverage gap.</div>
+  </section>
+
+  <section class="chapter" id="guide-preflight" aria-labelledby="guide-preflight-title">
+    <span class="kicker">Agent guidebook · 03</span><h3 id="guide-preflight-title">Agent preflight: identity, authority, inputs</h3>
+    <p>Before editing, write a small checkpoint in the task return with <strong>repository/commit, actual assignment, role, subject, chapter, exact question IDs, files permitted to change, existing PR ownership and validation scope</strong>. Read the current checkout's <code>AGENTS.md</code>, <code>Start_here.md</code>, <code>CURRENT_CHECKPOINT.md</code> and <code>docs/product-scope.md</code>. Some local notes are dated snapshots; compare them with the current branch instead of treating old counts as live authority.</p>
+    <div class="table-scroll"><table><thead><tr><th>Role</th><th>May do</th><th>Must not claim</th></tr></thead><tbody>
+      <tr><td>Source / custody agent</td><td>Bind exact question, figure, answer source, identities, hashes and rights</td><td>That a coaching answer is an official authenticated key</td></tr>
+      <tr><td>Core1A / Core1B author</td><td>Define construction, teach model and create genuinely different practice</td><td>Independent QRT approval or proven student mastery</td></tr>
+      <tr><td>Student-experience engineer</td><td>Route Core2 → Core1A → Core1B → Core2, protect attempts, remove iframe dependencies</td><td>That a working UI qualifies source or physics</td></tr>
+      <tr><td>Technical QA</td><td>Run schema, Python, browser, numerical, provenance and regression tests</td><td>That green tests replace subject review or release authority</td></tr>
+      <tr><td>Independent QRT reviewer</td><td>When separately authorized, solve and review a source-only exact task before other exposure</td><td>Blind independence after reading author-exposed conclusions</td></tr>
+    </tbody></table></div>
+    <p class="caution"><strong>Stop condition:</strong> If source identity/figure/key, approved task scope, selected Blueprint/adapter, science warrant or review independence is missing, record the precise HOLD and the smallest next permissible action. An agent can still implement a clearly labelled <em>authored practice candidate</em> without promoting it to an admitted exam/lesson.</p>
+  </section>
+
+  <section class="chapter" id="guide-procedure" aria-labelledby="guide-procedure-title">
+    <span class="kicker">Agent guidebook · 04</span><h3 id="guide-procedure-title">Repeatable one-question-to-one-construction procedure</h3>
+    <p>Execute these steps for one exact source ID before scaling to a batch. The output of each step is inspectable; do not substitute a status badge for evidence.</p>
+    <ol class="steps-list">
+      <li><strong>S0 — Pin the task.</strong> Record repository head, question ID, requested deliverable, role/authority and test boundary. Do not re-open merged work or take over another agent's lane.</li>
+      <li><strong>S1 — Verify source identity.</strong> Read original stem, choices, diagram and source-key custody. Keep an authored sketch separate from a verified exam figure. Distinguish official answer from coaching prediction.</li>
+      <li><strong>S2 — Record the intellectual demand.</strong> Find the shortest correct model and decisive step. Compare candidate operations and five demand factors; preserve author SL2 proposals as proposals. Never infer demand solely from formula complexity.</li>
+      <li><strong>S3 — Respect independent QRT.</strong> A separately appointed first-pass reviewer receives only the authorized source-only materials. Authors and engineers report a provisional route or <code>NOT_RUN</code>, never manufacture a review receipt or sign their own work as independent.</li>
+      <li><strong>S4 — Inspect Blueprint and topic adapter.</strong> For Physics/WPE, use the current pinned subject-specific Blueprint and selected adapter <em>if approved</em>; otherwise retain draft and <code>UNSELECTED</code> status. Do not force a D2 source into a D3 tile because D1/D2 guidance is pending.</li>
+      <li><strong>S5 — Derive a construction requirement.</strong> Write the exact skill to teach, prerequisites, model assumptions, scientific warrant, source-task linkage and protected new inference <strong>W</strong>. Compare with existing C/E/F lessons to prevent duplicate content.</li>
+      <li><strong>S6 — Build complete Core1A.</strong> Conventions → before-you-start prerequisites → model construction with reasons → fully worked <em>different</em> anchor → tempting wrong path → independent exit check. Diagrams must match the physical phase and be accessible.</li>
+      <li><strong>S7 — Build Core1B.</strong> Create a fresh MAIN/instance task whose crucial inference is not already answered in Core1A. Predict → Attempt → Reconstruct → Diagnose → Repair → Boundary test. Help is optional and its exposure recorded honestly.</li>
+      <li><strong>S8 — Connect the student loop.</strong> Use the verified Question Bank ID and direct lesson URL; preserve the learner's previous attempt, return to that exact ID and avoid iframe embedding. Distinguish related practice from sufficiently matched teaching.</li>
+      <li><strong>S9 — Verify and deliver.</strong> Recalculate equations and boundary cases, test full browser journeys, check B1–B7, compare source blobs, report all holds and create a scoped PR with exact-head CI. No academic approval inferred from software validation.</li>
+    </ol>
+    <p>For batch work, repeat S1–S9 for <em>every</em> ID, including unmapped IDs with a named reason. Never treat all questions in a topic as the same cognitive operation. Version/hash changes invalidate earlier checks unless re-verified.</p>
+  </section>
+
+
+  <section class="chapter" id="guide-author-decision" aria-labelledby="guide-author-decision-title">
+    <span class="kicker">Agent workbench · Think before building</span>
+    <h3 id="guide-author-decision-title">Decide what the learner must understand before writing the lesson</h3>
+    <p>A good Core1A/Core1B construction begins with the exact task's <strong>decisive inference</strong>, not a familiar formula or a topic label. Record the decision, the rival physical model, the conditions that choose between them, and a counterexample. This is an inspectable authoring explanation—not a secret reasoning transcript or an academic verdict.</p>
+    <div class="table-scroll"><table><thead><tr><th>Authoring question</th><th>Inspectable answer</th><th>Stop / repair trigger</th></tr></thead><tbody>
+      <tr><td>What exactly is the source?</td><td>Original ID, figure/key authority, digest and requested quantity</td><td>Authored sketch cannot substitute for missing official figure</td></tr>
+      <tr><td>What is the decisive operation?</td><td>Shortest valid task route, competing QRT operation and exclusion reason</td><td>Graph presence, formula length or topic title used as the QRT classification</td></tr>
+      <tr><td>Which model is physically admissible?</td><td>Objects, forces, signs, work terms, constraints, initial state, reachable domain</td><td>Negative string tension, inaccessible path or zero tangential force at exact starting equilibrium</td></tr>
+      <tr><td>What does existing teaching omit?</td><td>Verified foundation versus source-specific missing inference</td><td>RELATED_BRIDGE misrepresented as complete teaching</td></tr>
+      <tr><td>What stays the child's own decision?</td><td>Y = taught principle, Z = connecting route, W = unrevealed fresh inference</td><td>Task B repeats the worked example with only different numbers</td></tr>
+      <tr><td>What falsifies the wrong shortcut?</td><td>Independent negative-model and limiting-case calculations</td><td>Only a happy-path answer is tested</td></tr>
+    </tbody></table></div>
+    <p>Study the reusable decision worksheet in <a href="guidebook.html#author-workbench">Guidebook chapter 17</a> and the worked scientific cases in <a href="guidebook.html#science-cases">chapter 22</a>.</p>
+  </section>
+
+  <section class="chapter" id="guide-qrt-binding" aria-labelledby="guide-qrt-binding-title">
+    <span class="kicker">Academics and authority · QRT + Blueprint</span>
+    <h3 id="guide-qrt-binding-title">Bind QRT, Physics Blueprint and WPE adapter without self-approval</h3>
+    <ol class="steps-list">
+      <li><strong>Read the exact source first:</strong> Keep SL1 custody, author SL2 proposal and optional genuine P1 separate. Identify one decisive act among RETRIEVE, EXPLAIN, APPLY, MODEL, REPRESENT, SYNTHESIZE and JUSTIFY. Score the five demand factors only through an actual authorized independent QRT review—not by inventing numbers.</li>
+      <li><strong>Protect the first-pass reviewer:</strong> A blind QRT agent receives separately authorized source-only material before seeing this guidebook, author solutions or prior classifications. Missing review means NOT_RUN/HOLD, not permission to claim independence.</li>
+      <li><strong>Read the actual Blueprint:</strong> The Physics D3/D4 draft provides seven columns, 14 cells and MAIN/instance teaching obligations. MODEL/D3 suggests candidate <code>D3.4</code>; JUSTIFY/D4 suggests <code>D4.7</code>. These are not approval labels. The D1/D2 Blueprint specification is still pending; do not borrow D3.</li>
+      <li><strong>Pin and select the topic adapter:</strong> Record the exact Blueprint version/hash/status, WPE adapter version/hash and real Owner selection receipt. The current Blueprint remains <code>DRAFT_OWNER_REVIEW</code>, D3.1 paused and adapter <code>UNSELECTED</code>. Never merge candidate variants by choosing one yourself.</li>
+      <li><strong>Join the two evidence routes:</strong> Task/QRT demand defines the learner-owned inference; textbook or disciplinary evidence provides the law and conditions. Build Core1A only for that warranted reasoning, then protect W in Core1B. Technical tests cannot authenticate official keys or advance academic status.</li>
+    </ol>
+    <div class="caution"><strong>Important:</strong> An author may build labelled candidate practice without academic admission. A validated source route, functioning lesson and green CI are three different things from an independently qualified QRT cell and selected topic adapter.</div>
+    <p>Use <a href="guidebook.html#qrt-practice">Guidebook QRT procedure</a>, <a href="guidebook.html#blueprint-practice">Blueprint/adapter walk-through</a> and <a href="qrt-blueprint-protocol/RUNBOOK.md">full QRT runbook</a>.</p>
+  </section>
+
+  <section class="chapter" id="guide-science-tests" aria-labelledby="guide-science-tests-title">
+    <span class="kicker">R3/R4 lessons learned · Correct Physics and real tests</span>
+    <h3 id="guide-science-tests-title">A correct numerical answer can conceal a physically wrong model</h3>
+    <div class="table-scroll"><table><thead><tr><th>Case</th><th>False assumption</th><th>What the agent must test</th></tr></thead><tbody>
+      <tr><td>F04 / F08 springs</td><td>Whole-system kinetic energy all becomes spring energy</td><td>Relative versus centre-of-mass kinetic energy and external work</td></tr>
+      <tr><td>F05 massive spring</td><td><code>mv²/6</code> applies to every velocity profile</td><td>Actual profile integral; compare linear and nonlinear examples</td></tr>
+      <tr><td>F07 pendulum</td><td>Turning-point force equals static holding force</td><td>Force history and distinct endpoint conditions; source ambiguity HOLD</td></tr>
+      <tr><td>C6S elastic robot</td><td>Positive spring energy causes motion from exact antipodal rest</td><td>Zero initial tangential force and vanishing-perturbation limiting motion</td></tr>
+      <tr><td>C6H exterior dome</td><td>Perfect rest at crown initiates descent</td><td>Zero tangent gravity and the perturbation limit for <code>h=2R/3</code></td></tr>
+      <tr><td>C6T / C6W</td><td>Energy ensures string contact; gravity accumulates for every loop</td><td>Radial feasibility and gravitational endpoint-work distinction</td></tr>
+      <tr><td>EX-M6 curved path</td><td>One travel-time ranking is universal</td><td>Geometry/key custody and admissible opposite-order counterexamples</td></tr>
+    </tbody></table></div>
+    <p><strong>Before merging:</strong> independently derive equations, signs, units, limits and deliberately wrong models; validate original source ID/hashes; check B1–B7 witnesses; run actual desktop/mobile Chromium for attempt-before-answer, progressive hints, Task A/B isolation, saved first attempts, diagnosis, boundary tests, source return and missing-source refusal. Then run full Python and relevant browser workflows at the final commit.</p>
+    <p><strong>Claims discipline:</strong> Passing twenty automated browser paths is not evidence from twenty children. Written reasoning saved by a browser is not automatically semantically assessed, and a green CI result cannot establish QRT or academic admission.</p>
+    <p>Full test matrix and commands: <a href="guidebook.html#test-studio">Guidebook chapter 23</a> · <a href="guidebook.html#release-checklist">agent handoff template</a>.</p>
+  </section>
+
+  <section class="chapter" id="guide-construction" aria-labelledby="guide-construction-title">
+    <span class="kicker">Teaching / transfer contract · 05</span><h3 id="guide-construction-title">What sufficient Core1A and protected Core1B actually mean</h3>
+    <p><strong>Core1A is the explanation the child needs to construct a model herself.</strong> It must establish the law, conventions, assumptions, action-and-reason chain, model selection, limits, and an explicit plausible error. A memorised worked answer without a reason is not sufficient teaching.</p>
+    <p><strong>Core1B is not a second copy of Core1A.</strong> Define <strong>Y</strong> as the taught skill, <strong>Z</strong> as the connecting route and <strong>W</strong> as the inference the learner must make without being told. Work through Y and show Z enough to support the attempt, but do not reveal W in the guide, hints, alt text or pre-attempt labels.</p>
+    <div class="table-scroll"><table><thead><tr><th>Core1B stage</th><th>What the child does</th><th>Evidence / reveal rule</th></tr></thead><tbody>
+      <tr><td>1 · Predict</td><td>Predict the physical result and say why</td><td>Capture the first model, even “I'm not sure”</td></tr>
+      <tr><td>2 · Attempt</td><td>Choose a model and submit an independent calculation or argument</td><td>Save the initial response separately from later edits and record help exposure</td></tr>
+      <tr><td>3 · Reconstruct</td><td>Compare the attempt with a warranted worked reconstruction</td><td>Reveal the full model <em>after</em> commitment; never silently rewrite the first answer</td></tr>
+      <tr><td>4 · Diagnose</td><td>Identify the first mistaken assumption or inference</td><td>Feedback should use actual response evidence, not just a generic error menu</td></tr>
+      <tr><td>5 · Repair</td><td>Explain a revised decision and why it works</td><td>Store a distinct repaired model, not an overwrite</td></tr>
+      <tr><td>6 · Boundary test</td><td>Try a changed condition or limiting case</td><td>Get a fresh attempt before showing that condition's worked check</td></tr>
+    </tbody></table></div>
+    <p>Hints have three progressively more helpful purposes: <strong>H1 clarify the relevant givens</strong>; <strong>H2 connect to the previously taught law</strong>; <strong>H3 open a route without supplying W</strong>. If help was opened before the first attempt, call that response <em>helped</em>, not <em>unassisted</em>. Browser local storage is not a secure assessment record or proof of identity.</p>
+    <h4>Construction binder: B1–B7 witnesses</h4>
+    <div class="table-scroll"><table><thead><tr><th>Witness</th><th>Concrete question the author / reviewer must answer</th></tr></thead><tbody>
+      <tr><td>B1 · Target</td><td>What exact source task and decisive operation is this construction intended to support?</td></tr>
+      <tr><td>B2 · Signature</td><td>Do the taught and fresh problems demand the same kind of reasoning, rather than share a topic name?</td></tr>
+      <tr><td>B3 · Teaching sufficiency</td><td>Are prerequisites, conditions, full worked reasoning, wrong path and exit check actually taught?</td></tr>
+      <tr><td>B4 · Fresh reconstruction</td><td>What inference W must the learner own that cannot be copied from the guided example?</td></tr>
+      <tr><td>B5 · Attempt protection</td><td>Is the first answer preserved and is help/reveal exposure ordered and honestly labelled?</td></tr>
+      <tr><td>B6 · Diagnosis / transfer</td><td>Does feedback identify a causal error and does a changed case require new reasoning?</td></tr>
+      <tr><td>B7 · Physics / provenance</td><td>Are laws, units, assumptions, diagrams, original identities and necessary subject checks reliable?</td></tr>
+    </tbody></table></div>
+    <p><strong>Six panels are necessary UI structure, not sufficient B1–B7 evidence.</strong> A progress counter reports completed practice stages, not demonstrated mastery. Only authorized reviews and actual learner evidence can support stronger claims.</p>
+  </section>
+
+  <section class="chapter" id="guide-example" aria-labelledby="guide-example-title">
+    <span class="kicker">Worked WPE construction · 06</span><h3 id="guide-example-title">An actual question-to-lesson decision and a fresh Physics calculation</h3>
+    <h4>Example A — EX-M79 → C03 → EX-M79</h4>
+    <p><strong>Exact source:</strong> EX-M79. <strong>Available related practice:</strong> C03, “Energy added each second.” Its guide teaches a constant-power case; the original source has a speed–distance relationship. That means <strong>C03 is related reasoning practice, not proof that EX-M79 itself has constant power</strong>. The child can learn the power/energy relationship and still must choose the original question's model independently on return.</p>
+    <p><strong>Core1A:</strong> Teach the distinction among work, kinetic-energy change, instantaneous power and the independent variable of a graph. <strong>Core1B:</strong> Give a different speed/energy setting and protect the model choice before revealing the solution. <strong>Core2 return:</strong> use <a href="../preview/question-status.html?question=EX-M79">the same EX-M79 source ID</a>; do not infer approval or overwrite its first response.</p>
+    <h4>Example B — a verified worked teaching anchor for applied versus net power</h4>
+    <div class="example"><p>An ideal <strong>2 kg carriage</strong> is pulled upward by a <strong>30 N cable</strong> over <strong>1 m</strong>, from rest, with <strong>g = 10 m/s²</strong>. Weight is 20 N downward and net force is 10 N upward. Net work is 10 J, so <code>½mv² = 10 J</code> and <code>v = √10 m/s</code> at release.</p>
+      <p>Just before release, <strong>cable power</strong> is <code>30 × √10 ≈ 94.9 W</code>. The <strong>net rate of translational kinetic-energy gain</strong> is <code>10 × √10 ≈ 31.6 W</code>. Their difference is the gravitational potential-energy increase rate. After detachment the cable does no further work.</p></div>
+    <p><strong>Protected new decision W:</strong> In a separate launch problem, decide which force's power is requested and where contact ends, before calculating. An optional second transfer challenge may later reuse PR #55's <em>different</em> toy/cable scenario inside F01–F03; it is <strong>planned, not merged</strong>, and must not duplicate an entire lesson engine.</p>
+    <div class="caution"><strong>EX-M97 warning:</strong> For a real person jumping, ground contact can be stationary. Ground-force × centre-of-mass speed is then a <em>centre-of-mass pseudo-work rate</em>, not automatically measured internal muscular power. Do not “correct” the original examination key solely by substituting 9.39 kW for a 6.26 kW coaching calculation; preserve the source conflict for review.</div>
+    <p>Examples are authored instructional illustrations, not authenticated examination questions or independent academic admissions.</p>
+  </section>
+
+  <section class="chapter" id="guide-gates" aria-labelledby="guide-gates-title">
+    <span class="kicker">QA, honesty and safety · 07</span><h3 id="guide-gates-title">What to test; what PASS, HOLD, FAIL and NOT_RUN mean</h3>
+    <div class="table-scroll"><table><thead><tr><th>Check</th><th>What the evidence can establish</th><th>It cannot establish</th></tr></thead><tbody>
+      <tr><td>Source/identity pins</td><td>Correct stable IDs, bytes, files and explicit original/synthetic roles</td><td>Official key authenticity without independent custody</td></tr>
+      <tr><td>Physics calculation</td><td>Numerical values, units, signs, laws, assumptions and limiting cases in the checked model</td><td>Correctness of a different unstated physical model</td></tr>
+      <tr><td>Python and schema tests</td><td>Named invariants for the exact version and inputs tested</td><td>Independent QRT, source validity or child comprehension</td></tr>
+      <tr><td>Real Chromium desktop/mobile</td><td>Actual navigation, stage order, response preservation, optional hints, refresh, reset and return</td><td>Secure testing or long-term learning transfer</td></tr>
+      <tr><td>B1–B7 evidence review</td><td>Whether planned and observed construction witnesses exist and are coherent</td><td>Automatic academic admission from a checklist</td></tr>
+      <tr><td>Independent / Owner authority</td><td>Only the decision within an actually authorized, scoped receipt</td><td>Unrelated subjects, future versions or unreviewed questions</td></tr>
+    </tbody></table></div>
+    <p><strong>PASS</strong> means a named, run check passed at its pinned version. <strong>HOLD</strong> means required evidence or authority is absent. <strong>FAIL</strong> means an actual contradiction or invalid claim was established. <strong>NOT_RUN</strong> is not a failed test and not an implied PASS. Never create reviewer approvals, backdate learner evidence or auto-join conflicting versions.</p>
+    <p class="caution"><strong>Student-flow security:</strong> Do not use iframes for WPE student learning integration. Directly link the verified destination, keep the source question ID intact and preserve attempted answers across page changes. Current <code>study-bridge.html</code> opens the existing lesson through a validated full-page link; future navigation changes still require source and attempt-preservation regression checks.</p>
+  </section>
+
+  <section class="chapter" id="guide-delivery" aria-labelledby="guide-delivery-title">
+    <span class="kicker">Agent output contract · 08</span><h3 id="guide-delivery-title">What a new agent returns at its checkpoint</h3>
+    <p>A new implementing agent should finish its assigned PR—not hand off a pending task—before proposing a different assignment. Record the exact GitHub branch/head, changed files, source IDs, existing lesson reuse and the evidence for every numbered claim.</p>
+    <div class="cols">
+      <div class="panel-lite"><h4>Required return</h4><ol>
+        <li><strong>Scope:</strong> subject, exact question(s), role, current branch/head and permissible file boundaries.</li>
+        <li><strong>Reasoning:</strong> decisive cognitive move, assumptions, source/figure/key state and proposed versus reviewed status.</li>
+        <li><strong>Construction:</strong> what Core1A teaches, what fresh W remains for Core1B, worked values and boundary tests.</li>
+        <li><strong>Integration:</strong> exact source-to-lesson-to-source links, local attempt preservation, clear related-vs-sufficient labels and no iframe.</li>
+        <li><strong>Verification:</strong> Python output, browser viewport routes, numerical negative controls, B1–B7 evidence and every NOT_RUN/HOLD.</li>
+        <li><strong>Delivery:</strong> PR URL, exact head, green CI scope, release/academic decision still outstanding and the next bounded action.</li>
+      </ol></div>
+      <div class="panel-lite"><h4>Typical repository destinations</h4><p><code>physics/wpe/learn-challenge.html</code> — learner gateway<br><code>physics/wpe/d3d4-self-tutor.html</code> — C01–C08 teaching and practice<br><code>physics/wpe/extension-learning.html</code> — E01–E05<br><code>physics/wpe/focused-journeys.html</code> — F01–F03<br><code>physics/wpe/gap-journeys.html</code> — F04–F08<br><code>physics/wpe/learning-coverage-r1.json</code> — 74-question practice map<br><code>preview/question-status.html</code> — original question/attempt UI</p><p>All paths are the <em>current public WPE pilot</em>, not a new universal schema or confirmed approved native tile.</p></div>
+    </div>
+    <h4>Primary full-length references for checking precise rules</h4>
+    <p>This page contains the working concept and procedure. For edge cases and actual contract versions, read the <a class="inline-link" href="guidebook.html">full illustrated Architecture Guidebook</a>, <a class="inline-link" href="../docs/agent-entry/concept-report-v4.html">Source → Core1A concept report</a> with its <a href="../docs/agent-entry/CURRENT_CONCEPT_COMPANION.md">current companion</a>, <a href="qrt-blueprint-protocol/CORE_METHOD.md">six-stage Core method</a>, <a href="qrt-blueprint-protocol/RUNBOOK.md">QRT × Blueprint runbook</a>, and <a href="../docs/agent-entry/00-required-reading.md">ordered agent onboarding map</a>. These explain exceptions; this page does not supersede the exact source contracts, separately appointed reviewers or Owner decisions.</p>
+    <p><strong>Non-negotiable final statement:</strong> No academic approval inferred from software validation.</p>
+  </section>
+</section>
+
+<details class="legacy-archive" id="previous-architecture">
+  <summary>Previous architecture details and documentation — show / hide preserved material</summary>
+  <div class="legacy-content">
+<section class="panel" style="background:#eaf7f1;border-color:#b7dfcd"><span class="tag">Production readiness</span><h2 style="margin:12px 0">✅ Production checklist · Core2 tablet QA</h2><p>Before each Core2 release, verify the direct full-page Question Bank on a 12.7-inch tablet in portrait and landscape. Check question navigation, source labels, hints and no iframe or horizontal overflow. Oracle Core1A coordination and academic approval are separate.</p><div class="linklist"><a href="production-checklist.html">Open Production Checklist</a><a href="../docs/agent-entry/concept-report-v4.html#production-checklist">Concept → checklist</a></div></section>
+<section class="panel"><span class="tag">Start with the guidebook</span><h2 style="font-size:1.67rem;margin-top:13px">Subtopic → Demands → QRT → Blueprint + Adapter → Core1A</h2><p>A practical illustrated methodology with both source routes, decisive-route analysis, five-factor demand, exact task joins, B1–B7 witnesses, attempt protection, scientific checks, blind-review hygiene and release governance. Includes actual repository references and explicit unresolved requirements.</p><div class="linklist"><a class="button" href="guidebook.html">Read the Architecture Guidebook →</a><a href="../docs/agent-entry/00-required-reading.md">Original required-reading map</a></div></section>
+<section class="panel" style="background:#eff8f5;border-color:#c3e3d8"><span class="tag">Agent execution · D3/D4 first</span><h2 style="font-size:1.67rem;margin-top:13px">QRT × Physics Blueprint: a repeatable decision protocol</h2><p>For lower-capability agents: an ordered question-by-question procedure, source-only independent-QRT separation, seven cognitive operations, five-factor D3/D4 scoring, Blueprint + exact WPE adapter routing, Core1A/Core1B rules, B1–B7 gates and explicit HOLD outcomes. Includes <strong>four JSON schemas, six golden source-grounded examples, five negative controls and runnable validation</strong>. This is a candidate engineering runbook—not an academic approval.</p><div class="linklist"><a class="button" href="qrt-blueprint-protocol/index.html">Open QRT × Blueprint Agent Protocol →</a><a href="qrt-blueprint-protocol/CORE_METHOD.md">Why the six Core1B stages exist · Core1A and B1–B7</a><a href="qrt-blueprint-protocol/RUNBOOK.md">Deterministic agent runbook</a><a href="qrt-blueprint-protocol/fixtures/golden-cases.json">Golden fixtures (JSON)</a><a href="qrt-blueprint-protocol/wpe-coverage.html">74-question WPE QRT + concept coverage</a></div></section>
+<div class="status"><strong>Authority boundary</strong><p>These links navigate existing documentation and technical previews. They do not create approved QRT decisions, authorize draft Blueprint/adapter selection or release native lessons. Independent reviewers must take the source-only route, not an author-exposed architecture page containing prior outcomes.</p></div>
+<h2 class="section-title">Explore the learning blueprint</h2><div class="cards">
+<article class="card"><div class="tile-icon" aria-hidden="true">🛡️</div><small>01 · GOVERNANCE</small><h3>Scope & authority</h3><p>Three-subject product boundaries, Owner instructions, actual implementation status and historical checkpoint.</p><div class="linklist"><a href="../docs/product-scope.md">Product scope</a><a href="../AGENTS.md">Repo rules</a><a href="../docs/implementation-status.md">Implementation status</a><a href="https://github.com/reallakshman19/Grade9v4.0/issues/1">Master issue</a></div></article>
+<article class="card"><div class="tile-icon" aria-hidden="true">📂</div><small>02 · SOURCE</small><h3>Intake & custody</h3><p>Separate question-paper, textbook, diagram and source-exposition evidence with exact locators and copyright controls.</p><div class="linklist"><a href="../docs/agent-entry/01-source-intake.md">Source protocol</a><a href="../docs/agent-entry/CURRENT_PATHS.json">Current paths</a><a href="../docs/agent-entry/ARTIFACT_REGISTER.json">Artifact register</a></div></article>
+<article class="card"><div class="tile-icon" aria-hidden="true">✍️</div><small>03 · DEMANDS</small><h3>SL1, P1 and SL2</h3><p>Source identity, optional first-attempt evidence, decisive move, cognitive candidate and intrinsic-demand factors.</p><div class="linklist"><a href="../docs/agent-entry/02-skills.md">Native Smart Skills</a><a href="../docs/smart-skills-integration.md">SL1/SL2 integration</a><a href="../docs/agent-entry/fixtures.html">Fixture comparisons</a></div></article>
+<article class="card"><div class="tile-icon" aria-hidden="true">🧠</div><small>04 · QRT</small><h3>Independent adjudication</h3><p>Seven operations, task-specific demand, shortest valid solution and distinct direct-exam/bridge roles.</p><div class="linklist"><a href="../docs/agent-entry/03-blueprint-adapters.md">QRT + adapter entry</a><a href="../docs/agent-entry/07-independent-review.md">Source-only review</a><a href="qrt-blueprint-protocol/index.html">Agent QRT + Blueprint protocol</a><a href="../preview/batches/b07-preflight.html">Author-exposed technical preflight</a></div></article>
+<article class="card"><div class="tile-icon" aria-hidden="true">🧩</div><small>05 · SUBJECT</small><h3>Blueprint & topic adapter</h3><p>Physics D3/D4 draft, selected topic bindings and qualified scientific warrants; Mathematics/Chemistry need their own versions.</p><div class="linklist"><a href="../templates/physics-blueprint/physics-blueprint.D3-D4.json">Physics Blueprint draft</a><a href="../schemas/v2/subject-intake.schema.json">Candidate multi-subject v2</a><a href="../docs/agent-entry/03-blueprint-adapters.md">Version/adapter governance</a></div></article>
+<article class="card"><div class="tile-icon" aria-hidden="true">💡</div><small>06 · CORE</small><h3>Construct, reconstruct, protect</h3><p>Core2 exact-question route, Core1A sufficient teaching, Core1B fresh reasoning and B1–B7 construction correspondence.</p><div class="linklist"><a href="../docs/agent-entry/04-output.md">Core output entry</a><a href="../docs/agent-entry/CURRENT_CONCEPT_COMPANION.md">Current concept companion</a><a href="../docs/agent-entry/concept-report-v4.html">Concept report + addendum</a></div></article>
+<article class="card"><div class="tile-icon" aria-hidden="true">✅</div><small>07 · CHECKS</small><h3>QA, provenance & publication</h3><p>What tests can prove, what requires independent reviewers, separate authorizations and fail-closed decisions.</p><div class="linklist"><a href="../docs/agent-entry/05-qa-publication.md">QA/publication entry</a><a href="../docs/agent-entry/OPEN_GAPS.md">Open gaps</a><a href="../docs/agent-entry/fixtures.html">Positive and negative controls</a></div></article>
+<article class="card"><div class="tile-icon" aria-hidden="true">🗺️</div><small>08 · CONTEXT</small><h3>Onboarding & current state</h3><p>Actual order of reading, working paths, the dated checkpoint and dependencies without overstating their authority.</p><div class="linklist"><a href="../docs/agent-entry/index.html">Agent onboarding</a><a href="../docs/agent-entry/CURRENT_WORKFLOW.json">Current workflow map</a><a href="../CURRENT_CHECKPOINT.md">Dated checkpoint</a></div></article>
+<article class="card"><div class="tile-icon" aria-hidden="true">🔬</div><small>09 · EVIDENCE</small><h3>WPE review examples</h3><p>Read-only technical construction candidates and QRT blockers, not a bank of admitted examination tasks.</p><div class="linklist"><a href="../preview/batches/reader.html">Cumulative WPE reader</a><a href="../preview/batches/b06-evidence-map.json">Source-to-Core1A mapping</a><a href="../preview/batches/b08-source-gates.json">Exam source-gate blockers</a></div></article>
+</div>
+<section class="panel"><h2>Suggested reading sequence (not the independent-review packet)</h2><div class="steps"><div class="step"><b>1. Scope</b><span>Three subjects, correct Owner/Shared role.</span></div><div class="step"><b>2. Source</b><span>Exact question or passage, rights and custody.</span></div><div class="step"><b>3. Requirement</b><span>SL1, SL2 and the parallel source claim route.</span></div><div class="step"><b>4. Review</b><span>Independent QRT, qualified law and topic adapter.</span></div><div class="step"><b>5. Learning</b><span>Core2/Core1A/B, B1–B7 and release.</span></div></div><div class="linklist"><a href="guidebook.html">Open complete step-by-step guidebook</a><a href="guidebook-sources.json">Guidebook source register (JSON)</a></div></section>
+
+  </div>
+</details>
+</main><footer class="footer"><div class="container"><span>Architecture · Documentation organized, not academically re-approved</span><a href="../physics/wpe/index.html">Physics → WPE</a></div></footer></body></html>

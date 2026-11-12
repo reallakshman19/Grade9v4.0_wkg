@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Deterministic QRT × Physics Blueprint × WPE protocol for low-capability agents: source-first review, D3/D4 priority, schemas, worked examples, golden fixtures and fail-closed decisions.">
+<title>QRT × Physics Blueprint · Agent Operating Protocol | Grade9 v4.0</title>
+<link rel="stylesheet" href="../../site.css">
+<style>
+:root{--ink:#183b4d;--teal:#086a62;--edge:#cfdee5;--muted:#506b7b;--soft:#eef7f7}
+html{scroll-behavior:smooth}body{background:#f4f8f9;color:var(--ink)}.proto{max-width:1150px;margin:0 auto;padding:18px 18px 70px}
+.proto h2{font-size:clamp(1.38rem,2.5vw,1.85rem);letter-spacing:-.02em;margin:4px 0 12px}
+.proto h3{font-size:1.07rem;margin:12px 0 7px}.proto p,.proto li{line-height:1.65}
+.proto a{color:#096f69}.proto a:focus-visible,.proto summary:focus-visible{outline:3px solid #e7ae45;outline-offset:3px}
+.hero-proto{padding:30px 30px 24px;background:linear-gradient(110deg,#e5f4ef,#ecf4fb);border:1px solid #cde1e3;border-radius:20px;margin:12px 0 18px}
+.hero-proto h1{font-size:clamp(1.8rem,4.2vw,2.9rem);line-height:1.17;margin:8px 0 10px;letter-spacing:-.035em}
+.hero-proto .meta{font-size:.83rem;text-transform:uppercase;font-weight:850;letter-spacing:.075em;color:#326d78}
+.hero-proto p{max-width:950px}.pillrow{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
+.pill{border:1px solid #bed7dc;background:white;border-radius:99px;padding:6px 12px;font-size:.83rem;font-weight:750}
+.pill.hold{background:#fff6e9;color:#8a5b2b;border-color:#e6d3b4}
+.quicklinks{display:flex;flex-wrap:wrap;gap:9px;margin:17px 0}.quicklinks a{display:inline-block;border:1px solid #b6d6d9;border-radius:9px;background:white;padding:10px 13px;font-weight:740;text-decoration:none}
+.quicklinks a.mainlink{background:#116f68;color:white;border-color:#116f68}.quicklinks a:hover{filter:brightness(.96)}
+.propanel{border:1px solid var(--edge);border-radius:15px;background:white;padding:22px 24px;margin:18px 0;scroll-margin-top:15px}
+.propanel .lead{font-weight:650;color:#35586b;max-width:880px}
+.notice{border-left:5px solid #bf9052;background:#fff8ed;padding:15px 18px;margin:12px 0;border-radius:0 12px 12px 0}
+.notice strong{color:#77501e}.note-teal{border-left-color:#248777;background:#eef8f4}
+.mini-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.metric{padding:15px;border:1px solid #c9dce1;border-radius:13px;background:#f7fbfc}
+.metric b{font-size:1.8rem;display:block;line-height:1.2;color:#175c67}
+.metric span{font-size:.84rem;color:var(--muted)}
+.process{list-style:none;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;counter-reset:run}
+.process li{counter-increment:run;border:1px solid #d2e1e6;border-radius:12px;padding:13px 14px;background:#f9fcfd}
+.process li::before{content:"STEP " counter(run);font-size:.73rem;font-weight:900;color:#1c786e;letter-spacing:.085em;display:block;margin-bottom:6px}
+.process strong{display:block;font-size:1.01rem}.process span{font-size:.86rem;color:#456473}
+.table-scroll{overflow-x:auto}.proto table{width:100%;border-collapse:collapse;font-size:.87rem;min-width:620px}.proto th,.proto td{border-bottom:1px solid #d9e5e9;padding:10px 9px;text-align:left;vertical-align:top}.proto thead th{background:#eaf4f6;color:#2c5467}.proto tbody tr:nth-child(even){background:#f8fbfc}
+.codeblock{background:#193b4c;border-radius:12px;padding:17px;color:#e9f4f5;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.85rem;line-height:1.6;overflow-x:auto}
+.codeblock code{color:inherit}.artifact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.artifact{border:1px solid #cbdde4;border-radius:12px;padding:15px;background:#f9fcfd}
+.artifact strong{display:block;margin-bottom:6px}.artifact p{font-size:.86rem;color:#506b7b;margin:4px 0 8px}
+.artifact a{font-weight:750}
+.fixture-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.fixture{border:1px solid #d4e3e7;border-radius:11px;background:#f7fafb;padding:12px 14px}
+.fixture b{color:#13685f}.fixture p{font-size:.85rem;margin:5px 0}
+details{border:1px solid #d6e4e9;border-radius:10px;margin:10px 0;background:#fcfefe;padding:10px 13px}
+details summary{cursor:pointer;color:#23677a;font-weight:780}
+.small{font-size:.81rem;color:#556e7c}.queue{margin:0;padding-left:22px}.queue li{padding:7px 0}
+.callout{background:#eaf6f2;border:1px solid #c8e2d9;padding:12px 16px;border-radius:11px;margin-top:13px}
+.footerlink{margin-top:20px}.footerlink a{font-weight:750}
+@media(max-width:790px){.mini-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.process,.artifact-grid,.fixture-list{grid-template-columns:1fr}.proto{padding:10px 12px 50px}.propanel{padding:16px 15px}.hero-proto{padding:22px 17px}}
+@media(max-width:460px){.mini-grid{grid-template-columns:1fr}.metric b{font-size:1.5rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Skip to protocol</a>
+<header class="mast">
+<div class="container top"><a class="logo" href="../../index.html"><i>G9</i>Grade9 v4.0</a>
+<nav class="tabs" aria-label="Four main sections"><a href="../../physics/index.html">⚛️ Physics</a><a href="../../mathematics/index.html">📐 Mathematics</a><a href="../../chemistry/index.html">🧪 Chemistry</a><a href="../index.html" aria-current="page">🧭 Architecture</a></nav></div>
+<div class="container hero"><div class="breadcrumbs"><a href="../../index.html">Subjects</a> / <a href="../index.html">Architecture</a> / QRT × Blueprint agent protocol</div></div>
+</header>
+<main id="main" class="proto">
+<section class="hero-proto" aria-labelledby="title">
+<div class="meta">Operating playbook 1.0 · 3 November 2026 · Source-derived architecture</div>
+<h1 id="title">QRT × Physics Blueprint × WPE<br>for any careful agent</h1>
+<p>Follow the same decisions every time: identify an exact question, preserve its proposed difficulty, obtain independent QRT only through its real reviewer gate, route by the 14-cell Physics Blueprint, fill a selected WPE adapter, then build and check Core1A/Core1B. Designed for agents that need <strong>explicit if/then rules, typed records and executable negative controls</strong>.</p>
+<div class="pillrow"><span class="pill">D3/D4 first</span><span class="pill">7 cognitive operations</span><span class="pill">4 schemas</span><span class="pill">6 golden cases + 5 negative controls</span><span class="pill hold">NOT A QRT APPROVAL</span></div>
+<div class="quicklinks"><a class="mainlink" href="#core-method">Why the six stages matter</a><a href="CORE_METHOD.md">Read Core1A → Core1B method</a><a href="RUNBOOK.md">QRT &amp; Blueprint runbook</a><a href="#procedure">Agent steps</a><a href="#schemas">Schemas</a><a href="#golden">Golden fixtures</a><a href="#checks">Run checks</a></div>
+</section>
+
+<section class="propanel" id="core-method">
+<h2>The Core principle: teach → independent construction → evidence-based repair → transfer</h2>
+<p class="lead">The six stages are <strong>not six screens or six clicks</strong>. They are a reasoning-and-evidence contract. <strong>Core1A teaches the complete inference with reasons</strong>; fresh <strong>Core1B leaves the child a decisive step W to construct</strong>. QRT names and scores that actual decisive demand, while the Physics Blueprint specifies what can be revealed, what must be saved and what counts as evidence.</p>
+<div class="table-scroll"><table><thead><tr><th>Core1B stage</th><th>Core purpose</th><th>Required evidence</th></tr></thead><tbody>
+<tr><th scope="row">1 · Predict</th><td>Commit to an initial physical model and why</td><td>Pre-reveal prediction with exposure status</td></tr>
+<tr><th scope="row">2 · Attempt</th><td>Own the fresh inference, not repeat Core1A</td><td>Locked first response + help chronology (B4/B5)</td></tr>
+<tr><th scope="row">3 · Reconstruct</th><td>Understand action → why valid → check</td><td>Compare model with first wrong step (B3)</td></tr>
+<tr><th scope="row">4 · Diagnose</th><td>Find the cause of a specific error</td><td>Evidence from the saved original; otherwise UNCERTAIN (B6)</td></tr>
+<tr><th scope="row">5 · Repair</th><td>Rebuild the reasoning, not the number</td><td>Separate corrected model with explanation (B6)</td></tr>
+<tr><th scope="row">6 · Boundary test</th><td>Transfer under a changed governing condition</td><td>New attempt before changed-condition answer reveal (B6/B7)</td></tr>
+</tbody></table></div>
+<div class="notice note-teal"><strong>Evidence principle:</strong> an answer submitted after hints is a saved <em>helped</em> attempt, not automatically an independent performance. The existing self-tutor has helpful stages but does not yet log a complete first-response/hint chronology or independently verify misconceptions or mastery.</div>
+<p>For a worked **C07 conveyor** six-stage reconstruction, a **C06 tension-versus-energy counterexample**, B1–B7 mapping, H1/H2/H3 protection, MAIN/instance cycles and an honest prototype gap assessment, read the dedicated chapter.</p>
+<div class="quicklinks"><a class="mainlink" href="CORE_METHOD.md">Read the Core reasoning method →</a><a href="fixtures/six-stage-core-method.json">Six-stage golden witness fixture (JSON)</a><a href="../../templates/physics-blueprint/physics-blueprint.D3-D4.json">Original Physics Blueprint</a></div>
+</section>
+
+<section class="propanel" id="baseline">
+<h2>Current academic baseline: keep three counts separate</h2>
+<div class="mini-grid">
+<div class="metric"><b>74</b><span>Consolidated question records; 22 currently labeled D3/D4, not independently admitted</span></div>
+<div class="metric"><b>14</b><span>Draft Physics Blueprint cells: 7 operations × D3/D4</span></div>
+<div class="metric"><b>21</b><span>Original-exam pilot places: 14 pending, 7 vacant, 0 admitted</span></div>
+</div>
+<div class="notice"><strong>Academic HOLD — do not erase it.</strong> The common Physics Blueprint <code>PHYS-QRT-BLUEPRINT v0.2.0</code> is <code>DRAFT_OWNER_REVIEW</code>. There is no uniquely selected Owner-approved WPE adapter, no admitted examination item, and the D3.1 cell remains PAUSED. Existing eight interactive learning constructions are practice candidates, not qualification evidence.</div>
+<p class="small">Snapshot is source-specific to the current repository. Recompute after a bank, pilot, adapter or Blueprint version change. The 22 proposed D3/D4 records, 21 examination-pilot places and 14 cognitive Blueprint cells are different denominators.</p>
+</section>
+
+<section class="propanel" id="authority">
+<h2>First question: which role are you?</h2>
+<div class="table-scroll"><table><thead><tr><th>Role</th><th>Allowed</th><th>Stop rule</th></tr></thead>
+<tbody>
+<tr><td><strong>Author-exposed agent</strong></td><td>Inventory, preliminary classification, candidate tile routing, teaching drafts, numerical QA</td><td>Cannot impersonate an independent QRT reviewer or approve source/adapter/lesson</td></tr>
+<tr><td><strong>Actually assigned independent reviewer</strong></td><td>Source-only exact-task analysis and sealed first pass, before later comparison</td><td>Must not read this author-exposed protocol or prior labels before the first-pass seal</td></tr>
+<tr><td><strong>Technical QA agent</strong></td><td>Validate exact schemas, pins, checks, browser and fixture behavior</td><td>PASS is not academic admission or an Owner receipt</td></tr>
+</tbody></table></div>
+<div class="notice"><strong>Blind-review hygiene:</strong> independent reviewers receive a separately dispatched original source, figure and rubric—not this page, not the question-bank review, and not the golden cases. If prior conclusions are already visible, declare exposure and stop calling the review blind. <a href="../../docs/agent-entry/07-independent-review.md">Official independent-review exception</a>.</div>
+</section>
+
+<section class="propanel" id="procedure">
+<h2>12 ordered actions an agent can follow</h2>
+<p class="lead">Do not skip a step to make a question reach D3 or D4. At every HOLD, record the reason and continue to the next question; never invent missing evidence.</p>
+<ol class="process">
+<li><strong>Choose role and pin sources</strong><span>Record the commit SHA, question ID, source path and available receipts. Default to NOT_ADMITTED.</span></li>
+<li><strong>Verify exact source identity</strong><span>Inspect original stem/figures/options/conditions and official key separately. Missing original custody = HOLD.</span></li>
+<li><strong>Record SL1/SL2 as proposals</strong><span>SL1 is identity/custody; SL2 proposes the decisive move and five difficulty factors. Optional P1 is not mandatory.</span></li>
+<li><strong>Dispatch independent QRT when authorized</strong><span>Source-only; withhold prior answer, suggested band, solutions and labels; require actual sealed first-pass bytes.</span></li>
+<li><strong>Compare the five-factor score</strong><span>Sum five 0–2 scores with evidence. D1 0–2, D2 3–5, D3 6–7, D4 8–10.</span></li>
+<li><strong>Choose exactly one decisive operation</strong><span>Retrieve, Explain, Apply, Model, Represent, Synthesize, Justify. Use actual Blueprint operation boundaries.</span></li>
+<li><strong>Route to a candidate Blueprint cell</strong><span>Only D3/D4 → D3/D4.1–.7. Reviewed D1/D2 is never promoted. Unreviewed proposed labels yield candidate-only routing.</span></li>
+<li><strong>Bind one approved topic adapter</strong><span>WPE facts/diagrams/conditions belong in adapter; Blueprint owns generic cognitive rules. No selected exact hash = HOLD.</span></li>
+<li><strong>Build full Core1A</strong><span>Teach conventions, prerequisites, justified steps, different worked anchor, wrong route and independent exit check.</span></li>
+<li><strong>Build protected Core1B</strong><span>One band-carrying MAIN plus per-instance six-stage cycle; save first attempt, then reconstruct, diagnose, repair and boundary-test.</span></li>
+<li><strong>Check B1–B7 and native evidence</strong><span>Verify target, signature, sufficiency, transfer, attempt protection, diagnosis, Physics/provenance and exact version pins.</span></li>
+<li><strong>Decide honestly and recheck on change</strong><span>Academic admission requires real independent decisions and Owner receipts. Student practice may remain usable under a clearly marked HOLD.</span></li>
+</ol>
+<div class="quicklinks"><a href="RUNBOOK.md#2-one-question-processing-procedure--execute-in-order-no-improvisation">Full S0–S11 decision procedure</a><a href="../../docs/smart-skills-integration.md">Native SL1/SL2 integration</a><a href="../../src/grade9qa/qrt_binding.py">Read-only QRT binding checker</a></div>
+</section>
+
+<section class="propanel" id="qrt">
+<h2>QRT: ask what the task requires, not what subject it mentions</h2>
+<div class="table-scroll"><table><thead><tr><th>Column</th><th>Decisive learner action</th><th>Observable evidence</th></tr></thead><tbody>
+<tr><td><b>1 · Retrieve</b></td><td>Choose the fact/category by defining condition</td><td>Verdict + deciding condition</td></tr>
+<tr><td><b>2 · Explain</b></td><td>Establish a causal mechanism</td><td>Every link warranted, changed-condition prediction</td></tr>
+<tr><td><b>3 · Apply</b></td><td>Execute a known relation validly</td><td>Applicability, signs, substitutions and check</td></tr>
+<tr><td><b>4 · Model</b></td><td>Choose law/system/assumptions</td><td>Defensible choice plus applicability conditions</td></tr>
+<tr><td><b>5 · Represent</b></td><td>Translate graph/diagram/words/equation</td><td>Invariant and consistent back-translation</td></tr>
+<tr><td><b>6 · Synthesize</b></td><td>Coordinate dependent concepts</td><td>Bridge quantity, order and second-route/invariant check</td></tr>
+<tr><td><b>7 · Justify</b></td><td>Establish a physical conclusion</td><td>Warrant, assumptions and boundary case</td></tr>
+</tbody></table></div>
+<p><strong>Five scored factors:</strong> concept/model selection; representation translation; reasoning chain length; algebra/computational load; trap/exception sensitivity. Each must have an integer 0–2 and a task-specific evidence statement. <strong>D3 = 6–7; D4 = 8–10</strong>. Neither a nice lesson nor an SL2 D3 label is enough.</p>
+<div class="callout"><b>Try it with a genuine reviewer, not an invented one.</b> The [first-pass schema] below separates source-only packet from reviewer result and a sealed receipt. A source-only packet with unbound original/figure remains NOT READY. Structural validation cannot establish reviewer independence.</div>
+</section>
+
+<section class="propanel" id="blueprint">
+<h2>Blueprint + adapter = tile; no invisible promotions</h2>
+<div class="codeblock"><code>Physics tile(X,Y) = Blueprint(X,Y) + Topic(WPE)
+
+X = 1..7 (Retrieve, Explain, Apply, Model, Represent, Synthesize, Justify)
+Y = D3 or D4
+MODEL/D3       → candidate D3.4 → PHY-WPE-D3.4
+SYNTHESIZE/D3  → candidate D3.6 → PHY-WPE-D3.6
+JUSTIFY/D4     → candidate D4.7 → PHY-WPE-D4.7
+APPLY/D2       → NO D3/D4 cell; D1/D2 spec pending</code></div>
+<p>Read <a href="../../templates/physics-blueprint/physics-blueprint.D3-D4.json">the current common Physics Blueprint</a> together with its <code>levels</code>, <code>columns</code> and <code>cells</code>. It defines the cognitive demand, learner-owned inference, H1/H2/H3 hint ladder, staged diagrams, MAIN/instance cycles, five-factor band checks and the source→Core1A→Core1B→return-to-exam page anatomy.</p>
+<p>Only the <strong>topic adapter</strong> binds WPE laws, source anchors, conditions and diagram content. Today no exact approved WPE adapter has been selected; stop at HOLD rather than combining drafts. If a universal Physics rule truly cannot represent an authoring requirement, submit a versioned <a href="schemas/blueprint-gap-note.schema.json">gap note</a> for Oracle/Owner decision. Never modify the Blueprint just to solve one WPE item.</p>
+<p>Even a correct MAIN task score is only <code>PROPOSED</code> until independent scoring. The existing eight-topic self-tutor is a practice bridge; its source joins and D3/D4 admission remain unqualified.</p>
+</section>
+
+<section class="propanel" id="coverage-register">
+<h2>Live WPE QRT × Blueprint coverage register</h2>
+<p class="lead">Inspect all 74 bank records without conflating <strong>reader proposals</strong>, four recorded D2 QRT first passes, one contested case, related six-stage practice, draft Blueprint cells or final admission. The 21-seat D3/D4 original-exam pilot is reconciled in its own table.</p>
+<div class="mini-grid"><div class="metric"><b>22</b><span>Reader D3/D4 proposals; not verified classifications</span></div><div class="metric"><b>9</b><span>D3/D4 learning routes lacking interactive construction</span></div><div class="metric"><b>0</b><span>QRT/Owner academic admissions</span></div></div>
+<div class="quicklinks"><a class="mainlink" href="wpe-coverage.html">Open searchable question-by-question register</a><a href="wpe-coverage-register.json">Pinned 74-question metadata (JSON)</a></div>
+<p class="small">Each row identifies source/key hold, QRT evidence, candidate cell, proposed concept join and next action. A working student lesson does not mean exact-task QRT qualification.</p>
+</section>
+
+<section class="propanel" id="priority">
+<h2>D3/D4 completion queue</h2>
+<ol class="queue">
+<li><strong>P0 · Authenticate source and QRT evidence</strong> for all purported D3/D4 questions. Preserve the four recorded D2 first passes and one contested B07 case; never count them as admitted D3/D4.</li>
+<li><strong>P0 · Build 74-row coverage register</strong> with independent source, SL2, QRT, candidate cell, adapter, learning link and admission fields; overlay all 21 pilot places without confusing counts.</li>
+<li><strong>P1 · Complete six pack-only D3 routes</strong> via interactive E01–E05 extensions: EX-M82, EX-M89, EX-M109, EX-N34, TB-WPE-ILL-05, TB-WPE-ILL-06.</li>
+<li><strong>P1 · Author three unmapped D3 learning routes:</strong> EX-M97, EX-N39 and WEP07-01. These may become practice before academic approval.</li>
+<li><strong>P1 · Verify the 13 existing interactive D3/D4 source links</strong> for their exact decisive move, rather than merely teaching a related physical law.</li>
+<li><strong>P2 · Remaining question-bank and 21-seat coverage</strong> once correct D1/D2 rules, authentic exam originals, actual independent QRT and Owner-approved Blueprint/adapter are available.</li>
+</ol>
+</section>
+
+<section class="propanel" id="golden">
+<h2>Golden fixtures: cases that should never be promoted</h2>
+<p class="lead">The examples carry real repository status facts where known, but omit source exam stems, reviewer identities and academic signatures. They are author-exposed **training fixtures**, not sealed QRT data.</p>
+<div class="fixture-list">
+<div class="fixture"><b>G01 · EX-M62</b><p>Reader proposal MODEL/D3; B07 first pass APPLY/D2, total 4. Do not fill a D3 seat or call C03 academically qualifying.</p></div>
+<div class="fixture"><b>G02 · WEP07-03</b><p>Pilot JUSTIFY/D4 vs recorded APPLY/D2 (5). Answer/key corroboration does not resolve demand classification.</p></div>
+<div class="fixture"><b>G03 · EX-M16</b><p>MODEL/D3 author proposal + interactive C07. Candidate D3.4, but QRT NOT_RUN and adapter UNSELECTED.</p></div>
+<div class="fixture"><b>G04 · EX-M109</b><p>SYNTHESIZE/D3 author proposal + E01 author pack only. Candidate D3.6 is not interactive or admitted.</p></div>
+<div class="fixture"><b>G05 · EX-M97</b><p>SYNTHESIZE/D3 proposal with no mapped construction. The learning gap remains real; do not infer coverage.</p></div>
+<div class="fixture"><b>G06 · EX-M79</b><p>Contested author-exposed prior labels. Candidate D3.3 is not a blind independent QRT review.</p></div>
+</div>
+<details><summary>Five negative controls that must HOLD</summary>
+<ol><li>N01 — fake <code>ADMITTED</code> status without trusted receipts</li><li>N02 — MODEL/D3 mislabeled as D3.6 instead of D3.4</li><li>N03 — a D2-reviewed task forced into a D3 tile</li><li>N04 — factor scores adding to a different total</li><li>N05 — an author practice link forged into <code>QUALIFIED_TILE</code></li></ol></details>
+<div class="quicklinks"><a href="fixtures/golden-cases.json">View all six + five negatives (JSON)</a><a href="verify_cases.py">Read executable fail-closed validator</a><a href="RUNBOOK.md#6-golden-examples--follow-the-exact-evidence-not-the-desired-label">See worked decision traces</a></div>
+</section>
+
+<section class="propanel" id="schemas">
+<h2>Machine-readable schemas and worked records</h2>
+<div class="artifact-grid">
+<div class="artifact"><strong>Question route · single auditable row</strong><p>Source/figure/key, SL2 proposal, QRT stage, draft cell, adapter, practice, academic hold and next action.</p><a href="schemas/question-route.schema.json">Schema</a> · <a href="fixtures/golden-cases.json">Six examples</a></div>
+<div class="artifact"><strong>Independent QRT first-pass</strong><p>Source-only packet, exposure declaration, actual reviewer assignment, decisive operation, five factors and seal fields.</p><a href="schemas/independent-first-pass.schema.json">Schema</a> · <a href="fixtures/source-only-packet-NOT-READY.json">Packet NOT READY</a> · <a href="fixtures/synthetic-qrt-scoring-NOT-EVIDENCE.json">Synthetic score</a></div>
+<div class="artifact"><strong>Blueprint tile build plan</strong><p>Two instances, one MAIN task, individual cycles, H1–H3, B1–B7 and draft/approval boundary.</p><a href="schemas/tile-build-plan.schema.json">Schema</a> · <a href="fixtures/illustrative-D3.4-tile-plan-NOT-APPROVED.json">D3.4 worked example</a></div>
+<div class="artifact"><strong>Blueprint gap-note</strong><p>Exact missing shared slot, topic-specific limitation, version pins and still-pending Oracle disposition.</p><a href="schemas/blueprint-gap-note.schema.json">Schema</a> · <a href="fixtures/hypothetical-blueprint-gap-NOT-SUBMITTED.json">Illustrative pending note</a></div>
+</div>
+<p class="small">Current source inputs are pinned in <a href="source-pins.json">source-pins.json</a> (exact Git blob SHAs for reader, Blueprint, QRT review, pilot, reasoning map and learner practice). The validator refuses to reuse fixtures silently if any pinned source changes.</p>
+<p class="small">These are constrained engineering work-item schemas. The official Physics Blueprint's <code>common.content_pack_shape</code>, native SL1/SL2 report shapes and Shared approval contracts remain authoritative. Schema VALID is never QRT PASS or Owner acceptance.</p>
+</section>
+
+<section class="propanel" id="checks">
+<h2>Executable checks and expected outcome</h2>
+<div class="codeblock"><code>python -m pip install -e ".[dev]"
+python architecture/qrt-blueprint-protocol/verify_cases.py
+python -m pytest -q tests/test_qrt_blueprint_agent_protocol.py
+python -m pytest -q tests/test_qrt_binding.py
+
+Expected validator scope:
+STRUCTURAL_AND_DOCUMENTARY_ONLY_NO_APPROVAL
+6 positive HOLD cases + 5 negative HOLD controls</code></div>
+<p>The tests cross-check real B07 first-pass bands and numeric factors, reader labels, pilot conflict, exact 14-cell draft Blueprint, 74 records, route arithmetic, candidate-cell derivation, schema shapes and HTML links. They also reject forged admissions, mismatched cells, D2 promotion and incoherent scoring. They do <strong>not</strong> approve a reviewer, prove a source paper or grade a child.</p>
+<div class="notice note-teal"><strong>What should the lower-thinking agent say at the end?</strong> “For question [ID], the evidence supports [proposed/reviewed claim]. The candidate tile is [cell or none]. The available practice is [link/status]. Academic admission remains [HOLD] because [specific missing evidence]. Next permitted action: [action].” Never answer with only “covered” or “approved.”</div>
+<div class="footerlink"><a href="RUNBOOK.md#8-final-delivery-checklist-a-low-thinking-agent-must-fill-every-row">Complete 13-item delivery checklist</a> · <a href="../guidebook.html">Broader architecture guidebook</a> · <a href="../index.html">Back to Architecture</a></div>
+</section>
+</main>
+<footer class="footer"><div class="container"><span>Architecture · Decision protocol, not an academic reviewer receipt</span><a href="../../physics/wpe/index.html">Physics → WPE</a></div></footer>
+</body>
+</html>

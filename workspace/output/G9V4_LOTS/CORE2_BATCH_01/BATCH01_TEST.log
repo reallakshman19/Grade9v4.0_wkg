@@ -1,0 +1,20 @@
+
+test_01_bank_manifest_integrity (__main__.TestCore2Batch01.test_01_bank_manifest_integrity)
+Verify Bank header, counts, and fail-closed governance metadata. ... ok
+test_02_verbatim_stem_hash_invariance (__main__.TestCore2Batch01.test_02_verbatim_stem_hash_invariance)
+Verify that every stem text matches its source audit record SHA-256 with 0-character drift. ... ok
+test_03_canonical_qrt_operations_and_bands (__main__.TestCore2Batch01.test_03_canonical_qrt_operations_and_bands)
+Verify cognitive operations are canonical and complexity scoring matches bands. ... ok
+test_04_scaffolds_and_support_plan (__main__.TestCore2Batch01.test_04_scaffolds_and_support_plan)
+Verify 3-tier progressive hint ladder and protected crux move references. ... ok
+test_05_svg_diagram_assets_presence_and_specs (__main__.TestCore2Batch01.test_05_svg_diagram_assets_presence_and_specs)
+Verify all referenced SVG assets exist and adhere to typography >= 14px. ... ok
+test_06_rendered_html_privacy_and_inert_template (__main__.TestCore2Batch01.test_06_rendered_html_privacy_and_inert_template)
+Verify rendered HTML is self-contained and derivations are hidden until commitment. ... ok
+test_07_negative_mutations_fail_closed (__main__.TestCore2Batch01.test_07_negative_mutations_fail_closed)
+Adversarial negative mutation tests: verifying corrupted data triggers fail-closed errors. ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.021s
+
+OK

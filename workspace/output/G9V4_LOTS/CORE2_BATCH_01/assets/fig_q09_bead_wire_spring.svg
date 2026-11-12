@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 270" width="100%" height="100%">
+  <defs>
+    <style>
+      .label { font-family: system-ui, -apple-system, sans-serif; font-size: 15px; font-weight: 600; fill: #1e293b; }
+      .wire { stroke: #334155; stroke-width: 3; fill: none; }
+      .spring { stroke: #0284c7; stroke-width: 2.5; fill: none; }
+      .bead { fill: #e11d48; stroke: #9f1239; stroke-width: 2; }
+    </style>
+  </defs>
+  <!-- Vertical wire contour -->
+  <path d="M 80 40 Q 200 240 320 40" class="wire"/>
+  
+  <!-- Anchor O -->
+  <circle cx="200" cy="50" r="5" fill="#0f172a"/>
+  <text x="200" y="35" class="label" text-anchor="middle">Anchor O</text>
+  
+  <!-- Spring connecting O to Bead P -->
+  <path d="M 200 50 L 195 70 L 205 90 L 195 110 L 205 130 L 195 150 L 200 170" class="spring"/>
+  
+  <!-- Bead P -->
+  <circle cx="200" cy="170" r="9" class="bead"/>
+  <text x="220" y="175" class="label">m</text>
+</svg>

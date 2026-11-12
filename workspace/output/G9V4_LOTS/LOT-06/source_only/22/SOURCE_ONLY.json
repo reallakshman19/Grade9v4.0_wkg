@@ -1,0 +1,17 @@
+{
+  "source_id": "EX-M69",
+  "task_identity": "Q-ID-25",
+  "sequence": 22,
+  "batch_sequence": 7,
+  "paper": "JEE Main 2020 (Online) 3rd September Evening Slot",
+  "stem_text": "A particle is moving unidirectionally on a horizontal plane under the action of a constant power supplying energy source. The displacement (s) - time (t) graph that describes the motion of the particle is (graphs are drawn schematically and are not to scale) :",
+  "stem_sha256": "9761db6873712de6b069cc95d817491c45f5018250ef8deac3885ab0c7525add",
+  "options": [
+    "A: [FIG-options-1]",
+    "B: [FIG-options-2]",
+    "C: [FIG-options-3]",
+    "D: [FIG-options-4]"
+  ],
+  "figure_reference": "[FIG-options-1..4] 4 remote graphical option images unverified against master",
+  "confidentiality_notice": "SEALED SOURCE-ONLY PACKET FOR BLIND INDEPENDENT REVIEW. Contains NO answers, keys, explanations, candidate solutions, SL2 factor scores, or prior review commentary."
+}

@@ -1,0 +1,173 @@
+{
+  "schema": "wpe01-technical-review/v1",
+  "as_of": "2026-11-02",
+  "chapter": "PHYSICS/WPE",
+  "target": "Learn → Challenge technical teaching preview",
+  "reviewer_role": "AUTHOR_EXPOSED_TECHNICAL_EDITOR",
+  "review_is_independent_qrt": false,
+  "academic_acceptance": false,
+  "source_map": "learn-challenge-source-map.json",
+  "page": "learn-challenge.html",
+  "summary": "Technical remediation only. Five distinct existing lesson/challenge pairs retained. Four Core1A diagrams replaced to remove Core1B setup/answer leakage. Five guided lessons expanded with contrast/transfer principles. Browser-local attempt continuity and option-specific misconception feedback added.",
+  "construction_gate_status": {
+    "B1": "CANDIDATE_ONLY",
+    "B2": "CANDIDATE_ONLY",
+    "B3": "REVIEW_REQUIRED",
+    "B4": "REVIEW_REQUIRED",
+    "B5": "LIMITED_TECHNICAL_EVIDENCE",
+    "B6": "PARTIAL_TECHNICAL_EVIDENCE",
+    "B7": "HOLD_SOURCE_ADAPTER_QRT_OWNER"
+  },
+  "witnesses": [
+    {
+      "id": "work-sign",
+      "source_qids": [
+        "Q1",
+        "Q3",
+        "Q7"
+      ],
+      "core1a": "Crate with constant friction; sign of work with force–displacement angle, explicit positive/negative/zero contrasts and net work",
+      "core1b": "Two-stage robot resistive-work sum",
+      "visual_separation": "Guide figure uses one crate, not the two-stage robot",
+      "review_attention": "Check whether positive, zero and work–energy theorem coverage is sufficient given Q7 source ambiguity.",
+      "gate_status": {
+        "B1": "CANDIDATE_ONLY",
+        "B2": "CANDIDATE_ONLY",
+        "B3": "REVIEW_REQUIRED",
+        "B4": "REVIEW_REQUIRED",
+        "B5": "LIMITED_TECHNICAL_EVIDENCE",
+        "B6": "PARTIAL_TECHNICAL_EVIDENCE",
+        "B7": "HOLD_SOURCE_ADAPTER_QRT_OWNER"
+      }
+    },
+    {
+      "id": "momentum-energy",
+      "source_qids": [
+        "Q2",
+        "Q4",
+        "Q8"
+      ],
+      "core1a": "Single 2 kg trolley p=6; energy computed from p²/(2m); fixed-p mass and fixed-mass p contrasts",
+      "core1b": "Two 1 kg/4 kg carts at equal p=8; kinetic-energy ratio",
+      "visual_separation": "Replaced previous Core1A 1 kg/4 kg equal-p figure with a single 2 kg trolley",
+      "review_attention": "Check graph K(p) and mass-dependence warrants across all source IDs.",
+      "gate_status": {
+        "B1": "CANDIDATE_ONLY",
+        "B2": "CANDIDATE_ONLY",
+        "B3": "REVIEW_REQUIRED",
+        "B4": "REVIEW_REQUIRED",
+        "B5": "LIMITED_TECHNICAL_EVIDENCE",
+        "B6": "PARTIAL_TECHNICAL_EVIDENCE",
+        "B7": "HOLD_SOURCE_ADAPTER_QRT_OWNER"
+      }
+    },
+    {
+      "id": "energy-motion",
+      "source_qids": [
+        "Q5",
+        "Q6",
+        "Q9"
+      ],
+      "core1a": "Accessible point on a smooth hill, h=3 m, E=50 J, plus general continuous-route condition",
+      "core1b": "Determine whether an independent robot can cross a 6 m ridge at E=50 J",
+      "visual_separation": "Removed 60 J ridge / 50 J barrier illustration from Core1A",
+      "review_attention": "Check whether the general reachability discussion supplies sufficient B3 while protecting the specific ridge decision in B4.",
+      "gate_status": {
+        "B1": "CANDIDATE_ONLY",
+        "B2": "CANDIDATE_ONLY",
+        "B3": "REVIEW_REQUIRED",
+        "B4": "REVIEW_REQUIRED",
+        "B5": "LIMITED_TECHNICAL_EVIDENCE",
+        "B6": "PARTIAL_TECHNICAL_EVIDENCE",
+        "B7": "HOLD_SOURCE_ADAPTER_QRT_OWNER"
+      }
+    },
+    {
+      "id": "potential-force",
+      "source_qids": [
+        "Q10"
+      ],
+      "core1a": "Single differentiable potential with constant negative slope and a distinct graph-to-slope calculation",
+      "core1b": "Two-interval piecewise potential with corner",
+      "visual_separation": "Replaced previously two-slope Core1A figure with single decreasing line",
+      "review_attention": "At the sharp corner classical derivative is undefined; never claim a unique force there.",
+      "gate_status": {
+        "B1": "CANDIDATE_ONLY",
+        "B2": "CANDIDATE_ONLY",
+        "B3": "REVIEW_REQUIRED",
+        "B4": "REVIEW_REQUIRED",
+        "B5": "LIMITED_TECHNICAL_EVIDENCE",
+        "B6": "PARTIAL_TECHNICAL_EVIDENCE",
+        "B7": "HOLD_SOURCE_ADAPTER_QRT_OWNER"
+      }
+    },
+    {
+      "id": "momentum-fragments",
+      "source_qids": [
+        "Q11"
+      ],
+      "core1a": "Two spring-linked carts initially at rest, 1 kg/3 kg; total initial p=0",
+      "core1b": "Initially moving 2 kg parent splitting into 0.5 kg/1.5 kg fragments",
+      "visual_separation": "Removed moving 2 kg parent / 0.5 kg and 1.5 kg fragments from Core1A graphic",
+      "review_attention": "Cross-topic scope and moving-frame prerequisite remain pending; verify conservation assumptions.",
+      "gate_status": {
+        "B1": "CANDIDATE_ONLY",
+        "B2": "CANDIDATE_ONLY",
+        "B3": "REVIEW_REQUIRED",
+        "B4": "REVIEW_REQUIRED",
+        "B5": "LIMITED_TECHNICAL_EVIDENCE",
+        "B6": "PARTIAL_TECHNICAL_EVIDENCE",
+        "B7": "HOLD_SOURCE_ADAPTER_QRT_OWNER"
+      }
+    }
+  ],
+  "attempt_protection": {
+    "status": "LIMITED_TECHNICAL_EVIDENCE",
+    "implemented": [
+      "Initial option and >=8-character explanation required to unlock hints",
+      "Choice and explanation frozen after lock",
+      "Two hints and answer revealed sequentially",
+      "Browser-local saved choice, explanation, hint stage and solved state restored after reload",
+      "Explicit local clear control and learner-facing storage disclosure"
+    ],
+    "not_established": [
+      "Authoritative identity-bound or tamper-resistant persisted evidence",
+      "First attempt preserved against use of browser dev tools or clear button",
+      "Protection against answer code inspection in a static client-only site",
+      "Automated semantic grading of free-text explanation"
+    ],
+    "privacy": "Student-written explanation is saved only to browser localStorage after the learner locks an attempt, not transmitted by this page; shared-device users should clear their attempt."
+  },
+  "diagnosis_transfer": {
+    "status": "PARTIAL_TECHNICAL_EVIDENCE",
+    "implemented": [
+      "Option-specific misconception prompts after worked check",
+      "Changed-condition reflection question per construction",
+      "Acknowledge free-text reasoning is not automatically evaluated"
+    ],
+    "not_established": [
+      "Human/independent validation that explanations demonstrate construction",
+      "Student-level cross-task transfer evidence"
+    ]
+  },
+  "scientific_and_source_flags": [
+    "Q7 net-tangential-force wording unresolved in original",
+    "Q9 must allow K=0",
+    "Q10 force is negative derivative of potential",
+    "Q11 original must state initial momentum condition",
+    "Q12 truncated/excluded",
+    "Original publisher, rights and authenticated answer key not established"
+  ],
+  "next_gates": [
+    "Independent source/QRT and governing Core2 scope",
+    "Subject/adapter selections and Owner approvals",
+    "B1–B7 independent construction sufficiency check",
+    "Tamper-resistant attempt evidence if intended as assessment rather than practice"
+  ],
+  "explicit_non_claims": [
+    "No new native Core1A or Core1B academic admission",
+    "No QRT grade or independent scientific approval",
+    "No secure examination mode",
+    "No learner transfer evidence from authored questions alone"
+  ]
+}

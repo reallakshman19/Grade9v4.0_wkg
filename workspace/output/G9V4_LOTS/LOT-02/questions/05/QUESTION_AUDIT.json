@@ -1,0 +1,115 @@
+{
+  "sequence": 5,
+  "task_identity": "Q-ID-05",
+  "stable_id": "Q-PHY-WPE-JEEM-2026-01-23-S1-05",
+  "source_id": "EX-M8",
+  "lot": "LOT-02",
+  "paper": "JEE Main 2026 (Online) 23rd January Morning Shift",
+  "source_type": "SCRAPED_EXTRACT_EXAMGOAL",
+  "source_custody": "PARTIAL",
+  "stem_text": "Two blocks with masses 100 g and 200 g are attached to the ends of springs \ud835\udc34 and \ud835\udc35 as shown in figure. The energy stored in \ud835\udc34 is \ud835\udc38 . The energy stored in \ud835\udc35 , when spring constants \ud835\udc58_\ud835\udc34,\ud835\udc58_\ud835\udc35 of \ud835\udc34 and \ud835\udc35 , respectively satisfy the relation 4\ud835\udc58_\ud835\udc34=3\ud835\udc58_\ud835\udc35 , is : [FIG-stem-1]",
+  "stem_sha256": "f154bd2c140fee999c231282c39119e1efee629fa820c8edcbb97fb9c2bf5245",
+  "source_hash": "f154bd2c140fee999c231282c39119e1efee629fa820c8edcbb97fb9c2bf5245",
+  "source_record_digest": "f154bd2c140fee999c231282c39119e1efee629fa820c8edcbb97fb9c2bf5245",
+  "duplicate_parent": null,
+  "scope": "IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "HOLD:FIGURE_UNRESOLVED",
+  "options": [
+    "A: 4\ud835\udc38",
+    "B: 2\ud835\udc38",
+    "C: (4)/(3)\ud835\udc38",
+    "D: 3\ud835\udc38"
+  ],
+  "unbound_remote_figures": [
+    {
+      "role": "stem",
+      "url": "https://app-content.cdn.examgoal.net/fly/1000/image/6y3zli1ml8vt218/e17e76ef-50e7-40d1-8a90-305fa9cdbe3e/9aca7cc0-0240-11f1-88dd-c7214e4b90e3/file-6y3zli1ml8vt219.png?format=png"
+    }
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "HOLD:FIGURE_UNRESOLVED",
+  "candidate_solve": {
+    "method": "SPRING_STATIC_EQUILIBRIUM_ENERGY",
+    "assumed_parameters_from_coaching_figure": "Figure depicts two separate vertical suspensions from a rigid ceiling under gravity.",
+    "derivation": "In vertical static equilibrium, spring tension equals suspended weight: k x = mg => x = mg / k. Elastic potential energy stored: U = 1/2 k x^2 = (mg)^2 / (2k). For spring A: m_A = 100 g, stiffness k_A => E_A = E = (m_A g)^2 / (2 k_A). For spring B: m_B = 200 g = 2 m_A, stiffness k_B = 4/3 k_A. Energy stored in B: E_B = (m_B g)^2 / (2 k_B) = (2 m_A g)^2 / (2 * (4/3) k_A) = (4 / (4/3)) * [ (m_A g)^2 / (2 k_A) ] = 3 E_A = 3E.",
+    "predicted_option": "D: 3\ud835\udc38",
+    "limiting_cases": "If m_B = m_A and k_B = k_A, E_B = E. If k_B -> infinity, E_B -> 0. With m ratio 2 and k ratio 4/3, factor is 2^2 / (4/3) = 3."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "status": "UNREVIEWED",
+    "decisive_operation": "APPLY",
+    "crux": "Expressing elastic potential energy in terms of static gravitational force U = F^2 / (2k) to exploit scaling with mass squared and inverse spring constant.",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Hooke's law static equilibrium and elastic potential energy formula."
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Interpreting two separate vertical spring-mass assemblies."
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Equilibrium condition -> energy equation -> algebraic scaling ratio."
+        },
+        "algebra_computational_load": {
+          "score": 0,
+          "evidence": "Simple fraction arithmetic: 4 / (4/3) = 3."
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Must avoid assuming identical extensions x or direct proportionality U proportional to k."
+        }
+      },
+      "total": 4,
+      "band": "D2"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "MODEL"
+      ],
+      "candidate_cell": "QRT-APPLY-D2",
+      "status": "PROPOSED"
+    },
+    "representation_requirements": [
+      "DIAGRAM",
+      "EQUATION"
+    ],
+    "independent_checks": [
+      "UNITS",
+      "LIMITING_CASE"
+    ],
+    "wrong_route_hypotheses": [
+      {
+        "route": "Assuming equal extension x => E_B/E_A = k_B/k_A = 4/3 (Option C)",
+        "status": "HYPOTHESIS"
+      },
+      {
+        "route": "Linear mass scaling 2 / (4/3) = 1.5 E",
+        "status": "HYPOTHESIS"
+      },
+      {
+        "route": "Ignoring spring stiffness ratio => 4E (Option A)",
+        "status": "HYPOTHESIS"
+      }
+    ]
+  },
+  "qrt": "UNREVIEWED",
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_REVIEW",
+  "b2_blind_status": "NOT_RUN",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:FIGURE_UNRESOLVED (diagram needed to verify separate suspension topology)",
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)",
+    "HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)"
+  ],
+  "next_action": "Source official NTA figure and verify master answer key."
+}

@@ -1,0 +1,8 @@
+{
+  "tests": 26,
+  "failures": 0,
+  "errors": 0,
+  "pass": true,
+  "scope": "AUTHOR_TESTS; actual native schemas, validators, renderer context; no distinct QA or academic admission",
+  "failed_details": []
+}

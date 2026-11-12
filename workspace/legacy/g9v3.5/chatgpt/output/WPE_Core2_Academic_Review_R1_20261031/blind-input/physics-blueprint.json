@@ -1,0 +1,385 @@
+{
+  "blueprint_id": "PHYS-QRT-BLUEPRINT",
+  "version": "0.2.0",
+  "status": "DRAFT_OWNER_REVIEW",
+  "date": "2026-10-28",
+  "subject": "Physics",
+  "scope": "Bands D3 and D4, all seven cognitive demands (14 cells). D1/D2 not yet written.",
+  "formula": "Physics tile(X,Y) = Blueprint(X,Y) + Topic(T). X = column (cognitive demand 1..7), Y = band (D3 or D4).",
+  "column_order": ["RETRIEVE", "EXPLAIN", "APPLY", "MODEL", "REPRESENT", "SYNTHESIZE", "JUSTIFY"],
+
+  "owner_rules": [
+    "Owner 28 Oct 2026: 'Physics tile(X,Y) = BluePrint(X,Y) + Topic(WPE)'. One Physics blueprint per cell, reused for every Physics topic; it never names a topic.",
+    "Owner 28 Oct 2026: 'if agent is not able to build Core 1A/1B for a D3 question by just adjusting topic adapter, then blueprint is to be expanded/revisited'. A builder changes ONLY the topic adapter. Anything else it needs is returned as a gap note (see gap_note_shape); the Oracle revises this blueprint once (new version) and the tile is rebuilt.",
+    "Owner 28 Oct 2026: coverage, not priority. Every D3/D4 item of the topic's textbook and of the JEE Main sample must end up inside some tile's Core1A/Core1B."
+  ],
+
+  "basis_refs": [
+    {"ref": "Shared/quality/question-demand-templates.v1.json", "repo": "Grade9v3.5", "commit": "574c7fe2", "use": "Shared 28 QRT templates: decisive act, X/Y/Z/W slots, wrong idea, replacement rule, visual job, check job, band policy, 12 review questions (H1-H3, S1-S3, P1-P3, M1-M3). Reused verbatim through template_ref; this blueprint adds the Physics layer and the page anatomy."},
+    {"ref": "Physics/adapter/DemandReview.json", "repo": "Grade9v3.5", "commit": "574c7fe2", "use": "Physics review focus, representation kinds, check types and misconception pattern per demand."},
+    {"ref": "Shared/vocabularies/learner-question-metadata.v1.json", "repo": "Grade9v3.5", "commit": "b1b04862", "use": "Five-component difficulty rubric (each 0-2) and score ranges D1 0-2, D2 3-5, D3 6-7, D4 8-10."},
+    {"ref": "Shared/roles/CORE1A.md and Shared/roles/CORE1B.md", "repo": "Grade9v3.5", "use": "Authority for what the teaching part and her try must contain."},
+    {"ref": "oracle-handoffs/G9O5-5/TILE-BLUEPRINT.v1.json", "repo": "Grade9v3.5 (local, untracked)", "use": "Core1A/Core1B content shape used for the Owner-accepted Newton's-laws study page."},
+    {"ref": "standalone/study/nlm-core1ab/inputs/v1/nlm-core1ab.v1.json", "repo": "Grade9v3.5", "use": "Quality reference only: the Owner-accepted Newton's-laws content pack (10 tiles). Different topic and older shape."},
+    {"ref": "oracle-handoffs/G9O5-9/TILE-APPROACH-GAPS.md", "repo": "Grade9v3.5 (local, untracked)", "use": "Seven known gaps; each is closed by a rule in common.* (see gap_fixes)."},
+    {"ref": "Physics/adapter/PhysicsTileProfiles.v1.json on draft PR #299", "repo": "Grade9v3.5", "commit": "455103ad", "use": "Donor only. Its D3/D4 profiles are superseded here: identical text across bands, all factors set to the band number, topic list inside the blueprint."}
+  ],
+
+  "gap_fixes": {
+    "1_band_is_only_a_label": "common.band_check scores the exact Core1B attempt task with evidence per component; columns.*.evidence_criterion binds the column to an observable act.",
+    "2_diagnosis_not_tied_to_evidence": "common.evidence_record plus core1b.diagnose: a wrong idea is recorded only from her saved answer; otherwise INSUFFICIENT_EVIDENCE.",
+    "3_one_lesson_per_cell": "common.tile_identity: a tile holds several instances, each with its own id.",
+    "4_picture_points_at_wrong_scene": "common.picture_rules.meaning_check: every picture stage is bound to a reasoning step and its drawn entities are checked against the scene.",
+    "5_answer_not_kept_before_help": "common.evidence_record.first_answer is saved before any hint or reveal.",
+    "6_topic_words_in_common_layer": "This file names no topic. Topic words, objects, numbers and pictures come only from the topic adapter.",
+    "7_versions_not_bound": "common.tile_identity records blueprint and adapter versions on every tile."
+  },
+
+  "common": {
+    "tile_identity": {
+      "tile_id": "PHY-<TOPIC_ID>-D<band>.<column>  e.g. PHY-WPE-D3.1",
+      "instances": "A tile holds one instance per subtopic. Core1A: one construction per instance. Core1B: one MAIN cycle whose attempt mixes instances and carries the tile band, plus one cycle per instance (same coverage as Core1A). Instance cycles may score below the tile band; their real level is labelled.",
+      "records": ["blueprint_id + version", "topic adapter id + version", "builder", "date", "band_check per instance", "open gap notes"]
+    },
+
+    "page_anatomy": {
+      "order": ["exam_question", "core1a", "core1b", "return_to_exam_question", "source_view"],
+      "exam_question": {
+        "role": "Core2 custody: the real exam question this tile prepares her for.",
+        "show": "Exact text, options and figure as published, with its source line (exam, date, shift). No answer, no hint, no level label.",
+        "rule": "If the tile has no real exam question at its band, say so on the page ('no exam question yet') rather than inventing one."
+      },
+      "core1a": {
+        "role": "Teaching part: the full reasoning, completed and visible.",
+        "sections": [
+          {"id": "conventions", "title": "Conventions", "rule": "Axes, signs, frame, system and reference levels the topic adapter declares, stated before use."},
+          {"id": "before_you_start", "title": "Before you start", "rule": "Prerequisite bridge: each entry assumption from the adapter, with a compact explanation or a link to where it is taught."},
+          {"id": "build_the_idea", "title": "Build the idea", "rule": "Ordered steps; each step = action + why it is valid + the picture stage it uses + source ref. Column shape in columns.*.core1a_build."},
+          {"id": "worked_anchor", "title": "Worked anchor", "rule": "A completed example at the tile's band, DIFFERENT from the exam question, reasoning shown in full including steps an expert would skip, ending with a check."},
+          {"id": "wrong_path", "title": "A plausible wrong path", "rule": "The column's wrong idea in this topic's words, a diagnostic question that exposes it, and the repair."},
+          {"id": "close_the_idea", "title": "Close the idea", "rule": "Exit task with its full answer and a check she can run alone."}
+        ]
+      },
+      "core1b": {
+        "role": "Her try: she performs the same inference before it is revealed, then checks and repairs without a tutor.",
+        "same_coverage_as_core1a": true,
+        "cycles": "Main cycle first (band-carrying, mixes instances), then one cycle per instance. Each cycle runs the six sections below.",
+        "sections": [
+          {"id": "predict", "title": "1 · Predict", "rule": "One decision she can commit to before anything is revealed; closes with a defensible answer."},
+          {"id": "attempt", "title": "2 · Construct your response", "rule": "A fresh task (not Core1A with nouns changed). States what she must produce. Its band is checked by common.band_check. Her first answer is saved before any help."},
+          {"id": "reconstruct", "title": "3 · Compare and reconstruct", "rule": "The correct construction reached the way a learner would reach it; rubric, accepted reasoning, rejected reasoning and why."},
+          {"id": "diagnose", "title": "4 · Diagnose", "rule": "The plausible wrong answer named, with a question that separates it from the right one; records MISCONCEPTION only from her saved answer."},
+          {"id": "repair", "title": "5 · Repair", "rule": "What she changes or rebuilds, linked to the exact Core1A step."},
+          {"id": "boundary_test", "title": "6 · Edge case", "rule": "A limiting, reversed or exception case that confirms understanding rather than recall; closed."}
+        ]
+      },
+      "return_to_exam_question": {
+        "rule": "After Core1B she answers the exam question shown at the start. Only then are its answer, solution and source key shown. If the exam question's level is below the tile's band, it is labelled with its real level."
+      },
+      "source_view": {
+        "rule": "Hidden by default: sources, exam custody (URL, paper, key status), band_check scores, blueprint/adapter versions, gap notes."
+      }
+    },
+
+    "reveal_boundaries": {
+      "phases": ["GIVENS", "ATTEMPT", "RECONSTRUCT", "ANSWER"],
+      "rules": [
+        "Before her attempt is saved: givens-only pictures; hints H1-H3 only; no verdict, model name, bridge or warrant that is her protected work.",
+        "Core1A of the same tile may teach the idea, but its worked anchor must not be the Core1B task or the exam question.",
+        "The exam question's answer is shown only after she answers it."
+      ]
+    },
+
+    "hint_ladder": {
+      "H1": {"verb": "CLARIFY", "rule": "Help her state exactly what the question turns on."},
+      "H2": {"verb": "CORRELATE", "rule": "Link that crux to something she has already shown she can do (Y)."},
+      "H3": {"verb": "OPEN_THE_WAY", "rule": "Open the route (Z) without doing the protected step (W)."},
+      "never": "No hint contains W, the answer, or eliminates options for her."
+    },
+
+    "picture_rules": {
+      "S1": "Shows the situation and makes the crux legible, without the answer.",
+      "S2": "Connects what she already holds to this situation.",
+      "S3": "Supports construction toward the crux without completing it.",
+      "meaning_check": "Every stage is bound to a named reasoning step. The drawn bodies, arrows, labels and values must match that step's scene; a familiar fallback picture is a failure. A picture that only decorates is replaced by a justified 'no picture' note.",
+      "accessibility": "Each stage has a text description; labels at least 14 px."
+    },
+
+    "review_objectives": {
+      "source": "Shared/quality/question-demand-templates.v1.json -> templates[template_ref].review (questions resolved per cell in the resolved file)",
+      "H1": "CLARIFY", "H2": "CORRELATE", "H3": "OPEN_THE_WAY",
+      "S1": "CLARIFY", "S2": "CORRELATE", "S3": "OPEN_THE_WAY",
+      "P1": "PROTECT: pre-attempt panels orient without handing over her decisive work",
+      "P2": "ROUTE: concept links reach the exact bridge or repair she needs",
+      "P3": "EXPLAIN_AND_CHECK: post-attempt reasoning explains validity and verifies independently",
+      "M1": "DIAGNOSE: the likely wrong route is represented",
+      "M2": "DETECT: separates a held misconception from a one-off slip",
+      "M3": "REPAIR: makes the failure visible and establishes the replacement rule",
+      "naming_note": "These review codes P1-P3 are not the learner's first assessment (also called P1 in the Owner's workflow)."
+    },
+
+    "evidence_record": {
+      "first_answer": "Saved, with time, before any hint, reveal or Core1A link is opened from the attempt.",
+      "help_exposure": "Each hint or reveal opened, in order.",
+      "revisions": "Kept separately from the first answer.",
+      "observation_states": ["DEMONSTRATED", "UNCERTAIN", "MISSING", "UNKNOWN"],
+      "rule": "Helped work is never DEMONSTRATED. A correct result without the column's evidence criterion is UNCERTAIN. No mastery claims."
+    },
+
+    "band_check": {
+      "applies_to": "Every Core1B attempt task and every exam question placed in the tile, each scored separately.",
+      "components": {
+        "concept_model_selection": "0-2",
+        "representation_translation": "0-2",
+        "reasoning_chain_length": "0-2",
+        "algebra_computational_load": "0-2",
+        "trap_exception_sensitivity": "0-2"
+      },
+      "scoring_rule": "Score the learner-owned work the exact task requires before support, using the rubric anchors in learner-question-metadata.v1.json; one evidence sentence per component; never score one difficulty twice.",
+      "ranges": {"D3": "6-7", "D4": "8-10"},
+      "primary_demand_rule": "Exactly one primary demand: the act whose success most directly decides the task. If scoring pushes the decisive act into another column (see columns.*.boundary), move the task to that column.",
+      "lower_level_material": "Exam questions scoring below the tile band may appear only as labelled bridge examples in Core1A or as the exam question with its real level shown; they never count as coverage at the tile band.",
+      "status_values": ["PROPOSED", "SUPPORTED", "UNCERTAIN", "MISMATCH"],
+      "independence": "Author's score is PROPOSED until someone other than the author scores it."
+    },
+
+    "self_audit_before_render": {
+      "per_hint": ["contains no W", "matches its H-level verb", "true in this topic's conventions"],
+      "per_solution_step": ["warrant stated", "conditions stated", "sign/direction consistent with conventions", "linked picture stage matches"],
+      "per_calculation": ["units carried", "substitution back or special-value check", "rounding stated"],
+      "format": "Each check: result PASS/FAIL/NOT_APPLICABLE + specific evidence + reason when NOT_APPLICABLE. A FAIL blocks rendering."
+    },
+
+    "closure": "Every prompt in Core1A and Core1B closes with a model response, a rubric, or accepted/rejected answers. Nothing is deferred to a teacher.",
+
+    "content_pack_shape": {
+      "note": "The file a builder returns (tile-pack.json). The page renderer reads exactly these fields. Fields marked [column] are filled per the cell's column (columns.*.core1a_build / core1b_shape). Learner-facing text is plain English for a Grade 10 self-studier; maths in plain Unicode (θ, ², ⟂, ∫, →), no LaTeX.",
+      "pack_id": "string, e.g. PACK-PHY-WPE-D3.1",
+      "version": "x.y.z",
+      "tile_id": "PHY-<TOPIC>-D<band>.<column>",
+      "status": "DRAFT_OWNER_VALIDATION",
+      "blueprint": {"id": "PHYS-QRT-BLUEPRINT", "version": "x.y.z"},
+      "adapter": {"id": "string", "version": "x.y.z (the builder's copy)"},
+      "builder": "name", "date": "YYYY-MM-DD",
+      "title": "learner-facing tile title",
+      "what_this_tile_trains": "one learner-facing sentence naming her move",
+      "sources": [{"source_id": "string", "title": "string", "locator": "path or URL", "use": "reused | adapted | authored", "verification_note": "string"}],
+      "conventions": [{"id": "adapter convention id", "statement": "learner-facing wording"}],
+      "exam_questions": [{"anchor_ref": "adapter anchor id", "placement": "START | BRIDGE | WARMUP", "real_level": "D1-D4", "source_line": "exam, date, shift", "text": "exact text", "options": {"A": "..."}, "answer": "letter + wording", "solution_steps": ["..."], "key_status": "string"}],
+      "instances": [{
+        "instance_id": "string", "subtopic_ref": "adapter subtopic id", "title": "learner-facing",
+        "canonical_refs": ["subject-library microtopic ids"], "truth_flags": ["BOOK_ONLY / CROSS_TOPIC facts used, if any"],
+        "inferential_jump": "the one inference this instance teaches",
+        "core1a": {
+          "before_you_start": [{"assumption": "string", "explanation": "compact but sufficient"}],
+          "build_the_idea": [{"step_id": "string", "action": "the reasoning step", "why_valid": "physical warrant", "picture_stage_refs": ["stage ids"], "source_refs": ["source ids"]}],
+          "column_extra": "[column] e.g. Recall: sorting_rows [{fact, deciding_condition, exception}]",
+          "bridge_examples": [{"anchor_ref": "id", "label": "e.g. 'JEE Main, level 2'", "worked": ["steps"], "answer": "string"}],
+          "worked_anchor": {"id": "string", "task": "string", "reasoning_steps": [{"action": "string", "why_valid": "string", "picture_stage_refs": ["ids"]}], "answer": "string", "check": "string"},
+          "wrong_path": {"wrong_idea": "string", "diagnostic_prompt": "string", "closure": "string", "repair": "string"},
+          "close_the_idea": {"prompt": "string", "answer": "string", "check": "string"}
+        }
+      }],
+      "core1b_cycles": [{
+        "cycle_id": "MAIN or the instance id", "kind": "MAIN | INSTANCE", "instance_refs": ["ids covered"], "real_level": "D1-D4",
+        "predict": {"prompt": "string", "defensible_answer": "string"},
+        "attempt": {"attempt_id": "string", "prompt": "full task with givens", "cases": "[column] optional list for multi-case tasks: [{case_id, text}]", "produces": "what she writes", "protected_work": "string", "initial_picture_refs": ["givens-only stage ids"],
+                    "hints": [{"level": "H1", "text": "string"}, {"level": "H2", "text": "string"}, {"level": "H3", "text": "string"}],
+                    "closure": {"model_response": "string or per-case list", "rubric": [{"criterion": "string", "evidence_of": "string"}], "accepted": ["string"], "rejected": [{"answer": "string", "why": "string"}]}},
+        "reconstruct": {"asks": [{"ask": "string", "why_this_ask": "author note", "model_response": "string", "concept_ref": "id"}], "full_reconstruction": "string"},
+        "diagnose": [{"wrong_idea": "string", "discriminating_prompt": "string", "closure": "string", "repair_ref": "repair id"}],
+        "repair": [{"repair_id": "string", "action": "string", "closure": "string", "core1a_step_ref": "step id"}],
+        "boundary_test": {"id": "string", "prompt": "string", "answer": "string", "confirms": "string"}
+      }],
+      "return_to_exam": {"anchor_ref": "the START exam question", "prompt": "learner-facing", "after_answer": "what is revealed and how it links back to the tile"},
+      "pictures": [{"picture_id": "string", "adapter_picture_ref": "id", "entities": ["labelled bodies/forces/quantities"], "coordinates_and_signs": "string",
+                    "correspondence": [{"element": "visible item", "symbol": "notation", "in_words": "meaning"}],
+                    "stages": [{"stage_id": "string", "reveal_phase": "GIVENS | ATTEMPT | RECONSTRUCT | ANSWER", "bound_step": "step or attempt id", "visible_elements": ["exact labels/arrows/values"], "description": "text alternative", "svg": "inline <svg> with viewBox, labels >= 14px, no scripts"}]}],
+      "band_checks": [{"task_ref": "attempt or exam id", "components": {"concept_model_selection": 0, "representation_translation": 0, "reasoning_chain_length": 0, "algebra_computational_load": 0, "trap_exception_sensitivity": 0}, "evidence": {"concept_model_selection": "sentence", "representation_translation": "sentence", "reasoning_chain_length": "sentence", "algebra_computational_load": "sentence", "trap_exception_sensitivity": "sentence"}, "total": 0, "band": "D1-D4", "status": "PROPOSED"}],
+      "self_audit": [{"item_ref": "hint/step/calculation id or path", "item_kind": "HINT | SOLUTION_STEP | CALCULATION", "checks": [{"name": "from common.self_audit_before_render", "result": "PASS | FAIL | NOT_APPLICABLE", "evidence": "specific", "reason": "required when NOT_APPLICABLE"}]}],
+      "adapter_changes": [{"where": "path in the adapter", "what": "string", "why": "string"}],
+      "gap_note_refs": ["GAP ids"],
+      "uncertainties": ["specific unresolved items"]
+    },
+
+    "invariants": [
+      "Academic truth comes from the topic adapter's canonical refs (subject library); exam questions and learner observations supply demand evidence, never replacement truth.",
+      "Core1A and Core1B cover the same subtopics and the same inferential jump.",
+      "Band and demand describe the task; the concept's intrinsic badge sets Core1A depth.",
+      "No invented exam identity, answer key, learner diagnosis or mastery.",
+      "Anything the builder cannot express through the topic adapter is a gap note, not an improvisation."
+    ]
+  },
+
+  "levels": {
+    "D3": {
+      "label": "Multi-step reasoning",
+      "score_range": "6-7",
+      "protected_work": "Leave the important bridge between ideas, representations or models to her; support may expose the component ideas separately.",
+      "support_posture": "Orient dependencies and component ideas, but do not make the bridge or ordering decision for her.",
+      "core1b_attempt_must": "Need at least two connected ideas or conditions with one material dependency, in a context she has met before.",
+      "core1a_must": "Teach each component idea, then the bridge between them as an explicit, justified step."
+    },
+    "D4": {
+      "label": "High-transfer / exception-sensitive",
+      "score_range": "8-10",
+      "protected_work": "Leave the decisive model, strategy, synthesis, exception or warrant itself to her; support may clarify constraints and invariants only.",
+      "support_posture": "Preserve the decisive abstraction or strategy choice even when more optional support is available later.",
+      "core1b_attempt_must": "Be set in an unfamiliar context (transfer) and/or hinge on an exception, boundary or converse that overturns the familiar answer.",
+      "core1a_must": "Add an exception construction (where and why the familiar rule fails) and a transfer contrast (same principle in two different-looking situations)."
+    }
+  },
+
+  "columns": {
+    "1": {
+      "demand": "RETRIEVE",
+      "name": "Recall / classify",
+      "her_move": "Pick or reconstruct the right fact, category, definition, unit, sign or condition, deciding by its defining condition.",
+      "wrong_idea": "A nearby fact or category is chosen because its wording looks familiar; in Physics, a familiar quantity with the wrong sign, unit or applicability condition.",
+      "fix": "Decide by the defining condition or boundary, not by familiarity.",
+      "slots": {"X": "the exact property, category or condition asked, including the qualifier that separates near-neighbours", "Y": "a demonstrated anchor that lets her rebuild the fact instead of guessing", "Z": "classify using the defining condition", "W": "the final classification decision for each case"},
+      "pictures": {"menu": ["COMPONENT_DIAGRAM", "force-and-displacement arrows", "sorting table"], "job": "Make the deciding feature visible; otherwise a justified 'no picture'."},
+      "checks": ["UNITS", "SIGN_AND_DIRECTION", "counterexample to the near-neighbour"],
+      "band_carriers": {"concept_model_selection": "1-2 (near-neighbour category)", "representation_translation": "0-1", "reasoning_chain_length": "1-2 (condition reached in steps)", "algebra_computational_load": "0 (must stay 0)", "trap_exception_sensitivity": "2"},
+      "boundary": "If executing a relation decides it -> Apply. If choosing a governing law to solve decides it -> Model. If reading a graph/diagram decides it -> Represent.",
+      "adapter_slots_required": ["subtopics[].facts[]: fact, deciding_condition, holds_when, fails_when, near_neighbour, trap_cases[], quick_check, misconception_refs[], picture", "subtopics[].fresh_case_axes[]", "anchors[]"],
+      "core1a_build": "For each fact: rule -> deciding condition -> near-neighbour contrast -> one trap case decided -> quick check. Then one sorting table (fact x deciding condition x exception).",
+      "core1b_shape": {"predict": "Verdict on one tricky case.", "attempt": "Classify a fresh set of cases; for each, verdict + deciding condition.", "diagnose": "Familiar wording vs deciding condition.", "boundary_test": "A case where the condition flips the familiar verdict."},
+      "evidence_criterion": "DEMONSTRATED only when each verdict comes with its correct deciding condition. Right verdict without the condition = UNCERTAIN."
+    },
+    "2": {
+      "demand": "EXPLAIN",
+      "name": "Explain",
+      "her_move": "Say why a relation or result holds: a chain of warranted links from a principle or mechanism to the outcome.",
+      "wrong_idea": "The outcome is restated, named, or a formula quoted, without saying why it follows.",
+      "fix": "Name the mechanism or principle and connect it to the outcome link by link.",
+      "slots": {"X": "the phenomenon that needs a causal explanation rather than a restatement", "Y": "a demonstrated principle that can account for it", "Z": "build the chain from principle to outcome", "W": "the linking 'because' statement that completes the explanation"},
+      "pictures": {"menu": ["MOTION_DIAGRAM", "FREE_BODY_DIAGRAM", "ENERGY_BAR_CHART"], "job": "Show causal states and before/after without writing the conclusion."},
+      "checks": ["SIGN_AND_DIRECTION", "LIMIT_CASE_ANALYSIS", "change one condition and predict"],
+      "band_carriers": {"concept_model_selection": "1-2", "representation_translation": "1", "reasoning_chain_length": "2", "algebra_computational_load": "0-1", "trap_exception_sensitivity": "1-2"},
+      "boundary": "If choosing which law applies decides it -> Model. If a formal warrant/proof decides it -> Justify.",
+      "adapter_slots_required": ["mechanisms[]: phenomenon, principle, causal_links[] (link + warrant), changed_condition_predictions[], restatement_trap, picture_states", "fresh_case_axes[]", "anchors[]"],
+      "core1a_build": "Principle -> each causal link with its warrant -> outcome; then one changed condition worked through.",
+      "core1b_shape": {"predict": "What happens if ...?", "attempt": "Write the causal chain for a fresh phenomenon, plus one changed-condition prediction.", "diagnose": "Restatement or formula vs mechanism.", "boundary_test": "Change one condition; predict and explain."},
+      "evidence_criterion": "DEMONSTRATED when the principle is named, every link is present with its warrant, and the changed-condition prediction is right."
+    },
+    "3": {
+      "demand": "APPLY",
+      "name": "Apply",
+      "her_move": "Execute a known relation or procedure after checking it applies, mapping each given to its symbol, sign and unit.",
+      "wrong_idea": "A familiar formula is run without checking its conditions or mapping the variables correctly.",
+      "fix": "Check applicability, map every given, then execute.",
+      "slots": {"X": "the requested result and the conditions under which the procedure applies", "Y": "a procedure she has demonstrated", "Z": "map givens to the procedure, then execute", "W": "the decisive substitution or execution step that yields the result"},
+      "pictures": {"menu": ["FREE_BODY_DIAGRAM", "COMPONENT_DIAGRAM", "GRAPH_GENERIC"], "job": "Align givens with symbols without doing the protected computation."},
+      "checks": ["UNITS", "SUBSTITUTION_BACK_CHECK", "special value", "alternate computation"],
+      "band_carriers": {"concept_model_selection": "0-1 (if model choice decides it -> Model)", "representation_translation": "1", "reasoning_chain_length": "1-2", "algebra_computational_load": "1-2", "trap_exception_sensitivity": "1-2"},
+      "boundary": "If picking the relation among plausible ones decides it -> Model. If coordinating several relations through a bridge decides it -> Synthesize.",
+      "adapter_slots_required": ["procedures[]: relation, applies_when, fails_when, symbol_map (symbol, meaning, unit, sign), condition_traps[], checks[]", "safe_number_ranges", "anchors[]"],
+      "core1a_build": "Conditions first -> symbol map -> execution with each step's why -> check.",
+      "core1b_shape": {"predict": "Sign or rough size of the result.", "attempt": "A fresh multi-quantity task that includes one applicability or sign condition.", "diagnose": "Condition ignored vs arithmetic slip.", "boundary_test": "A case where the relation does not apply."},
+      "evidence_criterion": "DEMONSTRATED when applicability is stated, mapping is right, result is right, and a check is run."
+    },
+    "4": {
+      "demand": "MODEL",
+      "name": "Choose the model",
+      "her_move": "Choose or formulate the governing law, system, variables, assumptions or strategy.",
+      "wrong_idea": "The most familiar model is picked from keywords instead of checking its assumptions.",
+      "fix": "Compare the candidate models against the stated conditions; choose the one whose assumptions fit.",
+      "slots": {"X": "the situation features that decide which model governs", "Y": "candidate models she has demonstrated", "Z": "test each candidate's assumptions against the situation", "W": "the final model, law or strategy choice"},
+      "pictures": {"menu": ["FREE_BODY_DIAGRAM", "EVENT_TIMELINE", "VECTOR_DIAGRAM"], "job": "Surface the features that separate candidate models without naming the winner."},
+      "checks": ["DIMENSIONAL_HOMOGENEITY", "LIMIT_CASE_ANALYSIS", "try the rival model and show where it breaks"],
+      "band_carriers": {"concept_model_selection": "2 (required)", "representation_translation": "0-2", "reasoning_chain_length": "1-2", "algebra_computational_load": "0-1", "trap_exception_sensitivity": "1-2"},
+      "boundary": "If the choice is only recalling a category -> Recall. If the difficulty is coordinating several models -> Synthesize.",
+      "adapter_slots_required": ["candidate_models[]: model, assumptions, applies_when, fails_when, discriminating_features, keyword_lures", "system_choices[]", "anchors[]"],
+      "core1a_build": "Candidates -> assumptions -> the discriminating feature -> worked choice -> short use of the chosen model.",
+      "core1b_shape": {"predict": "Which model governs?", "attempt": "Choose and defend the model for a fresh situation, then use it briefly.", "diagnose": "Keyword lure vs assumption check.", "boundary_test": "Change one condition so the rival model wins."},
+      "evidence_criterion": "DEMONSTRATED when the choice is defended by checking assumptions, not only by a correct final number.",
+      "physics_rule": "Pre-attempt support never names the winning model."
+    },
+    "5": {
+      "demand": "REPRESENT",
+      "name": "Translate",
+      "her_move": "Translate between words, diagram, vector, graph and equation while preserving meaning (sign, slope/area meaning, entity, scale, shared time).",
+      "wrong_idea": "Surface features are copied while sign, scale, entity or meaning changes.",
+      "fix": "State the invariant first, then map each element across.",
+      "slots": {"X": "the invariant that must survive the translation", "Y": "a translation she has demonstrated", "Z": "map element by element, preserving the invariant", "W": "the decisive correspondence that fixes the target representation"},
+      "pictures": {"menu": ["VECTOR_DIAGRAM", "COMPONENT_DIAGRAM", "GRAPH_POSITION_TIME", "GRAPH_VELOCITY_TIME", "EVENT_TIMELINE", "topic graphs from the adapter"], "job": "Show source-to-target correspondences step by step without completing the final mapping."},
+      "checks": ["GRAPH_CONSISTENCY", "SIGN_AND_DIRECTION", "translate back"],
+      "band_carriers": {"concept_model_selection": "0-1", "representation_translation": "2 (required)", "reasoning_chain_length": "1-2", "algebra_computational_load": "0-1", "trap_exception_sensitivity": "1-2"},
+      "boundary": "If the translation is incidental and executing a relation decides it -> Apply.",
+      "adapter_slots_required": ["representation_pairs[]: from, to, invariant, correspondence_rules[], sign_conventions, classic_distortions[]", "anchors[]"],
+      "core1a_build": "Invariant -> element-by-element correspondence in both directions -> worked translation -> back-translation check.",
+      "core1b_shape": {"predict": "Where does a named feature appear in the target?", "attempt": "Build the target representation from a fresh source.", "diagnose": "Surface copy vs preserved meaning.", "boundary_test": "A degenerate feature (flat region, sign change, crossing)."},
+      "evidence_criterion": "DEMONSTRATED when the invariant is named, correspondences are right, and the back-translation agrees."
+    },
+    "6": {
+      "demand": "SYNTHESIZE",
+      "name": "Multi-step",
+      "her_move": "Coordinate several dependent ideas or steps: find the bridge quantity or condition and the right order.",
+      "wrong_idea": "Pieces are solved separately, or chained in a convenient but invalid order.",
+      "fix": "Find the dependencies, establish the bridge, then carry it through the chain.",
+      "slots": {"X": "the stages and how they depend on each other", "Y": "each stage's idea she has demonstrated", "Z": "establish the bridge and carry it through", "W": "the bridge or ordering decision that unlocks the route"},
+      "pictures": {"menu": ["EVENT_TIMELINE", "FREE_BODY_DIAGRAM", "ENERGY_BAR_CHART"], "job": "Make dependencies, shared conditions and state changes visible without completing the route."},
+      "checks": ["DUAL_FORMALISM_EQUIVALENCE (second route)", "LIMIT_CASE_ANALYSIS", "consistency relation"],
+      "band_carriers": {"concept_model_selection": "1-2", "representation_translation": "1-2", "reasoning_chain_length": "2 (required)", "algebra_computational_load": "1-2", "trap_exception_sensitivity": "1-2"},
+      "boundary": "If one stage's model choice is the whole difficulty -> Model.",
+      "adapter_slots_required": ["multi_step_patterns[]: stages[], bridge, dependency_order, ideas_combined (may cite other topics), second_route_for_check", "anchors[]"],
+      "core1a_build": "Stages -> dependency map -> the bridge, justified -> worked route -> second-route check.",
+      "core1b_shape": {"predict": "What links the stages?", "attempt": "A fresh multi-stage task.", "diagnose": "Wrong order or missing bridge vs slip.", "boundary_test": "Remove or add a stage; what changes?"},
+      "evidence_criterion": "DEMONSTRATED when the bridge and order are stated, the route is valid, and a second route or invariant agrees."
+    },
+    "7": {
+      "demand": "JUSTIFY",
+      "name": "Justify",
+      "her_move": "Establish a conclusion from explicit warrants (law + conditions), a derivation or evidence.",
+      "wrong_idea": "An example, a picture, a pattern or a numerical coincidence is treated as proof.",
+      "fix": "State the warrant and show why its conditions license this conclusion.",
+      "slots": {"X": "the claim and what would establish it", "Y": "a law or result she has demonstrated", "Z": "chain warrants from givens to claim", "W": "the decisive warrant, inference or proof step"},
+      "pictures": {"menu": ["GRAPH_GENERIC", "APPARATUS_SCHEMATIC", "FREE_BODY_DIAGRAM"], "job": "Show givens and evidence without marking the conclusion as established."},
+      "checks": ["DIMENSIONAL_HOMOGENEITY", "SYMMETRY_EXTREMAL_TEST", "counterexample, converse or boundary case"],
+      "band_carriers": {"concept_model_selection": "1-2", "representation_translation": "0-1", "reasoning_chain_length": "2", "algebra_computational_load": "0-2 (derivations)", "trap_exception_sensitivity": "1-2 (converse/boundary)"},
+      "boundary": "If no warrant is needed and recalling the claim decides it -> Recall.",
+      "adapter_slots_required": ["claims[]: claim, warrants[] (law + conditions), derivation_steps[], where_it_fails, converse_traps[]", "anchors[]"],
+      "core1a_build": "Claim -> warrant -> conditions -> proof -> where the claim fails.",
+      "core1b_shape": {"predict": "True or false, and why?", "attempt": "Prove or refute a fresh claim, stating warrant and conditions.", "diagnose": "Example-as-proof vs warrant.", "boundary_test": "The converse, or the claim with one condition removed."},
+      "evidence_criterion": "DEMONSTRATED when warrant and conditions are explicit, the chain is valid, and the boundary case is handled."
+    }
+  },
+
+  "cells": {
+    "D3.1": {"template_ref": "QRT-RETRIEVE-D3", "attempt_pattern": "Main cycle: classify at least 4 fresh cases drawn from at least 2 subtopics, including one near-neighbour pair and one exception; verdict + deciding condition for each; at least one case reaches its condition in two dependent steps.", "protected": "Each verdict and its deciding condition.", "support_may_show": "The candidate categories and the definitions' wording; never which case goes where.", "band_recipe": "concept 1-2 + representation 0-1 + chain 1-2 + algebra 0 + trap 2 = 6-7", "note": "Real exam Recall questions often score 4-5 (D2); the D3 band is usually carried by the Core1B attempt, not by the exam question."},
+    "D4.1": {"template_ref": "QRT-RETRIEVE-D4", "attempt_pattern": "Classification whose deciding condition must be read from an unfamiliar context or representation, where an exception overturns the familiar verdict.", "protected": "The classification and the exception that decides it.", "support_may_show": "Constraints and invariants only.", "band_recipe": "concept 2 + representation 2 + chain 2 + algebra 0 + trap 2 = 8", "note": "Rare by construction: 8 is reachable only with every non-algebra component at 2. If the translation or the model choice becomes the decisive act, reclassify (D4.5 or D4.4). An empty D4.1 is reported as empty, never inflated."},
+    "D3.2": {"template_ref": "QRT-EXPLAIN-D3", "attempt_pattern": "Causal chain of at least 3 warranted links for a fresh phenomenon, plus one changed-condition prediction.", "protected": "The linking 'because' step(s).", "support_may_show": "The principles involved, separately; not how they link.", "band_recipe": "concept 1 + representation 1 + chain 2 + algebra 0-1 + trap 1-2 = 6-7", "note": ""},
+    "D4.2": {"template_ref": "QRT-EXPLAIN-D4", "attempt_pattern": "Explain a counter-intuitive outcome in an unfamiliar context, where the obvious explanation is wrong.", "protected": "The mechanism that actually accounts for it.", "support_may_show": "Constraints and invariants only.", "band_recipe": "concept 2 + representation 1-2 + chain 2 + algebra 0-1 + trap 2 = 8-9", "note": ""},
+    "D3.3": {"template_ref": "QRT-APPLY-D3", "attempt_pattern": "Fresh multi-quantity task with one applicability or sign/component condition before execution.", "protected": "The decisive substitution/execution step.", "support_may_show": "Part of the symbol map and the conditions to check; not the decisive step.", "band_recipe": "concept 1 + representation 1 + chain 1-2 + algebra 1-2 + trap 1 = 6-7", "note": ""},
+    "D4.3": {"template_ref": "QRT-APPLY-D4", "attempt_pattern": "Execution where a hidden condition changes the route part-way (relation valid only in part of the domain), with substantial algebra.", "protected": "Recognising the condition change and executing through it.", "support_may_show": "Constraints and invariants only.", "band_recipe": "concept 1 + representation 1-2 + chain 2 + algebra 2 + trap 2 = 8-9", "note": "If recognising the route change is the whole difficulty -> D4.4 or D4.6."},
+    "D3.4": {"template_ref": "QRT-MODEL-D3", "attempt_pattern": "Choose between at least 2 plausible models for a fresh situation, defend by assumptions, then use the model briefly.", "protected": "The model choice.", "support_may_show": "The candidate list and their assumptions, separately; never which fits.", "band_recipe": "concept 2 + representation 1 + chain 1-2 + algebra 0-1 + trap 1 = 6-7", "note": ""},
+    "D4.4": {"template_ref": "QRT-MODEL-D4", "attempt_pattern": "Unfamiliar context where an assumption fails part-way, so the model must change or be split.", "protected": "The model choice and where it changes.", "support_may_show": "Constraints and invariants only; never a candidate model.", "band_recipe": "concept 2 + representation 1-2 + chain 2 + algebra 1 + trap 2 = 8-9", "note": ""},
+    "D3.5": {"template_ref": "QRT-REPRESENT-D3", "attempt_pattern": "Build a target representation from a fresh source preserving at least 2 invariants (e.g. sign and slope/area meaning).", "protected": "The decisive correspondence.", "support_may_show": "Partial correspondences shown step by step; not the final mapping.", "band_recipe": "concept 1 + representation 2 + chain 1 + algebra 0-1 + trap 1-2 = 6-7", "note": ""},
+    "D4.5": {"template_ref": "QRT-REPRESENT-D4", "attempt_pattern": "Translation in an unfamiliar representation pair, or with a degenerate feature where meaning flips.", "protected": "The correspondence at the degenerate feature.", "support_may_show": "Constraints and invariants only.", "band_recipe": "concept 1-2 + representation 2 + chain 2 + algebra 1 + trap 2 = 8-9", "note": ""},
+    "D3.6": {"template_ref": "QRT-SYNTHESIZE-D3", "attempt_pattern": "Two or three stages joined by one bridge quantity or condition.", "protected": "The bridge and the order.", "support_may_show": "Each stage's idea separately; not the bridge or order.", "band_recipe": "concept 1 + representation 1 + chain 2 + algebra 1 + trap 1-2 = 6-7", "note": ""},
+    "D4.6": {"template_ref": "QRT-SYNTHESIZE-D4", "attempt_pattern": "Three or more stages with a non-obvious bridge and an exception at a stage boundary (e.g. a contact or regime change).", "protected": "The bridge, the order and the stage-boundary exception.", "support_may_show": "Constraints and invariants only.", "band_recipe": "concept 2 + representation 1-2 + chain 2 + algebra 1-2 + trap 2 = 8-10", "note": ""},
+    "D3.7": {"template_ref": "QRT-JUSTIFY-D3", "attempt_pattern": "Prove or refute a fresh claim, stating the warrant and its conditions.", "protected": "The decisive warrant/inference.", "support_may_show": "The relevant laws separately; not the inference that links them.", "band_recipe": "concept 1 + representation 0-1 + chain 2 + algebra 1 + trap 1-2 = 6-7", "note": ""},
+    "D4.7": {"template_ref": "QRT-JUSTIFY-D4", "attempt_pattern": "A claim whose converse or boundary case is false, or a derivation in a new context; she must state where it fails.", "protected": "The warrant and the failing condition.", "support_may_show": "Constraints and invariants only.", "band_recipe": "concept 2 + representation 1 + chain 2 + algebra 1-2 + trap 2 = 8-9", "note": ""}
+  },
+
+  "gap_note_shape": {
+    "gap_id": "GAP-<n>",
+    "date": "YYYY-MM-DD",
+    "builder": "agent name",
+    "tile_id": "e.g. PHY-WPE-D3.1",
+    "instance_or_question": "id",
+    "blueprint_version": "x.y.z",
+    "adapter_version": "x.y.z",
+    "could_not_build": "what part of Core1A/Core1B",
+    "missing_slot_or_rule": "what the blueprint lacks",
+    "change_outside_adapter_needed": "what the builder would have had to change",
+    "proposed_blueprint_change": "builder's suggestion",
+    "oracle_decision": "ACCEPTED (new version) / REJECTED (why) / ADAPTER_CAN_HOLD_IT (how)"
+  },
+
+  "change_log": [
+    {"version": "0.1.0", "date": "2026-10-28", "change": "First draft: 14 cells (D3/D4 x 7 columns), page anatomy from the accepted Newton's-laws page, band check on the Core1B attempt, gap-note rule. Supersedes #299 D3/D4 profiles as the working draft."},
+    {"version": "0.2.0", "date": "2026-10-28", "change": "Oracle, before the first build: added common.content_pack_shape (the builder's output layout, read by the renderer); Core1B = one band-carrying MAIN cycle plus one cycle per instance (removed the conflict between tile_identity and the D3.1 attempt pattern); accepted Newton's-laws pack added as a quality reference."}
+  ]
+}

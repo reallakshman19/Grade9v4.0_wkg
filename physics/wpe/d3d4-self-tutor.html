@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#12384f">
+  <meta name="description" content="Eight WPE practice journeys: learn, predict, attempt, reconstruct, diagnose, repair and test a changed condition.">
+  <title>Eight thinking challenges · Work, Power and Energy</title>
+  <link rel="stylesheet" href="../../site.css">
+  <link rel="stylesheet" href="d3d4-self-tutor.css">
+  <script src="d3d4-self-tutor.js" defer></script>
+  <script src="student-journey.js" defer></script>
+  <link rel="stylesheet" href="student-journey.css">
+</head>
+<body>
+  <a class="skip" href="#lesson-main">Skip to learning</a>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="back" href="index.html">‹ WPE chapter</a>
+      <span>Grade 9 Physics · Learn → Reconstruct</span>
+    </div>
+  </header>
+  <main id="lesson-main" class="shell">
+    <section class="welcome" aria-labelledby="page-title">
+      <p class="eyebrow">Eight thinking skills · Student practice preview</p>
+      <h1 id="page-title">Learn the idea. Then solve a <em>different</em> problem.</h1>
+      <p>These are not speed tests. Use the worked example to learn a method, then keep your first thinking before seeing the answer. You can be unsure or make mistakes—that's how the next steps help.</p>
+      <div class="how">
+        <strong>How each challenge works</strong>
+        <ol aria-label="Six learning stages">
+          <li>Predict</li><li>Attempt</li><li>Reconstruct</li><li>Diagnose</li><li>Repair</li><li>Boundary test</li>
+        </ol>
+        <p>You can write <strong>“I’m not sure”</strong> in an answer. Your first attempt is saved on this browser and stays separate from your later repair. This page does not grade explanations.</p>
+      </div>
+      <nav id="source-journey" class="source-journey" aria-label="Original question" hidden>
+<strong id="source-journey-title"></strong><p id="source-journey-message"></p>
+<a id="source-journey-return" href="question-bank.html">Return to the exact question</a></nav>
+      <div class="overall" aria-live="polite">
+        <span id="overall-count">0 of 8 challenges completed</span>
+        <progress id="overall-meter" value="0" max="8" aria-label="Completed boundary tests"></progress>
+      </div>
+      <nav class="topic-links" aria-label="Choose a lesson">
+        <a href="#C01">1 · Every force counts</a>
+        <a href="#C02">2 · When the spring stops pushing</a>
+        <a href="#C03">3 · Energy added each second</a>
+        <a href="#C04">4 · Only the hanging part</a>
+        <a href="#C05">5 · Read the axes first</a>
+        <a href="#C06">6 · Stay on the circle?</a>
+        <a href="#C07">7 · Momentum arrives every second</a>
+        <a href="#C08">8 · What stays the same?</a>
+      </nav>
+    </section>
+
+    <article class="unit" id="C01" data-topic="C01" aria-labelledby="c01-title">
+      <header class="unit-header">
+        <p class="eyebrow">Skill 1 of 8 · Multi-force work and energy</p>
+        <h2 id="c01-title">🛴 Every force counts</h2>
+        <p class="unit-subtitle">A push helps, friction slows, gravity pulls—and your energy calculation must include them all.</p>
+      </header>
+      <div class="pair">
+        <section class="guide" aria-labelledby="c01-guide">
+          <p class="part-label">Core1A · Guided example</p>
+          <h3 id="c01-guide">A box being pulled across a floor</h3>
+          <p>A <strong>2 kg</strong> box already moves right at <strong>1 m/s</strong>. A child pulls right with <strong>10 N</strong>. Friction pulls left with <strong>4 N</strong>. The box moves <strong>3 m right</strong> on a level floor.</p>
+          <figure class="illustration">
+            <svg viewBox="0 0 500 190" role="img" aria-label="Box moving right; ten-newton pull points right, four-newton friction points left, gravity down and normal force up.">
+              <path d="M22 139H479" stroke="#7695a3" stroke-width="3"/>
+              <rect x="198" y="80" width="95" height="58" rx="9" fill="#d2e7f0" stroke="#315f7a" stroke-width="3"/>
+              <text x="217" y="112" fill="#274e69" font-size="18" font-weight="bold">2 kg</text>
+              <path d="M292 106H422" stroke="#168774" stroke-width="4" stroke-linecap="round"/>
+              <path d="M411 95L425 106L411 117" fill="none" stroke="#168774" stroke-width="4"/>
+              <text x="330" y="91" fill="#0b705f" font-size="16">Pull 10 N →</text>
+              <path d="M198 120H80" stroke="#c16b43" stroke-width="4" stroke-linecap="round"/>
+              <path d="M92 109L78 120L92 131" fill="none" stroke="#c16b43" stroke-width="4"/>
+              <text x="32" y="103" fill="#995334" font-size="15">← Friction 4 N</text>
+              <path d="M247 82V31M247 139V173" stroke="#577f99" stroke-width="3"/>
+              <path d="M239 43L247 29L255 43M239 161L247 175L255 161" stroke="#577f99" stroke-width="3" fill="none"/>
+              <text x="263" y="32" fill="#416985" font-size="14">Normal ↑</text>
+              <text x="265" y="181" fill="#416985" font-size="14">Gravity ↓</text>
+            </svg>
+            <figcaption>Motion is horizontal; gravity and the floor's support are perpendicular to it.</figcaption>
+          </figure>
+          <ol class="guide-steps">
+            <li><strong>Choose the object:</strong> the box. Draw the four forces and the direction of its movement.</li>
+            <li><strong>Do the signs first:</strong> pull helps movement (+), friction opposes it (−), gravity and normal do zero work during horizontal motion.</li>
+            <li><strong>Make a work ledger:</strong>
+              <table><thead><tr><th scope="col">Force</th><th scope="col">Work</th></tr></thead><tbody>
+                <tr><td>Pull</td><td>+10 × 3 = +30 J</td></tr>
+                <tr><td>Friction</td><td>−4 × 3 = −12 J</td></tr>
+                <tr><td>Gravity</td><td>0 J</td></tr>
+                <tr><td>Normal support</td><td>0 J</td></tr>
+              </tbody></table>
+            </li>
+            <li><strong>Add all the work:</strong> net work = +30 − 12 = <strong>+18 J</strong>. This—not friction alone—equals the change in kinetic energy.</li>
+            <li><strong>Find speed:</strong> initial K = ½ × 2 × 1² = 1 J, final K = 19 J. So final speed = √19 ≈ <strong>4.36 m/s</strong>.</li>
+          </ol>
+          <p class="guide-takeaway"><strong>Remember:</strong> Every force gets a ledger row. Add the signed work before using the change in kinetic energy.</p>
+          <details class="deep-reason"><summary>Model detective · when does a force do zero work?</summary>
+<p>Work depends on the angle between the force and displacement, not simply whether the force points up or down. A normal reaction on a fixed smooth ramp is perpendicular to the motion and does zero work; gravity does negative work during an uphill climb. For a constant force use W = Fd cos θ; when the force varies, account for its change along the path.</p>
+<p><strong>Common wrong move:</strong> subtract only friction and call that the change in kinetic energy. It is the sum of work by <em>every</em> force that equals ΔK.</p></details>
+          <details class="conditions"><summary>When can I use this method?</summary><p>The forces are constant over 3 m, air drag is ignored, and the box stays level. If it climbs upward, gravity also does negative work. The normal force is perpendicular to this horizontal movement, so its work is zero.</p></details>
+        </section>
+        <section class="challenge" aria-labelledby="c01-challenge">
+          <p class="part-label independent">Core1B · Different challenge</p>
+          <h3 id="c01-challenge">Can the battery scooter climb?</h3>
+          <p>A <strong>3 kg</strong> toy scooter starts from rest at the bottom of a <strong>2 m ramp</strong>. The top is <strong>0.5 m higher</strong>. Its motor pushes <strong>15 N uphill</strong>, while friction is <strong>3 N downhill</strong>. The normal force is perpendicular to the ramp. Take <strong>g = 10 m/s²</strong>. Does it reach the top, and how fast is it moving there?</p>
+          <figure class="illustration">
+            <svg viewBox="0 0 500 165" role="img" aria-label="Two-metre rising ramp to a point half a metre higher; scooter moves uphill with a fifteen-newton motor force and three-newton friction downhill.">
+              <path d="M28 136L431 50" stroke="#468a80" stroke-width="6" stroke-linecap="round"/>
+              <path d="M431 50V137" stroke="#9eacb8" stroke-width="2" stroke-dasharray="5 4"/>
+              <rect x="187" y="82" width="75" height="32" rx="8" fill="#d3e9f3" stroke="#315f7a" stroke-width="2" transform="rotate(-12 225 100)"/>
+              <circle cx="202" cy="119" r="9" fill="#334f66"/><circle cx="254" cy="108" r="9" fill="#334f66"/>
+              <path d="M270 85L357 65" stroke="#168774" stroke-width="3"/><path d="M344 58L358 64L350 77" fill="none" stroke="#168774" stroke-width="3"/>
+              <text x="270" y="51" font-size="14" fill="#126d5e">15 N uphill</text>
+              <text x="32" y="44" font-size="15" fill="#a76041">3 N friction downhill</text>
+              <text x="397" y="157" font-size="14" fill="#476677">↑ 0.5 m</text>
+              <text x="92" y="154" font-size="14" fill="#476677">2 m slope</text>
+            </svg>
+            <figcaption>New situation: movement is up a slope, so gravity now matters.</figcaption>
+          </figure>
+          <div class="stage-root" data-stage-root="C01">
+            <p>Interactive steps require JavaScript. The guided example is available above.</p>
+          </div>
+        </section>
+      </div>
+      <nav class="unit-next" aria-label="Next skill"><a href="#C02">Next: When the spring stops pushing →</a></nav>
+    </article>
+
+    <article class="unit" id="C02" data-topic="C02" aria-labelledby="c02-title">
+      <header class="unit-header">
+        <p class="eyebrow">Skill 2 of 8 · Spring contact and energy</p>
+        <h2 id="c02-title">🌀 When the spring stops pushing</h2>
+        <p class="unit-subtitle">One journey can have two different sets of forces. Find the point where the rules change.</p>
+      </header>
+      <div class="pair">
+        <section class="guide" aria-labelledby="c02-guide">
+          <p class="part-label">Core1A · Guided example</p>
+          <h3 id="c02-guide">A spring pushes a toy cart</h3>
+          <p>A <strong>1 kg</strong> cart begins at rest against a spring compressed by <strong>0.20 m</strong> with stiffness <strong>100 N/m</strong>. The cart is <strong>not attached</strong>. The whole track is smooth.</p>
+          <figure class="illustration">
+            <svg viewBox="0 0 500 170" role="img" aria-label="A cart pushed away from a compressed spring. Phase A contact, then phase B smooth track after spring returns to natural length.">
+              <path d="M20 123H479" stroke="#7597a6" stroke-width="3"/>
+              <path d="M44 62V127" stroke="#436d83" stroke-width="8"/>
+              <polyline points="50,97 64,97 71,77 83,116 95,77 107,116 119,97 131,97" fill="none" stroke="#bd7850" stroke-width="4"/>
+              <rect x="131" y="77" width="67" height="37" rx="6" fill="#cee9f1" stroke="#315f7a" stroke-width="2"/>
+              <circle cx="149" cy="118" r="8" fill="#315f7a"/><circle cx="181" cy="118" r="8" fill="#315f7a"/>
+              <path d="M217 84H275" stroke="#208575" stroke-width="4"/><path d="M263 73L277 84L263 95" fill="none" stroke="#208575" stroke-width="4"/>
+              <path d="M292 61V130" stroke="#9db6bd" stroke-width="2" stroke-dasharray="5 4"/>
+              <text x="35" y="38" fill="#825333" font-size="16">A · Spring contact</text><text x="315" y="38" fill="#206f6a" font-size="16">B · No spring push</text>
+              <text x="239" y="149" fill="#476677" font-size="13">Natural length</text>
+            </svg>
+            <figcaption>Spring push stops when it reaches natural length and contact ends.</figcaption>
+          </figure>
+          <ol class="guide-steps">
+            <li><strong>Divide the path:</strong> A = spring contact. B = after the spring returns to natural length. The spring cannot pull this unattached cart.</li>
+            <li><strong>Energy at the start:</strong> spring energy = ½kx² = ½ × 100 × 0.20² = <strong>2 J</strong>.</li>
+            <li><strong>At release:</strong> the 2 J becomes kinetic energy, so ½ × 1 × v² = 2. The cart leaves at <strong>2 m/s</strong>.</li>
+            <li><strong>Later on smooth ground:</strong> the spring no longer acts and friction is zero, so the cart continues at <strong>2 m/s</strong>.</li>
+          </ol>
+          <p class="guide-takeaway"><strong>Remember:</strong> Write one energy rule while contact exists, then check which forces act afterward. Do not continue adding spring work after separation.</p>
+          <details class="deep-reason"><summary>Model detective · why not use one force everywhere?</summary>
+<p>While the spring is compressed, its force changes with compression; the released energy is ½kx², not one fixed force acting over the entire journey. For an unattached spring, contact ends at natural length. After that, a rough strip can remove kinetic energy through friction. If the spring is attached, it may pull as well as push and the boundary must be reconsidered.</p>
+<p><strong>Common wrong move:</strong> continue the spring force on the separate rough strip. Mark the change in contact first.</p></details>
+          <details class="conditions"><summary>When can I use this method?</summary><p>The spring is ideal and not attached, the track is smooth, and energy loss is ignored. If rough ground begins later, friction belongs in that later region only.</p></details>
+        </section>
+        <section class="challenge" aria-labelledby="c02-challenge">
+          <p class="part-label independent">Core1B · Different challenge</p>
+          <h3 id="c02-challenge">The cart crosses a rough strip</h3>
+          <p>A <strong>2 kg</strong> toy cart begins at rest against an <strong>unattached spring</strong> of stiffness <strong>200 N/m</strong>, compressed by <strong>0.10 m</strong>. The launch is smooth until the spring reaches natural length. Then the cart immediately crosses a <strong>0.50 m rough strip</strong> with <strong>1 N</strong> friction. No motor acts. Does it cross, and what is its speed at the far end?</p>
+          <figure class="illustration">
+            <svg viewBox="0 0 500 164" role="img" aria-label="Cart first moves away from a compressed spring on smooth track, then enters a separate 0.50 metre rough strip with one-newton friction.">
+              <path d="M18 120H485" stroke="#7597a6" stroke-width="3"/>
+              <path d="M36 55V124" stroke="#426b83" stroke-width="8"/>
+              <polyline points="43,98 53,98 64,79 76,117 88,79 101,117 114,98" fill="none" stroke="#c18159" stroke-width="4"/>
+              <rect x="115" y="77" width="66" height="33" rx="5" fill="#cee6ef" stroke="#315f7a" stroke-width="2"/>
+              <circle cx="135" cy="116" r="7" fill="#315f7a"/><circle cx="166" cy="116" r="7" fill="#315f7a"/>
+              <path d="M248 53V123" stroke="#97aeb8" stroke-width="2" stroke-dasharray="5 4"/>
+              <path d="M249 124H468" stroke="#bd8059" stroke-width="9" stroke-dasharray="10 6"/>
+              <text x="30" y="35" font-size="15" fill="#366c69">Smooth spring launch</text>
+              <text x="289" y="35" font-size="15" fill="#a56139">Rough strip · 0.50 m</text>
+              <text x="253" y="148" font-size="13" fill="#476677">Spring stops here</text>
+            </svg>
+            <figcaption>Contact and rough ground are two different regions. Mark their boundary first.</figcaption>
+          </figure>
+          <div class="stage-root" data-stage-root="C02">
+            <p>Interactive steps require JavaScript. The guided example is available above.</p>
+          </div>
+        </section>
+      </div>
+      <nav class="unit-next" aria-label="Learning navigation"><a href="#C01">← Back to Skill 1</a><a href="#C03">Next: Energy added each second →</a></nav>
+    </article>
+
+    <article class="unit" id="C03" data-topic="C03" aria-labelledby="c03-title">
+      <header class="unit-header">
+        <p class="eyebrow">Skill 3 of 8 · Constant power</p>
+        <h2 id="c03-title">⚡ Energy added each second</h2>
+        <p class="unit-subtitle">A motor can supply equal amounts of energy every second without making speed rise equally every second.</p>
+      </header>
+      <div class="pair">
+        <section class="guide" aria-labelledby="c03-guide">
+          <p class="part-label">Core1A · Guided example</p>
+          <h3 id="c03-guide">A powered toy sled</h3>
+          <p>A <strong>2 kg</strong> sled already moves right at <strong>2 m/s</strong>. A motor supplies a steady <strong>12 watts</strong> of mechanical power on a smooth, level track, for <strong>4 seconds</strong>. Assume there is no friction.</p>
+          <figure class="illustration">
+            <svg viewBox="0 0 500 198" role="img" aria-label="Two qualitative graphs: kinetic energy increases in a straight line as time passes, while speed increases but its graph gradually becomes less steep.">
+              <g stroke="#869ca7" stroke-width="2" fill="none"><path d="M40 157H218M40 157V25M286 157H465M286 157V25"/></g>
+              <g font-size="12" fill="#345e70"><text x="20" y="21">K (J)</text><text x="207" y="177">t (s)</text><text x="266" y="21">v (m/s)</text><text x="454" y="177">t (s)</text></g>
+              <path d="M40 145L205 31" stroke="#137d71" stroke-width="4" fill="none" stroke-linecap="round"/>
+              <path d="M286 139Q330 68 454 47" stroke="#ad724c" stroke-width="4" fill="none" stroke-linecap="round"/>
+              <g fill="#0d6b62" font-size="14" font-weight="bold"><text x="65" y="29">Straight</text></g>
+              <g fill="#8b5c39" font-size="14" font-weight="bold"><text x="340" y="30">Curves</text></g>
+              <text x="38" y="190" font-size="12" fill="#567584">Equal energy each second</text>
+              <text x="298" y="190" font-size="12" fill="#567584">Unequal speed gains</text>
+            </svg>
+            <figcaption>These show shapes, not exact plotted measurements. Always read the axes.</figcaption>
+          </figure>
+          <ol class="guide-steps">
+            <li><strong>Read watts:</strong> 12 W means the motor adds <strong>12 J of energy per second</strong>, not 12 N of force.</li>
+            <li><strong>Start with energy already there:</strong> K at the start = ½ × 2 × 2² = <strong>4 J</strong>.</li>
+            <li><strong>Keep an energy table:</strong> K after t seconds = 4 + 12 × t joules. At 1 s, K = <strong>16 J</strong>. At 4 s, K = <strong>52 J</strong>.</li>
+            <li><strong>Turn energy into speed:</strong> K = ½mv², so speed after 1 s is <strong>4 m/s</strong> and after 4 s is <strong>√52 ≈ 7.21 m/s</strong>.</li>
+            <li><strong>Choose graph shapes:</strong> kinetic energy against time is a rising straight line. Speed against time rises but gradually flattens. Distance against time grows with an increasing slope because the sled speeds up.</li>
+          </ol>
+          <p class="guide-takeaway"><strong>Remember:</strong> constant <em>net power into kinetic energy</em> means equal kinetic-energy gain each second—not a constant force or constant acceleration. Always include the energy from the initial speed.</p>
+          <details class="deep-reason" open><summary>Model detective · different graphs, different slopes</summary>
+<p>For fixed mass, positive constant <em>net mechanical power into kinetic energy</em> P, and no other work contribution, dK/dt = P gives K(t) = K₀ + Pt. Since K = ½mv², speed follows v(t) = √(v₀² + 2Pt/m). The quoted power must be the actual rate of kinetic-energy gain—not a motor rating when friction or drag removes energy.</p>
+<p><strong>Read the axes:</strong> the slope of K–t is the constant P; the slope of v–t is acceleration, which falls as v rises; the slope of displacement–t is speed, which rises. These graphs cannot all be straight lines. At nonzero speed, P = Fv, so F = P/v and acceleration = P/(mv).</p>
+<p><strong>Different clue, different model:</strong> when a problem gives speed as a function of <em>distance</em>, first decide what its speed–distance relation implies about kinetic-energy change. Do not assume constant power simply because speed is changing. This contrast is useful when you return to the original question.</p></details>
+          <details class="conditions"><summary>When does this work?</summary><p>The supplied 12 W is useful mechanical power, the mass stays fixed, the sled is already moving, and there are no energy losses. We only need an energy table and graph shapes; no calculus or memorized distance–time power law is needed.</p></details>
+        </section>
+        <section class="challenge" aria-labelledby="c03-challenge">
+          <p class="part-label independent">Core1B · Different challenge</p>
+          <h3 id="c03-challenge">The classroom trolley's changing speed</h3>
+          <p>A <strong>3 kg</strong> trolley already moves at <strong>2 m/s</strong>. A motor adds a steady <strong>18 W</strong> of mechanical power on a smooth, level track. Work out its speed after <strong>2 seconds</strong> and <strong>6 seconds</strong>. Explain the shapes of the <strong>kinetic energy–time</strong>, <strong>speed–time</strong> and <strong>displacement–time</strong> graphs. Does it have constant acceleration?</p>
+          <figure class="illustration">
+            <svg viewBox="0 0 500 154" role="img" aria-label="A three-kilogram classroom trolley moves right on a smooth track with an eighteen-watt motor. A timeline labels two seconds and six seconds.">
+              <path d="M20 110H484" stroke="#85a3ac" stroke-width="3"/>
+              <rect x="79" y="58" width="112" height="44" rx="9" fill="#d5eaf1" stroke="#315c7a" stroke-width="3"/>
+              <g fill="#315c7a"><circle cx="103" cy="107" r="10"/><circle cx="167" cy="107" r="10"/></g>
+              <text x="102" y="87" fill="#28536b" font-size="17" font-weight="bold">3 kg</text>
+              <path d="M198 75H313" stroke="#168774" stroke-width="4"/><path d="M298 63L315 75L298 87" fill="none" stroke="#168774" stroke-width="4"/>
+              <text x="211" y="56" fill="#127365" font-size="16">Motor · 18 W</text>
+              <path d="M344 111V125M449 111V125" stroke="#668d9c" stroke-width="2"/>
+              <text x="326" y="144" fill="#3a6273" font-size="14">2 s</text>
+              <text x="430" y="144" fill="#3a6273" font-size="14">6 s</text>
+              <text x="19" y="24" fill="#526d7d" font-size="15">Already moving at 2 m/s</text>
+            </svg>
+            <figcaption>Make a fresh energy table at both times. The motor's power differs from the guided example.</figcaption>
+          </figure>
+          <div class="stage-root" data-stage-root="C03"><p>Interactive steps require JavaScript. The guided example is available above.</p></div>
+        </section>
+      </div>
+      <nav class="unit-next" aria-label="Learning navigation"><a href="#C02">← Back to Skill 2</a><a href="#C04">Next: Only the hanging part →</a></nav>
+    </article>
+
+    <article class="unit" id="C04" data-topic="C04" aria-labelledby="c04-title">
+      <header class="unit-header">
+        <p class="eyebrow">Skill 4 of 8 · Changing centre of mass</p>
+        <h2 id="c04-title">⛓️ Only the hanging part</h2>
+        <p class="unit-subtitle">When a rope hangs over an edge, the amount of hanging rope—and the position of its middle—both change as you pull.</p>
+      </header>
+      <div class="pair">
+        <section class="guide" aria-labelledby="c04-guide">
+          <p class="part-label">Core1A · Guided example</p>
+          <h3 id="c04-guide">Lift a chain onto a table</h3>
+          <p>A uniform <strong>4 m</strong> chain has mass <strong>2 kg</strong>. Initially <strong>2 m hangs</strong> below a smooth table edge; the rest lies on the table. Pull it <strong>very slowly</strong> until none hangs. Take <strong>g = 10 m/s²</strong>.</p>
+          <figure class="illustration">
+            <svg viewBox="0 0 500 210" role="img" aria-label="A tabletop and a two-metre vertical hanging chain. Its hanging section has mass one kilogram and its centre of mass is one metre below the table. After lifting, the chain lies on the tabletop.">
+              <path d="M30 69H208V188" stroke="#678d9d" stroke-width="5" fill="none"/>
+              <path d="M59 61H199V188" stroke="#bd8158" stroke-width="7" stroke-linecap="round" fill="none"/>
+              <circle cx="199" cy="126" r="6" fill="#176f69"/>
+              <text x="64" y="37" font-size="15" fill="#446579">Before</text><text x="68" y="92" font-size="13" fill="#476d7f">On table</text>
+              <text x="209" y="130" font-size="13" fill="#126d67">Middle · 1 m below</text>
+              <text x="204" y="188" font-size="13" fill="#95603a">2 m hanging</text>
+              <path d="M317 69H469V188" stroke="#678d9d" stroke-width="5" fill="none"/>
+              <path d="M329 60H462" stroke="#bd8158" stroke-width="7" stroke-linecap="round"/>
+              <text x="352" y="37" font-size="15" fill="#446579">After</text>
+              <text x="344" y="98" font-size="13" fill="#126d67">0 m hanging</text>
+            </svg>
+            <figcaption>The green dot is the middle of the hanging piece, not the middle of the whole chain.</figcaption>
+          </figure>
+          <ol class="guide-steps">
+            <li><strong>Find mass per metre:</strong> 2 kg ÷ 4 m = <strong>0.5 kg/m</strong>.</li>
+            <li><strong>Use the hanging part:</strong> 2 m hangs, so its mass is 0.5 × 2 = <strong>1 kg</strong>.</li>
+            <li><strong>Find its middle:</strong> because it is uniform, its centre of mass is halfway down—<strong>1 m below the table</strong>.</li>
+            <li><strong>Compare energies:</strong> choose table height as zero. Initially the hanging part has U = −1 × 10 × 1 = <strong>−10 J</strong>. At the end, U = <strong>0 J</strong>.</li>
+            <li><strong>Find the work:</strong> the helper works slowly, so the work needed is the increase in potential energy: 0 − (−10) = <strong>+10 J</strong>.</li>
+          </ol>
+          <p class="guide-takeaway"><strong>Remember:</strong> as the hanging length shrinks, both its <em>mass</em> and its <em>centre-of-mass depth</em> shrink. Compare two pictures rather than lifting the entire chain as one fixed lump.</p>
+          <details class="deep-reason"><summary>Model detective · why the work is not simply weight × height</summary>
+<p>For a uniform rope with mass per length λ, a hanging length ℓ has mass λℓ and a middle ℓ/2 below the tabletop. Relative to that tabletop its gravitational potential energy is U(ℓ) = −λgℓ²/2. A slow lift from ℓ₁ to ℓ₂ therefore needs λg(ℓ₁² − ℓ₂²)/2 work; both the hanging mass and its centre depth change.</p>
+<p>If the rope accelerates while you pull, the work must also account for kinetic-energy change. For a nonuniform rope, constant λ is not valid.</p></details>
+          <details class="conditions"><summary>When can I use this method?</summary><p>The chain is uniform and flexible, the edge and tabletop are smooth, and it is pulled slowly enough that kinetic-energy changes can be ignored. Potential energy below the tabletop is negative only because of our chosen zero level.</p></details>
+        </section>
+        <section class="challenge" aria-labelledby="c04-challenge">
+          <p class="part-label independent">Core1B · Different challenge</p>
+          <h3 id="c04-challenge">Pull a rope only partway up</h3>
+          <p>A uniform <strong>8 m rope</strong> has mass <strong>4 kg</strong>. Initially <strong>4 m hangs</strong> below a smooth platform edge. You pull very slowly until <strong>2 m still hangs</strong>. There is no friction, stretching, or change in kinetic energy. Take <strong>g = 10 m/s²</strong>. How much <em>positive work</em> do you do?</p>
+          <figure class="illustration">
+            <svg viewBox="0 0 500 213" role="img" aria-label="Before: a uniform rope hangs four metres from a platform. After: two metres remain hanging. Learner must determine each hanging mass and centre-of-mass depth.">
+              <g stroke="#7597a6" stroke-width="4" fill="none"><path d="M22 53H213V190"/><path d="M283 53H474V190"/></g>
+              <g stroke="#bd805a" stroke-width="7" stroke-linecap="round" fill="none"><path d="M49 45H204V185"/><path d="M302 45H465V121"/></g>
+              <g fill="#345e72" font-size="16" font-weight="bold"><text x="39" y="27">Before · 4 m</text><text x="299" y="27">After · 2 m</text></g>
+              <g fill="#5a7887" font-size="13"><text x="27" y="204">Which mass is hanging?</text><text x="302" y="149">Where is its middle?</text></g>
+            </svg>
+            <figcaption>Draw a middle dot on both hanging pieces yourself. The mass below the edge is not the same in both states.</figcaption>
+          </figure>
+          <div class="stage-root" data-stage-root="C04"><p>Interactive steps require JavaScript. The guided example is available above.</p></div>
+        </section>
+      </div>
+      <nav class="unit-next" aria-label="Learning navigation"><a href="#C03">← Back to Skill 3</a><a href="#C05">Next: Read the axes first →</a></nav>
+    </article>
+
+    <article class="unit" id="C05" data-topic="C05" aria-labelledby="c05-title">
+      <header class="unit-header">
+        <p class="eyebrow">Skill 5 of 8 · Read graphs by their axes</p>
+        <h2 id="c05-title">📈 Read the axes first</h2>
+        <p class="unit-subtitle">Three graphs can look alike but mean very different things. Decide whether to find an area or a slope—and check the units.</p>
+      </header>
+      <div class="pair">
+        <section class="guide" aria-labelledby="c05-guide">
+          <p class="part-label">Core1A · Guided example</p>
+          <h3 id="c05-guide">Three graphs, three meanings</h3>
+          <p>Imagine three notebook graphs. First read the <strong>vertical and horizontal axes</strong>. Then decide what operation answers the question.</p>
+          <figure class="illustration">
+            <svg viewBox="0 0 520 174" role="img" aria-label="Three labeled graph sketches. A: force versus position horizontal at three newtons. B: potential energy versus position slopes down from nine to three joules. C: displacement versus time rises from zero to six metres over three seconds.">
+              <g fill="none" stroke="#74909c" stroke-width="2">
+                <path d="M31 131V30M31 131H165 M207 131V30M207 131H340 M382 131V30M382 131H506"/>
+              </g>
+              <g fill="#385e71" font-size="12" font-weight="600">
+                <text x="13" y="19">F (N)</text><text x="146" y="151">x (m)</text>
+                <text x="194" y="19">U (J)</text><text x="321" y="151">x (m)</text>
+                <text x="370" y="19">s (m)</text><text x="486" y="151">t (s)</text>
+              </g>
+              <path d="M32 72H145" stroke="#148577" stroke-width="4"/>
+              <path d="M208 39L324 103" stroke="#ad7150" stroke-width="4"/>
+              <path d="M383 131L498 39" stroke="#396f9a" stroke-width="4"/>
+              <g fill="#2e5769" font-size="12">
+                <text x="33" y="166">A · area</text><text x="217" y="166">B · slope</text><text x="395" y="166">C · slope</text>
+                <text x="39" y="64">3 N</text><text x="267" y="32">9 → 3 J</text><text x="417" y="35">0 → 6 m</text>
+              </g>
+            </svg>
+            <figcaption>Schematic graphs; exact endpoints are given in the text. The horizontal-axis unit is part of each physics decision.</figcaption>
+          </figure>
+          <ol class="guide-steps">
+            <li><strong>Graph A: force versus position.</strong> Force is +3 N from x = 0 to 2 m. The <em>area</em> is a rectangle: 3 × 2 = <strong>+6 J of work</strong>.</li>
+            <li><strong>Graph B: potential energy versus position.</strong> U falls from 9 J at x = 0 to 3 J at x = 2 m. The <em>slope</em> is (3 − 9) ÷ 2 = −3 J/m. The conservative force is the <em>negative</em> slope: <strong>+3 N</strong>.</li>
+            <li><strong>Graph C: displacement versus time.</strong> Displacement changes from 0 to 6 m over 3 s. The <em>slope</em> gives velocity: 6 ÷ 3 = <strong>2 m/s</strong>.</li>
+            <li><strong>Check the units:</strong> N × m = J for force–position area. J/m = N for potential–position slope. m/s is velocity for displacement–time slope.</li>
+            <li><strong>Say the choice first:</strong> “These axes show ___ against ___, so I use ___ because I need an answer in ___.”</li>
+          </ol>
+          <p class="guide-takeaway"><strong>Remember:</strong> a sloping line does not always mean a force, and an area does not always mean work. Read the axes <em>before</em> using a formula.</p>
+          <details class="conditions"><summary>Why do signs and graph corners matter?</summary><p>Work is signed when force acts with or against displacement. A conservative force equals minus the slope of its potential-energy graph. Velocity from a piecewise displacement–time plot is the slope <em>within the chosen straight interval</em>; at a sharp corner, a single instantaneous slope is not defined.</p></details>
+        </section>
+        <section class="challenge" aria-labelledby="c05-challenge">
+          <p class="part-label independent">Core1B · Different challenge</p>
+          <h3 id="c05-challenge">Robot lab: three mystery graph cards</h3>
+          <p>Read these <strong>new</strong> graph descriptions. Decide which operation—<strong>area or slope</strong>—you need, then calculate each answer with a unit.</p>
+          <div class="graph-cards">
+            <div><strong>Card R · Force–position</strong><p>Horizontal axis: x (m). Vertical axis: F (N). A straight line rises from <strong>(0 m, 0 N)</strong> to <strong>(4 m, 8 N)</strong>. The robot moves right. Find the <strong>work</strong> over 0–4 m.</p></div>
+            <div><strong>Card S · Potential–position</strong><p>Horizontal axis: x (m). Vertical axis: U (J). A straight line rises from <strong>(0 m, 2 J)</strong> to <strong>(2 m, 8 J)</strong>. Find the <strong>conservative force</strong> on this interval.</p></div>
+            <div><strong>Card T · Displacement–time</strong><p>Horizontal axis: t (s). Vertical axis: s (m). Straight segments join <strong>(0 s, 0 m)</strong>, <strong>(2 s, 4 m)</strong>, and <strong>(5 s, 16 m)</strong>. Find the <strong>velocity between 2 s and 5 s</strong>.</p></div>
+          </div>
+          <figure class="illustration">
+            <svg viewBox="0 0 520 167" role="img" aria-label="Three independently labeled new graph cards: R has a rising triangular force versus position line, S has rising potential versus position, T has two rising displacement versus time segments of differing slopes.">
+              <g stroke="#7e9aa8" fill="none" stroke-width="2">
+                <path d="M35 130V22M35 130H162M207 130V22M207 130H337M381 130V22M381 130H505"/>
+              </g>
+              <g fill="#345f73" font-size="12">
+                <text x="8" y="14">F (N)</text><text x="137" y="149">x (m)</text>
+                <text x="191" y="14">U (J)</text><text x="314" y="149">x (m)</text>
+                <text x="371" y="14">s (m)</text><text x="483" y="149">t (s)</text>
+              </g>
+              <path d="M35 130L156 32" stroke="#167d70" stroke-width="4"/>
+              <path d="M207 110L331 34" stroke="#aa714f" stroke-width="4"/>
+              <path d="M381 130L426 99L498 30" stroke="#326e9d" stroke-width="4" fill="none"/>
+              <g fill="#315769" font-size="12" font-weight="700"><text x="52" y="166">R · 0–4 m</text><text x="231" y="166">S · 0–2 m</text><text x="393" y="166">T · 2–5 s</text></g>
+            </svg>
+            <figcaption>The lines are sketched from the written coordinates; no original examination diagram is used.</figcaption>
+          </figure>
+          <div class="stage-root" data-stage-root="C05"><p>Interactive steps require JavaScript. The guided example is available above.</p></div>
+        </section>
+      </div>
+      <nav class="unit-next" aria-label="Learning navigation"><a href="#C04">← Back to Skill 4</a><a href="#C06">Next: Stay on the circle? →</a></nav>
+    </article>
+
+    <article class="unit" id="C06" data-topic="C06" aria-labelledby="c06-title">
+      <header class="unit-header">
+        <p class="eyebrow">Skill 6 of 8 · Vertical circular motion</p>
+        <h2 id="c06-title">🪀 Stay on the circle?</h2>
+        <p class="unit-subtitle">A moving ball may have enough energy to reach a height but still lack the inward pull needed to follow a taut circular path.</p>
+      </header>
+      <div class="pair">
+        <section class="guide" aria-labelledby="c06-guide">
+          <p class="part-label">Core1A · Guided example</p>
+          <h3 id="c06-guide">A ball circling on a string</h3>
+          <p>A <strong>0.5 kg</strong> ball moves in a vertical circle on a light, <strong>taut 2 m string</strong>. At the <strong>top</strong> its speed is <strong>6 m/s</strong>. Use <strong>g = 10 m/s²</strong>; ignore air resistance and pivot friction.</p>
+          <figure class="illustration">
+            <svg viewBox="0 0 520 232" role="img" aria-label="Vertical circular path with a top ball and bottom ball. At the top, inward points downward and gravity and string tension both point down. At the bottom, inward points upward; string tension points up and gravity down.">
+              <circle cx="242" cy="115" r="76" stroke="#8ba9b4" stroke-width="3" stroke-dasharray="6 5" fill="none"/>
+              <circle cx="242" cy="115" r="5" fill="#496b7c"/>
+              <path d="M242 115V39M242 115V191" stroke="#b7ccd4" stroke-width="2"/>
+              <circle cx="242" cy="39" r="12" fill="#cbe6f0" stroke="#325c74" stroke-width="2"/>
+              <circle cx="242" cy="191" r="12" fill="#cbe6f0" stroke="#325c74" stroke-width="2"/>
+              <path d="M227 55V91" stroke="#188479" stroke-width="4"/>
+              <path d="M219 79L227 94L235 79" stroke="#188479" stroke-width="3" fill="none"/>
+              <path d="M257 177V145" stroke="#188479" stroke-width="4"/>
+              <path d="M249 158L257 143L265 158" stroke="#188479" stroke-width="3" fill="none"/>
+              <g fill="#2b5669" font-size="15">
+                <text x="36" y="33">TOP: inward ↓</text><text x="36" y="52">gravity and tension ↓</text>
+                <text x="323" y="190">BOTTOM: inward ↑</text><text x="323" y="210">tension ↑, gravity ↓</text>
+                <text x="284" y="104">Centre</text><text x="42" y="211">Speed is tangent to the path</text>
+              </g>
+            </svg>
+            <figcaption>Point toward the centre first. A string can pull inward, but it cannot push outward to maintain a circle.</figcaption>
+          </figure>
+          <ol class="guide-steps">
+            <li><strong>At the top, inward is down.</strong> Gravity and string tension both act down. The needed inward force is mass × speed² ÷ radius.</li>
+            <li><strong>Find top tension:</strong> weight = 0.5 × 10 = 5 N. Needed inward force = 0.5 × 6² ÷ 2 = 9 N. So tension = 9 − 5 = <strong>+4 N</strong>. A positive tension is physically possible.</li>
+            <li><strong>Use energy from top to bottom:</strong> the top is twice the string length higher, or 4 m. Falling through 4 m gives the ball 0.5 × 10 × 4 = <strong>20 J</strong> extra kinetic energy.</li>
+            <li><strong>Find bottom speed:</strong> v² at the bottom = 6² + 4 × 10 × 2 = 116. Thus speed ≈ <strong>10.77 m/s</strong>.</li>
+            <li><strong>At the bottom, inward is up:</strong> tension acts up and gravity down. Tension − 5 = 0.5 × 116 ÷ 2 = 29 N, so bottom tension = <strong>34 N</strong>.</li>
+          </ol>
+          <p class="guide-takeaway"><strong>Remember:</strong> energy tells you a <em>possible speed</em>, while the inward-force equation checks whether the string can actually keep the ball on the circle. At the top, tension cannot be negative.</p>
+          <details class="conditions"><summary>What must I know before this advanced lesson?</summary><p>This extension uses inward (radial) acceleration = speed² ÷ radius. Radial acceleration changes the <em>direction</em> of the velocity. Velocity itself is tangent to the circle; at the bottom it is horizontal, not vertically upward. The force equations apply only while the light string is taut. Gravity also changes speed during travel; there is no air resistance.</p></details>
+        </section>
+        <section class="challenge" aria-labelledby="c06-challenge">
+          <p class="part-label independent">Core1B · Different challenge</p>
+          <h3 id="c06-challenge">Will a different string remain taut?</h3>
+          <p>A <strong>1 kg</strong> ball is attached to a light <strong>1 m string</strong> with a fixed pivot. At the <strong>bottom</strong> it is moving at <strong>7 m/s</strong>, tangent to the circle toward the rising side. The string begins taut. Use <strong>g = 10 m/s²</strong> and ignore air resistance.</p>
+          <p>Can the ball complete a full <strong>taut circular path</strong>? Check both the <strong>energy needed to reach the top height</strong> and the <strong>inward force the string must supply at the top</strong>. Explain what it means if the calculation gives a negative tension.</p>
+          <figure class="illustration">
+            <svg viewBox="0 0 520 195" role="img" aria-label="New one-metre vertical loop with a ball at its bottom moving tangentially. The top is two metres higher. A downward arrow at the top indicates inward direction; energy and tension must both be checked.">
+              <circle cx="260" cy="99" r="68" fill="none" stroke="#819eaa" stroke-width="3" stroke-dasharray="6 6"/>
+              <circle cx="260" cy="99" r="4" fill="#4a6f80"/>
+              <circle cx="260" cy="167" r="12" fill="#d0e7ef" stroke="#345f76" stroke-width="2"/>
+              <path d="M260 99V167" stroke="#90acba" stroke-width="3"/>
+              <path d="M279 167H357" stroke="#168676" stroke-width="4"/><path d="M344 157L359 167L344 177" stroke="#168676" stroke-width="3" fill="none"/>
+              <path d="M260 34V74" stroke="#a86b4f" stroke-width="3"/><path d="M252 61L260 76L268 61" stroke="#a86b4f" stroke-width="3" fill="none"/>
+              <g fill="#345e71" font-size="15"><text x="35" y="24">At top: inward ↓</text><text x="34" y="180">At bottom: 7 m/s →</text><text x="347" y="106">Height rise</text><text x="347" y="126">2 × 1 = 2 m</text></g>
+            </svg>
+            <figcaption>Energy might allow the height, yet the assumed taut circle can still fail. The challenge is to decide why.</figcaption>
+          </figure>
+          <div class="stage-root" data-stage-root="C06"><p>Interactive steps require JavaScript. The guided example is available above.</p></div>
+        </section>
+      </div>
+      <nav class="unit-next" aria-label="Learning navigation"><a href="#C05">← Back to Skill 5</a><a href="#C07">Next: Momentum arrives every second →</a></nav>
+    </article>
+
+    <article class="unit" id="C07" data-topic="C07" aria-labelledby="c07-title">
+      <header class="unit-header">
+        <p class="eyebrow">Skill 7 of 8 · Flowing mass, momentum and motor power</p>
+        <h2 id="c07-title">📦 Momentum arrives every second</h2>
+        <p class="unit-subtitle">A conveyor must keep speeding up fresh material as it arrives. Find what happens each second—not the total mass already on the belt.</p>
+      </header>
+      <div class="pair">
+        <section class="guide" aria-labelledby="c07-guide">
+          <p class="part-label">Core1A · Guided example</p>
+          <h3 id="c07-guide">Sand joining a moving belt</h3>
+          <p>A conveyor carries sand to the right at a steady <strong>2 m/s</strong>. Each second <strong>1 kg of sand</strong> lands with <strong>zero horizontal speed</strong> and leaves moving with the belt. Ignore other motor loads and vertical motion for this example.</p>
+          <figure class="illustration">
+            <svg viewBox="0 0 500 160" role="img" aria-label="Sand enters a moving belt with zero horizontal speed. One kilogram arrives each second, speeds up to 2 metres per second to the right, while motor force maintains belt motion.">
+              <path d="M46 115H453" stroke="#547f90" stroke-width="10" stroke-linecap="round"/>
+              <g fill="#bc8b5c"><circle cx="115" cy="45" r="7"/><circle cx="133" cy="59" r="6"/><circle cx="100" cy="65" r="6"/><circle cx="121" cy="82" r="7"/></g>
+              <path d="M126 88V101" stroke="#ac714f" stroke-width="3"/><path d="M118 95L126 103L134 95" stroke="#ac714f" fill="none" stroke-width="3"/>
+              <path d="M228 86H395" stroke="#118b7b" stroke-width="4"/><path d="M382 76L399 86L382 96" stroke="#118b7b" fill="none" stroke-width="3"/>
+              <g font-size="14" fill="#325c6f"><text x="36" y="28">1 kg each second</text><text x="36" y="143">Incoming u = 0</text><text x="280" y="65">Belt v = 2 m/s →</text><text x="285" y="146">Outgoing: 2 m/s →</text></g>
+            </svg>
+            <figcaption>Choose a 1-second batch. The belt changes its horizontal momentum, and some supplied energy becomes heat while sand catches up.</figcaption>
+          </figure>
+          <ol class="guide-steps">
+            <li><strong>Think in kilograms per second:</strong> 1 kg arrives each second. Its horizontal speed changes from 0 to 2 m/s.</li>
+            <li><strong>Find the required push:</strong> momentum gain per second gives force = (1 kg/s) × (2 − 0 m/s) = <strong>2 N right</strong>. The arriving sand pushes the belt backward by 2 N.</li>
+            <li><strong>Find extra motor power:</strong> to keep the belt at 2 m/s, the motor supplies <strong>2 N × 2 m/s = 4 W</strong> for pickup.</li>
+            <li><strong>Separate the energy uses:</strong> new sand gains horizontal kinetic energy at <strong>½ × 1 × (2² − 0²) = 2 W</strong>. The remaining <strong>4 − 2 = 2 W</strong> becomes heat during slipping.</li>
+            <li><strong>Check what changes:</strong> if sand already arrived moving right at 2 m/s, the belt would need <strong>zero extra pickup force and power</strong> in this ideal model.</li>
+          </ol>
+          <p class="guide-takeaway"><strong>Remember:</strong> extra motor power and the sand's kinetic-energy gain are not always equal. Show the <em>incoming velocity</em>, the <em>outgoing velocity</em>, and how much material arrives <em>per second</em>.</p>
+          <details class="conditions"><summary>When does this conveyor model work?</summary><p>This is a steady-flow model of horizontal momentum transfer. Sand is slower than the belt and friction brings it to belt speed. The motor holds belt speed steady. We ignore vertical-energy changes, bearing losses, electrical inefficiency and other loads. The rates are extra pickup-related power, not total electricity consumed. A feeder's mass-per-second rate may depend on belt speed.</p></details>
+        </section>
+        <section class="challenge" aria-labelledby="c07-challenge">
+          <p class="part-label independent">Core1B · Different challenge</p>
+          <h3 id="c07-challenge">Wood chips joining the school conveyor</h3>
+          <p>A conveyor belt moves <strong>right at 4 m/s</strong>. Wood chips arrive already moving <strong>right at 1 m/s</strong> and leave at the belt speed. The feeder delivers <strong>half the numerical belt speed</strong> in kilograms per second: at 4 m/s, its rate is 4 ÷ 2 kg/s. Friction speeds up incoming chips. Assume steady flow and ignore all other loads and vertical changes.</p>
+          <p>Find the <strong>mass flow rate</strong>, required <strong>horizontal force</strong>, extra <strong>motor power</strong>, the rate of increase in the chips' <strong>horizontal kinetic energy</strong>, and the <strong>heat rate</strong> during pickup. Explain why the last three numbers must balance.</p>
+          <figure class="illustration">
+            <svg viewBox="0 0 500 150" role="img" aria-label="Wood chips arrive from the left at one metre per second and leave with a four-metre-per-second rightward conveyor. Feed rate is half the numerical belt speed in kilograms per second.">
+              <path d="M32 114H466" stroke="#557e90" stroke-width="10" stroke-linecap="round"/>
+              <g fill="#a47c53"><rect x="70" y="83" width="17" height="15" rx="3"/><rect x="105" y="84" width="17" height="13" rx="3"/><rect x="336" y="83" width="17" height="15" rx="3"/></g>
+              <path d="M63 62H150" stroke="#ac734d" stroke-width="4"/><path d="M137 54L152 62L137 70" stroke="#ac734d" stroke-width="3" fill="none"/>
+              <path d="M283 62H439" stroke="#138579" stroke-width="4"/><path d="M426 54L441 62L426 70" stroke="#138579" stroke-width="3" fill="none"/>
+              <g fill="#3c6273" font-size="14"><text x="46" y="42">Incoming: u = 1 m/s</text><text x="294" y="42">Outgoing: v = 4 m/s</text><text x="126" y="139">Feed rate: v ÷ 2 kg/s</text></g>
+            </svg>
+            <figcaption>The incoming chips are already moving. Do not use zero for their initial horizontal velocity.</figcaption>
+          </figure>
+          <div class="stage-root" data-stage-root="C07"><p>Interactive steps require JavaScript. The guided example is available above.</p></div>
+        </section>
+      </div>
+      <nav class="unit-next" aria-label="Learning navigation"><a href="#C06">← Back to Skill 6</a><a href="#C08">Next: What stays the same? →</a></nav>
+    </article>
+
+    <article class="unit" id="C08" data-topic="C08" aria-labelledby="c08-title">
+      <header class="unit-header">
+        <p class="eyebrow">Skill 8 of 8 · Springs with different controlled variables</p>
+        <h2 id="c08-title">🌀 What stays the same?</h2>
+        <p class="unit-subtitle">A stiffer spring can store more energy in one experiment, but less in another. The answer depends on whether extension or final force is kept fixed.</p>
+      </header>
+      <div class="pair">
+        <section class="guide" aria-labelledby="c08-guide">
+          <p class="part-label">Core1A · Guided example</p>
+          <h3 id="c08-guide">Two springs, two kinds of fairness</h3>
+          <p>Spring A is softer (<strong>100 N/m</strong>). Spring B is stiffer (<strong>200 N/m</strong>). Start from their natural lengths and pull <strong>slowly</strong> until they stop moving. The force builds gradually from zero.</p>
+          <figure class="illustration">
+            <svg viewBox="0 0 500 162" role="img" aria-label="Two springs, A at 100 newtons per metre and B at 200 newtons per metre. Equal extension means equal stretch. Equal final applied force means the softer spring extends further.">
+              <g fill="#315a6e" font-size="14" font-weight="bold"><text x="28" y="27">A · 100 N/m</text><text x="274" y="27">B · 200 N/m</text></g>
+              <g stroke="#6d909e" stroke-width="5"><path d="M30 42V127"/><path d="M272 42V127"/></g>
+              <g stroke="#b17d54" stroke-width="4" fill="none">
+                <polyline points="35,76 54,76 65,61 81,91 97,61 113,91 129,76 148,76"/>
+                <polyline points="277,76 296,76 307,61 323,91 339,61 355,91 371,76 390,76"/>
+              </g>
+              <g stroke="#237f75" stroke-width="3" fill="none"><path d="M148 118H212"/><path d="M202 110L215 118L202 126"/><path d="M390 118H456"/><path d="M445 110L458 118L445 126"/></g>
+              <g fill="#496b79" font-size="12"><text x="46" y="147">Equal stretch?</text><text x="294" y="147">Equal final force?</text></g>
+            </svg>
+            <figcaption>Ask which quantity is the same across the two springs. The diagrams are qualitative, not to scale.</figcaption>
+          </figure>
+          <ol class="guide-steps">
+            <li><strong>Start with Hooke's law:</strong> final force F = k × extension x. Elastic energy is <strong>½kx²</strong>, the triangular area under the increasing force–extension graph—not final F × x.</li>
+            <li><strong>Experiment A: hold extension fixed at 0.10 m.</strong> Spring A stores ½ × 100 × 0.10² = <strong>0.50 J</strong>; spring B stores ½ × 200 × 0.10² = <strong>1.00 J</strong>. The stiffer spring B stores more.</li>
+            <li><strong>Experiment B: hold final force fixed at 10 N.</strong> A extends 10 ÷ 100 = 0.10 m; B extends 10 ÷ 200 = 0.05 m. Their stored energies are <strong>0.50 J</strong> in A and <strong>0.25 J</strong> in B. The softer spring A stores more.</li>
+            <li><strong>Explain the reversal:</strong> at equal extension energy grows with stiffness. At equal final force, the stiffer spring moves less, and energy = F² ÷ (2k), so it stores less.</li>
+          </ol>
+          <p class="guide-takeaway"><strong>Remember:</strong> first label the test <em>equal extension</em> or <em>equal final force</em>. “Same force” here means the same <em>final equilibrium</em> force after slowly increasing from zero, not suddenly applying a constant force to a moving spring.</p>
+          <details class="conditions"><summary>Why don't we multiply final force by extension?</summary><p>The spring's resisting force increases gradually during loading from zero to its final value. The stored elastic energy is the triangular area: ½ × final force × extension. Both springs are ideal and Hookean, with no hysteresis, losses, overshoot or oscillation.</p></details>
+        </section>
+        <section class="challenge" aria-labelledby="c08-challenge">
+          <p class="part-label independent">Core1B · Different challenge</p>
+          <h3 id="c08-challenge">Which mystery spring pad stores more?</h3>
+          <p>Two ideal pads are compressed <strong>slowly</strong> and held at rest. First, the lab measures the force required to hold both at the same compression of <strong>4 cm</strong>:</p>
+          <table class="student-data">
+            <caption>Measured final equilibrium force at 4 cm compression</caption>
+            <thead><tr><th scope="col">Spring pad</th><th scope="col">Final force</th></tr></thead>
+            <tbody><tr><th scope="row">Blue</th><td>8 N</td></tr><tr><th scope="row">Gold</th><td>16 N</td></tr></tbody>
+          </table>
+          <p><strong>Test X:</strong> compress both pads by <strong>5 cm</strong>. <strong>Test Y:</strong> start uncompressed and slowly increase the force on each until its <strong>final force is 12 N</strong>. Which pad stores more energy in each test?</p>
+          <p>Calculate each stiffness from the lab measurements, then both energy values for both tests. Explain why the winner <em>reverses</em> when the controlled variable changes.</p>
+          <figure class="illustration">
+            <svg viewBox="0 0 500 122" role="img" aria-label="Blue spring pad requires eight newtons to hold a compression of four centimetres. Gold requires sixteen newtons for the same four centimetres. The student must infer stiffness then compare equal-extension and equal-final-force tests.">
+              <rect x="40" y="37" width="173" height="57" rx="8" fill="#c9e6f3" stroke="#3f779b" stroke-width="2"/>
+              <rect x="288" y="37" width="173" height="57" rx="8" fill="#f6dfaa" stroke="#a17c38" stroke-width="2"/>
+              <g fill="#2d5569" font-size="15" font-weight="bold"><text x="99" y="60">Blue</text><text x="345" y="60">Gold</text><text x="93" y="81">8 N</text><text x="344" y="81">16 N</text></g>
+              <g fill="#4d6f7e" font-size="14"><text x="181" y="21">Both 4 cm</text><text x="151" y="117">Which one is stiffer?</text></g>
+            </svg>
+            <figcaption>The first measurements are clues to spring stiffness, not the forces you must use in both later tests.</figcaption>
+          </figure>
+          <div class="stage-root" data-stage-root="C08"><p>Interactive steps require JavaScript. The guided example is available above.</p></div>
+        </section>
+      </div>
+      <nav class="unit-next" aria-label="Learning navigation"><a href="#C07">← Back to Skill 7</a><a href="#C01">Return to Skill 1 ↑</a></nav>
+    </article>
+    <footer class="end-note">
+      <strong>About this preview:</strong> These are newly authored, independent practice problems based on the C01–C08 conceptual teaching drafts—not original examination questions. Local browser storage is useful for practice, but it does <em>not</em> verify identity, grade written reasoning, securely hide an answer key, or establish academic Core1A/Core1B admission. Original source selections remain under review.
+    </footer>
+  </main>
+</body>
+</html>

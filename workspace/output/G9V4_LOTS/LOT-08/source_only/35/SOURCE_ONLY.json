@@ -1,0 +1,17 @@
+{
+  "source_id": "EX-M97",
+  "task_identity": "Q-ID-40",
+  "sequence": 35,
+  "batch_sequence": 5,
+  "paper": "JEE Main 2013 (Online) 23th April Morning Slot",
+  "stem_text": "A 70 kg man leaps vertically into the air from a crouching position. To take the leap the man pushes the ground with a constant force F to raise himself. The center of gravity rises by 0.5 m before he leaps. After the leap the c.g. rises by another 1 m. The maximum power delivered by the muscles is : (Take g = 10 ms ^(−2) )",
+  "stem_sha256": "cbb41b03fc485b69ca2d6ca28cbb08a484d1a36fb7b3ba766c455607508ac8c8",
+  "options": [
+    "A: 6.26×10^(3) Watts at the start",
+    "B: 6.26×10^(3) Watts at take off",
+    "C: 6.26×10^(4) Watts at the start",
+    "D: 6.26×10^(4) Watts at take off"
+  ],
+  "figure_reference": null,
+  "confidentiality_notice": "Source custody blind packet. Academic solve, answer key, and scoring omitted. Private review only."
+}

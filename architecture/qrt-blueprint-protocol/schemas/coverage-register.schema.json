@@ -1,0 +1,700 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://reallakshman19.github.io/Grade9v4.0/architecture/qrt-blueprint-protocol/schemas/coverage-register.schema.json",
+  "title": "WPE 74-record source-to-QRT-to-Blueprint-to-learning review register (no academic admission)",
+  "description": "Fail-closed machine-checkable author-exposed coverage register with separate 21 original-examination pilot places. Schema validation is not source authentication, blind QRT or acceptance.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "as_of",
+    "status",
+    "authority_note",
+    "pins",
+    "operations",
+    "blueprint",
+    "summary",
+    "questions",
+    "pilot_places",
+    "release_policy"
+  ],
+  "properties": {
+    "schema": {
+      "const": "g9v4-wpe-qrt-blueprint-coverage-register/v1"
+    },
+    "as_of": {
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "const": "AUTHOR_EXPOSED_COVERAGE_REGISTER__NO_ACADEMIC_ADMISSION"
+    },
+    "authority_note": {
+      "type": "string",
+      "minLength": 1
+    },
+    "pins": {
+      "type": "object",
+      "minProperties": 8,
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "path",
+          "git_blob_sha"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "git_blob_sha": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "operations": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "RETRIEVE",
+          "EXPLAIN",
+          "APPLY",
+          "MODEL",
+          "REPRESENT",
+          "SYNTHESIZE",
+          "JUSTIFY"
+        ]
+      },
+      "minItems": 7,
+      "maxItems": 7,
+      "uniqueItems": true
+    },
+    "blueprint": {
+      "type": "object",
+      "required": [
+        "id",
+        "version",
+        "status",
+        "cell_count",
+        "adapter_status",
+        "native_qrt_admissions"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "const": "0.2.0"
+        },
+        "status": {
+          "const": "DRAFT_OWNER_REVIEW"
+        },
+        "cell_count": {
+          "const": 14
+        },
+        "adapter_status": {
+          "const": "UNSELECTED"
+        },
+        "native_qrt_admissions": {
+          "const": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "total_questions",
+        "unique_source_ids",
+        "reader_d3d4",
+        "reader_d3",
+        "reader_d4",
+        "reader_d3d4_learning",
+        "all_learning",
+        "qrt_review_statuses",
+        "pilot_places",
+        "pilot_pending",
+        "pilot_vacant",
+        "pilot_agree",
+        "pilot_conflict",
+        "pilot_absent",
+        "admitted"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "total_questions": {
+          "const": 74
+        },
+        "unique_source_ids": {
+          "const": 74
+        },
+        "reader_d3d4": {
+          "const": 22
+        },
+        "reader_d3": {
+          "const": 17
+        },
+        "reader_d4": {
+          "const": 5
+        },
+        "reader_d3d4_learning": {
+          "type": "object"
+        },
+        "all_learning": {
+          "type": "object"
+        },
+        "qrt_review_statuses": {
+          "type": "object"
+        },
+        "pilot_places": {
+          "const": 21
+        },
+        "pilot_pending": {
+          "const": 14
+        },
+        "pilot_vacant": {
+          "const": 7
+        },
+        "pilot_agree": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pilot_conflict": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pilot_absent": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "admitted": {
+          "const": 0
+        }
+      }
+    },
+    "questions": {
+      "type": "array",
+      "minItems": 74,
+      "maxItems": 74,
+      "items": {
+        "type": "object",
+        "required": [
+          "source_id",
+          "display_id",
+          "reader_sequence",
+          "category",
+          "reader_proposal",
+          "source_evidence",
+          "qrt_evidence",
+          "pilot_overlay",
+          "blueprint_route",
+          "learning",
+          "next_actions",
+          "priority",
+          "admission"
+        ],
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "display_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reader_sequence": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "category": {
+            "enum": [
+              "EXAM_CLAIM",
+              "TEXTBOOK",
+              "SYNTHETIC_CONTROL"
+            ]
+          },
+          "reader_proposal": {
+            "type": "object",
+            "required": [
+              "operation",
+              "band",
+              "classification_status",
+              "review_state"
+            ],
+            "properties": {
+              "operation": {
+                "type": "string",
+                "minLength": 1
+              },
+              "band": {
+                "enum": [
+                  "D1",
+                  "D2",
+                  "D3",
+                  "D4"
+                ]
+              },
+              "classification_status": {
+                "const": "AUTHOR_READER_PROPOSAL_NOT_QRT"
+              },
+              "review_state": {
+                "const": "NOT_ADMITTED"
+              }
+            },
+            "additionalProperties": false
+          },
+          "source_evidence": {
+            "type": "object",
+            "required": [
+              "reader_path",
+              "stem_sha256",
+              "source_figure_count",
+              "original_figure_verified",
+              "official_key_state",
+              "source_flag_count",
+              "source_custody",
+              "b08_custody",
+              "b08_figure_gate",
+              "b08_key_gate",
+              "b09_corrective_gate"
+            ],
+            "properties": {
+              "reader_path": {
+                "type": "string",
+                "minLength": 1
+              },
+              "stem_sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "source_figure_count": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "original_figure_verified": {
+                "const": false
+              },
+              "official_key_state": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source_flag_count": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "source_custody": {
+                "const": "NOT_AUTHENTICATED_BY_THIS_REGISTER"
+              },
+              "b08_custody": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "b08_figure_gate": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "b08_key_gate": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "b09_corrective_gate": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "additionalProperties": false
+          },
+          "qrt_evidence": {
+            "type": "object",
+            "required": [
+              "status",
+              "reported_role",
+              "reviewed_operation",
+              "reviewed_band",
+              "score_total",
+              "factors",
+              "qrt_final_admission",
+              "evidence_path",
+              "independent_final_adjudication"
+            ],
+            "properties": {
+              "status": {
+                "enum": [
+                  "NOT_RUN_IN_B07",
+                  "INDEPENDENT_FIRST_PASS_RECORDED",
+                  "CONFLICTING_AUTHOR_EXPOSED_PROPOSALS"
+                ]
+              },
+              "reported_role": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "reviewed_operation": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "reviewed_band": {
+                "enum": [
+                  "D1",
+                  "D2",
+                  "D3",
+                  "D4",
+                  null
+                ]
+              },
+              "score_total": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 10
+              },
+              "factors": {
+                "anyOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 2
+                    },
+                    "minItems": 5,
+                    "maxItems": 5
+                  }
+                ]
+              },
+              "qrt_final_admission": {
+                "type": "string",
+                "minLength": 1
+              },
+              "evidence_path": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "independent_final_adjudication": {
+                "const": false
+              }
+            },
+            "additionalProperties": false
+          },
+          "pilot_overlay": {
+            "type": "object",
+            "required": [
+              "places",
+              "pilot_proposals",
+              "comparison"
+            ],
+            "properties": {
+              "places": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "pilot_proposals": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "operation",
+                    "band",
+                    "status"
+                  ],
+                  "properties": {
+                    "operation": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "band": {
+                      "enum": [
+                        "D3",
+                        "D4"
+                      ]
+                    },
+                    "status": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "comparison": {
+                "enum": [
+                  "NOT_IN_21_PLACE_PILOT",
+                  "AGREE_WITH_READER_PROPOSAL",
+                  "CONFLICT_WITH_READER_PROPOSAL"
+                ]
+              }
+            },
+            "additionalProperties": false
+          },
+          "blueprint_route": {
+            "type": "object",
+            "required": [
+              "candidate_cell",
+              "basis",
+              "blueprint_status",
+              "adapter_status",
+              "approved_cell"
+            ],
+            "properties": {
+              "candidate_cell": {
+                "anyOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "string",
+                    "pattern": "^D[34]\\.[1-7]$"
+                  }
+                ]
+              },
+              "basis": {
+                "enum": [
+                  "READER_PROPOSAL_ONLY",
+                  "REVIEWED_D1_D2_OUTSIDE_D3_D4",
+                  "UNKNOWN_OPERATION_NO_VALID_CELL",
+                  "OUTSIDE_D3_D4_READER_PROPOSAL"
+                ]
+              },
+              "blueprint_status": {
+                "const": "DRAFT_OWNER_REVIEW"
+              },
+              "adapter_status": {
+                "const": "UNSELECTED"
+              },
+              "approved_cell": {
+                "const": null
+              }
+            },
+            "additionalProperties": false
+          },
+          "learning": {
+            "type": "object",
+            "required": [
+              "related_construction_ids",
+              "interactive_ids",
+              "author_pack_ids",
+              "status",
+              "semantic_join",
+              "exact_inference_independently_verified"
+            ],
+            "properties": {
+              "related_construction_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "interactive_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "author_pack_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "status": {
+                "enum": [
+                  "INTERACTIVE_RELATED_PRACTICE",
+                  "AUTHOR_PACK_ONLY",
+                  "UNMAPPED"
+                ]
+              },
+              "semantic_join": {
+                "const": "PROPOSED_UNQUALIFIED"
+              },
+              "exact_inference_independently_verified": {
+                "const": false
+              }
+            },
+            "additionalProperties": false
+          },
+          "next_actions": {
+            "type": "object",
+            "required": [
+              "source",
+              "qrt",
+              "learning"
+            ],
+            "properties": {
+              "source": {
+                "type": "string",
+                "minLength": 1
+              },
+              "qrt": {
+                "type": "string",
+                "minLength": 1
+              },
+              "learning": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": false
+          },
+          "priority": {
+            "enum": [
+              "P0_D3_D4_REVIEW",
+              "P2_OTHER_BANDS"
+            ]
+          },
+          "admission": {
+            "const": "NOT_ADMITTED"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "pilot_places": {
+      "type": "array",
+      "minItems": 21,
+      "maxItems": 21,
+      "items": {
+        "type": "object",
+        "required": [
+          "place_id",
+          "operation",
+          "candidate_id",
+          "pilot_band",
+          "pilot_status",
+          "reader_present",
+          "reader_operation",
+          "reader_band",
+          "comparison",
+          "qrt_first_pass_band",
+          "qrt_final_admitted"
+        ],
+        "properties": {
+          "place_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "operation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "candidate_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "pilot_band": {
+            "enum": [
+              "D3",
+              "D4",
+              null
+            ]
+          },
+          "pilot_status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reader_present": {
+            "type": "boolean"
+          },
+          "reader_operation": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "reader_band": {
+            "enum": [
+              "D1",
+              "D2",
+              "D3",
+              "D4",
+              null
+            ]
+          },
+          "comparison": {
+            "enum": [
+              "VACANT",
+              "AGREE",
+              "CONFLICT",
+              "ABSENT_FROM_CURRENT_READER"
+            ]
+          },
+          "qrt_first_pass_band": {
+            "enum": [
+              "D1",
+              "D2",
+              "D3",
+              "D4",
+              null
+            ]
+          },
+          "qrt_final_admitted": {
+            "const": false
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "release_policy": {
+      "type": "object",
+      "required": [
+        "academic_admission",
+        "practice_semantics",
+        "qrt_first_pass",
+        "pilot",
+        "d1d2",
+        "d31"
+      ],
+      "properties": {
+        "academic_admission": {
+          "const": "NOT_ADMITTED_FOR_ALL_ROWS"
+        },
+        "practice_semantics": {
+          "type": "string",
+          "minLength": 1
+        },
+        "qrt_first_pass": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pilot": {
+          "type": "string",
+          "minLength": 1
+        },
+        "d1d2": {
+          "type": "string",
+          "minLength": 1
+        },
+        "d31": {
+          "const": "PAUSED"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

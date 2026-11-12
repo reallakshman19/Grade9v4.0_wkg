@@ -1,0 +1,87 @@
+{
+  "sequence": 43,
+  "batch_sequence": 13,
+  "task_identity": "Q-ID-50",
+  "stable_id": "PHYS-WPE-LOT10-Q43",
+  "source_id": "EX-N8",
+  "lot": "LOT-10",
+  "batch": "BATCH-C",
+  "paper": "JEE Main 2023 (Online) 11th April Evening Shift",
+  "source_type": "EXAM_PAPER_TRANSCRIBED",
+  "source_custody": "VERIFIED_TEXT",
+  "stem_text": "A block of mass 5kg starting from rest is pulled up on a smooth inclined plane making an angle of 30^(∘) with horizontal with an effective acceleration of 1ms^(−2) . The power delivered by the pulling force at 𝑡=10s from the start is ___________ W. [use g=10ms^(−2) ] (calculate the nearest integer value)",
+  "stem_sha256": "d19ba8fc4762a1acb93b9059c01f13e25bdb4874bcd50ef8dcd71375500d4fef",
+  "source_hash": "d19ba8fc4762a1acb93b9059c01f13e25bdb4874bcd50ef8dcd71375500d4fef",
+  "source_record_digest": "sha256:d19ba8fc4762a1acb93b9059c01f13e25bdb4874bcd50ef8dcd71375500d4fef",
+  "duplicate_parent": null,
+  "scope": "PRIMARY_IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "NOT_REQUIRED",
+  "figure_reference": null,
+  "options": [],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "INCLINE_DYNAMICS_AND_INSTANTANEOUS_POWER",
+    "predicted_option": "300",
+    "derivation": "Incline angle 30 deg, acceleration a = 1 m/s^2. Equation of motion along incline: F_pull - m*g*sin(30) = m*a => F_pull = 5*10*0.5 + 5*1 = 25 + 5 = 30 N. At t = 10s: velocity v = a*t = 1 * 10 = 10 m/s. Instantaneous power P = F_pull * v = 30 * 10 = 300 W."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Newton's second law on incline to find pulling force, then instantaneous power P = F*v"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Resolving gravity along 30 degree incline and kinematics v = a*t"
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Find pulling force F = 30 N, speed at t=10s v = 10 m/s, evaluate power product"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Arithmetic multiplication: 30 * 10 = 300 W"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Not confusing effective acceleration with pulling force alone"
+        }
+      },
+      "total": 5,
+      "band": "D2",
+      "prior_proposal": {
+        "source": "INITIAL_CALIBRATION",
+        "scores": "1/1/1/1/1",
+        "total": 5
+      },
+      "differences": "Initial native factor audit"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "MODEL"
+      ],
+      "rationale": "Applying dynamics and kinematics to calculate instantaneous power delivery",
+      "candidate_cell": "QRT-APPLY-D2",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_INDEPENDENT_REVIEW",
+  "b2_blind_status": "PENDING_BLIND_SOLVE",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (Coaching key unverified against official NTA master)",
+    "HOLD:SPEC_PENDING (No qualified D1/D2 common blueprint or topic adapter)",
+    "HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)"
+  ],
+  "next_action": "B2 independent source-only solve + official NTA master key reconciliation"
+}

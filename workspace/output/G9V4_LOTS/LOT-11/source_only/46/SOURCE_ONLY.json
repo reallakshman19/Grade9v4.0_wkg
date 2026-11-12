@@ -1,0 +1,12 @@
+{
+  "source_id": "EX-N21",
+  "task_identity": "Q-ID-53",
+  "sequence": 46,
+  "batch_sequence": 1,
+  "paper": "JEE Main 2023 (Online) 25th January Morning Shift",
+  "stem_text": "An object of mass 'm' initially at rest on a smooth horizontal plane starts moving under the action of force F = 2N. In the process of its linear motion, the angle 𝜃 (as shown in figure) between the direction of force and horizontal varies as 𝜃=k𝑥 , where k is a constant and 𝑥 is the distance covered by the object from its initial position. The expression of kinetic energy of the object will be 𝐸=(𝑛)/(𝑘)sin⁡𝜃 . The value of n is ___________. [FIG-stem-1]",
+  "stem_sha256": "9138f7c80c15935a01e5518199ae4da9a95c8e3c4945c05da65f61ee14a11375",
+  "options": [],
+  "figure_reference": "FIG-stem-1",
+  "confidentiality_notice": "Source custody blind packet. Academic solve, answer key, and scoring omitted. Private review only."
+}

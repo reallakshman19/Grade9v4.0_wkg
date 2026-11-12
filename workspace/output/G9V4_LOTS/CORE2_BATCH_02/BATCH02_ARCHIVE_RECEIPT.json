@@ -1,0 +1,12 @@
+{
+  "schema_version": "grade9v4-batch-receipt-v1",
+  "batch_id": "BATCH-02",
+  "archive_filename": "CORE2_BATCH_02_PRIVATE_REVIEW.zip",
+  "archive_bytes": 38921,
+  "archive_sha256": "a76a0d72f2ac09111e51f92f4d1e4a98196faffda1624982cd3bee88ce4cc4d4",
+  "timestamp_utc": "2026-11-02T10:19:55.890458+00:00",
+  "academic_admission": "NOT_ADMITTED",
+  "disposition": "HOLD:ACADEMIC_ADMISSION",
+  "total_questions": 15,
+  "manifest_file_count": 14
+}

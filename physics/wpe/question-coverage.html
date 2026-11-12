@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Question-to-lesson map · Work, Power and Energy</title>
+<meta name="description" content="All WPE Question Bank candidates, essential reasoning from source notes, and working or missing independent challenges.">
+<link rel="stylesheet" href="../../site.css">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f4f8fa;color:#1b384a;font:16px/1.55 system-ui,sans-serif}
+main{max-width:1260px;padding:24px 18px 75px;margin:auto}a{color:#126e72}a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #bf8e31;outline-offset:3px}
+h1{font-size:clamp(1.7rem,3.6vw,2.55rem);line-height:1.16;margin:8px 0}
+p{max-width:950px}.intro,.counts{background:white;border:1px solid #d8e5ea;border-radius:14px;padding:18px 22px;margin:12px 0 17px}
+.intro nav{display:flex;gap:16px;flex-wrap:wrap}.counts{display:flex;gap:16px;flex-wrap:wrap;font-size:.93rem}
+.controls{display:flex;gap:12px;align-items:end;flex-wrap:wrap;margin:20px 0 15px}
+.controls label{display:grid;gap:5px;font-weight:700}.controls input,.controls select{border:1px solid #a7c0ca;border-radius:8px;min-height:44px;padding:9px 12px;font:inherit;max-width:100%}
+.controls input{width:min(380px,85vw)}.table-wrap{width:100%;overflow-x:auto;background:white;border:1px solid #d7e5ec;border-radius:12px}
+table{width:100%;border-collapse:collapse;min-width:700px}th,td{text-align:left;vertical-align:top;padding:12px 13px;border-bottom:1px solid #e2ebef}
+th{background:#e6f1f4;font-size:.87rem}td{font-size:.88rem}td:first-child{font-weight:800;white-space:nowrap}
+.skill{max-width:570px;overflow-wrap:anywhere}.missing{color:#885c32}.available{color:#136458;font-weight:700}
+.topic-links{display:flex;gap:6px;flex-wrap:wrap}.topic-links a{border:1px solid #b6cfd5;border-radius:7px;padding:5px 8px;text-decoration:none;min-height:34px;display:inline-flex;align-items:center}
+small{color:#496877}#table-status{font-weight:750}
+@media(max-width:680px){main{padding:15px 10px 50px}.intro,.counts{padding:13px}.table-wrap{overflow:visible;border:0;background:transparent}table,tbody,tr,td{display:block;min-width:0;width:100%}thead{display:none}tr{background:white;border:1px solid #d5e4eb;border-radius:10px;padding:9px;margin-bottom:10px}td{border:0;padding:6px 8px}td::before{content:attr(data-label);font-size:.72rem;font-weight:800;color:#567584;display:block;text-transform:uppercase;letter-spacing:.04em}}
+</style>
+</head>
+<body><main>
+<section class="intro">
+<nav aria-label="WPE navigation"><a href="index.html">WPE chapter</a><a href="question-bank.html">Question Bank</a><a href="reasoning-paths.html">Reasoning routes</a></nav>
+<h1>Which learning skill does each question need?</h1>
+<p>This map checks all 74 Question Bank entries against thirteen completed C/E lessons and eight focused journeys. A <em>related bridge</em> is not automatically sufficient teaching. Open a different challenge and then return to your original question; the five previously missing operations now have their own guided and fresh challenges.</p>
+</section>
+<div id="counts" class="counts" aria-live="polite">Reading the existing Question Bank…</div>
+<div class="controls"><label>Find a question or physics skill<input id="search" type="search" placeholder="Try EX-M79, graphs, spring…"></label>
+<label>Show<select id="filter"><option value="all">All questions</option><option value="focused">New focused journey</option><option value="targeted">Close-practice match</option><option value="related">Related idea only</option><option value="missing">Missing construction</option></select></label></div>
+<p id="table-status" role="status"></p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Question</th><th scope="col">Essential reasoning to practise</th><th scope="col">Learn → different challenge</th><th scope="col">What is missing?</th></tr></thead><tbody id="rows"></tbody></table></div>
+<p><small>Source operations and reasoning descriptions are author-supplied and may need physics correction. This page never imports source answers or treats proposed topic links as verified prerequisites.</small></p>
+</main>
+<script src="question-coverage-r1.js" defer></script>
+</body></html>

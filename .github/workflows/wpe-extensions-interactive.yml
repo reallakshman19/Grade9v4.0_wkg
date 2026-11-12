@@ -1,0 +1,36 @@
+name: WPE E01-E05 Interactive Learning QA
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "physics/wpe/extension-learning.html"
+      - "physics/wpe/extension-learning.js"
+      - "physics/wpe/extension-learning.css"
+      - "physics/wpe/reasoning-paths.html"
+      - "physics/wpe/index.html"
+      - "tools/wpe_extensions_interactive_ui.py"
+      - "tests/test_wpe_extensions_interactive.py"
+      - ".github/workflows/wpe-extensions-interactive.yml"
+jobs:
+  interactive-science-and-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install Python and real Chromium
+        run: |
+          python -m pip install -e ".[dev]" playwright==1.55.0
+          python -m playwright install --with-deps chromium
+      - name: Entire existing Python regression suite plus five extension science checks
+        run: python -m pytest -q
+      - name: Five complete six-stage interactive extension journeys (desktop and mobile)
+        run: python tools/wpe_extensions_interactive_ui.py
+      - name: C01-C08 existing real-browser regressions
+        run: python tools/wpe_d3d4_self_tutor_ui.py
+      - name: Exact Question Bank ↔ C03 regression
+        run: python tools/wpe_student_journey_r1_ui.py
+      - name: Existing five-topic Learn Challenge browser regression
+        run: python tools/wpe_learn_challenge_ui.py

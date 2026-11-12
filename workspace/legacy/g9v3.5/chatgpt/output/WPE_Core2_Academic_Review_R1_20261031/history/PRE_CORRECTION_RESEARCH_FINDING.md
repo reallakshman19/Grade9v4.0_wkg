@@ -1,0 +1,7 @@
+# Official final-key follow-up — Oracle author-exposed research
+
+The official IAPT homepage links the2025-26resource page. Under Final Answer Keys, the link textNSEJS points toNSEP_-_2025_Final_Answer_Key.pdf, while the neighbouringNSEP text points to theNSEJSkey. The actual retrieved PDF header identifies FINAL ANSWER KEY NSEP-2025; the visually inspected code61/Q57row is a,b,c,d. Read FINAL_KEY_RECEIPT.json for URL,bytes,SHA and exact locator. Identify the actual document, not its mismatched navigation label.
+
+This supersedes the previous audit's final-key NOT_RESOLVED claim only. It does not supersede the observed printed-paper/source-crop denominator x0 versus the solution's x0². Final-key scoring authority, literal mathematical validity and a corrected/adapted learner task remain separate. No erratum or corrected2025paper was found on the homepage,2025-26resource page,papers-solutions page or scoped domain searches. That bounded negative result cannot prove a notice never existed. Do not contact IAPT, post, silently fix or admit this item without actual scope/authority.
+
+The paper,corrected intended derivation and final score key can now be cross-referenced in a future source record. Any corrected task must preserve lineage and cannot pretend that the original printed option was identical. Four-task independent review first pass remains segregated from this comparison packet until sealed. All product inputs remain unchanged; no source or native bank promotion is performed.

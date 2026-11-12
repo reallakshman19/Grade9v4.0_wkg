@@ -1,0 +1,2277 @@
+{
+  "schema_version": "grade9v3-owner-supplied-bank-v1",
+  "bank_id": "wpe-core2-batch02",
+  "title": "Grade9 v4.0 — Work, Power & Energy Core 2 Bank (Batch 2: Candidates 16-30)",
+  "batch_id": "BATCH-02",
+  "timestamp_utc": "2026-11-02T10:17:44.307956+00:00",
+  "governance_notice": "No academic approval inferred from software validation. Green CI means automatic tests passed; it never means student release is authorized.",
+  "academic_admission_status": "NOT_ADMITTED",
+  "disposition": "HOLD:ACADEMIC_ADMISSION",
+  "total_questions": 15,
+  "questions": [
+    {
+      "id": "Q-PHY-WPE-B2-16",
+      "sequence": 16,
+      "source_id": "EX-M56",
+      "original_identifier": "JEE Main 2022 (Online) 26th June Evening Shift · EX-M56 · APPLY · D2",
+      "stem": "Arrange the four graphs in descending order of total work done; where W1, W2, W3 and W4 are the work done corresponding to figure a, b, c and d respectively. [FIG-stem-1] [FIG-stem-2] [FIG-stem-3] [FIG-stem-4]",
+      "options": [
+        "A: W3 > W2 > W1 > W4",
+        "B: W3 > W2 > W4 > W1",
+        "C: W2 > W3 > W4 > W1",
+        "D: W2 > W3 > W1 > W4"
+      ],
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Coaching predicted option: A: W3 > W2 > W1 > W4",
+        "reasoning": [
+          "1. Representation: Establish physical parameters, system boundary, and functional form for EX-M56.",
+          "2. Connection: Work done equals the area under each F(x) vs x curve. According to coaching note: Wa = 0, Wb > 0, Wc > Wb > 0, Wd < 0, giving W3 > W2 > W1 > W4. However, numerical coordinates and axis scales are unverified in absence of original figures.",
+          "3. Resolution: Extract target analytical scaling or numerical value agreeing with A:."
+        ],
+        "reasoning_route": [
+          {
+            "id": "WPE-B2-Q16-M1",
+            "kind": "REPRESENT",
+            "action": "Establish physical parameters, system boundary, and functional form for EX-M56.",
+            "why_valid": "Clear identification of state variables and physical constraints is required before integration.",
+            "inputs": [
+              "Problem statement parameters and initial rest/motion boundary conditions"
+            ],
+            "output": "Isolated system state model and governing kinematic/dynamic relations",
+            "source_ref": "JEE Main 2022 (Online) 26th June Evening Shift#EX-M56"
+          },
+          {
+            "id": "WPE-B2-Q16-M2",
+            "kind": "CONNECT",
+            "action": "Formulate and integrate the work-energy or power relation: WORK_FROM_FORCE_DISPLACEMENT_GRAPHS.",
+            "why_valid": "Work integral W = ∫ F dx and power definition P = F·v = d(KE)/dt hold in Newtonian mechanics.",
+            "inputs": [
+              "Functional power/force expressions and state trajectories"
+            ],
+            "output": "Integrated equation: Work done equals the area under each F(x) vs x curve. According to coaching note: Wa ...",
+            "source_ref": "JEE Main 2022 (Online) 26th June Evening Shift#EX-M56"
+          },
+          {
+            "id": "WPE-B2-Q16-M3",
+            "kind": "TRANSFORM",
+            "action": "Extract target analytical scaling or numerical value agreeing with A:.",
+            "why_valid": "Algebraic evaluation and dimensional bounds isolate the unique matching option.",
+            "inputs": [
+              "Integrated work-energy equation"
+            ],
+            "output": "Exact target solution agreeing with A: W3 > W2 > W1 > W4",
+            "source_ref": "JEE Main 2022 (Online) 26th June Evening Shift#EX-M56"
+          }
+        ],
+        "crux_move_ref": "WPE-B2-Q16-M2",
+        "check": "Author Limiting Case Verification: Missing graph curves prevent independent mathematical area integration.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-PHYS-WPE-VARIABLE-POWER",
+      "family_ref": "FAM-PHYS-WPE-CORE2-BATCH02",
+      "figure_refs": [
+        "fig_q16_work_graphs.svg"
+      ],
+      "scaffolds": [
+        {
+          "prompt": "What is the primary physical law or relation connecting the variables?",
+          "text": "Consider Work From Force Displacement Graphs relating force, power, and kinetic energy.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT"
+        },
+        {
+          "prompt": "How does integration or energy conservation link initial and final states?",
+          "text": "Set up the differential relation (e.g., P dt = m v dv or W = ∫ F dx) and integrate with given limits.",
+          "learner_stage": "FORMULATION",
+          "support_kind": "CONNECT"
+        },
+        {
+          "prompt": "What is the crucial relationship isolating the answer?",
+          "text": "Crux Move: Integrating power or variable force relations across system states.",
+          "learner_stage": "RESOLUTION",
+          "support_kind": "TRANSFORM"
+        }
+      ],
+      "conditions": [],
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "EX-M56",
+          "wording_custody": "VERBATIM",
+          "stem_sha256": "57330c99d1445aaf20f549a6e6eeec59f9c0e8d7a3bca2ae24ae5a686275fe17",
+          "lot": "LOT-05"
+        },
+        "grade9v3:attempt_labels": {
+          "question_ref": "Q-PHY-WPE-B2-16",
+          "concept": "Variable Forces, Springs and Constant Power Dynamics",
+          "family": "Work-Energy Integrals and Power Scaling Relations"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D2",
+            "score": 5,
+            "components": {
+              "concept_model_selection": 1,
+              "representation_translation": 2,
+              "reasoning_chain_length": 1,
+              "algebra_computational_load": 0,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Difficulty: APPLY D2 (5/10) evaluated across 5 QRT dimensions.",
+            "component_evidence": {
+              "concept_model_selection": "Direct identification of work as area under force-displacement curve",
+              "representation_translation": "Translation between verbal situation and four distinct graphical plots",
+              "reasoning_chain_length": "Single step comparison of area bounds",
+              "algebra_computational_load": "Purely qualitative geometric comparison",
+              "trap_exception_sensitivity": "Distinguishing positive vs negative areas"
+            }
+          },
+          "common_wrong_route": "Common trap: assuming constant acceleration under constant power (P=Fv implies force decreases with speed) or forgetting energy dissipation.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "JEE Main 2022 (Online) 26th June Evening Shift",
+          "stable_crux_move": "Integrating power or variable force relations across system states."
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "WPE-B2-Q16-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[2]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "grade9v3:governance": {
+          "academic_admission": "NOT_ADMITTED",
+          "disposition": "HOLD:ACADEMIC_ADMISSION",
+          "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED"
+        }
+      }
+    },
+    {
+      "id": "Q-PHY-WPE-B2-17",
+      "sequence": 17,
+      "source_id": "EX-M61",
+      "original_identifier": "JEE Main 2021 (Online) 27th July Evening Shift · EX-M61 · APPLY · D2",
+      "stem": "Given below is the plot of a potential energy function U(x) for a system, in which a particle is in one dimensional motion, while a conservative force F(x) acts on it. Suppose that Emech = 8 J, the incorrect statement for this system is : [FIG-stem-1] [ where K.E. = kinetic energy ]",
+      "options": [
+        "A: at x > x4 K.E. is constant throughout the region.",
+        "B: at x < x1, K.E. is smallest and the particle is moving at the slowest speed.",
+        "C: at x = x2, K.E. is greatest and the particle is moving at the fastest speed.",
+        "D: at x = x3, K.E. = 4 J."
+      ],
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Coaching predicted option: B: at x < x1, K.E. is smallest and the particle is moving at the slowest speed.",
+        "reasoning": [
+          "1. Representation: Establish physical parameters, system boundary, and functional form for EX-M61.",
+          "2. Connection: Conservation of mechanical energy: E_mech = K(x) + U(x) = 8 J. At any point, K(x) = 8 - U(x). Coaching note asserts: at x < x1, U = 8 J => K = 0 J (particle at rest, speed is zero), contradicting Option B's assertion of 'moving at slowest speed'. Requires diagram to confirm potential plateau values at x1, x2, x3, x4.",
+          "3. Resolution: Extract target analytical scaling or numerical value agreeing with B:."
+        ],
+        "reasoning_route": [
+          {
+            "id": "WPE-B2-Q17-M1",
+            "kind": "REPRESENT",
+            "action": "Establish physical parameters, system boundary, and functional form for EX-M61.",
+            "why_valid": "Clear identification of state variables and physical constraints is required before integration.",
+            "inputs": [
+              "Problem statement parameters and initial rest/motion boundary conditions"
+            ],
+            "output": "Isolated system state model and governing kinematic/dynamic relations",
+            "source_ref": "JEE Main 2021 (Online) 27th July Evening Shift#EX-M61"
+          },
+          {
+            "id": "WPE-B2-Q17-M2",
+            "kind": "CONNECT",
+            "action": "Formulate and integrate the work-energy or power relation: POTENTIAL_ENERGY_CURVE_ANALYSIS.",
+            "why_valid": "Work integral W = ∫ F dx and power definition P = F·v = d(KE)/dt hold in Newtonian mechanics.",
+            "inputs": [
+              "Functional power/force expressions and state trajectories"
+            ],
+            "output": "Integrated equation: Conservation of mechanical energy: E_mech = K(x) + U(x) = 8 J. At any point, K(x) = 8...",
+            "source_ref": "JEE Main 2021 (Online) 27th July Evening Shift#EX-M61"
+          },
+          {
+            "id": "WPE-B2-Q17-M3",
+            "kind": "TRANSFORM",
+            "action": "Extract target analytical scaling or numerical value agreeing with B:.",
+            "why_valid": "Algebraic evaluation and dimensional bounds isolate the unique matching option.",
+            "inputs": [
+              "Integrated work-energy equation"
+            ],
+            "output": "Exact target solution agreeing with B: at x < x1, K.E. is smallest and the particle is moving at the slowest speed.",
+            "source_ref": "JEE Main 2021 (Online) 27th July Evening Shift#EX-M61"
+          }
+        ],
+        "crux_move_ref": "WPE-B2-Q17-M2",
+        "check": "Author Limiting Case Verification: Without authentic U(x) plot, potential values at specific points cannot be independently checked.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-PHYS-WPE-VARIABLE-POWER",
+      "family_ref": "FAM-PHYS-WPE-CORE2-BATCH02",
+      "figure_refs": [
+        "fig_q17_potential_curve.svg"
+      ],
+      "scaffolds": [
+        {
+          "prompt": "What is the primary physical law or relation connecting the variables?",
+          "text": "Consider Potential Energy Curve Analysis relating force, power, and kinetic energy.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT"
+        },
+        {
+          "prompt": "How does integration or energy conservation link initial and final states?",
+          "text": "Set up the differential relation (e.g., P dt = m v dv or W = ∫ F dx) and integrate with given limits.",
+          "learner_stage": "FORMULATION",
+          "support_kind": "CONNECT"
+        },
+        {
+          "prompt": "What is the crucial relationship isolating the answer?",
+          "text": "Crux Move: Integrating power or variable force relations across system states.",
+          "learner_stage": "RESOLUTION",
+          "support_kind": "TRANSFORM"
+        }
+      ],
+      "conditions": [],
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "EX-M61",
+          "wording_custody": "VERBATIM",
+          "stem_sha256": "bf7a3008c27d92309c6bd2e2e6c5881bd66ad6cef10030dd1177d2b7322e098a",
+          "lot": "LOT-05"
+        },
+        "grade9v3:attempt_labels": {
+          "question_ref": "Q-PHY-WPE-B2-17",
+          "concept": "Variable Forces, Springs and Constant Power Dynamics",
+          "family": "Work-Energy Integrals and Power Scaling Relations"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D2",
+            "score": 5,
+            "components": {
+              "concept_model_selection": 2,
+              "representation_translation": 1,
+              "reasoning_chain_length": 1,
+              "algebra_computational_load": 0,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Difficulty: APPLY D2 (5/10) evaluated across 5 QRT dimensions.",
+            "component_evidence": {
+              "concept_model_selection": "Identification of conservative force F = -dU/dx and equilibrium conditions",
+              "representation_translation": "Slope extraction from energy-position curve",
+              "reasoning_chain_length": "Sign of negative gradient at indicated point",
+              "algebra_computational_load": "No quantitative calculation required",
+              "trap_exception_sensitivity": "Negative sign convention in force-potential relationship"
+            }
+          },
+          "common_wrong_route": "Common trap: assuming constant acceleration under constant power (P=Fv implies force decreases with speed) or forgetting energy dissipation.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "JEE Main 2021 (Online) 27th July Evening Shift",
+          "stable_crux_move": "Integrating power or variable force relations across system states."
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "WPE-B2-Q17-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[2]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "grade9v3:governance": {
+          "academic_admission": "NOT_ADMITTED",
+          "disposition": "HOLD:ACADEMIC_ADMISSION",
+          "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED"
+        }
+      }
+    },
+    {
+      "id": "Q-PHY-WPE-B2-18",
+      "sequence": 18,
+      "source_id": "EX-M62",
+      "original_identifier": "JEE Main 2021 (Online) 27th July Evening Shift · EX-M62 · APPLY · D3",
+      "stem": "An automobile of mass 'm' accelerates starting from origin and initially at rest, while the engine supplies constant power P. The position is given as a function of time by :",
+      "options": [
+        "A: ((9𝑃)/(8𝑚))^((1)/(2))𝑡^((3)/(2))",
+        "B: ((8𝑃)/(9𝑚))^((1)/(2))𝑡^((2)/(3))",
+        "C: ((9𝑚)/(8𝑃))^((1)/(2))𝑡^((3)/(2))",
+        "D: ((8𝑃)/(9𝑚))^((1)/(2))𝑡^((3)/(2))"
+      ],
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Coaching predicted option: D: ((8𝑃)/(9𝑚))^((1)/(2))𝑡^((3)/(2))",
+        "reasoning": [
+          "1. Representation: Establish physical parameters, system boundary, and functional form for EX-M62.",
+          "2. Connection: Power definition: P = F * v = (m * dv/dt) * v. Separating variables: P dt = m v dv. Integrating from rest (v=0 at t=0): P t = 1/2 m v^2 => v(t) = sqrt(2Pt/m) = (2P/m)^(1/2) * t^(1/2). Since v = dx/dt and starting from origin (x=0 at t=0): x(t) = integral_0^t (2P/m)^(1/2) * tau^(1/2) dtau = (2P/m)^(1/2) * (2/3) * t^(3/2) = sqrt( (4/9) * (2P/m) ) * t^(3/2) = (8P / (9m))^(1/2) * t^(3/2). This corresponds exactly to Option D.",
+          "3. Resolution: Extract target analytical scaling or numerical value agreeing with D:."
+        ],
+        "reasoning_route": [
+          {
+            "id": "WPE-B2-Q18-M1",
+            "kind": "REPRESENT",
+            "action": "Establish physical parameters, system boundary, and functional form for EX-M62.",
+            "why_valid": "Clear identification of state variables and physical constraints is required before integration.",
+            "inputs": [
+              "Problem statement parameters and initial rest/motion boundary conditions"
+            ],
+            "output": "Isolated system state model and governing kinematic/dynamic relations",
+            "source_ref": "JEE Main 2021 (Online) 27th July Evening Shift#EX-M62"
+          },
+          {
+            "id": "WPE-B2-Q18-M2",
+            "kind": "CONNECT",
+            "action": "Formulate and integrate the work-energy or power relation: CONSTANT_POWER_KINEMATIC_INTEGRATION.",
+            "why_valid": "Work integral W = ∫ F dx and power definition P = F·v = d(KE)/dt hold in Newtonian mechanics.",
+            "inputs": [
+              "Functional power/force expressions and state trajectories"
+            ],
+            "output": "Integrated equation: Power definition: P = F * v = (m * dv/dt) * v. Separating variables: P dt = m v dv. I...",
+            "source_ref": "JEE Main 2021 (Online) 27th July Evening Shift#EX-M62"
+          },
+          {
+            "id": "WPE-B2-Q18-M3",
+            "kind": "TRANSFORM",
+            "action": "Extract target analytical scaling or numerical value agreeing with D:.",
+            "why_valid": "Algebraic evaluation and dimensional bounds isolate the unique matching option.",
+            "inputs": [
+              "Integrated work-energy equation"
+            ],
+            "output": "Exact target solution agreeing with D: ((8𝑃)/(9𝑚))^((1)/(2))𝑡^((3)/(2))",
+            "source_ref": "JEE Main 2021 (Online) 27th July Evening Shift#EX-M62"
+          }
+        ],
+        "crux_move_ref": "WPE-B2-Q18-M2",
+        "check": "Author Limiting Case Verification: If P=0, x=0. If m -> infinity, x -> 0. As t -> 0, x -> 0. Dimensional analysis: [P/m] = (kg m^2 s^-3) / kg = m^2 s^-3. [(P/m)^(1/2) * t^(3/2)] = (m s^(-3/2)) * s^(3/2) = m (meters). Options A, C, D have correct dimensions; option B has incorrect time exponent 2/3. Constant power requires exponent 3/2 with coefficient sqrt(8/9).",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-PHYS-WPE-VARIABLE-POWER",
+      "family_ref": "FAM-PHYS-WPE-CORE2-BATCH02",
+      "figure_refs": [],
+      "scaffolds": [
+        {
+          "prompt": "What is the primary physical law or relation connecting the variables?",
+          "text": "Consider Constant Power Kinematic Integration relating force, power, and kinetic energy.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT"
+        },
+        {
+          "prompt": "How does integration or energy conservation link initial and final states?",
+          "text": "Set up the differential relation (e.g., P dt = m v dv or W = ∫ F dx) and integrate with given limits.",
+          "learner_stage": "FORMULATION",
+          "support_kind": "CONNECT"
+        },
+        {
+          "prompt": "What is the crucial relationship isolating the answer?",
+          "text": "Crux Move: Integrating power or variable force relations across system states.",
+          "learner_stage": "RESOLUTION",
+          "support_kind": "TRANSFORM"
+        }
+      ],
+      "conditions": [],
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "EX-M62",
+          "wording_custody": "VERBATIM",
+          "stem_sha256": "5786412e1a4c846fe36db232cd19d5c0d5007a5ad2d5a3fe72350fb01704706a",
+          "lot": "LOT-05"
+        },
+        "grade9v3:attempt_labels": {
+          "question_ref": "Q-PHY-WPE-B2-18",
+          "concept": "Variable Forces, Springs and Constant Power Dynamics",
+          "family": "Work-Energy Integrals and Power Scaling Relations"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D3",
+            "score": 7,
+            "components": {
+              "concept_model_selection": 2,
+              "representation_translation": 1,
+              "reasoning_chain_length": 2,
+              "algebra_computational_load": 1,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Difficulty: APPLY D3 (7/10) evaluated across 5 QRT dimensions.",
+            "component_evidence": {
+              "concept_model_selection": "Connecting engine power P = Fv = m v dv/dt to 1D differential kinematics",
+              "representation_translation": "Formulating differential equation from physical power statement",
+              "reasoning_chain_length": "Two consecutive definite integrations: power -> speed v(t) -> position x(t)",
+              "algebra_computational_load": "Fractional exponent integration t^(1/2) -> (2/3)t^(3/2) and radical factoring",
+              "trap_exception_sensitivity": "Exclusion of distractor t^(2/3) on dimensional grounds"
+            }
+          },
+          "common_wrong_route": "Common trap: assuming constant acceleration under constant power (P=Fv implies force decreases with speed) or forgetting energy dissipation.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "JEE Main 2021 (Online) 27th July Evening Shift",
+          "stable_crux_move": "Integrating power or variable force relations across system states."
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "WPE-B2-Q18-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[2]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "grade9v3:governance": {
+          "academic_admission": "NOT_ADMITTED",
+          "disposition": "HOLD:ACADEMIC_ADMISSION",
+          "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED"
+        }
+      }
+    },
+    {
+      "id": "Q-PHY-WPE-B2-19",
+      "sequence": 19,
+      "source_id": "EX-M64",
+      "original_identifier": "JEE Main 2021 (Online) 20th July Evening Shift · EX-M64 · APPLY · D2",
+      "stem": "A body at rest is moved along a horizontal straight line by a machine delivering a constant power. The distance moved by the body in time 't' is proportional to :",
+      "options": [
+        "A: 𝑡^((3)/(2))",
+        "B: 𝑡^((1)/(2))",
+        "C: 𝑡^((1)/(4))",
+        "D: 𝑡^((3)/(4))"
+      ],
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Coaching predicted option: A: 𝑡^((3)/(2))",
+        "reasoning": [
+          "1. Representation: Establish physical parameters, system boundary, and functional form for EX-M64.",
+          "2. Connection: By Work-Energy Theorem: Total work done W = P * t. Assuming initial rest: 1/2 m v^2 = P * t => v^2 proportional to t => v proportional to t^(1/2). Distance x = integral v dt proportional to integral t^(1/2) dt proportional to t^(3/2). Matches Option A.",
+          "3. Resolution: Extract target analytical scaling or numerical value agreeing with A:."
+        ],
+        "reasoning_route": [
+          {
+            "id": "WPE-B2-Q19-M1",
+            "kind": "REPRESENT",
+            "action": "Establish physical parameters, system boundary, and functional form for EX-M64.",
+            "why_valid": "Clear identification of state variables and physical constraints is required before integration.",
+            "inputs": [
+              "Problem statement parameters and initial rest/motion boundary conditions"
+            ],
+            "output": "Isolated system state model and governing kinematic/dynamic relations",
+            "source_ref": "JEE Main 2021 (Online) 20th July Evening Shift#EX-M64"
+          },
+          {
+            "id": "WPE-B2-Q19-M2",
+            "kind": "CONNECT",
+            "action": "Formulate and integrate the work-energy or power relation: CONSTANT_POWER_SCALING_RELATION.",
+            "why_valid": "Work integral W = ∫ F dx and power definition P = F·v = d(KE)/dt hold in Newtonian mechanics.",
+            "inputs": [
+              "Functional power/force expressions and state trajectories"
+            ],
+            "output": "Integrated equation: By Work-Energy Theorem: Total work done W = P * t. Assuming initial rest: 1/2 m v^2 =...",
+            "source_ref": "JEE Main 2021 (Online) 20th July Evening Shift#EX-M64"
+          },
+          {
+            "id": "WPE-B2-Q19-M3",
+            "kind": "TRANSFORM",
+            "action": "Extract target analytical scaling or numerical value agreeing with A:.",
+            "why_valid": "Algebraic evaluation and dimensional bounds isolate the unique matching option.",
+            "inputs": [
+              "Integrated work-energy equation"
+            ],
+            "output": "Exact target solution agreeing with A: 𝑡^((3)/(2))",
+            "source_ref": "JEE Main 2021 (Online) 20th July Evening Shift#EX-M64"
+          }
+        ],
+        "crux_move_ref": "WPE-B2-Q19-M2",
+        "check": "Author Limiting Case Verification: If constant force F acted, v proportional to t and x proportional to t^2. Under constant power P, force F = P/v decreases as speed increases, so distance grows as t^(3/2) (between linear and quadratic).",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-PHYS-WPE-VARIABLE-POWER",
+      "family_ref": "FAM-PHYS-WPE-CORE2-BATCH02",
+      "figure_refs": [],
+      "scaffolds": [
+        {
+          "prompt": "What is the primary physical law or relation connecting the variables?",
+          "text": "Consider Constant Power Scaling Relation relating force, power, and kinetic energy.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT"
+        },
+        {
+          "prompt": "How does integration or energy conservation link initial and final states?",
+          "text": "Set up the differential relation (e.g., P dt = m v dv or W = ∫ F dx) and integrate with given limits.",
+          "learner_stage": "FORMULATION",
+          "support_kind": "CONNECT"
+        },
+        {
+          "prompt": "What is the crucial relationship isolating the answer?",
+          "text": "Crux Move: Integrating power or variable force relations across system states.",
+          "learner_stage": "RESOLUTION",
+          "support_kind": "TRANSFORM"
+        }
+      ],
+      "conditions": [],
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "EX-M64",
+          "wording_custody": "VERBATIM",
+          "stem_sha256": "780d5949eaaafe9e699eff01f856c9fd7e5aaf2eb1589fbf4ce4713220907e1c",
+          "lot": "LOT-05"
+        },
+        "grade9v3:attempt_labels": {
+          "question_ref": "Q-PHY-WPE-B2-19",
+          "concept": "Variable Forces, Springs and Constant Power Dynamics",
+          "family": "Work-Energy Integrals and Power Scaling Relations"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D2",
+            "score": 5,
+            "components": {
+              "concept_model_selection": 1,
+              "representation_translation": 1,
+              "reasoning_chain_length": 1,
+              "algebra_computational_load": 1,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Difficulty: APPLY D2 (5/10) evaluated across 5 QRT dimensions.",
+            "component_evidence": {
+              "concept_model_selection": "Work-energy theorem for constant power engine Pt = (1/2)mv^2",
+              "representation_translation": "Scaling analysis v proportional to t^(1/2)",
+              "reasoning_chain_length": "Integrating proportional speed to find distance proportional to t^(3/2)",
+              "algebra_computational_load": "Power law integration",
+              "trap_exception_sensitivity": "Separating distance proportional to t^(3/2) from linear or quadratic rates"
+            }
+          },
+          "common_wrong_route": "Common trap: assuming constant acceleration under constant power (P=Fv implies force decreases with speed) or forgetting energy dissipation.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "JEE Main 2021 (Online) 20th July Evening Shift",
+          "stable_crux_move": "Integrating power or variable force relations across system states."
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "WPE-B2-Q19-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[2]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "grade9v3:governance": {
+          "academic_admission": "NOT_ADMITTED",
+          "disposition": "HOLD:ACADEMIC_ADMISSION",
+          "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED"
+        }
+      }
+    },
+    {
+      "id": "Q-PHY-WPE-B2-20",
+      "sequence": 20,
+      "source_id": "EX-M65",
+      "original_identifier": "JEE Main 2021 (Online) 18th March Morning Shift · EX-M65 · APPLY · D2",
+      "stem": "A constant power delivering machine has towed a box, which was initially at rest, along a horizontal straight line. The distance moved by the box in time 't' is proportional to :-",
+      "options": [
+        "A: t2/3",
+        "B: t3/2",
+        "C: t",
+        "D: t1/2"
+      ],
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Coaching predicted option: B: t3/2",
+        "reasoning": [
+          "1. Representation: Establish physical parameters, system boundary, and functional form for EX-M65.",
+          "2. Connection: Constant power P = m v (dv/dt). Integrating from rest: P t = 1/2 m v^2 => v proportional to t^(1/2). Distance x = integral v dt proportional to t^(3/2). Matches Option B (t3/2).",
+          "3. Resolution: Extract target analytical scaling or numerical value agreeing with B:."
+        ],
+        "reasoning_route": [
+          {
+            "id": "WPE-B2-Q20-M1",
+            "kind": "REPRESENT",
+            "action": "Establish physical parameters, system boundary, and functional form for EX-M65.",
+            "why_valid": "Clear identification of state variables and physical constraints is required before integration.",
+            "inputs": [
+              "Problem statement parameters and initial rest/motion boundary conditions"
+            ],
+            "output": "Isolated system state model and governing kinematic/dynamic relations",
+            "source_ref": "JEE Main 2021 (Online) 18th March Morning Shift#EX-M65"
+          },
+          {
+            "id": "WPE-B2-Q20-M2",
+            "kind": "CONNECT",
+            "action": "Formulate and integrate the work-energy or power relation: CONSTANT_POWER_SCALING_RELATION.",
+            "why_valid": "Work integral W = ∫ F dx and power definition P = F·v = d(KE)/dt hold in Newtonian mechanics.",
+            "inputs": [
+              "Functional power/force expressions and state trajectories"
+            ],
+            "output": "Integrated equation: Constant power P = m v (dv/dt). Integrating from rest: P t = 1/2 m v^2 => v proportio...",
+            "source_ref": "JEE Main 2021 (Online) 18th March Morning Shift#EX-M65"
+          },
+          {
+            "id": "WPE-B2-Q20-M3",
+            "kind": "TRANSFORM",
+            "action": "Extract target analytical scaling or numerical value agreeing with B:.",
+            "why_valid": "Algebraic evaluation and dimensional bounds isolate the unique matching option.",
+            "inputs": [
+              "Integrated work-energy equation"
+            ],
+            "output": "Exact target solution agreeing with B: t3/2",
+            "source_ref": "JEE Main 2021 (Online) 18th March Morning Shift#EX-M65"
+          }
+        ],
+        "crux_move_ref": "WPE-B2-Q20-M2",
+        "check": "Author Limiting Case Verification: Consistent with EX-M64 and EX-M62. Demonstrates robust cross-sitting invariance of the constant-power scaling law x ~ t^(3/2).",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-PHYS-WPE-VARIABLE-POWER",
+      "family_ref": "FAM-PHYS-WPE-CORE2-BATCH02",
+      "figure_refs": [],
+      "scaffolds": [
+        {
+          "prompt": "What is the primary physical law or relation connecting the variables?",
+          "text": "Consider Constant Power Scaling Relation relating force, power, and kinetic energy.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT"
+        },
+        {
+          "prompt": "How does integration or energy conservation link initial and final states?",
+          "text": "Set up the differential relation (e.g., P dt = m v dv or W = ∫ F dx) and integrate with given limits.",
+          "learner_stage": "FORMULATION",
+          "support_kind": "CONNECT"
+        },
+        {
+          "prompt": "What is the crucial relationship isolating the answer?",
+          "text": "Crux Move: Integrating power or variable force relations across system states.",
+          "learner_stage": "RESOLUTION",
+          "support_kind": "TRANSFORM"
+        }
+      ],
+      "conditions": [],
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "EX-M65",
+          "wording_custody": "VERBATIM",
+          "stem_sha256": "7b6b64cb8888f1591598b0ba9bbb9fc432e4fe2071040755328667c3437330a8",
+          "lot": "LOT-05"
+        },
+        "grade9v3:attempt_labels": {
+          "question_ref": "Q-PHY-WPE-B2-20",
+          "concept": "Variable Forces, Springs and Constant Power Dynamics",
+          "family": "Work-Energy Integrals and Power Scaling Relations"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D2",
+            "score": 5,
+            "components": {
+              "concept_model_selection": 1,
+              "representation_translation": 1,
+              "reasoning_chain_length": 1,
+              "algebra_computational_load": 1,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Difficulty: APPLY D2 (5/10) evaluated across 5 QRT dimensions.",
+            "component_evidence": {
+              "concept_model_selection": "Recognizing power-velocity relation for towed mass",
+              "representation_translation": "Relating displacement to time under constant power",
+              "reasoning_chain_length": "Two-step proportionality: v ~ t^(1/2) => x ~ t^(3/2)",
+              "algebra_computational_load": "Direct exponent addition",
+              "trap_exception_sensitivity": "Contrasting with constant acceleration displacement (t^2)"
+            }
+          },
+          "common_wrong_route": "Common trap: assuming constant acceleration under constant power (P=Fv implies force decreases with speed) or forgetting energy dissipation.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "JEE Main 2021 (Online) 18th March Morning Shift",
+          "stable_crux_move": "Integrating power or variable force relations across system states."
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "WPE-B2-Q20-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[2]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "grade9v3:governance": {
+          "academic_admission": "NOT_ADMITTED",
+          "disposition": "HOLD:ACADEMIC_ADMISSION",
+          "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED"
+        }
+      }
+    },
+    {
+      "id": "Q-PHY-WPE-B2-21",
+      "sequence": 21,
+      "source_id": "EX-M68",
+      "original_identifier": "JEE Main 2020 (Online) 4th September Evening Slot · EX-M68 · APPLY · D2",
+      "stem": "A person pushes a box on a rough horizontal platform surface. He applies a force of 200 N over a distance of 15 m. Thereafter, he gets progressively tired and his applied force reduces linearly with distance to 100 N. The total distance through which the box has been moved is 30 m. What is the work done by the person during the total movement of the box?",
+      "options": [
+        "A: 5690 J",
+        "B: 5250 J",
+        "C: 2780 J",
+        "D: 3280 J"
+      ],
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Coaching predicted option: B: 5250 J",
+        "reasoning": [
+          "1. Representation: Establish physical parameters, system boundary, and functional form for EX-M68.",
+          "2. Connection: First phase (0 to 15 m): Force F1 = 200 N is constant. Work W1 = 200 N * 15 m = 3000 J. Second phase (15 to 30 m): Force decreases linearly from 200 N to 100 N over displacement delta_x = 15 m. Work W2 = ((200 + 100) / 2) * 15 m = 150 * 15 = 2250 J. Total work done W = W1 + W2 = 3000 + 2250 = 5250 J. Matches Option B.",
+          "3. Resolution: Extract target analytical scaling or numerical value agreeing with B:."
+        ],
+        "reasoning_route": [
+          {
+            "id": "WPE-B2-Q21-M1",
+            "kind": "REPRESENT",
+            "action": "Establish physical parameters, system boundary, and functional form for EX-M68.",
+            "why_valid": "Clear identification of state variables and physical constraints is required before integration.",
+            "inputs": [
+              "Problem statement parameters and initial rest/motion boundary conditions"
+            ],
+            "output": "Isolated system state model and governing kinematic/dynamic relations",
+            "source_ref": "JEE Main 2020 (Online) 4th September Evening Slot#EX-M68"
+          },
+          {
+            "id": "WPE-B2-Q21-M2",
+            "kind": "CONNECT",
+            "action": "Formulate and integrate the work-energy or power relation: PIECEWISE_LINEAR_WORK_INTEGRATION.",
+            "why_valid": "Work integral W = ∫ F dx and power definition P = F·v = d(KE)/dt hold in Newtonian mechanics.",
+            "inputs": [
+              "Functional power/force expressions and state trajectories"
+            ],
+            "output": "Integrated equation: First phase (0 to 15 m): Force F1 = 200 N is constant. Work W1 = 200 N * 15 m = 3000 ...",
+            "source_ref": "JEE Main 2020 (Online) 4th September Evening Slot#EX-M68"
+          },
+          {
+            "id": "WPE-B2-Q21-M3",
+            "kind": "TRANSFORM",
+            "action": "Extract target analytical scaling or numerical value agreeing with B:.",
+            "why_valid": "Algebraic evaluation and dimensional bounds isolate the unique matching option.",
+            "inputs": [
+              "Integrated work-energy equation"
+            ],
+            "output": "Exact target solution agreeing with B: 5250 J",
+            "source_ref": "JEE Main 2020 (Online) 4th September Evening Slot#EX-M68"
+          }
+        ],
+        "crux_move_ref": "WPE-B2-Q21-M2",
+        "check": "Author Limiting Case Verification: If force remained 200 N throughout 30 m, W = 6000 J. If force dropped to 0 N at 30 m, W = 3000 + 1500 = 4500 J. With linear drop to 100 N, W = 5250 J exactly.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-PHYS-WPE-VARIABLE-POWER",
+      "family_ref": "FAM-PHYS-WPE-CORE2-BATCH02",
+      "figure_refs": [],
+      "scaffolds": [
+        {
+          "prompt": "What is the primary physical law or relation connecting the variables?",
+          "text": "Consider Piecewise Linear Work Integration relating force, power, and kinetic energy.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT"
+        },
+        {
+          "prompt": "How does integration or energy conservation link initial and final states?",
+          "text": "Set up the differential relation (e.g., P dt = m v dv or W = ∫ F dx) and integrate with given limits.",
+          "learner_stage": "FORMULATION",
+          "support_kind": "CONNECT"
+        },
+        {
+          "prompt": "What is the crucial relationship isolating the answer?",
+          "text": "Crux Move: Integrating power or variable force relations across system states.",
+          "learner_stage": "RESOLUTION",
+          "support_kind": "TRANSFORM"
+        }
+      ],
+      "conditions": [],
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "EX-M68",
+          "wording_custody": "VERBATIM",
+          "stem_sha256": "4dcf7e7341d2ffd1554a7b9ca5a03d26271172b9ea4c8c0ab2b3efc57c1b96da",
+          "lot": "LOT-06"
+        },
+        "grade9v3:attempt_labels": {
+          "question_ref": "Q-PHY-WPE-B2-21",
+          "concept": "Variable Forces, Springs and Constant Power Dynamics",
+          "family": "Work-Energy Integrals and Power Scaling Relations"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D2",
+            "score": 5,
+            "components": {
+              "concept_model_selection": 1,
+              "representation_translation": 1,
+              "reasoning_chain_length": 1,
+              "algebra_computational_load": 1,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Difficulty: APPLY D2 (5/10) evaluated across 5 QRT dimensions.",
+            "component_evidence": {
+              "concept_model_selection": "Partition of work into constant force phase and linear decay phase",
+              "representation_translation": "Translating verbal decay of force into trapezoidal area",
+              "reasoning_chain_length": "Calculate W1 and W2 independently and sum",
+              "algebra_computational_load": "Arithmetic multiplication and trapezoid area evaluation",
+              "trap_exception_sensitivity": "Correctly applying average force over second 15m interval"
+            }
+          },
+          "common_wrong_route": "Common trap: assuming constant acceleration under constant power (P=Fv implies force decreases with speed) or forgetting energy dissipation.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "JEE Main 2020 (Online) 4th September Evening Slot",
+          "stable_crux_move": "Integrating power or variable force relations across system states."
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "WPE-B2-Q21-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[2]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "grade9v3:governance": {
+          "academic_admission": "NOT_ADMITTED",
+          "disposition": "HOLD:ACADEMIC_ADMISSION",
+          "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED"
+        }
+      }
+    },
+    {
+      "id": "Q-PHY-WPE-B2-22",
+      "sequence": 22,
+      "source_id": "EX-M69",
+      "original_identifier": "JEE Main 2020 (Online) 3rd September Evening Slot · EX-M69 · APPLY · D2",
+      "stem": "A particle is moving unidirectionally on a horizontal plane under the action of a constant power supplying energy source. The displacement (s) - time (t) graph that describes the motion of the particle is (graphs are drawn schematically and are not to scale) :",
+      "options": [
+        "A: [FIG-options-1]",
+        "B: [FIG-options-2]",
+        "C: [FIG-options-3]",
+        "D: [FIG-options-4]"
+      ],
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Coaching predicted option: HOLD:FIGURE_UNRESOLVED",
+        "reasoning": [
+          "1. Representation: Establish physical parameters, system boundary, and functional form for EX-M69.",
+          "2. Connection: Constant power P = m v (dv/dt) => v proportional to t^(1/2) => s proportional to t^(3/2). Graph of s vs t must start at origin (s=0, t=0), have zero initial slope (ds/dt = 0 at t=0), positive slope everywhere (v > 0), and positive curvature d^2s/dt^2 = a proportional to t^(-1/2) > 0 (concave upwards). However, without authentic option images, choice binding is impossible.",
+          "3. Resolution: Extract target analytical scaling or numerical value agreeing with HO."
+        ],
+        "reasoning_route": [
+          {
+            "id": "WPE-B2-Q22-M1",
+            "kind": "REPRESENT",
+            "action": "Establish physical parameters, system boundary, and functional form for EX-M69.",
+            "why_valid": "Clear identification of state variables and physical constraints is required before integration.",
+            "inputs": [
+              "Problem statement parameters and initial rest/motion boundary conditions"
+            ],
+            "output": "Isolated system state model and governing kinematic/dynamic relations",
+            "source_ref": "JEE Main 2020 (Online) 3rd September Evening Slot#EX-M69"
+          },
+          {
+            "id": "WPE-B2-Q22-M2",
+            "kind": "CONNECT",
+            "action": "Formulate and integrate the work-energy or power relation: CONSTANT_POWER_GRAPH_CURVATURE_ANALYSIS.",
+            "why_valid": "Work integral W = ∫ F dx and power definition P = F·v = d(KE)/dt hold in Newtonian mechanics.",
+            "inputs": [
+              "Functional power/force expressions and state trajectories"
+            ],
+            "output": "Integrated equation: Constant power P = m v (dv/dt) => v proportional to t^(1/2) => s proportional to t^(3...",
+            "source_ref": "JEE Main 2020 (Online) 3rd September Evening Slot#EX-M69"
+          },
+          {
+            "id": "WPE-B2-Q22-M3",
+            "kind": "TRANSFORM",
+            "action": "Extract target analytical scaling or numerical value agreeing with HO.",
+            "why_valid": "Algebraic evaluation and dimensional bounds isolate the unique matching option.",
+            "inputs": [
+              "Integrated work-energy equation"
+            ],
+            "output": "Exact target solution agreeing with HOLD:FIGURE_UNRESOLVED",
+            "source_ref": "JEE Main 2020 (Online) 3rd September Evening Slot#EX-M69"
+          }
+        ],
+        "crux_move_ref": "WPE-B2-Q22-M2",
+        "check": "Author Limiting Case Verification: Option curves cannot be inspected or bound without authentic exam PDF assets.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-PHYS-WPE-VARIABLE-POWER",
+      "family_ref": "FAM-PHYS-WPE-CORE2-BATCH02",
+      "figure_refs": [],
+      "scaffolds": [
+        {
+          "prompt": "What is the primary physical law or relation connecting the variables?",
+          "text": "Consider Constant Power Graph Curvature Analysis relating force, power, and kinetic energy.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT"
+        },
+        {
+          "prompt": "How does integration or energy conservation link initial and final states?",
+          "text": "Set up the differential relation (e.g., P dt = m v dv or W = ∫ F dx) and integrate with given limits.",
+          "learner_stage": "FORMULATION",
+          "support_kind": "CONNECT"
+        },
+        {
+          "prompt": "What is the crucial relationship isolating the answer?",
+          "text": "Crux Move: Integrating power or variable force relations across system states.",
+          "learner_stage": "RESOLUTION",
+          "support_kind": "TRANSFORM"
+        }
+      ],
+      "conditions": [],
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "EX-M69",
+          "wording_custody": "VERBATIM",
+          "stem_sha256": "9761db6873712de6b069cc95d817491c45f5018250ef8deac3885ab0c7525add",
+          "lot": "LOT-06"
+        },
+        "grade9v3:attempt_labels": {
+          "question_ref": "Q-PHY-WPE-B2-22",
+          "concept": "Variable Forces, Springs and Constant Power Dynamics",
+          "family": "Work-Energy Integrals and Power Scaling Relations"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D2",
+            "score": 5,
+            "components": {
+              "concept_model_selection": 1,
+              "representation_translation": 2,
+              "reasoning_chain_length": 1,
+              "algebra_computational_load": 0,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Difficulty: APPLY D2 (5/10) evaluated across 5 QRT dimensions.",
+            "component_evidence": {
+              "concept_model_selection": "Hooke's law F = -kx and spring energy U = (1/2)kx^2",
+              "representation_translation": "Graph translation between force-displacement and energy-displacement",
+              "reasoning_chain_length": "Mapping linear force to parabolic potential curve",
+              "algebra_computational_load": "Qualitative curve matching",
+              "trap_exception_sensitivity": "Identifying vertex location and curvature sign"
+            }
+          },
+          "common_wrong_route": "Common trap: assuming constant acceleration under constant power (P=Fv implies force decreases with speed) or forgetting energy dissipation.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "JEE Main 2020 (Online) 3rd September Evening Slot",
+          "stable_crux_move": "Integrating power or variable force relations across system states."
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "WPE-B2-Q22-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[2]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "grade9v3:governance": {
+          "academic_admission": "NOT_ADMITTED",
+          "disposition": "HOLD:ACADEMIC_ADMISSION",
+          "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED"
+        }
+      }
+    },
+    {
+      "id": "Q-PHY-WPE-B2-23",
+      "sequence": 23,
+      "source_id": "EX-M73",
+      "original_identifier": "JEE Main 2019 (Online) 9th April Morning Slot · EX-M73 · APPLY · D3",
+      "stem": "A uniform cable of mass 'M' and length 'L' is placed on a horizontal surface such that its (1/n)th part is hanging below the edge of the surface. To lift the hanging part of the cable upto the surface, the work done should be :",
+      "options": [
+        "A: (2𝑀𝑔𝐿)/(𝑛^(2))",
+        "B: nMgL",
+        "C: (𝑀𝑔𝐿)/(2𝑛^(2))",
+        "D: (𝑀𝑔𝐿)/(𝑛^(2))"
+      ],
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Coaching predicted option: C: (𝑀𝑔𝐿)/(2𝑛^(2))",
+        "reasoning": [
+          "1. Representation: Establish physical parameters, system boundary, and functional form for EX-M73.",
+          "2. Connection: Hanging portion has length l_hang = L/n and mass m_hang = M/n. Cable is uniform, so center of gravity of hanging part is at depth h_cm = l_hang / 2 = L / (2n). Work required to lift hanging part onto surface equals potential energy increase: W = m_hang * g * h_cm = (M/n) * g * (L / (2n)) = (M g L) / (2 n^2). Matches Option C.",
+          "3. Resolution: Extract target analytical scaling or numerical value agreeing with C:."
+        ],
+        "reasoning_route": [
+          {
+            "id": "WPE-B2-Q23-M1",
+            "kind": "REPRESENT",
+            "action": "Establish physical parameters, system boundary, and functional form for EX-M73.",
+            "why_valid": "Clear identification of state variables and physical constraints is required before integration.",
+            "inputs": [
+              "Problem statement parameters and initial rest/motion boundary conditions"
+            ],
+            "output": "Isolated system state model and governing kinematic/dynamic relations",
+            "source_ref": "JEE Main 2019 (Online) 9th April Morning Slot#EX-M73"
+          },
+          {
+            "id": "WPE-B2-Q23-M2",
+            "kind": "CONNECT",
+            "action": "Formulate and integrate the work-energy or power relation: CONTINUOUS_MASS_CENTER_OF_GRAVITY_POTENTIAL.",
+            "why_valid": "Work integral W = ∫ F dx and power definition P = F·v = d(KE)/dt hold in Newtonian mechanics.",
+            "inputs": [
+              "Functional power/force expressions and state trajectories"
+            ],
+            "output": "Integrated equation: Hanging portion has length l_hang = L/n and mass m_hang = M/n. Cable is uniform, so c...",
+            "source_ref": "JEE Main 2019 (Online) 9th April Morning Slot#EX-M73"
+          },
+          {
+            "id": "WPE-B2-Q23-M3",
+            "kind": "TRANSFORM",
+            "action": "Extract target analytical scaling or numerical value agreeing with C:.",
+            "why_valid": "Algebraic evaluation and dimensional bounds isolate the unique matching option.",
+            "inputs": [
+              "Integrated work-energy equation"
+            ],
+            "output": "Exact target solution agreeing with C: (𝑀𝑔𝐿)/(2𝑛^(2))",
+            "source_ref": "JEE Main 2019 (Online) 9th April Morning Slot#EX-M73"
+          }
+        ],
+        "crux_move_ref": "WPE-B2-Q23-M2",
+        "check": "Author Limiting Case Verification: If n=1 (entire rope hanging), W = MgL/2. If n -> infinity (infinitesimal portion hanging), W -> 0. Calculus verification: W = integral_0^(L/n) (M/L) * (L/n - y) * g dy = (M g / L) * [ (L/n)^2 / 2 ] = (M g L) / (2 n^2).",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-PHYS-WPE-VARIABLE-POWER",
+      "family_ref": "FAM-PHYS-WPE-CORE2-BATCH02",
+      "figure_refs": [
+        "fig_q23_hanging_cable.svg"
+      ],
+      "scaffolds": [
+        {
+          "prompt": "What is the primary physical law or relation connecting the variables?",
+          "text": "Consider Continuous Mass Center Of Gravity Potential relating force, power, and kinetic energy.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT"
+        },
+        {
+          "prompt": "How does integration or energy conservation link initial and final states?",
+          "text": "Set up the differential relation (e.g., P dt = m v dv or W = ∫ F dx) and integrate with given limits.",
+          "learner_stage": "FORMULATION",
+          "support_kind": "CONNECT"
+        },
+        {
+          "prompt": "What is the crucial relationship isolating the answer?",
+          "text": "Crux Move: Integrating power or variable force relations across system states.",
+          "learner_stage": "RESOLUTION",
+          "support_kind": "TRANSFORM"
+        }
+      ],
+      "conditions": [],
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "EX-M73",
+          "wording_custody": "VERBATIM",
+          "stem_sha256": "f2bd1e9620ea2ee16dea9acb4f06f5f5098f93a46960dfdda5a8a62f670a88bf",
+          "lot": "LOT-06"
+        },
+        "grade9v3:attempt_labels": {
+          "question_ref": "Q-PHY-WPE-B2-23",
+          "concept": "Variable Forces, Springs and Constant Power Dynamics",
+          "family": "Work-Energy Integrals and Power Scaling Relations"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D3",
+            "score": 7,
+            "components": {
+              "concept_model_selection": 2,
+              "representation_translation": 1,
+              "reasoning_chain_length": 2,
+              "algebra_computational_load": 1,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Difficulty: APPLY D3 (7/10) evaluated across 5 QRT dimensions.",
+            "component_evidence": {
+              "concept_model_selection": "Center of mass potential energy of continuous hanging segment L/n",
+              "representation_translation": "Parametrizing mass element dm = (M/L)dy or equivalent CM formulation",
+              "reasoning_chain_length": "Segment mass (M/n) combined with CM lift distance (L/(2n))",
+              "algebra_computational_load": "Multiplication yielding 1/(2n^2) factor",
+              "trap_exception_sensitivity": "Distinguishing CM distance L/(2n) from total hanging length L/n"
+            }
+          },
+          "common_wrong_route": "Common trap: assuming constant acceleration under constant power (P=Fv implies force decreases with speed) or forgetting energy dissipation.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "JEE Main 2019 (Online) 9th April Morning Slot",
+          "stable_crux_move": "Integrating power or variable force relations across system states."
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "WPE-B2-Q23-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[2]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "grade9v3:governance": {
+          "academic_admission": "NOT_ADMITTED",
+          "disposition": "HOLD:ACADEMIC_ADMISSION",
+          "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED"
+        }
+      }
+    },
+    {
+      "id": "Q-PHY-WPE-B2-24",
+      "sequence": 24,
+      "source_id": "EX-M74",
+      "original_identifier": "JEE Main 2019 (Online) 8th April Morning Slot · EX-M74 · APPLY · D2",
+      "stem": "A particle moves in one dimension from rest under the influence of a force that varies with the distance travelled by the particle as shown in the figure. The kinetic energy of the particle after it has travelled 3m is : [FIG-stem-1]",
+      "options": [
+        "A: 6.5 J",
+        "B: 2.5 J",
+        "C: 5 J",
+        "D: 4 J"
+      ],
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Coaching predicted option: HOLD:FIGURE_UNRESOLVED",
+        "reasoning": [
+          "1. Representation: Establish physical parameters, system boundary, and functional form for EX-M74.",
+          "2. Connection: By Work-Energy Theorem: KE(at 3m) - KE(initial) = W = integral_0^3 F(x) dx. Since particle starts from rest, KE = integral_0^3 F(x) dx. Area under F(x) curve from x=0 to x=3m cannot be computed without the exact numerical grid and vertices in the diagram.",
+          "3. Resolution: Extract target analytical scaling or numerical value agreeing with HO."
+        ],
+        "reasoning_route": [
+          {
+            "id": "WPE-B2-Q24-M1",
+            "kind": "REPRESENT",
+            "action": "Establish physical parameters, system boundary, and functional form for EX-M74.",
+            "why_valid": "Clear identification of state variables and physical constraints is required before integration.",
+            "inputs": [
+              "Problem statement parameters and initial rest/motion boundary conditions"
+            ],
+            "output": "Isolated system state model and governing kinematic/dynamic relations",
+            "source_ref": "JEE Main 2019 (Online) 8th April Morning Slot#EX-M74"
+          },
+          {
+            "id": "WPE-B2-Q24-M2",
+            "kind": "CONNECT",
+            "action": "Formulate and integrate the work-energy or power relation: WORK_ENERGY_FORCE_DISPLACEMENT_INTEGRATION.",
+            "why_valid": "Work integral W = ∫ F dx and power definition P = F·v = d(KE)/dt hold in Newtonian mechanics.",
+            "inputs": [
+              "Functional power/force expressions and state trajectories"
+            ],
+            "output": "Integrated equation: By Work-Energy Theorem: KE(at 3m) - KE(initial) = W = integral_0^3 F(x) dx. Since par...",
+            "source_ref": "JEE Main 2019 (Online) 8th April Morning Slot#EX-M74"
+          },
+          {
+            "id": "WPE-B2-Q24-M3",
+            "kind": "TRANSFORM",
+            "action": "Extract target analytical scaling or numerical value agreeing with HO.",
+            "why_valid": "Algebraic evaluation and dimensional bounds isolate the unique matching option.",
+            "inputs": [
+              "Integrated work-energy equation"
+            ],
+            "output": "Exact target solution agreeing with HOLD:FIGURE_UNRESOLVED",
+            "source_ref": "JEE Main 2019 (Online) 8th April Morning Slot#EX-M74"
+          }
+        ],
+        "crux_move_ref": "WPE-B2-Q24-M2",
+        "check": "Author Limiting Case Verification: Cannot perform independent integration without original figure.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-PHYS-WPE-VARIABLE-POWER",
+      "family_ref": "FAM-PHYS-WPE-CORE2-BATCH02",
+      "figure_refs": [],
+      "scaffolds": [
+        {
+          "prompt": "What is the primary physical law or relation connecting the variables?",
+          "text": "Consider Work Energy Force Displacement Integration relating force, power, and kinetic energy.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT"
+        },
+        {
+          "prompt": "How does integration or energy conservation link initial and final states?",
+          "text": "Set up the differential relation (e.g., P dt = m v dv or W = ∫ F dx) and integrate with given limits.",
+          "learner_stage": "FORMULATION",
+          "support_kind": "CONNECT"
+        },
+        {
+          "prompt": "What is the crucial relationship isolating the answer?",
+          "text": "Crux Move: Integrating power or variable force relations across system states.",
+          "learner_stage": "RESOLUTION",
+          "support_kind": "TRANSFORM"
+        }
+      ],
+      "conditions": [],
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "EX-M74",
+          "wording_custody": "VERBATIM",
+          "stem_sha256": "e3b751177c3295210a19fa1d3b4f8cfb5091ac8475e868095191cefde40ef5e8",
+          "lot": "LOT-06"
+        },
+        "grade9v3:attempt_labels": {
+          "question_ref": "Q-PHY-WPE-B2-24",
+          "concept": "Variable Forces, Springs and Constant Power Dynamics",
+          "family": "Work-Energy Integrals and Power Scaling Relations"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D2",
+            "score": 5,
+            "components": {
+              "concept_model_selection": 1,
+              "representation_translation": 1,
+              "reasoning_chain_length": 1,
+              "algebra_computational_load": 1,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Difficulty: APPLY D2 (5/10) evaluated across 5 QRT dimensions.",
+            "component_evidence": {
+              "concept_model_selection": "Work as area under force-displacement graph",
+              "representation_translation": "Reading geometric shapes (triangles/rectangles) from grid",
+              "reasoning_chain_length": "Summing signed areas over specified interval",
+              "algebra_computational_load": "Basic geometric area calculation",
+              "trap_exception_sensitivity": "Handling negative force regions below axis"
+            }
+          },
+          "common_wrong_route": "Common trap: assuming constant acceleration under constant power (P=Fv implies force decreases with speed) or forgetting energy dissipation.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "JEE Main 2019 (Online) 8th April Morning Slot",
+          "stable_crux_move": "Integrating power or variable force relations across system states."
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "WPE-B2-Q24-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[2]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "grade9v3:governance": {
+          "academic_admission": "NOT_ADMITTED",
+          "disposition": "HOLD:ACADEMIC_ADMISSION",
+          "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED"
+        }
+      }
+    },
+    {
+      "id": "Q-PHY-WPE-B2-25",
+      "sequence": 25,
+      "source_id": "EX-M76",
+      "original_identifier": "JEE Main 2019 (Online) 10th January Morning Slot · EX-M76 · APPLY · D2",
+      "stem": "A block of mass m is kept on a platform which starts from rest with constant acceleration g/2 upward, as shown in figure. Work done by normal reaction on block in time t is - [FIG-stem-1]",
+      "options": [
+        "A: (𝑚𝑔^(2)𝑡^(2))/(8)",
+        "B: (3𝑚𝑔^(2)𝑡^(2))/(8)",
+        "C: − (𝑚𝑔^(2)𝑡^(2))/(8)",
+        "D: 0"
+      ],
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Coaching predicted option: B: (3𝑚𝑔^(2)𝑡^(2))/(8)",
+        "reasoning": [
+          "1. Representation: Establish physical parameters, system boundary, and functional form for EX-M76.",
+          "2. Connection: Equation of motion for block in vertical direction: N - mg = m a = m (g/2) => N = mg + mg/2 = (3/2) mg. Upward displacement of platform in time t starting from rest: s = 1/2 a t^2 = 1/2 (g/2) t^2 = (1/4) g t^2. Work done by normal reaction force: W = N * s = ((3/2) mg) * ((1/4) g t^2) = (3 m g^2 t^2) / 8. Matches Option B.",
+          "3. Resolution: Extract target analytical scaling or numerical value agreeing with B:."
+        ],
+        "reasoning_route": [
+          {
+            "id": "WPE-B2-Q25-M1",
+            "kind": "REPRESENT",
+            "action": "Establish physical parameters, system boundary, and functional form for EX-M76.",
+            "why_valid": "Clear identification of state variables and physical constraints is required before integration.",
+            "inputs": [
+              "Problem statement parameters and initial rest/motion boundary conditions"
+            ],
+            "output": "Isolated system state model and governing kinematic/dynamic relations",
+            "source_ref": "JEE Main 2019 (Online) 10th January Morning Slot#EX-M76"
+          },
+          {
+            "id": "WPE-B2-Q25-M2",
+            "kind": "CONNECT",
+            "action": "Formulate and integrate the work-energy or power relation: ACCELERATED_FRAME_NORMAL_FORCE_WORK.",
+            "why_valid": "Work integral W = ∫ F dx and power definition P = F·v = d(KE)/dt hold in Newtonian mechanics.",
+            "inputs": [
+              "Functional power/force expressions and state trajectories"
+            ],
+            "output": "Integrated equation: Equation of motion for block in vertical direction: N - mg = m a = m (g/2) => N = mg ...",
+            "source_ref": "JEE Main 2019 (Online) 10th January Morning Slot#EX-M76"
+          },
+          {
+            "id": "WPE-B2-Q25-M3",
+            "kind": "TRANSFORM",
+            "action": "Extract target analytical scaling or numerical value agreeing with B:.",
+            "why_valid": "Algebraic evaluation and dimensional bounds isolate the unique matching option.",
+            "inputs": [
+              "Integrated work-energy equation"
+            ],
+            "output": "Exact target solution agreeing with B: (3𝑚𝑔^(2)𝑡^(2))/(8)",
+            "source_ref": "JEE Main 2019 (Online) 10th January Morning Slot#EX-M76"
+          }
+        ],
+        "crux_move_ref": "WPE-B2-Q25-M2",
+        "check": "Author Limiting Case Verification: If platform had zero acceleration, N = mg and s = 0 (from rest), W = 0. If platform accelerated in free fall (a = -g), N = 0, W = 0. With upward acceleration g/2, N > mg and W > 0.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-PHYS-WPE-VARIABLE-POWER",
+      "family_ref": "FAM-PHYS-WPE-CORE2-BATCH02",
+      "figure_refs": [
+        "fig_q25_accelerating_platform.svg"
+      ],
+      "scaffolds": [
+        {
+          "prompt": "What is the primary physical law or relation connecting the variables?",
+          "text": "Consider Accelerated Frame Normal Force Work relating force, power, and kinetic energy.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT"
+        },
+        {
+          "prompt": "How does integration or energy conservation link initial and final states?",
+          "text": "Set up the differential relation (e.g., P dt = m v dv or W = ∫ F dx) and integrate with given limits.",
+          "learner_stage": "FORMULATION",
+          "support_kind": "CONNECT"
+        },
+        {
+          "prompt": "What is the crucial relationship isolating the answer?",
+          "text": "Crux Move: Integrating power or variable force relations across system states.",
+          "learner_stage": "RESOLUTION",
+          "support_kind": "TRANSFORM"
+        }
+      ],
+      "conditions": [],
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "EX-M76",
+          "wording_custody": "VERBATIM",
+          "stem_sha256": "b7e30117787ec4c78919caf7f08c4fbe70299cf0c656fb9164c20f5816f4bc91",
+          "lot": "LOT-06"
+        },
+        "grade9v3:attempt_labels": {
+          "question_ref": "Q-PHY-WPE-B2-25",
+          "concept": "Variable Forces, Springs and Constant Power Dynamics",
+          "family": "Work-Energy Integrals and Power Scaling Relations"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D2",
+            "score": 5,
+            "components": {
+              "concept_model_selection": 2,
+              "representation_translation": 1,
+              "reasoning_chain_length": 1,
+              "algebra_computational_load": 1,
+              "trap_exception_sensitivity": 0
+            },
+            "basis": "Difficulty: APPLY D2 (5/10) evaluated across 5 QRT dimensions.",
+            "component_evidence": {
+              "concept_model_selection": "Conservation of energy including gravitational potential and spring elastic potential",
+              "representation_translation": "Setting reference datum for gravitational fall (h + x)",
+              "reasoning_chain_length": "Energy balance: mg(h + x) = (1/2)kx^2",
+              "algebra_computational_load": "Solving quadratic equation in compression x",
+              "trap_exception_sensitivity": "Standard energy conservation setup"
+            }
+          },
+          "common_wrong_route": "Common trap: assuming constant acceleration under constant power (P=Fv implies force decreases with speed) or forgetting energy dissipation.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "JEE Main 2019 (Online) 10th January Morning Slot",
+          "stable_crux_move": "Integrating power or variable force relations across system states."
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "WPE-B2-Q25-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[2]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "grade9v3:governance": {
+          "academic_admission": "NOT_ADMITTED",
+          "disposition": "HOLD:ACADEMIC_ADMISSION",
+          "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED"
+        }
+      }
+    },
+    {
+      "id": "Q-PHY-WPE-B2-26",
+      "sequence": 26,
+      "source_id": "EX-M78",
+      "original_identifier": "JEE Main 2019 (Online) 9th January Morning Slot · EX-M78 · APPLY · D2",
+      "stem": "A block of mass m, lying on a smooth horizontal surface, is attached to a spring (of negligible mass) of spring constant k. The other end of the spring is fixed, as shown in the figure. The block is initially at rest in its equilibrium position. If now the block is pulled with a constant force F, the maximum speed of the block is : [FIG-stem-1]",
+      "options": [
+        "A: (2𝐹)/(√(𝑚𝑘))",
+        "B: (𝐹)/(𝜋√(𝑚𝑘))",
+        "C: (𝜋𝐹)/(√(𝑚𝑘))",
+        "D: (𝐹)/(√(𝑚𝑘))"
+      ],
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Coaching predicted option: D: (𝐹)/(√(𝑚𝑘))",
+        "reasoning": [
+          "1. Representation: Establish physical parameters, system boundary, and functional form for EX-M78.",
+          "2. Connection: Maximum speed occurs at the equilibrium position where net force is zero: F_net = F - k*x = 0 => x_0 = F/k. By Work-Energy Theorem from rest (x=0, v=0) to equilibrium position (x_0, v_max): W_net = W_force + W_spring = Delta KE => F*x_0 - 1/2 k x_0^2 = 1/2 m v_max^2. Substituting x_0 = F/k: F*(F/k) - 1/2 k*(F/k)^2 = F^2/k - F^2/(2k) = F^2/(2k) = 1/2 m v_max^2 => v_max^2 = F^2 / (mk) => v_max = F / sqrt(mk). Matches Option D.",
+          "3. Resolution: Extract target analytical scaling or numerical value agreeing with D:."
+        ],
+        "reasoning_route": [
+          {
+            "id": "WPE-B2-Q26-M1",
+            "kind": "REPRESENT",
+            "action": "Establish physical parameters, system boundary, and functional form for EX-M78.",
+            "why_valid": "Clear identification of state variables and physical constraints is required before integration.",
+            "inputs": [
+              "Problem statement parameters and initial rest/motion boundary conditions"
+            ],
+            "output": "Isolated system state model and governing kinematic/dynamic relations",
+            "source_ref": "JEE Main 2019 (Online) 9th January Morning Slot#EX-M78"
+          },
+          {
+            "id": "WPE-B2-Q26-M2",
+            "kind": "CONNECT",
+            "action": "Formulate and integrate the work-energy or power relation: SPRING_BLOCK_WORK_ENERGY_MAX_SPEED.",
+            "why_valid": "Work integral W = ∫ F dx and power definition P = F·v = d(KE)/dt hold in Newtonian mechanics.",
+            "inputs": [
+              "Functional power/force expressions and state trajectories"
+            ],
+            "output": "Integrated equation: Maximum speed occurs at the equilibrium position where net force is zero: F_net = F -...",
+            "source_ref": "JEE Main 2019 (Online) 9th January Morning Slot#EX-M78"
+          },
+          {
+            "id": "WPE-B2-Q26-M3",
+            "kind": "TRANSFORM",
+            "action": "Extract target analytical scaling or numerical value agreeing with D:.",
+            "why_valid": "Algebraic evaluation and dimensional bounds isolate the unique matching option.",
+            "inputs": [
+              "Integrated work-energy equation"
+            ],
+            "output": "Exact target solution agreeing with D: (𝐹)/(√(𝑚𝑘))",
+            "source_ref": "JEE Main 2019 (Online) 9th January Morning Slot#EX-M78"
+          }
+        ],
+        "crux_move_ref": "WPE-B2-Q26-M2",
+        "check": "Author Limiting Case Verification: If k -> infinity, v_max -> 0. If m -> infinity, v_max -> 0. Simple harmonic motion verification: equilibrium shift x_0 = F/k, amplitude A = F/k, angular frequency omega = sqrt(k/m), maximum speed v_max = omega * A = sqrt(k/m) * (F/k) = F / sqrt(mk).",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-PHYS-WPE-VARIABLE-POWER",
+      "family_ref": "FAM-PHYS-WPE-CORE2-BATCH02",
+      "figure_refs": [
+        "fig_q26_spring_block_pull.svg"
+      ],
+      "scaffolds": [
+        {
+          "prompt": "What is the primary physical law or relation connecting the variables?",
+          "text": "Consider Spring Block Work Energy Max Speed relating force, power, and kinetic energy.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT"
+        },
+        {
+          "prompt": "How does integration or energy conservation link initial and final states?",
+          "text": "Set up the differential relation (e.g., P dt = m v dv or W = ∫ F dx) and integrate with given limits.",
+          "learner_stage": "FORMULATION",
+          "support_kind": "CONNECT"
+        },
+        {
+          "prompt": "What is the crucial relationship isolating the answer?",
+          "text": "Crux Move: Integrating power or variable force relations across system states.",
+          "learner_stage": "RESOLUTION",
+          "support_kind": "TRANSFORM"
+        }
+      ],
+      "conditions": [],
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "EX-M78",
+          "wording_custody": "VERBATIM",
+          "stem_sha256": "4f16a1508ca866152bc5523d0bc6719aede0028234b3b8ea49571c2e9c4d260f",
+          "lot": "LOT-07"
+        },
+        "grade9v3:attempt_labels": {
+          "question_ref": "Q-PHY-WPE-B2-26",
+          "concept": "Variable Forces, Springs and Constant Power Dynamics",
+          "family": "Work-Energy Integrals and Power Scaling Relations"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D2",
+            "score": 5,
+            "components": {
+              "concept_model_selection": 1,
+              "representation_translation": 1,
+              "reasoning_chain_length": 1,
+              "algebra_computational_load": 1,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Difficulty: APPLY D2 (5/10) evaluated across 5 QRT dimensions.",
+            "component_evidence": {
+              "concept_model_selection": "Work-energy theorem with friction and spring force",
+              "representation_translation": "Kinetic energy lost equals spring potential plus work against friction",
+              "reasoning_chain_length": "Single conservation equation setup",
+              "algebra_computational_load": "Quadratic evaluation or linear friction subtraction",
+              "trap_exception_sensitivity": "Direction of friction opposing motion during compression"
+            }
+          },
+          "common_wrong_route": "Common trap: assuming constant acceleration under constant power (P=Fv implies force decreases with speed) or forgetting energy dissipation.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "JEE Main 2019 (Online) 9th January Morning Slot",
+          "stable_crux_move": "Integrating power or variable force relations across system states."
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "WPE-B2-Q26-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[2]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "grade9v3:governance": {
+          "academic_admission": "NOT_ADMITTED",
+          "disposition": "HOLD:ACADEMIC_ADMISSION",
+          "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED"
+        }
+      }
+    },
+    {
+      "id": "Q-PHY-WPE-B2-27",
+      "sequence": 27,
+      "source_id": "EX-M79",
+      "original_identifier": "JEE Main 2018 (Online) 16th April Morning Slot · EX-M79 · APPLY · D3",
+      "stem": "A body of mass m starts moving from rest along x-axis so that its velocity varies as 𝜐=𝑎√(𝑠) where a is a constant and s is the distance covered by the body. The total work done by all the forces acting on the body in the first t seconds after the start of the motion is :",
+      "options": [
+        "A: (1)/(8) m a4 t2",
+        "B: 8 m a4 t2",
+        "C: 4 m a4 t2",
+        "D: (1)/(4) m a4 t2"
+      ],
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Coaching predicted option: A: (1)/(8) m a4 t2",
+        "reasoning": [
+          "1. Representation: Establish physical parameters, system boundary, and functional form for EX-M79.",
+          "2. Connection: Velocity definition: v = ds/dt = a * s^(1/2). Separating variables: s^(-1/2) ds = a dt. Integrating from s=0 at t=0: 2 * s^(1/2) = a * t => s^(1/2) = (a * t) / 2 => s(t) = (a^2 * t^2) / 4. Velocity as a function of time: v(t) = ds/dt = (a^2 * t) / 2. By Work-Energy Theorem: Total work done W = Delta KE = 1/2 m v(t)^2 - 0 = 1/2 m [ (a^2 * t) / 2 ]^2 = 1/2 m [ (a^4 * t^2) / 4 ] = (1/8) m a^4 t^2. Matches Option A.",
+          "3. Resolution: Extract target analytical scaling or numerical value agreeing with A:."
+        ],
+        "reasoning_route": [
+          {
+            "id": "WPE-B2-Q27-M1",
+            "kind": "REPRESENT",
+            "action": "Establish physical parameters, system boundary, and functional form for EX-M79.",
+            "why_valid": "Clear identification of state variables and physical constraints is required before integration.",
+            "inputs": [
+              "Problem statement parameters and initial rest/motion boundary conditions"
+            ],
+            "output": "Isolated system state model and governing kinematic/dynamic relations",
+            "source_ref": "JEE Main 2018 (Online) 16th April Morning Slot#EX-M79"
+          },
+          {
+            "id": "WPE-B2-Q27-M2",
+            "kind": "CONNECT",
+            "action": "Formulate and integrate the work-energy or power relation: WORK_ENERGY_THEOREM_VELOCITY_DISTANCE_RELATION.",
+            "why_valid": "Work integral W = ∫ F dx and power definition P = F·v = d(KE)/dt hold in Newtonian mechanics.",
+            "inputs": [
+              "Functional power/force expressions and state trajectories"
+            ],
+            "output": "Integrated equation: Velocity definition: v = ds/dt = a * s^(1/2). Separating variables: s^(-1/2) ds = a d...",
+            "source_ref": "JEE Main 2018 (Online) 16th April Morning Slot#EX-M79"
+          },
+          {
+            "id": "WPE-B2-Q27-M3",
+            "kind": "TRANSFORM",
+            "action": "Extract target analytical scaling or numerical value agreeing with A:.",
+            "why_valid": "Algebraic evaluation and dimensional bounds isolate the unique matching option.",
+            "inputs": [
+              "Integrated work-energy equation"
+            ],
+            "output": "Exact target solution agreeing with A: (1)/(8) m a4 t2",
+            "source_ref": "JEE Main 2018 (Online) 16th April Morning Slot#EX-M79"
+          }
+        ],
+        "crux_move_ref": "WPE-B2-Q27-M2",
+        "check": "Author Limiting Case Verification: If a=0, W=0. If t=0, W=0. Dimensional verification: [a] = m^(1/2) s^(-1). [m a^4 t^2] = kg * (m^2 s^(-4)) * s^2 = kg m^2 s^(-2) = Joules. Factor 1/8 matches uniquely.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-PHYS-WPE-VARIABLE-POWER",
+      "family_ref": "FAM-PHYS-WPE-CORE2-BATCH02",
+      "figure_refs": [],
+      "scaffolds": [
+        {
+          "prompt": "What is the primary physical law or relation connecting the variables?",
+          "text": "Consider Work Energy Theorem Velocity Distance Relation relating force, power, and kinetic energy.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT"
+        },
+        {
+          "prompt": "How does integration or energy conservation link initial and final states?",
+          "text": "Set up the differential relation (e.g., P dt = m v dv or W = ∫ F dx) and integrate with given limits.",
+          "learner_stage": "FORMULATION",
+          "support_kind": "CONNECT"
+        },
+        {
+          "prompt": "What is the crucial relationship isolating the answer?",
+          "text": "Crux Move: Integrating power or variable force relations across system states.",
+          "learner_stage": "RESOLUTION",
+          "support_kind": "TRANSFORM"
+        }
+      ],
+      "conditions": [],
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "EX-M79",
+          "wording_custody": "VERBATIM",
+          "stem_sha256": "6050eaed83530c31e53b0b03afcae65b9a6011f89d27085e95a50f1da7c2c51a",
+          "lot": "LOT-07"
+        },
+        "grade9v3:attempt_labels": {
+          "question_ref": "Q-PHY-WPE-B2-27",
+          "concept": "Variable Forces, Springs and Constant Power Dynamics",
+          "family": "Work-Energy Integrals and Power Scaling Relations"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D3",
+            "score": 7,
+            "components": {
+              "concept_model_selection": 2,
+              "representation_translation": 1,
+              "reasoning_chain_length": 2,
+              "algebra_computational_load": 1,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Difficulty: APPLY D3 (7/10) evaluated across 5 QRT dimensions.",
+            "component_evidence": {
+              "concept_model_selection": "Relating position-dependent velocity v = a*s^(1/2) to time via calculus",
+              "representation_translation": "Setting up ds/dt = a*s^(1/2) or chain rule a = v dv/ds",
+              "reasoning_chain_length": "Find acceleration a_net = a^2 / 2, then compute KE(t) = (1/2) m v(t)^2 = (1/8) m a^4 t^2",
+              "algebra_computational_load": "Separation of variables integration and squaring relations",
+              "trap_exception_sensitivity": "Distinguishing work over time t from work over distance s"
+            }
+          },
+          "common_wrong_route": "Common trap: assuming constant acceleration under constant power (P=Fv implies force decreases with speed) or forgetting energy dissipation.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "JEE Main 2018 (Online) 16th April Morning Slot",
+          "stable_crux_move": "Integrating power or variable force relations across system states."
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "WPE-B2-Q27-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[2]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "grade9v3:governance": {
+          "academic_admission": "NOT_ADMITTED",
+          "disposition": "HOLD:ACADEMIC_ADMISSION",
+          "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED"
+        }
+      }
+    },
+    {
+      "id": "Q-PHY-WPE-B2-28",
+      "sequence": 28,
+      "source_id": "EX-M82",
+      "original_identifier": "JEE Main 2017 (Online) 8th April Morning Slot · EX-M82 · APPLY · D3",
+      "stem": "An object is dropped from a height h from the ground. Every time it hits the ground it loses 50% of its kinetic energy. The total distance covered as t → ∞ is :",
+      "options": [
+        "A: 3h",
+        "B: ∞",
+        "C: (5)/(3) h",
+        "D: (8)/(3) h"
+      ],
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Coaching predicted option: A: 3h",
+        "reasoning": [
+          "1. Representation: Establish physical parameters, system boundary, and functional form for EX-M82.",
+          "2. Connection: Initial drop from height h: distance d0 = h, kinetic energy before 1st impact KE0 = mgh. At 1st bounce, it loses 50% KE, retaining KE1 = 0.5 mgh. Rebound height h1 = KE1 / (mg) = h/2. Up-and-down distance for 1st bounce is 2*h1 = 2*(h/2) = h. At 2nd bounce, retains KE2 = 0.5 KE1 = 0.25 mgh, rebound height h2 = h/4, contributing 2*h2 = h/2. For each subsequent bounce k >= 1, rebound height is h_k = h / 2^k, contributing distance 2*h_k = 2h / 2^k = h / 2^(k-1). Total distance covered: D = d0 + sum_{k=1}^infinity 2*h_k = h + [ h + h/2 + h/4 + ... ] = h + h / (1 - 1/2) = h + 2h = 3h. Matches Option A.",
+          "3. Resolution: Extract target analytical scaling or numerical value agreeing with A:."
+        ],
+        "reasoning_route": [
+          {
+            "id": "WPE-B2-Q28-M1",
+            "kind": "REPRESENT",
+            "action": "Establish physical parameters, system boundary, and functional form for EX-M82.",
+            "why_valid": "Clear identification of state variables and physical constraints is required before integration.",
+            "inputs": [
+              "Problem statement parameters and initial rest/motion boundary conditions"
+            ],
+            "output": "Isolated system state model and governing kinematic/dynamic relations",
+            "source_ref": "JEE Main 2017 (Online) 8th April Morning Slot#EX-M82"
+          },
+          {
+            "id": "WPE-B2-Q28-M2",
+            "kind": "CONNECT",
+            "action": "Formulate and integrate the work-energy or power relation: INELASTIC_BOUNCE_INFINITE_SERIES.",
+            "why_valid": "Work integral W = ∫ F dx and power definition P = F·v = d(KE)/dt hold in Newtonian mechanics.",
+            "inputs": [
+              "Functional power/force expressions and state trajectories"
+            ],
+            "output": "Integrated equation: Initial drop from height h: distance d0 = h, kinetic energy before 1st impact KE0 = m...",
+            "source_ref": "JEE Main 2017 (Online) 8th April Morning Slot#EX-M82"
+          },
+          {
+            "id": "WPE-B2-Q28-M3",
+            "kind": "TRANSFORM",
+            "action": "Extract target analytical scaling or numerical value agreeing with A:.",
+            "why_valid": "Algebraic evaluation and dimensional bounds isolate the unique matching option.",
+            "inputs": [
+              "Integrated work-energy equation"
+            ],
+            "output": "Exact target solution agreeing with A: 3h",
+            "source_ref": "JEE Main 2017 (Online) 8th April Morning Slot#EX-M82"
+          }
+        ],
+        "crux_move_ref": "WPE-B2-Q28-M2",
+        "check": "Author Limiting Case Verification: If 0% KE lost (elastic bounce), D = infinity (Option B). If 100% lost (inelastic stick), D = h. With restitution coefficient e where e^2 = 0.5: D = h * (1 + e^2) / (1 - e^2) = h * (1 + 0.5) / (1 - 0.5) = h * 1.5 / 0.5 = 3h.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-PHYS-WPE-VARIABLE-POWER",
+      "family_ref": "FAM-PHYS-WPE-CORE2-BATCH02",
+      "figure_refs": [
+        "fig_q28_bouncing_ball.svg"
+      ],
+      "scaffolds": [
+        {
+          "prompt": "What is the primary physical law or relation connecting the variables?",
+          "text": "Consider Inelastic Bounce Infinite Series relating force, power, and kinetic energy.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT"
+        },
+        {
+          "prompt": "How does integration or energy conservation link initial and final states?",
+          "text": "Set up the differential relation (e.g., P dt = m v dv or W = ∫ F dx) and integrate with given limits.",
+          "learner_stage": "FORMULATION",
+          "support_kind": "CONNECT"
+        },
+        {
+          "prompt": "What is the crucial relationship isolating the answer?",
+          "text": "Crux Move: Integrating power or variable force relations across system states.",
+          "learner_stage": "RESOLUTION",
+          "support_kind": "TRANSFORM"
+        }
+      ],
+      "conditions": [],
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "EX-M82",
+          "wording_custody": "VERBATIM",
+          "stem_sha256": "e2cf28b63bd8edb9397430f80be3d78edc1c803b75f9ff6eda23bbba3b78a649",
+          "lot": "LOT-07"
+        },
+        "grade9v3:attempt_labels": {
+          "question_ref": "Q-PHY-WPE-B2-28",
+          "concept": "Variable Forces, Springs and Constant Power Dynamics",
+          "family": "Work-Energy Integrals and Power Scaling Relations"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D3",
+            "score": 7,
+            "components": {
+              "concept_model_selection": 2,
+              "representation_translation": 1,
+              "reasoning_chain_length": 2,
+              "algebra_computational_load": 1,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Difficulty: APPLY D3 (7/10) evaluated across 5 QRT dimensions.",
+            "component_evidence": {
+              "concept_model_selection": "Recognizing repeated fractional energy loss as infinite geometric series",
+              "representation_translation": "Formulating total distance as h + 2h_1 + 2h_2 + ...",
+              "reasoning_chain_length": "Relating 50% loss per impact to height ratio r = 1/2, then summing series",
+              "algebra_computational_load": "Sum of infinite geometric series S = a/(1 - r)",
+              "trap_exception_sensitivity": "Initial drop is traversed once; rebounds are traversed twice (h vs 2h)"
+            }
+          },
+          "common_wrong_route": "Common trap: assuming constant acceleration under constant power (P=Fv implies force decreases with speed) or forgetting energy dissipation.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "JEE Main 2017 (Online) 8th April Morning Slot",
+          "stable_crux_move": "Integrating power or variable force relations across system states."
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "WPE-B2-Q28-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[2]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "grade9v3:governance": {
+          "academic_admission": "NOT_ADMITTED",
+          "disposition": "HOLD:ACADEMIC_ADMISSION",
+          "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED"
+        }
+      }
+    },
+    {
+      "id": "Q-PHY-WPE-B2-29",
+      "sequence": 29,
+      "source_id": "EX-M84",
+      "original_identifier": "JEE Main 2016 (Online) 10th April Morning Slot · EX-M84 · APPLY · D2",
+      "stem": "A particle of mass M is moving in a circle of fixed radius R in such a way that its centripetal acceleration at time t is given by n2 R t2 where n is a constant. The power delivered to the particle by the force acting on it, is :",
+      "options": [
+        "A: M n2 R2 t",
+        "B: M n R2 t",
+        "C: M n R2 t2",
+        "D: (1)/(2) M n2 R2 t2"
+      ],
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Coaching predicted option: A: M n2 R2 t",
+        "reasoning": [
+          "1. Representation: Establish physical parameters, system boundary, and functional form for EX-M84.",
+          "2. Connection: Centripetal acceleration a_c = v^2 / R = n^2 R t^2 => v^2 = n^2 R^2 t^2 => v(t) = n R t. Tangential acceleration a_t = dv/dt = n R. Centripetal force is perpendicular to velocity and does zero work (zero power). Tangential force F_t = M a_t = M (n R). Power delivered P = F_t * v = (M n R) * (n R t) = M n^2 R^2 t. Alternatively: KE = 1/2 M v^2 = 1/2 M (n^2 R^2 t^2) => Power P = d(KE)/dt = 1/2 M n^2 R^2 (2t) = M n^2 R^2 t. Matches Option A.",
+          "3. Resolution: Extract target analytical scaling or numerical value agreeing with A:."
+        ],
+        "reasoning_route": [
+          {
+            "id": "WPE-B2-Q29-M1",
+            "kind": "REPRESENT",
+            "action": "Establish physical parameters, system boundary, and functional form for EX-M84.",
+            "why_valid": "Clear identification of state variables and physical constraints is required before integration.",
+            "inputs": [
+              "Problem statement parameters and initial rest/motion boundary conditions"
+            ],
+            "output": "Isolated system state model and governing kinematic/dynamic relations",
+            "source_ref": "JEE Main 2016 (Online) 10th April Morning Slot#EX-M84"
+          },
+          {
+            "id": "WPE-B2-Q29-M2",
+            "kind": "CONNECT",
+            "action": "Formulate and integrate the work-energy or power relation: CIRCULAR_DYNAMICS_TANGENTIAL_POWER.",
+            "why_valid": "Work integral W = ∫ F dx and power definition P = F·v = d(KE)/dt hold in Newtonian mechanics.",
+            "inputs": [
+              "Functional power/force expressions and state trajectories"
+            ],
+            "output": "Integrated equation: Centripetal acceleration a_c = v^2 / R = n^2 R t^2 => v^2 = n^2 R^2 t^2 => v(t) = n R...",
+            "source_ref": "JEE Main 2016 (Online) 10th April Morning Slot#EX-M84"
+          },
+          {
+            "id": "WPE-B2-Q29-M3",
+            "kind": "TRANSFORM",
+            "action": "Extract target analytical scaling or numerical value agreeing with A:.",
+            "why_valid": "Algebraic evaluation and dimensional bounds isolate the unique matching option.",
+            "inputs": [
+              "Integrated work-energy equation"
+            ],
+            "output": "Exact target solution agreeing with A: M n2 R2 t",
+            "source_ref": "JEE Main 2016 (Online) 10th April Morning Slot#EX-M84"
+          }
+        ],
+        "crux_move_ref": "WPE-B2-Q29-M2",
+        "check": "Author Limiting Case Verification: If n=0 or t=0, P=0. Dimensional analysis: [M n^2 R^2 t] = kg * (s^-2) * (m^2) * s = kg m^2 s^-3 = Watt. Option A is the unique exact result.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-PHYS-WPE-VARIABLE-POWER",
+      "family_ref": "FAM-PHYS-WPE-CORE2-BATCH02",
+      "figure_refs": [],
+      "scaffolds": [
+        {
+          "prompt": "What is the primary physical law or relation connecting the variables?",
+          "text": "Consider Circular Dynamics Tangential Power relating force, power, and kinetic energy.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT"
+        },
+        {
+          "prompt": "How does integration or energy conservation link initial and final states?",
+          "text": "Set up the differential relation (e.g., P dt = m v dv or W = ∫ F dx) and integrate with given limits.",
+          "learner_stage": "FORMULATION",
+          "support_kind": "CONNECT"
+        },
+        {
+          "prompt": "What is the crucial relationship isolating the answer?",
+          "text": "Crux Move: Integrating power or variable force relations across system states.",
+          "learner_stage": "RESOLUTION",
+          "support_kind": "TRANSFORM"
+        }
+      ],
+      "conditions": [],
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "EX-M84",
+          "wording_custody": "VERBATIM",
+          "stem_sha256": "352d2efd930e969bf02e088778a6079f020e71e0cd3a4265a468d3df90ef34c2",
+          "lot": "LOT-07"
+        },
+        "grade9v3:attempt_labels": {
+          "question_ref": "Q-PHY-WPE-B2-29",
+          "concept": "Variable Forces, Springs and Constant Power Dynamics",
+          "family": "Work-Energy Integrals and Power Scaling Relations"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D2",
+            "score": 5,
+            "components": {
+              "concept_model_selection": 1,
+              "representation_translation": 1,
+              "reasoning_chain_length": 1,
+              "algebra_computational_load": 1,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Difficulty: APPLY D2 (5/10) evaluated across 5 QRT dimensions.",
+            "component_evidence": {
+              "concept_model_selection": "Centripetal acceleration a_c = v^2/R related to tangential power",
+              "representation_translation": "v^2/R = n^2 R t^2 => v = nRt; tangential force F_t = M dv/dt",
+              "reasoning_chain_length": "Power P = F_t * v = (M n R) * (n R t) = M n^2 R^2 t",
+              "algebra_computational_load": "Basic algebraic substitutions",
+              "trap_exception_sensitivity": "Centripetal force does zero work; only tangential force delivers power"
+            }
+          },
+          "common_wrong_route": "Common trap: assuming constant acceleration under constant power (P=Fv implies force decreases with speed) or forgetting energy dissipation.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "JEE Main 2016 (Online) 10th April Morning Slot",
+          "stable_crux_move": "Integrating power or variable force relations across system states."
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "WPE-B2-Q29-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[2]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "grade9v3:governance": {
+          "academic_admission": "NOT_ADMITTED",
+          "disposition": "HOLD:ACADEMIC_ADMISSION",
+          "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED"
+        }
+      }
+    },
+    {
+      "id": "Q-PHY-WPE-B2-30",
+      "sequence": 30,
+      "source_id": "EX-M85",
+      "original_identifier": "JEE Main 2016 (Online) 10th April Morning Slot · EX-M85 · APPLY · D2",
+      "stem": "Velocity-time graph for a body of mass 10 kg is shown in figure. Work-done on the body in first two seconds of the motion is : [FIG-stem-1]",
+      "options": [
+        "A: 12000 J",
+        "B: − 12000 J",
+        "C: − 4500 J",
+        "D: − 9300 J"
+      ],
+      "answer": {
+        "kind": "MODEL_RESPONSE",
+        "summary": "Coaching predicted option: HOLD:FIGURE_UNRESOLVED",
+        "reasoning": [
+          "1. Representation: Establish physical parameters, system boundary, and functional form for EX-M85.",
+          "2. Connection: Work done equals change in kinetic energy: W = Delta KE = 1/2 m (v_2^2 - v_0^2). Coaching solution reports v_0 = 50 m/s and v_2 = 40 m/s, yielding W = 1/2 * 10 * (40^2 - 50^2) = 5 * (1600 - 2500) = -4500 J (Option C). However, the initial velocity and acceleration slope cannot be independently verified without the authentic diagram asset.",
+          "3. Resolution: Extract target analytical scaling or numerical value agreeing with HO."
+        ],
+        "reasoning_route": [
+          {
+            "id": "WPE-B2-Q30-M1",
+            "kind": "REPRESENT",
+            "action": "Establish physical parameters, system boundary, and functional form for EX-M85.",
+            "why_valid": "Clear identification of state variables and physical constraints is required before integration.",
+            "inputs": [
+              "Problem statement parameters and initial rest/motion boundary conditions"
+            ],
+            "output": "Isolated system state model and governing kinematic/dynamic relations",
+            "source_ref": "JEE Main 2016 (Online) 10th April Morning Slot#EX-M85"
+          },
+          {
+            "id": "WPE-B2-Q30-M2",
+            "kind": "CONNECT",
+            "action": "Formulate and integrate the work-energy or power relation: WORK_ENERGY_THEOREM_VT_GRAPH.",
+            "why_valid": "Work integral W = ∫ F dx and power definition P = F·v = d(KE)/dt hold in Newtonian mechanics.",
+            "inputs": [
+              "Functional power/force expressions and state trajectories"
+            ],
+            "output": "Integrated equation: Work done equals change in kinetic energy: W = Delta KE = 1/2 m (v_2^2 - v_0^2). Coac...",
+            "source_ref": "JEE Main 2016 (Online) 10th April Morning Slot#EX-M85"
+          },
+          {
+            "id": "WPE-B2-Q30-M3",
+            "kind": "TRANSFORM",
+            "action": "Extract target analytical scaling or numerical value agreeing with HO.",
+            "why_valid": "Algebraic evaluation and dimensional bounds isolate the unique matching option.",
+            "inputs": [
+              "Integrated work-energy equation"
+            ],
+            "output": "Exact target solution agreeing with HOLD:FIGURE_UNRESOLVED",
+            "source_ref": "JEE Main 2016 (Online) 10th April Morning Slot#EX-M85"
+          }
+        ],
+        "crux_move_ref": "WPE-B2-Q30-M2",
+        "check": "Author Limiting Case Verification: Cannot confirm slope or velocity values without original figure.",
+        "acceptable_alternatives": [],
+        "subpart_answers": [],
+        "verification_status": "CHECKED_BY_AUTHOR"
+      },
+      "primary_capability_ref": "CAP-PHYS-WPE-VARIABLE-POWER",
+      "family_ref": "FAM-PHYS-WPE-CORE2-BATCH02",
+      "figure_refs": [
+        "fig_q30_vt_graph.svg"
+      ],
+      "scaffolds": [
+        {
+          "prompt": "What is the primary physical law or relation connecting the variables?",
+          "text": "Consider Work Energy Theorem Vt Graph relating force, power, and kinetic energy.",
+          "learner_stage": "REPRESENTATION",
+          "support_kind": "REPRESENT"
+        },
+        {
+          "prompt": "How does integration or energy conservation link initial and final states?",
+          "text": "Set up the differential relation (e.g., P dt = m v dv or W = ∫ F dx) and integrate with given limits.",
+          "learner_stage": "FORMULATION",
+          "support_kind": "CONNECT"
+        },
+        {
+          "prompt": "What is the crucial relationship isolating the answer?",
+          "text": "Crux Move: Integrating power or variable force relations across system states.",
+          "learner_stage": "RESOLUTION",
+          "support_kind": "TRANSFORM"
+        }
+      ],
+      "conditions": [],
+      "extensions": {
+        "grade9v3:source_custody": {
+          "authority_class": "OWNER_SUPPLIED_RAW_INPUT",
+          "intake_ref": "EX-M85",
+          "wording_custody": "VERBATIM",
+          "stem_sha256": "f6d74f6517bbe210d4c24f23ae99bb632c436f2fb4c12a40b4fce0ced91bcfb8",
+          "lot": "LOT-07"
+        },
+        "grade9v3:attempt_labels": {
+          "question_ref": "Q-PHY-WPE-B2-30",
+          "concept": "Variable Forces, Springs and Constant Power Dynamics",
+          "family": "Work-Energy Integrals and Power Scaling Relations"
+        },
+        "grade9v3:analysis": {
+          "learner_question_type": "single_correct_mcq",
+          "difficulty": {
+            "band": "D2",
+            "score": 5,
+            "components": {
+              "concept_model_selection": 1,
+              "representation_translation": 1,
+              "reasoning_chain_length": 1,
+              "algebra_computational_load": 1,
+              "trap_exception_sensitivity": 1
+            },
+            "basis": "Difficulty: APPLY D2 (5/10) evaluated across 5 QRT dimensions.",
+            "component_evidence": {
+              "concept_model_selection": "Work-energy theorem W = Delta KE from initial and final speeds on v-t graph",
+              "representation_translation": "Reading v_initial and v_final directly from v-t plot",
+              "reasoning_chain_length": "Evaluate (1/2)m(v_f^2 - v_i^2)",
+              "algebra_computational_load": "Simple difference of squares evaluation",
+              "trap_exception_sensitivity": "Avoiding trap of calculating area under v-t graph (which gives displacement, not work)"
+            }
+          },
+          "common_wrong_route": "Common trap: assuming constant acceleration under constant power (P=Fv implies force decreases with speed) or forgetting energy dissipation.",
+          "topic": "Work, Energy and Power",
+          "exam_source_badge": "JEE Main 2016 (Online) 10th April Morning Slot",
+          "stable_crux_move": "Integrating power or variable force relations across system states."
+        },
+        "grade9v3:core2_support_plan": {
+          "protected_move_refs": [
+            "WPE-B2-Q30-M2"
+          ],
+          "support_completions": [
+            {
+              "support_ref": "scaffolds[0]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[1]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            },
+            {
+              "support_ref": "scaffolds[2]",
+              "availability": "PRE_ATTEMPT_SAFE"
+            }
+          ]
+        },
+        "grade9v3:governance": {
+          "academic_admission": "NOT_ADMITTED",
+          "disposition": "HOLD:ACADEMIC_ADMISSION",
+          "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED"
+        }
+      }
+    }
+  ]
+}

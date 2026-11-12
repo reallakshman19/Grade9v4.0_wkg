@@ -1,0 +1,85 @@
+{
+  "schema": "wpe-core2-candidate-git-manifest/v1",
+  "date": "2026-11-02",
+  "status": "NOT_ADMITTED; ENGINEERING_ONLY",
+  "base_commit": "4ed5c0f5644738c9cffc5849f062fe866285f9ef",
+  "previous_tracker_git_blob_sha": "71a7ba75fdb360016c41e4ee08b7b920d669b696",
+  "source_master_zip_sha256": "fe7e29e1463c92dcde795155826308c945f9abdff08b930655c7ea82647c3fc8",
+  "artifacts": [
+    {
+      "path": "preview/question-status.html",
+      "sha": "86dcd6c3fc1d8d541d76faf59bfd9e78baef0f57",
+      "length": 319985
+    },
+    {
+      "path": "preview/question-status-archive.html",
+      "sha": "71a7ba75fdb360016c41e4ee08b7b920d669b696",
+      "length": 23656
+    },
+    {
+      "path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+      "sha": "cd7cb5c705ce12b0f97edee213be2afedc04abb1",
+      "length": 240046
+    },
+    {
+      "path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/assets.review.json",
+      "sha": "09b6b39f0c604e879a3ab9d69dd15c1473ed92b7",
+      "length": 80062
+    },
+    {
+      "path": "workspace/output/WPE_Core2_Consolidated_20261102/review/dedup_decisions.json",
+      "sha": "872ce18c400f3dbc874188787dbf730fd7ec78dc",
+      "length": 1775
+    },
+    {
+      "path": "workspace/output/WPE_Core2_Consolidated_20261102/review/audit_flags.csv",
+      "sha": "e0ad3d002788ffeb3ab0453e7e40fada07cb817b",
+      "length": 3712
+    },
+    {
+      "path": "workspace/output/WPE_Core2_Consolidated_20261102/review/build_checks.json",
+      "sha": "9fa9a49354f97cba233435fdfcafdc64794d2de6",
+      "length": 597
+    },
+    {
+      "path": "workspace/output/WPE_Core2_Consolidated_20261102/README.md",
+      "sha": "4db60732c8670d01e3a0a8168f3d7123708f3fd4",
+      "length": 2700
+    },
+    {
+      "path": "workspace/output/WPE_Core2_Consolidated_20261102/review/HIGH_ROI_CORRECTION_20261102.md",
+      "sha": "977911d0d8aa88d73b47870ff87e6ea9569f34f6",
+      "length": 3257
+    },
+    {
+      "path": "workspace/output/WPE_Core2_Consolidated_20261102/review/BATCH_R2_HIGHROI_AUDIT.json",
+      "sha": "bff8622ad8be2d22973e416a3f00a739f0f8f291",
+      "length": 7683
+    },
+    {
+      "path": "workspace/output/WPE_Core2_Consolidated_20261102/review/BATCH_R2_HIGHROI_README.md",
+      "sha": "9b97990c5dacf98bdf3bf16cb38708ee921f7a3e",
+      "length": 4477
+    },
+    {
+      "path": "workspace/output/WPE_Core2_Consolidated_20261102/review/BATCH_R2_ACADEMIC_AUTHOR_AUDIT_20261102.json",
+      "sha": "ddb51fb70cfd5edcee5f8607e03dcd63f1722c9d",
+      "length": 14905
+    }
+  ],
+  "academic_review": "NOT_RUN",
+  "source_rights": "UNRESOLVED",
+  "learner_release": "NOT_APPROVED",
+  "high_roi_patch_base_commit": "146e62364b10255949a76e34284f2922d13f60c2",
+  "high_roi_patch_scope": [
+    "EX-M6",
+    "TB-WPE-ILL-05",
+    "WEP07-03"
+  ],
+  "batch_r2": {
+    "base_commit": "a5062ab11b512f0146d7bcb6c117124c648e23b4",
+    "scope": "33 authored student cue sets; literal Crux Move filtered for remaining 37; 16-question provisional academic batch audit; no source mutation",
+    "academic_state": "NOT_ADMITTED",
+    "independent_review": "NOT_RUN"
+  }
+}

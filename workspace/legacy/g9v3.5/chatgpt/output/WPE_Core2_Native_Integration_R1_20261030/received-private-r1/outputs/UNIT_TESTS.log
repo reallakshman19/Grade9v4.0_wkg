@@ -1,0 +1,38 @@
+test_01_synthetic_metadata_example_only (test_engine.Admission.test_01_synthetic_metadata_example_only) ... ok
+test_02_empty_not_admitted (test_engine.Admission.test_02_empty_not_admitted) ... ok
+test_03_no_official_paper (test_engine.Admission.test_03_no_official_paper) ... ok
+test_04_no_key (test_engine.Admission.test_04_no_key) ... ok
+test_05_same_witness (test_engine.Admission.test_05_same_witness) ... ok
+test_06_figure_missing (test_engine.Admission.test_06_figure_missing) ... ok
+test_07_key_reconciliation (test_engine.Admission.test_07_key_reconciliation) ... ok
+test_08_inherited_answer (test_engine.Admission.test_08_inherited_answer) ... ok
+test_09_adapter_authority (test_engine.Admission.test_09_adapter_authority) ... ok
+test_10_blueprint_drift (test_engine.Admission.test_10_blueprint_drift) ... ok
+test_11_stem_drift (test_engine.Admission.test_11_stem_drift) ... ok
+test_12_option_drift (test_engine.Admission.test_12_option_drift) ... ok
+test_13_d2_not_counted (test_engine.Admission.test_13_d2_not_counted) ... ok
+test_14_reviewer_same_author (test_engine.Admission.test_14_reviewer_same_author) ... ok
+test_15_exposure_undisclosed (test_engine.Admission.test_15_exposure_undisclosed) ... ok
+test_16_qrt_missing (test_engine.Admission.test_16_qrt_missing) ... ok
+test_17_alias_not_primary (test_engine.Admission.test_17_alias_not_primary) ... ok
+test_18_mismatched_response (test_engine.Admission.test_18_mismatched_response) ... ok
+test_19_wrong_option (test_engine.Admission.test_19_wrong_option) ... ok
+test_20_protected_scaffold (test_engine.Admission.test_20_protected_scaffold) ... ok
+test_21_quota (test_engine.Admission.test_21_quota) ... ok
+test_22_duplicate_counted (test_engine.Admission.test_22_duplicate_counted) ... ok
+test_23_wrong_operation_quota (test_engine.Admission.test_23_wrong_operation_quota) ... ok
+test_24_no_owner_release_needed_to_build (test_engine.Admission.test_24_no_owner_release_needed_to_build) ... ok
+test_25_package_preserves_library (test_engine.Admission.test_25_package_preserves_library) ... ok
+test_26_native_manifest_nonempty_fails (test_engine.Admission.test_26_native_manifest_nonempty_fails) ... ok
+test_27_cannot_package_real_candidates (test_engine.Admission.test_27_cannot_package_real_candidates) ... ok
+test_28_render_requires_synthetic_flag (test_engine.Admission.test_28_render_requires_synthetic_flag) ... ok
+test_29_render_production_refused (test_engine.Admission.test_29_render_production_refused) ... ok
+test_30_fixture_escapes_html (test_engine.Admission.test_30_fixture_escapes_html) ... ok
+test_external_reference_not_silently_embedded (test_engine.Admission.test_external_reference_not_silently_embedded) ... ok
+test_missing_original_figure_bytes (test_engine.Admission.test_missing_original_figure_bytes) ... ok
+test_rights_fail_closed (test_engine.Admission.test_rights_fail_closed) ... ok
+
+----------------------------------------------------------------------
+Ran 33 tests in 0.031s
+
+OK

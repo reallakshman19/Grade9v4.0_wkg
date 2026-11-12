@@ -1,0 +1,17 @@
+{
+  "source_id": "EX-M98",
+  "task_identity": "Q-ID-41",
+  "sequence": 36,
+  "batch_sequence": 6,
+  "paper": "JEE Main 2013 (Online) 9th April Morning Slot",
+  "stem_text": "Two springs of force constants 300 N/m (Spring A) and 400 N/m (Spring B) are joined together in series. The combination is compressed by 8.75 cm. The ratio of energy stored in A and B is (𝐸𝐴)/(𝐸𝐵) . Then (𝐸𝐴)/(𝐸𝐵) is equal to:",
+  "stem_sha256": "275a2a58ac5f752c0584a60cc804d0a71ea2dfdc266fa0c9f46b7e0ad5c63a3d",
+  "options": [
+    "A: (4)/(3)",
+    "B: (16)/(9)",
+    "C: (3)/(4)",
+    "D: (9)/(16)"
+  ],
+  "figure_reference": null,
+  "confidentiality_notice": "Source custody blind packet. Academic solve, answer key, and scoring omitted. Private review only."
+}

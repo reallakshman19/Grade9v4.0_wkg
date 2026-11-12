@@ -14,7 +14,7 @@ import sys
 from nsejs_core2_audit import source_questions,validate
 
 ROOT=Path(__file__).resolve().parents[1]
-SOURCE=ROOT/"preview/question-status.html"
+SOURCE = ROOT / "nsejs/data/legacy-physics-candidate-source.html"
 OUTPUT=ROOT/"nsejs/data/physics-core2-candidates.v1.json"
 SCHEMA="grade9-nsejs-physics-core2-candidate-corpus/v1"
 

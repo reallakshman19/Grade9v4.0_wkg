@@ -1,0 +1,5294 @@
+{
+  "schema": "g9v4-wpe-qrt-blueprint-coverage-register/v1",
+  "as_of": "2026-11-03",
+  "status": "AUTHOR_EXPOSED_COVERAGE_REGISTER__NO_ACADEMIC_ADMISSION",
+  "authority_note": "Question-bank SL2 labels, source-review leads, B07 recorded first passes and teaching-source associations are distinct evidence layers. This register does not authenticate originals, establish QRT final classifications, approve Blueprint/adapter or admit tiles.",
+  "pins": {
+    "bank": {
+      "path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+      "git_blob_sha": "cd7cb5c705ce12b0f97edee213be2afedc04abb1"
+    },
+    "routes": {
+      "path": "physics/wpe/reasoning-paths.review.json",
+      "git_blob_sha": "f5640abfcd6684413b1102987ef5485b5a7150a7"
+    },
+    "pilot": {
+      "path": "WPE_Source_to_Core1A_Concept/evidence/RECEIVED_selection_21_places.json",
+      "git_blob_sha": "531a5027da2649310b4660e9e812b774eb883de9"
+    },
+    "qrt_b07": {
+      "path": "preview/batches/b07-qrt-evidence.json",
+      "git_blob_sha": "5a1eaa5eca44c13c9f5034ab5856af6bb21852b5"
+    },
+    "source_b08": {
+      "path": "preview/batches/b08-source-gates.json",
+      "git_blob_sha": "d03a74332e309ab12f3c8a7c9dfdbdf5b36fe25e"
+    },
+    "corrective_b09": {
+      "path": "preview/batches/b09-corrective-evidence.json",
+      "git_blob_sha": "ffeed4a4493ee416fb1ded6a9a2835626b6c8d52"
+    },
+    "practice": {
+      "path": "physics/wpe/d3d4-self-tutor.review.json",
+      "git_blob_sha": "98bd01443fa3b8a8caabda7b2280fd90f730026a"
+    },
+    "blueprint": {
+      "path": "templates/physics-blueprint/physics-blueprint.D3-D4.json",
+      "git_blob_sha": "700dafcbe86d76442637bcf214eeb544497cf4ea"
+    }
+  },
+  "operations": [
+    "RETRIEVE",
+    "EXPLAIN",
+    "APPLY",
+    "MODEL",
+    "REPRESENT",
+    "SYNTHESIZE",
+    "JUSTIFY"
+  ],
+  "blueprint": {
+    "id": "PHYS-QRT-BLUEPRINT",
+    "version": "0.2.0",
+    "status": "DRAFT_OWNER_REVIEW",
+    "cell_count": 14,
+    "adapter_status": "UNSELECTED",
+    "native_qrt_admissions": 0
+  },
+  "summary": {
+    "total_questions": 74,
+    "unique_source_ids": 74,
+    "reader_proposed_bands": {
+      "D2": 47,
+      "D4": 5,
+      "D3": 17,
+      "D1": 5
+    },
+    "reader_d3d4": 22,
+    "reader_d3": 17,
+    "reader_d4": 5,
+    "reader_d3d4_learning": {
+      "INTERACTIVE_RELATED_PRACTICE": 13,
+      "AUTHOR_PACK_ONLY": 6,
+      "UNMAPPED": 3
+    },
+    "all_learning": {
+      "INTERACTIVE_RELATED_PRACTICE": 18,
+      "AUTHOR_PACK_ONLY": 7,
+      "UNMAPPED": 49
+    },
+    "reader_d3d4_unmapped_ids": [
+      "EX-M97",
+      "EX-N39",
+      "WEP07-01"
+    ],
+    "reader_d3d4_author_only_ids": [
+      "EX-M82",
+      "EX-M89",
+      "EX-M109",
+      "EX-N34",
+      "TB-WPE-ILL-05",
+      "TB-WPE-ILL-06"
+    ],
+    "reader_d3d4_interactive_ids": [
+      "EX-M6",
+      "EX-M16",
+      "EX-M18",
+      "EX-M24",
+      "EX-M62",
+      "EX-M73",
+      "EX-M79",
+      "EX-N31",
+      "WEP07-02",
+      "EX-M39",
+      "TB-WPE-ILL-02",
+      "TB-WPE-ILL-11",
+      "TB-WPE-ILL-12"
+    ],
+    "qrt_review_statuses": {
+      "NOT_RUN_IN_B07": 69,
+      "INDEPENDENT_FIRST_PASS_RECORDED": 4,
+      "CONFLICTING_AUTHOR_EXPOSED_PROPOSALS": 1
+    },
+    "b07_reviewed_d2_ids": [
+      "EX-M62",
+      "EX-M73",
+      "EX-M101",
+      "WEP07-03"
+    ],
+    "b07_contested_ids": [
+      "EX-M79"
+    ],
+    "pilot_places": 21,
+    "pilot_pending": 14,
+    "pilot_vacant": 7,
+    "pilot_agree": 3,
+    "pilot_conflict": 8,
+    "pilot_absent": 3,
+    "admitted": 0
+  },
+  "questions": [
+    {
+      "source_id": "EX-M2",
+      "display_id": "Q-PHY-WPE-B1-01",
+      "reader_sequence": 1,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "a5c763f95741876d7e1c31a53aa6049a439d0aa91b0b28512c9aece32b8bb52d",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 1,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M6",
+      "display_id": "Q-PHY-WPE-B1-03",
+      "reader_sequence": 3,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "JUSTIFY",
+        "band": "D4",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "7d9e6e00a473b5219d71fa3889281e129945bb5c19d9f53407d7ca7fe570e1b6",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:COACHING_KEY_PHYSICS_CONTRADICTION",
+        "source_flag_count": 2,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": "D4.7",
+        "basis": "READER_PROPOSAL_ONLY",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [
+          "WPE-C06"
+        ],
+        "interactive_ids": [
+          "WPE-C06"
+        ],
+        "author_pack_ids": [],
+        "status": "INTERACTIVE_RELATED_PRACTICE",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "RESOLVE_KEY_AND_PHYSICS_CONTRADICTION",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "REVIEW_EXACT_INFERENCE_NOT_JUST_RELATED_THEME"
+      },
+      "priority": "P0_D3_D4_REVIEW",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M7",
+      "display_id": "Q-PHY-WPE-B1-04",
+      "reader_sequence": 4,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "0a7d0a44e9eeb70842e0730dd0f34bbaacf362ddd7f7951b81e47eb3883e5489",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M8",
+      "display_id": "Q-PHY-WPE-B1-05",
+      "reader_sequence": 5,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "f154bd2c140fee999c231282c39119e1efee629fa820c8edcbb97fb9c2bf5245",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M11",
+      "display_id": "Q-PHY-WPE-B1-06",
+      "reader_sequence": 6,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "REPRESENT",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "dc5006b422da3095c1eb3f9d14810987971898073fa6e37fcfd7af34a35fd90f",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M14",
+      "display_id": "Q-PHY-WPE-B1-07",
+      "reader_sequence": 7,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "d42c49f2f74aee3cc526fca32bc34cbea5f9adc8817c591513fb91702feeca3d",
+        "source_figure_count": 0,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M16",
+      "display_id": "Q-PHY-WPE-B1-08",
+      "reader_sequence": 8,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "MODEL",
+        "band": "D3",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "d2abc9e9b5d095977abadd84bae36f1a5f40a58e4341dd4e8593efa216f7c0a2",
+        "source_figure_count": 0,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [
+          "MODEL-1"
+        ],
+        "pilot_proposals": [
+          {
+            "operation": "MODEL",
+            "band": "D3",
+            "status": "PENDING_REVIEW_HOLD"
+          }
+        ],
+        "comparison": "AGREE_WITH_READER_PROPOSAL"
+      },
+      "blueprint_route": {
+        "candidate_cell": "D3.4",
+        "basis": "READER_PROPOSAL_ONLY",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [
+          "WPE-C07"
+        ],
+        "interactive_ids": [
+          "WPE-C07"
+        ],
+        "author_pack_ids": [],
+        "status": "INTERACTIVE_RELATED_PRACTICE",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "REVIEW_EXACT_INFERENCE_NOT_JUST_RELATED_THEME"
+      },
+      "priority": "P0_D3_D4_REVIEW",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M18",
+      "display_id": "Q-PHY-WPE-B1-09",
+      "reader_sequence": 9,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "MODEL",
+        "band": "D4",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "42336fcec4a83179e7f595fe5bdc33dddc30953940189b66288cb39696ceaad8",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": "D4.4",
+        "basis": "READER_PROPOSAL_ONLY",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [
+          "WPE-C02",
+          "WPE-C06"
+        ],
+        "interactive_ids": [
+          "WPE-C02",
+          "WPE-C06"
+        ],
+        "author_pack_ids": [],
+        "status": "INTERACTIVE_RELATED_PRACTICE",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "REVIEW_EXACT_INFERENCE_NOT_JUST_RELATED_THEME"
+      },
+      "priority": "P0_D3_D4_REVIEW",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M24",
+      "display_id": "Q-PHY-WPE-B1-10",
+      "reader_sequence": 10,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D4",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "9d2c7cb9df50430ea2cb67603844ba5309901489311286518341a967bdd80dab",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": "D4.3",
+        "basis": "READER_PROPOSAL_ONLY",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [
+          "WPE-C01",
+          "WPE-C02"
+        ],
+        "interactive_ids": [
+          "WPE-C01",
+          "WPE-C02"
+        ],
+        "author_pack_ids": [],
+        "status": "INTERACTIVE_RELATED_PRACTICE",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "REVIEW_EXACT_INFERENCE_NOT_JUST_RELATED_THEME"
+      },
+      "priority": "P0_D3_D4_REVIEW",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M36",
+      "display_id": "Q-PHY-WPE-B1-12",
+      "reader_sequence": 12,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "5cd94ff098ab3cb5375207898d793623c5465f00ad2c4990a19f7ebaabc8fb1d",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M47",
+      "display_id": "Q-PHY-WPE-B1-13",
+      "reader_sequence": 13,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "RETRIEVE",
+        "band": "D1",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "99520cf83728c938297ec6a067aa32f4635bf8a7f2bd20d581941f0d6b41753d",
+        "source_figure_count": 0,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M49",
+      "display_id": "Q-PHY-WPE-B1-14",
+      "reader_sequence": 14,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "0e1ddae0acecd3dd63d5006fdce6616051e886fba96b35f836c70330d1b7f0de",
+        "source_figure_count": 0,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M50",
+      "display_id": "Q-PHY-WPE-B1-15",
+      "reader_sequence": 15,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "eb9b4c3b60984e3eba754ab63859475dfa45b5cc75f7824e40dd3a845bd04501",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M56",
+      "display_id": "Q-PHY-WPE-B2-16",
+      "reader_sequence": 16,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "REPRESENT",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "57330c99d1445aaf20f549a6e6eeec59f9c0e8d7a3bca2ae24ae5a686275fe17",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": "PARTIAL (4 remote figure placeholders unresolved)",
+        "b08_figure_gate": "HOLD:FIGURE_UNRESOLVED",
+        "b08_key_gate": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "b09_corrective_gate": "HOLD:FIGURE_UNRESOLVED"
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [
+          "REPRESENT-1"
+        ],
+        "pilot_proposals": [
+          {
+            "operation": "REPRESENT",
+            "band": "D3",
+            "status": "PENDING_REVIEW_HOLD"
+          }
+        ],
+        "comparison": "CONFLICT_WITH_READER_PROPOSAL"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [
+          "WPE-C05"
+        ],
+        "interactive_ids": [
+          "WPE-C05"
+        ],
+        "author_pack_ids": [],
+        "status": "INTERACTIVE_RELATED_PRACTICE",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "AUTHENTICATE_EXACT_ORIGINAL_FIGURE",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "REVIEW_EXACT_INFERENCE_NOT_JUST_RELATED_THEME"
+      },
+      "priority": "P0_D3_D4_REVIEW",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M61",
+      "display_id": "Q-PHY-WPE-B2-17",
+      "reader_sequence": 17,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "EXPLAIN",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "bf7a3008c27d92309c6bd2e2e6c5881bd66ad6cef10030dd1177d2b7322e098a",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 1,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": "PARTIAL (remote U(x) curve unresolved)",
+        "b08_figure_gate": "HOLD:FIGURE_UNRESOLVED",
+        "b08_key_gate": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "b09_corrective_gate": "HOLD:FIGURE_UNRESOLVED"
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [
+          "REPRESENT-2"
+        ],
+        "pilot_proposals": [
+          {
+            "operation": "REPRESENT",
+            "band": "D3",
+            "status": "PENDING_REVIEW_HOLD"
+          }
+        ],
+        "comparison": "CONFLICT_WITH_READER_PROPOSAL"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [
+          "WPE-C05"
+        ],
+        "interactive_ids": [
+          "WPE-C05"
+        ],
+        "author_pack_ids": [],
+        "status": "INTERACTIVE_RELATED_PRACTICE",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "AUTHENTICATE_EXACT_ORIGINAL_FIGURE",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "REVIEW_EXACT_INFERENCE_NOT_JUST_RELATED_THEME"
+      },
+      "priority": "P0_D3_D4_REVIEW",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M62",
+      "display_id": "Q-PHY-WPE-B2-18",
+      "reader_sequence": 18,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "MODEL",
+        "band": "D3",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "5786412e1a4c846fe36db232cd19d5c0d5007a5ad2d5a3fe72350fb01704706a",
+        "source_figure_count": 0,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 1,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "INDEPENDENT_FIRST_PASS_RECORDED",
+        "reported_role": "NOT_FINAL_QRT_ADJUDICATION",
+        "reviewed_operation": "APPLY",
+        "reviewed_band": "D2",
+        "score_total": 4,
+        "factors": [
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "qrt_final_admission": "NOT_GRANTED",
+        "evidence_path": "preview/batches/b07-qrt-evidence.json",
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [
+          "APPLY-2"
+        ],
+        "pilot_proposals": [
+          {
+            "operation": "APPLY",
+            "band": "D3",
+            "status": "PENDING_REVIEW_HOLD"
+          }
+        ],
+        "comparison": "CONFLICT_WITH_READER_PROPOSAL"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "REVIEWED_D1_D2_OUTSIDE_D3_D4",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [
+          "WPE-C03"
+        ],
+        "interactive_ids": [
+          "WPE-C03"
+        ],
+        "author_pack_ids": [],
+        "status": "INTERACTIVE_RELATED_PRACTICE",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "RECONCILE_RECORDED_D2_FIRST_PASS_AND_PRIOR_PROPOSAL",
+        "learning": "REVIEW_EXACT_INFERENCE_NOT_JUST_RELATED_THEME"
+      },
+      "priority": "P0_D3_D4_REVIEW",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M65",
+      "display_id": "Q-PHY-WPE-B2-20",
+      "reader_sequence": 20,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "7b6b64cb8888f1591598b0ba9bbb9fc432e4fe2071040755328667c3437330a8",
+        "source_figure_count": 0,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 1,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M68",
+      "display_id": "Q-PHY-WPE-B2-21",
+      "reader_sequence": 21,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "4dcf7e7341d2ffd1554a7b9ca5a03d26271172b9ea4c8c0ab2b3efc57c1b96da",
+        "source_figure_count": 0,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M69",
+      "display_id": "Q-PHY-WPE-B2-22",
+      "reader_sequence": 22,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "REPRESENT",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "9761db6873712de6b069cc95d817491c45f5018250ef8deac3885ab0c7525add",
+        "source_figure_count": 0,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": "PARTIAL (graphical options unresolved)",
+        "b08_figure_gate": "HOLD:FIGURE_UNRESOLVED",
+        "b08_key_gate": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "b09_corrective_gate": "HOLD:FIGURE_UNRESOLVED"
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [
+          "REPRESENT-3"
+        ],
+        "pilot_proposals": [
+          {
+            "operation": "REPRESENT",
+            "band": "D3",
+            "status": "PENDING_REVIEW_HOLD"
+          }
+        ],
+        "comparison": "CONFLICT_WITH_READER_PROPOSAL"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [
+          "WPE-C03",
+          "WPE-C05"
+        ],
+        "interactive_ids": [
+          "WPE-C03",
+          "WPE-C05"
+        ],
+        "author_pack_ids": [],
+        "status": "INTERACTIVE_RELATED_PRACTICE",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "AUTHENTICATE_EXACT_ORIGINAL_FIGURE",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "REVIEW_EXACT_INFERENCE_NOT_JUST_RELATED_THEME"
+      },
+      "priority": "P0_D3_D4_REVIEW",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M73",
+      "display_id": "Q-PHY-WPE-B2-23",
+      "reader_sequence": 23,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D3",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "f2bd1e9620ea2ee16dea9acb4f06f5f5098f93a46960dfdda5a8a62f670a88bf",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 1,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "INDEPENDENT_FIRST_PASS_RECORDED",
+        "reported_role": "NOT_FINAL_QRT_ADJUDICATION",
+        "reviewed_operation": "APPLY",
+        "reviewed_band": "D2",
+        "score_total": 3,
+        "factors": [
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        "qrt_final_admission": "NOT_GRANTED",
+        "evidence_path": "preview/batches/b07-qrt-evidence.json",
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [
+          "MODEL-2"
+        ],
+        "pilot_proposals": [
+          {
+            "operation": "MODEL",
+            "band": "D3",
+            "status": "PENDING_REVIEW_HOLD"
+          }
+        ],
+        "comparison": "CONFLICT_WITH_READER_PROPOSAL"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "REVIEWED_D1_D2_OUTSIDE_D3_D4",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [
+          "WPE-C04"
+        ],
+        "interactive_ids": [
+          "WPE-C04"
+        ],
+        "author_pack_ids": [],
+        "status": "INTERACTIVE_RELATED_PRACTICE",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "RECONCILE_RECORDED_D2_FIRST_PASS_AND_PRIOR_PROPOSAL",
+        "learning": "REVIEW_EXACT_INFERENCE_NOT_JUST_RELATED_THEME"
+      },
+      "priority": "P0_D3_D4_REVIEW",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M74",
+      "display_id": "Q-PHY-WPE-B2-24",
+      "reader_sequence": 24,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "e3b751177c3295210a19fa1d3b4f8cfb5091ac8475e868095191cefde40ef5e8",
+        "source_figure_count": 0,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M76",
+      "display_id": "Q-PHY-WPE-B2-25",
+      "reader_sequence": 25,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "b7e30117787ec4c78919caf7f08c4fbe70299cf0c656fb9164c20f5816f4bc91",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M78",
+      "display_id": "Q-PHY-WPE-B2-26",
+      "reader_sequence": 26,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "4f16a1508ca866152bc5523d0bc6719aede0028234b3b8ea49571c2e9c4d260f",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M79",
+      "display_id": "Q-PHY-WPE-B2-27",
+      "reader_sequence": 27,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D3",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "6050eaed83530c31e53b0b03afcae65b9a6011f89d27085e95a50f1da7c2c51a",
+        "source_figure_count": 0,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "CONFLICTING_AUTHOR_EXPOSED_PROPOSALS",
+        "reported_role": "UNADJUDICATED",
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED",
+        "evidence_path": "preview/batches/b07-qrt-evidence.json",
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [
+          "APPLY-3"
+        ],
+        "pilot_proposals": [
+          {
+            "operation": "APPLY",
+            "band": "D3",
+            "status": "PENDING_REVIEW_HOLD"
+          }
+        ],
+        "comparison": "AGREE_WITH_READER_PROPOSAL"
+      },
+      "blueprint_route": {
+        "candidate_cell": "D3.3",
+        "basis": "READER_PROPOSAL_ONLY",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [
+          "WPE-C03"
+        ],
+        "interactive_ids": [
+          "WPE-C03"
+        ],
+        "author_pack_ids": [],
+        "status": "INTERACTIVE_RELATED_PRACTICE",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "ASSIGN_INDEPENDENT_SOURCE_ONLY_FIRST_PASS",
+        "learning": "REVIEW_EXACT_INFERENCE_NOT_JUST_RELATED_THEME"
+      },
+      "priority": "P0_D3_D4_REVIEW",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M82",
+      "display_id": "Q-PHY-WPE-B2-28",
+      "reader_sequence": 28,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D3",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "e2cf28b63bd8edb9397430f80be3d78edc1c803b75f9ff6eda23bbba3b78a649",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": "D3.3",
+        "basis": "READER_PROPOSAL_ONLY",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [
+          "WPE-E04"
+        ],
+        "interactive_ids": [],
+        "author_pack_ids": [
+          "WPE-E04"
+        ],
+        "status": "AUTHOR_PACK_ONLY",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "TRANSFER_AUTHOR_PACK_TO_SIX_STAGE_PRACTICE"
+      },
+      "priority": "P0_D3_D4_REVIEW",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M85",
+      "display_id": "Q-PHY-WPE-B2-30",
+      "reader_sequence": 30,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "f6d74f6517bbe210d4c24f23ae99bb632c436f2fb4c12a40b4fce0ced91bcfb8",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M89",
+      "display_id": "Q-PHY-WPE-B3-31",
+      "reader_sequence": 31,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "SYNTHESIZE",
+        "band": "D3",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "794f05ed6f9302a63fe556ff98ee3644e5b0a419983ea559f9a9c517d3221379",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": "D3.6",
+        "basis": "READER_PROPOSAL_ONLY",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [
+          "WPE-E05"
+        ],
+        "interactive_ids": [],
+        "author_pack_ids": [
+          "WPE-E05"
+        ],
+        "status": "AUTHOR_PACK_ONLY",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "TRANSFER_AUTHOR_PACK_TO_SIX_STAGE_PRACTICE"
+      },
+      "priority": "P0_D3_D4_REVIEW",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M90",
+      "display_id": "Q-PHY-WPE-B3-32",
+      "reader_sequence": 32,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "f4543c5bbc08148d92aa40d74960d1496ef409acf45665a5e41bc2e08024348e",
+        "source_figure_count": 0,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M92",
+      "display_id": "Q-PHY-WPE-B3-33",
+      "reader_sequence": 33,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "MODEL",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "24ef3006cdb28b6eea3dc564f08194f099c08e3c1de42bed2d6dcf7eec6babf4",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M96",
+      "display_id": "Q-PHY-WPE-B3-34",
+      "reader_sequence": 34,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "RETRIEVE",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "833b0038bb505b5298837eda5fceb2bfa58f0149c3dbf52a2168b78b42cd29cc",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M97",
+      "display_id": "Q-PHY-WPE-B3-35",
+      "reader_sequence": 35,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "SYNTHESIZE",
+        "band": "D3",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "cbb41b03fc485b69ca2d6ca28cbb08a484d1a36fb7b3ba766c455607508ac8c8",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": "D3.6",
+        "basis": "READER_PROPOSAL_ONLY",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P0_D3_D4_REVIEW",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M98",
+      "display_id": "Q-PHY-WPE-B3-36",
+      "reader_sequence": 36,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "275a2a58ac5f752c0584a60cc804d0a71ea2dfdc266fa0c9f46b7e0ad5c63a3d",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M101",
+      "display_id": "Q-PHY-WPE-B3-37",
+      "reader_sequence": 37,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "JUSTIFY",
+        "band": "D1",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "c6caf00ac4069a7c971ef146bba439ffb17602663de90cb408c805f887fc639c",
+        "source_figure_count": 0,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 2,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "INDEPENDENT_FIRST_PASS_RECORDED",
+        "reported_role": "NOT_FINAL_QRT_ADJUDICATION",
+        "reviewed_operation": "APPLY",
+        "reviewed_band": "D2",
+        "score_total": 4,
+        "factors": [
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "qrt_final_admission": "NOT_GRANTED",
+        "evidence_path": "preview/batches/b07-qrt-evidence.json",
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [
+          "JUSTIFY-1"
+        ],
+        "pilot_proposals": [
+          {
+            "operation": "JUSTIFY",
+            "band": "D3",
+            "status": "PENDING_REVIEW_HOLD"
+          }
+        ],
+        "comparison": "CONFLICT_WITH_READER_PROPOSAL"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "REVIEWED_D1_D2_OUTSIDE_D3_D4",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [
+          "WPE-C08"
+        ],
+        "interactive_ids": [
+          "WPE-C08"
+        ],
+        "author_pack_ids": [],
+        "status": "INTERACTIVE_RELATED_PRACTICE",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "RECONCILE_RECORDED_D2_FIRST_PASS_AND_PRIOR_PROPOSAL",
+        "learning": "REVIEW_EXACT_INFERENCE_NOT_JUST_RELATED_THEME"
+      },
+      "priority": "P0_D3_D4_REVIEW",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M105",
+      "display_id": "Q-PHY-WPE-B3-38",
+      "reader_sequence": 38,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "7f1f8bdb0ec27dc0c8dafc016414d1dd70d15932139624a0a03f7f629b437ed4",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": "VERIFIED_TEXT",
+        "b08_figure_gate": "NOT_REQUIRED",
+        "b08_key_gate": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "b09_corrective_gate": "NOT_REQUIRED"
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [
+          "APPLY-1"
+        ],
+        "pilot_proposals": [
+          {
+            "operation": "APPLY",
+            "band": "D3",
+            "status": "PENDING_REVIEW_HOLD"
+          }
+        ],
+        "comparison": "CONFLICT_WITH_READER_PROPOSAL"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [
+          "WPE-C01"
+        ],
+        "interactive_ids": [
+          "WPE-C01"
+        ],
+        "author_pack_ids": [],
+        "status": "INTERACTIVE_RELATED_PRACTICE",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "REVIEW_EXACT_INFERENCE_NOT_JUST_RELATED_THEME"
+      },
+      "priority": "P0_D3_D4_REVIEW",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M106",
+      "display_id": "Q-PHY-WPE-B3-39",
+      "reader_sequence": 39,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "MODEL",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "89395cca6f98acf3a6845a526fe23d22fd1ab044eb29fd937ac5a5ca6a97d824",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": "VERIFIED_TEXT",
+        "b08_figure_gate": "NOT_REQUIRED",
+        "b08_key_gate": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "b09_corrective_gate": "NOT_REQUIRED"
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M109",
+      "display_id": "Q-PHY-WPE-B3-40",
+      "reader_sequence": 40,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "SYNTHESIZE",
+        "band": "D3",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "33513889a1163bb0ae5baeb9251958e4131319985cfb8fd452a700f855d66b07",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": "D3.6",
+        "basis": "READER_PROPOSAL_ONLY",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [
+          "WPE-E01"
+        ],
+        "interactive_ids": [],
+        "author_pack_ids": [
+          "WPE-E01"
+        ],
+        "status": "AUTHOR_PACK_ONLY",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "TRANSFER_AUTHOR_PACK_TO_SIX_STAGE_PRACTICE"
+      },
+      "priority": "P0_D3_D4_REVIEW",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M111",
+      "display_id": "Q-PHY-WPE-B3-41",
+      "reader_sequence": 41,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "1897b95b307743efe3c36a1e9b49cb6fb7c2957e7391efa13b84bbecb71f10fc",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-N8",
+      "display_id": "Q-PHY-WPE-B3-43",
+      "reader_sequence": 43,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "d19ba8fc4762a1acb93b9059c01f13e25bdb4874bcd50ef8dcd71375500d4fef",
+        "source_figure_count": 0,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-N11",
+      "display_id": "Q-PHY-WPE-B3-44",
+      "reader_sequence": 44,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "12a8f2425259c6c9b25eaba9f7aed7b20549c74d6ab635daee4efb8c4bd43de7",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-N19",
+      "display_id": "Q-PHY-WPE-B3-45",
+      "reader_sequence": 45,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "9739b34ab0a515db095df3f20655720d10bf0a5f3d057f175610930caf9d38ca",
+        "source_figure_count": 0,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-N21",
+      "display_id": "Q-PHY-WPE-B4-46",
+      "reader_sequence": 46,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "MODEL",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "9138f7c80c15935a01e5518199ae4da9a95c8e3c4945c05da65f61ee14a11375",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-N27",
+      "display_id": "Q-PHY-WPE-B4-47",
+      "reader_sequence": 47,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "a6819daad7442b9720739551885301d5aa100cae1563cc8e3fe64518a08fae3d",
+        "source_figure_count": 0,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-N30",
+      "display_id": "Q-PHY-WPE-B4-48",
+      "reader_sequence": 48,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "MODEL",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "7c21556444e97731374f766f14f37a90cfb488abd5f66e30d1777cc4811cbd73",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-N31",
+      "display_id": "Q-PHY-WPE-B4-49",
+      "reader_sequence": 49,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "SYNTHESIZE",
+        "band": "D3",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "4d65ea5eb7ee18377b5d2d9ca3264a4ebf6460d792aab960aa5119166b2e4431",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": "D3.6",
+        "basis": "READER_PROPOSAL_ONLY",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [
+          "WPE-C06"
+        ],
+        "interactive_ids": [
+          "WPE-C06"
+        ],
+        "author_pack_ids": [],
+        "status": "INTERACTIVE_RELATED_PRACTICE",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "REVIEW_EXACT_INFERENCE_NOT_JUST_RELATED_THEME"
+      },
+      "priority": "P0_D3_D4_REVIEW",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-N34",
+      "display_id": "Q-PHY-WPE-B4-50",
+      "reader_sequence": 50,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "SYNTHESIZE",
+        "band": "D3",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "48b31fcbba7f05e5a8d22084185d0d7dee11347424a767f88564a85916624285",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": "D3.6",
+        "basis": "READER_PROPOSAL_ONLY",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [
+          "WPE-E03"
+        ],
+        "interactive_ids": [],
+        "author_pack_ids": [
+          "WPE-E03"
+        ],
+        "status": "AUTHOR_PACK_ONLY",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "TRANSFER_AUTHOR_PACK_TO_SIX_STAGE_PRACTICE"
+      },
+      "priority": "P0_D3_D4_REVIEW",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-N38",
+      "display_id": "Q-PHY-WPE-B4-51",
+      "reader_sequence": 51,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "a1ae424276a151020133e8093c67432b4d5ed499ede455da4039ce5cc513c2a4",
+        "source_figure_count": 0,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-N39",
+      "display_id": "Q-PHY-WPE-B4-52",
+      "reader_sequence": 52,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "SYNTHESIZE",
+        "band": "D3",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "cd38aa00009c960631e41be9ab231e928c80b805c64c8780f54c2953967869cd",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": "D3.6",
+        "basis": "READER_PROPOSAL_ONLY",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P0_D3_D4_REVIEW",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-N42",
+      "display_id": "Q-PHY-WPE-B4-53",
+      "reader_sequence": 53,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "3a750d54e63d35d0453ec0da0e458d63b0314f13d594ef41cd8f6a6c2c866319",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "AN-1",
+      "display_id": "Q-PHY-WPE-B4-54",
+      "reader_sequence": 54,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "JUSTIFY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "cc6b080a4f624f51212a3211728edabfd3d0ce12589564eb0ec9873c55dde8f8",
+        "source_figure_count": 0,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "AN-2",
+      "display_id": "Q-PHY-WPE-B4-55",
+      "reader_sequence": 55,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "JUSTIFY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "f55524808b7e173fa787c96f13a1df0ea75a0a2147a7fe60576d7af1c4697ced",
+        "source_figure_count": 0,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "AN-3",
+      "display_id": "Q-PHY-WPE-B4-56",
+      "reader_sequence": 56,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "JUSTIFY",
+        "band": "D1",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "7e4f3c7265264c89a289192bedc6248bc10a35301854870e87f749b83a006339",
+        "source_figure_count": 0,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "AN-5",
+      "display_id": "Q-PHY-WPE-B4-57",
+      "reader_sequence": 57,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "EXPLAIN",
+        "band": "D1",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "418e81b2f767cac56cbc06edf988ea400744d74b0990258dc5c881508c5a55b1",
+        "source_figure_count": 0,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "AN-6",
+      "display_id": "Q-PHY-WPE-B4-58",
+      "reader_sequence": 58,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "RETRIEVE",
+        "band": "D1",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "67effd544d50be89bc80c6bdd4b23423bc52f315f7009f5fdeb8e84a29038af2",
+        "source_figure_count": 0,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "JEE-2026-04-04-S1-Q46",
+      "display_id": "Q-PHY-WPE-B4-59",
+      "reader_sequence": 59,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "5ad3a190498785dd07144b65cababc08875eccd1c1fe3cae60fcfaffc2a7a27e",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "JEE-2026-04-06-S2-Q29",
+      "display_id": "Q-PHY-WPE-B4-60",
+      "reader_sequence": 60,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "4ee2f5ef155a22e2906cb7dd9fcfb0e6e4409a2e21fb691fbce58dacfec00ed3",
+        "source_figure_count": 0,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "JEE-2026-04-06-S1-Q28",
+      "display_id": "Q-PHY-WPE-B5-61",
+      "reader_sequence": 61,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "bd9a429a1793415df658c78ddc1b3c13b8e6a64063471a389b041a6ef38ea5be",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 1,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "JEE-2026-04-02-S2-Q31",
+      "display_id": "Q-PHY-WPE-B5-62",
+      "reader_sequence": 62,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "854dfa83856e4d30d96041b64041918319bda6eb1cdb32748b4c14692d768385",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "JEE-2026-04-04-S1-Q49",
+      "display_id": "Q-PHY-WPE-B5-63",
+      "reader_sequence": 63,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "ea34503673c915695c8545282bb04f3f2c6afb3b104f240c8c9508cb2e9e24e3",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "WEP07-02",
+      "display_id": "Q-PHY-WPE-B5-64",
+      "reader_sequence": 64,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "SYNTHESIZE",
+        "band": "D3",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "eb593c10b9a79115ae089b494183891e9b4173bbe657fa5b997c6d8b8a877d5a",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": "D3.6",
+        "basis": "READER_PROPOSAL_ONLY",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [
+          "WPE-C04"
+        ],
+        "interactive_ids": [
+          "WPE-C04"
+        ],
+        "author_pack_ids": [],
+        "status": "INTERACTIVE_RELATED_PRACTICE",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "REVIEW_EXACT_INFERENCE_NOT_JUST_RELATED_THEME"
+      },
+      "priority": "P0_D3_D4_REVIEW",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "WEP07-03",
+      "display_id": "Q-PHY-WPE-B5-65",
+      "reader_sequence": 65,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "APPLY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "f2c82329078c24516058311cf0d166b937b1c983a9c273732d3ef0ab8e842c0c",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "PUBLIC_IAPT_KEY_ABCD_CORROBORATED; INDEPENDENT_ADMISSION_HOLD",
+        "source_flag_count": 2,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "INDEPENDENT_FIRST_PASS_RECORDED",
+        "reported_role": "NOT_FINAL_QRT_ADJUDICATION",
+        "reviewed_operation": "APPLY",
+        "reviewed_band": "D2",
+        "score_total": 5,
+        "factors": [
+          1,
+          0,
+          2,
+          1,
+          1
+        ],
+        "qrt_final_admission": "NOT_GRANTED",
+        "evidence_path": "preview/batches/b07-qrt-evidence.json",
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [
+          "JUSTIFY-2"
+        ],
+        "pilot_proposals": [
+          {
+            "operation": "JUSTIFY",
+            "band": "D4",
+            "status": "PENDING_REVIEW_HOLD"
+          }
+        ],
+        "comparison": "CONFLICT_WITH_READER_PROPOSAL"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "REVIEWED_D1_D2_OUTSIDE_D3_D4",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [
+          "WPE-E01"
+        ],
+        "interactive_ids": [],
+        "author_pack_ids": [
+          "WPE-E01"
+        ],
+        "status": "AUTHOR_PACK_ONLY",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "RECONCILE_RECORDED_D2_FIRST_PASS_AND_PRIOR_PROPOSAL",
+        "learning": "TRANSFER_AUTHOR_PACK_TO_SIX_STAGE_PRACTICE"
+      },
+      "priority": "P0_D3_D4_REVIEW",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-N41",
+      "display_id": "Q-PHY-WPE-B5-66",
+      "reader_sequence": 66,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "MODEL",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "0ff18b9aded9d2158b8c98d1368db9d02eeae9a77e414b324e0f9d0bc40ba5e2",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "AN-4",
+      "display_id": "Q-PHY-WPE-B5-67",
+      "reader_sequence": 67,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "JUSTIFY",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "2f1db6350369175b9684146e484c120a8ab3223f07edc90be902fdc3730034f4",
+        "source_figure_count": 0,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "JEE-2026-04-05-S2-Q28",
+      "display_id": "Q-PHY-WPE-B5-68",
+      "reader_sequence": 68,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "MODEL",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "90c93c0590800e6010895b00413c491fc8ad143da28cb5858c85f792d887ee65",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 1,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M39",
+      "display_id": "Q-PHY-WPE-B5-69",
+      "reader_sequence": 69,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "SYNTHESIZE",
+        "band": "D3",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "dd89be07d4d6869bc7b22622de6a9d0dd9bc7bae37279c3037fd263a2eb1998c",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 1,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [
+          "SYNTHESIZE-1"
+        ],
+        "pilot_proposals": [
+          {
+            "operation": "SYNTHESIZE",
+            "band": "D3",
+            "status": "PENDING_REVIEW_HOLD"
+          }
+        ],
+        "comparison": "AGREE_WITH_READER_PROPOSAL"
+      },
+      "blueprint_route": {
+        "candidate_cell": "D3.6",
+        "basis": "READER_PROPOSAL_ONLY",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [
+          "WPE-C06"
+        ],
+        "interactive_ids": [
+          "WPE-C06"
+        ],
+        "author_pack_ids": [],
+        "status": "INTERACTIVE_RELATED_PRACTICE",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "REVIEW_EXACT_INFERENCE_NOT_JUST_RELATED_THEME"
+      },
+      "priority": "P0_D3_D4_REVIEW",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "WEP07-01",
+      "display_id": "Q-PHY-WPE-B5-70",
+      "reader_sequence": 70,
+      "category": "EXAM_CLAIM",
+      "reader_proposal": {
+        "operation": "MODEL",
+        "band": "D3",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "3028f2910462fa5606e3a620a78a8e63ca0d03bcb8dc31937efe86e2b2c68068",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": "D3.4",
+        "basis": "READER_PROPOSAL_ONLY",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P0_D3_D4_REVIEW",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "TB-WPE-ILL-01",
+      "display_id": "TB-WPE-ILL-01",
+      "reader_sequence": 66,
+      "category": "TEXTBOOK",
+      "reader_proposal": {
+        "operation": "UNREVIEWED",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "a7931196db6f00febc5dde1796c7c8409c0b98108f3c912022266e14bc18fc90",
+        "source_figure_count": 0,
+        "original_figure_verified": false,
+        "official_key_state": "AUTHOR_SOURCE_DERIVED_UNREVIEWED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "TB-WPE-ILL-02",
+      "display_id": "TB-WPE-ILL-02",
+      "reader_sequence": 67,
+      "category": "TEXTBOOK",
+      "reader_proposal": {
+        "operation": "UNREVIEWED",
+        "band": "D3",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "7b4ba0ec3e17047dbdb2b44cb010576a5e3d2adba5024276e5076a90d128ad8a",
+        "source_figure_count": 0,
+        "original_figure_verified": false,
+        "official_key_state": "AUTHOR_SOURCE_DERIVED_UNREVIEWED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "UNKNOWN_OPERATION_NO_VALID_CELL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [
+          "WPE-C01"
+        ],
+        "interactive_ids": [
+          "WPE-C01"
+        ],
+        "author_pack_ids": [],
+        "status": "INTERACTIVE_RELATED_PRACTICE",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "REVIEW_EXACT_INFERENCE_NOT_JUST_RELATED_THEME"
+      },
+      "priority": "P0_D3_D4_REVIEW",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "TB-WPE-ILL-03",
+      "display_id": "TB-WPE-ILL-03",
+      "reader_sequence": 68,
+      "category": "TEXTBOOK",
+      "reader_proposal": {
+        "operation": "UNREVIEWED",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "c6b63342e273b053d8a2f80a1358b62c0e32522e9533c1b5694aefa248515974",
+        "source_figure_count": 0,
+        "original_figure_verified": false,
+        "official_key_state": "AUTHOR_SOURCE_DERIVED_UNREVIEWED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "TB-WPE-ILL-04",
+      "display_id": "TB-WPE-ILL-04",
+      "reader_sequence": 69,
+      "category": "TEXTBOOK",
+      "reader_proposal": {
+        "operation": "UNREVIEWED",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "698135d72d5291a075df45b0a83178a5e918d1169ecd20a9d2f97202c10706ec",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "AUTHOR_SOURCE_DERIVED_UNREVIEWED",
+        "source_flag_count": 1,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "TB-WPE-ILL-05",
+      "display_id": "TB-WPE-ILL-05",
+      "reader_sequence": 70,
+      "category": "TEXTBOOK",
+      "reader_proposal": {
+        "operation": "UNREVIEWED",
+        "band": "D3",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "826dfe7a0d485ccb73b58e73d3a8f88c535e84961ac9c281e8ff0971658e51fd",
+        "source_figure_count": 0,
+        "original_figure_verified": false,
+        "official_key_state": "AUTHOR_SOURCE_DERIVED_UNREVIEWED",
+        "source_flag_count": 1,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "UNKNOWN_OPERATION_NO_VALID_CELL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [
+          "WPE-E02"
+        ],
+        "interactive_ids": [],
+        "author_pack_ids": [
+          "WPE-E02"
+        ],
+        "status": "AUTHOR_PACK_ONLY",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "TRANSFER_AUTHOR_PACK_TO_SIX_STAGE_PRACTICE"
+      },
+      "priority": "P0_D3_D4_REVIEW",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "TB-WPE-ILL-06",
+      "display_id": "TB-WPE-ILL-06",
+      "reader_sequence": 71,
+      "category": "TEXTBOOK",
+      "reader_proposal": {
+        "operation": "UNREVIEWED",
+        "band": "D3",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "8d826df876ac32d2f27054911fb97799a81124b5f23533198cb1949dd7fb881d",
+        "source_figure_count": 0,
+        "original_figure_verified": false,
+        "official_key_state": "AUTHOR_SOURCE_DERIVED_UNREVIEWED",
+        "source_flag_count": 0,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "UNKNOWN_OPERATION_NO_VALID_CELL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [
+          "WPE-E02"
+        ],
+        "interactive_ids": [],
+        "author_pack_ids": [
+          "WPE-E02"
+        ],
+        "status": "AUTHOR_PACK_ONLY",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "TRANSFER_AUTHOR_PACK_TO_SIX_STAGE_PRACTICE"
+      },
+      "priority": "P0_D3_D4_REVIEW",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "TB-WPE-ILL-11",
+      "display_id": "TB-WPE-ILL-11",
+      "reader_sequence": 72,
+      "category": "TEXTBOOK",
+      "reader_proposal": {
+        "operation": "UNREVIEWED",
+        "band": "D4",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "731e89619ab1f36cfdcbbbe0977bffe79ddc9da79d83e39a4fb1075c4b4e6038",
+        "source_figure_count": 0,
+        "original_figure_verified": false,
+        "official_key_state": "AUTHOR_SOURCE_DERIVED_UNREVIEWED",
+        "source_flag_count": 1,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "UNKNOWN_OPERATION_NO_VALID_CELL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [
+          "WPE-C04"
+        ],
+        "interactive_ids": [
+          "WPE-C04"
+        ],
+        "author_pack_ids": [],
+        "status": "INTERACTIVE_RELATED_PRACTICE",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "REVIEW_EXACT_INFERENCE_NOT_JUST_RELATED_THEME"
+      },
+      "priority": "P0_D3_D4_REVIEW",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "TB-WPE-ILL-12",
+      "display_id": "TB-WPE-ILL-12",
+      "reader_sequence": 73,
+      "category": "TEXTBOOK",
+      "reader_proposal": {
+        "operation": "UNREVIEWED",
+        "band": "D4",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "47bf0b96009161ccb17706ff4eb16e9caf93b07b681a912978f05a73859a7faf",
+        "source_figure_count": 1,
+        "original_figure_verified": false,
+        "official_key_state": "AUTHOR_SOURCE_DERIVED_UNREVIEWED",
+        "source_flag_count": 1,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "UNKNOWN_OPERATION_NO_VALID_CELL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [
+          "WPE-C02"
+        ],
+        "interactive_ids": [
+          "WPE-C02"
+        ],
+        "author_pack_ids": [],
+        "status": "INTERACTIVE_RELATED_PRACTICE",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "REVIEW_EXACT_INFERENCE_NOT_JUST_RELATED_THEME"
+      },
+      "priority": "P0_D3_D4_REVIEW",
+      "admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "SYN-WPE-DIRECTION-CONTROL-01",
+      "display_id": "SYN-WPE-DIRECTION-CONTROL-01",
+      "reader_sequence": 74,
+      "category": "SYNTHETIC_CONTROL",
+      "reader_proposal": {
+        "operation": "AUTHOR_DEMO",
+        "band": "D2",
+        "classification_status": "AUTHOR_READER_PROPOSAL_NOT_QRT",
+        "review_state": "NOT_ADMITTED"
+      },
+      "source_evidence": {
+        "reader_path": "workspace/output/WPE_Core2_Consolidated_20261102/native-candidate/selected_bank.review.json",
+        "stem_sha256": "7ef09f5ffde322a80b9015b3b3142e76c38e747ea1dd20a7bb6818a52d1baecd",
+        "source_figure_count": 0,
+        "original_figure_verified": false,
+        "official_key_state": "AUTHOR_ONLY",
+        "source_flag_count": 1,
+        "source_custody": "NOT_AUTHENTICATED_BY_THIS_REGISTER",
+        "b08_custody": null,
+        "b08_figure_gate": null,
+        "b08_key_gate": null,
+        "b09_corrective_gate": null
+      },
+      "qrt_evidence": {
+        "status": "NOT_RUN_IN_B07",
+        "reported_role": null,
+        "reviewed_operation": null,
+        "reviewed_band": null,
+        "score_total": null,
+        "factors": null,
+        "qrt_final_admission": "NOT_GRANTED_NO_B07_REVIEW",
+        "evidence_path": null,
+        "independent_final_adjudication": false
+      },
+      "pilot_overlay": {
+        "places": [],
+        "pilot_proposals": [],
+        "comparison": "NOT_IN_21_PLACE_PILOT"
+      },
+      "blueprint_route": {
+        "candidate_cell": null,
+        "basis": "OUTSIDE_D3_D4_READER_PROPOSAL",
+        "blueprint_status": "DRAFT_OWNER_REVIEW",
+        "adapter_status": "UNSELECTED",
+        "approved_cell": null
+      },
+      "learning": {
+        "related_construction_ids": [],
+        "interactive_ids": [],
+        "author_pack_ids": [],
+        "status": "UNMAPPED",
+        "semantic_join": "PROPOSED_UNQUALIFIED",
+        "exact_inference_independently_verified": false
+      },
+      "next_actions": {
+        "source": "VERIFY_EXACT_SOURCE_AND_OFFICIAL_KEY",
+        "qrt": "OBTAIN_AUTHORIZED_INDEPENDENT_FIRST_PASS",
+        "learning": "AUTHOR_NEW_INFERENCE_CONSTRUCTION"
+      },
+      "priority": "P2_OTHER_BANDS",
+      "admission": "NOT_ADMITTED"
+    }
+  ],
+  "pilot_places": [
+    {
+      "place_id": "RETRIEVE-1",
+      "operation": "RETRIEVE",
+      "candidate_id": null,
+      "pilot_band": null,
+      "pilot_status": "VACANT",
+      "reader_present": false,
+      "reader_operation": null,
+      "reader_band": null,
+      "comparison": "VACANT",
+      "qrt_first_pass_band": null,
+      "qrt_final_admitted": false
+    },
+    {
+      "place_id": "RETRIEVE-2",
+      "operation": "RETRIEVE",
+      "candidate_id": null,
+      "pilot_band": null,
+      "pilot_status": "VACANT",
+      "reader_present": false,
+      "reader_operation": null,
+      "reader_band": null,
+      "comparison": "VACANT",
+      "qrt_first_pass_band": null,
+      "qrt_final_admitted": false
+    },
+    {
+      "place_id": "RETRIEVE-3",
+      "operation": "RETRIEVE",
+      "candidate_id": null,
+      "pilot_band": null,
+      "pilot_status": "VACANT",
+      "reader_present": false,
+      "reader_operation": null,
+      "reader_band": null,
+      "comparison": "VACANT",
+      "qrt_first_pass_band": null,
+      "qrt_final_admitted": false
+    },
+    {
+      "place_id": "EXPLAIN-1",
+      "operation": "EXPLAIN",
+      "candidate_id": null,
+      "pilot_band": null,
+      "pilot_status": "VACANT",
+      "reader_present": false,
+      "reader_operation": null,
+      "reader_band": null,
+      "comparison": "VACANT",
+      "qrt_first_pass_band": null,
+      "qrt_final_admitted": false
+    },
+    {
+      "place_id": "EXPLAIN-2",
+      "operation": "EXPLAIN",
+      "candidate_id": null,
+      "pilot_band": null,
+      "pilot_status": "VACANT",
+      "reader_present": false,
+      "reader_operation": null,
+      "reader_band": null,
+      "comparison": "VACANT",
+      "qrt_first_pass_band": null,
+      "qrt_final_admitted": false
+    },
+    {
+      "place_id": "EXPLAIN-3",
+      "operation": "EXPLAIN",
+      "candidate_id": null,
+      "pilot_band": null,
+      "pilot_status": "VACANT",
+      "reader_present": false,
+      "reader_operation": null,
+      "reader_band": null,
+      "comparison": "VACANT",
+      "qrt_first_pass_band": null,
+      "qrt_final_admitted": false
+    },
+    {
+      "place_id": "APPLY-1",
+      "operation": "APPLY",
+      "candidate_id": "EX-M105",
+      "pilot_band": "D3",
+      "pilot_status": "PENDING_REVIEW_HOLD",
+      "reader_present": true,
+      "reader_operation": "APPLY",
+      "reader_band": "D2",
+      "comparison": "CONFLICT",
+      "qrt_first_pass_band": null,
+      "qrt_final_admitted": false
+    },
+    {
+      "place_id": "APPLY-2",
+      "operation": "APPLY",
+      "candidate_id": "EX-M62",
+      "pilot_band": "D3",
+      "pilot_status": "PENDING_REVIEW_HOLD",
+      "reader_present": true,
+      "reader_operation": "MODEL",
+      "reader_band": "D3",
+      "comparison": "CONFLICT",
+      "qrt_first_pass_band": "D2",
+      "qrt_final_admitted": false
+    },
+    {
+      "place_id": "APPLY-3",
+      "operation": "APPLY",
+      "candidate_id": "EX-M79",
+      "pilot_band": "D3",
+      "pilot_status": "PENDING_REVIEW_HOLD",
+      "reader_present": true,
+      "reader_operation": "APPLY",
+      "reader_band": "D3",
+      "comparison": "AGREE",
+      "qrt_first_pass_band": null,
+      "qrt_final_admitted": false
+    },
+    {
+      "place_id": "MODEL-1",
+      "operation": "MODEL",
+      "candidate_id": "EX-M16",
+      "pilot_band": "D3",
+      "pilot_status": "PENDING_REVIEW_HOLD",
+      "reader_present": true,
+      "reader_operation": "MODEL",
+      "reader_band": "D3",
+      "comparison": "AGREE",
+      "qrt_first_pass_band": null,
+      "qrt_final_admitted": false
+    },
+    {
+      "place_id": "MODEL-2",
+      "operation": "MODEL",
+      "candidate_id": "EX-M73",
+      "pilot_band": "D3",
+      "pilot_status": "PENDING_REVIEW_HOLD",
+      "reader_present": true,
+      "reader_operation": "APPLY",
+      "reader_band": "D3",
+      "comparison": "CONFLICT",
+      "qrt_first_pass_band": "D2",
+      "qrt_final_admitted": false
+    },
+    {
+      "place_id": "MODEL-3",
+      "operation": "MODEL",
+      "candidate_id": "EX-M81",
+      "pilot_band": "D3",
+      "pilot_status": "PENDING_REVIEW_HOLD",
+      "reader_present": false,
+      "reader_operation": null,
+      "reader_band": null,
+      "comparison": "ABSENT_FROM_CURRENT_READER",
+      "qrt_first_pass_band": null,
+      "qrt_final_admitted": false
+    },
+    {
+      "place_id": "REPRESENT-1",
+      "operation": "REPRESENT",
+      "candidate_id": "EX-M56",
+      "pilot_band": "D3",
+      "pilot_status": "PENDING_REVIEW_HOLD",
+      "reader_present": true,
+      "reader_operation": "REPRESENT",
+      "reader_band": "D2",
+      "comparison": "CONFLICT",
+      "qrt_first_pass_band": null,
+      "qrt_final_admitted": false
+    },
+    {
+      "place_id": "REPRESENT-2",
+      "operation": "REPRESENT",
+      "candidate_id": "EX-M61",
+      "pilot_band": "D3",
+      "pilot_status": "PENDING_REVIEW_HOLD",
+      "reader_present": true,
+      "reader_operation": "EXPLAIN",
+      "reader_band": "D2",
+      "comparison": "CONFLICT",
+      "qrt_first_pass_band": null,
+      "qrt_final_admitted": false
+    },
+    {
+      "place_id": "REPRESENT-3",
+      "operation": "REPRESENT",
+      "candidate_id": "EX-M69",
+      "pilot_band": "D3",
+      "pilot_status": "PENDING_REVIEW_HOLD",
+      "reader_present": true,
+      "reader_operation": "REPRESENT",
+      "reader_band": "D2",
+      "comparison": "CONFLICT",
+      "qrt_first_pass_band": null,
+      "qrt_final_admitted": false
+    },
+    {
+      "place_id": "SYNTHESIZE-1",
+      "operation": "SYNTHESIZE",
+      "candidate_id": "EX-M39",
+      "pilot_band": "D3",
+      "pilot_status": "PENDING_REVIEW_HOLD",
+      "reader_present": true,
+      "reader_operation": "SYNTHESIZE",
+      "reader_band": "D3",
+      "comparison": "AGREE",
+      "qrt_first_pass_band": null,
+      "qrt_final_admitted": false
+    },
+    {
+      "place_id": "SYNTHESIZE-2",
+      "operation": "SYNTHESIZE",
+      "candidate_id": "EX-M44",
+      "pilot_band": "D3",
+      "pilot_status": "PENDING_REVIEW_HOLD",
+      "reader_present": false,
+      "reader_operation": null,
+      "reader_band": null,
+      "comparison": "ABSENT_FROM_CURRENT_READER",
+      "qrt_first_pass_band": null,
+      "qrt_final_admitted": false
+    },
+    {
+      "place_id": "SYNTHESIZE-3",
+      "operation": "SYNTHESIZE",
+      "candidate_id": "EX-M60",
+      "pilot_band": "D3",
+      "pilot_status": "PENDING_REVIEW_HOLD",
+      "reader_present": false,
+      "reader_operation": null,
+      "reader_band": null,
+      "comparison": "ABSENT_FROM_CURRENT_READER",
+      "qrt_first_pass_band": null,
+      "qrt_final_admitted": false
+    },
+    {
+      "place_id": "JUSTIFY-1",
+      "operation": "JUSTIFY",
+      "candidate_id": "EX-M101",
+      "pilot_band": "D3",
+      "pilot_status": "PENDING_REVIEW_HOLD",
+      "reader_present": true,
+      "reader_operation": "JUSTIFY",
+      "reader_band": "D1",
+      "comparison": "CONFLICT",
+      "qrt_first_pass_band": "D2",
+      "qrt_final_admitted": false
+    },
+    {
+      "place_id": "JUSTIFY-2",
+      "operation": "JUSTIFY",
+      "candidate_id": "WEP07-03",
+      "pilot_band": "D4",
+      "pilot_status": "PENDING_REVIEW_HOLD",
+      "reader_present": true,
+      "reader_operation": "APPLY",
+      "reader_band": "D2",
+      "comparison": "CONFLICT",
+      "qrt_first_pass_band": "D2",
+      "qrt_final_admitted": false
+    },
+    {
+      "place_id": "JUSTIFY-3",
+      "operation": "JUSTIFY",
+      "candidate_id": null,
+      "pilot_band": null,
+      "pilot_status": "VACANT",
+      "reader_present": false,
+      "reader_operation": null,
+      "reader_band": null,
+      "comparison": "VACANT",
+      "qrt_first_pass_band": null,
+      "qrt_final_admitted": false
+    }
+  ],
+  "release_policy": {
+    "academic_admission": "NOT_ADMITTED_FOR_ALL_ROWS",
+    "practice_semantics": "RELATED_HELP_IS_NOT_EXACT_TASK_TRANSFER",
+    "qrt_first_pass": "FIRST_PASS_NOT_FINAL_QRT",
+    "pilot": "21_PLACES_OVERLAY_NOT_21_ADMITTED_QUESTIONS",
+    "d1d2": "NO_FORCED_D3_D4_CELL",
+    "d31": "PAUSED"
+  }
+}

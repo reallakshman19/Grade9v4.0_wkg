@@ -1,0 +1,16 @@
+{
+  "source_id": "EX-M18",
+  "task_identity": "Q-ID-09",
+  "sequence": 9,
+  "paper": "JEE Main 2025 (Online) 28th January Morning Shift",
+  "stem_text": "A bead of mass ' \ud835\udc5a ' slides without friction on the wall of a vertical circular hoop of radius ' \ud835\udc45 ' as shown in figure. The bead moves under the combined action of gravity and a massless spring (k) attached to the bottom of the hoop. The equilibrium length of the spring is ' \ud835\udc45 '. If the bead is released from top of the hoop with (negligible) zero initial speed, velocity of bead, when the length of spring becomes ' \ud835\udc45 ', would be (spring constant is ' \ud835\udc58 ', \ud835\udc54 is acceleration due to gravity) [FIG-stem-1]",
+  "stem_sha256": "42336fcec4a83179e7f595fe5bdc33dddc30953940189b66288cb39696ceaad8",
+  "options": [
+    "A: \u221a(2\ud835\udc45\ud835\udc54+(kR2)/(m))",
+    "B: \u221a(3Rg+(kR2)/(m))",
+    "C: \u221a(2Rg+(4kR^(2))/(m))",
+    "D: 2\u221a(gR+(kR2)/(m))"
+  ],
+  "figure_reference": "https://app-content.cdn.examgoal.net/fly/1000/image/jaoe38c1m6vv01hf/d6172690-de16-4d80-a7c2-533f6e78297f/3c278440-e5ec-11ef-ac74-491aa7357b34/file-jaoe38c1m6vv01hg.png?format=png",
+  "confidentiality_notice": "SEALED SOURCE-ONLY PACKET FOR BLIND INDEPENDENT REVIEW. Contains NO answers, keys, explanations, candidate solutions, SL2 factor scores, or prior review commentary."
+}

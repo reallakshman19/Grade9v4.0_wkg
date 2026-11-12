@@ -1,0 +1,51 @@
+name: WPE Integration Stabilization R2 — Full Acceptance
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'physics/wpe/learn-challenge-coverage.js'
+      - 'physics/wpe/learn-challenge.html'
+      - 'physics/wpe/study-bridge.html'
+      - 'preview/question-status.html'
+      - 'workspace/output/WPE_Core2_Consolidated_20261102/MANIFEST.review.json'
+      - 'tests/test_wpe_learn_challenge_gap_closure_r2.py'
+      - 'tests/test_wpe_unified_integration_r1.py'
+      - 'tools/wpe_integration_stabilization_r2_ui.py'
+      - '.github/workflows/wpe-integration-stabilization-r2.yml'
+jobs:
+  complete-python-and-chromium:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install project and Chromium
+        run: |
+          python -m pip install -e '.[dev]' playwright==1.55.0
+          python -m playwright install --with-deps chromium
+      - name: Validate navigation scripts parse
+        run: |
+          node --check physics/wpe/learn-challenge-coverage.js
+          node --check physics/wpe/skill-explorer-tabs.js
+          python -m py_compile tools/wpe_integration_stabilization_r2_ui.py
+      - name: Run complete Python QA including source/science integrity
+        run: python -m pytest -q
+      - name: Verify source challenge and all 74 learner routes on desktop and mobile
+        run: python tools/wpe_integration_stabilization_r2_ui.py
+      - name: Run five F04–F08 six-stage tests and exact source returns
+        run: python tools/wpe_learn_challenge_gap_closure_r2_ui.py
+      - name: Run three F01–F03 six-stage tests and legacy coverage
+        run: python tools/wpe_learn_challenge_coverage_r1_ui.py
+      - name: Verify original first attempts, separate donor challenges, reload and reset
+        run: python tools/wpe_unified_integration_r1_ui.py
+      - name: Verify original C/E tutor journeys and foundation mini-lessons
+        run: |
+          python tools/wpe_student_journey_r1_ui.py
+          python tools/wpe_d3d4_self_tutor_ui.py
+          python tools/wpe_extensions_interactive_ui.py
+          python tools/wpe_learn_challenge_ui.py
+      - name: Verify published Foundations/C/E/F sub-tabs on desktop and mobile
+        run: python tools/wpe_skill_tabs_ui.py

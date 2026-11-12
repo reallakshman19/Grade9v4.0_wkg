@@ -1,0 +1,48 @@
+/* Shared, responsive WPE student-navigation vocabulary. */
+.gateway-start,.skill-explorer,.practice-manager{max-width:1110px;margin:18px auto;padding:18px 22px;border:1px solid #c8dde5;border-radius:14px;background:#fff;color:#1a3648}
+.gateway-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:12px;margin-top:12px}
+.gateway-option{display:flex;flex-direction:column;gap:6px;padding:18px;border:2px solid #b4d1de;border-radius:12px;background:#edf8fa;color:#174d63;text-decoration:none;min-height:94px}
+.gateway-option strong{font-size:1.15rem}.gateway-option span{font-size:.96rem}
+/* Single-section-at-a-time, accessible Physics skill sub-tabs. */
+.skill-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;border-bottom:2px solid #c8dde5;padding-bottom:8px}
+.skill-tab{min-height:46px;padding:10px 14px;border:1px solid #bad5df;border-radius:9px;background:#f4f9fb;color:#23586d;font:inherit;font-weight:750;cursor:pointer}
+.skill-tab[aria-selected="true"]{background:#176b74;color:white;border-color:#176b74}
+.skill-tab:hover:not([aria-selected="true"]){background:#e6f4f7}
+.skill-count{display:inline-block;margin-left:4px;font-size:.8rem;font-weight:750}
+.skill-tabpanels{margin-top:14px}
+.skill-tabpanel{border:1px solid #c8dde5;border-radius:12px;padding:18px;background:#fff}
+.skill-tabpanel[hidden]{display:none!important}
+.skill-tabpanel h3{margin:0 0 12px;color:#164960;font-size:1.13rem}
+.skill-panel-note{color:#426779;font-size:.9rem;margin:0 0 14px}
+.skill-entry-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:10px}
+.skill-entry{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px;border:1px solid #d2e3e9;border-radius:10px;background:#f8fbfc;min-width:0}
+.skill-entry-content{display:flex;gap:12px;align-items:flex-start;min-width:0;flex:1}
+.skill-entry-content>div{min-width:0}
+.skill-entry strong{font-weight:750;color:#204859}
+.skill-code{flex:none;font-variant-numeric:tabular-nums;color:#176071;font-weight:800;white-space:nowrap}
+.skill-open{display:inline-flex;align-items:center;justify-content:center;min-height:44px;flex:none;padding:8px 12px;border:1px solid #5f9ca9;border-radius:8px;background:#f0f9fa;color:#145770;font-size:.86rem;font-weight:700;text-decoration:none;text-align:center}
+.skill-open:hover{background:#d9f0f2;text-decoration:underline}
+.skill-finding{margin:5px 0 0;color:#4c6c7c;font-size:.84rem;line-height:1.45;overflow-wrap:anywhere}
+.skill-finding-label{font-weight:750;color:#325c71}
+
+.practice-controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.practice-controls a,.practice-controls button{padding:10px 13px;min-height:44px;border:1px solid #2c7381;border-radius:9px;font:inherit;background:#eef8fa;color:#154c62;font-weight:650;cursor:pointer;text-decoration:none}
+.practice-controls [aria-disabled="true"]{opacity:.75}
+.lesson-roles{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin:12px 0;padding:12px;border:1px solid #bad5df;border-radius:10px;background:#eaf7f8}
+.lesson-roles button{min-height:44px;border-radius:8px;border:1px solid #28778b;padding:8px 12px;background:#fff;color:#17576b;font:inherit;cursor:pointer;font-weight:650}
+.lesson-roles .source-return-inline{display:inline-flex;align-items:center;min-height:44px;color:#195e76;font-weight:700}
+.lesson-roles .role-status{font-size:.88rem;color:#4c6878;flex-basis:100%}
+a:focus-visible,button:focus-visible{outline:3px solid #d9a742;outline-offset:3px}
+@media(max-width:560px){
+.gateway-start,.skill-explorer,.practice-manager{padding:14px 12px;margin:10px}
+.gateway-option{padding:14px}
+.lesson-roles{padding:10px}
+.skill-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:12px}
+.skill-tab{padding:10px 6px;font-size:.9rem}
+.skill-tabpanel{padding:12px 10px}
+.skill-entry-list{grid-template-columns:1fr}
+.skill-entry{align-items:stretch;flex-direction:column}
+.skill-open{align-self:flex-start}
+}
+
+.transfer-challenge-link{display:inline-flex;align-items:center;justify-content:center;min-height:44px;margin:12px 8px 8px 0;padding:10px 14px;border:2px solid #176e80;border-radius:10px;background:#e8f7f6;color:#144b61;font-weight:700;text-decoration:none}

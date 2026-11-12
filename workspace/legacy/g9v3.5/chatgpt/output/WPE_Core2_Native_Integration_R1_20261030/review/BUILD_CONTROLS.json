@@ -1,0 +1,30 @@
+{
+  "results": [
+    {
+      "case": "strict combined draft is rejected atomically",
+      "pass": true,
+      "exit": 2,
+      "stderr": "CORE2   AUTHOR_COMPONENT                 TB-WPE-ILL-01                                REPRESENTATION is absent\nCORE2   AUTHOR_COMPONENT                 TB-WPE-ILL-02                                REPRESENTATION is absent\nCORE2   AUTHOR_COMPONENT                 TB-WPE-ILL-03                                REPRESENTATION is absent\nCORE2   AUTHOR_FIGURE_TEXT               REP-TB-FIG-06-INCLINE-BLOCK                  label(s) run outside the viewBox and are cut off at the figure's edge: '4 kg', 's = 3 m', 'Block Sliding Down Rough Inc'\nCORE2   AUTHOR_FIGURE_TEXT               REP-TB-FIG-07-INCLINE-FBD                    label(s) run outside the viewBox and are cut off at the figure's edge: '&#956;R', 'FBD on Incline: W_N = 0, W_g'\nCORE2   AUTHOR_COMPONENT                 TB-WPE-ILL-05                                REPRESENTATION is absent\nCORE2   AUTHOR_COMPONENT                 TB-WPE-ILL-06                                REPRESENTATION is absent\nCORE2   AUTHOR_FIGURE_TEXT               REP-TB-FIG-09-OVERHANGING-CHAIN              label(s) run outside the viewBox and are cut off at the figure's edge: 'Uniform Chain Slipping Off T'\nCORE2   AUTHOR_COMPONENT                 TB-WPE-ILL-11                                REPRESENTATION is absent\nCORE2   AUTHOR_FIGURE_TEXT               REP-TB-FIG-10-SPRING-BLOCK-WALL              label(s) run outside the viewBox and are cut off at the figure's edge: 'Block Released from Compress'\n10 gap(s): nothing written. Run `render_core.py gaps` or `--draft`.\n"
+    },
+    {
+      "case": "draft cannot bypass missing selected identity",
+      "pass": true,
+      "exit": 1,
+      "stderr": "selection rejected: PRODUCT_SELECTION_UNRESOLVED: core2:MISSING-QUESTION:expected=BANK\n"
+    },
+    {
+      "case": "relocated inputs rebuild without primary candidate or original textbook reads",
+      "pass": true,
+      "pages": [
+        "core2.html",
+        "index.html"
+      ],
+      "depth_gaps": 10,
+      "denied_reads": [],
+      "observed_file_opens": 236,
+      "runtime": "C:/CodeC/Grade9v3.5 native runtime still required; not a standalone toolchain distribution"
+    }
+  ],
+  "pass": true,
+  "scope": "AUTHOR_NATIVE_BUILD_CONTROLS"
+}

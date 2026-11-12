@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 350" width="100%" role="img" aria-labelledby="incline-title incline-desc">
+<title id="incline-title">Block sliding down a rough 37 degree incline</title>
+<desc id="incline-desc">A 4 kg block rests flush with the 37 degree slope. The displacement arrow points down and to the right, parallel to the slope. Sliding distance is 3 m and the coefficient of kinetic friction is 0.2.</desc>
+<defs><marker id="motion-tip" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 1 L10 5 L0 9Z" fill="#1e293b"/></marker></defs>
+<style>text{font-family:system-ui,sans-serif;fill:#1e293b;font-size:32px;font-weight:600}</style>
+<line x1="20" y1="255.928" x2="400" y2="255.928" stroke="#1e293b" stroke-width="3"/>
+<polygon points="80,255.928 340,255.928 80,60" fill="#f8fafc" stroke="#1e293b" stroke-width="3"/>
+<path d="M280 255.928 A60 60 0 0 1 292.082 219.819" fill="none" stroke="#1e293b" stroke-width="2"/>
+<text data-angle-label="37" x="268" y="246" text-anchor="end" font-size="32">37°</text>
+<g data-reader-fix="block-and-motion" transform="translate(175 131.588) rotate(37)">
+<rect x="-42" y="-62" width="84" height="62" rx="3" fill="#dbeafe" stroke="#1e293b" stroke-width="3"/>
+
+<line data-motion-arrow="down-slope" x1="54" y1="-32" x2="115" y2="-32" stroke="#1e293b" stroke-width="3" marker-end="url(#motion-tip)"/>
+</g>
+<text x="188.240" y="114.018" transform="rotate(37 188.240 114.018)" text-anchor="middle" font-size="32">4 kg</text>
+<text x="289" y="171" transform="rotate(37 289 171)" text-anchor="middle" font-size="32">s = 3 m</text>
+<text x="210" y="316" text-anchor="middle" font-size="32">μ = 0.2</text>
+</svg>

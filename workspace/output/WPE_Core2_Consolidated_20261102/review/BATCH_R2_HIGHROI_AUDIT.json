@@ -1,0 +1,205 @@
+{
+  "schema": "wpe-core2-oracle-batch-r2-self-assessment-v1",
+  "date": "2026-11-02",
+  "role": "AUTHOR_ORACLE_SELF_ASSESSED_NOT_INDEPENDENT",
+  "status": "CANDIDATE_ONLY_NOT_ADMITTED",
+  "base_commit": "90615716979d4172a5953cabf124c92de83912cf",
+  "question_inventory": {
+    "displayed": 74,
+    "source_displayed": 73,
+    "synthetic_controls": 1,
+    "unique_question_ids": 74,
+    "source_flagged": 16,
+    "with_literal_crux_move_pre_attempt_hint": 63,
+    "authored_scaffold_questions_added": 33,
+    "crux_move_cases_with_scaffold": 26,
+    "crux_move_cases_unscaffolded": 37,
+    "crux_move_cases_guarded_by_filter": 37
+  },
+  "review_flags": [
+    {
+      "source_id": "EX-M2",
+      "disposition": "AUTHOR_REPAIRED_SCIENCE",
+      "basis": "Round-vs-closest-option distinction made explicit; official source key remains unverified",
+      "academic_acceptance": "NOT_RUN",
+      "source_admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M6",
+      "disposition": "INDEPENDENT_PHYSICS_REQUIRED",
+      "basis": "Source diagram and actual bead dynamics conflict with coaching key A under plausible starting conditions",
+      "academic_acceptance": "NOT_RUN",
+      "source_admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M61",
+      "disposition": "AUTHOR_REPAIRED_UNVERIFIED",
+      "basis": "Removed unsupported definitive B selection; requires exact original U(x) graph and figure/key custody",
+      "academic_acceptance": "NOT_RUN",
+      "source_admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M62",
+      "disposition": "QRT_DECISION_REQUIRED",
+      "basis": "Original D3/MODEL claim differs from reviewed D2/APPLY proposal; no categorical promotion",
+      "academic_acceptance": "NOT_RUN",
+      "source_admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M65",
+      "disposition": "SOURCE_ASSUMPTION_REQUIRED",
+      "basis": "Constant-power t^(3/2) assumes no external dissipative-work effects; source constraints unresolved",
+      "academic_acceptance": "NOT_RUN",
+      "source_admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M73",
+      "disposition": "QRT_DECISION_REQUIRED",
+      "basis": "Algebra plausible; D3 cognitive calibration disputed; preserve proposed placement",
+      "academic_acceptance": "NOT_RUN",
+      "source_admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M101",
+      "disposition": "AUTHOR_REPAIRED_SCIENCE",
+      "basis": "Wrong inherited conservative-field/gravity coaching removed from learner-facing path; spring comparison corrected",
+      "academic_acceptance": "NOT_RUN",
+      "source_admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "JEE-2026-04-06-S1-Q28",
+      "disposition": "AUTHOR_REPAIRED_PRECISION",
+      "basis": "Exact -9.9875 versus standard -9.99 rounding and nearest -9.98 option distinguished",
+      "academic_acceptance": "NOT_RUN",
+      "source_admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "WEP07-03",
+      "disposition": "PREVIOUS_REPAIR_QRT_HOLD",
+      "basis": "Multi-select a/b/c/d and non-spoiler cues retained; independent operation/band pending",
+      "academic_acceptance": "NOT_RUN",
+      "source_admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "JEE-2026-04-05-S2-Q28",
+      "disposition": "ORIGINAL_FIGURE_REQUIRED",
+      "basis": "Vertical translation assumption in original question still requires authentic figure verification",
+      "academic_acceptance": "NOT_RUN",
+      "source_admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "EX-M39",
+      "disposition": "AUTHOR_REPAIRED_CHECK",
+      "basis": "Invalid 'small angle predicts 1 rad' check replaced with exact independent trigonometric substitution",
+      "academic_acceptance": "NOT_RUN",
+      "source_admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "TB-WPE-ILL-04",
+      "disposition": "ORIGINAL_FIGURE_REQUIRED",
+      "basis": "Author SVG must not be certified source-identical",
+      "academic_acceptance": "NOT_RUN",
+      "source_admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "TB-WPE-ILL-05",
+      "disposition": "PREVIOUS_REPAIR_SOURCE_HOLD",
+      "basis": "Initial speed unknown; prior general-u power expression retained",
+      "academic_acceptance": "NOT_RUN",
+      "source_admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "TB-WPE-ILL-11",
+      "disposition": "AUTHOR_REPAIRED_ASSUMPTION",
+      "basis": "General K_final=K_initial+4mgl/9; u=0 conditional result disclosed",
+      "academic_acceptance": "NOT_RUN",
+      "source_admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "TB-WPE-ILL-12",
+      "disposition": "PREVIOUS_REPAIR_SOURCE_HOLD",
+      "basis": "Spring detachment piecewise reasoning already retained; original figure equivalence unresolved",
+      "academic_acceptance": "NOT_RUN",
+      "source_admission": "NOT_ADMITTED"
+    },
+    {
+      "source_id": "SYN-WPE-DIRECTION-CONTROL-01",
+      "disposition": "AUTHORED_CONTROL_ONLY",
+      "basis": "Clearly synthetic; never count toward source-authenticated exam coverage",
+      "academic_acceptance": "NOT_RUN",
+      "source_admission": "NOT_ADMITTED"
+    }
+  ],
+  "source_hint_custody": {
+    "note": "Existing question.hints[] preserved byte-for-byte in every question record. New authored pedagogy is in question.scaffolds[]. Question-level original-hint authenticity remains unverified.",
+    "render_policy": "for scaffolded questions, pre-attempt learner hints show scaffolds instead of raw hints; for the remainder existing behavior retained"
+  },
+  "changed_questions": [
+    "EX-M2",
+    "EX-M6",
+    "EX-M7",
+    "EX-M8",
+    "EX-M11",
+    "EX-M14",
+    "EX-M16",
+    "EX-M18",
+    "EX-M24",
+    "EX-M36",
+    "EX-M47",
+    "EX-M49",
+    "EX-M50",
+    "EX-M61",
+    "EX-M62",
+    "EX-M65",
+    "EX-M73",
+    "EX-M89",
+    "EX-M90",
+    "EX-M101",
+    "JEE-2026-04-06-S1-Q28",
+    "WEP07-03",
+    "JEE-2026-04-05-S2-Q28",
+    "EX-M39",
+    "TB-WPE-ILL-04",
+    "TB-WPE-ILL-05",
+    "TB-WPE-ILL-11",
+    "TB-WPE-ILL-12",
+    "SYN-WPE-DIRECTION-CONTROL-01",
+    "AN-4",
+    "AN-5",
+    "AN-6",
+    "EX-M96"
+  ],
+  "science_text_changed": [
+    "EX-M2",
+    "EX-M61",
+    "EX-M101",
+    "JEE-2026-04-06-S1-Q28",
+    "EX-M39",
+    "TB-WPE-ILL-11"
+  ],
+  "no_new_questions": true,
+  "hard_holds": [
+    "Independent scientific reviewer and QRT disposition",
+    "Original source figure, exam key and source-rights evidence",
+    "Native Shared/Core2 admission and Owner learner release",
+    "Remaining pre-attempt cue contamination; do not claim all 63 resolved"
+  ],
+  "independent_review": "NOT_RUN",
+  "learner_trial": "NOT_RUN",
+  "reader_protection": {
+    "method": "Preserve raw hints[] exactly. For questions with authored scaffolds, show those instead of raw hints. For others, exclude only literal 'Crux Move' raw hints from the pre-attempt page; their method can still be learned from the after-attempt worked solution.",
+    "raw_hints_modified": false,
+    "explicit_crux_cases": 63,
+    "curated_scaffold_cases": 26,
+    "other_deferred_cases": 37,
+    "remaining_unreviewed_for_other_spoilers": 37,
+    "not_a_learned_mastery_claim": true
+  },
+  "student_cue_correction": {
+    "source_id": "EX-M8",
+    "error": "Earlier author hint wrongly presupposed equal stretching forces for unequal hanging masses (100 g and 200 g).",
+    "repair": "Prompt separate loads and energy/stiffness comparison without supplying the result.",
+    "source_reproduction": "https://www.allenoverseas.com/wp-content/themes/ALLENOverseas/lp-assets/2026/Physics/2301-Physics_Paper_With_Solution_Morning.pdf#page=3",
+    "academic_admission": "NOT_ADMITTED"
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "browser": "Chromium",
+  "mode": "synthetic_local_fixture_only",
+  "results": [
+    {
+      "case": "desktop:before no solution DOM",
+      "pass": true
+    },
+    {
+      "case": "desktop:no answer in visible page",
+      "pass": true
+    },
+    {
+      "case": "desktop:response type options",
+      "pass": true
+    },
+    {
+      "case": "desktop:blank attempt rejected",
+      "pass": true
+    },
+    {
+      "case": "desktop:hint 1",
+      "pass": true
+    },
+    {
+      "case": "desktop:hint 2",
+      "pass": true
+    },
+    {
+      "case": "desktop:hint 3",
+      "pass": true
+    },
+    {
+      "case": "desktop:hint ladder stops",
+      "pass": true
+    },
+    {
+      "case": "desktop:wrong answer graded",
+      "pass": true
+    },
+    {
+      "case": "desktop:solution visible after commit",
+      "pass": true
+    },
+    {
+      "case": "desktop:cannot reattempt",
+      "pass": true
+    },
+    {
+      "case": "desktop:correct answer graded",
+      "pass": true
+    },
+    {
+      "case": "desktop:no horizontal overflow",
+      "pass": true
+    },
+    {
+      "case": "mobile:before no solution DOM",
+      "pass": true
+    },
+    {
+      "case": "mobile:no answer in visible page",
+      "pass": true
+    },
+    {
+      "case": "mobile:response type options",
+      "pass": true
+    },
+    {
+      "case": "mobile:blank attempt rejected",
+      "pass": true
+    },
+    {
+      "case": "mobile:hint 1",
+      "pass": true
+    },
+    {
+      "case": "mobile:hint 2",
+      "pass": true
+    },
+    {
+      "case": "mobile:hint 3",
+      "pass": true
+    },
+    {
+      "case": "mobile:hint ladder stops",
+      "pass": true
+    },
+    {
+      "case": "mobile:wrong answer graded",
+      "pass": true
+    },
+    {
+      "case": "mobile:solution visible after commit",
+      "pass": true
+    },
+    {
+      "case": "mobile:cannot reattempt",
+      "pass": true
+    },
+    {
+      "case": "mobile:correct answer graded",
+      "pass": true
+    },
+    {
+      "case": "mobile:no horizontal overflow",
+      "pass": true
+    }
+  ],
+  "passed": 26,
+  "total": 26
+}

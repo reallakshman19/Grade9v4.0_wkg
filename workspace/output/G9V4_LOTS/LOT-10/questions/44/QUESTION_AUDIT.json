@@ -1,0 +1,89 @@
+{
+  "sequence": 44,
+  "batch_sequence": 14,
+  "task_identity": "Q-ID-51",
+  "stable_id": "PHYS-WPE-LOT10-Q44",
+  "source_id": "EX-N11",
+  "lot": "LOT-10",
+  "batch": "BATCH-C",
+  "paper": "JEE Main 2023 (Online) 10th April Morning Shift",
+  "source_type": "EXAM_PAPER_TRANSCRIBED",
+  "source_custody": "PARTIAL (Remote figure [FIG-stem-1] unresolved)",
+  "stem_text": "A closed circular tube of average radius 15 cm, whose inner walls are rough, is kept in vertical plane. A block of mass 1 kg just fits inside the tube. The speed of block is 22 m/s, when it is introduced at the top of tube. After completing five oscillations, the block stops at the bottom region of tube. The work done by the tube on the block is __________ J. (Given g = 10 m/s ^(2) ). [FIG-stem-1]",
+  "stem_sha256": "12a8f2425259c6c9b25eaba9f7aed7b20549c74d6ab635daee4efb8c4bd43de7",
+  "source_hash": "12a8f2425259c6c9b25eaba9f7aed7b20549c74d6ab635daee4efb8c4bd43de7",
+  "source_record_digest": "sha256:12a8f2425259c6c9b25eaba9f7aed7b20549c74d6ab635daee4efb8c4bd43de7",
+  "duplicate_parent": null,
+  "scope": "PRIMARY_IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "REQUIRED_UNRESOLVED",
+  "figure_reference": "[FIG-stem-1]",
+  "options": [],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "HOLD:FIGURE_UNRESOLVED",
+  "candidate_solve": {
+    "method": "WORK_ENERGY_CIRCULAR_TUBE_FRICTION",
+    "predicted_option": "-245",
+    "derivation": "Initial speed v0 = 22 m/s at top. Comes to rest at bottom region. Delta KE = 0 - (1/2)*m*v0^2 = -0.5 * 1 * 484 = -242 J. Work by gravity: drop h = 2*R = 2*0.15 = 0.3 m => W_g = m*g*h = 1 * 10 * 0.3 = 3 J. Work-energy theorem: W_net = W_g + W_tube = Delta KE => 3 + W_tube = -242 => W_tube = -245 J. Held on figure custody."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Work-energy theorem on vertical circular constraint with friction dissipation"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Translating vertical displacement between top and bottom of circle (2R)"
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Evaluate Delta KE, gravity work, and deduce constraint work"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Squaring 22^2 = 484 and subtraction: -242 - 3 = -245"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Tracking negative sign of dissipative friction work and unresolved figure geometry"
+        }
+      },
+      "total": 5,
+      "band": "D2",
+      "prior_proposal": {
+        "source": "INITIAL_CALIBRATION",
+        "scores": "1/1/1/1/1",
+        "total": 5
+      },
+      "differences": "Initial native factor audit"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "REPRESENT"
+      ],
+      "rationale": "Application of work-energy theorem to dissipative circular tube motion",
+      "candidate_cell": "QRT-APPLY-D2",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_INDEPENDENT_REVIEW",
+  "b2_blind_status": "PENDING_BLIND_SOLVE",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:FIGURE_UNRESOLVED (Remote figure [FIG-stem-1] missing from local custody)",
+    "HOLD:SIGNED_WORK_VS_KEY_DISPUTE (Sign convention dispute between friction work -245J vs magnitude)",
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (Coaching key unverified against official NTA master)",
+    "HOLD:SPEC_PENDING (No qualified D1/D2 common blueprint or topic adapter)",
+    "HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)"
+  ],
+  "next_action": "B2 independent source-only solve + official NTA master key reconciliation"
+}

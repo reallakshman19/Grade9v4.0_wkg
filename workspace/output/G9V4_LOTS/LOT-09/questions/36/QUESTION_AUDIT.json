@@ -1,0 +1,92 @@
+{
+  "sequence": 36,
+  "batch_sequence": 6,
+  "task_identity": "Q-ID-41",
+  "stable_id": "PHYS-WPE-LOT09-Q36",
+  "source_id": "EX-M98",
+  "lot": "LOT-09",
+  "batch": "BATCH-C",
+  "paper": "JEE Main 2013 (Online) 9th April Morning Slot",
+  "source_type": "EXAM_PAPER_TRANSCRIBED",
+  "source_custody": "VERIFIED_TEXT",
+  "stem_text": "Two springs of force constants 300 N/m (Spring A) and 400 N/m (Spring B) are joined together in series. The combination is compressed by 8.75 cm. The ratio of energy stored in A and B is (𝐸𝐴)/(𝐸𝐵) . Then (𝐸𝐴)/(𝐸𝐵) is equal to:",
+  "stem_sha256": "275a2a58ac5f752c0584a60cc804d0a71ea2dfdc266fa0c9f46b7e0ad5c63a3d",
+  "source_hash": "275a2a58ac5f752c0584a60cc804d0a71ea2dfdc266fa0c9f46b7e0ad5c63a3d",
+  "source_record_digest": "sha256:275a2a58ac5f752c0584a60cc804d0a71ea2dfdc266fa0c9f46b7e0ad5c63a3d",
+  "duplicate_parent": null,
+  "scope": "PRIMARY_IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "NOT_REQUIRED",
+  "figure_reference": null,
+  "options": [
+    "A: (4)/(3)",
+    "B: (16)/(9)",
+    "C: (3)/(4)",
+    "D: (9)/(16)"
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "SERIES_SPRINGS_FORCE_EQUALITY",
+    "predicted_option": "A: (4)/(3)",
+    "derivation": "In series, compression force F is identical for both springs. Stored energy E = F^2 / (2k). Ratio E_A / E_B = (F^2 / (2*kA)) / (F^2 / (2*kB)) = kB / kA = 400 / 300 = 4/3."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Series spring coupling: identical restoring force F transmitted across both springs"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Formulating stored energy as E = F^2 / (2k) instead of displacement"
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Evaluating inverse ratio of spring constants EA/EB = kB/kA"
+        },
+        "algebra_computational_load": {
+          "score": 0,
+          "evidence": "Direct fraction reduction 400/300 = 4/3"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Avoiding trap of assuming equal compression (which would give 3/4)"
+        }
+      },
+      "total": 4,
+      "band": "D2",
+      "prior_proposal": {
+        "source": "INITIAL_CALIBRATION",
+        "scores": "1/1/1/0/1",
+        "total": 4
+      },
+      "differences": "Initial native factor audit"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "RETRIEVE"
+      ],
+      "rationale": "Applying series spring force transmission law to energy ratio",
+      "candidate_cell": "QRT-APPLY-D2",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_INDEPENDENT_REVIEW",
+  "b2_blind_status": "PENDING_BLIND_SOLVE",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (Coaching key unverified against official NTA master)",
+    "HOLD:SPEC_PENDING (No qualified D1/D2 common blueprint or topic adapter)",
+    "HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)"
+  ],
+  "next_action": "B2 independent source-only solve + official NTA master key reconciliation"
+}

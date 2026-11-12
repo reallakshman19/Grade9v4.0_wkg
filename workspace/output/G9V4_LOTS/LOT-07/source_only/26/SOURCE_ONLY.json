@@ -1,0 +1,17 @@
+{
+  "source_id": "EX-M78",
+  "task_identity": "Q-ID-29",
+  "sequence": 26,
+  "batch_sequence": 11,
+  "paper": "JEE Main 2019 (Online) 9th January Morning Slot",
+  "stem_text": "A block of mass m, lying on a smooth horizontal surface, is attached to a spring (of negligible mass) of spring constant k. The other end of the spring is fixed, as shown in the figure. The block is initially at rest in its equilibrium position. If now the block is pulled with a constant force F, the maximum speed of the block is : [FIG-stem-1]",
+  "stem_sha256": "4f16a1508ca866152bc5523d0bc6719aede0028234b3b8ea49571c2e9c4d260f",
+  "options": [
+    "A: (2\ud835\udc39)/(\u221a(\ud835\udc5a\ud835\udc58))",
+    "B: (\ud835\udc39)/(\ud835\udf0b\u221a(\ud835\udc5a\ud835\udc58))",
+    "C: (\ud835\udf0b\ud835\udc39)/(\u221a(\ud835\udc5a\ud835\udc58))",
+    "D: (\ud835\udc39)/(\u221a(\ud835\udc5a\ud835\udc58))"
+  ],
+  "figure_reference": "[FIG-stem-1] Horizontal spring-block setup unverified against master",
+  "confidentiality_notice": "SEALED SOURCE-ONLY PACKET FOR BLIND INDEPENDENT REVIEW. Contains NO answers, keys, explanations, candidate solutions, SL2 factor scores, or prior review commentary."
+}

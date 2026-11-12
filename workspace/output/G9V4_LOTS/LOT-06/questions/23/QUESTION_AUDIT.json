@@ -1,0 +1,104 @@
+{
+  "sequence": 23,
+  "batch_sequence": 8,
+  "task_identity": "Q-ID-26",
+  "stable_id": "G9V4-PHYS-WPE-EX-M73",
+  "source_id": "EX-M73",
+  "lot": "LOT-06",
+  "batch": "BATCH-B",
+  "paper": "JEE Main 2019 (Online) 9th April Morning Slot",
+  "source_type": "JEE_MAIN_PAST_EXAM_QUESTION",
+  "source_custody": "VERIFIED_TEXT_ONLY (Self-contained mathematical question)",
+  "stem_text": "A uniform cable of mass 'M' and length 'L' is placed on a horizontal surface such that its (1/n)th part is hanging below the edge of the surface. To lift the hanging part of the cable upto the surface, the work done should be :",
+  "stem_sha256": "f2bd1e9620ea2ee16dea9acb4f06f5f5098f93a46960dfdda5a8a62f670a88bf",
+  "source_hash": "f2bd1e9620ea2ee16dea9acb4f06f5f5098f93a46960dfdda5a8a62f670a88bf",
+  "source_record_digest": "f2bd1e9620ea2ee16dea9acb4f06f5f5098f93a46960dfdda5a8a62f670a88bf",
+  "duplicate_parent": null,
+  "scope": "IN_SCOPE_WPE_ONLY",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "NOT_REQUIRED",
+  "figure_reference": "NONE (pure text question)",
+  "options": [
+    "A: (2𝑀𝑔𝐿)/(𝑛^(2))",
+    "B: nMgL",
+    "C: (𝑀𝑔𝐿)/(2𝑛^(2))",
+    "D: (𝑀𝑔𝐿)/(𝑛^(2))"
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "CONTINUOUS_MASS_CENTER_OF_GRAVITY_POTENTIAL",
+    "derivation": "Hanging portion has length l_hang = L/n and mass m_hang = M/n. Cable is uniform, so center of gravity of hanging part is at depth h_cm = l_hang / 2 = L / (2n). Work required to lift hanging part onto surface equals potential energy increase: W = m_hang * g * h_cm = (M/n) * g * (L / (2n)) = (M g L) / (2 n^2). Matches Option C.",
+    "predicted_option": "C: (𝑀𝑔𝐿)/(2𝑛^(2))",
+    "limiting_cases": "If n=1 (entire rope hanging), W = MgL/2. If n -> infinity (infinitesimal portion hanging), W -> 0. Calculus verification: W = integral_0^(L/n) (M/L) * (L/n - y) * g dy = (M g / L) * [ (L/n)^2 / 2 ] = (M g L) / (2 n^2)."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 2,
+          "evidence": "Center of mass potential energy of continuous hanging segment L/n"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Parametrizing mass element dm = (M/L)dy or equivalent CM formulation"
+        },
+        "reasoning_chain_length": {
+          "score": 2,
+          "evidence": "Segment mass (M/n) combined with CM lift distance (L/(2n))"
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Multiplication yielding 1/(2n^2) factor"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Distinguishing CM distance L/(2n) from total hanging length L/n"
+        }
+      },
+      "total": 7,
+      "band": "D3",
+      "prior_proposal": {
+        "source": "PRODUCER_HISTORICAL_ESTIMATE",
+        "scores": "1/1/1/1/1",
+        "total": 5
+      },
+      "differences": "Rescored to native five-factor rubric per B2 CP-4 review"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "MODEL"
+      ],
+      "rationale": "Applying work required against gravity for continuous distributed mass",
+      "candidate_cell": "QRT-APPLY-D3",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": {
+    "blueprint_id": "PHYS-QRT-BLUEPRINT",
+    "version": "0.2.0",
+    "sha256": "ac32dc937403cac33c76343f2e7e0dabd7c2c4a3188cb3b453ddf2576578ddf9",
+    "blueprint_cell_ref": "D3.3",
+    "topic_tag": "WPE-02-POTENTIAL",
+    "status": "PINNED_CELL_UNQUALIFIED"
+  },
+  "adapter_fit": {
+    "adapter_id": "PHYS-TOPIC-WPE",
+    "sha256": "899e61e59370a3fc5d6f73b7d8cbb65165d0782c9fba20acd83439ae441e6a9b",
+    "status": "CELL_UNQUALIFIED_ADAPTER_GAP",
+    "note": "WPE adapter currently defines cell D3.1 only. Target cell requires adapter cell expansion; flagged as SPEC_GAP."
+  },
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_CP4_GATE",
+  "b2_blind_status": "UNREVIEWED",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)",
+    "HOLD:INDEPENDENT_REVIEW_PENDING (requires unexposed blind physics review before admission)"
+  ],
+  "next_action": "Verify official NTA key and submit for independent blind review."
+}

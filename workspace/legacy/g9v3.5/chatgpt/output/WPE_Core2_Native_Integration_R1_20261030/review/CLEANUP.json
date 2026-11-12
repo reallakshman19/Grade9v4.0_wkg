@@ -1,0 +1,10 @@
+{
+  "browser_session": "wpe-native-r1",
+  "browser": "CLOSED (CLI readback)",
+  "loopback_server_pid": 30804,
+  "port": 8785,
+  "server": "STOPPED (exact task command-line verified before stopping)",
+  "agents_launched": 0,
+  "remote_writes": 0,
+  "d31": "PAUSED"
+}

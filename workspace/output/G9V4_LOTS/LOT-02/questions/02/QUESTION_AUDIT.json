@@ -1,0 +1,109 @@
+{
+  "sequence": 2,
+  "task_identity": "Q-ID-02",
+  "stable_id": "Q-PHY-WPE-JEEM-2026-04-05-S2-02",
+  "source_id": "EX-M4",
+  "lot": "LOT-02",
+  "paper": "JEE Main 2026 (Online) 5th April Evening Shift",
+  "source_type": "SCRAPED_EXTRACT_EXAMGOAL",
+  "source_custody": "VERIFIED_TEXT_ONLY",
+  "stem_text": "A mass of 1 kg is kept on an inclined plane with 30^(\u2218) inclination with respect to horizontal plane and it is at rest initially. Then the whole assembly is moved up with constant velocity of 4m/s . The work done by the frictional force in time 2 s is ____ J. (Take \ud835\udc54=10m/s^(2) )",
+  "stem_sha256": "1c74525b1b16d7448675a4f5fdb9586a47da156a0650291c7fdb9d5c577c89e1",
+  "source_hash": "1c74525b1b16d7448675a4f5fdb9586a47da156a0650291c7fdb9d5c577c89e1",
+  "source_record_digest": "1c74525b1b16d7448675a4f5fdb9586a47da156a0650291c7fdb9d5c577c89e1",
+  "duplicate_parent": "PRIMARY_PARENT_OF_ALIAS:JEE-2026-04-05-S2-Q28",
+  "scope": "IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "VERIFIED_NONE_REQUIRED",
+  "options": [
+    "A: 20",
+    "B: 25",
+    "C: 30",
+    "D: 10"
+  ],
+  "unbound_remote_figures": [],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "STATIC_FRICTION_FRAME_TRANSLATION",
+    "assumed_parameters_from_coaching_figure": "None required (pure text).",
+    "derivation": "Block rests on incline at theta = 30 deg. Tangential gravity balance gives static friction f_s = mg sin(30 deg) = 1 * 10 * 0.5 = 5 N directed up the incline. The incline assembly translates vertically upward at constant v = 4 m/s for t = 2 s, so vertical displacement s_y = 4 * 2 = 8 m. Since acceleration a = 0, dynamic equilibrium holds and f_s remains 5 N up the incline. Incline angle is 30 deg to horizontal, so friction vector angle to vertical is 60 deg (or angle to horizontal is 30 deg). Vertical component of static friction f_s,y = f_s * sin(30 deg) = 5 * 0.5 = 2.5 N. Work done by friction W = f_s,y * s_y = 2.5 N * 8 m = 20 J.",
+    "predicted_option": "A: 20",
+    "limiting_cases": "If theta = 0 deg, f_s = 0 => W = 0 J. If theta -> 90 deg, normal force -> 0 (block falls). For theta = 30 deg, W = 20 J."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "status": "UNREVIEWED",
+    "decisive_operation": "APPLY",
+    "crux": "Recognizing that static friction can perform non-zero work in an inertial frame when the contact boundary translates, and projecting friction onto the displacement vector.",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Equilibrium static friction and definition of work W = F . s."
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Resolving inclined vector into vertical motion coordinate."
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Equilibrium force -> vertical component -> displacement dot product."
+        },
+        "algebra_computational_load": {
+          "score": 0,
+          "evidence": "Direct arithmetic: 5 * 0.5 * 8 = 20 J."
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Overcoming the pervasive misconception that static friction never does work."
+        }
+      },
+      "total": 4,
+      "band": "D2"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "EXPLAIN"
+      ],
+      "candidate_cell": "QRT-APPLY-D2",
+      "status": "PROPOSED"
+    },
+    "representation_requirements": [
+      "FREE_BODY_DIAGRAM",
+      "EQUATION"
+    ],
+    "independent_checks": [
+      "UNITS",
+      "LIMITING_CASE"
+    ],
+    "wrong_route_hypotheses": [
+      {
+        "route": "Claiming W = 0 because static friction does no work relative to the surface",
+        "status": "HYPOTHESIS"
+      },
+      {
+        "route": "Using full magnitude without projecting W = f_s * s = 5 * 8 = 40 J",
+        "status": "HYPOTHESIS"
+      },
+      {
+        "route": "Projecting using cos(30) instead of sin(30): W = 5 * cos(30) * 8 = 34.6 J",
+        "status": "HYPOTHESIS"
+      }
+    ]
+  },
+  "qrt": "UNREVIEWED",
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_REVIEW",
+  "b2_blind_status": "NOT_RUN",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)",
+    "HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)"
+  ],
+  "next_action": "Verify NTA master question paper and official answer key for 2026-04-05 S2."
+}

@@ -1,0 +1,132 @@
+[
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\SKILL.md",
+    "sha256": "e657150ba5b1d845c90fc1016770de6e80569b31244ff7d0fcfe85370d133373",
+    "bytes": 4533
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\references\\benchmarks.md",
+    "sha256": "3ad6f794e55288d1d814d7915992142cbbd094f4818ff02bb020abb32a657c00",
+    "bytes": 3969
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\references\\protocol.md",
+    "sha256": "6516a518d0ee73825b8ed53f3c33ee6ed6a21d0e15312182d66c4dc2c713c34d",
+    "bytes": 5851
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\references\\record-contract.md",
+    "sha256": "eaed59fa2d7a40bbece53520497e8bcdda41caaf2f9f5d861d9f90208e86d656",
+    "bytes": 5398
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\scripts\\check_handoff.py",
+    "sha256": "346cd5b973bb245b39b882807ef05596e2432d884e29aac0f7628c73b987e6d3",
+    "bytes": 18104
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\scripts\\render_handoff.py",
+    "sha256": "9f67b25a533d50f9a5388025227a0cacf0d1965d7760a210a37823ad6aed206b",
+    "bytes": 6085
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\tests\\test_handoff.py",
+    "sha256": "9124aa2651557e871186f5d27137e1b5ddc2f400e488e310b68c9a1935650a9b",
+    "bytes": 13866
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\handoff.json",
+    "sha256": "705e87ad7c26cf235563d58881282380983a9ddb6c4a8e86ffd30463bfb4abd3",
+    "bytes": 62475
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\index.html",
+    "sha256": "8e598e190b73baa2a46f00376c76e3cf72c540e1ac3d8dea2e8313a7f839a1f5",
+    "bytes": 63596
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\source-pins.json",
+    "sha256": "4592d446024ec963dd9ed33cae85a1f3915fa5f4be9406b2c53337c7aeae91a5",
+    "bytes": 1502
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\book.md",
+    "sha256": "a33f19b308ea81c7eb527546e44b6bbd4b4adf26aed7116013ac01218cc1bbb8",
+    "bytes": 23474
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\library.json",
+    "sha256": "84fe88387e33a03bf87bf1f537bae8c447f5b86f0d77a854c899ad70f12d8258",
+    "bytes": 119754
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\package.schema.json",
+    "sha256": "b645f4b5beb9132d6e38b628b1416846201d44dec16a5f04af9a252e9e891d93",
+    "bytes": 108010
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\page_01.jpg",
+    "sha256": "577fa3448aeb2cb72387d827ab67d7ad2c47041fa8dba8473d74193455ceb55a",
+    "bytes": 872585
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\positive-work.svg",
+    "sha256": "912c3b84c157e78916584db95bd520c45ed31e76ad73c900175a1ea93ac1b804",
+    "bytes": 2641
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\spine.md",
+    "sha256": "07338e242e363becf2e55a9637d29fd178e37236fd730e5aac0a1211f1d8ecf9",
+    "bytes": 3620
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\images\\fig_01_work_sign_positive.svg",
+    "sha256": "912c3b84c157e78916584db95bd520c45ed31e76ad73c900175a1ea93ac1b804",
+    "bytes": 2641
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\images\\fig_02_work_sign_negative.svg",
+    "sha256": "a6ffa32dbc3e6918f06660f3f5b4b61f9ef965d9849c72663c88fb71ae9f16c9",
+    "bytes": 2651
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\images\\fig_03_fbd_string_raising.svg",
+    "sha256": "9d408dcca1198fd6f5b08f63359c12007ae9428732be9d48dde32e8170e36df4",
+    "bytes": 2523
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\images\\fig_04_variable_force_calculus.svg",
+    "sha256": "ff0b49e26c724f668f225930b0c928d52a7bffb4653d83c5189423580e4e8b74",
+    "bytes": 4749
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\images\\fig_05_friction_direction.svg",
+    "sha256": "a5db2db77e7149b546fe34e9a081a9863024b9bf774e57c02035d9867302e710",
+    "bytes": 4450
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\images\\fig_06_incline_block.svg",
+    "sha256": "c5a896866e7fcca2b2dd82e8408394e655ab8b4ef8edda3a3eb6d80cbad6ccd5",
+    "bytes": 2404
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\images\\fig_07_incline_fbd.svg",
+    "sha256": "98c664df1595322694f974c7fde38699fc337a6f7829786b00e0dd5fd133e6bd",
+    "bytes": 3208
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\images\\fig_08_curved_path_work.svg",
+    "sha256": "d62c1f8955757c71486cce4f623a12042ea7da37043674a8dff4752c425c3ac6",
+    "bytes": 2722
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\images\\fig_09_overhanging_chain.svg",
+    "sha256": "40510540074ad29b0f7634e680f8235356f64dbe969eb28b164edb7e30a00aa0",
+    "bytes": 3745
+  },
+  {
+    "path": "D:\\CodeD\\g9v3.5\\chatgpt\\output\\WPE_Construction_Handoff_Skill_R1_2026-10-30\\skill\\source-to-core1a\\examples\\wpe-work-direction\\sources\\images\\fig_10_spring_block_wall.svg",
+    "sha256": "c0a90c6fffcc88731316cb17fe34439e4bdccceda7a34d8deb585a2ba1d61bbc",
+    "bytes": 3446
+  }
+]

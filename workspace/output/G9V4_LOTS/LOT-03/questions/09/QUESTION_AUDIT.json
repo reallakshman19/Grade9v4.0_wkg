@@ -1,0 +1,123 @@
+{
+  "sequence": 9,
+  "task_identity": "Q-ID-09",
+  "stable_id": "Q-PHY-WPE-JEEM-2025-01-28-S1-09",
+  "source_id": "EX-M18",
+  "lot": "LOT-03",
+  "paper": "JEE Main 2025 (Online) 28th January Morning Shift",
+  "source_type": "SCRAPED_EXTRACT_EXAMGOAL",
+  "source_custody": "PARTIAL",
+  "stem_text": "A bead of mass ' \ud835\udc5a ' slides without friction on the wall of a vertical circular hoop of radius ' \ud835\udc45 ' as shown in figure. The bead moves under the combined action of gravity and a massless spring (k) attached to the bottom of the hoop. The equilibrium length of the spring is ' \ud835\udc45 '. If the bead is released from top of the hoop with (negligible) zero initial speed, velocity of bead, when the length of spring becomes ' \ud835\udc45 ', would be (spring constant is ' \ud835\udc58 ', \ud835\udc54 is acceleration due to gravity) [FIG-stem-1]",
+  "stem_sha256": "42336fcec4a83179e7f595fe5bdc33dddc30953940189b66288cb39696ceaad8",
+  "source_hash": "42336fcec4a83179e7f595fe5bdc33dddc30953940189b66288cb39696ceaad8",
+  "source_record_digest": "42336fcec4a83179e7f595fe5bdc33dddc30953940189b66288cb39696ceaad8",
+  "source_fidelity_repair_note": "SOURCE_FIDELITY_REPAIR: Stem text restored verbatim from registry.json. Previous scrape inverted spring anchor to top and corrupted geometry. Original geometry: spring (k, unstretched length R) attached to bottom of vertical circular hoop (radius R). Bead released from top (y1 = 2R, spring length 2R, extension x1 = R). Bead moves until spring length becomes R (forming an equilateral triangle with bottom anchor and circle center; central angle 60 deg from vertical bottom, height y2 = R - R cos(60 deg) = R/2, drop Delta h = 3R/2). Spring relaxes to extension x2 = 0. Potential energy loss: Delta U_grav = mg(3R/2) and Delta U_spring = 1/2 k R^2. By energy conservation: 1/2 m v^2 = 3/2 mgR + 1/2 k R^2 => v^2 = 3gR + k R^2 / m => v = sqrt(3gR + k R^2 / m) [Option B]. Preserved on HOLD awaiting verified official diagram asset and key.",
+  "duplicate_parent": null,
+  "scope": "IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "HOLD:FIGURE_UNRESOLVED",
+  "options": [
+    "A: \u221a(2\ud835\udc45\ud835\udc54+(kR2)/(m))",
+    "B: \u221a(3Rg+(kR2)/(m))",
+    "C: \u221a(2Rg+(4kR^(2))/(m))",
+    "D: 2\u221a(gR+(kR2)/(m))"
+  ],
+  "unbound_remote_figures": [
+    {
+      "role": "stem",
+      "url": "https://app-content.cdn.examgoal.net/fly/1000/image/jaoe38c1m6vv01hf/d6172690-de16-4d80-a7c2-533f6e78297f/3c278440-e5ec-11ef-ac74-491aa7357b34/file-jaoe38c1m6vv01hg.png?format=png"
+    }
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "HOLD:FIGURE_UNRESOLVED",
+  "candidate_solve": {
+    "method": "CIRCULAR_HOOP_BOTTOM_SPRING_GRAVITY_ENERGY",
+    "reviewer_exposure_status": "EXPOSED_REFERENCE_SOLVE (Reviewer exposure has occurred; this is an exposed reference solve, NOT an independent blind solution).",
+    "assumed_parameters_from_coaching_figure": "Bead on vertical circular hoop (radius R). Spring (stiffness k, unstretched length R) attached to bottom of hoop. Bead released from top.",
+    "derivation": "Initial state (top of hoop): y1 = 2R, spring length = 2R, extension x1 = 2R - R = R, v1 = 0. Final state (length of spring becomes R): spring anchor at bottom (0,0), hoop center at (0,R), bead at P on circle. Since distance from bottom to P is R, and from center to P is R, triangle formed by bottom anchor, center, and P is equilateral with side R. The angle at center from downward vertical is 60 deg. Height of P: y2 = R - R cos(60 deg) = R - R/2 = R/2. Height drop: Delta h = y1 - y2 = 2R - R/2 = 3R/2. Final spring extension x2 = R - R = 0 (spring is unstretched). Energy conservation: 1/2 m v^2 = mg(Delta h) + 1/2 k x1^2 - 1/2 k x2^2 = mg(3R/2) + 1/2 k R^2 - 0 = 3/2 mgR + 1/2 k R^2. Multiplying by 2/m: v^2 = 3gR + (k R^2 / m) => v = sqrt(3gR + (k R^2 / m)).",
+    "predicted_option": "B: \u221a(3Rg+(kR2)/(m))",
+    "limiting_cases": "If k = 0 (pure gravity), v = sqrt(2 g Delta h) = sqrt(2 g * 3R/2) = sqrt(3gR). If g = 0 (pure spring), v = sqrt(k R^2 / m). Both conservative forces lose potential energy simultaneously, yielding Option B."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "status": "UNREVIEWED",
+    "decisive_operation": "MODEL",
+    "crux": "Modeling the simultaneous relaxation of an extended bottom-anchored spring and gravitational descent on a circular constraint using equilateral triangle geometry.",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 2,
+          "evidence": "Simultaneous conservative potential energies (gravity + bottom Hookean spring) on circular constraint."
+        },
+        "representation_translation": {
+          "score": 2,
+          "evidence": "Geometric resolution of equilateral triangle to find angle (60 deg) and height drop (3R/2)."
+        },
+        "reasoning_chain_length": {
+          "score": 2,
+          "evidence": "Initial geometry -> final geometry -> energy conservation -> velocity solution."
+        },
+        "algebra_computational_load": {
+          "score": 1,
+          "evidence": "Quadratic expression and square root formatting."
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Equilibrium length is R, so elongation at top is 2R - R = R, not 2R; spring relaxes to zero elongation."
+        }
+      },
+      "total": 8,
+      "band": "D4"
+    },
+    "demand_proposal": {
+      "primary": "MODEL",
+      "secondary": [
+        "APPLY"
+      ],
+      "candidate_cell": "QRT-MODEL-D4",
+      "status": "PROPOSED"
+    },
+    "representation_requirements": [
+      "DIAGRAM",
+      "EQUATION"
+    ],
+    "independent_checks": [
+      "UNITS",
+      "LIMITING_CASE"
+    ],
+    "wrong_route_hypotheses": [
+      {
+        "route": "Using top spring anchor which leads to energy subtraction or sign contradiction",
+        "status": "HYPOTHESIS"
+      },
+      {
+        "route": "Using Delta h = 2R instead of 3/2 R leading to Option D",
+        "status": "HYPOTHESIS"
+      }
+    ]
+  },
+  "qrt": "UNREVIEWED",
+  "blueprint_fit": {
+    "blueprint_id": "PHYS-QRT-BLUEPRINT",
+    "version": "0.2.0",
+    "sha256": "ac32dc937403cac33c76343f2e7e0dabd7c2c4a3188cb3b453ddf2576578ddf9",
+    "cell": "QRT-MODEL-D4"
+  },
+  "adapter_fit": {
+    "adapter_id": "PHYS-TOPIC-WPE",
+    "version": "0.1.0",
+    "sha256": "899e61e59370a3fc5d6f73b7d8cbb65165d0782c9fba20acd83439ae441e6a9b",
+    "topic": "WPE"
+  },
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_REVIEW",
+  "b2_blind_status": "NOT_RUN",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:FIGURE_UNRESOLVED (diagram needed to verify exact location and angle of position A)",
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)",
+    "HOLD:B2_INDEPENDENT_PENDING (requires verified authentic diagram before candidate solve can be qualified)"
+  ],
+  "next_action": "Source official NTA figure asset and assign B2 unexposed solve."
+}

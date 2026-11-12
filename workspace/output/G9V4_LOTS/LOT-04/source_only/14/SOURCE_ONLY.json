@@ -1,0 +1,16 @@
+{
+  "source_id": "EX-M49",
+  "task_identity": "Q-ID-14",
+  "sequence": 14,
+  "paper": "JEE Main 2022 (Online) 27th July Morning Shift",
+  "stem_text": "Sand is being dropped from a stationary dropper at a rate of 0.5kgs^(\u22121) on a conveyor belt moving with a velocity of 5ms^(\u22121) . The power needed to keep the belt moving with the same velocity will be :",
+  "stem_sha256": "0e1ddae0acecd3dd63d5006fdce6616051e886fba96b35f836c70330d1b7f0de",
+  "options": [
+    "A: 1.25 W",
+    "B: 2.5 W",
+    "C: 6.25 W",
+    "D: 12.5 W"
+  ],
+  "figure_reference": "NONE",
+  "confidentiality_notice": "SEALED SOURCE-ONLY PACKET FOR BLIND INDEPENDENT REVIEW. Contains NO answers, keys, explanations, candidate solutions, SL2 factor scores, or prior review commentary."
+}

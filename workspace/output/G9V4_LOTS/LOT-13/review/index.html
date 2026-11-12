@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade9 v4.0 — Lot 13 Private Review Dashboard (Questions 56–60)</title>
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --border: #e2e8f0;
+            --text: #0f172a;
+            --text-muted: #64748b;
+            --primary: #2563eb;
+            --warning: #d97706;
+            --warning-bg: #fffbeb;
+            --danger: #b91c1c;
+            --danger-bg: #fef2f2;
+            --info: #0891b2;
+            --info-bg: #ecfeff;
+            --badge-bg: #f1f5f9;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            padding: 16px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        h1 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+        .header-meta { font-size: 13px; color: var(--text-muted); }
+
+        .table-wrap {
+            overflow-x: auto;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            text-align: left;
+        }
+
+        th {
+            background: #f1f5f9;
+            padding: 10px 12px;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border);
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        .col-seq { width: 100px; }
+        .col-source { width: 180px; }
+        .col-stem { width: 340px; }
+        .col-cog { width: 130px; }
+        .col-bp { width: 170px; }
+        .col-gates { width: 260px; }
+
+        .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+        .text-muted { color: var(--text-muted); }
+
+        .badge {
+            display: inline-block;
+            font-size: 11px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+            margin-top: 4px;
+        }
+
+        .badge-lot { background: #ede9fe; color: #6d28d9; }
+        .badge-source { background: #e0f2fe; color: #0369a1; }
+        .badge-fig { background: #fef3c7; color: #92400e; }
+        .badge-prop { background: #dcfce7; color: #15803d; }
+        .badge-hold { background: #fef2f2; color: #b91c1c; font-family: monospace; }
+        .badge-admission { background: #fef2f2; color: #991b1b; font-weight: 700; border: 1px solid #f87171; }
+
+        .stem-preview {
+            font-size: 12px;
+            color: var(--text);
+            margin-bottom: 8px;
+            max-height: 60px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .solve-summary {
+            font-size: 12px;
+            background: #f8fafc;
+            padding: 6px 8px;
+            border-radius: 4px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .blocker-list {
+            list-style: none;
+            margin-top: 6px;
+        }
+
+        .blocker-list li {
+            font-size: 11px;
+            color: var(--danger);
+            margin-bottom: 2px;
+            padding-left: 12px;
+            position: relative;
+        }
+
+        .blocker-list li::before {
+            content: "•";
+            position: absolute;
+            left: 2px;
+            color: var(--danger);
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .pr-banner {
+            margin-top: 15px;
+            padding: 10px 14px;
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            border-radius: 6px;
+            font-size: 12px;
+            color: #92400e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Grade9 v4.0 — Lot 13 Private Review Dashboard</h1>
+            <div class="header-meta">
+                Batch D (CP-3) | Candidates Q56–Q60 | Generated: 2026-11-01 12:39:05 UTC<br>
+                <strong>Academic Notice:</strong> No academic approval inferred from software validation.
+            </div>
+            <div class="pr-banner">
+                <strong>PR Gate Status:</strong> <code>PR: HOLD_BASE_NOT_READY</code> — Retained in local private storage until stable base designated by owner.
+            </div>
+        </header>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sequence</th>
+                        <th>Source Custody</th>
+                        <th>Stem & Candidate Solve</th>
+                        <th>Cognitive Demand</th>
+                        <th>Blueprint Fit</th>
+                        <th>Gates & Blockers</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+    <tr>
+        <td class="col-seq">
+            <strong>#56</strong><br>
+            <span class="badge badge-lot">LOT-13</span><br>
+            <small class="mono">Q-ID-65</small><br>
+            <small>Batch #11</small>
+        </td>
+        <td class="col-source">
+            <strong>AN-3</strong><br>
+            <small class="text-muted">JEE Main 2025 (Online), 28 January, Morning Shift</small><br>
+            <span class="badge badge-source">VERIFIED_TEXT</span>
+            <span class="badge badge-fig">NOT_REQUIRED</span><br>
+            <small>Auth: <strong>NTA</strong></small>
+        </td>
+        <td class="col-stem">
+            <div class="stem-preview">Assertion A: In a central force field, the work done is independent of the path chosen.
+Reason R: Every force encountered in mechanics does ...</div>
+            <div class="solve-summary">
+                <strong>Method:</strong> <code>CENTRAL_FORCE_PATH_INDEPENDENCE_AND_CONSERVATIVE_THEORY</code><br>
+                <strong>Predicted Option:</strong> B: Both A and R are true but R is NOT the correct explanation of A
+            </div>
+        </td>
+        <td class="col-cog">
+            <strong>JUSTIFY</strong> (D3)<br>
+            <small>Score: 8/10</small><br>
+            <span class="badge badge-prop">PROPOSED</span>
+        </td>
+        <td class="col-bp"><strong>PHYS-QRT-BLUEPRINT</strong><br><small>D3.4 (WPE-02-POTENTIAL)</small></td>
+        <td class="col-gates">
+            <span class="badge badge-admission">NOT_ADMITTED</span>
+            <ul class="blocker-list">
+                <li>HOLD:OFFICIAL_KEY_UNRESOLVED (Option B unverified against official NTA master)</li><li>HOLD:CENTRAL_FORCE_QUALIFICATION (Central force spherical symmetry assumption requires qualification)</li><li>HOLD:ADAPTER_CELL_GAP (WPE adapter lacks D3.4 cell authority)</li><li>HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)</li>
+            </ul>
+        </td>
+    </tr>
+    
+    <tr>
+        <td class="col-seq">
+            <strong>#57</strong><br>
+            <span class="badge badge-lot">LOT-13</span><br>
+            <small class="mono">Q-ID-67</small><br>
+            <small>Batch #12</small>
+        </td>
+        <td class="col-source">
+            <strong>AN-5</strong><br>
+            <small class="text-muted">AIEEE 2004</small><br>
+            <span class="badge badge-source">VERIFIED_TEXT</span>
+            <span class="badge badge-fig">NOT_REQUIRED</span><br>
+            <small>Auth: <strong>CBSE</strong></small>
+        </td>
+        <td class="col-stem">
+            <div class="stem-preview">A particle is acted upon by a force of constant magnitude which is always perpendicular to the velocity of the particle, the motion of the p...</div>
+            <div class="solve-summary">
+                <strong>Method:</strong> <code>ORTHOGONAL_FORCE_POWER_AND_KINETIC_ENERGY_INVARIANCE</code><br>
+                <strong>Predicted Option:</strong> A: its kinetic energy is constant
+            </div>
+        </td>
+        <td class="col-cog">
+            <strong>JUSTIFY</strong> (D2)<br>
+            <small>Score: 5/10</small><br>
+            <span class="badge badge-prop">PROPOSED</span>
+        </td>
+        <td class="col-bp"><span class='badge badge-hold'>BLUEPRINT=SPEC_PENDING</span></td>
+        <td class="col-gates">
+            <span class="badge badge-admission">NOT_ADMITTED</span>
+            <ul class="blocker-list">
+                <li>HOLD:OFFICIAL_KEY_UNRESOLVED (Option A unverified against official CBSE master)</li><li>HOLD:SPEC_PENDING (No qualified D1/D2 common blueprint or topic adapter)</li><li>HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)</li>
+            </ul>
+        </td>
+    </tr>
+    
+    <tr>
+        <td class="col-seq">
+            <strong>#58</strong><br>
+            <span class="badge badge-lot">LOT-13</span><br>
+            <small class="mono">Q-ID-68</small><br>
+            <small>Batch #13</small>
+        </td>
+        <td class="col-source">
+            <strong>AN-6</strong><br>
+            <small class="text-muted">JEE Main 2025 (Online), 7 April, Evening Shift</small><br>
+            <span class="badge badge-source">VERIFIED_TEXT</span>
+            <span class="badge badge-fig">NOT_REQUIRED</span><br>
+            <small>Auth: <strong>NTA</strong></small>
+        </td>
+        <td class="col-stem">
+            <div class="stem-preview">Which one of the following forces cannot be expressed in terms of potential energy?...</div>
+            <div class="solve-summary">
+                <strong>Method:</strong> <code>CONSERVATIVE_FORCE_POTENTIAL_ENERGY_EXISTENCE_IDENTIFICATION</code><br>
+                <strong>Predicted Option:</strong> A: Frictional force
+            </div>
+        </td>
+        <td class="col-cog">
+            <strong>IDENTIFY</strong> (D2)<br>
+            <small>Score: 5/10</small><br>
+            <span class="badge badge-prop">PROPOSED</span>
+        </td>
+        <td class="col-bp"><span class='badge badge-hold'>BLUEPRINT=SPEC_PENDING</span></td>
+        <td class="col-gates">
+            <span class="badge badge-admission">NOT_ADMITTED</span>
+            <ul class="blocker-list">
+                <li>HOLD:OFFICIAL_KEY_UNRESOLVED (Option A unverified against official NTA master)</li><li>HOLD:SPEC_PENDING (No qualified D1/D2 common blueprint or topic adapter)</li><li>HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)</li>
+            </ul>
+        </td>
+    </tr>
+    
+    <tr>
+        <td class="col-seq">
+            <strong>#59</strong><br>
+            <span class="badge badge-lot">LOT-13</span><br>
+            <small class="mono">Q-ID-69</small><br>
+            <small>Batch #14</small>
+        </td>
+        <td class="col-source">
+            <strong>JEE-2026-04-04-S1-Q46</strong><br>
+            <small class="text-muted">JEE Main 2026 Session 2 / 2026-04-04 / Shift 1 (Morning)</small><br>
+            <span class="badge badge-source">VERIFIED_TEXT</span>
+            <span class="badge badge-fig">REQUIRED_RETAINED</span><br>
+            <small>Auth: <strong>NTA</strong></small>
+        </td>
+        <td class="col-stem">
+            <div class="stem-preview">A 1 kg block subjected to two simultaneous forces (2i^ + 3j^ + 4k^) N and (3i^ - j^ - 2k^) N is moved a distance of 25 m along (3i^ - 4j^) d...</div>
+            <div class="solve-summary">
+                <strong>Method:</strong> <code>SUPERPOSED_FORCES_3D_VECTOR_WORK_DOT_PRODUCT</code><br>
+                <strong>Predicted Option:</strong> 35
+            </div>
+        </td>
+        <td class="col-cog">
+            <strong>APPLY</strong> (D3)<br>
+            <small>Score: 7/10</small><br>
+            <span class="badge badge-prop">PROPOSED</span>
+        </td>
+        <td class="col-bp"><strong>PHYS-QRT-BLUEPRINT</strong><br><small>D3.3 (WPE-01-WORK)</small></td>
+        <td class="col-gates">
+            <span class="badge badge-admission">NOT_ADMITTED</span>
+            <ul class="blocker-list">
+                <li>HOLD:OFFICIAL_KEY_UNRESOLVED (Numerical answer 35 unverified against official NTA master)</li><li>HOLD:ADAPTER_CELL_GAP (WPE adapter lacks D3.3 cell authority)</li><li>HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)</li>
+            </ul>
+        </td>
+    </tr>
+    
+    <tr>
+        <td class="col-seq">
+            <strong>#60</strong><br>
+            <span class="badge badge-lot">LOT-13</span><br>
+            <small class="mono">Q-ID-70</small><br>
+            <small>Batch #15</small>
+        </td>
+        <td class="col-source">
+            <strong>JEE-2026-04-06-S2-Q29</strong><br>
+            <small class="text-muted">JEE Main 2026 Session 2 / 2026-04-06 / Shift 2 (Evening)</small><br>
+            <span class="badge badge-source">VERIFIED_TEXT</span>
+            <span class="badge badge-fig">REQUIRED_RETAINED</span><br>
+            <small>Auth: <strong>NTA</strong></small>
+        </td>
+        <td class="col-stem">
+            <div class="stem-preview">A body of mass 1 kg moves along a straight line with a velocity v = 2x^2. The work done by the body during displacement from x = 0 to 5 m is...</div>
+            <div class="solve-summary">
+                <strong>Method:</strong> <code>WORK_ENERGY_THEOREM_POSITION_DEPENDENT_VELOCITY</code><br>
+                <strong>Predicted Option:</strong> 6911214180: 1250
+            </div>
+        </td>
+        <td class="col-cog">
+            <strong>APPLY</strong> (D3)<br>
+            <small>Score: 7/10</small><br>
+            <span class="badge badge-prop">PROPOSED</span>
+        </td>
+        <td class="col-bp"><strong>PHYS-QRT-BLUEPRINT</strong><br><small>D3.3 (WPE-01-WORK)</small></td>
+        <td class="col-gates">
+            <span class="badge badge-admission">NOT_ADMITTED</span>
+            <ul class="blocker-list">
+                <li>HOLD:OFFICIAL_KEY_UNRESOLVED (Option 6911214180 unverified against official NTA master)</li><li>HOLD:WORK_BY_VS_ON_WORDING_AMBIGUITY (Work done by vs on the body wording requires clarification)</li><li>HOLD:ADAPTER_CELL_GAP (WPE adapter lacks D3.3 cell authority)</li><li>HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)</li>
+            </ul>
+        </td>
+    </tr>
+    
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            Grade9 v4.0 Academic Platform &bull; Private Review Artifact &bull; Confidential
+        </footer>
+    </div>
+</body>
+</html>

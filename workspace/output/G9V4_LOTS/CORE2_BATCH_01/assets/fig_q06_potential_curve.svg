@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" width="100%" height="100%">
+  <defs>
+    <style>
+      .label { font-family: system-ui, -apple-system, sans-serif; font-size: 15px; font-weight: 600; fill: #1e293b; }
+      .axis { stroke: #64748b; stroke-width: 2; }
+      .curve { stroke: #2563eb; stroke-width: 3; fill: none; }
+      .grid { stroke: #cbd5e1; stroke-dasharray: 4 4; stroke-width: 1.5; }
+    </style>
+  </defs>
+  <!-- Axes -->
+  <line x1="60" y1="210" x2="380" y2="210" class="axis"/>
+  <line x1="60" y1="210" x2="60" y2="30" class="axis"/>
+  <text x="390" y="215" class="label">x</text>
+  <text x="45" y="35" class="label">V(x)</text>
+  
+  <!-- Potential Profile -->
+  <path d="M 60 180 Q 140 60 210 120 T 360 80" class="curve"/>
+  
+  <!-- Points of equilibrium -->
+  <circle cx="140" cy="98" r="5" fill="#e11d48"/>
+  <text x="140" y="80" class="label" style="fill:#e11d48;" text-anchor="middle">Unstable</text>
+  
+  <circle cx="270" cy="140" r="5" fill="#16a34a"/>
+  <text x="270" y="165" class="label" style="fill:#16a34a;" text-anchor="middle">Stable</text>
+</svg>

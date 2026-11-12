@@ -1,0 +1,96 @@
+{
+  "checked_occurrences": 109,
+  "missing_files": [
+    {
+      "page": "rendered/index.html",
+      "href": "../physics/index.html"
+    },
+    {
+      "page": "rendered/index.html",
+      "href": "../chemistry/index.html"
+    },
+    {
+      "page": "rendered/index.html",
+      "href": "../mathematics/index.html"
+    },
+    {
+      "page": "rendered/index.html",
+      "href": "../physics/index.html"
+    },
+    {
+      "page": "rendered/index.html",
+      "href": "../topics/nlm/index.html"
+    },
+    {
+      "page": "rendered/core2.html",
+      "href": "../physics/index.html"
+    },
+    {
+      "page": "rendered/core2.html",
+      "href": "../chemistry/index.html"
+    },
+    {
+      "page": "rendered/core2.html",
+      "href": "../mathematics/index.html"
+    },
+    {
+      "page": "rendered/core2.html",
+      "href": "core2.pdf"
+    },
+    {
+      "page": "rendered/core2.html",
+      "href": "../physics/index.html"
+    },
+    {
+      "page": "rendered/core2.html",
+      "href": "../topics/nlm/index.html"
+    },
+    {
+      "page": "synthetic-rendered/index.html",
+      "href": "../physics/index.html"
+    },
+    {
+      "page": "synthetic-rendered/index.html",
+      "href": "../chemistry/index.html"
+    },
+    {
+      "page": "synthetic-rendered/index.html",
+      "href": "../mathematics/index.html"
+    },
+    {
+      "page": "synthetic-rendered/index.html",
+      "href": "../physics/index.html"
+    },
+    {
+      "page": "synthetic-rendered/index.html",
+      "href": "../topics/nlm/index.html"
+    },
+    {
+      "page": "synthetic-rendered/core2.html",
+      "href": "../physics/index.html"
+    },
+    {
+      "page": "synthetic-rendered/core2.html",
+      "href": "../chemistry/index.html"
+    },
+    {
+      "page": "synthetic-rendered/core2.html",
+      "href": "../mathematics/index.html"
+    },
+    {
+      "page": "synthetic-rendered/core2.html",
+      "href": "core2.pdf"
+    },
+    {
+      "page": "synthetic-rendered/core2.html",
+      "href": "../physics/index.html"
+    },
+    {
+      "page": "synthetic-rendered/core2.html",
+      "href": "../topics/nlm/index.html"
+    }
+  ],
+  "missing_fragments": [],
+  "scope": "Current seven Owner/native entry pages; retained historical baseline not reauthored. Native missing portals/PDF remain open.",
+  "owner_entry_broken_links": []
+}

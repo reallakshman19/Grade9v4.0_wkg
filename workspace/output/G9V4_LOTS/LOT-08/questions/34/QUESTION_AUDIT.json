@@ -1,0 +1,92 @@
+{
+  "sequence": 34,
+  "batch_sequence": 4,
+  "task_identity": "Q-ID-39",
+  "stable_id": "PHYS-WPE-LOT08-Q34",
+  "source_id": "EX-M96",
+  "lot": "LOT-08",
+  "batch": "BATCH-C",
+  "paper": "JEE Main 2013 (Online) 25th April Morning Slot",
+  "source_type": "EXAM_PAPER_TRANSCRIBED",
+  "source_custody": "VERIFIED_TEXT",
+  "stem_text": "A wind-powered generator converts wind energy into electrical energy. Assume that the generator converts a fixed fraction of the wind energy intercepted by its blades into electrical energy. For wind speed 𝑣 , the electrical power output will be most likely proportional to",
+  "stem_sha256": "833b0038bb505b5298837eda5fceb2bfa58f0149c3dbf52a2168b78b42cd29cc",
+  "source_hash": "833b0038bb505b5298837eda5fceb2bfa58f0149c3dbf52a2168b78b42cd29cc",
+  "source_record_digest": "sha256:833b0038bb505b5298837eda5fceb2bfa58f0149c3dbf52a2168b78b42cd29cc",
+  "duplicate_parent": null,
+  "scope": "PRIMARY_IN_SCOPE_WPE",
+  "key_status": "HOLD:OFFICIAL_KEY_UNRESOLVED",
+  "figure_status": "NOT_REQUIRED",
+  "figure_reference": null,
+  "options": [
+    "A: 𝑣^(4)",
+    "B: 𝑣^(2)",
+    "C: 𝑣",
+    "D: 𝑣^(3)"
+  ],
+  "solve_exposure": "EXPOSED",
+  "solve_status": "CANDIDATE_DERIVED",
+  "candidate_solve": {
+    "method": "FLUID_POWER_VELOCITY_SCALING",
+    "predicted_option": "D: 𝑣^(3)",
+    "derivation": "Mass of air intercepted per second: dm/dt = rho * A * v. Kinetic energy per unit time of this intercepted air: P_wind = (1/2)*(dm/dt)*v^2 = (1/2)*rho*A*v^3. Since electrical power output is a fixed fraction of wind power, P_elec proportional to v^3."
+  },
+  "sl2": {
+    "mode": "QUESTION",
+    "difficulty_evidence": {
+      "components": {
+        "concept_model_selection": {
+          "score": 1,
+          "evidence": "Mass flow rate scaling dm/dt proportional to v, kinetic energy proportional to v^2"
+        },
+        "representation_translation": {
+          "score": 1,
+          "evidence": "Combining mass flux and kinetic energy into power rate equation"
+        },
+        "reasoning_chain_length": {
+          "score": 1,
+          "evidence": "Single proportionality chain dm/dt ~ v => P ~ (dm/dt)*v^2 ~ v^3"
+        },
+        "algebra_computational_load": {
+          "score": 0,
+          "evidence": "Direct exponent addition: 1 + 2 = 3"
+        },
+        "trap_exception_sensitivity": {
+          "score": 1,
+          "evidence": "Avoiding quadratic distractor v^2 (which assumes constant mass rather than fluid flux)"
+        }
+      },
+      "total": 4,
+      "band": "D2",
+      "prior_proposal": {
+        "source": "INITIAL_CALIBRATION",
+        "scores": "1/1/1/0/1",
+        "total": 4
+      },
+      "differences": "Initial native factor audit"
+    },
+    "demand_proposal": {
+      "primary": "APPLY",
+      "secondary": [
+        "MODEL"
+      ],
+      "rationale": "Applying mass-flux kinetic energy scaling to windmill power generation",
+      "candidate_cell": "QRT-APPLY-D2",
+      "status": "PROPOSED"
+    },
+    "status": "UNREVIEWED"
+  },
+  "blueprint_fit": "BLUEPRINT=SPEC_PENDING",
+  "adapter_fit": "ADAPTER=SPEC_PENDING",
+  "core2_status": "NOT_RUN",
+  "owner_admission": "PENDING_INDEPENDENT_REVIEW",
+  "b2_blind_status": "PENDING_BLIND_SOLVE",
+  "academic_admission": "NOT_ADMITTED",
+  "admission_gate": "HOLD:ACADEMIC_ADMISSION",
+  "blockers": [
+    "HOLD:OFFICIAL_KEY_UNRESOLVED (Coaching key unverified against official NTA master)",
+    "HOLD:SPEC_PENDING (No qualified D1/D2 common blueprint or topic adapter)",
+    "HOLD:ACADEMIC_ADMISSION (No human reviewer approval receipt)"
+  ],
+  "next_action": "B2 independent source-only solve + official NTA master key reconciliation"
+}

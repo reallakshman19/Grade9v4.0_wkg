@@ -1,0 +1,79 @@
+======================================================================
+GRADE9 V4.0 -- LOT-00 EXECUTABLE VERIFICATION TEST LOG
+Timestamp: 2026-11-01T07:04:02.288627+00:00
+Environment: Python 3.14.0 / Node.js v22.23.2 / Playwright-core 1.52 Chromium
+======================================================================
+
+[PART 1: PYTHON EXECUTABLE ASSERTION TEST SUITE (test_lot00_inventory.py)]
+test_01_source_cardinality_and_unique_ids (__main__.TestLot00Inventory.test_01_source_cardinality_and_unique_ids)
+Verify registry candidate count (79) and ID uniqueness. ... ok
+test_02_examside_62_items_cardinality_and_correspondence (__main__.TestLot00Inventory.test_02_examside_62_items_cardinality_and_correspondence)
+Verify 62 items in extract exist and correspond to EX- records. ... ok
+test_03_62_item_stem_comparison_and_normalization (__main__.TestLot00Inventory.test_03_62_item_stem_comparison_and_normalization)
+Verify 49 exact verbatim matches and 13 scraper-suffix matches (62/62 normalized). ... ok
+test_04_candidate_alias_pair_evidence (__main__.TestLot00Inventory.test_04_candidate_alias_pair_evidence)
+Verify candidate alias pair EX-M4 <-> JEE-2026-04-05-S2-Q28 evidence. ... ok
+test_05_five_nsep_records_empty_stem_and_unbound_status (__main__.TestLot00Inventory.test_05_five_nsep_records_empty_stem_and_unbound_status)
+Verify five NSEP-extension records have None stem and are not hashed as empty string. ... ok
+test_06_figure_hold_consistency (__main__.TestLot00Inventory.test_06_figure_hold_consistency)
+Verify records with FIGURE holds are marked REQUIRED_UNRESOLVED. ... ok
+test_07_scope_and_key_status_arithmetic (__main__.TestLot00Inventory.test_07_scope_and_key_status_arithmetic)
+Verify all scope, key, figure, and lead status sums reconcile. ... ok
+test_08_fail_closed_zero_admission_gate (__main__.TestLot00Inventory.test_08_fail_closed_zero_admission_gate)
+Verify zero admitted questions (fail-closed gate preserved). ... ok
+test_09_negative_mutations (__main__.TestLot00Inventory.test_09_negative_mutations)
+Executable negative tests: verifying that mutations trigger assertion failures. ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.013s
+
+OK
+
+[PART 2: PLAYWRIGHT CHROMIUM BROWSER VIEWPORT & DOM EVENT CHECKS (verify_dashboard_playwright.js)]
+Testing dashboard with Playwright Chromium: file:///D:/CodeD/grade9v4/workspace/output/G9V4_LOTS/LOT-00/inventory.html
+
+--- Testing 375px Viewport (Mobile) ---
+Mobile Metrics (375px): {
+  docClientWidth: 375,
+  docScrollWidth: 375,
+  bodyScrollWidth: 375,
+  containerScrollWidth: 343,
+  tableContainerScrollWidth: 1203,
+  tableContainerClientWidth: 341,
+  rowsCount: 79
+}
+Document horizontal overflow at 375px: NONE (PASS)
+
+--- Testing Search Input Event ---
+Visible rows after typing 'EX-M39': 1
+PASS: 'input' event successfully triggers instant 1-row filtering for 'EX-M39'!
+Visible rows after pasting 'WEP07-03': 1
+PASS: Pasted text triggers 'input' event correctly!
+
+--- Testing 1365px Viewport (Desktop) ---
+Desktop Metrics (1365px): {
+  docClientWidth: 1365,
+  docScrollWidth: 1365,
+  bodyScrollWidth: 1365,
+  rowsCount: 79
+}
+Document horizontal overflow at 1365px: NONE (PASS)
+
+--- Testing Dropdown Filters ---
+Rows for IN_SCOPE: 66 (Expected 66)
+Rows for IN_SCOPE + PRIMARY_ONLY: 65 (Expected 65)
+Rows for VERIFIED + PRIMARY_ONLY: 1 (Expected 1)
+
+Page errors caught: 0
+PASS: Zero console errors or unhandled exceptions.
+
+>>> ALL PLAYWRIGHT CHROMIUM DASHBOARD CHECKS PASSED SUCCESSFULLY! <<<
+
+
+======================================================================
+PYTHON EXIT STATUS: 0 (OK)
+PLAYWRIGHT EXIT STATUS: 0 (OK)
+FINAL DISPOSITION: PASS WITH FIXES (Mechanical Inventory Readiness)
+ACADEMIC ADMISSION & LOT 01: HOLD
+No academic approval inferred from software validation.
+======================================================================

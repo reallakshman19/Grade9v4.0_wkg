@@ -1,0 +1,12 @@
+/* R4 scoped family learning lab: no changes to global WPE gateway or R3 F04–F08. */
+.source-index{border:1px solid #c0d5dc;background:#f4f9fb;padding:14px 17px;border-radius:13px;margin:20px 0}
+.source-index h2{margin-top:0;font-size:1.12rem}
+.source-family{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:8px;margin:12px 0}
+.source-family a{display:block;padding:11px 13px;background:white;color:#174a5f;border:1px solid #a8c7d1;border-radius:10px;text-decoration:none;font-weight:650;line-height:1.35}
+.source-family a:hover,.source-family a:focus-visible{text-decoration:underline;outline-offset:2px}
+.source-route{border-left:4px solid #4f8597;padding:10px 12px;background:#fff;margin-top:13px;border-radius:8px}
+.source-route h3{margin:0;font-size:1rem}
+.source-route p{margin:8px 0}
+.source-route a{color:#13576d;font-weight:700}
+.lesson-title,.academic-checkpoint{overflow-wrap:anywhere}
+@media(max-width:520px){.source-index{padding:12px}.source-family{grid-template-columns:1fr}}

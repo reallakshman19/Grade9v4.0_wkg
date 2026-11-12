@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" width="100%" height="100%">
+  <defs>
+    <style>
+      .label { font-family: system-ui, -apple-system, sans-serif; font-size: 15px; font-weight: 600; fill: #1e293b; }
+      .curve { stroke: #0284c7; stroke-width: 2.5; fill: none; }
+      .straight { stroke: #475569; stroke-width: 2.5; fill: none; }
+      .bead { fill: #e11d48; stroke: #881337; stroke-width: 2; }
+      .bead2 { fill: #2563eb; stroke: #1e3a8a; stroke-width: 2; }
+    </style>
+  </defs>
+  <!-- Straight wire AB -->
+  <line x1="60" y1="70" x2="360" y2="70" class="straight"/>
+  <text x="45" y="75" class="label">A</text>
+  <text x="370" y="75" class="label">B</text>
+  
+  <!-- Semicircular wire ACB -->
+  <path d="M 60 70 A 150 150 0 0 0 360 70" class="curve"/>
+  <text x="210" y="240" class="label" text-anchor="middle">C</text>
+  
+  <!-- Bead Q on AB -->
+  <circle cx="90" cy="70" r="8" class="bead2"/>
+  <text x="90" y="55" class="label" style="fill:#2563eb;" text-anchor="middle">Q (v)</text>
+  
+  <!-- Bead P at point S on ACB -->
+  <circle cx="120" cy="176" r="8" class="bead"/>
+  <text x="100" y="195" class="label" style="fill:#e11d48;">P (at S)</text>
+  
+  <!-- Velocity arrow for Q -->
+  <line x1="102" y1="70" x2="135" y2="70" stroke="#2563eb" stroke-width="2"/>
+  <polygon points="135,67 142,70 135,73" fill="#2563eb"/>
+</svg>

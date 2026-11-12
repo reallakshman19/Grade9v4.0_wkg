@@ -1,0 +1,21 @@
+{
+  "url": "https://iapt.org.in/wp-content/uploads/images/NSEP_-_2025_Final_Answer_Key.pdf",
+  "final_url": "https://iapt.org.in/wp-content/uploads/images/NSEP_-_2025_Final_Answer_Key.pdf",
+  "bytes": 452627,
+  "sha256": "b640115a6d05c5bb3bc86440070832f8a9501bf94740a942f696f6ce24d01859",
+  "pages": 1,
+  "source_anchor_text": "NSEJS (mislabeled on linked resource page)",
+  "actual_document_identity": "INDIAN ASSOCIATION OF PHYSICS TEACHERS / FINAL ANSWER KEY NSEP - 2025",
+  "visually_checked_row": {
+    "question": 57,
+    "paper_code": 61,
+    "answer": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "page": 1
+  },
+  "paper_key_discrepancy_resolved": false
+}

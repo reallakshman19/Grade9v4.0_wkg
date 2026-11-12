@@ -1,0 +1,17 @@
+{
+  "task": "WPE-SOURCE-CORE1A-COMPLETION-R2",
+  "role": "Scoped Coder; session Oracle (standalone)",
+  "Owner_words": "Assign you Coder and approve bounded completion",
+  "started_utc": "2026-10-30T12:01:40Z",
+  "max_minutes": 60,
+  "max_inspection_verification_calls": 60,
+  "single_agent": true,
+  "no_remote_writes": true,
+  "no_installation": true,
+  "no_lesson_authoring": true,
+  "D31": "PAUSED",
+  "originals": "PRESERVE",
+  "scientific_and_reviewed_SL2_evidence": "Genuine evidence required; unresolved stays explicit",
+  "token_metric": "reported input plus output",
+  "baseline": "UNKNOWN"
+}

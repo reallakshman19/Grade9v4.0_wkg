@@ -1,0 +1,1662 @@
+{
+  "schema": "wpe-learner-coverage-r1/v1",
+  "date": "2026-11-03",
+  "basis": "Exact 74 reader questions + preexisting 13 authored interactive lessons + three new original focused learning constructions; existing QRT/Blueprint/adapter classifications retained as proposals. R2 adds five scientifically distinct source-specific Core1A/Core1B challenges F04–F08, with shared two-body relative-motion model across F04/F08; QRT proposals remain unchanged.",
+  "source_bank_git_blob": "cd7cb5c705ce12b0f97edee213be2afedc04abb1",
+  "source_coverage_register_git_blob": "6b2ad2ef3f458c60314fb56cadb931e8b102b6dd",
+  "source_reasoning_manifest_git_blob": "f5640abfcd6684413b1102987ef5485b5a7150a7",
+  "counts": {
+    "total": 74,
+    "focused_new": 8,
+    "targeted": 18,
+    "related": 48,
+    "missing": 0,
+    "wrapped_related": 41,
+    "new_gap_closure": 5,
+    "shared_foundation_groups": 4
+  },
+  "fit_legend": {
+    "FOCUSED_NEW": "Authored Core1A and fresh six-stage Core1B; includes F01–F08 and does not certify original examination key.",
+    "TARGETED_PRACTICE": "A lesson practises the same apparent reasoning operation, without academic sufficiency claim.",
+    "RELATED_BRIDGE": "A helpful related lesson but NOT sufficient teaching of the exact question's decisive inference.",
+    "MISSING_CONSTRUCTION": "No existing interactive lesson covers the crucial physical operation; do not invent an equivalence."
+  },
+  "questions": [
+    {
+      "source_id": "EX-M2",
+      "reader_sequence": 1,
+      "stem_sha256": "a5c763f95741876d7e1c31a53aa6049a439d0aa91b0b28512c9aece32b8bb52d",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D2"
+      },
+      "primary_lesson": "C01",
+      "related_lessons": [
+        "C01"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Coordinate two mass movements with one string constraint, then balance energy.",
+      "teaching_limit": "Pulley kinematics and coupled masses need explicit teaching.",
+      "lesson_href": "study-bridge.html?question=EX-M2&lesson=C01",
+      "source_href": "../../preview/question-status.html?question=EX-M2",
+      "has_source_caution": true,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "EX-M6",
+      "reader_sequence": 3,
+      "stem_sha256": "7d9e6e00a473b5219d71fa3889281e129945bb5c19d9f53407d7ca7fe570e1b6",
+      "reader_proposal": {
+        "op": "JUSTIFY",
+        "band": "D4"
+      },
+      "primary_lesson": "C06",
+      "related_lessons": [
+        "C06"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Verify the actual curved-path dynamics before asserting a universal arrival order.",
+      "teaching_limit": "Existing lesson is related practice, NOT sufficient proof for this question's exact inference; inspect the source conditions and figure.",
+      "lesson_href": "d3d4-self-tutor.html?question=EX-M6#C06",
+      "source_href": "../../preview/question-status.html?question=EX-M6",
+      "has_source_caution": true,
+      "source_science_note": "Curved-path time ordering is not universally fixed by the given data.",
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "NATIVE_EXACT_SOURCE"
+    },
+    {
+      "source_id": "EX-M7",
+      "reader_sequence": 4,
+      "stem_sha256": "0a7d0a44e9eeb70842e0730dd0f34bbaacf362ddd7f7951b81e47eb3883e5489",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D2"
+      },
+      "primary_lesson": "E03",
+      "related_lessons": [
+        "E03"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Use gravitational height to compare projectile kinetic energies at different points.",
+      "teaching_limit": "Oblique launch and figure-dependent heights are not taught in E03.",
+      "lesson_href": "study-bridge.html?question=EX-M7&lesson=E03",
+      "source_href": "../../preview/question-status.html?question=EX-M7",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "EX-M8",
+      "reader_sequence": 5,
+      "stem_sha256": "f154bd2c140fee999c231282c39119e1efee629fa820c8edcbb97fb9c2bf5245",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D2"
+      },
+      "primary_lesson": "C08",
+      "related_lessons": [
+        "C08"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Compare spring energies under different hanging loads, not an equal-load assumption.",
+      "teaching_limit": "Unequal masses and the original spring geometry require a separate worked bridge.",
+      "lesson_href": "study-bridge.html?question=EX-M8&lesson=C08",
+      "source_href": "../../preview/question-status.html?question=EX-M8",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "EX-M11",
+      "reader_sequence": 6,
+      "stem_sha256": "dc5006b422da3095c1eb3f9d14810987971898073fa6e37fcfd7af34a35fd90f",
+      "reader_proposal": {
+        "op": "REPRESENT",
+        "band": "D2"
+      },
+      "primary_lesson": "C05",
+      "related_lessons": [
+        "C05"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Read each potential-energy slope and rank force magnitudes.",
+      "teaching_limit": "Need multi-segment absolute-slope ranking and verified figure.",
+      "lesson_href": "study-bridge.html?question=EX-M11&lesson=C05",
+      "source_href": "../../preview/question-status.html?question=EX-M11",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "EX-M14",
+      "reader_sequence": 7,
+      "stem_sha256": "d42c49f2f74aee3cc526fca32bc34cbea5f9adc8817c591513fb91702feeca3d",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D2"
+      },
+      "primary_lesson": "C01",
+      "related_lessons": [
+        "C01"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Resolve angled pull, changed normal reaction and friction together.",
+      "teaching_limit": "C01 does not yet derive friction from the angle-dependent normal.",
+      "lesson_href": "study-bridge.html?question=EX-M14&lesson=C01",
+      "source_href": "../../preview/question-status.html?question=EX-M14",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "EX-M16",
+      "reader_sequence": 8,
+      "stem_sha256": "d2abc9e9b5d095977abadd84bae36f1a5f40a58e4341dd4e8593efa216f7c0a2",
+      "reader_proposal": {
+        "op": "MODEL",
+        "band": "D3"
+      },
+      "primary_lesson": "C07",
+      "related_lessons": [
+        "C07"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Investigate Variable-mass momentum transfer and conveyor power, selecting the valid law and assumptions.",
+      "teaching_limit": "Existing lesson is related practice, NOT sufficient proof for this question's exact inference; inspect the source conditions and figure.",
+      "lesson_href": "d3d4-self-tutor.html?question=EX-M16#C07",
+      "source_href": "../../preview/question-status.html?question=EX-M16",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "NATIVE_EXACT_SOURCE"
+    },
+    {
+      "source_id": "EX-M18",
+      "reader_sequence": 9,
+      "stem_sha256": "42336fcec4a83179e7f595fe5bdc33dddc30953940189b66288cb39696ceaad8",
+      "reader_proposal": {
+        "op": "MODEL",
+        "band": "D4"
+      },
+      "primary_lesson": "C06",
+      "related_lessons": [
+        "C02",
+        "C06"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Investigate Vertical circle: energy plus contact/tension condition, selecting the valid law and assumptions.",
+      "teaching_limit": "Existing lesson is related practice, NOT sufficient proof for this question's exact inference; inspect the source conditions and figure.",
+      "lesson_href": "d3d4-self-tutor.html?question=EX-M18#C06",
+      "source_href": "../../preview/question-status.html?question=EX-M18",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "NATIVE_EXACT_SOURCE"
+    },
+    {
+      "source_id": "EX-M24",
+      "reader_sequence": 10,
+      "stem_sha256": "9d2c7cb9df50430ea2cb67603844ba5309901489311286518341a967bdd80dab",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D4"
+      },
+      "primary_lesson": "C02",
+      "related_lessons": [
+        "C01",
+        "C02"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Investigate Spring contact and motion phases, selecting the valid law and assumptions.",
+      "teaching_limit": "Existing lesson is related practice, NOT sufficient proof for this question's exact inference; inspect the source conditions and figure.",
+      "lesson_href": "d3d4-self-tutor.html?question=EX-M24#C02",
+      "source_href": "../../preview/question-status.html?question=EX-M24",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "NATIVE_EXACT_SOURCE"
+    },
+    {
+      "source_id": "EX-M36",
+      "reader_sequence": 12,
+      "stem_sha256": "5cd94ff098ab3cb5375207898d793623c5465f00ad2c4990a19f7ebaabc8fb1d",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D2"
+      },
+      "primary_lesson": "C06",
+      "related_lessons": [
+        "C06"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Combine gravitational energy and top-of-circle motion constraints.",
+      "teaching_limit": "The minimum-speed half-circle string condition needs a separate contact model.",
+      "lesson_href": "study-bridge.html?question=EX-M36&lesson=C06",
+      "source_href": "../../preview/question-status.html?question=EX-M36",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "EX-M47",
+      "reader_sequence": 13,
+      "stem_sha256": "99520cf83728c938297ec6a067aa32f4635bf8a7f2bd20d581941f0d6b41753d",
+      "reader_proposal": {
+        "op": "RETRIEVE",
+        "band": "D1"
+      },
+      "primary_lesson": "E03",
+      "related_lessons": [
+        "E03"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Separate horizontal kinetic energy at the projectile apex from vertical motion.",
+      "teaching_limit": "Oblique flight/apex reasoning is not covered by the horizontal-launch guide.",
+      "lesson_href": "study-bridge.html?question=EX-M47&lesson=E03",
+      "source_href": "../../preview/question-status.html?question=EX-M47",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "EX-M49",
+      "reader_sequence": 14,
+      "stem_sha256": "0e1ddae0acecd3dd63d5006fdce6616051e886fba96b35f836c70330d1b7f0de",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D2"
+      },
+      "primary_lesson": "C07",
+      "related_lessons": [
+        "C07"
+      ],
+      "fit": "TARGETED_PRACTICE",
+      "student_goal": "Account for momentum transferred to material arriving on a moving belt.",
+      "teaching_limit": "C07 is a close model; verify the precise incoming horizontal velocity and losses.",
+      "lesson_href": "study-bridge.html?question=EX-M49&lesson=C07",
+      "source_href": "../../preview/question-status.html?question=EX-M49",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "EX-M50",
+      "reader_sequence": 15,
+      "stem_sha256": "eb9b4c3b60984e3eba754ab63859475dfa45b5cc75f7824e40dd3a845bd04501",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D2"
+      },
+      "primary_lesson": "F04",
+      "related_lessons": [
+        "F04"
+      ],
+      "fit": "FOCUSED_NEW",
+      "student_goal": "Separate centre-of-mass drift from relative kinetic energy so an internal spring receives only the energy of changing separation.",
+      "teaching_limit": "Ideal lossless spring: ½μ(u₁−u₂)² becomes spring energy while ½MV² remains. A different external impulse or nonzero spring prestrain requires a new budget.",
+      "lesson_href": "gap-journeys.html?question=EX-M50#F04",
+      "source_href": "../../preview/question-status.html?question=EX-M50",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "FOCUSED_SOURCE",
+      "construction_group": "TWO_BODY_RELATIVE_ENERGY"
+    },
+    {
+      "source_id": "EX-M56",
+      "reader_sequence": 16,
+      "stem_sha256": "57330c99d1445aaf20f549a6e6eeec59f9c0e8d7a3bca2ae24ae5a686275fe17",
+      "reader_proposal": {
+        "op": "REPRESENT",
+        "band": "D2"
+      },
+      "primary_lesson": "C05",
+      "related_lessons": [
+        "C05"
+      ],
+      "fit": "TARGETED_PRACTICE",
+      "student_goal": "Investigate Graph decision: area, slope or time shape, selecting the valid law and assumptions.",
+      "teaching_limit": "Close practice for the proposed reasoning operation, but original-question transfer and source evidence still need checking.",
+      "lesson_href": "d3d4-self-tutor.html?question=EX-M56#C05",
+      "source_href": "../../preview/question-status.html?question=EX-M56",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "NATIVE_EXACT_SOURCE"
+    },
+    {
+      "source_id": "EX-M61",
+      "reader_sequence": 17,
+      "stem_sha256": "bf7a3008c27d92309c6bd2e2e6c5881bd66ad6cef10030dd1177d2b7322e098a",
+      "reader_proposal": {
+        "op": "EXPLAIN",
+        "band": "D2"
+      },
+      "primary_lesson": "C05",
+      "related_lessons": [
+        "C05"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Investigate Graph decision: area, slope or time shape, selecting the valid law and assumptions.",
+      "teaching_limit": "Existing lesson is related practice, NOT sufficient proof for this question's exact inference; inspect the source conditions and figure.",
+      "lesson_href": "d3d4-self-tutor.html?question=EX-M61#C05",
+      "source_href": "../../preview/question-status.html?question=EX-M61",
+      "has_source_caution": true,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "NATIVE_EXACT_SOURCE"
+    },
+    {
+      "source_id": "EX-M62",
+      "reader_sequence": 18,
+      "stem_sha256": "5786412e1a4c846fe36db232cd19d5c0d5007a5ad2d5a3fe72350fb01704706a",
+      "reader_proposal": {
+        "op": "MODEL",
+        "band": "D3"
+      },
+      "primary_lesson": "C03",
+      "related_lessons": [
+        "C03"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Investigate Constant power and speed–time–distance, selecting the valid law and assumptions.",
+      "teaching_limit": "Existing lesson is related practice, NOT sufficient proof for this question's exact inference; inspect the source conditions and figure.",
+      "lesson_href": "d3d4-self-tutor.html?question=EX-M62#C03",
+      "source_href": "../../preview/question-status.html?question=EX-M62",
+      "has_source_caution": true,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "NATIVE_EXACT_SOURCE"
+    },
+    {
+      "source_id": "EX-M65",
+      "reader_sequence": 20,
+      "stem_sha256": "7b6b64cb8888f1591598b0ba9bbb9fc432e4fe2071040755328667c3437330a8",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D2"
+      },
+      "primary_lesson": "C03",
+      "related_lessons": [
+        "C03"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Relate constant power to energy, speed and displacement over time.",
+      "teaching_limit": "Requires a conceptual calculus bridge for displacement proportional to t^(3/2).",
+      "lesson_href": "study-bridge.html?question=EX-M65&lesson=C03",
+      "source_href": "../../preview/question-status.html?question=EX-M65",
+      "has_source_caution": true,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "EX-M68",
+      "reader_sequence": 21,
+      "stem_sha256": "4dcf7e7341d2ffd1554a7b9ca5a03d26271172b9ea4c8c0ab2b3efc57c1b96da",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D2"
+      },
+      "primary_lesson": "C05",
+      "related_lessons": [
+        "C05"
+      ],
+      "fit": "TARGETED_PRACTICE",
+      "student_goal": "Integrate piecewise changing force as signed area under force–displacement.",
+      "teaching_limit": "C05 teaches area choice; a multi-section decreasing-force ledger is still needed.",
+      "lesson_href": "study-bridge.html?question=EX-M68&lesson=C05",
+      "source_href": "../../preview/question-status.html?question=EX-M68",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "EX-M69",
+      "reader_sequence": 22,
+      "stem_sha256": "9761db6873712de6b069cc95d817491c45f5018250ef8deac3885ab0c7525add",
+      "reader_proposal": {
+        "op": "REPRESENT",
+        "band": "D2"
+      },
+      "primary_lesson": "C05",
+      "related_lessons": [
+        "C03",
+        "C05"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Investigate Graph decision: area, slope or time shape, selecting the valid law and assumptions.",
+      "teaching_limit": "Existing lesson is related practice, NOT sufficient proof for this question's exact inference; inspect the source conditions and figure.",
+      "lesson_href": "d3d4-self-tutor.html?question=EX-M69#C05",
+      "source_href": "../../preview/question-status.html?question=EX-M69",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "NATIVE_EXACT_SOURCE"
+    },
+    {
+      "source_id": "EX-M73",
+      "reader_sequence": 23,
+      "stem_sha256": "f2bd1e9620ea2ee16dea9acb4f06f5f5098f93a46960dfdda5a8a62f670a88bf",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D3"
+      },
+      "primary_lesson": "C04",
+      "related_lessons": [
+        "C04"
+      ],
+      "fit": "TARGETED_PRACTICE",
+      "student_goal": "Investigate Distributed mass, chain and changing centre of mass, selecting the valid law and assumptions.",
+      "teaching_limit": "Close practice for the proposed reasoning operation, but original-question transfer and source evidence still need checking.",
+      "lesson_href": "d3d4-self-tutor.html?question=EX-M73#C04",
+      "source_href": "../../preview/question-status.html?question=EX-M73",
+      "has_source_caution": true,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "NATIVE_EXACT_SOURCE"
+    },
+    {
+      "source_id": "EX-M74",
+      "reader_sequence": 24,
+      "stem_sha256": "e3b751177c3295210a19fa1d3b4f8cfb5091ac8475e868095191cefde40ef5e8",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D2"
+      },
+      "primary_lesson": "C05",
+      "related_lessons": [
+        "C05"
+      ],
+      "fit": "TARGETED_PRACTICE",
+      "student_goal": "Recover kinetic energy from area under a force–distance graph.",
+      "teaching_limit": "Graph sections and initial energy must be independently checked.",
+      "lesson_href": "study-bridge.html?question=EX-M74&lesson=C05",
+      "source_href": "../../preview/question-status.html?question=EX-M74",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "EX-M76",
+      "reader_sequence": 25,
+      "stem_sha256": "b7e30117787ec4c78919caf7f08c4fbe70299cf0c656fb9164c20f5816f4bc91",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D2"
+      },
+      "primary_lesson": "C01",
+      "related_lessons": [
+        "C01"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Compute normal-force work with an accelerating vertical platform.",
+      "teaching_limit": "Need platform displacement and the nonzero normal-work distinction.",
+      "lesson_href": "study-bridge.html?question=EX-M76&lesson=C01",
+      "source_href": "../../preview/question-status.html?question=EX-M76",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "EX-M78",
+      "reader_sequence": 26,
+      "stem_sha256": "4f16a1508ca866152bc5523d0bc6719aede0028234b3b8ea49571c2e9c4d260f",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D2"
+      },
+      "primary_lesson": "C02",
+      "related_lessons": [
+        "C02"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Track spring potential and kinetic energy as compression changes.",
+      "teaching_limit": "Check whether the original setup has attached versus contact-only spring.",
+      "lesson_href": "study-bridge.html?question=EX-M78&lesson=C02",
+      "source_href": "../../preview/question-status.html?question=EX-M78",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "EX-M79",
+      "reader_sequence": 27,
+      "stem_sha256": "6050eaed83530c31e53b0b03afcae65b9a6011f89d27085e95a50f1da7c2c51a",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D3"
+      },
+      "primary_lesson": "C03",
+      "related_lessons": [
+        "C03"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Decide from the speed–distance relation what the motion law actually is, and compare its energy-time behavior with constant-power practice.",
+      "teaching_limit": "Existing lesson is related practice, NOT sufficient proof for this question's exact inference; inspect the source conditions and figure.",
+      "lesson_href": "d3d4-self-tutor.html?question=EX-M79#C03",
+      "source_href": "../../preview/question-status.html?question=EX-M79",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "NATIVE_EXACT_SOURCE"
+    },
+    {
+      "source_id": "EX-M82",
+      "reader_sequence": 28,
+      "stem_sha256": "e2cf28b63bd8edb9397430f80be3d78edc1c803b75f9ff6eda23bbba3b78a649",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D3"
+      },
+      "primary_lesson": "E04",
+      "related_lessons": [
+        "E04"
+      ],
+      "fit": "TARGETED_PRACTICE",
+      "student_goal": "Investigate Repeated dissipative bounces, selecting the valid law and assumptions.",
+      "teaching_limit": "Close practice for the proposed reasoning operation, but original-question transfer and source evidence still need checking.",
+      "lesson_href": "extension-learning.html?question=EX-M82#E04",
+      "source_href": "../../preview/question-status.html?question=EX-M82",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "NATIVE_EXACT_SOURCE"
+    },
+    {
+      "source_id": "EX-M85",
+      "reader_sequence": 30,
+      "stem_sha256": "f6d74f6517bbe210d4c24f23ae99bb632c436f2fb4c12a40b4fce0ced91bcfb8",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D2"
+      },
+      "primary_lesson": "C05",
+      "related_lessons": [
+        "C05"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Read speeds at two times then use net work equal to kinetic-energy change.",
+      "teaching_limit": "C05 is a graph-operation bridge; figure axes need checking.",
+      "lesson_href": "study-bridge.html?question=EX-M85&lesson=C05",
+      "source_href": "../../preview/question-status.html?question=EX-M85",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "EX-M89",
+      "reader_sequence": 31,
+      "stem_sha256": "794f05ed6f9302a63fe556ff98ee3644e5b0a419983ea559f9a9c517d3221379",
+      "reader_proposal": {
+        "op": "SYNTHESIZE",
+        "band": "D3"
+      },
+      "primary_lesson": "E05",
+      "related_lessons": [
+        "E05"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Investigate Radial-force potential, selecting the valid law and assumptions.",
+      "teaching_limit": "Existing lesson is related practice, NOT sufficient proof for this question's exact inference; inspect the source conditions and figure.",
+      "lesson_href": "extension-learning.html?question=EX-M89#E05",
+      "source_href": "../../preview/question-status.html?question=EX-M89",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "NATIVE_EXACT_SOURCE"
+    },
+    {
+      "source_id": "EX-M90",
+      "reader_sequence": 32,
+      "stem_sha256": "f4543c5bbc08148d92aa40d74960d1496ef409acf45665a5e41bc2e08024348e",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D2"
+      },
+      "primary_lesson": "C02",
+      "related_lessons": [
+        "C02"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Infer spring stiffness from energy conversion at a partial return position.",
+      "teaching_limit": "Requires incomplete-compression energy comparison.",
+      "lesson_href": "study-bridge.html?question=EX-M90&lesson=C02",
+      "source_href": "../../preview/question-status.html?question=EX-M90",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "EX-M92",
+      "reader_sequence": 33,
+      "stem_sha256": "24ef3006cdb28b6eea3dc564f08194f099c08e3c1de42bed2d6dcf7eec6babf4",
+      "reader_proposal": {
+        "op": "MODEL",
+        "band": "D2"
+      },
+      "primary_lesson": "F05",
+      "related_lessons": [
+        "F05"
+      ],
+      "fit": "FOCUSED_NEW",
+      "student_goal": "Give every spring slice its own speed, sum its kinetic energy, then recover mv²/6 from a linear velocity profile.",
+      "teaching_limit": "The one-sixth rule needs a fixed end AND uniform-affine extension. End speed by itself does not exclude elastic waves or nonlinear velocity profiles.",
+      "lesson_href": "gap-journeys.html?question=EX-M92#F05",
+      "source_href": "../../preview/question-status.html?question=EX-M92",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "FOCUSED_SOURCE",
+      "construction_group": "DISTRIBUTED_MASS_VELOCITY"
+    },
+    {
+      "source_id": "EX-M96",
+      "reader_sequence": 34,
+      "stem_sha256": "833b0038bb505b5298837eda5fceb2bfa58f0149c3dbf52a2168b78b42cd29cc",
+      "reader_proposal": {
+        "op": "RETRIEVE",
+        "band": "D2"
+      },
+      "primary_lesson": "F06",
+      "related_lessons": [
+        "F06"
+      ],
+      "fit": "FOCUSED_NEW",
+      "student_goal": "Multiply mass intercepted per second (∝v) by kinetic energy per kilogram (∝v²) to justify cubic wind power.",
+      "teaching_limit": "The cubic law assumes constant rotor area, air density and conversion fraction. A real turbine may not obey one power law across all speeds.",
+      "lesson_href": "gap-journeys.html?question=EX-M96#F06",
+      "source_href": "../../preview/question-status.html?question=EX-M96",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "FOCUSED_SOURCE",
+      "construction_group": "MOVING_MASS_ENERGY_FLUX"
+    },
+    {
+      "source_id": "EX-M97",
+      "reader_sequence": 35,
+      "stem_sha256": "cbb41b03fc485b69ca2d6ca28cbb08a484d1a36fb7b3ba766c455607508ac8c8",
+      "reader_proposal": {
+        "op": "SYNTHESIZE",
+        "band": "D3"
+      },
+      "primary_lesson": "F01",
+      "related_lessons": [
+        "F01"
+      ],
+      "fit": "FOCUSED_NEW",
+      "student_goal": "Compare power supplied by a push with net kinetic-energy rate across push and flight.",
+      "teaching_limit": "New focused teaching and independent challenge. The original examination key remains unverified.",
+      "lesson_href": "focused-journeys.html?question=EX-M97#F01",
+      "source_href": "../../preview/question-status.html?question=EX-M97",
+      "has_source_caution": true,
+      "source_science_note": "The coaching prediction uses (F−mg)v_COM, while applied-force × centre-of-mass speed gives Fv_COM. Neither alone establishes actual internal muscular power for a real jumper: the stationary shoe contact and body-segment motion matter. Distinguish these quantities.",
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "FOCUSED_SOURCE"
+    },
+    {
+      "source_id": "EX-M98",
+      "reader_sequence": 36,
+      "stem_sha256": "275a2a58ac5f752c0584a60cc804d0a71ea2dfdc266fa0c9f46b7e0ad5c63a3d",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D2"
+      },
+      "primary_lesson": "C08",
+      "related_lessons": [
+        "C08"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Recognize identical series force but unequal spring extensions and energies.",
+      "teaching_limit": "C08 contrasts controlled force and extension; series connection needs explicit derivation.",
+      "lesson_href": "study-bridge.html?question=EX-M98&lesson=C08",
+      "source_href": "../../preview/question-status.html?question=EX-M98",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "EX-M101",
+      "reader_sequence": 37,
+      "stem_sha256": "c6caf00ac4069a7c971ef146bba439ffb17602663de90cb408c805f887fc639c",
+      "reader_proposal": {
+        "op": "JUSTIFY",
+        "band": "D1"
+      },
+      "primary_lesson": "C08",
+      "related_lessons": [
+        "C08"
+      ],
+      "fit": "TARGETED_PRACTICE",
+      "student_goal": "Compare spring work at equal final equilibrium force versus equal extension; determine how the controlled variable reverses the energy ordering.",
+      "teaching_limit": "Close practice for the proposed reasoning operation, but original-question transfer and source evidence still need checking.",
+      "lesson_href": "d3d4-self-tutor.html?question=EX-M101#C08",
+      "source_href": "../../preview/question-status.html?question=EX-M101",
+      "has_source_caution": true,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "NATIVE_EXACT_SOURCE"
+    },
+    {
+      "source_id": "EX-M105",
+      "reader_sequence": 38,
+      "stem_sha256": "7f1f8bdb0ec27dc0c8dafc016414d1dd70d15932139624a0a03f7f629b437ed4",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D2"
+      },
+      "primary_lesson": "C01",
+      "related_lessons": [
+        "C01"
+      ],
+      "fit": "TARGETED_PRACTICE",
+      "student_goal": "Investigate Multi-force work–energy ledger, selecting the valid law and assumptions.",
+      "teaching_limit": "Close practice for the proposed reasoning operation, but original-question transfer and source evidence still need checking.",
+      "lesson_href": "d3d4-self-tutor.html?question=EX-M105#C01",
+      "source_href": "../../preview/question-status.html?question=EX-M105",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "NATIVE_EXACT_SOURCE"
+    },
+    {
+      "source_id": "EX-M106",
+      "reader_sequence": 39,
+      "stem_sha256": "89395cca6f98acf3a6845a526fe23d22fd1ab044eb29fd937ac5a5ca6a97d824",
+      "reader_proposal": {
+        "op": "MODEL",
+        "band": "D2"
+      },
+      "primary_lesson": "F07",
+      "related_lessons": [
+        "F07"
+      ],
+      "fit": "FOCUSED_NEW",
+      "student_goal": "Choose between constant-force turning-point work and static tangential equilibrium; derive Mg tan(θ/2) versus Mg tanθ.",
+      "teaching_limit": "The wording does not specify a constant-force start-and-stop journey versus static holding. Their distinct 45° predictions are Mg(√2−1) and Mg.",
+      "lesson_href": "gap-journeys.html?question=EX-M106#F07",
+      "source_href": "../../preview/question-status.html?question=EX-M106",
+      "has_source_caution": true,
+      "source_science_note": "Do not teach one unique value: a constant horizontal force ending at first turning point gives Mg(√2−1) at 45°, while static holding needs Mg. The original wording is ambiguous.",
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "FOCUSED_SOURCE",
+      "construction_group": "PENDULUM_DYNAMIC_VS_STATIC"
+    },
+    {
+      "source_id": "EX-M109",
+      "reader_sequence": 40,
+      "stem_sha256": "33513889a1163bb0ae5baeb9251958e4131319985cfb8fd452a700f855d66b07",
+      "reader_proposal": {
+        "op": "SYNTHESIZE",
+        "band": "D3"
+      },
+      "primary_lesson": "E01",
+      "related_lessons": [
+        "E01"
+      ],
+      "fit": "TARGETED_PRACTICE",
+      "student_goal": "Investigate Analytic potential wells, accessible domains and extrema, selecting the valid law and assumptions.",
+      "teaching_limit": "Close practice for the proposed reasoning operation, but original-question transfer and source evidence still need checking.",
+      "lesson_href": "extension-learning.html?question=EX-M109#E01",
+      "source_href": "../../preview/question-status.html?question=EX-M109",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "NATIVE_EXACT_SOURCE"
+    },
+    {
+      "source_id": "EX-M111",
+      "reader_sequence": 41,
+      "stem_sha256": "1897b95b307743efe3c36a1e9b49cb6fb7c2957e7391efa13b84bbecb71f10fc",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D2"
+      },
+      "primary_lesson": "F02",
+      "related_lessons": [
+        "F02"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Split a ramp into smooth and rough segments, then apply an energy ledger.",
+      "teaching_limit": "F02 covers bidirectional friction; segment-specific friction remains different.",
+      "lesson_href": "study-bridge.html?question=EX-M111&lesson=F02",
+      "source_href": "../../preview/question-status.html?question=EX-M111",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "EX-N8",
+      "reader_sequence": 43,
+      "stem_sha256": "d19ba8fc4762a1acb93b9059c01f13e25bdb4874bcd50ef8dcd71375500d4fef",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D2"
+      },
+      "primary_lesson": "F01",
+      "related_lessons": [
+        "F01"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Derive applied inclined-plane force and multiply by instantaneous speed.",
+      "teaching_limit": "F01 is vertical and requires a bridge for force components along an incline.",
+      "lesson_href": "study-bridge.html?question=EX-N8&lesson=F01",
+      "source_href": "../../preview/question-status.html?question=EX-N8",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "EX-N11",
+      "reader_sequence": 44,
+      "stem_sha256": "12a8f2425259c6c9b25eaba9f7aed7b20549c74d6ab635daee4efb8c4bd43de7",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D2"
+      },
+      "primary_lesson": "C06",
+      "related_lessons": [
+        "C06"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Model circular motion where friction also dissipates energy.",
+      "teaching_limit": "C06 covers contact/energy separately, but not friction around a whole loop.",
+      "lesson_href": "study-bridge.html?question=EX-N11&lesson=C06",
+      "source_href": "../../preview/question-status.html?question=EX-N11",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "EX-N19",
+      "reader_sequence": 45,
+      "stem_sha256": "9739b34ab0a515db095df3f20655720d10bf0a5f3d057f175610930caf9d38ca",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D2"
+      },
+      "primary_lesson": "C03",
+      "related_lessons": [
+        "C03"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Connect constant power to displacement through a changing speed.",
+      "teaching_limit": "The position–time relation requires a prepared integral or graphical bridge.",
+      "lesson_href": "study-bridge.html?question=EX-N19&lesson=C03",
+      "source_href": "../../preview/question-status.html?question=EX-N19",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "EX-N21",
+      "reader_sequence": 46,
+      "stem_sha256": "9138f7c80c15935a01e5518199ae4da9a95c8e3c4945c05da65f61ee14a11375",
+      "reader_proposal": {
+        "op": "MODEL",
+        "band": "D2"
+      },
+      "primary_lesson": "E02",
+      "related_lessons": [
+        "E02"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Use force component along velocity when the angle changes with motion.",
+      "teaching_limit": "The angle-varying trajectory needs a separate geometric construction.",
+      "lesson_href": "study-bridge.html?question=EX-N21&lesson=E02",
+      "source_href": "../../preview/question-status.html?question=EX-N21",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "EX-N27",
+      "reader_sequence": 47,
+      "stem_sha256": "a6819daad7442b9720739551885301d5aa100cae1563cc8e3fe64518a08fae3d",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D2"
+      },
+      "primary_lesson": "F08",
+      "related_lessons": [
+        "F08"
+      ],
+      "fit": "FOCUSED_NEW",
+      "student_goal": "Contrast an explicitly ASSUMED whole-system 10%-retention budget with an actual two-body spring's available relative kinetic energy.",
+      "teaching_limit": "The 16×10⁵ N/m coached value depends on assuming 10% of WHOLE-SYSTEM initial energy becomes spring energy. A genuine two-body engine–wagon coupling needs separate masses and braking/damping information.",
+      "lesson_href": "gap-journeys.html?question=EX-N27#F08",
+      "source_href": "../../preview/question-status.html?question=EX-N27",
+      "has_source_caution": true,
+      "source_science_note": "Conditional only: k=1.6×10⁶ N/m from assumed 10% of whole-system kinetic energy and x=1 m. Because wagon/engine masses and the brake/damping forces are absent, the source data do not uniquely determine a two-body coupling.",
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "FOCUSED_SOURCE",
+      "construction_group": "TWO_BODY_RELATIVE_ENERGY"
+    },
+    {
+      "source_id": "EX-N30",
+      "reader_sequence": 48,
+      "stem_sha256": "7c21556444e97731374f766f14f37a90cfb488abd5f66e30d1777cc4811cbd73",
+      "reader_proposal": {
+        "op": "MODEL",
+        "band": "D2"
+      },
+      "primary_lesson": "C04",
+      "related_lessons": [
+        "C04"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Track a moving chain's changing centre of mass until it has fully slipped.",
+      "teaching_limit": "C04 gives a strong distributed-mass bridge; the release-to-motion phase differs.",
+      "lesson_href": "study-bridge.html?question=EX-N30&lesson=C04",
+      "source_href": "../../preview/question-status.html?question=EX-N30",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "EX-N31",
+      "reader_sequence": 49,
+      "stem_sha256": "4d65ea5eb7ee18377b5d2d9ca3264a4ebf6460d792aab960aa5119166b2e4431",
+      "reader_proposal": {
+        "op": "SYNTHESIZE",
+        "band": "D3"
+      },
+      "primary_lesson": "C06",
+      "related_lessons": [
+        "C06"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Investigate Vertical circle: energy plus contact/tension condition, selecting the valid law and assumptions.",
+      "teaching_limit": "Existing lesson is related practice, NOT sufficient proof for this question's exact inference; inspect the source conditions and figure.",
+      "lesson_href": "d3d4-self-tutor.html?question=EX-N31#C06",
+      "source_href": "../../preview/question-status.html?question=EX-N31",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "NATIVE_EXACT_SOURCE"
+    },
+    {
+      "source_id": "EX-N34",
+      "reader_sequence": 50,
+      "stem_sha256": "48b31fcbba7f05e5a8d22084185d0d7dee11347424a767f88564a85916624285",
+      "reader_proposal": {
+        "op": "SYNTHESIZE",
+        "band": "D3"
+      },
+      "primary_lesson": "E03",
+      "related_lessons": [
+        "E03"
+      ],
+      "fit": "TARGETED_PRACTICE",
+      "student_goal": "Investigate Spring–projectile transitions, selecting the valid law and assumptions.",
+      "teaching_limit": "Close practice for the proposed reasoning operation, but original-question transfer and source evidence still need checking.",
+      "lesson_href": "extension-learning.html?question=EX-N34#E03",
+      "source_href": "../../preview/question-status.html?question=EX-N34",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "NATIVE_EXACT_SOURCE"
+    },
+    {
+      "source_id": "EX-N38",
+      "reader_sequence": 51,
+      "stem_sha256": "a1ae424276a151020133e8093c67432b4d5ed499ede455da4039ce5cc513c2a4",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D2"
+      },
+      "primary_lesson": "C03",
+      "related_lessons": [
+        "C03"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Start from K(t)=Pt and reconstruct distance from changing velocity.",
+      "teaching_limit": "C03 explains K and v; integrating displacement is advanced.",
+      "lesson_href": "study-bridge.html?question=EX-N38&lesson=C03",
+      "source_href": "../../preview/question-status.html?question=EX-N38",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "EX-N39",
+      "reader_sequence": 52,
+      "stem_sha256": "cd38aa00009c960631e41be9ab231e928c80b805c64c8780f54c2953967869cd",
+      "reader_proposal": {
+        "op": "SYNTHESIZE",
+        "band": "D3"
+      },
+      "primary_lesson": "F02",
+      "related_lessons": [
+        "F02"
+      ],
+      "fit": "FOCUSED_NEW",
+      "student_goal": "Infer kinetic friction from different uphill and downhill energy ledgers.",
+      "teaching_limit": "New focused teaching and independent challenge. The original examination key remains unverified.",
+      "lesson_href": "focused-journeys.html?question=EX-N39#F02",
+      "source_href": "../../preview/question-status.html?question=EX-N39",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "FOCUSED_SOURCE"
+    },
+    {
+      "source_id": "EX-N42",
+      "reader_sequence": 53,
+      "stem_sha256": "3a750d54e63d35d0453ec0da0e458d63b0314f13d594ef41cd8f6a6c2c866319",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D2"
+      },
+      "primary_lesson": "E03",
+      "related_lessons": [
+        "E03"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Switch from a gravity-powered track to free projectile flight.",
+      "teaching_limit": "E03's contact-to-flight split is related but not the same transition.",
+      "lesson_href": "study-bridge.html?question=EX-N42&lesson=E03",
+      "source_href": "../../preview/question-status.html?question=EX-N42",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "AN-1",
+      "reader_sequence": 54,
+      "stem_sha256": "cc6b080a4f624f51212a3211728edabfd3d0ce12589564eb0ec9873c55dde8f8",
+      "reader_proposal": {
+        "op": "JUSTIFY",
+        "band": "D2"
+      },
+      "primary_lesson": "C01",
+      "related_lessons": [
+        "C01"
+      ],
+      "fit": "TARGETED_PRACTICE",
+      "student_goal": "Set displacement direction and sign of gravity versus lifting work.",
+      "teaching_limit": "C01 gives a signed force-work ledger; test the actual source statements.",
+      "lesson_href": "study-bridge.html?question=AN-1&lesson=C01",
+      "source_href": "../../preview/question-status.html?question=AN-1",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "AN-2",
+      "reader_sequence": 55,
+      "stem_sha256": "f55524808b7e173fa787c96f13a1df0ea75a0a2147a7fe60576d7af1c4697ced",
+      "reader_proposal": {
+        "op": "JUSTIFY",
+        "band": "D2"
+      },
+      "primary_lesson": "C05",
+      "related_lessons": [
+        "C05"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Distinguish conservative-force work from negative potential-energy change.",
+      "teaching_limit": "The source wording and sign of a stated integral need independent checking.",
+      "lesson_href": "study-bridge.html?question=AN-2&lesson=C05",
+      "source_href": "../../preview/question-status.html?question=AN-2",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "AN-3",
+      "reader_sequence": 56,
+      "stem_sha256": "7e4f3c7265264c89a289192bedc6248bc10a35301854870e87f749b83a006339",
+      "reader_proposal": {
+        "op": "JUSTIFY",
+        "band": "D1"
+      },
+      "primary_lesson": "E05",
+      "related_lessons": [
+        "E05"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Explain when central force fields have path-independent work.",
+      "teaching_limit": "A radial position-only central force is conservative under stated conditions; not all forces are.",
+      "lesson_href": "study-bridge.html?question=AN-3&lesson=E05",
+      "source_href": "../../preview/question-status.html?question=AN-3",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "AN-5",
+      "reader_sequence": 57,
+      "stem_sha256": "418e81b2f767cac56cbc06edf988ea400744d74b0990258dc5c881508c5a55b1",
+      "reader_proposal": {
+        "op": "EXPLAIN",
+        "band": "D1"
+      },
+      "primary_lesson": "E02",
+      "related_lessons": [
+        "E02"
+      ],
+      "fit": "TARGETED_PRACTICE",
+      "student_goal": "Infer zero instantaneous power when a force is perpendicular to velocity.",
+      "teaching_limit": "E02 provides a direct zero-power changed-condition example.",
+      "lesson_href": "study-bridge.html?question=AN-5&lesson=E02",
+      "source_href": "../../preview/question-status.html?question=AN-5",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "AN-6",
+      "reader_sequence": 58,
+      "stem_sha256": "67effd544d50be89bc80c6bdd4b23423bc52f315f7009f5fdeb8e84a29038af2",
+      "reader_proposal": {
+        "op": "RETRIEVE",
+        "band": "D1"
+      },
+      "primary_lesson": "C05",
+      "related_lessons": [
+        "C05"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Distinguish conservative forces with potential energy from dissipative forces.",
+      "teaching_limit": "C05 teaches U-slope; a formal potential-existence criterion is missing.",
+      "lesson_href": "study-bridge.html?question=AN-6&lesson=C05",
+      "source_href": "../../preview/question-status.html?question=AN-6",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "JEE-2026-04-04-S1-Q46",
+      "reader_sequence": 59,
+      "stem_sha256": "5ad3a190498785dd07144b65cababc08875eccd1c1fe3cae60fcfaffc2a7a27e",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D2"
+      },
+      "primary_lesson": "E02",
+      "related_lessons": [
+        "E02"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Compute three-dimensional work using signed force–displacement components.",
+      "teaching_limit": "E02's 2-D power components bridge the dot product; 3-D displacement differs.",
+      "lesson_href": "study-bridge.html?question=JEE-2026-04-04-S1-Q46&lesson=E02",
+      "source_href": "../../preview/question-status.html?question=JEE-2026-04-04-S1-Q46",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "JEE-2026-04-06-S2-Q29",
+      "reader_sequence": 60,
+      "stem_sha256": "4ee2f5ef155a22e2906cb7dd9fcfb0e6e4409a2e21fb691fbce58dacfec00ed3",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D2"
+      },
+      "primary_lesson": "C05",
+      "related_lessons": [
+        "C05"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Read v(x) and evaluate work through change in kinetic energy.",
+      "teaching_limit": "C05 distinguishes graph operations but does not derive the entire v(x) law.",
+      "lesson_href": "study-bridge.html?question=JEE-2026-04-06-S2-Q29&lesson=C05",
+      "source_href": "../../preview/question-status.html?question=JEE-2026-04-06-S2-Q29",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "JEE-2026-04-06-S1-Q28",
+      "reader_sequence": 61,
+      "stem_sha256": "bd9a429a1793415df658c78ddc1b3c13b8e6a64063471a389b041a6ef38ea5be",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D2"
+      },
+      "primary_lesson": "C01",
+      "related_lessons": [
+        "C01"
+      ],
+      "fit": "TARGETED_PRACTICE",
+      "student_goal": "Use net work to solve for an unknown resistive-force work.",
+      "teaching_limit": "C01 includes resistance signs; source rounding/key still requires caution.",
+      "lesson_href": "study-bridge.html?question=JEE-2026-04-06-S1-Q28&lesson=C01",
+      "source_href": "../../preview/question-status.html?question=JEE-2026-04-06-S1-Q28",
+      "has_source_caution": true,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "JEE-2026-04-02-S2-Q31",
+      "reader_sequence": 62,
+      "stem_sha256": "854dfa83856e4d30d96041b64041918319bda6eb1cdb32748b4c14692d768385",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D2"
+      },
+      "primary_lesson": "E05",
+      "related_lessons": [
+        "E05"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Use conservative radial gravitational energy change from infinity to a surface.",
+      "teaching_limit": "E05 is a radial-force bridge; inverse-square gravity and U(infinity)=0 need separate teaching.",
+      "lesson_href": "study-bridge.html?question=JEE-2026-04-02-S2-Q31&lesson=E05",
+      "source_href": "../../preview/question-status.html?question=JEE-2026-04-02-S2-Q31",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "JEE-2026-04-04-S1-Q49",
+      "reader_sequence": 63,
+      "stem_sha256": "ea34503673c915695c8545282bb04f3f2c6afb3b104f240c8c9508cb2e9e24e3",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D2"
+      },
+      "primary_lesson": "E02",
+      "related_lessons": [
+        "E02"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Find velocity under time-varying vector force before computing instantaneous power.",
+      "teaching_limit": "E02 teaches the dot product, but impulse integration is missing.",
+      "lesson_href": "study-bridge.html?question=JEE-2026-04-04-S1-Q49&lesson=E02",
+      "source_href": "../../preview/question-status.html?question=JEE-2026-04-04-S1-Q49",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "WEP07-02",
+      "reader_sequence": 64,
+      "stem_sha256": "eb593c10b9a79115ae089b494183891e9b4173bbe657fa5b997c6d8b8a877d5a",
+      "reader_proposal": {
+        "op": "SYNTHESIZE",
+        "band": "D3"
+      },
+      "primary_lesson": "C04",
+      "related_lessons": [
+        "C04"
+      ],
+      "fit": "TARGETED_PRACTICE",
+      "student_goal": "Investigate Distributed mass, chain and changing centre of mass, selecting the valid law and assumptions.",
+      "teaching_limit": "Close practice for the proposed reasoning operation, but original-question transfer and source evidence still need checking.",
+      "lesson_href": "d3d4-self-tutor.html?question=WEP07-02#C04",
+      "source_href": "../../preview/question-status.html?question=WEP07-02",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "NATIVE_EXACT_SOURCE"
+    },
+    {
+      "source_id": "WEP07-03",
+      "reader_sequence": 65,
+      "stem_sha256": "f2c82329078c24516058311cf0d166b937b1c983a9c273732d3ef0ab8e842c0c",
+      "reader_proposal": {
+        "op": "APPLY",
+        "band": "D2"
+      },
+      "primary_lesson": "E01",
+      "related_lessons": [
+        "E01"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Investigate Analytic potential wells, accessible domains and extrema, selecting the valid law and assumptions.",
+      "teaching_limit": "Existing lesson is related practice, NOT sufficient proof for this question's exact inference; inspect the source conditions and figure.",
+      "lesson_href": "extension-learning.html?question=WEP07-03#E01",
+      "source_href": "../../preview/question-status.html?question=WEP07-03",
+      "has_source_caution": true,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "NATIVE_EXACT_SOURCE"
+    },
+    {
+      "source_id": "EX-N41",
+      "reader_sequence": 66,
+      "stem_sha256": "0ff18b9aded9d2158b8c98d1368db9d02eeae9a77e414b324e0f9d0bc40ba5e2",
+      "reader_proposal": {
+        "op": "MODEL",
+        "band": "D2"
+      },
+      "primary_lesson": "F02",
+      "related_lessons": [
+        "F02"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Model friction only along rough portions of a composite incline.",
+      "teaching_limit": "F02 treats uniform friction on both legs; piecewise roughness differs.",
+      "lesson_href": "study-bridge.html?question=EX-N41&lesson=F02",
+      "source_href": "../../preview/question-status.html?question=EX-N41",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "AN-4",
+      "reader_sequence": 67,
+      "stem_sha256": "2f1db6350369175b9684146e484c120a8ab3223f07edc90be902fdc3730034f4",
+      "reader_proposal": {
+        "op": "JUSTIFY",
+        "band": "D2"
+      },
+      "primary_lesson": "C01",
+      "related_lessons": [
+        "C01"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Compare stopping distance from work against equal kinetic energy.",
+      "teaching_limit": "C01's work–energy method transfers; distinguish constant versus changing brakes.",
+      "lesson_href": "study-bridge.html?question=AN-4&lesson=C01",
+      "source_href": "../../preview/question-status.html?question=AN-4",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "JEE-2026-04-05-S2-Q28",
+      "reader_sequence": 68,
+      "stem_sha256": "90c93c0590800e6010895b00413c491fc8ad143da28cb5858c85f792d887ee65",
+      "reader_proposal": {
+        "op": "MODEL",
+        "band": "D2"
+      },
+      "primary_lesson": "C01",
+      "related_lessons": [
+        "C01"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Decide whether friction does work when the entire surface moves.",
+      "teaching_limit": "The figure and actual displacement frame need verification.",
+      "lesson_href": "study-bridge.html?question=JEE-2026-04-05-S2-Q28&lesson=C01",
+      "source_href": "../../preview/question-status.html?question=JEE-2026-04-05-S2-Q28",
+      "has_source_caution": true,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "EX-M39",
+      "reader_sequence": 69,
+      "stem_sha256": "dd89be07d4d6869bc7b22622de6a9d0dd9bc7bae37279c3037fd263a2eb1998c",
+      "reader_proposal": {
+        "op": "SYNTHESIZE",
+        "band": "D3"
+      },
+      "primary_lesson": "C06",
+      "related_lessons": [
+        "C06"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Investigate Vertical circle: energy plus contact/tension condition, selecting the valid law and assumptions.",
+      "teaching_limit": "Existing lesson is related practice, NOT sufficient proof for this question's exact inference; inspect the source conditions and figure.",
+      "lesson_href": "d3d4-self-tutor.html?question=EX-M39#C06",
+      "source_href": "../../preview/question-status.html?question=EX-M39",
+      "has_source_caution": true,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "NATIVE_EXACT_SOURCE"
+    },
+    {
+      "source_id": "WEP07-01",
+      "reader_sequence": 70,
+      "stem_sha256": "3028f2910462fa5606e3a620a78a8e63ca0d03bcb8dc31937efe86e2b2c68068",
+      "reader_proposal": {
+        "op": "MODEL",
+        "band": "D3"
+      },
+      "primary_lesson": "F03",
+      "related_lessons": [
+        "F03"
+      ],
+      "fit": "FOCUSED_NEW",
+      "student_goal": "Find new spring equilibrium and the other turning point after the external force changes.",
+      "teaching_limit": "New focused teaching and independent challenge. The original examination key remains unverified.",
+      "lesson_href": "focused-journeys.html?question=WEP07-01#F03",
+      "source_href": "../../preview/question-status.html?question=WEP07-01",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "FOCUSED_SOURCE"
+    },
+    {
+      "source_id": "TB-WPE-ILL-01",
+      "reader_sequence": 66,
+      "stem_sha256": "a7931196db6f00febc5dde1796c7c8409c0b98108f3c912022266e14bc18fc90",
+      "reader_proposal": {
+        "op": "UNREVIEWED",
+        "band": "D2"
+      },
+      "primary_lesson": "E02",
+      "related_lessons": [
+        "E02"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Use signed vector components for work from force and displacement.",
+      "teaching_limit": "E02 teaches force–velocity components; for work substitute displacement.",
+      "lesson_href": "study-bridge.html?question=TB-WPE-ILL-01&lesson=E02",
+      "source_href": "../../preview/question-status.html?question=TB-WPE-ILL-01",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "TB-WPE-ILL-02",
+      "reader_sequence": 67,
+      "stem_sha256": "7b4ba0ec3e17047dbdb2b44cb010576a5e3d2adba5024276e5076a90d128ad8a",
+      "reader_proposal": {
+        "op": "UNREVIEWED",
+        "band": "D3"
+      },
+      "primary_lesson": "C01",
+      "related_lessons": [
+        "C01"
+      ],
+      "fit": "TARGETED_PRACTICE",
+      "student_goal": "Investigate Multi-force work–energy ledger, selecting the valid law and assumptions.",
+      "teaching_limit": "Close practice for the proposed reasoning operation, but original-question transfer and source evidence still need checking.",
+      "lesson_href": "d3d4-self-tutor.html?question=TB-WPE-ILL-02#C01",
+      "source_href": "../../preview/question-status.html?question=TB-WPE-ILL-02",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "NATIVE_EXACT_SOURCE"
+    },
+    {
+      "source_id": "TB-WPE-ILL-03",
+      "reader_sequence": 68,
+      "stem_sha256": "c6b63342e273b053d8a2f80a1358b62c0e32522e9533c1b5694aefa248515974",
+      "reader_proposal": {
+        "op": "UNREVIEWED",
+        "band": "D2"
+      },
+      "primary_lesson": "C05",
+      "related_lessons": [
+        "C05"
+      ],
+      "fit": "TARGETED_PRACTICE",
+      "student_goal": "Find work from a linearly varying force as trapezoid area.",
+      "teaching_limit": "C05 gives area operations; varying base and offsets need a fresh check.",
+      "lesson_href": "study-bridge.html?question=TB-WPE-ILL-03&lesson=C05",
+      "source_href": "../../preview/question-status.html?question=TB-WPE-ILL-03",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "TB-WPE-ILL-04",
+      "reader_sequence": 69,
+      "stem_sha256": "698135d72d5291a075df45b0a83178a5e918d1169ecd20a9d2f97202c10706ec",
+      "reader_proposal": {
+        "op": "UNREVIEWED",
+        "band": "D2"
+      },
+      "primary_lesson": "F02",
+      "related_lessons": [
+        "F02"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Create a signed gravity and friction ledger on an inclined plane.",
+      "teaching_limit": "F02's two-way model can scaffold a single rough descent.",
+      "lesson_href": "study-bridge.html?question=TB-WPE-ILL-04&lesson=F02",
+      "source_href": "../../preview/question-status.html?question=TB-WPE-ILL-04",
+      "has_source_caution": true,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    },
+    {
+      "source_id": "TB-WPE-ILL-05",
+      "reader_sequence": 70,
+      "stem_sha256": "826dfe7a0d485ccb73b58e73d3a8f88c535e84961ac9c281e8ff0971658e51fd",
+      "reader_proposal": {
+        "op": "UNREVIEWED",
+        "band": "D3"
+      },
+      "primary_lesson": "E02",
+      "related_lessons": [
+        "E02"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Investigate Instantaneous power, selecting the valid law and assumptions.",
+      "teaching_limit": "Existing lesson is related practice, NOT sufficient proof for this question's exact inference; inspect the source conditions and figure.",
+      "lesson_href": "extension-learning.html?question=TB-WPE-ILL-05#E02",
+      "source_href": "../../preview/question-status.html?question=TB-WPE-ILL-05",
+      "has_source_caution": true,
+      "source_science_note": "Initial speed not specified; cannot determine one numerical bottom power.",
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "NATIVE_EXACT_SOURCE"
+    },
+    {
+      "source_id": "TB-WPE-ILL-06",
+      "reader_sequence": 71,
+      "stem_sha256": "8d826df876ac32d2f27054911fb97799a81124b5f23533198cb1949dd7fb881d",
+      "reader_proposal": {
+        "op": "UNREVIEWED",
+        "band": "D3"
+      },
+      "primary_lesson": "E02",
+      "related_lessons": [
+        "E02"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Investigate Instantaneous power, selecting the valid law and assumptions.",
+      "teaching_limit": "Existing lesson is related practice, NOT sufficient proof for this question's exact inference; inspect the source conditions and figure.",
+      "lesson_href": "extension-learning.html?question=TB-WPE-ILL-06#E02",
+      "source_href": "../../preview/question-status.html?question=TB-WPE-ILL-06",
+      "has_source_caution": false,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "NATIVE_EXACT_SOURCE"
+    },
+    {
+      "source_id": "TB-WPE-ILL-11",
+      "reader_sequence": 72,
+      "stem_sha256": "731e89619ab1f36cfdcbbbe0977bffe79ddc9da79d83e39a4fb1075c4b4e6038",
+      "reader_proposal": {
+        "op": "UNREVIEWED",
+        "band": "D4"
+      },
+      "primary_lesson": "C04",
+      "related_lessons": [
+        "C04"
+      ],
+      "fit": "TARGETED_PRACTICE",
+      "student_goal": "Investigate Distributed mass, chain and changing centre of mass, selecting the valid law and assumptions.",
+      "teaching_limit": "Close practice for the proposed reasoning operation, but original-question transfer and source evidence still need checking.",
+      "lesson_href": "d3d4-self-tutor.html?question=TB-WPE-ILL-11#C04",
+      "source_href": "../../preview/question-status.html?question=TB-WPE-ILL-11",
+      "has_source_caution": true,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "NATIVE_EXACT_SOURCE"
+    },
+    {
+      "source_id": "TB-WPE-ILL-12",
+      "reader_sequence": 73,
+      "stem_sha256": "47bf0b96009161ccb17706ff4eb16e9caf93b07b681a912978f05a73859a7faf",
+      "reader_proposal": {
+        "op": "UNREVIEWED",
+        "band": "D4"
+      },
+      "primary_lesson": "C02",
+      "related_lessons": [
+        "C02"
+      ],
+      "fit": "RELATED_BRIDGE",
+      "student_goal": "Investigate Spring contact and motion phases, selecting the valid law and assumptions.",
+      "teaching_limit": "Existing lesson is related practice, NOT sufficient proof for this question's exact inference; inspect the source conditions and figure.",
+      "lesson_href": "d3d4-self-tutor.html?question=TB-WPE-ILL-12#C02",
+      "source_href": "../../preview/question-status.html?question=TB-WPE-ILL-12",
+      "has_source_caution": true,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "NATIVE_EXACT_SOURCE"
+    },
+    {
+      "source_id": "SYN-WPE-DIRECTION-CONTROL-01",
+      "reader_sequence": 74,
+      "stem_sha256": "7ef09f5ffde322a80b9015b3b3142e76c38e747ea1dd20a7bb6818a52d1baecd",
+      "reader_proposal": {
+        "op": "AUTHOR_DEMO",
+        "band": "D2"
+      },
+      "primary_lesson": "C01",
+      "related_lessons": [
+        "C01"
+      ],
+      "fit": "TARGETED_PRACTICE",
+      "student_goal": "Recognize that a perpendicular force does zero work.",
+      "teaching_limit": "C01 explicitly teaches zero work for normal force.",
+      "lesson_href": "study-bridge.html?question=SYN-WPE-DIRECTION-CONTROL-01&lesson=C01",
+      "source_href": "../../preview/question-status.html?question=SYN-WPE-DIRECTION-CONTROL-01",
+      "has_source_caution": true,
+      "source_science_note": null,
+      "academic_status": "PRACTICE_ONLY_NOT_ADMITTED",
+      "route_mode": "BRIDGED_RELATED"
+    }
+  ]
+}

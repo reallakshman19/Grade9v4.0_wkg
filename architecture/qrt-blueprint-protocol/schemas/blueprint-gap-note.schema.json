@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://reallakshman19.github.io/Grade9v4.0/architecture/qrt-blueprint-protocol/schemas/blueprint-gap-note.schema.json",
+  "title": "Versioned Physics Blueprint gap note; author does not edit common Blueprint",
+  "description": "Fields mirror templates/physics-blueprint/physics-blueprint.D3-D4.json common.gap_note_shape; status and receipt are engineering additions, not Owner decisions.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "gap_id",
+    "date",
+    "builder",
+    "tile_id",
+    "instance_or_question",
+    "blueprint_version",
+    "adapter_version",
+    "could_not_build",
+    "missing_slot_or_rule",
+    "change_outside_adapter_needed",
+    "proposed_blueprint_change",
+    "oracle_decision",
+    "oracle_receipt"
+  ],
+  "properties": {
+    "schema": {
+      "const": "g9v4-blueprint-gap-note/v1"
+    },
+    "gap_id": {
+      "type": "string",
+      "pattern": "^GAP-[1-9][0-9]*$"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "builder": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tile_id": {
+      "type": "string",
+      "pattern": "^PHY-WPE-D[34]\\.[1-7]$"
+    },
+    "instance_or_question": {
+      "type": "string",
+      "minLength": 1
+    },
+    "blueprint_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "adapter_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "could_not_build": {
+      "type": "string",
+      "minLength": 1
+    },
+    "missing_slot_or_rule": {
+      "type": "string",
+      "minLength": 1
+    },
+    "change_outside_adapter_needed": {
+      "type": "string",
+      "minLength": 1
+    },
+    "proposed_blueprint_change": {
+      "type": "string",
+      "minLength": 1
+    },
+    "oracle_decision": {
+      "enum": [
+        "PENDING",
+        "ACCEPTED",
+        "REJECTED",
+        "ADAPTER_CAN_HOLD_IT"
+      ]
+    },
+    "oracle_receipt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    }
+  }
+}

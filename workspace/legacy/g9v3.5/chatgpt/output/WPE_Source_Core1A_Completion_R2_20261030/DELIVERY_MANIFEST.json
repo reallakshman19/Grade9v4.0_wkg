@@ -1,0 +1,503 @@
+{
+  "schema": "wpe-local-candidate-manifest/v1",
+  "files": {
+    "AUTHORITY.json": {
+      "bytes": 618,
+      "sha256": "f2415c88d683c2bdb130996259121d6e51ce3c31aca740ca2553892bf1dc4e8e"
+    },
+    "build_candidate.py": {
+      "bytes": 42796,
+      "sha256": "0d8ad69ab1f82ad748d4e9ee857b121c2864eb4c32ab82e1078f3575cbfa48fa"
+    },
+    "COMPLETION_REPORT.md": {
+      "bytes": 10343,
+      "sha256": "51167918277027f7db8e48b7ceeedf3380c2c3a11e02bf6b193e3d9f5acb06f7"
+    },
+    "CONTINUITY.md": {
+      "bytes": 6284,
+      "sha256": "94a76cd6a9b95f4b2119859059f24093c605c1c4051e00620f478386adbc2255"
+    },
+    "coverage.csv": {
+      "bytes": 1302,
+      "sha256": "5d053a180edb774c36f7b7531c5cb307e621eedc2bee170817cb1dc4aea365d0"
+    },
+    "finish_documents.py": {
+      "bytes": 14782,
+      "sha256": "eee4396aca36321864720fe3151c2373e340af408af4eb049982289e4675da12"
+    },
+    "index.html": {
+      "bytes": 2955,
+      "sha256": "57e1e3964925387b7319ff0c69a04245264a32b0c4e30240de6765a175f2d223"
+    },
+    "package_candidate.py": {
+      "bytes": 1876,
+      "sha256": "6d72af07cdbff7e540060750245ebbfc39733a26893ae44c632d08cb59ad4931"
+    },
+    "verify_portability.py": {
+      "bytes": 5615,
+      "sha256": "0daa90b23844ee1187034902acfa9c21f147b66c4c8942c024c3fc8425ea53ab"
+    },
+    "review/BROWSER_CHECK.json": {
+      "bytes": 1063,
+      "sha256": "c2c25ae65a660d3c9b0df2e9898d1f40b191ef20c0d64bdf32fa534122c8d09b"
+    },
+    "review/COUNTS.json": {
+      "bytes": 466,
+      "sha256": "b668b5fc135e9b195323ff464195b668ef1dea15315aba6f5c8f2df534a42499"
+    },
+    "review/COVERAGE.json": {
+      "bytes": 3222,
+      "sha256": "9631f1aa77974c19849b5505c54f9642ba3989f610481031e4e1141a150f5866"
+    },
+    "review/EXTERNAL_PIN_RECEIPT.json": {
+      "bytes": 320,
+      "sha256": "b003ddd27a8a777c15e52b4420c54328d8163abfc9f7746c6502e43457504328"
+    },
+    "review/INPUT_COVERAGE.json": {
+      "bytes": 212,
+      "sha256": "34335edf1d940961dc5a569e3ae7e47e623fa717e9b8de2de1bcfd19d093afdf"
+    },
+    "review/PORTABILITY.json": {
+      "bytes": 222,
+      "sha256": "c2777d3cefeb9576132c2fc997725430ecf9ed8ac5424f5a8df4f3ed6a550283"
+    },
+    "review/PORTABLE_CODE_IDENTITIES.json": {
+      "bytes": 1212,
+      "sha256": "4dfea32f1fa90e71c034d3f7aa9e9e49829e58ef41e5188b3b4f0382fcdc4040"
+    },
+    "review/PORTABLE_REGRESSION_RESULTS.json": {
+      "bytes": 444,
+      "sha256": "381c1033709d62224ed03b7545c2aceff168523bb7bebb368517f5c68f2e93da"
+    },
+    "review/PRESERVATION.json": {
+      "bytes": 11859,
+      "sha256": "08995ea84d87ae142093276276496164cd4869fc777eab361aa69eacbca36d98"
+    },
+    "review/PROGRAM_CHECK.json": {
+      "bytes": 4446,
+      "sha256": "5021c2e5d50cfb93a2c33021f57e824d5968128f91fa3ada59de8f9faaa383ca"
+    },
+    "review/R1_PRESERVATION_BASELINE.json": {
+      "bytes": 7520,
+      "sha256": "cab979a7cee8cce66c46c5a6482d9cef192191e893f32e0ed7a8528ed8f2b286"
+    },
+    "review/REGRESSION_RESULTS.json": {
+      "bytes": 444,
+      "sha256": "ae14948d4900a552a61d758b9ece7b11362acd8c6a7d8145e15702c3f3a949c2"
+    },
+    "review/SOURCE_RECEIPT.json": {
+      "bytes": 11228,
+      "sha256": "1d98886d4598203447ae4f184d0f0c3b1bd90d66d09b25f88765e0eab9fc6e03"
+    },
+    "review/STATIC_VALIDATION.json": {
+      "bytes": 266,
+      "sha256": "d319452821f61b9c7d1771cbe316ba355bc4a4d520b7c5fc9065030e71be47c0"
+    },
+    "output/playwright/catalogue-final.png": {
+      "bytes": 65812,
+      "sha256": "9318d6be29fbccd458a209f711fe523a1b2860f66d937d866765466bf4b6f5c6"
+    },
+    "output/playwright/catalogue.png": {
+      "bytes": 59810,
+      "sha256": "852026ca48bf2e93bed154a8ad74faf60c3cbfd831f2f9063c22a6619fd2e96a"
+    },
+    "output/playwright/node07.png": {
+      "bytes": 63717,
+      "sha256": "b5bb9fce8d2cff0d0f2e66f8da5b8e89de5fad8df8f73f0a34d240fe3170a622"
+    },
+    "output/playwright/node09-mobile-final.png": {
+      "bytes": 45128,
+      "sha256": "6bca9aab27e21f214252649a7a4a72420cfa353c2a2d43a8c00ce80b81069156"
+    },
+    "output/playwright/node09-mobile.png": {
+      "bytes": 45128,
+      "sha256": "6bca9aab27e21f214252649a7a4a72420cfa353c2a2d43a8c00ce80b81069156"
+    },
+    "output/playwright/server-final.err.log": {
+      "bytes": 563,
+      "sha256": "2ff0c316306649dee546e5216f70e5fdfe8ada036aab3e7b71795bc8812f561a"
+    },
+    "output/playwright/server-final.json": {
+      "bytes": 130,
+      "sha256": "12cfdbb90c82941d7e2e0a51d6d00189d6bfe8241481c04036921ef3099cc276"
+    },
+    "output/playwright/server-final.out.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "output/playwright/server.err.log": {
+      "bytes": 767,
+      "sha256": "eb3a6dd3aeeb6eeafaa727463ae00ecafc0469269b8855191971bbcc5b0d6f37"
+    },
+    "output/playwright/server.json": {
+      "bytes": 130,
+      "sha256": "614d716624d41eecc808702676a7280c39737db157efb65b7ba95fa5ab95835b"
+    },
+    "output/playwright/server.out.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "skill/source-to-core1a/SKILL.md": {
+      "bytes": 5906,
+      "sha256": "7866b71fb1a2e7f49099e680040100cb4277baf15e3ea70c0c620798425222ca"
+    },
+    "skill/source-to-core1a/references/benchmarks.md": {
+      "bytes": 3969,
+      "sha256": "3ad6f794e55288d1d814d7915992142cbbd094f4818ff02bb020abb32a657c00"
+    },
+    "skill/source-to-core1a/references/protocol-r2.md": {
+      "bytes": 6248,
+      "sha256": "169f9bf42ba912574886728caa2c7b5d58f179533ef121f7093232880cf8eb8a"
+    },
+    "skill/source-to-core1a/references/protocol.md": {
+      "bytes": 6030,
+      "sha256": "903bbe226f7a88767c75aa2db75c97d906942d202b3531031e462a26aa880156"
+    },
+    "skill/source-to-core1a/references/record-contract-r2.md": {
+      "bytes": 4883,
+      "sha256": "9418bd09c61b526d896177d95cace582254c39a90185bb2ccbcd0c429567d83e"
+    },
+    "skill/source-to-core1a/references/record-contract.md": {
+      "bytes": 5398,
+      "sha256": "eaed59fa2d7a40bbece53520497e8bcdda41caaf2f9f5d861d9f90208e86d656"
+    },
+    "skill/source-to-core1a/scripts/check_handoff.py": {
+      "bytes": 18104,
+      "sha256": "346cd5b973bb245b39b882807ef05596e2432d884e29aac0f7628c73b987e6d3"
+    },
+    "skill/source-to-core1a/scripts/check_program.py": {
+      "bytes": 17783,
+      "sha256": "e037b970f0b9ee901ae4eedb2bd6cdf9dd626c7bb30c81f2a1414122e9e79f0f"
+    },
+    "skill/source-to-core1a/scripts/render_handoff.py": {
+      "bytes": 6085,
+      "sha256": "9f67b25a533d50f9a5388025227a0cacf0d1965d7760a210a37823ad6aed206b"
+    },
+    "skill/source-to-core1a/scripts/render_program.py": {
+      "bytes": 10440,
+      "sha256": "ea3e48515f6bfbb723c852eeccf8a617b52a9f6d38e4791b1d0f86afbf0de44c"
+    },
+    "skill/source-to-core1a/tests/test_handoff.py": {
+      "bytes": 13866,
+      "sha256": "9124aa2651557e871186f5d27137e1b5ddc2f400e488e310b68c9a1935650a9b"
+    },
+    "skill/source-to-core1a/tests/test_program.py": {
+      "bytes": 11250,
+      "sha256": "cc5360ef3f98efe33f9319592c973b3ab787d03079754eb5ad14b7ef07c80548"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/index.html": {
+      "bytes": 10282,
+      "sha256": "d1262c9906838c958bacde9f5aa611912058a49909f0b0c468189a5c733dd2bf"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/program.json": {
+      "bytes": 12469,
+      "sha256": "41ae676c77ace2d727696b2a8d7fc6a3ec6f9d4c90972bfff1c6c75c6d838b2f"
+    },
+    "skill/source-to-core1a/examples/wpe-work-direction/handoff.json": {
+      "bytes": 62475,
+      "sha256": "705e87ad7c26cf235563d58881282380983a9ddb6c4a8e86ffd30463bfb4abd3"
+    },
+    "skill/source-to-core1a/examples/wpe-work-direction/index.html": {
+      "bytes": 63596,
+      "sha256": "8e598e190b73baa2a46f00376c76e3cf72c540e1ac3d8dea2e8313a7f839a1f5"
+    },
+    "skill/source-to-core1a/examples/wpe-work-direction/source-pins.json": {
+      "bytes": 1502,
+      "sha256": "4592d446024ec963dd9ed33cae85a1f3915fa5f4be9406b2c53337c7aeae91a5"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N01.html": {
+      "bytes": 78947,
+      "sha256": "e8e9304d6a335f28ccfbc730ba9d8c472c8655aaa63cc739b6999a3b3b95681d"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N01.json": {
+      "bytes": 75905,
+      "sha256": "649f4797b0a442d65c9c765ee339636c0ea09b7b4349e42e346e5fd15e49a89d"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N01.pins.json": {
+      "bytes": 2712,
+      "sha256": "bdd0a4716feb4370c014991dfc26e82ae740667b0b1257e0f1d3e53119e7648b"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N02.html": {
+      "bytes": 75965,
+      "sha256": "163a3732daab900358731c7a01839817b52a4961b7fe1dbeec9c0173e987e610"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N02.json": {
+      "bytes": 72864,
+      "sha256": "74ba4f955ab52460341353bafdd8ede68c4d75445ead5b45d1dca94df1d3801c"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N02.pins.json": {
+      "bytes": 2195,
+      "sha256": "cc3c4d7d1764d312bfab4852d3e796580b6baf0c18db9d468281364d4f025698"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N03.html": {
+      "bytes": 75643,
+      "sha256": "ef587d345d52a33aaac96c4249d0975aa7c0671e27f3c9aa089aa8cbce4258ed"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N03.json": {
+      "bytes": 72334,
+      "sha256": "4cef03d4fc5d991e1427f167ef9d7f0a1721cd5693eaea8570290ea60f1938cb"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N03.pins.json": {
+      "bytes": 1695,
+      "sha256": "86997070771789fb74d09525c01fb9ae723de5d9bba90b1e455934a034f12b36"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N04.html": {
+      "bytes": 80219,
+      "sha256": "eff1db7c134e5edc4589c7b12fa4d8b2d5b136fd90d1dda1ae8d836acc9af016"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N04.json": {
+      "bytes": 76473,
+      "sha256": "8497b39d71379990873ff0155ef2b10a43f3ce72e0b86b8103eb573075b3368a"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N04.pins.json": {
+      "bytes": 1720,
+      "sha256": "2db898e538d88ad5ab60a7521c045bc2ef5a1899760c1eccc283611566a9e045"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N05.html": {
+      "bytes": 72594,
+      "sha256": "9a68ca44c3669597637c762f2bcaf0d4164b1ab9231b935dcc8acdef9ca73f0c"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N05.json": {
+      "bytes": 69767,
+      "sha256": "cb14f78f570a3b21a5673de79c45eed58be3efddbb05bab2ef70351e861def09"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N05.pins.json": {
+      "bytes": 1695,
+      "sha256": "970ba845e3f450436bcd882ffacdfcfa7b592ede42da681e63d45d674168c588"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N06.html": {
+      "bytes": 75344,
+      "sha256": "654c3fe93d627464b0cbda8b9916f11066555b583c80a64a5e072c750d0b6f97"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N06.json": {
+      "bytes": 72022,
+      "sha256": "a943abead4b68788fce979956140b5687fafa5c2fb19b7e12ad4be3e4d441623"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N06.pins.json": {
+      "bytes": 1461,
+      "sha256": "fd9ec5465c60e80c3bd0d3be36665fc01f541bd7e65333bc4e6470ad782c24a3"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N07.html": {
+      "bytes": 60753,
+      "sha256": "4f8967b2ee9fbc8ce31dd0ab7c5748432510fec029679a2d0d3946540114dd6e"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N07.json": {
+      "bytes": 58409,
+      "sha256": "ed90830e804ee42858331b76fe174073fbfd919b198ae9b58592c247429df818"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N07.pins.json": {
+      "bytes": 1461,
+      "sha256": "fd9ec5465c60e80c3bd0d3be36665fc01f541bd7e65333bc4e6470ad782c24a3"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N08.html": {
+      "bytes": 88114,
+      "sha256": "050ce8b8f42c9266d16aaa6984f1daf4cd90a86c9186d111d518c0ca1d387317"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N08.json": {
+      "bytes": 84341,
+      "sha256": "6fcfc850650624c1485a25a4e1dec115461f51566d04e7f5ed0d0221cdd7ab6c"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N08.pins.json": {
+      "bytes": 2216,
+      "sha256": "8ab41062ca609e71fcdde7507d288e688bd7977726dcbab9d3854d93f62a2cf3"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N09.html": {
+      "bytes": 69527,
+      "sha256": "620787d368b561c64115e68f30e8e2305fa31665b384f48ccf9b023e6ec08d5f"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N09.json": {
+      "bytes": 66639,
+      "sha256": "91bdec64f9fe7fa7f04f33d77f439fc0f44eafa1637ddc8ca0afdb9e3568527c"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N09.pins.json": {
+      "bytes": 2466,
+      "sha256": "9e19203b51984186c20f01a0e942114d07129c1a1ccebc354c2ed8d72078b466"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N10.html": {
+      "bytes": 78382,
+      "sha256": "773b7fb12630d4d8e374b1e5dda96610b39e16e7bb229a8c151a5c07e866e0a8"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N10.json": {
+      "bytes": 74739,
+      "sha256": "34a00fb300e55bc2056df4febe68324ca6be255765bc71b8e73577918c3dd711"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/WPE-N10.pins.json": {
+      "bytes": 1461,
+      "sha256": "acfd814e7670b713131430f11bb0b469738ea362e41b832c737b5558caaf6eb7"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/sources/book.md": {
+      "bytes": 23474,
+      "sha256": "a33f19b308ea81c7eb527546e44b6bbd4b4adf26aed7116013ac01218cc1bbb8"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/sources/generate_wpe_svgs.py": {
+      "bytes": 35681,
+      "sha256": "d59622c3df1e884602238e8e5f3548a521e5a73ebb6468d36ce14f101f2999da"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/sources/library.json": {
+      "bytes": 119754,
+      "sha256": "84fe88387e33a03bf87bf1f537bae8c447f5b86f0d77a854c899ad70f12d8258"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/sources/package.schema.json": {
+      "bytes": 108010,
+      "sha256": "b645f4b5beb9132d6e38b628b1416846201d44dec16a5f04af9a252e9e891d93"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/sources/page_01.jpg": {
+      "bytes": 872585,
+      "sha256": "577fa3448aeb2cb72387d827ab67d7ad2c47041fa8dba8473d74193455ceb55a"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/sources/page_02.jpg": {
+      "bytes": 1074956,
+      "sha256": "49dfbcfdf5c17eddd3a88c5383ffb702d55150118bcb825d9b9257417e2214d0"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/sources/page_03.jpg": {
+      "bytes": 1090384,
+      "sha256": "74af7bf6ef7a57d63259c68e871eaa6db14d4912153d253a545ab1f018c346b9"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/sources/page_04.jpg": {
+      "bytes": 1487285,
+      "sha256": "6ca8b187415073f13a5c4638fc1dc42c4a09a7c682f663d58b384c089701257c"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/sources/page_05.jpg": {
+      "bytes": 976805,
+      "sha256": "f399adb7fa0231871a2a4ec753cbcd0e81c27644daf5511286098c3292f26612"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/sources/page_06.jpg": {
+      "bytes": 916968,
+      "sha256": "bef1126f750a833860588c49295fc50e28de5eb485b8acb5932e7a2388e5d500"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/sources/page_07.jpg": {
+      "bytes": 503067,
+      "sha256": "e05651537a9b3ea961304ef281f30cc900b3e6331076346273bc82c57a2ed6b9"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/sources/page_08.jpg": {
+      "bytes": 725098,
+      "sha256": "a4cdb3f5b960cf079bbf0627f461f4bff59bd1cb5880f8139609db3f10beafbd"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/sources/page_09.jpg": {
+      "bytes": 830562,
+      "sha256": "4847ec6173954d7e50d89af62db0972db12a3cfde654666a4e9fd97ce734d646"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/sources/recall-notes.md": {
+      "bytes": 3827,
+      "sha256": "5185ac2e9d28a1385ec7b4ea5b185717822e3063674e0e64a74673a0a11fb88e"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/sources/reference-ontology.json": {
+      "bytes": 25393,
+      "sha256": "0fb53c653d7cd5b5f6e94ba5ed096278aa42f5d1429eac24981ee8dffa168acf"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/sources/source-organizer.md": {
+      "bytes": 1191,
+      "sha256": "e6c15f481bb67380b5e183a9e15f6b8eeb3467659de72fa3921e580fd2b45894"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/sources/spine.md": {
+      "bytes": 3620,
+      "sha256": "07338e242e363becf2e55a9637d29fd178e37236fd730e5aac0a1211f1d8ecf9"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/sources/images/fig_01_work_sign_positive.svg": {
+      "bytes": 2641,
+      "sha256": "912c3b84c157e78916584db95bd520c45ed31e76ad73c900175a1ea93ac1b804"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/sources/images/fig_02_work_sign_negative.svg": {
+      "bytes": 2651,
+      "sha256": "a6ffa32dbc3e6918f06660f3f5b4b61f9ef965d9849c72663c88fb71ae9f16c9"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/sources/images/fig_03_fbd_string_raising.svg": {
+      "bytes": 2523,
+      "sha256": "9d408dcca1198fd6f5b08f63359c12007ae9428732be9d48dde32e8170e36df4"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/sources/images/fig_04_variable_force_calculus.svg": {
+      "bytes": 4749,
+      "sha256": "ff0b49e26c724f668f225930b0c928d52a7bffb4653d83c5189423580e4e8b74"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/sources/images/fig_05_friction_direction.svg": {
+      "bytes": 4450,
+      "sha256": "a5db2db77e7149b546fe34e9a081a9863024b9bf774e57c02035d9867302e710"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/sources/images/fig_06_incline_block.svg": {
+      "bytes": 2404,
+      "sha256": "c5a896866e7fcca2b2dd82e8408394e655ab8b4ef8edda3a3eb6d80cbad6ccd5"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/sources/images/fig_07_incline_fbd.svg": {
+      "bytes": 3208,
+      "sha256": "98c664df1595322694f974c7fde38699fc337a6f7829786b00e0dd5fd133e6bd"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/sources/images/fig_08_curved_path_work.svg": {
+      "bytes": 2722,
+      "sha256": "d62c1f8955757c71486cce4f623a12042ea7da37043674a8dff4752c425c3ac6"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/sources/images/fig_09_overhanging_chain.svg": {
+      "bytes": 3745,
+      "sha256": "40510540074ad29b0f7634e680f8235356f64dbe969eb28b164edb7e30a00aa0"
+    },
+    "skill/source-to-core1a/examples/wpe-source-program/handoffs/sources/images/fig_10_spring_block_wall.svg": {
+      "bytes": 3446,
+      "sha256": "c0a90c6fffcc88731316cb17fe34439e4bdccceda7a34d8deb585a2ba1d61bbc"
+    },
+    "skill/source-to-core1a/examples/wpe-work-direction/sources/book.md": {
+      "bytes": 23474,
+      "sha256": "a33f19b308ea81c7eb527546e44b6bbd4b4adf26aed7116013ac01218cc1bbb8"
+    },
+    "skill/source-to-core1a/examples/wpe-work-direction/sources/library.json": {
+      "bytes": 119754,
+      "sha256": "84fe88387e33a03bf87bf1f537bae8c447f5b86f0d77a854c899ad70f12d8258"
+    },
+    "skill/source-to-core1a/examples/wpe-work-direction/sources/package.schema.json": {
+      "bytes": 108010,
+      "sha256": "b645f4b5beb9132d6e38b628b1416846201d44dec16a5f04af9a252e9e891d93"
+    },
+    "skill/source-to-core1a/examples/wpe-work-direction/sources/page_01.jpg": {
+      "bytes": 872585,
+      "sha256": "577fa3448aeb2cb72387d827ab67d7ad2c47041fa8dba8473d74193455ceb55a"
+    },
+    "skill/source-to-core1a/examples/wpe-work-direction/sources/positive-work.svg": {
+      "bytes": 2641,
+      "sha256": "912c3b84c157e78916584db95bd520c45ed31e76ad73c900175a1ea93ac1b804"
+    },
+    "skill/source-to-core1a/examples/wpe-work-direction/sources/spine.md": {
+      "bytes": 3620,
+      "sha256": "07338e242e363becf2e55a9637d29fd178e37236fd730e5aac0a1211f1d8ecf9"
+    },
+    "skill/source-to-core1a/examples/wpe-work-direction/sources/images/fig_01_work_sign_positive.svg": {
+      "bytes": 2641,
+      "sha256": "912c3b84c157e78916584db95bd520c45ed31e76ad73c900175a1ea93ac1b804"
+    },
+    "skill/source-to-core1a/examples/wpe-work-direction/sources/images/fig_02_work_sign_negative.svg": {
+      "bytes": 2651,
+      "sha256": "a6ffa32dbc3e6918f06660f3f5b4b61f9ef965d9849c72663c88fb71ae9f16c9"
+    },
+    "skill/source-to-core1a/examples/wpe-work-direction/sources/images/fig_03_fbd_string_raising.svg": {
+      "bytes": 2523,
+      "sha256": "9d408dcca1198fd6f5b08f63359c12007ae9428732be9d48dde32e8170e36df4"
+    },
+    "skill/source-to-core1a/examples/wpe-work-direction/sources/images/fig_04_variable_force_calculus.svg": {
+      "bytes": 4749,
+      "sha256": "ff0b49e26c724f668f225930b0c928d52a7bffb4653d83c5189423580e4e8b74"
+    },
+    "skill/source-to-core1a/examples/wpe-work-direction/sources/images/fig_05_friction_direction.svg": {
+      "bytes": 4450,
+      "sha256": "a5db2db77e7149b546fe34e9a081a9863024b9bf774e57c02035d9867302e710"
+    },
+    "skill/source-to-core1a/examples/wpe-work-direction/sources/images/fig_06_incline_block.svg": {
+      "bytes": 2404,
+      "sha256": "c5a896866e7fcca2b2dd82e8408394e655ab8b4ef8edda3a3eb6d80cbad6ccd5"
+    },
+    "skill/source-to-core1a/examples/wpe-work-direction/sources/images/fig_07_incline_fbd.svg": {
+      "bytes": 3208,
+      "sha256": "98c664df1595322694f974c7fde38699fc337a6f7829786b00e0dd5fd133e6bd"
+    },
+    "skill/source-to-core1a/examples/wpe-work-direction/sources/images/fig_08_curved_path_work.svg": {
+      "bytes": 2722,
+      "sha256": "d62c1f8955757c71486cce4f623a12042ea7da37043674a8dff4752c425c3ac6"
+    },
+    "skill/source-to-core1a/examples/wpe-work-direction/sources/images/fig_09_overhanging_chain.svg": {
+      "bytes": 3745,
+      "sha256": "40510540074ad29b0f7634e680f8235356f64dbe969eb28b164edb7e30a00aa0"
+    },
+    "skill/source-to-core1a/examples/wpe-work-direction/sources/images/fig_10_spring_block_wall.svg": {
+      "bytes": 3446,
+      "sha256": "c0a90c6fffcc88731316cb17fe34439e4bdccceda7a34d8deb585a2ba1d61bbc"
+    }
+  },
+  "privacy": "LOCAL_PRIVATE_SOURCE_BYTES; not authorized for public publication",
+  "status": "PREPARATION_CANDIDATE_NOT_QUALIFIED_LESSON"
+}

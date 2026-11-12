@@ -1,0 +1,13 @@
+{
+  "source_id": "WEP07-03",
+  "task_identity": "Q-ID-76",
+  "sequence": 65,
+  "lot_sequence": 5,
+  "paper": "NSEP 2025 code 61 Q57",
+  "stem_status": "SOURCE_INCOMPLETE_UNBOUND_REGISTRY_STEM",
+  "stem_text": null,
+  "stem_sha256": null,
+  "options": null,
+  "figure_reference": "PDF_PAGE:15_Q57:NSEP_-_2025_Set_611.pdf",
+  "confidentiality_notice": "Source custody blind packet. Academic solve, answer key, and scoring omitted. Private review only."
+}

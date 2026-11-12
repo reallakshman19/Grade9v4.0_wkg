@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade9 v4.0 — LOT-06 Source & Candidate Solve Audit (Questions 21–25)</title>
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --border: #e2e8f0;
+            --text: #0f172a;
+            --text-muted: #64748b;
+            --primary: #2563eb;
+            --danger: #b91c1c;
+            --warning: #d97706;
+            --success: #15803d;
+            --neutral-bg: #f1f5f9;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            padding: 16px;
+            font-size: 14px;
+            min-width: 0;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1365px;
+            margin: 0 auto;
+            background: var(--surface);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            min-width: 0;
+        }
+        header {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+        }
+        h1 { font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 6px; word-break: break-word; }
+        .header-meta {
+            font-size: 12px;
+            color: var(--text-muted);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .notice-banner {
+            background: #fffbeb;
+            border-left: 4px solid var(--warning);
+            padding: 14px 18px;
+            margin-bottom: 24px;
+            border-radius: 0 4px 4px 0;
+            font-size: 13px;
+            color: #92400e;
+        }
+        .table-wrapper {
+            overflow-x: auto;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            margin-bottom: 24px;
+            -webkit-overflow-scrolling: touch;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            min-width: 900px;
+        }
+        th, td {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        th {
+            background: #f8fafc;
+            font-weight: 600;
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+        .col-seq { width: 110px; }
+        .col-source { width: 220px; word-break: break-word; }
+        .col-stem { min-width: 260px; word-break: break-word; }
+        .col-cog { width: 140px; }
+        .col-bp { width: 140px; word-break: break-word; }
+        .col-gates { width: 260px; word-break: break-word; }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin: 2px 0;
+            word-break: break-all;
+        }
+        .badge-admission { background: #fef2f2; color: var(--danger); border: 1px solid #fecaca; }
+        .badge-hold { background: #fff7ed; color: var(--warning); border: 1px solid #fed7aa; }
+        .badge-source { background: #eff6ff; color: var(--primary); }
+        .badge-fig { background: #f1f5f9; color: var(--text-muted); }
+        .badge-prop { background: #f3e8ff; color: #7e22ce; }
+
+        .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+        .text-muted { color: var(--text-muted); }
+        .stem-preview { font-size: 13px; margin-bottom: 8px; color: #334155; }
+        .candidate-details {
+            margin-top: 6px;
+            font-size: 12px;
+        }
+        .candidate-details summary {
+            cursor: pointer;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .solve-box {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 10px;
+            margin-top: 6px;
+        }
+        .solve-box p { margin-bottom: 6px; }
+        .solve-box p:last-child { margin-bottom: 0; }
+        .blocker-list {
+            margin-top: 4px;
+            padding-left: 16px;
+            font-size: 11px;
+            color: var(--danger);
+        }
+        .blocker-list li { margin-bottom: 2px; }
+        footer {
+            border-top: 1px solid var(--border);
+            padding-top: 16px;
+            font-size: 12px;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        @media (max-width: 600px) {
+            body { padding: 8px; }
+            .container { padding: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Grade9 v4.0 — LOT-06 Source & Candidate Solve Audit (Questions 21–25)</h1>
+            <div class="header-meta">
+                <span><strong>Batch:</strong> BATCH-B (CP-2)</span>
+                <span><strong>Lot:</strong> LOT-06 (Roster Positions 6–10)</span>
+                <span><strong>Scope:</strong> Physics / WPE</span>
+                <span><strong>Admissions:</strong> 0 / 5 (Strict Fail-Closed)</span>
+            </div>
+        </header>
+
+        <div class="notice-banner">
+            <strong>Mandatory Governance Boundary:</strong> ZERO academic approvals inferred from software validation. All 5 candidate questions remain in state <code>NOT_ADMITTED</code>. No Core2 learner cards have been constructed. Official NTA master answer keys and authentic figure assets remain on HOLD awaiting independent review.
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="col-seq">Seq / Task ID</th>
+                        <th class="col-source">Source & Custody</th>
+                        <th class="col-stem">Question Stem & Candidate Solve</th>
+                        <th class="col-cog">SL2 Proposal</th>
+                        <th class="col-bp">Blueprint / Adapter</th>
+                        <th class="col-gates">Academic Gate & Blockers</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+    <tr>
+        <td class="col-seq"><strong>#21</strong><br><small class="mono">Q-ID-24</small><br><small>Batch Seq: #6</small></td>
+        <td class="col-source">
+            <strong>EX-M68</strong><br>
+            <small class="text-muted">JEE Main 2020 (Online) 4th September Evening Slot</small><br>
+            <span class="badge badge-source">VERIFIED_TEXT_ONLY (Self-contained mathematical question)</span>
+            <span class="badge badge-fig">NOT_REQUIRED</span>
+        </td>
+        <td class="col-stem">
+            <div class="stem-preview">A person pushes a box on a rough horizontal platform surface. He applies a force of 200 N over a distance of 15 m. Thereafter, he gets progressively tired and h...</div>
+            <details class="candidate-details">
+                <summary>View Candidate Solve & Working</summary>
+                <div class="solve-box">
+                    <p><strong>Predicted Option:</strong> B: 5250 J</p>
+                    <p><strong>Method:</strong> <code>PIECEWISE_LINEAR_WORK_INTEGRATION</code></p>
+                    <p><strong>Derivation:</strong> First phase (0 to 15 m): Force F1 = 200 N is constant. Work W1 = 200 N * 15 m = 3000 J. Second phase (15 to 30 m): Force decreases linearly from 200 N to 100 N over displacement delta_x = 15 m. Work W2 = ((200 + 100) / 2) * 15 m = 150 * 15 = 2250 J. Total work done W = W1 + W2 = 3000 + 2250 = 5250 J. Matches Option B.</p>
+                    <p><strong>Limiting Cases:</strong> If force remained 200 N throughout 30 m, W = 6000 J. If force dropped to 0 N at 30 m, W = 3000 + 1500 = 4500 J. With linear drop to 100 N, W = 5250 J exactly.</p>
+                </div>
+            </details>
+        </td>
+        <td class="col-cog">
+            <strong>CALCULATE_WORK_VARIABLE_FORCE</strong> (D2)<br>
+            <small>Score: 4/10</small><br>
+            <span class="badge badge-prop">PROPOSED</span>
+        </td>
+        <td class="col-bp"><span class='badge badge-hold'>BLUEPRINT=SPEC_PENDING</span></td>
+        <td class="col-gates">
+            <span class="badge badge-admission">NOT_ADMITTED</span>
+            <ul class="blocker-list">
+                <li>HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)</li><li>HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)</li>
+            </ul>
+        </td>
+    </tr>
+    
+    <tr>
+        <td class="col-seq"><strong>#22</strong><br><small class="mono">Q-ID-25</small><br><small>Batch Seq: #7</small></td>
+        <td class="col-source">
+            <strong>EX-M69</strong><br>
+            <small class="text-muted">JEE Main 2020 (Online) 3rd September Evening Slot</small><br>
+            <span class="badge badge-source">PARTIAL (graphical options unresolved)</span>
+            <span class="badge badge-fig">HOLD:FIGURE_UNRESOLVED</span>
+        </td>
+        <td class="col-stem">
+            <div class="stem-preview">A particle is moving unidirectionally on a horizontal plane under the action of a constant power supplying energy source. The displacement (s) - time (t) graph ...</div>
+            <details class="candidate-details">
+                <summary>View Candidate Solve & Working</summary>
+                <div class="solve-box">
+                    <p><strong>Predicted Option:</strong> HOLD:FIGURE_UNRESOLVED</p>
+                    <p><strong>Method:</strong> <code>CONSTANT_POWER_GRAPH_CURVATURE_ANALYSIS</code></p>
+                    <p><strong>Derivation:</strong> Constant power P = m v (dv/dt) => v proportional to t^(1/2) => s proportional to t^(3/2). Graph of s vs t must start at origin (s=0, t=0), have zero initial slope (ds/dt = 0 at t=0), positive slope everywhere (v > 0), and positive curvature d^2s/dt^2 = a proportional to t^(-1/2) > 0 (concave upwards). However, without authentic option images, choice binding is impossible.</p>
+                    <p><strong>Limiting Cases:</strong> Option curves cannot be inspected or bound without authentic exam PDF assets.</p>
+                </div>
+            </details>
+        </td>
+        <td class="col-cog">
+            <strong>IDENTIFY_KINEMATIC_GRAPH_UNDER_POWER</strong> (D2)<br>
+            <small>Score: 4/10</small><br>
+            <span class="badge badge-prop">PROPOSED</span>
+        </td>
+        <td class="col-bp"><span class='badge badge-hold'>BLUEPRINT=SPEC_PENDING</span></td>
+        <td class="col-gates">
+            <span class="badge badge-admission">NOT_ADMITTED</span>
+            <ul class="blocker-list">
+                <li>HOLD:FIGURE_UNRESOLVED (4 remote graphical options unverified against official master)</li><li>HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)</li><li>HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)</li>
+            </ul>
+        </td>
+    </tr>
+    
+    <tr>
+        <td class="col-seq"><strong>#23</strong><br><small class="mono">Q-ID-26</small><br><small>Batch Seq: #8</small></td>
+        <td class="col-source">
+            <strong>EX-M73</strong><br>
+            <small class="text-muted">JEE Main 2019 (Online) 9th April Morning Slot</small><br>
+            <span class="badge badge-source">VERIFIED_TEXT_ONLY (Self-contained mathematical question)</span>
+            <span class="badge badge-fig">NOT_REQUIRED</span>
+        </td>
+        <td class="col-stem">
+            <div class="stem-preview">A uniform cable of mass 'M' and length 'L' is placed on a horizontal surface such that its (1/n)th part is hanging below the edge of the surface. To lift the ha...</div>
+            <details class="candidate-details">
+                <summary>View Candidate Solve & Working</summary>
+                <div class="solve-box">
+                    <p><strong>Predicted Option:</strong> C: (𝑀𝑔𝐿)/(2𝑛^(2))</p>
+                    <p><strong>Method:</strong> <code>CONTINUOUS_MASS_CENTER_OF_GRAVITY_POTENTIAL</code></p>
+                    <p><strong>Derivation:</strong> Hanging portion has length l_hang = L/n and mass m_hang = M/n. Cable is uniform, so center of gravity of hanging part is at depth h_cm = l_hang / 2 = L / (2n). Work required to lift hanging part onto surface equals potential energy increase: W = m_hang * g * h_cm = (M/n) * g * (L / (2n)) = (M g L) / (2 n^2). Matches Option C.</p>
+                    <p><strong>Limiting Cases:</strong> If n=1 (entire rope hanging), W = MgL/2. If n -> infinity (infinitesimal portion hanging), W -> 0. Calculus verification: W = integral_0^(L/n) (M/L) * (L/n - y) * g dy = (M g / L) * [ (L/n)^2 / 2 ] = (M g L) / (2 n^2).</p>
+                </div>
+            </details>
+        </td>
+        <td class="col-cog">
+            <strong>CALCULATE_WORK_ON_CONTINUOUS_MASS</strong> (D3)<br>
+            <small>Score: 6/10</small><br>
+            <span class="badge badge-prop">PROPOSED</span>
+        </td>
+        <td class="col-bp"><strong>PHYS-QRT-BLUEPRINT</strong><br><small>WPE-01-WORK-VARIABLE-D3</small></td>
+        <td class="col-gates">
+            <span class="badge badge-admission">NOT_ADMITTED</span>
+            <ul class="blocker-list">
+                <li>HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)</li><li>HOLD:INDEPENDENT_REVIEW_PENDING (requires unexposed blind physics review before admission)</li>
+            </ul>
+        </td>
+    </tr>
+    
+    <tr>
+        <td class="col-seq"><strong>#24</strong><br><small class="mono">Q-ID-27</small><br><small>Batch Seq: #9</small></td>
+        <td class="col-source">
+            <strong>EX-M74</strong><br>
+            <small class="text-muted">JEE Main 2019 (Online) 8th April Morning Slot</small><br>
+            <span class="badge badge-source">PARTIAL (F(x) graph unresolved)</span>
+            <span class="badge badge-fig">HOLD:FIGURE_UNRESOLVED</span>
+        </td>
+        <td class="col-stem">
+            <div class="stem-preview">A particle moves in one dimension from rest under the influence of a force that varies with the distance travelled by the particle as shown in the figure. The k...</div>
+            <details class="candidate-details">
+                <summary>View Candidate Solve & Working</summary>
+                <div class="solve-box">
+                    <p><strong>Predicted Option:</strong> HOLD:FIGURE_UNRESOLVED</p>
+                    <p><strong>Method:</strong> <code>WORK_ENERGY_FORCE_DISPLACEMENT_INTEGRATION</code></p>
+                    <p><strong>Derivation:</strong> By Work-Energy Theorem: KE(at 3m) - KE(initial) = W = integral_0^3 F(x) dx. Since particle starts from rest, KE = integral_0^3 F(x) dx. Area under F(x) curve from x=0 to x=3m cannot be computed without the exact numerical grid and vertices in the diagram.</p>
+                    <p><strong>Limiting Cases:</strong> Cannot perform independent integration without original figure.</p>
+                </div>
+            </details>
+        </td>
+        <td class="col-cog">
+            <strong>CALCULATE_KE_FROM_FORCE_GRAPH</strong> (D2)<br>
+            <small>Score: 4/10</small><br>
+            <span class="badge badge-prop">PROPOSED</span>
+        </td>
+        <td class="col-bp"><span class='badge badge-hold'>BLUEPRINT=SPEC_PENDING</span></td>
+        <td class="col-gates">
+            <span class="badge badge-admission">NOT_ADMITTED</span>
+            <ul class="blocker-list">
+                <li>HOLD:FIGURE_UNRESOLVED (Force-displacement graph unverified against authentic master)</li><li>HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)</li><li>HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)</li>
+            </ul>
+        </td>
+    </tr>
+    
+    <tr>
+        <td class="col-seq"><strong>#25</strong><br><small class="mono">Q-ID-28</small><br><small>Batch Seq: #10</small></td>
+        <td class="col-source">
+            <strong>EX-M76</strong><br>
+            <small class="text-muted">JEE Main 2019 (Online) 10th January Morning Slot</small><br>
+            <span class="badge badge-source">PARTIAL (remote setup diagram unresolved)</span>
+            <span class="badge badge-fig">HOLD:FIGURE_UNRESOLVED</span>
+        </td>
+        <td class="col-stem">
+            <div class="stem-preview">A block of mass m is kept on a platform which starts from rest with constant acceleration g/2 upward, as shown in figure. Work done by normal reaction on block ...</div>
+            <details class="candidate-details">
+                <summary>View Candidate Solve & Working</summary>
+                <div class="solve-box">
+                    <p><strong>Predicted Option:</strong> B: (3𝑚𝑔^(2)𝑡^(2))/(8)</p>
+                    <p><strong>Method:</strong> <code>ACCELERATED_FRAME_NORMAL_FORCE_WORK</code></p>
+                    <p><strong>Derivation:</strong> Equation of motion for block in vertical direction: N - mg = m a = m (g/2) => N = mg + mg/2 = (3/2) mg. Upward displacement of platform in time t starting from rest: s = 1/2 a t^2 = 1/2 (g/2) t^2 = (1/4) g t^2. Work done by normal reaction force: W = N * s = ((3/2) mg) * ((1/4) g t^2) = (3 m g^2 t^2) / 8. Matches Option B.</p>
+                    <p><strong>Limiting Cases:</strong> If platform had zero acceleration, N = mg and s = 0 (from rest), W = 0. If platform accelerated in free fall (a = -g), N = 0, W = 0. With upward acceleration g/2, N > mg and W > 0.</p>
+                </div>
+            </details>
+        </td>
+        <td class="col-cog">
+            <strong>CALCULATE_WORK_BY_CONSTRAINT_FORCE</strong> (D2)<br>
+            <small>Score: 4/10</small><br>
+            <span class="badge badge-prop">PROPOSED</span>
+        </td>
+        <td class="col-bp"><span class='badge badge-hold'>BLUEPRINT=SPEC_PENDING</span></td>
+        <td class="col-gates">
+            <span class="badge badge-admission">NOT_ADMITTED</span>
+            <ul class="blocker-list">
+                <li>HOLD:FIGURE_UNRESOLVED (diagram needed to verify orientation and contact plane)</li><li>HOLD:OFFICIAL_KEY_UNRESOLVED (coaching key unverified against NTA official master)</li><li>HOLD:SPEC_PENDING_D2 (no common D1/D2 teaching blueprint qualified)</li>
+            </ul>
+        </td>
+    </tr>
+    
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            <div>Produced by Local Coding Agent | Low-Discretion Autonomous Mode</div>
+            <div>No academic approval inferred from software validation.</div>
+        </footer>
+    </div>
+</body>
+</html>

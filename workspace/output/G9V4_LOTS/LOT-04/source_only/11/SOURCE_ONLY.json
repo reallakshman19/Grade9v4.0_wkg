@@ -1,0 +1,16 @@
+{
+  "source_id": "EX-M29",
+  "task_identity": "Q-ID-11",
+  "sequence": 11,
+  "paper": "JEE Main 2024 (Online) 5th April Evening Shift",
+  "stem_text": "A body is moving unidirectionally under the influence of a constant power source. Its displacement in time t is proportional to :",
+  "stem_sha256": "80c4f7f49db75f9ae66f54d1ed7808074d33abbaa7a744a4c0e3adf1622e1501",
+  "options": [
+    "A: t2/3",
+    "B: t3/2",
+    "C: t",
+    "D: t2"
+  ],
+  "figure_reference": "NONE",
+  "confidentiality_notice": "SEALED SOURCE-ONLY PACKET FOR BLIND INDEPENDENT REVIEW. Contains NO answers, keys, explanations, candidate solutions, SL2 factor scores, or prior review commentary."
+}
