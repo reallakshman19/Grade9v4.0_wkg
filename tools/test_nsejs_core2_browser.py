@@ -33,7 +33,7 @@ def execute():
             for topic in ("optics","electrostatics","circuits","magnetism","mechanics"):
                 expected = 11 if topic == "mechanics" else 10
                 page.goto(base+BASE+"question-bank.html?topic="+topic, wait_until="domcontentloaded")
-                page.wait_for_function("(n) => document.querySelectorAll('.card').length === n", expected)
+                page.wait_for_function("(n) => document.querySelectorAll('.card').length === n", arg=expected)
                 assert page.locator(".card").count() == expected, topic
                 assert str(expected)+" candidate records" in page.locator("#status").inner_text(), topic
                 assert page.locator("span.status").count() == 10, topic
