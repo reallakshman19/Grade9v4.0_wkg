@@ -21,6 +21,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 from build_public_reader_preview import build_preview
 from nsejs_core1ab_public_coverage import public_coverage, render_subject_index, render_official_sources
+from source_learning_bridge import validate_bindings
+from wpe_learner_contract import validate as validate_wpe_contract
 
 PUBLIC_NSEJS = (
     "nsejs/index.html",
@@ -35,6 +37,17 @@ PUBLIC_NSEJS = (
     "nsejs/data/physics-authored-practice-r1.json",
     "nsejs/PUBLIC_PREVIEW_STATUS.json",
 )
+# Authored, source-bound Wave 2 Mechanics learner. This is ADDITIONAL to the
+# eight existing generated Core1A/B previews, not a 9/26 coverage certificate.
+MECHANICS_WPE_PUBLIC = (
+    "nsejs/physics/learn-mechanics.html",
+    "nsejs/css/wpe-touch-parity.css",
+    "nsejs/js/wpe-contract-adapter.js",
+    "nsejs/data/mechanics-wpe-teaching-pilot.v1.json",
+    "nsejs/data/source-learning-bridge-tech-preview.v1.json",
+)
+MECHANICS_WPE_UID = "g9:PHYSICS:G9-AUTH-MECH-001"
+
 PUBLIC_SCHOOL_DIRS = (
     "physics/wpe", "architecture", "css", "js",
 )
@@ -140,6 +153,94 @@ def add_source_links(stage: Path) -> None:
                  'View official paper/key links</a></section>')
         page.write_text(body.replace("</body>", block + "\n</body>", 1), encoding="utf-8")
 
+def validate_mechanics_wpe_public_pilot(original: dict, preview: dict,
+                                        lesson: dict, collection: dict) -> dict:
+    """Independent positive authorization for a technical-only, authored pilot.
+
+    The original UNBUILT mapping is NEVER promoted or modified. The separate
+    technical-preview mapping may unlock a lesson only after complete question
+    revision, QRT HOLD, owner/task IDs, and its exact lesson revision match.
+    """
+    [source_row] = validate_bindings(original, collection)
+    if (original.get("route_status") != "UNBUILT_TECHNICAL_PILOT" or
+        source_row.get("lesson_status") != "PENDING_WAVE2" or
+        source_row.get("lesson_revision") != "UNBUILT"):
+        raise ValueError("SOURCE_FIRST_UNBUILT_CUSTODY_NOT_PRESERVED")
+    rows = preview.get("routes")
+    if (not isinstance(rows, list) or len(rows) != 1 or
+        preview.get("schema") != original["schema"] or
+        preview.get("academic_admission") != "HOLD" or
+        preview.get("route_status") != "TECHNICAL_PREVIEW" or
+        preview.get("preview_authority") != "AUTHORED_TECHNICAL_ONLY_NOT_ACADEMIC_ADMISSION"):
+        raise ValueError("WPE_PREVIEW_MANIFEST_NOT_QUALIFIED")
+    [candidate] = rows
+    critical = ("question_uid", "source_id", "content_revision_sha256",
+                "source_collection", "origin", "subject", "topic", "lesson_id",
+                "task_a_id", "task_b_id", "transfer_id", "source_return")
+    if any(candidate.get(key) != source_row.get(key) for key in critical):
+        raise ValueError("WPE_SOURCE_LEARNING_BRIDGE_NOT_EXACT")
+    if (candidate.get("lesson_status") != "READY_FOR_TECHNICAL_PREVIEW" or
+        candidate.get("lesson_revision") != lesson.get("lesson", {}).get("revision") or
+        candidate.get("academic_admission") != "HOLD" or
+        candidate.get("original_source_status") != "AUTHORED_PRACTICE_NOT_OFFICIAL_EXAM"):
+        raise ValueError("WPE_LESSON_READINESS_OR_SOURCE_CLAIM_INVALID")
+    result = validate_wpe_contract(lesson, preview)
+    if (result["source_uid"] != MECHANICS_WPE_UID or
+        result["academic_admission"] != "HOLD" or
+        lesson.get("source_return",{}).get("route_status") != "TECHNICAL_PREVIEW"):
+        raise ValueError("WPE_SOURCE_AUTHORIZATION_FAILED")
+    return {"published":True, "source_uid":MECHANICS_WPE_UID,
+            "source_revision_sha256":result["source_revision"],
+            "lesson_revision":candidate["lesson_revision"],
+            "lesson_id":candidate["lesson_id"], "academic_approval":"HOLD",
+            "source_authenticity":"AUTHORED_PRACTICE_NOT_OFFICIAL_EXAM",
+            "status":"AUTHORED_TECHNICAL_PREVIEW_ONLY"}
+
+
+def publish_mechanics_wpe_pilot(stage: Path) -> dict:
+    def read(path: str) -> dict:
+        return json.loads((ROOT/path).read_text(encoding="utf-8"))
+    original = read("nsejs/data/source-learning-bridge-pilot.v1.json")
+    preview = read("nsejs/data/source-learning-bridge-tech-preview.v1.json")
+    lesson = read("nsejs/data/mechanics-wpe-teaching-pilot.v1.json")
+    source = read("nsejs/data/physics-authored-practice-r1.json")
+    qualified = validate_mechanics_wpe_public_pilot(original,preview,lesson,source)
+    for path in MECHANICS_WPE_PUBLIC:
+        content=(ROOT/path).read_bytes()
+        if path.endswith((".html",".js")) and b"<iframe" in content.lower():
+            raise ValueError("NO_IFRAMES_ALLOWED_IN_NSEJS_WPE_PILOT")
+        put(stage,path,content)
+    # Only the single correctly bound authored Mechanics question is
+    # discoverable. All other Core2 records remain candidate-only.
+    subject_page=stage/"nsejs/physics/index.html"
+    page=subject_page.read_text(encoding="utf-8")
+    if 'id="nsejs-wpe-mechanics-parity"' in page or "</body>" not in page:
+        raise ValueError("DUPLICATE_OR_INVALID_WPE_HUB_INSERTION")
+    href=("learn-mechanics.html?source_uid=" +
+          qualified["source_uid"] +
+          "&source_revision=" + qualified["source_revision_sha256"])
+    block=(
+        '<section id="nsejs-wpe-mechanics-parity" class="tablet-container" '
+        'aria-labelledby="nsejs-mechanics-heading" '
+        'style="margin:24px auto;padding:22px;border:2px solid #6c9fad;'
+        'border-radius:15px;background:#f0f9fc;color:#173749">'
+        '<h2 id="nsejs-mechanics-heading">Mechanics Core1A → Core1B · '
+        'six-stage authored technical preview</h2>'
+        '<p><strong>UNVALIDATED · Academic HOLD.</strong> '
+        'A single source-bound authored Grade9 Physics practice example, '
+        'not an original NSEJS exam question or academically admitted source. '
+        'Use the interactive collision model and independent Task A/B.</p>'
+        '<a href="'+href+'" style="display:inline-flex;align-items:center;'
+        'min-height:56px;padding:14px 22px;border-radius:12px;'
+        'background:#145c76;color:#fff;font-weight:750;text-decoration:none">'
+        'Open authored Mechanics six-stage learner</a>'
+        '</section>'
+    )
+    subject_page.write_text(page.replace("</body>",block+"\n</body>",1),
+                            encoding="utf-8")
+    return qualified
+
+
 def build(out: Path) -> dict:
     out=out.resolve()
     if out.exists() or out == ROOT or out.is_relative_to(ROOT/"workspace"):
@@ -162,6 +263,7 @@ def build(out: Path) -> dict:
             raise ValueError("MISSING_NSEJS_PREVIEW_ASSET:"+relative)
         put(out,relative,src.read_bytes())
     coverage = generated_lessons(out)
+    mechanics_wpe = publish_mechanics_wpe_pilot(out)
     add_source_links(out)
     (out/".nojekyll").write_text("",encoding="utf-8")
     file_list=sorted(p.relative_to(out).as_posix() for p in out.rglob("*") if p.is_file())
@@ -179,6 +281,7 @@ def build(out: Path) -> dict:
         "core1ab_authored_lesson_pages": coverage["published_authored_preview_journeys"],
         "core1ab_test_backed_constructions": coverage["tracked_constructions"],
         "core1ab_unpublished_constructions": coverage["not_published_constructions"],
+        "additional_authored_mechanics_wpe_parity_preview": mechanics_wpe,
         "official_sources_link_only": True,
         "school_wpe_preserved":True,
         "existing_synthetic_reader_preserved":True,
