@@ -10,14 +10,15 @@
       "year": 2020,
       "exam_series": "IOQJS_2020_21_PART_I",
       "official_archive_url": "https://iapt.org.in/ioq-2020-21-part-i/",
-      "official_paper_url": null,
+      "official_paper_url": "https://iapt.org.in/images/nse_2020/IOQJS%20PART%20I%202020-21.pdf",
       "official_final_key_url": "https://iapt.org.in/wp-content/uploads/Final-Answer-key-IOQJS-2020-21Part-I.pdf",
-      "paper_link_status": "NOT_LOCATED_ON_OFFICIAL_ARCHIVE_IN_THIS_REVIEW",
+      "paper_link_status": "OFFICIAL_IOQJS_2020_21_CODE51_PAPER_LOCATED_BYTES_PENDING",
       "key_link_status": "OFFICIAL_CONTENT_READ",
       "recorded_total_question_labels": 32,
-      "note": "This series is IOQJS Part I rather than a conventional NSEJS 2020 paper; the author-test 8-per-subject selection is NOT a validated original-paper census.",
+      "note": "Official IAPT-hosted IOQJS Part I 2020–21 Paper Code 51 located; 32 questions; NOT a conventional NSEJS 2020 sitting. Original byte hashes, figures and distribution rights pending independent custody.",
       "source_bytes_imported": false,
-      "independently_authenticated": false
+      "independently_authenticated": false,
+      "paper_code": 51
     },
     {
       "year": 2021,
