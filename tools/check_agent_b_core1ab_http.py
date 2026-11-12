@@ -24,14 +24,16 @@ def main():
 
     with tempfile.TemporaryDirectory(prefix="agent_b_http_") as temp:
         root = Path(temp)
-        script = root / "build_d3_expansion_modules.py"
-        shutil.copyfile(ROOT / script.name, script)
         env = dict(os.environ)
         env["PYTHONPATH"] = str(ROOT) + os.pathsep + env.get("PYTHONPATH", "")
-        r = subprocess.run([sys.executable, str(script)], cwd=root, env=env, capture_output=True,
-                           text=True, timeout=40)
-        _check(r.returncode == 0, "Original source-safe builder failed: " + r.stderr[-2000:])
+        for name in ("build_d3_expansion_modules.py", "build_d3_batch2_modules.py"):
+            script = root / name
+            shutil.copyfile(ROOT / name, script)
+            r = subprocess.run([sys.executable, str(script)], cwd=root, env=env, capture_output=True,
+                               text=True, timeout=40)
+            _check(r.returncode == 0, "Source-safe builder failed: " + name + ": " + r.stderr[-2000:])
         url_path = "/workspace/output/nsejs-fluids-surface-energy-d3-r1/learning_journey.html"
+        lens_path = "/workspace/output/nsejs-optics-displacement-d3-r1/learning_journey.html"
 
         class Quiet(http.server.SimpleHTTPRequestHandler):
             def __init__(self, *args, **kwargs):
@@ -102,6 +104,62 @@ def main():
                         _check(page.locator("iframe").count() == 0, "Iframe unsupported")
                         _check(page.evaluate("document.documentElement.scrollWidth <= window.innerWidth + 1"),
                                "Horizontal viewport overflow")
+                        cases += 1
+                        ctx.close()
+
+                    for size in ((1366, 768), (390, 844)):
+                        ctx = browser.new_context(viewport={"width": size[0], "height": size[1]})
+                        page = ctx.new_page()
+                        js_errors = []
+                        page.on("pageerror", lambda e: js_errors.append(str(e)))
+                        response = page.goto(f"http://127.0.0.1:{port}"+lens_path, wait_until="load", timeout=15000)
+                        _check(response is not None and response.status == 200, "Lens HTTP learner navigation failed")
+                        page.locator("#tab-core2").click()
+                        _check("Agent A" in page.locator("#content-core2").inner_text(), "Core2 ownership status missing")
+                        page.locator("#tab-core1a").click()
+                        _check("Core1A physical construction" in page.locator("#content-core1a").inner_text(),
+                               "Lens Core1A teaching not rendered")
+                        page.locator("#tab-core1b").click()
+                        _check(not page.locator('[data-role="model-host"]').is_visible(),
+                               "Lens reconstruction shown without first attempt")
+                        _check("18 cm" not in page.locator("#content-core1b").inner_text(),
+                               "Lens focal answer leaked in attempt or hints")
+                        page.locator('[data-hint="3"]').click()
+                        _check("18 cm" not in page.locator("#content-core1b").inner_text(),
+                               "Lens H3 reveals final focal length")
+                        page.locator('[data-role="prediction-input"]').fill(
+                            "Conjugate positions measure the root separation, not the focal length.")
+                        page.locator('[data-role="save-prediction"]').click()
+                        page.locator('[data-role="firstAttempt-input"]').fill(
+                            "D=96, d=48 so product=(D^2-d^2)/4=1728 and f=1728/96=18 cm.")
+                        page.locator('[data-role="save-firstAttempt"]').click()
+                        _check(page.locator('[data-role="model-host"]').is_visible(), "Lens reconstruction not gated correctly")
+                        _check(page.locator('[data-role="save-firstAttempt"]').is_disabled(), "Lens attempt not frozen")
+                        _check("18 cm" in page.locator('[data-role="model-host"]').inner_text(),
+                               "Lens independent reconstruction missing")
+                        page.reload(wait_until="load")
+                        page.locator("#tab-core1b").click()
+                        _check(page.locator('[data-role="model-host"]').is_visible(), "Lens saved attempt not restored")
+                        _check(page.locator('[data-role="save-firstAttempt"]').is_disabled(), "Lens attempt can be overwritten")
+                        page.locator('[data-role="diagnosis-input"]').fill("Confused measured displacement with focal length.")
+                        page.locator('[data-role="save-diagnosis"]').click()
+                        page.locator('[data-role="repair-input"]').fill("Use root sum and difference first.")
+                        page.locator('[data-role="save-repair"]').click()
+                        page.locator('[data-role="transfer-input"]').fill("D=70 is smaller than 4f=72.")
+                        page.locator('[data-role="save-transfer"]').click()
+                        _check(page.locator('[data-role="boundary-answer"]').is_visible(),
+                               "Lens transfer feedback not gated")
+                        page.goto(f"http://127.0.0.1:{port}"+url_path, wait_until="load", timeout=15000)
+                        page.locator("#tab-core1b").click()
+                        _check(not page.locator('[data-role="model-host"]').is_visible(),
+                               "A lens attempt incorrectly unlocked droplet reconstruction")
+                        page.go_back(wait_until="load")
+                        page.locator("#tab-core1b").click()
+                        _check(page.locator('[data-role="model-host"]').is_visible(),
+                               "Lens attempt not preserved after return navigation")
+                        _check(page.evaluate("document.documentElement.scrollWidth <= window.innerWidth + 1"),
+                               "Lens mobile/desktop horizontal overflow")
+                        _check(not js_errors, "Lens JS errors "+repr(js_errors))
                         cases += 1
                         ctx.close()
 
