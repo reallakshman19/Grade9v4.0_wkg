@@ -27,7 +27,11 @@ def test_bounded_lens_and_scandium_checks_do_not_authenticate_original_paper():
     q57 = by_id["PHYS-NSEJS-2024-P-Q57"]
     assert q57["key_letters_matched"] is True
     assert q57["status"] == "BOUNDED_MATCH_ONLY_SOURCE_HOLD"
-    assert "Q57_ORIGINAL_FIGURE_AND_BYTE_DIGEST_NOT_VERIFIED" in q57["findings"]
+    assert "Q57_CANDIDATE_FIGURE_FIDELITY_NOT_VERIFIED" in q57["findings"]
+    assert "Q57_ORIGINAL_SOURCE_FIGURE_NOT_STAGED" in q57["findings"]
+    assert result["official_paper_raw_sha256_verified"] == (
+        "b80e3bae4e64aaad11f43cc12f07ef17ae495b75e231122d440b0f81709379e8"
+    )
     q56 = by_id["CHEM-NSEJS-2024-C-Q56"]
     assert q56["key_letters_matched"] is True
     assert q56["academic_admission"] == "HOLD"
