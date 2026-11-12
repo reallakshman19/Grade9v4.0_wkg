@@ -9,6 +9,7 @@ on:
       - 'nsejs/**'
       - 'preview/question-status.html'
       - 'tools/nsejs_core2_audit.py'
+      - 'tools/build_nsejs_core2_corpus.py'
       - 'tools/test_nsejs_core2_browser.py'
       - 'tests/test_nsejs_core2_agent_a.py'
       - '.github/workflows/nsejs-agent-a.yml'
@@ -30,6 +31,16 @@ jobs:
       - name: Source and QRT census (candidate only)
         run: |
           python tools/nsejs_core2_audit.py --census out/nsejs-physics-census.csv --json out/nsejs-qrt-summary.json
+      - name: Verify deterministic canonical candidate corpus
+        run: python tools/build_nsejs_core2_corpus.py --check
+      - name: Detect producer QRT band contradictions (expected HOLD, not CI acceptance)
+        run: |
+          if python tools/nsejs_core2_audit.py --strict-qrt > out/qrt-contradiction-summary.json; then
+            echo "Expected QRT contradiction negative-control did not fail"
+            exit 1
+          else
+            echo "QRT contradictions correctly held; not academically admitted"
+          fi
       - name: Isolated NSEJS negative and integrity tests
         run: python -m pytest tests/test_nsejs_core2_agent_a.py -q
       - name: Real HTTP Chromium Core2 journeys

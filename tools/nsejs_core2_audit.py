@@ -16,6 +16,25 @@ TOPICS = ("OPTICS","ELECTROSTATICS","CURRENT_ELECTRICITY","MAGNETISM_AND_EMI","M
 FACTORS = ("concept_model_selection","representation_translation","reasoning_chain_length",
            "algebra_computational_load","trap_exception_sensitivity")
 
+BAND_RANGES={"D1":(0,2),"D2":(3,5),"D3":(6,7),"D4":(8,10)}
+
+def score_band(score: int) -> str:
+    if type(score) is not int:
+        return "INVALID_SCORE"
+    for name,(lo,hi) in BAND_RANGES.items():
+        if lo<=score<=hi:
+            return name
+    return "OUT_OF_RANGE"
+
+def band_score_mismatches(questions: list[dict]) -> list[dict]:
+    return [
+        {"source_id":q["source_id"],"displayed_id":q.get("id"),
+         "topic":q.get("topic"),"nominated_band":q.get("band"),
+         "score":q.get("score"),"rubric_score_band":score_band(q.get("score")),
+         "adjudication":"HOLD"}
+        for q in questions if score_band(q.get("score"))!=q.get("band")
+    ]
+
 def source_questions(html: str) -> list[dict]:
     match = re.search(r'<script\s+id="wpe-data"\s+type="application/json">([\s\S]*?)</script>', html)
     if not match:
@@ -81,7 +100,8 @@ def rows(questions: list[dict]) -> list[dict]:
         r={"question_uid":uid(q),"source_id":q["source_id"],"displayed_id":q.get("id"),
            "topic":q.get("topic"),"provenance_claim":q.get("category","UNKNOWN"),
            "operation_nomination":q.get("op"),"band_nomination":q.get("band"),
-           "score_nomination":q.get("score"),"figure_refs":"|".join(figures),
+           "score_nomination":q.get("score"),"rubric_score_band":score_band(q.get("score")),
+           "band_score_consistent":score_band(q.get("score"))==q.get("band"),"figure_refs":"|".join(figures),
            "figure_custody":"NOT_RECEIVED" if figures else "NOT_APPLICABLE",
            "declared_stem_sha256":q.get("stem_sha256"),"computed_stem_sha256":stem_digest(q),
            "stem_digest_matches":stem_digest(q)==q.get("stem_sha256"),
@@ -100,6 +120,8 @@ def summary(questions: list[dict]) -> dict:
             "distinct_displayed_ids":len(names),
             "repeated_display_ids":sorted(k for k,n in names.items() if n>1),
             "producer_band_nominations":dict(sorted(bands.items())),
+            "rubric_band_mismatch_records":band_score_mismatches(questions),
+            "rubric_band_mismatch_count":len(band_score_mismatches(questions)),
             "topics":{t:{"count":sum(q["topic"]==t for q in questions),
                          "D3_nominated":sum(q["topic"]==t and q.get("band")=="D3" for q in questions),
                          "D4_nominated":sum(q["topic"]==t and q.get("band")=="D4" for q in questions)}
@@ -115,6 +137,7 @@ def main()->int:
     ap.add_argument("--census",type=Path)
     ap.add_argument("--json",type=Path)
     ap.add_argument("--strict-digest",action="store_true")
+    ap.add_argument("--strict-qrt",action="store_true",help="Fail on score/rubric band contradiction")
     args=ap.parse_args()
     try:
         q=source_questions(args.source.read_text(encoding="utf-8"))
@@ -129,7 +152,7 @@ def main()->int:
             args.json.parent.mkdir(parents=True,exist_ok=True)
             args.json.write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8")
         print(json.dumps(report,indent=2))
-        return 2 if problems else (3 if args.strict_digest and stem_mismatches(q) else 0)
+        return 2 if problems else (3 if args.strict_digest and stem_mismatches(q) else (4 if args.strict_qrt and band_score_mismatches(q) else 0))
     except (ValueError,KeyError,OSError,TypeError) as exc:
         print("NSEJS_CORE2_AUDIT_FAILURE:"+str(exc),file=sys.stderr);return 2
 if __name__=="__main__":raise SystemExit(main())

@@ -125,3 +125,47 @@ def test_duplicate_hub_question_viewers_removed():
         assert 'class="q-item-card' not in html
         assert "function revealDerivation(" not in html
     assert (ROOT/"nsejs/physics/question-bank.html").is_file()
+
+
+def test_qrt_d3_mislabels_are_reported_and_not_silently_reclassified():
+    mismatches=audit.band_score_mismatches(questions())
+    assert {(x["source_id"],x["rubric_score_band"]) for x in mismatches}=={
+        ("NSEJS-19-OPT-02","D1"),
+        ("NSEJS-FND-ELEC-04","D2"),
+        ("NSEJS-FND-CIRC-01","D2"),
+        ("NSEJS-FND-CIRC-02","D2"),
+    }
+    assert all(x["nominated_band"]=="D3" and x["adjudication"]=="HOLD" for x in mismatches)
+    assert audit.summary(questions())["rubric_band_mismatch_count"]==4
+
+
+def test_corpus_builder_is_reproducible_and_detects_source_mutations():
+    import json
+    import hashlib
+    import importlib.util
+    source=(ROOT/"preview/question-status.html").read_bytes()
+    corpus=json.loads((ROOT/"nsejs/data/physics-core2-candidates.v1.json").read_text(encoding="utf-8"))
+    module_spec=importlib.util.spec_from_file_location("core2_candidate_builder",ROOT/"tools/build_nsejs_core2_corpus.py")
+    builder=importlib.util.module_from_spec(module_spec)
+    module_spec.loader.exec_module(builder)
+    compiled=builder.compile_corpus(source,corpus["known_paper_locator_corrections"])
+    assert compiled==corpus
+    assert builder.generated_bytes(compiled)==builder.generated_bytes(
+        builder.compile_corpus(source,corpus["known_paper_locator_corrections"]))
+    tampered=source.replace(b"An ant is sitting on the principal axis",b"An ant is jumping on the principal axis",1)
+    assert builder.compile_corpus(tampered,corpus["known_paper_locator_corrections"])!=corpus
+
+
+def test_five_official_locator_corrections_preserve_historical_ids():
+    import json
+    corpus=json.loads((ROOT/"nsejs/data/physics-core2-candidates.v1.json").read_text(encoding="utf-8"))
+    corrections=corpus["known_paper_locator_corrections"]
+    assert [(sid,corrections[sid]["official_question_no"],corrections[sid]["official_option"])
+        for sid in ("NSEJS-23-OPT-01","NSEJS-24-ELEC-01","NSEJS-24-CIRC-01",
+                    "NSEJS-24-MAG-01","NSEJS-24-MECH-01")]==[
+        ("NSEJS-23-OPT-01",43,"B"),("NSEJS-24-ELEC-01",22,"A"),
+        ("NSEJS-24-CIRC-01",42,"D"),("NSEJS-24-MAG-01",44,"D"),
+        ("NSEJS-24-MECH-01",46,"B")]
+    assert len(corpus["questions"])==50
+    assert all(q["review_state"]=="NOT_ADMITTED" for q in corpus["questions"])
+    assert all(x["evidence_status"]=="OFFICIAL_PAPER_LOCATOR_AND_KEY_CHECKED" for x in corrections.values())
