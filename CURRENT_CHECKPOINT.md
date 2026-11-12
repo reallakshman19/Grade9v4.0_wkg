@@ -1,7 +1,7 @@
 # Oracle Checkpoint — 12 November 2026
 
-**Timestamp:** 2026-11-12T10:15:00+04:00  
-**Operating Sequence:** **Dual-Engine Quality Audit & Remediation across all 24 Core 1A/1B Modules: 100% COMPLETE & VERIFIED**  
+**Timestamp:** 2026-11-12T10:18:00+04:00  
+**Operating Sequence:** **12.7" Tablet Topic Hubs & Cores PR Draft Prepared (WPE Tile Removed; Core 2 Labeled {Unvalidated}; 1001 Pytest Passed, Tablet Playwright Passed)**  
 **Active Branch:** `feat/multi-subject-core2-expansion-01`  
 **Authority Invariant:** Rule 13 in `AGENTS.md` (*No academic approval inferred from software validation. Green CI means automatic tests passed; it never means student release is authorized.*)
 
@@ -16,7 +16,7 @@
 | **Track 3: Chemistry** | Topic 1: Matter & Mole Concept<br>Topic 2: Chemical Substances — Reactions<br>Topic 3: Atomic Structure & Bonding<br>D3 Modules (Eudiometry & Redox Titrations)<br>**NSEJS 2024, 2023, 2022, 2021 & 2020 Official Paper 51** | **112 items** | 15 suites (3 Core topics + 7 D3 + **NSEJS 2024, 2023, 2022, 2021 & 2020 Papers**), **155 passed** | **100% COMPLETE & DUAL-ENGINE AUDITED** |
 | **Track 4: Biology** | **NSEJS 2024, 2023, 2022, 2021 & 2020 Official Paper 51** | **80 items** | 6 suites (**NSEJS 2024, 2023, 2022, 2021 & 2020 Papers** + D3 Viral Genetics), **96 passed** | **100% COMPLETE & DUAL-ENGINE AUDITED** |
 | **Cross-Subject Architecture** | Shared/QRT Schemas, Bounded Transfer Protocols, Gate Checkers, Audit Invariants | N/A | 10 cross-cutting contract suites, **468 passed** | **ACTIVE & ENFORCED** |
-| **TOTALS** | **37 Active Learning Modules** | **392 items** | **52 Pytest Suites, 995 Passed, 2 Skipped (Platform Symlinks), 0 Failed** | **100% GREEN CI (Dual-Engine Audited)** |
+| **TOTALS** | **37 Active Learning Modules** | **392 items** | **53 Pytest Suites, 1001 Passed, 2 Skipped (Platform Symlinks), 0 Failed** | **100% GREEN CI (Dual-Engine & Tablet Audited)** |
 
 ---
 
