@@ -86,30 +86,33 @@ def test_bad_route_fails_closed(evidence, field, value, error):
 
 
 def test_return_question_or_revision_substitution_rejected(evidence):
-    mapping, source = evidence
+    original = deepcopy(original)
+    mapping, source = deepcopy(original)
     mapping["routes"][0]["source_return"]["question_uid"] = "g9:PHYSICS:WRONG"
     held(mapping, source, "SOURCE_RETURN_REVISION_MISMATCH")
-    mapping, source = deepcopy(evidence)
+    mapping, source = deepcopy(original)
     mapping["routes"][0]["source_return"]["content_revision_sha256"] = "0"*64
     held(mapping, source, "SOURCE_RETURN_REVISION_MISMATCH")
 
 
 def test_academic_or_reader_contract_promotion_rejected(evidence):
-    mapping, source = evidence
+    original = deepcopy(original)
+    mapping, source = deepcopy(original)
     source["source_claim"] = "OFFICIAL_NSEJS_EXAM"
     held(mapping, source, "UNAUTHORIZED_SOURCE_ORIGIN")
-    mapping, source = deepcopy(evidence)
+    mapping, source = deepcopy(original)
     mapping["source_revision_algorithm"] = "unexpected/v2"
     held(mapping, source, "INCOMPATIBLE_CONTENT_REVISION_ALGORITHM")
-    mapping, source = deepcopy(evidence)
+    mapping, source = deepcopy(original)
     mapping["academic_admission"] = "PASS"
     held(mapping, source, "ACADEMIC_ADMISSION_MUST_REMAIN_HOLD")
 
 
 def test_topic_change_or_lesson_attempt_alias_rejected(evidence):
-    mapping, source = evidence
+    original = deepcopy(original)
+    mapping, source = deepcopy(original)
     source["questions"][0]["topic"] = "OPTICS"
     held(mapping, source, "SOURCE_PROVENANCE_OR_TOPIC_INVALID")
-    mapping, source = deepcopy(evidence)
+    mapping, source = deepcopy(original)
     mapping["routes"][0]["lesson_id"] = mapping["routes"][0]["task_a_id"]
     held(mapping, source, "SHARED_ATTEMPT_OR_TRANSFER_ID")
