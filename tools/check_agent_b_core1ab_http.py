@@ -19,6 +19,40 @@ def _check(condition, message):
         raise AssertionError(message)
 
 
+def _check_touch_ergonomics(page, module: str, orientation: str):
+    """Inspect actual rendered touch geometry (CSS pixels, not assumed physical DPI)."""
+    checks = page.evaluate("""() => {
+      const visible = el => {
+        const style = getComputedStyle(el);
+        const rect = el.getBoundingClientRect();
+        return style.visibility !== 'hidden' && style.display !== 'none' &&
+          rect.width > 0 && rect.height > 0;
+      };
+      const tabs = [...document.querySelectorAll('#tab-core2,#tab-core1a,#tab-core1b')].filter(visible);
+      const controls = [...document.querySelectorAll('#content-core1b button')].filter(visible);
+      const fields = [...document.querySelectorAll('#content-core1b textarea')].filter(visible);
+      return {
+        tabSizes: tabs.map(x => ({width: x.getBoundingClientRect().width, height: x.getBoundingClientRect().height})),
+        controlSizes: controls.map(x => ({width: x.getBoundingClientRect().width, height: x.getBoundingClientRect().height})),
+        fieldSizes: fields.map(x => ({width: x.getBoundingClientRect().width, height: x.getBoundingClientRect().height})),
+        bodyFont: parseFloat(getComputedStyle(document.body).fontSize),
+        touchStyle: !!document.querySelector('#agent-b-127-tablet-touch'),
+        overflow: document.documentElement.scrollWidth > window.innerWidth + 1,
+      };
+    }""")
+    prefix = module + " " + orientation
+    _check(checks["touchStyle"], prefix+" lacks source-owned touch design stylesheet")
+    _check(checks["bodyFont"] >= 18, prefix+" body text smaller than 18 CSS px")
+    _check(len(checks["tabSizes"]) == 3, prefix+" expected three visible learning tabs")
+    _check(len(checks["controlSizes"]) >= 2, prefix+" expected visible Core1B buttons")
+    _check(all(x["height"] >= 55 and x["width"] >= 104 for x in
+               checks["tabSizes"]+checks["controlSizes"]),
+           prefix+" touch target smaller than the intended tablet size: "+repr(checks))
+    _check(all(x["height"] >= 170 for x in checks["fieldSizes"]),
+           prefix+" answer field too short for sustained touchscreen typing")
+    _check(not checks["overflow"], prefix+" horizontal scrolling at tablet viewport")
+
+
 def main():
     from playwright.sync_api import sync_playwright
 
@@ -50,33 +84,34 @@ def main():
             with sync_playwright() as p:
                 browser = p.chromium.launch(headless=True, args=["--no-sandbox", "--disable-dev-shm-usage"])
                 try:
-                    for size in ((1366, 768), (390, 844)):
-                        ctx = browser.new_context(viewport={"width": size[0], "height": size[1]})
+                    for size in ((1600, 1000), (1000, 1600)):
+                        ctx = browser.new_context(viewport={"width": size[0], "height": size[1]}, has_touch=True, is_mobile=False)
                         page = ctx.new_page()
                         js_errors = []
                         page.on("pageerror", lambda e: js_errors.append(str(e)))
                         response = page.goto(f"http://127.0.0.1:{port}"+url_path, wait_until="load", timeout=15000)
                         _check(response is not None and response.status == 200, "HTTP navigation failed")
-                        page.locator("#tab-core1b").click()
+                        page.locator("#tab-core1b").tap()
+                        _check_touch_ergonomics(page, "Core1B", "tablet")
                         root_selector = "#content-core1b[data-agent-b-core1b]"
                         _check(page.locator(root_selector).count() == 1, "No protected Core1B panel")
                         _check(not page.locator('[data-role="model-host"]').is_visible(), "Model visible before attempt")
                         _check("5.1124" not in page.locator(root_selector).inner_text(), "Work answer leaked before attempt")
 
-                        page.locator('[data-hint="1"]').click()
+                        page.locator('[data-hint="1"]').tap()
                         _check(page.locator('[data-hint-text="1"]').inner_text().strip() != "", "Hint did not reveal; status=" + page.locator('[data-role="status"]').inner_text() + "; js=" + repr(js_errors))
                         page.locator('[data-role="prediction-input"]').fill("The large drop contributes eight small-drop volumes.")
-                        page.locator('[data-role="save-prediction"]').click()
+                        page.locator('[data-role="save-prediction"]').tap()
                         page.reload(wait_until="load")
-                        page.locator("#tab-core1b").click()
+                        page.locator("#tab-core1b").tap()
                         _check(page.locator('[data-role="save-prediction"]').is_disabled(), "Prediction not restored")
 
                         stale_tab = ctx.new_page()
                         stale_tab.goto(f"http://127.0.0.1:{port}"+url_path, wait_until="load", timeout=15000)
-                        stale_tab.locator("#tab-core1b").click()
+                        stale_tab.locator("#tab-core1b").tap()
                         page.locator('[data-role="firstAttempt-input"]').fill(
                             "R^3=8r^3+(2r)^3=16r^3; Ai=4pi(12)r^2 and Af=4pi(16^(2/3))r^2.")
-                        page.locator('[data-role="save-firstAttempt"]').click()
+                        page.locator('[data-role="save-firstAttempt"]').tap()
                         _check(page.locator('[data-role="model-host"]').is_visible(), "Reconstruction did not unlock")
                         _check(page.locator('[data-role="save-firstAttempt"]').is_disabled(), "Original attempt not frozen")
                         _check(page.locator('[data-role="model-host"]').inner_text().count("5.1124") > 0,
@@ -85,20 +120,20 @@ def main():
                                "Stale tab was not invalidated")
 
                         page.reload(wait_until="load")
-                        page.locator("#tab-core1b").click()
+                        page.locator("#tab-core1b").tap()
                         _check(page.locator('[data-role="model-host"]').is_visible(), "Reconstruction not restored")
                         _check(page.locator('[data-role="save-firstAttempt"]').is_disabled(), "Attempt could be replaced")
                         page.locator('[data-role="diagnosis-input"]').fill("First mistake: treated unequal radii as equal.")
-                        page.locator('[data-role="save-diagnosis"]').click()
+                        page.locator('[data-role="save-diagnosis"]').tap()
                         _check(page.locator('[data-role="repair-stage"]').is_visible(), "Repair not gated by diagnosis")
                         page.locator('[data-role="repair-input"]').fill("Add cubic radii separately and subtract final area.")
-                        page.locator('[data-role="save-repair"]').click()
+                        page.locator('[data-role="save-repair"]').tap()
                         _check(page.locator('[data-role="transfer-stage"]').is_visible(), "Changed-condition task not available")
                         page.locator('[data-role="transfer-input"]').fill("For ten equal drops, R^3=10r^3.")
-                        page.locator('[data-role="save-transfer"]').click()
+                        page.locator('[data-role="save-transfer"]').tap()
                         _check(page.locator('[data-role="boundary-answer"]').is_visible(), "Boundary model remained hidden")
                         page.reload(wait_until="load")
-                        page.locator("#tab-core1b").click()
+                        page.locator("#tab-core1b").tap()
                         _check(page.locator('[data-role="save-transfer"]').is_disabled(), "Transfer attempt not durable")
                         _check(not js_errors, "JavaScript runtime exceptions: "+repr(js_errors))
                         _check(page.locator("iframe").count() == 0, "Iframe unsupported")
@@ -107,58 +142,59 @@ def main():
                         cases += 1
                         ctx.close()
 
-                    for size in ((1366, 768), (390, 844)):
-                        ctx = browser.new_context(viewport={"width": size[0], "height": size[1]})
+                    for size in ((1600, 1000), (1000, 1600)):
+                        ctx = browser.new_context(viewport={"width": size[0], "height": size[1]}, has_touch=True, is_mobile=False)
                         page = ctx.new_page()
                         js_errors = []
                         page.on("pageerror", lambda e: js_errors.append(str(e)))
                         response = page.goto(f"http://127.0.0.1:{port}"+lens_path, wait_until="load", timeout=15000)
                         _check(response is not None and response.status == 200, "Lens HTTP learner navigation failed")
-                        page.locator("#tab-core2").click()
+                        page.locator("#tab-core2").tap()
                         _check("Agent A" in page.locator("#content-core2").inner_text(), "Core2 ownership status missing")
-                        page.locator("#tab-core1a").click()
+                        page.locator("#tab-core1a").tap()
                         _check("Core1A physical construction" in page.locator("#content-core1a").inner_text(),
                                "Lens Core1A teaching not rendered")
-                        page.locator("#tab-core1b").click()
+                        page.locator("#tab-core1b").tap()
+                        _check_touch_ergonomics(page, "lens", "tablet")
                         _check(not page.locator('[data-role="model-host"]').is_visible(),
                                "Lens reconstruction shown without first attempt")
                         _check("18 cm" not in page.locator("#content-core1b").inner_text(),
                                "Lens focal answer leaked in attempt or hints")
-                        page.locator('[data-hint="3"]').click()
+                        page.locator('[data-hint="3"]').tap()
                         _check("18 cm" not in page.locator("#content-core1b").inner_text(),
                                "Lens H3 reveals final focal length")
                         page.locator('[data-role="prediction-input"]').fill(
                             "Conjugate positions measure the root separation, not the focal length.")
-                        page.locator('[data-role="save-prediction"]').click()
+                        page.locator('[data-role="save-prediction"]').tap()
                         page.locator('[data-role="firstAttempt-input"]').fill(
                             "D=96, d=48 so product=(D^2-d^2)/4=1728 and f=1728/96=18 cm.")
-                        page.locator('[data-role="save-firstAttempt"]').click()
+                        page.locator('[data-role="save-firstAttempt"]').tap()
                         _check(page.locator('[data-role="model-host"]').is_visible(), "Lens reconstruction not gated correctly")
                         _check(page.locator('[data-role="save-firstAttempt"]').is_disabled(), "Lens attempt not frozen")
                         _check("18 cm" in page.locator('[data-role="model-host"]').inner_text(),
                                "Lens independent reconstruction missing")
                         page.reload(wait_until="load")
-                        page.locator("#tab-core1b").click()
+                        page.locator("#tab-core1b").tap()
                         _check(page.locator('[data-role="model-host"]').is_visible(), "Lens saved attempt not restored")
                         _check(page.locator('[data-role="save-firstAttempt"]').is_disabled(), "Lens attempt can be overwritten")
                         page.locator('[data-role="diagnosis-input"]').fill("Confused measured displacement with focal length.")
-                        page.locator('[data-role="save-diagnosis"]').click()
+                        page.locator('[data-role="save-diagnosis"]').tap()
                         page.locator('[data-role="repair-input"]').fill("Use root sum and difference first.")
-                        page.locator('[data-role="save-repair"]').click()
+                        page.locator('[data-role="save-repair"]').tap()
                         page.locator('[data-role="transfer-input"]').fill("D=70 is smaller than 4f=72.")
-                        page.locator('[data-role="save-transfer"]').click()
+                        page.locator('[data-role="save-transfer"]').tap()
                         _check(page.locator('[data-role="boundary-answer"]').is_visible(),
                                "Lens transfer feedback not gated")
                         page.goto(f"http://127.0.0.1:{port}"+url_path, wait_until="load", timeout=15000)
-                        page.locator("#tab-core1b").click()
+                        page.locator("#tab-core1b").tap()
                         _check(not page.locator('[data-role="model-host"]').is_visible(),
                                "A lens attempt incorrectly unlocked droplet reconstruction")
                         page.go_back(wait_until="load")
-                        page.locator("#tab-core1b").click()
+                        page.locator("#tab-core1b").tap()
                         _check(page.locator('[data-role="model-host"]').is_visible(),
                                "Lens attempt not preserved after return navigation")
                         _check(page.evaluate("document.documentElement.scrollWidth <= window.innerWidth + 1"),
-                               "Lens mobile/desktop horizontal overflow")
+                               "Lens tablet portrait/landscape horizontal overflow")
                         _check(not js_errors, "Lens JS errors "+repr(js_errors))
                         cases += 1
                         ctx.close()
@@ -175,8 +211,8 @@ def main():
                     )
                     for slug in more:
                         path = "/workspace/output/"+slug+"/learning_journey.html"
-                        for size in ((1366, 768), (390, 844)):
-                            ctx = browser.new_context(viewport={"width": size[0], "height": size[1]})
+                        for size in ((1600, 1000), (1000, 1600)):
+                            ctx = browser.new_context(viewport={"width": size[0], "height": size[1]}, has_touch=True, is_mobile=False)
                             page = ctx.new_page()
                             errors = []
                             page.on("pageerror", lambda e: errors.append(str(e)))
@@ -184,23 +220,24 @@ def main():
                                              wait_until="load", timeout=15000)
                             _check(resp is not None and resp.status == 200,
                                    "Missing real HTTP learner route: "+slug)
-                            page.locator("#tab-core1b").click()
+                            page.locator("#tab-core1b").tap()
+                            _check_touch_ergonomics(page, slug, "tablet")
                             _check(not page.locator('[data-role="model-host"]').is_visible(),
                                    slug+" leaked model before first answer")
                             _check(page.locator('[data-role="save-firstAttempt"]').is_enabled(),
                                    slug+" cannot enter first answer")
                             page.locator('[data-role="prediction-input"]').fill(
                                 "I predict the source assumptions will determine the governing operation.")
-                            page.locator('[data-role="save-prediction"]').click()
+                            page.locator('[data-role="save-prediction"]').tap()
                             page.locator('[data-role="firstAttempt-input"]').fill(
                                 "Original response: I will test the model assumptions and carry out the operation.")
-                            page.locator('[data-role="save-firstAttempt"]').click()
+                            page.locator('[data-role="save-firstAttempt"]').tap()
                             _check(page.locator('[data-role="model-host"]').is_visible(),
                                    slug+" did not unlock reconstruction after verified save")
                             _check(page.locator('[data-role="save-firstAttempt"]').is_disabled(),
                                    slug+" did not freeze original response")
                             page.reload(wait_until="load")
-                            page.locator("#tab-core1b").click()
+                            page.locator("#tab-core1b").tap()
                             _check(page.locator('[data-role="model-host"]').is_visible(),
                                    slug+" lost persisted model/attempt on HTTP refresh")
                             _check(page.locator('[data-role="save-firstAttempt"]').is_disabled(),
@@ -213,7 +250,7 @@ def main():
                             cases += 1
                             ctx.close()
 
-                    denied = browser.new_context(viewport={"width": 390, "height": 844})
+                    denied = browser.new_context(viewport={"width": 1000, "height": 1600}, has_touch=True, is_mobile=False)
                     denied.add_init_script("""(() => {
                         const original = Storage.prototype.setItem;
                         Storage.prototype.setItem = function(k,v) {
@@ -223,7 +260,7 @@ def main():
                     })()""")
                     page = denied.new_page()
                     page.goto(f"http://127.0.0.1:{port}"+url_path, wait_until="load", timeout=15000)
-                    page.locator("#tab-core1b").click()
+                    page.locator("#tab-core1b").tap()
                     _check("unavailable" in page.locator('[data-role="status"]').inner_text(),
                            "Storage denial not disclosed")
                     _check(page.locator('[data-role="save-firstAttempt"]').is_disabled(), "Denied storage enabled submit")
@@ -235,7 +272,7 @@ def main():
         finally:
             server.shutdown()
             server.server_close()
-    print(f"PASS: {cases} real HTTP Chromium Agent B learner cases (desktop/mobile/storage denial)")
+    print(f"PASS: {cases} real HTTP Chromium Agent B 12.7-inch tablet touch cases (landscape/portrait/storage denial)")
 
 
 if __name__ == "__main__":
