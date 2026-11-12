@@ -325,3 +325,113 @@ def render_protected_core1b(original_html: str, b: dict) -> str:
     if "</body>" not in output:
         raise ValueError("Cannot find end of generated learner page")
     return output.replace("</body>", script+"</body>", 1)
+
+
+
+def render_lens_learning_journey(core1a: dict, core1b: dict) -> str:
+    """Standalone source-neutral authored lesson; Agent A retains the Core2 reader.
+
+    This is intentionally a separate generated learner page, not a copy of the
+    candidate bank's original stem, figures, answer map or QRT authority.
+    """
+    if core1a.get("construction_id") != core1b.get("construction_id"):
+        raise ValueError("Core1A/Core1B construction identity mismatch")
+    if core1a.get("academic_status") != "HOLD:ACADEMIC_ADMISSION":
+        raise ValueError("Unexpected Core1A admission")
+    if core1b.get("academic_status") != "HOLD:ACADEMIC_ADMISSION":
+        raise ValueError("Unexpected Core1B admission")
+    if not core1b.get("fresh_context_ref", "").startswith("AB-PRACTICE-"):
+        raise ValueError("Practice candidate must not masquerade as an authentic exam source")
+    escaped_title = html.escape(str(core1a.get("title", "Lens displacement teaching")), quote=True)
+    path_steps = core1a.get("teaching_path", [])
+    anchor = core1a.get("worked_conceptual_anchor", {})
+    if not path_steps or not anchor:
+        raise ValueError("Core1A teaching spans or worked anchor missing")
+    teaching = []
+    for i, step in enumerate(path_steps, 1):
+        if not isinstance(step, dict):
+            raise ValueError("Invalid Core1A teaching step")
+        title = html.escape(str(step.get("role", "Inference")), quote=True)
+        action = html.escape(str(step.get("action", "")), quote=True)
+        justification = html.escape(str(step.get("why_valid", "")), quote=True)
+        teaching.append(f'<li><strong>{i}. {title}</strong>: {action} <span class="why">Why valid: {justification}</span></li>')
+    examples = "".join(
+        f"<li>{html.escape(str(step), quote=True)}</li>"
+        for step in anchor.get("solution_steps", [])
+    )
+    if not examples:
+        raise ValueError("No distinct worked Core1A solution anchor")
+    anchor_prompt = html.escape(str(anchor.get("problem", "")), quote=True)
+    entry = html.escape(str(core1a.get("inferential_jump", "")), quote=True)
+    misconceptions = "".join(
+        "<li>" + html.escape(str(m.get("wrong_idea", "")), quote=True) +
+        " — Repair: " + html.escape(str(m.get("repair", "")), quote=True) + "</li>"
+        for m in core1a.get("misconceptions", []) if isinstance(m, dict)
+    )
+    base = """<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>""" + escaped_title + """ — Core1A/B authored practice</title>
+<style>
+html,body{margin:0;padding:0;box-sizing:border-box;font:16px/1.55 system-ui,-apple-system,sans-serif;color:#192335;background:#f7f9fc}
+*,*::before,*::after{box-sizing:inherit}
+main{max-width:900px;margin:auto;padding:1rem}
+section{border:1px solid #d2deea;border-radius:.65rem;margin:.8rem 0;padding:.85rem;background:#fff}
+button{min-height:44px;padding:.5rem .8rem;cursor:pointer}
+button:focus-visible,textarea:focus-visible{outline:3px solid #2563eb;outline-offset:2px}
+nav{display:flex;flex-wrap:wrap;gap:.5rem;padding:.4rem}
+.tab-content{display:none}.tab-content.active{display:block}
+.tab-button.active{background:#223f65;color:#fff}
+.why{display:block;font-style:italic;color:#3d5061}
+li{margin-bottom:.7rem;overflow-wrap:anywhere}
+svg{max-width:100%;max-height:130px}
+.derivation-section{display:none}
+footer{border-top:1px solid #d2deea;margin:2rem 0;padding-top:1rem;color:#435164}
+@media (max-width: 600px){main{padding:.5rem;}section{padding:.65rem;}button{width:100%;}}
+</style></head>
+<body><main>
+<header><h1>""" + escaped_title + """</h1>
+<p><strong>Authored practice · Academic admission HOLD.</strong> Not a verified original NSEJS question.
+Core2 source, original figure, official key and source/QRT approval belong to Agent A.</p></header>
+<nav aria-label="Core learning tabs">
+<button class="tab-button active" type="button" id="tab-core2" onclick="switchTab('core2')">Core 2 source status</button>
+<button class="tab-button" type="button" id="tab-core1a" onclick="switchTab('core1a')">Core 1A teaching</button>
+<button class="tab-button" type="button" id="tab-core1b" onclick="switchTab('core1b')">Core 1B new challenge</button></nav>
+<div id="content-core2" class="tab-content active">
+<section><h2>Original question — separate source authority</h2>
+<p>This standalone page does not reproduce the original examination question or authenticate its source.
+Use the Agent A source-preserving reader for the original question.
+No original-answer or QRT approval is issued by this learning page.</p>
+<button type="button" onclick="document.getElementById('derivation-section').style.display='block'">Show source authority note</button>
+<div id="derivation-section" class="derivation-section" style="display: none;">
+<p>Original question and derivation must remain under Agent A's separate source and attempt contract.</p></div></section></div>
+<div id="content-core1a" class="tab-content">
+<section><h2>Core1A physical construction</h2><p>""" + entry + """</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 600 100" role="img" aria-label="An object, thin lens and screen along a common optical axis; distances add to D.">
+<line x1="60" y1="58" x2="540" y2="58" stroke="#333" stroke-width="2"/>
+<line x1="95" y1="20" x2="95" y2="85" stroke="#244d8c" stroke-width="5"/>
+<line x1="275" y1="15" x2="275" y2="85" stroke="#107d75" stroke-width="5"/>
+<line x1="500" y1="20" x2="500" y2="85" stroke="#9a5427" stroke-width="5"/>
+<text x="60" y="14" font-size="14">Object</text>
+<text x="258" y="14" font-size="14">Lens</text>
+<text x="481" y="14" font-size="14">Screen</text>
+<text x="163" y="92" font-size="14">x</text>
+<text x="381" y="92" font-size="14">D − x</text>
+</svg>
+<ol>""" + "\n".join(teaching) + """</ol>
+<h3>Distinct worked concept anchor</h3><p>""" + anchor_prompt + """</p>
+<ol>""" + examples + """</ol>
+<h3>Check misconceptions</h3><ul>""" + misconceptions + """</ul></section></div>
+<div id="content-core1b" class="tab-content"></div>
+<footer>No academic approval inferred from software validation. Green CI means automatic tests passed; it never means student release is authorized.</footer>
+</main>
+<script>
+function switchTab(id){
+  for(const el of document.querySelectorAll('.tab-button'))el.classList.remove('active');
+  for(const el of document.querySelectorAll('.tab-content'))el.classList.remove('active');
+  document.getElementById('tab-'+id).classList.add('active');
+  document.getElementById('content-'+id).classList.add('active');
+}
+</script>
+</body></html>"""
+    return render_protected_core1b(base, core1b)
