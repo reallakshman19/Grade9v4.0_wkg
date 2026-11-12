@@ -60,7 +60,7 @@ def test_custody_source_manipulations_fail_closed(sources,mutate):
     source=deepcopy(sources)
     year=next(y for y in source["years"] if y["year"]==2024)
     if mutate=="official_authority":source["source_admission"]="APPROVED"
-    if mutate=="duplicate_year":source["years"][0]["year"]=2020
+    if mutate=="duplicate_year":source["years"][0]["year"]=2021
     if mutate=="wrong_host":year["official_paper_url"]="https://example.com/paper.pdf"
     if mutate=="ftp_link":year["official_final_key_url"]="http://iapt.org.in/key.pdf"
     if mutate=="source_claim":source["copyright_and_redistribution"]="APPROVED"
