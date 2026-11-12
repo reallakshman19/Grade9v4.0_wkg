@@ -166,3 +166,35 @@ def test_unsafe_author_source_or_route_is_rejected_not_linked(start,kind):
         assert page.locator(".answer:visible").count()==0
     finally:
         ctx.close()
+
+
+def test_malformed_encoded_return_fragment_fails_closed_without_script_exception(start):
+    # Encoded return anchors are untrusted URL input. A bad escape must not
+    # cause an unhandled URIError in the asynchronous observer callback.
+    ctx,page,errors=start(return_path(fragment="question-%ZZ"))
+    try:
+        page.wait_for_function("document.querySelectorAll('article.card').length===11")
+        page.locator("#learning-return-status[data-state='HOLD']").wait_for(timeout=15000)
+        assert "invalid source UID, revision, topic or fragment" in page.locator(
+            "#learning-return-status").inner_text()
+        assert page.locator(".nsejs-exact-source-return").count()==0
+        assert page.locator(".answer:visible").count()==0
+        assert not errors,errors
+    finally:
+        ctx.close()
+
+
+def test_conflicting_core2_uid_filter_blocks_return_even_when_revision_matches(start):
+    # The reader optionally filters cards by ?uid. A conflicting UID must be
+    # explicitly rejected; do not leave a pending/blank return status forever.
+    path=return_path().replace("#"+ANCHOR,
+        "&uid="+quote("g9:PHYSICS:WRONG",safe="")+"#"+ANCHOR)
+    ctx,page,errors=start(path)
+    try:
+        page.locator("#learning-return-status[data-state='HOLD']").wait_for(timeout=15000)
+        assert page.locator(".nsejs-exact-source-return").count()==0
+        assert page.locator(".answer:visible").count()==0
+        assert page.locator("#learning-return-status").inner_text().startswith("HOLD")
+        assert not errors,errors
+    finally:
+        ctx.close()
