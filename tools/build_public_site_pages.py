@@ -7,6 +7,7 @@ The repo's historical engineering/reader workspaces stay untouched.
 """
 from __future__ import annotations
 from pathlib import Path
+import re
 from html import escape
 from urllib.parse import urlparse
 
@@ -238,7 +239,7 @@ def preview_html(path: str)->str:
  txt=(ROOT/path).read_text(encoding="utf-8")
  txt=txt.replace('<script data-grade9-nav defer src="../site-nav.js"></script>','')
  for old,new in _LEGACY_LINK_TARGETS.items():
-  txt=txt.replace('href="'+old+'"','href="'+new+'"')
+  txt=re.sub(r'href="'+re.escape(old)+r'(?:#[^"]*)?"','href="'+new+'"',txt)
  # Only display new content, never claim that the synthetic reader is a real QBank.
  txt=txt.replace('Question Bank · Review','Synthetic reader · review only')
  txt=txt.replace('Question Bank','Synthetic technical reader')
