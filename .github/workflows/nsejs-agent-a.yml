@@ -4,12 +4,15 @@ on:
   push:
     branches:
       - fix/nsejs-core2-qrt-agent-a-r1
+      - fix/nsejs-core2-stem-qrt-reconcile-r3
   pull_request:
     paths:
       - 'nsejs/**'
       - 'preview/question-status.html'
       - 'tools/nsejs_core2_audit.py'
       - 'tools/build_nsejs_core2_corpus.py'
+      - 'tools/build_nsejs_core2_integrity.py'
+      - 'tests/test_nsejs_core2_integrity_r3.py'
       - 'tools/test_nsejs_core2_browser.py'
       - 'tests/test_nsejs_core2_agent_a.py'
       - '.github/workflows/nsejs-agent-a.yml'
@@ -46,8 +49,17 @@ jobs:
             exit 1
           fi
           echo "PASS: both QRT and digest contradictions rejected with exact failure codes; still on HOLD"
+      - name: Verify observed stem data integrity and source/score HOLD ledger
+        run: python tools/build_nsejs_core2_integrity.py --check
+      - name: Verify academic gate refuses unresolved source claims
+        run: |
+          set +e
+          python tools/build_nsejs_core2_integrity.py --check --academic-gate > out/source-and-qrt-academic-hold.json
+          status=$?
+          set -e
+          test "$status" -eq 4 || { echo "Expected ACADEMIC_HOLD exit 4, got $status"; exit 1; }
       - name: Isolated NSEJS negative and integrity tests
-        run: python -m pytest tests/test_nsejs_core2_agent_a.py -q
+        run: python -m pytest tests/test_nsejs_core2_agent_a.py tests/test_nsejs_core2_integrity_r3.py -q
       - name: Real HTTP Chromium Core2 journeys
         run: python tools/test_nsejs_core2_browser.py
       - name: Upload audit evidence
