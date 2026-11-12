@@ -22,6 +22,12 @@ main{padding-top:0}.notice{border-left:5px solid #b67b1a;background:#fff9e6;padd
 .figure-warning{background:#fff4e5;border:1px solid #bc8e54;border-radius:8px;padding:9px}
 a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #bb7f1b;outline-offset:2px}
 @media(max-width:600px){header,main{padding:12px}.card{padding:12px}}
+.nsejs-learning-route{padding:16px 18px;border:2px solid #6299ad;border-radius:12px;background:#edf8fa;margin:18px 0}
+.nsejs-learning-touch-link{display:inline-flex;min-height:56px;align-items:center;padding:12px 18px;background:#145a75;color:#fff;border-radius:10px;font-weight:700;text-decoration:none}
+.nsejs-learning-touch-link:focus-visible{outline:4px solid #b47a19;outline-offset:3px}
+.nsejs-exact-source-return{border:4px solid #167453;scroll-margin-top:22px}
+#learning-return-status{padding:14px 18px;border-radius:11px;border:2px solid #9ab6bf;background:#eff8fa;max-width:1140px}
+#learning-return-status[data-state="HOLD"]{background:#fff4e7;border-color:#b46d36}
 </style>
 <script>
 window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]},svg:{fontCache:'global'}};
@@ -34,8 +40,10 @@ window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]},svg:{fontCache:'globa
 <div class="notice"><strong>Candidate practice — not academically admitted.</strong> Exam authenticity, QRT classifications, answers and original figures require independent verification. Browser attempts are unverified local practice, not examination evidence.</div>
 <nav id="topicNav" aria-label="Physics topics"></nav>
 <p id="status" role="status">Loading source-linked candidate records…</p>
+<p id="learning-return-status" role="status" aria-live="polite" hidden></p>
 <section id="questions" aria-label="Questions"></section>
 <footer><p>No academic approval inferred from software validation.</p></footer>
 </main>
 <script defer src="../js/core2-physics-reader.js"></script>
+<script defer src="../js/core2-learning-route.js"></script>
 </body></html>
