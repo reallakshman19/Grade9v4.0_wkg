@@ -9,6 +9,7 @@ on:
       - 'tests/test_nsejs_browser_suite_registration.py'
       - 'nsejs/physics/learn-mechanics.html'
       - 'nsejs/css/wpe-touch-parity.css'
+      - 'browser_tests/test_nsejs_wpe_runtime_browser.py'
       - 'browser_tests/test_nsejs_wpe_real_pilot_browser.py'
       - 'tests/test_nsejs_mechanics_teaching_pilot.py'
       - '.github/workflows/nsejs-wave2-joint-http.yml'
