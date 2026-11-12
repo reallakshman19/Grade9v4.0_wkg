@@ -63,6 +63,10 @@ def test_core1a_structure_and_fields(core1a):
 
     assert len(core1a["entry_assumptions"]) >= 3
     assert len(core1a["inferential_jump"]) > 30
+    # New B3 teaching must repair the specific IAPT Q52 concept, not histamine.
+    assert "IgM" in core1a["teaching_path"][3]["action"]
+    assert "IgD" in core1a["teaching_path"][3]["action"]
+    assert "histamine" not in core1a["teaching_path"][3]["action"].lower()
 
     path = core1a["teaching_path"]
     assert len(path) == 4
@@ -116,14 +120,24 @@ def test_witness_schema_and_b1_to_b7_inspection(witness):
     assert witness["core1a"]["content_sha256"] == expected_c1a_sha
     assert witness["core1b"]["task_sha256"] == expected_c1b_sha
 
+    # The original-paper Q52 option D is about B-cell membrane IgM/IgD,
+    # whereas the old authored bank substituted a histamine statement.
+    # A coincidentally matching answer-letter set is NOT original source fidelity.
+    assert witness["assessment"]["source_role"] == "PREREQUISITE_BRIDGE"
+    assert witness["source_and_physics"]["known_physics_contradiction"] is True
+    assert witness["source_and_physics"]["source_custody_ref"].startswith("HOLD_SOURCE_CONFLICT")
     result = inspect_witness(witness)
-    assert result["mechanical_status"] == "HOLD"
+    assert result["mechanical_status"] == "FAIL"  # P0 source contradiction, fail closed
     assert result["qualification_status"] == "HOLD"
     assert result["release_status"] == "HOLD"
-
     gate_results = {g["gate"]: g["result"] for g in result["gate_results"]}
-    for gate_name in ("B1", "B2", "B3", "B4", "B5", "B6", "B7"):
-        assert gate_results[gate_name] == "HOLD"
+    assert gate_results["B7"] == "FAIL"
+    # Earlier gates may independently fail as additional evidence is inspected;
+    # none is permitted to confer an academic PASS.
+    assert all(gate_results[g] in ("HOLD", "FAIL") for g in
+               ("B1", "B2", "B3", "B4", "B5", "B6"))
+    assert any(x["code"] == "KNOWN_PHYSICS_CONTRADICTION"
+               for x in next(g for g in result["gate_results"] if g["gate"] == "B7")["findings"])
 
 
 def test_anti_patterns_on_learning_journey_html(journey_html):
@@ -157,9 +171,9 @@ def test_immunology_biological_soundness():
     """Verify biological veracity of propositions."""
     propositions = {
         "A": {"statement": "All antibodies are glycoproteins", "valid": True},
-        "B": {"statement": "Eosinophils are non-phagocytic lymphocytes", "valid": False},  # myeloid granulocyte
+        "B": {"statement": "Eosinophils are not polymorphonuclear cells", "valid": False},  # they are myeloid granulocytes
         "C": {"statement": "Ciliated pseudostratified epithelium is physical barrier", "valid": True},
-        "D": {"statement": "Histamine causes vasodilation and inflammation", "valid": True}
+        "D": {"statement": "Mature naive B cells express surface IgM and IgD", "valid": True}
     }
     correct_options = [k for k, v in propositions.items() if v["valid"]]
     assert correct_options == ["A", "C", "D"]
