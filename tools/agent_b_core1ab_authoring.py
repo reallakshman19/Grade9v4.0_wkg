@@ -435,3 +435,181 @@ function switchTab(id){
 </script>
 </body></html>"""
     return render_protected_core1b(base, core1b)
+
+
+
+def scandium_ionization_core1b(original: dict) -> dict:
+    """Authored transfer: remove electrons from ions; never present as an exam item."""
+    b = copy.deepcopy(original)
+    b["fresh_context_ref"] = "AB-PRACTICE-CHEM-SC-IONIZATION-R1"
+    b["taught_skill_Y"] = "Derive neutral atom electron configuration from shell and subshell occupancy."
+    b["connecting_route_Z"] = "Distinguish initial 4s filling from electron-removal ordering for free transition-metal ions."
+    b["protected_fresh_inference_W"] = (
+        "Predict how Sc, Sc2+ and Sc3+ ground-state unpaired-electron counts differ "
+        "by selecting the physically correct subshell to ionize."
+    )
+    b["stages"] = {
+        "stage_1_predict": {
+            "prompt": "The 4s subshell fills before 3d for neutral scandium. Must a 3d electron therefore always be lost before 4s during ionization? Justify.",
+            "defensible_prediction": "No; filling order and electron-removal order are different. The 4s electrons are removed first in common Sc cations."
+        },
+        "stage_2_attempt": {
+            "prompt": "For isolated neutral scandium, Sc2+ and Sc3+, write their ground-state subshell configurations and predict the number of unpaired electrons in each. Explain which subshell loses the first two electrons and which loses the third.",
+            "produces": "Sc [Ar]3d1 4s2 has one unpaired; Sc2+ [Ar]3d1 has one; Sc3+ [Ar] has none. Ionization removes 4s before 3d.",
+            "closure": "RUBRIC",
+            "rubric": [
+                {"criterion": "Start from neutral Sc [Ar]3d1 4s2.", "evidence_of": "Distinguishes neutral atom's electron filling from ionization."},
+                {"criterion": "Remove both 4s electrons before removing the remaining 3d electron.", "evidence_of": "Applies cation energetics instead of reversing Aufbau simplistically."},
+                {"criterion": "Determine Sc, Sc2+ and Sc3+ ground-state unpaired counts.", "evidence_of": "Checks Hund occupancy and an empty valence shell."}
+            ],
+            "accepted": ["Sc: 1; Sc2+: 1; Sc3+: 0 unpaired, removing 4s first"],
+            "rejected": ["Remove 3d before 4s simply because 3d filled last", "Sc3+ must remain paramagnetic"]
+        },
+        "stage_3_reconstruct": {
+            "route": [
+                {"ask": "What is the neutral ground-state Sc configuration?", "why_this_ask": "There are 21 electrons.", "step_answer": "Sc (Z=21) is [Ar]3d1 4s2."},
+                {"ask": "Which subshell loses electrons first when Sc is ionized?", "why_this_ask": "Ionization changes the energy ordering; 4s electrons are lost first.", "step_answer": "Sc2+ has [Ar]3d1 after loss of two 4s electrons."},
+                {"ask": "What happens to the final remaining valence electron for Sc3+?", "why_this_ask": "Removing the third electron produces the Ar core.", "step_answer": "Sc3+ is [Ar], with no 3d electron."},
+                {"ask": "What are the three unpaired-electron counts?", "why_this_ask": "Use subshell occupancy and pairing.", "step_answer": "Neutral Sc has 1; Sc2+ has 1; Sc3+ has 0 unpaired electrons."}
+            ],
+            "differs_from_teaching_path": "The original neutral shell-population classification is replaced by successive cation ionization and spin inference."
+        },
+        "stage_4_diagnose": {
+            "error_trap": "Confusing orbital filling sequence with cation ionization order.",
+            "diagnostic_prompt": "Did you remove a 3d electron from Sc before its 4s electrons? What assumption requires repair?",
+            "resolution": "Neutral Aufbau filling order does not fix removal order for a transition-metal ion."
+        },
+        "stage_5_repair": {"action": "Freeze the original answer and explicitly cross out the incorrect reverse-Aufbau assumption; redraw the neutral-to-2+-to-3+ sequence."},
+        "stage_6_boundary_test": {
+            "prompt": "Would a hypothetical Sc+ ion necessarily have zero unpaired electrons under the same isolated-ion model? Explain without using the original neutral-shell options.",
+            "answer": "No. Sc+ has [Ar]3d1 4s1 in its ground state, giving two unpaired electrons; the next electron removed for Sc2+ is 4s."
+        },
+    }
+    b["progressive_hints"] = [
+        {"hint_id": "H1", "tier": "CLARIFY", "text": "Use the neutral atom configuration as a starting point, then treat electron removal as a separate operation."},
+        {"hint_id": "H2", "tier": "CORRELATE", "text": "In transition-metal cations the 4s electrons are removed before the 3d electrons; do not simply reverse the Aufbau filling list."},
+        {"hint_id": "H3", "tier": "OPEN_THE_WAY", "text": "Write each ionic configuration before counting spins. Ask when the remaining 3d electron is removed."}
+    ]
+    return b
+
+
+def immunity_bcell_core1b(original: dict) -> dict:
+    """Authored explanatory transfer: antibody recall vs retained innate defense."""
+    b = copy.deepcopy(original)
+    b["fresh_context_ref"] = "AB-PRACTICE-BIO-INNATE-ADAPTIVE-R1"
+    b["taught_skill_Y"] = "Distinguish antibody-producing lymphocytes, phagocytes and nonspecific barriers."
+    b["connecting_route_Z"] = "Apply cell-lineage roles to a changed condition of absent B-cell antibody memory."
+    b["protected_fresh_inference_W"] = (
+        "Predict which recall and innate functions can remain in a model with B-cell deficiency "
+        "and intact neutrophils; avoid the overgeneralization that all immune defenses vanish."
+    )
+    b["stages"] = {
+        "stage_1_predict": {
+            "prompt": "If B-cell memory is lost, does every component of innate immunity necessarily disappear too? Explain which cell lineage matters.",
+            "defensible_prediction": "No: loss of B-cell antibody memory does not imply loss of functional neutrophils or intact physical barriers."
+        },
+        "stage_2_attempt": {
+            "prompt": "Compare two hypothetical learners exposed to an antigen previously encountered through vaccination. Learner A has functional B-cell memory; learner B lacks functional B cells but has intact neutrophils, skin and mucosal barriers. Predict (i) the difference in rapid antigen-specific antibody recall and (ii) one innate defense that can remain in learner B. Name an additional assumption necessary for this comparison.",
+            "produces": "Antigen-specific antibody recall is impaired without functional memory B cells, while neutrophil phagocytosis and physical barriers can remain. Other immune pathways depend on stated assumptions.",
+            "closure": "RUBRIC",
+            "rubric": [
+                {"criterion": "Separate memory-B-cell/plasma-cell antibody recall from innate defenses.", "evidence_of": "Avoids conflating humoral adaptive immunity with phagocyte function."},
+                {"criterion": "Identify an intact innate pathway under the stipulated condition.", "evidence_of": "Uses the changed B-cell-only deficit assumption."},
+                {"criterion": "State an additional condition/limitation, such as preserved T cells and neutrophil function.", "evidence_of": "Recognizes limits of a hypothetical cellular model."}
+            ],
+            "accepted": ["Antigen-specific antibody recall impaired; neutrophil phagocytosis/barriers can remain; assumptions stated"],
+            "rejected": ["All immunological functions necessarily disappear", "Neutrophils are memory B cells"]
+        },
+        "stage_3_reconstruct": {
+            "route": [
+                {"ask": "Which lineage produces a rapidly recalled antigen-specific antibody response?", "why_this_ask": "Memory B cells activate and differentiate into antibody-secreting plasma cells.", "step_answer": "Humoral adaptive recall requires competent antigen-specific B-cell memory and plasma-cell differentiation."},
+                {"ask": "Which hypothetical capacity is missing in learner B?", "why_this_ask": "The model stipulates absence of functional B cells.", "step_answer": "Rapid memory B-cell-mediated antibody response to the familiar antigen is deficient."},
+                {"ask": "What innate capacity need not vanish with this defect?", "why_this_ask": "Neutrophils arise from a different lineage and are retained by assumption.", "step_answer": "Neutrophil phagocytosis and intact physical barriers may remain effective."},
+                {"ask": "What makes this comparison conditional rather than universal?", "why_this_ask": "Clinical immunodeficiencies and infections can have additional mechanisms.", "step_answer": "It assumes preserved neutrophils, barriers and other relevant immune pathways; no disease prognosis follows."}
+            ],
+            "differs_from_teaching_path": "Predict selective loss and retained defense under changed-cell-lineage assumptions; not original statement selection."
+        },
+        "stage_4_diagnose": {
+            "error_trap": "Equating a humoral adaptive deficit with complete loss of innate response.",
+            "diagnostic_prompt": "Which other immune lineage did you inadvertently treat as a B cell?",
+            "resolution": "Neutrophils have separate myeloid lineage and can remain intact."
+        },
+        "stage_5_repair": {"action": "Keep the frozen first response; rewrite two columns for adaptive memory and innate phagocytic/barrier functions and state assumptions."},
+        "stage_6_boundary_test": {
+            "prompt": "If learner B also had severely impaired neutrophils, would the original retained-phagocytosis inference still follow? Explain.",
+            "answer": "No. The retained-phagocytosis conclusion depended on explicitly intact neutrophils and does not transfer when that condition changes."
+        },
+    }
+    b["progressive_hints"] = [
+        {"hint_id": "H1", "tier": "CLARIFY", "text": "B cells and neutrophils are different immune-cell types with distinct roles."},
+        {"hint_id": "H2", "tier": "CORRELATE", "text": "Separate antigen-specific recall from general phagocytosis and physical barriers."},
+        {"hint_id": "H3", "tier": "OPEN_THE_WAY", "text": "Read the stipulated functions carefully and distinguish which lineage was impaired from which was left intact."}
+    ]
+    return b
+
+
+def render_generic_core1ab_lesson(core1a: dict, core1b: dict) -> str:
+    """Standalone explanatory page with no original exam stem, options or key."""
+    if core1a.get("construction_id") != core1b.get("construction_id"):
+        raise ValueError("Core1A/Core1B IDs mismatch")
+    if core1a.get("academic_status") != "HOLD:ACADEMIC_ADMISSION":
+        raise ValueError("Core1A academic admission must be HOLD")
+    if core1b.get("academic_status") != "HOLD:ACADEMIC_ADMISSION":
+        raise ValueError("Core1B academic admission must be HOLD")
+    esc = lambda x: html.escape(str(x), quote=True)
+    title = esc(core1a.get("title", "Conceptual teaching"))
+    teaching = core1a.get("teaching_path", [])
+    anchor = core1a.get("worked_conceptual_anchor", {})
+    if not teaching or not anchor or not anchor.get("solution_steps"):
+        raise ValueError("Core1A missing conceptual teaching or worked anchor")
+    steps = "".join(
+        "<li><b>" + esc(x.get("role", "Inference")) + "</b> — " + esc(x.get("action", "")) +
+        ". Why valid: " + esc(x.get("why_valid", "")) + "</li>"
+        for x in teaching if isinstance(x, dict)
+    )
+    anchor_steps = "".join("<li>" + esc(x) + "</li>" for x in anchor.get("solution_steps", []))
+    misconceptions = "".join(
+        "<li>" + esc(x.get("wrong_idea", "")) + " — " + esc(x.get("repair", "")) + "</li>"
+        for x in core1a.get("misconceptions", []) if isinstance(x, dict)
+    )
+    exit_check = core1a.get("exit_task", {})
+    body = '''<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>''' + title + ''' — Core1A/B candidate</title><style>
+*{box-sizing:border-box}html,body{margin:0;font:16px/1.55 system-ui,sans-serif;color:#162536;background:#f7f9fc}
+main{max-width:900px;margin:auto;padding:1rem}section{padding:.9rem;margin:.8rem 0;border:1px solid #cbd5e1;border-radius:.5rem;background:white}
+.tab-content{display:none}.tab-content.active{display:block}.tab-button.active{background:#184c75;color:white}
+nav{display:flex;flex-wrap:wrap;gap:.5rem}button{min-height:44px;padding:.6rem;cursor:pointer}
+button:focus-visible,textarea:focus-visible{outline:3px solid #146ca0;outline-offset:2px}
+li{padding:.25rem 0;overflow-wrap:anywhere}svg{max-width:100%}
+.derivation-section{display:none}footer{padding:1.2rem 0;border-top:1px solid #cbd5e1}
+@media (max-width: 600px){main{padding:.4rem}section{padding:.5rem}button{width:100%}}
+</style></head><body><main><h1>''' + title + '''</h1>
+<p><strong>Authored practice; science/QRT and source admission HOLD.</strong> Not an authenticated official exam item.</p>
+<nav><button type="button" id="tab-core2" class="tab-button active" onclick="switchTab('core2')">Core 2 status</button>
+<button type="button" id="tab-core1a" class="tab-button" onclick="switchTab('core1a')">Core 1A teaching</button>
+<button type="button" id="tab-core1b" class="tab-button" onclick="switchTab('core1b')">Core 1B new challenge</button></nav>
+<div id="content-core2" class="tab-content active"><section><h2>Original source authority</h2>
+<p>The original exam question and canonical UID, paper/key and QRT decisions remain with Agent A.
+This candidate does not reproduce them or infer source authenticity.</p>
+<button type="button" onclick="document.getElementById('derivation-section').style.display='block'">Show source custody notice</button>
+<div id="derivation-section" class="derivation-section" style="display: none;"><p>Original Core2
+retrieval and attempt are a separate source-bound route controlled by Agent A.</p></div></section></div>
+<div id="content-core1a" class="tab-content"><section><h2>Core1A — taught operation</h2>
+<p>''' + esc(core1a.get("inferential_jump", "")) + '''</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 400 55" role="img" aria-label="Conceptual progression from representation to inference to verification">
+<rect width="400" height="55" fill="#eff6ff"/><text x="10" y="33" font-size="14">Represent → infer → verify</text></svg>
+<h3>Justified steps</h3><ol>''' + steps + '''</ol>
+<h3>Distinct worked conceptual anchor</h3><p>''' + esc(anchor.get("problem", "")) + '''</p>
+<ol>''' + anchor_steps + '''</ol><h3>Misconceptions</h3><ul>''' + misconceptions + '''</ul>
+<h3>Teaching exit</h3><p>''' + esc(exit_check.get("prompt", "")) + '''</p>
+<p><em>The worked exit belongs to teaching, not to the Core1B original response.</em></p>
+</section></div><div id="content-core1b" class="tab-content"></div>
+<footer>No academic approval inferred from software validation.</footer></main>
+<script>function switchTab(tab){
+ document.querySelectorAll('.tab-button').forEach(x=>x.classList.remove('active'));
+ document.querySelectorAll('.tab-content').forEach(x=>x.classList.remove('active'));
+ document.getElementById('tab-'+tab).classList.add('active');
+ document.getElementById('content-'+tab).classList.add('active');
+}</script></body></html>'''
+    return render_protected_core1b(body, core1b)
