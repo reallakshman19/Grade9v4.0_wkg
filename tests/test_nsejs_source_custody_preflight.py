@@ -25,12 +25,12 @@ def candidate_row(count=1):
 
 def build_synthetic(tmp_path, items):
     bank_dir = tmp_path / "workspace/output/nsejs-2024-physics-r1"
-    bank_dir.mkdir(parents=True)
+    bank_dir.mkdir(parents=True, exist_ok=True)
     for name in audit.OUTPUT_FILES:
         (bank_dir / name).write_text("{}", encoding="utf-8")
     (bank_dir / "bank.json").write_text(json.dumps({"questions": items}), encoding="utf-8")
     source_root = tmp_path / "workspace/sources/nsejs"
-    source_root.mkdir(parents=True)
+    source_root.mkdir(parents=True, exist_ok=True)
     for q in items:
         qid = q["id"]
         if not audit.SAFE_ID.fullmatch(qid):
