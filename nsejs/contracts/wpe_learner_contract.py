@@ -159,13 +159,43 @@ def validate(data: dict, bridge: dict | None = None) -> dict:
     _need(route.get("route_status") in {"UNBUILT", "TECHNICAL_PREVIEW"},
           "SOURCE_RETURN_UNREVIEWED_PROMOTION")
     if bridge is not None:
-        _need(bridge.get("question_uid") == uid and
-              bridge.get("content_revision_sha256") == revision and
-              bridge.get("lesson_id") == lesson["id"] and
-              bridge.get("source_return", {}).get("content_revision_sha256") == revision,
+        _need(isinstance(bridge, dict), "SOURCE_BRIDGE_NOT_OBJECT")
+        # Agent 4 publishes a versioned manifest with a 'routes' collection.
+        # A single row is accepted for synthetic/adapter tests, but never infer
+        # source authority or publication readiness from a pending mapping.
+        if "routes" in bridge:
+            _need(bridge.get("schema") == "grade9-nsejs-source-learning-bridge/v1"
+                  and bridge.get("academic_admission") == "HOLD",
+                  "SOURCE_BRIDGE_MANIFEST_UNTRUSTED")
+            rows = bridge.get("routes")
+            _need(isinstance(rows, list), "SOURCE_BRIDGE_ROUTES_INVALID")
+            matches = [row for row in rows if isinstance(row, dict)
+                       and row.get("question_uid") == uid]
+            _need(len(matches) == 1, "SOURCE_BRIDGE_ROUTE_MISSING_OR_DUPLICATED")
+            entry = matches[0]
+        else:
+            entry = bridge
+        _need(entry.get("question_uid") == uid and
+              entry.get("content_revision_sha256") == revision and
+              entry.get("lesson_id") == lesson["id"] and
+              isinstance(entry.get("source_return"), dict) and
+              entry["source_return"].get("question_uid") == uid and
+              entry["source_return"].get("content_revision_sha256") == revision,
               "SOURCE_BRIDGE_REVISION_OR_OWNER_MISMATCH")
-        _need(tasks["A"]["id"] == bridge.get("task_a_id") and
-              tasks["B"]["id"] == bridge.get("task_b_id"), "BRIDGE_TASK_ID_MISMATCH")
+        _need(entry.get("subject", data["subject"]) == data["subject"] and
+              entry.get("topic", lesson["topic"]) == lesson["topic"] and
+              entry.get("origin", source["origin"]) == source["origin"],
+              "SOURCE_BRIDGE_SUBJECT_TOPIC_OR_PROVENANCE_MISMATCH")
+        _need(tasks["A"]["id"] == entry.get("task_a_id") and
+              tasks["B"]["id"] == entry.get("task_b_id") and
+              entry.get("transfer_id", "UNSPECIFIED") not in
+              {tasks["A"]["id"], tasks["B"]["id"]},
+              "BRIDGE_TASK_ID_MISMATCH")
+        if "routes" in bridge:
+            _need(bridge.get("route_status") == "TECHNICAL_PREVIEW" and
+                  entry.get("lesson_status") == "READY_FOR_TECHNICAL_PREVIEW" and
+                  entry.get("lesson_revision") == lesson["revision"],
+                  "SOURCE_BRIDGE_LESSON_NOT_READY")
     return {"schema": data["schema"], "engine": data["engine"],
             "source_uid": uid, "source_revision": revision,
             "storage_prefix": namespace(data), "variants": ["T1", "T2"],
