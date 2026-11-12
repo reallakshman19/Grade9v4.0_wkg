@@ -62,8 +62,8 @@
   async function createCard(q,index) {
     const box=text("article","", "card"); box.id = "question-"+encodeURIComponent(q.source_id);
     append(box,text("h2","Candidate "+(index+1)+" · "+q.source_id));
-    append(box,text("div","Original displayed ID: "+q.id+" · QRT nomination: "+q.op+" / "+q.band+" · NOT_ADMITTED","meta"));
-    append(box,text("span","{Unvalidated} · source/key/figures not authenticated","status"));
+    append(box,text("div",(q.category==="AUTHORED_PRACTICE"?"Authored practice ID: ":"Historical candidate ID: ")+q.id+" · QRT nomination: "+q.op+" / "+q.band+" · NOT_ADMITTED","meta"));
+    append(box,text("span",q.category==="AUTHORED_PRACTICE"?"{Unvalidated} · authored practice; Physics/QRT admission pending":"{Unvalidated} · source/key/figures not authenticated","status"));
     const stem=text("p",String(q.stem||"").replace(/\[FIG[^\]]*\]/g,"[Figure required — not available]"),"stem");
     append(box,stem);
     const requiredFigure=Array.isArray(q.source_figures) && q.source_figures.length>0;
@@ -145,9 +145,15 @@
     const all=JSON.parse(data.textContent).questions;
     if(!Array.isArray(all))throw new Error("Invalid candidate question payload");
     const physics=all.filter(q=>TOPICS.slice(0,5).some(t=>t[1]===q.topic));
+    const extensionResponse=await fetch("../data/physics-authored-practice-r1.json",{cache:"no-store"});
+    if(!extensionResponse.ok)throw new Error("Authored practice manifest unavailable");
+    const extension=await extensionResponse.json();
+    if(!Array.isArray(extension.questions) || !extension.questions.every(q=>q.category==="AUTHORED_PRACTICE" && q.review_state==="NOT_ADMITTED"))throw new Error("Untrusted authored practice manifest");
     const identities=physics.map(uidOf);
     if(physics.length!==50 || new Set(identities).size!==50)throw new Error("Physics census/identity mismatch; fail closed");
-    const questions=physics.filter(q=>q.topic===topic[1]);
+    const combined=physics.concat(extension.questions);
+    if(new Set(combined.map(uidOf)).size!==combined.length)throw new Error("Combined candidate UID collision");
+    const questions=combined.filter(q=>q.topic===topic[1]);
     status.textContent=topic[2]+": "+questions.length+" candidate records · source and QRT admission HOLD.";
     if(questions.length===0){target.append(text("p","No source-backed candidate question bank is available for this topic. Do not infer coverage."));return;}
     const requestedUid=query.get("uid");
