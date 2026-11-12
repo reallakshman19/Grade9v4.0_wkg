@@ -193,8 +193,9 @@ def test_scandium_topup_is_new_ionization_inference_not_original_neutral_questio
 def test_immunity_topup_does_not_invent_original_source_or_universal_innate_loss(generated):
     a = _read(generated, "bio-immunology-defense-d3-r1", "core1a_construction")
     b = _read(generated, "bio-immunology-defense-d3-r1", "core1b_reconstruction")
-    assert "memory B cells" in a["misconceptions"][-1]["wrong_idea"]
+    assert any("memory B cells" in m.get("wrong_idea", "") for m in a["misconceptions"])
     assert b["fresh_context_ref"].startswith("AB-PRACTICE")
     assert "intact neutrophils" in b["stages"]["stage_2_attempt"]["prompt"]
     assert len(b["stages"]["stage_3_reconstruct"]["route"]) == 4
     assert "neutrophils" in b["stages"]["stage_6_boundary_test"]["prompt"]
+    assert any("helminth" in m.get("repair", "").lower() for m in a["misconceptions"])
