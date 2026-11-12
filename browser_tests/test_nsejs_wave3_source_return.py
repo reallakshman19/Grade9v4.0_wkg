@@ -47,10 +47,13 @@ def start(http_root):
             page.route("https://cdn.jsdelivr.net/**",
                        lambda route:route.fulfill(status=200,content_type="application/javascript",body=""))
             if override:
+                def make_handler(payload):
+                    def fulfill(route):
+                        route.fulfill(status=200,content_type="application/json",
+                                      body=json.dumps(payload))
+                    return fulfill
                 for fragment, data in override.items():
-                    page.route("**/" + fragment,
-                        lambda route, d=data: route.fulfill(
-                            status=200,content_type="application/json",body=json.dumps(d)))
+                    page.route("**/" + fragment, make_handler(data))
             response=page.goto(http_root + path, wait_until="domcontentloaded", timeout=30000)
             assert response.status == 200
             return ctx,page,errors
