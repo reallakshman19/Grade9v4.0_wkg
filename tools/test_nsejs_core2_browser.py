@@ -36,7 +36,7 @@ def execute():
                 page.wait_for_function("(n) => document.querySelectorAll('.card').length === n", arg=expected)
                 assert page.locator(".card").count() == expected, topic
                 assert str(expected)+" candidate records" in page.locator("#status").inner_text(), topic
-                assert page.locator("span.status").count() == 10, topic
+                assert page.locator("span.status").count() == expected, topic
             page.goto(base+BASE+"question-bank.html?topic=optics",wait_until="domcontentloaded")
             page.wait_for_function("document.querySelectorAll('.card').length === 10")
             figure_card = page.locator(".card").first
