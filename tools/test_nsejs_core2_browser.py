@@ -40,7 +40,7 @@ def execute():
             page.goto(base+BASE+"question-bank.html?topic=optics",wait_until="domcontentloaded")
             page.wait_for_function("document.querySelectorAll('.card').length === 10")
             figure_card = page.locator(".card").first
-            assert "source-fidelity HOLD" in figure_card.inner_text()
+            assert "Source-fidelity HOLD" in figure_card.inner_text()
             assert figure_card.get_by_role("button",name="Save first attempt").is_disabled()
             practice_card = page.locator(".card").nth(1)
             assert practice_card.locator(".answer").is_hidden()
