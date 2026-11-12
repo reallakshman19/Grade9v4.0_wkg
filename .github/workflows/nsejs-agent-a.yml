@@ -1,0 +1,59 @@
+name: NSEJS Agent A Core2 candidate checks
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - fix/nsejs-core2-qrt-agent-a-r1
+  pull_request:
+    paths:
+      - 'nsejs/**'
+      - 'preview/question-status.html'
+      - 'tools/nsejs_core2_audit.py'
+      - 'tools/build_nsejs_core2_corpus.py'
+      - 'tools/test_nsejs_core2_browser.py'
+      - 'tests/test_nsejs_core2_agent_a.py'
+      - '.github/workflows/nsejs-agent-a.yml'
+permissions:
+  contents: read
+jobs:
+  candidate-core2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install candidate QA and Chromium runner
+        run: |
+          python -m pip install -e ".[dev]"
+          python -m pip install playwright==1.55.0
+          python -m playwright install --with-deps chromium
+      - name: Source and QRT census (candidate only)
+        run: |
+          python tools/nsejs_core2_audit.py --census out/nsejs-physics-census.csv --json out/nsejs-qrt-summary.json
+      - name: Verify deterministic canonical candidate corpus
+        run: python tools/build_nsejs_core2_corpus.py --check
+      - name: Detect producer QRT band contradictions (expected HOLD, not CI acceptance)
+        run: |
+          set +e
+          python tools/nsejs_core2_audit.py --strict-qrt > out/qrt-contradiction-summary.json
+          qrt_status=$?
+          python tools/nsejs_core2_audit.py --strict-digest > out/declared-stem-digest-summary.json
+          digest_status=$?
+          set -e
+          if [ "$qrt_status" -ne 4 ] || [ "$digest_status" -ne 3 ]; then
+            echo "Unexpected negative-control exit codes: QRT=$qrt_status DIGEST=$digest_status"
+            exit 1
+          fi
+          echo "PASS: both QRT and digest contradictions rejected with exact failure codes; still on HOLD"
+      - name: Isolated NSEJS negative and integrity tests
+        run: python -m pytest tests/test_nsejs_core2_agent_a.py -q
+      - name: Real HTTP Chromium Core2 journeys
+        run: python tools/test_nsejs_core2_browser.py
+      - name: Upload audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nsejs-core2-agent-a-census
+          path: out/
+          if-no-files-found: ignore
