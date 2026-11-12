@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import shutil
 from pathlib import Path
 import subprocess
 import sys
@@ -96,7 +97,9 @@ def generate_and_audit(repo: Path = ROOT) -> dict:
         root = Path(temp)
         env = dict(os.environ)
         env["PYTHONPATH"] = str(repo) + os.pathsep + env.get("PYTHONPATH", "")
-        p = subprocess.run([sys.executable, str(repo / BUILDER)], cwd=root,
+        builder_copy = root / BUILDER
+        shutil.copyfile(repo / BUILDER, builder_copy)
+        p = subprocess.run([sys.executable, str(builder_copy)], cwd=root,
                            env=env, capture_output=True, text=True, timeout=90)
         if p.returncode != 0:
             return {"schema": "grade9-nsejs-2024-code51-spotcheck/v1",
