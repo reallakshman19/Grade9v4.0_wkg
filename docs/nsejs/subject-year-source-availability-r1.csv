@@ -1,0 +1,16 @@
+year,subject,author_test_declared_count,bank_expected_path,source_root_expected,bank_committed_to_pr80,source_files_committed_to_pr80,review_status,source_authenticity,academic_admission
+2020,PHYSICS,8,workspace/output/nsejs-2020-physics-r1/bank.json,workspace/sources/nsejs,NO,NO,NOT_RUN_MISSING_FIXTURE,UNKNOWN_SOURCE,HOLD
+2020,CHEMISTRY,8,workspace/output/nsejs-2020-chemistry-r1/bank.json,workspace/sources/chem,NO,NO,NOT_RUN_MISSING_FIXTURE,UNKNOWN_SOURCE,HOLD
+2020,BIOLOGY,8,workspace/output/nsejs-2020-biology-r1/bank.json,workspace/sources/bio,NO,NO,NOT_RUN_MISSING_FIXTURE,UNKNOWN_SOURCE,HOLD
+2021,PHYSICS,11,workspace/output/nsejs-2021-physics-r1/bank.json,workspace/sources/nsejs,NO,NO,NOT_RUN_MISSING_FIXTURE,UNKNOWN_SOURCE,HOLD
+2021,CHEMISTRY,11,workspace/output/nsejs-2021-chemistry-r1/bank.json,workspace/sources/chem,NO,NO,NOT_RUN_MISSING_FIXTURE,UNKNOWN_SOURCE,HOLD
+2021,BIOLOGY,11,workspace/output/nsejs-2021-biology-r1/bank.json,workspace/sources/bio,NO,NO,NOT_RUN_MISSING_FIXTURE,UNKNOWN_SOURCE,HOLD
+2022,PHYSICS,20,workspace/output/nsejs-2022-physics-r1/bank.json,workspace/sources/nsejs,NO,NO,NOT_RUN_MISSING_FIXTURE,UNKNOWN_SOURCE,HOLD
+2022,CHEMISTRY,20,workspace/output/nsejs-2022-chemistry-r1/bank.json,workspace/sources/chem,NO,NO,NOT_RUN_MISSING_FIXTURE,UNKNOWN_SOURCE,HOLD
+2022,BIOLOGY,20,workspace/output/nsejs-2022-biology-r1/bank.json,workspace/sources/bio,NO,NO,NOT_RUN_MISSING_FIXTURE,UNKNOWN_SOURCE,HOLD
+2023,PHYSICS,20,workspace/output/nsejs-2023-physics-r1/bank.json,workspace/sources/nsejs,NO,NO,NOT_RUN_MISSING_FIXTURE,UNKNOWN_SOURCE,HOLD
+2023,CHEMISTRY,20,workspace/output/nsejs-2023-chemistry-r1/bank.json,workspace/sources/chem,NO,NO,NOT_RUN_MISSING_FIXTURE,UNKNOWN_SOURCE,HOLD
+2023,BIOLOGY,20,workspace/output/nsejs-2023-biology-r1/bank.json,workspace/sources/bio,NO,NO,NOT_RUN_MISSING_FIXTURE,UNKNOWN_SOURCE,HOLD
+2024,PHYSICS,20,workspace/output/nsejs-2024-physics-r1/bank.json,workspace/sources/nsejs,NO,NO,NOT_RUN_MISSING_FIXTURE,UNKNOWN_SOURCE,HOLD
+2024,CHEMISTRY,20,workspace/output/nsejs-2024-chemistry-r1/bank.json,workspace/sources/chem,NO,NO,NOT_RUN_MISSING_FIXTURE,UNKNOWN_SOURCE,HOLD
+2024,BIOLOGY,20,workspace/output/nsejs-2024-biology-r1/bank.json,workspace/sources/bio,NO,NO,NOT_RUN_MISSING_FIXTURE,UNKNOWN_SOURCE,HOLD
