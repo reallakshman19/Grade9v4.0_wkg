@@ -19,6 +19,7 @@ import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
+sys.path.insert(0, str(ROOT / "nsejs/contracts"))
 from build_public_reader_preview import build_preview
 from nsejs_core1ab_public_coverage import public_coverage, render_subject_index, render_official_sources
 from source_learning_bridge import validate_bindings
