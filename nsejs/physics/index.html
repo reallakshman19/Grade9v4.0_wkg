@@ -572,78 +572,10 @@
 
     <!-- Legacy two-question sample: full source-indexed bank is at question-bank.html -->
     <section class="qbank-tablet-section" id="activeQBankSection">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-        <div>
-          <span class="topic-meta-tag" id="currentTopicTag">PHYSICS · TOPIC 1 · QUESTION BANK</span>
-          <h2 id="currentTopicTitle">Two unqualified historical examples — open a topic bank for all available records</h2>
-        </div>
-        <span class="unval-tag" style="font-size: 14px; padding: 6px 14px;">{Label: Each Question Unvalidated}</span>
-      </div>
-
-      <div id="questionsList">
-        <!-- Sample Unvalidated Question Item 1 -->
-        <article class="q-item-card unval-border">
-          <div class="q-item-header">
-            <div class="q-meta-group">
-              <span class="q-id-badge">NSEJS-2023-P-Q01</span>
-              <span class="unval-tag">{Unvalidated}</span>
-              <span style="font-size: 13px; color: #64748b; font-weight: 600;">Demand: MODEL · Band D2</span>
-            </div>
-            <span style="font-size: 13px; color: #475569; font-weight: 700;">Format: Single Correct (3 Marks)</span>
-          </div>
-          <div class="q-stem-text">
-            An ant is sitting on the principal axis of a convex mirror of focal length $f$, at a distance $2f$ from the pole in front of the mirror. It starts moving on the principal axis towards the mirror. During the course of motion, the distance between the ant and its image:
-          </div>
-          <div class="q-opt-list">
-            <label class="q-opt-label"><input type="radio" name="q_opt_1" onchange="enableCommit('q1')"> <strong>(A)</strong> Remains constant throughout</label>
-            <label class="q-opt-label"><input type="radio" name="q_opt_1" onchange="enableCommit('q1')"> <strong>(B)</strong> First decreases and then increases</label>
-            <label class="q-opt-label"><input type="radio" name="q_opt_1" onchange="enableCommit('q1')"> <strong>(C)</strong> Continuously decreases</label>
-            <label class="q-opt-label"><input type="radio" name="q_opt_1" onchange="enableCommit('q1')"> <strong>(D)</strong> Continuously increases</label>
-          </div>
-          <div class="q-actions-bar">
-            <span style="font-size: 13px; color: #64748b;">Sample only — use the topic bank for a saved local first attempt.</span>
-            <button class="q-commit-btn" id="commit-btn-q1" disabled onclick="revealDerivation('q1')">Commit Candidate Attempt</button>
-          </div>
-          <div class="q-derivation" id="deriv-q1">
-            <strong>Candidate explanation &amp; proposed reasoning [NSEJS-2023-P-Q01-M2] <span class="unval-tag">{Unvalidated}</span>:</strong><br>
-            1. <em>Physical Model:</em> For a convex mirror, $f > 0$. When ant is at $u = -2f$, mirror equation $1/v + 1/(-2f) = 1/f$ gives $v = +2f/3$. Separation $D(u) = |u| + v = 2f + 2f/3 = 8f/3$.<br>
-            2. <em>Dynamic Execution:</em> As ant moves towards pole ($u \to 0^-$), $v = \frac{f|u|}{|u|+f}$. Total separation is $D(|u|) = |u| + \frac{f|u|}{|u|+f}$. Its derivative $dD/d|u| = 1 + \frac{f^2}{(|u|+f)^2} > 0$ strictly positive for all $|u| \ge 0$.<br>
-            3. <em>Resolution:</em> Separation $D$ continuously decreases as $|u|$ decreases from $2f \to 0$. Correct Option: <strong>C</strong>.
-          </div>
-        </article>
-
-        <!-- Sample Unvalidated Question Item 2 -->
-        <article class="q-item-card unval-border">
-          <div class="q-item-header">
-            <div class="q-meta-group">
-              <span class="q-id-badge">NSEJS-2024-P-Q15</span>
-              <span class="unval-tag">{Unvalidated}</span>
-              <span style="font-size: 13px; color: #64748b; font-weight: 600;">Demand: SYNTHESIZE · Band D3</span>
-            </div>
-            <span style="font-size: 13px; color: #475569; font-weight: 700;">Format: Multiple Correct (6 Marks)</span>
-          </div>
-          <div class="q-stem-text">
-            A monochromatic light ray passes symmetrically through an equilateral glass prism of refractive index $\mu = \sqrt{3}$. Which of the following statements are correct?
-          </div>
-          <div class="q-opt-list">
-            <label class="q-opt-label"><input type="checkbox" name="q_opt_2" onchange="enableCommit('q2')"> <strong>(A)</strong> Angle of minimum deviation is $60^\circ$</label>
-            <label class="q-opt-label"><input type="checkbox" name="q_opt_2" onchange="enableCommit('q2')"> <strong>(B)</strong> Angle of incidence at first surface is $60^\circ$</label>
-            <label class="q-opt-label"><input type="checkbox" name="q_opt_2" onchange="enableCommit('q2')"> <strong>(C)</strong> Refracted ray inside is parallel to prism base</label>
-            <label class="q-opt-label"><input type="checkbox" name="q_opt_2" onchange="enableCommit('q2')"> <strong>(D)</strong> Total internal reflection occurs at base</label>
-          </div>
-          <div class="q-actions-bar">
-            <span style="font-size: 13px; color: #64748b;">Sample only — use the topic bank for a saved local first attempt.</span>
-            <button class="q-commit-btn" id="commit-btn-q2" disabled onclick="revealDerivation('q2')">Commit Candidate Attempt</button>
-          </div>
-          <div class="q-derivation" id="deriv-q2">
-            <strong>Candidate explanation &amp; proposed reasoning [NSEJS-2024-P-Q15-M2] <span class="unval-tag">{Unvalidated}</span>:</strong><br>
-            1. <em>Model:</em> Equilateral prism $A = 60^\circ$. At minimum deviation, $r_1 = r_2 = A/2 = 30^\circ$.<br>
-            2. <em>Snell's Law:</em> $\sin i_1 = \mu \sin r_1 = \sqrt{3} \sin 30^\circ = \sqrt{3}/2 \implies i_1 = 60^\circ$. (B is true).<br>
-            3. <em>Deviation:</em> $\delta_m = 2i - A = 2(60^\circ) - 60^\circ = 60^\circ$. (A is true). By symmetry, internal ray is parallel to base (C is true). Correct Options: <strong>A, B, C</strong>.
-          </div>
-        </article>
-      </div>
-    </section>
+<h2>Source-indexed Physics candidate bank</h2>
+<p>The five available Physics topic banks are presented through one source-indexed reader. Earlier embedded examples have been withdrawn to avoid independent option/key versions. All original-exam and QRT claims remain unverified.</p>
+<a class="core-btn-touch" href="question-bank.html?topic=optics">Open Physics candidate bank</a>
+</section>
 
     <footer class="tab-footer">
       Rule 13 Invariant: No academic approval inferred from software validation. Green CI means automatic tests passed; it never means student release is authorized. All questions labeled {Unvalidated}.
@@ -655,18 +587,7 @@
       window.location.href = "question-bank.html?topic=" + encodeURIComponent(topicKey);
     }
 
-    function enableCommit(qId) { /* Historical two-item sample: no first-attempt evidence in this page. */ }
-
-    function revealDerivation(qId) {
-      const deriv = document.getElementById('deriv-' + qId);
-      if (deriv) deriv.style.display = 'block';
-      const btn = document.getElementById('commit-btn-' + qId);
-      if (btn) {
-        btn.disabled = true;
-        btn.textContent = 'Committed · Derivation Revealed';
-        btn.style.background = '#059669';
-      }
-    }
+    /* The old sample commit/reveal functions were removed with the duplicate viewer. */
   </script>
 </body>
 </html>

@@ -568,47 +568,9 @@
 
     <!-- 12.7" Tablet Interactive Core 2 Question Bank Viewer -->
     <section class="qbank-tablet-section" id="activeQBankSection">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-        <div>
-          <span class="topic-meta-tag" id="currentTopicTag">CHEMISTRY · TOPIC 4 · QUESTION BANK</span>
-          <h2 id="currentTopicTitle">Acids, Bases &amp; Phosphorus Oxyacids (Core 2)</h2>
-        </div>
-        <span class="unval-tag" style="font-size: 14px; padding: 6px 14px;">{Label: Each Question Unvalidated}</span>
-      </div>
-
-      <div id="questionsList">
-        <!-- Sample Unvalidated Question Item 1 -->
-        <article class="q-item-card unval-border">
-          <div class="q-item-header">
-            <div class="q-meta-group">
-              <span class="q-id-badge">NSEJS-2024-C-Q55</span>
-              <span class="unval-tag">{Unvalidated}</span>
-              <span style="font-size: 13px; color: #64748b; font-weight: 600;">Demand: SYNTHESIZE · Band D3</span>
-            </div>
-            <span style="font-size: 13px; color: #475569; font-weight: 700;">Format: Multiple Correct (6 Marks)</span>
-          </div>
-          <div class="q-stem-text">
-            Consider the phosphorus oxyacids: hypophosphorous acid ($H_3PO_2$), phosphorous acid ($H_3PO_3$), and orthophosphoric acid ($H_3PO_4$). Which of the following statements are correct?
-          </div>
-          <div class="q-opt-list">
-            <label class="q-opt-label"><input type="checkbox" name="qc_opt_1" onchange="enableCommit('qc1')"> <strong>(A)</strong> Basicity order is $H_3PO_2 < H_3PO_3 < H_3PO_4$</label>
-            <label class="q-opt-label"><input type="checkbox" name="qc_opt_1" onchange="enableCommit('qc1')"> <strong>(B)</strong> $H_3PO_2$ acts as a stronger reducing agent than $H_3PO_4$</label>
-            <label class="q-opt-label"><input type="checkbox" name="qc_opt_1" onchange="enableCommit('qc1')"> <strong>(C)</strong> $H_3PO_3$ is a dibasic acid with two ionizable P-OH bonds</label>
-            <label class="q-opt-label"><input type="checkbox" name="qc_opt_1" onchange="enableCommit('qc1')"> <strong>(D)</strong> All three acids possess identical oxidation states of phosphorus</label>
-          </div>
-          <div class="q-actions-bar">
-            <span style="font-size: 13px; color: #64748b;">Unreviewed sample: protected assessment not available.</span>
-            <button class="q-commit-btn" id="commit-btn-qc1" disabled onclick="revealDerivation('qc1')">Commit Candidate Attempt</button>
-          </div>
-          <div class="q-derivation" id="deriv-qc1">
-            <strong>Producer-proposed explanation (unverified) [NSEJS-2024-C-Q55-M2] <span class="unval-tag">{Unvalidated}</span>:</strong><br>
-            1. <em>Structure &amp; Basicity:</em> In phosphorus oxyacids, only hydrogens bound to oxygen (P-OH) are ionizable. $H_3PO_2$ has one P-OH (monobasic); $H_3PO_3$ has two P-OH (dibasic); $H_3PO_4$ has three P-OH (tribasic). Basicity: $1 < 2 < 3$. (A and C are true).<br>
-            2. <em>Reducing Property:</em> Reducing character is directly proportional to number of P-H bonds. $H_3PO_2$ has two P-H bonds; $H_3PO_4$ has zero P-H bonds. (B is true).<br>
-            3. <em>Oxidation States:</em> $+1$ in $H_3PO_2$, $+3$ in $H_3PO_3$, $+5$ in $H_3PO_4$. (D is false). Correct Options: <strong>A, B, C</strong>.
-          </div>
-        </article>
-      </div>
-    </section>
+<h2>Question-bank source verification pending</h2>
+<p>No reproducible public source-backed question bank is available for this subject in this PR. The earlier two-item sample viewer has been withdrawn; its presence did not substantiate advertised topic totals. Source, answer and academic status remain HOLD.</p>
+</section>
 
     <footer class="tab-footer">
       Rule 13 Invariant: No academic approval inferred from software validation. Green CI means automatic tests passed; it never means student release is authorized. All questions labeled {Unvalidated}.
@@ -621,18 +583,7 @@
       section.scrollIntoView({ behavior: 'smooth' });
     }
 
-    function enableCommit(qId) { /* Source/assessment HOLD: cannot claim a stored first attempt. */ }
-
-    function revealDerivation(qId) {
-      const deriv = document.getElementById('deriv-' + qId);
-      if (deriv) deriv.style.display = 'block';
-      const btn = document.getElementById('commit-btn-' + qId);
-      if (btn) {
-        btn.disabled = true;
-        btn.textContent = 'Committed · Derivation Revealed';
-        btn.style.background = '#059669';
-      }
-    }
+    /* The old sample commit/reveal functions were removed with the duplicate viewer. */
   </script>
 </body>
 </html>

@@ -91,7 +91,8 @@ def test_unavailable_chemistry_biology_banks_are_not_false_clickable():
 
 def test_physics_hub_sample_does_not_claim_saved_first_attempt():
     html=(ROOT/"nsejs/physics/index.html").read_text(encoding="utf-8")
-    assert "Sample only" in html
+    assert "Source-indexed Physics candidate bank" in html
+    assert 'class="q-item-card' not in html
     assert "if (btn) btn.disabled = false;" not in html
     assert 'window.location.href = "question-bank.html?topic="' in html
 
@@ -116,3 +117,11 @@ def test_original_authored_mechanics_topup_keeps_provenance_and_physics_correct(
     assert stopping==3.2
     assert q["answer"]=="C: 3.2 m"
     assert audit.uid(q) not in {audit.uid(x) for x in questions()}
+
+
+def test_duplicate_hub_question_viewers_removed():
+    for subject in ("physics","chemistry","biology"):
+        html=(ROOT/"nsejs"/subject/"index.html").read_text(encoding="utf-8")
+        assert 'class="q-item-card' not in html
+        assert "function revealDerivation(" not in html
+    assert (ROOT/"nsejs/physics/question-bank.html").is_file()
