@@ -156,6 +156,10 @@ def test_eight_reproducible_b1b7_candidates_have_generated_attempt_controls(gene
         assert w["status"] == "CANDIDATE", slug
         assert not w["review_receipts"], slug
         assert 'data-agent-b-core1b' in page, slug
+        assert 'id="agent-b-127-tablet-touch"' in page, slug
+        assert "min-height: 56px" in page, slug
+        assert "min-height: 176px" in page, slug
+        assert "orientation: portrait" in page, slug
         assert 'data-role="model-host" hidden' in page, slug
         assert 'data-role="save-firstAttempt"' in page, slug
         assert 'data-role="save-transfer"' in page, slug
