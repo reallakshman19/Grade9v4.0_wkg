@@ -6,6 +6,7 @@ from __future__ import annotations
 import importlib.util
 import json
 from pathlib import Path
+import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 SPEC = importlib.util.spec_from_file_location("nsejs_source_custody_preflight",
@@ -111,9 +112,67 @@ def test_cli_strict_missing_returns_three_and_academic_gate_four(tmp_path):
     (dest / "subject-year-source-availability-r1.csv").write_bytes(
         (ROOT / audit.MANIFEST).read_bytes()
     )
+    (dest / "official-iapt-source-locators-r1.json").write_bytes(
+        (ROOT / audit.OFFICIAL_LOCATORS).read_bytes()
+    )
     path = tmp_path / "receipt.json"
     status = audit.main(["--root", str(tmp_path), "--json-out", str(path), "--require-files"])
     assert status == 3 and path.is_file()
     result = json.loads(path.read_text(encoding="utf-8"))
     assert result["missing_or_invalid_subject_year_bundles"] == 15
     assert audit.main(["--root", str(tmp_path), "--academic-gate"]) == 4
+
+
+
+def test_official_year_series_and_source_links_are_recorded_not_imported():
+    data = audit.load_official_locators()
+    years = {row["year"]: row for row in data["years"]}
+    assert len(years) == 5
+    assert years[2020]["exam_series"] == "IOQJS_2020_21_PART_I"
+    assert years[2021]["exam_series"] == "IOQJS_2021_22_PART_I"
+    assert years[2020]["official_paper_url"] is None
+    assert all(not row["source_bytes_imported"] for row in years.values())
+    assert all(not row["independently_authenticated"] for row in years.values())
+
+
+def test_iapt_2024_paper_code_51_drop_and_multiple_correct_preserved():
+    years = {row["year"]: row for row in audit.load_official_locators()["years"]}
+    paper = years[2024]
+    assert paper["paper_code"] == 51
+    assert paper["known_final_key_exception"] == {
+        "question": 20, "paper_code": 51, "status": "DROP"
+    }
+    assert paper["part_A2_range"] == [49, 60]
+    assert paper["part_A2_format"] == "MULTIPLE_CORRECT"
+
+
+def test_untrusted_source_locator_metadata_fails_validation(tmp_path):
+    source = audit.load_official_locators()
+    p = tmp_path / audit.OFFICIAL_LOCATORS
+    p.parent.mkdir(parents=True)
+    broken = json.loads(json.dumps(source))
+    broken["years"][0]["official_archive_url"] = "https://attacker.example/source.pdf"
+    p.write_text(json.dumps(broken), encoding="utf-8")
+    with pytest.raises(ValueError, match="Non-IAPT"):
+        audit.load_official_locators(tmp_path)
+    broken["years"][0] = source["years"][0]
+    broken["years"][4]["known_final_key_exception"] = {"question": 20, "paper_code": 51, "status": "A"}
+    p.write_text(json.dumps(broken), encoding="utf-8")
+    with pytest.raises(ValueError, match="Code 51"):
+        audit.load_official_locators(tmp_path)
+
+
+def test_located_official_urls_do_not_clear_missing_native_custody():
+    report = audit.audit()
+    assert report["official_archive_years_located"] == 5
+    assert report["official_paper_url_years_located"] == 4
+    assert report["official_final_key_url_years_located"] == 5
+    assert report["locators_are_source_custody"] is False
+    assert report["missing_or_invalid_subject_year_bundles"] == 15
+    assert report["academic_admission"] == "HOLD"
+    for row in report["rows"]:
+        assert row["official_archive_url"].startswith("https://iapt.org.in/")
+        assert row["official_locator_status"].endswith("_NOT_IMPORTED") or row["official_locator_status"].endswith("_NOT_LOCATED")
+        if row["year"] == 2024:
+            assert "IAPT_CODE_51_QUESTION_20_DROPPED" in row["flags"]
+            assert "IAPT_CODE_51_QUESTIONS_49_60_MULTI_CORRECT" in row["flags"]
