@@ -59,11 +59,15 @@ def test_contract_and_source_bridge_match_authored_evidence(data):
     collection = json.loads(SOURCE.read_text("utf-8"))
     routes = validate_bindings(bridge, collection)
     assert len(routes) == 1
-    result = validate(data, routes[0])
+    preview = json.loads((ROOT / "nsejs/data/source-learning-bridge-tech-preview.v1.json")
+                         .read_text("utf-8"))
+    result = validate(data, preview)
     assert result["academic_admission"] == "HOLD"
     assert result["source_uid"] == "g9:PHYSICS:G9-AUTH-MECH-001"
     assert data["source"]["origin"] == "AUTHORED_PRACTICE_NOT_OFFICIAL_EXAM"
-    assert data["source_return"]["route_status"] == "UNBUILT"
+    assert data["source_return"]["route_status"] == "TECHNICAL_PREVIEW"
+    assert preview["routes"][0]["lesson_revision"] == data["lesson"]["revision"]
+    assert bridge["route_status"] == "UNBUILT_TECHNICAL_PILOT"
 
 
 def test_original_source_answer_matches_independent_two_stage_model(data):
