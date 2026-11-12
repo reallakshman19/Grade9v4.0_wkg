@@ -6,6 +6,7 @@ on:
 jobs:
   test:
     strategy:
+      fail-fast: false
       matrix:
         python-version: ["3.11", "3.12"]
     runs-on: ubuntu-latest
@@ -15,4 +16,10 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - run: python -m pip install -e ".[dev]"
+      - name: Regenerate eight tracked authored Core1A/B candidates (never original exam fixtures)
+        run: |
+          python build_d3_batch2_modules.py
+          python build_d3_expansion_modules.py
+          python build_physics_fluids_core1.py
+          python build_bio_genetics_core1.py
       - run: python -m pytest -q

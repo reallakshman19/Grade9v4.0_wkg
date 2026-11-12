@@ -739,9 +739,18 @@ mod3_bank = {
             "operation": "SYNTHESIZE",
             "band": "D3",
             "score": 6,
-            "crux_move": "M2"
+            "crux_move": "M2",
+            "source_claim_status": "KNOWN_NON_VERBATIM_AUTHORED_ADAPTATION",
+            "original_exam_question": False,
+            "exam_source_admission": "HOLD_P0_Q52_OPTIONS_SUBSTITUTED",
+            "academic_approval": "HOLD",
+            "review_issue": "https://github.com/reallakshman19/Grade9v4.0/issues/86"
         }
-    ]
+    ],
+    "source_claim_status": "KNOWN_NON_VERBATIM_AUTHORED_ADAPTATION",
+    "official_question_reproduction_allowed": False,
+    "academic_approval": "HOLD",
+    "release_status": "HOLD"
 }
 (mod3_dir / "bank.json").write_text(json.dumps(mod3_bank, indent=2), encoding="utf-8")
 
@@ -749,7 +758,7 @@ mod3_c1a = {
     "schema": "core1a-construction/v1",
     "construction_id": "BIO-IMMUN-C-VERTEBRATE-DEFENSE-D3-01",
     "target_question_id": "BIO-NSEJS-2024-B-Q52",
-    "title": "Vertebrate Immune Architecture: Immunoglobulins, Leukocyte Lineages & Inflammatory Mediators",
+    "title": "Vertebrate Immune Architecture: Immunoglobulins, Leukocyte Lineages & B-cell Surface Receptors",
     "topic": "ANIMAL_PHYSIOLOGY_IMMUNOLOGY",
     "cognitive_demand": "SYNTHESIZE",
     "difficulty_band": "D3",
@@ -770,16 +779,16 @@ mod3_c1a = {
             "statement": "Ciliated pseudostratified columnar epithelium with goblet cell mucus forms the mucociliary escalator, providing a non-specific physical/mechanical barrier trapping and sweeping pathogens outward."
         },
         {
-            "name": "Mast Cell & Basophil Inflammatory Mediators",
-            "statement": "Tissue mast cells and circulating basophils store preformed histamine in granules; degranulation triggers arteriolar vasodilation and increases post-capillary venular permeability during acute inflammation."
+            "name": "Mature B-cell Surface Immunoglobulin Receptors",
+            "statement": "Mature naive human B lymphocytes commonly co-express membrane IgM and IgD antigen receptors. Plasma cells differentiate to secrete antibodies, so membrane B-cell receptors must be distinguished from secreted immunoglobulins."
         }
     ],
     "entry_assumptions": [
         "Familiarity with innate vs adaptive immunity and body defense lines.",
         "Basic histology of epithelial tissues and blood cellular elements.",
-        "Knowledge of inflammatory signs (rubor, calor, tumor, dolor) and chemical mediation."
+        "Understanding the difference between membrane-bound B-cell antigen receptors and antibodies secreted by plasma cells."
     ],
-    "inferential_jump": "Integrating molecular biochemistry (antibody glycosylation), hematological differentiation (myeloid granulocytes vs lymphoid agranulocytes), histological defenses (mucociliary clearance), and vascular pharmacology (histamine-mediated extravasation).",
+    "inferential_jump": "Integrating molecular biochemistry (antibody glycosylation), hematological differentiation (myeloid granulocytes vs lymphoid agranulocytes), histological defenses (mucociliary clearance), and B-cell maturation (surface IgM and IgD co-expression).",
     "teaching_path": [
         {
             "step": 1,
@@ -802,8 +811,8 @@ mod3_c1a = {
         {
             "step": 4,
             "role": "SYNTHESIZE",
-            "action": "Analyze mast cell and basophil degranulation and the downstream vascular effects of histamine.",
-            "why_valid": "Histamine binds H1 receptors on endothelial cells, promoting vasodilation and vascular leakage."
+            "action": "Distinguish membrane IgM/IgD co-expression in mature naive B cells from the secretion of soluble antibodies by plasma cells.",
+            "why_valid": "Mature naive B cells can co-express surface IgM and IgD B-cell receptors via alternative heavy-chain RNA processing; this does not mean they are plasma cells."
         }
     ],
     "worked_conceptual_anchor": {
@@ -822,8 +831,8 @@ mod3_c1a = {
         }
     ],
     "exit_task": {
-        "prompt": "State two defining biochemical and cellular characteristics that distinguish an antibody from a lymphocyte receptor.",
-        "answer": "An antibody is a soluble secreted glycoprotein with 2 heavy and 2 light chains; a lymphocyte receptor (TCR) is a membrane-bound heterodimer."
+        "prompt": "Why can a mature naive B lymphocyte display both membrane IgM and IgD, and how does this differ from soluble antibody secretion by plasma cells?",
+        "answer": "A mature naive B cell commonly co-expresses membrane IgM and IgD B-cell antigen receptors through heavy-chain RNA processing; differentiated plasma cells primarily secrete immunoglobulin instead of simply presenting both naive receptors."
     }
 }
 # Agent B Core1A top-up: antibody recall deficit does not erase intact myeloid innate defenses.
@@ -838,6 +847,14 @@ mod3_c1a["misconceptions"].append({
     "wrong_idea": "Eosinophils engulf intact helminth worms to clear infection.",
     "diagnostic_prompt": "Can a whole multicellular parasite physically fit inside a phagocyte?",
     "repair": "Large helminths cannot be ingested whole; eosinophils can participate in extracellular degranulation and antibody-dependent cellular cytotoxicity. This does not make them lymphocytes."
+})
+
+# B3 evidence-first repair: the official 2024 Code 51 Q52 option D is about
+# B-cell surface IgM/IgD, not mast-cell histamine. Keep original bank on HOLD.
+mod3_c1a["misconceptions"].append({
+    "wrong_idea": "Mature naive B cells cannot express both membrane IgM and IgD antigen receptors.",
+    "diagnostic_prompt": "Does co-expression of B-cell surface receptors mean the cell is secreting two soluble antibody types?",
+    "repair": "Mature naive human B cells can co-express surface IgM and IgD, whereas plasma-cell antibody secretion is a distinct differentiation state."
 })
 (mod3_dir / "core1a_construction.json").write_text(json.dumps(mod3_c1a, indent=2), encoding="utf-8")
 
@@ -962,7 +979,7 @@ mod3_witness = {
         "band": "D3",
         "direction": "CLASSIFY_FROM_CASE",
         "signature": {
-            "inputs": ["Antibody glycoprotein structure", "Leukocyte lineages", "Epithelial barriers", "Histamine inflammation"],
+            "inputs": ["Antibody glycoprotein structure", "Leukocyte lineages", "Epithelial barriers", "Naive B-cell IgM/IgD receptors"],
             "obstacle": "Cross-disciplinary synthesis of molecular immunology, histology, and leukocyte hematology",
             "decisive_move": "Refuting lymphocyte classification of eosinophils and validating A, C, D",
             "output": "Statements A, C, D valid; Statement B false ==> Options A, C, D",
@@ -971,7 +988,7 @@ mod3_witness = {
             "independent_check": "Eosinophil lineage: CMP -> CFU-Eo -> Eosinophil (myeloid granulocyte)",
             "validity_boundary": "Applies to vertebrate mammalian immune systems; invertebrate immunity lacks immunoglobulins"
         },
-        "decisive_roles": ["ROLE_BIO_ANTIBODY", "ROLE_BIO_LEUKOCYTE", "ROLE_BIO_EPITHELIUM", "ROLE_BIO_HISTAMINE"]
+        "decisive_roles": ["ROLE_BIO_ANTIBODY", "ROLE_BIO_LEUKOCYTE", "ROLE_BIO_EPITHELIUM", "ROLE_BIO_BCELL_SURFACE"]
     },
     "core1a": {
         "construction_id": "BIO-IMMUN-C-VERTEBRATE-DEFENSE-D3-01",
@@ -993,7 +1010,7 @@ mod3_witness = {
             "ROLE_BIO_ANTIBODY": {"teaching_span_ref": "core1a_construction.json#/teaching_path/0", "demonstration_ref": "core1a_construction.json#/worked_conceptual_anchor/solution_steps/0"},
             "ROLE_BIO_LEUKOCYTE": {"teaching_span_ref": "core1a_construction.json#/teaching_path/1", "demonstration_ref": "core1a_construction.json#/worked_conceptual_anchor/solution_steps/1"},
             "ROLE_BIO_EPITHELIUM": {"teaching_span_ref": "core1a_construction.json#/teaching_path/2", "demonstration_ref": "core1a_construction.json#/worked_conceptual_anchor/solution_steps/2"},
-            "ROLE_BIO_HISTAMINE": {"teaching_span_ref": "core1a_construction.json#/teaching_path/3", "demonstration_ref": "core1a_construction.json#/worked_conceptual_anchor/solution_steps/3"}
+            "ROLE_BIO_BCELL_SURFACE": {"teaching_span_ref": "core1a_construction.json#/teaching_path/3", "demonstration_ref": "core1a_construction.json#/worked_conceptual_anchor/solution_steps/3"}
         }
     },
     "core1b": {
@@ -1008,7 +1025,7 @@ mod3_witness = {
             "ROLE_BIO_ANTIBODY": {"attempt_field": "stage_2_attempt.rubric[0]", "observable": "Confirming antibody glycoprotein nature"},
             "ROLE_BIO_LEUKOCYTE": {"attempt_field": "stage_2_attempt.rubric[1]", "observable": "Rejecting eosinophil as lymphocyte"},
             "ROLE_BIO_EPITHELIUM": {"attempt_field": "stage_2_attempt.rubric[2]", "observable": "Validating mucociliary escalator"},
-            "ROLE_BIO_HISTAMINE": {"attempt_field": "stage_2_attempt.rubric[3]", "observable": "Validating histamine-mediated vasodilation"}
+            "ROLE_BIO_BCELL_SURFACE": {"attempt_field": "stage_2_attempt.rubric[3]", "observable": "Distinguishing naive B-cell surface IgM/IgD"}
         },
         "attempt_contract": {
             "p1_optional": True,
@@ -1028,7 +1045,7 @@ mod3_witness = {
             {"role_id": "ROLE_BIO_ANTIBODY", "observable": "Denying glycoprotein nature of antibodies", "failed_node_ref": "NODE-BIO-GLYCO", "repair_ref": "STEP-1"},
             {"role_id": "ROLE_BIO_LEUKOCYTE", "observable": "Accepting eosinophils as lymphocytes", "failed_node_ref": "NODE-BIO-LINEAGE", "repair_ref": "STEP-2"},
             {"role_id": "ROLE_BIO_EPITHELIUM", "observable": "Denying mechanical barrier of cilia", "failed_node_ref": "NODE-BIO-BARRIER", "repair_ref": "STEP-3"},
-            {"role_id": "ROLE_BIO_HISTAMINE", "observable": "Denying histamine vasodilation role", "failed_node_ref": "NODE-BIO-HISTAMINE", "repair_ref": "STEP-4"}
+            {"role_id": "ROLE_BIO_BCELL_SURFACE", "observable": "Misclassifying IgM/IgD receptor co-expression", "failed_node_ref": "NODE-BIO-HISTAMINE", "repair_ref": "STEP-4"}
         ],
         "changed_condition_transfer_ref": "TRANSFER-IMMUNOLOGY-DEGLYCOSYLATION-02",
         "transfer_success_criterion": "Understanding that antibody carbohydrate chains are vital for effector functions",
@@ -1054,7 +1071,7 @@ mod3_witness = {
             {"role_id": "ROLE_BIO_ANTIBODY", "warrant_ref": "WARRANT-ANTIBODY-GLYCOPROTEIN", "library_sha256": sha256_text("WARRANT-ANTIBODY-GLYCOPROTEIN")},
             {"role_id": "ROLE_BIO_LEUKOCYTE", "warrant_ref": "WARRANT-LEUKOCYTE-HEMATOPOIESIS", "library_sha256": sha256_text("WARRANT-LEUKOCYTE-HEMATOPOIESIS")},
             {"role_id": "ROLE_BIO_EPITHELIUM", "warrant_ref": "WARRANT-MUCOCILIARY-ESCALATOR", "library_sha256": sha256_text("WARRANT-MUCOCILIARY-ESCALATOR")},
-            {"role_id": "ROLE_BIO_HISTAMINE", "warrant_ref": "WARRANT-MAST-CELL-HISTAMINE", "library_sha256": sha256_text("WARRANT-MAST-CELL-HISTAMINE")}
+            {"role_id": "ROLE_BIO_BCELL_SURFACE", "warrant_ref": "WARRANT-B-CELL-IGM-IGD", "library_sha256": sha256_text("WARRANT-B-CELL-IGM-IGD")}
         ]
     },
     "review_receipts": []
@@ -1066,8 +1083,17 @@ mod3_witness["core1b"]["assessed_roles"] = {
     "ROLE_BIO_ANTIBODY": {"attempt_field": "stage_2_attempt.rubric[0]", "observable": "Separate B-cell recall from innate response."},
     "ROLE_BIO_LEUKOCYTE": {"attempt_field": "stage_2_attempt.rubric[1]", "observable": "Identify retained neutrophil/epithelial defense under assumptions."},
     "ROLE_BIO_EPITHELIUM": {"attempt_field": "stage_2_attempt.rubric[1]", "observable": "State intact barrier function."},
-    "ROLE_BIO_HISTAMINE": {"attempt_field": "stage_2_attempt.rubric[2]", "observable": "Explain conditional limits; do not mislabel original histamine route as retested."}
+    "ROLE_BIO_BCELL_SURFACE": {"attempt_field": "stage_2_attempt.rubric[2]", "observable": "Explain conditional limits; do not mislabel original IgM/IgD route as requalified."}
 }
+
+# The authored Q52 source bank is NOT faithful to IAPT Paper Code 51.
+# Do not make an unsupported direct-exam source or review-receipt claim.
+mod3_witness["assessment"]["source_role"] = "PREREQUISITE_BRIDGE"
+mod3_witness["source_and_physics"]["known_physics_contradiction"] = True
+mod3_witness["source_and_physics"]["source_custody_ref"] = "HOLD_SOURCE_CONFLICT_IAPT2024_CODE51_Q52"
+mod3_witness["source_and_physics"]["physics_review_ref"] = "NOT_RECEIVED"
+mod3_witness["source_and_physics"]["solution_review_ref"] = "NOT_RECEIVED"
+mod3_witness["source_and_physics"]["warrant_links"] = []
 (mod3_dir / "witness.json").write_text(json.dumps(mod3_witness, indent=2), encoding="utf-8")
 (mod3_dir / "learning_journey.html").write_text(
     render_generic_core1ab_lesson(mod3_c1a, mod3_c1b), encoding="utf-8"

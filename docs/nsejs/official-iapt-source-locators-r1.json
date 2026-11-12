@@ -1,0 +1,91 @@
+{
+  "schema": "grade9-nsejs-official-source-locators/v1",
+  "authority": "Indian Association of Physics Teachers (IAPT) archive links as observed 2026-11-12; content bytes and publication permissions NOT IMPORTED or independently certified",
+  "purpose": "Public URLs only; no question, key, figure or solution text.",
+  "source_admission": "HOLD",
+  "copyright_and_redistribution": "NOT_REVIEWED",
+  "verified_observation_date": "2026-11-12",
+  "years": [
+    {
+      "year": 2020,
+      "exam_series": "IOQJS_2020_21_PART_I",
+      "official_archive_url": "https://iapt.org.in/ioq-2020-21-part-i/",
+      "official_paper_url": "https://iapt.org.in/wp-content/uploads/IOQJS-PART-I-2020-21.pdf",
+      "official_final_key_url": "https://iapt.org.in/wp-content/uploads/Final-Answer-key-IOQJS-2020-21Part-I.pdf",
+      "paper_link_status": "IAPT_PDF_36_PAGES_RAW_SHA256_VERIFIED_CODE51_PAGE_SCOPE_PENDING",
+      "key_link_status": "OFFICIAL_CONTENT_READ",
+      "recorded_total_question_labels": 32,
+      "note": "IAPT's original indexed image URL returned HTTP404, but a 36-page official uploads PDF was retrieved and SHA256 hashed; the individual paper code/language page span is not independently resolved.",
+      "source_bytes_imported": false,
+      "independently_authenticated": false,
+      "paper_code": 51
+    },
+    {
+      "year": 2021,
+      "exam_series": "IOQJS_2021_22_PART_I",
+      "official_archive_url": "https://iapt.org.in/nse-2021-22/",
+      "official_paper_url": "https://iapt.org.in/wp-content/uploads/ioqjs_2021_22_part_i.pdf",
+      "official_final_key_url": "https://iapt.org.in/wp-content/uploads/ioqjs_2021_22_part_i_answer_key.pdf",
+      "paper_link_status": "OFFICIAL_ARCHIVE_LINK_OBSERVED_CONTENT_NOT_VERIFIED",
+      "key_link_status": "OFFICIAL_ARCHIVE_LINK_OBSERVED_CONTENT_NOT_VERIFIED",
+      "recorded_total_question_labels": null,
+      "note": "IAPT archive calls this IOQJS rather than ordinary NSEJS; original paper/key bytes not checked.",
+      "source_bytes_imported": false,
+      "independently_authenticated": false
+    },
+    {
+      "year": 2022,
+      "exam_series": "NSEJS_2022_23",
+      "official_archive_url": "https://iapt.org.in/nse-2022-23/",
+      "official_paper_url": "https://iapt.org.in/wp-content/uploads/nsejs_2022_23_part_i.pdf",
+      "official_final_key_url": "https://iapt.org.in/wp-content/uploads/nsejs-2022-final-answer-key.pdf",
+      "paper_link_status": "OFFICIAL_ARCHIVE_LINK_OBSERVED_TOO_LARGE_FOR_READ",
+      "key_link_status": "OFFICIAL_ARCHIVE_LINK_OBSERVED_403_ON_FETCH",
+      "recorded_total_question_labels": null,
+      "note": "Paper and key are linked from the official archive; bytes/figures were not authenticated in this work.",
+      "source_bytes_imported": false,
+      "independently_authenticated": false
+    },
+    {
+      "year": 2023,
+      "exam_series": "NSEJS_2023_24",
+      "official_archive_url": "https://iapt.org.in/nse-2023-24/",
+      "official_paper_url": "https://iapt.org.in/wp-content/uploads/NSEJS_2023_Set_51.pdf",
+      "official_final_key_url": "https://iapt.org.in/wp-content/uploads/NSEJS_2023_TENTATIVE_ANSWER_KEY.pdf",
+      "paper_link_status": "OFFICIAL_ARCHIVE_LINK_OBSERVED_FETCH_FORBIDDEN",
+      "key_link_status": "OFFICIAL_ARCHIVE_LABEL_FINAL_DOCUMENT_SELF_LABEL_FINAL_FILENAME_TENTATIVE",
+      "recorded_total_question_labels": 60,
+      "note": "Official archive labels linked key FINAL, PDF text also claims FINAL, but filename says TENTATIVE. Treat as publication-identity conflict needing reviewer.",
+      "source_bytes_imported": false,
+      "independently_authenticated": false
+    },
+    {
+      "year": 2024,
+      "exam_series": "NSEJS_2024_25",
+      "official_archive_url": "https://iapt.org.in/nse-2024-25/",
+      "official_paper_url": "https://www.iapt.org.in/images/nse_2024/NSEJS-2024_Set_51.pdf",
+      "official_final_key_url": "https://www.iapt.org.in/images/nse_2024/NSEJS_-_2024_Final_Answer_Key.pdf",
+      "paper_link_status": "OFFICIAL_PDF_TITLE_CODE_51_FIRST_PAGE_INSPECTED",
+      "key_link_status": "OFFICIAL_FINAL_KEY_CONTENT_READ",
+      "recorded_total_question_labels": 60,
+      "paper_code": 51,
+      "part_A1_range": [
+        1,
+        48
+      ],
+      "part_A2_range": [
+        49,
+        60
+      ],
+      "part_A2_format": "MULTIPLE_CORRECT",
+      "known_final_key_exception": {
+        "question": 20,
+        "paper_code": 51,
+        "status": "DROP"
+      },
+      "note": "Code-51 official key marks Q20 DROP; a native single-choice answer must not be invented. Code 51 Q49-Q60 permit multiple answers.",
+      "source_bytes_imported": false,
+      "independently_authenticated": false
+    }
+  ]
+}

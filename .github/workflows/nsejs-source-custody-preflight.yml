@@ -1,0 +1,131 @@
+name: NSEJS source-custody preflight (NO academic approval)
+on:
+  pull_request:
+    paths:
+      - 'tools/nsejs_source_custody_preflight.py'
+      - 'tests/test_nsejs_source_custody_preflight.py'
+      - 'docs/nsejs/subject-year-source-availability-r1.csv'
+      - 'docs/nsejs/official-iapt-source-locators-r1.json'
+      - 'tools/nsejs_2024_source_spotcheck.py'
+      - 'tools/nsejs_iapt_pdf_byte_custody.py'
+      - 'tests/test_nsejs_iapt_pdf_byte_custody.py'
+      - 'tests/test_nsejs_2024_source_spotcheck.py'
+      - 'build_d3_batch2_modules.py'
+      - 'docs/nsejs/official-iapt-source-reconciliation-r1.md'
+      - '.github/workflows/nsejs-source-custody-preflight.yml'
+  push:
+    branches: [main, 'feat/**']
+    paths:
+      - 'tools/nsejs_source_custody_preflight.py'
+      - 'tests/test_nsejs_source_custody_preflight.py'
+      - 'docs/nsejs/subject-year-source-availability-r1.csv'
+      - 'docs/nsejs/official-iapt-source-locators-r1.json'
+      - 'tools/nsejs_2024_source_spotcheck.py'
+      - 'tools/nsejs_iapt_pdf_byte_custody.py'
+      - 'tests/test_nsejs_iapt_pdf_byte_custody.py'
+      - 'tests/test_nsejs_2024_source_spotcheck.py'
+      - 'build_d3_batch2_modules.py'
+      - 'docs/nsejs/official-iapt-source-reconciliation-r1.md'
+      - '.github/workflows/nsejs-source-custody-preflight.yml'
+
+jobs:
+  source-custody-preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run source-neutral negative controls
+        run: |
+          python -m pip install 'pytest>=8,<10'
+          python -m pytest -q tests/test_nsejs_source_custody_preflight.py tests/test_nsejs_2024_source_spotcheck.py
+      - name: Produce source-neutral custody receipts
+        run: |
+          mkdir -p source-custody-receipts
+          python tools/nsejs_source_custody_preflight.py \
+            --json-out source-custody-receipts/custody.json \
+            --md-out source-custody-receipts/custody.md
+          python tools/nsejs_2024_source_spotcheck.py --out source-custody-receipts/2024-code51-spotcheck.json
+      - name: Test the strict missing-file and academic HOLD exits
+        shell: bash
+        run: |
+          set +e
+          python tools/nsejs_source_custody_preflight.py --require-files
+          missing_status=$?
+          python tools/nsejs_source_custody_preflight.py --academic-gate
+          academic_status=$?
+          set -e
+          echo "require-files exit=$missing_status (0=all present structurally; 3=missing files)"
+          echo "academic-gate exit=$academic_status (4=HOLD)"
+          if [[ "$missing_status" != "0" && "$missing_status" != "3" ]]; then exit 1; fi
+          if [[ "$academic_status" != "4" ]]; then exit 1; fi
+      - name: Verify the known source substitution remains blocked
+        shell: bash
+        run: |
+          set +e
+          python tools/nsejs_2024_source_spotcheck.py --out source-custody-receipts/2024-code51-strict.json --require-no-source-conflicts
+          source_status=$?
+          set -e
+          echo "source-conflict strict exit=$source_status (5 = unresolved source mismatch)"
+          test "$source_status" -eq 5
+      - name: Verify generated Biology Core1A/B witness remains schema-valid
+        run: |
+          python -m pip install -e ".[dev]"
+          python build_d3_batch2_modules.py
+          python -m pytest -q tests/test_bio_immunology_defense_d3_core1.py
+      - name: Upload custody status only (no source content)
+        uses: actions/upload-artifact@v4
+        with:
+          name: nsejs-custody-status-only
+          path: source-custody-receipts/
+          if-no-files-found: error
+
+
+  iapt-official-pdf-byte-custody:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install PDF parser and test runtime
+        run: python -m pip install "pypdf>=5,<7" "pytest>=8,<10"
+      - name: Check byte provenance, offline hashes, and host security controls
+        run: python -m pytest -q tests/test_nsejs_iapt_pdf_byte_custody.py
+      - name: Attempt TLS-verified official IAPT paper and final-key raw-byte retrieval
+        run: |
+          mkdir -p source-custody-receipts
+          python tools/nsejs_iapt_pdf_byte_custody.py \
+            --out source-custody-receipts/iapt-2020-2024-official-pdf-raw-sha256.json \
+            --timeout 12 \
+            --include-archive-years
+      - name: Upload digest-only custody report even on inaccessible source
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nsejs-iapt-official-pdf-hash-status-only
+          path: source-custody-receipts/iapt-2020-2024-official-pdf-raw-sha256.json
+          if-no-files-found: warn
+      - name: Enforce that both raw PDF documents were actually received
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("source-custody-receipts/iapt-2020-2024-official-pdf-raw-sha256.json")
+          report=json.loads(p.read_text())
+          n=report["raw_pdf_documents_received"]
+          present={x["document"]: x["fetch_status"] for x in report["documents"]
+                   if x["document"] in ("NSEJS_2024_CODE51_PAPER","NSEJS_2024_FINAL_KEY")}
+          if len(present) != 2 or not all(x == "RAW_PDF_BYTES_FETCHED_HASHED"
+                                            for x in present.values()):
+              print("SOURCE_CUSTODY_NOT_RECEIVED: missing at least one 2024 Code51 source; archive years optional")
+              raise SystemExit(7)
+          print("RAW_BYTES_SHA256_VERIFIED: both 2024 Code51 PDFs;",n,"of",report["expected_documents"],"all years; rights/academic HOLD")
+          PY

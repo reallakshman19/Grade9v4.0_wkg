@@ -276,38 +276,40 @@ def test_governance_fail_closed_holding_status(bank, module_html):
 # ---------------------------------------------------------------------------
 
 def test_preview_question_status_page_magnetism():
-    path = REPO_ROOT / "preview/question-status.html"
-    assert path.exists(), "Missing preview/question-status.html"
-    html = path.read_text(encoding="utf-8")
+    """The live Physics Core2 is source-indexed, not part of the legacy WPE
+    question-status page. Verify the actual 50 unadmitted candidates instead
+    of inventing obsolete parallel 10-card UI records.
+    """
+    old_preview = (REPO_ROOT / "preview/question-status.html").read_text(encoding="utf-8")
+    assert 'id="wpe-data"' in old_preview
 
-    # Match JSON script data
-    m = re.search(r'<script id="wpe-data" type="application/json">(.*?)</script>', html, re.DOTALL)
-    assert m, "Missing #wpe-data script tag in preview/question-status.html"
-    data = json.loads(m.group(1))
+    corpus = json.loads((REPO_ROOT / "nsejs/data/physics-core2-candidates.v1.json")
+                        .read_text(encoding="utf-8"))
+    assert corpus["source_claims_status"] == "HOLD"
+    assert corpus["qrt_adjudication"] == "HOLD"
+    assert len(corpus["questions"]) == 50
+    assert len({q["source_id"] for q in corpus["questions"]}) == 50
 
-    questions = data["questions"]
-    assert len(questions) >= 40, f"Expected at least 40 unified questions, found {len(questions)}"
-
-    mag_questions = [q for q in questions if "MAG" in q.get("source_id", "")]
-    assert len(mag_questions) == 10, f"Expected 10 magnetism questions, found {len(mag_questions)}"
-
-    # Check each magnetism question's structure
-    for q in mag_questions:
-        assert "id" in q and q["id"].startswith("NSEJS-")
-        assert "source_id" in q
-        assert "stem" in q and len(q["stem"]) > 10
-        assert "options" in q and len(q["options"]) == 4
-        assert "op" in q and q["op"] in CANONICAL_OPERATIONS
-        assert "band" in q and q["band"] in {"D1", "D2", "D3", "D4"}
+    selected = [q for q in corpus["questions"] if q.get("topic") == "MAGNETISM_AND_EMI"]
+    assert len(selected) == 10, "Original test-backed Physics topic count changed"
+    for q in selected:
+        assert q["id"].startswith(("NSEJS-", "IOQJS-"))
+        assert q["source_id"]
+        assert len(q["stem"]) > 10
+        assert len(q["options"]) == 4
+        assert q["op"] in CANONICAL_OPERATIONS
+        assert q["band"] in {"D1", "D2", "D3", "D4"}
         assert q["review_state"] == "NOT_ADMITTED"
-        assert "hints" in q and len(q["hints"]) == 3
-        assert "steps" in q and len(q["steps"]) == 3
-        assert "check" in q and len(q["check"]) > 5
+        assert len(q["hints"]) == 3
+        assert len(q["steps"]) == 3
+        assert len(q["check"]) > 5
 
-    # Check UI & Governance elements
-    assert "HOLD · NO ACADEMIC APPROVAL INFERRED FROM SOFTWARE VALIDATION" in html
-    assert 'value="MAGNETISM_AND_EMI"' in html
-    assert 'class="status"' in html
-    assert 'class="layout"' in html
-    assert 'class="filters"' in html
-    assert 'class="stage"' in html
+    hub = (REPO_ROOT / "nsejs/physics/index.html").read_text(encoding="utf-8")
+    reader = (REPO_ROOT / "nsejs/physics/question-bank.html").read_text(encoding="utf-8")
+    engine = (REPO_ROOT / "nsejs/js/core2-physics-reader.js").read_text(encoding="utf-8")
+    assert 'question-bank.html?topic=' in hub
+    assert 'id="questions"' in reader and "not academically admitted" in reader
+    assert '../js/core2-physics-reader.js' in reader
+    assert 'physics-core2-candidates.v1.json' in engine
+    assert '"NOT_ADMITTED"' in engine
+    assert 'source and QRT admission HOLD' in engine

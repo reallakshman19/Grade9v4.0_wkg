@@ -20,6 +20,7 @@ import tempfile
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 from build_public_reader_preview import build_preview
+from nsejs_core1ab_public_coverage import public_coverage, render_subject_index, render_official_sources
 
 PUBLIC_NSEJS = (
     "nsejs/index.html",
@@ -91,7 +92,7 @@ def lesson_index(subject: str, slugs: tuple[str, ...]) -> str:
     )
     return ('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NSEJS '+subject.title()+' · Authored Core1A / Core1B preview</title><style>body{font:18px/1.55 system-ui,sans-serif;background:#f4f8fb;color:#133047;margin:0}main{max-width:1000px;margin:auto;padding:28px}a{color:#0c577c}h1{font-size:1.8rem}ul{padding:0;list-style:none}.hold{border-left:5px solid #ac7517;background:#fff7df;padding:16px}a:focus-visible{outline:3px solid #bb7f1b}</style></head><body><main><a href="../index.html">Back to NSEJS '+subject.title()+'</a><h1>Core1A + Core1B authored learning modules</h1><p class="hold"><strong>Technical preview · UNVALIDATED · Academic HOLD.</strong> Authored teaching/transfer content, not official examination endorsement. B1–B7 and independent source-custody acceptance remain separate.</p><ul>'+cards+'</ul><p>No academic approval inferred from software validation.</p></main></body></html>')
 
-def generated_lessons(stage: Path) -> None:
+def generated_lessons(stage: Path) -> dict:
     with tempfile.TemporaryDirectory(prefix="g9-authored-public-preview-") as td:
         temp = Path(td)
         env = os.environ.copy()
@@ -100,6 +101,9 @@ def generated_lessons(stage: Path) -> None:
             shutil.copyfile(ROOT / builder, temp / builder)
             subprocess.run([sys.executable, builder], cwd=temp, env=env,
                            check=True, capture_output=True, text=True, timeout=100)
+        coverage = public_coverage(LESSONS, ROOT, temp / "workspace" / "output")
+        put(stage, "nsejs/data/core1ab-coverage.v1.json",
+            (json.dumps(coverage, indent=2, sort_keys=True) + "\n").encode("utf-8"))
         for subject, modules in LESSONS.items():
             for slug in modules:
                 src = temp / "workspace" / "output" / slug / "learning_journey.html"
@@ -112,8 +116,29 @@ def generated_lessons(stage: Path) -> None:
                     raise ValueError("AUTHOR_LESSON_HOLD_OR_ATTEMPT_CONTRACT_MISSING:"+slug)
                 put(stage, f"nsejs/{subject}/core1/{slug}/index.html", html.encode("utf-8"))
             put(stage, f"nsejs/{subject}/core1/index.html",
-                lesson_index(subject, modules).encode("utf-8"))
+                render_subject_index(subject, coverage).encode("utf-8"))
             add_learning_nav(stage,subject,modules)
+    return coverage
+
+def add_source_links(stage: Path) -> None:
+    locators = ROOT / "docs" / "nsejs" / "official-iapt-source-locators-r1.json"
+    put(stage, "nsejs/official-sources.html",
+        render_official_sources(locators).encode("utf-8"))
+    for subject in ("", "physics", "chemistry", "biology"):
+        relative = f"nsejs/{subject}/index.html" if subject else "nsejs/index.html"
+        page = stage / relative
+        body = page.read_text(encoding="utf-8")
+        if "</body>" not in body or 'id="official-iapt-links"' in body:
+            raise ValueError("OFFICIAL_LINK_INSERTION_UNSAFE:"+relative)
+        href = "../official-sources.html" if subject else "official-sources.html"
+        block = ('<section id="official-iapt-links" style="max-width:1060px;margin:24px auto;'
+                 'padding:20px;border:2px solid #b6c9d3;border-radius:12px;background:#fff">'
+                 '<h2>Official IAPT source papers (external links only)</h2>'
+                 '<p>Original papers stay on IAPT. These learning previews are not independently source-approved.</p>'
+                 '<a style="display:inline-flex;align-items:center;min-height:56px;padding:12px 20px;'
+                 'background:#125a79;color:white;border-radius:10px" href="'+href+'">'
+                 'View official paper/key links</a></section>')
+        page.write_text(body.replace("</body>", block + "\n</body>", 1), encoding="utf-8")
 
 def build(out: Path) -> dict:
     out=out.resolve()
@@ -136,7 +161,8 @@ def build(out: Path) -> dict:
         if not src.is_file():
             raise ValueError("MISSING_NSEJS_PREVIEW_ASSET:"+relative)
         put(out,relative,src.read_bytes())
-    generated_lessons(out)
+    coverage = generated_lessons(out)
+    add_source_links(out)
     (out/".nojekyll").write_text("",encoding="utf-8")
     file_list=sorted(p.relative_to(out).as_posix() for p in out.rglob("*") if p.is_file())
     if any(p.startswith(("workspace/","sources/","tests/","tools/")) or
@@ -150,7 +176,10 @@ def build(out: Path) -> dict:
         "source_question_published":True,
         "candidate_50_record_published":True,
         "official_source_figures_published":False,
-        "core1ab_authored_lesson_pages":8,
+        "core1ab_authored_lesson_pages": coverage["published_authored_preview_journeys"],
+        "core1ab_test_backed_constructions": coverage["tracked_constructions"],
+        "core1ab_unpublished_constructions": coverage["not_published_constructions"],
+        "official_sources_link_only": True,
         "school_wpe_preserved":True,
         "existing_synthetic_reader_preserved":True,
         "files":{name:sha((out/name).read_bytes()) for name in file_list if name not in ("PUBLIC_PREVIEW_MANIFEST.json",".nojekyll")}

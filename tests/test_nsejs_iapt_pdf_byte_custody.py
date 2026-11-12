@@ -1,0 +1,193 @@
+"""Adversarial official PDF-byte custody controls; no examination content."""
+import hashlib
+import importlib.util
+import json
+from pathlib import Path
+from urllib.error import HTTPError
+
+import pytest
+from pypdf import PdfWriter
+
+ROOT = Path(__file__).resolve().parents[1]
+SPEC = importlib.util.spec_from_file_location(
+    "nsejs_iapt_pdf_byte_custody", ROOT / "tools/nsejs_iapt_pdf_byte_custody.py")
+custody = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(custody)
+
+
+def fake_pdf() -> bytes:
+    from io import BytesIO
+    buff = BytesIO()
+    writer = PdfWriter()
+    writer.add_blank_page(width=612, height=792)
+    writer.write(buff)
+    return buff.getvalue()
+
+
+@pytest.mark.parametrize("url", [
+    "http://iapt.org.in/wp-content/uploads/file.pdf",
+    "https://external.example/file.pdf",
+    "https://iapt.org.in.evil.example/file.pdf",
+    "https://iapt.org.in/wp-content/uploads/file.html",
+    "https://u:pass@iapt.org.in/foo.pdf",
+    "https://iapt.org.in/foo.pdf#hidden",
+])
+def test_reject_wrong_scheme_domain_extension_credentials_and_fragment(url):
+    assert not custody.allowlisted_url(url)
+
+
+def test_allow_only_official_pdf_urls():
+    assert custody.allowlisted_url(
+        "https://www.iapt.org.in/images/nse_2024/NSEJS-2024_Set_51.pdf")
+    assert custody.allowlisted_url(
+        "https://mail.iapt.org.in/images/nse_2024/NSEJS-2024_Set_51.pdf")
+
+
+def test_actual_pdf_sha256_uses_bytes_not_text_or_declared_manifest():
+    raw = fake_pdf()
+    facts = custody.inspect_pdf_bytes(raw)
+    assert raw.startswith(b"%PDF-")
+    assert facts["sha256"] == hashlib.sha256(raw).hexdigest()
+    assert facts["size_bytes"] == len(raw)
+    assert facts["pdf_pages"] == 1
+    assert facts["pdf_encrypted"] is False
+
+
+def test_redirect_to_non_iapt_fails_before_request():
+    handler = custody.IAPTOnlyRedirect()
+    from urllib.request import Request
+    import io
+    with pytest.raises(ValueError, match="REDIRECT_LEFT_IAPT"):
+        handler.redirect_request(Request("https://iapt.org.in/paper.pdf"),
+                                 io.BytesIO(), 302, "Redirect",
+                                 {"Location": "https://other.example/pdf.pdf"},
+                                 "https://other.example/pdf.pdf")
+
+
+def test_source_retrieval_writes_digest_only_and_does_not_misclassify_rights(monkeypatch):
+    raw = fake_pdf()
+    def retrieve(url, timeout):
+        assert custody.allowlisted_url(url)
+        return raw, url
+    monkeypatch.setattr(custody, "read_official_bytes", retrieve)
+    result = custody.build_receipt(timeout=2)
+    assert result["raw_pdf_documents_received"] == 2
+    assert result["academic_admission"] == "HOLD"
+    assert result["source_rights"] == "NOT_VERIFIED"
+    assert result["source_pdf_content_embedded"] is False
+    assert all(x["sha256"] == hashlib.sha256(raw).hexdigest()
+               for x in result["documents"])
+    output = json.dumps(result)
+    assert "%PDF" not in output and "Contents" not in output
+    assert '"rights_to_redistribute": "NOT_VERIFIED"' in output
+
+
+def test_network_failure_preserves_unverified_sha(monkeypatch):
+    def retrieve(url, timeout):
+        raise HTTPError(url, 403, "Forbidden", {}, None)
+    monkeypatch.setattr(custody, "read_official_bytes", retrieve)
+    result = custody.build_receipt(timeout=1)
+    assert result["raw_pdf_documents_received"] == 0
+    assert result["academic_admission"] == "HOLD"
+    assert all(x["sha256"] is None for x in result["documents"])
+    assert all(x["fetch_status"] == "RAW_SOURCE_NOT_RECEIVED" for x in result["documents"])
+    assert all(row["error_code"] == "HTTP_403" for doc in result["documents"]
+               for row in doc["attempts"])
+
+
+def test_invalid_pdf_produces_no_fake_hash(monkeypatch):
+    monkeypatch.setattr(custody, "read_official_bytes",
+                        lambda url, timeout: (b"<html>not pdf</html>", url))
+    result = custody.build_receipt(timeout=1)
+    assert result["raw_pdf_documents_received"] == 0
+    assert all(x["sha256"] is None for x in result["documents"])
+
+
+
+def test_archive_years_are_source_named_and_preserve_2020_2021_ioqjs_identity(monkeypatch):
+    raw = fake_pdf()
+    monkeypatch.setattr(custody, "read_official_bytes",
+                        lambda url, timeout: (raw, url))
+    summary = custody.build_receipt(timeout=1, include_archives=True)
+    assert summary["expected_documents"] == 10
+    assert summary["raw_pdf_documents_received"] == 10
+    assert summary["archive_years_attempted"] is True
+    names = {d["document"] for d in summary["documents"]}
+    assert "IOQJS_2020_21_CODE51_PAPER" in names
+    assert "IOQJS_2021_22_FINAL_KEY" in names
+    assert "NSEJS_2023_24_KEY_AS_LINKED_BY_IAPT" in names
+    assert all(d["independent_academic_admission"] == "HOLD"
+               for d in summary["documents"])
+
+
+
+def test_committed_original_pdf_receipts_pin_real_ci_digests_without_claiming_rights():
+    manifest = json.loads((ROOT / "docs/nsejs/official-2020-2024-raw-byte-custody-r1.json")
+                          .read_text(encoding="utf-8"))
+    assert manifest["raw_official_pdf_documents_verified"] == 10
+    assert manifest["raw_official_pdf_documents_missing"] == 0
+    assert len(manifest["items"]) == 10
+    assert manifest["rights"] == "NOT_VERIFIED"
+    assert manifest["academic_qualification"] == "HOLD"
+    assert manifest["figure_fidelity"] == "NOT_VERIFIED"
+    assert all(x["source_bytes_publicly_republished"] is False for x in manifest["items"])
+    indexed = {x["id"]: x for x in manifest["items"]}
+    paper = indexed["NSEJS_2024_CODE51_PAPER"]
+    archive2020 = indexed["IOQJS_2020_21_CODE51_PAPER"]
+    assert archive2020["sha256"] == "8b7f09e6bb42b6ca953155a3f1166dfecdea2c76372d65bcf4f5ff83d9d27471"
+    assert archive2020["pdf_pages"] == 36
+    assert archive2020["paper_code_scope"].endswith("NOT_FULLY_INDEPENDENTLY_REVIEWED")
+    key = indexed["NSEJS_2024_FINAL_KEY"]
+    assert paper["sha256"] == "b80e3bae4e64aaad11f43cc12f07ef17ae495b75e231122d440b0f81709379e8"
+    assert key["sha256"] == "6d56f6f4e7f3c6b7a0b7b6146c0e7e9386c035fc5988c5523fe6551fc9374926"
+    for item in manifest["items"]:
+        if item["sha256"]:
+            assert len(item["sha256"]) == 64
+            assert item["size_bytes"] > 500
+            assert item["pdf_pages"] >= 1
+        else:
+            assert item["source_byte_status"] == "RAW_SOURCE_NOT_RECEIVED"
+            assert item["size_bytes"] is None
+
+
+
+def test_bounded_original_page_check_exports_flags_not_question_text(monkeypatch):
+    class Page:
+        def __init__(self, text):
+            self.text = text
+        def extract_text(self):
+            return self.text
+    class Reader:
+        def __init__(self, *args, **kwargs):
+            self.pages = [Page("irrelevant")] * 11 + [
+                Page("52: Eosinophils and surface IgM IgD. 57: lens 75 cm 12 cm.")
+            ]
+    import pypdf
+    monkeypatch.setattr(pypdf, "PdfReader", Reader)
+    evidence = custody.inspect_bounded_2024_pdf_evidence(b"%PDF-fake")
+    assert evidence["page12_available"] is True
+    assert evidence["source_q52_surface_igm_seen"] is True
+    assert evidence["source_q52_surface_igd_seen"] is True
+    assert evidence["source_q52_option_b_eosinophil_seen"] is True
+    assert evidence["source_q57_lens_75cm_seen"] is True
+    assert evidence["source_q57_focal_12cm_seen"] is True
+    assert evidence["q52_histamine_term_on_pdf_page12"] is False
+    assert evidence["original_q57_figure_comparison"] == "NOT_PERFORMED"
+    assert "Eosinophils" not in json.dumps(evidence)
+    assert evidence["academic_source_admission"] == "HOLD"
+
+
+
+def test_actual_2024_page_12_evidence_is_pinned_but_does_not_approve_figure():
+    source = json.loads(
+        (ROOT / "docs/nsejs/official-2024-code51-raw-byte-custody-r1.json")
+        .read_text(encoding="utf-8")
+    )
+    evidence = source["bounded_internal_page12_source_check"]
+    assert evidence["q52_igm_on_official_source_page"] is True
+    assert evidence["q52_igd_on_official_source_page"] is True
+    assert evidence["q52_histamine_mentioned_on_same_page"] is False
+    assert evidence["q57_lens_75cm_and_12cm_on_official_source_page"] is True
+    assert evidence["original_q57_figure_to_generated_candidate"] == "NOT_INDEPENDENTLY_COMPARED"
+    assert evidence["source_text_embedded"] is False
+    assert evidence["academic_admission"] == "HOLD"
