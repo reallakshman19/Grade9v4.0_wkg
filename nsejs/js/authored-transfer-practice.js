@@ -24,6 +24,16 @@
     const h=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(raw));
     return Array.from(new Uint8Array(h),b=>b.toString(16).padStart(2,"0")).join("");
   }
+  function canonical(value) {
+    // Match Python's sort_keys=True / separators=(',', ':') SHA input.
+    // Every authored question revision is checked from the entire real item,
+    // not accepted from a declared 64-character string.
+    if (Array.isArray(value)) return "["+value.map(canonical).join(",")+"]";
+    if (value!==null && typeof value==="object") {
+      return "{"+Object.keys(value).sort().map(k=>JSON.stringify(k)+":"+canonical(value[k])).join(",")+"}";
+    }
+    return JSON.stringify(value);
+  }
   function storageKey(q){
     return ["g9","nsejs","author-core1b","v1",subject,sourceDigest,q.uid,q.revision_sha256].join(":");
   }
@@ -133,6 +143,10 @@
          !/^[a-z0-9-]+$/.test(q.lesson_slug)||
          q.lesson_route!=="nsejs/"+q.subject.toLowerCase()+"/core1/"+q.lesson_slug+"/index.html")
         throw Error("AUTHOR_EXERCISE_REVISION_OR_SCOPE_INVALID");
+      const revisionInput={...q};
+      delete revisionInput.revision_sha256;
+      if(await digest(canonical(revisionInput))!==q.revision_sha256)
+        throw Error("AUTHORED_TRANSFER_REAL_CONTENT_HASH_MISMATCH");
       seen.add(q.uid);
     }
     sourceDigest=await digest(raw);
