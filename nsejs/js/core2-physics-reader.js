@@ -62,7 +62,8 @@
   async function createCard(q,index) {
     const box=text("article","", "card"); box.id = "question-"+encodeURIComponent(q.source_id);
     append(box,text("h2","Candidate "+(index+1)+" · "+q.source_id));
-    append(box,text("div",(q.category==="AUTHORED_PRACTICE"?"Authored practice ID: ":"Historical candidate ID: ")+q.id+" · QRT nomination: "+q.op+" / "+q.band+" · NOT_ADMITTED","meta"));
+    append(box,text("div",(q.category==="AUTHORED_PRACTICE"?"Authored practice ID: ":"Historical candidate ID (not official locator): ")+q.id+" · QRT nomination: "+q.op+" / "+q.band+" · NOT_ADMITTED","meta"));
+    if(q.official_locator_override) append(box,text("div","Official checked Paper "+q.official_locator_override.paper_year+" code "+q.official_locator_override.paper_code+" · Q"+q.official_locator_override.official_question_no+" · key "+q.official_locator_override.official_option+" (item fidelity remains HOLD)","meta"));
     append(box,text("span",q.category==="AUTHORED_PRACTICE"?"{Unvalidated} · authored practice; Physics/QRT admission pending":"{Unvalidated} · source/key/figures not authenticated","status"));
     const stem=text("p",String(q.stem||"").replace(/\[FIG[^\]]*\]/g,"[Figure required — not available]"),"stem");
     append(box,stem);
@@ -136,14 +137,13 @@
       if(t[0]===selectedTopic)a.setAttribute("aria-current","page");
       nav.append(a);
     });
-    const response=await fetch("../../preview/question-status.html",{cache:"no-store"});
-    if(!response.ok)throw new Error("Candidate data unavailable (HTTP "+response.status+")");
-    const html=await response.text();
-    const doc=new DOMParser().parseFromString(html,"text/html");
-    const data=doc.querySelector('script#wpe-data[type="application/json"]');
-    if(!data)throw new Error("Legacy public candidate source has no wpe-data payload");
-    const all=JSON.parse(data.textContent).questions;
-    if(!Array.isArray(all))throw new Error("Invalid candidate question payload");
+    const response=await fetch("../data/physics-core2-candidates.v1.json",{cache:"no-store"});
+    if(!response.ok)throw new Error("Candidate corpus unavailable (HTTP "+response.status+")");
+    const corpus=await response.json();
+    if(corpus.schema_version!=="grade9-nsejs-physics-core2-candidate-corpus/v1" ||
+       corpus.source_claims_status!=="HOLD" || !Array.isArray(corpus.questions))
+      throw new Error("Unqualified/malformed candidate corpus; fail closed");
+    const all=corpus.questions;
     const physics=all.filter(q=>TOPICS.slice(0,5).some(t=>t[1]===q.topic));
     const extensionResponse=await fetch("../data/physics-authored-practice-r1.json",{cache:"no-store"});
     if(!extensionResponse.ok)throw new Error("Authored practice manifest unavailable");
@@ -151,6 +151,8 @@
     if(!Array.isArray(extension.questions) || !extension.questions.every(q=>q.category==="AUTHORED_PRACTICE" && q.review_state==="NOT_ADMITTED"))throw new Error("Untrusted authored practice manifest");
     const identities=physics.map(uidOf);
     if(physics.length!==50 || new Set(identities).size!==50)throw new Error("Physics census/identity mismatch; fail closed");
+    const verifiedLocators=corpus.known_paper_locator_corrections || {};
+    physics.forEach(q => { if(verifiedLocators[q.source_id]) q.official_locator_override=verifiedLocators[q.source_id]; });
     const combined=physics.concat(extension.questions);
     if(new Set(combined.map(uidOf)).size!==combined.length)throw new Error("Combined candidate UID collision");
     const questions=combined.filter(q=>q.topic===topic[1]);
