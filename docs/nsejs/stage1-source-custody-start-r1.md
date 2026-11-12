@@ -51,3 +51,20 @@ Use a private, access-controlled intake, never unverified public Git:
 Stage 1 ACCEPTED only for a truthful, reproducible custody inventory and adversarial tests. Source intake, the full 237 author-test claims, Chemistry/Biology banks, original Physics fidelity, academic acceptance, overall QA and the remaining learner journeys all remain HOLD or NOT_RECEIVED.
 
 No merge, no Pages deployment, no new original-source data publication and no academic approval inferred from software validation.
+
+
+## Stage 1B — official PDF raw-byte custody achieved (12 November 2026)
+
+The original Stage 1 note described PDF byte hashes as NOT_RECEIVED at that time. Subsequent exact-head GitHub Actions retrieved and hashed actual PDF bytes from IAPT HTTPS in ephemeral runner memory. No original PDF bytes were committed or uploaded as artifacts.
+
+- Nine of ten named 2020–2024 official paper/key PDFs now have SHA-256, byte size and page count. Exception: the 2020–21 IOQJS Part I Code 51 paper, whose indexed older image-host links returned HTTP 404.
+- Verified 2024 Code 51 paper: SHA-256 b80e3bae4e64aaad11f43cc12f07ef17ae495b75e231122d440b0f81709379e8; 1,189,141 bytes; 14 pages.
+- Verified 2024 final key: SHA-256 6d56f6f4e7f3c6b7a0b7b6146c0e7e9386c035fc5988c5523fe6551fc9374926; 453,386 bytes; one page.
+- Full nine-file digest ledger: docs/nsejs/official-2020-2024-raw-byte-custody-r1.json.
+- Machine receipt: https://github.com/reallakshman19/Grade9v4.0/actions/runs/43229165198.
+- Code 51 Q52's original-option substitution remains a P0 source defect (Issue #86). The authentic Q57 source drawing is not yet staged or independently matched.
+- Source registry, exact figure/stem/key comparisons, academic correctness, QRT qualification, publication permissions and release acceptance all remain HOLD. Nine raw PDF SHA receipts are not nine approved native Core2 banks.
+
+### Safe-publication boundary
+
+Continue linking directly to original IAPT-hosted PDFs and publishing separately authored learning constructions. Do not embed or mirror whole original papers into a public source bank without verified rights, source/figure fidelity and independent academic acceptance. The fifteen legacy subject-year bank/input groups still lack reproducible production artifacts, independently of the nine PDF hash receipts.
