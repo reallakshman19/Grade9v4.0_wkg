@@ -8,6 +8,7 @@ on:
       - 'tests/test_agent_b_science_topups.py'
       - 'tests/test_agent_b_authored_corrections.py'
       - 'tools/agent_b_core1ab_authoring.py'
+      - 'tools/check_agent_b_core1ab_http.py'
       - 'build_d3_expansion_modules.py'
       - 'build_d3_batch2_modules.py'
       - 'docs/agent-b-core1ab-candidate-topups.md'
@@ -29,3 +30,19 @@ jobs:
         run: python -m pip install 'pytest>=8,<10'
       - name: Run synthetic B4/B5 falsifiers
         run: python -m pytest -q tests/test_agent_b_core1ab_audit.py tests/test_agent_b_science_topups.py tests/test_agent_b_authored_corrections.py
+
+
+  real-http-chromium:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Playwright Chromium
+        run: |
+          python -m pip install playwright==1.55.0
+          python -m playwright install chromium
+      - name: Run actual HTTP desktop/mobile Core1B protection
+        run: python tools/check_agent_b_core1ab_http.py
