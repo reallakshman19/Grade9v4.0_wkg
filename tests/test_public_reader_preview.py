@@ -69,9 +69,9 @@ def test_all_published_student_links_resolve_without_hidden_workspaces(tmp_path)
     home=(out/"index.html").read_text()
     assert 'href="nsejs/index.html"' in home
     nsejs=(out/"nsejs/index.html").read_text()
-    assert 'href="physics/index.html"' in nsejs
-    assert 'href="chemistry/index.html"' in nsejs
-    assert 'href="biology/index.html"' in nsejs
+    assert 'href="../nsejs/physics/index.html"' in nsejs
+    assert 'href="../nsejs/chemistry/index.html"' in nsejs
+    assert 'href="../nsejs/biology/index.html"' in nsejs
 
 def test_preview_is_deterministic_and_refuses_replacement(tmp_path):
     a,b=tmp_path/"a",tmp_path/"b"
