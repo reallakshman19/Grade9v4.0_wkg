@@ -18,6 +18,7 @@ on:
       - 'tools/check_staged_nsejs_mechanics_http.py'
       - 'tools/check_source_linked_practice_http.py'
       - 'tools/nsejs_source_practice_recovery.py'
+      - 'tools/nsejs_authored_transfer_index.py'
       - 'tests/test_nsejs_source_practice_recovery.py'
       - 'docs/nsejs/official-iapt-source-locators-r1.json'
       - 'tools/check_public_nsejs_http.py'
@@ -63,6 +64,7 @@ on:
       - 'tools/check_staged_nsejs_mechanics_http.py'
       - 'tools/check_source_linked_practice_http.py'
       - 'tools/nsejs_source_practice_recovery.py'
+      - 'tools/nsejs_authored_transfer_index.py'
       - 'tests/test_nsejs_source_practice_recovery.py'
       - 'docs/nsejs/official-iapt-source-locators-r1.json'
       - 'tools/check_public_nsejs_http.py'
@@ -118,6 +120,7 @@ jobs:
           node --check nsejs/js/core2-learning-route.js
           node --check nsejs/js/core2-physics-reader.js
           node --check nsejs/js/source-linked-exam-practice.js
+          node --check nsejs/js/authored-transfer-practice.js
           node --check nsejs/js/wpe-contract-adapter.js
       - name: Build existing WPE plus NSEJS candidate-only technical preview and authored Core1AB lessons
         run: python tools/build_public_nsejs_preview.py --out public-safe-dist
