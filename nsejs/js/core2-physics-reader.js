@@ -22,6 +22,11 @@
   };
   const append = (parent, ...children) => { children.forEach(child => parent.appendChild(child)); return parent; };
   const uidOf = q => "g9:PHYSICS:" + q.source_id;
+  async function digestText(raw) {
+    if (typeof crypto === "undefined" || !crypto.subtle) throw new Error("SHA-256 unavailable; data validation failed closed");
+    const h=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(raw));
+    return Array.from(new Uint8Array(h),v=>v.toString(16).padStart(2,"0")).join("");
+  }
   const revisionPayload = q => JSON.stringify({
     uid:uidOf(q),source_id:q.source_id,original_id:q.id,
     stem:q.stem,options:q.options,answer:q.answer,question_type:q.question_type,
@@ -62,14 +67,28 @@
   async function createCard(q,index) {
     const box=text("article","", "card"); box.id = "question-"+encodeURIComponent(q.source_id);
     append(box,text("h2","Candidate "+(index+1)+" · "+q.source_id));
-    append(box,text("div",(q.category==="AUTHORED_PRACTICE"?"Authored practice ID: ":"Historical candidate ID (not official locator): ")+q.id+" · QRT nomination: "+q.op+" / "+q.band+" · NOT_ADMITTED","meta"));
-    if(q.official_locator_override) append(box,text("div","Official checked Paper "+q.official_locator_override.paper_year+" code "+q.official_locator_override.paper_code+" · Q"+q.official_locator_override.official_question_no+" · key "+q.official_locator_override.official_option+" (item fidelity remains HOLD)","meta"));
-    append(box,text("span",q.category==="AUTHORED_PRACTICE"?"{Unvalidated} · authored practice; Physics/QRT admission pending":"{Unvalidated} · source/key/figures not authenticated","status"));
+    const integrity=q.integrity_meta || null;
+    const qualifier=integrity && !integrity.qrt_nomination_consistent ?
+      " · QRT CONFLICT: "+integrity.producer_qrt_band+" nomination vs "+integrity.score_based_band+" score band — HOLD" :
+      " · QRT nomination (not reviewed): "+q.op+" / "+q.band;
+    append(box,text("div",(q.category==="AUTHORED_PRACTICE"?"Authored practice ID: ":"Historical candidate ID: ")+q.id+qualifier+" · NOT_ADMITTED","meta"));
+    if(integrity && integrity.official_paper_question) append(box,text("div","Paper locator/key cross-checked: "+integrity.official_paper_year+" · Code "+integrity.official_paper_code+" · Q"+integrity.official_paper_question+" (exact item transcription remains HOLD)","meta"));
+    if(integrity && integrity.source_evidence_status==="OFFICIAL_ID_CONTRADICTED") append(box,text("p","SOURCE CLAIM INVALID: This historical ID does not match the official 2024 question. Treat as unverified practice, not as an original paper item.","figure-warning"));
+    append(box,text("span",q.category==="AUTHORED_PRACTICE"?"{Unvalidated} · authored practice; Physics/QRT admission pending":
+      "{Unvalidated} · "+(integrity ? integrity.source_evidence_status+" · asserted stem digest "+(integrity.declared_matches_observed?"agrees with display":"CONFLICTS with display")+" · QRT HOLD" : "no independent source proof"),"status"));
     const stem=text("p",String(q.stem||"").replace(/\[FIG[^\]]*\]/g,"[Figure required — not available]"),"stem");
     append(box,stem);
-    const requiredFigure=Array.isArray(q.source_figures) && q.source_figures.length>0;
+    const requiredFigure=Boolean(integrity && integrity.figure_dependency_missing) ||
+      (Array.isArray(q.source_figures) && q.source_figures.length>0);
     if (requiredFigure) {
-      append(box,text("p","Required source figure not supplied in this public candidate page: "+q.source_figures.join(", ")+". Question remains source-fidelity HOLD; commitment disabled.","figure-warning"));
+      const figNames=(q.source_figures || []).length ? q.source_figures.join(", ") : "official examination figure/graph";
+      append(box,text("p","Required or claimed source figure not supplied in this candidate page: "+figNames+". Source-fidelity HOLD; commitment disabled.","figure-warning"));
+    }
+    if(integrity) {
+      const details=document.createElement("details");
+      const summary=text("summary","Data integrity and QRT (technical evidence; not admission)");
+      append(details,summary,text("p","Observed stem SHA-256: "+integrity.observed_stem_sha256+"; producer declared: "+integrity.producer_declared_stem_sha256+". "+integrity.source_evidence_status+"; five-factor score: "+integrity.five_factor_score+"; calculated score band: "+integrity.score_based_band+"; academic status: HOLD.","meta"));
+      append(box,details);
     }
     const group=text("div","","options");
     const chosen=[];
@@ -137,13 +156,41 @@
       if(t[0]===selectedTopic)a.setAttribute("aria-current","page");
       nav.append(a);
     });
-    const response=await fetch("../data/physics-core2-candidates.v1.json",{cache:"no-store"});
-    if(!response.ok)throw new Error("Candidate corpus unavailable (HTTP "+response.status+")");
-    const corpus=await response.json();
-    if(corpus.schema_version!=="grade9-nsejs-physics-core2-candidate-corpus/v1" ||
-       corpus.source_claims_status!=="HOLD" || !Array.isArray(corpus.questions))
-      throw new Error("Unqualified/malformed candidate corpus; fail closed");
+    const [manifestResponse,response,evidenceResponse]=await Promise.all([
+      fetch("../data/physics-core2-integrity.v1.json",{cache:"no-store"}),
+      fetch("../data/physics-core2-candidates.v1.json",{cache:"no-store"}),
+      fetch("../data/physics-core2-source-evidence.v1.json",{cache:"no-store"})
+    ]);
+    if(!manifestResponse.ok || !response.ok || !evidenceResponse.ok) throw new Error("Source integrity registry incomplete; fail closed");
+    const [manifestText,corpusText,evidenceText]=await Promise.all([
+      manifestResponse.text(),response.text(),evidenceResponse.text()
+    ]);
+    const manifest=JSON.parse(manifestText),corpus=JSON.parse(corpusText),evidence=JSON.parse(evidenceText);
+    if(manifest.schema_version!=="grade9-nsejs-physics-core2-integrity/v1" ||
+       manifest.academic_admission!=="HOLD" || corpus.source_claims_status!=="HOLD" ||
+       corpus.schema_version!=="grade9-nsejs-physics-core2-candidate-corpus/v1" ||
+       evidence.schema_version!=="grade9-nsejs-physics-source-evidence/v1" ||
+       !Array.isArray(corpus.questions) || !Array.isArray(manifest.items))
+      throw new Error("Unqualified or malformed candidate registry; fail closed");
+    if(await digestText(corpusText)!==manifest.corpus_sha256 ||
+       await digestText(evidenceText)!==manifest.provenance_sha256)
+      throw new Error("SOURCE_CONTENT_INTEGRITY_MISMATCH; fail closed");
     const all=corpus.questions;
+    const integrityById=new Map(manifest.items.map(x=>[x.source_id,x]));
+    if(manifest.items.length!==50 || integrityById.size!==50)
+      throw new Error("Invalid or duplicated integrity ledger; fail closed");
+    for(const q of all) {
+      const record=integrityById.get(q.source_id);
+      if(!record || record.academic_admission!=="NOT_ADMITTED" ||
+         record.source_exact_fidelity!=="HOLD" ||
+         record.historical_display_id!==q.id ||
+         record.producer_declared_stem_sha256!==q.stem_sha256 ||
+         record.producer_qrt_band!==q.band || record.five_factor_score!==q.score ||
+         await digestText(q.stem)!==record.observed_stem_sha256 ||
+         await revision(q)!==record.observed_question_revision_sha256)
+        throw new Error("SOURCE_ITEM_INTEGRITY_MISMATCH: "+q.source_id);
+      q.integrity_meta=record;
+    }
     const physics=all.filter(q=>TOPICS.slice(0,5).some(t=>t[1]===q.topic));
     const extensionResponse=await fetch("../data/physics-authored-practice-r1.json",{cache:"no-store"});
     if(!extensionResponse.ok)throw new Error("Authored practice manifest unavailable");
@@ -151,8 +198,8 @@
     if(!Array.isArray(extension.questions) || !extension.questions.every(q=>q.category==="AUTHORED_PRACTICE" && q.review_state==="NOT_ADMITTED"))throw new Error("Untrusted authored practice manifest");
     const identities=physics.map(uidOf);
     if(physics.length!==50 || new Set(identities).size!==50)throw new Error("Physics census/identity mismatch; fail closed");
-    const verifiedLocators=corpus.known_paper_locator_corrections || {};
-    physics.forEach(q => { if(verifiedLocators[q.source_id]) q.official_locator_override=verifiedLocators[q.source_id]; });
+    // Official locators are rendered only from source-reconciled integrity evidence;
+    // historical ID values are never silently overwritten.
     const combined=physics.concat(extension.questions);
     if(new Set(combined.map(uidOf)).size!==combined.length)throw new Error("Combined candidate UID collision");
     const questions=combined.filter(q=>q.topic===topic[1]);
