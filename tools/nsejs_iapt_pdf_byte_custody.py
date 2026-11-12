@@ -32,6 +32,41 @@ URLS = {
         "https://mail.iapt.org.in/images/nse_2024/NSEJS_-_2024_Final_Answer_Key.pdf",
     ),
 }
+ARCHIVE_URLS = {
+    "IOQJS_2020_21_CODE51_PAPER": (
+        "https://iapt.org.in/images/nse_2020/IOQJS%20PART%20I%202020-21.pdf",
+        "https://www.iapt.org.in/images/nse_2020/IOQJS%20PART%20I%202020-21.pdf",
+    ),
+    "IOQJS_2020_21_FINAL_KEY": (
+        "https://iapt.org.in/wp-content/uploads/Final-Answer-key-IOQJS-2020-21Part-I.pdf",
+        "https://www.iapt.org.in/images/nse_2020/final-answer-keys-ioqjs-part-I.pdf",
+    ),
+    "IOQJS_2021_22_CODE51_PAPER": (
+        "https://iapt.org.in/wp-content/uploads/ioqjs_2021_22_part_i.pdf",
+        "https://www.iapt.org.in/images/nse_2021/ioqjs_2021_22_part_i.pdf",
+    ),
+    "IOQJS_2021_22_FINAL_KEY": (
+        "https://iapt.org.in/wp-content/uploads/ioqjs_2021_22_part_i_answer_key.pdf",
+        "https://www.iapt.org.in/images/nse_2021/ioqjs_2021_22_part_i_answer_key.pdf",
+    ),
+    "NSEJS_2022_23_CODE51_PAPER": (
+        "https://iapt.org.in/wp-content/uploads/nsejs_2022_23_part_i.pdf",
+        "https://www.iapt.org.in/images/nse_2022/nsejs_2022_23_part_i.pdf",
+    ),
+    "NSEJS_2022_23_FINAL_KEY": (
+        "https://iapt.org.in/wp-content/uploads/nsejs-2022-final-answer-key.pdf",
+    ),
+    "NSEJS_2023_24_CODE51_PAPER": (
+        "https://iapt.org.in/wp-content/uploads/NSEJS_2023_Set_51.pdf",
+        "https://www.iapt.org.in/images/nse_2023/NSEJS_2023_Set_51.pdf",
+    ),
+    "NSEJS_2023_24_KEY_AS_LINKED_BY_IAPT": (
+        "https://iapt.org.in/wp-content/uploads/NSEJS_2023_TENTATIVE_ANSWER_KEY.pdf",
+    ),
+}
+# 2023 key URL carries a TENTATIVE filename despite prior official page's
+# FINAL label. Its publication/revision authority must be verified separately.
+
 MAX_BYTES = 25 * 1024 * 1024
 MIN_BYTES = 512
 
@@ -134,8 +169,9 @@ def inspect_one(name: str, candidates: tuple[str, ...], timeout: int = 18) -> di
     }
 
 
-def build_receipt(timeout: int = 18) -> dict:
-    rows = [inspect_one(n, urls, timeout=timeout) for n, urls in URLS.items()]
+def build_receipt(timeout: int = 18, include_archives: bool = False) -> dict:
+    sources = {**URLS, **ARCHIVE_URLS} if include_archives else URLS
+    rows = [inspect_one(n, urls, timeout=timeout) for n, urls in sources.items()]
     count = sum(x["fetch_status"] == "RAW_PDF_BYTES_FETCHED_HASHED" for x in rows)
     return {
         "schema": "grade9-nsejs-iapt-source-raw-byte-custody/v1",
@@ -144,6 +180,7 @@ def build_receipt(timeout: int = 18) -> dict:
         "source_pdf_files_saved": False,
         "raw_pdf_documents_received": count,
         "expected_documents": len(rows),
+        "archive_years_attempted": include_archives,
         "source_rights": "NOT_VERIFIED",
         "independent_source_fidelity": "NOT_VERIFIED",
         "academic_admission": "HOLD",
@@ -157,12 +194,14 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--timeout", type=int, default=18)
+    ap.add_argument("--include-archive-years", action="store_true",
+                    help="Also attempt official 2020–2023 IOQJS/NSEJS papers and keys")
     ap.add_argument("--require-both", action="store_true",
                     help="Exit 7 unless both actual official PDFs were fetched+hashed")
     args = ap.parse_args(argv)
     if not 1 <= args.timeout <= 60:
         ap.error("timeout outside [1,60]")
-    report = build_receipt(timeout=args.timeout)
+    report = build_receipt(timeout=args.timeout, include_archives=args.include_archive_years)
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(report, sort_keys=True, indent=2) + "\n", encoding="utf-8")
     print("IAPT_PDF_SOURCE_CUSTODY:", report["raw_pdf_documents_received"],
@@ -173,7 +212,12 @@ def main(argv=None) -> int:
               doc.get("sha256") or "SHA256_NOT_RECEIVED",
               doc.get("size_bytes") or "SIZE_NOT_RECEIVED",
               "pages", doc.get("pdf_pages") or "NOT_RECEIVED")
-    if args.require_both and report["raw_pdf_documents_received"] != 2:
+    code51 = {x["document"]: x["fetch_status"] for x in report["documents"]
+              if x["document"] in URLS}
+    if args.require_both and not (
+        len(code51) == 2
+        and all(x == "RAW_PDF_BYTES_FETCHED_HASHED" for x in code51.values())
+    ):
         return 7
     return 0
 
