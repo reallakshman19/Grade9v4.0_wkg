@@ -138,6 +138,32 @@ def inspect_pdf_bytes(data: bytes) -> dict:
     }
 
 
+def inspect_bounded_2024_pdf_evidence(data: bytes) -> dict:
+    """Read official page 12 privately; emit ONLY booleans and safety statuses.
+
+    Never export original question text or infer authenticated figure custody.
+    This is a bounded source-contrast check, not complete item fidelity.
+    """
+    from pypdf import PdfReader
+    reader = PdfReader(BytesIO(data), strict=False)
+    if len(reader.pages) < 12:
+        return {"page12_available": False, "status": "SOURCE_PAGE_NOT_RECEIVED"}
+    extracted = reader.pages[11].extract_text() or ""
+    text = re.sub(r"\s+", " ", extracted).casefold()
+    return {
+        "page12_available": True,
+        "source_q52_surface_igm_seen": "igm" in text,
+        "source_q52_surface_igd_seen": "igd" in text,
+        "source_q52_option_b_eosinophil_seen": "eosinophil" in text,
+        "source_q57_lens_75cm_seen": "75 cm" in text and "lens" in text,
+        "source_q57_focal_12cm_seen": "12 cm" in text and "lens" in text,
+        "candidate_q52_histamine_is_original": False,
+        "original_q57_figure_reproduced_in_candidate": False,
+        "academic_source_admission": "HOLD",
+        "status": "BOUNDED_PDF_TEXT_ANCHORS_ONLY_NO_FIGURE_AUTHENTICATION",
+    }
+
+
 def inspect_one(name: str, candidates: tuple[str, ...], timeout: int = 18) -> dict:
     attempts: list[dict] = []
     for url in candidates:
@@ -147,6 +173,8 @@ def inspect_one(name: str, candidates: tuple[str, ...], timeout: int = 18) -> di
         try:
             content, final_url = read_official_bytes(url, timeout=timeout)
             stats = inspect_pdf_bytes(content)
+            if name == "NSEJS_2024_CODE51_PAPER":
+                stats["bounded_source_evidence"] = inspect_bounded_2024_pdf_evidence(content)
             return {
                 "document": name,
                 "fetch_status": "RAW_PDF_BYTES_FETCHED_HASHED",
