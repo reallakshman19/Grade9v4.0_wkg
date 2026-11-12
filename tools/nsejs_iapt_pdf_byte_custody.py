@@ -34,6 +34,11 @@ URLS = {
 }
 ARCHIVE_URLS = {
     "IOQJS_2020_21_CODE51_PAPER": (
+        # Publicly indexed older image-host path currently returns HTTP 404.
+        # Try same-name IAPT's modern migration paths, without treating a
+        # guessed URL as an available source unless actual PDF bytes verify.
+        "https://iapt.org.in/wp-content/uploads/IOQJS%20PART%20I%202020-21.pdf",
+        "https://iapt.org.in/wp-content/uploads/IOQJS-PART-I-2020-21.pdf",
         "https://iapt.org.in/images/nse_2020/IOQJS%20PART%20I%202020-21.pdf",
         "https://www.iapt.org.in/images/nse_2020/IOQJS%20PART%20I%202020-21.pdf",
     ),
