@@ -1,7 +1,7 @@
 # Oracle Checkpoint — 12 November 2026
 
-**Timestamp:** 2026-11-12T09:10:00+04:00  
-**Operating Sequence:** **NSEJS 5-Year Past-Paper Ingestion (2024, 2023, 2022, 2021 & 2020 100% COMPLETE across PCB: 237 authentic items)**  
+**Timestamp:** 2026-11-12T09:45:00+04:00  
+**Operating Sequence:** **Dual-Engine Core 2 Quality Audit across 5-Year NSEJS Corpus (237 items, 15 batches): 100% COMPLETE & VERIFIED**  
 **Active Branch:** `feat/multi-subject-core2-expansion-01`  
 **Authority Invariant:** Rule 13 in `AGENTS.md` (*No academic approval inferred from software validation. Green CI means automatic tests passed; it never means student release is authorized.*)
 
@@ -11,16 +11,41 @@
 
 | Subject Track | Topics / Papers Ingested | Ingested Question Count | Test Suite Status | Track Status |
 | :--- | :--- | :---: | :---: | :---: |
-| **Track 1: Physics** | Ray Optics, Electrostatics, Circuits, Magnetism & EMI, Mechanics, Fluid Mechanics & Sound, **NSEJS 2024, 2023, 2022, 2021 & 2020 Official Paper 51** | **139 items** | 25 suites (6 Core 2 topics + 8 D3 + 6 Core 1A/1B + **NSEJS 2024, 2023, 2022, 2021 & 2020 Papers**), **270 passed** | **100% COMPLETE (All Topics + 5-Year Past Papers Ingested)** |
+| **Track 1: Physics** | Ray Optics, Electrostatics, Circuits, Magnetism & EMI, Mechanics, Fluid Mechanics & Sound, **NSEJS 2024, 2023, 2022, 2021 & 2020 Official Paper 51** | **140 items** | 26 suites (6 Core 2 topics + 9 D3 + 6 Core 1A/1B + **NSEJS 2024, 2023, 2022, 2021 & 2020 Papers**), **276 passed** | **100% COMPLETE & DUAL-ENGINE AUDITED** |
 | **Track 2: Mathematics** | Topic 1: Algebra & Polynomials<br>Topic 2: Number Theory & Divisibility | **20 items** | 2 suites, **43 passed** (Full QRT Labelling) | **COMPLETE (Topics 1 & 2 Ingested; paused per user)** |
-| **Track 3: Chemistry** | Topic 1: Matter & Mole Concept<br>Topic 2: Chemical Substances — Reactions<br>Topic 3: Atomic Structure & Bonding<br>D3 Modules (Eudiometry & Redox Titrations)<br>**NSEJS 2024, 2023, 2022, 2021 & 2020 Official Paper 51** | **111 items** | 14 suites (3 Core topics + 6 D3 + **NSEJS 2024, 2023, 2022, 2021 & 2020 Papers**), **149 passed** | **100% COMPLETE (All Topics + 5-Year Past Papers Ingested)** |
-| **Track 4: Biology** | **NSEJS 2024, 2023, 2022, 2021 & 2020 Official Paper 51** | **79 items** | 5 suites (**NSEJS 2024, 2023, 2022, 2021 & 2020 Papers**), **90 passed** | **100% COMPLETE (5-Year Past Papers Ingested)** |
-| **Cross-Subject Architecture** | Shared/QRT Schemas, Bounded Transfer Protocols, Gate Checkers, Audit Invariants | N/A | 10 cross-cutting contract suites, **461 passed** | **ACTIVE & ENFORCED** |
-| **TOTALS** | **34 Active Learning Modules** | **389 items** | **49 Pytest Suites, 977 Passed, 2 Skipped (Platform Symlinks), 0 Failed** | **100% GREEN CI** |
+| **Track 3: Chemistry** | Topic 1: Matter & Mole Concept<br>Topic 2: Chemical Substances — Reactions<br>Topic 3: Atomic Structure & Bonding<br>D3 Modules (Eudiometry & Redox Titrations)<br>**NSEJS 2024, 2023, 2022, 2021 & 2020 Official Paper 51** | **112 items** | 15 suites (3 Core topics + 7 D3 + **NSEJS 2024, 2023, 2022, 2021 & 2020 Papers**), **155 passed** | **100% COMPLETE & DUAL-ENGINE AUDITED** |
+| **Track 4: Biology** | **NSEJS 2024, 2023, 2022, 2021 & 2020 Official Paper 51** | **80 items** | 6 suites (**NSEJS 2024, 2023, 2022, 2021 & 2020 Papers** + D3 Viral Genetics), **96 passed** | **100% COMPLETE & DUAL-ENGINE AUDITED** |
+| **Cross-Subject Architecture** | Shared/QRT Schemas, Bounded Transfer Protocols, Gate Checkers, Audit Invariants | N/A | 10 cross-cutting contract suites, **468 passed** | **ACTIVE & ENFORCED** |
+| **TOTALS** | **37 Active Learning Modules** | **392 items** | **52 Pytest Suites, 995 Passed, 2 Skipped (Platform Symlinks), 0 Failed** | **100% GREEN CI (Dual-Engine Audited)** |
 
 ---
 
-## 2. NSEJS 5-Year Authentic Corpus Inventory (`nsejs.com/previous-exam-papers`)
+## 2. Core 2 Dual-Engine Quality Audit Results (`ag-core2`)
+
+Auditing across all 15 authentic NSEJS examination batches (237 questions total) was executed via the approved **`core2_quality_audit_plan.md`** under **Universal Rule 13**:
+
+### A. Engine A: Static Schema, Cognitive Demand & 7 Anti-Patterns (`audit_nsejs_corpus.py`)
+- **Batches Audited:** 15 batches (`nsejs-2024-*` through `nsejs-2020-*`).
+- **Total Questions Audited:** 237 authentic items (79 Physics, 79 Chemistry, 79 Biology).
+- **Gate 0 Custody:** 100% stem hash invariance, 0 duplicate IDs, explicit response types.
+- **Gate 1 Cognitive Demand:** 0 forbidden verbs (`CALCULATE`, `SOLVE`), 100% 7 canonical verbs membership, dynamic crux move distribution ($M1, M2, M3$), 0 rubric sum drift.
+- **7 Anti-Patterns:** 0 ghost text occurrences (`"2. Connection:"`), SVG root attributes width/height 100%, mobile cascade desktop-first.
+- **Engine A Verdict:** **`LOCAL_REVIEW_MECHANICAL_PASS`** (0 FAIL findings, 88 HOLD findings).
+- **Report Saved:** `workspace/output/5YEAR_NSEJS_CORPUS_AUDIT_REPORT.json`.
+
+### B. Engine B: Headless Playwright Viewport & Interaction (`verify_all_nsejs_playwright.js`)
+- **Batches Evaluated:** 15 / 15 (100% Pass rate).
+- **Mobile Viewport (375x812):** Exactly 0px horizontal scroll overflow (`scrollWidth <= 375px`).
+- **Desktop Viewport (1365x900):** Exactly 0px horizontal scroll overflow (`scrollWidth <= 1365px`).
+- **Commitment-First Contract:** Derivation initially `display: none;` $\to$ User selects option & commits $\to$ Derivation unlocks to `display: block;`.
+- **Touch Targets:** All interactive option labels and commit buttons meet WCAG 2.5.5 touch target height.
+- **Console & Network Cleanliness:** 0 console errors, 0 unhandled exceptions, 0 HTTP 4xx/5xx errors.
+- **Engine B Verdict:** **`PLAYWRIGHT_VIEWPORT_AUDIT_PASS`**.
+- **Report Saved:** `workspace/output/5YEAR_NSEJS_PLAYWRIGHT_AUDIT_REPORT.json`.
+
+---
+
+## 3. NSEJS 5-Year Authentic Corpus Inventory (`nsejs.com/previous-exam-papers`)
 
 All 12 official question papers, detailed solution booklets, and chapter/concept analysis PDFs have been downloaded and cataloged in `scratch`:
 
