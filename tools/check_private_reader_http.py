@@ -18,6 +18,7 @@ from urllib.request import urlopen
 from playwright.sync_api import sync_playwright
 
 from private_reader_integration import build
+from private_reader_r6 import RUNTIME
 
 
 def run(chromium: str | None = None) -> dict:
@@ -94,6 +95,42 @@ def run(chromium: str | None = None) -> dict:
                             receipt['journeys'].append({'path':'cross-topic-identity-and-hub',
                                                         'viewport': viewport['width'],
                                                         'result':'PASS'})
+                            # The actual served fixture remains synthetic. Check
+                            # R6 revision-scoped local persistence in this real
+                            # HTTP origin, including denial (no false save).
+                            runtime_js = RUNTIME.split('>', 1)[1].rsplit('</script>', 1)[0]
+                            page.add_script_tag(content=runtime_js)
+                            result = page.evaluate("""() => {
+                              const scope = 'OPTICS::EX-SAME::Q1';
+                              const rev = '1'.repeat(64);
+                              const state = {selected:'B', committed:true, revealed:false,
+                                firstAttempt:{selected:'B', assisted:true}, helpEvents:[0],
+                                storageStatus:'UNSAVED'};
+                              const saved = G9ReviewStore.write(scope, rev, state);
+                              const restored = G9ReviewStore.read(scope, rev);
+                              const changedRevision = G9ReviewStore.read(scope, '2'.repeat(64));
+                              const changedTopic = G9ReviewStore.read('MAGNETISM::EX-SAME::Q1', rev);
+                              const originalSetItem = Storage.prototype.setItem;
+                              Storage.prototype.setItem = function(key, value) {
+                                if (key.startsWith('g9:private:practice:v3:')) {
+                                  throw new DOMException('blocked synthetic test', 'QuotaExceededError');
+                                }
+                                return originalSetItem.call(this, key, value);
+                              };
+                              const unsaved = {selected:'C', committed:true,
+                                firstAttempt:{selected:'C'}, helpEvents:[], storageStatus:'UNSAVED'};
+                              const denied = G9ReviewStore.write('OPTICS::NEW::Q2', rev, unsaved);
+                              return {saved, restoredCommitted:restored.committed,
+                                first:restored.firstAttempt?.selected, assisted:restored.firstAttempt?.assisted,
+                                help:restored.helpEvents.length, stale:changedRevision.committed,
+                                crossTopic:changedTopic.committed, denied, denyStatus:unsaved.storageStatus};
+                            }""")
+                            assert result == {'saved':True, 'restoredCommitted':True,
+                                'first':'B', 'assisted':True, 'help':1,
+                                'stale':False, 'crossTopic':False,
+                                'denied':False, 'denyStatus':'UNSAVED'}, result
+                            receipt['journeys'].append({'path':'R6-storage-revision-failure',
+                                'viewport':viewport['width'], 'result':'PASS'})
                         finally:
                             context.close()
                 finally:
