@@ -118,7 +118,7 @@
     });
     reveal.addEventListener("click",function(){
       if(!committed)return;
-      answerBox.textContent="Producer-proposed answer (not independently verified): "+String(q.answer||"").replace(/^Official Key:\\s*/i,"")+"\n\n"+(q.steps||[]).join("\n")+"\n\n"+String(q.check||"");
+      answerBox.textContent="Producer-proposed answer (not independently verified): "+String(q.answer||"").replace(/^Official Key:[ ]*/i,"")+"\n\n"+(q.steps||[]).join("\n")+"\n\n"+String(q.check||"");
       answerBox.hidden=false;
       reveal.disabled=true;
       reveal.textContent="Explanation revealed";
