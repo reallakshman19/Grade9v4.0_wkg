@@ -212,7 +212,7 @@ def test_real_chromium_two_independent_six_stage_tasks_and_exact_return(
 def test_bad_source_storage_and_tampering_never_reveal_answers(
     open_page, fixture_data, error_mode
 ):
-    contract, src, route = fixture_data
+    contract, src, route, preview_bridge = fixture_data
     options = {}
     if error_mode == "bad_uid": options["uid"] = "g9:PHYSICS:NONEXISTENT"
     if error_mode == "bad_revision": options["revision"] = "f" * 64
