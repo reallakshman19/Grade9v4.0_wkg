@@ -1,0 +1,35 @@
+name: NSEJS Wave 1 integrated technical gate (no academic approval)
+on:
+  pull_request:
+    branches: [integration/nsejs-wpe-parity-r1]
+    paths:
+      - 'tests/test_nsejs_wave1_combined_gate.py'
+      - '.github/workflows/nsejs-wave1-combined-gate.yml'
+  push:
+    branches: [integration/nsejs-wpe-parity-r1]
+    paths:
+      - 'tests/test_nsejs_wave1_combined_gate.py'
+      - '.github/workflows/nsejs-wave1-combined-gate.yml'
+permissions:
+  contents: read
+jobs:
+  combined-technical:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install 'pytest>=8,<10'
+      - name: Execute all bounded Wave 1 positive and negative tests
+        run: |
+          python -m pytest -q tests/test_source_learning_bridge_pilot.py tests/test_nsejs_wpe_learner_contract.py tests/test_live_nsejs_preview_exact_bytes.py tests/test_qa_reproducibility.py tests/test_nsejs_wave1_combined_gate.py
+          python tools/source_learning_bridge.py
+      - name: Verify exact local Pages package without deployment
+        run: |
+          python tools/build_public_nsejs_preview.py --out public-safe-dist
+          python tools/check_live_nsejs_preview.py --verify-local --manifest public-safe-dist/PUBLIC_PREVIEW_MANIFEST.json
