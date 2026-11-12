@@ -191,6 +191,7 @@ def bridge_manifest(lesson):
 
 
 def test_actual_agent_four_bridge_manifest_shape_is_supported(lesson):
+    lesson["source_return"]["route_status"] = "TECHNICAL_PREVIEW"
     bridge = bridge_manifest(lesson)
     result = validate(lesson, bridge)
     assert result["academic_admission"] == "HOLD"
@@ -198,6 +199,7 @@ def test_actual_agent_four_bridge_manifest_shape_is_supported(lesson):
 
 
 def test_unbuilt_agent_four_mapping_cannot_unlock_runtime(lesson):
+    lesson["source_return"]["route_status"] = "TECHNICAL_PREVIEW"
     bridge = bridge_manifest(lesson)
     bridge["route_status"] = "UNBUILT_TECHNICAL_PILOT"
     bridge["routes"][0]["lesson_status"] = "PENDING_WAVE2"
@@ -215,12 +217,14 @@ def test_unbuilt_agent_four_mapping_cannot_unlock_runtime(lesson):
     ("lesson_revision", "stale-r0", "SOURCE_BRIDGE_LESSON_NOT_READY"),
 ])
 def test_manifest_owner_task_revision_and_provenance_isolation(lesson, field, value, error):
+    lesson["source_return"]["route_status"] = "TECHNICAL_PREVIEW"
     bridge = bridge_manifest(lesson)
     bridge["routes"][0][field] = value
     fails(lesson, error, bridge)
 
 
 def test_manifest_duplicate_or_missing_question_route_fails_closed(lesson):
+    lesson["source_return"]["route_status"] = "TECHNICAL_PREVIEW"
     bridge = bridge_manifest(lesson)
     bridge["routes"].append(deepcopy(bridge["routes"][0]))
     fails(lesson, "SOURCE_BRIDGE_ROUTE_MISSING_OR_DUPLICATED", bridge)
@@ -230,6 +234,12 @@ def test_manifest_duplicate_or_missing_question_route_fails_closed(lesson):
 
 
 def test_manifest_academic_self_promotion_fails_closed(lesson):
+    lesson["source_return"]["route_status"] = "TECHNICAL_PREVIEW"
     bridge = bridge_manifest(lesson)
     bridge["academic_admission"] = "PASS"
     fails(lesson, "SOURCE_BRIDGE_MANIFEST_UNTRUSTED", bridge)
+
+
+def test_unbuilt_source_return_blocks_even_ready_bridge(lesson):
+    bridge = bridge_manifest(lesson)
+    fails(lesson, "SOURCE_RETURN_NOT_READY", bridge)
