@@ -118,3 +118,29 @@ def test_archive_years_are_source_named_and_preserve_2020_2021_ioqjs_identity(mo
     assert "NSEJS_2023_24_KEY_AS_LINKED_BY_IAPT" in names
     assert all(d["independent_academic_admission"] == "HOLD"
                for d in summary["documents"])
+
+
+
+def test_committed_original_pdf_receipts_pin_real_ci_digests_without_claiming_rights():
+    manifest = json.loads((ROOT / "docs/nsejs/official-2020-2024-raw-byte-custody-r1.json")
+                          .read_text(encoding="utf-8"))
+    assert manifest["raw_official_pdf_documents_verified"] == 9
+    assert manifest["raw_official_pdf_documents_missing"] == 1
+    assert len(manifest["items"]) == 10
+    assert manifest["rights"] == "NOT_VERIFIED"
+    assert manifest["academic_qualification"] == "HOLD"
+    assert manifest["figure_fidelity"] == "NOT_VERIFIED"
+    assert all(x["source_bytes_publicly_republished"] is False for x in manifest["items"])
+    indexed = {x["id"]: x for x in manifest["items"]}
+    paper = indexed["NSEJS_2024_CODE51_PAPER"]
+    key = indexed["NSEJS_2024_FINAL_KEY"]
+    assert paper["sha256"] == "b80e3bae4e64aaad11f43cc12f07ef17ae495b75e231122d440b0f81709379e8"
+    assert key["sha256"] == "6d56f6f4e7f3c6b7a0b7b6146c0e7e9386c035fc5988c5523fe6551fc9374926"
+    for item in manifest["items"]:
+        if item["sha256"]:
+            assert len(item["sha256"]) == 64
+            assert item["size_bytes"] > 500
+            assert item["pdf_pages"] >= 1
+        else:
+            assert item["source_byte_status"] == "RAW_SOURCE_NOT_RECEIVED"
+            assert item["size_bytes"] is None
