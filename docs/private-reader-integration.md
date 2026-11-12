@@ -65,6 +65,19 @@ The browser test serves generated synthetic pages over real HTTP, requires brows
 
 The presentation-only stylesheet `tools/private_reader_12p7.css` is included in every generated private review question page by the deterministic builder. Primary viewport contracts are 1280×800 and 1472×920 CSS pixels (landscape 16:10 scaling); 800×1280 tests full-size portrait tablet behavior. These are representative CSS viewports, not a claim about the exact device's native resolution. The portrait question picker is bounded and scrollable so the first question is visible without scrolling through all 50 navigation items. The original question/answer/figure payload is unchanged. Smartphone HTTP coverage is not required for this task, and its absence must not be described as a mobile PASS.
 
+## R6 learner-state integration (private-review only)
+
+`tools/private_reader_r6.py` implements optional, fail-closed revision-scoped
+local practice storage and explicit disambiguation of repeated legacy IDs.
+Run `private_reader_integration.py --r6` to apply the patch during a private
+build. It rejects incompatible templates rather than silently retaining
+the old attempt handling. No private candidate material is committed.
+
+The public CI additionally checks synthetic question/figure revisions and runs
+the R6 localStorage contract against a served HTTP origin on 12.7-inch
+landscape/tablet viewports. This test does not establish private candidate
+HTTP acceptance or secure examination-grade first attempts.
+
 **These synthetic CI tests do not qualify the private 50-record candidate's HTTP browser execution.** That still needs a separately authorized private runner, with a verified recipient source manifest, real Chromium over HTTP, original question-to-output reconciliation and observed saved-state/deep-link behavior.
 
 ## Approval boundaries
