@@ -112,3 +112,22 @@ def test_no_fake_native_runtime_receipts(generated):
     assert witness["core1b"]["attempt_events"] == []
     assert witness["core1b"]["native_runtime_receipt_ref"] == "NOT_RECEIVED"
     assert witness["assessment"]["qrt_decision_ref"]  # producer-owned, not reviewed here
+
+
+def test_generated_lens_learner_is_source_neutral_and_protected(generated):
+    html = (generated / "nsejs-optics-displacement-d3-r1" / "learning_journey.html").read_text(encoding="utf-8")
+    assert 'id="tab-core1b"' in html
+    assert 'id="tab-core1a"' in html
+    assert 'id="tab-core2"' in html
+    assert "No original-answer or QRT approval" in html
+    assert "Core1A physical construction" in html
+    assert "Stage 1" in html and "Stage 2" in html
+    assert 'data-agent-b-core1b' in html
+    assert 'data-role="model-host" hidden' in html
+    assert 'data-role="save-firstAttempt"' in html
+    assert 'data-role="save-transfer"' in html
+    assert "96 cm" in html and "48 cm" in html
+    assert "18 cm" in html  # present in inert script data, not pre-attempt visible prose
+    assert "localStorage.getItem(key)!==priorRaw" in html
+    assert "Agent A" in html
+    assert "<iframe" not in html.lower()
