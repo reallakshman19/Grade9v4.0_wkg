@@ -59,18 +59,6 @@
     review.type="button";review.disabled=true;
     const feedback=tag("p","First response not yet saved.");feedback.setAttribute("role","status");
     const hidden=tag("section");hidden.className="author-worked";hidden.hidden=true;
-    const first=tag("h3","Author's reconstruction · NOT academically reviewed");
-    hidden.append(first,tag("p","Compare your approach to the following authored teaching steps; they are not a verified official solution."));
-    const list=tag("ol");
-    for(const item of q.reconstruction){
-      const li=tag("li");
-      li.append(tag("strong",item.ask),tag("p",item.answer));
-      list.append(li);
-    }
-    hidden.append(list,tag("h4","Boundary challenge"),tag("p",q.boundary_question));
-    // The author response to the boundary question is intentionally not
-    // injected into the DOM until the user requests reconstruction.
-    const explanation=tag("p",q.boundary_author_response);hidden.append(explanation);
     const lesson=tag("a","Open complete authored Core1A + Core1B lesson");
     lesson.href="core1/"+q.lesson_slug+"/index.html";
     lesson.className="lesson-touch";
@@ -99,6 +87,18 @@
     });
     review.addEventListener("click",()=>{
       if(review.disabled||!read(key))return;
+      // Do not even insert author answers into the DOM before the durable
+      // saved first response AND a separate explicit reveal click.
+      const first=tag("h3","Author's reconstruction · NOT academically reviewed");
+      hidden.append(first,tag("p","Compare your approach to these authored teaching steps; not a verified official solution."));
+      const list=tag("ol");
+      for(const item of q.reconstruction){
+        const li=tag("li");
+        li.append(tag("strong",item.ask),tag("p",item.answer));
+        list.append(li);
+      }
+      hidden.append(list,tag("h4","Boundary challenge"),tag("p",q.boundary_question),
+        tag("p",q.boundary_author_response));
       hidden.hidden=false;
       review.disabled=true;
       review.textContent="Author's teaching reconstruction shown";
