@@ -130,7 +130,7 @@ def test_official_year_series_and_source_links_are_recorded_not_imported():
     assert len(years) == 5
     assert years[2020]["exam_series"] == "IOQJS_2020_21_PART_I"
     assert years[2021]["exam_series"] == "IOQJS_2021_22_PART_I"
-    assert years[2020]["official_paper_url"].endswith("/IOQJS%20PART%20I%202020-21.pdf")
+    assert years[2020]["official_paper_url"].endswith("/IOQJS-PART-I-2020-21.pdf")
     assert years[2020]["paper_code"] == 51
     assert all(not row["source_bytes_imported"] for row in years.values())
     assert all(not row["independently_authenticated"] for row in years.values())
