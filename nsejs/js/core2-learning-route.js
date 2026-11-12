@@ -113,6 +113,13 @@
     return route;
   }
 
+  function safeReturnFragment() {
+    // A malformed percent-encoded fragment must produce a visible HOLD, not
+    // an unhandled URIError that prevents all source-return diagnostics.
+    try { return decodeURIComponent(location.hash.slice(1)); }
+    catch (_) { return null; }
+  }
+
   function reconcile() {
     if (!accepted) return;
     const route = accepted;
@@ -144,7 +151,8 @@
     const returnedRevision = params.get("source_revision");
     if (returnedUID !== UID || returnedRevision !== route.content_revision_sha256 ||
         params.get("topic") !== "mechanics" ||
-        decodeURIComponent(location.hash.slice(1)) !== "question-" + SOURCE_ID) {
+        (params.has("uid") && params.get("uid") !== UID) ||
+        safeReturnFragment() !== "question-" + SOURCE_ID) {
       block("Requested return has invalid source UID, revision, topic or fragment");
       once = true; return;
     }
