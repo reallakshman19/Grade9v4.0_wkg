@@ -36,9 +36,15 @@ def derive_authored_transfer_index(generated: Path,
         for slug in slugs:
             path=generated/slug
             b=json.loads((path/"core1b_reconstruction.json").read_text("utf-8"))
-            bank=json.loads((path/"bank.json").read_text("utf-8"))
-            original=(bank.get("questions") or [])
-            if (len(original)!=1 or not isinstance(original[0].get("stem"),str)
+            # One older stand-alone authored genetics builder ships Core1A/B
+            # without an accompanying source bank. That is not permission
+            # to infer an original exam item. Verify its independent Core1B
+            # identity and never publish a missing original stem.
+            bank_path=path/"bank.json"
+            bank=json.loads(bank_path.read_text("utf-8")) if bank_path.is_file() else None
+            original=(bank.get("questions") or []) if isinstance(bank,dict) else []
+            if ((bank is not None and
+                 (len(original)!=1 or not isinstance(original[0].get("stem"),str)))
                 or b.get("academic_status")!="HOLD:ACADEMIC_ADMISSION"):
                 raise ValueError("CORE1B_AUTHOR_CUSTODY_NOT_VALID:"+slug)
             stages=b.get("stages") or {}
@@ -51,7 +57,8 @@ def derive_authored_transfer_index(generated: Path,
                 not isinstance(fresh_id,str) or len(fresh_id)<10 or
                 fresh_id.upper().find("AUTHENTIC-EXAM")>=0 or
                 fresh_id==b.get("target_question_id") or
-                normalized(prompt)==normalized(original[0]["stem"]) or
+                (original and normalized(prompt)==normalized(original[0]["stem"])) or
+                (not original and "-CORE1B-" not in fresh_id) or
                 not isinstance(boundary.get("prompt"),str) or
                 not isinstance(boundary.get("answer"),str) or
                 len(boundary["prompt"])<25 or len(boundary["answer"])<25):
