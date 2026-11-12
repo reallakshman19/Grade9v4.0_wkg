@@ -176,3 +176,38 @@ def test_located_official_urls_do_not_clear_missing_native_custody():
         if row["year"] == 2024:
             assert "IAPT_CODE_51_QUESTION_20_DROPPED" in row["flags"]
             assert "IAPT_CODE_51_QUESTIONS_49_60_MULTI_CORRECT" in row["flags"]
+
+
+
+def test_code51_dropped_question_20_cannot_be_graded_with_ordinary_key():
+    item = {"id": "NSEJS-2024-C-Q20", "response": {"type": "multiple_choice"},
+            "correct_option": "B", "official_key_status": "UNREVIEWED"}
+    flags = audit.code51_grading_flags(item)
+    assert "IAPT_CODE51_Q20_DROP_GRADING_NOT_CONFIRMED" in flags
+    assert "IAPT_CODE51_Q20_HAS_GRADED_ANSWER" in flags
+    approved_drop = {"id": "NSEJS-2024-C-Q20", "official_key_status": "DROP",
+                     "answer": {"correct_options": []}}
+    assert audit.code51_grading_flags(approved_drop) == []
+
+
+@pytest.mark.parametrize("id", [
+    "NSEJS-2024-B-Q49", "NSEJS-2024-B-Q52", "NSEJS-2024-C-Q55",
+    "NSEJS-2024-P-Q57", "NSEJS-2024-P-Q60",
+])
+def test_code51_a2_multiple_answer_requires_explicit_ui_support(id):
+    ambiguous = {"id": id, "response": {"type": "multiple_choice"}}
+    assert audit.code51_grading_flags(ambiguous) == [
+        "IAPT_CODE51_A2_MULTICORRECT_UI_NOT_CONFIRMED"
+    ]
+    proper = {"id": id, "response": {"type": "multiple_choice", "allow_multiple": True}}
+    assert audit.code51_grading_flags(proper) == []
+
+
+def test_code51_a1_single_choice_not_confused_with_a2():
+    original = {"id": "NSEJS-2024-P-Q48", "response": {"type": "multiple_choice"}}
+    assert audit.code51_grading_flags(original) == []
+
+
+def test_code51_wrong_question_identity_never_marks_academic_pass():
+    q = {"id": "../private"}
+    assert audit.code51_grading_flags(q) == ["CODE51_QUESTION_ID_INVALID"]
