@@ -161,6 +161,8 @@ def render(data: dict) -> str:
         'Use the links below for independently identified <em>authored</em> '
         'practice or external original IAPT paper notebooks; no exam endorsement '
         'or completeness is claimed.</p>'
+        '<p><a href="question-map.html">Browse all 267 question occurrence IDs, '
+        'provisional reasoning operations and missing learning constructions</a></p>'
         +''.join(sections)+
         '<p>No Mathematics records included. No academic approval inferred from '
         'software validation.</p></main></body></html>')
@@ -175,6 +177,9 @@ def publish(stage: Path) -> dict:
     (dest/"index.html").write_text(render(data),encoding="utf-8")
     (dest/"inventory.v1.json").write_text(
         json.dumps(data,indent=2,sort_keys=True)+"\n",encoding="utf-8")
+    # Source-neutral question-level identities, not original exams or native Core2.
+    from nsejs_pcb_identity_map import stage as stage_pcb_question_map
+    stage_pcb_question_map(stage)
     for subject in ("physics","chemistry","biology"):
         path=root/subject/"index.html"
         page=path.read_text("utf-8")
