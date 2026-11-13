@@ -43,6 +43,15 @@ def check(site:Path)->None:
             for width,height in ((1000,1600),(1600,1000)):
                 ctx=browser.new_context(
                     viewport={"width":width,"height":height},has_touch=True,is_mobile=True)
+                # Check every existing related-only candidate route really resolves.
+                # This does not classify any as sufficient teaching or source-original.
+                routes={q["candidate_learning_route"] for q in canonical["questions"]
+                        if q["candidate_learning_route"] is not None}
+                assert len(routes)==26
+                for relative in sorted(routes):
+                    assert relative.startswith("nsejs/") and ".." not in relative
+                    linked=ctx.request.get(base+"/"+relative,timeout=10000)
+                    assert linked.status==200,relative
                 page=ctx.new_page()
                 errors=[]
                 page.on("pageerror",lambda error:errors.append(str(error)))
