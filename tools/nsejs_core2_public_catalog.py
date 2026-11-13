@@ -181,15 +181,17 @@ def publish(stage: Path) -> dict:
         if "core2-archive-register" in page or "</body>" not in page:
             raise ValueError("CORE2_REGISTER_DUPLICATE_OR_SUBJECT_HTML_INVALID")
         link=(
-            '<section id="core2-archive-register" class="tablet-container" '
-            'style="margin:22px auto;padding:22px;border:2px solid #93aebc;'
+            '<section id="core2-archive-register" '
+            'style="position:relative;isolation:isolate;z-index:1;max-width:1050px;'
+            'margin:22px auto;padding:22px;border:2px solid #93aebc;'
             'border-radius:13px;background:#f3fafc;color:#15384b">'
             '<h2>Core2 question coverage · source-safe register</h2>'
             '<p><strong>UNVALIDATED · Source and academic HOLD.</strong> '
             'The recovered Owner archive supplies a metadata inventory only; '
             'unapproved original exam question bodies are not published.</p>'
             '<a href="../core2/index.html#'+subject+'" '
-            'style="display:inline-flex;min-height:56px;align-items:center;'
+            'style="position:relative;z-index:3;display:inline-flex;'
+            'min-height:56px;align-items:center;pointer-events:auto;'
             'padding:10px 20px;border-radius:9px;background:#135c79;'
             'color:#fff;text-decoration:none;font-weight:700">'
             'Browse '+subject.title()+' Core2 candidate coverage</a></section>'
