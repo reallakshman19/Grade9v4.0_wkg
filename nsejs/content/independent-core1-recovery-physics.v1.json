@@ -1,0 +1,256 @@
+{
+  "schema": "grade9-independent-core1-remediation-source/v1",
+  "subject": "PHYSICS",
+  "authority": "ORIGINAL_AUTHORED_TRANSFER_NOT_SOURCE_EXAM",
+  "academic_admission": "HOLD",
+  "original_18_audit_equivalence": false,
+  "items": [
+    {
+      "slug": "nsejs-circuits-r1",
+      "construction": "PHYS-CIRC-C-TETRAHEDRON-SYMMETRY-01",
+      "subject": "PHYSICS",
+      "title": "A tetrahedron of resistors",
+      "concept": "In a symmetric K4 network of six identical resistors R, the two vertices not used as terminals have equal potential. No current passes through their joining edge.",
+      "predict": "If voltage is applied between two K4 vertices, do the other two vertices have equal or different potentials?",
+      "worked": "Delete the zero-current cross-edge by symmetry. The two side routes each have 2R and are in parallel, giving R, which is parallel to the direct edge R; R_eq=R/2.",
+      "challenge": "Six 12 Ω resistors form the six edges of a tetrahedron. Find equivalent resistance between any two vertices and explain why no source current uses the opposite connecting edge.",
+      "steps": [
+        "Exchange the remaining two vertices while leaving the terminals fixed: the network is unchanged, so their potentials are equal.",
+        "Their joining 12 Ω edge has zero voltage drop; the two two-edge routes each total 24 Ω and combine to 12 Ω.",
+        "The direct 12 Ω edge parallels this 12 Ω combination, giving 6 Ω."
+      ],
+      "trap": "Adding all six resistors in series or discarding the direct-edge branch.",
+      "repair": "Label terminals and symmetry-equivalent nodes, then reduce series and parallel branches only after checking their current paths.",
+      "boundary": "If the resistor connecting the two equipotential middle vertices is removed, does the equivalent resistance change?",
+      "boundaryAnswer": "No, while the remaining resistor values preserve that symmetry. The removed resistor had zero current."
+    },
+    {
+      "slug": "nsejs-circuits-cube-d3-r1",
+      "construction": "PHYS-CIRC-C-3D-CUBE-SYMMETRY-01",
+      "subject": "PHYSICS",
+      "title": "Cube networks by equipotential groups",
+      "concept": "For twelve equal edge resistors R in a cube, opposite-corner terminals produce two groups of three equipotential near vertices. Replace edges between each group with parallel equivalents.",
+      "predict": "Between opposite cube corners, will three near vertices have the same potential?",
+      "worked": "For a body diagonal, the three entrance edges are R/3, the six middle edges R/6, and the three exit edges R/3; R_eq=5R/6.",
+      "challenge": "Every edge of a cube is 6 Ω. Find the equivalent resistance between opposite body-diagonal vertices and show the three symmetry reductions.",
+      "steps": [
+        "At each terminal, three equal outgoing resistors are parallel: 6/3=2 Ω.",
+        "Between the two groups of three same-potential nodes are six 6 Ω edges in parallel: 6/6=1 Ω.",
+        "The three stages are series-connected: 2+1+2=5 Ω."
+      ],
+      "trap": "Treating the twelve edges as identical paths from terminal to terminal without grouping equipotential nodes.",
+      "repair": "Use automorphisms of the cube that leave source terminals fixed to identify equal-potential vertices before circuit reduction.",
+      "boundary": "Would the same 5R/6 expression hold for two adjacent cube vertices?",
+      "boundaryAnswer": "No. For adjacent vertices the symmetry grouping changes; the known equal-resistor cube value is 7R/12."
+    },
+    {
+      "slug": "nsejs-circuits-ladder-d3-r1",
+      "construction": "PHYS-CIRC-C-INFINITE-LADDER-01",
+      "subject": "PHYSICS",
+      "title": "Infinite ladders and self-consistency",
+      "concept": "An infinite resistor ladder is identical to its tail. If each cell has a series R followed by a shunt R in parallel with the remaining ladder X, X=R+R X/(R+X).",
+      "predict": "Does adding one more identical cell change the input resistance of an already infinite self-similar ladder?",
+      "worked": "Rearrange X=R+RX/(R+X) to X²−RX−R²=0. The physically positive root is X=φR with φ=(1+√5)/2.",
+      "challenge": "Each series and shunt resistor of a self-similar infinite ladder is 4 Ω. Find input resistance to three significant figures and exclude the nonphysical quadratic root.",
+      "steps": [
+        "Write X=4+(4X)/(4+X); multiply by (4+X).",
+        "Simplify to X²−4X−16=0, giving X=2(1±√5).",
+        "Choose positive X=2(1+√5)=6.472 Ω; negative resistance is not passive."
+      ],
+      "trap": "Solving the quadratic but retaining its negative root, or treating the entire infinite network as a finite two-resistor cell.",
+      "repair": "Define exactly what is repeated, derive the self-similarity equation, and apply a passive-resistance sign check.",
+      "boundary": "What is the input resistance of one cell consisting only of a series R followed by its terminal shunt R?",
+      "boundaryAnswer": "It is 2R for the stated one-cell termination, greater than the infinite-tail limit φR; a finite ladder must specify its termination."
+    },
+    {
+      "slug": "nsejs-electrostatics-r1",
+      "construction": "PHYS-ELEC-C-COULOMB-QUANTIZATION-01",
+      "subject": "PHYSICS",
+      "title": "Coulomb force and electron-count scale",
+      "concept": "For two identical point charges separated by r, F=kq²/r². Solve q from the square root and estimate N=|q|/e, checking integer charge quantization and orders of magnitude.",
+      "predict": "At fixed separation, if measured repulsion becomes four times as large, will each equal charge double or quadruple?",
+      "worked": "For r=0.03 m, F=0.001 N, k=9×10⁹, the equal charge is q=√(F r²/k)=1.0×10⁻⁸ C.",
+      "challenge": "Keep r=0.03 m but raise equal-charge repulsion to 0.004 N. Estimate the magnitude of each charge and the number of elementary charges (e=1.6×10⁻¹⁹ C).",
+      "steps": [
+        "The force quadruples at fixed r, so |q| doubles to 2.0×10⁻⁸ C.",
+        "N=q/e=(2.0×10⁻⁸)/(1.6×10⁻¹⁹)=1.25×10¹¹.",
+        "The count is enormous but compatible with charge quantization; only the sign must be chosen from attraction/repulsion information."
+      ],
+      "trap": "Replacing q² with q or overlooking the square root when inverting Coulomb's law.",
+      "repair": "Isolate q² before taking the positive square root for magnitude, then divide by e and check units.",
+      "boundary": "With identical charges fixed, what happens to the force if the separation is doubled?",
+      "boundaryAnswer": "The force becomes one-quarter: F∝1/r²."
+    },
+    {
+      "slug": "nsejs-electrostatics-deflection-d3-r1",
+      "construction": "PHYS-ELEC-C-TRANSVERSE-DEFLECTION-01",
+      "subject": "PHYSICS",
+      "title": "Transverse electrostatic deflection",
+      "concept": "A charge entering a uniform transverse electric field with horizontal speed v₀ has transit time t=L/v₀, transverse acceleration a=qE/m, and displacement magnitude |y|=|q|E L²/(2mv₀²).",
+      "predict": "If the entry speed doubles while field and plate length stay fixed, does the deflection fall by a factor of two or four?",
+      "worked": "The speed dependence is v₀⁻²: at unchanged field and length, twice v₀ gives one-quarter the deflection.",
+      "challenge": "A charged particle deflects by 8.0 mm in a uniform transverse plate field. With field strength and plate length fixed, how much does it deflect if its entry speed is doubled? State direction separately.",
+      "steps": [
+        "Transit time halves because t=L/v₀.",
+        "Electric transverse acceleration magnitude is unchanged, but y=(1/2)at² so the deflection falls by factor four.",
+        "The new displacement magnitude is 8.0/4=2.0 mm. Its direction is set by the sign of q and field orientation."
+      ],
+      "trap": "Using y∝t, forgetting the squared time, or identifying force direction without charge sign.",
+      "repair": "Start from the x-flight time and y-acceleration, then retain both the t² factor and the charge sign.",
+      "boundary": "Under a small-angle model, how does the exit slope magnitude vary when v₀ doubles?",
+      "boundaryAnswer": "The exit slope is |q|EL/(mv₀²), so it too falls to one-quarter while E and L remain fixed."
+    },
+    {
+      "slug": "ioqjs-optics-conjugate-d3-r1",
+      "construction": "PHYS-OPT-C-CONJUGATE-LENS-01",
+      "subject": "PHYSICS",
+      "title": "Coupled conjugate-distance constraints",
+      "concept": "For a prescribed algebraic conjugate relation 1/u₁+1/u₂=2/f, distances must be solved with consistent sign conventions. A positive number below f may represent a virtual-image branch; it must not silently be called a real screen position.",
+      "predict": "Can algebraic positive solutions below the focal length always be interpreted as real images on a screen?",
+      "worked": "With f=12 cm and u₁=18 cm, 1/u₂=2/12−1/18=1/9, so u₂=9 cm. Interpret the branch using actual optics geometry.",
+      "challenge": "In the same stated algebraic relation let f=15 cm and u₁=30 cm. Find u₂, then explain what additional physical data are needed before calling both positions real.",
+      "steps": [
+        "Substitute 1/u₂=2/15−1/30=4/30−1/30=3/30.",
+        "Invert to get u₂=10 cm.",
+        "Because 10 cm<f, an ordinary converging-lens real-image assumption is not sufficient; clarify geometry and sign conventions."
+      ],
+      "trap": "Equating any positive root with a real image or mixing virtual-object and real-object sign conventions.",
+      "repair": "Separate the algebraic relation from the signed physical image equation; validate each root against the apparatus.",
+      "boundary": "What happens algebraically if u₁=f/2 in this relation?",
+      "boundaryAnswer": "Then 1/u₂=2/f−2/f=0, so u₂ tends to infinity, not an additional finite position."
+    },
+    {
+      "slug": "nsejs-magnetism-r1",
+      "construction": "PHYS-MAG-C-LENZ-LAW-INDUCED-CURRENT-01",
+      "subject": "PHYSICS",
+      "title": "Lenz's law: identify flux change first",
+      "concept": "An induced current produces a magnetic field opposing the CHANGE in magnetic flux. For a bar magnet viewed from its approaching face, a north pole approaching a loop makes the near face of the loop a north pole.",
+      "predict": "When a north pole approaches a conducting loop, should the loop attract it or repel the change in approach?",
+      "worked": "The near face of the loop must become north to oppose increasing north-pole flux; viewed from that magnet side the induced current is counterclockwise by the right-hand grip rule.",
+      "challenge": "A south pole is moved toward a conducting loop. Viewed from the magnet side, what is the induced current sense and which magnetic pole appears on the loop's near face?",
+      "steps": [
+        "An approaching south pole increases the flux associated with that approach.",
+        "To oppose the increased flux, the loop presents a south pole toward the approaching south pole.",
+        "A south face has clockwise current as seen from that face."
+      ],
+      "trap": "Choosing current sense from the pole alone without deciding whether flux is increasing or decreasing.",
+      "repair": "Write flux direction and its time-change sign; select the opposing induced field, then apply the right-hand rule.",
+      "boundary": "If the approaching south pole instead moves away, does induced current reverse?",
+      "boundaryAnswer": "Yes, for the same orientation and nonzero motion: the sign of flux change reverses and the induced current reverses."
+    },
+    {
+      "slug": "nsejs-magnetism-terminal-d3-r1",
+      "construction": "PHYS-MAG-C-MOTIONAL-EMF-TERMINAL-01",
+      "subject": "PHYSICS",
+      "title": "Falling conductive rod: terminal magnetic damping",
+      "concept": "For an ideal conducting rod of length l sliding across rails in magnetic field B with circuit resistance R, induced EMF=Blv, current=Blv/R and magnetic drag=B²l²v/R. Terminal speed obeys mg=B²l²v/R.",
+      "predict": "If the circuit resistance doubles with everything else fixed, does magnetic braking strengthen or weaken at a given velocity?",
+      "worked": "With m=0.020 kg, g=10 m/s², R=1 Ω, B=0.5 T and l=1 m, v_term=mgR/(B²l²)=0.8 m/s.",
+      "challenge": "A similar frictionless rod has mass 0.010 kg while g, R, B and l retain their values. Compute terminal speed and thermal dissipation at that speed.",
+      "steps": [
+        "Use v_term=(0.010×10×1)/(0.5²×1²)=0.4 m/s.",
+        "At terminal speed, P_gravity=mgv=0.010×10×0.4=0.040 W.",
+        "Current is Blv/R=0.5×1×0.4/1=0.20 A, so I²R=0.040 W, confirming power balance."
+      ],
+      "trap": "Writing magnetic force proportional to B instead of B², or treating a terminal-speed balance as accelerating motion.",
+      "repair": "Derive induced current from EMF, multiply by Bl to obtain drag, and check mgv=I²R at terminal speed.",
+      "boundary": "If resistance doubles in this ideal model, what happens to terminal speed?",
+      "boundaryAnswer": "It doubles, since the magnetic drag coefficient is inversely proportional to R; this assumes all other effects remain negligible."
+    },
+    {
+      "slug": "nsejs-mechanics-r1",
+      "construction": "PHYS-MECH-C-DECOUPLED-KINEMATICS-01",
+      "subject": "PHYSICS",
+      "title": "Position, displacement and average speed",
+      "concept": "For constant acceleration in one dimension, v(t) is linear and average velocity equals the mean of initial and final velocities: v̄=(v₀+v_f)/2. Distance and displacement may differ if direction reverses.",
+      "predict": "Is the midpoint-of-endpoint-velocities formula always valid for an arbitrary velocity-time curve?",
+      "worked": "For constant acceleration from 3 to 15 m/s without reversal, the average velocity is 9 m/s regardless of the elapsed time.",
+      "challenge": "A cart accelerates uniformly in a straight line from +4 to +20 m/s over 6 s. Find displacement, average velocity and acceleration, showing the time-area connection.",
+      "steps": [
+        "Average velocity is (4+20)/2=12 m/s.",
+        "Displacement is area under the trapezoidal v–t plot: 12×6=72 m.",
+        "Acceleration is (20−4)/6=8/3 m/s²."
+      ],
+      "trap": "Using the average-speed formula from the end speeds even when acceleration is nonuniform or the cart reverses.",
+      "repair": "Sketch the actual v–t graph, integrate signed area, and check whether the linear-v assumption holds.",
+      "boundary": "Does endpoint averaging still determine displacement if velocity is curved rather than linear in time?",
+      "boundaryAnswer": "Not in general. Use the actual integral of velocity versus time; equal endpoints can hide differing interior motion."
+    },
+    {
+      "slug": "nsejs-optics-r1",
+      "construction": "PHYS-OPT-C-CONVEX-DYNAMICS-01",
+      "subject": "PHYSICS",
+      "title": "Convex mirrors: sign and limiting image position",
+      "concept": "With Cartesian mirror signs, a real object has u<0 and a convex mirror has f>0. The equation 1/f=1/v+1/u gives a positive virtual image v between pole and focus.",
+      "predict": "As an object moves farther from a convex mirror, does its virtual image approach the pole or the focus?",
+      "worked": "For f=15 cm and u=−30 cm, 1/v=1/15+1/30=1/10, hence v=10 cm behind the mirror.",
+      "challenge": "A convex mirror has focal length +10 cm and an object 20 cm in front. Compute virtual-image distance and magnification using a consistent sign convention.",
+      "steps": [
+        "Set u=−20 cm and f=+10 cm; 1/v=1/f−1/u=1/10+1/20=3/20.",
+        "Thus v=20/3≈6.67 cm, positive behind the mirror.",
+        "Magnification m=−v/u=+(20/3)/20=1/3: virtual, erect, diminished."
+      ],
+      "trap": "Giving the image a negative sign or using f<0 from a different sign convention without changing the equations.",
+      "repair": "Record the sign convention alongside each u, f and v, then check the known virtual/diminished behavior.",
+      "boundary": "As u tends to minus infinity, where does the convex mirror image form?",
+      "boundaryAnswer": "The virtual image tends to v=f behind the mirror, while magnification tends to zero."
+    },
+    {
+      "slug": "nsejs-optics-lens-mirror-d3-r1",
+      "construction": "PHYS-OPT-C-LENS-MIRROR-01",
+      "subject": "PHYSICS",
+      "title": "Lens image followed by plane-mirror reflection",
+      "concept": "A thin converging lens with positive object-distance magnitude u>f has image distance v=fu/(u−f). A plane mirror at position x_M forms an image of a point at x at x_ref=2x_M−x. Any additional return pass through the lens needs a separate equation.",
+      "predict": "Can a plane mirror image coordinate be found simply by reflecting the image point across the mirror plane?",
+      "worked": "For lens f=10 cm and object u=30 cm, the intermediate lens image is v=15 cm. A plane mirror at x_M=20 cm reflects that point to coordinate 2×20−15=25 cm.",
+      "challenge": "A converging lens at x=0 has f=12 cm and an object 36 cm left of it. A plane mirror stands at x=30 cm. Find the lens's first image coordinate and its plane-mirror image coordinate; stop before any lens return pass.",
+      "steps": [
+        "The lens first-image magnitude is v=fu/(u−f)=12×36/(36−12)=18 cm to the right.",
+        "Reflect x=18 cm across mirror x_M=30 cm: x_ref=2×30−18=42 cm.",
+        "The 42 cm coordinate is a plane-mirror virtual image; a subsequent return through the lens requires fresh ray tracing."
+      ],
+      "trap": "Multiplying two magnifications or double-counting the reflected path before defining the intermediate image and mirror coordinates.",
+      "repair": "Label each optical element and intermediate image in a common coordinate system, then solve one propagation stage at a time.",
+      "boundary": "If a point lies exactly in the mirror plane, where is its reflected image?",
+      "boundaryAnswer": "It coincides with that plane: x_ref=2x_M−x_M=x_M."
+    },
+    {
+      "slug": "nsejs-optics-prism-d3-r1",
+      "construction": "PHYS-OPT-C-PRISM-SILVERED-01",
+      "subject": "PHYSICS",
+      "title": "Silvered prisms: discrete reflection geometry",
+      "concept": "In a particular ideal symmetric silvered-prism repeat path, the permitted apex angles satisfy (2n+1)A=180°, with integer reflection index n≥1. The relation is geometry-specific, not a universal prism law.",
+      "predict": "Within this constrained model, do more internal reflections require a larger or smaller apex angle?",
+      "worked": "For n=2, the recurrence gives A=180°/5=36°. For n=3, A=180°/7≈25.71°.",
+      "challenge": "Use the same (2n+1)A=180° model with n=4. Compute A and compare with the n=2 model, stating the geometry assumption.",
+      "steps": [
+        "The angular closure factor is 2×4+1=9.",
+        "Therefore A=180°/9=20°.",
+        "20°<36°: more repeat reflections correspond to smaller apex angle in this idealized family."
+      ],
+      "trap": "Treating A=180/(2n+1) as a general refraction law valid for arbitrary prisms and ray paths.",
+      "repair": "State the ideal symmetric multi-reflection geometry and define n before using the closure relation.",
+      "boundary": "What angle does the same constrained model produce when n=1?",
+      "boundaryAnswer": "A=180°/(2×1+1)=60°, consistent with its single-index anchor."
+    },
+    {
+      "slug": "nsejs-optics-screw-lens-d3-r1",
+      "construction": "PHYS-OPT-C-SCREW-LENS-01",
+      "subject": "PHYSICS",
+      "title": "Lens magnification and screw pitch",
+      "concept": "For a fixed-focus thin lens in the chosen real-image geometry, |u|=f(1+1/|m|). A screw of pitch p moves the lens by p per full turn. Thus turns N=|Δu|/p; confirm the two image states share the same geometry.",
+      "predict": "If pitch is halved for the same required lens displacement, does turn count halve or double?",
+      "worked": "With f=10 cm, magnification magnitudes 2 and 1, the displacement is |10(1/1−1/2)|=5 cm. At pitch 0.5 cm/turn, it takes 10 turns.",
+      "challenge": "A lens of focal length 12 cm changes magnification magnitude from 3 to 1 in the same arrangement. A screw moves 0.4 cm per turn. Find the lens travel and the required number of full turns.",
+      "steps": [
+        "Use |u₁|=12(1+1/3)=16 cm and |u₂|=12(1+1)=24 cm.",
+        "The travel is |24−16|=8 cm.",
+        "At 0.4 cm per turn, N=8/0.4=20 turns."
+      ],
+      "trap": "Multiplying by screw pitch instead of dividing or mistaking magnification magnitude for its reciprocal.",
+      "repair": "Compute physical lens positions from each magnification before subtracting; then convert travel to turns using pitch as distance per rotation.",
+      "boundary": "If initial and final magnification magnitudes are identical, how many turns are needed in this model?",
+      "boundaryAnswer": "Zero, provided the system stays on the same physical branch and no other adjustment is required."
+    }
+  ]
+}
