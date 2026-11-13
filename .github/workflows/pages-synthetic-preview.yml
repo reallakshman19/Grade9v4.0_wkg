@@ -20,6 +20,10 @@ on:
       - 'tools/nsejs_source_practice_recovery.py'
       - 'tools/nsejs_authored_transfer_index.py'
       - 'tests/test_nsejs_source_practice_recovery.py'
+      - 'tests/test_nsejs_pcb_source_keys_and_18_skill_recovery.py'
+      - 'tools/nsejs_2024_source_key_locators.py'
+      - 'tools/nsejs_independent_core1_builder.py'
+      - 'tools/check_independent_core1_recovery_http.py'
       - 'docs/nsejs/official-iapt-source-locators-r1.json'
       - 'tools/check_public_nsejs_http.py'
       - 'tools/check_live_nsejs_preview.py'
@@ -66,6 +70,10 @@ on:
       - 'tools/nsejs_source_practice_recovery.py'
       - 'tools/nsejs_authored_transfer_index.py'
       - 'tests/test_nsejs_source_practice_recovery.py'
+      - 'tests/test_nsejs_pcb_source_keys_and_18_skill_recovery.py'
+      - 'tools/nsejs_2024_source_key_locators.py'
+      - 'tools/nsejs_independent_core1_builder.py'
+      - 'tools/check_independent_core1_recovery_http.py'
       - 'docs/nsejs/official-iapt-source-locators-r1.json'
       - 'tools/check_public_nsejs_http.py'
       - 'tools/check_live_nsejs_preview.py'
@@ -121,6 +129,7 @@ jobs:
           node --check nsejs/js/core2-physics-reader.js
           node --check nsejs/js/source-linked-exam-practice.js
           node --check nsejs/js/authored-transfer-practice.js
+          node --check nsejs/js/core1-independent-recovery.js
           node --check nsejs/js/wpe-contract-adapter.js
       - name: Build existing WPE plus NSEJS candidate-only technical preview and authored Core1AB lessons
         run: python tools/build_public_nsejs_preview.py --out public-safe-dist
@@ -140,6 +149,10 @@ jobs:
         run: python -m pytest -q tests/test_nsejs_source_practice_recovery.py
       - name: Verify source-linked Chemistry and Biology response notebooks in actual staged Pages
         run: python tools/check_source_linked_practice_http.py --site public-safe-dist
+      - name: Verify 40 Code-51 publisher/subject source locators and 18 independent Core1 authoring/custody gates
+        run: python -m pytest -q tests/test_nsejs_pcb_source_keys_and_18_skill_recovery.py
+      - name: Verify all 18 authored Core1A/B repair routes in real HTTP Chromium
+        run: python tools/check_independent_core1_recovery_http.py --site public-safe-dist
       - name: Verify actual staged NSEJS routes with HTTP Chromium on 12.7-inch touch viewports
         run: python tools/check_public_nsejs_http.py --site public-safe-dist
       - name: Check actual staged authored Mechanics six-stage learner via Physics hub
