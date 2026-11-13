@@ -1,7 +1,7 @@
 # Grade9 v4.0 — Owner Core1 private candidate correction R3
 
 **Task:** G9V4-CORE1-CORE2-SCIENCE-CUSTODY-QA-R3  
-**Original source checkout:** `main` at `0f6ca753f86d7df340f0d41955ae14ca52155344` (2026-11-13); **rebase base**: `ac6e632302b544c6ddec274864ff6ae279001cbb` after PR #115.  
+**Original source checkout:** `main` at `0f6ca753f86d7df340f0d41955ae14ca52155344` (2026-11-13); **latest rebase base**: `fffe8f6bc3e8b90c71cc5104c4dee8e5782714c5` after PRs #115 and #116.  
 **Mode:** PRIVATE_SOURCE_FIRST · SCIENCE_CANDIDATE · FAIL_CLOSED  
 **Scope:** Physics, Chemistry and Biology only; mathematics out of this correction lane.
 
