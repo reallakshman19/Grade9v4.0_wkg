@@ -168,6 +168,166 @@ def render(data: dict) -> str:
         'software validation.</p></main></body></html>')
 
 
+
+# Topic grouping is by uploaded module filename, not by verified question content.
+# The five 2020–2024 bank modules per subject remain in the unclassified
+# historical-year group. Do not imply year-batch questions match topic cards.
+TOPIC_FILE_GROUPS = {
+    "physics": (
+        ("optics", (
+            "ioqjs-optics-conjugate-d3-r1", "nsejs-optics-displacement-d3-r1",
+            "nsejs-optics-lens-mirror-d3-r1", "nsejs-optics-prism-d3-r1",
+            "nsejs-optics-r1", "nsejs-optics-screw-lens-d3-r1")),
+        ("mechanics", ("nsejs-mechanics-r1",)),
+        ("circuits", (
+            "nsejs-circuits-r1", "nsejs-circuits-cube-d3-r1",
+            "nsejs-circuits-ladder-d3-r1")),
+        ("electrostatics", (
+            "nsejs-electrostatics-r1", "nsejs-electrostatics-deflection-d3-r1")),
+        ("magnetism", (
+            "nsejs-magnetism-r1", "nsejs-magnetism-terminal-d3-r1")),
+        ("fluids", (
+            "nsejs-fluids-sound-r1", "nsejs-fluids-surface-energy-d3-r1")),
+    ),
+    "chemistry": (
+        ("matter", ("chem-matter-mole-r1",)),
+        ("reactions", ("chem-chemical-substances-r1",)),
+        ("atomic", (
+            "chem-atomic-bonding-r1", "chem-atomic-structure-r1",
+            "chem-electronic-structure-d3-r1")),
+        ("acids", ("chem-phosphorus-oxyacids-d3-r1",)),
+        ("redox", ("chem-redox-titration-d3-r1",)),
+        ("eudiometry", ("chem-eudiometry-d3-r1",)),
+    ),
+    "biology": (
+        ("cell", (
+            "bio-organisation-living-world-r1", "bio-viral-genetics-d3-r1")),
+        ("life", (
+            "bio-life-processes-r1", "bio-immunology-defense-d3-r1")),
+        ("coordination", ("bio-genetics-coordination-r1",)),
+        ("heredity", ()),
+        ("ecology", ("bio-environment-resources-r1",)),
+    ),
+}
+
+
+def expose_zip_coverage_in_subject_cards(page: str, subject: str, catalog: dict) -> str:
+    """Expose the newly published 267-ID map *inside* existing topic tiles.
+
+    Does not alter the older 50+1 Physics reader, Chemistry/Biology paper
+    notebooks, core1 statuses, or original source admission.
+    """
+    import re
+    sb = subject.upper()
+    module_by_slug = {r["slug"]: r for r in catalog["items"]}
+    scoped = {slug for slug, row in module_by_slug.items() if row["subject"] == sb}
+    grouped = TOPIC_FILE_GROUPS[subject]
+    topic_slugs = [slug for _, slugs in grouped for slug in slugs]
+    year_slugs = {slug for slug in scoped
+                  if re.fullmatch(r"nsejs-202[0-4]-" + subject + r"-r1", slug)}
+    if (len(topic_slugs) != len(set(topic_slugs)) or
+            set(topic_slugs) & year_slugs or
+            set(topic_slugs) | year_slugs != scoped or len(year_slugs) != 5 or
+            sum(module_by_slug[x]["unverified_candidate_question_count"]
+                for x in year_slugs) != 79):
+        raise ValueError("CORE2_TOPIC_BANK_FILENAME_CENSUS_MISMATCH")
+
+    # The synthetic unit-test subject fixture has no topic cards.
+    if 'class="topics-grid-12-7"' not in page:
+        return page
+    cards = list(re.finditer(
+        r'<article class="topic-card-tab">[\s\S]*?</article>', page))
+    if len(cards) != len(grouped):
+        raise ValueError("CORE2_TOPIC_CARD_STRUCTURE_CHANGED")
+
+    replacements = []
+    for index, match in enumerate(cards):
+        card = match.group(0)
+        topic, slugs = grouped[index]
+        if (card.count('<span class="core-name">Question Bank</span>') != 1
+                or card.count('class="topic-desc"') != 1
+                or 'data-core2-zip-topic=' in card):
+            raise ValueError("CORE2_TOPIC_CARD_ANCHOR_CHANGED")
+        count = sum(module_by_slug[x]["unverified_candidate_question_count"]
+                    for x in slugs)
+        if count != len(slugs):
+            raise ValueError("CORE2_TOPICAL_MODULE_EXPECTED_ONE_CANDIDATE_EACH")
+        module_links = "".join(
+            '<li><a href="../core2/question-map.html#module-' +
+            html.escape(slug, quote=True) + '">' +
+            html.escape(slug.replace("-", " ")) + '</a></li>'
+            for slug in slugs)
+        if slugs:
+            detail = (
+                '<details style="margin-top:7px"><summary style="cursor:pointer;'
+                'min-height:56px;display:flex;align-items:center;color:#075c83;'
+                'font-weight:750">Show ' + str(len(slugs)) +
+                ' ZIP module ID(s)</summary><ul style="margin:6px 0 0 17px;'
+                'padding:0;line-height:1.7">' + module_links + '</ul></details>'
+            )
+        else:
+            detail = (
+                '<p style="margin:7px 0 0">No standalone topic bank in ZIP. '
+                '<a href="../core2/question-map.html#' + subject +
+                '">Browse historical-year subject records</a>.</p>'
+            )
+        callout = (
+            '<section class="core2-zip-topic-preview" data-core2-zip-topic="' +
+            topic + '" aria-label="New source-held Core2 ZIP module inventory" '
+            'style="margin:12px 0;padding:12px 14px;border:1px solid #a0c3d4;'
+            'border-left:5px solid #12698d;border-radius:10px;'
+            'background:#edf7fb;color:#123a52">'
+            '<strong>NEW · Uploaded ZIP Core2: ' + str(len(slugs)) +
+            ' topic module(s), ' + str(count) +
+            ' unvalidated question ID(s)</strong>'
+            '<p style="font-size:.9rem;margin:5px 0">Source-held ID inventory '
+            'only; the full exam questions and answer keys are not published. '
+            'This is separate from the existing candidate-bank button.</p>' +
+            detail + '</section>'
+        )
+        card2 = card.replace(
+            '<div class="cores-sub-deck">',
+            callout + '\n        <div class="cores-sub-deck">', 1)
+        if card2 == card:
+            raise ValueError("CORE2_SUBDECK_ANCHOR_NOT_FOUND")
+        replacements.append((match.start(), match.end(), card2))
+
+    for start, end, val in reversed(replacements):
+        page = page[:start] + val + page[end:]
+
+    totals = catalog["subjects"][sb]
+    topical = len(topic_slugs)
+    year_rows = sum(module_by_slug[x]["unverified_candidate_question_count"]
+                    for x in year_slugs)
+    if totals["modules"] != topical + 5 or totals["candidates"] != topical + year_rows:
+        raise ValueError("CORE2_SUBJECT_SUMMARY_INCONSISTENT")
+    overview = (
+        '<section id="pcb-core2-zip-now-visible" '
+        'aria-label="New uploaded ZIP Core2 question identity coverage" '
+        'style="margin:20px 0;padding:23px;border:2px solid #087198;'
+        'border-radius:15px;background:#e7f5fb;color:#14384a">'
+        '<h2 style="margin:0 0 7px">NEW · Uploaded Core2 ZIP coverage</h2>'
+        '<p><strong>' + str(totals["modules"]) + ' ' + subject.title() +
+        ' modules · ' + str(totals["candidates"]) +
+        ' question IDs indexed</strong> (' + str(topical) +
+        ' standalone topic modules + 5 historical-year banks containing ' +
+        str(year_rows) + ' candidate IDs).</p>'
+        '<p><strong>Metadata only · Source/rights/academic HOLD.</strong> '
+        'These are <em>not</em> the existing topic-button question records. '
+        'No full ZIP stems, figures, keys or solutions are published.</p>'
+        '<a href="../core2/question-map.html#' + subject +
+        '" style="min-height:56px;display:inline-flex;align-items:center;'
+        'font-weight:800;background:#115a79;color:white;border-radius:9px;'
+        'padding:12px 20px;text-decoration:none">'
+        'Browse all ' + str(totals["candidates"]) +
+        ' source-held question IDs</a></section>'
+    )
+    opening = '<div class="topics-grid-12-7">'
+    if page.count(opening) != 1:
+        raise ValueError("CORE2_TOPIC_GRID_AMBIGUOUS")
+    return page.replace(opening, overview + '\n    ' + opening, 1)
+
+
 def publish(stage: Path) -> dict:
     data=registry()
     validate(data)
@@ -206,8 +366,10 @@ def publish(stage: Path) -> dict:
         # the bottom after a very tall topic grid. This prevents off-screen
         # touch hit-testing/scroll restoration from obscuring the link.
         path.write_text(
-            page.replace('<main class="tablet-container">',
-                         '<main class="tablet-container">\n'+link,1),
+            expose_zip_coverage_in_subject_cards(
+                page.replace('<main class="tablet-container">',
+                             '<main class="tablet-container">\n'+link,1),
+                subject, data),
             encoding="utf-8")
     return {"status":data["status"],"module_count":data["module_count"],
             "candidate_question_count":data["candidate_question_count"],

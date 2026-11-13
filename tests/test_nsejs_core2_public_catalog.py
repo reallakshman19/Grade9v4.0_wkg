@@ -12,7 +12,8 @@ import pytest
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/"tools"))
-from nsejs_core2_public_catalog import registry,validate,render,publish
+from nsejs_core2_public_catalog import (registry,validate,render,publish,
+    expose_zip_coverage_in_subject_cards,TOPIC_FILE_GROUPS)
 
 
 def test_archive_core2_inventory_counts_exact_and_no_mathematics():
@@ -94,3 +95,54 @@ def test_publish_metadata_only_into_stage_and_subject_navigation(tmp_path):
     assert not list(stage.rglob("*.pdf"))
     assert not list(stage.rglob("bank.json"))
     assert not list(stage.rglob("*math*"))
+
+
+def test_existing_subject_cards_show_new_zip_question_map_without_replacing_old_bank():
+    """Regression for screenshots still showing only Open 10 candidate records."""
+    catalog = registry()
+    expectations = {
+        "physics": (6, 21, 95, 16),
+        "chemistry": (6, 13, 87, 8),
+        "biology": (5, 11, 85, 6),
+    }
+    byslug = {m["slug"] for m in catalog["items"]}
+    for subject, (cards, modules, questions, topical) in expectations.items():
+        original = (ROOT/"nsejs"/subject/"index.html").read_text("utf-8")
+        assert original.count('<div class="topics-grid-12-7">') == 1
+        updated = expose_zip_coverage_in_subject_cards(original,subject,catalog)
+        assert updated.count('id="pcb-core2-zip-now-visible"') == 1
+        assert updated.count('class="core2-zip-topic-preview"') == cards
+        assert f'{modules} {subject.title()} modules · {questions} question IDs indexed' in updated
+        assert f'Browse all {questions} source-held question IDs' in updated
+        assert f'href="../core2/question-map.html#{subject}"' in updated
+        assert 'Metadata only · Source/rights/academic HOLD' in updated
+        assert 'not</em> the existing topic-button question records' in updated
+        # The existing reader buttons must remain intact; no implied replacement.
+        if subject == "physics":
+            assert updated.count("Open 10 candidate records") == 4
+            assert 'Open 11 candidate records (1 authored)' in updated
+            assert 'No public bank (HOLD)' in updated
+            assert updated.count("onclick=\"openTopicQBank(") == 6
+        module_links = [slug for _, slugs in TOPIC_FILE_GROUPS[subject] for slug in slugs]
+        assert len(set(module_links)) == len(module_links) == topical
+        assert set(module_links).issubset(byslug)
+        for slug in module_links:
+            assert updated.count(f'href="../core2/question-map.html#module-{slug}"') == 1
+        assert "original exam questions and answer keys are not published" not in updated
+        assert 'No full ZIP stems, figures, keys or solutions are published' in updated
+        assert '<iframe' not in updated.lower()
+
+
+def test_card_publication_fail_closed_if_core2_topic_dom_changed():
+    source = (ROOT/"nsejs"/"physics"/"index.html").read_text("utf-8")
+    assert source.count('<article class="topic-card-tab">') == 6
+    broken=source.replace('class="topics-grid-12-7"', 'class="topics-grid-12-7"') \
+                 .replace('<span class="core-name">Question Bank</span>',
+                          '<span class="core-name">Bank</span>', 1)
+    with pytest.raises(ValueError, match="CORE2_TOPIC_CARD_ANCHOR_CHANGED"):
+        expose_zip_coverage_in_subject_cards(broken,"physics",registry())
+    with pytest.raises(ValueError, match="CORE2_TOPIC_CARD_STRUCTURE_CHANGED"):
+        expose_zip_coverage_in_subject_cards(
+            source.replace('</article>', '</article></article>', 1)
+                  .replace('<article class="topic-card-tab">', '', 1),
+            "physics",registry())

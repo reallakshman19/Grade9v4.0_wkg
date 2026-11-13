@@ -80,6 +80,45 @@ def check(site:Path)->None:
                     response=page.goto(base+f"/nsejs/{subject}/index.html",
                                        wait_until="domcontentloaded",timeout=25000)
                     assert response and response.status==200
+
+                    # Regression for older topic cards that looked unchanged.
+                    # The source-neutral ZIP census must be *visible in each
+                    # subject page*, not hidden on a separate unrelated URL.
+                    visible_counts={
+                        "physics": (6,21,95),
+                        "chemistry": (6,13,87),
+                        "biology": (5,11,85),
+                    }
+                    card_count, module_count, q_count=visible_counts[subject]
+                    cards=page.locator('[data-core2-zip-topic]')
+                    assert cards.count()==card_count
+                    overview=page.locator('#pcb-core2-zip-now-visible')
+                    assert overview.count()==1
+                    assert f"{module_count} {subject.title()} modules" in overview.inner_text()
+                    assert f"{q_count} question IDs" in overview.inner_text()
+                    assert "Source/rights/academic HOLD" in overview.inner_text()
+                    assert page.locator("iframe").count()==0
+                    # Genuine tablet tap on an actual card and its question-ID link;
+                    # never force-click or open the URL programmatically.
+                    topical=cards.first
+                    expanding=topical.locator('details')
+                    assert expanding.count()==1
+                    expanding.locator('summary').click(timeout=10000)
+                    a=expanding.locator('a').first
+                    href=a.get_attribute("href")
+                    assert href.startswith("../core2/question-map.html#module-")
+                    a.click(timeout=10000)
+                    page.wait_for_url("**/nsejs/core2/question-map.html#module-*")
+                    target=href.split("#",1)[1]
+                    assert page.locator(f'details[id="{target}"]').count()==1
+                    # Return to subject landing to verify its existing core2
+                    # buttons and full-register link were not replaced.
+                    page.goto(base+f"/nsejs/{subject}/index.html",
+                              wait_until="domcontentloaded",timeout=25000)
+                    if subject=="physics":
+                        assert page.locator('button[onclick^="openTopicQBank("]').count()==6
+                        assert page.get_by_text("Open 10 candidate records",exact=False).count()==4
+
                     link=page.locator("#core2-archive-register a")
                     assert link.count()==1
                     assert link.get_attribute("href")==f"../core2/index.html#{subject}"
