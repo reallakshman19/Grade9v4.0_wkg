@@ -19,8 +19,16 @@ import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
+sys.path.insert(0, str(ROOT / "nsejs/contracts"))
 from build_public_reader_preview import build_preview
 from nsejs_core1ab_public_coverage import public_coverage, render_subject_index, render_official_sources
+from nsejs_source_practice_recovery import (build_source_link_index, recovery_receipt, render_core1_recovery, write_json)
+from nsejs_authored_transfer_index import derive_authored_transfer_index
+from nsejs_2024_source_key_locators import official_locator_bank
+from nsejs_independent_core1_builder import validate_catalog,lesson_html
+from nsejs_core2_public_catalog import publish as publish_core2_metadata_register
+from source_learning_bridge import validate_bindings
+from wpe_learner_contract import validate as validate_wpe_contract
 
 PUBLIC_NSEJS = (
     "nsejs/index.html",
@@ -28,13 +36,32 @@ PUBLIC_NSEJS = (
     "nsejs/chemistry/index.html",
     "nsejs/biology/index.html",
     "nsejs/physics/question-bank.html",
+    "nsejs/chemistry/question-bank.html",
+    "nsejs/biology/question-bank.html",
+    "nsejs/js/source-linked-exam-practice.js",
+    "nsejs/js/core1-independent-recovery.js",
+    "nsejs/chemistry/authored-practice.html",
+    "nsejs/biology/authored-practice.html",
+    "nsejs/js/authored-transfer-practice.js",
     "nsejs/js/core2-physics-reader.js",
+    "nsejs/js/core2-learning-route.js",
     "nsejs/data/physics-core2-candidates.v1.json",
     "nsejs/data/physics-core2-integrity.v1.json",
     "nsejs/data/physics-core2-source-evidence.v1.json",
     "nsejs/data/physics-authored-practice-r1.json",
     "nsejs/PUBLIC_PREVIEW_STATUS.json",
 )
+# Authored, source-bound Wave 2 Mechanics learner. This is ADDITIONAL to the
+# eight existing generated Core1A/B previews, not a 9/26 coverage certificate.
+MECHANICS_WPE_PUBLIC = (
+    "nsejs/physics/learn-mechanics.html",
+    "nsejs/css/wpe-touch-parity.css",
+    "nsejs/js/wpe-contract-adapter.js",
+    "nsejs/data/mechanics-wpe-teaching-pilot.v1.json",
+    "nsejs/data/source-learning-bridge-tech-preview.v1.json",
+)
+MECHANICS_WPE_UID = "g9:PHYSICS:G9-AUTH-MECH-001"
+
 PUBLIC_SCHOOL_DIRS = (
     "physics/wpe", "architecture", "css", "js",
 )
@@ -102,6 +129,8 @@ def generated_lessons(stage: Path) -> dict:
             subprocess.run([sys.executable, builder], cwd=temp, env=env,
                            check=True, capture_output=True, text=True, timeout=100)
         coverage = public_coverage(LESSONS, ROOT, temp / "workspace" / "output")
+        authored = derive_authored_transfer_index(temp / "workspace" / "output", LESSONS)
+        put(stage, "nsejs/data/authored-core1b-transfers.v1.json", write_json(authored))
         put(stage, "nsejs/data/core1ab-coverage.v1.json",
             (json.dumps(coverage, indent=2, sort_keys=True) + "\n").encode("utf-8"))
         for subject, modules in LESSONS.items():
@@ -140,6 +169,222 @@ def add_source_links(stage: Path) -> None:
                  'View official paper/key links</a></section>')
         page.write_text(body.replace("</body>", block + "\n</body>", 1), encoding="utf-8")
 
+def validate_mechanics_wpe_public_pilot(original: dict, preview: dict,
+                                        lesson: dict, collection: dict) -> dict:
+    """Independent positive authorization for a technical-only, authored pilot.
+
+    The original UNBUILT mapping is NEVER promoted or modified. The separate
+    technical-preview mapping may unlock a lesson only after complete question
+    revision, QRT HOLD, owner/task IDs, and its exact lesson revision match.
+    """
+    [source_row] = validate_bindings(original, collection)
+    if (original.get("route_status") != "UNBUILT_TECHNICAL_PILOT" or
+        source_row.get("lesson_status") != "PENDING_WAVE2" or
+        source_row.get("lesson_revision") != "UNBUILT"):
+        raise ValueError("SOURCE_FIRST_UNBUILT_CUSTODY_NOT_PRESERVED")
+    rows = preview.get("routes")
+    if (not isinstance(rows, list) or len(rows) != 1 or
+        preview.get("schema") != original["schema"] or
+        preview.get("academic_admission") != "HOLD" or
+        preview.get("route_status") != "TECHNICAL_PREVIEW" or
+        preview.get("preview_authority") != "AUTHORED_TECHNICAL_ONLY_NOT_ACADEMIC_ADMISSION"):
+        raise ValueError("WPE_PREVIEW_MANIFEST_NOT_QUALIFIED")
+    [candidate] = rows
+    critical = ("question_uid", "source_id", "content_revision_sha256",
+                "source_collection", "origin", "subject", "topic", "lesson_id",
+                "task_a_id", "task_b_id", "transfer_id", "source_return")
+    if any(candidate.get(key) != source_row.get(key) for key in critical):
+        raise ValueError("WPE_SOURCE_LEARNING_BRIDGE_NOT_EXACT")
+    if (candidate.get("lesson_status") != "READY_FOR_TECHNICAL_PREVIEW" or
+        candidate.get("lesson_revision") != lesson.get("lesson", {}).get("revision") or
+        candidate.get("academic_admission") != "HOLD" or
+        candidate.get("original_source_status") != "AUTHORED_PRACTICE_NOT_OFFICIAL_EXAM"):
+        raise ValueError("WPE_LESSON_READINESS_OR_SOURCE_CLAIM_INVALID")
+    result = validate_wpe_contract(lesson, preview)
+    if (result["source_uid"] != MECHANICS_WPE_UID or
+        result["academic_admission"] != "HOLD" or
+        lesson.get("source_return",{}).get("route_status") != "TECHNICAL_PREVIEW"):
+        raise ValueError("WPE_SOURCE_AUTHORIZATION_FAILED")
+    return {"published":True, "source_uid":MECHANICS_WPE_UID,
+            "source_revision_sha256":result["source_revision"],
+            "lesson_revision":candidate["lesson_revision"],
+            "lesson_id":candidate["lesson_id"], "academic_approval":"HOLD",
+            "source_authenticity":"AUTHORED_PRACTICE_NOT_OFFICIAL_EXAM",
+            "status":"AUTHORED_TECHNICAL_PREVIEW_ONLY"}
+
+
+def publish_mechanics_wpe_pilot(stage: Path) -> dict:
+    def read(path: str) -> dict:
+        return json.loads((ROOT/path).read_text(encoding="utf-8"))
+    original = read("nsejs/data/source-learning-bridge-pilot.v1.json")
+    preview = read("nsejs/data/source-learning-bridge-tech-preview.v1.json")
+    lesson = read("nsejs/data/mechanics-wpe-teaching-pilot.v1.json")
+    source = read("nsejs/data/physics-authored-practice-r1.json")
+    qualified = validate_mechanics_wpe_public_pilot(original,preview,lesson,source)
+    for path in MECHANICS_WPE_PUBLIC:
+        content=(ROOT/path).read_bytes()
+        if path.endswith((".html",".js")) and b"<iframe" in content.lower():
+            raise ValueError("NO_IFRAMES_ALLOWED_IN_NSEJS_WPE_PILOT")
+        put(stage,path,content)
+    # Only the single correctly bound authored Mechanics question is
+    # discoverable. All other Core2 records remain candidate-only.
+    subject_page=stage/"nsejs/physics/index.html"
+    page=subject_page.read_text(encoding="utf-8")
+    if 'id="nsejs-wpe-mechanics-parity"' in page or "</body>" not in page:
+        raise ValueError("DUPLICATE_OR_INVALID_WPE_HUB_INSERTION")
+    href=("learn-mechanics.html?source_uid=" +
+          qualified["source_uid"] +
+          "&source_revision=" + qualified["source_revision_sha256"])
+    block=(
+        '<section id="nsejs-wpe-mechanics-parity" class="tablet-container" '
+        'aria-labelledby="nsejs-mechanics-heading" '
+        'style="margin:24px auto;padding:22px;border:2px solid #6c9fad;'
+        'border-radius:15px;background:#f0f9fc;color:#173749">'
+        '<h2 id="nsejs-mechanics-heading">Mechanics Core1A → Core1B · '
+        'six-stage authored technical preview</h2>'
+        '<p><strong>UNVALIDATED · Academic HOLD.</strong> '
+        'A single source-bound authored Grade9 Physics practice example, '
+        'not an original NSEJS exam question or academically admitted source. '
+        'Use the interactive collision model and independent Task A/B.</p>'
+        '<a href="'+href+'" style="display:inline-flex;align-items:center;'
+        'min-height:56px;padding:14px 22px;border-radius:12px;'
+        'background:#145c76;color:#fff;font-weight:750;text-decoration:none">'
+        'Open authored Mechanics six-stage learner</a>'
+        '</section>'
+    )
+    subject_page.write_text(page.replace("</body>",block+"\n</body>",1),
+                            encoding="utf-8")
+    return qualified
+
+
+def stage_independent_core1_recovery(stage: Path, coverage: dict) -> dict:
+    """Build 18 distinct authored *supplemental* journeys; originals stay HOLD."""
+    source_receipt=recovery_receipt(coverage,GENERATORS)
+    catalog=validate_catalog(ROOT,source_receipt)
+    put(stage,"nsejs/data/independent-core1-recovery.v1.json",write_json(catalog))
+    for entry in catalog["items"]:
+        relative=entry["publication_route"]
+        content=lesson_html(entry)
+        if "<iframe" in content.lower() or "No academic approval inferred" not in content:
+            raise ValueError("UNSAFE_INDEPENDENT_CORE1_LEARNER")
+        put(stage,relative,content.encode("utf-8"))
+    rows=[]
+    for entry in catalog["items"]:
+        link=entry["publication_route"]
+        label=entry["title"].replace("&","&amp;").replace("<","&lt;")
+        rows.append('<li><a href="../'+link+'" style="display:inline-flex;'
+                    'align-items:center;min-height:56px;padding:11px 17px">'
+                    +label+'</a> · '+entry["subject"]+'</li>')
+    target=stage/"nsejs/core1-recovery.html"
+    original=target.read_text("utf-8")
+    if "</main>" not in original or 'id="independent-core1-skill-repairs"' in original:
+        raise ValueError("RECOVERY_STAGING_INDEX_INVALID")
+    section=(
+        '<section id="independent-core1-skill-repairs" style="margin:25px 0;'
+        'padding:22px;border:2px solid #9bb9c7;background:#eef8fb;border-radius:14px">'
+        '<h2>18 NEW source-neutral Core1A/B skill-repair journeys</h2>'
+        '<p><strong>Supplemental technical learning only.</strong> These original Grade9'
+        ' teaching exercises are reproducibly generated, but are NOT the 18'
+        ' withheld source-bound modules. All original-source, independent'
+        ' science, B1–B7 and academic admission statuses remain HOLD.</p>'
+        '<ol>'+"".join(rows)+'</ol></section>'
+    )
+    target.write_text(original.replace("</main>",section+"</main>",1),"utf-8")
+    for subject in ("physics","chemistry"):
+        path=stage/f"nsejs/{subject}/core1/index.html"
+        old=path.read_text("utf-8")
+        relevant=[x for x in catalog["items"] if x["subject"]==subject.upper()]
+        nav='<section id="independent-core1-repairs" style="margin:22px 0;'
+        nav+='padding:20px;border:2px solid #9bb9c7;border-radius:13px">'
+        nav+='<h2>'+str(len(relevant))+' new independent skill-repair journeys</h2>'
+        nav+='<p>Not original exam questions or certified B1–B7 modules. Original'
+        nav+=' constructions and academic admission remain HOLD.</p><ul>'
+        for entry in relevant:
+            nav+='<li><a style="display:inline-flex;align-items:center;min-height:56px"'
+            nav+=' href="recovery/'+entry["slug"]+'/index.html">'
+            nav+=entry["title"].replace("&","&amp;").replace("<","&lt;")
+            nav+='</a></li>'
+        nav+='</ul></section>'
+        if "</main>" not in old:raise ValueError("CORE1_SUBJECT_INDEX_UNCLOSED")
+        path.write_text(old.replace("</main>",nav+"</main>",1),"utf-8")
+    return {"new_independent_authored_supplements":18,
+            "original_missing_reproducible_modules":18,
+            "source_originals_recovered":0,
+            "academic_admission":"HOLD",
+            "source_exam_admission":"HOLD",
+            "catalog":"nsejs/data/independent-core1-recovery.v1.json"}
+
+
+def stage_external_paper_practice(stage: Path, coverage: dict) -> dict:
+    """Add an honest, working offsite-paper study entry—not invented questions."""
+    locator=ROOT/"docs/nsejs/official-iapt-source-locators-r1.json"
+    index=build_source_link_index(json.loads(locator.read_text(encoding="utf-8")))
+    put(stage,"nsejs/data/source-linked-practice.v1.json",write_json(index))
+    keys=official_locator_bank(index)
+    put(stage,"nsejs/data/subject-paper-2024-code51.v1.json",write_json(keys))
+    recovery=recovery_receipt(coverage, GENERATORS)
+    put(stage,"nsejs/data/core1-recovery.v1.json",write_json(recovery))
+    put(stage,"nsejs/core1-recovery.html",render_core1_recovery(recovery).encode("utf-8"))
+    for subject in ("chemistry","biology"):
+        page=stage/f"nsejs/{subject}/index.html"
+        s=page.read_text(encoding="utf-8")
+        if "</body>" not in s or 'id="source-linked-external-practice"' in s:
+            raise ValueError("PAPER_NOTEBOOK_SUBJECT_NAV_DUPLICATE_OR_UNCLOSED")
+        block=(
+            '<section id="source-linked-external-practice" class="tablet-container" '
+            'style="margin:28px auto;padding:22px;border:2px solid #a78c5d;'
+            'border-radius:13px;background:#fff7df;color:#553e18">'
+            '<h2>Study from the original IAPT paper (external)</h2>'
+            '<p><strong>Source HOLD · not a verified '+subject.title()+' question bank.</strong> '
+            'Use your own paper question number for local first-response notes. '
+            'No question text, diagrams, official solution or exam score is reproduced. '
+            'The 2024 code-51 link supports unverified notes only. Earlier years are link-only.</p>'
+            '<a href="question-bank.html" style="display:inline-flex;min-height:56px;'
+            'align-items:center;padding:13px 20px;border-radius:11px;'
+            'background:#145a75;color:white;font-weight:750;text-decoration:none">'
+            'Open source-linked practice notebook</a></section>'
+        )
+        authored_link=(
+            '<section id="authored-transfer-question-bank" class="tablet-container" '
+            'style="margin:24px auto;padding:20px;border:2px solid #80aebc;'
+            'border-radius:12px;background:#edf8fa;color:#1a3e52">'
+            '<h2>Authored Core1B independent transfer practice</h2>'
+            '<p>Technical-only authored Grade9 prompts, not official NSEJS questions. '
+            'Two Chemistry and three Biology practices were generated from checked-in '
+            'Core1B teaching builders; answers and academic admission remain HOLD.</p>'
+            '<a href="authored-practice.html" style="display:inline-flex;align-items:center;'
+            'min-height:56px;padding:12px 18px;color:#114d72">'
+            'Open authored transfer practice questions</a></section>'
+        )
+        page.write_text(s.replace("</body>",block+"\n"+authored_link+"\n</body>",1),
+                        encoding="utf-8")
+    hub=stage/"nsejs/index.html"
+    s=hub.read_text("utf-8")
+    if "</body>" not in s or 'id="core1-recovery-ledger"' in s:
+        raise ValueError("RECOVERY_HUB_NAV_DUPLICATE_OR_UNCLOSED")
+    block=(
+        '<section id="core1-recovery-ledger" class="tablet-container" '
+        'style="margin:26px auto;padding:20px;border:1px solid #bdada0;'
+        'border-radius:12px;background:#fff9ed;color:#573f21">'
+        '<h2>18 unavailable Core1 learning modules · recovery register</h2>'
+        '<p>These modules still lack checked-in, reproducible public authoring '
+        'and independent source/academic acceptance. No fake lesson links.</p>'
+        '<a href="core1-recovery.html" style="display:inline-flex;min-height:56px;'
+        'align-items:center;padding:12px 19px;color:#114e78">Inspect 18 recovery cases</a>'
+        '</section>'
+    )
+    hub.write_text(s.replace("</body>",block+"\n</body>",1),encoding="utf-8")
+    return {"source_linked_paper_notebooks":len(index["subjects"]),
+            "source_paper_count":len(index["years"]),
+            "2024_code51_subject_locator_count":keys["total_locator_records"],
+            "official_original_question_bodies":0,
+            "question_bodies_published":0,
+            "student_status":"LOCAL_UNVERIFIED_PAPER_RESPONSE_ONLY",
+            "academic_admission":"HOLD",
+            "core1_missing_reproducible_modules":18,
+            "core1_recovery_receipt":"nsejs/data/core1-recovery.v1.json"}
+
+
 def build(out: Path) -> dict:
     out=out.resolve()
     if out.exists() or out == ROOT or out.is_relative_to(ROOT/"workspace"):
@@ -162,7 +407,11 @@ def build(out: Path) -> dict:
             raise ValueError("MISSING_NSEJS_PREVIEW_ASSET:"+relative)
         put(out,relative,src.read_bytes())
     coverage = generated_lessons(out)
+    paper_practice_recovery = stage_external_paper_practice(out, coverage)
+    supplemental_skills = stage_independent_core1_recovery(out, coverage)
+    mechanics_wpe = publish_mechanics_wpe_pilot(out)
     add_source_links(out)
+    core2_metadata = publish_core2_metadata_register(out)
     (out/".nojekyll").write_text("",encoding="utf-8")
     file_list=sorted(p.relative_to(out).as_posix() for p in out.rglob("*") if p.is_file())
     if any(p.startswith(("workspace/","sources/","tests/","tools/")) or
@@ -179,6 +428,10 @@ def build(out: Path) -> dict:
         "core1ab_authored_lesson_pages": coverage["published_authored_preview_journeys"],
         "core1ab_test_backed_constructions": coverage["tracked_constructions"],
         "core1ab_unpublished_constructions": coverage["not_published_constructions"],
+        "source_linked_recovery":paper_practice_recovery,
+        "core2_archive_metadata_only":core2_metadata,
+        "independent_core1_supplements":supplemental_skills,
+        "additional_authored_mechanics_wpe_parity_preview": mechanics_wpe,
         "official_sources_link_only": True,
         "school_wpe_preserved":True,
         "existing_synthetic_reader_preserved":True,

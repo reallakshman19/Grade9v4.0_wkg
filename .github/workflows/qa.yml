@@ -1,7 +1,7 @@
 name: Python QA
 on:
   push:
-    branches: ["main", "feat/**"]
+    branches: ["main", "feat/**", "integration/nsejs-wpe-parity-r1"]
   pull_request:
 jobs:
   test:
@@ -16,10 +16,69 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - run: python -m pip install -e ".[dev]"
-      - name: Regenerate eight tracked authored Core1A/B candidates (never original exam fixtures)
+      - name: Verify reproducibility diagnostics and false-green controls
+        run: python -m pytest -q tests/test_qa_reproducibility.py
+      - name: Deterministically regenerate checked-in authored modules only
+        run: python tools/qa_reproducibility.py bootstrap
+      - name: Run full unfiltered Python QA and emit failure classification
         run: |
-          python build_d3_batch2_modules.py
-          python build_d3_expansion_modules.py
-          python build_physics_fluids_core1.py
-          python build_bio_genetics_core1.py
-      - run: python -m pytest -q
+          mkdir -p qa-artifacts
+          python tools/qa_reproducibility.py run --json-out qa-artifacts/failures.json --junit-out qa-artifacts/junit.xml
+      - name: Trace source and generated-output prerequisites (diagnostic, never a waiver)
+        if: always()
+        run: |
+          mkdir -p qa-artifacts
+          python tools/qa_failure_triage.py \
+            --json-in qa-artifacts/failures.json \
+            --json-out qa-artifacts/root-causes.json \
+            --markdown-out qa-artifacts/root-causes.md
+          cat qa-artifacts/root-causes.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Preserve exact-version classified QA receipt (not approval)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nsejs-py${{ matrix.python-version }}-full-qa-fail-closed
+          path: qa-artifacts/
+          if-no-files-found: warn
+
+
+  public-source-neutral:
+    name: Public reproducible QA (NOT full repository QA)
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install public test dependencies
+        run: python -m pip install -e ".[dev]"
+      - name: Regenerate only checked-in authored modules
+        run: python tools/qa_reproducibility.py bootstrap
+      - name: Run explicitly bounded source-neutral regressions
+        run: |
+          python -m pytest -q \
+            tests/test_qa_reproducibility.py \
+            tests/test_qa_failure_triage.py \
+            tests/test_qa_verified_input_restore.py \
+            tests/test_qa_core2_bank_archive.py \
+            tests/test_source_learning_bridge_pilot.py \
+            tests/test_nsejs_wpe_learner_contract.py \
+            tests/test_nsejs_wave1_combined_gate.py \
+            tests/test_nsejs_mechanics_teaching_pilot.py \
+            tests/test_nsejs_wave2_promotion_gate.py \
+            tests/test_nsejs_browser_suite_registration.py \
+            tests/test_nsejs_wave3_public_stage.py \
+            tests/test_nsejs_core2_public_catalog.py \
+            tests/test_nsejs_public_coverage_r1.py \
+            tests/test_wpe_learning_route.py \
+            tests/test_wpe_learn_challenge_gap_closure_r2.py \
+            tests/test_wpe_core1a_core1b_transfer_readiness_r3.py \
+            tests/test_wpe_c06_construction_r4.py
+      - name: State public lane scope (never claim full QA approval)
+        run: |
+          echo "Public source-neutral tests executed." >> "$GITHUB_STEP_SUMMARY"
+          echo "Full unfiltered Python QA is the separate test matrix job above; source/academic HOLD is not waived." >> "$GITHUB_STEP_SUMMARY"

@@ -43,6 +43,28 @@
     const match = String(opt).match(/^[A-H]\s*[:.)]\s*/);
     return {id:match ? match[0].trim().charAt(0) : String.fromCharCode(65+i),label:String(opt)};
   }
+  /* This compares a SAVED response with an unreviewed producer proposal.
+   * It never calls the option academically correct, awards points, or treats
+   * an original-paper locator as proof of a verified answer key. Reject
+   * ambiguous/malformed proposals instead of guessing A/B/C/D from prose. */
+  function producerProposedIds(answer, options, isMulti) {
+    const source = String(answer || "").trim().replace(/^Official Key:\s*/i, "");
+    const valid = new Set(options.map(option => option.value));
+    let ids;
+    if (isMulti) {
+      const head = source.match(/^(\(?[A-H]\)?(?:\s*(?:,|\/|&|\+|and)\s*\(?[A-H]\)?)+)(?=$|\s|[.:;])/i);
+      if (!head) return null;
+      ids = Array.from(head[1].matchAll(/\(([A-H])\)|\b([A-H])\b/gi),
+        match => (match[1] || match[2]).toUpperCase());
+      if (ids.length < 2) return null;
+    } else {
+      const head = source.match(/^\(?([A-H])\)?(?=$|\s|[.:;])/i);
+      if (!head) return null;
+      ids = [head[1].toUpperCase()];
+    }
+    return ids.length === new Set(ids).size && ids.every(id => valid.has(id)) ? ids : null;
+  }
+
   function attemptKey(q,rev) {
     return ["g9","nsejs","core2","candidate-attempt","v1",encodeURIComponent(uidOf(q)),rev].join(":");
   }
@@ -113,6 +135,9 @@
     append(action,commit,reveal,feedback);append(box,action);
     const answerBox=text("div","","answer");answerBox.hidden=true;
     append(box,answerBox);
+    const proposedComparison=text("div","","producer-proposal-feedback");
+    proposedComparison.hidden=true;proposedComparison.setAttribute("role","status");
+    append(box,proposedComparison);
     let rev;
     try { rev=await revision(q); } catch(e) { commit.disabled=true;feedback.textContent=e.message;return box; }
     box.dataset.questionUid=uidOf(q);
@@ -120,10 +145,57 @@
     const key=attemptKey(q,rev);
     let committed=getAttempt(key);
     function setCommitted(saved,labels) {
-      controls.forEach(f=>{f.disabled=true;if(labels && labels.includes(f.value)) f.checked=true;});
-      commit.disabled=true;reveal.disabled=false;
+      const selected=new Set(Array.isArray(labels)?labels:[]);
+      controls.forEach(field=>{field.disabled=true;field.checked=selected.has(field.value);});
+      commit.disabled=true;
+      // Never reveal answers or display key comparisons after a failed
+      // localStorage write. First-attempt persistence is mandatory.
+      reveal.disabled=!saved;
       feedback.className=saved?"ok":"error";
-      feedback.textContent=saved?"First attempt saved locally; not certified.":"Attempt committed in this tab but NOT SAVED. Not an unassisted evidence record.";
+      feedback.textContent=saved?
+        "First attempt saved locally; producer comparison is provisional, not certified.":
+        "Attempt NOT SAVED. Proposed key and explanation are withheld; browser storage failed.";
+      if (!saved) {
+        proposedComparison.hidden=true;
+        return;
+      }
+      const proposed=producerProposedIds(q.answer,controls,isMulti);
+      proposedComparison.hidden=false;
+      proposedComparison.replaceChildren();
+      const heading=text("strong","Comparison with producer-proposed key · UNVALIDATED");
+      const notice=text("p","This is not a verified answer key, examination mark, academic correctness judgement, or mastery record.");
+      append(proposedComparison,heading,notice);
+      if (!proposed) {
+        append(proposedComparison,text("p",
+          "No reliable producer-option comparison is available for this record. No answer or score is inferred.",
+          "proposal-note"));
+        return;
+      }
+      const proposedSet=new Set(proposed);
+      let overlap=0;
+      controls.forEach(field=>{
+        const label=field.closest("label");
+        if (!label) return;
+        const wasSelected=selected.has(field.value);
+        const wasProposed=proposedSet.has(field.value);
+        if (wasSelected && wasProposed) overlap++;
+        if (!wasSelected && !wasProposed) return;
+        const caption=wasSelected && wasProposed?
+          "Selected · matches producer proposal":
+          wasSelected?
+          "Selected · differs from producer proposal":
+          "Producer-proposed · not selected";
+        label.classList.add(wasSelected && wasProposed?"proposal-match":
+          wasSelected?"proposal-diff":"proposal-not-selected");
+        append(label,text("small",caption,"proposal-option-caption"));
+      });
+      const extra=Array.from(selected).filter(id=>!proposedSet.has(id)).length;
+      const compare=isMulti?
+        "Overlap with unverified producer proposal: "+overlap+" of "+proposedSet.size+
+        " proposed options selected; "+extra+" additional selected. This is not partial credit or a score.":
+        (overlap===1?"Your saved choice matches":"Your saved choice differs from")+
+        " the unverified producer-proposed option. No correctness claim or grade.";
+      append(proposedComparison,text("p",compare,"proposal-note"));
     }
     if(committed && committed.question_uid===uidOf(q)) setCommitted(true,committed.selected_option_ids||[]);
     commit.addEventListener("click",function(){
