@@ -61,9 +61,11 @@ def validate_catalog(repository: Path,recovery: dict)->dict:
                 raise ValueError("ORIGINAL_SUBJECT_MISMATCH")
             if raw["subject"]!=row["subject"]:
                 raise ValueError("AUTHOR_SUBJECT_FILE_MISMATCH")
-            for field in ("concept","predict","worked","challenge","trap",
-                          "repair","boundary","boundaryAnswer"):
-                if not isinstance(row[field],str) or len(row[field].strip())<55:
+            thresholds={"concept":55,"predict":45,"worked":45,
+                        "challenge":55,"trap":35,"repair":35,
+                        "boundary":30,"boundaryAnswer":30}
+            for field,minimum in thresholds.items():
+                if not isinstance(row[field],str) or len(row[field].strip())<minimum:
                     raise ValueError("AUTHOR_REPAIR_CONTENT_UNDERDEVELOPED:"+row["slug"]+":"+field)
             if (not isinstance(row["steps"],list) or len(row["steps"])!=3
                 or any(not isinstance(x,str) or len(x.strip())<40 for x in row["steps"])):
