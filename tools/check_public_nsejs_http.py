@@ -42,8 +42,14 @@ def check(folder:Path)->None:
                     assert panel.count()==1 and "UNVALIDATED" in panel.inner_text()
                     panel.locator("a").tap()
                     page.wait_for_url("**/nsejs/"+subject+"/core1/index.html")
-                    assert page.locator("li a").count()==count
-                    modules=page.locator("li a").evaluate_all("nodes => nodes.map(n=>n.getAttribute('href'))")
+                    # Count the 8 original authored modules only; the newly
+                    # authored 18 source-neutral repairs live in a separate
+                    # section and must never masquerade as original modules.
+                    assert page.locator("main > ul li a").count()==count
+                    if subject in ("physics","chemistry"):
+                        repairs=page.locator("#independent-core1-repairs li a")
+                        assert repairs.count()==(13 if subject=="physics" else 5)
+                    modules=page.locator("main > ul li a").evaluate_all("nodes => nodes.map(n=>n.getAttribute('href'))")
                     for module in modules:
                         visit("nsejs/"+subject+"/core1/"+module,"No academic approval")
                         assert page.locator("#tab-core1b").count()==1
