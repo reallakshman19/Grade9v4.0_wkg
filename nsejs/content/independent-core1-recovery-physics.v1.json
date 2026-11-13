@@ -73,7 +73,7 @@
       "challenge": "Keep r=0.03 m but raise equal-charge repulsion to 0.004 N. Estimate the magnitude of each charge and the number of elementary charges (e=1.6×10⁻¹⁹ C).",
       "steps": [
         "The force quadruples at fixed r, so |q| doubles to 2.0×10⁻⁸ C.",
-        "N=q/e=(2.0×10⁻⁸)/(1.6×10⁻¹⁹)=1.25×10¹¹.",
+        "N=q/e=(2.0×10⁻⁸)/(1.6×10⁻¹⁹)=1.25×10¹¹ elementary charges, using the magnitude of each electron's charge.",
         "The count is enormous but compatible with charge quantization; only the sign must be chosen from attraction/repulsion information."
       ],
       "trap": "Replacing q² with q or overlooking the square root when inverting Coulomb's law.",
@@ -91,7 +91,7 @@
       "worked": "The speed dependence is v₀⁻²: at unchanged field and length, twice v₀ gives one-quarter the deflection.",
       "challenge": "A charged particle deflects by 8.0 mm in a uniform transverse plate field. With field strength and plate length fixed, how much does it deflect if its entry speed is doubled? State direction separately.",
       "steps": [
-        "Transit time halves because t=L/v₀.",
+        "Transit time halves because t=L/v₀ when the field region has a fixed horizontal length L.",
         "Electric transverse acceleration magnitude is unchanged, but y=(1/2)at² so the deflection falls by factor four.",
         "The new displacement magnitude is 8.0/4=2.0 mm. Its direction is set by the sign of q and field orientation."
       ],
@@ -111,7 +111,7 @@
       "challenge": "In the same stated algebraic relation let f=15 cm and u₁=30 cm. Find u₂, then explain what additional physical data are needed before calling both positions real.",
       "steps": [
         "Substitute 1/u₂=2/15−1/30=4/30−1/30=3/30.",
-        "Invert to get u₂=10 cm.",
+        "Invert the algebraic equation to get u₂=10 cm, then keep physical image interpretation separate until signs and geometry are established.",
         "Because 10 cm<f, an ordinary converging-lens real-image assumption is not sufficient; clarify geometry and sign conventions."
       ],
       "trap": "Equating any positive root with a real image or mixing virtual-object and real-object sign conventions.",
@@ -167,9 +167,9 @@
       "worked": "For constant acceleration from 3 to 15 m/s without reversal, the average velocity is 9 m/s regardless of the elapsed time.",
       "challenge": "A cart accelerates uniformly in a straight line from +4 to +20 m/s over 6 s. Find displacement, average velocity and acceleration, showing the time-area connection.",
       "steps": [
-        "Average velocity is (4+20)/2=12 m/s.",
+        "Average velocity is (4+20)/2=12 m/s because the acceleration is constant throughout the interval.",
         "Displacement is area under the trapezoidal v–t plot: 12×6=72 m.",
-        "Acceleration is (20−4)/6=8/3 m/s²."
+        "Acceleration is (20−4)/6=8/3 m/s², equal to the uniform slope of the velocity-time graph."
       ],
       "trap": "Using the average-speed formula from the end speeds even when acceleration is nonuniform or the cart reverses.",
       "repair": "Sketch the actual v–t graph, integrate signed area, and check whether the linear-v assumption holds.",
@@ -224,8 +224,8 @@
       "worked": "For n=2, the recurrence gives A=180°/5=36°. For n=3, A=180°/7≈25.71°.",
       "challenge": "Use the same (2n+1)A=180° model with n=4. Compute A and compare with the n=2 model, stating the geometry assumption.",
       "steps": [
-        "The angular closure factor is 2×4+1=9.",
-        "Therefore A=180°/9=20°.",
+        "The angular closure factor is 2×4+1=9 for the n=4 member of the specified symmetric reflection family.",
+        "Therefore A=180°/9=20° from this constrained geometry, not from a universal prism refraction formula.",
         "20°<36°: more repeat reflections correspond to smaller apex angle in this idealized family."
       ],
       "trap": "Treating A=180/(2n+1) as a general refraction law valid for arbitrary prisms and ray paths.",
@@ -244,8 +244,8 @@
       "challenge": "A lens of focal length 12 cm changes magnification magnitude from 3 to 1 in the same arrangement. A screw moves 0.4 cm per turn. Find the lens travel and the required number of full turns.",
       "steps": [
         "Use |u₁|=12(1+1/3)=16 cm and |u₂|=12(1+1)=24 cm.",
-        "The travel is |24−16|=8 cm.",
-        "At 0.4 cm per turn, N=8/0.4=20 turns."
+        "The travel is |24−16|=8 cm between the two lens positions in the same assumed imaging branch.",
+        "At 0.4 cm per turn, N=8/0.4=20 full screw revolutions, with the pitch measured in cm per turn."
       ],
       "trap": "Multiplying by screw pitch instead of dividing or mistaking magnification magnitude for its reciprocal.",
       "repair": "Compute physical lens positions from each magnification before subtracting; then convert travel to turns using pitch as distance per rotation.",
