@@ -55,7 +55,26 @@ def check(site:Path)->None:
                     assert link.count()==1
                     assert link.get_attribute("href")==f"../core2/index.html#{subject}"
                     assert link.evaluate("el=>el.getBoundingClientRect().height")>=56
-                    link.click()
+                    # Diagnostic for genuine touch interception; never force the
+                    # click or bypass the test. Include element-under-point.
+                    box=link.bounding_box()
+                    hit=page.evaluate("""({x,y}) => {
+                        const at=document.elementFromPoint(x,y);
+                        const a=document.querySelector('#core2-archive-register a');
+                        const p=a.closest('section');
+                        const css=getComputedStyle(a);
+                        return {hit:at?.outerHTML?.slice(0,180),
+                                hitTag:at?.tagName, hitId:at?.id,
+                                anchorRect:a.getBoundingClientRect().toJSON(),
+                                parentRect:p.getBoundingClientRect().toJSON(),
+                                scrollY, viewportH:innerHeight, viewportW:innerWidth,
+                                pointer:css.pointerEvents,display:css.display,
+                                visibility:css.visibility,
+                                computedPosition:css.position,zIndex:css.zIndex};
+                    }""",{"x":box["x"]+box["width"]/2,
+                            "y":box["y"]+box["height"]/2})
+                    print("CORE2_TOUCH_HIT",subject,width,height,hit,flush=True)
+                    link.click(timeout=7000)
                     page.wait_for_url("**/nsejs/core2/index.html#"+subject)
                     assert page.locator("section#"+subject+" table tbody tr").count()==(
                         {"physics":21,"chemistry":13,"biology":11}[subject])
