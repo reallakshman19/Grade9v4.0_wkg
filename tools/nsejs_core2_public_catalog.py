@@ -178,7 +178,8 @@ def publish(stage: Path) -> dict:
     for subject in ("physics","chemistry","biology"):
         path=root/subject/"index.html"
         page=path.read_text("utf-8")
-        if "core2-archive-register" in page or "</body>" not in page:
+        if ("core2-archive-register" in page or
+            page.count('<main class="tablet-container">') != 1):
             raise ValueError("CORE2_REGISTER_DUPLICATE_OR_SUBJECT_HTML_INVALID")
         link=(
             '<section id="core2-archive-register" '
@@ -196,7 +197,13 @@ def publish(stage: Path) -> dict:
             'color:#fff;text-decoration:none;font-weight:700">'
             'Browse '+subject.title()+' Core2 candidate coverage</a></section>'
         )
-        path.write_text(page.replace("</body>",link+"\n</body>",1),encoding="utf-8")
+        # Put the link at the *start* of the subject's main content, not at
+        # the bottom after a very tall topic grid. This prevents off-screen
+        # touch hit-testing/scroll restoration from obscuring the link.
+        path.write_text(
+            page.replace('<main class="tablet-container">',
+                         '<main class="tablet-container">\n'+link,1),
+            encoding="utf-8")
     return {"status":data["status"],"module_count":data["module_count"],
             "candidate_question_count":data["candidate_question_count"],
             "original_exam_question_bodies_published":0,
