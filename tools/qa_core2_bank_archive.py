@@ -56,7 +56,8 @@ def verify_bank_archive(archive_path: Path, expected_sha256: str) -> dict[str, b
         with ZipFile(archive_path) as archive:
             infos = archive.infolist()
             names = [info.filename for info in infos]
-            if len(infos) > 500 or len(names) != len(set(names)):
+            if (len(infos) > 500 or len(names) != len(set(names))
+                    or sum(info.file_size for info in infos) > 30_000_000):
                 raise OutputRecoveryHold("BUNDLE_MEMBER_DUPLICATION_OR_SIZE")
             for info in infos:
                 _safe_member(info.filename)
