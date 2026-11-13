@@ -25,6 +25,7 @@ from nsejs_core1ab_public_coverage import public_coverage, render_subject_index,
 from nsejs_source_practice_recovery import (build_source_link_index, recovery_receipt, render_core1_recovery, write_json)
 from nsejs_authored_transfer_index import derive_authored_transfer_index
 from nsejs_2024_source_key_locators import official_locator_bank
+from nsejs_independent_core1_builder import validate_catalog,lesson_html
 from source_learning_bridge import validate_bindings
 from wpe_learner_contract import validate as validate_wpe_contract
 
@@ -37,6 +38,7 @@ PUBLIC_NSEJS = (
     "nsejs/chemistry/question-bank.html",
     "nsejs/biology/question-bank.html",
     "nsejs/js/source-linked-exam-practice.js",
+    "nsejs/js/core1-independent-recovery.js",
     "nsejs/chemistry/authored-practice.html",
     "nsejs/biology/authored-practice.html",
     "nsejs/js/authored-transfer-practice.js",
@@ -254,6 +256,64 @@ def publish_mechanics_wpe_pilot(stage: Path) -> dict:
     return qualified
 
 
+def stage_independent_core1_recovery(stage: Path, coverage: dict) -> dict:
+    """Build 18 distinct authored *supplemental* journeys; originals stay HOLD."""
+    source_receipt=recovery_receipt(coverage,GENERATORS)
+    catalog=validate_catalog(ROOT,source_receipt)
+    put(stage,"nsejs/data/independent-core1-recovery.v1.json",write_json(catalog))
+    for entry in catalog["items"]:
+        relative=entry["publication_route"]
+        content=lesson_html(entry)
+        if "<iframe" in content.lower() or "No academic approval inferred" not in content:
+            raise ValueError("UNSAFE_INDEPENDENT_CORE1_LEARNER")
+        put(stage,relative,content.encode("utf-8"))
+    rows=[]
+    for entry in catalog["items"]:
+        link=entry["publication_route"]
+        label=entry["title"].replace("&","&amp;").replace("<","&lt;")
+        rows.append('<li><a href="../'+link+'" style="display:inline-flex;'
+                    'align-items:center;min-height:56px;padding:11px 17px">'
+                    +label+'</a> · '+entry["subject"]+'</li>')
+    target=stage/"nsejs/core1-recovery.html"
+    original=target.read_text("utf-8")
+    if "</main>" not in original or 'id="independent-core1-skill-repairs"' in original:
+        raise ValueError("RECOVERY_STAGING_INDEX_INVALID")
+    section=(
+        '<section id="independent-core1-skill-repairs" style="margin:25px 0;'
+        'padding:22px;border:2px solid #9bb9c7;background:#eef8fb;border-radius:14px">'
+        '<h2>18 NEW source-neutral Core1A/B skill-repair journeys</h2>'
+        '<p><strong>Supplemental technical learning only.</strong> These original Grade9'
+        ' teaching exercises are reproducibly generated, but are NOT the 18'
+        ' withheld source-bound modules. All original-source, independent'
+        ' science, B1–B7 and academic admission statuses remain HOLD.</p>'
+        '<ol>'+"".join(rows)+'</ol></section>'
+    )
+    target.write_text(original.replace("</main>",section+"</main>",1),"utf-8")
+    for subject in ("physics","chemistry"):
+        path=stage/f"nsejs/{subject}/core1/index.html"
+        old=path.read_text("utf-8")
+        relevant=[x for x in catalog["items"] if x["subject"]==subject.upper()]
+        nav='<section id="independent-core1-repairs" style="margin:22px 0;'
+        nav+='padding:20px;border:2px solid #9bb9c7;border-radius:13px">'
+        nav+='<h2>'+str(len(relevant))+' new independent skill-repair journeys</h2>'
+        nav+='<p>Not original exam questions or certified B1–B7 modules. Original'
+        nav+=' constructions and academic admission remain HOLD.</p><ul>'
+        for entry in relevant:
+            nav+='<li><a style="display:inline-flex;align-items:center;min-height:56px"'
+            nav+=' href="recovery/'+entry["slug"]+'/index.html">'
+            nav+=entry["title"].replace("&","&amp;").replace("<","&lt;")
+            nav+='</a></li>'
+        nav+='</ul></section>'
+        if "</main>" not in old:raise ValueError("CORE1_SUBJECT_INDEX_UNCLOSED")
+        path.write_text(old.replace("</main>",nav+"</main>",1),"utf-8")
+    return {"new_independent_authored_supplements":18,
+            "original_missing_reproducible_modules":18,
+            "source_originals_recovered":0,
+            "academic_admission":"HOLD",
+            "source_exam_admission":"HOLD",
+            "catalog":"nsejs/data/independent-core1-recovery.v1.json"}
+
+
 def stage_external_paper_practice(stage: Path, coverage: dict) -> dict:
     """Add an honest, working offsite-paper study entry—not invented questions."""
     locator=ROOT/"docs/nsejs/official-iapt-source-locators-r1.json"
@@ -347,6 +407,7 @@ def build(out: Path) -> dict:
         put(out,relative,src.read_bytes())
     coverage = generated_lessons(out)
     paper_practice_recovery = stage_external_paper_practice(out, coverage)
+    supplemental_skills = stage_independent_core1_recovery(out, coverage)
     mechanics_wpe = publish_mechanics_wpe_pilot(out)
     add_source_links(out)
     (out/".nojekyll").write_text("",encoding="utf-8")
@@ -366,6 +427,7 @@ def build(out: Path) -> dict:
         "core1ab_test_backed_constructions": coverage["tracked_constructions"],
         "core1ab_unpublished_constructions": coverage["not_published_constructions"],
         "source_linked_recovery":paper_practice_recovery,
+        "independent_core1_supplements":supplemental_skills,
         "additional_authored_mechanics_wpe_parity_preview": mechanics_wpe,
         "official_sources_link_only": True,
         "school_wpe_preserved":True,
