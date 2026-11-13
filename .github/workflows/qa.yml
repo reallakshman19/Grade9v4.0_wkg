@@ -73,6 +73,7 @@ jobs:
             tests/test_nsejs_browser_suite_registration.py \
             tests/test_nsejs_wave3_public_stage.py \
             tests/test_nsejs_core2_public_catalog.py \
+            tests/test_nsejs_pcb_identity_map.py \
             tests/test_nsejs_public_coverage_r1.py \
             tests/test_wpe_learning_route.py \
             tests/test_wpe_learn_challenge_gap_closure_r2.py \

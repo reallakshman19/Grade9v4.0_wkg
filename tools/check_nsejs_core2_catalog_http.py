@@ -24,8 +24,15 @@ def check(site:Path)->None:
     assert len(catalog["items"])==45
     assert not any(row["subject"]=="MATHEMATICS" or "math" in row["slug"]
                    for row in catalog["items"])
-    for name in ("nsejs/core2/index.html","nsejs/core2/inventory.v1.json"):
+    for name in ("nsejs/core2/index.html","nsejs/core2/inventory.v1.json",
+                 "nsejs/core2/question-map.html","nsejs/core2/question-map.v1.json"):
         assert name in manifest["files"]
+    canonical=json.loads((root/"nsejs/core2/question-map.v1.json").read_text("utf-8"))
+    assert canonical["module_count"]==45
+    assert canonical["candidate_question_count"]==267
+    assert canonical["summary"]["missing_construction"]==241
+    assert canonical["summary"]["topic_only_related"]==26
+    assert canonical["source_originals_published"]==0
     server=ThreadingHTTPServer(("127.0.0.1",0),
           partial(SimpleHTTPRequestHandler,directory=str(root)))
     Thread(target=server.serve_forever,daemon=True).start()
@@ -36,6 +43,15 @@ def check(site:Path)->None:
             for width,height in ((1000,1600),(1600,1000)):
                 ctx=browser.new_context(
                     viewport={"width":width,"height":height},has_touch=True,is_mobile=True)
+                # Check every existing related-only candidate route really resolves.
+                # This does not classify any as sufficient teaching or source-original.
+                routes={q["candidate_learning_route"] for q in canonical["questions"]
+                        if q["candidate_learning_route"] is not None}
+                assert len(routes)==26
+                for relative in sorted(routes):
+                    assert relative.startswith("nsejs/") and ".." not in relative
+                    linked=ctx.request.get(base+"/"+relative,timeout=10000)
+                    assert linked.status==200,relative
                 page=ctx.new_page()
                 errors=[]
                 page.on("pageerror",lambda error:errors.append(str(error)))
@@ -47,6 +63,19 @@ def check(site:Path)->None:
                 assert page.get_by_text("No Mathematics records included").count()==1
                 assert page.locator("iframe").count()==0
                 assert page.evaluate("document.documentElement.scrollWidth <= innerWidth+5")
+                # Open the new question-level source-neutral map with a real tap,
+                # not a force-click, iframe or JavaScript-only navigation.
+                page.get_by_role("link",name="Browse all 267 question occurrence IDs, provisional reasoning operations and missing learning constructions").click()
+                page.wait_for_url("**/nsejs/core2/question-map.html")
+                assert page.locator("details").count()==45
+                assert page.locator("tbody tr").count()==267
+                assert page.locator("a").filter(has_text="Related practice, NOT sufficient teaching").count()==26
+                assert page.get_by_text("Mathematics excluded",exact=False).count()==1
+                assert page.locator("iframe").count()==0
+                assert page.evaluate("document.documentElement.scrollWidth <= innerWidth+5")
+                page.locator("details summary").first.click()
+                assert page.locator("details[open]").count()==1
+                page.goto(base+"/nsejs/core2/index.html",wait_until="domcontentloaded")
                 for subject in ("physics","chemistry","biology"):
                     response=page.goto(base+f"/nsejs/{subject}/index.html",
                                        wait_until="domcontentloaded",timeout=25000)
