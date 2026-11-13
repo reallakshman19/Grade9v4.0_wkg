@@ -176,7 +176,7 @@
     subjectMenu();
     const meta=currentMeta();
     if(!meta){
-      outcome.textContent=qNumber.value.trim()==="20"?
+      outcome.textContent=qNumber.value.trim()==="20"&&subject==="CHEMISTRY"?
         "2024 Code 51 Q20 was DROPPED by the publisher; no answer or score accepted.":
         "Choose one of the "+subject+" paper question numbers displayed above. "+
         "Original questions remain on IAPT; Q20 is dropped. All source claims HOLD.";
@@ -204,7 +204,7 @@
     commit.disabled=false;
     outcome.dataset.status="PENDING";
     outcome.textContent="No first attempt saved. Choose option(s) using the original IAPT paper, "+
-      "then save locally. Questions, figures and official correct answers are not imported.";
+      "then save locally. Original questions/figures are not imported; the provisional publisher key appears only after durable save.";
   }
   async function init() {
     if(!subjects.includes(subject)||!root||!control||!outcome||
