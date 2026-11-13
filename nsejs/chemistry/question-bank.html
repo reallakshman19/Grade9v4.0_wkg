@@ -13,6 +13,11 @@ h1{font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.3}
 h2{font-size:1.23rem}
 a{color:#105a80}a:focus-visible,input:focus-visible,select:focus-visible,button:focus-visible{outline:4px solid #af7a1a;outline-offset:3px}
 .hold{background:#fff5df;color:#654719;border:2px solid #b99c6f;border-radius:12px;padding:16px 21px}
+.locator-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:9px;padding:16px 0}
+.source-q-pick{width:100%;min-height:56px;background:#e7f2f6;color:#12465c;border:2px solid #adc6cd}
+.source-q-pick:focus-visible{outline:4px solid #a87517;outline-offset:2px}
+.practice-q-menu{border:1px solid #9cb8c5;border-radius:11px;padding:14px;margin:16px 0}
+.key-review{border:2px solid #7ca5a8;border-radius:11px;padding:16px;background:#eaf5f6;color:#153e52}
 .paper-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:20px 0}
 .paper-source-card{padding:16px 19px;background:white;border:1px solid #b8ced8;border-radius:12px}
 .paper-source-card h2{margin:0 0 8px}
@@ -45,8 +50,8 @@ The actual question text, diagrams, verified subject-specific mappings and answe
 The official paper remains on IAPT. This tool records your own first answer to a paper item you read externally;
 no scoring, original-source claim, academic approval or percentage coverage is inferred.</p>
 <h1>Chemistry · IAPT paper-linked practice notebook</h1>
-<p>Choose a year and open the original paper. Only 2024 Code 51 question numbers 1–60 are provisionally usable for local response notes:
-Q20 was dropped; Q49–60 use multiple options. These numeric labels are <em>not</em> a verified
+<p>Choose a year and open the original paper. Only verified-locator year 2024 Code 51 is supported for local first responses:
+this Chemistry practice notebook contains 20 distinct numbered subject entries. Q20 was dropped in Chemistry; Q49–60 permit multiple options. Publisher-final-key comparison is shown after the first saved response and is provisional. These numeric labels are <em>not</em> a verified
 Chemistry-specific question inventory. Earlier years remain paper-link-only pending code, language and byte-evidence reconciliation.</p>
 <div id="source-index" class="paper-grid" aria-label="IAPT official paper links"><p>Checking source link evidence…</p></div>
 <section id="paper-practice-form" class="practice" aria-labelledby="attempt-title" hidden>
@@ -55,11 +60,13 @@ Chemistry-specific question inventory. Earlier years remain paper-link-only pend
 <label>Paper year<select id="source-year" aria-label="Paper year"></select></label>
 <label>Question number (from original paper)<input id="source-question-number" type="number" min="1" max="60" step="1" inputmode="numeric" placeholder="e.g., 21"></label>
 </div>
+<div id="subject-questions" class="practice-q-menu" aria-label="2024 Code 51 subject source question numbers" hidden></div>
 <div id="practice-choices" aria-label="Answer option selections"></div>
 <p><a id="active-paper-link" class="practice-link" href="#" hidden>Read original IAPT paper</a>
 <a id="publisher-key-link" class="practice-link" href="#" hidden>View publisher-linked key (external, not independently matched)</a></p>
 <button id="save-first-response" type="button" disabled>Save first local response · unverified</button>
 <p id="attempt-status" role="status" aria-live="polite" data-status="HOLD">Verification pending.</p>
+<section id="publisher-key-result" class="key-review" hidden aria-live="polite" aria-label="Post-save IAPT final key comparison"></section>
 </section>
 <section class="hold"><h2>What's needed for a full question bank?</h2>
 <p>Original paper code, figures, subject-specific question identities and final key must be byte-verified,
