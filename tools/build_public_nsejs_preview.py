@@ -26,6 +26,7 @@ from nsejs_source_practice_recovery import (build_source_link_index, recovery_re
 from nsejs_authored_transfer_index import derive_authored_transfer_index
 from nsejs_2024_source_key_locators import official_locator_bank
 from nsejs_independent_core1_builder import validate_catalog,lesson_html
+from nsejs_owner_core1_publication_gate import custody_receipt
 from source_learning_bridge import validate_bindings
 from wpe_learner_contract import validate as validate_wpe_contract
 
@@ -261,6 +262,14 @@ def stage_independent_core1_recovery(stage: Path, coverage: dict) -> dict:
     source_receipt=recovery_receipt(coverage,GENERATORS)
     catalog=validate_catalog(ROOT,source_receipt)
     put(stage,"nsejs/data/independent-core1-recovery.v1.json",write_json(catalog))
+    owner_receipt=custody_receipt(
+        ROOT/"docs/nsejs/core1-owner-candidate-custody-r2.json",
+        catalog,source_receipt
+    )
+    # Public metadata only: NO original examination stems, source records,
+    # private bank.json, original teaching constructions or archived HTML.
+    put(stage,"nsejs/data/core1-owner-candidate-custody.v2.json",
+        write_json(owner_receipt))
     for entry in catalog["items"]:
         relative=entry["publication_route"]
         content=lesson_html(entry)
@@ -276,6 +285,27 @@ def stage_independent_core1_recovery(stage: Path, coverage: dict) -> dict:
                     +label+'</a> · '+entry["subject"]+'</li>')
     target=stage/"nsejs/core1-recovery.html"
     original=target.read_text("utf-8")
+    # Explicit owner candidate receipt, without falsely upgrading original
+    # source-bound and B1–B7 rows to public lesson routes.
+    warning=(
+        '<section id="owner-private-core1-candidate-receipt" '
+        'style="padding:16px;margin:18px 0;border:2px solid #b48d4c;'
+        'border-radius:12px;background:#fff6e6">'
+        '<h2>Owner candidate archive received — original source HOLD</h2>'
+        '<p>27 folder entries reconcile to 26 unique constructions. '
+        'The archive contains candidate Core1 outputs for the 18 historical '
+        'unpublished cases, but no authenticated original source-custody files. '
+        'One Chemistry duplicate alias is not a 27th lesson.</p>'
+        '<p>Four explicit science/source contradictions remain held '
+        '(oxide atomic mass, optical image positions, missing four-panel '
+        'magnetism evidence and conjugate-optics answer acceptance). '
+        'The 18 learning journeys below are NEW, independently authored '
+        'technical supplements, NOT releases of those original candidates. '
+        'Original-source, science and academic gates remain HOLD.</p></section>'
+    )
+    if 'id="owner-private-core1-candidate-receipt"' in original:
+        raise ValueError("OWNER_ARCHIVE_CUSTODY_RECEIPT_DUPLICATED")
+    original=original.replace("</main>",warning+"</main>",1)
     if "</main>" not in original or 'id="independent-core1-skill-repairs"' in original:
         raise ValueError("RECOVERY_STAGING_INDEX_INVALID")
     section=(
@@ -311,7 +341,11 @@ def stage_independent_core1_recovery(stage: Path, coverage: dict) -> dict:
             "source_originals_recovered":0,
             "academic_admission":"HOLD",
             "source_exam_admission":"HOLD",
-            "catalog":"nsejs/data/independent-core1-recovery.v1.json"}
+            "catalog":"nsejs/data/independent-core1-recovery.v1.json",
+            "owner_private_archive_candidate_count":18,
+            "owner_original_source_custody":"HOLD",
+            "owner_science_blocker_count":4,
+            "owner_candidate_receipt":"nsejs/data/core1-owner-candidate-custody.v2.json"}
 
 
 def stage_external_paper_practice(stage: Path, coverage: dict) -> dict:
