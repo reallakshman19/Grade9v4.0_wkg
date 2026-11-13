@@ -60,29 +60,46 @@ def check(site: Path) -> None:
                         assert page.locator('a[href^="https://"][target="_blank"]').count()>=5
                         # The genuine official-source link is external; never an iframe.
                         assert page.locator('#source-year').input_value()=="2024"
+                        single_q="21" if subject=="chemistry" else "11"
+                        multi_q="53" if subject=="chemistry" else "49"
+                        assert page.locator("#subject-questions .source-q-pick").count()==20
+                        assert page.locator("#publisher-key-result").is_hidden()
                         page.locator('#source-question-number').fill("20")
-                        assert "DROPPED" in page.locator("#attempt-status").inner_text()
+                        if subject=="chemistry":
+                            assert "DROPPED" in page.locator("#attempt-status").inner_text()
+                        else:
+                            assert "Choose one of" in page.locator("#attempt-status").inner_text()
                         assert page.locator("#save-first-response").is_disabled()
                         assert page.locator("#publisher-key-link").is_hidden()
-                        page.locator('#source-question-number').fill("21")
+                        page.locator('#source-question-number').fill(single_q)
                         assert page.locator('#practice-choices input[type="radio"]').count()==4
                         assert page.locator("#save-first-response").is_enabled()
+                        assert page.locator("#publisher-key-result").is_hidden()
                         page.locator('#practice-choices input[value="B"]').check()
                         page.locator("#save-first-response").click()
                         assert page.locator("#attempt-status").get_attribute("data-status")=="SAVED_UNVERIFIED"
                         assert "No actual question was imported" in page.locator("#attempt-status").inner_text()
                         assert page.locator("#publisher-key-link").is_visible()
+                        assert page.locator("#publisher-key-result").is_visible()
+                        comparison=page.locator("#publisher-key-result").inner_text()
+                        assert "Publisher" in comparison or "final key" in comparison
+                        assert ("matches" if subject=="chemistry" else "differs") in comparison
                         assert page.locator("#save-first-response").is_disabled()
                         page.reload(wait_until="domcontentloaded")
                         page.locator("#paper-practice-form:visible").wait_for(timeout=15000)
-                        page.locator('#source-question-number').fill("21")
+                        page.locator('#source-question-number').fill(single_q)
                         assert page.locator("#attempt-status").get_attribute("data-status")=="SAVED_UNVERIFIED"
                         assert page.locator('#practice-choices input[value="B"]').is_checked()
-                        page.locator('#source-question-number').fill("49")
+                        page.locator('#source-question-number').fill(multi_q)
                         assert page.locator('#practice-choices input[type="checkbox"]').count()==4
                         page.locator('#practice-choices input[value="A"]').check()
-                        page.locator('#practice-choices input[value="C"]').check()
+                        page.locator('#practice-choices input[value="B"]').check()
+                        if subject=="chemistry":
+                            page.locator('#practice-choices input[value="C"]').check()
+                        else:
+                            page.locator('#practice-choices input[value="D"]').check()
                         page.locator("#save-first-response").click()
+                        assert "matches" in page.locator("#publisher-key-result").inner_text()
                         assert "No actual question was imported" in page.locator("#attempt-status").inner_text()
                         assert page.locator("#save-first-response").is_disabled()
                         page.locator("#source-year").select_option("2023")
@@ -90,6 +107,8 @@ def check(site: Path) -> None:
                         assert page.locator("#save-first-response").is_disabled()
                         assert "code/language" in page.locator("#attempt-status").inner_text().lower()
                         assert page.locator('#publisher-key-link').is_hidden()
+                        assert page.locator("#publisher-key-result").is_hidden()
+                        assert page.locator("#subject-questions").is_hidden()
                         assert page.evaluate("document.documentElement.scrollWidth <= innerWidth + 4")
                         # Distinct authored question bank must contain actual
                         # fresh Core1B prompts, not an empty page or source copies.
