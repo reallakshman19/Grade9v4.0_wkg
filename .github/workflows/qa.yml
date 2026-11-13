@@ -64,6 +64,7 @@ jobs:
             tests/test_qa_reproducibility.py \
             tests/test_qa_failure_triage.py \
             tests/test_qa_verified_input_restore.py \
+            tests/test_qa_core2_bank_archive.py \
             tests/test_source_learning_bridge_pilot.py \
             tests/test_nsejs_wpe_learner_contract.py \
             tests/test_nsejs_wave1_combined_gate.py \
