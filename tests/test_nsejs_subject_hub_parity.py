@@ -77,7 +77,8 @@ def test_source_linked_notebooks_are_not_misrepresented_as_verified_core2_banks(
         contents=notebook.read_text("utf-8")
         assert "Source HOLD" in contents
         assert "not a complete NSEJS" in contents
-        assert "The actual question text, diagrams" in contents
+        assert "The original paper question text and diagrams have NOT been imported." in contents
+        assert "provisional subject-number locators and a transcribed publisher final key" in contents
         assert "No academic approval" in contents
         assert 'src="../js/source-linked-exam-practice.js"' in contents
         assert "<iframe" not in contents.lower()
