@@ -99,6 +99,12 @@ def verify_bank_archive(archive_path: Path, expected_sha256: str) -> dict[str, b
                         continue
                     else:
                         raise OutputRecoveryHold("NONSTANDARD_OUTPUT_PATH:" + name)
+                elif not (name in {"ALL_CORE2_QUESTIONS_AND_ANSWERS.json",
+                                   "ALL_CORE2_QUESTIONS_AND_ANSWERS.md",
+                                   "ALL_CORE2_QUESTIONS_AND_ANSWERS.html"}
+                          or name in {"audit/5YEAR_NSEJS_CORPUS_AUDIT_REPORT.json",
+                                      "audit/5YEAR_NSEJS_PLAYWRIGHT_AUDIT_REPORT.json"}):
+                    raise OutputRecoveryHold("NONSTANDARD_OUTPUT_PATH:" + name)
             if set(names) - verified - {"MANIFEST.json", "README.md"}:
                 raise OutputRecoveryHold("BUNDLE_UNLISTED_FILES")
             if not output:
