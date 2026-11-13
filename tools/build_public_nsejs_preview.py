@@ -26,6 +26,7 @@ from nsejs_source_practice_recovery import (build_source_link_index, recovery_re
 from nsejs_authored_transfer_index import derive_authored_transfer_index
 from nsejs_2024_source_key_locators import official_locator_bank
 from nsejs_independent_core1_builder import validate_catalog,lesson_html
+from nsejs_core2_public_catalog import publish as publish_core2_metadata_register
 from source_learning_bridge import validate_bindings
 from wpe_learner_contract import validate as validate_wpe_contract
 
@@ -410,6 +411,7 @@ def build(out: Path) -> dict:
     supplemental_skills = stage_independent_core1_recovery(out, coverage)
     mechanics_wpe = publish_mechanics_wpe_pilot(out)
     add_source_links(out)
+    core2_metadata = publish_core2_metadata_register(out)
     (out/".nojekyll").write_text("",encoding="utf-8")
     file_list=sorted(p.relative_to(out).as_posix() for p in out.rglob("*") if p.is_file())
     if any(p.startswith(("workspace/","sources/","tests/","tools/")) or
@@ -427,6 +429,7 @@ def build(out: Path) -> dict:
         "core1ab_test_backed_constructions": coverage["tracked_constructions"],
         "core1ab_unpublished_constructions": coverage["not_published_constructions"],
         "source_linked_recovery":paper_practice_recovery,
+        "core2_archive_metadata_only":core2_metadata,
         "independent_core1_supplements":supplemental_skills,
         "additional_authored_mechanics_wpe_parity_preview": mechanics_wpe,
         "official_sources_link_only": True,
