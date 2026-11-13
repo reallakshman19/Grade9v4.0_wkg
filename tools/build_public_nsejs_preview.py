@@ -24,6 +24,7 @@ from build_public_reader_preview import build_preview
 from nsejs_core1ab_public_coverage import public_coverage, render_subject_index, render_official_sources
 from nsejs_source_practice_recovery import (build_source_link_index, recovery_receipt, render_core1_recovery, write_json)
 from nsejs_authored_transfer_index import derive_authored_transfer_index
+from nsejs_2024_source_key_locators import official_locator_bank
 from source_learning_bridge import validate_bindings
 from wpe_learner_contract import validate as validate_wpe_contract
 
@@ -258,6 +259,8 @@ def stage_external_paper_practice(stage: Path, coverage: dict) -> dict:
     locator=ROOT/"docs/nsejs/official-iapt-source-locators-r1.json"
     index=build_source_link_index(json.loads(locator.read_text(encoding="utf-8")))
     put(stage,"nsejs/data/source-linked-practice.v1.json",write_json(index))
+    keys=official_locator_bank(index)
+    put(stage,"nsejs/data/subject-paper-2024-code51.v1.json",write_json(keys))
     recovery=recovery_receipt(coverage, GENERATORS)
     put(stage,"nsejs/data/core1-recovery.v1.json",write_json(recovery))
     put(stage,"nsejs/core1-recovery.html",render_core1_recovery(recovery).encode("utf-8"))
@@ -312,6 +315,8 @@ def stage_external_paper_practice(stage: Path, coverage: dict) -> dict:
     hub.write_text(s.replace("</body>",block+"\n</body>",1),encoding="utf-8")
     return {"source_linked_paper_notebooks":len(index["subjects"]),
             "source_paper_count":len(index["years"]),
+            "2024_code51_subject_locator_count":keys["total_locator_records"],
+            "official_original_question_bodies":0,
             "question_bodies_published":0,
             "student_status":"LOCAL_UNVERIFIED_PAPER_RESPONSE_ONLY",
             "academic_admission":"HOLD",
