@@ -1,0 +1,35 @@
+name: Core2 native handoff snapshot (pinned main)
+on:
+  push:
+    branches:
+      - archive/core2-native-handoff-20261113
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout snapshot commit with history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Archive exact production Git tracked source, no .git or private user archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          git cat-file -t 4d6bb29420b2d1452b6b4d3708b8bb518b54f927 | grep -qx commit
+          git archive --format=zip --output=grade9-main-native-pinned.zip 4d6bb29420b2d1452b6b4d3708b8bb518b54f927
+          echo "repository=reallakshman19/Grade9v4.0" > GH_SOURCE_PIN.txt
+          echo "commit=4d6bb29420b2d1452b6b4d3708b8bb518b54f927" >> GH_SOURCE_PIN.txt
+          echo "scope=git-tracked source only; original private owner archive not included" >> GH_SOURCE_PIN.txt
+          sha256sum grade9-main-native-pinned.zip >> GH_SOURCE_PIN.txt
+          unzip -tq grade9-main-native-pinned.zip
+      - name: Upload native source snapshot for Owner handoff
+        uses: actions/upload-artifact@v4
+        with:
+          name: core2-native-repo-snapshot-4d6bb294
+          path: |
+            grade9-main-native-pinned.zip
+            GH_SOURCE_PIN.txt
+          if-no-files-found: error
+          retention-days: 7
