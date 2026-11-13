@@ -34,7 +34,7 @@
       "worked": "4.07 g of ZnO at molar mass 81.4 g/mol is 0.050 mol. Its acid dissolution needs 0.100 mol HCl, not 0.050 mol.",
       "challenge": "A clean 8.14 g sample of ZnO reacts with HCl. Calculate the minimum amount of HCl in moles and the volume of 0.50 M HCl solution needed.",
       "steps": [
-        "n(ZnO)=8.14/81.4=0.100 mol.",
+        "n(ZnO)=8.14/81.4=0.100 mol, using the molar mass of ZnO and the measured sample mass.",
         "The balanced equation needs 2 mol HCl per mol ZnO, hence n(HCl)=0.200 mol.",
         "At 0.50 mol/L, V=0.200/0.50=0.400 L, or 400 mL."
       ],
