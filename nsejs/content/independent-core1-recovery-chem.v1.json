@@ -1,0 +1,104 @@
+{
+  "schema": "grade9-independent-core1-remediation-source/v1",
+  "subject": "CHEMISTRY",
+  "authority": "ORIGINAL_AUTHORED_TRANSFER_NOT_SOURCE_EXAM",
+  "academic_admission": "HOLD",
+  "original_18_audit_equivalence": false,
+  "items": [
+    {
+      "slug": "chem-atomic-structure-r1",
+      "construction": "CHEM-ATOM-C-BOHR-TRANSITIONS-01",
+      "subject": "CHEMISTRY",
+      "title": "Atomic spectra: inverses, not energy gaps",
+      "concept": "Hydrogenic emission uses 1/λ = R(1/n_low²−1/n_high²). A larger energy or wavenumber gap means a shorter wavelength; always choose n_high greater than n_low.",
+      "predict": "Will the 4→2 Balmer photon have a shorter or longer wavelength than the 3→2 photon? Predict before evaluating fractions.",
+      "worked": "For 3→2, the wavenumber factor is 1/4−1/9=5/36; for 4→2 it is 1/4−1/16=3/16. Thus λ(3→2)/λ(4→2)=(3/16)/(5/36)=27/20=1.35.",
+      "challenge": "Independently find λ(5→2)/λ(4→2) for a hydrogen-like atom. Show the inverse-ratio logic; numerical R is unnecessary.",
+      "steps": [
+        "Compute the 5→2 wavenumber factor: 1/4−1/25=21/100.",
+        "For 4→2 the factor is 3/16. Invert factors for wavelengths: λ(5→2)/λ(4→2)=(3/16)/(21/100)=25/28≈0.893.",
+        "The 5→2 transition emits the shorter wavelength because its level gap is larger."
+      ],
+      "trap": "Using the ratio of energy gaps as though it were the ratio of wavelengths.",
+      "repair": "Write each wavenumber factor, put λ proportional to its reciprocal, then compare the resulting ratio and inequality.",
+      "boundary": "Would an n=2→n=2 transition yield a spectral line?",
+      "boundaryAnswer": "No. Its level-energy difference is zero; the line formula yields zero wavenumber, not a finite emitted photon."
+    },
+    {
+      "slug": "chem-chemical-substances-r1",
+      "construction": "CHEM-REACT-C-AMPHOTERIC-STOICH-01",
+      "subject": "CHEMISTRY",
+      "title": "Amphoteric oxides and equivalent bookkeeping",
+      "concept": "Amphoteric ZnO reacts with both acid and excess strong alkali. Balance the atoms and charge before applying a mole ratio. With acid, ZnO + 2HCl → ZnCl2 + H2O.",
+      "predict": "Would adding twice as many moles of HCl as ZnO be sufficient for complete acid dissolution? State the stoichiometric reason.",
+      "worked": "4.07 g of ZnO at molar mass 81.4 g/mol is 0.050 mol. Its acid dissolution needs 0.100 mol HCl, not 0.050 mol.",
+      "challenge": "A clean 8.14 g sample of ZnO reacts with HCl. Calculate the minimum amount of HCl in moles and the volume of 0.50 M HCl solution needed.",
+      "steps": [
+        "n(ZnO)=8.14/81.4=0.100 mol.",
+        "The balanced equation needs 2 mol HCl per mol ZnO, hence n(HCl)=0.200 mol.",
+        "At 0.50 mol/L, V=0.200/0.50=0.400 L, or 400 mL."
+      ],
+      "trap": "Using a 1:1 ratio because the oxide formula contains one zinc atom.",
+      "repair": "Mark the coefficient 2 in the balanced reaction and write mole-needed = coefficient × limiting-reactant moles.",
+      "boundary": "If only 0.10 mol HCl is available for this 8.14 g sample, can all of the ZnO dissolve?",
+      "boundaryAnswer": "No. Only 0.050 mol ZnO can react with 0.10 mol HCl; the remaining 0.050 mol ZnO is unreacted under this acid-only model."
+    },
+    {
+      "slug": "chem-eudiometry-d3-r1",
+      "construction": "CHEM-EUDIO-C-COMBUSTION-D3-01",
+      "subject": "CHEMISTRY",
+      "title": "Gas-volume conservation in combustion eudiometry",
+      "concept": "At the same temperature and pressure, gas volumes follow stoichiometric mole ratios. In CH4 + 2O2 → CO2 + 2H2O, water is condensed before reading the dry gas; an alkali absorbent can then remove CO2.",
+      "predict": "After burning methane in excess oxygen and condensing water, is the remaining dry gas necessarily only carbon dioxide?",
+      "worked": "15 mL CH4 consumes 30 mL O2, leaving 5 mL from an initial 35 mL O2. It produces 15 mL CO2: dry residual gas =20 mL; after CO2 absorption, 5 mL remains.",
+      "challenge": "Burn 12 mL CH4 with 30 mL O2 at the same gas conditions. Determine the dry volume after water condenses and the final volume after removing CO2 with alkali.",
+      "steps": [
+        "Required O2 is twice methane: 24 mL, leaving 30−24=6 mL O2.",
+        "CO2 formed is 12 mL; after condensing water, dry volume =12+6=18 mL.",
+        "An alkaline absorber removes 12 mL CO2, leaving 6 mL O2."
+      ],
+      "trap": "Counting water vapour as dry gas or subtracting CO2 before calculating oxygen excess.",
+      "repair": "Write three separate columns: reacted volume, dry gas after condensation, and gas after selective CO2 absorption.",
+      "boundary": "If oxygen supplied were only 20 mL for 12 mL methane, could all methane burn completely?",
+      "boundaryAnswer": "No. Complete combustion needs 24 mL oxygen; the mixture is oxygen-limited and cannot be evaluated with the all-methane-complete assumption."
+    },
+    {
+      "slug": "chem-matter-mole-r1",
+      "construction": "CHEM-MOLE-C-PARTIAL-PRESSURE-01",
+      "subject": "CHEMISTRY",
+      "title": "Mole fraction and partial pressures",
+      "concept": "For an ideal nonreacting gas mixture at equilibrium, Dalton's law is p_i = x_i P_total, where x_i=n_i/Σn. Mole fractions must sum to one.",
+      "predict": "Can a minority gas by mole count have a larger partial pressure than a majority gas under identical ideal mixing conditions?",
+      "worked": "In a vessel with 2 mol N2 and 3 mol O2 at total pressure 5 atm, x_N2=2/5 and x_O2=3/5, yielding p_N2=2 atm and p_O2=3 atm.",
+      "challenge": "A 10-atm ideal mixture contains 1 mol helium and 4 mol neon. Calculate each partial pressure, then check whether they sum to total pressure.",
+      "steps": [
+        "Total moles are 1+4=5; x_He=1/5 and x_Ne=4/5.",
+        "Apply Dalton's law: p_He=(1/5)×10=2 atm and p_Ne=(4/5)×10=8 atm.",
+        "Check p_He+p_Ne=10 atm; each partial pressure is nonnegative and ≤ total."
+      ],
+      "trap": "Using molar mass or an arbitrary volume fraction when the ideal mixture is specified by mole numbers.",
+      "repair": "Find the total moles first, then normalize each component amount before multiplying by total pressure.",
+      "boundary": "Would the same simple partial-pressure rule remain valid if gases react appreciably before measurement?",
+      "boundaryAnswer": "Not with the initial unreacted mole numbers. First determine equilibrium compositions; only then use the relevant mixture relations."
+    },
+    {
+      "slug": "chem-redox-titration-d3-r1",
+      "construction": "CHEM-REDOX-C-TITRATION-D3-01",
+      "subject": "CHEMISTRY",
+      "title": "Redox titration by electron-equivalent balance",
+      "concept": "In acidic solution, MnO4− takes 5 electrons to become Mn²⁺, whereas Fe²⁺ donates one electron to become Fe³⁺. Balance exchanged electron-moles before titration arithmetic.",
+      "predict": "Does one mole of acidic permanganate oxidise one mole or five moles of Fe²⁺? Explain the electron count.",
+      "worked": "20 mL of 0.020 M KMnO4 contains 0.00040 mol permanganate and can oxidise 5×0.00040=0.00200 mol Fe²⁺ in acid.",
+      "challenge": "25.0 mL of 0.0100 M acidic KMnO4 reaches the equivalence point with Fe²⁺. Determine the Fe²⁺ amount in moles and the 0.0500 M Fe²⁺ solution volume consumed.",
+      "steps": [
+        "n(MnO4−)=0.0250 L×0.0100 mol/L=2.50×10⁻⁴ mol.",
+        "Five Fe²⁺ donate the five electrons needed per permanganate; n(Fe²⁺)=1.25×10⁻³ mol.",
+        "V(Fe²⁺)=0.00125/0.0500=0.0250 L=25.0 mL."
+      ],
+      "trap": "Assuming a one-to-one mole ratio without considering the oxidation-state changes.",
+      "repair": "Balance the oxidation/reduction half-reactions first and then use n oxidant×n-factor = n reductant×n-factor.",
+      "boundary": "Would the same five-electron permanganate reduction necessarily apply in strongly alkaline solution?",
+      "boundaryAnswer": "No. The Mn product and electron stoichiometry depend on medium; confirm the reaction product and rebalance for that environment."
+    }
+  ]
+}
