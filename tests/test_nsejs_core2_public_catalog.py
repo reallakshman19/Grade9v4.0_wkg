@@ -75,7 +75,7 @@ def test_publish_metadata_only_into_stage_and_subject_navigation(tmp_path):
         root=stage/"nsejs"/name
         root.mkdir(parents=True)
         (root/"index.html").write_text(
-            '<!doctype html><html><body><main>'+name+'</main></body></html>',encoding="utf-8")
+            '<!doctype html><html><body><main class="tablet-container">'+name+'</main></body></html>',encoding="utf-8")
     info=publish(stage)
     assert info=={"status":"METADATA_CATALOG_ONLY","module_count":45,
                   "candidate_question_count":267,
