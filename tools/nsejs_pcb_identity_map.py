@@ -6,6 +6,7 @@ NO exam stem, answer, figure, reasoning worked solution or custody proof.
 """
 from __future__ import annotations
 from collections import Counter, defaultdict
+import hashlib
 import html
 import json
 from pathlib import Path
@@ -68,6 +69,13 @@ def validate(doc, *, root=ROOT):
     from nsejs_core2_public_catalog import REGISTER
     need(isinstance(doc, dict) and set(doc) == ROOT_FIELDS,
          "UNKNOWN_TOP_LEVEL_FIELD")
+    # Independent owner-ZIP reconciliation fingerprint, over every metadata
+    # field and row. No source stem/key is needed to enforce byte lineage.
+    canonical = json.dumps(doc, sort_keys=True, ensure_ascii=False,
+                           separators=(",", ":"), allow_nan=False)
+    need(hashlib.sha256(canonical.encode("utf-8")).hexdigest() ==
+         "752f7774ef3082bc6574678defb6b9a2ebcaff29624605144cac6a1507e8af82",
+         "SOURCE_NEUTRAL_OWNER_ZIP_RECONCILIATION_FINGERPRINT")
     need(doc["schema"] == "grade9-pcb-core2-canonical-identity-map/v1" and
          doc["archive_sha256"] == PIN and
          doc["mode"] == "SOURCE_NEUTRAL_IDENTITY_AND_PROVISIONAL_REASONING_ONLY",
