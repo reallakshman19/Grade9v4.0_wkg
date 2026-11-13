@@ -16,6 +16,43 @@
   const paperLink=document.getElementById("active-paper-link");
   const keyLink=document.getElementById("publisher-key-link");
   let index=null, revision=null, item=null, key=null;
+  // 2024 paper code 51 subject-number assignments are backed by the
+  // existing 2024 subject-test census, pending independent source audit.
+  let sourceKeyMap=null;
+  const subjectNumbers={
+    CHEMISTRY:[...Array(16)].map((_,i)=>i+17).concat([53,54,55,56]),
+    BIOLOGY:[...Array(16)].map((_,i)=>i+1).concat([49,50,51,52])
+  };
+  const keyResult=document.getElementById("publisher-key-result");
+  const questionMenu=document.getElementById("subject-questions");
+  function canonical(value) {
+    if(Array.isArray(value))return "["+value.map(canonical).join(",")+"]";
+    if(value!==null&&typeof value==="object")
+      return "{"+Object.keys(value).sort().map(k=>JSON.stringify(k)+":"+canonical(value[k])).join(",")+"}";
+    return JSON.stringify(value);
+  }
+  const questionRecord=q=>sourceKeyMap?.items.find(
+    x=>x.subject===subject&&x.question_number===q);
+  function subjectMenu(){
+    questionMenu.replaceChildren();
+    questionMenu.append(words("strong","2024 Code 51 · 20 "+subject+
+      " source-number records. Read original IAPT paper; source and academic HOLD."));
+    const grid=words("div","","locator-grid");
+    for(const n of subjectNumbers[subject]){
+      const info=questionRecord(n);
+      if(!info)throw Error("EXACT_SUBJECT_SOURCE_LOCATOR_MISSING");
+      const button=words("button","Q"+String(n).padStart(2,"0")+
+        (info.publisher_key_status==="DROP"?" · dropped":""),
+        "source-q-pick");
+      button.type="button";
+      button.dataset.q=String(n);
+      button.addEventListener("click",()=>{qNumber.value=String(n);update();});
+      grid.append(button);
+    }
+    questionMenu.append(grid);
+    questionMenu.hidden=false;
+  }
+
   const allowed=new Set(["A","B","C","D"]);
   const words=(tag,value,cls)=>{
     const n=document.createElement(tag);
@@ -49,8 +86,13 @@
        JSON.stringify(item.multi_answer_range)!=="[49,60]"||
        JSON.stringify(item.dropped_question_numbers)!=="[20]") return null;
     const q=Number(qNumber.value);
-    if(!Number.isInteger(q)||q<1||q>60||String(q)!==qNumber.value.trim()||q===20)return null;
-    return {q,isMulti:q>=49};
+    if(!Number.isInteger(q)||!subjectNumbers[subject].includes(q)||
+       String(q)!==qNumber.value.trim()||q===20)return null;
+    const itemRecord=questionRecord(q);
+    if(!itemRecord||itemRecord.academic_admission!=="HOLD"||
+       itemRecord.source_question_text!==null||
+       itemRecord.publisher_key_status!=="IAPT_TRANSCRIBED_PROVISIONAL")return null;
+    return {q,isMulti:q>=49, itemRecord};
   }
   function storageKey(q) {
     return ["g9","nsejs","iapt-link-note","v1",revision,subject,
@@ -95,11 +137,28 @@
     outcome.textContent="First local response stored for "+subject+
       " · IAPT 2024 Code 51 Q"+record.question+". No actual question was imported; "+
       "no answer comparison, correctness or official mark is claimed.";
+    const official=questionRecord(record.question);
+    if(!official||!Array.isArray(official.publisher_key)){
+      fail("KEY_LOCATOR_NOT_AVAILABLE");return;
+    }
+    const expected=official.publisher_key;
+    const exact=expected.length===record.options.length&&
+      expected.every(x=>record.options.includes(x));
+    keyResult.replaceChildren(
+      words("strong","IAPT 2024 Code 51 final key, transcribed: "+expected.join(", ")),
+      words("p",exact?
+        "Your saved first response matches the publisher-listed key.":
+        "Your saved first response differs from the publisher-listed key."),
+      words("p","Key transcription and subject assignment require independent review. This comparison is not an academic mark or qualification.")
+    );
+    keyResult.hidden=false;
     keyLink.hidden=false;
     setLink(keyLink,item.key_url);
   }
   function update() {
     choices.replaceChildren();
+    keyResult.hidden=true;
+    questionMenu.hidden=true;
     keyLink.hidden=true;
     commit.disabled=true;
     outcome.dataset.status="HOLD";
@@ -114,12 +173,13 @@
     }
     paperLink.hidden=false;
     setLink(paperLink,item.paper_url);
+    subjectMenu();
     const meta=currentMeta();
     if(!meta){
       outcome.textContent=qNumber.value.trim()==="20"?
         "2024 Code 51 Q20 was DROPPED by the publisher; no answer or score accepted.":
-        "Choose an integer paper question number 1–60 (Q20 dropped). "+
-        "Questions 49–60 permit multiple options. The paper stays on IAPT; all source claims HOLD.";
+        "Choose one of the "+subject+" paper question numbers displayed above. "+
+        "Original questions remain on IAPT; Q20 is dropped. All source claims HOLD.";
       return;
     }
     key=storageKey(meta.q);
@@ -148,7 +208,8 @@
   }
   async function init() {
     if(!subjects.includes(subject)||!root||!control||!outcome||
-       !selectYear||!qNumber||!choices||!commit||!paperLink||!keyLink)
+       !selectYear||!qNumber||!choices||!commit||!paperLink||!keyLink||
+       !keyResult||!questionMenu)
       throw Error("UNRECOGNIZED_SUBJECT_OR_MOUNT");
     const response=await fetch("../data/source-linked-practice.v1.json",{cache:"no-store"});
     if(!response.ok)throw Error("PUBLIC_SOURCE_INDEX_MISSING");
@@ -169,8 +230,44 @@
        r.question_text_present===false&&r.official_answer_values_present===false&&
        trustedUrl(r.paper_url)&&trustedUrl(r.archive_url)&&trustedUrl(r.key_url)))
       throw Error("UNTRUSTED_OR_PROMOTED_OFFICIAL_LINK");
-    revision=await hash(raw);
-    index=data;
+    // The publisher key is stored as factual source data, but it is shown
+    // in the UI only after saving a first attempt; this is not a secure exam.
+    const response2=await fetch("../data/subject-paper-2024-code51.v1.json",{cache:"no-store"});
+    if(!response2.ok)throw Error("OFFICIAL_CODE51_LOCATORS_MISSING");
+    const raw2=await response2.text();
+    const keys=JSON.parse(raw2);
+    if(keys.schema!=="grade9-nsejs-code51-publisher-key-locators/v1"||
+       keys.academic_admission!=="HOLD"||keys.redistribution_review!=="HOLD"||
+       keys.source_text_copied!==false||keys.questions_present_as_original_text!==0||
+       keys.total_locator_records!==40||keys.subject_locator_counts.CHEMISTRY!==20||
+       keys.subject_locator_counts.BIOLOGY!==20||!Array.isArray(keys.items)||
+       keys.items.length!==40||keys.registry_sha256!==await hash(canonical(data)))
+      throw Error("KEY_SOURCE_PROVENANCE_OR_SCOPE_INVALID");
+    const seen=new Set();
+    for(const row of keys.items) {
+      if(!subjectNumbers[row.subject]?.includes(row.question_number)||
+         seen.has(row.uid)||row.source_custody!=="HOLD"||
+         row.academic_admission!=="HOLD"||row.source_question_text!==null||
+         !Array.isArray(row.source_figures)||row.source_figures.length!==0||
+         row.source_locator!==keys.paper_url||
+         row.publisher_final_key_url!==keys.final_key_url||
+         row.subject_identity_basis!==keys.subject_mapping_basis||
+         !/^[a-f0-9]{64}$/.test(row.revision_sha256))
+        throw Error("KEY_SOURCE_OCCURRENCE_INVALID");
+      const rawRow={...row};delete rawRow.revision_sha256;
+      if(await hash(canonical(rawRow))!==row.revision_sha256)
+        throw Error("KEY_SOURCE_REAL_CONTENT_HASH_MISMATCH");
+      if(row.question_number===20 ?
+         (row.publisher_key_status!=="DROP"||row.publisher_key!==null):
+         (row.publisher_key_status!=="IAPT_TRANSCRIBED_PROVISIONAL"||
+          !Array.isArray(row.publisher_key)||row.publisher_key.length===0||
+          row.publisher_key.some(x=>!allowed.has(x))||
+          (row.question_number<49&&row.publisher_key.length!==1)))
+        throw Error("PUBLISHER_KEY_FORMAT_INVALID");
+      seen.add(row.uid);
+    }
+    revision=await hash(raw+"\n"+raw2);
+    index=data;sourceKeyMap=keys;
     root.replaceChildren();
     selectYear.replaceChildren();
     for(const year of data.years){
